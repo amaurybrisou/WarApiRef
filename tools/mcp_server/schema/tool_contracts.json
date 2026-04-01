@@ -1,0 +1,63 @@
+{
+  "tools": [
+    {
+      "name": "lookup_symbol",
+      "request_fields": ["symbol_name", "symbol_type", "include_examples", "include_related"],
+      "response_fields": ["exact_match", "symbol", "alternatives", "warnings"]
+    },
+    {
+      "name": "search_symbols",
+      "request_fields": ["query", "type_filter", "namespace_filter", "confidence_min", "limit", "include_examples"],
+      "response_fields": ["total_matches", "matches", "warnings"]
+    },
+    {
+      "name": "get_related_symbols",
+      "request_fields": ["symbol_name", "relation_types", "depth", "limit_per_relation"],
+      "response_fields": ["source_symbol", "relations", "graph_summary", "warnings"]
+    },
+    {
+      "name": "get_event_flow",
+      "request_fields": ["event_name", "include_examples", "include_downstream"],
+      "response_fields": ["event", "observed_handlers", "common_flows", "downstream_symbols", "examples", "warnings"]
+    },
+    {
+      "name": "get_xml_handler_info",
+      "request_fields": ["handler_name", "include_examples", "include_related"],
+      "response_fields": ["handler", "lifecycle_role", "expected_callback_shape", "common_element_types", "paired_symbols", "examples", "warnings"]
+    },
+    {
+      "name": "find_usage_examples",
+      "request_fields": ["symbol_name", "pattern_name", "addon_filter", "limit"],
+      "response_fields": ["query_type", "total_matches", "examples"]
+    },
+    {
+      "name": "explain_confidence",
+      "request_fields": ["symbol_name"],
+      "response_fields": ["symbol", "confidence_breakdown", "semantic_confidence_breakdown", "evidence_signals", "penalties", "rationale", "warnings"]
+    },
+    {
+      "name": "explain_symbol_usage",
+      "request_fields": ["symbol_name", "include_patterns", "include_pitfalls"],
+      "response_fields": ["symbol", "purpose", "usage_context", "parameters", "returns", "side_effects", "preconditions", "postconditions", "common_patterns", "pitfalls_or_uncertainty", "examples", "warnings"]
+    },
+    {
+      "name": "scaffold_addon_snippet",
+      "request_fields": ["task_description", "desired_apis", "output_style", "include_xml", "include_comments"],
+      "response_fields": ["generated_artifacts", "used_documented_symbols", "avoided_symbols", "uncertainty_notes", "rationale"]
+    }
+  ],
+  "resource_uris": [
+    "war-api://symbols/<canonical_name>",
+    "war-api://events/<event_name>",
+    "war-api://xml-handlers/<handler_name>",
+    "war-api://patterns/<pattern_name>",
+    "war-api://meta/conventions",
+    "war-api://meta/inference-rules",
+    "war-api://meta/coverage-report",
+    "war-api://graph/<canonical_name>",
+    "war-api://navigation/tree",
+    "war-api://navigation/sidebar"
+  ],
+  "supported_relation_types": ["related", "used_with", "triggered_by", "affects", "calls", "handled_by", "commonly_used_with"],
+  "supported_symbol_types": ["function", "event", "xml_handler", "data_structure", "xml_element"]
+}

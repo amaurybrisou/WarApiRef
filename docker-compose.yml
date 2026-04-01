@@ -20,3 +20,21 @@ services:
       - "${DOCS_SITE_PORT:-8080}:80"
     volumes:
       - ./docs/site:/usr/share/nginx/html:ro
+
+  mcp-server:
+    container_name: war-api-mcp-server
+    build:
+      context: .
+      dockerfile: infra/docker/mcp-server.Dockerfile
+    image: ror-mcp-server:local
+    command:
+      - --transport
+      - http
+      - --listen
+      - :8091
+      - --docs-root
+      - /workspace/docs/war-api
+    ports:
+      - "${MCP_SERVER_PORT:-8091}:8091"
+    volumes:
+      - .:/workspace:ro
