@@ -30,8 +30,8 @@ func TestInitializeCapabilitiesAreStructured(t *testing.T) {
 	if !ok {
 		t.Fatalf("missing tools capability object")
 	}
-	if _, ok := tools["listChanged"]; !ok {
-		t.Fatalf("tools capability missing listChanged")
+	if len(tools) != 0 {
+		t.Fatalf("tools capability should be an object")
 	}
 }
 

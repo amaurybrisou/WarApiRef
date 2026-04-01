@@ -7,9 +7,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
+	"sync"
 
 	"roraddons/tools/mcp_server/model"
 )
@@ -29,40 +32,65 @@ type jsonRPCResponse struct {
 }
 
 type App struct {
+	docsRoot  string
 	store     *Store
+	storeErr  error
+	storeOnce sync.Once
+	storeDone chan struct{}
+	storeMu   sync.RWMutex
 	validator *Validator
 }
 
 func NewApp(docsRoot string) (*App, error) {
-	store, err := NewStore(docsRoot)
-	if err != nil {
-		return nil, err
+	app := &App{
+		docsRoot:  docsRoot,
+		validator: NewValidator(),
+		storeDone: make(chan struct{}),
 	}
-	return &App{store: store, validator: NewValidator()}, nil
+	app.ensureStoreLoaded()
+	return app, nil
 }
 
 func (a *App) ServeStdio(ctx context.Context, input io.Reader, output io.Writer) error {
 	r := bufio.NewReader(input)
+	w := bufio.NewWriter(output)
+	mode := "unknown"
+	log.Printf("mcp stdio server started")
 	for {
 		select {
 		case <-ctx.Done():
 			return ctx.Err()
 		default:
 		}
-		payload, err := readFrame(r)
+
+		payload, currentMode, err := readStdioPayload(r)
 		if err != nil {
 			if err == io.EOF {
 				return nil
 			}
 			return err
 		}
+		if mode == "unknown" {
+			mode = currentMode
+			log.Printf("mcp stdio detected mode=%s", mode)
+		}
 		resp := a.handlePayload(payload)
 		if len(resp.ID) == 0 {
 			continue
 		}
-		if err := writeFrame(output, resp); err != nil {
+		if mode == "framed" {
+			if err := writeFrame(w, resp); err != nil {
+				return err
+			}
+		} else {
+			if err := writeLineJSON(w, resp); err != nil {
+				return err
+			}
+		}
+		if err := w.Flush(); err != nil {
 			return err
 		}
+		log.Printf("mcp stdio response sent")
 	}
 }
 
@@ -86,12 +114,13 @@ func (a *App) handlePayload(payload []byte) jsonRPCResponse {
 	if err := json.Unmarshal(payload, &req); err != nil {
 		return jsonRPCResponse{JSONRPC: "2.0", Error: map[string]any{"code": -32700, "message": "parse error"}}
 	}
+	log.Printf("mcp request method=%s", req.Method)
 	if req.JSONRPC == "" {
 		req.JSONRPC = "2.0"
 	}
 	result, rpcErr := a.dispatch(req.Method, req.Params)
 	if rpcErr != nil {
-		return jsonRPCResponse{JSONRPC: "2.0", ID: req.ID, Error: map[string]any{"code": -32000, "message": rpcErr.ErrorMessage, "data": rpcErr}}
+		return jsonRPCResponse{JSONRPC: "2.0", ID: req.ID, Error: map[string]any{"code": rpcCodeFromError(rpcErr), "message": rpcErr.ErrorMessage, "data": rpcErr}}
 	}
 	return jsonRPCResponse{JSONRPC: "2.0", ID: req.ID, Result: result}
 }
@@ -100,15 +129,14 @@ func (a *App) dispatch(method string, params json.RawMessage) (interface{}, *mod
 	switch method {
 	case "initialize":
 		return map[string]any{
-			"protocolVersion": "2024-11-05",
-			"serverInfo":      map[string]any{"name": "war-api-mcp", "version": "2.0.0"},
+			"protocolVersion": "2025-03-26",
+			"serverInfo":      map[string]any{"name": "war-api-mcp-server", "version": "1.0.0"},
 			"capabilities": map[string]any{
-				"tools":     map[string]any{"listChanged": false},
-				"resources": map[string]any{"subscribe": false, "listChanged": false},
-				"prompts":   map[string]any{"listChanged": false},
+				"tools":     map[string]any{},
+				"resources": map[string]any{},
 			},
 		}, nil
-	case "notifications/initialized":
+	case "initialized", "notifications/initialized":
 		return map[string]any{}, nil
 	case "tools/list":
 		return map[string]any{"tools": ToolRegistry()}, nil
@@ -148,6 +176,95 @@ func (a *App) dispatch(method string, params json.RawMessage) (interface{}, *mod
 	}
 }
 
+func (a *App) ensureStoreLoaded() {
+	a.storeOnce.Do(func() {
+		go func() {
+			store, err := NewStore(a.docsRoot)
+			a.storeMu.Lock()
+			a.store = store
+			a.storeErr = err
+			a.storeMu.Unlock()
+			close(a.storeDone)
+			if err != nil {
+				log.Printf("mcp store load failed: %v", err)
+				return
+			}
+			log.Printf("mcp store loaded")
+		}()
+	})
+}
+
+func (a *App) storeReady() (*Store, *model.APIError) {
+	a.ensureStoreLoaded()
+	<-a.storeDone
+
+	a.storeMu.RLock()
+	defer a.storeMu.RUnlock()
+	if a.storeErr != nil {
+		return nil, &model.APIError{ErrorCode: "server_unavailable", ErrorMessage: "failed to load documentation index", Details: map[string]any{"cause": a.storeErr.Error()}}
+	}
+	if a.store == nil {
+		return nil, &model.APIError{ErrorCode: "server_unavailable", ErrorMessage: "documentation index unavailable"}
+	}
+	return a.store, nil
+}
+
+func readStdioPayload(r *bufio.Reader) ([]byte, string, error) {
+	for {
+		line, err := r.ReadString('\n')
+		if err != nil {
+			if err == io.EOF && strings.TrimSpace(line) != "" {
+				return []byte(strings.TrimSpace(line)), "line", nil
+			}
+			return nil, "", err
+		}
+
+		trimmed := strings.TrimSpace(line)
+		if trimmed == "" {
+			continue
+		}
+
+		if strings.HasPrefix(strings.ToLower(trimmed), "content-length:") {
+			payload, ferr := readFrameFromFirstHeader(trimmed, r)
+			return payload, "framed", ferr
+		}
+
+		return []byte(trimmed), "line", nil
+	}
+}
+
+func readFrameFromFirstHeader(firstHeader string, r *bufio.Reader) ([]byte, error) {
+	length := 0
+	headers := []string{firstHeader}
+	for {
+		line, err := r.ReadString('\n')
+		if err != nil {
+			return nil, err
+		}
+		trimmed := strings.TrimRight(line, "\r\n")
+		if trimmed == "" {
+			break
+		}
+		headers = append(headers, trimmed)
+	}
+	for _, h := range headers {
+		parts := strings.SplitN(h, ":", 2)
+		if len(parts) == 2 && strings.EqualFold(strings.TrimSpace(parts[0]), "content-length") {
+			n, err := strconv.Atoi(strings.TrimSpace(parts[1]))
+			if err != nil {
+				return nil, err
+			}
+			length = n
+		}
+	}
+	if length <= 0 {
+		return nil, fmt.Errorf("missing content-length")
+	}
+	payload := make([]byte, length)
+	_, err := io.ReadFull(r, payload)
+	return payload, err
+}
+
 func readFrame(r *bufio.Reader) ([]byte, error) {
 	length := 0
 	for {
@@ -174,6 +291,33 @@ func readFrame(r *bufio.Reader) ([]byte, error) {
 	payload := make([]byte, length)
 	_, err := io.ReadFull(r, payload)
 	return payload, err
+}
+
+func writeLineJSON(w io.Writer, resp jsonRPCResponse) error {
+	b, err := json.Marshal(resp)
+	if err != nil {
+		return err
+	}
+	_, err = w.Write(append(b, '\n'))
+	return err
+}
+
+func rpcCodeFromError(apiErr *model.APIError) int {
+	if apiErr == nil {
+		return -32000
+	}
+	switch apiErr.ErrorCode {
+	case "method_not_found":
+		return -32601
+	case "invalid_params":
+		return -32602
+	default:
+		return -32000
+	}
+}
+
+func init() {
+	log.SetOutput(os.Stderr)
 }
 
 func writeFrame(w io.Writer, resp jsonRPCResponse) error {
