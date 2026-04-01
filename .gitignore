@@ -1,0 +1,22 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.temp
+*.log
+
+# Local editor settings
+.vscode/
+.idea/
+
+# Build/test caches
+.coverage
+*.out
+
+# Generated intermediate documentation (rebuild with make generate-addon)
+docs/addon-api/
+
+# Local docker/runtime leftovers
+*.pid

@@ -1,0 +1,15 @@
+**
+!go.mod
+!docker-compose.yml
+!.dockerignore
+!Makefile
+!README.md
+!infra/
+!infra/docker/**
+!tools/
+!tools/api_doc_gen/**
+!docs/
+!docs/site/**
+!docs/war-api/**
+!data/
+!data/raw/**

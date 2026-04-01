@@ -1,0 +1,99 @@
+# SystemData.Events.INTERACT_DONE
+
+- Category: SystemData Field
+- Confidence level: HIGH
+- Confidence score: 100/100
+- Seen in: 4 addons
+
+## Confidence Assessment
+
+- Level: HIGH
+
+- Final score: 100/100
+
+- Raw weighted score: 198
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+
+## Evidence Signals
+
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
+- +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+
+## Evidence Summary
+
+| Evidence | Value |
+| --- | --- |
+| Addons seen in | Effigy, Effigy, JunkDump, Shinies, JunkDump, Shinies |
+| Files seen in | `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/JunkDump/JunkDump.lua:291`, `/workspace/Shinies/Source/Shinies.lua:169`, `/workspace/Shinies/Source/Shinies.lua:206`, `/workspace/Shinies/Source/Shinies.lua:219` |
+| Namespaces detected | SystemData |
+| Source kinds | event_page, event_registration, flow, lua_call |
+| Example locations | AuctionWindow.Hide, Effigy.Name..".EndCast", Effigy.RegisterStateInfoForCastbar, JunkDump.Finalize, JunkDump.StartListeners, LibStub:OnDisable |
+| XML usage count | 0 |
+| XML attribute usage count | 0 |
+| Lua usage count | 15 |
+| Global usage count | 15 |
+| Local definition count | 0 |
+| Documentation references | 4 |
+| Initialization flow references | 2 |
+| Known engine namespace | yes |
+| Default UI presence | yes |
+| Event binding presence | yes |
+| Observed in XML and Lua | no |
+| Consistent role | yes |
+| Consistent arguments | no |
+| Consistent returns | no |
+| Slash command presence | no |
+| Weak usage only | no |
+| Project-specific name | no |
+| Placeholder or computed name | no |
+| Conflicting signatures | no |
+| Conflicting roles | no |
+| Wrapper likely | no |
+| Never outside local graph | no |
+| Local helper only | no |
+
+## Description
+
+Observed SystemData field used by 4 addons through generated function calls, event pages, or lifecycle evidence.
+
+## Seen In
+
+- Effigy
+- Effigy, JunkDump, Shinies
+- JunkDump
+- Shinies
+
+## Related APIs
+
+- [WindowRegisterCoreEventHandler](../../window_api/functions/window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
+- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
+- [WindowUnregisterEventHandler](../../window_api/functions/window_WindowUnregisterEventHandler.md) (HIGH 100/100) - Window Function
+
+## Used With
+
+- [SystemData.Events.AUCTION_BID_RESULT_RECEIVED](systemdata_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.AUCTION_INIT_RECEIVED](systemdata_SystemData.Events.AUCTION_INIT_RECEIVED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](systemdata_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
+- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
+- [WindowUnregisterEventHandler](../../window_api/functions/window_WindowUnregisterEventHandler.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+
+## Triggered By
+
+- none
+
+## Affects
+
+- none
+
+## Notes
+
+- Observed in contexts: AuctionWindow.Hide, Effigy.Name..".EndCast", Effigy.RegisterStateInfoForCastbar, JunkDump.Finalize, JunkDump.StartListeners, LibStub:OnDisable

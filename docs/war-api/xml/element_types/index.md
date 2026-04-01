@@ -1,0 +1,25 @@
+# XML Element Types
+
+## Element Types
+
+- [ActionButtonGroup](element_ActionButtonGroup.md) (HIGH 100/100)
+- [AnimatedImage](element_AnimatedImage.md) (HIGH 100/100)
+- [Button](element_Button.md) (HIGH 100/100)
+- [CircleImage](element_CircleImage.md) (HIGH 100/100)
+- [ColorPicker](element_ColorPicker.md) (HIGH 100/100)
+- [ComboBox](element_ComboBox.md) (HIGH 100/100)
+- [CooldownDisplay](element_CooldownDisplay.md) (MEDIUM 45/100)
+- [DynamicImage](element_DynamicImage.md) (HIGH 100/100)
+- [EditBox](element_EditBox.md) (HIGH 100/100)
+- [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100)
+- [HorizontalResizeImage](element_HorizontalResizeImage.md) (HIGH 100/100)
+- [Label](element_Label.md) (HIGH 100/100)
+- [ListBox](element_ListBox.md) (HIGH 100/100)
+- [LogDisplay](element_LogDisplay.md) (HIGH 98/100)
+- [MapDisplay](element_MapDisplay.md) (HIGH 100/100)
+- [ScrollWindow](element_ScrollWindow.md) (HIGH 100/100)
+- [SliderBar](element_SliderBar.md) (HIGH 100/100)
+- [StatusBar](element_StatusBar.md) (HIGH 100/100)
+- [VerticalResizeImage](element_VerticalResizeImage.md) (HIGH 100/100)
+- [VerticalScrollbar](element_VerticalScrollbar.md) (HIGH 100/100)
+- [Window](element_Window.md) (HIGH 100/100)

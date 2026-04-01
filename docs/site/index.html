@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WAR API Reference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ── Sidebar ─────────────────────────────── -->
+    <aside class="sidebar">
+      <a href="#" class="sidebar-brand">
+        <span class="brand-icon" aria-hidden="true">WAR</span>
+        <div>
+          <strong>WAR API</strong>
+          <small>Return of Reckoning</small>
+        </div>
+      </a>
+
+      <div class="sidebar-search">
+          <input id="search" type="search" placeholder="Search symbols, events..." aria-label="Search API">
+      </div>
+
+      <div id="results" class="search-results" role="listbox" aria-label="Search results"></div>
+
+      <nav id="nav" class="nav-tree" aria-label="API navigation"></nav>
+    </aside>
+
+    <!-- ── Content area ────────────────────────── -->
+    <div class="content-area">
+      <header class="topbar">
+        <nav id="breadcrumb" class="breadcrumb" aria-label="Breadcrumb"></nav>
+        <div class="topbar-actions">
+            <button id="graphToggle" class="outline">Graph</button>
+        </div>
+      </header>
+
+      <main>
+        <article id="doc" class="doc-panel"></article>
+
+        <section id="graphPanel" class="graph-panel hidden" aria-label="API relationship graph">
+          <div class="graph-header">
+            <div class="graph-title-row">
+              <strong>API Relationship Graph</strong>
+              <div class="graph-legend" aria-label="Node type legend">
+                <span class="legend-dot fn" aria-hidden="true"></span><small>Function</small>
+                <span class="legend-dot ev" aria-hidden="true"></span><small>Event</small>
+                <span class="legend-dot ds" aria-hidden="true"></span><small>Table</small>
+                <span class="legend-dot xml" aria-hidden="true"></span><small>XML</small>
+              </div>
+            </div>
+            <div class="graph-controls">
+                <input id="graphSearch" type="search" placeholder="Filter nodes..." aria-label="Filter graph nodes">
+              <select id="graphKindFilter" aria-label="Filter by node type">
+                <option value="">All types</option>
+                <option value="function">Functions</option>
+                <option value="event">Events</option>
+                <option value="data_structure">Tables</option>
+                <option value="xml">XML</option>
+              </select>
+                <button id="graphReset" class="outline secondary">Reset</button>
+            </div>
+          </div>
+          <div class="graph-viewport">
+            <div id="graphTooltip" class="graph-tooltip hidden" role="tooltip"></div>
+            <svg id="graphSvg" aria-label="API graph visualization"></svg>
+          </div>
+        </section>
+      </main>
+    </div>
+
+  </div><!-- /.app-shell -->
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

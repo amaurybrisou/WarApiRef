@@ -1,0 +1,380 @@
+package platform
+
+import (
+	"fmt"
+	"strings"
+
+	"roraddons/tools/api_doc_gen/deep_analysis"
+)
+
+// EnhancedFunctionSymbol extends FunctionSymbol with rich inference metadata
+type EnhancedFunctionSymbol struct {
+	Symbol               FunctionSymbol
+	InferredReturnType   string // best guess for return type
+	ReturnTypeConfidence int    // 0-100
+	ReturnTypeRationale  string // explanation
+	InferredParameters   []EnhancedParameter
+	AnalysisEvidence     map[string]interface{}
+}
+
+// EnhancedParameter extends ParameterDoc with inference metadata
+type EnhancedParameter struct {
+	Name             string
+	Role             string // collection, object, callback, flag, value, unknown
+	TypeSignals      []string
+	CallSiteExamples []string
+	Confidence       int
+	UsageContexts    []string
+}
+
+type sourceFunctionIndex struct {
+	byPath map[string]FunctionDoc
+	byName map[string][]FunctionDoc
+}
+
+// ApplyReturnTypeInference enriches function symbols with inferred return types
+// This applies the ReturnInference engine to all functions and updates documentation
+func ApplyReturnTypeInference(corpus *Corpus, sourceModel SourceModel) {
+	if len(corpus.GlobalFunctions) == 0 && len(corpus.WindowFunctions) == 0 {
+		return
+	}
+
+	functionIndex := buildSourceFunctionIndex(sourceModel)
+	analyzer := deep_analysis.NewAdvancedReturnAnalyzer()
+	analyzer.BuildIndex(collectFunctionSources(sourceModel.Functions))
+	reports := analyzer.AnalyzeAll()
+
+	for i, symbol := range corpus.GlobalFunctions {
+		if report, ok := matchReportForSymbol(symbol.Name, functionIndex, reports); ok {
+			corpus.GlobalFunctions[i] = applyAdvancedReturnReport(symbol, report)
+			continue
+		}
+		report := analyzer.AnalyzeFunctionByName(symbol.Name)
+		if len(report.ReturnPositions) > 0 || len(report.ReturnVariants) > 0 {
+			corpus.GlobalFunctions[i] = applyAdvancedReturnReport(symbol, report)
+		}
+	}
+
+	for i, symbol := range corpus.WindowFunctions {
+		if report, ok := matchReportForSymbol(symbol.Name, functionIndex, reports); ok {
+			corpus.WindowFunctions[i] = applyAdvancedReturnReport(symbol, report)
+			continue
+		}
+		report := analyzer.AnalyzeFunctionByName(symbol.Name)
+		if len(report.ReturnPositions) > 0 || len(report.ReturnVariants) > 0 {
+			corpus.WindowFunctions[i] = applyAdvancedReturnReport(symbol, report)
+		}
+	}
+}
+
+func buildSourceFunctionIndex(sourceModel SourceModel) sourceFunctionIndex {
+	idx := sourceFunctionIndex{
+		byPath: map[string]FunctionDoc{},
+		byName: map[string][]FunctionDoc{},
+	}
+	for _, fn := range sourceModel.Functions {
+		path := fn.Addon + "." + fn.Name
+		idx.byPath[path] = fn
+		key := normalizeFunctionName(fn.Name)
+		idx.byName[key] = append(idx.byName[key], fn)
+	}
+	return idx
+}
+
+func collectFunctionSources(functions []FunctionDoc) []deep_analysis.FunctionSource {
+	result := make([]deep_analysis.FunctionSource, 0, len(functions))
+	for _, fn := range functions {
+		result = append(result, deep_analysis.FunctionSource{
+			Path:   fn.Addon + "." + fn.Name,
+			Name:   fn.Name,
+			Addon:  fn.Addon,
+			Source: fn.Source,
+		})
+	}
+	return result
+}
+
+func normalizeFunctionName(name string) string {
+	trimmed := strings.TrimSpace(name)
+	parts := strings.Split(trimmed, ".")
+	return strings.ToLower(parts[len(parts)-1])
+}
+
+func matchReportForSymbol(symbolName string, idx sourceFunctionIndex, reports map[string]deep_analysis.AdvancedReturnReport) (deep_analysis.AdvancedReturnReport, bool) {
+	candidates := idx.byName[normalizeFunctionName(symbolName)]
+	if len(candidates) == 0 {
+		return deep_analysis.AdvancedReturnReport{}, false
+	}
+
+	bestScore := -1
+	var best deep_analysis.AdvancedReturnReport
+	found := false
+	for _, fn := range candidates {
+		path := fn.Addon + "." + fn.Name
+		report, ok := reports[path]
+		if !ok {
+			continue
+		}
+		score := 0
+		for _, pos := range report.ReturnPositions {
+			score += pos.ConfidenceScore
+		}
+		if score > bestScore {
+			bestScore = score
+			best = report
+			found = true
+		}
+	}
+	return best, found
+}
+
+func applyAdvancedReturnReport(symbol FunctionSymbol, report deep_analysis.AdvancedReturnReport) FunctionSymbol {
+	symbol.ObservedReturnArity = append([]int{}, report.ObservedReturnArity...)
+	symbol.InferredReturnArity = report.InferredReturnArity
+	symbol.BranchSensitive = report.BranchSensitive
+	symbol.WrapperAffected = report.WrapperAffected
+	symbol.RuntimeObserved = report.RuntimeObserved
+	symbol.ReturnRationale = report.Rationale
+	symbol.ReturnUncertainty = append([]string{}, report.UncertaintyNotes...)
+
+	returnPositions := make([]ReturnPositionDoc, 0, len(report.ReturnPositions))
+	returnsSummary := make([]string, 0, len(report.ReturnPositions))
+	for _, pos := range report.ReturnPositions {
+		returnPositions = append(returnPositions, ReturnPositionDoc{
+			Position:        pos.Position,
+			InferredType:    pos.InferredType,
+			InferredRole:    pos.InferredRole,
+			ConfidenceScore: pos.ConfidenceScore,
+			ConfidenceLevel: pos.ConfidenceLevel,
+			Evidence:        append([]string{}, pos.Evidence...),
+			Optional:        pos.Optional,
+			Stable:          pos.Stable,
+		})
+		returnsSummary = append(returnsSummary, fmt.Sprintf("return %d: %s (%s, %d%%)", pos.Position, pos.InferredType, pos.InferredRole, pos.ConfidenceScore))
+	}
+	symbol.ReturnPositions = returnPositions
+
+	variants := make([]ReturnVariantDoc, 0, len(report.ReturnVariants))
+	for _, variant := range report.ReturnVariants {
+		notes := append([]string{}, variant.Notes...)
+		if len(variant.Contexts) > 0 {
+			notes = append(notes, "contexts: "+strings.Join(variant.Contexts, ", "))
+		}
+		variants = append(variants, ReturnVariantDoc{
+			Label:      variant.Label,
+			Arity:      variant.Arity,
+			Shape:      append([]string{}, variant.Shape...),
+			Confidence: variant.Confidence,
+			Notes:      notes,
+		})
+	}
+	symbol.ReturnVariants = variants
+
+	if len(returnsSummary) > 0 {
+		symbol.Returns = returnsSummary
+	}
+
+	if report.Rationale != "" {
+		symbol.Notes = append(symbol.Notes, "Advanced return analysis: "+report.Rationale)
+	}
+	for _, note := range report.UncertaintyNotes {
+		symbol.Notes = append(symbol.Notes, "Return uncertainty: "+note)
+	}
+
+	return symbol
+}
+
+// enrichFunctionWithReturnInference analyzes a single function and infers its return type
+func enrichFunctionWithReturnInference(symbol FunctionSymbol, sourceDoc FunctionDoc, analyzer *deep_analysis.ReturnInference) EnhancedFunctionSymbol {
+	enhanced := EnhancedFunctionSymbol{
+		Symbol:           symbol,
+		AnalysisEvidence: make(map[string]interface{}),
+	}
+
+	// Analyze function source
+	fullPath := sourceDoc.Addon + "." + sourceDoc.Name
+	returnAnalysis := analyzer.AnalyzeReturns(fullPath, sourceDoc.Source)
+	analyzer.AnalyzeCallSites(fullPath, sourceDoc.Source)
+	analyzer.AnalyzeFieldAccess(fullPath, sourceDoc.Source)
+
+	// Get best guess for return type
+	bestType, confidence := returnAnalysis.BestGuess()
+	enhanced.InferredReturnType = bestType
+	enhanced.ReturnTypeConfidence = confidence
+
+	// Generate rationale
+	enhanced.ReturnTypeRationale = generateReturnTypeRationale(returnAnalysis, confidence)
+
+	// Update the symbol's returns if confident enough
+	if confidence >= 50 { // Medium+ confidence threshold
+		if enhanced.InferredReturnType != "unknown" {
+			enhanced.Symbol.Returns = []string{enhanced.InferredReturnType}
+			if confidence >= 75 {
+				// High confidence - mark as reliable
+				enhanced.Symbol.Notes = append(enhanced.Symbol.Notes,
+					fmt.Sprintf("Return type: %s (inferred with %d%% confidence)", enhanced.InferredReturnType, confidence))
+			} else {
+				// Medium confidence - mark as tentative
+				enhanced.Symbol.Notes = append(enhanced.Symbol.Notes,
+					fmt.Sprintf("Return type: %s (inferred, %d%% confidence, verify against usage)", enhanced.InferredReturnType, confidence))
+			}
+		}
+	}
+
+	// Record analysis evidence
+	enhanced.AnalysisEvidence["return_type"] = map[string]interface{}{
+		"inferred_type":       enhanced.InferredReturnType,
+		"confidence":          enhanced.ReturnTypeConfidence,
+		"evidence_count":      len(returnAnalysis.Evidence),
+		"explicit_returns":    returnAnalysis.ExplicitReturns,
+		"literal_returns":     returnAnalysis.LiteralReturns,
+		"assignment_contexts": returnAnalysis.AssignmentContexts,
+		"comparison_contexts": returnAnalysis.ComparisonContexts,
+	}
+
+	return enhanced
+}
+
+// generateReturnTypeRationale creates explanation for inferred return type
+func generateReturnTypeRationale(analysis *deep_analysis.ReturnAnalysis, confidence int) string {
+	rationale := ""
+
+	// Explicit annotations have highest precedence
+	if len(analysis.ExplicitReturns) > 0 {
+		return fmt.Sprintf("Explicitly annotated as %s", analysis.ExplicitReturns[0])
+	}
+
+	// Analyze evidence
+	if len(analysis.LiteralReturns) > 0 {
+		literals := truncateList(analysis.LiteralReturns, 3)
+		rationale = fmt.Sprintf("Returns literal values: %s", strings.Join(literals, ", "))
+	}
+
+	if len(analysis.ComparisonContexts) > 0 {
+		contexts := truncateList(analysis.ComparisonContexts, 2)
+		if rationale != "" {
+			rationale += "; "
+		}
+		rationale += fmt.Sprintf("Used in %s", strings.Join(contexts, ", "))
+	}
+
+	if len(analysis.AssignmentContexts) > 0 {
+		contexts := truncateList(analysis.AssignmentContexts, 2)
+		if rationale != "" {
+			rationale += "; "
+		}
+		rationale += fmt.Sprintf("Assigned to: %s", strings.Join(contexts, ", "))
+	}
+
+	// Add confidence qualifier
+	if confidence >= 80 {
+		rationale += " [high confidence]"
+	} else if confidence >= 60 {
+		rationale += " [medium confidence]"
+	} else if confidence >= 40 {
+		rationale += " [low confidence]"
+	}
+
+	if rationale == "" {
+		rationale = "Insufficient evidence for confident type inference"
+	}
+
+	return rationale
+}
+
+// ApplyArgumentInference enriches function parameters with inferred types and roles
+// This applies the ArgumentInference engine to add parameter documentation
+func ApplyArgumentInference(corpus *Corpus, sourceModel SourceModel) {
+	if len(corpus.GlobalFunctions) == 0 && len(corpus.WindowFunctions) == 0 {
+		return
+	}
+
+	// Create argument analyzer
+	argAnalyzer := deep_analysis.NewArgumentInference()
+
+	// Build map of source functions for lookup
+	sourceFuncMap := make(map[string]FunctionDoc)
+	for _, fn := range sourceModel.Functions {
+		key := fn.Addon + "." + fn.Name
+		sourceFuncMap[key] = fn
+	}
+
+	// Analyze each global function's parameters
+	for i, symbol := range corpus.GlobalFunctions {
+		sourceKey := symbol.Name
+		if sourceDoc, found := sourceFuncMap[sourceKey]; found {
+			if sourceDoc.Source != "" {
+				enhanced := enrichFunctionWithArgumentInference(symbol, sourceDoc, argAnalyzer)
+				corpus.GlobalFunctions[i] = enhanced
+			}
+		}
+	}
+
+	// Analyze each window function's parameters
+	for i, symbol := range corpus.WindowFunctions {
+		sourceKey := symbol.Name
+		if sourceDoc, found := sourceFuncMap[sourceKey]; found {
+			if sourceDoc.Source != "" {
+				enhanced := enrichFunctionWithArgumentInference(symbol, sourceDoc, argAnalyzer)
+				corpus.WindowFunctions[i] = enhanced
+			}
+		}
+	}
+}
+
+// enrichFunctionWithArgumentInference enriches function parameters with inference metadata
+func enrichFunctionWithArgumentInference(symbol FunctionSymbol, sourceDoc FunctionDoc, analyzer *deep_analysis.ArgumentInference) FunctionSymbol {
+	fullPath := sourceDoc.Addon + "." + sourceDoc.Name
+
+	// Extract and analyze parameters
+	paramNames := analyzer.AnalyzeParameters(fullPath, sourceDoc.Source)
+	analyzer.AnalyzeParameterUsage(fullPath, sourceDoc.Source, paramNames)
+	analyzer.AnalyzeCallSites(fullPath, sourceDoc.Source, paramNames)
+
+	// Enhance parameter documentation
+	for i, param := range symbol.Parameters {
+		if i >= len(paramNames) {
+			break
+		}
+
+		paramName := paramNames[i]
+		role := analyzer.InferArgumentRole(fullPath, paramName)
+		confidence := 60 // Default confidence for inferred roles
+
+		// Get analysis for this parameter
+		key := fullPath + "@" + paramName
+		if paramAnalysis, ok := analyzer.FunctionArgs[key]; ok {
+			sourceStr := ""
+			if len(paramAnalysis.Usage) > 0 {
+				sourceStr = "Based on usage: " + strings.Join(truncateList(paramAnalysis.Usage, 3), ", ")
+			}
+
+			// Update parameter doc with confidence annotation
+			symbol.Parameters[i] = ParameterDoc{
+				Name:     param.Name,
+				Role:     role,
+				Evidence: fmt.Sprintf("%s [%d%% confidence]", sourceStr, confidence),
+			}
+		}
+	}
+
+	return symbol
+}
+
+// truncateList returns a truncated list for display purposes
+func truncateList(items []string, maxItems int) []string {
+	if len(items) <= maxItems {
+		return items
+	}
+	return append(items[:maxItems], fmt.Sprintf("... and %d more", len(items)-maxItems))
+}
+
+// enrichSymbolsWithAnalysis coordinates all inference and enrichment
+// This is the main entry point for applying deep_analysis to symbols
+func enrichSymbolsWithAnalysis(corpus *Corpus, sourceModel SourceModel) {
+	// Apply return type inference (Priority 2)
+	ApplyReturnTypeInference(corpus, sourceModel)
+
+	// Apply argument inference (Priority 3)
+	ApplyArgumentInference(corpus, sourceModel)
+}

@@ -1,0 +1,22 @@
+services:
+  api-doc-gen:
+    build:
+      context: .
+      dockerfile: infra/docker/api-doc-gen.Dockerfile
+    image: ror-api-doc-gen:local
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - ..:/workspace_addons:ro
+    entrypoint:
+      - api_doc_gen
+
+  docs-site:
+    build:
+      context: .
+      dockerfile: infra/docker/docs-site.Dockerfile
+    image: ror-api-docs-site:local
+    ports:
+      - "${DOCS_SITE_PORT:-8080}:80"
+    volumes:
+      - ./docs/site:/usr/share/nginx/html:ro
