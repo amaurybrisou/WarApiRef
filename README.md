@@ -5,6 +5,7 @@ This repository now exposes a consolidated documentation pipeline with a single 
 ## Structure
 
 - `tools/api_doc_gen`: Go generator (addon, platform, site modes)
+- `tools/mcp_server`: MCP server over canonical `docs/war-api` artifacts
 - `data/raw`: logical source root for addon scanning
 - `docs/addon-api`: generated addon-layer API docs (intermediate, regenerated on demand)
 - `docs/war-api`: generated WAR platform docs, semantic navigation, and graph JSON
@@ -29,6 +30,96 @@ This repository now exposes a consolidated documentation pipeline with a single 
   - `make generate-site`
 - Run preview site:
   - `make preview`
+
+## MCP Server
+
+The MCP server reads `docs/war-api` as its source of truth and exposes tools/resources for symbol lookup, graph navigation, confidence reasoning, and snippet scaffolding.
+
+## MCP Configuration
+
+The server supports two transports:
+
+- `stdio`: for MCP clients that launch the process directly
+- `http`: for network access via `/mcp`
+
+Runtime flags:
+
+- `--transport`: `stdio` (default) or `http`
+- `--docs-root`: path to generated WAR docs root (default: `docs/war-api`)
+- `--listen`: HTTP bind address when `--transport http` (default: `:8091`)
+
+Environment variables:
+
+- `WAR_API_ROOT`: fallback docs root used when `--docs-root` is not passed
+- `MCP_SERVER_PORT`: Docker Compose host port override for HTTP mode (default: `8091`)
+
+Examples:
+
+- Stdio mode (recommended for local MCP client integration):
+  - `make run-mcp`
+- HTTP mode with Docker Compose:
+  - `MCP_SERVER_PORT=8092 docker compose up --build mcp-server`
+- Direct binary run over HTTP:
+  - `go run ./tools/mcp_server --transport http --listen :8091 --docs-root ./docs/war-api`
+
+Health check via MCP endpoint:
+
+- `curl -s http://localhost:8091/mcp -H "content-type: application/json" -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}'`
+
+Notes:
+
+- The server expects generated docs to exist under the configured docs root.
+- Generate/rebuild docs first when needed:
+  - `make generate-addon`
+  - `make generate-platform`
+
+Contract layout:
+
+- `tools/mcp_server/model`: shared entities, confidence, warnings, error model
+- `tools/mcp_server/schema`: IDs, request/response structs, supported names, `tool_contracts.json`
+- `tools/mcp_server/tools`: tool-specific handlers with stable output shapes
+- `tools/mcp_server/resources`: resource resolvers with stable URI handling
+- `tools/mcp_server/server`: registry, validation, dispatch, and transport adapters
+
+- Local stdio mode (for MCP clients):
+  - `make run-mcp`
+- Run tests:
+  - `make test-mcp`
+- Build MCP container:
+  - `make build-mcp`
+- Run MCP server over HTTP (container):
+  - `make up-mcp`
+
+Default HTTP endpoint: `http://localhost:8091/mcp`
+
+Supported tools:
+
+- `lookup_symbol`
+- `search_symbols`
+- `get_related_symbols`
+- `get_event_flow`
+- `get_xml_handler_info`
+- `find_usage_examples`
+- `explain_confidence`
+- `scaffold_addon_snippet`
+- `explain_symbol_usage`
+
+Supported resource URIs:
+
+- `war-api://symbols/<canonical_name>`
+- `war-api://events/<event_name>`
+- `war-api://xml-handlers/<handler_name>`
+- `war-api://patterns/<pattern_name>`
+- `war-api://meta/conventions`
+- `war-api://meta/inference-rules`
+- `war-api://meta/coverage-report`
+- `war-api://graph/<canonical_name>`
+- `war-api://navigation/tree`
+- `war-api://navigation/sidebar`
+
+Machine-readable contract summary:
+
+- `tools/mcp_server/schema/tool_contracts.json`
 
 ## Site Features
 
