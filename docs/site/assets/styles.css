@@ -222,6 +222,69 @@ main {
   gap:            16px;
 }
 
+/* ── 9.5. MCP console ───────────────────────────────────────────────────── */
+.mcp-console {
+  border: 1px solid #d9b79a;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 85% -30%, rgba(179, 82, 47, .22) 0, rgba(179, 82, 47, 0) 55%),
+    linear-gradient(145deg, #fff7ef 0%, #fffdf9 65%);
+  box-shadow: 0 10px 28px rgba(64, 28, 15, .08);
+  padding: 14px 16px;
+}
+
+.mcp-console-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mcp-console-head strong {
+  font-size: .95rem;
+  letter-spacing: .02em;
+  color: #7d2f18;
+}
+
+.mcp-console-head small {
+  font-size: .76rem;
+  color: #6a5646;
+}
+
+.mcp-console-controls {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mcp-console-controls input,
+.mcp-console-controls button {
+  margin: 0;
+}
+
+.mcp-console-controls button {
+  font-size: .82rem;
+  padding: 7px 12px;
+  white-space: nowrap;
+}
+
+.mcp-console-output {
+  margin: 0;
+  border: 1px solid #deceb8;
+  border-radius: 8px;
+  background: #221c16;
+  color: #ead9c3;
+  min-height: 120px;
+  max-height: 300px;
+  overflow: auto;
+  font-size: .77rem;
+  line-height: 1.55;
+  padding: 10px 12px;
+}
+
 /* ── 10. Doc panel — Pico gives <article> card styling automatically ──────── */
 .doc-panel { padding: 26px 30px; }
 
@@ -301,5 +364,9 @@ main {
   .nav-tree  { max-height: 260px; }
   main       { padding: 12px; }
   #graphSvg  { height: 420px; }
+
+  .mcp-console-controls {
+    grid-template-columns: 1fr;
+  }
 }
 

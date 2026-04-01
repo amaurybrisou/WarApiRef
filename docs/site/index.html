@@ -41,6 +41,19 @@
       </header>
 
       <main>
+        <section class="mcp-console" aria-label="MCP live console">
+          <div class="mcp-console-head">
+            <strong>MCP Live Console</strong>
+            <small>Quickly validate initialize and tools/list against your running server.</small>
+          </div>
+          <div class="mcp-console-controls">
+            <input id="mcpEndpoint" type="url" value="http://127.0.0.1:8091/mcp" aria-label="MCP endpoint URL">
+            <button id="mcpInitBtn">Initialize</button>
+            <button id="mcpToolsBtn" class="outline">Tools List</button>
+          </div>
+          <pre id="mcpConsoleOutput" class="mcp-console-output">Waiting for request...</pre>
+        </section>
+
         <article id="doc" class="doc-panel"></article>
 
         <section id="graphPanel" class="graph-panel hidden" aria-label="API relationship graph">

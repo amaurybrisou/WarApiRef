@@ -11,6 +11,10 @@ const graphTooltip    = document.getElementById("graphTooltip");
 const graphSearch     = document.getElementById("graphSearch");
 const graphKindFilter = document.getElementById("graphKindFilter");
 const graphReset      = document.getElementById("graphReset");
+const mcpEndpoint     = document.getElementById("mcpEndpoint");
+const mcpInitBtn      = document.getElementById("mcpInitBtn");
+const mcpToolsBtn     = document.getElementById("mcpToolsBtn");
+const mcpConsoleOut   = document.getElementById("mcpConsoleOutput");
 
 // --- App state ----------------------------------------------------------------
 const DEFAULT_PATH = "index.md";
@@ -33,6 +37,59 @@ async function loadJSON(path) {
   const res = await fetch(path);
   if (!res.ok) throw new Error(`${res.status} ${path}`);
   return res.json();
+}
+
+// --- MCP console -------------------------------------------------------------
+function renderMcpConsole(payload) {
+  if (!mcpConsoleOut) return;
+  if (typeof payload === "string") {
+    mcpConsoleOut.textContent = payload;
+    return;
+  }
+  mcpConsoleOut.textContent = JSON.stringify(payload, null, 2);
+}
+
+async function postMcp(method, params) {
+  if (!mcpEndpoint) return;
+  const endpoint = mcpEndpoint.value.trim();
+  if (!endpoint) {
+    renderMcpConsole("Please provide an MCP endpoint URL.");
+    return;
+  }
+
+  const request = {
+    jsonrpc: "2.0",
+    id: Date.now(),
+    method,
+    params: params || {},
+  };
+
+  renderMcpConsole(`Sending ${method} to ${endpoint} ...`);
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(request),
+    });
+
+    const text = await response.text();
+    let decoded = null;
+    try {
+      decoded = JSON.parse(text);
+    } catch {
+      decoded = { status: response.status, raw: text };
+    }
+
+    renderMcpConsole(decoded);
+  } catch (err) {
+    renderMcpConsole({
+      error: "request_failed",
+      message: err && err.message ? err.message : String(err),
+      endpoint,
+      method,
+    });
+  }
 }
 
 // --- Navigation tree  (collapsible via <details>/<summary>) ------------------
@@ -490,6 +547,22 @@ graphReset.addEventListener("click", () => {
   if (d3zoom) d3.select(graphSvg).transition().duration(300).call(d3zoom.transform, d3.zoomIdentity);
   drawGraph("", "");
 });
+
+if (mcpInitBtn) {
+  mcpInitBtn.addEventListener("click", () => {
+    postMcp("initialize", {
+      protocolVersion: "2025-03-26",
+      capabilities: {},
+      clientInfo: { name: "war-api-docs-ui", version: "1.0.0" },
+    });
+  });
+}
+
+if (mcpToolsBtn) {
+  mcpToolsBtn.addEventListener("click", () => {
+    postMcp("tools/list", {});
+  });
+}
 
 // --- Init ---------------------------------------------------------------------
 (async function init() {

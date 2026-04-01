@@ -130,6 +130,17 @@ The static app in `docs/site` provides:
 - sidebar navigation paths from generated content links
 - graph exploration from `docs/site/content/graph/api_graph.json`
 - markdown page rendering with internal link rewrites
+- MCP Live Console panel for quick `initialize` and `tools/list` checks against a running MCP endpoint
+
+### Docs UI MCP Console
+
+After opening the docs site, use the **MCP Live Console** panel at the top of the page:
+
+1. Set the MCP endpoint URL (default `http://127.0.0.1:8091/mcp`)
+2. Click `Initialize` to test handshake response
+3. Click `Tools List` to inspect exposed tools and `inputSchema` contracts
+
+This is a lightweight diagnostics UI for MCP health checks and client-contract verification.
 
 ## Notes
 

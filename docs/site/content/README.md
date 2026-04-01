@@ -39,3 +39,12 @@ This documentation is the platform-facing second layer derived from the generate
 - [API graph](graph/api_graph.json)
 
 - [Coverage report](meta/coverage_report.md)
+
+## MCP Diagnostics in the Site UI
+
+The docs UI includes an **MCP Live Console** panel that can send:
+
+- `initialize`
+- `tools/list`
+
+Use it to quickly validate endpoint reachability and inspect tool contracts while browsing docs.
