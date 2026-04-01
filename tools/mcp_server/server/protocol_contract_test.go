@@ -1,3 +1,4 @@
+
 package server
 
 import (
@@ -71,15 +72,34 @@ func TestToolsListIncludesInputSchema(t *testing.T) {
 
 	for _, tool := range tools {
 		name, _ := tool["name"].(string)
-		schema, ok := tool["inputSchema"].(map[string]any)
+		schemaObj, ok := tool["inputSchema"].(map[string]any)
 		if !ok {
 			t.Fatalf("tool %q missing inputSchema object", name)
 		}
-		if schema["type"] != "object" {
+		if schemaObj["type"] != "object" {
 			t.Fatalf("tool %q inputSchema.type must be object", name)
 		}
-		if _, ok := schema["properties"].(map[string]any); !ok {
+		if schemaObj["additionalProperties"] != false {
+			t.Fatalf("tool %q inputSchema.additionalProperties must be false", name)
+		}
+
+		properties, ok := schemaObj["properties"].(map[string]any)
+		if !ok {
 			t.Fatalf("tool %q inputSchema.properties missing", name)
+		}
+
+		requestFields, ok := tool["request_fields"].([]any)
+		if !ok {
+			t.Fatalf("tool %q missing request_fields", name)
+		}
+		for _, field := range requestFields {
+			fieldName, ok := field.(string)
+			if !ok || fieldName == "" {
+				t.Fatalf("tool %q has invalid request field entry", name)
+			}
+			if _, ok := properties[fieldName]; !ok {
+				t.Fatalf("tool %q schema missing property for request field %q", name, fieldName)
+			}
 		}
 	}
 }
