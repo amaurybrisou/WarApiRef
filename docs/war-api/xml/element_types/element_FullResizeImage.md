@@ -79,9 +79,32 @@ Observed XML element type instantiated by 41 addons.
 
 ## Common Handlers
 
-- OnMouseOver
-- OnMouseOverEnd
-- OnLButtonUp
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+
+## Common Handler Functions
+
+- Enemy.ConfigurationWindow_ShowTooltip
+- MapMonster_Calibrate.OnLMouseButton
+- MapMonster_Calibrate.OnMouseOverEnd
+- MiracleGrow.OverAutoConsume
+- MiracleGrow.OverEndStartAll
+- MiracleGrow.OverStartAll
+- MiracleGrow.autoGrow
+- MiracleGrow.onAutoConsumeToggle
+- MiracleGrow.setAutoGrowColor
+- wbLeadHelper.onMouseOut
+- wbLeadHelper.onMouseOver
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | MapMonster_Calibrate.OnLMouseButton, MiracleGrow.autoGrow, MiracleGrow.onAutoConsumeToggle | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.ConfigurationWindow_ShowTooltip, MiracleGrow.OverAutoConsume, MiracleGrow.OverStartAll, wbLeadHelper.onMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | MapMonster_Calibrate.OnMouseOverEnd, MiracleGrow.OverEndStartAll, MiracleGrow.setAutoGrowColor, wbLeadHelper.onMouseOut | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -98,11 +121,57 @@ Observed XML element type instantiated by 41 addons.
 - ClosetGoblinDefaultBG
 - EA_Button_ResizeIconFrameHighlight
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [TintColor](element_TintColor.md)
-- [Middle](element_Middle.md)
-- [TexSlices](element_TexSlices.md)
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+
+## Common Named Child Elements
+
+- [Label](element_Label.md)
+
+
+## Structural Sub-Elements
+
+### [TintColor](element_TintColor.md)
+
+- Observed in 37 parent frames
+- Attributes: `a`, `b`, `g`, `r`
+  - `a`: `30`, `255`, `200`, `0.6`, `1`, `0.4`, `0`, `0.65`
+  - `b`: `0`, `110`, `130`, `150`, `50`, `120`, `166`, `36`
+  - `g`: `0`, `185`, `130`, `150`, `50`, `120`, `84`, `28`
+  - `r`: `0`, `200`, `130`, `150`, `50`, `120`, `237`, `255`
+
+### [Middle](element_Middle.md)
+
+- Observed in 11 parent frames
+- Attributes: `x`, `y`
+  - `x`: `78`, `2`, `1`, `13`, `50`, `58`
+  - `y`: `25`, `2`, `1`, `13`, `23`, `58`
+
+### [TexSlices](element_TexSlices.md)
+
+- Observed in 5 parent frames
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `AggroMeterWindowBorderCheck`, `AggroMeterWindow_AggroWindow1BorderCheck`, `AggroMeterWindow_AggroWindow1Seperator1`, `AggroMeterWindow_AggroWindow2BorderCheck`, … | 199 |
+| `inherits` | frame-ref | `EA_FullResizeImage_BlackTransparent`, `EA_FullResizeImage_TintableSolidBackground`, `EA_FullResizeImage_WhiteTransparent`, `AuraWindowBackground`, … | 187 |
+| `handleinput` | boolean | `false`, `true` | 101 |
+| `layer` | string | `background`, `popup`, `overlay`, `default`, … | 64 |
+| `alpha` | number | `0.5`, `0.3`, `0.1`, `0.75`, … | 51 |
+| `texture` | string | `shared_01`, `enemy_bar_rect`, `Frame_1`, `Frame_BG`, … | 11 |
+| `skipinput` | boolean | `true` | 10 |
+| `frameonly` | boolean | `true` | 5 |
+| `showing` | boolean | `false` | 5 |
+| `hanldeinput` | boolean | `false` | 2 |
+| `drawchildrenfirst` | boolean | `true` | 1 |
+| `font` | string | `font_clear_small_bold` | 1 |
+| `sticky` | boolean | `false` | 1 |
+| `textalign` | string | `center` | 1 |
 
 ## Seen In
 

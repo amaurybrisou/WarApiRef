@@ -73,19 +73,67 @@ Observed XML element type instantiated by 10 addons.
 - savesettings
 - texturescale
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - EA_MoraleButtonAnimation
 - LoadingScreenWarSymbolAnimation
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [AnimFrame](element_AnimFrame.md)
-- [AnimFrames](element_AnimFrames.md)
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+
+
+## Structural Sub-Elements
+
+### [AnimFrame](element_AnimFrame.md)
+
+- Observed in 5 parent frames
+- Attributes: `id`, `x`, `y`
+  - `id`: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`
+  - `x`: `64`, `101`, `138`, `175`, `212`, `249`, `2`, `200`
+  - `y`: `796`, `0`, `128`, `256`, `64`, `85`, `170`
+
+### [AnimFrames](element_AnimFrames.md)
+
+- Observed in 5 parent frames
+
+## Typical XML Structure
+
+```xml
+<AnimatedImage name="..." texture="MM_AniArrows_Tintable" fps="8" sticky="false" handleinput="false" alpha="1" popable="true" savesettings="false">
+  <AnimFrames>
+    <AnimFrame id="1" x="0" y="0"/>
+    <AnimFrame id="2" x="64" y="0"/>
+    <AnimFrame id="3" x="128" y="0"/>
+    <AnimFrame id="4" x="192" y="0"/>
+    <AnimFrame id="5" x="256" y="0"/>
+    <AnimFrame id="6" x="0" y="64"/>
+    <AnimFrame id="7" x="64" y="64"/>
+    <AnimFrame id="8" x="128" y="64"/>
+    <AnimFrame id="9" x="192" y="64"/>
+    <AnimFrame id="10" x="256" y="64"/>
+  </AnimFrames>
+</AnimatedImage>
+```
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `CMapWindowMapRallyCallGlowAnim`, `CMapWindowMapScenarioQueueGlowAnim`, `EnemyTargetFlash`, `EnemyTargetGlow`, … | 19 |
+| `layer` | string | `background`, `secondary`, `overlay`, `default` | 18 |
+| `handleinput` | boolean | `false` | 16 |
+| `texture` | string | `EA_HUD_01`, `anim_fury_round_1`, `anim_morale_flash`, `anim_morale_glow`, … | 16 |
+| `fps` | number | `6`, `10`, `20`, `13`, … | 15 |
+| `inherits` | frame-ref | `EA_MoraleButtonAnimation`, `LoadingScreenWarSymbolAnimation` | 14 |
+| `textureScale` | number | `1.0`, `0.43`, `1.2`, `0.74`, … | 14 |
+| `alpha` | number | `1`, `0.9` | 8 |
+| `sticky` | boolean | `false` | 5 |
+| `popable` | boolean | `true` | 1 |
+| `savesettings` | boolean | `false` | 1 |
+| `texturescale` | number | `1` | 1 |
 
 ## Seen In
 

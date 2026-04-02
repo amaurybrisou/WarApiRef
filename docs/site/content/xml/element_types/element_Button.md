@@ -79,16 +79,47 @@ Observed XML element type instantiated by 51 addons.
 
 ## Common Handlers
 
-- OnLButtonUp
-- OnMouseOver
-- OnRButtonUp
-- OnLButtonDown
-- OnMouseOverEnd
-- OnRButtonDown
-- OnMouseDrag
-- OnInitialize
-- OnMButtonUp
-- OnMouseWheel
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
+- [OnLButtonDown](../handlers/handler_OnLButtonDown.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+- [OnRButtonDown](../handlers/handler_OnRButtonDown.md)
+- [OnMouseDrag](../handlers/handler_OnMouseDrag.md)
+- [OnInitialize](../handlers/handler_OnInitialize.md)
+- [OnMButtonUp](../handlers/handler_OnMButtonUp.md)
+- [OnMouseWheel](../handlers/handler_OnMouseWheel.md)
+
+## Common Handler Functions
+
+- APAGui.OnTabButtonUp
+- BankArkel.PackTab
+- BankArkel.PackTabMover
+- Enemy.CombatLogUI_StatsWindow_SortColumnClick
+- TortallDPSDetail.GenericSort
+- Enemy.CombatLogUI_StatsWindow_SortColumnRClick
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_SortColumnClick
+- TortallDPSDetail.ShowColumnMenu
+- AdvancedRenownTraining.OnLButtonUpTab
+- AuraConfig.OnConfigTabSelected
+- TortallDPSMeter.ToggleDetail
+- AggroMeter.OnTabLBU
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnInitialize](../handlers/handler_OnInitialize.md) | EA_GenericCheckButton.Initialize, IraConfig.HelpBtnInit | `function()` | MEDIUM |
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | ClosetGoblinCharacterWindow.EquipmentLButtonDown, MiracleGrow2.onHClick, QuickWarReport.OnConfirmNoop, BuffHead.Setup.Layout.BeginResize, CMapWindow.OnResizeBeginLO, CMapWindow.OnResizeBeginLU | `function(...)` | LOW |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | APAGui.OnTabButtonUp, BankArkel.PackTab, Enemy.CombatLogUI_StatsWindow_SortColumnClick, TortallDPSDetail.GenericSort, Enemy.ScenarioInfoUI_ScenarioInfoDialog_SortColumnClick, AdvancedRenownTraining.OnLButtonUpTab | `function(...)` | LOW |
+| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | followTheLeader.OnMButtonUp | `function(...)` | LOW |
+| [OnMouseDrag](../handlers/handler_OnMouseDrag.md) | EA_Window_Macro.IconMouseDrag, Enemy.AssistUI_ConfigDialog_OnMacroMarkMouseDrag, Enemy.AssistUI_ConfigDialog_OnMacroTargetMouseDrag, Enemy.ConfigurationWindow_OnMacroMouseDrag, Enemy.ScenarioInfoUI_ConfigDialog_OnMacroToggleMouseDrag | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | BankArkel.PackTabMover, MapMonster.PinTypeEditor.MouseOverDescription, Enemy.ConfigurationWindow_ShowTooltip, MiracleGrow2.ContextHover, MiracleGrow2.onHHover, WarBoard.OnMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | ClosetGoblinCharacterWindow.HideCloakOptions, ClosetGoblinCharacterWindow.HideShowHelm, WarBoard.OnMouseOverEnd, WarBoard.OnMouseOverEndBottom, ClosetGoblinCharacterWindow.EquipmentMouseOverEnd, MiracleGrow.onHHoverEnd | `function(...)` | LOW |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | CMapWindow.MWheelWholeZoom | `function(delta)` | MEDIUM |
+| [OnRButtonDown](../handlers/handler_OnRButtonDown.md) | ClosetGoblinCharacterWindow.EquipmentRButtonDown, CG_ItemRack.EquipmentRButtonDown, EA_Window_Macro.DetailIconRButtonDown, EA_Window_Macro.IconRButtonDown, EA_Window_Macro.SelectionIconRButtonDown | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | Enemy.CombatLogUI_StatsWindow_SortColumnRClick, TortallDPSDetail.ShowColumnMenu, MiracleGrow2.onRClick, CMapWindow.OnScenarioQueueRButtonUp, Enemy.ScenarioInfoUI_ScenarioInfoDialog_SortColumnRClick, MapMonster.OnMouseRightClickFilter | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -105,16 +136,215 @@ Observed XML element type instantiated by 51 addons.
 - EA_Button_DefaultListSort
 - CG_ItemRackEquipmentButton
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [Normal](element_Normal.md)
-- [Pressed](element_Pressed.md)
-- [NormalHighlit](element_NormalHighlit.md)
-- [Disabled](element_Disabled.md)
-- [PressedHighlit](element_PressedHighlit.md)
-- [TexSlices](element_TexSlices.md)
-- [TextOffset](element_TextOffset.md)
-- [TextColors](element_TextColors.md)
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+- [LogDisplay](element_LogDisplay.md)
+
+## Common Named Child Elements
+
+- [DynamicImage](element_DynamicImage.md)
+- [Label](element_Label.md)
+- [Window](element_Window.md)
+- [CircleImage](element_CircleImage.md)
+- [FullResizeImage](element_FullResizeImage.md)
+- [AnimatedImage](element_AnimatedImage.md)
+- [Button](element_Button.md)
+
+
+## Structural Sub-Elements
+
+### [Normal](element_Normal.md)
+
+- Observed in 84 parent frames
+- Attributes: `a`, `b`, `def`, `g`, `id`, `r`, `texture`, `x`, `y`
+  - `a`: `255`
+  - `b`: `255`, `45`, `73`, `102`
+  - `def`: `EA_HorizontalResizeImage_DefaultComboBox`, `EA_AnimatedImage_DefaultChoiceOverlay`, `BuffHeadLayoutHorizontalButtonNormal`, `BuffHeadLayoutVerticalButtonNormal`, `EA_HorizontalResizeImage_DefaultComboBox2`, `EA_HorizontalResizeImage_ResizeableButtonNormal`, `EA_Button_ListSortNormal`
+  - `g`: `255`, `216`, `175`, `204`
+  - `id`: `morale-yellow`, `RightTabFrame`, `LayoutCorner-BottomLeft`, `LayoutCorner-BottomRight`, `LayoutCorner-TopLeft`, `LayoutCorner-TopRight`, `Map-Filters-Button`, `Map-Scenario-Button-Blue`
+  - `r`: `255`, `226`
+  - `texture`: `bpKtxt`, `EA_SquareFrame`, `PinBG`, `ShiniesIconBorderNormal`, `TidyRoll_SquareFrame`, `nRarityBorderNormal`
+  - `x`: `0`, `92`, `172`, `494`
+  - `y`: `28`, `44`, `0`, `341`, `434`, `420`
+
+### [Pressed](element_Pressed.md)
+
+- Observed in 77 parent frames
+- Attributes: `a`, `b`, `def`, `g`, `id`, `r`, `texture`, `x`, `y`
+  - `a`: `255`
+  - `b`: `63`, `0`, `45`, `36`
+  - `def`: `EA_HorizontalResizeImage_DefaultComboBox`, `BuffHeadLayoutHorizontalButtonPressed`, `BuffHeadLayoutVerticalButtonPressed`, `EA_HorizontalResizeImage_DefaultComboBox2`, `EA_HorizontalResizeImage_ResizeableButtonPressed`, `EA_Button_ListSortPressed`
+  - `g`: `213`, `255`, `216`, `57`, `85`
+  - `id`: `morale-white`, `RightTabFrame-Rollover`, `LayoutCorner-BottomLeft-ROLLOVER`, `LayoutCorner-BottomRight-ROLLOVER`, `LayoutCorner-TopLeft-ROLLOVER`, `LayoutCorner-TopRight-ROLLOVER`, `Map-Filters-Button-Depressed`, `Map-Scenario-Button-Blue-Queue-Frame-1`
+  - `r`: `250`, `255`, `226`, `95`
+  - `texture`: `EA_SquareFrame_Pressed`, `PinBG`, `ShiniesIconBorderHighlight`, `TidyRoll_SquareFrame`, `nRarityBorderHighlight`
+  - `x`: `0`, `120`, `172`, `494`
+  - `y`: `56`, `44`, `0`, `370`, `434`, `420`
+
+### [NormalHighlit](element_NormalHighlit.md)
+
+- Observed in 65 parent frames
+- Attributes: `a`, `b`, `def`, `g`, `id`, `r`, `texture`, `x`, `y`
+  - `a`: `255`
+  - `b`: `63`, `0`, `45`
+  - `def`: `EA_HorizontalResizeImage_DefaultComboBox`, `EA_AnimatedImage_DefaultChoiceOverlay`, `EA_FullResizeImage_RedTransparent`, `BuffHeadLayoutHorizontalButtonHighlight`, `BuffHeadLayoutVerticalButtonHighlight`, `EA_HorizontalResizeImage_DefaultComboBox2`, `EA_HorizontalResizeImage_ResizeableButtonNormalHighlit`, `EA_Button_ListSortHighlight`
+  - `g`: `213`, `255`, `216`, `85`
+  - `id`: `morale-white`, `RightTabFrame-Rollover`, `LayoutCorner-BottomLeft-ROLLOVER`, `LayoutCorner-BottomRight-ROLLOVER`, `LayoutCorner-TopLeft-ROLLOVER`, `LayoutCorner-TopRight-ROLLOVER`, `Map-Filters-Button-ROLLOVER`, `Map-Scenario-Button-ROLLOVER`
+  - `r`: `250`, `255`, `226`
+  - `texture`: `EA_SquareFrame_Highlight`, `PinBG`, `ShiniesIconBorderHighlight`, `TidyRoll_SquareFrame_Highlight`, `nRarityBorderHighlight`
+  - `x`: `27`, `105`, `0`, `201`, `475`
+  - `y`: `28`, `44`, `0`, `341`, `434`, `420`
+
+### [Disabled](element_Disabled.md)
+
+- Observed in 60 parent frames
+- Attributes: `a`, `b`, `def`, `g`, `id`, `r`, `texture`, `x`, `y`
+  - `a`: `255`
+  - `b`: `92`, `36`, `102`
+  - `def`: `EA_HorizontalResizeImage_DefaultComboBox`, `EA_HorizontalResizeImage_DefaultComboBox2`, `EA_HorizontalResizeImage_ResizeableButtonDisabled`, `EA_Button_ListSortNormal`
+  - `g`: `92`, `57`, `204`
+  - `id`: `morale-white`, `RightTabFrame`, `Map-Plus-Button-Disabled`, `Map-Minus-Button-Disabled`, `IconFrame-1`, `adminbutton-base`
+  - `r`: `92`, `95`, `255`
+  - `texture`: `EA_SquareFrame`, `PinBG`, `ShiniesIconBorderNormal`, `TidyRoll_SquareFrame`, `nRarityBorderNormal`
+  - `x`: `27`, `92`, `0`, `230`
+  - `y`: `56`, `44`, `0`, `341`
+
+### [PressedHighlit](element_PressedHighlit.md)
+
+- Observed in 53 parent frames
+- Attributes: `a`, `b`, `def`, `g`, `id`, `r`, `x`, `y`
+  - `a`: `255`
+  - `b`: `63`, `0`, `45`, `36`
+  - `def`: `EA_HorizontalResizeImage_DefaultComboBox`, `BuffHeadLayoutHorizontalButtonPressed`, `BuffHeadLayoutVerticalButtonPressed`, `EA_FullResizeImage_RedTransparent`, `EA_HorizontalResizeImage_DefaultComboBox2`
+  - `g`: `213`, `255`, `216`, `57`, `85`
+  - `id`: `morale-white`, `RightTabFrame-Rollover`, `LayoutCorner-BottomLeft-ROLLOVER`, `LayoutCorner-BottomRight-ROLLOVER`, `LayoutCorner-TopLeft-ROLLOVER`, `LayoutCorner-TopRight-ROLLOVER`, `Map-Filters-Button-ROLLOVER`, `Map-Scenario-Button-ROLLOVER`
+  - `r`: `250`, `255`, `226`, `95`
+  - `x`: `0`, `120`, `172`, `475`
+  - `y`: `56`, `44`, `370`, `434`, `420`
+
+### [TexSlices](element_TexSlices.md)
+
+- Observed in 44 parent frames
+
+### [TextOffset](element_TextOffset.md)
+
+- Observed in 30 parent frames
+- Attributes: `x`, `y`
+  - `x`: `5`, `0`, `10`
+  - `y`: `5`, `7`, `0`
+
+### [TextColors](element_TextColors.md)
+
+- Observed in 23 parent frames
+
+### [ResizeImages](element_ResizeImages.md)
+
+- Observed in 21 parent frames
+
+### [DisabledPressed](element_DisabledPressed.md)
+
+- Observed in 14 parent frames
+- Attributes: `a`, `b`, `g`, `id`, `r`
+  - `a`: `255`
+  - `b`: `36`
+  - `g`: `57`
+  - `id`: `morale-white`, `RightTabFrame`, `Map-Plus-Button-Disabled`, `Map-Minus-Button-Disabled`
+  - `r`: `95`
+
+### [OverlayOffset](element_OverlayOffset.md)
+
+- Observed in 14 parent frames
+- Attributes: `x`, `y`
+  - `x`: `93`, `193`, `48`, `148`, `223`, `183`, `5`, `73`
+  - `y`: `0`, `9`, `7`
+
+### [OverlaySize](element_OverlaySize.md)
+
+- Observed in 14 parent frames
+- Attributes: `x`, `y`
+  - `x`: `27`, `18`
+  - `y`: `28`, `13`
+
+### [OverlayTexCoords](element_OverlayTexCoords.md)
+
+- Observed in 14 parent frames
+
+### [Sound](element_Sound.md)
+
+- Observed in 7 parent frames
+- Attributes: `event`, `script`
+  - `event`: `OnLButtonDown`, `OnMouseOver`, `OnLButtonUp`
+  - `script`: `Sound.Play( Sound.BUTTON_OVER )`, `Sound.Play(Sound.CULTIVATING_HARVEST_CROP)`, `Sound.Play( Sound.CULTIVATING_HARVEST_CROP )`
+
+### [Sounds](element_Sounds.md)
+
+- Observed in 7 parent frames
+
+### [Text](element_Text.md)
+
+- Observed in 3 parent frames
+
+### [AnimatedImages](element_AnimatedImages.md)
+
+- Observed in 1 parent frames
+
+### [Eventhandlers](element_Eventhandlers.md)
+
+- Observed in 1 parent frames
+
+## Typical XML Structure
+
+```xml
+<Button name="..." backgroundtexture="shared_01" handleinput="false" highlighttexture="shared_01" font="font_default_text" textalign="left" overlaytexture="shared_01" overlayhighlighttexture="shared_01">
+  <TextColors>
+    <Normal r="255" g="255" b="255" a="255"/>
+    <NormalHighlit r="250" g="213" b="63" a="255"/>
+    <Pressed r="250" g="213" b="63" a="255"/>
+    <PressedHighlit r="250" g="213" b="63" a="255"/>
+    <Disabled r="92" g="92" b="92" a="255"/>
+  </TextColors>
+  <ResizeImages>
+    <Normal def="EA_HorizontalResizeImage_Defa..."/>
+    <NormalHighlit def="EA_HorizontalResizeImage_Defa..."/>
+    <Pressed def="EA_HorizontalResizeImage_Defa..."/>
+    <PressedHighlit def="EA_HorizontalResizeImage_Defa..."/>
+    <Disabled def="EA_HorizontalResizeImage_Defa..."/>
+  </ResizeImages>
+  <OverlaySize x="27" y="28"/>
+  <OverlayOffset x="93" y="0"/>
+  <OverlayTexCoords>
+    <Normal x="0" y="28"/>
+    <NormalHighlit x="27" y="28"/>
+    <Pressed x="0" y="56"/>
+    <PressedHighlit x="0" y="56"/>
+    <Disabled x="27" y="56"/>
+  </OverlayTexCoords>
+  <TextOffset x="5" y="5"/>
+</Button>
+```
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `APAOptionsClose`, `APAOptionsTabsAutoRecall`, `APAOptionsTabsControls`, `APAOptionsTabsFollowTarget`, … | 917 |
+| `inherits` | frame-ref | `EA_Button_DefaultWindowClose`, `EA_Button_Tab`, `EA_Button_DefaultResizeable`, `EA_Button_DefaultCheckBox`, … | 868 |
+| `id` | number | `3`, `2`, `1`, `4`, … | 249 |
+| `textalign` | string | `left`, `center`, `leftcenter`, `bottomright`, … | 160 |
+| `font` | string | `font_default_text`, `font_chat_text`, `font_clear_small_bold`, `font_clear_medium`, … | 139 |
+| `layer` | string | `overlay`, `popup`, `default`, `secondary`, … | 90 |
+| `handleinput` | boolean | `false`, `true` | 78 |
+| `backgroundtexture` | string | `shared_01`, `EA_Training_Specialization`, `EA_Abilities01_d5`, `bpKtxt`, … | 74 |
+| `highlighttexture` | string | `shared_01`, `EA_Training_Specialization`, `EA_Abilities01_d5`, `EA_HUD_01`, … | 67 |
+| `drawchildrenfirst` | boolean | `true`, `false` | 32 |
+| `texturescale` | number | `2.0`, `0.74`, `1.171`, `0.68`, … | 32 |
+| `alpha` | number | `1`, `0` | 24 |
+| `textureScale` | number | `0.62`, `0.75`, `1`, `0.85`, … | 15 |
+| `overlayhighlighttexture` | string | `shared_01`, `EA_HUD_01` | 14 |
+| `overlaytexture` | string | `shared_01`, `EA_HUD_01` | 14 |
 
 ## Seen In
 

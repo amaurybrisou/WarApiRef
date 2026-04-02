@@ -71,15 +71,47 @@ Observed XML element type instantiated by 3 addons.
 
 ## Common Handlers
 
-- OnActionButtonLButtonDown
-- OnActionButtonLButtonUp
-- OnActionButtonMouseOver
-- OnActionButtonRButtonDown
+- [OnActionButtonLButtonDown](../handlers/handler_OnActionButtonLButtonDown.md)
+- [OnActionButtonLButtonUp](../handlers/handler_OnActionButtonLButtonUp.md)
+- [OnActionButtonMouseOver](../handlers/handler_OnActionButtonMouseOver.md)
+- [OnActionButtonRButtonDown](../handlers/handler_OnActionButtonRButtonDown.md)
+
+## Common Handler Functions
+
+- BankWindow.EquipmentLButtonDown
+- BankWindow.EquipmentLButtonUp
+- BankWindow.EquipmentMouseOver
+- BankWindow.EquipmentRButtonDown
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnActionButtonLButtonDown](../handlers/handler_OnActionButtonLButtonDown.md) | BankWindow.EquipmentLButtonDown | `function(...)` | LOW |
+| [OnActionButtonLButtonUp](../handlers/handler_OnActionButtonLButtonUp.md) | BankWindow.EquipmentLButtonUp | `function(...)` | LOW |
+| [OnActionButtonMouseOver](../handlers/handler_OnActionButtonMouseOver.md) | BankWindow.EquipmentMouseOver | `function(...)` | LOW |
+| [OnActionButtonRButtonDown](../handlers/handler_OnActionButtonRButtonDown.md) | BankWindow.EquipmentRButtonDown | `function(...)` | LOW |
 
 ## Common Inherits
 
 - EA_ActionButtonGroup_CareerIconsWithTooltip
 - EA_ActionButtonGroup_DefaultSmall
+
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `inherits` | frame-ref | `EA_ActionButtonGroup_DefaultSmall`, `EA_ActionButtonGroup_CareerIconsWithTooltip` | 3 |
+| `name` | string | `BankWindowSlotsFixed`, `EA_ScrollWindow_ModInfoTemplateScrollChildCareers`, `RVMOD_ManagerModInfoTemplateScrollChildCareers` | 3 |
+| `hideButtonWhenIconBlank` | boolean | `true` | 2 |
+| `draganddrop` | boolean | `true` | 1 |
+| `gameactionbutton` | string | `right` | 1 |
 
 ## Seen In
 

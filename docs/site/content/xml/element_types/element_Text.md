@@ -63,13 +63,17 @@ Observed XML element type instantiated by 4 addons.
 - text
 - alignment
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `text` | string | `Display`, `Kill list font`, `Feed storage limit`, `Zone K/D history limit`, … | 53 |
+| `alignment` | string | `left` | 21 |
 
 ## Seen In
 

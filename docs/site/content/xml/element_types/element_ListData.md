@@ -64,13 +64,17 @@ Structural XML sub-element of ListBox that binds a list to a named Lua backing t
 - table
 - populationfunction
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `table` | lua-function | `AggroMeter.Listdata`, `AuraSettings.listDisplayData`, `AuraShares.listDisplayData`, `AuraTexture.listIconDisplayData`, … | 51 |
+| `populationfunction` | lua-function | `AuraSettings.PopulateDisplay`, `AuraShares.PopulateDisplay`, `AuraTexture.PopulateIconsListDisplay`, `BuffHead.Setup.AdvancedCompressionItem.OnPopulate`, … | 50 |
 
 ## Seen In
 

@@ -79,12 +79,39 @@ Observed XML element type instantiated by 24 addons.
 
 ## Common Handlers
 
-- OnTextChanged
-- OnKeyEnter
-- OnKeyEscape
-- OnMouseOver
-- OnKeyTab
-- OnShown
+- [OnTextChanged](../handlers/handler_OnTextChanged.md)
+- [OnKeyEnter](../handlers/handler_OnKeyEnter.md)
+- [OnKeyEscape](../handlers/handler_OnKeyEscape.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnKeyTab](../handlers/handler_OnKeyTab.md)
+- [OnShown](../handlers/handler_OnShown.md)
+
+## Common Handler Functions
+
+- Enemy.ConfigurationWindow_OnChange
+- Enemy.ConfigurationWindow_ShowTooltip
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- Killer.OnSettingsEditChanged
+- MiracleGrow2.LayoutBarCChanged
+- MiracleGrow2.LayoutProgDimChanged
+- BuffHead.Setup.SelectColor.OnTintChanged
+- MapMonster.PinTypeEditor.MouseOverDescription
+- MapPin.TimeChanged
+- MiracleGrow2.ConfigThrobCChanged
+- ShiniesAutoUI.OnPriceChange
+- ShiniesPostUI.OnPriceChange
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnKeyEnter](../handlers/handler_OnKeyEnter.md) | MapPin.SendCommand, MapPin.SendText, ObjectInspector.InspectObject, DebugWindow.TextSend, DevPadWindow.ConfirmRename, DevPadWindow.CreateNewFile | `function(...)` | LOW |
+| [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | DebugWindow.TextClear, DevPadWindow.OnKeyEscape | `function(...)` | LOW |
+| [OnKeyTab](../handlers/handler_OnKeyTab.md) | DebugWindow.OnKeyTab, DevPadWindow.OnKeyTab | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.ConfigurationWindow_ShowTooltip, MapMonster.PinTypeEditor.MouseOverDescription, Enemy.GroupsUI_EffectFilterDialog_OnAbilityIdsMouseOver, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig2CommandMouseOver, LPET.OnMouseOver, WbLeadHelperMessage.OnMouseOverLabelEditBox | `function()` | MEDIUM |
+| [OnShown](../handlers/handler_OnShown.md) | DebugWindow.OnShowFocus, DevPadWindow.OnShown | `function()` | MEDIUM |
+| [OnTextChanged](../handlers/handler_OnTextChanged.md) | Enemy.ConfigurationWindow_OnChange, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsEditChanged, MiracleGrow2.LayoutBarCChanged, MiracleGrow2.LayoutProgDimChanged, BuffHead.Setup.SelectColor.OnTintChanged | `function()` | MEDIUM |
 
 ## Common Inherits
 
@@ -101,9 +128,53 @@ Observed XML element type instantiated by 24 addons.
 - Shinies_SilverCoin_EditBox_DefaultFrame
 - EA_EditBox_NoFrame
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [TextOffset](element_TextOffset.md)
+- [Window](element_Window.md)
+
+## Common Named Child Elements
+
+- [VerticalScrollbar](element_VerticalScrollbar.md)
+- [Label](element_Label.md)
+
+
+## Structural Sub-Elements
+
+### [TextOffset](element_TextOffset.md)
+
+- Observed in 20 parent frames
+- Attributes: `x`, `y`
+  - `x`: `4`, `0`, `8`, `7`
+  - `y`: `2`, `3`, `4`
+
+## Typical XML Structure
+
+```xml
+<EditBox name="..." font="font_chat_text" background="EA_FullResizeImage_TanBorder">
+  <TextOffset x="4" y="2"/>
+</EditBox>
+```
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `AdvancedRenownTrainingImportNameInputWindowNameInputBox`, `AdvancedRenownTrainingImportWindowLinkInputBox`, `AdvancedRenownTrainingImportWindowNameInputBox`, `AdvancedRenownTrainingLinkWindowLinkBox`, … | 212 |
+| `inherits` | frame-ref | `EA_EditBox_DefaultFrame`, `Aura_EditBox_DefaultFrame`, `EA_EditBox_DefaultFrame_Multiline`, `EA_EditBox_NoFrame`, … | 201 |
+| `maxchars` | number | `76`, `20`, `5`, `3`, … | 132 |
+| `input` | string | `nospaces`, `numbers` | 71 |
+| `layer` | string | `secondary`, `default` | 54 |
+| `warnOnTextCropped` | boolean | `false` | 37 |
+| `font` | string | `font_chat_text`, `font_clear_small`, `font_clear_default`, `font_clear_small_bold`, … | 35 |
+| `taborder` | number | `1`, `2`, `3`, `6`, … | 32 |
+| `handleinput` | boolean | `true` | 16 |
+| `scrolling` | string | `vert`, `none` | 16 |
+| `maxChars` | number | `300`, `3`, `4`, `2`, … | 14 |
+| `background` | string | `EA_FullResizeImage_TanBorder` | 11 |
+| `id` | number | `1`, `5`, `3`, `4`, … | 11 |
+| `align` | string | `rightcenter`, `center` | 7 |
+| `scrollbar` | frame-ref | `EA_ScrollBar_DefaultVerticalChain`, `CopyScrollBar`, `$parentDevPadCodeScrollBar`, `$parentObjectScrollbar` | 7 |
 
 ## Seen In
 

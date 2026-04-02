@@ -79,8 +79,31 @@ Observed XML element type instantiated by 17 addons.
 
 ## Common Handlers
 
-- OnSlide
-- OnMouseOver
+- [OnSlide](../handlers/handler_OnSlide.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+
+## Common Handler Functions
+
+- AuraColorPicker.OnSlide
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- BuffHead.Setup.SelectColor.OnSlideTint
+- MapMonster.PinTypeEditor.OnSetCustomColor
+- MoraleCircle.OnSetCustomColor
+- MoraleCircle.OnSetCustomColorEmpty
+- MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.OnSetCustomColorFull
+- TexturedButtons.Setup.SelectColor.OnSlideTint
+- TexturedButtons.Setup.Tint.OnSlideTint
+- TurretRange.Setup.Display.OnSlideTint
+- TurretRange.Setup.Distance.OnSlideTint
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | WSCT.OnMouseOver | `function()` | MEDIUM |
+| [OnSlide](../handlers/handler_OnSlide.md) | AuraColorPicker.OnSlide, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, BuffHead.Setup.SelectColor.OnSlideTint, MapMonster.PinTypeEditor.OnSetCustomColor, MoraleCircle.OnSetCustomColor, MoraleCircle.OnSetCustomColorEmpty | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -88,6 +111,32 @@ Observed XML element type instantiated by 17 addons.
 - Aura_Default_SliderBar
 - RVMOD_ManagerSliderTemplate
 - RVAPI_ColorDialogSliderTemplate
+
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Common Named Child Elements
+
+- [Label](element_Label.md)
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `AuraColorPickerAlpha`, `AuraColorPickerBlue`, `AuraColorPickerGreen`, `AuraColorPickerRed`, … | 91 |
+| `inherits` | frame-ref | `EA_Default_SliderBar`, `Aura_Default_SliderBar`, `RVAPI_ColorDialogSliderTemplate`, `RVMOD_ManagerSliderTemplate` | 90 |
+| `numticks` | number | `360`, `250`, `200`, `5`, … | 9 |
+| `handleinput` | boolean | `true` | 7 |
+| `scale` | number | `0.4` | 4 |
+| `locktoticks` | boolean | `false` | 3 |
+| `autoresize` | boolean | `true` | 2 |
+| `handlinput` | boolean | `true` | 2 |
+| `numTicks` | number | `11` | 2 |
+| `background` | string | `EA_BrownHorizontalRule` | 1 |
+| `sliderbutton` | frame-ref | `Aura_Default_SliderButton` | 1 |
+| `tickmark` | string | `Aura_Default_SliderTick` | 1 |
 
 ## Seen In
 

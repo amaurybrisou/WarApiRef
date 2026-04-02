@@ -1,5 +1,6 @@
 **
 !go.mod
+!go.sum
 !docker-compose.yml
 !.dockerignore
 !Makefile

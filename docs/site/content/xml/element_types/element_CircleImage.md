@@ -73,17 +73,48 @@ Observed XML element type instantiated by 11 addons.
 - filtering
 - movable
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [TintColor](element_TintColor.md)
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+
+## Common Named Child Elements
+
+- [Label](element_Label.md)
+
+
+## Structural Sub-Elements
+
+### [TintColor](element_TintColor.md)
+
+- Observed in 8 parent frames
+- Attributes: `a`, `b`, `g`, `r`
+  - `a`: `1`, `0.7`
+  - `b`: `25`, `0`
+  - `g`: `235`, `155`, `0`
+  - `r`: `25`, `155`, `0`
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `Aggro_Button_TemplateIcon`, `AuraFrameImageCircle`, `EnemyCircleImageTemplate`, `EnemyStopwatchImage`, … | 29 |
+| `layer` | string | `overlay`, `background`, `default`, `secondary`, … | 27 |
+| `handleinput` | boolean | `false` | 24 |
+| `numsegments` | number | `32`, `16`, `64` | 24 |
+| `textureScale` | number | `0.8`, `0.38`, `0.48`, `0.35`, … | 22 |
+| `popable` | boolean | `false` | 20 |
+| `texture` | string | `StopwatchButton`, `EA_HUD_01`, `EA_Cultivating01_d5`, `EA_TintableImage`, … | 20 |
+| `sticky` | boolean | `true`, `false` | 18 |
+| `alpha` | number | `0.9`, `0.85`, `0` | 5 |
+| `texturescale` | number | `1.11`, `0.18` | 3 |
+| `filtering` | boolean | `true` | 1 |
+| `movable` | boolean | `false` | 1 |
 
 ## Seen In
 

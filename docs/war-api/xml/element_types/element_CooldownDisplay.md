@@ -66,13 +66,27 @@ Observed XML element type instantiated by 1 addons.
 - segments
 - sticky
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `cooldownshape` | string | `circle` | 1 |
+| `handleinput` | boolean | `false` | 1 |
+| `layer` | string | `overlay` | 1 |
+| `movable` | boolean | `true` | 1 |
+| `name` | string | `MoraleTemplateAbilityCooldown` | 1 |
+| `popable` | boolean | `false` | 1 |
+| `segments` | number | `32` | 1 |
+| `sticky` | boolean | `true` | 1 |
 
 ## Seen In
 

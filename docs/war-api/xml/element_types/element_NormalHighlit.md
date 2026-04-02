@@ -70,13 +70,24 @@ Observed XML element type instantiated by 23 addons.
 - def
 - texture
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `x` | number | `27`, `105`, `0`, `201`, … | 26 |
+| `y` | number | `28`, `44`, `0`, `341`, … | 26 |
+| `id` | string | `morale-white`, `RightTabFrame-Rollover`, `LayoutCorner-BottomLeft-ROLLOVER`, `LayoutCorner-BottomRight-ROLLOVER`, … | 25 |
+| `b` | number | `63`, `0`, `45` | 23 |
+| `g` | number | `213`, `255`, `216`, `85` | 23 |
+| `r` | number | `250`, `255`, `226` | 23 |
+| `a` | number | `255` | 22 |
+| `def` | string | `EA_HorizontalResizeImage_DefaultComboBox`, `EA_AnimatedImage_DefaultChoiceOverlay`, `EA_FullResizeImage_RedTransparent`, `BuffHeadLayoutHorizontalButtonHighlight`, … | 22 |
+| `texture` | string | `EA_SquareFrame_Highlight`, `PinBG`, `ShiniesIconBorderHighlight`, `TidyRoll_SquareFrame_Highlight`, … | 11 |
 
 ## Seen In
 

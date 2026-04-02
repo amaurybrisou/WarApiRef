@@ -64,13 +64,18 @@ Observed XML element type instantiated by 11 addons.
 - y
 - id
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `x` | number | `0`, `424`, `78`, `576`, … | 25 |
+| `y` | number | `0`, `762`, `25`, `1`, … | 25 |
+| `id` | string | `Loser-Bar-horiz`, `Victor-Bar-horiz`, `Horiz-Background`, `Dest-VP-Bar-horiz`, … | 5 |
 
 ## Seen In
 

@@ -63,13 +63,17 @@ Observed XML element type instantiated by 15 addons.
 - x
 - y
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `x` | number | `5`, `4`, `0`, `8`, … | 51 |
+| `y` | number | `5`, `2`, `7`, `3`, … | 47 |
 
 ## Seen In
 

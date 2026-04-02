@@ -79,18 +79,58 @@ Observed XML element type instantiated by 60 addons.
 
 ## Common Handlers
 
-- OnLButtonUp
-- OnHidden
-- OnMouseOver
-- OnShown
-- OnRButtonUp
-- OnLButtonDown
-- OnMouseOverEnd
-- OnInitialize
-- OnKeyEscape
-- OnRButtonDown
-- OnShutdown
-- OnMouseOut
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+- [OnHidden](../handlers/handler_OnHidden.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnShown](../handlers/handler_OnShown.md)
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
+- [OnLButtonDown](../handlers/handler_OnLButtonDown.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+- [OnInitialize](../handlers/handler_OnInitialize.md)
+- [OnKeyEscape](../handlers/handler_OnKeyEscape.md)
+- [OnRButtonDown](../handlers/handler_OnRButtonDown.md)
+- [OnShutdown](../handlers/handler_OnShutdown.md)
+- [OnMouseOut](../handlers/handler_OnMouseOut.md)
+
+## Common Handler Functions
+
+- WindowUtils.OnShown
+- WindowUtils.OnHidden
+- BuffHead.Setup.Layout.OnLayersChanged
+- WindowUtils.TrapClick
+- BuffHead.Setup.Layout.Properties.OnColorExampleMouseOut
+- BuffHead.Setup.Layout.Properties.OnColorExampleMouseOver
+- BuffHead.Setup.PriorityEffectsItem.OnTargetTypeLUp
+- Killer.HideRowTooltip
+- MapPin.RButtonUp
+- RoR_SoR.BroadCastOption
+- RoR_SoR.OnMouseOverStart
+- EA_LabelCheckButton.Initialize
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnHidden](../handlers/handler_OnHidden.md) | WindowUtils.OnHidden, APAGui.OnFollowTargetHUDHidden, APAGui.OnHidden, APAGui.OnInstantOnlyHUDHidden, APAGui.OnKitingHUDHidden, AdvancedRenownTraining.OnExportHidden | `function()` | MEDIUM |
+| [OnInitialize](../handlers/handler_OnInitialize.md) | EA_LabelCheckButton.Initialize, AdvancedRenownTraining.Initialize, AuraConfig.OnInitialize, CMapWindow.Initialize, CMapWindow.RefreshMapPointFilterMenu, ClosetGoblinOptionWindow.OnInitialize | `function()` | MEDIUM |
+| [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | DebugWindow.OnKeyEscape, Enemy.CombatLogUI_SnapshotWindow_Hide, Enemy.CombatLogUI_StatsWindow_Hide, Enemy.GroupsUI_EffectFilterDialog_Hide, Enemy.IntercomUI_ChooseChannelDialog_Hide, Enemy.IntercomUI_IntercomDialog_Hide | `function(...)` | LOW |
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | WindowUtils.TrapClick, Enemy.UnitFramesUI_Anchor_OnLButtonDown, AdvancedRenownTraining.Select, BuffHead.Setup.AdvancedCompression.OnRowLDown, BuffHead.Setup.AdvancedCompressionItem.OnRowLDown, BuffHead.Setup.AdvancedContainers.OnRowLDown | `function(...)` | LOW |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | BuffHead.Setup.Layout.OnLayersChanged, BuffHead.Setup.PriorityEffectsItem.OnTargetTypeLUp, EA_LabelCheckButton.Toggle, MapPin.LButtonUp, AnywhereTrainer.OnLButtonUp, BustedGUI.ToggleMainWindow | `function(...)` | LOW |
+| [OnMButtonDown](../handlers/handler_OnMButtonDown.md) | Enemy.UnitFramesUI_UnitFrame_OnMButtonDown, MoraleCircle.Reset | `function(...)` | LOW |
+| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | Enemy.UnitFramesUI_UnitFrame_OnMButtonUp, TidyRollFrame.OnMButtonUp | `function(...)` | LOW |
+| [OnMouseOut](../handlers/handler_OnMouseOut.md) | Killer.HideRowTooltip | `function()` | MEDIUM |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | BuffHead.Setup.Layout.Properties.OnColorExampleMouseOver, RoR_SoR.OnMouseOverStart, MapPin.MouseOver, AggroMeter.OnMouseOverStart, Enemy.ConfigurationWindow_ShowTooltip, Enemy.UnitFramesUI_Anchor_OnMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | BuffHead.Setup.Layout.Properties.OnColorExampleMouseOut, Enemy.UnitFramesUI_Anchor_OnMouseOverEnd, TexturedButtons.Setup.Fonts.OnColorExampleMouseOut, BuffHead.Setup.AdvancedCompression.OnRowMouseOut, BuffHead.Setup.AdvancedCompressionItem.OnRowMouseOut, BuffHead.Setup.AdvancedContainers.OnRowMouseOut | `function(...)` | LOW |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | FrameManager.OnMouseWheel, MoraleCircle.OnMouseWheel, TidyChat.Copy.OnMouseWheel | `function(delta)` | MEDIUM |
+| [OnRButtonDown](../handlers/handler_OnRButtonDown.md) | BuffHead.Setup.AdvancedCompression.OnRowRDown, BuffHead.Setup.AdvancedCompressionItem.OnRowRDown, BuffHead.Setup.AdvancedContainers.OnRowRDown, BuffHead.Setup.AdvancedContainersItem.OnRowRDown, BuffHead.Setup.Layout.OnControlFrameRButtonDown, BuffHead.Setup.Layout.OnLayoutWindowRButtonDown | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | MapPin.RButtonUp, RoR_SoR.BroadCastOption, BustedGUI.ClearAlertFlash, MiracleGrow2.onRClick, RoR_SoR.POPOption, AggroMeter.OnTabRBU | `function(...)` | LOW |
+| [OnRawDeviceInput](../handlers/handler_OnRawDeviceInput.md) | BuffHead.Setup.Layout.OnRawDeviceInput | `function(...)` | LOW |
+| [OnSetMoving](../handlers/handler_OnSetMoving.md) | MapPin.OnMoving | `function(...)` | LOW |
+| [OnShown](../handlers/handler_OnShown.md) | WindowUtils.OnShown, APAGui.OnFollowTargetHUDShown, APAGui.OnInstantOnlyHUDShown, APAGui.OnKitingHUDShown, APAGui.OnPetTargetHUDShown, APAGui.OnShown | `function()` | MEDIUM |
+| [OnShutdown](../handlers/handler_OnShutdown.md) | CMapWindow.Shutdown, ClosetGoblinCharacterWindow.OnShutdown, ClosetGoblinZoneWindow.OnShutdown, DebugWindow.Shutdown, EA_Window_ContextMenu.Shutdown, EA_Window_Macro.Shutdown | `function()` | MEDIUM |
+| [OnSizeUpdated](../handlers/handler_OnSizeUpdated.md) | RoR_SoR.OnSizeUpdated | `function(...)` | LOW |
+| [OnUpdate](../handlers/handler_OnUpdate.md) | BuffHead.Setup.Layout.OnUpdate, DebugWindow.Update, TidyRoll.OnUpdate | `function(elapsed)` | MEDIUM |
 
 ## Common Inherits
 
@@ -107,11 +147,72 @@ Observed XML element type instantiated by 60 addons.
 - MapPinCallTemplateWindow
 - WSCTCheckBox
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [Sound](element_Sound.md)
-- [Sounds](element_Sounds.md)
-- [Visual](element_Visual.md)
+- [Window](element_Window.md)
+- [ScrollWindow](element_ScrollWindow.md)
+- [Button](element_Button.md)
+
+## Common Named Child Elements
+
+- [Label](element_Label.md)
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+- [FullResizeImage](element_FullResizeImage.md)
+- [DynamicImage](element_DynamicImage.md)
+- [ComboBox](element_ComboBox.md)
+- [EditBox](element_EditBox.md)
+- [ListBox](element_ListBox.md)
+
+
+## Structural Sub-Elements
+
+### [Sound](element_Sound.md)
+
+- Observed in 1 parent frames
+- Attributes: `event`, `script`
+  - `event`: `OnShown`, `OnHidden`
+  - `script`: `Sound.Play( Sound.TOME_OPEN )`, `Sound.Play( Sound.TOME_CLOSE)`
+
+### [Sounds](element_Sounds.md)
+
+- Observed in 1 parent frames
+
+### [Visual](element_Visual.md)
+
+- Observed in 1 parent frames
+
+## Typical XML Structure
+
+```xml
+<Window name="..." movable="true" layer="secondary" alpha="50" savesettings="false">
+  <Sounds>
+    <Sound event="OnShown" script="Sound.Play( Sound.TOME_OPEN )"/>
+    <Sound event="OnHidden" script="Sound.Play( Sound.TOME_CLOSE)"/>
+  </Sounds>
+</Window>
+```
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `APAFollowTargetHUD`, `APAInstantOnlyHUD`, `APAKitingHUD`, `APAOptions`, … | 1331 |
+| `inherits` | frame-ref | `EA_Window_DefaultFrame`, `EA_TitleBar_Default`, `EA_Window_Default`, `EA_Window_DefaultSeparator`, … | 807 |
+| `layer` | string | `secondary`, `popup`, `background`, `default`, … | 422 |
+| `handleinput` | boolean | `true`, `false` | 302 |
+| `movable` | boolean | `true`, `false` | 270 |
+| `savesettings` | boolean | `true`, `false` | 175 |
+| `popable` | boolean | `true`, `false` | 85 |
+| `sticky` | boolean | `false`, `true` | 69 |
+| `scale` | number | `1.0`, `0.7` | 35 |
+| `id` | number | `1`, `10`, `11`, `2`, … | 27 |
+| `skipinput` | boolean | `false`, `true` | 21 |
+| `alpha` | number | `0.85`, `1.0`, `0.97`, `0`, … | 20 |
+| `font` | string | `font_clear_small_bold`, `font_chat_text` | 15 |
+| `Scale` | number | `0.7` | 8 |
+| `drawchildrenfirst` | boolean | `true` | 6 |
 
 ## Seen In
 

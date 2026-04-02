@@ -16,10 +16,10 @@ Observed XML and window-scoped handlers using On* hooks to bridge engine UI even
 - [OnHyperLinkLButtonUp](../events/window_events/window_event_OnHyperLinkLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnHyperLinkRButtonUp](../xml/handlers/handler_OnHyperLinkRButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnHyperLinkRButtonUp](../events/window_events/window_event_OnHyperLinkRButtonUp.md) (HIGH 100/100) - Window Event
-- [OnInitialize](../xml/handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Handler
 - [OnInitialize](../events/window_events/window_event_OnInitialize.md) (HIGH 100/100) - Window Event
-- [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [OnInitialize](../xml/handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Handler
 - [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
+- [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [OnActionButtonLButtonDown](../xml/handlers/handler_OnActionButtonLButtonDown.md) (HIGH 73/100) - XML Handler
 - [OnActionButtonLButtonUp](../xml/handlers/handler_OnActionButtonLButtonUp.md) (HIGH 73/100) - XML Handler
 - [OnActionButtonMouseOver](../xml/handlers/handler_OnActionButtonMouseOver.md) (HIGH 73/100) - XML Handler

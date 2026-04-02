@@ -63,13 +63,17 @@ Observed XML element type instantiated by 4 addons.
 - event
 - script
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `event` | string | `OnLButtonDown`, `OnMouseOver`, `OnShown`, `OnHidden`, … | 8 |
+| `script` | string | `Sound.Play( Sound.BUTTON_OVER )`, `Sound.Play( Sound.TOME_OPEN )`, `Sound.Play( Sound.TOME_CLOSE)`, `Sound.Play(Sound.CULTIVATING_HARVEST_CROP)`, … | 8 |
 
 ## Seen In
 

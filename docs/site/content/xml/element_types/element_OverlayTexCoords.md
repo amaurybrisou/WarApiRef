@@ -62,10 +62,6 @@ Observed XML element type instantiated by 7 addons.
 
 - none
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none

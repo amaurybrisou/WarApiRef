@@ -79,13 +79,41 @@ Observed XML element type instantiated by 56 addons.
 
 ## Common Handlers
 
-- OnMouseOver
-- OnLButtonUp
-- OnRButtonUp
-- OnMouseOverEnd
-- OnHyperLinkLButtonUp
-- OnHyperLinkRButtonUp
-- OnLButtonDown
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+- [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md)
+- [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md)
+- [OnLButtonDown](../handlers/handler_OnLButtonDown.md)
+
+## Common Handler Functions
+
+- LPET.OnMouseOver
+- Cheeseboard.SortColumnClick
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip
+- Cheeseboard.OnMouseOver
+- FrameManager.OnMouseOverEnd
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueLClick
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick
+- Enemy.CombatLogUI_EpsWindow_OnMouseOver
+- Enemy.CombatLogUI_EpsWindow_OnRButtonUp
+- EA_ChatWindow.OnHyperLinkLButtonUp
+- EA_ChatWindow.OnHyperLinkRButtonUp
+- Enemy.ConfigurationWindow_ShowTooltip
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md) | EA_ChatWindow.OnHyperLinkLButtonUp | `function(...)` | LOW |
+| [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) | EA_ChatWindow.OnHyperLinkRButtonUp, MapPin.RButtonUp | `function(...)` | LOW |
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | Enemy.CombatLogUI_IDS_OnRowLButtonDown | `function(...)` | LOW |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | Cheeseboard.SortColumnClick, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueLClick, Enemy.KillSpamUI_KillSpamDialog_OnTotalLButtonUp, ClosetGoblinCharacterWindow.OnClickSetRow, ClosetGoblinZoneWindow.OnClickZoneRow, Enemy.CombatLogUI_EpsWindow_OnInDpsLButtonUp | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | LPET.OnMouseOver, Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip, Cheeseboard.OnMouseOver, Enemy.CombatLogUI_EpsWindow_OnMouseOver, Enemy.ConfigurationWindow_ShowTooltip, Enemy.CombatLogUI_StatsWindow_ListRowMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | FrameManager.OnMouseOverEnd, TexturedButtons.Setup.Fonts.OnFontExampleMouseOut, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOut, BuffHead.Setup.Layout.Properties.OnFontExampleMouseOut, BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOut, TurretRange.Setup.Display.OnDistanceFontMouseOut | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick, Enemy.CombatLogUI_EpsWindow_OnRButtonUp, Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp, ClosetGoblinCharacterWindow.OnSetRowContextMenu, ClosetGoblinZoneWindow.OnSetZoneRowContextMenu, MiracleGrowLight.switchMode | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -102,10 +130,57 @@ Observed XML element type instantiated by 56 addons.
 - EA_Label_DefaultText_Small
 - IraConfigHeading
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [Text](element_Text.md)
-- [TintColor](element_TintColor.md)
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+- [SliderBar](element_SliderBar.md)
+- [DynamicImage](element_DynamicImage.md)
+- [FullResizeImage](element_FullResizeImage.md)
+- [EditBox](element_EditBox.md)
+
+## Common Named Child Elements
+
+- [DynamicImage](element_DynamicImage.md)
+
+
+## Structural Sub-Elements
+
+### [Text](element_Text.md)
+
+- Observed in 69 parent frames
+- Attributes: `alignment`, `text`
+  - `alignment`: `left`
+  - `text`: `Display`, `Kill list font`, `Feed storage limit`, `Zone K/D history limit`, `Changes apply immediately. Zone K/D history uses 0 for unlimited saved zone leaderboards.`, `Main height`, `Main width`, `All-time deaths`
+
+### [TintColor](element_TintColor.md)
+
+- Observed in 14 parent frames
+- Attributes: `b`, `g`, `r`
+  - `b`: `255`
+  - `g`: `255`
+  - `r`: `255`
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `APAFollowTargetHUDLabel`, `APAInstantOnlyHUDLabel`, `APAKitingHUDLabel`, `APALabelAttackBind`, … | 1572 |
+| `textalign` | string | `center`, `left`, `leftcenter`, `right`, … | 1169 |
+| `font` | string | `font_clear_small_bold`, `font_default_text`, `font_clear_medium_bold`, `font_default_text_large`, … | 1128 |
+| `inherits` | frame-ref | `EA_Label_DefaultText`, `DefaultWindowText`, `TOKText`, `Aggro_Label_Template`, … | 491 |
+| `handleinput` | boolean | `false`, `true` | 439 |
+| `autoresize` | boolean | `true`, `false` | 367 |
+| `warnOnTextCropped` | boolean | `false` | 345 |
+| `maxchars` | number | `128`, `512`, `256`, `80`, … | 337 |
+| `wordwrap` | boolean | `false`, `true` | 263 |
+| `layer` | string | `secondary`, `popup`, `overlay`, `default`, … | 260 |
+| `popable` | boolean | `false` | 108 |
+| `skipinput` | boolean | `true` | 71 |
+| `autoresizewidth` | boolean | `true`, `false` | 52 |
+| `textAutoFitMinScale` | number | `0.5`, `0.75`, `0.3` | 50 |
+| `hanldeinput` | boolean | `false` | 31 |
 
 ## Seen In
 

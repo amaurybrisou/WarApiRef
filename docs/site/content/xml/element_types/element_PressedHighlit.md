@@ -69,13 +69,23 @@ Observed XML element type instantiated by 17 addons.
 - x
 - y
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `id` | string | `morale-white`, `RightTabFrame-Rollover`, `LayoutCorner-BottomLeft-ROLLOVER`, `LayoutCorner-BottomRight-ROLLOVER`, … | 25 |
+| `b` | number | `63`, `0`, `45`, `36` | 23 |
+| `g` | number | `213`, `255`, `216`, `57`, … | 23 |
+| `r` | number | `250`, `255`, `226`, `95` | 23 |
+| `a` | number | `255` | 22 |
+| `def` | string | `EA_HorizontalResizeImage_DefaultComboBox`, `BuffHeadLayoutHorizontalButtonPressed`, `BuffHeadLayoutVerticalButtonPressed`, `EA_FullResizeImage_RedTransparent`, … | 15 |
+| `x` | number | `0`, `120`, `172`, `475` | 15 |
+| `y` | number | `56`, `44`, `370`, `434`, … | 15 |
 
 ## Seen In
 

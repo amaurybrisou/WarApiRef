@@ -77,20 +77,71 @@ Observed XML element type instantiated by 3 addons.
 
 ## Common Handlers
 
-- OnLButtonUp
-- OnPointMouseOver
-- OnMouseWheel
-- OnHidden
-- OnMButtonUp
-- OnMouseOver
-- OnMouseOverEnd
-- OnRButtonUp
-- OnShown
-- OnUpdate
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+- [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md)
+- [OnMouseWheel](../handlers/handler_OnMouseWheel.md)
+- [OnHidden](../handlers/handler_OnHidden.md)
+- [OnMButtonUp](../handlers/handler_OnMButtonUp.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
+- [OnShown](../handlers/handler_OnShown.md)
+- [OnUpdate](../handlers/handler_OnUpdate.md)
+
+## Common Handler Functions
+
+- CMapWindow.MWheel
+- CMapWindow.OnClickMap
+- CMapWindow.OnMouseOverPoint
+- CMapWindow.UpdateCoordinatesWMap
+- CMapWindow.WmapOnClickMap
+- CMapWindow.WmapOnMouseOverPoint
+- CMapWindow.WmapOver
+- CMapWindow.WmapOverEnd
+- Map.OnClickMap
+- Map.OnMButtonUp
+- Map.OnMouseOverPoint
+- Map.OnRClickMap
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnHidden](../handlers/handler_OnHidden.md) | WindowUtils.OnHidden | `function()` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | CMapWindow.OnClickMap, CMapWindow.WmapOnClickMap, Map.OnClickMap | `function(...)` | LOW |
+| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | Map.OnMButtonUp | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | CMapWindow.WmapOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | CMapWindow.WmapOverEnd | `function(...)` | LOW |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | CMapWindow.MWheel | `function(delta)` | MEDIUM |
+| [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) | CMapWindow.OnMouseOverPoint, CMapWindow.WmapOnMouseOverPoint, Map.OnMouseOverPoint | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | Map.OnRClickMap | `function(...)` | LOW |
+| [OnShown](../handlers/handler_OnShown.md) | WindowUtils.OnShown | `function()` | MEDIUM |
+| [OnUpdate](../handlers/handler_OnUpdate.md) | CMapWindow.UpdateCoordinatesWMap | `function(elapsed)` | MEDIUM |
 
 ## Common Inherits
 
 - none
+
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | frame-ref | `CMapWindowMapDisplay`, `CMapWindowWMap`, `MapMonster_CalibrateWindowMapDisplay`, `TurretMapDisplay` | 4 |
+| `pinTexture` | string | `map_markers01` | 4 |
+| `layer` | string | `default`, `secondary`, `Overlay` | 3 |
+| `movable` | boolean | `false` | 3 |
+| `shape` | string | `square`, `circle` | 3 |
+| `iconScale` | number | `0.70`, `0.45` | 2 |
+| `loadingAnim` | string | `MapLoadingAnim` | 2 |
+| `sticky` | boolean | `false`, `true` | 2 |
+| `gutterIcon` | number | `39` | 1 |
+| `popable` | boolean | `false` | 1 |
 
 ## Seen In
 

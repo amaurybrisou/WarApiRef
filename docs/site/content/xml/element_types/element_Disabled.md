@@ -70,13 +70,24 @@ Observed XML element type instantiated by 20 addons.
 - def
 - texture
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `x` | number | `27`, `92`, `0`, `230` | 26 |
+| `y` | number | `56`, `44`, `0`, `341` | 26 |
+| `b` | number | `92`, `36`, `102` | 23 |
+| `g` | number | `92`, `57`, `204` | 23 |
+| `id` | string | `morale-white`, `RightTabFrame`, `Map-Plus-Button-Disabled`, `Map-Minus-Button-Disabled`, … | 23 |
+| `r` | number | `92`, `95`, `255` | 23 |
+| `a` | number | `255` | 22 |
+| `def` | string | `EA_HorizontalResizeImage_DefaultComboBox`, `EA_HorizontalResizeImage_DefaultComboBox2`, `EA_HorizontalResizeImage_ResizeableButtonDisabled`, `EA_Button_ListSortNormal` | 14 |
+| `texture` | string | `EA_SquareFrame`, `PinBG`, `ShiniesIconBorderNormal`, `TidyRoll_SquareFrame`, … | 11 |
 
 ## Seen In
 

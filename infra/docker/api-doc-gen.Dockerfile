@@ -3,6 +3,7 @@ FROM golang:1.22-alpine AS build
 WORKDIR /src
 
 COPY go.mod ./
+COPY go.sum ./
 COPY tools/api_doc_gen ./tools/api_doc_gen
 
 RUN go build -o /out/api_doc_gen ./tools/api_doc_gen

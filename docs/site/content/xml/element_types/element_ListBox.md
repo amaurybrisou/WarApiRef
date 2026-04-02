@@ -77,20 +77,91 @@ Observed XML element type instantiated by 20 addons.
 
 ## Common Handlers
 
-- OnLButtonUp
-- OnMouseOver
-- OnMouseOverEnd
-- OnRButtonUp
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
+
+## Common Handler Functions
+
+- AggroMeter.PickedListMenu
+- Enemy.KillSpamUI_KillSpamDialog_OnMouseOver
+- Enemy.KillSpamUI_KillSpamDialog_OnMouseOverEnd
+- Enemy.UnitFramesUI_ConfigDialog_OnClickCastingsListLButtonUp
+- Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListLButtonUp
+- Enemy.UnitFramesUI_ConfigDialog_OnUnitFramePartsListLButtonUp
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListLButtonUp
+- TidyRoll.CustomAutoRoll.OnListLbuttonUp
+- wbLeadHelperMessagesTab.OnListLButtonUp
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | Enemy.UnitFramesUI_ConfigDialog_OnClickCastingsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnUnitFramePartsListLButtonUp, Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListLButtonUp, TidyRoll.CustomAutoRoll.OnListLbuttonUp, wbLeadHelperMessagesTab.OnListLButtonUp | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.KillSpamUI_KillSpamDialog_OnMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | Enemy.KillSpamUI_KillSpamDialog_OnMouseOverEnd | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | AggroMeter.PickedListMenu | `function(...)` | LOW |
 
 ## Common Inherits
 
 - none
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [ListData](element_ListData.md)
-- [ListColumns](element_ListColumns.md)
-- [ListColumn](element_ListColumn.md)
+- [Window](element_Window.md)
+
+
+## Structural Sub-Elements
+
+### [ListData](element_ListData.md)
+
+- Observed in 51 parent frames
+- Attributes: `populationfunction`, `table`
+  - `populationfunction`: `AuraSettings.PopulateDisplay`, `AuraShares.PopulateDisplay`, `AuraTexture.PopulateIconsListDisplay`, `BuffHead.Setup.AdvancedCompressionItem.OnPopulate`, `BuffHead.Setup.AdvancedCompression.OnPopulate`, `BuffHead.Setup.AdvancedContainers.OnPopulate`, `BuffHead.Setup.EffectCache.OnPopulate`, `BuffHead.Setup.Filter.OnPopulate`
+  - `table`: `AggroMeter.Listdata`, `AuraSettings.listDisplayData`, `AuraShares.listDisplayData`, `AuraTexture.listIconDisplayData`, `BuffHead.Setup.AdvancedCompressionItem.Entries`, `BuffHead.Setup.AdvancedCompression.Entries`, `BuffHead.Setup.AdvancedContainers.Entries`, `BuffHead.Setup.EffectCache.Entries`
+
+### [ListColumns](element_ListColumns.md)
+
+- Observed in 28 parent frames
+
+### [ListColumn](element_ListColumn.md)
+
+- Observed in 27 parent frames
+- Attributes: `format`, `variable`, `windowname`
+  - `format`: `wstring`, `number`, `icon`
+  - `variable`: `Name`, `RankN`, `Character`, `Type`, `Text`, `Effects`, `Description`, `Id`
+  - `windowname`: `Name`, `Rank`, `Character`, `Type`, `Text`, `Effects`, `Description`, `Id`
+
+## Typical XML Structure
+
+```xml
+<ListBox name="..." color="155, 255, 155, 0" scrollbar="EA_ScrollBar_DefaultVerticalC..." rowdef="AggroMeterGrayTemplateListboxRow" visiblerows="13" rowcount="120" rowspacing="0">
+  <ListData table="AggroMeter.Listdata">
+    <ListColumns>
+      <ListColumn windowname="Name" variable="Name" format="wstring"/>
+      <ListColumn windowname="Rank" variable="RankN" format="wstring"/>
+    </ListColumns>
+  </ListData>
+</ListBox>
+```
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | frame-ref | `AggroMeterGrayListBox`, `AuraSettingsAuraList`, `AuraSharesAuraList`, `AuraTextureIconsIcons`, … | 51 |
+| `rowdef` | string | `AggroMeterGrayTemplateListboxRow`, `AuraWindowRow`, `AuraSharesRow`, `AuraIconRow`, … | 51 |
+| `rowspacing` | number | `0`, `1`, `6`, `5`, … | 51 |
+| `visiblerows` | number | `13`, `7`, `5`, `4`, … | 51 |
+| `scrollbar` | frame-ref | `EA_ScrollBar_DefaultVerticalChain` | 43 |
+| `rowcount` | number | `120`, `100`, `7`, `2`, … | 12 |
+| `layer` | string | `secondary` | 4 |
+| `color` | string | `155, 255, 155, 0` | 1 |
+| `draganddrop` | boolean | `true` | 1 |
+| `scrollbarPosition` | string | `left` | 1 |
 
 ## Seen In
 

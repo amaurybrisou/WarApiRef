@@ -65,13 +65,19 @@ Observed XML element type instantiated by 21 addons.
 - r
 - a
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `b` | number | `0`, `110`, `130`, `50`, … | 99 |
+| `g` | number | `0`, `200`, `185`, `130`, … | 99 |
+| `r` | number | `255`, `0`, `180`, `200`, … | 99 |
+| `a` | number | `30`, `255`, `0.5`, `200`, … | 37 |
 
 ## Seen In
 

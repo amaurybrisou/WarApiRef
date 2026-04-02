@@ -69,20 +69,66 @@ Observed XML element type instantiated by 3 addons.
 - reversefill
 - sticky
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - BuffHeadLayoutVerticalResizeImage
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [Middle](element_Middle.md)
-- [TintColor](element_TintColor.md)
-- [Bottom](element_Bottom.md)
-- [Top](element_Top.md)
+- [Window](element_Window.md)
+
+
+## Structural Sub-Elements
+
+### [Middle](element_Middle.md)
+
+- Observed in 4 parent frames
+- Attributes: `x`, `y`
+  - `x`: `424`, `576`, `598`, `172`
+  - `y`: `762`, `1`, `416`
+
+### [TintColor](element_TintColor.md)
+
+- Observed in 3 parent frames
+- Attributes: `b`, `g`, `r`
+  - `b`: `0`, `200`
+  - `g`: `200`, `255`
+  - `r`: `200`, `255`
+
+### [Bottom](element_Bottom.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `172`
+  - `y`: `429`
+
+### [Top](element_Top.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `172`
+  - `y`: `403`
+
+## Typical XML Structure
+
+```xml
+<VerticalResizeImage name="..." inherits="BuffHeadLayoutVerticalResizeI...">
+  <TintColor r="200" g="200" b="0"/>
+</VerticalResizeImage>
+```
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `BuffHeadLayoutVerticalButtonHighlight`, `BuffHeadLayoutVerticalButtonNormal`, `BuffHeadLayoutVerticalButtonPressed`, `BuffHeadLayoutVerticalResizeImage`, … | 7 |
+| `texture` | string | `EA_TintableImage`, `ui_main`, `EA_HUD_01` | 4 |
+| `inherits` | frame-ref | `BuffHeadLayoutVerticalResizeImage` | 3 |
+| `handleinput` | boolean | `false` | 2 |
+| `reverseFill` | boolean | `true` | 1 |
+| `reversefill` | boolean | `true` | 1 |
+| `sticky` | boolean | `false` | 1 |
 
 ## Seen In
 

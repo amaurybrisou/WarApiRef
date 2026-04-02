@@ -66,13 +66,20 @@ Observed XML element type instantiated by 8 addons.
 - g
 - r
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `id` | string | `morale-white`, `RightTabFrame`, `Map-Plus-Button-Disabled`, `Map-Minus-Button-Disabled` | 10 |
+| `a` | number | `255` | 4 |
+| `b` | number | `36` | 4 |
+| `g` | number | `57` | 4 |
+| `r` | number | `95` | 4 |
 
 ## Seen In
 

@@ -68,18 +68,66 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Handlers
 
-- OnLButtonUp
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+
+## Common Handler Functions
+
+- WSCT.OnLButtonUpColorPicker
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | WSCT.OnLButtonUpColorPicker | `function(...)` | LOW |
 
 ## Common Inherits
 
 - none
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [ColorSize](element_ColorSize.md)
-- [ColorSpacing](element_ColorSpacing.md)
-- [ColorTexCoords](element_ColorTexCoords.md)
-- [ColorTexDims](element_ColorTexDims.md)
+- [Window](element_Window.md)
+
+
+## Structural Sub-Elements
+
+### [ColorSize](element_ColorSize.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `28`
+  - `y`: `28`
+
+### [ColorSpacing](element_ColorSpacing.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `5`
+  - `y`: `5`
+
+### [ColorTexCoords](element_ColorTexCoords.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `304`
+  - `y`: `450`
+
+### [ColorTexDims](element_ColorTexDims.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `24`
+  - `y`: `24`
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `columnsPerRow` | number | `4` | 1 |
+| `name` | string | `WSCTOptionsColorPickerWindowColorPicker` | 1 |
+| `texture` | string | `EA_HUD_01` | 1 |
 
 ## Seen In
 

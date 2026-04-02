@@ -65,13 +65,18 @@ Structural XML element inside ListColumns that maps a single field of each backi
 - variable
 - windowname
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `format` | string | `wstring`, `number`, `icon` | 27 |
+| `variable` | string | `Name`, `RankN`, `Character`, `Type`, … | 27 |
+| `windowname` | string | `Name`, `Rank`, `Character`, `Type`, … | 27 |
 
 ## Seen In
 

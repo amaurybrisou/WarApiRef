@@ -70,10 +70,6 @@ Observed XML element type instantiated by 11 addons.
 - autohidescrollbar
 - layer
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - DAoCBuffFrameSettingsTab
@@ -81,6 +77,29 @@ Observed XML element type instantiated by 11 addons.
 - DAoCBuffListManagerTab
 - EA_ScrollWindow_ModInfoTemplate
 - RVMOD_ManagerModInfoTemplate
+
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Common Named Child Elements
+
+- [VerticalScrollbar](element_VerticalScrollbar.md)
+- [Window](element_Window.md)
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `DAoCBuffMessageWindowScrollWindow`, `DAoCBuff_Settings_FrameSettings`, `DAoCBuff_Settings_GeneralSettings`, `DAoCBuff_Settings_ListManagerSettings`, … | 31 |
+| `childscrollwindow` | string | `$parentScrollChild`, `MiracleGrow2Config`, `MiracleGrow2Layout`, `MiracleGrow2Preset`, … | 26 |
+| `lineheight` | number | `18`, `20`, `19`, `90`, … | 26 |
+| `scrollbar` | frame-ref | `$parentScrollbar`, `$parentScroll`, `$parentBar`, `RVMOD_ManagerWindowContentListBoxScrollbar`, … | 26 |
+| `autoHideScrollBar` | boolean | `false`, `true` | 15 |
+| `inherits` | frame-ref | `DAoCBuffFrameSettingsTab`, `DAoCBuffGeneralSettingsTab`, `DAoCBuffListManagerTab`, `EA_ScrollWindow_ModInfoTemplate`, … | 5 |
+| `autohidescrollbar` | boolean | `true` | 2 |
+| `layer` | string | `secondary` | 1 |
 
 ## Seen In
 

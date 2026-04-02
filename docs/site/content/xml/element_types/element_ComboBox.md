@@ -79,8 +79,31 @@ Observed XML element type instantiated by 29 addons.
 
 ## Common Handlers
 
-- OnSelChanged
-- OnMouseOver
+- [OnSelChanged](../handlers/handler_OnSelChanged.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+
+## Common Handler Functions
+
+- LPET.OnMouseOver
+- APAGui.OnComboChanged
+- LPET.QuickHealthOnSelChanged
+- LPET.QuickModeOnSelChanged
+- LPET.QuickPriorityOnSelChanged
+- WHMGui.OnOptionsComboChanged
+- MapPin.ComboBoxUpdate
+- BustedGUI.SelectAddonView
+- DaemonAssist.OnBindingComboChanged
+- Enemy.ConfigurationWindow_OnChange
+- Enemy.ConfigurationWindow_ShowTooltip
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | LPET.OnMouseOver, Enemy.ConfigurationWindow_ShowTooltip, DevPadWindow.OnMouseOverCode, PotionBarSettings.OnMouseoverActivator, PotionBarSettings.OnMouseoverBuild, PotionBarSettings.OnMouseoverInfoTextBR | `function()` | MEDIUM |
+| [OnSelChanged](../handlers/handler_OnSelChanged.md) | APAGui.OnComboChanged, LPET.QuickHealthOnSelChanged, LPET.QuickModeOnSelChanged, LPET.QuickPriorityOnSelChanged, WHMGui.OnOptionsComboChanged, MapPin.ComboBoxUpdate | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -97,10 +120,53 @@ Observed XML element type instantiated by 29 addons.
 - APA_ComboBoxWide
 - DaemonAssist_ComboBoxWide
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [MenuButtonOffset](element_MenuButtonOffset.md)
-- [TextOffset](element_TextOffset.md)
+- [Window](element_Window.md)
+
+
+## Structural Sub-Elements
+
+### [MenuButtonOffset](element_MenuButtonOffset.md)
+
+- Observed in 13 parent frames
+- Attributes: `x`, `y`
+  - `x`: `5`, `12`
+  - `y`: `5`
+
+### [TextOffset](element_TextOffset.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `0`
+  - `y`: `5`
+
+## Typical XML Structure
+
+```xml
+<ComboBox name="..." selectedbutton="EA_Button_DefaultResizableCom..." menubackground="EA_Window_ComboBoxMenuBackground" menuitembutton="EA_Button_DefaultMenuButton" scrollbar="EA_ScrollBar_DefaultVerticalC..." maxvisibleitems="10">
+  <MenuButtonOffset x="5" y="5"/>
+  <TextOffset x="0" y="5"/>
+</ComboBox>
+```
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `APAComboAttackBind`, `APAComboAutoReattack`, `APAComboAutoReattackDelay`, `APAComboCastDelay`, … | 347 |
+| `inherits` | frame-ref | `APA_ComboBoxWide`, `APA_ComboBox`, `EA_ComboBox_DefaultResizable`, `Aura_ComboBox_DefaultResizableLarge`, … | 334 |
+| `layer` | string | `secondary`, `popup`, `overlay`, `default` | 195 |
+| `maxvisibleitems` | number | `10`, `13`, `8`, `5`, … | 27 |
+| `menubackground` | string | `EA_Window_ComboBoxMenuBackground`, `EA_Window_DefaultFrame` | 13 |
+| `menuitembutton` | string | `EA_Button_DefaultMenuButtonSmall`, `EA_Button_DefaultMenuButton`, `Aura_Button_DefaultMenuButton`, `Aura_Button_DefaultMenuButtonLarge`, … | 13 |
+| `scrollbar` | frame-ref | `EA_ScrollBar_DefaultVerticalChain`, `EA_ScrollBar_ChatVertical` | 13 |
+| `selectedbutton` | string | `APA_ComboBoxButton`, `APA_ComboBoxButtonWide`, `Aura_ComboBox_DefaultResizableComboBoxSelected`, `Aura_ComboBox_DefaultResizableComboBoxSelectedLarge`, … | 13 |
+| `show` | boolean | `false` | 10 |
+| `autoresize` | boolean | `true` | 9 |
+| `id` | number | `1`, `2`, `3` | 3 |
+| `warnOnTextCropped` | boolean | `false` | 3 |
 
 ## Seen In
 

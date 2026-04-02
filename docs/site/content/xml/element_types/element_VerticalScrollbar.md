@@ -73,19 +73,85 @@ Observed XML element type instantiated by 12 addons.
 
 ## Common Handlers
 
-- OnScrollPosChanged
+- [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md)
+
+## Common Handler Functions
+
+- MacroIcons.ScrollPos
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md) | MacroIcons.ScrollPos | `function(...)` | LOW |
 
 ## Common Inherits
 
 - EA_ScrollBar_DefaultVerticalChain
 - EA_ScrollBar_ChatVertical
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [ActiveZoneOffset](element_ActiveZoneOffset.md)
-- [DownOffset](element_DownOffset.md)
-- [ThumbOffset](element_ThumbOffset.md)
-- [UpOffset](element_UpOffset.md)
+- [ScrollWindow](element_ScrollWindow.md)
+- [EditBox](element_EditBox.md)
+- [LogDisplay](element_LogDisplay.md)
+- [Window](element_Window.md)
+
+
+## Structural Sub-Elements
+
+### [ActiveZoneOffset](element_ActiveZoneOffset.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `100`
+  - `y`: `0`
+
+### [DownOffset](element_DownOffset.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `0`
+  - `y`: `0`
+
+### [ThumbOffset](element_ThumbOffset.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `3`
+  - `y`: `0`
+
+### [UpOffset](element_UpOffset.md)
+
+- Observed in 1 parent frames
+- Attributes: `x`, `y`
+  - `x`: `0`
+  - `y`: `0`
+
+## Typical XML Structure
+
+```xml
+<VerticalScrollbar name="..." up="EA_ScrollBar_ChatUpArrowButton" down="EA_ScrollBar_ChatDownArrowButton" thumb="EA_ScrollBar_ChatThumb">
+  <ThumbOffset x="3" y="0"/>
+  <UpOffset x="0" y="0"/>
+  <DownOffset x="0" y="0"/>
+  <ActiveZoneOffset x="100" y="0"/>
+</VerticalScrollbar>
+```
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | frame-ref | `DAoCBuffMessageWindowScrollWindowScrollbar`, `CopyScrollBar`, `DebugWindowTextScrollbar`, `DevPadWindowDevPadCodeDevPadCodeScrollBar`, … | 33 |
+| `inherits` | frame-ref | `EA_ScrollBar_DefaultVerticalChain`, `EA_ScrollBar_ChatVertical` | 32 |
+| `layer` | string | `popup` | 30 |
+| `alpha` | number | `0.97` | 1 |
+| `down` | frame-ref | `EA_ScrollBar_ChatDownArrowButton` | 1 |
+| `thumb` | string | `EA_ScrollBar_ChatThumb` | 1 |
+| `up` | frame-ref | `EA_ScrollBar_ChatUpArrowButton` | 1 |
 
 ## Seen In
 

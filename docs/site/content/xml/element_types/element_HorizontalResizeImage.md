@@ -69,10 +69,6 @@ Observed XML element type instantiated by 12 addons.
 - savesettings
 - alpha
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - EA_HorizontalResizeImage_TabSeparatorMiddle
@@ -85,13 +81,72 @@ Observed XML element type instantiated by 12 addons.
 - VictoryPointsFilledBarDestruction
 - VictoryPointsFilledBarOrder
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [Middle](element_Middle.md)
-- [Left](element_Left.md)
-- [Right](element_Right.md)
-- [TintColor](element_TintColor.md)
-- [TexSlices](element_TexSlices.md)
+- [Window](element_Window.md)
+
+
+## Structural Sub-Elements
+
+### [Middle](element_Middle.md)
+
+- Observed in 15 parent frames
+- Attributes: `id`, `x`, `y`
+  - `id`: `Loser-Bar-horiz`, `Victor-Bar-horiz`, `Horiz-Background`, `Dest-VP-Bar-horiz`, `Order-VP-Bar-horiz`
+  - `x`: `0`, `424`, `7`, `346`
+  - `y`: `0`, `762`, `655`
+
+### [Left](element_Left.md)
+
+- Observed in 10 parent frames
+- Attributes: `id`, `x`, `y`
+  - `id`: `Loser-Bar-horiz-End-Cap`, `Dest-VP-Bar-horiz-End-Cap`
+  - `x`: `0`, `346`
+  - `y`: `0`, `655`
+
+### [Right](element_Right.md)
+
+- Observed in 10 parent frames
+- Attributes: `id`, `x`, `y`
+  - `id`: `Victor-Bar-horiz-End-Cap`, `Order-VP-Bar-horiz-End-Cap`
+  - `x`: `0`, `59`, `396`
+  - `y`: `30`, `24`, `0`, `50`, `655`
+
+### [TintColor](element_TintColor.md)
+
+- Observed in 10 parent frames
+- Attributes: `b`, `g`, `r`
+  - `b`: `0`, `200`, `100`, `255`
+  - `g`: `0`, `200`, `255`, `100`
+  - `r`: `255`, `0`, `180`, `200`, `100`
+
+### [TexSlices](element_TexSlices.md)
+
+- Observed in 5 parent frames
+
+## Typical XML Structure
+
+```xml
+<HorizontalResizeImage name="..." texture="EA_VictoryPoints01_32b" handleinput="false">
+  <TexSlices>
+    <Left id="Loser-Bar-horiz-End-Cap"/>
+    <Middle id="Loser-Bar-horiz"/>
+  </TexSlices>
+</HorizontalResizeImage>
+```
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `APAFollowTargetHUDFill`, `APAInstantOnlyHUDFill`, `APAKitingHUDFill`, `APAPetTargetHUDBg`, … | 31 |
+| `inherits` | frame-ref | `EA_HorizontalResizeImage_TabSeparatorMiddle`, `BuffHeadLayoutHorizontalResizeImage`, `VictoryPointsFilledBarDestruction`, `RewardPoolFilledBarLoser`, … | 16 |
+| `texture` | string | `EA_TintableImage`, `EA_VictoryPoints01_32b`, `shared_01`, `EA_HUD_01` | 15 |
+| `handleinput` | boolean | `false` | 12 |
+| `layer` | string | `background` | 5 |
+| `savesettings` | boolean | `false` | 5 |
+| `alpha` | number | `1` | 1 |
 
 ## Seen In
 

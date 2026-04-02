@@ -79,11 +79,37 @@ Observed XML element type instantiated by 41 addons.
 
 ## Common Handlers
 
-- OnMouseOver
-- OnLButtonUp
-- OnRButtonUp
-- OnLButtonDown
-- OnMouseOverEnd
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
+- [OnLButtonDown](../handlers/handler_OnLButtonDown.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+
+## Common Handler Functions
+
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip
+- BuffHead.Setup.AdvancedContainersItem.OnContainerRClick
+- BuffHead.Setup.Container.OnContainerClick
+- ClosetGoblinOptionWindow.OnLButtonUp
+- ClosetGoblinOptionWindow.OnRButtonUp
+- MapPin.ShowIcons
+- AggroMeter.OnMouseOverStart
+- BagOMatic.wnd_on_lbutton_up
+- BagOMatic.wnd_on_mouse_over
+- CMapWindow.MouseoverMail
+- CMapWindow.OnMouseoverRvRIndicator
+- Enemy.CombatLogUI_IDS_OnRowLButtonDown
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | Enemy.CombatLogUI_IDS_OnRowLButtonDown | `function(...)` | LOW |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | BuffHead.Setup.Container.OnContainerClick, ClosetGoblinOptionWindow.OnLButtonUp, MapPin.ShowIcons, BagOMatic.wnd_on_lbutton_up, Enemy.Guard_GuardIndicator_OnLButtonUp, Enemy.MarksUI_EnemyMarksWindow_OnAddLButtonUp | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip, AggroMeter.OnMouseOverStart, BagOMatic.wnd_on_mouse_over, CMapWindow.MouseoverMail, CMapWindow.OnMouseoverRvRIndicator, Enemy.Guard_GuardIndicator_OnMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | Enemy.MarksUI_EnemyMarksWindow_OnAddMouseOverEnd | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | BuffHead.Setup.AdvancedContainersItem.OnContainerRClick, ClosetGoblinOptionWindow.OnRButtonUp, Enemy.MarksUI_EnemyMarksWindow_OnAddRButtonUp, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick, Enemy.UI_Icon_OnRButtonUp, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionRButtonUp | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -100,9 +126,50 @@ Observed XML element type instantiated by 41 addons.
 - EA_Default_MerchantImage
 - EA_Default_TrainingImage
 
-## Common Structural Child Elements
+## Common Parent Elements
 
-- [TintColor](element_TintColor.md)
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+- [DynamicImage](element_DynamicImage.md)
+- [Label](element_Label.md)
+
+## Common Named Child Elements
+
+- [DynamicImage](element_DynamicImage.md)
+- [Label](element_Label.md)
+
+
+## Structural Sub-Elements
+
+### [TintColor](element_TintColor.md)
+
+- Observed in 27 parent frames
+- Attributes: `a`, `b`, `g`, `r`
+  - `a`: `0.5`, `0.8`, `0.7`, `1`
+  - `b`: `0`, `50`, `255`, `155`, `40`, `175`
+  - `g`: `0`, `50`, `155`, `255`, `90`, `40`, `175`
+  - `r`: `255`, `50`, `155`, `90`, `0`, `40`, `175`
+
+
+## Attribute Reference
+
+| Attribute | Role | Observed Values | Count |
+|-----------|------|-----------------|-------|
+| `name` | string | `AbilityButtonTemplateSquare`, `AbilityButtonTemplateSquareFrame`, `AdvancedRenownTrainingWindowCornorImage`, `AggroMeterWindow_AggroWindow1Tactic`, … | 321 |
+| `handleinput` | boolean | `false`, `true` | 243 |
+| `texture` | string | `EA_SquareFrame`, `AggroMeterIcon`, `EA_Abilities01_d5`, `EA_HUD_01`, … | 236 |
+| `layer` | string | `background`, `overlay`, `popup`, `default`, … | 202 |
+| `textureScale` | number | `1.0`, `0.5`, `1.171`, `1`, … | 80 |
+| `popable` | boolean | `false`, `true` | 55 |
+| `slice` | string | `Tab-ALL`, `Round-Swatch-Selection-Ring`, `Radio-Button`, `You-Have-Mail`, … | 55 |
+| `id` | number | `1`, `2`, `3`, `4`, … | 48 |
+| `texturescale` | number | `0.35`, `1.00`, `.5`, `0.6`, … | 46 |
+| `inherits` | frame-ref | `EA_Default_TrainingImage`, `Aggro_Tactic_Template`, `EA_ListSortDownArrow`, `EA_ListSortUpArrow`, … | 44 |
+| `sticky` | boolean | `false`, `true` | 27 |
+| `alpha` | number | `1.0`, `0.0`, `0.5`, `0.9`, … | 16 |
+| `savesettings` | boolean | `false`, `true` | 8 |
+| `poppable` | boolean | `false` | 6 |
+| `filtering` | boolean | `true` | 5 |
 
 ## Seen In
 
