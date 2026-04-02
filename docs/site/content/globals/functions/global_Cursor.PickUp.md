@@ -107,13 +107,9 @@ Observed as a global function across 3 addons.
 ## Used With
 
 - [BankWindow](../tables/table_BankWindow.md) (HIGH 100/100) - Global Table
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [Cursor.Clear](global_Cursor.Clear.md) (HIGH 100/100) - Global Function
 - [Cursor.IconOnCursor](global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.InsertItemLink](global_EA_ChatWindow.InsertItemLink.md) (HIGH 100/100) - Global Function
 - [GameData.PlayerActions.DO_ABILITY](../../gamedata/fields/gamedata_GameData.PlayerActions.DO_ABILITY.md) (HIGH 100/100) - GameData Field
-- [OnMouseDrag](../../events/window_events/window_event_OnMouseDrag.md) (HIGH 100/100) - Window Event
-- [OnMouseDrag](../../xml/handlers/handler_OnMouseDrag.md) (HIGH 100/100) - XML Handler
 - [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
 - [BankWindow.GetItem](global_BankWindow.GetItem.md) (HIGH 96/100) - Global Function
 - [BankWindow.GetSlotNumberForButtonIndex](global_BankWindow.GetSlotNumberForButtonIndex.md) (HIGH 96/100) - Global Function

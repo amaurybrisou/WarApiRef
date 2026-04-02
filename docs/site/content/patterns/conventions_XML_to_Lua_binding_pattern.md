@@ -9,8 +9,8 @@ XML handler names map directly to Lua functions and can be cross-checked through
 
 ## Involved APIs
 
-- [OnSelChanged](../xml/handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Handler
 - [OnSelChanged](../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
+- [OnSelChanged](../xml/handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Handler
 
 ## Flow Diagram
 

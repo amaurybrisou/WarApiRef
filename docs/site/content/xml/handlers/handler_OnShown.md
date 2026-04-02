@@ -117,18 +117,8 @@ function(...)
 
 ## Used With
 
-- [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [DebugWindow.OnShowFocus](../../globals/functions/global_DebugWindow.OnShowFocus.md) (HIGH 100/100) - Global Function
 - [EditBox](../element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
-- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-- [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

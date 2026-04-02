@@ -104,8 +104,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [MapDisplay](../../xml/element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnMButtonUp](../../xml/handlers/handler_OnMButtonUp.md) (HIGH 100/100) - XML Handler
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 

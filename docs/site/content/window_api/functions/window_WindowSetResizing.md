@@ -95,8 +95,7 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 

@@ -97,14 +97,7 @@ Observed shared global table or namespace surfaced in 8 addons.
 
 ## Used With
 
-- [Cursor.Clear](../functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
-- [Cursor.IconOnCursor](../functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
-- [EA_BackpackUtilsMediator.GetCurrentBackpackType](../functions/global_EA_BackpackUtilsMediator.GetCurrentBackpackType.md) (HIGH 100/100) - Global Function
-- [EA_BackpackUtilsMediator.GetCursorForBackpack](../functions/global_EA_BackpackUtilsMediator.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
-- [EA_BackpackUtilsMediator.GetItemsFromBackpack](../functions/global_EA_BackpackUtilsMediator.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
-- [ListBox](../../xml/element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- none
 
 ## Triggered By
 

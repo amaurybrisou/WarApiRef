@@ -124,8 +124,6 @@ Observed XML element type instantiated by 17 addons.
 
 ## Used With
 
-- [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
-- [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
 - [OnSlide](../../events/window_events/window_event_OnSlide.md) (HIGH 100/100) - Window Event
 - [OnSlide](../handlers/handler_OnSlide.md) (HIGH 100/100) - XML Handler
 

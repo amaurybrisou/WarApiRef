@@ -82,8 +82,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Used With
 
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [OnSizeUpdated](../../xml/handlers/handler_OnSizeUpdated.md) (HIGH 73/100) - XML Handler
+- none
 
 ## Triggered By
 

@@ -93,7 +93,6 @@ function(...)
 ## Used With
 
 - [OnShutdown](../../events/window_events/window_event_OnShutdown.md) (HIGH 100/100) - Window Event
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

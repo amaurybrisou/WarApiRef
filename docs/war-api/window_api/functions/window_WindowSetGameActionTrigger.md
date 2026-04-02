@@ -106,9 +106,7 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [GameData.Player.level](../../gamedata/fields/gamedata_GameData.Player.level.md) (HIGH 100/100) - GameData Field
-- [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
-- [WindowSetGameActionData](window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 

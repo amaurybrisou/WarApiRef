@@ -86,12 +86,7 @@ Observed shared global table or namespace surfaced in 2 addons.
 
 - [DialogManager.MakeTextEntryDialog](../functions/global_DialogManager.MakeTextEntryDialog.md) (HIGH 100/100) - Global Function
 - [EA_ChatTabManager.GetTabName](../functions/global_EA_ChatTabManager.GetTabName.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.ShowTabCycleButtons](../functions/global_EA_ChatWindow.ShowTabCycleButtons.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.UpdateTabScrollWindow](../functions/global_EA_ChatWindow.UpdateTabScrollWindow.md) (HIGH 100/100) - Global Function
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
-- [WindowSetOffsetFromParent](../../window_api/functions/window_WindowSetOffsetFromParent.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [wstring.match](../functions/global_wstring.match.md) (HIGH 100/100) - Global Function
 - [towstring](../functions/global_towstring.md) (HIGH 75/100) - Global Function
 

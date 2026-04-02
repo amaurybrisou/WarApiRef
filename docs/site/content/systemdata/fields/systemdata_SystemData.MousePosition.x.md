@@ -74,11 +74,7 @@ Observed SystemData field used by 4 addons through generated function calls, eve
 
 ## Used With
 
-- [FullResizeImage](../../xml/element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
-- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
-- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [SystemData.MousePosition.y](systemdata_SystemData.MousePosition.y.md) (HIGH 100/100) - SystemData Field
-- [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 

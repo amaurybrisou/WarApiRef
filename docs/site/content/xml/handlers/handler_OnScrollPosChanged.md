@@ -81,8 +81,7 @@ function(...)
 
 ## Used With
 
-- [VerticalScrollbar](../element_types/element_VerticalScrollbar.md) (HIGH 100/100) - XML Element Type
-- [OnScrollPosChanged](../../events/window_events/window_event_OnScrollPosChanged.md) (MEDIUM 53/100) - Window Event
+- none
 
 ## Triggered By
 

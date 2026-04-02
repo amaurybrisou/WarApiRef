@@ -99,14 +99,7 @@ Observed XML element type instantiated by 3 addons.
 
 ## Used With
 
-- [OnActionButtonLButtonDown](../handlers/handler_OnActionButtonLButtonDown.md) (HIGH 73/100) - XML Handler
-- [OnActionButtonLButtonUp](../handlers/handler_OnActionButtonLButtonUp.md) (HIGH 73/100) - XML Handler
-- [OnActionButtonMouseOver](../handlers/handler_OnActionButtonMouseOver.md) (HIGH 73/100) - XML Handler
-- [OnActionButtonRButtonDown](../handlers/handler_OnActionButtonRButtonDown.md) (HIGH 73/100) - XML Handler
-- [OnActionButtonLButtonDown](../../events/window_events/window_event_OnActionButtonLButtonDown.md) (MEDIUM 53/100) - Window Event
-- [OnActionButtonLButtonUp](../../events/window_events/window_event_OnActionButtonLButtonUp.md) (MEDIUM 53/100) - Window Event
-- [OnActionButtonMouseOver](../../events/window_events/window_event_OnActionButtonMouseOver.md) (MEDIUM 53/100) - Window Event
-- [OnActionButtonRButtonDown](../../events/window_events/window_event_OnActionButtonRButtonDown.md) (MEDIUM 53/100) - Window Event
+- none
 
 ## Triggered By
 

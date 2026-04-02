@@ -94,8 +94,7 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [EA_Window_Backpack.GetPocketName](global_EA_Window_Backpack.GetPocketName.md) (HIGH 100/100) - Global Function
-- [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- none
 
 ## Triggered By
 

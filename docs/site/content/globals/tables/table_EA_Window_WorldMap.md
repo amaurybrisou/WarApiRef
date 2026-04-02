@@ -92,19 +92,8 @@ Observed shared global table or namespace surfaced in 2 addons.
 - [DialogManager.MakeTextEntryDialog](../functions/global_DialogManager.MakeTextEntryDialog.md) (HIGH 100/100) - Global Function
 - [EA_ChatWindow.InsertText](../functions/global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
 - [EA_Window_WorldMap.ShowZone](../functions/global_EA_Window_WorldMap.ShowZone.md) (HIGH 100/100) - Global Function
-- [Icons.GetCareerIconIDFromCareerLine](../functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
 - [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [PartyUtils.GetWarbandLeader](../functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
-- [PartyUtils.IsPartyActive](../functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
-- [WindowGetScale](../../window_api/functions/window_WindowGetScale.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [GetIconData](../functions/global_GetIconData.md) (HIGH 83/100) - Global Function
-- [towstring](../functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

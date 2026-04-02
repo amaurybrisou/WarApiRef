@@ -100,7 +100,7 @@ Observed as a global function across 2 addons.
 
 ## Used With
 
-- [DefaultColor.SetLabelColor](global_DefaultColor.SetLabelColor.md) (HIGH 70/100) - Global Function
+- none
 
 ## Triggered By
 

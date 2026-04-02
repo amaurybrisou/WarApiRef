@@ -89,8 +89,7 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
-- [wstring.lower](global_wstring.lower.md) (MEDIUM 45/100) - Global Function
+- none
 
 ## Triggered By
 

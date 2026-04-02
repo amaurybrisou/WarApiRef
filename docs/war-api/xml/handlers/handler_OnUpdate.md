@@ -91,9 +91,7 @@ function(...)
 
 ## Used With
 
-- [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnUpdate](../../events/window_events/window_event_OnUpdate.md) (HIGH 100/100) - Window Event
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

@@ -81,8 +81,7 @@ function(...)
 
 ## Used With
 
-- [ActionButtonGroup](../element_types/element_ActionButtonGroup.md) (HIGH 100/100) - XML Element Type
-- [OnActionButtonRButtonDown](../../events/window_events/window_event_OnActionButtonRButtonDown.md) (MEDIUM 53/100) - Window Event
+- none
 
 ## Triggered By
 

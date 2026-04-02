@@ -110,8 +110,7 @@ Observed XML element type instantiated by 12 addons.
 
 ## Used With
 
-- [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md) (HIGH 73/100) - XML Handler
-- [OnScrollPosChanged](../../events/window_events/window_event_OnScrollPosChanged.md) (MEDIUM 53/100) - Window Event
+- none
 
 ## Triggered By
 

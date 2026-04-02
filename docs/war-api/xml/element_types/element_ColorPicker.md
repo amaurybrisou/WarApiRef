@@ -88,8 +88,7 @@ Observed XML element type instantiated by 1 addons.
 
 ## Used With
 
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- none
 
 ## Triggered By
 

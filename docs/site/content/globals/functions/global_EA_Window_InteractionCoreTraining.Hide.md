@@ -89,8 +89,7 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [EA_Window_InteractionCoreTraining.Show](global_EA_Window_InteractionCoreTraining.Show.md) (HIGH 80/100) - Global Function
+- none
 
 ## Triggered By
 

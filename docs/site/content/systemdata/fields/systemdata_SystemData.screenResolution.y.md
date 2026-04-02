@@ -71,11 +71,7 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 
 ## Used With
 
-- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [SystemData.screenResolution.x](systemdata_SystemData.screenResolution.x.md) (HIGH 100/100) - SystemData Field
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-- [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
+- none
 
 ## Triggered By
 

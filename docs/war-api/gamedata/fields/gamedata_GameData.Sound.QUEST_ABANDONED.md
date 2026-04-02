@@ -71,16 +71,7 @@ Observed GameData field used by 1 addons through generated function calls, event
 
 ## Used With
 
-- [AlertText](../../globals/tables/table_AlertText.md) (HIGH 100/100) - Global Table
-- [GameData.ChatData.name](gamedata_GameData.ChatData.name.md) (HIGH 100/100) - GameData Field
-- [GameData.ChatData.text](gamedata_GameData.ChatData.text.md) (HIGH 100/100) - GameData Field
-- [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
-- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
-- [WindowSetOffsetFromParent](../../window_api/functions/window_WindowSetOffsetFromParent.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
-- [AlertTextWindow.AddAlert](../../globals/functions/global_AlertTextWindow.AddAlert.md) (HIGH 88/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
+- none
 
 ## Triggered By
 

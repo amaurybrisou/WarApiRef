@@ -104,8 +104,7 @@ Observed as a global function across 4 addons.
 
 ## Used With
 
-- [PartyUtils.GetPartyData](global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [PartyUtils.GetWarbandData](global_PartyUtils.GetWarbandData.md) (HIGH 100/100) - Global Function
+- none
 
 ## Triggered By
 

@@ -94,13 +94,9 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [EditBox](../../xml/element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
-- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
-- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Handler
 - [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
 - [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [WindowRegisterCoreEventHandler](../../window_api/functions/window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 

@@ -94,8 +94,8 @@ Observed wiring slash commands through a shared command-registration table.
 ## Examples
 
 - BagOMatic: BagOMatic.init -> LibSlash.IsSlashCmdRegistered("bom")
-- Effigy: Effigy.RegisterWithLibSlash -> LibSlash.IsSlashCmdRegistered("unitframes")
 - Effigy: Effigy.RegisterWithLibSlash -> LibSlash.IsSlashCmdRegistered("effigy")
+- Effigy: Effigy.RegisterWithLibSlash -> LibSlash.IsSlashCmdRegistered("unitframes")
 - JunkDump: JunkDump.Initialize -> LibSlash.IsSlashCmdRegistered("jd")
 - PlanB: PlanB.Initialize -> LibSlash.IsSlashCmdRegistered("planb")
 - wbLeadHelper: wbLeadHelper.OnInitialize -> LibSlash.IsSlashCmdRegistered("wlh")
@@ -106,19 +106,11 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Used With
 
-- [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [LibSlash.RegisterWSlashCmd](global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Settings.Language.active](../../systemdata/fields/systemdata_SystemData.Settings.Language.active.md) (HIGH 100/100) - SystemData Field
-- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
 - [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [RegisterEventHandler](global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By
 

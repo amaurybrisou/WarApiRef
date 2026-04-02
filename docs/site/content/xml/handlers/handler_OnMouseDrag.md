@@ -91,8 +91,6 @@ function(...)
 ## Used With
 
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
-- [Cursor.PickUp](../../globals/functions/global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
 - [OnMouseDrag](../../events/window_events/window_event_OnMouseDrag.md) (HIGH 100/100) - Window Event
 
 ## Triggered By

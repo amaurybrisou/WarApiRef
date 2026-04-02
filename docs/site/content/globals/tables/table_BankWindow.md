@@ -110,20 +110,9 @@ Observed shared global table or namespace surfaced in 6 addons.
 - [Cursor.Clear](../functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
 - [Cursor.IconOnCursor](../functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
 - [Cursor.PickUp](../functions/global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
-- [DialogManager.MakeOneButtonDialog](../functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.InsertItemLink](../functions/global_EA_ChatWindow.InsertItemLink.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.OnKeyEnter](../functions/global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.Print](../functions/global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
 - [EA_Window_Backpack](table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
-- [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [BankWindow.GetItem](../functions/global_BankWindow.GetItem.md) (HIGH 96/100) - Global Function
 - [BankWindow.GetSlotNumberForButtonIndex](../functions/global_BankWindow.GetSlotNumberForButtonIndex.md) (HIGH 96/100) - Global Function
-- [BankWindow.Hide](../functions/global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
-- [CreateWindow](../functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [RegisterEventHandler](../functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By
 

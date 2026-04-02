@@ -94,7 +94,7 @@ Observed as a global function across 2 addons.
 
 ## Used With
 
-- [GameData.PetCommand.FOLLOW](../../gamedata/fields/gamedata_GameData.PetCommand.FOLLOW.md) (HIGH 100/100) - GameData Field
+- none
 
 ## Triggered By
 

@@ -102,17 +102,8 @@ Observed shared global table or namespace surfaced in 3 addons.
 - [DialogManager.MakeTwoButtonDialog](../functions/global_DialogManager.MakeTwoButtonDialog.md) (HIGH 100/100) - Global Function
 - [EA_Window_Backpack.AutoAddCraftingItemIfPossible](../functions/global_EA_Window_Backpack.AutoAddCraftingItemIfPossible.md) (HIGH 100/100) - Global Function
 - [EA_Window_Backpack.ConfirmThenRefine](../functions/global_EA_Window_Backpack.ConfirmThenRefine.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack.GetCursorForBackpack](../functions/global_EA_Window_Backpack.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack.GetItemsFromBackpack](../functions/global_EA_Window_Backpack.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack.IsRefinable](../functions/global_EA_Window_Backpack.IsRefinable.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack.IsSlotLocked](../functions/global_EA_Window_Backpack.IsSlotLocked.md) (HIGH 100/100) - Global Function
 - [GameData.ItemLocs.INVENTORY](../../gamedata/fields/gamedata_GameData.ItemLocs.INVENTORY.md) (HIGH 100/100) - GameData Field
-- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [BankWindow.IsShowing](../functions/global_BankWindow.IsShowing.md) (HIGH 96/100) - Global Function
-- [EA_Window_InteractionLibrarianStore.ConfirmThenRepairItem](../functions/global_EA_Window_InteractionLibrarianStore.ConfirmThenRepairItem.md) (HIGH 80/100) - Global Function
-- [EA_Window_InteractionLibrarianStore.ConfirmThenSellItem](../functions/global_EA_Window_InteractionLibrarianStore.ConfirmThenSellItem.md) (HIGH 80/100) - Global Function
-- [EA_Window_InteractionLibrarianStore.InteractingWithLibrarianStore](../functions/global_EA_Window_InteractionLibrarianStore.InteractingWithLibrarianStore.md) (HIGH 80/100) - Global Function
-- [EA_Window_InteractionLibrarianStore.InteractingWithRepairMan](../functions/global_EA_Window_InteractionLibrarianStore.InteractingWithRepairMan.md) (HIGH 80/100) - Global Function
 
 ## Triggered By
 

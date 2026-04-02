@@ -82,8 +82,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Used With
 
-- [ActionButtonGroup](../../xml/element_types/element_ActionButtonGroup.md) (HIGH 100/100) - XML Element Type
-- [OnActionButtonRButtonDown](../../xml/handlers/handler_OnActionButtonRButtonDown.md) (HIGH 73/100) - XML Handler
+- none
 
 ## Triggered By
 

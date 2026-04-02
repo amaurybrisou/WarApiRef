@@ -85,7 +85,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Used With
 
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- none
 
 ## Triggered By
 

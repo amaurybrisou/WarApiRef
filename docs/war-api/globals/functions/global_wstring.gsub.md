@@ -113,11 +113,7 @@ Observed as a global function across 15 addons.
 
 ## Used With
 
-- [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 100/100) - Window Function
-- [LabelGetText](../../window_api/functions/window_LabelGetText.md) (HIGH 100/100) - Window Function
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [wstring.match](global_wstring.match.md) (HIGH 100/100) - Global Function
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 - [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Triggered By

@@ -92,8 +92,6 @@ function(...)
 
 ## Used With
 
-- [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnMButtonUp](../../events/window_events/window_event_OnMButtonUp.md) (HIGH 100/100) - Window Event
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 

@@ -110,7 +110,7 @@ Observed as a window function across 10 addons.
 
 ## Used With
 
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- none
 
 ## Triggered By
 
