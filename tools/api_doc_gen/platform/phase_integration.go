@@ -1,24 +1,80 @@
 package platform
 
 import (
+	"fmt"
+	"os"
+
+	"roraddons/tools/api_doc_gen/lua_ast"
 	"roraddons/tools/api_doc_gen/semantic_merge"
+	"roraddons/tools/api_doc_gen/source_scan"
 	"roraddons/tools/api_doc_gen/xml_lua_binding"
 	"roraddons/tools/api_doc_gen/xml_structure"
 )
 
-// runPhasedPipeline converts the existing SourceModel data into PipelineInput,
-// runs the 4-phase XML↔Lua semantic pipeline, and enriches the ElementTypeSymbol
-// slice with the resulting Phase 4 catalog.
-func runPhasedPipeline(elementTypes []ElementTypeSymbol, source SourceModel) []ElementTypeSymbol {
-	// Build Phase 1 XMLTrees from the existing FrameDoc/HandlerDoc data.
-	// Since we don't have access to raw XML files in platform mode (we work
-	// from pre-parsed API_Ref docs), we synthesise XMLElements from FrameDocs.
-	trees := synthesizeXMLTrees(source)
+// runPhasedPipeline is the pipeline dispatch function. It selects the
+// source-first path when a sourceRoot is available, or falls back to the
+// degraded docs-based path.
+//
+//   - When sourceRoot != "": calls [runPhasedPipelineFromSources] (primary path).
+//   - When sourceRoot == "": calls [runPhasedPipelineFromDocs] (degraded fallback).
+func runPhasedPipeline(elementTypes []ElementTypeSymbol, source SourceModel, sourceRoot string) []ElementTypeSymbol {
+	if sourceRoot != "" {
+		return runPhasedPipelineFromSources(elementTypes, sourceRoot, source)
+	}
+	return runPhasedPipelineFromDocs(elementTypes, source)
+}
 
-	// Build Lua function definitions from FunctionDocs for Phase 2.
-	luaDefs := synthesizeLuaDefs(source)
+// runPhasedPipelineFromSources is the PRIMARY pipeline path.
+//
+// It discovers addon XML and Lua files from sourceRoot, parses them using
+// real parsers (etree for XML, tokenizer-based lua_parser for Lua), and feeds
+// the resulting phase inputs to the 4-phase semantic pipeline.
+//
+// The pre-resolved bindings from the SourceModel are injected as supplementary
+// evidence, but the primary structural data always comes from source files.
+func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot string, source SourceModel) []ElementTypeSymbol {
+	addonSources, err := source_scan.DiscoverAddonSources(sourceRoot)
+	if err != nil {
+		fmt.Fprintf(os.Stderr,
+			"warning: source-first pipeline: discover sources failed (%v); falling back to degraded docs path\n", err)
+		return runPhasedPipelineFromDocs(elementTypes, source)
+	}
+	if len(addonSources) == 0 {
+		fmt.Fprintf(os.Stderr,
+			"warning: source-first pipeline: no addon sources found in %q; falling back to degraded docs path\n", sourceRoot)
+		return runPhasedPipelineFromDocs(elementTypes, source)
+	}
 
-	// Convert pre-resolved bindings from SourceModel.
+	// Phase 1: parse real XML source files.
+	var trees []*xml_structure.XMLTree
+	for _, addon := range addonSources {
+		for _, xmlFile := range addon.XMLFiles {
+			tree, parseErr := xml_structure.ParseFile(addon.AddonName, xmlFile)
+			if parseErr != nil {
+				fmt.Fprintf(os.Stderr,
+					"warning: source-first pipeline: skipping XML file %s: %v\n", xmlFile, parseErr)
+				continue
+			}
+			trees = append(trees, tree)
+		}
+	}
+
+	// Phase 2 input: parse real Lua source files.
+	var luaDefs []xml_lua_binding.LuaFunctionDef
+	for _, addon := range addonSources {
+		for _, luaFile := range addon.LuaFiles {
+			defs, parseErr := lua_ast.ExtractFromFile(addon.AddonName, luaFile, addon.Manifest)
+			if parseErr != nil {
+				fmt.Fprintf(os.Stderr,
+					"warning: source-first pipeline: skipping Lua file %s: %v\n", luaFile, parseErr)
+				continue
+			}
+			luaDefs = append(luaDefs, defs...)
+		}
+	}
+
+	// Supplement with pre-resolved bindings from the SourceModel as additional
+	// evidence (they do not replace source-parsed hierarchy data).
 	var preResolved []semantic_merge.PreResolvedBinding
 	for _, b := range source.Bindings {
 		preResolved = append(preResolved, semantic_merge.PreResolvedBinding{
@@ -31,14 +87,51 @@ func runPhasedPipeline(elementTypes []ElementTypeSymbol, source SourceModel) []E
 		})
 	}
 
-	// Run the full 4-phase pipeline.
 	output := semantic_merge.RunPipeline(&semantic_merge.PipelineInput{
 		XMLTrees:            trees,
 		LuaFunctions:        luaDefs,
 		PreResolvedBindings: preResolved,
 	})
+	return enrichElementTypesFromCatalog(elementTypes, output.Catalog)
+}
 
-	// Enrich element types from the Phase 4 catalog.
+// runPhasedPipelineFromDocs is the DEGRADED FALLBACK path.
+//
+// It reconstructs XML trees and Lua definitions from pre-flattened
+// SourceModel data (API reference docs). This path is lossy: parent/child
+// relationships are inferred, not parsed; Lua AST facts are unavailable;
+// the hierarchy is partial.
+//
+// # WARNING
+//
+// This path is provided only for backwards compatibility when no source root
+// is available. It must NOT be used as the primary pipeline input. Callers
+// should prefer [runPhasedPipelineFromSources].
+func runPhasedPipelineFromDocs(elementTypes []ElementTypeSymbol, source SourceModel) []ElementTypeSymbol {
+	fmt.Fprintln(os.Stderr,
+		"[DEGRADED] platform pipeline: running from flattened docs (no source root). "+
+			"Hierarchy will be partial; use --source-root for source-first analysis.")
+
+	trees := synthesizeXMLTrees(source)
+	luaDefs := synthesizeLuaDefs(source)
+
+	var preResolved []semantic_merge.PreResolvedBinding
+	for _, b := range source.Bindings {
+		preResolved = append(preResolved, semantic_merge.PreResolvedBinding{
+			Addon:       b.Addon,
+			Frame:       b.Frame,
+			Event:       b.Event,
+			XMLFunction: b.XMLFunction,
+			LuaFunction: b.LuaFunction,
+			Resolved:    b.Resolved,
+		})
+	}
+
+	output := semantic_merge.RunPipeline(&semantic_merge.PipelineInput{
+		XMLTrees:            trees,
+		LuaFunctions:        luaDefs,
+		PreResolvedBindings: preResolved,
+	})
 	return enrichElementTypesFromCatalog(elementTypes, output.Catalog)
 }
 
