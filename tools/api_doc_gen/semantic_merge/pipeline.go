@@ -88,7 +88,14 @@ func RunPipeline(input *PipelineInput) *PipelineOutput {
 	// Phase 4: Merge all findings into enriched element catalog
 	output.Catalog = BuildEnrichedCatalog(output.XMLCorpus, output.Bindings, output.LuaSemantic)
 
-	// Pass .mod semantic analysis through to the caller unchanged.
+	// Phase 4 mod enrichment: merge .mod lifecycle semantics into the catalog.
+	// Build a frame-name → element-type-tag lookup from the parsed XML trees so
+	// that CreateWindow targets can be associated with their element type.
+	frameTypeByName := buildFrameTypeByName(input.XMLTrees)
+	enrichCatalogFromModSemantics(output.Catalog, input.ModSemantics, frameTypeByName)
+
+	// Pass .mod semantic analysis through to the caller so that the platform
+	// layer can apply additional element-type enrichments (e.g. StartupWindowFacts).
 	output.ModSemantics = input.ModSemantics
 
 	return output
@@ -190,4 +197,149 @@ func splitDot(s string) []string {
 	}
 	parts = append(parts, s[start:])
 	return parts
+}
+
+// buildFrameTypeByName constructs a lookup from named frame name to element
+// type tag across all parsed XML trees.  It is used by
+// enrichCatalogFromModSemantics to resolve CreateWindow targets to element types.
+func buildFrameTypeByName(trees []*xml_structure.XMLTree) map[string]string {
+	m := make(map[string]string)
+	for _, tree := range trees {
+		for _, node := range tree.AllNodes {
+			if node.IsNamed && node.Name != "" && node.Tag != "" {
+				m[node.Name] = node.Tag
+			}
+		}
+	}
+	return m
+}
+
+// enrichCatalogFromModSemantics merges .mod lifecycle semantics into the
+// EnrichedElementCatalog.  For each ModuleSemantic it:
+//
+//   - Populates EnrichedElementCatalog.AddonLifecycleSemantics with a
+//     CatalogAddonLifecycleSemantic summarising hooks, actions, and saved vars.
+//   - Populates EnrichedElementCatalog.FunctionLifecycleFacts so that callers
+//     can look up lifecycle roles by normalised function name.
+//   - Adds ModLifecycleWindowFact records to the LifecycleWindowFacts field of
+//     every EnrichedElement whose type tag matches a CreateWindow target.
+func enrichCatalogFromModSemantics(
+	catalog *EnrichedElementCatalog,
+	modSemantics []*mod_semantic.ModuleSemantic,
+	frameTypeByName map[string]string,
+) {
+	if catalog == nil || len(modSemantics) == 0 {
+		return
+	}
+
+	if catalog.FunctionLifecycleFacts == nil {
+		catalog.FunctionLifecycleFacts = make(map[string][]ModLifecycleFunctionFact)
+	}
+
+	for _, sem := range modSemantics {
+		addonSem := CatalogAddonLifecycleSemantic{
+			AddonName:      sem.AddonName,
+			SavedVariables: sem.SavedVariables,
+		}
+
+		hookKindSeen := make(map[string]bool)
+		hookTagSeen := make(map[string]bool)
+
+		for _, hook := range sem.LifecycleHooks {
+			hookKind := string(hook.Kind)
+			hookTag := hook.Tag
+
+			if !hookKindSeen[hookKind] {
+				hookKindSeen[hookKind] = true
+				addonSem.HookKinds = append(addonSem.HookKinds, hookKind)
+			}
+			if !hookTagSeen[hookTag] {
+				hookTagSeen[hookTag] = true
+				addonSem.HookTags = append(addonSem.HookTags, hookTag)
+			}
+
+			for _, action := range hook.Actions {
+				switch action.Kind {
+				case mod_semantic.ActionKindCallFunction:
+					fact := ModLifecycleFunctionFact{
+						RefName:      action.Name,
+						MatchedFuncs: action.MatchedLuaFunctions,
+						AddonName:    sem.AddonName,
+						HookKind:     hookKind,
+						HookTag:      hookTag,
+						ActionTag:    action.Tag,
+						ActionIndex:  action.Index,
+						Resolution:   string(action.Resolution),
+						Confidence:   action.Confidence,
+					}
+					if hook.Kind == mod_semantic.HookKindUnknown {
+						addonSem.UnknownActions = append(addonSem.UnknownActions, fact)
+					} else {
+						addonSem.FunctionFacts = append(addonSem.FunctionFacts, fact)
+					}
+					// Index by each matched qualified function name (normalised)
+					for _, qname := range action.MatchedLuaFunctions {
+						norm := normalizeFunc(qname)
+						catalog.FunctionLifecycleFacts[norm] = append(catalog.FunctionLifecycleFacts[norm], fact)
+					}
+					// Also index by normalised reference name for unresolved lookups
+					if len(action.MatchedLuaFunctions) == 0 {
+						norm := normalizeFunc(action.Name)
+						catalog.FunctionLifecycleFacts[norm] = append(catalog.FunctionLifecycleFacts[norm], fact)
+					}
+
+				case mod_semantic.ActionKindCreateWindow:
+					windowFact := ModLifecycleWindowFact{
+						FrameName:   action.Name,
+						AddonName:   sem.AddonName,
+						HookKind:    hookKind,
+						HookTag:     hookTag,
+						ActionTag:   action.Tag,
+						ActionIndex: action.Index,
+						Resolution:  string(action.Resolution),
+						Confidence:  action.Confidence,
+					}
+					if hook.Kind == mod_semantic.HookKindUnknown {
+						// Store as unknown action (reuse function fact type with RefName)
+						addonSem.UnknownActions = append(addonSem.UnknownActions, ModLifecycleFunctionFact{
+							RefName:     action.Name,
+							AddonName:   sem.AddonName,
+							HookKind:    hookKind,
+							HookTag:     hookTag,
+							ActionTag:   action.Tag,
+							ActionIndex: action.Index,
+							Resolution:  string(action.Resolution),
+							Confidence:  action.Confidence,
+						})
+					} else {
+						addonSem.WindowFacts = append(addonSem.WindowFacts, windowFact)
+					}
+					// Add to the EnrichedElement for the matching element type
+					for _, frameName := range action.MatchedXMLNames {
+						elemTag, ok := frameTypeByName[frameName]
+						if !ok {
+							continue
+						}
+						if elem, ok := catalog.Elements[elemTag]; ok {
+							elem.LifecycleWindowFacts = append(elem.LifecycleWindowFacts, windowFact)
+						}
+					}
+
+				default: // ActionKindUnknown
+					addonSem.UnknownActions = append(addonSem.UnknownActions, ModLifecycleFunctionFact{
+						RefName:     action.Name,
+						AddonName:   sem.AddonName,
+						HookKind:    hookKind,
+						HookTag:     hookTag,
+						ActionTag:   action.Tag,
+						ActionIndex: action.Index,
+						Resolution:  string(action.Resolution),
+						Confidence:  action.Confidence,
+					})
+				}
+			}
+		}
+
+		catalog.AddonLifecycleSemantics = append(catalog.AddonLifecycleSemantics, addonSem)
+	}
 }

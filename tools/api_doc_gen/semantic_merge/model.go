@@ -15,6 +15,15 @@ package semantic_merge
 // findings, ready for Phase 5 (generation).
 type EnrichedElementCatalog struct {
 	Elements map[string]*EnrichedElement // Tag name → enriched element
+
+	// FunctionLifecycleFacts indexes ModLifecycleFunctionFact records by
+	// normalised Lua function name.  This enables callers to look up whether
+	// a function carries a lifecycle role without scanning all addons.
+	FunctionLifecycleFacts map[string][]ModLifecycleFunctionFact
+
+	// AddonLifecycleSemantics holds one CatalogAddonLifecycleSemantic per
+	// .mod addon processed during Phase 4 mod enrichment.
+	AddonLifecycleSemantics []CatalogAddonLifecycleSemantic
 }
 
 // EnrichedElement is the merged model for a single XML element type,
@@ -67,6 +76,13 @@ type EnrichedElement struct {
 
 	// === NOTES ===
 	Notes []string
+
+	// === .MOD LIFECYCLE FACTS (from Phase 4 mod enrichment) ===
+
+	// LifecycleWindowFacts records startup-window facts where this element
+	// type is the target (i.e. a .mod CreateWindow action resolved to a
+	// named frame whose element type is this one).
+	LifecycleWindowFacts []ModLifecycleWindowFact
 }
 
 // ElementRef is a reference to another element type with frequency data.
@@ -153,4 +169,52 @@ type ExpectedParam struct {
 	Name     string // Expected name
 	Type     string // Expected type
 	Role     string // What it represents
+}
+
+// ModLifecycleWindowFact records that an XML frame is instantiated as a
+// startup window via a .mod manifest lifecycle action.
+type ModLifecycleWindowFact struct {
+	FrameName   string // XML frame name from the .mod CreateWindow action
+	AddonName   string // Addon that owns the .mod manifest
+	HookKind    string // Lifecycle hook kind: "OnInitialize", "OnUpdate", "OnShutdown", or ""
+	HookTag     string // Raw element tag of the lifecycle hook in the .mod file
+	ActionTag   string // Raw element tag of the action (e.g. "CreateWindow")
+	ActionIndex int    // Position of the action within its hook (0-based)
+	Resolution  string // "exact", "ambiguous", or "unresolved"
+	Confidence  string // "HIGH", "MEDIUM", or "" (empty when unresolved)
+}
+
+// ModLifecycleFunctionFact records that a Lua function is invoked from a .mod
+// manifest lifecycle action, giving it a semantic lifecycle role.
+type ModLifecycleFunctionFact struct {
+	RefName      string   // Name attribute from the .mod CallFunction action
+	MatchedFuncs []string // Qualified Lua function names resolved from RefName
+	AddonName    string   // Addon that owns the .mod manifest
+	HookKind     string   // Lifecycle hook kind
+	HookTag      string   // Raw element tag of the lifecycle hook
+	ActionTag    string   // Raw element tag of the action (e.g. "CallFunction")
+	ActionIndex  int      // Position within the hook (0-based)
+	Resolution   string   // "exact", "ambiguous", or "unresolved"
+	Confidence   string   // "HIGH", "MEDIUM", or ""
+}
+
+// CatalogAddonLifecycleSemantic holds structured addon-level .mod lifecycle
+// facts at the catalog level.  One entry is produced per .mod addon.
+type CatalogAddonLifecycleSemantic struct {
+	AddonName      string
+	HookKinds      []string // Distinct lifecycle hook kinds found (e.g. "OnInitialize")
+	HookTags       []string // Raw hook element tag names found in the .mod file
+
+	// CallFunction actions found in recognised lifecycle sections
+	FunctionFacts []ModLifecycleFunctionFact
+
+	// CreateWindow actions found in recognised lifecycle sections
+	WindowFacts []ModLifecycleWindowFact
+
+	// SavedVariables declared in the .mod manifest
+	SavedVariables []string
+
+	// UnknownActions collects actions (CallFunction, CreateWindow, or other)
+	// that appear inside unrecognised / custom lifecycle sections.
+	UnknownActions []ModLifecycleFunctionFact
 }

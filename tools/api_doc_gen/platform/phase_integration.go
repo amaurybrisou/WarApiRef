@@ -18,11 +18,19 @@ import (
 //
 //   - When sourceRoot != "": calls [runPhasedPipelineFromSources] (primary path).
 //   - When sourceRoot == "": calls [runPhasedPipelineFromDocs] (degraded fallback).
-func runPhasedPipeline(elementTypes []ElementTypeSymbol, source SourceModel, sourceRoot string) []ElementTypeSymbol {
+func runPhasedPipeline(elementTypes []ElementTypeSymbol, source SourceModel, sourceRoot string) phasedPipelineResult {
 	if sourceRoot != "" {
 		return runPhasedPipelineFromSources(elementTypes, sourceRoot, source)
 	}
 	return runPhasedPipelineFromDocs(elementTypes, source)
+}
+
+// phasedPipelineResult bundles all structured outputs from the analysis
+// pipeline, including element-type enrichments and .mod lifecycle semantics.
+type phasedPipelineResult struct {
+	ElementTypes            []ElementTypeSymbol
+	AddonLifecycleSemantics []AddonLifecycleSemantic
+	FunctionLifecycleRoles  []FunctionLifecycleRole
 }
 
 // runPhasedPipelineFromSources is the PRIMARY pipeline path.
@@ -33,7 +41,7 @@ func runPhasedPipeline(elementTypes []ElementTypeSymbol, source SourceModel, sou
 //
 // The pre-resolved bindings from the SourceModel are injected as supplementary
 // evidence, but the primary structural data always comes from source files.
-func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot string, source SourceModel) []ElementTypeSymbol {
+func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot string, source SourceModel) phasedPipelineResult {
 	addonSources, err := source_scan.DiscoverAddonSources(sourceRoot)
 	if err != nil {
 		fmt.Fprintf(os.Stderr,
@@ -120,7 +128,12 @@ func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot s
 		ModSemantics:        modSemantics,
 	})
 	enriched := enrichElementTypesFromCatalog(elementTypes, output.Catalog)
-	return enrichElementTypesFromModSemantics(enriched, output.ModSemantics, frameTypeByName)
+	enriched = enrichElementTypesFromModSemantics(enriched, output.ModSemantics, frameTypeByName)
+	return phasedPipelineResult{
+		ElementTypes:            enriched,
+		AddonLifecycleSemantics: buildAddonLifecycleSemantics(output.Catalog),
+		FunctionLifecycleRoles:  buildFunctionLifecycleRoles(output.Catalog),
+	}
 }
 
 // runPhasedPipelineFromDocs is the DEGRADED FALLBACK path.
@@ -135,7 +148,7 @@ func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot s
 // This path is provided only for backwards compatibility when no source root
 // is available. It must NOT be used as the primary pipeline input. Callers
 // should prefer [runPhasedPipelineFromSources].
-func runPhasedPipelineFromDocs(elementTypes []ElementTypeSymbol, source SourceModel) []ElementTypeSymbol {
+func runPhasedPipelineFromDocs(elementTypes []ElementTypeSymbol, source SourceModel) phasedPipelineResult {
 	fmt.Fprintln(os.Stderr,
 		"[DEGRADED] platform pipeline: running from flattened docs (no source root). "+
 			"Hierarchy will be partial; provide a source root via BuildOptions.SourceRoot for source-first analysis.")
@@ -160,7 +173,9 @@ func runPhasedPipelineFromDocs(elementTypes []ElementTypeSymbol, source SourceMo
 		LuaFunctions:        luaDefs,
 		PreResolvedBindings: preResolved,
 	})
-	return enrichElementTypesFromCatalog(elementTypes, output.Catalog)
+	return phasedPipelineResult{
+		ElementTypes: enrichElementTypesFromCatalog(elementTypes, output.Catalog),
+	}
 }
 
 // synthesizeXMLTrees converts SourceModel.Frames into XMLTrees that the Phase 1
@@ -460,6 +475,27 @@ func enrichElementTypesFromCatalog(elementTypes []ElementTypeSymbol, catalog *se
 
 		// Binding resolution statistics
 		enrichBindingStats(&elementTypes[i], enriched)
+
+		// .mod lifecycle window facts — map ModLifecycleWindowFact records from
+		// the catalog's EnrichedElement into platform WindowLifecycleSemantic.
+		for _, wf := range enriched.LifecycleWindowFacts {
+			elementTypes[i].StartupWindowFacts = append(elementTypes[i].StartupWindowFacts, WindowLifecycleSemantic{
+				FrameName:   wf.FrameName,
+				ElementType: sym.Name,
+				HookKind:    wf.HookKind,
+				Resolution:  wf.Resolution,
+				Confidence:  wf.Confidence,
+				Provenance: ModProvenance{
+					AddonName:   wf.AddonName,
+					HookKind:    wf.HookKind,
+					HookTag:     wf.HookTag,
+					ActionTag:   wf.ActionTag,
+					ActionIndex: wf.ActionIndex,
+					Resolution:  wf.Resolution,
+					Confidence:  wf.Confidence,
+				},
+			})
+		}
 	}
 
 	return elementTypes
@@ -569,12 +605,17 @@ func buildFrameTypeByName(trees []*xml_structure.XMLTree) map[string]string {
 // enrichElementTypesFromModSemantics applies .mod lifecycle facts to the
 // enriched element types.  For each CreateWindow action that was exactly
 // resolved to an XML frame name, the element type of that frame (looked up
-// from frameTypeByName) receives a note indicating that it is instantiated at
-// startup via the OnInitialize lifecycle hook.
+// from frameTypeByName) receives:
 //
-// This is the concrete "influence" that .mod semantic analysis has on the
-// element-type enrichment step: element types used as startup windows are
-// annotated so that downstream generators can surface this fact.
+//   - A structured WindowLifecycleSemantic in StartupWindowFacts (primary
+//     representation with full provenance).
+//   - A human-readable note in Notes (derived from the structured fact).
+//
+// StartupWindowFacts populated via enrichElementTypesFromCatalog (from the
+// catalog's EnrichedElement.LifecycleWindowFacts) already cover exact matches.
+// This function adds ambiguous and previously-unseen facts to ensure all
+// resolved and partially-resolved references are visible, and re-derives Notes
+// so that presentation always reflects the structured data.
 func enrichElementTypesFromModSemantics(elementTypes []ElementTypeSymbol, modSemantics []*mod_semantic.ModuleSemantic, frameTypeByName map[string]string) []ElementTypeSymbol {
 	if len(modSemantics) == 0 {
 		return elementTypes
@@ -588,15 +629,22 @@ func enrichElementTypesFromModSemantics(elementTypes []ElementTypeSymbol, modSem
 
 	for _, sem := range modSemantics {
 		for _, hook := range sem.LifecycleHooks {
-			if hook.Kind != mod_semantic.HookKindOnInitialize {
-				continue
-			}
 			for _, action := range hook.Actions {
 				if action.Kind != mod_semantic.ActionKindCreateWindow {
 					continue
 				}
-				if action.Resolution != mod_semantic.ResolutionExact {
+				// Process both exact and ambiguous resolutions.
+				if action.Resolution == mod_semantic.ResolutionUnresolved {
 					continue
+				}
+				prov := ModProvenance{
+					AddonName:   sem.AddonName,
+					HookKind:    string(hook.Kind),
+					HookTag:     hook.Tag,
+					ActionTag:   action.Tag,
+					ActionIndex: action.Index,
+					Resolution:  string(action.Resolution),
+					Confidence:  action.Confidence,
 				}
 				for _, frameName := range action.MatchedXMLNames {
 					elemTag, ok := frameTypeByName[frameName]
@@ -607,22 +655,206 @@ func enrichElementTypesFromModSemantics(elementTypes []ElementTypeSymbol, modSem
 					if !found {
 						continue
 					}
-					note := "Startup-created window: " + frameName + " (from " + sem.AddonName + " OnInitialize)"
-					// Avoid duplicate notes.
-					duplicate := false
-					for _, existing := range elementTypes[idx].Notes {
-						if existing == note {
-							duplicate = true
+					// Check whether this structured fact was already added by
+					// enrichElementTypesFromCatalog to avoid duplicates.
+					alreadyPresent := false
+					for _, existing := range elementTypes[idx].StartupWindowFacts {
+						if existing.FrameName == frameName && existing.Provenance.AddonName == sem.AddonName {
+							alreadyPresent = true
 							break
 						}
 					}
-					if !duplicate {
-						elementTypes[idx].Notes = append(elementTypes[idx].Notes, note)
+					if !alreadyPresent {
+						elementTypes[idx].StartupWindowFacts = append(elementTypes[idx].StartupWindowFacts, WindowLifecycleSemantic{
+							FrameName:   frameName,
+							ElementType: elemTag,
+							HookKind:    string(hook.Kind),
+							Resolution:  string(action.Resolution),
+							Confidence:  action.Confidence,
+							Provenance:  prov,
+						})
 					}
 				}
 			}
 		}
 	}
 
+	// Derive Notes from the authoritative StartupWindowFacts.
+	// This ensures Notes always reflect the structured data and prevents
+	// the two representations from diverging.
+	for i := range elementTypes {
+		noteSet := make(map[string]bool, len(elementTypes[i].Notes))
+		for _, n := range elementTypes[i].Notes {
+			noteSet[n] = true
+		}
+		for _, wf := range elementTypes[i].StartupWindowFacts {
+			hookLabel := wf.HookKind
+			if hookLabel == "" {
+				hookLabel = "unknown lifecycle hook"
+			}
+			note := "Startup-created window: " + wf.FrameName + " (from " + wf.Provenance.AddonName + " " + hookLabel + ")"
+			if !noteSet[note] {
+				noteSet[note] = true
+				elementTypes[i].Notes = append(elementTypes[i].Notes, note)
+			}
+		}
+	}
+
 	return elementTypes
+}
+
+// buildAddonLifecycleSemantics converts the catalog's CatalogAddonLifecycleSemantic
+// records into platform-level AddonLifecycleSemantic values.
+func buildAddonLifecycleSemantics(catalog *semantic_merge.EnrichedElementCatalog) []AddonLifecycleSemantic {
+	if catalog == nil || len(catalog.AddonLifecycleSemantics) == 0 {
+		return nil
+	}
+
+	result := make([]AddonLifecycleSemantic, 0, len(catalog.AddonLifecycleSemantics))
+	for _, cas := range catalog.AddonLifecycleSemantics {
+		as := AddonLifecycleSemantic{
+			AddonName:      cas.AddonName,
+			HookKinds:      cas.HookKinds,
+			SavedVariables: cas.SavedVariables,
+		}
+
+		// Distribute FunctionFacts into lifecycle-phase buckets.
+		for _, ff := range cas.FunctionFacts {
+			rec := lifecycleActionRecordFromFunctionFact(ff, "CallFunction")
+			switch ff.HookKind {
+			case "OnInitialize":
+				as.StartupActions = append(as.StartupActions, rec)
+			case "OnShutdown":
+				as.ShutdownActions = append(as.ShutdownActions, rec)
+			case "OnUpdate":
+				as.UpdateActions = append(as.UpdateActions, rec)
+			default:
+				as.UnknownActions = append(as.UnknownActions, rec)
+			}
+			if ff.Resolution == "unresolved" {
+				as.UnresolvedRefs = append(as.UnresolvedRefs, rec)
+			}
+		}
+
+		// CreateWindow facts go into the same phase buckets with "CreateWindow" kind.
+		for _, wf := range cas.WindowFacts {
+			rec := LifecycleActionRecord{
+				ActionKind:   "CreateWindow",
+				ActionTag:    wf.ActionTag,
+				Name:         wf.FrameName,
+				HookKind:     wf.HookKind,
+				HookTag:      wf.HookTag,
+				Resolution:   wf.Resolution,
+				Confidence:   wf.Confidence,
+				MatchedNames: []string{wf.FrameName},
+			}
+			switch wf.HookKind {
+			case "OnInitialize":
+				as.StartupActions = append(as.StartupActions, rec)
+			case "OnShutdown":
+				as.ShutdownActions = append(as.ShutdownActions, rec)
+			case "OnUpdate":
+				as.UpdateActions = append(as.UpdateActions, rec)
+			default:
+				as.UnknownActions = append(as.UnknownActions, rec)
+			}
+			if wf.Resolution == "unresolved" {
+				as.UnresolvedRefs = append(as.UnresolvedRefs, rec)
+			}
+		}
+
+		// Unknown-section actions.
+		for _, uf := range cas.UnknownActions {
+			rec := lifecycleActionRecordFromFunctionFact(uf, uf.ActionTag)
+			as.UnknownActions = append(as.UnknownActions, rec)
+			if uf.Resolution == "unresolved" {
+				as.UnresolvedRefs = append(as.UnresolvedRefs, rec)
+			}
+		}
+
+		result = append(result, as)
+	}
+	return result
+}
+
+// lifecycleActionRecordFromFunctionFact converts a ModLifecycleFunctionFact
+// to a LifecycleActionRecord.
+func lifecycleActionRecordFromFunctionFact(ff semantic_merge.ModLifecycleFunctionFact, actionKind string) LifecycleActionRecord {
+	return LifecycleActionRecord{
+		ActionKind:   actionKind,
+		ActionTag:    ff.ActionTag,
+		Name:         ff.RefName,
+		HookKind:     ff.HookKind,
+		HookTag:      ff.HookTag,
+		Resolution:   ff.Resolution,
+		Confidence:   ff.Confidence,
+		MatchedNames: ff.MatchedFuncs,
+	}
+}
+
+// buildFunctionLifecycleRoles converts the catalog's FunctionLifecycleFacts
+// index into platform-level FunctionLifecycleRole values.
+func buildFunctionLifecycleRoles(catalog *semantic_merge.EnrichedElementCatalog) []FunctionLifecycleRole {
+	if catalog == nil || len(catalog.FunctionLifecycleFacts) == 0 {
+		return nil
+	}
+
+	// Deduplicate by (funcName, addonName, hookKind) to avoid emitting the
+	// same role multiple times when a function appears in several lifecycle hooks.
+	seen := make(map[string]bool)
+	var result []FunctionLifecycleRole
+
+	for _, facts := range catalog.FunctionLifecycleFacts {
+		for _, ff := range facts {
+			role := hookKindToRole(ff.HookKind, ff.Resolution)
+
+			// Prefer qualified matched names; fall back to ref name.
+			funcNames := ff.MatchedFuncs
+			if len(funcNames) == 0 {
+				funcNames = []string{ff.RefName}
+			}
+
+			for _, fname := range funcNames {
+				key := fname + "|" + ff.AddonName + "|" + ff.HookKind + "|" + role
+				if seen[key] {
+					continue
+				}
+				seen[key] = true
+
+				result = append(result, FunctionLifecycleRole{
+					FuncName: fname,
+					RefName:  ff.RefName,
+					Role:     role,
+					Provenance: ModProvenance{
+						AddonName:   ff.AddonName,
+						HookKind:    ff.HookKind,
+						HookTag:     ff.HookTag,
+						ActionTag:   ff.ActionTag,
+						ActionIndex: ff.ActionIndex,
+						Resolution:  ff.Resolution,
+						Confidence:  ff.Confidence,
+					},
+				})
+			}
+		}
+	}
+	return result
+}
+
+// hookKindToRole converts a .mod lifecycle hook kind and resolution status
+// to a human-readable FunctionLifecycleRole.Role value.
+func hookKindToRole(hookKind, resolution string) string {
+	if resolution == "unresolved" {
+		return "unresolved_lifecycle_ref"
+	}
+	switch hookKind {
+	case "OnInitialize":
+		return "startup_entrypoint"
+	case "OnShutdown":
+		return "shutdown_entrypoint"
+	case "OnUpdate":
+		return "update_callback"
+	default:
+		return "unknown_lifecycle_ref"
+	}
 }
