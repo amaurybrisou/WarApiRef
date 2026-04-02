@@ -25,14 +25,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Miracle Grow Remix, Miracle Grow Remix, Shinies |
-| Files seen in | `/workspace/MGRemix/MGRemix.lua:195` |
+| Files seen in | `/workspace_addons/MGRemix/MGRemix.lua:195` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | MiracleGrow2.Initialize, MiracleGrow2.onInvChange, SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED, event_page, event_registration, flow |

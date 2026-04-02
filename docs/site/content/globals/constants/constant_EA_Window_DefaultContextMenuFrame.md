@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Busted, JunkDump, TidyChat, TidyRoll |
-| Files seen in | `/workspace/Busted/Busted.xml:146`, `/workspace/JunkDump/JunkDumpOptions.xml:23`, `/workspace/TidyChat/TidyChat.xml:4`, `/workspace/TidyRoll/CustomAutoRoll.xml:90`, `/workspace/TidyRoll/TidyRoll.xml:298` |
+| Files seen in | `/workspace_addons/Busted/Busted.xml:146`, `/workspace_addons/JunkDump/JunkDumpOptions.xml:23`, `/workspace_addons/TidyChat/TidyChat.xml:4`, `/workspace_addons/TidyRoll/CustomAutoRoll.xml:90`, `/workspace_addons/TidyRoll/TidyRoll.xml:298` |
 | Namespaces detected | EA_Window_DefaultContextMenuFrame |
 | Source kinds | xml_attributes |
 | Example locations | BustedMiniGUIBack, JunkDumpOptionsWinBackground, TRollAutoRoll, TidyChatOptions, TidyRollOptions |

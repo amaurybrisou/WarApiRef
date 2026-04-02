@@ -30,13 +30,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, AutoBand, BagOMatic |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:116`, `/workspace/AdvancedPetAssist/APAGui.xml:1386`, `/workspace/AdvancedPetAssist/APAGui.xml:141`, `/workspace/AdvancedPetAssist/APAGui.xml:1427`, `/workspace/AdvancedPetAssist/APAGui.xml:1468`, `/workspace/AdvancedPetAssist/APAGui.xml:155`, `/workspace/AdvancedPetAssist/APAGui.xml:169`, `/workspace/AdvancedPetAssist/APAGui.xml:183` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, BagOMatic, BankArkel |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:116`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1386`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:141`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1427`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1468`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:155`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:169`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:183` |
 | Namespaces detected | OnLButtonUp |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
 | Example locations | AdvancedPetAssist: APAFollowTargetHUD.OnLButtonUp, AdvancedPetAssist: APAInstantOnlyHUD.OnLButtonUp, AdvancedPetAssist: APAKitingHUD.OnLButtonUp, AdvancedPetAssist: APAOptionsClose.OnLButtonUp, AdvancedPetAssist: APAOptionsTabsAutoRecall.OnLButtonUp, AdvancedPetAssist: APAOptionsTabsControls.OnLButtonUp |
-| XML usage count | 880 |
-| XML attribute usage count | 880 |
+| XML usage count | 824 |
+| XML attribute usage count | 824 |
 | Lua usage count | 4 |
 | Global usage count | 4 |
 | Local definition count | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 57 addons.
+Observed as an engine-supplied UI event hook used by 51 addons.
 
 ## Handler Pattern
 
@@ -79,7 +79,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - AnywhereTrainer
 - AnywhereTrainerAdditions
 - Aura
-- AutoBand
 - BagOMatic
 - BankArkel
 - BuffHead
@@ -88,7 +87,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - CMap
 - Cheeseboard
 - DAoCBuff
-- DeepSleep
 - EA_UiDebugTools
 - EA_UiModWindow
 - Effigy
@@ -101,7 +99,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
@@ -109,7 +106,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - ObjectInspector
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
 - RVAPI_ColorDialog
@@ -118,9 +114,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - RoR_SoR
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
 - Tortall_DPS
 - TurretRange
@@ -190,31 +184,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - AuraTexture.OnClose
 - AuraTexture.OnIconLButtonUp
 - AuraTexture.OnRaceTabSelected
-- AutoBand.cmd_toggle_gui
-- AutoBandWindow.Hide
-- AutoBandWindow.OnLButtonUpTab
-- AutoBandWindowConfig.OnClearTemplateButton
-- AutoBandWindowConfig.OnKickCheckBox
-- AutoBandWindowConfig.OnKickToofarCheckBox
-- AutoBandWindowConfig.OnMapIconCheckBox
-- AutoBandWindowConfig.OnPressRankMinusButton
-- AutoBandWindowConfig.OnPressRankPlusButton
-- AutoBandWindowConfig.OnPressTimeMinusButton
-- AutoBandWindowConfig.OnPressTimePlusButton
-- AutoBandWindowConfig.OnResetConfig
-- AutoBandWindowTemplate.OnApplyTemplate
-- AutoBandWindowTemplate.OnDefaultCheckBox
-- AutoBandWindowTemplate.OnDeleteTemplate
-- AutoBandWindowTemplate.OnSaveTemplate
-- AutoBandWindowTemplateSave.Hide
-- AutoBandWindowTemplateSave.OnCancel
-- AutoBandWindowTemplateSave.OnOK
-- AutoBandWindowTools.OnKickButton
-- AutoBandWindowTools.OnKickOfflineCheckBox
-- AutoBandWindowTools.OnKickRankCheckBox
-- AutoBandWindowTools.OnKickZoneCheckBox
-- AutoBandWindowTools.OnPrintButton
-- AutoBandWindowTools.OnResetTools
 - BagOMatic.wnd_on_lbutton_up
 - BankArkel.PackClose
 - BankArkel.PackTab
@@ -379,7 +348,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - DebugWindow.UpdateDisplayFilter
 - DebugWindow.UpdateLoadLuaDebugLibrary
 - DebugWindow.UpdateLuaErrorHandling
-- DeepSleep.Settings.Close
 - DevPadWindow.CancelRename
 - DevPadWindow.ConfirmRename
 - DevPadWindow.CreateNewFile
@@ -590,10 +558,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - MapPin.ToggleCheckbox
 - MapPin.UI_ChooseIconDialog_Hide
 - MapPin.UI_ChooseIconDialog_OnListRowLButtonUp
-- Megaphone.HideWindow
-- Megaphone.HighlightLeaderToggle
-- Megaphone.ShowLeaderToggle
-- Megaphone.TestAlert
 - MiracleGrow.autoGrow
 - MiracleGrow.menuShow
 - MiracleGrow.onAutoConsumeToggle
@@ -644,16 +608,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - QTS.ChangeSorting
 - QTS.OnClose
 - QTS.SetTactic
-- QueueQueuer_GUI.BlacklistAllButton_OnLButtonUp
-- QueueQueuer_GUI.BlacklistCheckBox_OnLButtonUp
-- QueueQueuer_GUI.BlacklistNoneButton_OnLButtonUp
-- QueueQueuer_GUI.Close_OnLButtonUp
-- QueueQueuer_GUI.JoinButton_OnLButtonUp
-- QueueQueuer_GUI.LeaveButton_OnLButtonUp
-- QueueQueuer_GUI.MapButton_OnLButtonUp
-- QueueQueuer_GUI.OnLButtonUpTab
-- QueueQueuer_GUI.OptionCheckBox_OnLButtonUp
-- QueueQueuer_GUI.QueuerCheckButton_OnLButtonUp
 - QuickWarReport.OnConfirmAccept
 - QuickWarReport.OnConfirmDecline
 - RVAPI_ColorDialog.OnLButtonUpButtonCancel
@@ -692,13 +646,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - ShiniesConfigPrice.OnLButtonUp_IncreasePriority
 - ShiniesConfigUI.OnLButtonUp_ListItem
 - ShiniesPostUI.OnLButtonUp_SortButton
-- TOLSettingsUI.BeginEditPhrases
-- TOLSettingsUI.CloseLButtonUp
-- TOLSettingsUI.OnEventSelChanged
-- TOLSettingsUI.PhraseDeleteLButtonUp
-- TOLSettingsUI.PhraseSaveLButtonUp
-- TOLSettingsUI.SkillDeleteLButtonUp
-- TOLSettingsUI.SkillSaveLButtonUp
 - TexturedButtons.Setup.Actionbar.OnCloseLUp
 - TexturedButtons.Setup.Actionbar.OnEnableLUp
 - TexturedButtons.Setup.Actionbar.OnHideBackgroundLUp
@@ -746,11 +693,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - TidyChat.Options.OnClose
 - TidyChat.Options.OnTabLBU
 - TidyChat.Options.Reset
-- TidyQueue.OnAutojoinLBU
-- TidyQueue.OnCheckboxLBU
-- TidyQueue.OnJoinSelected
-- TidyQueue.OnSelectAll
-- TidyQueue.OnSelectNone
 - TidyRoll.CustomAutoRoll.AddById
 - TidyRoll.CustomAutoRoll.OnApply
 - TidyRoll.CustomAutoRoll.OnClose
@@ -808,7 +750,9 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - UiModWindow.OnToggleModEnabled
 - UiModWindow.SelectMainUiLoadOption
 - UiModWindow.ToggleShowMainUiInModsList
+- WHMGui.HideDetailsWindow
 - WHMGui.HideOptionsWindow
+- WHMGui.OnHealerNameMouseUp
 - WHMGui.OnOptionsResetButton
 - WHMGui.ToggleOptionsWindow
 - WSCT.CheckBoxOnLButtonUp
@@ -925,7 +869,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ColorPicker](../../xml/element_types/element_ColorPicker.md) (HIGH 100/100) - XML Element Type
-- [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [ComboBoxClearMenuItems](../../window_api/functions/window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
@@ -956,8 +899,8 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - [ListBox](../../xml/element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
 - [MapDisplay](../../xml/element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnMouseOver](window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
 - [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
+- [OnMouseOver](window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
 - [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
 - [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field

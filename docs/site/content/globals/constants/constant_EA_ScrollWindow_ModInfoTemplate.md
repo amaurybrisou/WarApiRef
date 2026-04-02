@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiModWindow |
-| Files seen in | `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:54`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:62`, `/workspace/ea_uimodwindow/Source/UiModWindow.xml:284` |
+| Files seen in | `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:54`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:62`, `/workspace_addons/ea_uimodwindow/Source/UiModWindow.xml:284` |
 | Namespaces detected | EA_ScrollWindow_ModInfoTemplate |
 | Source kinds | flows, xml_attributes |
 | Example locations | EA_ScrollWindow_ModInfoTemplateScrollChild, EA_ScrollWindow_ModInfoTemplateScrollbar, UiModWindowModDetails |

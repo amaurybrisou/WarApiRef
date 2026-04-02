@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | PlanB |
-| Files seen in | `/workspace/PlanB/PlanB.lua:225`, `/workspace/PlanB/PlanB.lua:96` |
+| Files seen in | `/workspace_addons/PlanB/PlanB.lua:225`, `/workspace_addons/PlanB/PlanB.lua:96` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | PlanB.Command, PlanB.DisplaySettings, lua_call |

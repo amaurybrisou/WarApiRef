@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapPin |
-| Files seen in | `/workspace/MapPin/source/MapPin.lua:1122` |
+| Files seen in | `/workspace_addons/MapPin/source/MapPin.lua:1122` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | MapPin.test, lua_call |

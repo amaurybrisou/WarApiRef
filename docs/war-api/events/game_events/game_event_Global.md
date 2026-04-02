@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TortallDPSCore |
-| Files seen in | `/workspace/TortallDPSCore/TortallDPSCore.lua:211` |
+| Files seen in | `/workspace_addons/TortallDPSCore/TortallDPSCore.lua:211` |
 | Namespaces detected | Global |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | TortallDPSCore: TortallDPSCore.Initialize |

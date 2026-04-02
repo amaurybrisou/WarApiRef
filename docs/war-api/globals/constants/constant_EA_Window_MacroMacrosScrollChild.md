@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | bigger_MacroWindow |
-| Files seen in | `/workspace/bigger_macrowindow/Source/MacroWindow.xml:430`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:437`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:444`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:451`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:458`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:465`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:473`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:480` |
+| Files seen in | `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:430`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:437`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:444`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:451`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:458`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:465`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:473`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:480` |
 | Namespaces detected | EA_Window_MacroMacrosScrollChild |
 | Source kinds | xml_attributes |
 | Example locations | EA_Window_MacroIconSlot1, EA_Window_MacroIconSlot10, EA_Window_MacroIconSlot11, EA_Window_MacroIconSlot12, EA_Window_MacroIconSlot13, EA_Window_MacroIconSlot14 |

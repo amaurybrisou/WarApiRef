@@ -24,19 +24,19 @@
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, CM_ClosetGoblin, CMap, EA_UiDebugTools, EA_UiModWindow, Enemy |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:1384`, `/workspace/AdvancedPetAssist/APAGui.xml:1425`, `/workspace/AdvancedPetAssist/APAGui.xml:1466`, `/workspace/AdvancedPetAssist/APAGui.xml:1506`, `/workspace/AdvancedPetAssist/APAGui.xml:95`, `/workspace/Aura/Source/AuraTexture.xml:100`, `/workspace/ClosetGoblin/ClosetGoblin.xml:1226`, `/workspace/ClosetGoblin/ClosetGoblin.xml:262` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1384`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1425`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1466`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1506`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:95`, `/workspace_addons/Aura/Source/AuraTexture.xml:100`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1226`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:262` |
 | Namespaces detected | OnShown |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
 | Example locations | AdvancedPetAssist: APAFollowTargetHUD.OnShown, AdvancedPetAssist: APAInstantOnlyHUD.OnShown, AdvancedPetAssist: APAKitingHUD.OnShown, AdvancedPetAssist: APAOptions.OnShown, AdvancedPetAssist: APAPetTargetHUD.OnShown, AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow.OnShown |
-| XML usage count | 65 |
-| XML attribute usage count | 65 |
+| XML usage count | 66 |
+| XML attribute usage count | 66 |
 | Lua usage count | 1 |
 | Global usage count | 1 |
 | Local definition count | 0 |
@@ -69,7 +69,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Payload
 
-- Window callback arguments are not fully inferable from API_Ref alone.
+- Window callback arguments are not fully inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -138,6 +138,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - UiModVersionMismatchWindow.OnShown
 - UiModWindow.OnAdvancedShown
 - UiModWindow.OnShown
+- WHMGui.OnDetailsShown
 - WHMGui.OnOptionsShown
 - WHMGui.OnWindowShown
 - WSCT.OnShown

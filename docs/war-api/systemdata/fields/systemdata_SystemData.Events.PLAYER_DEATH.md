@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Effigy, PlanB, PlanB |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace/PlanB/PlanB.lua:35` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace_addons/PlanB/PlanB.lua:35` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | Effigy.OnPlayerDeath, Effigy.RegisterStateInfoForPlayer, PlanB.Initialize, PlanB.SetPage, SystemData.Events.PLAYER_DEATH, event_page |

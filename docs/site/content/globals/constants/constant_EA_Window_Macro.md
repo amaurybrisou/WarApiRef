@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | bigger_MacroWindow |
-| Files seen in | `/workspace/bigger_macrowindow/Source/MacroWindow.xml:363`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:364`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:365`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:371`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:387`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:781` |
+| Files seen in | `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:363`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:364`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:365`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:371`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:387`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:781` |
 | Namespaces detected | EA_Window_Macro |
 | Source kinds | flows, xml_attributes |
 | Example locations | EA_Window_MacroBackground, EA_Window_MacroClose, EA_Window_MacroDetails, EA_Window_MacroMacros, EA_Window_MacroMacrosBackground, EA_Window_MacroTitleBar |

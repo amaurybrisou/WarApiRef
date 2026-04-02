@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/DebugWindow.xml:211`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:71`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:728` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:211`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:71`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:728` |
 | Namespaces detected | OnKeyTab |
 | Source kinds | event_page, xml_handlers |
 | Example locations | EA_UiDebugTools: DebugWindowTextBox.OnKeyTab, EA_UiDebugTools: DevPadCopyLog.OnKeyTab, EA_UiDebugTools: DevPadWindowDevPadCode.OnKeyTab |
@@ -61,7 +61,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Payload
 
-- Window callback arguments are not fully inferable from API_Ref alone.
+- Window callback arguments are not fully inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -97,4 +97,4 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Notes
 
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

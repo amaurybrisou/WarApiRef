@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -11,35 +11,34 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 160
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, DeepSleep, Effigy, GuardLine, RetAlert |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/DeepSleep/DeepSleep.lua:8`, `/workspace/Effigy/Effigy.lua:111`, `/workspace/GuardLine/GuardLine.lua:63`, `/workspace/RetAlert/Source/RetAlert.lua:108` |
+| Addons seen in | DAoCBuff, Effigy, GuardLine |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/GuardLine/GuardLine.lua:63` |
 | Namespaces detected | LayoutEditor |
-| Source kinds | globals, lua_calls |
-| Example locations | DAoCBuff: DAoCBuff.Initialize, DeepSleep: DeepSleep.Initialize, Effigy: Effigy.Initialize, GuardLine: GuardLine.init, RetAlert: RetAlert_OnInitialize |
+| Source kinds | lua_calls |
+| Example locations | DAoCBuff: DAoCBuff.Initialize, Effigy: Effigy.Initialize, GuardLine: GuardLine.init |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -66,17 +65,17 @@ LayoutEditor.RegisterEditCallback(arg1)
 
 ## Description
 
-Observed as a window function across 5 addons.
+Observed as a window function across 3 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: Addon.LayoutEditorDone, DAoCBuff.LEH, DeepSleep.LayoutEditorDone |
+| arg1 | Observed as a function or method reference. | Observed values: Addon.LayoutEditorDone, DAoCBuff.LEH, GuardLine.OnLayoutEditorFinished |
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -85,18 +84,14 @@ Observed as a window function across 5 addons.
 ## Seen In
 
 - DAoCBuff
-- DeepSleep
 - Effigy
 - GuardLine
-- RetAlert
 
 ## Examples
 
 - DAoCBuff: DAoCBuff.Initialize -> LayoutEditor.RegisterEditCallback(DAoCBuff.LEH)
-- DeepSleep: DeepSleep.Initialize -> LayoutEditor.RegisterEditCallback(DeepSleep.LayoutEditorDone)
 - Effigy: Effigy.Initialize -> LayoutEditor.RegisterEditCallback(Addon.LayoutEditorDone)
 - GuardLine: GuardLine.init -> LayoutEditor.RegisterEditCallback(GuardLine.OnLayoutEditorFinished)
-- RetAlert: RetAlert_OnInitialize -> LayoutEditor.RegisterEditCallback(RetAlert_LayoutEditor_Callback)
 
 ## Related APIs
 

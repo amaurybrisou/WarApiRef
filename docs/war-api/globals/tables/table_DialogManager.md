@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, Aura, BankArkel, BankWindowFix, CM_ClosetGoblin, Effigy, Enemy, MapMonster |
-| Files seen in | `/workspace/Aura/Source/AuraShares.lua:419`, `/workspace/BankArkel/BankArkel.lua:85`, `/workspace/BankArkel/BankArkel.lua:95`, `/workspace/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:147`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:154`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:212`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:216` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraShares.lua:419`, `/workspace_addons/BankArkel/BankArkel.lua:85`, `/workspace_addons/BankArkel/BankArkel.lua:95`, `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:147`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:154`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:212`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:216` |
 | Namespaces detected | DialogManager |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize, Aura: AuraShares.OnImportExportOkButton, BankArkel: BankArkel.ConvertDB, BankArkel: BankArkel.Init, BankWindowFix: BankWindowFix.BagEquipmentRButtonUp, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickDeleteSetButton |

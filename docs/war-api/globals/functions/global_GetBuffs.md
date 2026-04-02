@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 83/100
-- Seen in: 10 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, BuffHead, DAoCBuff, Enemy, GCDsaver, LibGuard, RandomMount, Twister |
-| Files seen in | `/workspace/Aura/Source/AuraEffectTracker.lua:62`, `/workspace/BuffHead/Core.lua:1138`, `/workspace/BuffHead/Core.lua:178`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:1099`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:1245`, `/workspace/DAoCBuff/Source/DAoCBuffHeadFrames.lua:780`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:503`, `/workspace/GCDsaver/GCDsaver.lua:42` |
+| Addons seen in | Aura, BuffHead, DAoCBuff, Enemy, GCDsaver, LibGuard, RandomMount, WSCT |
+| Files seen in | `/workspace_addons/Aura/Source/AuraEffectTracker.lua:62`, `/workspace_addons/BuffHead/Core.lua:1138`, `/workspace_addons/BuffHead/Core.lua:178`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:1099`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:1245`, `/workspace_addons/DAoCBuff/Source/DAoCBuffHeadFrames.lua:780`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:503`, `/workspace_addons/GCDsaver/GCDsaver.lua:42` |
 | Namespaces detected | GetBuffs |
 | Source kinds | lua_calls |
 | Example locations | Aura: AuraEffectTracker:RefreshEffects, BuffHead: BuffHead.RefreshPlayerBuffs, BuffHead: BuffHead.local.ResyncTarget, BuffHead: ResyncTarget, DAoCBuff: DAoCBuffHeadTracker:Refresh, DAoCBuff: DAoCBuffTracker:Refresh |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 17 |
-| Global usage count | 17 |
+| Lua usage count | 13 |
+| Global usage count | 13 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ GetBuffs(arg1)
 
 ## Description
 
-Observed as a shared query API across 10 addons.
+Observed as a shared query API across 8 addons.
 
 ## Parameters
 
@@ -87,9 +87,7 @@ Observed as a shared query API across 10 addons.
 - GCDsaver
 - LibGuard
 - RandomMount
-- Twister
 - WSCT
-- WarTriage
 
 ## Examples
 

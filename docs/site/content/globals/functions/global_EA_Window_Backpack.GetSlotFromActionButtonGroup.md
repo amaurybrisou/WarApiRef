@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | NPC Item Sale Price |
-| Files seen in | `/workspace/nisp/Source/Nisp.lua:174` |
+| Files seen in | `/workspace_addons/nisp/Source/Nisp.lua:174` |
 | Namespaces detected | EA_Window_Backpack |
 | Source kinds | globals, lua_calls |
 | Example locations | NPC Item Sale Price: Nisp.RButtonUp |
@@ -74,11 +74,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

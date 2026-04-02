@@ -10,33 +10,33 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 118
+- Raw weighted score: 113
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
 - +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DeepSleep, Effigy, Enemy |
-| Files seen in | `/workspace/Effigy/Effigy.lua:474`, `/workspace/Enemy/Code/UnitFrames/UnitFrame.lua:413` |
+| Addons seen in | Effigy, Enemy |
+| Files seen in | `/workspace_addons/Effigy/Effigy.lua:474`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFrame.lua:413` |
 | Namespaces detected | PlayerMenuWindow |
-| Source kinds | globals, lua_calls |
+| Source kinds | lua_calls |
 | Example locations | Effigy: Effigy.local.FriendlyRightClickMenu, Effigy: FriendlyRightClickMenu, Enemy: Enemy.UnitFramesUI_UnitFrame_OnRButtonUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 13 |
 | Global usage count | 2 |
-| Local definition count | 1 |
-| Documentation references | 1 |
+| Local definition count | 0 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 3 addons.
+Observed shared global table or namespace surfaced in 2 addons.
 
 ## Functions
 
@@ -70,7 +70,6 @@ Observed shared global table or namespace surfaced in 3 addons.
 
 ## Seen In
 
-- DeepSleep
 - Effigy
 - Enemy
 

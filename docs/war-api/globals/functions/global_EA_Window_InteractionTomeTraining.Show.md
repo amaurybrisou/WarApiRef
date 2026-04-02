@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:261` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:261` |
 | Namespaces detected | EA_Window_InteractionTomeTraining |
 | Source kinds | lua_calls |
 | Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickTome |
@@ -104,3 +104,4 @@ Observed as a global function across 1 addons.
 
 - Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -29,13 +29,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, AutoBand, BuffHead, Busted, EA_UiDebugTools, EA_UiModWindow, Enemy |
-| Files seen in | `/workspace/Aura/Source/AuraConfig.xml:1096`, `/workspace/Aura/Source/AuraConfig.xml:1137`, `/workspace/Aura/Source/AuraConfig.xml:116`, `/workspace/Aura/Source/AuraConfig.xml:1202`, `/workspace/Aura/Source/AuraConfig.xml:1243`, `/workspace/Aura/Source/AuraConfig.xml:1347`, `/workspace/Aura/Source/AuraConfig.xml:1471`, `/workspace/Aura/Source/AuraConfig.xml:1559` |
+| Addons seen in | AdvancedRenownTrainer, Aura, BuffHead, Busted, EA_UiDebugTools, EA_UiModWindow, Enemy, Killer |
+| Files seen in | `/workspace_addons/Aura/Source/AuraConfig.xml:1096`, `/workspace_addons/Aura/Source/AuraConfig.xml:1137`, `/workspace_addons/Aura/Source/AuraConfig.xml:116`, `/workspace_addons/Aura/Source/AuraConfig.xml:1202`, `/workspace_addons/Aura/Source/AuraConfig.xml:1243`, `/workspace_addons/Aura/Source/AuraConfig.xml:1347`, `/workspace_addons/Aura/Source/AuraConfig.xml:1471`, `/workspace_addons/Aura/Source/AuraConfig.xml:1559` |
 | Namespaces detected | EditBox |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTrainingImportNameInputWindowNameInputBox, AdvancedRenownTrainer: AdvancedRenownTrainingImportWindowLinkInputBox, AdvancedRenownTrainer: AdvancedRenownTrainingImportWindowNameInputBox, AdvancedRenownTrainer: AdvancedRenownTrainingLinkWindowLinkBox, AdvancedRenownTrainer: AdvancedRenownTrainingPresetsWindowSaveNameInput, Aura: AuraConfigActivationAlertTextText |
-| XML usage count | 215 |
-| XML attribute usage count | 215 |
+| XML usage count | 212 |
+| XML attribute usage count | 212 |
 | Lua usage count | 6 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 26 addons.
+Observed XML element type instantiated by 24 addons.
 
 ## Common Attributes
 
@@ -105,7 +105,6 @@ Observed XML element type instantiated by 26 addons.
 
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - BuffHead
 - Busted
 - EA_UiDebugTools
@@ -123,7 +122,6 @@ Observed XML element type instantiated by 26 addons.
 - RandomMount
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
 - TurretRange

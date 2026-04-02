@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankWindowFix |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.xml:11` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.xml:11` |
 | Namespaces detected | OnActionButtonLButtonUp |
 | Source kinds | event_page, xml_handlers |
 | Example locations | BankWindowFix: BankWindowSlotsFixed.OnActionButtonLButtonUp |
@@ -62,7 +62,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Payload
 
-- Window callback arguments are not fully inferable from API_Ref alone.
+- Window callback arguments are not fully inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -95,4 +95,4 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Notes
 
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

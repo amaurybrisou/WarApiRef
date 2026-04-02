@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, TidyChat, TidyRoll, TurretRange, followTheLeader |
-| Files seen in | `/workspace/Enemy/Code/UnitFrames/UnitFrame.xml:93`, `/workspace/TidyChat/TidyChat.lua:930`, `/workspace/TidyRoll/TidyRoll.xml:202`, `/workspace/TurrentRange/Display.xml:167`, `/workspace/followTheLeader/followTheLeader.xml:11` |
+| Files seen in | `/workspace_addons/Enemy/Code/UnitFrames/UnitFrame.xml:93`, `/workspace_addons/TidyChat/TidyChat.lua:930`, `/workspace_addons/TidyRoll/TidyRoll.xml:202`, `/workspace_addons/TurrentRange/Display.xml:167`, `/workspace_addons/followTheLeader/followTheLeader.xml:11` |
 | Namespaces detected | OnMButtonUp |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
 | Example locations | Enemy: EnemyUnitFrame.OnMButtonUp, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollFrame.OnMButtonUp, TurretRange: TurretMapDisplay.OnMButtonUp, followTheLeader: followTheLeaderWindow.OnMButtonUp |

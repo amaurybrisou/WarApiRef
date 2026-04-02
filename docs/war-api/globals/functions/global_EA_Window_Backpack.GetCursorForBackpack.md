@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankWindowFix, Miracle Grow Remix |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace/MGRemix/MGRemix.lua:996` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace_addons/MGRemix/MGRemix.lua:996` |
 | Namespaces detected | EA_Window_Backpack |
 | Source kinds | globals, lua_calls |
 | Example locations | BankWindowFix: BankWindowFix.BagEquipmentRButtonUp, Miracle Grow Remix: MiracleGrow2.GetCursorForBackpack |
@@ -138,3 +138,4 @@ Observed as a global function across 2 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

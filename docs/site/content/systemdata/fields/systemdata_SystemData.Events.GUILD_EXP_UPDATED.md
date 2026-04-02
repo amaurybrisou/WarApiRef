@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStateGuild.lua:4` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateGuild.lua:4` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Effigy.RegisterStateInfoForGuild, lua_call |

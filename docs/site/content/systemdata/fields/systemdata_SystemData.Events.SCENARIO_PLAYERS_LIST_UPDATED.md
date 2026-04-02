@@ -24,14 +24,14 @@
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, Enemy, followTheLeader, followTheLeader |
-| Files seen in | `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace_addons/followTheLeader/followTheLeader.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Enemy.ScenarioInfoUpdate, Enemy._ScenarioInfoEnabledChanged, SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED, event_page, event_registration, followTheLeader.Initialize |

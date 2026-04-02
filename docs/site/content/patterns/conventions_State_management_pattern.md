@@ -28,8 +28,8 @@ AdvancedPetAssist: APA_Settings
 - AdvancedPetAssist: APA_Settings
 - AdvancedRenownTrainer: AdvancedRenownTraining.Presets
 - AggroMeter: AggroMeter.Settings
-- AutoBand: AutoBand.saved
 - BagOMatic: BagOMatic.saved
 - BankArkel: BankArkel.db
 - BuffHead: BuffHead.Settings
 - CM_ClosetGoblin: ClosetGoblin.setData
+- CM_ClosetGoblin: ClosetGoblin.settings

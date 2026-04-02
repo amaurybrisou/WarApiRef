@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankArkel |
-| Files seen in | `/workspace/BankArkel/BankArkel.xml:276` |
+| Files seen in | `/workspace_addons/BankArkel/BankArkel.xml:276` |
 | Namespaces detected | EA_Button_DefaultIconFrame |
 | Source kinds | xml_attributes |
 | Example locations | PackIconTmp |

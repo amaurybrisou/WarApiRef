@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 11 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, TidyChat, TidyQueue, TidyRoll |
-| Files seen in | `/workspace/Ace/LibGUI.lua:285`, `/workspace/Effigy/LibGUI.lua:285`, `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace/GCDsaver/libs/LibGUI.lua:285`, `/workspace/LibWarBoardToggler/LibWBToggler.lua:32`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:285`, `/workspace/Shinies/Libraries/LibGUI.lua:285` |
+| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, TidyChat, TidyRoll, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:285`, `/workspace_addons/Effigy/LibGUI.lua:285`, `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:285`, `/workspace_addons/LibWarBoardToggler/LibWBToggler.lua:32`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:285`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:285` |
 | Namespaces detected | WindowRegisterCoreEventHandler |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:RegisterEvent, Effigy: Effigy.RegisterStateInfoForCastbar, Effigy: Effigy.RegisterStateInfoForPlayer, Effigy: LIBGUI_ELEMENT:RegisterEvent, GCDsaver: LIBGUI_ELEMENT:RegisterEvent, LibWBToggler: LIBGUI_ELEMENT:RegisterEvent |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 21 |
-| Global usage count | 21 |
+| Lua usage count | 19 |
+| Global usage count | 19 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -72,7 +72,7 @@ Observed binding On* window events directly to a named window.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "EA_Window_ScenarioLobby", "EffigySwingTimerWindow", "UFLayerTimerWindow" |
+| windowName | Observed as a target window name. | Observed values: "EffigySwingTimerWindow", "UFLayerTimerWindow", c_TEXT_ENTRY_WINDOW.."ChannelButton" |
 | windowEvent | Observed as an On* window event string. | Observed values: "OnHidden", "OnLButtonDown", "OnLButtonUp" |
 | handlerName | Observed as a Lua handler reference. | Observed values: "LIBGUI_ELEMENT.events."..e.."."..self.name, "TidyChat.OnChannelButtonMButtonUp", "TidyChat.OnEntryBoxTextInputLBD" |
 
@@ -92,9 +92,7 @@ Observed binding On* window events directly to a named window.
 - LibWBToggler
 - Shinies
 - TidyChat
-- TidyQueue
 - TidyRoll
-- WarTriage
 - WoH-Reticle
 - nRarity
 

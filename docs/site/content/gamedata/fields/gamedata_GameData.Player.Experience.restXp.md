@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePlayer.lua:332`, `/workspace/Effigy/States/EffigyStatePlayer.lua:483` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:332`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:483` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Effigy.SetXPLabelText, Effigy.UpdateRestedExp, lua_call |

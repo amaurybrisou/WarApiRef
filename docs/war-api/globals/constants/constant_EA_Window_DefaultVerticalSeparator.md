@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiModWindow, PotionBar, WarBoard |
-| Files seen in | `/workspace/PotionBar/settings/Settings.xml:214`, `/workspace/WarBoard/WarBoardOptions.xml:296`, `/workspace/ea_uimodwindow/Source/UiModWindow.xml:145` |
+| Files seen in | `/workspace_addons/PotionBar/settings/Settings.xml:214`, `/workspace_addons/WarBoard/WarBoardOptions.xml:296`, `/workspace_addons/ea_uimodwindow/Source/UiModWindow.xml:145` |
 | Namespaces detected | EA_Window_DefaultVerticalSeparator |
 | Source kinds | xml_attributes |
 | Example locations | PotionBarTypeTemplateVertSeperator, UiModWindowVerticalSeperator, WarBoardOptionsTabMainSocketVertDivider |

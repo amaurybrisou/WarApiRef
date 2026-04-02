@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, DaemonAssist, EA_UiDebugTools, Killer, QuickWarReport, WhoHealedMe |
-| Files seen in | `/workspace/AdvancedPetAssist/APACore.lua:186`, `/workspace/AdvancedPetAssist/APAUpdateDebugWatch.lua:14`, `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:41`, `/workspace/DaemonAssist/DALogging.lua:3`, `/workspace/Killer/KillerUtils.lua:49`, `/workspace/QuickWarReport/QWRCore.lua:17`, `/workspace/WhoHealedMe/WHMCore.lua:17`, `/workspace/ea_uidebugtools/Source/Debug.lua:13` |
+| Addons seen in | AdvancedPetAssist, DaemonAssist, EA_UiDebugTools, Killer, QuickTacticSwitch, QuickWarReport, WhoHealedMe |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APACore.lua:186`, `/workspace_addons/AdvancedPetAssist/APAUpdateDebugWatch.lua:14`, `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:41`, `/workspace_addons/DaemonAssist/DALogging.lua:3`, `/workspace_addons/Killer/KillerUtils.lua:49`, `/workspace_addons/QuickTacticSwitch/quicktacticswitch.lua:9`, `/workspace_addons/QuickWarReport/QWRCore.lua:17`, `/workspace_addons/WhoHealedMe/WHMCore.lua:17` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | AdvancedPetAssist.Log, AdvancedPetAssist.TickDebugWatch, AdvancedPetAssist.local.LogSettingsSnapshot, DEBUG, DaemonAssist.Debug, Killer.Log |
+| Example locations | AdvancedPetAssist.Log, AdvancedPetAssist.TickDebugWatch, AdvancedPetAssist.local.LogSettingsSnapshot, DEBUG, DaemonAssist.Debug, DebugLog |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 12 |
+| Global usage count | 12 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed SystemData field used by 6 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 7 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
@@ -67,6 +67,7 @@ Observed SystemData field used by 6 addons through generated function calls, eve
 - DaemonAssist
 - EA_UiDebugTools
 - Killer
+- QuickTacticSwitch
 - QuickWarReport
 - WhoHealedMe
 
@@ -88,4 +89,4 @@ Observed SystemData field used by 6 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: AdvancedPetAssist.Log, AdvancedPetAssist.TickDebugWatch, AdvancedPetAssist.local.LogSettingsSnapshot, DEBUG, DaemonAssist.Debug, Killer.Log
+- Observed in contexts: AdvancedPetAssist.Log, AdvancedPetAssist.TickDebugWatch, AdvancedPetAssist.local.LogSettingsSnapshot, DEBUG, DaemonAssist.Debug, DebugLog

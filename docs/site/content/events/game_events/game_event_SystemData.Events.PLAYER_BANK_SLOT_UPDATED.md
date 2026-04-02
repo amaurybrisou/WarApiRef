@@ -62,7 +62,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 
@@ -95,4 +95,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Notes
 
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

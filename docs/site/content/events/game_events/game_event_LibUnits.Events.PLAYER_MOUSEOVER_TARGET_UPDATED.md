@@ -18,7 +18,7 @@
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 - -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
 
 ## Evidence Summary
@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStateTargets.lua:55` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateTargets.lua:55` |
 | Namespaces detected | LibUnits |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Effigy: Effigy.RegisterStateInfoForTargets |
@@ -99,4 +99,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Notes
 
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

@@ -29,13 +29,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, AutoBand, AutoMark |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:101`, `/workspace/AdvancedPetAssist/APAGui.xml:111`, `/workspace/AdvancedPetAssist/APAGui.xml:121`, `/workspace/AdvancedPetAssist/APAGui.xml:1374`, `/workspace/AdvancedPetAssist/APAGui.xml:1415`, `/workspace/AdvancedPetAssist/APAGui.xml:1456`, `/workspace/AdvancedPetAssist/APAGui.xml:1496`, `/workspace/AdvancedPetAssist/APAGui.xml:232` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, AutoMark, BankArkel |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:101`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:111`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:121`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1374`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1415`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1456`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1496`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:232` |
 | Namespaces detected | Window |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | AdvancedPetAssist: APAFollowTargetHUD, AdvancedPetAssist: APAInstantOnlyHUD, AdvancedPetAssist: APAKitingHUD, AdvancedPetAssist: APAOptions, AdvancedPetAssist: APAOptionsBackground, AdvancedPetAssist: APAOptionsContent |
-| XML usage count | 1450 |
-| XML attribute usage count | 1450 |
+| XML usage count | 1331 |
+| XML attribute usage count | 1331 |
 | Lua usage count | 19 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 71 addons.
+Observed XML element type instantiated by 60 addons.
 
 ## Common Attributes
 
@@ -71,41 +71,41 @@ Observed XML element type instantiated by 71 addons.
 - movable
 - savesettings
 - popable
-- id
 - sticky
 - scale
-- alpha
+- id
 - skipinput
+- alpha
 
 ## Common Handlers
 
 - OnLButtonUp
 - OnHidden
 - OnMouseOver
-- OnRButtonUp
 - OnShown
-- OnInitialize
+- OnRButtonUp
 - OnLButtonDown
 - OnMouseOverEnd
+- OnInitialize
 - OnKeyEscape
-- OnShutdown
 - OnRButtonDown
-- OnUpdate
+- OnShutdown
+- OnMouseOut
 
 ## Common Inherits
 
 - EA_Window_Default
 - EA_Window_DefaultFrame
 - EA_LabelCheckButton
-- EA_TitleBar_Default
 - EA_Window_DefaultBackgroundFrame
-- BlacklistCheckBox
+- EA_TitleBar_Default
 - EA_Window_DefaultSeparator
-- EA_Window_DefaultButtonBottomFrame
 - WSCTEvent
 - Aura_LabelCheckButton
 - EnemyScenarioInfoDialog_CareerStatsTemplate
+- EA_Window_DefaultButtonBottomFrame
 - MapPinCallTemplateWindow
+- WSCTCheckBox
 
 ## Seen In
 
@@ -115,7 +115,6 @@ Observed XML element type instantiated by 71 addons.
 - AnywhereTrainer
 - AnywhereTrainerAdditions
 - Aura
-- AutoBand
 - AutoMark
 - BankArkel
 - BuffHead
@@ -123,11 +122,9 @@ Observed XML element type instantiated by 71 addons.
 - CM_ClosetGoblin
 - CMap
 - Cheeseboard
-- Clock
 - Crafting Info Tooltip
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_ThreePartBar
 - EA_UiDebugTools
 - EA_UiModWindow
@@ -135,7 +132,6 @@ Observed XML element type instantiated by 71 addons.
 - Enemy
 - FastInteract
 - GetStats
-- GoldTracker
 - GuardLine
 - GuardList
 - GuardRange
@@ -146,17 +142,14 @@ Observed XML element type instantiated by 71 addons.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
 - Moth
 - ObjectInspector
-- PeaceOut
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
 - RVAPI_ColorDialog
@@ -167,14 +160,10 @@ Observed XML element type instantiated by 71 addons.
 - Swift Assist
 - Targets
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
-- TimeInQueue
 - Tortall_DPS
 - TurretRange
-- Twister
 - WSCT
 - WarBoard
 - WhoHealedMe
@@ -220,7 +209,6 @@ Observed XML element type instantiated by 71 addons.
 - [EA_Window_ContextMenu.AddMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
-- [EA_Window_ScenarioLobby.OnJoinInstanceWait](../../globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md) (HIGH 100/100) - Global Function
 - [EA_Window_WorldMap.ShowZone](../../globals/functions/global_EA_Window_WorldMap.ShowZone.md) (HIGH 100/100) - Global Function
 - [LabelGetText](../../window_api/functions/window_LabelGetText.md) (HIGH 100/100) - Window Function
 - [LabelGetTextColor](../../window_api/functions/window_LabelGetTextColor.md) (HIGH 100/100) - Window Function
@@ -296,14 +284,12 @@ Observed XML element type instantiated by 71 addons.
 - [WindowSetMoving](../../window_api/functions/window_WindowSetMoving.md) (HIGH 90/100) - Window Function
 - [WindowSetResizing](../../window_api/functions/window_WindowSetResizing.md) (HIGH 90/100) - Window Function
 - [WindowStartScaleAnimation](../../window_api/functions/window_WindowStartScaleAnimation.md) (HIGH 90/100) - Window Function
-- [PlayerMenuWindow.ShowMenu](../../globals/functions/global_PlayerMenuWindow.ShowMenu.md) (HIGH 88/100) - Global Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [ComboBoxExternalOpenMenu](../../window_api/functions/window_ComboBoxExternalOpenMenu.md) (HIGH 80/100) - Window Function
 - [TextEditBoxGetHistory](../../window_api/functions/window_TextEditBoxGetHistory.md) (HIGH 80/100) - Window Function
 - [TextEditBoxInsertText](../../window_api/functions/window_TextEditBoxInsertText.md) (HIGH 80/100) - Window Function
 - [TextEditBoxSetHistory](../../window_api/functions/window_TextEditBoxSetHistory.md) (HIGH 80/100) - Window Function
 - [TextEditBoxSetMaxChars](../../window_api/functions/window_TextEditBoxSetMaxChars.md) (HIGH 80/100) - Window Function
-- [WindowUnRegisterEventHandler](../../window_api/functions/window_WindowUnRegisterEventHandler.md) (HIGH 80/100) - Window Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
 - [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
@@ -311,7 +297,6 @@ Observed XML element type instantiated by 71 addons.
 
 ## Used With
 
-- [ButtonGetDisabledFlag](../../window_api/functions/window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ButtonGetPressedFlag](../../window_api/functions/window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
@@ -334,14 +319,14 @@ Observed XML element type instantiated by 71 addons.
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Handler
 - [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
-- [OnInitialize](../handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Handler
 - [OnInitialize](../../events/window_events/window_event_OnInitialize.md) (HIGH 100/100) - Window Event
+- [OnInitialize](../handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Handler
 - [OnKeyEscape](../handlers/handler_OnKeyEscape.md) (HIGH 100/100) - XML Handler
 - [OnKeyEscape](../../events/window_events/window_event_OnKeyEscape.md) (HIGH 100/100) - Window Event
 - [OnLButtonDown](../handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Handler
 - [OnLButtonDown](../../events/window_events/window_event_OnLButtonDown.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnMButtonDown](../../events/window_events/window_event_OnMButtonDown.md) (HIGH 100/100) - Window Event
 - [OnMButtonDown](../handlers/handler_OnMButtonDown.md) (HIGH 100/100) - XML Handler
 - [OnMButtonUp](../../events/window_events/window_event_OnMButtonUp.md) (HIGH 100/100) - Window Event
@@ -350,8 +335,8 @@ Observed XML element type instantiated by 71 addons.
 - [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
 - [OnMouseOverEnd](../../events/window_events/window_event_OnMouseOverEnd.md) (HIGH 100/100) - Window Event
 - [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 100/100) - XML Handler
-- [OnMouseWheel](../../events/window_events/window_event_OnMouseWheel.md) (HIGH 100/100) - Window Event
 - [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Handler
+- [OnMouseWheel](../../events/window_events/window_event_OnMouseWheel.md) (HIGH 100/100) - Window Event
 - [OnRButtonDown](../../events/window_events/window_event_OnRButtonDown.md) (HIGH 100/100) - Window Event
 - [OnRButtonDown](../handlers/handler_OnRButtonDown.md) (HIGH 100/100) - XML Handler
 - [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event

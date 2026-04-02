@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 20 addons
+- Seen in: 18 addons
 
 ## Confidence Assessment
 
@@ -25,24 +25,24 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibWBToggler, PlanB, TexturedButtons, TidyChat, TidyQueue, TidyRoll, TurretRange, Twister, WarBoard, WhoHealedMe, wbLeadHelper, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibGroup |
-| Files seen in | `/workspace/Aura/Source/AuraAddon.lua:70`, `/workspace/BuffHead/Core.lua:152`, `/workspace/ClosetGoblin/ClosetGoblin.lua:70`, `/workspace/Effigy/Effigy.lua:111`, `/workspace/LatestAura-RoR/Twister.lua:90`, `/workspace/LibGroup/LibGroup.lua:343`, `/workspace/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace/PlanB/PlanB.lua:35` |
+| Addons seen in | AdvancedRenownTrainer, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibWBToggler, PlanB, TexturedButtons, TidyChat, TidyRoll, TurretRange, WarBoard, WhoHealedMe, wbLeadHelper, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibGroup |
+| Files seen in | `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/LibGroup/LibGroup.lua:343`, `/workspace_addons/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace_addons/PlanB/PlanB.lua:35`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:1199` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedRenownTraining.Initialize, AdvancedRenownTraining.OnReload, AuraAddon.OnInitialize, AuraAddon.OnLoad, BagOMatic.init, BagOMatic.restore_filters |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 44 |
-| Global usage count | 44 |
+| Lua usage count | 40 |
+| Global usage count | 40 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 15 |
+| Initialization flow references | 13 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,12 +62,12 @@
 
 ## Description
 
-Observed SystemData field used by 20 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 18 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - AdvancedRenownTrainer
-- AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibWBToggler, PlanB, TexturedButtons, TidyChat, TidyQueue, TidyRoll, TurretRange, Twister, WarBoard, WhoHealedMe, wbLeadHelper
+- AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibWBToggler, PlanB, TexturedButtons, TidyChat, TidyRoll, TurretRange, WarBoard, WhoHealedMe, wbLeadHelper
 - Aura
 - BagOMatic
 - BuffHead
@@ -79,10 +79,8 @@ Observed SystemData field used by 20 addons through generated function calls, ev
 - RVMOD_Manager
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
-- Twister
 - WarBoard
 - WhoHealedMe
 - wbLeadHelper
@@ -93,7 +91,6 @@ Observed SystemData field used by 20 addons through generated function calls, ev
 - [LibSlash.IsSlashCmdRegistered](../../globals/functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
 - [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
-- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 

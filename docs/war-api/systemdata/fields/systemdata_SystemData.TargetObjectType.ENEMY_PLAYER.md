@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Targets |
-| Files seen in | `/workspace/targets/Targets.lua:8` |
+| Files seen in | `/workspace_addons/targets/Targets.lua:8` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Targets.init, lua_call |

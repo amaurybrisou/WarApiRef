@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AutoMark, BuffHead, Effigy, Enemy, GuardLine, MapMonster, MapPin, Miracle Grow Remix |
-| Files seen in | `/workspace/AutoMark/Source/AutoMark.lua:124`, `/workspace/BuffHead/Container.lua:1129`, `/workspace/BuffHead/Setup/LayoutControlFrame.lua:8`, `/workspace/BuffHead/Setup/Setup.lua:141`, `/workspace/BuffHead/Setup/Setup.lua:171`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:375`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:520`, `/workspace/BuffHead/Setup/SetupLayoutProperties.lua:332` |
+| Files seen in | `/workspace_addons/AutoMark/Source/AutoMark.lua:124`, `/workspace_addons/BuffHead/Container.lua:1129`, `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:8`, `/workspace_addons/BuffHead/Setup/Setup.lua:141`, `/workspace_addons/BuffHead/Setup/Setup.lua:171`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:375`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:520`, `/workspace_addons/BuffHead/Setup/SetupLayoutProperties.lua:332` |
 | Namespaces detected | WindowGetScreenPosition |
 | Source kinds | lua_calls |
 | Example locations | AutoMark: AutoMark.OnUpdate, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show, BuffHead: BuffHead.Setup.Layout.Properties.Show, BuffHead: BuffHead.Setup.SetActiveWindow, BuffHead: BuffHead.Setup.Show, BuffHead: BuffHead.local.GetRelativeScreenPosition |
@@ -75,11 +75,11 @@ Observed querying runtime window state or metadata.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

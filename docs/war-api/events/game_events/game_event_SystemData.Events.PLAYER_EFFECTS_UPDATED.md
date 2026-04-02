@@ -30,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, DAoCBuff, Enemy, GCDsaver, Twister, WSCT |
-| Files seen in | `/workspace/BuffHead/Core.lua:207`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/LatestAura-RoR/Twister.lua:90`, `/workspace/wsct/wsct.lua:117` |
+| Addons seen in | BuffHead, DAoCBuff, Enemy, GCDsaver, WSCT |
+| Files seen in | `/workspace_addons/BuffHead/Core.lua:207`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/wsct/wsct.lua:117` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | BuffHead: BuffHead.SetSelfTracking, DAoCBuff: DAoCBuff.Initialize, Enemy: Enemy.GroupsInitialize, GCDsaver: GCDsaver.RegisterEvents, Twister: Twister.Initialize, WSCT: WSCT:RegisterSelfEvents |
+| Example locations | BuffHead: BuffHead.SetSelfTracking, DAoCBuff: DAoCBuff.Initialize, Enemy: Enemy.GroupsInitialize, GCDsaver: GCDsaver.RegisterEvents, WSCT: WSCT:RegisterSelfEvents |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 5 |
+| Initialization flow references | 4 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 6 addons.
+Observed as a shared SystemData runtime event used by 5 addons.
 
 ## Handler Pattern
 
@@ -77,7 +77,6 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - DAoCBuff
 - Enemy
 - GCDsaver
-- Twister
 - WSCT
 
 ## Registrars And Handlers
@@ -87,7 +86,6 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - Enemy.Groups_OnCurrentPlayerEffectsUpdated
 - GCDsaver.PLAYER_EFFECTS_UPDATED
 - RegisterEventHandler
-- Twister.OnEffects
 - WSCT.PLAYER_EFFECTS_UPDATED
 - global
 
@@ -97,8 +95,8 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - DAoCBuff: DAoCBuff.Initialize -> SystemData.Events.PLAYER_EFFECTS_UPDATED -> DAoCBuff.OnEvent
 - Enemy: Enemy.GroupsInitialize -> SystemData.Events.PLAYER_EFFECTS_UPDATED -> Enemy.Groups_OnCurrentPlayerEffectsUpdated
 - GCDsaver: GCDsaver.RegisterEvents -> SystemData.Events.PLAYER_EFFECTS_UPDATED -> GCDsaver.PLAYER_EFFECTS_UPDATED
-- Twister: Twister.Initialize -> SystemData.Events.PLAYER_EFFECTS_UPDATED -> Twister.OnEffects
 - WSCT: WSCT:RegisterSelfEvents -> SystemData.Events.PLAYER_EFFECTS_UPDATED -> WSCT.PLAYER_EFFECTS_UPDATED
+- BuffHead: BuffHead.OnGroupEffectsUpdated -> RegisterEventHandler(SystemData.Events.PLAYER_EFFECTS_UPDATED, BuffHead.OnGroupEffectsUpdated)
 
 ## Related APIs
 

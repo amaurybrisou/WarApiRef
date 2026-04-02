@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiModWindow, RVMOD_Manager |
-| Files seen in | `/workspace/RVMOD_Manager/RVMOD_ManagerTemplates.xml:322`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:213` |
+| Files seen in | `/workspace_addons/RVMOD_Manager/RVMOD_ManagerTemplates.xml:322`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:213` |
 | Namespaces detected | EA_ActionButtonGroup_CareerIconsWithTooltip |
 | Source kinds | xml_attributes |
 | Example locations | EA_ScrollWindow_ModInfoTemplateScrollChildCareers, RVMOD_ManagerModInfoTemplateScrollChildCareers |

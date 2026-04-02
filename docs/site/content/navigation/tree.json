@@ -338,13 +338,6 @@
               "importance": 100
             },
             {
-              "id": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait",
-              "label": "EA_Window_ScenarioLobby.OnJoinInstanceWait",
-              "type": "function",
-              "path": "globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md",
-              "importance": 100
-            },
-            {
               "id": "function:global:EA_Window_WorldMap.SetMap",
               "label": "EA_Window_WorldMap.SetMap",
               "type": "function",
@@ -583,31 +576,10 @@
               "importance": 88
             },
             {
-              "id": "function:global:PartyUtils.IsPlayerInWarband",
-              "label": "PartyUtils.IsPlayerInWarband",
-              "type": "function",
-              "path": "globals/functions/global_PartyUtils.IsPlayerInWarband.md",
-              "importance": 88
-            },
-            {
               "id": "function:global:PetWindow.SwitchToPassiveStance",
               "label": "PetWindow.SwitchToPassiveStance",
               "type": "function",
               "path": "globals/functions/global_PetWindow.SwitchToPassiveStance.md",
-              "importance": 88
-            },
-            {
-              "id": "function:global:PlayerMenuWindow.ShowMenu",
-              "label": "PlayerMenuWindow.ShowMenu",
-              "type": "function",
-              "path": "globals/functions/global_PlayerMenuWindow.ShowMenu.md",
-              "importance": 88
-            },
-            {
-              "id": "function:global:wstring.upper",
-              "label": "wstring.upper",
-              "type": "function",
-              "path": "globals/functions/global_wstring.upper.md",
               "importance": 88
             },
             {
@@ -793,10 +765,10 @@
               "importance": 45
             },
             {
-              "id": "function:global:wstring.reverse",
-              "label": "wstring.reverse",
+              "id": "function:global:wstring.upper",
+              "label": "wstring.upper",
               "type": "function",
-              "path": "globals/functions/global_wstring.reverse.md",
+              "path": "globals/functions/global_wstring.upper.md",
               "importance": 45
             }
           ]
@@ -962,24 +934,10 @@
               "importance": 100
             },
             {
-              "id": "data:table:EA_Window_ScenarioLobby",
-              "label": "EA_Window_ScenarioLobby",
-              "type": "data_structure",
-              "path": "globals/tables/table_EA_Window_ScenarioLobby.md",
-              "importance": 100
-            },
-            {
               "id": "data:table:EA_Window_WorldMap",
               "label": "EA_Window_WorldMap",
               "type": "data_structure",
               "path": "globals/tables/table_EA_Window_WorldMap.md",
-              "importance": 100
-            },
-            {
-              "id": "data:table:GroupWindow",
-              "label": "GroupWindow",
-              "type": "data_structure",
-              "path": "globals/tables/table_GroupWindow.md",
               "importance": 100
             },
             {
@@ -1243,13 +1201,6 @@
               "importance": 100
             },
             {
-              "id": "data:constant:EA_CheckButtonLabel",
-              "label": "EA_CheckButtonLabel",
-              "type": "data_structure",
-              "path": "globals/constants/constant_EA_CheckButtonLabel.md",
-              "importance": 100
-            },
-            {
               "id": "data:constant:EA_ComboBox_DefaultResizable",
               "label": "EA_ComboBox_DefaultResizable",
               "type": "data_structure",
@@ -1261,13 +1212,6 @@
               "label": "EA_ComboBox_DefaultResizableLarge",
               "type": "data_structure",
               "path": "globals/constants/constant_EA_ComboBox_DefaultResizableLarge.md",
-              "importance": 100
-            },
-            {
-              "id": "data:constant:EA_ComboBox_DefaultResizableMedium",
-              "label": "EA_ComboBox_DefaultResizableMedium",
-              "type": "data_structure",
-              "path": "globals/constants/constant_EA_ComboBox_DefaultResizableMedium.md",
               "importance": 100
             },
             {
@@ -1289,13 +1233,6 @@
               "label": "EA_ComboBox_DefaultResizable_Fixed_Small",
               "type": "data_structure",
               "path": "globals/constants/constant_EA_ComboBox_DefaultResizable_Fixed_Small.md",
-              "importance": 100
-            },
-            {
-              "id": "data:constant:EA_Default_CornerImage",
-              "label": "EA_Default_CornerImage",
-              "type": "data_structure",
-              "path": "globals/constants/constant_EA_Default_CornerImage.md",
               "importance": 100
             },
             {
@@ -1656,13 +1593,6 @@
               "importance": 90
             },
             {
-              "id": "data:constant:EA_Button_DefaultTextButton",
-              "label": "EA_Button_DefaultTextButton",
-              "type": "data_structure",
-              "path": "globals/constants/constant_EA_Button_DefaultTextButton.md",
-              "importance": 90
-            },
-            {
               "id": "data:constant:EA_Button_DefaultToggleCircle",
               "label": "EA_Button_DefaultToggleCircle",
               "type": "data_structure",
@@ -1698,10 +1628,24 @@
               "importance": 90
             },
             {
+              "id": "data:constant:EA_CheckButtonLabel",
+              "label": "EA_CheckButtonLabel",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_CheckButtonLabel.md",
+              "importance": 90
+            },
+            {
               "id": "data:constant:EA_ComboBox_DefaultResizable3",
               "label": "EA_ComboBox_DefaultResizable3",
               "type": "data_structure",
               "path": "globals/constants/constant_EA_ComboBox_DefaultResizable3.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_ComboBox_DefaultResizableMedium",
+              "label": "EA_ComboBox_DefaultResizableMedium",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_ComboBox_DefaultResizableMedium.md",
               "importance": 90
             },
             {
@@ -1719,17 +1663,17 @@
               "importance": 90
             },
             {
+              "id": "data:constant:EA_Default_CornerImage",
+              "label": "EA_Default_CornerImage",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Default_CornerImage.md",
+              "importance": 90
+            },
+            {
               "id": "data:constant:EA_Default_MerchantImage",
               "label": "EA_Default_MerchantImage",
               "type": "data_structure",
               "path": "globals/constants/constant_EA_Default_MerchantImage.md",
-              "importance": 90
-            },
-            {
-              "id": "data:constant:EA_Default_SocialImage",
-              "label": "EA_Default_SocialImage",
-              "type": "data_structure",
-              "path": "globals/constants/constant_EA_Default_SocialImage.md",
               "importance": 90
             },
             {
@@ -2558,13 +2502,6 @@
               "type": "function",
               "path": "window_api/functions/window_TextEditBoxSetMaxChars.md",
               "importance": 80
-            },
-            {
-              "id": "function:window:WindowUnRegisterEventHandler",
-              "label": "WindowUnRegisterEventHandler",
-              "type": "function",
-              "path": "window_api/functions/window_WindowUnRegisterEventHandler.md",
-              "importance": 80
             }
           ]
         },
@@ -3113,13 +3050,6 @@
               "importance": 100
             },
             {
-              "id": "event:game:SystemData.Events.EXIT_GAME",
-              "label": "SystemData.Events.EXIT_GAME",
-              "type": "event",
-              "path": "events/game_events/game_event_SystemData.Events.EXIT_GAME.md",
-              "importance": 100
-            },
-            {
               "id": "event:game:SystemData.Events.GROUP_ACCEPT_INVITATION",
               "label": "SystemData.Events.GROUP_ACCEPT_INVITATION",
               "type": "event",
@@ -3197,13 +3127,6 @@
               "importance": 100
             },
             {
-              "id": "event:game:SystemData.Events.INTERACT_LOOT_CLOSE",
-              "label": "SystemData.Events.INTERACT_LOOT_CLOSE",
-              "type": "event",
-              "path": "events/game_events/game_event_SystemData.Events.INTERACT_LOOT_CLOSE.md",
-              "importance": 100
-            },
-            {
               "id": "event:game:SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM",
               "label": "SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM",
               "type": "event",
@@ -3239,24 +3162,10 @@
               "importance": 100
             },
             {
-              "id": "event:game:SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-              "label": "SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-              "type": "event",
-              "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST.md",
-              "importance": 100
-            },
-            {
               "id": "event:game:SystemData.Events.INTERACT_SHOW_STORE",
               "label": "SystemData.Events.INTERACT_SHOW_STORE",
               "type": "event",
               "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_STORE.md",
-              "importance": 100
-            },
-            {
-              "id": "event:game:SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-              "label": "SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-              "type": "event",
-              "path": "events/game_events/game_event_SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST.md",
               "importance": 100
             },
             {
@@ -3505,13 +3414,6 @@
               "importance": 100
             },
             {
-              "id": "event:game:SystemData.Events.PLAYER_MONEY_UPDATED",
-              "label": "SystemData.Events.PLAYER_MONEY_UPDATED",
-              "type": "event",
-              "path": "events/game_events/game_event_SystemData.Events.PLAYER_MONEY_UPDATED.md",
-              "importance": 100
-            },
-            {
               "id": "event:game:SystemData.Events.PLAYER_MORALE_UPDATED",
               "label": "SystemData.Events.PLAYER_MORALE_UPDATED",
               "type": "event",
@@ -3680,13 +3582,6 @@
               "importance": 100
             },
             {
-              "id": "event:game:SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-              "label": "SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-              "type": "event",
-              "path": "events/game_events/game_event_SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED.md",
-              "importance": 100
-            },
-            {
               "id": "event:game:SystemData.Events.SCENARIO_BEGIN",
               "label": "SystemData.Events.SCENARIO_BEGIN",
               "type": "event",
@@ -3712,13 +3607,6 @@
               "label": "SystemData.Events.SCENARIO_GROUP_LEAVE",
               "type": "event",
               "path": "events/game_events/game_event_SystemData.Events.SCENARIO_GROUP_LEAVE.md",
-              "importance": 100
-            },
-            {
-              "id": "event:game:SystemData.Events.SCENARIO_INSTANCE_CANCEL",
-              "label": "SystemData.Events.SCENARIO_INSTANCE_CANCEL",
-              "type": "event",
-              "path": "events/game_events/game_event_SystemData.Events.SCENARIO_INSTANCE_CANCEL.md",
               "importance": 100
             },
             {
@@ -3862,24 +3750,10 @@
               "importance": 100
             },
             {
-              "id": "event:game:SystemData.Events.L_BUTTON_UP",
-              "label": "SystemData.Events.L_BUTTON_UP",
-              "type": "event",
-              "path": "events/game_events/game_event_SystemData.Events.L_BUTTON_UP.md",
-              "importance": 98
-            },
-            {
               "id": "event:game:SystemData.Events.PLAYER_BANK_SLOT_UPDATED",
               "label": "SystemData.Events.PLAYER_BANK_SLOT_UPDATED",
               "type": "event",
               "path": "events/game_events/game_event_SystemData.Events.PLAYER_BANK_SLOT_UPDATED.md",
-              "importance": 98
-            },
-            {
-              "id": "event:game:SystemData.Events.PLAYER_LOAD_COMPLETE",
-              "label": "SystemData.Events.PLAYER_LOAD_COMPLETE",
-              "type": "event",
-              "path": "events/game_events/game_event_SystemData.Events.PLAYER_LOAD_COMPLETE.md",
               "importance": 98
             },
             {
@@ -3995,13 +3869,6 @@
               "importance": 73
             },
             {
-              "id": "event:game:Start",
-              "label": "Start",
-              "type": "event",
-              "path": "events/game_events/game_event_Start.md",
-              "importance": 73
-            },
-            {
               "id": "event:game:GroupsPlayerEffectsUpdated",
               "label": "GroupsPlayerEffectsUpdated",
               "type": "event",
@@ -4055,6 +3922,13 @@
               "label": "PlayerTargetUpdated",
               "type": "event",
               "path": "events/game_events/game_event_PlayerTargetUpdated.md",
+              "importance": 63
+            },
+            {
+              "id": "event:game:SystemData.Events.PLAYER_MONEY_UPDATED",
+              "label": "SystemData.Events.PLAYER_MONEY_UPDATED",
+              "type": "event",
+              "path": "events/game_events/game_event_SystemData.Events.PLAYER_MONEY_UPDATED.md",
               "importance": 63
             },
             {
@@ -4118,6 +3992,13 @@
               "label": "PlayerObjectWindowsChanged",
               "type": "event",
               "path": "events/game_events/game_event_PlayerObjectWindowsChanged.md",
+              "importance": 43
+            },
+            {
+              "id": "event:game:Start",
+              "label": "Start",
+              "type": "event",
+              "path": "events/game_events/game_event_Start.md",
               "importance": 43
             },
             {
@@ -4605,13 +4486,6 @@
               "importance": 100
             },
             {
-              "id": "data:system:SystemData.Events.EXIT_GAME",
-              "label": "SystemData.Events.EXIT_GAME",
-              "type": "data_structure",
-              "path": "systemdata/fields/systemdata_SystemData.Events.EXIT_GAME.md",
-              "importance": 100
-            },
-            {
               "id": "data:system:SystemData.Events.GROUP_ACCEPT_INVITATION",
               "label": "SystemData.Events.GROUP_ACCEPT_INVITATION",
               "type": "data_structure",
@@ -4710,13 +4584,6 @@
               "importance": 100
             },
             {
-              "id": "data:system:SystemData.Events.INTERACT_LOOT_CLOSE",
-              "label": "SystemData.Events.INTERACT_LOOT_CLOSE",
-              "type": "data_structure",
-              "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_LOOT_CLOSE.md",
-              "importance": 100
-            },
-            {
               "id": "data:system:SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM",
               "label": "SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM",
               "type": "data_structure",
@@ -4728,13 +4595,6 @@
               "label": "SystemData.Events.INTERACT_OPEN_BANK",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md",
-              "importance": 100
-            },
-            {
-              "id": "data:system:SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST",
-              "label": "SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST",
-              "type": "data_structure",
-              "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST.md",
               "importance": 100
             },
             {
@@ -4766,24 +4626,10 @@
               "importance": 100
             },
             {
-              "id": "data:system:SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-              "label": "SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-              "type": "data_structure",
-              "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST.md",
-              "importance": 100
-            },
-            {
               "id": "data:system:SystemData.Events.INTERACT_SHOW_STORE",
               "label": "SystemData.Events.INTERACT_SHOW_STORE",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_STORE.md",
-              "importance": 100
-            },
-            {
-              "id": "data:system:SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-              "label": "SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-              "type": "data_structure",
-              "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST.md",
               "importance": 100
             },
             {
@@ -4826,13 +4672,6 @@
               "label": "SystemData.Events.L_BUTTON_DOWN_PROCESSED",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.L_BUTTON_DOWN_PROCESSED.md",
-              "importance": 100
-            },
-            {
-              "id": "data:system:SystemData.Events.L_BUTTON_UP",
-              "label": "SystemData.Events.L_BUTTON_UP",
-              "type": "data_structure",
-              "path": "systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP.md",
               "importance": 100
             },
             {
@@ -5060,13 +4899,6 @@
               "importance": 100
             },
             {
-              "id": "data:system:SystemData.Events.PLAYER_LOAD_COMPLETE",
-              "label": "SystemData.Events.PLAYER_LOAD_COMPLETE",
-              "type": "data_structure",
-              "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_LOAD_COMPLETE.md",
-              "importance": 100
-            },
-            {
               "id": "data:system:SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
               "label": "SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
               "type": "data_structure",
@@ -5256,13 +5088,6 @@
               "importance": 100
             },
             {
-              "id": "data:system:SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-              "label": "SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-              "type": "data_structure",
-              "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED.md",
-              "importance": 100
-            },
-            {
               "id": "data:system:SystemData.Events.SCENARIO_BEGIN",
               "label": "SystemData.Events.SCENARIO_BEGIN",
               "type": "data_structure",
@@ -5288,13 +5113,6 @@
               "label": "SystemData.Events.SCENARIO_GROUP_LEAVE",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_GROUP_LEAVE.md",
-              "importance": 100
-            },
-            {
-              "id": "data:system:SystemData.Events.SCENARIO_INSTANCE_CANCEL",
-              "label": "SystemData.Events.SCENARIO_INSTANCE_CANCEL",
-              "type": "data_structure",
-              "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_INSTANCE_CANCEL.md",
               "importance": 100
             },
             {
@@ -5386,13 +5204,6 @@
               "label": "SystemData.Events.SHOW_ALERT_TEXT",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.SHOW_ALERT_TEXT.md",
-              "importance": 100
-            },
-            {
-              "id": "data:system:SystemData.Events.SPELL_CAST_CANCEL",
-              "label": "SystemData.Events.SPELL_CAST_CANCEL",
-              "type": "data_structure",
-              "path": "systemdata/fields/systemdata_SystemData.Events.SPELL_CAST_CANCEL.md",
               "importance": 100
             },
             {
@@ -5646,20 +5457,6 @@
               "label": "GameData.BuffTargetType.SELF",
               "type": "data_structure",
               "path": "gamedata/fields/gamedata_GameData.BuffTargetType.SELF.md",
-              "importance": 100
-            },
-            {
-              "id": "data:game:GameData.CareerLine.WITCH_ELF",
-              "label": "GameData.CareerLine.WITCH_ELF",
-              "type": "data_structure",
-              "path": "gamedata/fields/gamedata_GameData.CareerLine.WITCH_ELF.md",
-              "importance": 100
-            },
-            {
-              "id": "data:game:GameData.CareerLine.WITCH_HUNTER",
-              "label": "GameData.CareerLine.WITCH_HUNTER",
-              "type": "data_structure",
-              "path": "gamedata/fields/gamedata_GameData.CareerLine.WITCH_HUNTER.md",
               "importance": 100
             },
             {
@@ -6146,13 +5943,6 @@
               "importance": 100
             },
             {
-              "id": "data:game:GameData.ScenarioQueueData",
-              "label": "GameData.ScenarioQueueData",
-              "type": "data_structure",
-              "path": "gamedata/fields/gamedata_GameData.ScenarioQueueData.md",
-              "importance": 100
-            },
-            {
               "id": "data:game:GameData.Sound",
               "label": "GameData.Sound",
               "type": "data_structure",
@@ -6249,6 +6039,20 @@
               "type": "pattern",
               "path": "patterns/conventions_UI_creation_pattern.md",
               "importance": 100
+            },
+            {
+              "id": "pattern:conventions_XML_list_binding_pattern",
+              "label": "XML list binding pattern",
+              "type": "pattern",
+              "path": "patterns/conventions_XML_list_binding_pattern.md",
+              "importance": 60
+            },
+            {
+              "id": "pattern:conventions_XML_runtime_caveats",
+              "label": "XML runtime caveats",
+              "type": "pattern",
+              "path": "patterns/conventions_XML_runtime_caveats.md",
+              "importance": 60
             },
             {
               "id": "pattern:conventions_XML_to_Lua_binding_pattern",

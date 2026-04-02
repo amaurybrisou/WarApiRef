@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, DAoCBuff, Enemy, PlanB, Shinies, WSCT |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/PlanB/PlanB.lua:35`, `/workspace/wsct/wsct.lua:117` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/PlanB/PlanB.lua:35`, `/workspace_addons/wsct/wsct.lua:117` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.local.RegisterCoreEvents, AdvancedPetAssist: RegisterCoreEvents, DAoCBuff: DAoCBuff.Initialize, Enemy: Enemy.GroupsInitialize, PlanB: PlanB.Initialize, WSCT: WSCT:RegisterSelfEvents |

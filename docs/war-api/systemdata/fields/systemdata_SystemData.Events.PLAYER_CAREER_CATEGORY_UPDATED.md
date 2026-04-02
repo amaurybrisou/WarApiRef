@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer |
-| Files seen in | `/workspace/advancedrenowntrainer/AdvancedRenownTraining.lua:498`, `/workspace/advancedrenowntrainer/AdvancedRenownTraining.lua:580` |
+| Files seen in | `/workspace_addons/advancedrenowntrainer/AdvancedRenownTraining.lua:498`, `/workspace_addons/advancedrenowntrainer/AdvancedRenownTraining.lua:580` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedRenownTraining.CreateDataTable, AdvancedRenownTraining.Initialize, AdvancedRenownTraining.OnReload, SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, event_page, event_registration |

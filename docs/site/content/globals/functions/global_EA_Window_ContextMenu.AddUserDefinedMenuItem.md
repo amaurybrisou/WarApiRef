@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Miracle Grow Remix, MoraleCircle |
-| Files seen in | `/workspace/MGRemix/context.lua:27`, `/workspace/MoraleCircle/MoraleCircle.lua:391`, `/workspace/MoraleCircle/MoraleCircle.lua:415`, `/workspace/MoraleCircle/MoraleCircle.lua:436`, `/workspace/MoraleCircle/MoraleCircle.lua:458` |
+| Files seen in | `/workspace_addons/MGRemix/context.lua:27`, `/workspace_addons/MoraleCircle/MoraleCircle.lua:391`, `/workspace_addons/MoraleCircle/MoraleCircle.lua:415`, `/workspace_addons/MoraleCircle/MoraleCircle.lua:436`, `/workspace_addons/MoraleCircle/MoraleCircle.lua:458` |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
 | Example locations | Miracle Grow Remix: AddContextItem, Miracle Grow Remix: Miracle Grow Remix.local.AddContextItem, MoraleCircle: MoraleCircle.ColorChanger1, MoraleCircle: MoraleCircle.ColorChanger2, MoraleCircle: MoraleCircle.ColorChanger3, MoraleCircle: MoraleCircle.ColorChanger4 |
@@ -76,11 +76,11 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

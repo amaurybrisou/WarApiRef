@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | FastInteract |
-| Files seen in | `/workspace/FastInteract/FastInteract.lua:132` |
+| Files seen in | `/workspace_addons/FastInteract/FastInteract.lua:132` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | FastInteract: FastInteract.Initialize |

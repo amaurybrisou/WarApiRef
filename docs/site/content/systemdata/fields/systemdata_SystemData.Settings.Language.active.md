@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | JunkDump |
-| Files seen in | `/workspace/JunkDump/JunkDump.lua:50`, `/workspace/JunkDump/JunkDumpOptions.lua:22` |
+| Files seen in | `/workspace_addons/JunkDump/JunkDump.lua:50`, `/workspace_addons/JunkDump/JunkDumpOptions.lua:22` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | JunkDump.Initialize, JunkDumpOptions.Initialize, lua_call |

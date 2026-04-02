@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/ScenarioAlerter/ScenarioAlerter.lua:58` |
+| Files seen in | `/workspace_addons/Enemy/Code/ScenarioAlerter/ScenarioAlerter.lua:58` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Enemy.local.GetStartingScenarioName, GetStartingScenarioName, lua_call |

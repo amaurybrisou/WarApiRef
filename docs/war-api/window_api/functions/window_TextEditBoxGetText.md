@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 27 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace/Ace/LibGUI.lua:664`, `/workspace/Ace/LibGUI.lua:719`, `/workspace/AdvancedPetAssist/APAGuiHelpers.lua:9`, `/workspace/Aura/Source/AuraShares.lua:419`, `/workspace/BuffHead/Setup/SelectColor.lua:78`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.lua:310`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:147`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:601` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:664`, `/workspace_addons/Ace/LibGUI.lua:719`, `/workspace_addons/AdvancedPetAssist/APAGuiHelpers.lua:9`, `/workspace_addons/Aura/Source/AuraShares.lua:419`, `/workspace_addons/BuffHead/Setup/SelectColor.lua:78`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.lua:310`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:147`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:601` |
 | Namespaces detected | TextEditBoxGetText |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_MultiTextbox:GetText, Ace: LIBGUI_Textbox:GetText, AdvancedPetAssist: APAGuiHelpers.ParseRGB, AdvancedRenownTrainer: AdvancedRenownTraining.ImportNameInputOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.SavePreset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 196 |
-| Global usage count | 196 |
+| Lua usage count | 190 |
+| Global usage count | 190 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -105,10 +105,8 @@ Observed reading from or writing to edit-box controls.
 - RandomMount
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyRoll
 - TurretRange
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - wbLeadHelper

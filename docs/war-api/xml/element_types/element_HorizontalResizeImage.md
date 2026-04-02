@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AggroMeter, Aura, BuffHead, EA_ThreePartBar, EA_UiDebugTools, MapMonster, PotionBar |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:1389`, `/workspace/AdvancedPetAssist/APAGui.xml:1430`, `/workspace/AdvancedPetAssist/APAGui.xml:1471`, `/workspace/AdvancedPetAssist/APAGui.xml:1509`, `/workspace/AggroMeter/AggroMeter.xml:126`, `/workspace/Aura/Source/AuraConfig.xml:390`, `/workspace/Aura/Source/AuraConfig.xml:400`, `/workspace/Aura/Source/AuraConfig.xml:410` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1389`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1430`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1471`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1509`, `/workspace_addons/AggroMeter/AggroMeter.xml:126`, `/workspace_addons/Aura/Source/AuraConfig.xml:390`, `/workspace_addons/Aura/Source/AuraConfig.xml:400`, `/workspace_addons/Aura/Source/AuraConfig.xml:410` |
 | Namespaces detected | HorizontalResizeImage |
 | Source kinds | xml_frames |
 | Example locations | AdvancedPetAssist: APAFollowTargetHUDFill, AdvancedPetAssist: APAInstantOnlyHUDFill, AdvancedPetAssist: APAKitingHUDFill, AdvancedPetAssist: APAPetTargetHUDBg, AggroMeter: AggroMeterGrayWindowSeparatorMiddle, Aura: AuraConfigTabsSeparatorActivation |

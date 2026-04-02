@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WSCT |
-| Files seen in | `/workspace/wsct/wsct.lua:117`, `/workspace/wsct/wsct.lua:137` |
+| Files seen in | `/workspace_addons/wsct/wsct.lua:117`, `/workspace_addons/wsct/wsct.lua:137` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | WSCT: WSCT:RegisterSelfEvents, WSCT: WSCT:UnregisterSelfEvents |
@@ -65,7 +65,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 
@@ -103,4 +103,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Notes
 
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

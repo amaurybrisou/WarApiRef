@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Source/ShiniesUITemplates.xml:77` |
+| Files seen in | `/workspace_addons/Shinies/Source/ShiniesUITemplates.xml:77` |
 | Namespaces detected | EA_Templates_GoldCoin |
 | Source kinds | xml_attributes |
 | Example locations | Shinies_GoldCoinImage |

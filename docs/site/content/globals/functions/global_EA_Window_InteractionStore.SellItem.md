@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic |
-| Files seen in | `/workspace/bagomatic/BagOMatic.lua:771` |
+| Files seen in | `/workspace_addons/bagomatic/BagOMatic.lua:771` |
 | Namespaces detected | EA_Window_InteractionStore |
 | Source kinds | globals, lua_calls |
 | Example locations | BagOMatic: BagOMatic.sellItemAt |
@@ -74,11 +74,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -108,3 +108,4 @@ Observed as a global function across 1 addons.
 
 - Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

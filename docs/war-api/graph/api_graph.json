@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T06:28:20.398564521Z",
+  "generated_at": "2026-04-02T04:17:20.313294738Z",
   "nodes": [
     {
       "id": "data:table:ActiveWindow",
@@ -19,7 +19,7 @@
       "path": "globals/tables/table_AlertText.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 5 addons."
+      "summary": "Observed shared global table or namespace surfaced in 4 addons."
     },
     {
       "id": "data:table:AlertTextWindow",
@@ -29,7 +29,7 @@
       "path": "globals/tables/table_AlertTextWindow.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 8 addons."
+      "summary": "Observed shared global table or namespace surfaced in 7 addons."
     },
     {
       "id": "data:table:AuctionWindow",
@@ -209,7 +209,7 @@
       "path": "globals/constants/constant_EA_Button_DefaultCheckBox.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 20 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 17 addons."
     },
     {
       "id": "data:constant:EA_Button_DefaultDown",
@@ -289,7 +289,7 @@
       "path": "globals/constants/constant_EA_Button_DefaultMinus.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 6 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 5 addons."
     },
     {
       "id": "data:constant:EA_Button_DefaultPlus",
@@ -299,7 +299,7 @@
       "path": "globals/constants/constant_EA_Button_DefaultPlus.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 6 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 5 addons."
     },
     {
       "id": "data:constant:EA_Button_DefaultResizableComboBoxSelected",
@@ -319,7 +319,7 @@
       "path": "globals/constants/constant_EA_Button_DefaultResizeable.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 34 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 29 addons."
     },
     {
       "id": "data:constant:EA_Button_DefaultSmallSquare",
@@ -340,16 +340,6 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed engine XML template or inherited constant referenced by 5 addons."
-    },
-    {
-      "id": "data:constant:EA_Button_DefaultTextButton",
-      "label": "EA_Button_DefaultTextButton",
-      "type": "data_structure",
-      "category": "Constant",
-      "path": "globals/constants/constant_EA_Button_DefaultTextButton.md",
-      "confidence": "HIGH",
-      "score": 90,
-      "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
     },
     {
       "id": "data:constant:EA_Button_DefaultToggleCircle",
@@ -379,7 +369,7 @@
       "path": "globals/constants/constant_EA_Button_DefaultWindowClose.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 43 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 38 addons."
     },
     {
       "id": "data:constant:EA_Button_ListSort",
@@ -439,7 +429,7 @@
       "path": "globals/constants/constant_EA_Button_Tab.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 14 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 12 addons."
     },
     {
       "id": "data:constant:EA_Button_UiModuleListRowTemplate",
@@ -469,7 +459,7 @@
       "path": "globals/tables/table_EA_ChatWindow.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 44 addons."
+      "summary": "Observed shared global table or namespace surfaced in 37 addons."
     },
     {
       "id": "data:table:EA_ChatWindowGroups",
@@ -498,8 +488,8 @@
       "category": "Constant",
       "path": "globals/constants/constant_EA_CheckButtonLabel.md",
       "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 2 addons."
+      "score": 90,
+      "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
     },
     {
       "id": "data:constant:EA_ComboBox_DefaultResizable",
@@ -509,7 +499,7 @@
       "path": "globals/constants/constant_EA_ComboBox_DefaultResizable.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 14 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 12 addons."
     },
     {
       "id": "data:constant:EA_ComboBox_DefaultResizable3",
@@ -529,7 +519,7 @@
       "path": "globals/constants/constant_EA_ComboBox_DefaultResizableLarge.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 4 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 3 addons."
     },
     {
       "id": "data:constant:EA_ComboBox_DefaultResizableMedium",
@@ -538,8 +528,8 @@
       "category": "Constant",
       "path": "globals/constants/constant_EA_ComboBox_DefaultResizableMedium.md",
       "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 2 addons."
+      "score": 90,
+      "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
     },
     {
       "id": "data:constant:EA_ComboBox_DefaultResizableSmall",
@@ -598,8 +588,8 @@
       "category": "Constant",
       "path": "globals/constants/constant_EA_Default_CornerImage.md",
       "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 2 addons."
+      "score": 90,
+      "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
     },
     {
       "id": "data:constant:EA_Default_MerchantImage",
@@ -622,16 +612,6 @@
       "summary": "Observed engine XML template or inherited constant referenced by 17 addons."
     },
     {
-      "id": "data:constant:EA_Default_SocialImage",
-      "label": "EA_Default_SocialImage",
-      "type": "data_structure",
-      "category": "Constant",
-      "path": "globals/constants/constant_EA_Default_SocialImage.md",
-      "confidence": "HIGH",
-      "score": 90,
-      "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
-    },
-    {
       "id": "data:constant:EA_Default_TrainingImage",
       "label": "EA_Default_TrainingImage",
       "type": "data_structure",
@@ -649,7 +629,7 @@
       "path": "globals/constants/constant_EA_EditBox_DefaultFrame.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 23 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 21 addons."
     },
     {
       "id": "data:constant:EA_EditBox_DefaultFrame_Multiline",
@@ -719,7 +699,7 @@
       "path": "globals/constants/constant_EA_FullResizeImage_DefaultFrame.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 4 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 3 addons."
     },
     {
       "id": "data:constant:EA_FullResizeImage_MetalFill",
@@ -729,7 +709,7 @@
       "path": "globals/constants/constant_EA_FullResizeImage_MetalFill.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 9 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 6 addons."
     },
     {
       "id": "data:constant:EA_FullResizeImage_TanBorder",
@@ -819,7 +799,7 @@
       "path": "globals/constants/constant_EA_LabelCheckButton.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 10 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 9 addons."
     },
     {
       "id": "data:constant:EA_LabelCheckButtonSmallCopy",
@@ -839,7 +819,7 @@
       "path": "globals/constants/constant_EA_Label_DefaultSubHeading.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 4 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 3 addons."
     },
     {
       "id": "data:constant:EA_Label_DefaultText",
@@ -849,7 +829,7 @@
       "path": "globals/constants/constant_EA_Label_DefaultText.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 14 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 11 addons."
     },
     {
       "id": "data:constant:EA_Label_DefaultText_Small",
@@ -859,7 +839,7 @@
       "path": "globals/constants/constant_EA_Label_DefaultText_Small.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 5 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 3 addons."
     },
     {
       "id": "data:constant:EA_ListSortDownArrow",
@@ -909,7 +889,7 @@
       "path": "globals/constants/constant_EA_ScrollBar_DefaultVerticalChain.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 12 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 11 addons."
     },
     {
       "id": "data:constant:EA_ScrollWindow_ModInfoTemplate",
@@ -959,7 +939,7 @@
       "path": "globals/constants/constant_EA_Settings_SectionTitle.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 5 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 4 addons."
     },
     {
       "id": "data:constant:EA_Templates_BrassCoin",
@@ -1019,7 +999,7 @@
       "path": "globals/constants/constant_EA_TitleBar_Default.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 33 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 27 addons."
     },
     {
       "id": "data:constant:EA_Window_AdvancedMainUIPathToggle",
@@ -1069,7 +1049,7 @@
       "path": "globals/tables/table_EA_Window_ContextMenu.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 22 addons."
+      "summary": "Observed shared global table or namespace surfaced in 20 addons."
     },
     {
       "id": "data:table:EA_Window_CurrentEvents",
@@ -1089,7 +1069,7 @@
       "path": "globals/constants/constant_EA_Window_Default.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 24 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 23 addons."
     },
     {
       "id": "data:constant:EA_Window_DefaultBackgroundFrame",
@@ -1099,7 +1079,7 @@
       "path": "globals/constants/constant_EA_Window_DefaultBackgroundFrame.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 26 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 22 addons."
     },
     {
       "id": "data:constant:EA_Window_DefaultButtonBottomFrame",
@@ -1109,7 +1089,7 @@
       "path": "globals/constants/constant_EA_Window_DefaultButtonBottomFrame.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 10 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 7 addons."
     },
     {
       "id": "data:constant:EA_Window_DefaultContextMenuFrame",
@@ -1129,7 +1109,7 @@
       "path": "globals/constants/constant_EA_Window_DefaultFrame.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 25 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 22 addons."
     },
     {
       "id": "data:constant:EA_Window_DefaultFrameStatusBar",
@@ -1159,7 +1139,7 @@
       "path": "globals/constants/constant_EA_Window_DefaultSeparator.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 12 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 10 addons."
     },
     {
       "id": "data:constant:EA_Window_DefaultTooltipBackground",
@@ -1322,16 +1302,6 @@
       "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
     },
     {
-      "id": "data:table:EA_Window_ScenarioLobby",
-      "label": "EA_Window_ScenarioLobby",
-      "type": "data_structure",
-      "category": "Global Table",
-      "path": "globals/tables/table_EA_Window_ScenarioLobby.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 2 addons."
-    },
-    {
       "id": "data:constant:EA_Window_TabSeparatorLeftSide",
       "label": "EA_Window_TabSeparatorLeftSide",
       "type": "data_structure",
@@ -1339,7 +1309,7 @@
       "path": "globals/constants/constant_EA_Window_TabSeparatorLeftSide.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 10 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 8 addons."
     },
     {
       "id": "data:constant:EA_Window_TabSeparatorRightSide",
@@ -1349,7 +1319,7 @@
       "path": "globals/constants/constant_EA_Window_TabSeparatorRightSide.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 10 addons."
+      "summary": "Observed engine XML template or inherited constant referenced by 8 addons."
     },
     {
       "id": "data:table:EA_Window_WorldMap",
@@ -1439,27 +1409,7 @@
       "path": "gamedata/fields/gamedata_GameData.BuffTargetType.SELF.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed GameData field used by 7 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
-      "id": "data:game:GameData.CareerLine.WITCH_ELF",
-      "label": "GameData.CareerLine.WITCH_ELF",
-      "type": "data_structure",
-      "category": "GameData Field",
-      "path": "gamedata/fields/gamedata_GameData.CareerLine.WITCH_ELF.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
-      "id": "data:game:GameData.CareerLine.WITCH_HUNTER",
-      "label": "GameData.CareerLine.WITCH_HUNTER",
-      "type": "data_structure",
-      "category": "GameData Field",
-      "path": "gamedata/fields/gamedata_GameData.CareerLine.WITCH_HUNTER.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed GameData field used by 5 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:game:GameData.ChatData.name",
@@ -1469,7 +1419,7 @@
       "path": "gamedata/fields/gamedata_GameData.ChatData.name.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed GameData field used by 3 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:game:GameData.ChatData.text",
@@ -1959,7 +1909,7 @@
       "path": "gamedata/fields/gamedata_GameData.Player.hitPoints.current.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:game:GameData.Player.hitPoints.maximum",
@@ -1969,7 +1919,7 @@
       "path": "gamedata/fields/gamedata_GameData.Player.hitPoints.maximum.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed GameData field used by 3 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:game:GameData.Player.inCombat",
@@ -2029,7 +1979,7 @@
       "path": "gamedata/fields/gamedata_GameData.Player.name.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed GameData field used by 12 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed GameData field used by 9 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:game:GameData.Player.rvrPermaFlagged",
@@ -2069,7 +2019,7 @@
       "path": "gamedata/fields/gamedata_GameData.Player.zone.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed GameData field used by 7 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed GameData field used by 6 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:game:GameData.Player.zoneId",
@@ -2129,7 +2079,7 @@
       "path": "gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed GameData field used by 7 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed GameData field used by 5 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:game:GameData.ScenarioData",
@@ -2147,16 +2097,6 @@
       "type": "data_structure",
       "category": "GameData Field",
       "path": "gamedata/fields/gamedata_GameData.ScenarioData.startingScenario.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
-      "id": "data:game:GameData.ScenarioQueueData",
-      "label": "GameData.ScenarioQueueData",
-      "type": "data_structure",
-      "category": "GameData Field",
-      "path": "gamedata/fields/gamedata_GameData.ScenarioQueueData.md",
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
@@ -2222,16 +2162,6 @@
       "summary": "Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
-      "id": "data:table:GroupWindow",
-      "label": "GroupWindow",
-      "type": "data_structure",
-      "category": "Global Table",
-      "path": "globals/tables/table_GroupWindow.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 2 addons."
-    },
-    {
       "id": "data:table:HelpTips",
       "label": "HelpTips",
       "type": "data_structure",
@@ -2259,7 +2189,7 @@
       "path": "globals/tables/table_InterfaceCore.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 23 addons."
+      "summary": "Observed shared global table or namespace surfaced in 21 addons."
     },
     {
       "id": "data:table:LibSlash",
@@ -2269,7 +2199,7 @@
       "path": "globals/tables/table_LibSlash.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 56 addons."
+      "summary": "Observed shared global table or namespace surfaced in 46 addons."
     },
     {
       "id": "data:table:MailWindow",
@@ -2309,7 +2239,7 @@
       "path": "globals/tables/table_PartyUtils.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 15 addons."
+      "summary": "Observed shared global table or namespace surfaced in 11 addons."
     },
     {
       "id": "data:table:PetWindow",
@@ -2329,7 +2259,7 @@
       "path": "globals/tables/table_PlayerMenuWindow.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 3 addons."
+      "summary": "Observed shared global table or namespace surfaced in 2 addons."
     },
     {
       "id": "data:system:SystemData.ActiveWindow.name",
@@ -2339,7 +2269,7 @@
       "path": "systemdata/fields/systemdata_SystemData.ActiveWindow.name.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 30 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 29 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.AlertText.Types.DEFAULT",
@@ -2459,7 +2389,7 @@
       "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.ALL_MODULES_INITIALIZED",
@@ -2519,7 +2449,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_MEMBER_UPDATED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 4 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.BATTLEGROUP_UPDATED",
@@ -2529,7 +2459,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.CAMPAIGN_ZONE_UPDATED",
@@ -2549,7 +2479,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.CHAT_TEXT_ARRIVED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.CITY_SCENARIO_BEGIN",
@@ -2610,16 +2540,6 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
-      "id": "data:system:SystemData.Events.EXIT_GAME",
-      "label": "SystemData.Events.EXIT_GAME",
-      "type": "data_structure",
-      "category": "SystemData Field",
-      "path": "systemdata/fields/systemdata_SystemData.Events.EXIT_GAME.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.GROUP_ACCEPT_INVITATION",
@@ -2759,16 +2679,6 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
-      "id": "data:system:SystemData.Events.INTERACT_LOOT_CLOSE",
-      "label": "SystemData.Events.INTERACT_LOOT_CLOSE",
-      "type": "data_structure",
-      "category": "SystemData Field",
-      "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_LOOT_CLOSE.md",
-      "confidence": "HIGH",
-      "score": 100,
       "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
@@ -2790,16 +2700,6 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
-      "id": "data:system:SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST",
-      "label": "SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST",
-      "type": "data_structure",
-      "category": "SystemData Field",
-      "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.INTERACT_SELL_ITEM",
@@ -2829,7 +2729,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.INTERACT_SHOW_QUEST",
@@ -2837,16 +2737,6 @@
       "type": "data_structure",
       "category": "SystemData Field",
       "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_QUEST.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
-      "id": "data:system:SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-      "label": "SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-      "type": "data_structure",
-      "category": "SystemData Field",
-      "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST.md",
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
@@ -2862,16 +2752,6 @@
       "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
-      "id": "data:system:SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-      "label": "SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-      "type": "data_structure",
-      "category": "SystemData Field",
-      "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
       "id": "data:system:SystemData.Events.INTERFACE_RELOADED",
       "label": "SystemData.Events.INTERFACE_RELOADED",
       "type": "data_structure",
@@ -2879,7 +2759,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 9 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 7 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.ITEM_SET_DATA_ARRIVED",
@@ -2909,7 +2789,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_END.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 31 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 27 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.LOG_OUT",
@@ -2919,7 +2799,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.L_BUTTON_DOWN_PROCESSED",
@@ -2930,16 +2810,6 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
-      "id": "data:system:SystemData.Events.L_BUTTON_UP",
-      "label": "SystemData.Events.L_BUTTON_UP",
-      "type": "data_structure",
-      "category": "SystemData Field",
-      "path": "systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.L_BUTTON_UP_PROCESSED",
@@ -3189,7 +3059,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_EFFECTS_UPDATED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 8 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 7 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.PLAYER_END_CAST",
@@ -3262,16 +3132,6 @@
       "summary": "Observed SystemData field used by 6 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
-      "id": "data:system:SystemData.Events.PLAYER_LOAD_COMPLETE",
-      "label": "SystemData.Events.PLAYER_LOAD_COMPLETE",
-      "type": "data_structure",
-      "category": "SystemData Field",
-      "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_LOAD_COMPLETE.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
       "id": "data:system:SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
       "label": "SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
       "type": "data_structure",
@@ -3299,7 +3159,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MONEY_UPDATED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.PLAYER_MORALE_UPDATED",
@@ -3399,7 +3259,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_UPDATED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.PLAYER_RVR_FLAG_UPDATED",
@@ -3469,7 +3329,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 8 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 7 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.PUBLIC_QUEST_ADDED",
@@ -3529,7 +3389,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 20 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 18 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.R_BUTTON_DOWN_PROCESSED",
@@ -3540,16 +3400,6 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed SystemData field used by 4 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
-      "id": "data:system:SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-      "label": "SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-      "type": "data_structure",
-      "category": "SystemData Field",
-      "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.SCENARIO_BEGIN",
@@ -3592,16 +3442,6 @@
       "summary": "Observed SystemData field used by 4 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
-      "id": "data:system:SystemData.Events.SCENARIO_INSTANCE_CANCEL",
-      "label": "SystemData.Events.SCENARIO_INSTANCE_CANCEL",
-      "type": "data_structure",
-      "category": "SystemData Field",
-      "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_INSTANCE_CANCEL.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
       "id": "data:system:SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW",
       "label": "SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW",
       "type": "data_structure",
@@ -3609,7 +3449,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 4 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED",
@@ -3679,7 +3519,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS",
@@ -3719,7 +3559,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.SEND_CHAT_TEXT.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.SHOW_ALERT_TEXT",
@@ -3730,16 +3570,6 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
-    },
-    {
-      "id": "data:system:SystemData.Events.SPELL_CAST_CANCEL",
-      "label": "SystemData.Events.SPELL_CAST_CANCEL",
-      "type": "data_structure",
-      "category": "SystemData Field",
-      "path": "systemdata/fields/systemdata_SystemData.Events.SPELL_CAST_CANCEL.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.TARGET_PET",
@@ -3769,7 +3599,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 17 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 14 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.USER_SETTINGS_CHANGED",
@@ -3799,7 +3629,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 6 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED",
@@ -3819,7 +3649,7 @@
       "path": "systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_RENOWN_GAINED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.Events.WORLD_OBJ_XP_GAINED",
@@ -3889,7 +3719,7 @@
       "path": "systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 26 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 24 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.MousePosition.x",
@@ -3959,7 +3789,7 @@
       "path": "systemdata/fields/systemdata_SystemData.UiLogFilters.DEBUG.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 6 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 7 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.UiLogFilters.ERROR",
@@ -3969,7 +3799,7 @@
       "path": "systemdata/fields/systemdata_SystemData.UiLogFilters.ERROR.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence."
+      "summary": "Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence."
     },
     {
       "id": "data:system:SystemData.UiLogFilters.FUNCTION",
@@ -4019,7 +3849,7 @@
       "path": "globals/tables/table_wstring.md",
       "confidence": "HIGH",
       "score": 90,
-      "summary": "Observed shared global table or namespace surfaced in 25 addons."
+      "summary": "Observed shared global table or namespace surfaced in 23 addons."
     },
     {
       "id": "event:game:BroadcastMessageInvite",
@@ -4359,7 +4189,7 @@
       "path": "events/window_events/window_event_OnHidden.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an engine-supplied UI event hook used by 24 addons."
+      "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
     },
     {
       "id": "event:window:OnHyperLinkLButtonUp",
@@ -4389,7 +4219,7 @@
       "path": "events/window_events/window_event_OnInitialize.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an engine-supplied UI event hook used by 21 addons."
+      "summary": "Observed as an engine-supplied UI event hook used by 19 addons."
     },
     {
       "id": "event:window:OnKeyEnter",
@@ -4429,7 +4259,7 @@
       "path": "events/window_events/window_event_OnLButtonDown.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an engine-supplied UI event hook used by 22 addons."
+      "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
     },
     {
       "id": "event:window:OnLButtonUp",
@@ -4439,7 +4269,7 @@
       "path": "events/window_events/window_event_OnLButtonUp.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an engine-supplied UI event hook used by 57 addons."
+      "summary": "Observed as an engine-supplied UI event hook used by 51 addons."
     },
     {
       "id": "event:window:OnMButtonDown",
@@ -4489,7 +4319,7 @@
       "path": "events/window_events/window_event_OnMouseOver.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an engine-supplied UI event hook used by 43 addons."
+      "summary": "Observed as an engine-supplied UI event hook used by 41 addons."
     },
     {
       "id": "event:window:OnMouseOverEnd",
@@ -4539,7 +4369,7 @@
       "path": "events/window_events/window_event_OnRButtonUp.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an engine-supplied UI event hook used by 36 addons."
+      "summary": "Observed as an engine-supplied UI event hook used by 32 addons."
     },
     {
       "id": "event:window:OnRawDeviceInput",
@@ -4569,7 +4399,7 @@
       "path": "events/window_events/window_event_OnSelChanged.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an engine-supplied UI event hook used by 31 addons."
+      "summary": "Observed as an engine-supplied UI event hook used by 27 addons."
     },
     {
       "id": "event:window:OnSetMoving",
@@ -4599,7 +4429,7 @@
       "path": "events/window_events/window_event_OnShutdown.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an engine-supplied UI event hook used by 6 addons."
+      "summary": "Observed as an engine-supplied UI event hook used by 4 addons."
     },
     {
       "id": "event:window:OnSizeUpdated",
@@ -4639,7 +4469,7 @@
       "path": "events/window_events/window_event_OnUpdate.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an engine-supplied UI event hook used by 7 addons."
+      "summary": "Observed as an engine-supplied UI event hook used by 5 addons."
     },
     {
       "id": "event:game:PlayerObjectWindowsChanged",
@@ -4677,8 +4507,8 @@
       "type": "event",
       "category": "Game Event",
       "path": "events/game_events/game_event_Start.md",
-      "confidence": "HIGH",
-      "score": 73,
+      "confidence": "MEDIUM",
+      "score": 43,
       "summary": "Observed as a runtime event or event-like identifier used by 1 addons."
     },
     {
@@ -4749,7 +4579,7 @@
       "path": "events/game_events/game_event_SystemData.Events.BATTLEGROUP_MEMBER_UPDATED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 2 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
       "id": "event:game:SystemData.Events.BATTLEGROUP_UPDATED",
@@ -4759,7 +4589,7 @@
       "path": "events/game_events/game_event_SystemData.Events.BATTLEGROUP_UPDATED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 2 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
       "id": "event:game:SystemData.Events.CAMPAIGN_ZONE_UPDATED",
@@ -4779,7 +4609,7 @@
       "path": "events/game_events/game_event_SystemData.Events.CHAT_TEXT_ARRIVED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 4 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 2 addons."
     },
     {
       "id": "event:game:SystemData.Events.CITY_SCENARIO_BEGIN",
@@ -4840,16 +4670,6 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed as a shared SystemData runtime event used by 4 addons."
-    },
-    {
-      "id": "event:game:SystemData.Events.EXIT_GAME",
-      "label": "SystemData.Events.EXIT_GAME",
-      "type": "event",
-      "category": "Game Event",
-      "path": "events/game_events/game_event_SystemData.Events.EXIT_GAME.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
       "id": "event:game:SystemData.Events.GROUP_ACCEPT_INVITATION",
@@ -4959,16 +4779,6 @@
       "path": "events/game_events/game_event_SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 3 addons."
-    },
-    {
-      "id": "event:game:SystemData.Events.INTERACT_LOOT_CLOSE",
-      "label": "SystemData.Events.INTERACT_LOOT_CLOSE",
-      "type": "event",
-      "category": "Game Event",
-      "path": "events/game_events/game_event_SystemData.Events.INTERACT_LOOT_CLOSE.md",
-      "confidence": "HIGH",
-      "score": 100,
       "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
@@ -5009,7 +4819,7 @@
       "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 2 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
       "id": "event:game:SystemData.Events.INTERACT_SHOW_QUEST",
@@ -5017,16 +4827,6 @@
       "type": "event",
       "category": "Game Event",
       "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_QUEST.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
-    },
-    {
-      "id": "event:game:SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-      "label": "SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-      "type": "event",
-      "category": "Game Event",
-      "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST.md",
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed as a shared SystemData runtime event used by 1 addons."
@@ -5042,16 +4842,6 @@
       "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
-      "id": "event:game:SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-      "label": "SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-      "type": "event",
-      "category": "Game Event",
-      "path": "events/game_events/game_event_SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
-    },
-    {
       "id": "event:game:SystemData.Events.INTERFACE_RELOADED",
       "label": "SystemData.Events.INTERFACE_RELOADED",
       "type": "event",
@@ -5059,7 +4849,7 @@
       "path": "events/game_events/game_event_SystemData.Events.INTERFACE_RELOADED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 8 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 6 addons."
     },
     {
       "id": "event:game:SystemData.Events.ITEM_SET_DATA_ARRIVED",
@@ -5089,7 +4879,7 @@
       "path": "events/game_events/game_event_SystemData.Events.LOADING_END.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 29 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 25 addons."
     },
     {
       "id": "event:game:SystemData.Events.LOG_OUT",
@@ -5099,7 +4889,7 @@
       "path": "events/game_events/game_event_SystemData.Events.LOG_OUT.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 2 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
       "id": "event:game:SystemData.Events.L_BUTTON_DOWN_PROCESSED",
@@ -5109,16 +4899,6 @@
       "path": "events/game_events/game_event_SystemData.Events.L_BUTTON_DOWN_PROCESSED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
-    },
-    {
-      "id": "event:game:SystemData.Events.L_BUTTON_UP",
-      "label": "SystemData.Events.L_BUTTON_UP",
-      "type": "event",
-      "category": "Game Event",
-      "path": "events/game_events/game_event_SystemData.Events.L_BUTTON_UP.md",
-      "confidence": "HIGH",
-      "score": 98,
       "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
@@ -5349,7 +5129,7 @@
       "path": "events/game_events/game_event_SystemData.Events.PLAYER_EFFECTS_UPDATED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 6 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 5 addons."
     },
     {
       "id": "event:game:SystemData.Events.PLAYER_END_CAST",
@@ -5402,16 +5182,6 @@
       "summary": "Observed as a shared SystemData runtime event used by 6 addons."
     },
     {
-      "id": "event:game:SystemData.Events.PLAYER_LOAD_COMPLETE",
-      "label": "SystemData.Events.PLAYER_LOAD_COMPLETE",
-      "type": "event",
-      "category": "Game Event",
-      "path": "events/game_events/game_event_SystemData.Events.PLAYER_LOAD_COMPLETE.md",
-      "confidence": "HIGH",
-      "score": 98,
-      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
-    },
-    {
       "id": "event:game:SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
       "label": "SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
       "type": "event",
@@ -5437,9 +5207,9 @@
       "type": "event",
       "category": "Game Event",
       "path": "events/game_events/game_event_SystemData.Events.PLAYER_MONEY_UPDATED.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 2 addons."
+      "confidence": "MEDIUM",
+      "score": 63,
+      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
       "id": "event:game:SystemData.Events.PLAYER_MORALE_UPDATED",
@@ -5609,7 +5379,7 @@
       "path": "events/game_events/game_event_SystemData.Events.PLAYER_ZONE_CHANGED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 8 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 7 addons."
     },
     {
       "id": "event:game:SystemData.Events.PUBLIC_QUEST_ADDED",
@@ -5669,7 +5439,7 @@
       "path": "events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 17 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 15 addons."
     },
     {
       "id": "event:game:SystemData.Events.R_BUTTON_DOWN_PROCESSED",
@@ -5680,16 +5450,6 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed as a shared SystemData runtime event used by 2 addons."
-    },
-    {
-      "id": "event:game:SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-      "label": "SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-      "type": "event",
-      "category": "Game Event",
-      "path": "events/game_events/game_event_SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
       "id": "event:game:SystemData.Events.SCENARIO_BEGIN",
@@ -5732,16 +5492,6 @@
       "summary": "Observed as a shared SystemData runtime event used by 2 addons."
     },
     {
-      "id": "event:game:SystemData.Events.SCENARIO_INSTANCE_CANCEL",
-      "label": "SystemData.Events.SCENARIO_INSTANCE_CANCEL",
-      "type": "event",
-      "category": "Game Event",
-      "path": "events/game_events/game_event_SystemData.Events.SCENARIO_INSTANCE_CANCEL.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 2 addons."
-    },
-    {
       "id": "event:game:SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW",
       "label": "SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW",
       "type": "event",
@@ -5749,7 +5499,7 @@
       "path": "events/game_events/game_event_SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 3 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
       "id": "event:game:SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED",
@@ -5819,7 +5569,7 @@
       "path": "events/game_events/game_event_SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 4 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
       "id": "event:game:SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS",
@@ -5869,7 +5619,7 @@
       "path": "events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 17 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 14 addons."
     },
     {
       "id": "event:game:SystemData.Events.USER_SETTINGS_CHANGED",
@@ -5899,7 +5649,7 @@
       "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 4 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 3 addons."
     },
     {
       "id": "event:game:SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED",
@@ -5919,7 +5669,7 @@
       "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_RENOWN_GAINED.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a shared SystemData runtime event used by 2 addons."
+      "summary": "Observed as a shared SystemData runtime event used by 1 addons."
     },
     {
       "id": "event:game:SystemData.Events.WORLD_OBJ_XP_GAINED",
@@ -6009,7 +5759,7 @@
       "path": "globals/functions/global_AlertTextWindow.AddLine.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 5 addons."
+      "summary": "Observed as a global function across 4 addons."
     },
     {
       "id": "function:global:BankWindow.GetItem",
@@ -6079,7 +5829,7 @@
       "path": "window_api/functions/window_ButtonGetDisabledFlag.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 21 addons."
+      "summary": "Observed as a window function across 18 addons."
     },
     {
       "id": "function:window:ButtonGetPressedFlag",
@@ -6089,7 +5839,7 @@
       "path": "window_api/functions/window_ButtonGetPressedFlag.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 25 addons."
+      "summary": "Observed as a window function across 22 addons."
     },
     {
       "id": "function:window:ButtonGetText",
@@ -6109,7 +5859,7 @@
       "path": "window_api/functions/window_ButtonGetTextColor.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 7 addons."
+      "summary": "Observed as a window function across 6 addons."
     },
     {
       "id": "function:window:ButtonSetCheckButtonFlag",
@@ -6199,7 +5949,7 @@
       "path": "window_api/functions/window_ComboBoxAddMenuItem.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 21 addons."
+      "summary": "Observed as a window function across 19 addons."
     },
     {
       "id": "function:window:ComboBoxClearMenuItems",
@@ -6209,7 +5959,7 @@
       "path": "window_api/functions/window_ComboBoxClearMenuItems.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 26 addons."
+      "summary": "Observed as a window function across 24 addons."
     },
     {
       "id": "function:window:ComboBoxExternalOpenMenu",
@@ -6229,7 +5979,7 @@
       "path": "window_api/functions/window_ComboBoxGetDisabledFlag.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 8 addons."
+      "summary": "Observed as a window function across 6 addons."
     },
     {
       "id": "function:window:ComboBoxGetSelectedMenuItem",
@@ -6239,7 +5989,7 @@
       "path": "window_api/functions/window_ComboBoxGetSelectedMenuItem.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 29 addons."
+      "summary": "Observed as a window function across 25 addons."
     },
     {
       "id": "function:window:ComboBoxGetSelectedText",
@@ -6259,7 +6009,7 @@
       "path": "window_api/functions/window_ComboBoxSetDisabledFlag.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 11 addons."
+      "summary": "Observed as a window function across 10 addons."
     },
     {
       "id": "function:window:ComboBoxSetSelectedMenuItem",
@@ -6269,7 +6019,7 @@
       "path": "window_api/functions/window_ComboBoxSetSelectedMenuItem.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 32 addons."
+      "summary": "Observed as a window function across 28 addons."
     },
     {
       "id": "function:global:CreateWindow",
@@ -6579,7 +6329,7 @@
       "path": "globals/functions/global_EA_ChatWindow.Print.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 40 addons."
+      "summary": "Observed as a global function across 33 addons."
     },
     {
       "id": "function:global:EA_ChatWindow.ShowTabCycleButtons",
@@ -6719,7 +6469,7 @@
       "path": "globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 18 addons."
+      "summary": "Observed as a global function across 16 addons."
     },
     {
       "id": "function:global:EA_Window_ContextMenu.AddUserDefinedMenuItem",
@@ -6739,7 +6489,7 @@
       "path": "globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 20 addons."
+      "summary": "Observed as a global function across 19 addons."
     },
     {
       "id": "function:global:EA_Window_ContextMenu.Finalize",
@@ -6749,7 +6499,7 @@
       "path": "globals/functions/global_EA_Window_ContextMenu.Finalize.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 22 addons."
+      "summary": "Observed as a global function across 20 addons."
     },
     {
       "id": "function:global:EA_Window_ContextMenu.Hide",
@@ -6952,16 +6702,6 @@
       "summary": "Observed as a global function across 3 addons."
     },
     {
-      "id": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait",
-      "label": "EA_Window_ScenarioLobby.OnJoinInstanceWait",
-      "type": "function",
-      "category": "Global Function",
-      "path": "globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed as a global function across 1 addons."
-    },
-    {
       "id": "function:global:EA_Window_WorldMap.SetMap",
       "label": "EA_Window_WorldMap.SetMap",
       "type": "function",
@@ -6989,7 +6729,7 @@
       "path": "globals/functions/global_GameData.GetScenarioPlayerGroups.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 6 addons."
+      "summary": "Observed as a global function across 4 addons."
     },
     {
       "id": "function:global:GameData.GetScenarioPlayers",
@@ -7029,7 +6769,7 @@
       "path": "globals/functions/global_GetBuffs.md",
       "confidence": "HIGH",
       "score": 83,
-      "summary": "Observed as a shared query API across 10 addons."
+      "summary": "Observed as a shared query API across 8 addons."
     },
     {
       "id": "function:global:GetIconData",
@@ -7039,7 +6779,7 @@
       "path": "globals/functions/global_GetIconData.md",
       "confidence": "HIGH",
       "score": 83,
-      "summary": "Observed as a shared query API across 24 addons."
+      "summary": "Observed as a shared query API across 23 addons."
     },
     {
       "id": "function:global:HelpTips.SetFocusOnWindow",
@@ -7079,7 +6819,7 @@
       "path": "globals/functions/global_InterfaceCore.GetScale.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 22 addons."
+      "summary": "Observed as a global function across 20 addons."
     },
     {
       "id": "function:global:InterfaceCore.ReloadUI",
@@ -7099,7 +6839,7 @@
       "path": "window_api/functions/window_LabelGetText.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 12 addons."
+      "summary": "Observed as a window function across 10 addons."
     },
     {
       "id": "function:window:LabelGetTextColor",
@@ -7109,7 +6849,7 @@
       "path": "window_api/functions/window_LabelGetTextColor.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 7 addons."
+      "summary": "Observed as a window function across 6 addons."
     },
     {
       "id": "function:window:LabelGetTextDimensions",
@@ -7129,7 +6869,7 @@
       "path": "window_api/functions/window_LabelGetWordWrap.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 7 addons."
+      "summary": "Observed as a window function across 6 addons."
     },
     {
       "id": "function:window:LabelSetFont",
@@ -7189,7 +6929,7 @@
       "path": "window_api/functions/window_LayoutEditor.RegisterEditCallback.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 5 addons."
+      "summary": "Observed as a window function across 3 addons."
     },
     {
       "id": "function:window:LayoutEditor.RegisterWindow",
@@ -7199,7 +6939,7 @@
       "path": "window_api/functions/window_LayoutEditor.RegisterWindow.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 27 addons."
+      "summary": "Observed as a window function across 23 addons."
     },
     {
       "id": "function:window:LayoutEditor.UnregisterWindow",
@@ -7259,7 +6999,7 @@
       "path": "globals/functions/global_PartyUtils.GetPartyData.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 8 addons."
+      "summary": "Observed as a global function across 6 addons."
     },
     {
       "id": "function:global:PartyUtils.GetPartyMember",
@@ -7279,7 +7019,7 @@
       "path": "globals/functions/global_PartyUtils.GetWarbandData.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 6 addons."
+      "summary": "Observed as a global function across 4 addons."
     },
     {
       "id": "function:global:PartyUtils.GetWarbandLeader",
@@ -7289,7 +7029,7 @@
       "path": "globals/functions/global_PartyUtils.GetWarbandLeader.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 4 addons."
+      "summary": "Observed as a global function across 3 addons."
     },
     {
       "id": "function:global:PartyUtils.GetWarbandMainAssist",
@@ -7322,16 +7062,6 @@
       "summary": "Observed as a global function across 6 addons."
     },
     {
-      "id": "function:global:PartyUtils.IsPlayerInWarband",
-      "label": "PartyUtils.IsPlayerInWarband",
-      "type": "function",
-      "category": "Global Function",
-      "path": "globals/functions/global_PartyUtils.IsPlayerInWarband.md",
-      "confidence": "HIGH",
-      "score": 88,
-      "summary": "Observed as a global function across 1 addons."
-    },
-    {
       "id": "function:global:PetWindow.HasPet",
       "label": "PetWindow.HasPet",
       "type": "function",
@@ -7347,16 +7077,6 @@
       "type": "function",
       "category": "Global Function",
       "path": "globals/functions/global_PetWindow.SwitchToPassiveStance.md",
-      "confidence": "HIGH",
-      "score": 88,
-      "summary": "Observed as a global function across 2 addons."
-    },
-    {
-      "id": "function:global:PlayerMenuWindow.ShowMenu",
-      "label": "PlayerMenuWindow.ShowMenu",
-      "type": "function",
-      "category": "Global Function",
-      "path": "globals/functions/global_PlayerMenuWindow.ShowMenu.md",
       "confidence": "HIGH",
       "score": 88,
       "summary": "Observed as a global function across 2 addons."
@@ -7399,7 +7119,7 @@
       "path": "window_api/functions/window_StatusBarGetCurrentValue.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 7 addons."
+      "summary": "Observed as a window function across 6 addons."
     },
     {
       "id": "function:window:StatusBarSetBackgroundTint",
@@ -7409,7 +7129,7 @@
       "path": "window_api/functions/window_StatusBarSetBackgroundTint.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 8 addons."
+      "summary": "Observed as a window function across 7 addons."
     },
     {
       "id": "function:window:StatusBarSetCurrentValue",
@@ -7419,7 +7139,7 @@
       "path": "window_api/functions/window_StatusBarSetCurrentValue.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 10 addons."
+      "summary": "Observed as a window function across 9 addons."
     },
     {
       "id": "function:window:StatusBarSetForegroundTint",
@@ -7429,7 +7149,7 @@
       "path": "window_api/functions/window_StatusBarSetForegroundTint.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 9 addons."
+      "summary": "Observed as a window function across 8 addons."
     },
     {
       "id": "function:window:StatusBarSetMaximumValue",
@@ -7439,7 +7159,7 @@
       "path": "window_api/functions/window_StatusBarSetMaximumValue.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 10 addons."
+      "summary": "Observed as a window function across 9 addons."
     },
     {
       "id": "function:window:TextEditBoxGetHistory",
@@ -7549,7 +7269,7 @@
       "path": "window_api/functions/window_WindowAssignFocus.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 13 addons."
+      "summary": "Observed as a window function across 12 addons."
     },
     {
       "id": "function:window:WindowClearAnchors",
@@ -7569,7 +7289,7 @@
       "path": "window_api/functions/window_WindowForceProcessAnchors.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 7 addons."
+      "summary": "Observed as a window function across 6 addons."
     },
     {
       "id": "function:window:WindowGetAlpha",
@@ -7939,7 +7659,7 @@
       "path": "window_api/functions/window_WindowStartAlphaAnimation.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 10 addons."
+      "summary": "Observed as a window function across 9 addons."
     },
     {
       "id": "function:window:WindowStartScaleAnimation",
@@ -7962,16 +7682,6 @@
       "summary": "Observed as a window function across 9 addons."
     },
     {
-      "id": "function:window:WindowUnRegisterEventHandler",
-      "label": "WindowUnRegisterEventHandler",
-      "type": "function",
-      "category": "Window Function",
-      "path": "window_api/functions/window_WindowUnRegisterEventHandler.md",
-      "confidence": "HIGH",
-      "score": 80,
-      "summary": "Observed as a window function across 1 addons."
-    },
-    {
       "id": "function:window:WindowUnregisterCoreEventHandler",
       "label": "WindowUnregisterCoreEventHandler",
       "type": "function",
@@ -7979,7 +7689,7 @@
       "path": "window_api/functions/window_WindowUnregisterCoreEventHandler.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a window function across 10 addons."
+      "summary": "Observed as a window function across 8 addons."
     },
     {
       "id": "function:window:WindowUnregisterEventHandler",
@@ -7999,7 +7709,7 @@
       "path": "globals/functions/global_towstring.md",
       "confidence": "HIGH",
       "score": 75,
-      "summary": "Observed as a global function across 68 addons."
+      "summary": "Observed as a global function across 56 addons."
     },
     {
       "id": "function:global:wstring.char",
@@ -8019,7 +7729,7 @@
       "path": "globals/functions/global_wstring.find.md",
       "confidence": "MEDIUM",
       "score": 63,
-      "summary": "Observed as a global function across 3 addons."
+      "summary": "Observed as a global function across 2 addons."
     },
     {
       "id": "function:global:wstring.format",
@@ -8039,7 +7749,7 @@
       "path": "globals/functions/global_wstring.gsub.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 16 addons."
+      "summary": "Observed as a global function across 15 addons."
     },
     {
       "id": "function:global:wstring.len",
@@ -8049,7 +7759,7 @@
       "path": "globals/functions/global_wstring.len.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as a global function across 6 addons."
+      "summary": "Observed as a global function across 5 addons."
     },
     {
       "id": "function:global:wstring.lower",
@@ -8072,16 +7782,6 @@
       "summary": "Observed as a global function across 9 addons."
     },
     {
-      "id": "function:global:wstring.reverse",
-      "label": "wstring.reverse",
-      "type": "function",
-      "category": "Global Function",
-      "path": "globals/functions/global_wstring.reverse.md",
-      "confidence": "MEDIUM",
-      "score": 45,
-      "summary": "Observed as a global function across 1 addons."
-    },
-    {
       "id": "function:global:wstring.sub",
       "label": "wstring.sub",
       "type": "function",
@@ -8089,7 +7789,7 @@
       "path": "globals/functions/global_wstring.sub.md",
       "confidence": "HIGH",
       "score": 75,
-      "summary": "Observed as a global function across 9 addons."
+      "summary": "Observed as a global function across 8 addons."
     },
     {
       "id": "function:global:wstring.upper",
@@ -8097,9 +7797,9 @@
       "type": "function",
       "category": "Global Function",
       "path": "globals/functions/global_wstring.upper.md",
-      "confidence": "HIGH",
-      "score": 88,
-      "summary": "Observed as a global function across 2 addons."
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed as a global function across 1 addons."
     },
     {
       "id": "ui:ActionButtonGroup",
@@ -8129,7 +7829,7 @@
       "path": "xml/element_types/element_Button.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 58 addons."
+      "summary": "Observed XML element type instantiated by 51 addons."
     },
     {
       "id": "ui:CircleImage",
@@ -8159,7 +7859,7 @@
       "path": "xml/element_types/element_ComboBox.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 33 addons."
+      "summary": "Observed XML element type instantiated by 29 addons."
     },
     {
       "id": "ui:CooldownDisplay",
@@ -8179,7 +7879,7 @@
       "path": "xml/element_types/element_DynamicImage.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 45 addons."
+      "summary": "Observed XML element type instantiated by 41 addons."
     },
     {
       "id": "ui:EditBox",
@@ -8189,7 +7889,7 @@
       "path": "xml/element_types/element_EditBox.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 26 addons."
+      "summary": "Observed XML element type instantiated by 24 addons."
     },
     {
       "id": "ui:FullResizeImage",
@@ -8199,7 +7899,7 @@
       "path": "xml/element_types/element_FullResizeImage.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 44 addons."
+      "summary": "Observed XML element type instantiated by 41 addons."
     },
     {
       "id": "ui:HorizontalResizeImage",
@@ -8219,7 +7919,7 @@
       "path": "xml/element_types/element_Label.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 66 addons."
+      "summary": "Observed XML element type instantiated by 56 addons."
     },
     {
       "id": "ui:ListBox",
@@ -8259,7 +7959,7 @@
       "path": "xml/element_types/element_ScrollWindow.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 12 addons."
+      "summary": "Observed XML element type instantiated by 11 addons."
     },
     {
       "id": "ui:SliderBar",
@@ -8299,7 +7999,7 @@
       "path": "xml/element_types/element_VerticalScrollbar.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 13 addons."
+      "summary": "Observed XML element type instantiated by 12 addons."
     },
     {
       "id": "ui:Window",
@@ -8309,7 +8009,7 @@
       "path": "xml/element_types/element_Window.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 71 addons."
+      "summary": "Observed XML element type instantiated by 60 addons."
     },
     {
       "id": "xml_handler:OnActionButtonLButtonDown",
@@ -8389,7 +8089,7 @@
       "path": "xml/handlers/handler_OnInitialize.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an XML handler hook bound by 21 addons through frame event handlers."
+      "summary": "Observed as an XML handler hook bound by 19 addons through frame event handlers."
     },
     {
       "id": "xml_handler:OnKeyEnter",
@@ -8429,7 +8129,7 @@
       "path": "xml/handlers/handler_OnLButtonDown.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an XML handler hook bound by 21 addons through frame event handlers."
+      "summary": "Observed as an XML handler hook bound by 22 addons through frame event handlers."
     },
     {
       "id": "xml_handler:OnLButtonUp",
@@ -8439,7 +8139,7 @@
       "path": "xml/handlers/handler_OnLButtonUp.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an XML handler hook bound by 57 addons through frame event handlers."
+      "summary": "Observed as an XML handler hook bound by 51 addons through frame event handlers."
     },
     {
       "id": "xml_handler:OnMButtonDown",
@@ -8489,7 +8189,7 @@
       "path": "xml/handlers/handler_OnMouseOver.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an XML handler hook bound by 43 addons through frame event handlers."
+      "summary": "Observed as an XML handler hook bound by 41 addons through frame event handlers."
     },
     {
       "id": "xml_handler:OnMouseOverEnd",
@@ -8539,7 +8239,7 @@
       "path": "xml/handlers/handler_OnRButtonUp.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an XML handler hook bound by 35 addons through frame event handlers."
+      "summary": "Observed as an XML handler hook bound by 31 addons through frame event handlers."
     },
     {
       "id": "xml_handler:OnRawDeviceInput",
@@ -8569,7 +8269,7 @@
       "path": "xml/handlers/handler_OnSelChanged.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an XML handler hook bound by 31 addons through frame event handlers."
+      "summary": "Observed as an XML handler hook bound by 27 addons through frame event handlers."
     },
     {
       "id": "xml_handler:OnSetMoving",
@@ -8599,7 +8299,7 @@
       "path": "xml/handlers/handler_OnShutdown.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an XML handler hook bound by 6 addons through frame event handlers."
+      "summary": "Observed as an XML handler hook bound by 4 addons through frame event handlers."
     },
     {
       "id": "xml_handler:OnSizeUpdated",
@@ -8639,7 +8339,7 @@
       "path": "xml/handlers/handler_OnUpdate.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed as an XML handler hook bound by 6 addons through frame event handlers."
+      "summary": "Observed as an XML handler hook bound by 4 addons through frame event handlers."
     }
   ],
   "edges": [
@@ -9099,21 +8799,6 @@
       ]
     },
     {
-      "from": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait",
-      "to": "xml_handler:OnUpdate",
-      "type": "bound_from_xml",
-      "confidence_score": 72,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "TidyQueue: TidyQueue.OnUpdate -\u003e EA_Window_ScenarioLobby.OnJoinInstanceWait()"
-      ],
-      "rationale": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait is bound from XML handler xml_handler:OnUpdate",
-      "weight": 1,
-      "evidence": [
-        "TidyQueue: TidyQueue.OnUpdate -\u003e EA_Window_ScenarioLobby.OnJoinInstanceWait()"
-      ]
-    },
-    {
       "from": "function:global:EA_Window_WorldMap.SetMap",
       "to": "xml_handler:OnSelChanged",
       "type": "bound_from_xml",
@@ -9231,21 +8916,6 @@
       "weight": 1,
       "evidence": [
         "MapPin: MapPin.LButtonUp -\u003e PartyUtils.IsPartyActive()"
-      ]
-    },
-    {
-      "from": "function:global:PlayerMenuWindow.ShowMenu",
-      "to": "xml_handler:OnRButtonUp",
-      "type": "bound_from_xml",
-      "confidence_score": 72,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "Enemy: Enemy.UnitFramesUI_UnitFrame_OnRButtonUp -\u003e PlayerMenuWindow.ShowMenu(player.name, 0, custom_menu_items)"
-      ],
-      "rationale": "function:global:PlayerMenuWindow.ShowMenu is bound from XML handler xml_handler:OnRButtonUp",
-      "weight": 1,
-      "evidence": [
-        "Enemy: Enemy.UnitFramesUI_UnitFrame_OnRButtonUp -\u003e PlayerMenuWindow.ShowMenu(player.name, 0, custom_menu_items)"
       ]
     },
     {
@@ -10821,21 +10491,6 @@
       ]
     },
     {
-      "from": "data:game:GameData.Player.name",
-      "to": "function:global:PartyUtils.IsPlayerInWarband",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "GameData.Player.name + PartyUtils.IsPlayerInWarband"
-      ],
-      "rationale": "data:game:GameData.Player.name and function:global:PartyUtils.IsPlayerInWarband are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "GameData.Player.name + PartyUtils.IsPlayerInWarband"
-      ]
-    },
-    {
       "from": "data:game:GameData.Player.worldObjNum",
       "to": "function:global:wstring.find",
       "type": "commonly_used_with",
@@ -10878,36 +10533,6 @@
       "weight": 1,
       "evidence": [
         "GameData.Player.zone + EA_Window_Backpack.GetItemsFromBackpack"
-      ]
-    },
-    {
-      "from": "data:game:GameData.Player.zone",
-      "to": "function:global:towstring",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "GameData.Player.zone + towstring"
-      ],
-      "rationale": "data:game:GameData.Player.zone and function:global:towstring are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "GameData.Player.zone + towstring"
-      ]
-    },
-    {
-      "from": "data:game:GameData.Player.zone",
-      "to": "function:window:WindowSetShowing",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "GameData.Player.zone + WindowSetShowing"
-      ],
-      "rationale": "data:game:GameData.Player.zone and function:window:WindowSetShowing are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "GameData.Player.zone + WindowSetShowing"
       ]
     },
     {
@@ -13806,6 +13431,126 @@
       ]
     },
     {
+      "from": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "to": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED and data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "to": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + SystemData.Events.PLAYER_RENOWN_RANK_UPDATED"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED and data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + SystemData.Events.PLAYER_RENOWN_RANK_UPDATED"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "to": "function:global:DestroyWindow",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + DestroyWindow"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED and function:global:DestroyWindow are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + DestroyWindow"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "to": "function:global:InterfaceCore.GetScale",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + InterfaceCore.GetScale"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED and function:global:InterfaceCore.GetScale are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + InterfaceCore.GetScale"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "to": "function:global:LibSlash.UnregisterSlashCmd",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + LibSlash.UnregisterSlashCmd"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED and function:global:LibSlash.UnregisterSlashCmd are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + LibSlash.UnregisterSlashCmd"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "to": "function:global:UnregisterEventHandler",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + UnregisterEventHandler"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED and function:global:UnregisterEventHandler are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + UnregisterEventHandler"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "to": "function:window:WindowGetOffsetFromParent",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + WindowGetOffsetFromParent"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED and function:window:WindowGetOffsetFromParent are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + WindowGetOffsetFromParent"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "to": "function:window:WindowGetScale",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + WindowGetScale"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED and function:window:WindowGetScale are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED + WindowGetScale"
+      ]
+    },
+    {
       "from": "data:system:SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED",
       "to": "data:system:SystemData.Events.RELOAD_INTERFACE",
       "type": "commonly_used_with",
@@ -14436,6 +14181,201 @@
       ]
     },
     {
+      "from": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "to": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + SystemData.Events.PLAYER_RENOWN_RANK_UPDATED"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED and data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + SystemData.Events.PLAYER_RENOWN_RANK_UPDATED"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "to": "function:global:DestroyWindow",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + DestroyWindow"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED and function:global:DestroyWindow are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + DestroyWindow"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "to": "function:global:InterfaceCore.GetScale",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + InterfaceCore.GetScale"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED and function:global:InterfaceCore.GetScale are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + InterfaceCore.GetScale"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "to": "function:global:LibSlash.UnregisterSlashCmd",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + LibSlash.UnregisterSlashCmd"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED and function:global:LibSlash.UnregisterSlashCmd are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + LibSlash.UnregisterSlashCmd"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "to": "function:global:UnregisterEventHandler",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + UnregisterEventHandler"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED and function:global:UnregisterEventHandler are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + UnregisterEventHandler"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "to": "function:window:WindowGetOffsetFromParent",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + WindowGetOffsetFromParent"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED and function:window:WindowGetOffsetFromParent are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + WindowGetOffsetFromParent"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "to": "function:window:WindowGetScale",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + WindowGetScale"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED and function:window:WindowGetScale are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED + WindowGetScale"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "to": "function:global:DestroyWindow",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + DestroyWindow"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED and function:global:DestroyWindow are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + DestroyWindow"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "to": "function:global:InterfaceCore.GetScale",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + InterfaceCore.GetScale"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED and function:global:InterfaceCore.GetScale are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + InterfaceCore.GetScale"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "to": "function:global:LibSlash.UnregisterSlashCmd",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + LibSlash.UnregisterSlashCmd"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED and function:global:LibSlash.UnregisterSlashCmd are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + LibSlash.UnregisterSlashCmd"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "to": "function:global:UnregisterEventHandler",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + UnregisterEventHandler"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED and function:global:UnregisterEventHandler are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + UnregisterEventHandler"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "to": "function:window:WindowGetOffsetFromParent",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + WindowGetOffsetFromParent"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED and function:window:WindowGetOffsetFromParent are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + WindowGetOffsetFromParent"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "to": "function:window:WindowGetScale",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + WindowGetScale"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED and function:window:WindowGetScale are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED + WindowGetScale"
+      ]
+    },
+    {
       "from": "data:system:SystemData.Events.PLAYER_RENOWN_UPDATED",
       "to": "data:system:SystemData.Events.PLAYER_ZONE_CHANGED",
       "type": "commonly_used_with",
@@ -14583,6 +14523,21 @@
       "weight": 1,
       "evidence": [
         "SystemData.Events.PLAYER_TARGET_UPDATED + CreateWindow"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.PLAYER_TARGET_UPDATED",
+      "to": "function:global:LibSlash.RegisterSlashCmd",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.PLAYER_TARGET_UPDATED + LibSlash.RegisterSlashCmd"
+      ],
+      "rationale": "data:system:SystemData.Events.PLAYER_TARGET_UPDATED and function:global:LibSlash.RegisterSlashCmd are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.PLAYER_TARGET_UPDATED + LibSlash.RegisterSlashCmd"
       ]
     },
     {
@@ -17361,21 +17316,6 @@
       ]
     },
     {
-      "from": "data:table:GroupWindow",
-      "to": "function:global:PartyUtils.GetPartyData",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "GroupWindow + PartyUtils.GetPartyData"
-      ],
-      "rationale": "data:table:GroupWindow and function:global:PartyUtils.GetPartyData are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "GroupWindow + PartyUtils.GetPartyData"
-      ]
-    },
-    {
       "from": "event:game:SystemData.Events.INTERACT_SHOW_HEALER",
       "to": "function:global:EA_Window_InteractionHealer.HealAllPenalties",
       "type": "commonly_used_with",
@@ -17418,6 +17358,36 @@
       "weight": 1,
       "evidence": [
         "SystemData.Events.LOADING_END + SystemData.Events.RELOAD_INTERFACE"
+      ]
+    },
+    {
+      "from": "event:game:SystemData.Events.LOADING_END",
+      "to": "function:global:DoesWindowExist",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.LOADING_END + DoesWindowExist"
+      ],
+      "rationale": "event:game:SystemData.Events.LOADING_END and function:global:DoesWindowExist are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.LOADING_END + DoesWindowExist"
+      ]
+    },
+    {
+      "from": "event:game:SystemData.Events.LOADING_END",
+      "to": "function:global:LibSlash.RegisterWSlashCmd",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.LOADING_END + LibSlash.RegisterWSlashCmd"
+      ],
+      "rationale": "event:game:SystemData.Events.LOADING_END and function:global:LibSlash.RegisterWSlashCmd are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.LOADING_END + LibSlash.RegisterWSlashCmd"
       ]
     },
     {
@@ -17568,6 +17538,36 @@
       "weight": 1,
       "evidence": [
         "SystemData.Events.PLAYER_TARGET_UPDATED + RegisterEventHandler"
+      ]
+    },
+    {
+      "from": "event:game:SystemData.Events.RELOAD_INTERFACE",
+      "to": "function:global:DoesWindowExist",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.RELOAD_INTERFACE + DoesWindowExist"
+      ],
+      "rationale": "event:game:SystemData.Events.RELOAD_INTERFACE and function:global:DoesWindowExist are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.RELOAD_INTERFACE + DoesWindowExist"
+      ]
+    },
+    {
+      "from": "event:game:SystemData.Events.RELOAD_INTERFACE",
+      "to": "function:global:LibSlash.RegisterWSlashCmd",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SystemData.Events.RELOAD_INTERFACE + LibSlash.RegisterWSlashCmd"
+      ],
+      "rationale": "event:game:SystemData.Events.RELOAD_INTERFACE and function:global:LibSlash.RegisterWSlashCmd are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "SystemData.Events.RELOAD_INTERFACE + LibSlash.RegisterWSlashCmd"
       ]
     },
     {
@@ -19027,21 +19027,6 @@
     },
     {
       "from": "event:window:OnLButtonUp",
-      "to": "ui:ComboBox",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "OnLButtonUp + ComboBox"
-      ],
-      "rationale": "event:window:OnLButtonUp and ui:ComboBox are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "OnLButtonUp + ComboBox"
-      ]
-    },
-    {
-      "from": "event:window:OnLButtonUp",
       "to": "ui:DynamicImage",
       "type": "commonly_used_with",
       "confidence_score": 55,
@@ -19942,21 +19927,6 @@
     },
     {
       "from": "event:window:OnRButtonUp",
-      "to": "ui:ComboBox",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "OnRButtonUp + ComboBox"
-      ],
-      "rationale": "event:window:OnRButtonUp and ui:ComboBox are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "OnRButtonUp + ComboBox"
-      ]
-    },
-    {
-      "from": "event:window:OnRButtonUp",
       "to": "ui:DynamicImage",
       "type": "commonly_used_with",
       "confidence_score": 55,
@@ -20568,21 +20538,6 @@
       "weight": 1,
       "evidence": [
         "OnTextChanged + OnTextChanged"
-      ]
-    },
-    {
-      "from": "event:window:OnUpdate",
-      "to": "ui:Button",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "OnUpdate + Button"
-      ],
-      "rationale": "event:window:OnUpdate and ui:Button are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "OnUpdate + Button"
       ]
     },
     {
@@ -21258,21 +21213,6 @@
       "weight": 1,
       "evidence": [
         "BankWindow.Show + WindowGetShowing"
-      ]
-    },
-    {
-      "from": "function:global:BroadcastEvent",
-      "to": "function:global:towstring",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "BroadcastEvent + towstring"
-      ],
-      "rationale": "function:global:BroadcastEvent and function:global:towstring are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "BroadcastEvent + towstring"
       ]
     },
     {
@@ -22987,6 +22927,51 @@
     },
     {
       "from": "function:global:DestroyWindow",
+      "to": "function:global:InterfaceCore.GetScale",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DestroyWindow + InterfaceCore.GetScale"
+      ],
+      "rationale": "function:global:DestroyWindow and function:global:InterfaceCore.GetScale are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "DestroyWindow + InterfaceCore.GetScale"
+      ]
+    },
+    {
+      "from": "function:global:DestroyWindow",
+      "to": "function:global:LibSlash.UnregisterSlashCmd",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DestroyWindow + LibSlash.UnregisterSlashCmd"
+      ],
+      "rationale": "function:global:DestroyWindow and function:global:LibSlash.UnregisterSlashCmd are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "DestroyWindow + LibSlash.UnregisterSlashCmd"
+      ]
+    },
+    {
+      "from": "function:global:DestroyWindow",
+      "to": "function:global:UnregisterEventHandler",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DestroyWindow + UnregisterEventHandler"
+      ],
+      "rationale": "function:global:DestroyWindow and function:global:UnregisterEventHandler are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "DestroyWindow + UnregisterEventHandler"
+      ]
+    },
+    {
+      "from": "function:global:DestroyWindow",
       "to": "function:global:towstring",
       "type": "commonly_used_with",
       "confidence_score": 55,
@@ -23088,6 +23073,21 @@
       "weight": 1,
       "evidence": [
         "DestroyWindow + WindowClearAnchors"
+      ]
+    },
+    {
+      "from": "function:global:DestroyWindow",
+      "to": "function:window:WindowGetOffsetFromParent",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DestroyWindow + WindowGetOffsetFromParent"
+      ],
+      "rationale": "function:global:DestroyWindow and function:window:WindowGetOffsetFromParent are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "DestroyWindow + WindowGetOffsetFromParent"
       ]
     },
     {
@@ -23913,6 +23913,21 @@
       "weight": 1,
       "evidence": [
         "DoesWindowExist + RegisterEventHandler"
+      ]
+    },
+    {
+      "from": "function:global:DoesWindowExist",
+      "to": "function:global:UnregisterEventHandler",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DoesWindowExist + UnregisterEventHandler"
+      ],
+      "rationale": "function:global:DoesWindowExist and function:global:UnregisterEventHandler are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "DoesWindowExist + UnregisterEventHandler"
       ]
     },
     {
@@ -24978,6 +24993,21 @@
       "weight": 1,
       "evidence": [
         "EA_ChatWindow.OnKeyEnter + EA_ChatWindow.Print"
+      ]
+    },
+    {
+      "from": "function:global:EA_ChatWindow.OnKeyEnter",
+      "to": "function:global:LibSlash.RegisterSlashCmd",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "EA_ChatWindow.OnKeyEnter + LibSlash.RegisterSlashCmd"
+      ],
+      "rationale": "function:global:EA_ChatWindow.OnKeyEnter and function:global:LibSlash.RegisterSlashCmd are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "EA_ChatWindow.OnKeyEnter + LibSlash.RegisterSlashCmd"
       ]
     },
     {
@@ -27621,36 +27651,6 @@
       ]
     },
     {
-      "from": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait",
-      "to": "function:window:ButtonGetDisabledFlag",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "EA_Window_ScenarioLobby.OnJoinInstanceWait + ButtonGetDisabledFlag"
-      ],
-      "rationale": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait and function:window:ButtonGetDisabledFlag are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "EA_Window_ScenarioLobby.OnJoinInstanceWait + ButtonGetDisabledFlag"
-      ]
-    },
-    {
-      "from": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait",
-      "to": "function:window:WindowGetShowing",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "EA_Window_ScenarioLobby.OnJoinInstanceWait + WindowGetShowing"
-      ],
-      "rationale": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait and function:window:WindowGetShowing are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "EA_Window_ScenarioLobby.OnJoinInstanceWait + WindowGetShowing"
-      ]
-    },
-    {
       "from": "function:global:EA_Window_WorldMap.ShowZone",
       "to": "function:global:GetIconData",
       "type": "commonly_used_with",
@@ -28687,6 +28687,36 @@
     },
     {
       "from": "function:global:InterfaceCore.GetScale",
+      "to": "function:global:LibSlash.UnregisterSlashCmd",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "InterfaceCore.GetScale + LibSlash.UnregisterSlashCmd"
+      ],
+      "rationale": "function:global:InterfaceCore.GetScale and function:global:LibSlash.UnregisterSlashCmd are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "InterfaceCore.GetScale + LibSlash.UnregisterSlashCmd"
+      ]
+    },
+    {
+      "from": "function:global:InterfaceCore.GetScale",
+      "to": "function:global:UnregisterEventHandler",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "InterfaceCore.GetScale + UnregisterEventHandler"
+      ],
+      "rationale": "function:global:InterfaceCore.GetScale and function:global:UnregisterEventHandler are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "InterfaceCore.GetScale + UnregisterEventHandler"
+      ]
+    },
+    {
+      "from": "function:global:InterfaceCore.GetScale",
       "to": "function:global:towstring",
       "type": "commonly_used_with",
       "confidence_score": 55,
@@ -29167,21 +29197,6 @@
     },
     {
       "from": "function:global:LibSlash.IsSlashCmdRegistered",
-      "to": "function:window:LayoutEditor.RegisterWindow",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "LibSlash.IsSlashCmdRegistered + LayoutEditor.RegisterWindow"
-      ],
-      "rationale": "function:global:LibSlash.IsSlashCmdRegistered and function:window:LayoutEditor.RegisterWindow are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "LibSlash.IsSlashCmdRegistered + LayoutEditor.RegisterWindow"
-      ]
-    },
-    {
-      "from": "function:global:LibSlash.IsSlashCmdRegistered",
       "to": "function:window:WindowAddAnchor",
       "type": "commonly_used_with",
       "confidence_score": 55,
@@ -29463,6 +29478,36 @@
       "weight": 1,
       "evidence": [
         "LibSlash.UnregisterSlashCmd + LayoutEditor.UnregisterWindow"
+      ]
+    },
+    {
+      "from": "function:global:LibSlash.UnregisterSlashCmd",
+      "to": "function:window:WindowGetOffsetFromParent",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "LibSlash.UnregisterSlashCmd + WindowGetOffsetFromParent"
+      ],
+      "rationale": "function:global:LibSlash.UnregisterSlashCmd and function:window:WindowGetOffsetFromParent are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "LibSlash.UnregisterSlashCmd + WindowGetOffsetFromParent"
+      ]
+    },
+    {
+      "from": "function:global:LibSlash.UnregisterSlashCmd",
+      "to": "function:window:WindowGetScale",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "LibSlash.UnregisterSlashCmd + WindowGetScale"
+      ],
+      "rationale": "function:global:LibSlash.UnregisterSlashCmd and function:window:WindowGetScale are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "LibSlash.UnregisterSlashCmd + WindowGetScale"
       ]
     },
     {
@@ -30037,6 +30082,36 @@
     },
     {
       "from": "function:global:UnregisterEventHandler",
+      "to": "function:window:WindowGetOffsetFromParent",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "UnregisterEventHandler + WindowGetOffsetFromParent"
+      ],
+      "rationale": "function:global:UnregisterEventHandler and function:window:WindowGetOffsetFromParent are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "UnregisterEventHandler + WindowGetOffsetFromParent"
+      ]
+    },
+    {
+      "from": "function:global:UnregisterEventHandler",
+      "to": "function:window:WindowGetScale",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "UnregisterEventHandler + WindowGetScale"
+      ],
+      "rationale": "function:global:UnregisterEventHandler and function:window:WindowGetScale are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "UnregisterEventHandler + WindowGetScale"
+      ]
+    },
+    {
+      "from": "function:global:UnregisterEventHandler",
       "to": "function:window:WindowSetHandleInput",
       "type": "commonly_used_with",
       "confidence_score": 55,
@@ -30082,21 +30157,6 @@
     },
     {
       "from": "function:global:towstring",
-      "to": "function:global:wstring.find",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "towstring + wstring.find"
-      ],
-      "rationale": "function:global:towstring and function:global:wstring.find are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "towstring + wstring.find"
-      ]
-    },
-    {
-      "from": "function:global:towstring",
       "to": "function:global:wstring.format",
       "type": "commonly_used_with",
       "confidence_score": 55,
@@ -30138,21 +30198,6 @@
       "weight": 1,
       "evidence": [
         "towstring + wstring.match"
-      ]
-    },
-    {
-      "from": "function:global:towstring",
-      "to": "function:global:wstring.reverse",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "towstring + wstring.reverse"
-      ],
-      "rationale": "function:global:towstring and function:global:wstring.reverse are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "towstring + wstring.reverse"
       ]
     },
     {
@@ -30982,32 +31027,17 @@
     },
     {
       "from": "function:global:wstring.find",
-      "to": "function:global:wstring.len",
+      "to": "function:global:wstring.match",
       "type": "commonly_used_with",
       "confidence_score": 55,
       "evidence_count": 1,
       "evidence_sources": [
-        "wstring.find + wstring.len"
+        "wstring.find + wstring.match"
       ],
-      "rationale": "function:global:wstring.find and function:global:wstring.len are commonly used together",
+      "rationale": "function:global:wstring.find and function:global:wstring.match are commonly used together",
       "weight": 1,
       "evidence": [
-        "wstring.find + wstring.len"
-      ]
-    },
-    {
-      "from": "function:global:wstring.find",
-      "to": "function:global:wstring.reverse",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "wstring.find + wstring.reverse"
-      ],
-      "rationale": "function:global:wstring.find and function:global:wstring.reverse are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "wstring.find + wstring.reverse"
+        "wstring.find + wstring.match"
       ]
     },
     {
@@ -31326,21 +31356,6 @@
       ]
     },
     {
-      "from": "function:global:wstring.reverse",
-      "to": "function:global:wstring.sub",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "wstring.reverse + wstring.sub"
-      ],
-      "rationale": "function:global:wstring.reverse and function:global:wstring.sub are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "wstring.reverse + wstring.sub"
-      ]
-    },
-    {
       "from": "function:global:wstring.sub",
       "to": "function:global:wstring.upper",
       "type": "commonly_used_with",
@@ -31432,21 +31447,6 @@
     },
     {
       "from": "function:window:ButtonGetDisabledFlag",
-      "to": "function:window:WindowGetShowing",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "ButtonGetDisabledFlag + WindowGetShowing"
-      ],
-      "rationale": "function:window:ButtonGetDisabledFlag and function:window:WindowGetShowing are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "ButtonGetDisabledFlag + WindowGetShowing"
-      ]
-    },
-    {
-      "from": "function:window:ButtonGetDisabledFlag",
       "to": "ui:Button",
       "type": "commonly_used_with",
       "confidence_score": 55,
@@ -31458,21 +31458,6 @@
       "weight": 1,
       "evidence": [
         "ButtonGetDisabledFlag + Button"
-      ]
-    },
-    {
-      "from": "function:window:ButtonGetDisabledFlag",
-      "to": "ui:Window",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "ButtonGetDisabledFlag + Window"
-      ],
-      "rationale": "function:window:ButtonGetDisabledFlag and ui:Window are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "ButtonGetDisabledFlag + Window"
       ]
     },
     {
@@ -36202,6 +36187,21 @@
     },
     {
       "from": "function:window:LayoutEditor.RegisterWindow",
+      "to": "function:window:WindowClearAnchors",
+      "type": "commonly_used_with",
+      "confidence_score": 55,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "LayoutEditor.RegisterWindow + WindowClearAnchors"
+      ],
+      "rationale": "function:window:LayoutEditor.RegisterWindow and function:window:WindowClearAnchors are commonly used together",
+      "weight": 1,
+      "evidence": [
+        "LayoutEditor.RegisterWindow + WindowClearAnchors"
+      ]
+    },
+    {
+      "from": "function:window:LayoutEditor.RegisterWindow",
       "to": "function:window:WindowGetScale",
       "type": "commonly_used_with",
       "confidence_score": 55,
@@ -40446,21 +40446,6 @@
       ]
     },
     {
-      "from": "ui:Button",
-      "to": "xml_handler:OnUpdate",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "Button + OnUpdate"
-      ],
-      "rationale": "ui:Button and xml_handler:OnUpdate are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "Button + OnUpdate"
-      ]
-    },
-    {
       "from": "ui:ColorPicker",
       "to": "xml_handler:OnLButtonUp",
       "type": "commonly_used_with",
@@ -40477,21 +40462,6 @@
     },
     {
       "from": "ui:ComboBox",
-      "to": "xml_handler:OnLButtonUp",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "ComboBox + OnLButtonUp"
-      ],
-      "rationale": "ui:ComboBox and xml_handler:OnLButtonUp are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "ComboBox + OnLButtonUp"
-      ]
-    },
-    {
-      "from": "ui:ComboBox",
       "to": "xml_handler:OnMouseOver",
       "type": "commonly_used_with",
       "confidence_score": 55,
@@ -40503,21 +40473,6 @@
       "weight": 1,
       "evidence": [
         "ComboBox + OnMouseOver"
-      ]
-    },
-    {
-      "from": "ui:ComboBox",
-      "to": "xml_handler:OnRButtonUp",
-      "type": "commonly_used_with",
-      "confidence_score": 55,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "ComboBox + OnRButtonUp"
-      ],
-      "rationale": "ui:ComboBox and xml_handler:OnRButtonUp are commonly used together",
-      "weight": 1,
-      "evidence": [
-        "ComboBox + OnRButtonUp"
       ]
     },
     {
@@ -41444,6 +41399,21 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
+      "rationale": "MapPin.MapPin.OnInitialize is called during addon initialization",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnInitialize",
+      "to": "addon_init_phase",
+      "type": "initializes",
+      "confidence_score": 80,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
       "rationale": "wbLeadHelper.wbLeadHelper.OnInitialize is called during addon initialization",
       "weight": 1,
       "evidence": [
@@ -41459,52 +41429,7 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize is called during addon initialization",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnInitialize",
-      "to": "addon_init_phase",
-      "type": "initializes",
-      "confidence_score": 80,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
       "rationale": "Aura.AuraAddon.OnInitialize is called during addon initialization",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnInitialize",
-      "to": "addon_init_phase",
-      "type": "initializes",
-      "confidence_score": 80,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "ScenarioAlert.ScenarioAlert.OnInitialize is called during addon initialization",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnInitialize",
-      "to": "addon_init_phase",
-      "type": "initializes",
-      "confidence_score": 80,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "Shinies.OnInitialize is called during addon initialization",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -41549,52 +41474,7 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "Shinies._G.Shinies.OnInitialize is called during addon initialization",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnInitialize",
-      "to": "addon_init_phase",
-      "type": "initializes",
-      "confidence_score": 80,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "Queue Queuer.QueueQueuer.OnInitialize is called during addon initialization",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnInitialize",
-      "to": "addon_init_phase",
-      "type": "initializes",
-      "confidence_score": 80,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize is called during addon initialization",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnInitialize",
-      "to": "addon_init_phase",
-      "type": "initializes",
-      "confidence_score": 80,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "GoldTracker.GoldTracker.OnInitialize is called during addon initialization",
+      "rationale": "AutoMark.AutoMark.OnInitialize is called during addon initialization",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -41624,7 +41504,7 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "AutoMark.AutoMark.OnInitialize is called during addon initialization",
+      "rationale": "Shinies.OnInitialize is called during addon initialization",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -41639,7 +41519,37 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "MapPin.MapPin.OnInitialize is called during addon initialization",
+      "rationale": "GetStats.GetStats.OnInitialize is called during addon initialization",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnInitialize",
+      "to": "addon_init_phase",
+      "type": "initializes",
+      "confidence_score": 80,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "Shinies._G.Shinies.OnInitialize is called during addon initialization",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnInitialize",
+      "to": "addon_init_phase",
+      "type": "initializes",
+      "confidence_score": 80,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize is called during addon initialization",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -41669,7 +41579,7 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "GetStats.GetStats.OnInitialize is called during addon initialization",
+      "rationale": "CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize is called during addon initialization",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -42644,19 +42554,36 @@
     },
     {
       "from": "function:global:LibSlash.IsSlashCmdRegistered",
+      "to": "data:system:SystemData.Events.LOADING_BEGIN",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "wbLeadHelper: wbLeadHelper.OnInitialize -\u003e LibSlash.IsSlashCmdRegistered(\"wlh\")"
+      ],
+      "rationale": "function:global:LibSlash.IsSlashCmdRegistered reads data from data:system:SystemData.Events.LOADING_BEGIN",
+      "weight": 1,
+      "evidence": [
+        "wbLeadHelper: wbLeadHelper.OnInitialize -\u003e LibSlash.IsSlashCmdRegistered(\"wlh\")"
+      ]
+    },
+    {
+      "from": "function:global:LibSlash.IsSlashCmdRegistered",
       "to": "data:system:SystemData.Events.LOADING_END",
       "type": "reads_data",
-      "confidence_score": 72,
-      "evidence_count": 2,
+      "confidence_score": 74,
+      "evidence_count": 3,
       "evidence_sources": [
         "BagOMatic: BagOMatic.init -\u003e LibSlash.IsSlashCmdRegistered(\"bom\")",
-        "PlanB: PlanB.Initialize -\u003e LibSlash.IsSlashCmdRegistered(\"planb\")"
+        "PlanB: PlanB.Initialize -\u003e LibSlash.IsSlashCmdRegistered(\"planb\")",
+        "wbLeadHelper: wbLeadHelper.OnInitialize -\u003e LibSlash.IsSlashCmdRegistered(\"wlh\")"
       ],
       "rationale": "function:global:LibSlash.IsSlashCmdRegistered reads data from data:system:SystemData.Events.LOADING_END",
-      "weight": 2,
+      "weight": 3,
       "evidence": [
         "BagOMatic: BagOMatic.init -\u003e LibSlash.IsSlashCmdRegistered(\"bom\")",
-        "PlanB: PlanB.Initialize -\u003e LibSlash.IsSlashCmdRegistered(\"planb\")"
+        "PlanB: PlanB.Initialize -\u003e LibSlash.IsSlashCmdRegistered(\"planb\")",
+        "wbLeadHelper: wbLeadHelper.OnInitialize -\u003e LibSlash.IsSlashCmdRegistered(\"wlh\")"
       ]
     },
     {
@@ -42740,38 +42667,57 @@
       "from": "function:global:LibSlash.RegisterSlashCmd",
       "to": "data:system:SystemData.Events.LOADING_END",
       "type": "reads_data",
-      "confidence_score": 74,
-      "evidence_count": 3,
+      "confidence_score": 76,
+      "evidence_count": 4,
       "evidence_sources": [
         "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"aura\", AuraAddon.Slash)",
         "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"auraconfig\", AuraAddon.Slash)",
-        "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"showaura\", AuraAddon.Slash)"
+        "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"showaura\", AuraAddon.Slash)",
+        "BagOMatic: BagOMatic.init -\u003e LibSlash.RegisterSlashCmd(\"bagomatic\", function(msg)BagOMatic.parse_cmd(msg)end)"
       ],
       "rationale": "function:global:LibSlash.RegisterSlashCmd reads data from data:system:SystemData.Events.LOADING_END",
-      "weight": 3,
+      "weight": 4,
       "evidence": [
         "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"aura\", AuraAddon.Slash)",
         "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"auraconfig\", AuraAddon.Slash)",
-        "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"showaura\", AuraAddon.Slash)"
+        "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"showaura\", AuraAddon.Slash)",
+        "BagOMatic: BagOMatic.init -\u003e LibSlash.RegisterSlashCmd(\"bagomatic\", function(msg)BagOMatic.parse_cmd(msg)end)"
+      ]
+    },
+    {
+      "from": "function:global:LibSlash.RegisterSlashCmd",
+      "to": "data:system:SystemData.Events.PLAYER_TARGET_UPDATED",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "AutoMark: AutoMark.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"automark\", AutoMark.OnSlashCommand)"
+      ],
+      "rationale": "function:global:LibSlash.RegisterSlashCmd reads data from data:system:SystemData.Events.PLAYER_TARGET_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "AutoMark: AutoMark.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"automark\", AutoMark.OnSlashCommand)"
       ]
     },
     {
       "from": "function:global:LibSlash.RegisterSlashCmd",
       "to": "data:system:SystemData.Events.RELOAD_INTERFACE",
       "type": "reads_data",
-      "confidence_score": 74,
-      "evidence_count": 3,
+      "confidence_score": 76,
+      "evidence_count": 4,
       "evidence_sources": [
         "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"aura\", AuraAddon.Slash)",
         "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"auraconfig\", AuraAddon.Slash)",
-        "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"showaura\", AuraAddon.Slash)"
+        "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"showaura\", AuraAddon.Slash)",
+        "BagOMatic: BagOMatic.init -\u003e LibSlash.RegisterSlashCmd(\"bagomatic\", function(msg)BagOMatic.parse_cmd(msg)end)"
       ],
       "rationale": "function:global:LibSlash.RegisterSlashCmd reads data from data:system:SystemData.Events.RELOAD_INTERFACE",
-      "weight": 3,
+      "weight": 4,
       "evidence": [
         "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"aura\", AuraAddon.Slash)",
         "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"auraconfig\", AuraAddon.Slash)",
-        "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"showaura\", AuraAddon.Slash)"
+        "Aura: AuraAddon.OnInitialize -\u003e LibSlash.RegisterSlashCmd(\"showaura\", AuraAddon.Slash)",
+        "BagOMatic: BagOMatic.init -\u003e LibSlash.RegisterSlashCmd(\"bagomatic\", function(msg)BagOMatic.parse_cmd(msg)end)"
       ]
     },
     {
@@ -42804,6 +42750,21 @@
       "weight": 1,
       "evidence": [
         "Killer: Killer.Shutdown -\u003e LibSlash.UnregisterSlashCmd(\"killer\")"
+      ]
+    },
+    {
+      "from": "function:global:LibSlash.UnregisterSlashCmd",
+      "to": "data:system:SystemData.Events.CHAT_TEXT_ARRIVED",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "QuickWarReport: QuickWarReport.Shutdown -\u003e LibSlash.UnregisterSlashCmd(\"qwr\")"
+      ],
+      "rationale": "function:global:LibSlash.UnregisterSlashCmd reads data from data:system:SystemData.Events.CHAT_TEXT_ARRIVED",
+      "weight": 1,
+      "evidence": [
+        "QuickWarReport: QuickWarReport.Shutdown -\u003e LibSlash.UnregisterSlashCmd(\"qwr\")"
       ]
     },
     {
@@ -42908,6 +42869,21 @@
     },
     {
       "from": "function:global:LibSlash.UnregisterSlashCmd",
+      "to": "data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "PotionBar: PotionBar.Shutdown -\u003e LibSlash.UnregisterSlashCmd(PotionBar.LibSlashCommand)"
+      ],
+      "rationale": "function:global:LibSlash.UnregisterSlashCmd reads data from data:system:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "PotionBar: PotionBar.Shutdown -\u003e LibSlash.UnregisterSlashCmd(PotionBar.LibSlashCommand)"
+      ]
+    },
+    {
+      "from": "function:global:LibSlash.UnregisterSlashCmd",
       "to": "data:system:SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED",
       "type": "reads_data",
       "confidence_score": 72,
@@ -42970,6 +42946,36 @@
       "evidence": [
         "DAoCBuff: DAoCBuff.Shutdown -\u003e LibSlash.UnregisterSlashCmd(\"daocbuff\")",
         "DAoCBuff: DAoCBuff.Shutdown -\u003e LibSlash.UnregisterSlashCmd(\"resetdaocbuff\")"
+      ]
+    },
+    {
+      "from": "function:global:LibSlash.UnregisterSlashCmd",
+      "to": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "PotionBar: PotionBar.Shutdown -\u003e LibSlash.UnregisterSlashCmd(PotionBar.LibSlashCommand)"
+      ],
+      "rationale": "function:global:LibSlash.UnregisterSlashCmd reads data from data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "PotionBar: PotionBar.Shutdown -\u003e LibSlash.UnregisterSlashCmd(PotionBar.LibSlashCommand)"
+      ]
+    },
+    {
+      "from": "function:global:LibSlash.UnregisterSlashCmd",
+      "to": "data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "PotionBar: PotionBar.Shutdown -\u003e LibSlash.UnregisterSlashCmd(PotionBar.LibSlashCommand)"
+      ],
+      "rationale": "function:global:LibSlash.UnregisterSlashCmd reads data from data:system:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "PotionBar: PotionBar.Shutdown -\u003e LibSlash.UnregisterSlashCmd(PotionBar.LibSlashCommand)"
       ]
     },
     {
@@ -43055,6 +43061,21 @@
     },
     {
       "from": "function:global:PartyUtils.GetPartyData",
+      "to": "data:game:GameData.Player.name",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "followTheLeader: followTheLeader.GetDynamicLeaderName -\u003e PartyUtils.GetPartyData()"
+      ],
+      "rationale": "function:global:PartyUtils.GetPartyData reads data from data:game:GameData.Player.name",
+      "weight": 1,
+      "evidence": [
+        "followTheLeader: followTheLeader.GetDynamicLeaderName -\u003e PartyUtils.GetPartyData()"
+      ]
+    },
+    {
+      "from": "function:global:PartyUtils.GetPartyData",
       "to": "function:global:GameData.GetScenarioPlayerGroups",
       "type": "reads_data",
       "confidence_score": 70,
@@ -43070,49 +43091,17 @@
     },
     {
       "from": "function:global:PartyUtils.GetWarbandData",
-      "to": "data:game:GameData.Player.hitPoints.current",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "WarTriage: WarTriage.GetFriendlyPlayers -\u003e PartyUtils.GetWarbandData()"
-      ],
-      "rationale": "function:global:PartyUtils.GetWarbandData reads data from data:game:GameData.Player.hitPoints.current",
-      "weight": 1,
-      "evidence": [
-        "WarTriage: WarTriage.GetFriendlyPlayers -\u003e PartyUtils.GetWarbandData()"
-      ]
-    },
-    {
-      "from": "function:global:PartyUtils.GetWarbandData",
-      "to": "data:game:GameData.Player.hitPoints.maximum",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "WarTriage: WarTriage.GetFriendlyPlayers -\u003e PartyUtils.GetWarbandData()"
-      ],
-      "rationale": "function:global:PartyUtils.GetWarbandData reads data from data:game:GameData.Player.hitPoints.maximum",
-      "weight": 1,
-      "evidence": [
-        "WarTriage: WarTriage.GetFriendlyPlayers -\u003e PartyUtils.GetWarbandData()"
-      ]
-    },
-    {
-      "from": "function:global:PartyUtils.GetWarbandData",
       "to": "function:global:GameData.GetScenarioPlayerGroups",
       "type": "reads_data",
-      "confidence_score": 72,
-      "evidence_count": 2,
+      "confidence_score": 70,
+      "evidence_count": 1,
       "evidence_sources": [
-        "Enemy: Enemy._GroupsUpdate -\u003e PartyUtils.GetWarbandData()",
-        "WarTriage: WarTriage.GetFriendlyPlayers -\u003e PartyUtils.GetWarbandData()"
+        "Enemy: Enemy._GroupsUpdate -\u003e PartyUtils.GetWarbandData()"
       ],
       "rationale": "function:global:PartyUtils.GetWarbandData reads data from function:global:GameData.GetScenarioPlayerGroups",
-      "weight": 2,
+      "weight": 1,
       "evidence": [
-        "Enemy: Enemy._GroupsUpdate -\u003e PartyUtils.GetWarbandData()",
-        "WarTriage: WarTriage.GetFriendlyPlayers -\u003e PartyUtils.GetWarbandData()"
+        "Enemy: Enemy._GroupsUpdate -\u003e PartyUtils.GetWarbandData()"
       ]
     },
     {
@@ -43236,23 +43225,6 @@
       ]
     },
     {
-      "from": "function:global:PartyUtils.IsPlayerInWarband",
-      "to": "data:game:GameData.Player.name",
-      "type": "reads_data",
-      "confidence_score": 72,
-      "evidence_count": 2,
-      "evidence_sources": [
-        "Queue Queuer: QueueQueuer.UpdateQueuerList -\u003e PartyUtils.IsPlayerInWarband(player)",
-        "Queue Queuer: QueueQueuer.UpdateQueuerList -\u003e PartyUtils.IsPlayerInWarband(playerName)"
-      ],
-      "rationale": "function:global:PartyUtils.IsPlayerInWarband reads data from data:game:GameData.Player.name",
-      "weight": 2,
-      "evidence": [
-        "Queue Queuer: QueueQueuer.UpdateQueuerList -\u003e PartyUtils.IsPlayerInWarband(player)",
-        "Queue Queuer: QueueQueuer.UpdateQueuerList -\u003e PartyUtils.IsPlayerInWarband(playerName)"
-      ]
-    },
-    {
       "from": "function:global:PetWindow.SwitchToPassiveStance",
       "to": "data:game:GameData.PetCommand.DEFENSIVE",
       "type": "reads_data",
@@ -43284,21 +43256,6 @@
         "AdvancedPetAssist: AdvancedPetAssist.ApplyDefaultStance -\u003e PetWindow.SwitchToPassiveStance()",
         "AdvancedPetAssist: AdvancedPetAssist.SetPassiveFollow -\u003e PetWindow.SwitchToPassiveStance()",
         "DaemonAssist: DaemonAssist.EnsurePassiveFollow -\u003e PetWindow.SwitchToPassiveStance()"
-      ]
-    },
-    {
-      "from": "function:global:PlayerMenuWindow.ShowMenu",
-      "to": "data:system:SystemData.MouseOverWindow.name",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "Enemy: Enemy.UnitFramesUI_UnitFrame_OnRButtonUp -\u003e PlayerMenuWindow.ShowMenu(player.name, 0, custom_menu_items)"
-      ],
-      "rationale": "function:global:PlayerMenuWindow.ShowMenu reads data from data:system:SystemData.MouseOverWindow.name",
-      "weight": 1,
-      "evidence": [
-        "Enemy: Enemy.UnitFramesUI_UnitFrame_OnRButtonUp -\u003e PlayerMenuWindow.ShowMenu(player.name, 0, custom_menu_items)"
       ]
     },
     {
@@ -43594,36 +43551,6 @@
       ]
     },
     {
-      "from": "function:global:wstring.upper",
-      "to": "data:game:GameData.Player.zone",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "Queue Queuer: QueueQueuer.OnUpdate -\u003e wstring.upper(LabelGetText(\"EA_Window_ScenarioJoinPromptBoxName\"))"
-      ],
-      "rationale": "function:global:wstring.upper reads data from data:game:GameData.Player.zone",
-      "weight": 1,
-      "evidence": [
-        "Queue Queuer: QueueQueuer.OnUpdate -\u003e wstring.upper(LabelGetText(\"EA_Window_ScenarioJoinPromptBoxName\"))"
-      ]
-    },
-    {
-      "from": "function:global:wstring.upper",
-      "to": "data:system:SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "Queue Queuer: QueueQueuer.OnUpdate -\u003e wstring.upper(LabelGetText(\"EA_Window_ScenarioJoinPromptBoxName\"))"
-      ],
-      "rationale": "function:global:wstring.upper reads data from data:system:SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST",
-      "weight": 1,
-      "evidence": [
-        "Queue Queuer: QueueQueuer.OnUpdate -\u003e wstring.upper(LabelGetText(\"EA_Window_ScenarioJoinPromptBoxName\"))"
-      ]
-    },
-    {
       "from": "function:window:ButtonGetDisabledFlag",
       "to": "data:system:SystemData.ActiveWindow.name",
       "type": "reads_data",
@@ -43683,21 +43610,6 @@
       "weight": 1,
       "evidence": [
         "Shinies: _G.Shinies:NewModule.Criteria_ReopenComboBox -\u003e ComboBoxExternalOpenMenu(lastComboSelected)"
-      ]
-    },
-    {
-      "from": "function:window:ComboBoxGetDisabledFlag",
-      "to": "data:system:SystemData.ActiveWindow.name",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "DeepSleep: Settings.ComboBoxChanged -\u003e ComboBoxGetDisabledFlag(box)"
-      ],
-      "rationale": "function:window:ComboBoxGetDisabledFlag reads data from data:system:SystemData.ActiveWindow.name",
-      "weight": 1,
-      "evidence": [
-        "DeepSleep: Settings.ComboBoxChanged -\u003e ComboBoxGetDisabledFlag(box)"
       ]
     },
     {
@@ -45030,111 +44942,6 @@
       ]
     },
     {
-      "from": "function:window:WindowUnRegisterEventHandler",
-      "to": "data:system:SystemData.Events.PLAYER_RENOWN_UPDATED",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "RRCount: RrCount.Shutdown -\u003e WindowUnRegisterEventHandler(windowName, SystemData.Events.PLAYER_RENOWN_UPDATED)"
-      ],
-      "rationale": "function:window:WindowUnRegisterEventHandler reads data from data:system:SystemData.Events.PLAYER_RENOWN_UPDATED",
-      "weight": 1,
-      "evidence": [
-        "RRCount: RrCount.Shutdown -\u003e WindowUnRegisterEventHandler(windowName, SystemData.Events.PLAYER_RENOWN_UPDATED)"
-      ]
-    },
-    {
-      "from": "function:window:WindowUnregisterCoreEventHandler",
-      "to": "data:system:SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ],
-      "rationale": "function:window:WindowUnregisterCoreEventHandler reads data from data:system:SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-      "weight": 1,
-      "evidence": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ]
-    },
-    {
-      "from": "function:window:WindowUnregisterCoreEventHandler",
-      "to": "data:system:SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ],
-      "rationale": "function:window:WindowUnregisterCoreEventHandler reads data from data:system:SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-      "weight": 1,
-      "evidence": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ]
-    },
-    {
-      "from": "function:window:WindowUnregisterCoreEventHandler",
-      "to": "data:system:SystemData.Events.LOADING_END",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ],
-      "rationale": "function:window:WindowUnregisterCoreEventHandler reads data from data:system:SystemData.Events.LOADING_END",
-      "weight": 1,
-      "evidence": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ]
-    },
-    {
-      "from": "function:window:WindowUnregisterCoreEventHandler",
-      "to": "data:system:SystemData.Events.RELOAD_INTERFACE",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ],
-      "rationale": "function:window:WindowUnregisterCoreEventHandler reads data from data:system:SystemData.Events.RELOAD_INTERFACE",
-      "weight": 1,
-      "evidence": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ]
-    },
-    {
-      "from": "function:window:WindowUnregisterCoreEventHandler",
-      "to": "data:system:SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ],
-      "rationale": "function:window:WindowUnregisterCoreEventHandler reads data from data:system:SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-      "weight": 1,
-      "evidence": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ]
-    },
-    {
-      "from": "function:window:WindowUnregisterCoreEventHandler",
-      "to": "data:system:SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT",
-      "type": "reads_data",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ],
-      "rationale": "function:window:WindowUnregisterCoreEventHandler reads data from data:system:SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT",
-      "weight": 1,
-      "evidence": [
-        "TidyQueue: TidyQueue.Initialize -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_ScenarioLobby\", \"OnHidden\")"
-      ]
-    },
-    {
       "from": "function:window:WindowUnregisterEventHandler",
       "to": "data:system:SystemData.Events.AUCTION_BID_RESULT_RECEIVED",
       "type": "reads_data",
@@ -45272,82 +45079,7 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "MapPin.MapPin.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "TidyRoll.TidyRoll.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "MiracleGrowLight.MiracleGrowLight.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "WhoHealedMe.WhoHealedMe.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "AggroMeter.AggroMeter.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "WhoHealedMe.WHMEvents.OnUpdate is called during periodic updates",
+      "rationale": "TurretRange.TurretRange.OnUpdate is called during periodic updates",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -45377,7 +45109,7 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "Queue Queuer.QueueQueuer.OnUpdate is called during periodic updates",
+      "rationale": "BuffHead.BuffHead.OnUpdate is called during periodic updates",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -45392,7 +45124,7 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "WarTriage.WarTriage.OnUpdate is called during periodic updates",
+      "rationale": "RVAPI_ColorDialog.RVAPI_ColorDialog.OnUpdate is called during periodic updates",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -45407,7 +45139,52 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "TurretRange.TurretRange.OnUpdate is called during periodic updates",
+      "rationale": "Enemy.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "WhoHealedMe.WhoHealedMe.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "WoH-Reticle.LibConfig.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "DaemonAssist.DaemonAssist.OnUpdate is called during periodic updates",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -45452,21 +45229,6 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "TidyQueue.TidyQueue.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
       "rationale": "QuickWarReport.QuickWarReport.OnUpdate is called during periodic updates",
       "weight": 1,
       "evidence": [
@@ -45482,187 +45244,7 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "LibWBToggler.LibConfig.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "DaemonAssist.DaemonAssist.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "LibGroup.LibGroup.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "WarTriage.LibConfig.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "LoyalPet.LPET.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "Killer.Killer.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "BuffHead.BuffHead.Setup.Demo.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "MiracleGrow.MiracleGrow.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "Miracle Grow Remix.MiracleGrow2.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "BuffHead.BuffHead.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "TortallDPSCore.TortallDPSCore.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "AutoMark.AutoMark.OnUpdate is called during periodic updates",
-      "weight": 1,
-      "evidence": [
-        "semantic:function_name"
-      ]
-    },
-    {
-      "from": "xml_handler:OnUpdate",
-      "to": "addon_update_phase",
-      "type": "refreshes",
-      "confidence_score": 78,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "semantic:function_name"
-      ],
-      "rationale": "RVAPI_ColorDialog.RVAPI_ColorDialog.OnUpdate is called during periodic updates",
+      "rationale": "MiracleGrowLight.MiracleGrowLight.OnUpdate is called during periodic updates",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -45692,6 +45274,36 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
+      "rationale": "MiracleGrow.MiracleGrow.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "LibWBToggler.LibConfig.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
       "rationale": "BuffHead.BuffHead.Setup.Layout.OnUpdate is called during periodic updates",
       "weight": 1,
       "evidence": [
@@ -45707,7 +45319,97 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "WoH-Reticle.LibConfig.OnUpdate is called during periodic updates",
+      "rationale": "WhoHealedMe.WHMEvents.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "LibGroup.LibGroup.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "Miracle Grow Remix.MiracleGrow2.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "LoyalPet.LPET.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "AggroMeter.AggroMeter.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "MapPin.MapPin.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "Killer.Killer.OnUpdate is called during periodic updates",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -45737,7 +45439,7 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "Enemy.OnUpdate is called during periodic updates",
+      "rationale": "BuffHead.BuffHead.Setup.ContainerDemo.OnUpdate is called during periodic updates",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -45752,7 +45454,52 @@
       "evidence_sources": [
         "semantic:function_name"
       ],
-      "rationale": "BuffHead.BuffHead.Setup.ContainerDemo.OnUpdate is called during periodic updates",
+      "rationale": "TortallDPSCore.TortallDPSCore.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "TidyRoll.TidyRoll.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "AutoMark.AutoMark.OnUpdate is called during periodic updates",
+      "weight": 1,
+      "evidence": [
+        "semantic:function_name"
+      ]
+    },
+    {
+      "from": "xml_handler:OnUpdate",
+      "to": "addon_update_phase",
+      "type": "refreshes",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "semantic:function_name"
+      ],
+      "rationale": "BuffHead.BuffHead.Setup.Demo.OnUpdate is called during periodic updates",
       "weight": 1,
       "evidence": [
         "semantic:function_name"
@@ -46462,21 +46209,6 @@
       ]
     },
     {
-      "from": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait",
-      "to": "event:window:OnUpdate",
-      "type": "triggered_by",
-      "confidence_score": 80,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "TidyQueue: TidyQueue.OnUpdate -\u003e EA_Window_ScenarioLobby.OnJoinInstanceWait()"
-      ],
-      "rationale": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait triggers event:window:OnUpdate",
-      "weight": 1,
-      "evidence": [
-        "TidyQueue: TidyQueue.OnUpdate -\u003e EA_Window_ScenarioLobby.OnJoinInstanceWait()"
-      ]
-    },
-    {
       "from": "function:global:EA_Window_WorldMap.SetMap",
       "to": "event:window:OnSelChanged",
       "type": "triggered_by",
@@ -46671,21 +46403,6 @@
       "weight": 1,
       "evidence": [
         "MapPin: MapPin.LButtonUp -\u003e PartyUtils.IsPartyActive()"
-      ]
-    },
-    {
-      "from": "function:global:PlayerMenuWindow.ShowMenu",
-      "to": "event:window:OnRButtonUp",
-      "type": "triggered_by",
-      "confidence_score": 80,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "Enemy: Enemy.UnitFramesUI_UnitFrame_OnRButtonUp -\u003e PlayerMenuWindow.ShowMenu(player.name, 0, custom_menu_items)"
-      ],
-      "rationale": "function:global:PlayerMenuWindow.ShowMenu triggers event:window:OnRButtonUp",
-      "weight": 1,
-      "evidence": [
-        "Enemy: Enemy.UnitFramesUI_UnitFrame_OnRButtonUp -\u003e PlayerMenuWindow.ShowMenu(player.name, 0, custom_menu_items)"
       ]
     },
     {
@@ -47552,6 +47269,36 @@
       ]
     },
     {
+      "from": "function:window:WindowUnregisterCoreEventHandler",
+      "to": "event:game:SystemData.Events.LOADING_END",
+      "type": "triggered_by",
+      "confidence_score": 80,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "TidyRoll: TidyRoll.OnLoad -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_LootRoll\", \"OnShown\")"
+      ],
+      "rationale": "function:window:WindowUnregisterCoreEventHandler triggers event:game:SystemData.Events.LOADING_END",
+      "weight": 1,
+      "evidence": [
+        "TidyRoll: TidyRoll.OnLoad -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_LootRoll\", \"OnShown\")"
+      ]
+    },
+    {
+      "from": "function:window:WindowUnregisterCoreEventHandler",
+      "to": "event:game:SystemData.Events.RELOAD_INTERFACE",
+      "type": "triggered_by",
+      "confidence_score": 80,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "TidyRoll: TidyRoll.OnLoad -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_LootRoll\", \"OnShown\")"
+      ],
+      "rationale": "function:window:WindowUnregisterCoreEventHandler triggers event:game:SystemData.Events.RELOAD_INTERFACE",
+      "weight": 1,
+      "evidence": [
+        "TidyRoll: TidyRoll.OnLoad -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_LootRoll\", \"OnShown\")"
+      ]
+    },
+    {
       "from": "function:global:AlertTextWindow.AddLine",
       "to": "ui:Button",
       "type": "updates_ui",
@@ -48104,21 +47851,6 @@
       ]
     },
     {
-      "from": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait",
-      "to": "ui:Window",
-      "type": "updates_ui",
-      "confidence_score": 72,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "TidyQueue: TidyQueue.OnUpdate -\u003e EA_Window_ScenarioLobby.OnJoinInstanceWait()"
-      ],
-      "rationale": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait updates UI element ui:Window",
-      "weight": 1,
-      "evidence": [
-        "TidyQueue: TidyQueue.OnUpdate -\u003e EA_Window_ScenarioLobby.OnJoinInstanceWait()"
-      ]
-    },
-    {
       "from": "function:global:EA_Window_WorldMap.SetMap",
       "to": "ui:ComboBox",
       "type": "updates_ui",
@@ -48223,21 +47955,6 @@
       "weight": 1,
       "evidence": [
         "MapPin: MapPin.LButtonUp -\u003e PartyUtils.IsPartyActive()"
-      ]
-    },
-    {
-      "from": "function:global:PlayerMenuWindow.ShowMenu",
-      "to": "ui:Window",
-      "type": "updates_ui",
-      "confidence_score": 72,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "Enemy: Enemy.UnitFramesUI_UnitFrame_OnRButtonUp -\u003e PlayerMenuWindow.ShowMenu(player.name, 0, custom_menu_items)"
-      ],
-      "rationale": "function:global:PlayerMenuWindow.ShowMenu updates UI element ui:Window",
-      "weight": 1,
-      "evidence": [
-        "Enemy: Enemy.UnitFramesUI_UnitFrame_OnRButtonUp -\u003e PlayerMenuWindow.ShowMenu(player.name, 0, custom_menu_items)"
       ]
     },
     {
@@ -50197,21 +49914,6 @@
       ]
     },
     {
-      "from": "function:window:WindowUnRegisterEventHandler",
-      "to": "ui:Window",
-      "type": "updates_ui",
-      "confidence_score": 72,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "WindowUnRegisterEventHandler: description and category indicate window-facing behavior"
-      ],
-      "rationale": "function:window:WindowUnRegisterEventHandler updates UI element ui:Window",
-      "weight": 1,
-      "evidence": [
-        "WindowUnRegisterEventHandler: description and category indicate window-facing behavior"
-      ]
-    },
-    {
       "from": "function:window:WindowUnregisterCoreEventHandler",
       "to": "ui:Window",
       "type": "updates_ui",
@@ -51893,6 +51595,36 @@
       ]
     },
     {
+      "from": "function:global:LibSlash.IsSlashCmdRegistered",
+      "to": "function:global:EA_ChatWindow.OnKeyEnter",
+      "type": "writes_state",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "wbLeadHelper: wbLeadHelper.OnInitialize -\u003e LibSlash.IsSlashCmdRegistered(\"wlh\")"
+      ],
+      "rationale": "function:global:LibSlash.IsSlashCmdRegistered updates state in function:global:EA_ChatWindow.OnKeyEnter",
+      "weight": 1,
+      "evidence": [
+        "wbLeadHelper: wbLeadHelper.OnInitialize -\u003e LibSlash.IsSlashCmdRegistered(\"wlh\")"
+      ]
+    },
+    {
+      "from": "function:global:LibSlash.RegisterSlashCmd",
+      "to": "data:table:EA_Window_Backpack",
+      "type": "writes_state",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "BagOMatic: BagOMatic.init -\u003e LibSlash.RegisterSlashCmd(\"bagomatic\", function(msg)BagOMatic.parse_cmd(msg)end)"
+      ],
+      "rationale": "function:global:LibSlash.RegisterSlashCmd updates state in data:table:EA_Window_Backpack",
+      "weight": 1,
+      "evidence": [
+        "BagOMatic: BagOMatic.init -\u003e LibSlash.RegisterSlashCmd(\"bagomatic\", function(msg)BagOMatic.parse_cmd(msg)end)"
+      ]
+    },
+    {
       "from": "function:global:LibSlash.RegisterWSlashCmd",
       "to": "data:table:EA_Window_Backpack",
       "type": "writes_state",
@@ -51911,34 +51643,34 @@
     },
     {
       "from": "function:global:PartyUtils.GetPartyData",
-      "to": "data:table:GroupWindow",
+      "to": "function:global:PartyUtils.GetWarbandData",
       "type": "writes_state",
       "confidence_score": 72,
       "evidence_count": 2,
       "evidence_sources": [
-        "DeepSleep: AddGroupMenuItems -\u003e PartyUtils.GetPartyData()",
-        "DeepSleep: PlayerMenuWindow.AddGroupMenuItems -\u003e PartyUtils.GetPartyData()"
+        "LibGuard: LibGuard.GetIdFromName -\u003e PartyUtils.GetPartyData()",
+        "WhoHealedMe: WHMCore.IsHealerInPartyOrWarband -\u003e PartyUtils.GetPartyData()"
       ],
-      "rationale": "function:global:PartyUtils.GetPartyData updates state in data:table:GroupWindow",
+      "rationale": "function:global:PartyUtils.GetPartyData updates state in function:global:PartyUtils.GetWarbandData",
       "weight": 2,
       "evidence": [
-        "DeepSleep: AddGroupMenuItems -\u003e PartyUtils.GetPartyData()",
-        "DeepSleep: PlayerMenuWindow.AddGroupMenuItems -\u003e PartyUtils.GetPartyData()"
+        "LibGuard: LibGuard.GetIdFromName -\u003e PartyUtils.GetPartyData()",
+        "WhoHealedMe: WHMCore.IsHealerInPartyOrWarband -\u003e PartyUtils.GetPartyData()"
       ]
     },
     {
       "from": "function:global:PartyUtils.GetPartyData",
-      "to": "function:global:PartyUtils.GetWarbandData",
+      "to": "function:global:PartyUtils.GetWarbandLeader",
       "type": "writes_state",
       "confidence_score": 70,
       "evidence_count": 1,
       "evidence_sources": [
-        "LibGuard: LibGuard.GetIdFromName -\u003e PartyUtils.GetPartyData()"
+        "followTheLeader: followTheLeader.GetDynamicLeaderName -\u003e PartyUtils.GetPartyData()"
       ],
-      "rationale": "function:global:PartyUtils.GetPartyData updates state in function:global:PartyUtils.GetWarbandData",
+      "rationale": "function:global:PartyUtils.GetPartyData updates state in function:global:PartyUtils.GetWarbandLeader",
       "weight": 1,
       "evidence": [
-        "LibGuard: LibGuard.GetIdFromName -\u003e PartyUtils.GetPartyData()"
+        "followTheLeader: followTheLeader.GetDynamicLeaderName -\u003e PartyUtils.GetPartyData()"
       ]
     },
     {
@@ -51960,17 +51692,19 @@
       "from": "function:global:PartyUtils.GetWarbandData",
       "to": "function:global:PartyUtils.GetPartyData",
       "type": "writes_state",
-      "confidence_score": 72,
-      "evidence_count": 2,
+      "confidence_score": 74,
+      "evidence_count": 3,
       "evidence_sources": [
         "Enemy: Enemy._GroupsUpdate -\u003e PartyUtils.GetWarbandData()",
-        "LibGuard: LibGuard.GetIdFromName -\u003e PartyUtils.GetWarbandData()"
+        "LibGuard: LibGuard.GetIdFromName -\u003e PartyUtils.GetWarbandData()",
+        "WhoHealedMe: WHMCore.IsHealerInPartyOrWarband -\u003e PartyUtils.GetWarbandData()"
       ],
       "rationale": "function:global:PartyUtils.GetWarbandData updates state in function:global:PartyUtils.GetPartyData",
-      "weight": 2,
+      "weight": 3,
       "evidence": [
         "Enemy: Enemy._GroupsUpdate -\u003e PartyUtils.GetWarbandData()",
-        "LibGuard: LibGuard.GetIdFromName -\u003e PartyUtils.GetWarbandData()"
+        "LibGuard: LibGuard.GetIdFromName -\u003e PartyUtils.GetWarbandData()",
+        "WhoHealedMe: WHMCore.IsHealerInPartyOrWarband -\u003e PartyUtils.GetWarbandData()"
       ]
     },
     {
@@ -52238,21 +51972,6 @@
       "weight": 1,
       "evidence": [
         "AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize -\u003e ButtonGetText(WindowName..\"RespecializeButton\")"
-      ]
-    },
-    {
-      "from": "function:window:ComboBoxGetDisabledFlag",
-      "to": "data:system:SystemData.ActiveWindow.name",
-      "type": "writes_state",
-      "confidence_score": 70,
-      "evidence_count": 1,
-      "evidence_sources": [
-        "DeepSleep: Settings.ComboBoxChanged -\u003e ComboBoxGetDisabledFlag(box)"
-      ],
-      "rationale": "function:window:ComboBoxGetDisabledFlag updates state in data:system:SystemData.ActiveWindow.name",
-      "weight": 1,
-      "evidence": [
-        "DeepSleep: Settings.ComboBoxChanged -\u003e ComboBoxGetDisabledFlag(box)"
       ]
     },
     {

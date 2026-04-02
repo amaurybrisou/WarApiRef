@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyChat |
-| Files seen in | `/workspace/TidyChat/TidyChat.lua:980` |
+| Files seen in | `/workspace_addons/TidyChat/TidyChat.lua:980` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | TidyChatFrames.InitializeChannelMenuTidyChannelButtons, lua_call |

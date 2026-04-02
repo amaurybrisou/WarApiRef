@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 160
+- Raw weighted score: 135
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -23,23 +23,22 @@
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff, Effigy, Killer, Miracle Grow Remix, QuickWarReport, RVMOD_Manager, TexturedButtons, TidyRoll |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:653`, `/workspace/DAoCBuff/Source/DAoCBuffHeadFrames.lua:212`, `/workspace/Effigy/Elements/EffigyBar.lua:135`, `/workspace/Effigy/Elements/EffigyBar.lua:640`, `/workspace/Killer/KillerLifecycle.lua:100`, `/workspace/MGRemix/config.lua:87`, `/workspace/MGRemix/preset.lua:298`, `/workspace/QuickWarReport/QWRLifecycle.lua:90` |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:653`, `/workspace_addons/DAoCBuff/Source/DAoCBuffHeadFrames.lua:212`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:135`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:640`, `/workspace_addons/Killer/KillerLifecycle.lua:100`, `/workspace_addons/MGRemix/config.lua:87`, `/workspace_addons/MGRemix/preset.lua:298`, `/workspace_addons/QuickWarReport/QWRLifecycle.lua:90` |
 | Namespaces detected | LayoutEditor |
-| Source kinds | globals, lua_calls |
+| Source kinds | lua_calls |
 | Example locations | DAoCBuff: DAoCBuffHeadTracker:Shutdown, DAoCBuff: DAoCBuffTracker:Shutdown, Effigy: EffigyBar:destroy, Effigy: EffigyBar:setup, Killer: Killer.Shutdown, Miracle Grow Remix: MiracleGrow2.ConfigCallback |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 14 |
 | Global usage count | 14 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -76,7 +75,7 @@ Observed as a window function across 10 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

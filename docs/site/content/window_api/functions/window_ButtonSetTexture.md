@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TexturedButtons |
-| Files seen in | `/workspace/TexturedButtons/TexturedButtons.lua:214` |
+| Files seen in | `/workspace_addons/TexturedButtons/TexturedButtons.lua:214` |
 | Namespaces detected | ButtonSetTexture |
 | Source kinds | lua_calls |
 | Example locations | TexturedButtons: SetButtonTexture, TexturedButtons: TexturedButtons.local.SetButtonTexture |
@@ -75,7 +75,7 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

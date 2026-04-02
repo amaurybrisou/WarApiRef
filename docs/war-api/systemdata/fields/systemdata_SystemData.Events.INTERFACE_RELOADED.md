@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -31,18 +31,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, DAoCBuff, Enemy, GCDsaver, MapMonster, MegaphonePlusPlus, PeaceOut, PetFixWindow, RoR_SoR, Enemy, GCDsaver, MapMonster, MegaphonePlusPlus, PeaceOut, PetFixWindow |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Enemy/Code/Core/Main.lua:4`, `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/GCDsaver/GCDsaver.lua:268`, `/workspace/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace/MapMonster/Source/MapMonster_Player.lua:83`, `/workspace/PeaceOut/PeaceOut.lua:39` |
+| Addons seen in | DAoCBuff, DAoCBuff, Enemy, GCDsaver, MapMonster, PetFixWindow, RoR_SoR, Enemy, GCDsaver, MapMonster, PetFixWindow, RoR_SoR |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Enemy/Code/Core/Main.lua:4`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/GCDsaver/GCDsaver.lua:268`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:83`, `/workspace_addons/PetFixWindow/PetFixWindow.lua:3` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | DAoCBuff.Initialize, DAoCBuff.OnReload, DAoCBuff.Shutdown, Enemy.Initialize, Enemy._Initialize, GCDsaver.INTERFACE_RELOADED |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 27 |
-| Global usage count | 27 |
+| Lua usage count | 22 |
+| Global usage count | 22 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 7 |
+| Initialization flow references | 5 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,17 +62,15 @@
 
 ## Description
 
-Observed SystemData field used by 9 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 7 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - DAoCBuff
-- DAoCBuff, Enemy, GCDsaver, MapMonster, MegaphonePlusPlus, PeaceOut, PetFixWindow, RoR_SoR
+- DAoCBuff, Enemy, GCDsaver, MapMonster, PetFixWindow, RoR_SoR
 - Enemy
 - GCDsaver
 - MapMonster
-- MegaphonePlusPlus
-- PeaceOut
 - PetFixWindow
 - RoR_SoR
 

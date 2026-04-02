@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePets.lua:29`, `/workspace/Effigy/States/EffigyStatePets.lua:48` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePets.lua:29`, `/workspace_addons/Effigy/States/EffigyStatePets.lua:48` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Effigy.OnPlayerPetHealthUpdated, Effigy.UpdatePlayerPet, lua_call |

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic |
-| Files seen in | `/workspace/bagomatic/BagOMatic.lua:818` |
+| Files seen in | `/workspace_addons/bagomatic/BagOMatic.lua:818` |
 | Namespaces detected | EA_BackpackUtilsMediator |
 | Source kinds | globals, lua_calls |
 | Example locations | BagOMatic: BagOMatic.SalvageHook |

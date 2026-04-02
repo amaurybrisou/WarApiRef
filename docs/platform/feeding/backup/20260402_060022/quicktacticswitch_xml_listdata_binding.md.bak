@@ -1,0 +1,75 @@
+# QuickTacticSwitch XML ListData Binding Findings
+
+## Status
+
+- Candidate for review and possible promotion.
+
+## Source
+
+- Addon: `QuickTacticSwitch`
+- Corroborating addons: `AggroMeter`, `AuraShares`, `ClosetGoblin`
+- Validation context: XML and Lua implementation review across multiple in-workspace addons
+- Date: 2026-04-02
+
+## Target Seed
+
+- `docs/platform/seeds/xml_conventions.md`
+
+## Confidence
+
+- Overall: `MEDIUM`
+- Reason: the pattern is repeated across several addons and is implementation-backed, but there is no canonical engine-side documentation yet for `ListData` itself.
+
+## Observed Behavior
+
+### 1. `ListData` binds a `ListBox` to a Lua table
+
+- `MEDIUM`: `ListData` appears to act as the XML-to-Lua binding node for `ListBox` row data.
+- Observed attributes:
+  - `table`: string path to the Lua table used as the backing collection
+  - `populationfunction`: optional Lua function name used for custom row population work
+- Practical effect: the row data shown by the list is sourced from the named Lua table rather than being fully authored in XML.
+
+### 2. `ListColumns` maps row-template child windows to table fields
+
+- `MEDIUM`: `ListColumn` entries under `ListData` appear to bind values from each table entry onto row-template child windows.
+- Observed attributes:
+  - `windowname`: child window suffix in the row template
+  - `variable`: field name on the Lua table entry
+  - `format`: observed as `wstring` for label text
+- Practical effect: text columns can populate automatically from table fields without manual label assignment in the population callback.
+
+### 3. Custom row population and display order are handled from Lua
+
+- `MEDIUM`: when `populationfunction` is present, Lua can perform extra per-row work that is not covered by `ListColumns`, such as setting images.
+- `MEDIUM`: visible row ordering is commonly controlled from Lua with `ListBoxSetDisplayOrder`.
+- `MEDIUM`: during list population, addons can inspect `<ListBoxName>.PopulatorIndices` to map visible row numbers to backing data indices.
+- Practical effect: mixed text-and-image rows often use XML for text binding and Lua for icon or state binding.
+
+## Evidence
+
+### QuickTacticSwitch
+
+- The list XML declares `ListData table="QTS.listDisplayData" populationfunction="QTS.PopulateDisplay"` under the `QuickTacticSwitchWindowList` list box.
+- `ListColumns` binds `Name` and `Enemy` from each entry in `QTS.listDisplayData`.
+- `QTS.CreateDisplayData()` builds the table used by the list.
+- `QTS.DisplayData()` calls `ListBoxSetDisplayOrder(QTS.Window .. "List", sortOrder)`.
+- `QTS.PopulateDisplay()` iterates `QuickTacticSwitchWindowList.PopulatorIndices` and sets the tactic icon for each visible row.
+- `GetTacticIndex()` uses `ListBoxGetDataIndex` to map a clicked row back to the current backing-data index.
+
+### AggroMeter
+
+- `AggroMeter` declares `ListData table="AggroMeter.Listdata" populationfunction=""`.
+- This suggests a blank population function is accepted when XML column binding alone is sufficient.
+
+## Promotion Notes
+
+- Promote as an observed XML/Lua list-binding pattern, not as a guaranteed engine contract.
+- Keep the note scoped to the observed binding model:
+  - `ListData` as the `ListBox` data-binding node
+  - `ListColumns` field mapping behavior
+  - optional `populationfunction`
+  - `ListBoxSetDisplayOrder`
+  - `<ListBoxName>.PopulatorIndices`
+  - `ListBoxGetDataIndex`
+- Do not claim exact callback timing until the behavior is corroborated by canonical docs or broader MCP-backed evidence.

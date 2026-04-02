@@ -103,6 +103,24 @@ func (v *Validator) decodeAndValidate(toolName string, raw json.RawMessage) (int
 			return nil, invalidParams("scaffold_addon_snippet", "task_description is required")
 		}
 		return req, nil
+	case "ingest_observation":
+		var req schema.IngestObservationRequest
+		if err := json.Unmarshal(raw, &req); err != nil {
+			return nil, invalidParams("ingest_observation", "invalid request payload")
+		}
+		if len(req.Observation) == 0 {
+			return nil, invalidParams("ingest_observation", "observation is required")
+		}
+		return req, nil
+	case "ingest_observation_batch":
+		var req schema.IngestObservationBatchRequest
+		if err := json.Unmarshal(raw, &req); err != nil {
+			return nil, invalidParams("ingest_observation_batch", "invalid request payload")
+		}
+		if req.Limit < 0 {
+			return nil, invalidParams("ingest_observation_batch", "limit must be >= 0")
+		}
+		return req, nil
 	default:
 		return nil, &model.APIError{ErrorCode: "unknown_tool", ErrorMessage: "unknown tool: " + toolName}
 	}

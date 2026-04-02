@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Enemy, WSCT |
-| Files seen in | `/workspace/Effigy/States/EffigyStateCastbarRespawn.lua:67`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/wsct/wsct.lua:117` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateCastbarRespawn.lua:67`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/wsct/wsct.lua:117` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Effigy: Effigy.InitializeCastbarRespawn, Enemy: Enemy.GroupsInitialize, WSCT: WSCT:RegisterSelfEvents |

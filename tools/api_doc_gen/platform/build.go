@@ -1109,6 +1109,31 @@ func buildConventions(corpus Corpus) []PatternDoc {
 		Evidence:    bindingEvidence(corpus.Source.Bindings, 8),
 	})
 	patterns = append(patterns, PatternDoc{
+		Name:       "XML runtime caveats",
+		Category:   "conventions",
+		Confidence: ConfidenceMedium,
+		Description: "Implementation-validated findings show that XML input and scroll layout behavior can depend on ancestor state and on outer-window sizing, even when child nodes appear correctly configured.",
+		Evidence: []string{
+			"WhoHealedMe: a child `OnLButtonUp` target remained inert until the parent or template input chain was made input-enabled.",
+			"guidance: validate ancestor `handleinput` state across the clickable chain, not only on the child node.",
+			"caveat: treat this as a reusable runtime warning, not a guaranteed engine contract.",
+			"WhoHealedMe: nested scroll content dimensions initially under-reported usable space during early layout.",
+			"guidance: compute size from the outer parent first, then resize child content and call `ScrollWindowUpdateScrollRect`.",
+		},
+	})
+	patterns = append(patterns, PatternDoc{
+		Name:       "XML list binding pattern",
+		Category:   "conventions",
+		Confidence: ConfidenceMedium,
+		Description: "ListBox rows are commonly bound through ListData-backed Lua tables, with ListColumns supplying text fields and Lua population callbacks handling extra row setup such as icons or reordered display.",
+		Evidence: []string{
+			"QuickTacticSwitch: `ListData table=\"QTS.listDisplayData\" populationfunction=\"QTS.PopulateDisplay\"` binds a ListBox to Lua-backed row data.",
+			"QuickTacticSwitch: `ListColumns` binds `Name` and `Enemy`, while `QTS.PopulateDisplay` uses `QuickTacticSwitchWindowList.PopulatorIndices` to populate row icons.",
+			"QuickTacticSwitch: `ListBoxSetDisplayOrder` and `ListBoxGetDataIndex` are used to manage visible ordering and row-to-data mapping.",
+			"AggroMeter: `ListData table=\"AggroMeter.Listdata\" populationfunction=\"\"` suggests column-only text binding works without a custom population callback.",
+		},
+	})
+	patterns = append(patterns, PatternDoc{
 		Name:        "State management pattern",
 		Category:    "conventions",
 		Confidence:  ConfidenceMedium,

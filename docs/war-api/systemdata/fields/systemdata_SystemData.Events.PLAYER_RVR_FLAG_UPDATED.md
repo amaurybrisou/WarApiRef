@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, Effigy, Enemy |
-| Files seen in | `/workspace/Aura/Source/AuraEngine.lua:312`, `/workspace/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraEngine.lua:312`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | AuraEngine.JumpStartEventBasedAuras, Effigy.RegisterStateInfoForPlayer, Enemy.GroupsInitialize, Enemy.Groups_OnCurrentPlayerUpdated, SystemData.Events.PLAYER_RVR_FLAG_UPDATED, event_page |

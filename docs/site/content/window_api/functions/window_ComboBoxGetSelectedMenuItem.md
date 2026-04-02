@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 25 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, BuffHead, Crafting Info Tooltip, DAoCBuff, DeepSleep, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1110`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.lua:455`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.lua:470`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:581`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:594`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:619`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:631`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:693` |
+| Addons seen in | Ace, AdvancedRenownTrainer, BuffHead, Crafting Info Tooltip, DAoCBuff, EA_UiDebugTools, Effigy, Enemy |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1110`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.lua:455`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.lua:470`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:581`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:594`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:619`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:631`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:693` |
 | Namespaces detected | ComboBoxGetSelectedMenuItem |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Combobox:SelectedIndex, AdvancedRenownTrainer: AdvancedRenownTraining.OnExportButtonPressed, BuffHead: BuffHead.Setup.AdvancedContainersItem.OnPositionChanged, BuffHead: BuffHead.Setup.AdvancedContainersItem.OnTargetTypeChanged, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsBuffsChanged, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsDebuffsChanged |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 258 |
-| Global usage count | 258 |
+| Lua usage count | 245 |
+| Global usage count | 245 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxGetSelectedMenuItem(arg1)
 
 ## Description
 
-Observed as a window function across 29 addons.
+Observed as a window function across 25 addons.
 
 ## Parameters
 
@@ -75,11 +75,11 @@ Observed as a window function across 29 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -88,7 +88,6 @@ Observed as a window function across 29 addons.
 - BuffHead
 - Crafting Info Tooltip
 - DAoCBuff
-- DeepSleep
 - EA_UiDebugTools
 - Effigy
 - Enemy
@@ -97,19 +96,16 @@ Observed as a window function across 29 addons.
 - LibWBToggler
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - Pocket Palette
 - PotionBar
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
 - TurretRange
 - WSCT
 - WarBoard
-- WarTriage
 - WoH-Reticle
 - wbLeadHelper
 

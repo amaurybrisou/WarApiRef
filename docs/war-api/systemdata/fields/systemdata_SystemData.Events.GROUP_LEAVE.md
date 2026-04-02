@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, LibGuard, LibGuard, followTheLeader, followTheLeader |
-| Files seen in | `/workspace/Effigy/Effigy.lua:376`, `/workspace/LibGuard/Source/LibGuard.lua:47`, `/workspace/LibGuard/Source/LibGuard.lua:91`, `/workspace/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | `/workspace_addons/Effigy/Effigy.lua:376`, `/workspace_addons/LibGuard/Source/LibGuard.lua:47`, `/workspace_addons/LibGuard/Source/LibGuard.lua:91`, `/workspace_addons/followTheLeader/followTheLeader.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | Effigy.local.OnMenuClickLeaveGroup, LibGuard.GROUP_UPDATED, LibGuard.Init, LibGuard.OnShutdown, OnMenuClickLeaveGroup, SystemData.Events.GROUP_LEAVE |

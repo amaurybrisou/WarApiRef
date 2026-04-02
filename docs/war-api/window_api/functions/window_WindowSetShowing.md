@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 64 addons
+- Seen in: 55 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainerAdditions, Aura, AutoMark, BankArkel |
-| Files seen in | `/workspace/Ace/LibGUI.lua:74`, `/workspace/Ace/LibGUI.lua:79`, `/workspace/AdvancedPetAssist/APAGui.lua:1063`, `/workspace/AdvancedPetAssist/APAGui.lua:1071`, `/workspace/AdvancedPetAssist/APAGui.lua:546`, `/workspace/AdvancedPetAssist/APAGui.lua:983`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:138`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:181` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:74`, `/workspace_addons/Ace/LibGUI.lua:79`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:1063`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:1071`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:546`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:983`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:138`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:181` |
 | Namespaces detected | WindowSetShowing |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Hide, Ace: LIBGUI_ELEMENT:Show, AdvancedPetAssist: APAGui.Hide, AdvancedPetAssist: APAGui.HidePetTargetHUD, AdvancedPetAssist: APAGui.OnShown, AdvancedPetAssist: APAGui.Show |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1340 |
-| Global usage count | 1340 |
+| Lua usage count | 1280 |
+| Global usage count | 1280 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -99,14 +99,12 @@ Observed mutating runtime window state or presentation.
 - Crafting Info Tooltip
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - Effigy
 - Enemy
 - FastInteract
 - GCDsaver
 - GetStats
-- GoldTracker
 - GuardLine
 - JunkDump
 - Killer
@@ -116,16 +114,13 @@ Observed mutating runtime window state or presentation.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - Moth
-- PeaceOut
 - PetFixWindow
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
 - RVAPI_ColorDialog
@@ -134,15 +129,11 @@ Observed mutating runtime window state or presentation.
 - Shinies
 - Swift Assist
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
-- Twister
 - WSCT
 - WarBoard
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - followTheLeader
@@ -201,7 +192,6 @@ Observed mutating runtime window state or presentation.
 - [EA_Window_WorldMap.ShowZone](../../globals/functions/global_EA_Window_WorldMap.ShowZone.md) (HIGH 100/100) - Global Function
 - [GameData.ChatData.name](../../gamedata/fields/gamedata_GameData.ChatData.name.md) (HIGH 100/100) - GameData Field
 - [GameData.ChatData.text](../../gamedata/fields/gamedata_GameData.ChatData.text.md) (HIGH 100/100) - GameData Field
-- [GameData.Player.zone](../../gamedata/fields/gamedata_GameData.Player.zone.md) (HIGH 100/100) - GameData Field
 - [GameData.Sound.QUEST_ABANDONED](../../gamedata/fields/gamedata_GameData.Sound.QUEST_ABANDONED.md) (HIGH 100/100) - GameData Field
 - [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
 - [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
@@ -220,8 +210,8 @@ Observed mutating runtime window state or presentation.
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
-- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
 - [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
 - [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
 - [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 - [ScrollWindowSetOffset](window_ScrollWindowSetOffset.md) (HIGH 100/100) - Window Function
@@ -235,8 +225,8 @@ Observed mutating runtime window state or presentation.
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CULTIVATION_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CULTIVATION_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.UPDATE_PROCESSED](../../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.UPDATE_PROCESSED](../../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function

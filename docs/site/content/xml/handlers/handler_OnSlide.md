@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, BuffHead, Enemy, LibGroup, MapMonster, MapPin, MoraleCircle, PotionBar |
-| Files seen in | `/workspace/Aura/Source/AuraColorPicker.xml:105`, `/workspace/Aura/Source/AuraColorPicker.xml:33`, `/workspace/Aura/Source/AuraColorPicker.xml:65`, `/workspace/Aura/Source/AuraColorPicker.xml:85`, `/workspace/Aura/Source/AuraConfig.xml:1680`, `/workspace/Aura/Source/AuraConfig.xml:256`, `/workspace/Aura/Source/AuraConfig.xml:311`, `/workspace/BuffHead/Setup/General.xml:142` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraColorPicker.xml:105`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:33`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:65`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:85`, `/workspace_addons/Aura/Source/AuraConfig.xml:1680`, `/workspace_addons/Aura/Source/AuraConfig.xml:256`, `/workspace_addons/Aura/Source/AuraConfig.xml:311`, `/workspace_addons/BuffHead/Setup/General.xml:142` |
 | Namespaces detected | OnSlide |
 | Source kinds | bindings, xml_handlers |
 | Example locations | Aura: AuraColorPickerAlpha.OnSlide, Aura: AuraColorPickerBlue.OnSlide, Aura: AuraColorPickerGreen.OnSlide, Aura: AuraColorPickerRed.OnSlide, Aura: AuraConfigGeneralTextureRotationSlider.OnSlide, Aura: AuraConfigGeneralTextureScaleSlider.OnSlide |
@@ -117,4 +117,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

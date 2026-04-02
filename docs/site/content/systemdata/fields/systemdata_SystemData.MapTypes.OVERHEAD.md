@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TurretRange |
-| Files seen in | `/workspace/TurrentRange/Core.lua:112` |
+| Files seen in | `/workspace_addons/TurrentRange/Core.lua:112` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | TurretRange.OnLoadComplete, lua_call |

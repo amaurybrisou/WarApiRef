@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoBand, Busted, EA_UiDebugTools, Miracle Grow Remix, ObjectInspector, WarBoard |
-| Files seen in | `/workspace/Autoband/AutoBandWindowConfig.xml:220`, `/workspace/Autoband/AutoBandWindowConfig.xml:296`, `/workspace/Busted/Busted.xml:50`, `/workspace/MGRemix/layout.xml:444`, `/workspace/MGRemix/layout.xml:770`, `/workspace/ObjectInspector/ObjectInspector.xml:123`, `/workspace/WarBoard/WarBoardOptions.xml:482`, `/workspace/WarBoard/WarBoardOptions.xml:547` |
+| Addons seen in | Busted, EA_UiDebugTools, Miracle Grow Remix, ObjectInspector, WarBoard |
+| Files seen in | `/workspace_addons/Busted/Busted.xml:50`, `/workspace_addons/MGRemix/layout.xml:444`, `/workspace_addons/MGRemix/layout.xml:770`, `/workspace_addons/ObjectInspector/ObjectInspector.xml:123`, `/workspace_addons/WarBoard/WarBoardOptions.xml:482`, `/workspace_addons/WarBoard/WarBoardOptions.xml:547`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:469`, `/workspace_addons/ea_uidebugtools/Source/objectinsp/ObjectInspector.xml:161` |
 | Namespaces detected | EA_Button_DefaultMinus |
 | Source kinds | xml_attributes |
-| Example locations | AutoBandWindowConfigButtonMinusRank, AutoBandWindowConfigButtonMinusTime, BustedGUIPrevError, MiracleGrow2LayoutProgTemplateBarMinus, MiracleGrow2LayoutSettingsTemplateVisMinus, ObjectInspectorDepthMinusButton |
-| XML usage count | 8 |
-| XML attribute usage count | 8 |
+| Example locations | BustedGUIPrevError, MiracleGrow2LayoutProgTemplateBarMinus, MiracleGrow2LayoutSettingsTemplateVisMinus, ObjectInspectorDepthMinusButton, PlusMinusMinButton, PlusMinusVertMinButton |
+| XML usage count | 6 |
+| XML attribute usage count | 6 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,11 +57,10 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 6 addons.
+Observed engine XML template or inherited constant referenced by 5 addons.
 
 ## Seen In
 
-- AutoBand
 - Busted
 - EA_UiDebugTools
 - Miracle Grow Remix
@@ -70,8 +69,6 @@ Observed engine XML template or inherited constant referenced by 6 addons.
 
 ## Used By
 
-- AutoBandWindowConfigButtonMinusRank
-- AutoBandWindowConfigButtonMinusTime
 - BustedGUIPrevError
 - MiracleGrow2LayoutProgTemplateBarMinus
 - MiracleGrow2LayoutSettingsTemplateVisMinus

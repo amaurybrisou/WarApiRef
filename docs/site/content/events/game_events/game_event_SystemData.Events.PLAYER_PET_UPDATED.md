@@ -24,14 +24,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, PetFixWindow, TurretRange |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/PetFixWindow/PetFixWindow.lua:3`, `/workspace/TurrentRange/Core.lua:74` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/PetFixWindow/PetFixWindow.lua:3`, `/workspace_addons/TurrentRange/Core.lua:74` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.local.RegisterCoreEvents, AdvancedPetAssist: RegisterCoreEvents, PetFixWindow: PetFixWindow.onInit, TurretRange: TurretRange.Initialize |
@@ -69,7 +69,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 

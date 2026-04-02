@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, Effigy, LibGuard, TurretRange |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/LibGuard/Source/LibGuard.lua:47`, `/workspace/TurrentRange/Core.lua:74` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace_addons/LibGuard/Source/LibGuard.lua:47`, `/workspace_addons/TurrentRange/Core.lua:74` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.local.RegisterCoreEvents, AdvancedPetAssist: RegisterCoreEvents, Effigy: Effigy.RegisterStateInfoForCastbar, LibGuard: LibGuard.Init, TurretRange: TurretRange.Initialize |

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | bigger_MacroWindow |
-| Files seen in | `/workspace/bigger_macrowindow/Source/MacroWindow.xml:793`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:801`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:812`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:827`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:838`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:853` |
+| Files seen in | `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:793`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:801`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:812`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:827`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:838`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:853` |
 | Namespaces detected | EA_Window_MacroDetails |
 | Source kinds | flows, xml_attributes |
 | Example locations | EA_Window_MacroDetailsIcon, EA_Window_MacroDetailsName, EA_Window_MacroDetailsNameTitle, EA_Window_MacroDetailsSave, EA_Window_MacroDetailsText, EA_Window_MacroDetailsTextTitle |

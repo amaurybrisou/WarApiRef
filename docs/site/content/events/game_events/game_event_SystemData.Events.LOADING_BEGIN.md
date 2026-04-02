@@ -24,14 +24,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin, MapMonster, wbLeadHelper |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblin.lua:1218`, `/workspace/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace/wbLeadHelper/wbLeadHelper.lua:34` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1283`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace_addons/wbLeadHelper/wbLeadHelper.lua:34` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | CM_ClosetGoblin: ClosetGoblin.ZoneChangeInit, MapMonster: MapMonster.InitializePlayer, wbLeadHelper: wbLeadHelper.OnInitialize |
@@ -69,7 +69,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 

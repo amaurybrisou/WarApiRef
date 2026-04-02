@@ -24,14 +24,14 @@
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, Enemy, RoR_SoR, followTheLeader, LibGroup, RoR_SoR, followTheLeader |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace/LibGroup/LibGroup.lua:343`, `/workspace/RoR_SoR/RoR_SoR.lua:178`, `/workspace/RoR_SoR/RoR_SoR.lua:278`, `/workspace/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace_addons/LibGroup/LibGroup.lua:343`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:178`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:278`, `/workspace_addons/followTheLeader/followTheLeader.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Enemy.GroupsInitialize, Enemy.GroupsUpdateType, Enemy.ScenarioInfoUpdate, Enemy._ScenarioInfoEnabledChanged, LibGroup.Initialize, RoR_SoR.OnScenario |

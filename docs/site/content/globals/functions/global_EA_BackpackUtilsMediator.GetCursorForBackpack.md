@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyRoll |
-| Files seen in | `/workspace/TidyRoll/CustomAutoRoll.lua:400` |
+| Files seen in | `/workspace_addons/TidyRoll/CustomAutoRoll.lua:400` |
 | Namespaces detected | EA_BackpackUtilsMediator |
 | Source kinds | globals, lua_calls |
 | Example locations | TidyRoll: TidyRoll.CustomAutoRoll.OnListLbuttonUp |
@@ -73,11 +73,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -119,3 +119,4 @@ Observed as a global function across 1 addons.
 
 - Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:280`, `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:297`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:142`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:159` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:280`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:297`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:142`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:159` |
 | Namespaces detected | AuctionWindow |
 | Source kinds | lua_calls |
 | Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction, AnywhereTrainer: AnywhereTrainer.OnRightClickAuction, AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickAuction, AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnRightClickAuction |

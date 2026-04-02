@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | QuickTacticSwitch |
-| Files seen in | `/workspace/QuickTacticSwitch/quicktacticswitch.lua:30` |
+| Files seen in | `/workspace_addons/QuickTacticSwitch/quicktacticswitch.lua:59` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | QTS.CountTactics, QTS.Initialize, SystemData.Events.PLAYER_NUM_TACTIC_SLOTS_UPDATED, event_page, event_registration, flow |

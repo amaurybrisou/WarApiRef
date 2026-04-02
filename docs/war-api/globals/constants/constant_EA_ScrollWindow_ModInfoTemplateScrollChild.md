@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiModWindow |
-| Files seen in | `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:134`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:141`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:150`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:157`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:166`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:173`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:183`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:190` |
+| Files seen in | `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:134`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:141`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:150`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:157`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:166`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:173`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:183`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:190` |
 | Namespaces detected | EA_ScrollWindow_ModInfoTemplateScrollChild |
 | Source kinds | flows, xml_attributes |
 | Example locations | EA_ScrollWindow_ModInfoTemplateScrollChildAuthorLabel, EA_ScrollWindow_ModInfoTemplateScrollChildAuthorText, EA_ScrollWindow_ModInfoTemplateScrollChildCareers, EA_ScrollWindow_ModInfoTemplateScrollChildCareersLabel, EA_ScrollWindow_ModInfoTemplateScrollChildCareersText, EA_ScrollWindow_ModInfoTemplateScrollChildCategoriesLabel |

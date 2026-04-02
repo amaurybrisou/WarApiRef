@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WSCT |
-| Files seen in | `/workspace/wsct/wsct.lua:117`, `/workspace/wsct/wsct.lua:137` |
+| Files seen in | `/workspace_addons/wsct/wsct.lua:117`, `/workspace_addons/wsct/wsct.lua:137` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | WSCT: WSCT:RegisterSelfEvents, WSCT: WSCT:UnregisterSelfEvents |

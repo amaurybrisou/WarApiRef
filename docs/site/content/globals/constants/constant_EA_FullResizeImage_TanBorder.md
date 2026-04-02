@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Busted, EA_UiDebugTools, EA_UiModWindow, Effigy, MapMonster, Miracle Grow Remix, Moth, RVAPI_ColorDialog |
-| Files seen in | `/workspace/Busted/Busted.xml:84`, `/workspace/Effigy/Effigy.xml:51`, `/workspace/MGRemix/layout.xml:863`, `/workspace/MapMonster/Source/MapMonster_PinTypeEditorWindow.xml:226`, `/workspace/MapMonster/Source/MapMonster_PinTypeEditorWindow.xml:365`, `/workspace/Moth/Moth.xml:75`, `/workspace/RVAPI_ColorDialog/RVAPI_ColorDialog.xml:116`, `/workspace/RVMOD_Manager/RVMOD_ManagerTemplates.xml:170` |
+| Files seen in | `/workspace_addons/Busted/Busted.xml:84`, `/workspace_addons/Effigy/Effigy.xml:51`, `/workspace_addons/MGRemix/layout.xml:863`, `/workspace_addons/MapMonster/Source/MapMonster_PinTypeEditorWindow.xml:226`, `/workspace_addons/MapMonster/Source/MapMonster_PinTypeEditorWindow.xml:365`, `/workspace_addons/Moth/Moth.xml:75`, `/workspace_addons/RVAPI_ColorDialog/RVAPI_ColorDialog.xml:116`, `/workspace_addons/RVMOD_Manager/RVMOD_ManagerTemplates.xml:170` |
 | Namespaces detected | EA_FullResizeImage_TanBorder |
 | Source kinds | xml_attributes |
 | Example locations | BustedGUICountBackground, EA_ScrollWindow_ModInfoTemplateScrollChildStatusFrame, FrameTanBack, MapMonster_PinTypeEditorWindowMapPinIconOptionsBorder, MapMonster_PinTypeEditorWindowOptionsBorder, MiracleGrow2LayoutTemplateVBar |

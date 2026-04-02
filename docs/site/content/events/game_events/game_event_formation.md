@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStateFormation.lua:63`, `/workspace/Effigy/States/EffigyStateGroup.lua:98` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateFormation.lua:63`, `/workspace_addons/Effigy/States/EffigyStateGroup.lua:98` |
 | Namespaces detected | formation |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Effigy: Effigy.UpdateFormationMember, Effigy: Effigy.UpdatePartyMember |
@@ -97,4 +97,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Notes
 
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

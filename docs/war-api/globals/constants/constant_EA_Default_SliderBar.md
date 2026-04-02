@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, BuffHead, Enemy, LibGroup, MapMonster, MapPin, MoraleCircle, PotionBar |
-| Files seen in | `/workspace/Aura/Source/AuraColorPicker.xml:26`, `/workspace/Aura/Source/AuraColorPicker.xml:58`, `/workspace/Aura/Source/AuraColorPicker.xml:78`, `/workspace/Aura/Source/AuraColorPicker.xml:98`, `/workspace/BuffHead/Setup/General.xml:132`, `/workspace/BuffHead/Setup/General.xml:171`, `/workspace/BuffHead/Setup/General.xml:211`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:793` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraColorPicker.xml:26`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:58`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:78`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:98`, `/workspace_addons/BuffHead/Setup/General.xml:132`, `/workspace_addons/BuffHead/Setup/General.xml:171`, `/workspace_addons/BuffHead/Setup/General.xml:211`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:793` |
 | Namespaces detected | EA_Default_SliderBar |
 | Source kinds | xml_attributes |
 | Example locations | AuraColorPickerAlpha, AuraColorPickerBlue, AuraColorPickerGreen, AuraColorPickerRed, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementScaleSlider, BuffHeadSetupContainerWindowContainerColumnsSlider |

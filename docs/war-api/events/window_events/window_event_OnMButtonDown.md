@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, MoraleCircle |
-| Files seen in | `/workspace/Enemy/Code/UnitFrames/UnitFrame.xml:90`, `/workspace/MoraleCircle/MoraleCircle.xml:18` |
+| Files seen in | `/workspace_addons/Enemy/Code/UnitFrames/UnitFrame.xml:90`, `/workspace_addons/MoraleCircle/MoraleCircle.xml:18` |
 | Namespaces detected | OnMButtonDown |
 | Source kinds | event_page, xml_handlers |
 | Example locations | Enemy: EnemyUnitFrame.OnMButtonDown, MoraleCircle: MoraleTemplate.OnMButtonDown |

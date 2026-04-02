@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Source/Shinies.lua:503` |
+| Files seen in | `/workspace_addons/Shinies/Source/Shinies.lua:503` |
 | Namespaces detected | ButtonSetStayDownFlag |
 | Source kinds | lua_calls |
 | Example locations | Shinies: ShowUITab |
@@ -72,7 +72,7 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, LoyalPet |
-| Files seen in | `/workspace/AdvancedPetAssist/APAAbilityQueue.lua:334`, `/workspace/AdvancedPetAssist/APAEvents.lua:380`, `/workspace/AdvancedPetAssist/APAEvents.lua:440`, `/workspace/LoyalPet/LoyalPet.lua:1213` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAAbilityQueue.lua:334`, `/workspace_addons/AdvancedPetAssist/APAEvents.lua:380`, `/workspace_addons/AdvancedPetAssist/APAEvents.lua:440`, `/workspace_addons/LoyalPet/LoyalPet.lua:1213` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | AdvancedPetAssist.OnPlayerCast, AdvancedPetAssist.OnTargetUpdated, AdvancedPetAssist.QueueCastNext, LPET.SameTarget, lua_call |

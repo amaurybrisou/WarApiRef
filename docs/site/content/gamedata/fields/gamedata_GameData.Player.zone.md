@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Killer, MapMonster, MapPin, Queue Queuer, RoR_SoR, TurretRange, wbLeadHelper |
-| Files seen in | `/workspace/Killer/KillerRenown.lua:108`, `/workspace/Killer/KillerRenown.lua:127`, `/workspace/Killer/KillerRenown.lua:61`, `/workspace/Killer/KillerUtils.lua:125`, `/workspace/Killer/KillerZoneHistory.lua:329`, `/workspace/Killer/KillerZoneHistory.lua:370`, `/workspace/Killer/KillerZoneHistory.lua:446`, `/workspace/Killer/KillerZoneHistory.lua:5` |
+| Addons seen in | Killer, MapMonster, MapPin, RoR_SoR, TurretRange, wbLeadHelper |
+| Files seen in | `/workspace_addons/Killer/KillerRenown.lua:108`, `/workspace_addons/Killer/KillerRenown.lua:127`, `/workspace_addons/Killer/KillerRenown.lua:61`, `/workspace_addons/Killer/KillerUtils.lua:125`, `/workspace_addons/Killer/KillerZoneHistory.lua:329`, `/workspace_addons/Killer/KillerZoneHistory.lua:370`, `/workspace_addons/Killer/KillerZoneHistory.lua:446`, `/workspace_addons/Killer/KillerZoneHistory.lua:5` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Killer.CaptureInitialWarCrests, Killer.GetActiveRvrZoneId, Killer.GetCurrentZoneHistoryEntry, Killer.LoadCurrentZoneFromHistory, Killer.OnCurrencyUpdated, Killer.OnRenownUpdated |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 21 |
-| Global usage count | 21 |
+| Lua usage count | 17 |
+| Global usage count | 17 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,14 +59,13 @@
 
 ## Description
 
-Observed GameData field used by 7 addons through generated function calls, event pages, or lifecycle evidence.
+Observed GameData field used by 6 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - Killer
 - MapMonster
 - MapPin
-- Queue Queuer
 - RoR_SoR
 - TurretRange
 - wbLeadHelper
@@ -75,14 +74,11 @@ Observed GameData field used by 7 addons through generated function calls, event
 
 - [EA_Window_Backpack.GetItemsFromBackpack](../../globals/functions/global_EA_Window_Backpack.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
 - [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
-- [wstring.upper](../../globals/functions/global_wstring.upper.md) (HIGH 88/100) - Global Function
 
 ## Used With
 
 - [EA_Window_Backpack.GetItemsFromBackpack](../../globals/functions/global_EA_Window_Backpack.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
 - [GameData.Player](gamedata_GameData.Player.md) (HIGH 100/100) - GameData Field
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

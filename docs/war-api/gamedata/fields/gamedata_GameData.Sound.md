@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Core/ConfigurationWindow.lua:642` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/ConfigurationWindow.lua:642` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Enemy.ConfigurationWindowGetSoundsSelectValues, lua_call |

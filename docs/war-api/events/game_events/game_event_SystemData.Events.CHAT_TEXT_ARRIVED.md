@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 186
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -30,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, MegaphonePlusPlus, Queue Queuer, QuickWarReport |
-| Files seen in | `/workspace/Enemy/Code/Core/Communication.lua:3`, `/workspace/QueueQueuer/QueueQueuer.lua:436`, `/workspace/QuickWarReport/QWRLifecycle.lua:60`, `/workspace/megaphoneplusplus-1.0.4/MegaphonePlusPlus.lua:115` |
+| Addons seen in | Enemy, QuickWarReport |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Communication.lua:3`, `/workspace_addons/QuickWarReport/QWRLifecycle.lua:60` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | Enemy: Enemy.CommunicationInitialize, MegaphonePlusPlus: Megaphone.Initialize, Queue Queuer: QueueQueuer.OnInitialize, QuickWarReport: QuickWarReport.Initialize |
+| Example locations | Enemy: Enemy.CommunicationInitialize, QuickWarReport: QuickWarReport.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 3 |
+| Initialization flow references | 1 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 4 addons.
+Observed as a shared SystemData runtime event used by 2 addons.
 
 ## Handler Pattern
 
@@ -74,15 +74,11 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Seen In
 
 - Enemy
-- MegaphonePlusPlus
-- Queue Queuer
 - QuickWarReport
 
 ## Registrars And Handlers
 
 - Enemy.OnChatTextArrived
-- Megaphone.FilterChat
-- QueueQueuer.OnChat
 - QuickWarReport.OnChatArrived
 - RegisterEventHandler
 - global
@@ -90,11 +86,9 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Examples
 
 - Enemy: Enemy.CommunicationInitialize -> SystemData.Events.CHAT_TEXT_ARRIVED -> Enemy.OnChatTextArrived
-- MegaphonePlusPlus: Megaphone.Initialize -> SystemData.Events.CHAT_TEXT_ARRIVED -> Megaphone.FilterChat
-- Queue Queuer: QueueQueuer.OnInitialize -> SystemData.Events.CHAT_TEXT_ARRIVED -> QueueQueuer.OnChat
 - QuickWarReport: QuickWarReport.Initialize -> SystemData.Events.CHAT_TEXT_ARRIVED -> QuickWarReport.OnChatArrived
 - Enemy: Enemy.OnChatTextArrived -> RegisterEventHandler(SystemData.Events.CHAT_TEXT_ARRIVED, Enemy.OnChatTextArrived)
-- MegaphonePlusPlus: Megaphone.FilterChat -> RegisterEventHandler(SystemData.Events.CHAT_TEXT_ARRIVED, Megaphone.FilterChat)
+- QuickWarReport: QuickWarReport.OnChatArrived -> RegisterEventHandler(SystemData.Events.CHAT_TEXT_ARRIVED, QuickWarReport.OnChatArrived)
 
 ## Related APIs
 

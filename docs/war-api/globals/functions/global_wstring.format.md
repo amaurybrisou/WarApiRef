@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, DAoCBuff, Effigy, Enemy, MapPin, PotionBar, Shinies, TexturedButtons |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.lua:205`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:121`, `/workspace/Effigy/Effigy.lua:227`, `/workspace/Effigy/States/EffigyStatePlayer.lua:483`, `/workspace/Effigy/States/EffigyStatePlayer.lua:532`, `/workspace/Enemy/Code/Core/Utils.lua:727`, `/workspace/Enemy/Code/Core/Utils.lua:820`, `/workspace/MapPin/source/MapPin.lua:2465` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.lua:205`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:121`, `/workspace_addons/Effigy/Effigy.lua:227`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:483`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:532`, `/workspace_addons/Enemy/Code/Core/Utils.lua:727`, `/workspace_addons/Enemy/Code/Core/Utils.lua:820`, `/workspace_addons/MapPin/source/MapPin.lua:2465` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
 | Example locations | AggroMeter: AggroMeter.OnMouseOverStart, DAoCBuff: DAoCBuffFrame:UpdateI_hpte, Effigy: Effigy.LoadLayout, Effigy: Effigy.SetRPLabelText, Effigy: Effigy.SetXPLabelText, Enemy: Enemy.DateTimeToString |

@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainerAdditions, BankWindowFix, CM_ClosetGoblin, Enemy, HotbarMorale, RandomMount, Shinies |
-| Files seen in | `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace/BankWindowFix/Source/BankWindowFix.lua:30`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:512`, `/workspace/Enemy/Code/Assist/Assist.lua:363`, `/workspace/Enemy/Code/Core/ConfigurationWindow.lua:65`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:1447`, `/workspace/Enemy/Code/UnitFrames/ClickCasting.lua:379`, `/workspace/HotbarMorale/HotbarMorale.lua:10` |
+| Files seen in | `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:30`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:512`, `/workspace_addons/Enemy/Code/Assist/Assist.lua:363`, `/workspace_addons/Enemy/Code/Core/ConfigurationWindow.lua:65`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:1447`, `/workspace_addons/Enemy/Code/UnitFrames/ClickCasting.lua:379`, `/workspace_addons/HotbarMorale/HotbarMorale.lua:10` |
 | Namespaces detected | Cursor |
 | Source kinds | globals, lua_calls |
 | Example locations | AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown, BankWindowFix: BankWindowFix.BankEquipmentRButtonDown, CM_ClosetGoblin: ClosetGoblinCharacterWindow.HandleDrag, Enemy: Enemy.ConfigurationWindow_OnMacroMouseDrag, Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionLButtonUp, Enemy: Enemy.local.OnMacroMouseDrag |

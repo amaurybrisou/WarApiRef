@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, Enemy, MapPin, wbLeadHelper |
-| Files seen in | `/workspace/Aura/Source/AuraConfig.xml:56`, `/workspace/Aura/Source/AuraTexture.xml:20`, `/workspace/Enemy/Code/Core/ChooseIconDialog.xml:4`, `/workspace/MapPin/source/MapPin.xml:896`, `/workspace/wbLeadHelper/config/wbLeadHelperChooseIcon.xml:4` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraConfig.xml:56`, `/workspace_addons/Aura/Source/AuraTexture.xml:20`, `/workspace_addons/Enemy/Code/Core/ChooseIconDialog.xml:4`, `/workspace_addons/MapPin/source/MapPin.xml:896`, `/workspace_addons/wbLeadHelper/config/wbLeadHelperChooseIcon.xml:4` |
 | Namespaces detected | EA_Button_DefaultIconFrame_Large |
 | Source kinds | xml_attributes |
 | Example locations | AuraConfigGeneralIconButton, AuraIconButton, EnemyChooseIconDialogList_IconButton, MapPinChooseIconDialogList_IconButton, wbLeadHelperChooseIconDialogList_IconButton |

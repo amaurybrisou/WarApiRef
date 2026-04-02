@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, AutoBand, BuffHead, CM_ClosetGoblin, CMap, Cheeseboard, DAoCBuff |
-| Files seen in | `/workspace/Aura/Source/AuraColorPicker.xml:19`, `/workspace/Autoband/AutoBandWindow.xml:12`, `/workspace/Autoband/AutoBandWindowTemplate.xml:135`, `/workspace/Autoband/AutoBandWindowTemplate.xml:150`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.xml:52`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.xml:51`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:4`, `/workspace/BuffHead/Setup/SetupAdvancedContainers.xml:52` |
+| Addons seen in | AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, CMap, Cheeseboard, DAoCBuff, EA_UiDebugTools |
+| Files seen in | `/workspace_addons/Aura/Source/AuraColorPicker.xml:19`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:52`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:51`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:4`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainers.xml:52`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.xml:51`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:4`, `/workspace_addons/BuffHead/Setup/SetupContainer.xml:4` |
 | Namespaces detected | EA_Window_Default |
 | Source kinds | xml_attributes |
 | Example locations | AdvancedRenownTrainingExportWindow, AdvancedRenownTrainingImportNameInputWindow, AdvancedRenownTrainingImportWindow, AdvancedRenownTrainingLinkWindow, AdvancedRenownTrainingPresetsWindow, AdvancedRenownTrainingWindow |
-| XML usage count | 118 |
-| XML attribute usage count | 118 |
+| XML usage count | 115 |
+| XML attribute usage count | 115 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,13 +57,12 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 24 addons.
+Observed engine XML template or inherited constant referenced by 23 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - BuffHead
 - CM_ClosetGoblin
 - CMap
@@ -95,9 +94,6 @@ Observed engine XML template or inherited constant referenced by 24 addons.
 - AdvancedRenownTrainingPresetsWindow
 - AdvancedRenownTrainingWindow
 - AuraColorPicker
-- AutoBandWindow
-- AutoBandWindowTemplateMask
-- AutoBandWindowTemplateSave
 - BuffHeadSetupAdvancedCompressionItemEffectWindow
 - BuffHeadSetupAdvancedCompressionItemWindow
 - BuffHeadSetupAdvancedCompressionWindow

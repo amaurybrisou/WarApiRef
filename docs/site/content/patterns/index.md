@@ -10,6 +10,8 @@ These pages collect reusable WAR addon usage patterns inferred from the canonica
 | conventions | [Initialization pattern](conventions_Initialization_pattern.md) | HIGH | 4 |
 | conventions | [State management pattern](conventions_State_management_pattern.md) | MEDIUM | 0 |
 | conventions | [UI creation pattern](conventions_UI_creation_pattern.md) | HIGH | 4 |
+| conventions | [XML list binding pattern](conventions_XML_list_binding_pattern.md) | MEDIUM | 3 |
+| conventions | [XML runtime caveats](conventions_XML_runtime_caveats.md) | MEDIUM | 7 |
 | conventions | [XML to Lua binding pattern](conventions_XML_to_Lua_binding_pattern.md) | HIGH | 2 |
 | events | [BroadcastEvent](events_BroadcastEvent.md) | HIGH | 7 |
 | events | [Game event fan-in](events_Game_event_fan-in.md) | HIGH | 11 |

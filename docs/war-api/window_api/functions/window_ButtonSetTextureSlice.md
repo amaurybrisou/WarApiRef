@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TexturedButtons |
-| Files seen in | `/workspace/TexturedButtons/TexturedButtons.lua:214` |
+| Files seen in | `/workspace_addons/TexturedButtons/TexturedButtons.lua:214` |
 | Namespaces detected | ButtonSetTextureSlice |
 | Source kinds | lua_calls |
 | Example locations | TexturedButtons: SetButtonTexture, TexturedButtons: TexturedButtons.local.SetButtonTexture |

@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | bigger_MacroWindow |
-| Files seen in | `/workspace/bigger_macrowindow/Source/MacroWindow.xml:403`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:416` |
+| Files seen in | `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:403`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:416` |
 | Namespaces detected | EA_Window_MacroMacros |
 | Source kinds | xml_attributes |
 | Example locations | EA_Window_MacroMacrosScrollChild, EA_Window_MacroMacrosScrollbar |

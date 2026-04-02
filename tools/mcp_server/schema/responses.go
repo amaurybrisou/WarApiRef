@@ -62,3 +62,28 @@ type ScaffoldAddonSnippetResponse struct {
 	UncertaintyNotes      []string              `json:"uncertainty_notes"`
 	Rationale             string                `json:"rationale"`
 }
+
+type IngestObservationResponse struct {
+	Accepted      bool            `json:"accepted"`
+	EntryID       string          `json:"entry_id,omitempty"`
+	SchemaVersion string          `json:"schema_version,omitempty"`
+	SourcePath    string          `json:"source_path,omitempty"`
+	Errors        []string        `json:"errors,omitempty"`
+	Warnings      []model.Warning `json:"warnings,omitempty"`
+}
+
+type IngestObservationBatchItem struct {
+	SourcePath string   `json:"source_path"`
+	Accepted   bool     `json:"accepted"`
+	EntryID    string   `json:"entry_id,omitempty"`
+	Errors     []string `json:"errors,omitempty"`
+}
+
+type IngestObservationBatchResponse struct {
+	TotalFiles    int                         `json:"total_files"`
+	ProcessedFiles int                        `json:"processed_files"`
+	AcceptedCount int                         `json:"accepted_count"`
+	RejectedCount int                         `json:"rejected_count"`
+	Results       []IngestObservationBatchItem `json:"results"`
+	Warnings      []model.Warning              `json:"warnings,omitempty"`
+}

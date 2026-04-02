@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | QuickWarReport |
-| Files seen in | `/workspace/QuickWarReport/QWRCore.lua:62`, `/workspace/QuickWarReport/QWRCore.lua:89` |
+| Files seen in | `/workspace_addons/QuickWarReport/QWRCore.lua:62`, `/workspace_addons/QuickWarReport/QWRCore.lua:89` |
 | Namespaces detected | EA_Window_CurrentEvents |
 | Source kinds | lua_calls |
 | Example locations | QuickWarReport: QuickWarReport.JumpToTier, QuickWarReport: QuickWarReport.JumpToTierCurrentZone |

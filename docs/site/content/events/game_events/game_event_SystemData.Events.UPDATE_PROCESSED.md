@@ -24,24 +24,24 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, BuffHead, DAoCBuff, Enemy, GCDsaver, LibWBToggler, LoyalPet |
-| Files seen in | `/workspace/BuffHead/Setup/ContainerDemo.lua:197`, `/workspace/BuffHead/Setup/LayoutDemo.lua:147`, `/workspace/BuffHead/Setup/SetupEffectCache.lua:386`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:148`, `/workspace/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:104`, `/workspace/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1253`, `/workspace/PeaceOut/PeaceOut.lua:225`, `/workspace/RetAlert/Source/RetAlert.lua:61` |
+| Addons seen in | Ace, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, GCDsaver, LibWBToggler |
+| Files seen in | `/workspace_addons/BuffHead/Setup/ContainerDemo.lua:197`, `/workspace_addons/BuffHead/Setup/LayoutDemo.lua:147`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.lua:386`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:148`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:104`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1253`, `/workspace_addons/TexturedButtons/TexturedButtons.lua:408` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | BuffHead: BuffHead.Setup.ContainerDemo.Enable, BuffHead: BuffHead.Setup.Demo.Enable, BuffHead: BuffHead.Setup.EffectCache.OnSearchChanged, DAoCBuff: DAoCBuffSettings.CloseOptionswindow, DAoCBuff: FilterSettings.Close, DAoCBuff: ImExport.Close |
+| Example locations | BuffHead: BuffHead.Setup.ContainerDemo.Enable, BuffHead: BuffHead.Setup.Demo.Enable, BuffHead: BuffHead.Setup.EffectCache.OnSearchChanged, CM_ClosetGoblin: ClosetGoblin.OnInitialize, DAoCBuff: DAoCBuffSettings.CloseOptionswindow, DAoCBuff: FilterSettings.Close |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 18 |
-| Global usage count | 18 |
+| Lua usage count | 15 |
+| Global usage count | 15 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 12 |
+| Initialization flow references | 9 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 17 addons.
+Observed as a shared SystemData runtime event used by 14 addons.
 
 ## Handler Pattern
 
@@ -69,26 +69,23 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 
 - Ace
 - Aura
 - BuffHead
+- CM_ClosetGoblin
 - DAoCBuff
 - Enemy
 - GCDsaver
 - LibWBToggler
 - LoyalPet
-- PeaceOut
-- RetAlert
 - Shinies
 - Swift Assist
 - TexturedButtons
-- TimeInQueue
 - TortallDPSCore
-- WarTriage
 - WoH-Reticle
 
 ## Registrars And Handlers
@@ -98,19 +95,17 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - BuffHead.Setup.ContainerDemo.OnUpdate
 - BuffHead.Setup.Demo.OnUpdate
 - BuffHead.Setup.EffectCache.UpdateSearch
+- ClosetGoblin.OnActivationWatchdog
 - DAoCBuffSettings.FilterSettings.Cleanup
 - DAoCBuffSettings.ImExport.Cleanup
 - DAoCBuffSettings.UC
 - LibConfig.OnUpdate
-- PeaceOut.TickCheck
 - RegisterEventHandler
-- RetAlert_OnUpdate
 - TargetInfoFix.APPLY_TARGETINFO_FIX_DONOTTOUCH
 - TexturedButtons.OnRegisteredTexturedChanged
 - TexturedButtons.RefreshActionBars
 - TexturedButtons.RefreshSettings
 - TexturedButtons.UpdateButtons
-- TimeInQueue.setupTimer
 - TortallDPSCore.OnUpdate
 - global
 
@@ -119,9 +114,9 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - BuffHead: BuffHead.Setup.ContainerDemo.Enable -> SystemData.Events.UPDATE_PROCESSED -> BuffHead.Setup.ContainerDemo.OnUpdate
 - BuffHead: BuffHead.Setup.Demo.Enable -> SystemData.Events.UPDATE_PROCESSED -> BuffHead.Setup.Demo.OnUpdate
 - BuffHead: BuffHead.Setup.EffectCache.OnSearchChanged -> SystemData.Events.UPDATE_PROCESSED -> BuffHead.Setup.EffectCache.UpdateSearch
+- CM_ClosetGoblin: ClosetGoblin.OnInitialize -> SystemData.Events.UPDATE_PROCESSED -> ClosetGoblin.OnActivationWatchdog
 - DAoCBuff: DAoCBuffSettings.CloseOptionswindow -> SystemData.Events.UPDATE_PROCESSED -> DAoCBuffSettings.UC
 - DAoCBuff: FilterSettings.Close -> SystemData.Events.UPDATE_PROCESSED -> DAoCBuffSettings.FilterSettings.Cleanup
-- DAoCBuff: ImExport.Close -> SystemData.Events.UPDATE_PROCESSED -> DAoCBuffSettings.ImExport.Cleanup
 
 ## Related APIs
 

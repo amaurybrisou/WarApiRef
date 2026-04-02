@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | GuardLine, GuardList, GuardRange, MapPin, RoR_SoR, wbLeadHelper |
-| Files seen in | `/workspace/GuardLine/GuardLine.xml:209`, `/workspace/GuardList/GuardList.xml:19`, `/workspace/GuardRange/GuardRange.xml:19`, `/workspace/MapPin/source/MapPin.xml:195`, `/workspace/RoR_SoR/RoR_SoR.xml:409`, `/workspace/RoR_SoR/RoR_SoR.xml:429`, `/workspace/RoR_SoR/RoR_SoR.xml:555`, `/workspace/RoR_SoR/RoR_SoR.xml:568` |
+| Files seen in | `/workspace_addons/GuardLine/GuardLine.xml:209`, `/workspace_addons/GuardList/GuardList.xml:19`, `/workspace_addons/GuardRange/GuardRange.xml:19`, `/workspace_addons/MapPin/source/MapPin.xml:195`, `/workspace_addons/RoR_SoR/RoR_SoR.xml:409`, `/workspace_addons/RoR_SoR/RoR_SoR.xml:429`, `/workspace_addons/RoR_SoR/RoR_SoR.xml:555`, `/workspace_addons/RoR_SoR/RoR_SoR.xml:568` |
 | Namespaces detected | OnHyperLinkLButtonUp |
 | Source kinds | bindings, xml_handlers |
 | Example locations | GuardLine: GuardLineSelfWindowLabel.OnHyperLinkLButtonUp, GuardList: GuardList_Window0Label.OnHyperLinkLButtonUp, GuardRange: GuardRange_Window0Label.OnHyperLinkLButtonUp, MapPin: MapPinCallTemplateWindowTitle.OnHyperLinkLButtonUp, RoR_SoR: RoR_SoR_City_Status_TemplateLock_STATUS.OnHyperLinkLButtonUp, RoR_SoR: RoR_SoR_City_Status_Template_TIMER.OnHyperLinkLButtonUp |
@@ -107,4 +107,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapPin, TidyRoll |
-| Files seen in | `/workspace/MapPin/source/MapPin.xml:618`, `/workspace/TidyRoll/CustomAutoRoll.xml:26` |
+| Files seen in | `/workspace_addons/MapPin/source/MapPin.xml:618`, `/workspace_addons/TidyRoll/CustomAutoRoll.xml:26` |
 | Namespaces detected | EA_Image_DefaultIconFrame |
 | Source kinds | xml_attributes |
 | Example locations | AutoRollRowTemplateIconFrame, MapPin_SetupIconFrame |

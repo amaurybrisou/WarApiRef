@@ -23,14 +23,14 @@
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | FastInteract |
-| Files seen in | `/workspace/FastInteract/FastInteract.lua:132`, `/workspace/FastInteract/FastInteract.lua:142` |
+| Files seen in | `/workspace_addons/FastInteract/FastInteract.lua:132`, `/workspace_addons/FastInteract/FastInteract.lua:142` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | FastInteract.Initialize, FastInteract.Interact, FastInteract.OnShutdown, SystemData.Events.INTERACT_DEFAULT, event_page, event_registration |

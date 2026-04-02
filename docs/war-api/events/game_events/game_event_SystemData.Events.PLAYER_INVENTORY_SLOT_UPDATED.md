@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin, Enemy, Miracle Grow Remix, Pocket Palette, PotionBar, Shinies |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblin.lua:70`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace/MGRemix/MGRemix.lua:195`, `/workspace/PocketPalette/PocketPalette.lua:105`, `/workspace/PotionBar/source/Main.lua:189` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace_addons/MGRemix/MGRemix.lua:195`, `/workspace_addons/PocketPalette/PocketPalette.lua:105`, `/workspace_addons/PotionBar/source/Main.lua:189` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | CM_ClosetGoblin: ClosetGoblin.OnInitialize, Enemy: Enemy._TalismanAlerterEnabledChanged, Miracle Grow Remix: MiracleGrow2.Initialize, Pocket Palette: PP.Initialize, PotionBar: PotionBar.Initialize |

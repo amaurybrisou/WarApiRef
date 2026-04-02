@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | bigger_MacroWindow |
-| Files seen in | `/workspace/bigger_macrowindow/Source/MacroIcons.xml:9` |
+| Files seen in | `/workspace_addons/bigger_macrowindow/Source/MacroIcons.xml:9` |
 | Namespaces detected | OnScrollPosChanged |
 | Source kinds | bindings, xml_handlers |
 | Example locations | bigger_MacroWindow: MacroIconsScrollBar.OnScrollPosChanged |
@@ -94,4 +94,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

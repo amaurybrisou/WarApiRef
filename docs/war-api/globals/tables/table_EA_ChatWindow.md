@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AnywhereTrainerAdditions, Aura, AutoBand, BagOMatic, BankArkel, Crafting Info Tooltip |
-| Files seen in | `/workspace/AdvancedPetAssist/APACore.lua:298`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace/Aura/Source/AuraAddon.lua:469`, `/workspace/Autoband/AB_util.lua:19`, `/workspace/BankArkel/BankArkel.lua:686`, `/workspace/BankArkel/BankArkel.lua:95`, `/workspace/CraftValueTip/CraftValueTip.lua:29`, `/workspace/CraftValueTip/CraftValueTip.lua:33` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AnywhereTrainerAdditions, Aura, BagOMatic, BankArkel, Crafting Info Tooltip, DAoCBuff |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APACore.lua:298`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace_addons/Aura/Source/AuraAddon.lua:469`, `/workspace_addons/BankArkel/BankArkel.lua:686`, `/workspace_addons/BankArkel/BankArkel.lua:95`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:29`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:33`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:687` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.Print, AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink, AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown, Aura: AuraPrint, AutoBand: AB_util.print, BagOMatic: BagOMatic.print |
+| Example locations | AdvancedPetAssist: AdvancedPetAssist.Print, AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink, AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown, Aura: AuraPrint, BagOMatic: BagOMatic.print, BankArkel: BankArkel.Init |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 275 |
+| Lua usage count | 229 |
 | Global usage count | 8 |
 | Local definition count | 9 |
 | Documentation references | 1 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 44 addons.
+Observed shared global table or namespace surfaced in 37 addons.
 
 ## Functions
 
@@ -80,7 +80,6 @@ Observed shared global table or namespace surfaced in 44 addons.
 - AdvancedRenownTrainer
 - AnywhereTrainerAdditions
 - Aura
-- AutoBand
 - BagOMatic
 - BankArkel
 - Crafting Info Tooltip
@@ -97,27 +96,21 @@ Observed shared global table or namespace surfaced in 44 addons.
 - LibWBToggler
 - LoyalPet
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - NPC Item Sale Price
 - PlanB
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
-- RRCount
 - RVMOD_Manager
 - RandomMount
 - RoR_SoR
 - Shinies
 - Swift Assist
 - Targets
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - WSCT
-- WarTriage
 - WhoHealedMe
 - wbLeadHelper
 
@@ -127,8 +120,8 @@ Observed shared global table or namespace surfaced in 44 addons.
 - AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink -> EA_ChatWindow.InsertText(hl)
 - AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown -> EA_ChatWindow.InsertItemLink(itemData)
 - Aura: AuraPrint -> EA_ChatWindow.Print(towstring(str))
-- AutoBand: AB_util.print -> EA_ChatWindow.Print(L "[AutoBand] "..towstring(text))
 - BagOMatic: BagOMatic.print -> EA_ChatWindow.Print(L "[BagOMatic] "..towstring(text))
+- BankArkel: BankArkel.Init -> EA_ChatWindow.Print(StringToWString(InitTxt))
 
 ## Related APIs
 

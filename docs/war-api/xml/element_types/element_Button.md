@@ -29,14 +29,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, Aura, AutoBand, BankArkel, BuffHead |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:114`, `/workspace/AdvancedPetAssist/APAGui.xml:131`, `/workspace/AdvancedPetAssist/APAGui.xml:145`, `/workspace/AdvancedPetAssist/APAGui.xml:159`, `/workspace/AdvancedPetAssist/APAGui.xml:173`, `/workspace/AdvancedPetAssist/APAGui.xml:187`, `/workspace/AdvancedPetAssist/APAGui.xml:201`, `/workspace/AdvancedPetAssist/APAGui.xml:215` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, Aura, BankArkel, BuffHead, Busted |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:114`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:131`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:145`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:159`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:173`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:187`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:201`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:215` |
 | Namespaces detected | Button |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | AdvancedPetAssist: APAOptionsClose, AdvancedPetAssist: APAOptionsTabsAutoRecall, AdvancedPetAssist: APAOptionsTabsControls, AdvancedPetAssist: APAOptionsTabsFollowTarget, AdvancedPetAssist: APAOptionsTabsGeneral, AdvancedPetAssist: APAOptionsTabsHUD |
-| XML usage count | 973 |
-| XML attribute usage count | 973 |
-| Lua usage count | 11 |
+| XML usage count | 917 |
+| XML attribute usage count | 917 |
+| Lua usage count | 10 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 58 addons.
+Observed XML element type instantiated by 51 addons.
 
 ## Common Attributes
 
@@ -70,11 +70,11 @@ Observed XML element type instantiated by 58 addons.
 - textalign
 - font
 - layer
-- backgroundtexture
 - handleinput
+- backgroundtexture
 - highlighttexture
-- texturescale
 - drawchildrenfirst
+- texturescale
 - alpha
 
 ## Common Handlers
@@ -86,7 +86,6 @@ Observed XML element type instantiated by 58 addons.
 - OnMouseOverEnd
 - OnRButtonDown
 - OnMouseDrag
-- OnUpdate
 - OnInitialize
 - OnMButtonUp
 - OnMouseWheel
@@ -101,8 +100,8 @@ Observed XML element type instantiated by 58 addons.
 - MacroIconSelectionWindowIconButton
 - EA_Button_Default
 - EA_Button_Tab
-- DefaultButton
 - ClosetGoblinEquipmentButton
+- DefaultButton
 - EA_Button_DefaultListSort
 - CG_ItemRackEquipmentButton
 
@@ -113,7 +112,6 @@ Observed XML element type instantiated by 58 addons.
 - AggroMeter
 - AnywhereTrainer
 - Aura
-- AutoBand
 - BankArkel
 - BuffHead
 - Busted
@@ -122,13 +120,11 @@ Observed XML element type instantiated by 58 addons.
 - Cheeseboard
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - EA_UiModWindow
 - Enemy
 - FastInteract
 - GetStats
-- GoldTracker
 - GuardList
 - GuardRange
 - JunkDump
@@ -137,14 +133,12 @@ Observed XML element type instantiated by 58 addons.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - ObjectInspector
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
 - RVAPI_ColorDialog
@@ -153,9 +147,7 @@ Observed XML element type instantiated by 58 addons.
 - RoR_SoR
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
 - Tortall_DPS
 - TurretRange
@@ -233,24 +225,22 @@ Observed XML element type instantiated by 58 addons.
 - [OnInitialize](../../events/window_events/window_event_OnInitialize.md) (HIGH 100/100) - Window Event
 - [OnLButtonDown](../handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Handler
 - [OnLButtonDown](../../events/window_events/window_event_OnLButtonDown.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnMButtonUp](../../events/window_events/window_event_OnMButtonUp.md) (HIGH 100/100) - Window Event
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnMButtonUp](../handlers/handler_OnMButtonUp.md) (HIGH 100/100) - XML Handler
+- [OnMButtonUp](../../events/window_events/window_event_OnMButtonUp.md) (HIGH 100/100) - Window Event
 - [OnMouseDrag](../handlers/handler_OnMouseDrag.md) (HIGH 100/100) - XML Handler
 - [OnMouseDrag](../../events/window_events/window_event_OnMouseDrag.md) (HIGH 100/100) - Window Event
 - [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
 - [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
 - [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 100/100) - XML Handler
 - [OnMouseOverEnd](../../events/window_events/window_event_OnMouseOverEnd.md) (HIGH 100/100) - Window Event
-- [OnMouseWheel](../../events/window_events/window_event_OnMouseWheel.md) (HIGH 100/100) - Window Event
 - [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Handler
+- [OnMouseWheel](../../events/window_events/window_event_OnMouseWheel.md) (HIGH 100/100) - Window Event
 - [OnRButtonDown](../handlers/handler_OnRButtonDown.md) (HIGH 100/100) - XML Handler
 - [OnRButtonDown](../../events/window_events/window_event_OnRButtonDown.md) (HIGH 100/100) - Window Event
 - [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
 - [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnUpdate](../handlers/handler_OnUpdate.md) (HIGH 100/100) - XML Handler
-- [OnUpdate](../../events/window_events/window_event_OnUpdate.md) (HIGH 100/100) - Window Event
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function

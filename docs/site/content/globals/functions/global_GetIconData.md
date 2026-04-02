@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 83/100
-- Seen in: 24 addons
+- Seen in: 23 addons
 
 ## Confidence Assessment
 
@@ -26,14 +26,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, Aura, AutoMark, BankArkel, BuffHead, CM_ClosetGoblin, CombatTextNames, DAoCBuff |
-| Files seen in | `/workspace/Aura/Source/AuraAddon.lua:238`, `/workspace/AutoMark/Source/AutoMark.lua:7`, `/workspace/BankArkel/BankArkel.lua:242`, `/workspace/BuffHead/EffectFrame.lua:52`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:384`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:159`, `/workspace/Effigy/Elements/EffigyIcons.lua:138`, `/workspace/Effigy/Elements/EffigyIcons.lua:172` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraAddon.lua:238`, `/workspace_addons/AutoMark/Source/AutoMark.lua:7`, `/workspace_addons/BankArkel/BankArkel.lua:242`, `/workspace_addons/BuffHead/EffectFrame.lua:52`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:384`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:159`, `/workspace_addons/Effigy/Elements/EffigyIcons.lua:138`, `/workspace_addons/Effigy/Elements/EffigyIcons.lua:172` |
 | Namespaces detected | GetIconData |
 | Source kinds | lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow, AdvancedRenownTrainer: CreateAbilityWindow, Aura: AuraAddon.GetTextureData, AutoMark: AutoMark.local.CreateMarker, AutoMark: CreateMarker, BankArkel: BankArkel.PackShow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 70 |
-| Global usage count | 70 |
+| Lua usage count | 68 |
+| Global usage count | 68 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ GetIconData(arg1)
 
 ## Description
 
-Observed as a shared query API across 24 addons.
+Observed as a shared query API across 23 addons.
 
 ## Parameters
 
@@ -72,11 +72,11 @@ Observed as a shared query API across 24 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -101,7 +101,6 @@ Observed as a shared query API across 24 addons.
 - Targets
 - TexturedButtons
 - TidyRoll
-- Twister
 - WSCT
 - wbLeadHelper
 

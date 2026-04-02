@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | followTheLeader |
-| Files seen in | `/workspace/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | `/workspace_addons/followTheLeader/followTheLeader.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | SystemData.Events.GROUP_SETTINGS_UPDATED, event_page, event_registration, flow, followTheLeader.Initialize, followTheLeader.RequestUpdate |

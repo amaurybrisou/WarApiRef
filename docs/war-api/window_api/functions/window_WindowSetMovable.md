@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 12 addons
+- Seen in: 11 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, Effigy, Enemy, GCDsaver, JunkDump, LibWBToggler, MapPin, PotionBar |
-| Files seen in | `/workspace/Ace/LibGUI.lua:104`, `/workspace/Ace/LibGUI.lua:110`, `/workspace/Effigy/LibGUI.lua:104`, `/workspace/Effigy/LibGUI.lua:110`, `/workspace/Enemy/Code/Core/Main.lua:41`, `/workspace/Enemy/Code/Guard/Guard.lua:323`, `/workspace/GCDsaver/libs/LibGUI.lua:104`, `/workspace/GCDsaver/libs/LibGUI.lua:110` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:104`, `/workspace_addons/Ace/LibGUI.lua:110`, `/workspace_addons/Effigy/LibGUI.lua:104`, `/workspace_addons/Effigy/LibGUI.lua:110`, `/workspace_addons/Enemy/Code/Core/Main.lua:41`, `/workspace_addons/Enemy/Code/Guard/Guard.lua:323`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:104`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:110` |
 | Namespaces detected | WindowSetMovable |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:MakeFixed, Ace: LIBGUI_ELEMENT:MakeMovable, Effigy: LIBGUI_ELEMENT:MakeFixed, Effigy: LIBGUI_ELEMENT:MakeMovable, Enemy: Enemy.Guard_GuardIndicator_Update, Enemy: Enemy._Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 24 |
-| Global usage count | 24 |
+| Lua usage count | 22 |
+| Global usage count | 22 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -94,7 +94,6 @@ Observed mutating runtime window state or presentation.
 - PotionBar
 - Shinies
 - TexturedButtons
-- WarTriage
 - WoH-Reticle
 
 ## Examples

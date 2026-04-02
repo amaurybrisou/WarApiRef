@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Killer |
-| Files seen in | `/workspace/Killer/Killer.xml:157`, `/workspace/Killer/Killer.xml:171`, `/workspace/Killer/Killer.xml:31`, `/workspace/Killer/Killer.xml:770` |
+| Files seen in | `/workspace_addons/Killer/Killer.xml:157`, `/workspace_addons/Killer/Killer.xml:171`, `/workspace_addons/Killer/Killer.xml:31`, `/workspace_addons/Killer/Killer.xml:770` |
 | Namespaces detected | OnMouseOut |
 | Source kinds | event_page, xml_handlers |
 | Example locations | Killer: KillerFeedRowTemplate.OnMouseOut, Killer: KillerPersonalCounter.OnMouseOut, Killer: KillerWindowAllTimeHover.OnMouseOut, Killer: KillerWindowRecentHover.OnMouseOut |
@@ -61,7 +61,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Payload
 
-- Window callback arguments are not fully inferable from API_Ref alone.
+- Window callback arguments are not fully inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -97,4 +97,4 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Notes
 
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

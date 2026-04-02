@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools, Pocket Palette |
-| Files seen in | `/workspace/PocketPalette/PocketPalette.lua:91`, `/workspace/ea_uidebugtools/Source/Debug.lua:502` |
+| Files seen in | `/workspace_addons/PocketPalette/PocketPalette.lua:91`, `/workspace_addons/ea_uidebugtools/Source/Debug.lua:502` |
 | Namespaces detected | HelpTips |
 | Source kinds | lua_calls |
 | Example locations | EA_UiDebugTools: hw, Pocket Palette: HighlightWindow |
@@ -72,7 +72,7 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

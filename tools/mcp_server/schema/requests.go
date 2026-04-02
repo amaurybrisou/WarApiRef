@@ -59,3 +59,19 @@ type ScaffoldAddonSnippetRequest struct {
 	IncludeXML      bool     `json:"include_xml,omitempty"`
 	IncludeComments bool     `json:"include_comments,omitempty"`
 }
+
+type IngestObservationRequest struct {
+	Observation map[string]any `json:"observation"`
+	DryRun      bool           `json:"dry_run,omitempty"`
+	Persist     bool           `json:"persist,omitempty"`
+	QueueFile   string         `json:"queue_file,omitempty"`
+	SourcePath  string         `json:"source_path,omitempty"`
+}
+
+type IngestObservationBatchRequest struct {
+	DryRun          bool   `json:"dry_run,omitempty"`
+	Persist         bool   `json:"persist,omitempty"`
+	QueueFile       string `json:"queue_file,omitempty"`
+	ContinueOnError bool   `json:"continue_on_error,omitempty"`
+	Limit           int    `json:"limit,omitempty"`
+}

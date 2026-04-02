@@ -18,7 +18,7 @@ Observed top-level UI windows being created from XML definitions at initializati
 ```text
 OnLButtonUp
   -> handlers: DebugWindow.ClearTextLog, InterfaceCore.ReloadUI
-  -> ui: Button, ColorPicker, ComboBox, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
+  -> ui: Button, ColorPicker, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code

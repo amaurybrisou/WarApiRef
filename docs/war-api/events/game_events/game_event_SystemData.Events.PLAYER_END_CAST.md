@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, TurretRange |
-| Files seen in | `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/TurrentRange/Core.lua:74` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace_addons/TurrentRange/Core.lua:74` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Effigy: Effigy.RegisterStateInfoForCastbar, TurretRange: TurretRange.Initialize |

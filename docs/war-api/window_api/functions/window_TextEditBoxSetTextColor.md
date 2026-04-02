@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools, Miracle Grow Remix |
-| Files seen in | `/workspace/MGRemix/config.lua:17`, `/workspace/MGRemix/config.lua:258`, `/workspace/MGRemix/config.lua:87`, `/workspace/MGRemix/layout.lua:1033`, `/workspace/MGRemix/layout.lua:262`, `/workspace/ea_uidebugtools/Source/objectinsp/ObjectInspector.lua:60` |
+| Files seen in | `/workspace_addons/MGRemix/config.lua:17`, `/workspace_addons/MGRemix/config.lua:258`, `/workspace_addons/MGRemix/config.lua:87`, `/workspace_addons/MGRemix/layout.lua:1033`, `/workspace_addons/MGRemix/layout.lua:262`, `/workspace_addons/ea_uidebugtools/Source/objectinsp/ObjectInspector.lua:60` |
 | Namespaces detected | TextEditBoxSetTextColor |
 | Source kinds | lua_calls |
 | Example locations | EA_UiDebugTools: ObjectInspector.WindowInit, Miracle Grow Remix: MiracleGrow2.ConfigCallback, Miracle Grow Remix: MiracleGrow2.ConfigSoundChanged, Miracle Grow Remix: MiracleGrow2.InitConfig, Miracle Grow Remix: MiracleGrow2.InitLayout, Miracle Grow Remix: MiracleGrow2.LayoutPlotArrChanged |

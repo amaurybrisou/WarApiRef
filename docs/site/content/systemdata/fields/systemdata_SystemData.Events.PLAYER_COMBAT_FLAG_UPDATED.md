@@ -25,14 +25,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, Ace, AdvancedPetAssist, DAoCBuff, Enemy, PlanB, Shinies, WSCT, AdvancedPetAssist, Aura, DAoCBuff, Effigy, Enemy, PlanB |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/Aura/Source/AuraEngine.lua:312`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Effigy/States/EffigyStateCombat.lua:4`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/PlanB/PlanB.lua:35`, `/workspace/wsct/wsct.lua:117` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/Aura/Source/AuraEngine.lua:312`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Effigy/States/EffigyStateCombat.lua:4`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/PlanB/PlanB.lua:35`, `/workspace_addons/wsct/wsct.lua:117` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedPetAssist.OnCombatFlagUpdated, AuraEngine.JumpStartEventBasedAuras, DAoCBuff.CombatUpdate, DAoCBuff.Initialize, DAoCBuff.Shutdown, Effigy.RegisterStateInfoForCombat |

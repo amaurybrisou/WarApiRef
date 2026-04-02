@@ -27,14 +27,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, AutoBand, CM_ClosetGoblin, CMap, EA_UiDebugTools, EA_UiModWindow, FastInteract |
-| Files seen in | `/workspace/Aura/Source/AuraConfig.xml:28`, `/workspace/Aura/Source/Templates.xml:358`, `/workspace/Aura/Source/Templates.xml:389`, `/workspace/Autoband/AutoBandWindow.xml:21`, `/workspace/Autoband/AutoBandWindowConfig.xml:20`, `/workspace/Autoband/AutoBandWindowTemplate.xml:158`, `/workspace/Autoband/AutoBandWindowTemplate.xml:21`, `/workspace/Autoband/AutoBandWindowTools.xml:20` |
+| Addons seen in | AdvancedRenownTrainer, Aura, CM_ClosetGoblin, CMap, EA_UiDebugTools, EA_UiModWindow, FastInteract, LoyalPet |
+| Files seen in | `/workspace_addons/Aura/Source/AuraConfig.xml:28`, `/workspace_addons/Aura/Source/Templates.xml:358`, `/workspace_addons/Aura/Source/Templates.xml:389`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1405`, `/workspace_addons/FastInteract/FastInteract.xml:13`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:2646`, `/workspace_addons/MGRemix/MGRemix.xml:253`, `/workspace_addons/MGRemix/config.xml:378` |
 | Namespaces detected | OnInitialize |
 | Source kinds | bindings, xml_handlers |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize, Aura: AuraConfig.OnInitialize, Aura: Aura_LabelCheckButton.OnInitialize, Aura: Aura_LargeLabelCheckButton.OnInitialize, AutoBand: AutoBandWindow.OnInitialize, AutoBand: AutoBandWindowConfig.OnInitialize |
-| XML usage count | 43 |
-| XML attribute usage count | 43 |
-| Lua usage count | 43 |
+| Example locations | AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize, Aura: AuraConfig.OnInitialize, Aura: Aura_LabelCheckButton.OnInitialize, Aura: Aura_LargeLabelCheckButton.OnInitialize, CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize, CMap: CMapWindow.OnInitialize |
+| XML usage count | 31 |
+| XML attribute usage count | 31 |
+| Lua usage count | 31 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 21 addons through frame event handlers.
+Observed as an XML handler hook bound by 19 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -75,7 +75,6 @@ function(...)
 
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - CM_ClosetGoblin
 - CMap
 - EA_UiDebugTools
@@ -85,7 +84,6 @@ function(...)
 - MapMonster
 - Miracle Grow Remix
 - MiracleGrow
-- Queue Queuer
 - RandomMount
 - Shinies
 - TidyRoll
@@ -101,8 +99,8 @@ function(...)
 - Aura: AuraConfig -> AuraConfig.OnInitialize -> AuraConfig.OnInitialize
 - Aura: Aura_LabelCheckButton -> Aura_LabelCheckButton.OnInitialize -> EA_LabelCheckButton.Initialize
 - Aura: Aura_LargeLabelCheckButton -> Aura_LargeLabelCheckButton.OnInitialize -> EA_LabelCheckButton.Initialize
-- AutoBand: AutoBandWindow -> AutoBandWindow.OnInitialize -> AutoBandWindow.Initialize
-- AutoBand: AutoBandWindowConfig -> AutoBandWindowConfig.OnInitialize -> AutoBandWindowConfig.Initialize
+- CM_ClosetGoblin: ClosetGoblinOptionWindow -> ClosetGoblinOptionWindow.OnInitialize -> ClosetGoblinOptionWindow.OnInitialize
+- CMap: CMapWindow -> CMapWindow.OnInitialize -> CMapWindow.Initialize
 
 ## Related APIs
 
@@ -136,4 +134,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

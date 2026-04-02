@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, Aura, BuffHead, CM_ClosetGoblin, CMap, Cheeseboard, DAoCBuff, EA_UiModWindow |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:131`, `/workspace/Aura/Source/AuraSettings.xml:189`, `/workspace/Aura/Source/AuraShares.xml:224`, `/workspace/Aura/Source/AuraTexture.xml:175`, `/workspace/BuffHead/Setup/General.xml:51`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.xml:106`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.xml:182`, `/workspace/BuffHead/Setup/SetupAdvancedContainers.xml:106` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:131`, `/workspace_addons/Aura/Source/AuraSettings.xml:189`, `/workspace_addons/Aura/Source/AuraShares.xml:224`, `/workspace_addons/Aura/Source/AuraTexture.xml:175`, `/workspace_addons/BuffHead/Setup/General.xml:51`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:106`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:182`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainers.xml:106` |
 | Namespaces detected | ListBox |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | AggroMeter: AggroMeterGrayListBox, Aura: AuraSettingsAuraList, Aura: AuraSharesAuraList, Aura: AuraTextureIconsIcons, BuffHead: BuffHeadSetupAdvancedCompressionItemWindowList, BuffHead: BuffHeadSetupAdvancedCompressionWindowList |

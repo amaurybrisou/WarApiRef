@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 19 addons
+- Seen in: 18 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BuffHead, DAoCBuff, Effigy, Enemy, GCDsaver, GuardLine, LibWBToggler |
-| Files seen in | `/workspace/Ace/LibGUI.lua:236`, `/workspace/BuffHead/AdvancedContainers.lua:36`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:480`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:653`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:72`, `/workspace/DAoCBuff/Source/DAoCBuffHeadFrames.lua:212`, `/workspace/DAoCBuff/Source/DAoCBuffHeadFrames.lua:796`, `/workspace/DAoCBuff/Source/DAoCBuffHeadFrames.lua:850` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:236`, `/workspace_addons/BuffHead/AdvancedContainers.lua:36`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:480`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:653`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:72`, `/workspace_addons/DAoCBuff/Source/DAoCBuffHeadFrames.lua:212`, `/workspace_addons/DAoCBuff/Source/DAoCBuffHeadFrames.lua:796`, `/workspace_addons/DAoCBuff/Source/DAoCBuffHeadFrames.lua:850` |
 | Namespaces detected | WindowGetScale |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Scale, BuffHead: BuffHead.local.RegisterLayoutEditor, BuffHead: RegisterLayoutEditor, DAoCBuff: DAoCBuff.SetSize, DAoCBuff: DAoCBuffFrame:SetScale, DAoCBuff: DAoCBuffHeadTracker:OnBuffsChanged |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 74 |
-| Global usage count | 74 |
+| Lua usage count | 73 |
+| Global usage count | 73 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -75,11 +75,11 @@ Observed querying runtime window state or metadata.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -99,7 +99,6 @@ Observed querying runtime window state or metadata.
 - Shinies
 - TexturedButtons
 - TurretRange
-- WarTriage
 - WoH-Reticle
 - nRarity
 
@@ -133,10 +132,14 @@ Observed querying runtime window state or metadata.
 - [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.UnregisterWindow](window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
 - [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
+- [SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_RENOWN_RANK_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_RANK_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
@@ -156,6 +159,7 @@ Observed querying runtime window state or metadata.
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 - [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
 - [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
+- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By
 

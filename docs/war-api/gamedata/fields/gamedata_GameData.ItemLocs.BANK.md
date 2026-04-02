@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Modules/Data/Shinies-Data-Inventory.lua:168` |
+| Files seen in | `/workspace_addons/Shinies/Modules/Data/Shinies-Data-Inventory.lua:168` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | ShiniesDataInventory.OnPlayerBankSlotUpdated, lua_call |

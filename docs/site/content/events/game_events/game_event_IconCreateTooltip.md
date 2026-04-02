@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Intercom/Intercom.lua:4` |
+| Files seen in | `/workspace_addons/Enemy/Code/Intercom/Intercom.lua:4` |
 | Namespaces detected | IconCreateTooltip |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy.IntercomInitialize |
@@ -98,4 +98,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Notes
 
 - Triggered-by evidence: Enemy:Enemy.UI_Icon_OnMouseOver
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

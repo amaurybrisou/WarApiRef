@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | PotionBar, RVMOD_Manager, WSCT, WarBoard |
-| Files seen in | `/workspace/PotionBar/settings/Settings.xml:342`, `/workspace/PotionBar/settings/Settings.xml:353`, `/workspace/PotionBar/settings/Settings.xml:364`, `/workspace/PotionBar/settings/Settings.xml:399`, `/workspace/PotionBar/settings/Settings.xml:410`, `/workspace/PotionBar/settings/Settings.xml:421`, `/workspace/RVMOD_Manager/RVMOD_ManagerTemplates.xml:410`, `/workspace/RVMOD_Manager/RVMOD_ManagerTemplates.xml:421` |
+| Files seen in | `/workspace_addons/PotionBar/settings/Settings.xml:342`, `/workspace_addons/PotionBar/settings/Settings.xml:353`, `/workspace_addons/PotionBar/settings/Settings.xml:364`, `/workspace_addons/PotionBar/settings/Settings.xml:399`, `/workspace_addons/PotionBar/settings/Settings.xml:410`, `/workspace_addons/PotionBar/settings/Settings.xml:421`, `/workspace_addons/RVMOD_Manager/RVMOD_ManagerTemplates.xml:410`, `/workspace_addons/RVMOD_Manager/RVMOD_ManagerTemplates.xml:421` |
 | Namespaces detected | EA_Settings_ItemTitle |
 | Source kinds | xml_attributes |
 | Example locations | PotionBarTypeTemplateOpacitySliderMaxLabel, PotionBarTypeTemplateOpacitySliderMidLabel, PotionBarTypeTemplateOpacitySliderMinLabel, PotionBarTypeTemplateScaleSliderMaxLabel, PotionBarTypeTemplateScaleSliderMidLabel, PotionBarTypeTemplateScaleSliderMinLabel |

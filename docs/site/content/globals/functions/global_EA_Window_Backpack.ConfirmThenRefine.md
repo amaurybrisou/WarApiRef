@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankWindowFix |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.lua:108` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108` |
 | Namespaces detected | EA_Window_Backpack |
 | Source kinds | globals, lua_calls |
 | Example locations | BankWindowFix: BankWindowFix.BagEquipmentRButtonUp |
@@ -74,11 +74,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

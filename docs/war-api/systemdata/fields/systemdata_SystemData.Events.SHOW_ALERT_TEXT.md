@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, GCDsaver |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/GCDsaver/GCDsaver.lua:76` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/GCDsaver/GCDsaver.lua:76` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Enemy.GroupsInitialize, Enemy.Groups_OnShowAlertText, GCDsaver.local.alertText, SystemData.Events.SHOW_ALERT_TEXT, alertText, event_page |

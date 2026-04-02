@@ -63,7 +63,7 @@
 
 ## Pipeline Heuristics
 
-- Parsed only generated markdown under API_Ref; raw addon Lua and XML were not rescanned.
+- Parsed only generated markdown under docs/addon-api; raw addon Lua and XML were not rescanned.
 - Dropped call-site aliases when a qualified and unqualified symbol shared caller, line, arguments, and final segment.
 - Filtered addon-local calls when the symbol root or final segment matched addon-owned namespaces or function names.
 - Promoted symbols to platform API candidates when they appeared in multiple addons, in XML/window handlers, or under known WAR/UI namespaces.

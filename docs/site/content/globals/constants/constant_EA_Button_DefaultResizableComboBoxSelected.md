@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapMonster |
-| Files seen in | `/workspace/MapMonster/Source/MapMonster_PinTypeEditorWindow.xml:34` |
+| Files seen in | `/workspace_addons/MapMonster/Source/MapMonster_PinTypeEditorWindow.xml:34` |
 | Namespaces detected | EA_Button_DefaultResizableComboBoxSelected |
 | Source kinds | flows, xml_attributes |
 | Example locations | MapMonsterPinTypeEditor_Button_DefaultResizableComboBoxSelected |

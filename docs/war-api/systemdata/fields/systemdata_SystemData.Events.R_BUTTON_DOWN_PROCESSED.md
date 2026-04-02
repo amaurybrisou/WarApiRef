@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedPetAssist, FastInteract, FastInteract, LoyalPet |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/FastInteract/FastInteract.lua:132`, `/workspace/FastInteract/FastInteract.lua:142`, `/workspace/LoyalPet/LoyalPet.lua:134`, `/workspace/LoyalPet/LoyalPet.lua:203` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/FastInteract/FastInteract.lua:132`, `/workspace_addons/FastInteract/FastInteract.lua:142`, `/workspace_addons/LoyalPet/LoyalPet.lua:134`, `/workspace_addons/LoyalPet/LoyalPet.lua:203` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedPetAssist.OnRButtonDown, FastInteract.Initialize, FastInteract.OnShutdown, FastInteract.ProcessRightClick, LPET.Initialize, LPET.Shutdown |

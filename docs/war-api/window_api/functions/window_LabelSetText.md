@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 57 addons
+- Seen in: 48 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, Busted |
-| Files seen in | `/workspace/Ace/LibGUI.lua:426`, `/workspace/Ace/LibGUI.lua:439`, `/workspace/AdvancedPetAssist/APAGui.lua:983`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace/AggroMeter/AggroMeter.lua:5` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:426`, `/workspace_addons/Ace/LibGUI.lua:439`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:983`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace_addons/AggroMeter/AggroMeter.lua:5` |
 | Namespaces detected | LabelSetText |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Label:Clear, Ace: LIBGUI_Label:SetText, AdvancedPetAssist: APAGui.OnShown, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1436 |
-| Global usage count | 1436 |
+| Lua usage count | 1401 |
+| Global usage count | 1401 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -72,7 +72,7 @@ Observed updating label text or label styling on existing controls.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | windowName | Observed as a target control name. | Observed values: "APAFollowTargetHUDLabel", "APAInstantOnlyHUDLabel", "APAKitingHUDLabel" |
-| text | Observed as a text or wstring payload. | Observed values: APA.PetTarget.cachedName, Active and L "zzzZZZzzZZzz" or Check and L "demanding" or L "denied", AddonToShow.RVCredits |
+| text | Observed as a text or wstring payload. | Observed values: APA.PetTarget.cachedName, AddonToShow.RVCredits, AddonToShow.RVLicense |
 
 ## Returns
 
@@ -97,26 +97,22 @@ Observed updating label text or label styling on existing controls.
 - Crafting Info Tooltip
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - Effigy
 - Enemy
 - FastInteract
 - GCDsaver
 - GetStats
-- GoldTracker
 - JunkDump
 - Killer
 - LibGroup
 - LibWBToggler
 - MapMonster
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
 - Moth
-- PeaceOut
 - Pocket Palette
 - PotionBar
 - QuickTacticSwitch
@@ -129,15 +125,10 @@ Observed updating label text or label styling on existing controls.
 - Swift Assist
 - Targets
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
-- TimeInQueue
 - TurretRange
-- Twister
 - WSCT
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - wbLeadHelper

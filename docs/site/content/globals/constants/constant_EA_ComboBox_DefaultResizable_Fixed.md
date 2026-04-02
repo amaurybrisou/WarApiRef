@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | LoyalPet, WSCT |
-| Files seen in | `/workspace/LoyalPet/gui/lpet_gui.xml:112`, `/workspace/LoyalPet/gui/lpet_gui.xml:2560`, `/workspace/LoyalPet/gui/lpet_gui.xml:533`, `/workspace/LoyalPet/gui/lpet_gui.xml:561`, `/workspace/wsct/wsct_options/wsct_options.xml:1032`, `/workspace/wsct/wsct_options/wsct_options.xml:210`, `/workspace/wsct/wsct_options/wsct_options.xml:382`, `/workspace/wsct/wsct_options/wsct_options.xml:647` |
+| Files seen in | `/workspace_addons/LoyalPet/gui/lpet_gui.xml:112`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:2560`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:533`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:561`, `/workspace_addons/wsct/wsct_options/wsct_options.xml:1032`, `/workspace_addons/wsct/wsct_options/wsct_options.xml:210`, `/workspace_addons/wsct/wsct_options/wsct_options.xml:382`, `/workspace_addons/wsct/wsct_options/wsct_options.xml:647` |
 | Namespaces detected | EA_ComboBox_DefaultResizable_Fixed |
 | Source kinds | flows, xml_attributes |
 | Example locations | LPETComboBoxTemplateCombo, LPETOptionsPetAttackCombo, LPETOptionsPetFollowCombo, LPETOptionsProfilesCombo, WSCTComboBoxTemplateCombo, WSCTOptionsEventWindowCombo |

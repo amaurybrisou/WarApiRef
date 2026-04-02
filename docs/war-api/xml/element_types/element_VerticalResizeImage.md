@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, CMap, EA_UiDebugTools |
-| Files seen in | `/workspace/BuffHead/Setup/SetupLayout.xml:67`, `/workspace/BuffHead/Setup/SetupLayout.xml:73`, `/workspace/BuffHead/Setup/SetupLayout.xml:76`, `/workspace/BuffHead/Setup/SetupLayout.xml:79`, `/workspace/cmap/Cmap_Templates_OverheadMap.xml:12`, `/workspace/cmap/Cmap_Templates_OverheadMap.xml:26`, `/workspace/ea_uidebugtools/Source/DebugWindowVerticalScroll.xml:80` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupLayout.xml:67`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:73`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:76`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:79`, `/workspace_addons/cmap/Cmap_Templates_OverheadMap.xml:12`, `/workspace_addons/cmap/Cmap_Templates_OverheadMap.xml:26`, `/workspace_addons/ea_uidebugtools/Source/DebugWindowVerticalScroll.xml:80` |
 | Namespaces detected | VerticalResizeImage |
 | Source kinds | xml_frames |
 | Example locations | BuffHead: BuffHeadLayoutVerticalButtonHighlight, BuffHead: BuffHeadLayoutVerticalButtonNormal, BuffHead: BuffHeadLayoutVerticalButtonPressed, BuffHead: BuffHeadLayoutVerticalResizeImage, CMap: HUDInfluenceBarBackground, CMap: HUDInfluenceBarFill |

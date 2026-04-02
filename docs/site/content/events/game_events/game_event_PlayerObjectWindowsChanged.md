@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/GroupIcons/GroupIcons.lua:62` |
+| Files seen in | `/workspace_addons/Enemy/Code/GroupIcons/GroupIcons.lua:62` |
 | Namespaces detected | PlayerObjectWindowsChanged |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy._GroupIconsEnabledChanged |
@@ -98,4 +98,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Notes
 
 - Triggered-by evidence: Enemy:EnemyObjectWindow:Attach, Enemy:EnemyObjectWindow:Detach, Enemy:EnemyObjectWindow:Remove
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

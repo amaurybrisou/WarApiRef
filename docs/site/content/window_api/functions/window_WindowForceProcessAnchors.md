@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/Ace/LibGUI.lua:115`, `/workspace/Effigy/LibGUI.lua:115`, `/workspace/GCDsaver/libs/LibGUI.lua:115`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:115`, `/workspace/Shinies/Libraries/LibGUI.lua:115`, `/workspace/WarTriage/libs/LibGUI.lua:115`, `/workspace/WoH-Reticle/libs/LibGUI.lua:115` |
+| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:115`, `/workspace_addons/Effigy/LibGUI.lua:115`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:115`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:115`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:115`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:115` |
 | Namespaces detected | WindowForceProcessAnchors |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:ProcessAnchors, Effigy: LIBGUI_ELEMENT:ProcessAnchors, GCDsaver: LIBGUI_ELEMENT:ProcessAnchors, LibWBToggler: LIBGUI_ELEMENT:ProcessAnchors, Shinies: LIBGUI_ELEMENT:ProcessAnchors, WarTriage: LIBGUI_ELEMENT:ProcessAnchors |
+| Example locations | Ace: LIBGUI_ELEMENT:ProcessAnchors, Effigy: LIBGUI_ELEMENT:ProcessAnchors, GCDsaver: LIBGUI_ELEMENT:ProcessAnchors, LibWBToggler: LIBGUI_ELEMENT:ProcessAnchors, Shinies: LIBGUI_ELEMENT:ProcessAnchors, WoH-Reticle: LIBGUI_ELEMENT:ProcessAnchors |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ WindowForceProcessAnchors(arg1)
 
 ## Description
 
-Observed as a window function across 7 addons.
+Observed as a window function across 6 addons.
 
 ## Parameters
 
@@ -75,11 +75,11 @@ Observed as a window function across 7 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -88,7 +88,6 @@ Observed as a window function across 7 addons.
 - GCDsaver
 - LibWBToggler
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples
@@ -98,7 +97,7 @@ Observed as a window function across 7 addons.
 - GCDsaver: LIBGUI_ELEMENT:ProcessAnchors -> WindowForceProcessAnchors(self.name)
 - LibWBToggler: LIBGUI_ELEMENT:ProcessAnchors -> WindowForceProcessAnchors(self.name)
 - Shinies: LIBGUI_ELEMENT:ProcessAnchors -> WindowForceProcessAnchors(self.name)
-- WarTriage: LIBGUI_ELEMENT:ProcessAnchors -> WindowForceProcessAnchors(self.name)
+- WoH-Reticle: LIBGUI_ELEMENT:ProcessAnchors -> WindowForceProcessAnchors(self.name)
 
 ## Related APIs
 

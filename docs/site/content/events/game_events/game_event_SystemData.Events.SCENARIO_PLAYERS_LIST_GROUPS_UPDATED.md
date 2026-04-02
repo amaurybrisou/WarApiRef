@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, LibGuard |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/LibGuard/Source/LibGuard.lua:47` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/LibGuard/Source/LibGuard.lua:47` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy.GroupsInitialize, LibGuard: LibGuard.Init |
@@ -67,7 +67,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 

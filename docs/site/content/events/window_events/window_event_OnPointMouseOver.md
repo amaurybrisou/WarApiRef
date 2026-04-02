@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CMap, TurretRange |
-| Files seen in | `/workspace/TurrentRange/Display.xml:166`, `/workspace/cmap/CMap.xml:77`, `/workspace/cmap/CMap.xml:97` |
+| Files seen in | `/workspace_addons/TurrentRange/Display.xml:166`, `/workspace_addons/cmap/CMap.xml:77`, `/workspace_addons/cmap/CMap.xml:97` |
 | Namespaces detected | OnPointMouseOver |
 | Source kinds | event_page, xml_handlers |
 | Example locations | CMap: CMapWindowMapDisplay.OnPointMouseOver, CMap: CMapWindowWMap.OnPointMouseOver, TurretRange: TurretMapDisplay.OnPointMouseOver |
@@ -65,7 +65,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Payload
 
-- Window callback arguments are not fully inferable from API_Ref alone.
+- Window callback arguments are not fully inferable from addon-api docs alone.
 
 ## Seen In
 

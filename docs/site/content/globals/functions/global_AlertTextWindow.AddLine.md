@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, MapMonster, MegaphonePlusPlus, Targets, WSCT |
-| Files seen in | `/workspace/Aura/Source/Aura.lua:186`, `/workspace/Aura/Source/Aura.lua:282`, `/workspace/MapMonster/Source/MapMonster.lua:54`, `/workspace/MapMonster/Source/MapMonster.lua:65`, `/workspace/MapMonster/Source/MapMonster_EditorWindow.lua:1024`, `/workspace/MapMonster/Source/MapMonster_EditorWindow.lua:763`, `/workspace/MapMonster/Source/MapMonster_PinTypeEditorWindow.lua:682`, `/workspace/megaphoneplusplus-1.0.4/MegaphonePlusPlus.lua:364` |
+| Addons seen in | Aura, MapMonster, Targets, WSCT |
+| Files seen in | `/workspace_addons/Aura/Source/Aura.lua:186`, `/workspace_addons/Aura/Source/Aura.lua:282`, `/workspace_addons/MapMonster/Source/MapMonster.lua:54`, `/workspace_addons/MapMonster/Source/MapMonster.lua:65`, `/workspace_addons/MapMonster/Source/MapMonster_EditorWindow.lua:1024`, `/workspace_addons/MapMonster/Source/MapMonster_EditorWindow.lua:763`, `/workspace_addons/MapMonster/Source/MapMonster_PinTypeEditorWindow.lua:682`, `/workspace_addons/targets/Targets.lua:214` |
 | Namespaces detected | AlertTextWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | Aura: Aura:Activate, Aura: Aura:Deactivate, MapMonster: ConfirmCreateSubType, MapMonster: MapMonster.Editor.OnClickLeft, MapMonster: MapMonster.Editor.OpenEditWindow, MapMonster: MapMonster.PinTypeEditor.LeftButton |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 21 |
-| Global usage count | 21 |
+| Lua usage count | 20 |
+| Global usage count | 20 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ AlertTextWindow.AddLine(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 5 addons.
+Observed as a global function across 4 addons.
 
 ## Parameters
 
@@ -73,17 +73,16 @@ Observed as a global function across 5 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
 - Aura
 - MapMonster
-- MegaphonePlusPlus
 - Targets
 - WSCT
 

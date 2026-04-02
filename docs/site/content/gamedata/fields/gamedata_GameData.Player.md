@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Killer, QuickWarReport, Swift Assist, wbLeadHelper |
-| Files seen in | `/workspace/Killer/KillerRenown.lua:108`, `/workspace/Killer/KillerRenown.lua:127`, `/workspace/Killer/KillerRenown.lua:61`, `/workspace/Killer/KillerZoneHistory.lua:329`, `/workspace/Killer/KillerZoneHistory.lua:370`, `/workspace/Killer/KillerZoneHistory.lua:446`, `/workspace/Killer/KillerZoneHistory.lua:5`, `/workspace/QuickWarReport/QWRComms.lua:287` |
+| Files seen in | `/workspace_addons/Killer/KillerRenown.lua:108`, `/workspace_addons/Killer/KillerRenown.lua:127`, `/workspace_addons/Killer/KillerRenown.lua:61`, `/workspace_addons/Killer/KillerZoneHistory.lua:329`, `/workspace_addons/Killer/KillerZoneHistory.lua:370`, `/workspace_addons/Killer/KillerZoneHistory.lua:446`, `/workspace_addons/Killer/KillerZoneHistory.lua:5`, `/workspace_addons/QuickWarReport/QWRComms.lua:287` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Killer.CaptureInitialWarCrests, Killer.GetCurrentZoneHistoryEntry, Killer.LoadCurrentZoneFromHistory, Killer.OnCurrencyUpdated, Killer.OnRenownUpdated, Killer.UpsertZoneHistory |

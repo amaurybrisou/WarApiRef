@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | FastInteract |
-| Files seen in | `/workspace/FastInteract/FastInteract.lua:132`, `/workspace/FastInteract/FastInteract.lua:142` |
+| Files seen in | `/workspace_addons/FastInteract/FastInteract.lua:132`, `/workspace_addons/FastInteract/FastInteract.lua:142` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | FastInteract.Initialize, FastInteract.OnShutdown, FastInteract.ProcessQuest, SystemData.Events.INTERACT_SHOW_QUEST, event_page, event_registration |

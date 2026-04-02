@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, LibGuard, followTheLeader |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/LibGuard/Source/LibGuard.lua:47`, `/workspace/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/LibGuard/Source/LibGuard.lua:47`, `/workspace_addons/followTheLeader/followTheLeader.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Enemy: Enemy.GroupsInitialize, LibGuard: LibGuard.Init, followTheLeader: followTheLeader.Initialize |

@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, JunkDump, Shinies |
-| Files seen in | `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/JunkDump/JunkDump.lua:291`, `/workspace/Shinies/Source/Shinies.lua:169`, `/workspace/Shinies/Source/Shinies.lua:219` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace_addons/JunkDump/JunkDump.lua:291`, `/workspace_addons/Shinies/Source/Shinies.lua:169`, `/workspace_addons/Shinies/Source/Shinies.lua:219` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Effigy: Effigy.RegisterStateInfoForCastbar, JunkDump: JunkDump.StartListeners, Shinies: LibStub:OnEnable, Shinies: LibStub:UpdateDefaultAuctionHouseDisable |

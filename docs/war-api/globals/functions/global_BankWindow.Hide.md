@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions, BankArkel |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:131`, `/workspace/BankArkel/BankArkel.lua:573` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:131`, `/workspace_addons/BankArkel/BankArkel.lua:573` |
 | Namespaces detected | BankWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickBank, AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickBank, BankArkel: BankArkel.CloseBank |
@@ -122,3 +122,4 @@ Observed as a global function across 3 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

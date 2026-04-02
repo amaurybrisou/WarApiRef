@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:371`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:507` |
+| Files seen in | `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:371`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:507` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Enemy.ScenarioInfoCheckBroadcast, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnShown, lua_call |

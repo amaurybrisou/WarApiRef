@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 16 addons
+- Seen in: 15 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, Aura, Effigy, GCDsaver, LibWBToggler, MapMonster, MapPin, Miracle Grow Remix |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1284`, `/workspace/Aura/Source/AuraHelpers.lua:33`, `/workspace/Effigy/LibGUI.lua:1281`, `/workspace/Effigy/Textures/TextureManager.lua:125`, `/workspace/GCDsaver/libs/LibGUI.lua:1281`, `/workspace/LibWarBoardToggler/LibWBToggler.lua:16`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:1281`, `/workspace/MGRemix/MGRemix.lua:797` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1284`, `/workspace_addons/Aura/Source/AuraHelpers.lua:33`, `/workspace_addons/Effigy/LibGUI.lua:1281`, `/workspace_addons/Effigy/Textures/TextureManager.lua:125`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:1281`, `/workspace_addons/LibWarBoardToggler/LibWBToggler.lua:16`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:1281`, `/workspace_addons/MGRemix/MGRemix.lua:797` |
 | Namespaces detected | DynamicImageSetTextureSlice |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Image:TexSlice, Aura: AuraHelpers.SetDynamicImageTexture, Effigy: Effigy.TextureManager.SetTexture, Effigy: LIBGUI_Image:TexSlice, GCDsaver: LIBGUI_Image:TexSlice, LibWBToggler: LIBGUI_Image:TexSlice |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 58 |
-| Global usage count | 58 |
+| Lua usage count | 57 |
+| Global usage count | 57 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -98,7 +98,6 @@ Observed mutating runtime image resources on existing controls.
 - RoR_SoR
 - Shinies
 - TexturedButtons
-- WarTriage
 - WoH-Reticle
 
 ## Examples

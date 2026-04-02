@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Moth |
-| Files seen in | `/workspace/Moth/Moth.xml:64` |
+| Files seen in | `/workspace_addons/Moth/Moth.xml:64` |
 | Namespaces detected | EA_Button_ResizeIconFrameHighlight |
 | Source kinds | xml_attributes |
 | Example locations | MothBorderSilver |

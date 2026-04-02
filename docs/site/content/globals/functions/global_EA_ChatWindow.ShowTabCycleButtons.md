@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyChat |
-| Files seen in | `/workspace/TidyChat/TidyChat.lua:305` |
+| Files seen in | `/workspace_addons/TidyChat/TidyChat.lua:305` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | TidyChat: TidyChatCore.SetWindowTabs |
@@ -74,11 +74,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

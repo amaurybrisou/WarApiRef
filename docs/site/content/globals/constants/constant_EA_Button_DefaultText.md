@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Cheeseboard, EA_UiDebugTools, Enemy, GetStats, wbLeadHelper |
-| Files seen in | `/workspace/Cheeseboard/Cheeseboard.xml:173`, `/workspace/Enemy/Code/Assist/AssistConfiguration.xml:32`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:241`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:254`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:267`, `/workspace/Enemy/Code/Core/ConfigDialog.xml:75`, `/workspace/Enemy/Code/Core/ConfigDialog.xml:88`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.xml:1036` |
+| Files seen in | `/workspace_addons/Cheeseboard/Cheeseboard.xml:173`, `/workspace_addons/Enemy/Code/Assist/AssistConfiguration.xml:32`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:241`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:254`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:267`, `/workspace_addons/Enemy/Code/Core/ConfigDialog.xml:75`, `/workspace_addons/Enemy/Code/Core/ConfigDialog.xml:88`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.xml:1036` |
 | Namespaces detected | EA_Button_DefaultText |
 | Source kinds | xml_attributes |
 | Example locations | CheeseboardWindowButton, DebugWindowClose, DebugWindowOptionsClearLogText, DebugWindowOptionsClose, DebugWindowReloadUi, DebugWindowToggleCopy |

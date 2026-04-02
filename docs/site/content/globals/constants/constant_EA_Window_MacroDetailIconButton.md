@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | bigger_MacroWindow |
-| Files seen in | `/workspace/bigger_macrowindow/Source/MacroWindow.xml:793` |
+| Files seen in | `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:793` |
 | Namespaces detected | EA_Window_MacroDetailIconButton |
 | Source kinds | flows, xml_attributes |
 | Example locations | EA_Window_MacroDetailsIcon |

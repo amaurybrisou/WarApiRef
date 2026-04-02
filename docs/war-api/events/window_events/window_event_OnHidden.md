@@ -31,17 +31,17 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, CMap, EA_UiDebugTools, EA_UiModWindow |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:1385`, `/workspace/AdvancedPetAssist/APAGui.xml:1426`, `/workspace/AdvancedPetAssist/APAGui.xml:1467`, `/workspace/AdvancedPetAssist/APAGui.xml:96`, `/workspace/Aura/Source/AuraConfig.xml:27`, `/workspace/Aura/Source/AuraSettings.xml:78`, `/workspace/Aura/Source/AuraShares.xml:153`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.xml:54` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1385`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1426`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1467`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:96`, `/workspace_addons/Aura/Source/AuraConfig.xml:27`, `/workspace_addons/Aura/Source/AuraSettings.xml:78`, `/workspace_addons/Aura/Source/AuraShares.xml:153`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:54` |
 | Namespaces detected | OnHidden |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
 | Example locations | AdvancedPetAssist: APAFollowTargetHUD.OnHidden, AdvancedPetAssist: APAInstantOnlyHUD.OnHidden, AdvancedPetAssist: APAKitingHUD.OnHidden, AdvancedPetAssist: APAOptions.OnHidden, AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow.OnHidden, AdvancedRenownTrainer: AdvancedRenownTrainingImportNameInputWindow.OnHidden |
 | XML usage count | 95 |
 | XML attribute usage count | 95 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 3 |
-| Initialization flow references | 2 |
+| Initialization flow references | 1 |
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 24 addons.
+Observed as an engine-supplied UI event hook used by 23 addons.
 
 ## Handler Pattern
 
@@ -90,7 +90,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - Shinies
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
 - WSCT
@@ -162,7 +161,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - TidyChat.LootRoll.OnHidden
 - TidyChat.OnEntryBoxUpdateShowing
 - TidyChat.Options.OnHidden
-- TidyQueue.OnHidden
 - TidyRoll.CustomAutoRoll.OnHidden
 - TidyRoll.OnEsc
 - TidyRollOptions.OnHidden
@@ -183,11 +181,11 @@ Observed as an On* callback routed into a module-qualified Lua function.
 ## Examples
 
 - TidyChat: TidyChatFrames.Initialize -> OnHidden -> TidyChat.OnEntryBoxUpdateShowing
-- TidyQueue: TidyQueue.Initialize -> OnHidden -> TidyQueue.OnHidden
 - AdvancedPetAssist: APAFollowTargetHUD -> APAFollowTargetHUD.OnHidden -> APAGui.OnFollowTargetHUDHidden
 - AdvancedPetAssist: APAInstantOnlyHUD -> APAInstantOnlyHUD.OnHidden -> APAGui.OnInstantOnlyHUDHidden
 - AdvancedPetAssist: APAKitingHUD -> APAKitingHUD.OnHidden -> APAGui.OnKitingHUDHidden
 - AdvancedPetAssist: APAOptions -> APAOptions.OnHidden -> APAGui.OnHidden
+- AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow -> AdvancedRenownTrainingExportWindow.OnHidden -> AdvancedRenownTraining.OnExportHidden
 
 ## Related APIs
 

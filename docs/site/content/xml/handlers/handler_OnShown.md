@@ -28,13 +28,13 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, CM_ClosetGoblin, CMap, EA_UiDebugTools, EA_UiModWindow, Enemy |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:1384`, `/workspace/AdvancedPetAssist/APAGui.xml:1425`, `/workspace/AdvancedPetAssist/APAGui.xml:1466`, `/workspace/AdvancedPetAssist/APAGui.xml:1506`, `/workspace/AdvancedPetAssist/APAGui.xml:95`, `/workspace/Aura/Source/AuraTexture.xml:100`, `/workspace/ClosetGoblin/ClosetGoblin.xml:1226`, `/workspace/ClosetGoblin/ClosetGoblin.xml:262` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1384`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1425`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1466`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1506`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:95`, `/workspace_addons/Aura/Source/AuraTexture.xml:100`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1226`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:262` |
 | Namespaces detected | OnShown |
 | Source kinds | bindings, xml_handlers |
 | Example locations | AdvancedPetAssist: APAFollowTargetHUD.OnShown, AdvancedPetAssist: APAInstantOnlyHUD.OnShown, AdvancedPetAssist: APAKitingHUD.OnShown, AdvancedPetAssist: APAOptions.OnShown, AdvancedPetAssist: APAPetTargetHUD.OnShown, AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow.OnShown |
-| XML usage count | 65 |
-| XML attribute usage count | 65 |
-| Lua usage count | 65 |
+| XML usage count | 66 |
+| XML attribute usage count | 66 |
+| Lua usage count | 66 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -140,4 +140,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

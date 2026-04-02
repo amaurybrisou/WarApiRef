@@ -25,14 +25,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, DAoCBuff, DAoCBuff, Enemy, Enemy, LibGroup |
-| Files seen in | `/workspace/Aura/Source/AuraEngine.lua:312`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/LibGroup/LibGroup.lua:343` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraEngine.lua:312`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/LibGroup/LibGroup.lua:343` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AuraEngine.JumpStartEventBasedAuras, DAoCBuff.Initialize, DAoCBuff.OnEventGU, DAoCBuff.Shutdown, Enemy.GroupsInitialize, Enemy.GroupsUpdateType |

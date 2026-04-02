@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | GCDsaver, LibWBToggler, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/GCDsaver/libs/LibConfig.lua:419`, `/workspace/GCDsaver/libs/LibConfig.lua:507`, `/workspace/LibWarBoardToggler/libs/LibConfig.lua:415`, `/workspace/LibWarBoardToggler/libs/LibConfig.lua:503`, `/workspace/WarTriage/libs/LibConfig.lua:419`, `/workspace/WarTriage/libs/LibConfig.lua:507`, `/workspace/WoH-Reticle/libs/LibConfig.lua:409`, `/workspace/WoH-Reticle/libs/LibConfig.lua:500` |
+| Addons seen in | GCDsaver, LibWBToggler, WoH-Reticle |
+| Files seen in | `/workspace_addons/GCDsaver/libs/LibConfig.lua:419`, `/workspace_addons/GCDsaver/libs/LibConfig.lua:507`, `/workspace_addons/LibWarBoardToggler/libs/LibConfig.lua:415`, `/workspace_addons/LibWarBoardToggler/libs/LibConfig.lua:503`, `/workspace_addons/WoH-Reticle/libs/LibConfig.lua:409`, `/workspace_addons/WoH-Reticle/libs/LibConfig.lua:500` |
 | Namespaces detected | WindowGetTintColor |
 | Source kinds | lua_calls |
-| Example locations | GCDsaver: LibConfigMenu:Add, GCDsaver: element.button.OnLButtonUp, LibWBToggler: LibConfigMenu:Add, LibWBToggler: element.button.OnLButtonUp, WarTriage: LibConfigMenu:Add, WarTriage: element.button.OnLButtonUp |
+| Example locations | GCDsaver: LibConfigMenu:Add, GCDsaver: element.button.OnLButtonUp, LibWBToggler: LibConfigMenu:Add, LibWBToggler: element.button.OnLButtonUp, WoH-Reticle: LibConfigMenu:Add, WoH-Reticle: element.button.OnLButtonUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -75,17 +75,16 @@ Observed querying runtime window state or metadata.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
 - GCDsaver
 - LibWBToggler
-- WarTriage
 - WoH-Reticle
 
 ## Examples
@@ -94,8 +93,8 @@ Observed querying runtime window state or metadata.
 - GCDsaver: element.button.OnLButtonUp -> WindowGetTintColor(LibConfig.colorizer.object.name)
 - LibWBToggler: LibConfigMenu:Add -> WindowGetTintColor(LibConfig.colorizer.object.name)
 - LibWBToggler: element.button.OnLButtonUp -> WindowGetTintColor(LibConfig.colorizer.object.name)
-- WarTriage: LibConfigMenu:Add -> WindowGetTintColor(LibConfig.colorizer.object.name)
-- WarTriage: element.button.OnLButtonUp -> WindowGetTintColor(LibConfig.colorizer.object.name)
+- WoH-Reticle: LibConfigMenu:Add -> WindowGetTintColor(LibConfig.colorizer.object.name)
+- WoH-Reticle: element.button.OnLButtonUp -> WindowGetTintColor(LibConfig.colorizer.object.name)
 
 ## Related APIs
 

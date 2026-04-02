@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Core/ObjectWindows.lua:237`, `/workspace/Enemy/Code/Marks/Marks.lua:8` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/ObjectWindows.lua:237`, `/workspace_addons/Enemy/Code/Marks/Marks.lua:8` |
 | Namespaces detected | GroupsPlayerWorldObjectIdUpdated |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy.MarksInitialize, Enemy: Enemy.ObjectWindowsInitialize |

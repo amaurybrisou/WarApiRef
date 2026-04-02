@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 186
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -25,24 +25,24 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, Enemy, MegaphonePlusPlus, Queue Queuer, QuickWarReport, MegaphonePlusPlus, Queue Queuer, QuickWarReport |
-| Files seen in | `/workspace/Enemy/Code/Core/Communication.lua:3`, `/workspace/QueueQueuer/QueueQueuer.lua:436`, `/workspace/QueueQueuer/QueueQueuer.lua:466`, `/workspace/QuickWarReport/QWRLifecycle.lua:60`, `/workspace/QuickWarReport/QWRLifecycle.lua:90`, `/workspace/megaphoneplusplus-1.0.4/MegaphonePlusPlus.lua:115`, `/workspace/megaphoneplusplus-1.0.4/MegaphonePlusPlus.lua:150` |
+| Addons seen in | Enemy, Enemy, QuickWarReport, QuickWarReport |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Communication.lua:3`, `/workspace_addons/QuickWarReport/QWRLifecycle.lua:60`, `/workspace_addons/QuickWarReport/QWRLifecycle.lua:90` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | Enemy.CommunicationInitialize, Enemy.OnChatTextArrived, Megaphone.FilterChat, Megaphone.Initialize, Megaphone.OnShutdown, QueueQueuer.OnChat |
+| Example locations | Enemy.CommunicationInitialize, Enemy.OnChatTextArrived, QuickWarReport.Initialize, QuickWarReport.OnChatArrived, QuickWarReport.Shutdown, SystemData.Events.CHAT_TEXT_ARRIVED |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 17 |
-| Global usage count | 17 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 3 |
+| Initialization flow references | 1 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,19 +62,17 @@
 
 ## Description
 
-Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - Enemy
-- Enemy, MegaphonePlusPlus, Queue Queuer, QuickWarReport
-- MegaphonePlusPlus
-- Queue Queuer
+- Enemy, QuickWarReport
 - QuickWarReport
 
 ## Related APIs
 
-- none
+- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
 
 ## Used With
 
@@ -90,4 +88,4 @@ Observed SystemData field used by 5 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: Enemy.CommunicationInitialize, Enemy.OnChatTextArrived, Megaphone.FilterChat, Megaphone.Initialize, Megaphone.OnShutdown, QueueQueuer.OnChat
+- Observed in contexts: Enemy.CommunicationInitialize, Enemy.OnChatTextArrived, QuickWarReport.Initialize, QuickWarReport.OnChatArrived, QuickWarReport.Shutdown, SystemData.Events.CHAT_TEXT_ARRIVED

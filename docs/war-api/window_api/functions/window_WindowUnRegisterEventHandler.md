@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MiracleGrow, Shinies |
-| Files seen in | `/workspace/MiracleGrow/MiracleGrow.lua:163`, `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:290`, `/workspace/Shinies/Source/Shinies.lua:169` |
+| Files seen in | `/workspace_addons/MiracleGrow/MiracleGrow.lua:163`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:290`, `/workspace_addons/Shinies/Source/Shinies.lua:169` |
 | Namespaces detected | WindowUnregisterEventHandler |
 | Source kinds | lua_calls |
 | Example locations | MiracleGrow: MiracleGrow.disableAddon, Shinies: LibStub:UpdateDefaultAuctionHouseDisable, Shinies: _G.Shinies:NewModule.Criteria_ReopenComboBox |

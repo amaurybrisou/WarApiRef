@@ -31,17 +31,17 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibWBToggler, PlanB |
-| Files seen in | `/workspace/Aura/Source/AuraAddon.lua:70`, `/workspace/BuffHead/Core.lua:152`, `/workspace/ClosetGoblin/ClosetGoblin.lua:70`, `/workspace/Effigy/Effigy.lua:111`, `/workspace/LatestAura-RoR/Twister.lua:90`, `/workspace/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace/PlanB/PlanB.lua:35`, `/workspace/TexturedButtons/TexturedButtons.lua:492` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace_addons/PlanB/PlanB.lua:35`, `/workspace_addons/TexturedButtons/TexturedButtons.lua:492`, `/workspace_addons/TidyChat/TidyChat.lua:144` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, Aura: AuraAddon.OnInitialize, BagOMatic: BagOMatic.init, BuffHead: BuffHead.Initialize, CM_ClosetGoblin: ClosetGoblin.OnInitialize, Effigy: Effigy.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 16 |
-| Global usage count | 16 |
+| Lua usage count | 14 |
+| Global usage count | 14 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 15 |
+| Initialization flow references | 13 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 17 addons.
+Observed as a shared SystemData runtime event used by 15 addons.
 
 ## Handler Pattern
 
@@ -83,10 +83,8 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - PlanB
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
-- Twister
 - WarBoard
 - WhoHealedMe
 - wbLeadHelper
@@ -104,10 +102,8 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - RegisterEventHandler
 - TexturedButtons.OnLoadComplete
 - TidyChat.OnLoad
-- TidyQueue.OnLoad
 - TidyRoll.OnLoad
 - TurretRange.OnLoadComplete
-- Twister.OnLoad
 - WHMEvents.OnLoadingEnd
 - WarBoard.SortMods
 - global
@@ -126,13 +122,16 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
+- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Used With
 
+- [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.LOADING_END](game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 

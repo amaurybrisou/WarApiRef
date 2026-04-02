@@ -24,14 +24,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin, Enemy, Miracle Grow Remix, Pocket Palette, PotionBar, Shinies |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblin.lua:70`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace/MGRemix/MGRemix.lua:195`, `/workspace/PocketPalette/PocketPalette.lua:105`, `/workspace/PotionBar/source/Main.lua:189` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace_addons/MGRemix/MGRemix.lua:195`, `/workspace_addons/PocketPalette/PocketPalette.lua:105`, `/workspace_addons/PotionBar/source/Main.lua:189` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | CM_ClosetGoblin: ClosetGoblin.OnInitialize, Enemy: Enemy._TalismanAlerterEnabledChanged, Miracle Grow Remix: MiracleGrow2.Initialize, Pocket Palette: PP.Initialize, PotionBar: PotionBar.Initialize |
@@ -69,7 +69,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 

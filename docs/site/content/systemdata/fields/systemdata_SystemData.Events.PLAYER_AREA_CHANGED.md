@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePlayer.lua:45` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Effigy.RegisterStateInfoForPlayer, lua_call |

@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, RandomMount, Swift Assist |
-| Files seen in | `/workspace/AdvancedPetAssist/APACommands.lua:61`, `/workspace/RandomMount/RandomMount.lua:79`, `/workspace/swift-assist/SwiftAssist.lua:247` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APACommands.lua:61`, `/workspace_addons/RandomMount/RandomMount.lua:79`, `/workspace_addons/swift-assist/SwiftAssist.lua:247` |
 | Namespaces detected | EA_Window_Macro |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.CreateOrUpdateMacros, RandomMount: RandomMount.CreateMacro, Swift Assist: CreateMacro, Swift Assist: Swift Assist.local.CreateMacro |
@@ -75,11 +75,11 @@ Observed as a global function across 3 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

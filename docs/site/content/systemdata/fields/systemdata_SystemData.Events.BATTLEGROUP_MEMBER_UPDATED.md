@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,38 +11,37 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 176
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, Enemy, MegaphonePlusPlus, LibGroup, MegaphonePlusPlus |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/LibGroup/LibGroup.lua:119`, `/workspace/megaphoneplusplus-1.0.4/MegaphonePlusPlus.lua:115`, `/workspace/megaphoneplusplus-1.0.4/MegaphonePlusPlus.lua:150` |
+| Addons seen in | Enemy, LibGroup |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/LibGroup/LibGroup.lua:119` |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | Enemy.GroupsInitialize, Enemy.Groups_OnBattlegroupMemberUpdated, LibGroup.local.SetMode, Megaphone.GroupUpdate, Megaphone.Initialize, Megaphone.OnShutdown |
+| Source kinds | event_page, event_registration, lua_call |
+| Example locations | Enemy.GroupsInitialize, Enemy.Groups_OnBattlegroupMemberUpdated, LibGroup.local.SetMode, SetMode, SystemData.Events.BATTLEGROUP_MEMBER_UPDATED, event_page |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 1 |
+| Documentation references | 3 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,14 +61,12 @@
 
 ## Description
 
-Observed SystemData field used by 4 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - Enemy
-- Enemy, MegaphonePlusPlus
 - LibGroup
-- MegaphonePlusPlus
 
 ## Related APIs
 
@@ -89,4 +86,4 @@ Observed SystemData field used by 4 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: Enemy.GroupsInitialize, Enemy.Groups_OnBattlegroupMemberUpdated, LibGroup.local.SetMode, Megaphone.GroupUpdate, Megaphone.Initialize, Megaphone.OnShutdown
+- Observed in contexts: Enemy.GroupsInitialize, Enemy.Groups_OnBattlegroupMemberUpdated, LibGroup.local.SetMode, SetMode, SystemData.Events.BATTLEGROUP_MEMBER_UPDATED, event_page

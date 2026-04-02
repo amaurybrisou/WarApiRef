@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WhoHealedMe |
-| Files seen in | `/workspace/WhoHealedMe/WHMCommands.lua:437` |
+| Files seen in | `/workspace_addons/WhoHealedMe/WHMCommands.lua:405` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | WhoHealedMe: GetCurrentChannelCmd, WhoHealedMe: WhoHealedMe.local.GetCurrentChannelCmd |
@@ -74,11 +74,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

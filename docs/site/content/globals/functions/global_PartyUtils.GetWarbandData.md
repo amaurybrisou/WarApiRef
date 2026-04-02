@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, LibGroup, LibGuard, MegaphonePlusPlus, WarTriage, WhoHealedMe |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:281`, `/workspace/LibGroup/LibGroup.lua:660`, `/workspace/LibGuard/Source/LibGuard.lua:186`, `/workspace/WarTriage/WarTriage.lua:347`, `/workspace/WhoHealedMe/WHMCore.lua:197`, `/workspace/megaphoneplusplus-1.0.4/MegaphonePlusPlus.lua:330` |
+| Addons seen in | Enemy, LibGroup, LibGuard, WhoHealedMe |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:281`, `/workspace_addons/LibGroup/LibGroup.lua:660`, `/workspace_addons/LibGuard/Source/LibGuard.lua:186`, `/workspace_addons/WhoHealedMe/WHMCore.lua:201` |
 | Namespaces detected | PartyUtils |
 | Source kinds | globals, lua_calls |
-| Example locations | Enemy: Enemy._GroupsUpdate, LibGroup: GetWarbandData, LibGroup: LibGroup.local.GetWarbandData, LibGuard: LibGuard.GetIdFromName, MegaphonePlusPlus: Megaphone.FindLeader, WarTriage: WarTriage.GetFriendlyPlayers |
+| Example locations | Enemy: Enemy._GroupsUpdate, LibGroup: GetWarbandData, LibGroup: LibGroup.local.GetWarbandData, LibGuard: LibGuard.GetIdFromName, WhoHealedMe: WHMCore.IsHealerInPartyOrWarband |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -66,7 +66,7 @@ PartyUtils.GetWarbandData()
 
 ## Description
 
-Observed as a global function across 6 addons.
+Observed as a global function across 4 addons.
 
 ## Parameters
 
@@ -75,19 +75,17 @@ Observed as a global function across 6 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
 - Enemy
 - LibGroup
 - LibGuard
-- MegaphonePlusPlus
-- WarTriage
 - WhoHealedMe
 
 ## Examples
@@ -96,8 +94,7 @@ Observed as a global function across 6 addons.
 - LibGroup: GetWarbandData -> PartyUtils.GetWarbandData()
 - LibGroup: LibGroup.local.GetWarbandData -> PartyUtils.GetWarbandData()
 - LibGuard: LibGuard.GetIdFromName -> PartyUtils.GetWarbandData()
-- MegaphonePlusPlus: Megaphone.FindLeader -> PartyUtils.GetWarbandData()
-- WarTriage: WarTriage.GetFriendlyPlayers -> PartyUtils.GetWarbandData()
+- WhoHealedMe: WHMCore.IsHealerInPartyOrWarband -> PartyUtils.GetWarbandData()
 
 ## Related APIs
 
@@ -117,10 +114,9 @@ Observed as a global function across 6 addons.
 ## Affects
 
 - [GameData.GetScenarioPlayerGroups](global_GameData.GetScenarioPlayerGroups.md) (HIGH 100/100) - Global Function
-- [GameData.Player.hitPoints.current](../../gamedata/fields/gamedata_GameData.Player.hitPoints.current.md) (HIGH 100/100) - GameData Field
-- [GameData.Player.hitPoints.maximum](../../gamedata/fields/gamedata_GameData.Player.hitPoints.maximum.md) (HIGH 100/100) - GameData Field
 - [PartyUtils.GetPartyData](global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

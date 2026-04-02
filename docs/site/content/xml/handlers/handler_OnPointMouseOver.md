@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CMap, TurretRange |
-| Files seen in | `/workspace/TurrentRange/Display.xml:166`, `/workspace/cmap/CMap.xml:77`, `/workspace/cmap/CMap.xml:97` |
+| Files seen in | `/workspace_addons/TurrentRange/Display.xml:166`, `/workspace_addons/cmap/CMap.xml:77`, `/workspace_addons/cmap/CMap.xml:97` |
 | Namespaces detected | OnPointMouseOver |
 | Source kinds | bindings, xml_handlers |
 | Example locations | CMap: CMapWindowMapDisplay.OnPointMouseOver, CMap: CMapWindowWMap.OnPointMouseOver, TurretRange: TurretMapDisplay.OnPointMouseOver |
@@ -100,4 +100,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

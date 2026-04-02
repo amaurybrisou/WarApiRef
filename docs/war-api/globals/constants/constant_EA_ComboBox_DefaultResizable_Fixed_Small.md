@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | LoyalPet |
-| Files seen in | `/workspace/LoyalPet/gui/lpet_gui.xml:1001`, `/workspace/LoyalPet/gui/lpet_gui.xml:1014`, `/workspace/LoyalPet/gui/lpet_gui.xml:1055`, `/workspace/LoyalPet/gui/lpet_gui.xml:1068`, `/workspace/LoyalPet/gui/lpet_gui.xml:1081`, `/workspace/LoyalPet/gui/lpet_gui.xml:1109`, `/workspace/LoyalPet/gui/lpet_gui.xml:1122`, `/workspace/LoyalPet/gui/lpet_gui.xml:1135` |
+| Files seen in | `/workspace_addons/LoyalPet/gui/lpet_gui.xml:1001`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:1014`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:1055`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:1068`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:1081`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:1109`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:1122`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:1135` |
 | Namespaces detected | EA_ComboBox_DefaultResizable_Fixed_Small |
 | Source kinds | flows, xml_attributes |
 | Example locations | LPETOptionsAttackRangeCheckCombo, LPETOptionsAutoAttackCombo, LPETOptionsAutoDefendCombo, LPETOptionsAutoSwitchCombo, LPETOptionsBiteCombo, LPETOptionsBiteHealthCombo |

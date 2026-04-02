@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiModWindow |
-| Files seen in | `/workspace/ea_uimodwindow/Source/UiModWindow.xml:9` |
+| Files seen in | `/workspace_addons/ea_uimodwindow/Source/UiModWindow.xml:9` |
 | Namespaces detected | EA_Button_DefaultListRow |
 | Source kinds | xml_attributes |
 | Example locations | EA_Button_UiModuleListRowTemplate |

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, Pocket Palette |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:20`, `/workspace/PocketPalette/PocketPalette.xml:448` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:20`, `/workspace_addons/PocketPalette/PocketPalette.xml:448` |
 | Namespaces detected | EA_Button_ResizeIconFrame_NoNormalImage |
 | Source kinds | xml_attributes |
 | Example locations | AggroMeterGrayTemplateListboxRow, DyeListBoxRowTemplate |

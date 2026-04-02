@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Busted, EA_UiDebugTools, Miracle Grow Remix, MiracleGrow, Moth, Shinies |
-| Files seen in | `/workspace/Busted/Busted.lua:324`, `/workspace/MGRemix/MGRemix.lua:195`, `/workspace/MiracleGrow/MiracleGrow.lua:155`, `/workspace/Moth/Moth.lua:721`, `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:463`, `/workspace/Shinies/Source/Shinies.lua:169`, `/workspace/ea_uidebugtools/Source/bust/Busted.lua:331` |
+| Files seen in | `/workspace_addons/Busted/Busted.lua:324`, `/workspace_addons/MGRemix/MGRemix.lua:195`, `/workspace_addons/MiracleGrow/MiracleGrow.lua:155`, `/workspace_addons/Moth/Moth.lua:721`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:463`, `/workspace_addons/Shinies/Source/Shinies.lua:169`, `/workspace_addons/ea_uidebugtools/Source/bust/Busted.lua:331` |
 | Namespaces detected | WindowRegisterEventHandler |
 | Source kinds | lua_calls |
 | Example locations | Busted: Busted.Initialize, EA_UiDebugTools: Busted.Initialize, Miracle Grow Remix: MiracleGrow2.Initialize, MiracleGrow: MiracleGrow.enableAddon, Moth: Moth.Initialize, Shinies: LibStub:UpdateDefaultAuctionHouseDisable |

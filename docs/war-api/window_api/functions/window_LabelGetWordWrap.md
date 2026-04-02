@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/Ace/LibGUI.lua:451`, `/workspace/Effigy/LibGUI.lua:451`, `/workspace/GCDsaver/libs/LibGUI.lua:451`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:451`, `/workspace/Shinies/Libraries/LibGUI.lua:451`, `/workspace/WarTriage/libs/LibGUI.lua:451`, `/workspace/WoH-Reticle/libs/LibGUI.lua:451` |
+| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:451`, `/workspace_addons/Effigy/LibGUI.lua:451`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:451`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:451`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:451`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:451` |
 | Namespaces detected | LabelGetWordWrap |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Label:WordWrap, Effigy: LIBGUI_Label:WordWrap, GCDsaver: LIBGUI_Label:WordWrap, LibWBToggler: LIBGUI_Label:WordWrap, Shinies: LIBGUI_Label:WordWrap, WarTriage: LIBGUI_Label:WordWrap |
+| Example locations | Ace: LIBGUI_Label:WordWrap, Effigy: LIBGUI_Label:WordWrap, GCDsaver: LIBGUI_Label:WordWrap, LibWBToggler: LIBGUI_Label:WordWrap, Shinies: LIBGUI_Label:WordWrap, WoH-Reticle: LIBGUI_Label:WordWrap |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ LabelGetWordWrap(arg1)
 
 ## Description
 
-Observed as a window function across 7 addons.
+Observed as a window function across 6 addons.
 
 ## Parameters
 
@@ -88,7 +88,6 @@ Observed as a window function across 7 addons.
 - GCDsaver
 - LibWBToggler
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples
@@ -98,7 +97,7 @@ Observed as a window function across 7 addons.
 - GCDsaver: LIBGUI_Label:WordWrap -> LabelGetWordWrap(self.name)
 - LibWBToggler: LIBGUI_Label:WordWrap -> LabelGetWordWrap(self.name)
 - Shinies: LIBGUI_Label:WordWrap -> LabelGetWordWrap(self.name)
-- WarTriage: LIBGUI_Label:WordWrap -> LabelGetWordWrap(self.name)
+- WoH-Reticle: LIBGUI_Label:WordWrap -> LabelGetWordWrap(self.name)
 
 ## Related APIs
 

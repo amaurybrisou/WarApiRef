@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:315`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:177` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:315`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:177` |
 | Namespaces detected | MailWindow |
 | Source kinds | lua_calls |
 | Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickMail, AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickMail |

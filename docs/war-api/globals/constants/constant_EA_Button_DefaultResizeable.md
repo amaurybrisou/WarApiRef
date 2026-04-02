@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, AutoBand, BuffHead, CM_ClosetGoblin, DAoCBuff, DaemonAssist, EA_UiModWindow |
-| Files seen in | `/workspace/Aura/Source/Templates.xml:18`, `/workspace/Autoband/AutoBandWindowConfig.xml:379`, `/workspace/Autoband/AutoBandWindowConfig.xml:61`, `/workspace/Autoband/AutoBandWindowTemplate.xml:100`, `/workspace/Autoband/AutoBandWindowTemplate.xml:112`, `/workspace/Autoband/AutoBandWindowTemplate.xml:124`, `/workspace/Autoband/AutoBandWindowTemplate.xml:217`, `/workspace/Autoband/AutoBandWindowTemplate.xml:229` |
+| Addons seen in | AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, DaemonAssist, EA_UiModWindow, Enemy |
+| Files seen in | `/workspace_addons/Aura/Source/Templates.xml:18`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:124`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:200`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:216`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:230`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:102`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:88`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainers.xml:124` |
 | Namespaces detected | EA_Button_DefaultResizeable |
 | Source kinds | xml_attributes |
 | Example locations | AdvancedRenownTrainingExportWindowCancelButton, AdvancedRenownTrainingExportWindowHyperLinkButton, AdvancedRenownTrainingExportWindowWardrobeButton, AdvancedRenownTrainingImportNameInputWindowCancelButton, AdvancedRenownTrainingImportNameInputWindowOkButton, AdvancedRenownTrainingImportWindowCancelButton |
-| XML usage count | 175 |
-| XML attribute usage count | 175 |
+| XML usage count | 150 |
+| XML attribute usage count | 150 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,13 +57,12 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 34 addons.
+Observed engine XML template or inherited constant referenced by 29 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - BuffHead
 - CM_ClosetGoblin
 - DAoCBuff
@@ -74,19 +73,15 @@ Observed engine XML template or inherited constant referenced by 34 addons.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - ObjectInspector
 - Pocket Palette
-- Queue Queuer
 - QuickWarReport
 - RVAPI_ColorDialog
 - RVMOD_Manager
 - RandomMount
 - Shinies
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
 - WSCT
@@ -117,16 +112,6 @@ Observed engine XML template or inherited constant referenced by 34 addons.
 - AdvancedRenownTrainingWindowRespecializeButton
 - ApplyRowAlignButton
 - AuraWindowButton
-- AutoBandWindowConfigClearTemplateButton
-- AutoBandWindowConfigResetButton
-- AutoBandWindowTemplateApplyButton
-- AutoBandWindowTemplateDeleteButton
-- AutoBandWindowTemplateSaveButton
-- AutoBandWindowTemplateSaveCancelButton
-- AutoBandWindowTemplateSaveOKButton
-- AutoBandWindowToolsKickButton
-- AutoBandWindowToolsPrintButton
-- AutoBandWindowToolsResetButton
 - BuffHeadSetupAdvancedCompressionItemEffectWindowApplyButton
 - BuffHeadSetupAdvancedCompressionItemEffectWindowCreateButton
 - BuffHeadSetupAdvancedCompressionItemWindowAddButton
@@ -202,8 +187,6 @@ Observed engine XML template or inherited constant referenced by 34 addons.
 - MapMonster_FilterButton
 - MapPin_SetupAcceptButton
 - MapPin_SetupCancelButton
-- MegaphoneMainCloseButton
-- MegaphoneMainTestButton
 - MiracleGrow2PresetTemplateLayoutButton
 - MiracleGrow2PresetTemplateSettingsButton
 - ObjectInspectorClearButton
@@ -212,11 +195,6 @@ Observed engine XML template or inherited constant referenced by 34 addons.
 - OpenUiModWindowButton
 - PPMainCharacterWindowBtn
 - PPMainTogglePickerBtn
-- QueueQueuer_GUI_BlacklistAllButton
-- QueueQueuer_GUI_BlacklistNoneButton
-- QueueQueuer_GUI_JoinButton
-- QueueQueuer_GUI_LeaveButton
-- QueueQueuer_GUI_QueuerCheckButton
 - QuickWarReportConfirmAccept
 - QuickWarReportConfirmDecline
 - RVAPI_ColorDialogWindowButtonCancel
@@ -228,17 +206,9 @@ Observed engine XML template or inherited constant referenced by 34 addons.
 - Shinies_Default_Button_ClearMediumFont
 - Shinies_Default_Button_ClearSmallFont
 - TChatButton
-- TOLSettingsWindowPhraseEditWindowDeleteButton
-- TOLSettingsWindowPhraseEditWindowSaveButton
-- TOLSettingsWindowSkillEditWindowDeleteButton
-- TOLSettingsWindowSkillEditWindowEditPhrasesButton
-- TOLSettingsWindowSkillEditWindowSaveButton
 - TRollButton
 - TidyChatCopyNext
 - TidyChatCopyPrev
-- TidyQueueJoinSelected
-- TidyQueueSelectAll
-- TidyQueueSelectNone
 - ToggleLayoutButton
 - TurretRangeSetupDistanceWindowApplyButton
 - TurretRangeSetupDistanceWindowCreateButton

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 38 addons
+- Seen in: 35 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Effigy |
-| Files seen in | `/workspace/Ace/LibGUI.lua:249`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace/Aura/Source/Aura.lua:417`, `/workspace/Aura/Source/AuraHelpers.lua:33`, `/workspace/Aura/Source/AuraHelpers.lua:55` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:249`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace_addons/Aura/Source/Aura.lua:417`, `/workspace_addons/Aura/Source/AuraHelpers.lua:33`, `/workspace_addons/Aura/Source/AuraHelpers.lua:55` |
 | Namespaces detected | WindowSetTintColor |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Tint, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD, AdvancedPetAssist: APAGui.UpdatePetTargetHUD, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SelectAdvantage |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 276 |
-| Global usage count | 276 |
+| Lua usage count | 272 |
+| Global usage count | 272 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -78,7 +78,7 @@ Observed mutating runtime window state or presentation.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -105,7 +105,6 @@ Observed mutating runtime window state or presentation.
 - MiracleGrow
 - MoraleCircle
 - Moth
-- PeaceOut
 - Pocket Palette
 - PotionBar
 - QuickWarReport
@@ -117,9 +116,7 @@ Observed mutating runtime window state or presentation.
 - TidyChat
 - TidyRoll
 - TurretRange
-- Twister
 - WSCT
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - nRarity

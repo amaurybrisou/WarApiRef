@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer |
-| Files seen in | `/workspace/advancedrenowntrainer/AdvancedRenownTraining.lua:763` |
+| Files seen in | `/workspace_addons/advancedrenowntrainer/AdvancedRenownTraining.lua:763` |
 | Namespaces detected | GameData |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize |

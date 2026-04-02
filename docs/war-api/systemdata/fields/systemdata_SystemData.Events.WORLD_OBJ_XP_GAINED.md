@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WSCT |
-| Files seen in | `/workspace/wsct/wsct.lua:117`, `/workspace/wsct/wsct.lua:137` |
+| Files seen in | `/workspace_addons/wsct/wsct.lua:117`, `/workspace_addons/wsct/wsct.lua:137` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | EA_System_EventText.AddXpText, SystemData.Events.WORLD_OBJ_XP_GAINED, WSCT.WORLD_OBJ_XP_GAINED, WSCT:RegisterSelfEvents, WSCT:UnregisterSelfEvents, event_page |

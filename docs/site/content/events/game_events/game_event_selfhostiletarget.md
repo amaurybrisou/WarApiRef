@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStateTargets.lua:55` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateTargets.lua:55` |
 | Namespaces detected | selfhostiletarget |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Effigy: Effigy.RegisterStateInfoForTargets |
@@ -97,4 +97,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Notes
 
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

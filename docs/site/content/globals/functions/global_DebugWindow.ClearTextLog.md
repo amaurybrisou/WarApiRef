@@ -22,14 +22,14 @@
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Core/Main.lua:492`, `/workspace/Enemy/Code/Core/Utils.lua:588`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1392` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Main.lua:492`, `/workspace_addons/Enemy/Code/Core/Utils.lua:588`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1392` |
 | Namespaces detected | DebugWindow |
 | Source kinds | bindings, lua_calls, xml_handlers |
 | Example locations | EA_UiDebugTools: DebugWindowOptionsClearLogText.OnLButtonUp, Enemy: Enemy._DebugTest, Enemy: cls |
@@ -74,11 +74,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

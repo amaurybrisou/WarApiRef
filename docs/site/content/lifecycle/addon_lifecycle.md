@@ -2,7 +2,7 @@
 
 ## Manifest
 
-- Seen in addons: 94
+- Seen in addons: 77
 
 - Description: Addon manifests declare file load order and bootstrap hooks before Lua runtime logic begins.
 
@@ -23,7 +23,7 @@
 
 ## Initialize
 
-- Seen in addons: 92
+- Seen in addons: 75
 
 - Description: Initialization hooks create windows, hydrate settings, and bind runtime callbacks.
 
@@ -44,7 +44,7 @@
 
 ## Saved-Variables
 
-- Seen in addons: 67
+- Seen in addons: 57
 
 - Description: Saved-variable roots appear before normal runtime hooks and provide persistent addon state.
 
@@ -53,7 +53,6 @@
 - AdvancedPetAssist: APA_Settings
   - AdvancedRenownTrainer: AdvancedRenownTraining.Presets
   - AggroMeter: AggroMeter.Settings
-  - AutoBand: AutoBand.saved
   - BagOMatic: BagOMatic.saved
   - BankArkel: BankArkel.db
   - BuffHead: BuffHead.Settings
@@ -61,11 +60,12 @@
   - CM_ClosetGoblin: ClosetGoblin.settings
   - CMap: CMapWindow.Settings
   - CMap: CMapWindow.VisSettings
-  - Clock: ClockSettings
+  - CombatTextNames: CombatTextNames.RateLimiterSettings
+  - Crafting Info Tooltip: CraftValueTip.settings
 
 ## Xml
 
-- Seen in addons: 77
+- Seen in addons: 65
 
 - Description: XML windows, templates, and handlers become available as the UI layer is created.
 
@@ -86,7 +86,7 @@
 
 ## Runtime
 
-- Seen in addons: 66
+- Seen in addons: 54
 
 - Description: Runtime logic pivots into event-driven updates wired through shared event registration APIs.
 
@@ -107,7 +107,7 @@
 
 ## Update
 
-- Seen in addons: 39
+- Seen in addons: 34
 
 - Description: Optional update hooks provide repeated processing after initialization has completed.
 
@@ -116,19 +116,19 @@
 - AdvancedPetAssist: AdvancedPetAssist.OnUpdate
   - AggroMeter: AggroMeter.OnUpdate
   - Aura: AuraEngine.Event_UPDATE_PROCESSED
-  - AutoBand: AutoBand.update
   - AutoMark: AutoMark.OnUpdate
   - BagOMatic: BagOMatic.update
   - BuffHead: BuffHead.OnUpdate
   - Cheeseboard: Cheeseboard.OnUpdate
-  - Clock: Clock.OnUpdate
   - DAoCBuff: DAoCBuff.UpdateWindow
   - Enemy: Enemy.Update
   - GCDsaver: GCDsaver.OnUpdate
+  - GuardLine: GuardLine.update
+  - Killer: Killer.OnUpdate
 
 ## Shutdown
 
-- Seen in addons: 39
+- Seen in addons: 32
 
 - Description: Shutdown hooks unregister commands or handlers and persist addon-owned state.
 
@@ -144,5 +144,5 @@
   - Crafting Info Tooltip: CraftValueTip.ShutDown
   - DAoCBuff: DAoCBuff.Shutdown
   - DaemonAssist: DaemonAssist.Shutdown
-  - DeepSleep: DeepSleep.Shutdown
   - EA_ThreePartBar: ThreePartBar.Shutdown
+  - EA_UiDebugTools: DebugWindow.Shutdown

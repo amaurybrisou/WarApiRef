@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 45 addons
+- Seen in: 38 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, AutoMark, BankWindowFix |
-| Files seen in | `/workspace/Ace/LibGUI.lua:84`, `/workspace/AggroMeter/AggroMeter.lua:374`, `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:227`, `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:235`, `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:243`, `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:261`, `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:280` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:84`, `/workspace_addons/AggroMeter/AggroMeter.lua:374`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:227`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:235`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:243`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:261`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:280` |
 | Namespaces detected | WindowGetShowing |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Showing, AdvancedRenownTrainer: AdvancedRenownTraining.TogglePresets, AggroMeter: AggroMeter.Close, AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction, AnywhereTrainer: AnywhereTrainer.OnLeftClickBank, AnywhereTrainer: AnywhereTrainer.OnLeftClickCareer |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 305 |
-| Global usage count | 305 |
+| Lua usage count | 273 |
+| Global usage count | 273 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -75,11 +75,11 @@ Observed querying runtime window state or metadata.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -96,34 +96,27 @@ Observed querying runtime window state or metadata.
 - CombatTextNames
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - Effigy
 - Enemy
 - GCDsaver
-- GoldTracker
 - GuardLine
 - LibGroup
 - LibWBToggler
 - MapMonster
 - MapPin
 - Miracle Grow Remix
-- PeaceOut
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - RandomMount
 - RoR_SoR
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
 - WarBoard
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - nRarity
@@ -145,7 +138,6 @@ Observed querying runtime window state or metadata.
 ## Used With
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ButtonGetDisabledFlag](window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [DialogManager.MakeTextEntryDialog](../../globals/functions/global_DialogManager.MakeTextEntryDialog.md) (HIGH 100/100) - Global Function
 - [DialogManager.MakeTwoButtonDialog](../../globals/functions/global_DialogManager.MakeTwoButtonDialog.md) (HIGH 100/100) - Global Function
 - [EA_ChatWindow.InsertText](../../globals/functions/global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
@@ -158,15 +150,14 @@ Observed querying runtime window state or metadata.
 - [EA_Window_InteractionRenownTraining.Hide](../../globals/functions/global_EA_Window_InteractionRenownTraining.Hide.md) (HIGH 100/100) - Global Function
 - [EA_Window_InteractionRenownTraining.Show](../../globals/functions/global_EA_Window_InteractionRenownTraining.Show.md) (HIGH 100/100) - Global Function
 - [EA_Window_InteractionStore](../../globals/tables/table_EA_Window_InteractionStore.md) (HIGH 100/100) - Global Table
-- [EA_Window_ScenarioLobby.OnJoinInstanceWait](../../globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md) (HIGH 100/100) - Global Function
 - [EA_Window_WorldMap](../../globals/tables/table_EA_Window_WorldMap.md) (HIGH 100/100) - Global Table
 - [EA_Window_WorldMap.ShowZone](../../globals/functions/global_EA_Window_WorldMap.ShowZone.md) (HIGH 100/100) - Global Function
 - [GameData.ItemLocs.INVENTORY](../../gamedata/fields/gamedata_GameData.ItemLocs.INVENTORY.md) (HIGH 100/100) - GameData Field
 - [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
 - [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
 - [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field

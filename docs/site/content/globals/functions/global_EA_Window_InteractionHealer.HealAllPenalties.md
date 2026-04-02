@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | FastInteract, HealAll |
-| Files seen in | `/workspace/FastInteract/FastInteract.lua:30`, `/workspace/HealAll/HealAll.lua:8` |
+| Files seen in | `/workspace_addons/FastInteract/FastInteract.lua:30`, `/workspace_addons/HealAll/HealAll.lua:8` |
 | Namespaces detected | EA_Window_InteractionHealer |
 | Source kinds | lua_calls |
 | Example locations | FastInteract: FastInteract.HealAll, HealAll: HealAll.Heal |
@@ -74,11 +74,11 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

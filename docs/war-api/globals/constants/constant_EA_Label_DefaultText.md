@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AutoBand, JunkDump, LoyalPet, MapMonster, MapPin, PeaceOut, RVAPI_ColorDialog |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:1012`, `/workspace/AdvancedPetAssist/APAGui.xml:1034`, `/workspace/AdvancedPetAssist/APAGui.xml:1056`, `/workspace/AdvancedPetAssist/APAGui.xml:1068`, `/workspace/AdvancedPetAssist/APAGui.xml:1090`, `/workspace/AdvancedPetAssist/APAGui.xml:1102`, `/workspace/AdvancedPetAssist/APAGui.xml:1114`, `/workspace/AdvancedPetAssist/APAGui.xml:1126` |
+| Addons seen in | AdvancedPetAssist, JunkDump, LoyalPet, MapMonster, MapPin, RVAPI_ColorDialog, RVMOD_Manager, TidyChat |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1012`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1034`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1056`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1068`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1090`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1102`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1114`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1126` |
 | Namespaces detected | EA_Label_DefaultText |
 | Source kinds | xml_attributes |
 | Example locations | APAFollowTargetHUDLabel, APAInstantOnlyHUDLabel, APAKitingHUDLabel, APALabelAttackBind, APALabelAutoReattack, APALabelAutoReattackDelay |
-| XML usage count | 152 |
-| XML attribute usage count | 152 |
+| XML usage count | 139 |
+| XML attribute usage count | 139 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,20 +57,17 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 14 addons.
+Observed engine XML template or inherited constant referenced by 11 addons.
 
 ## Seen In
 
 - AdvancedPetAssist
-- AutoBand
 - JunkDump
 - LoyalPet
 - MapMonster
 - MapPin
-- PeaceOut
 - RVAPI_ColorDialog
 - RVMOD_Manager
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
 - WSCT
@@ -141,16 +138,6 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 - APALabelStance
 - APAPetTargetHUDHP
 - APAPetTargetHUDName
-- AutoBandWindowConfigAutoKickLabel
-- AutoBandWindowConfigAutoKickToofarLabel
-- AutoBandWindowConfigComboBoxLabel
-- AutoBandWindowConfigDefaultLabel
-- AutoBandWindowConfigKickTimeLabel
-- AutoBandWindowConfigMapIconLabel
-- AutoBandWindowConfigRankReqLabel
-- AutoBandWindowTemplateComboBoxLabel
-- AutoBandWindowTemplateSaveNameLabel
-- AutoBandWindowToolsKickLabel
 - JunkDumpOptionsWinFriendsName
 - LPETOptionsAbilityHealthLabel
 - LPETOptionsAbilityModeLabel
@@ -205,7 +192,6 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 - MapPin_SetupRotateFactorValue
 - MapPin_SetupScaleFactorLabel
 - MapPin_SetupScaleFactorValue
-- PeaceOutDisplay
 - RVAPI_ColorDialogEditBoxTemplateLabel
 - RVAPI_ColorDialogEditBoxTemplateMetrics
 - RVAPI_ColorDialogSliderTemplateEdit
@@ -215,8 +201,6 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 - RVMOD_ManagerSettingsWindowLabelFadeInOutDelay
 - RVMOD_ManagerSettingsWindowLabelUseGlobalScale
 - RVMOD_ManagerSettingsWindowLabelZoomInOutDelay
-- TOLSettingsWindowPhraseEditWindowTitleLabel
-- TOLSettingsWindowSkillEditWindowTitleLabel
 - TRollAutoRollTitleLabel
 - TidyChatOptionsTitleLabel
 - TidyChatOptionsVersionLabel

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainerAdditions, BankWindowFix |
-| Files seen in | `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace/BankWindowFix/Source/BankWindowFix.lua:30` |
+| Files seen in | `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:30` |
 | Namespaces detected | BankWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown, BankWindowFix: BankWindowFix.BankEquipmentRButtonDown |
@@ -73,11 +73,11 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

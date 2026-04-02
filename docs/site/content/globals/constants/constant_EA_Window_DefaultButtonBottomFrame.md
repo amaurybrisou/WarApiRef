@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, AutoBand, EA_UiDebugTools, EA_UiModWindow, Enemy, MegaphonePlusPlus, PotionBar, Queue Queuer |
-| Files seen in | `/workspace/Aura/Source/AuraSettings.xml:93`, `/workspace/Aura/Source/AuraShares.xml:169`, `/workspace/Aura/Source/AuraShares.xml:35`, `/workspace/Autoband/AutoBandWindowConfig.xml:360`, `/workspace/Autoband/AutoBandWindowTemplate.xml:210`, `/workspace/Autoband/AutoBandWindowTemplate.xml:93`, `/workspace/Autoband/AutoBandWindowTools.xml:146`, `/workspace/Enemy/Code/Core/Common.xml:140` |
+| Addons seen in | Aura, EA_UiDebugTools, EA_UiModWindow, Enemy, PotionBar, TidyChat, wbLeadHelper |
+| Files seen in | `/workspace_addons/Aura/Source/AuraSettings.xml:93`, `/workspace_addons/Aura/Source/AuraShares.xml:169`, `/workspace_addons/Aura/Source/AuraShares.xml:35`, `/workspace_addons/Enemy/Code/Core/Common.xml:140`, `/workspace_addons/Enemy/Code/Core/ConfigDialog.xml:69`, `/workspace_addons/Enemy/Code/Core/Groups/EffectFilterDialog.xml:272`, `/workspace_addons/Enemy/Code/Intercom/ChooseChannelDialog.xml:74`, `/workspace_addons/Enemy/Code/Intercom/IntercomDialog.xml:238` |
 | Namespaces detected | EA_Window_DefaultButtonBottomFrame |
 | Source kinds | xml_attributes |
-| Example locations | AuraSettingsButtonBackground, AuraSharesButtonBackground, AuraSharesImportExportButtonBackground, AutoBandWindowConfigButtonBar, AutoBandWindowTemplateButtonBar, AutoBandWindowTemplateSaveButtonBar |
-| XML usage count | 29 |
-| XML attribute usage count | 29 |
+| Example locations | AuraSettingsButtonBackground, AuraSharesButtonBackground, AuraSharesImportExportButtonBackground, DebugWindowButtonBackground, EnemyChooseChannelDialogButtonBackground, EnemyClickCastingDialogButtonBackground |
+| XML usage count | 23 |
+| XML attribute usage count | 23 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,18 +57,15 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 10 addons.
+Observed engine XML template or inherited constant referenced by 7 addons.
 
 ## Seen In
 
 - Aura
-- AutoBand
 - EA_UiDebugTools
 - EA_UiModWindow
 - Enemy
-- MegaphonePlusPlus
 - PotionBar
-- Queue Queuer
 - TidyChat
 - wbLeadHelper
 
@@ -77,10 +74,6 @@ Observed engine XML template or inherited constant referenced by 10 addons.
 - AuraSettingsButtonBackground
 - AuraSharesButtonBackground
 - AuraSharesImportExportButtonBackground
-- AutoBandWindowConfigButtonBar
-- AutoBandWindowTemplateButtonBar
-- AutoBandWindowTemplateSaveButtonBar
-- AutoBandWindowToolsButtonBar
 - DebugWindowButtonBackground
 - EnemyChooseChannelDialogButtonBackground
 - EnemyClickCastingDialogButtonBackground
@@ -92,10 +85,8 @@ Observed engine XML template or inherited constant referenced by 10 addons.
 - EnemyMarkConfigDialogButtonBackground
 - EnemyTextEntryDialogButtonBackground
 - EnemyUnitFramePartDialogButtonBackground
-- MegaphoneMainButtonBackground
 - PotionBarAboutButtonBackground
 - PotionBarTypeTemplateButtonBackground
-- QueueQueuer_GUI_ButtonBackground
 - TidyChatCopyButtonBackground
 - UiModAdvancedWindowButtonBackground
 - UiModVersionMismatchWindowButtonBackground

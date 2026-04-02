@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoBand, BankArkel, BuffHead, CM_ClosetGoblin |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:114`, `/workspace/AggroMeter/AggroMeter.xml:84`, `/workspace/Aura/Source/AuraConfig.xml:37`, `/workspace/Aura/Source/AuraSettings.xml:87`, `/workspace/Aura/Source/AuraShares.xml:162`, `/workspace/Aura/Source/AuraShares.xml:29`, `/workspace/Aura/Source/AuraTexture.xml:106`, `/workspace/Autoband/AutoBandWindow.xml:29` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, CM_ClosetGoblin, Cheeseboard |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:114`, `/workspace_addons/AggroMeter/AggroMeter.xml:84`, `/workspace_addons/Aura/Source/AuraConfig.xml:37`, `/workspace_addons/Aura/Source/AuraSettings.xml:87`, `/workspace_addons/Aura/Source/AuraShares.xml:162`, `/workspace_addons/Aura/Source/AuraShares.xml:29`, `/workspace_addons/Aura/Source/AuraTexture.xml:106`, `/workspace_addons/BankArkel/BankArkel.xml:244` |
 | Namespaces detected | EA_Button_DefaultWindowClose |
 | Source kinds | xml_attributes |
 | Example locations | APAOptionsClose, AdvancedRenownTrainingLinkWindowClose, AdvancedRenownTrainingWindowClose, AggroMeterGrayWindowClose, AuraConfigClose, AuraSettingsClose |
-| XML usage count | 111 |
-| XML attribute usage count | 111 |
+| XML usage count | 106 |
+| XML attribute usage count | 106 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 43 addons.
+Observed engine XML template or inherited constant referenced by 38 addons.
 
 ## Seen In
 
@@ -65,14 +65,12 @@ Observed engine XML template or inherited constant referenced by 43 addons.
 - AdvancedRenownTrainer
 - AggroMeter
 - Aura
-- AutoBand
 - BankArkel
 - BuffHead
 - CM_ClosetGoblin
 - Cheeseboard
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_UiModWindow
 - Enemy
 - FastInteract
@@ -83,11 +81,9 @@ Observed engine XML template or inherited constant referenced by 43 addons.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - ObjectInspector
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
 - RVMOD_Manager
@@ -95,7 +91,6 @@ Observed engine XML template or inherited constant referenced by 43 addons.
 - RoR_SoR
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
 - TurretRange
@@ -116,8 +111,6 @@ Observed engine XML template or inherited constant referenced by 43 addons.
 - AuraSharesClose
 - AuraSharesImportExportClose
 - AuraTextureClose
-- AutoBandWindowClose
-- AutoBandWindowTemplateSaveClose
 - BuffHeadSetupAdvancedCompressionItemEffectWindowClose
 - BuffHeadSetupAdvancedCompressionItemWindowClose
 - BuffHeadSetupAdvancedCompressionWindowClose
@@ -144,7 +137,6 @@ Observed engine XML template or inherited constant referenced by 43 addons.
 - DAoCBuffMessageWindowClose
 - DAoCBuff_SettingsClose
 - DaemonAssistWindowClose
-- DeepSleep_SettingsClose
 - EA_Window_MacroClose
 - EnemyChooseChannelDialogClose
 - EnemyChooseIconDialogClose
@@ -175,13 +167,11 @@ Observed engine XML template or inherited constant referenced by 43 addons.
 - MapMonster_PinTypeEditorWindowClose
 - MapPinChooseIconDialogClose
 - MapPin_SetupClose
-- MegaphoneMainClose
 - ObjectInspectorClose
 - PPMainClose
 - PackWinClose
 - PotionBarAboutClose
 - PotionBarTypeTemplateClose
-- QueueQueuer_GUIClose
 - QuickTacticSwitchWindowClose
 - QuickWarReportConfirmClose
 - RVMOD_ManagerWindowClose
@@ -190,7 +180,6 @@ Observed engine XML template or inherited constant referenced by 43 addons.
 - RoR_SoR_OpacityClose
 - RoR_SoR_ScaleClose
 - ShiniesWindowClose
-- TOLSettingsMainWindowClose
 - TRollAutoRollCloseButton
 - TexturedButtonsSetupActionbarWindowClose
 - TexturedButtonsSetupAdvancedTexturesWindowClose
@@ -215,6 +204,7 @@ Observed engine XML template or inherited constant referenced by 43 addons.
 - WSCTOptionsColorPickerWindowClose
 - WarBoardOptionsClose
 - WbLeadHelperMessageClose
+- WhoHealedMeDetailsClose
 - WhoHealedMeOptionsClose
 - wbLeadHelperChooseIconDialogClose
 - wbLeadHelperConfigWindowClose

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 13 addons
+- Seen in: 12 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BuffHead, Effigy, Enemy, GCDsaver, LibWBToggler, Miracle Grow Remix, PotionBar |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1304`, `/workspace/BuffHead/Setup/SetupLayoutProperties.lua:117`, `/workspace/Effigy/LibGUI.lua:1301`, `/workspace/Effigy/Textures/TextureManager.lua:125`, `/workspace/Effigy/Textures/TextureManager.lua:64`, `/workspace/Enemy/Code/UnitFrames/Parts/CareerIcon.lua:13`, `/workspace/Enemy/Code/UnitFrames/UnitFramePart.lua:393`, `/workspace/Enemy/Code/UnitFrames/UnitFramePart.lua:407` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1304`, `/workspace_addons/BuffHead/Setup/SetupLayoutProperties.lua:117`, `/workspace_addons/Effigy/LibGUI.lua:1301`, `/workspace_addons/Effigy/Textures/TextureManager.lua:125`, `/workspace_addons/Effigy/Textures/TextureManager.lua:64`, `/workspace_addons/Enemy/Code/UnitFrames/Parts/CareerIcon.lua:13`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFramePart.lua:393`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFramePart.lua:407` |
 | Namespaces detected | DynamicImageSetTextureDimensions |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Image:TexDims, BuffHead: BuffHead.local.SetTextureButton, BuffHead: SetTextureButton, Effigy: Effigy.TextureManager.SetTexture, Effigy: Effigy.TextureManager.SetTextureFill, Effigy: LIBGUI_Image:TexDims |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 31 |
-| Global usage count | 31 |
+| Lua usage count | 30 |
+| Global usage count | 30 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -77,7 +77,7 @@ Observed mutating runtime image resources on existing controls.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -96,7 +96,6 @@ Observed mutating runtime image resources on existing controls.
 - Shinies
 - TexturedButtons
 - WSCT
-- WarTriage
 - WoH-Reticle
 
 ## Examples

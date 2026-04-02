@@ -30,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, Enemy, GCDsaver, MapMonster, MegaphonePlusPlus, PeaceOut, PetFixWindow, RoR_SoR |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Enemy/Code/Core/Main.lua:4`, `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace/PeaceOut/PeaceOut.lua:39`, `/workspace/PetFixWindow/PetFixWindow.lua:3`, `/workspace/RoR_SoR/RoR_SoR.lua:178`, `/workspace/megaphoneplusplus-1.0.4/MegaphonePlusPlus.lua:115` |
+| Addons seen in | DAoCBuff, Enemy, GCDsaver, MapMonster, PetFixWindow, RoR_SoR |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Enemy/Code/Core/Main.lua:4`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace_addons/PetFixWindow/PetFixWindow.lua:3`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:178` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | DAoCBuff: DAoCBuff.Initialize, Enemy: Enemy.Initialize, GCDsaver: GCDsaver.RegisterEvents, MapMonster: MapMonster.InitializePlayer, MegaphonePlusPlus: Megaphone.Initialize, PeaceOut: PeaceOut.Init |
+| Example locations | DAoCBuff: DAoCBuff.Initialize, Enemy: Enemy.Initialize, GCDsaver: GCDsaver.RegisterEvents, MapMonster: MapMonster.InitializePlayer, PetFixWindow: PetFixWindow.onInit, RoR_SoR: RoR_SoR:RegisterSelfEvents |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 7 |
+| Initialization flow references | 5 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 8 addons.
+Observed as a shared SystemData runtime event used by 6 addons.
 
 ## Handler Pattern
 
@@ -77,8 +77,6 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - Enemy
 - GCDsaver
 - MapMonster
-- MegaphonePlusPlus
-- PeaceOut
 - PetFixWindow
 - RoR_SoR
 
@@ -88,8 +86,6 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - Enemy._Initialize
 - GCDsaver.INTERFACE_RELOADED
 - MapMonster.OnLoadingEnd
-- Megaphone.GroupUpdate
-- PeaceOut.DelayInit
 - PetFixWindow.PetFixes
 - RegisterEventHandler
 - RoR_SoR.Enable
@@ -101,8 +97,8 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - Enemy: Enemy.Initialize -> SystemData.Events.INTERFACE_RELOADED -> Enemy._Initialize
 - GCDsaver: GCDsaver.RegisterEvents -> SystemData.Events.INTERFACE_RELOADED -> GCDsaver.INTERFACE_RELOADED
 - MapMonster: MapMonster.InitializePlayer -> SystemData.Events.INTERFACE_RELOADED -> MapMonster.OnLoadingEnd
-- MegaphonePlusPlus: Megaphone.Initialize -> SystemData.Events.INTERFACE_RELOADED -> Megaphone.GroupUpdate
-- PeaceOut: PeaceOut.Init -> SystemData.Events.INTERFACE_RELOADED -> PeaceOut.DelayInit
+- PetFixWindow: PetFixWindow.onInit -> SystemData.Events.INTERFACE_RELOADED -> PetFixWindow.PetFixes
+- RoR_SoR: RoR_SoR:RegisterSelfEvents -> SystemData.Events.INTERFACE_RELOADED -> RoR_SoR.Enable
 
 ## Related APIs
 

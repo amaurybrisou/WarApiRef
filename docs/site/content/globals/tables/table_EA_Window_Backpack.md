@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic, BankArkel, BankWindowFix, JunkDump, Killer, Miracle Grow Remix, NPC Item Sale Price, Shinies |
-| Files seen in | `/workspace/BankArkel/BankArkel.lua:371`, `/workspace/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace/JunkDump/JunkDump.lua:618`, `/workspace/Killer/KillerRenown.lua:108`, `/workspace/Killer/KillerRenown.lua:127`, `/workspace/MGRemix/MGRemix.lua:996`, `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:298`, `/workspace/nisp/Source/Nisp.lua:174` |
+| Files seen in | `/workspace_addons/BankArkel/BankArkel.lua:371`, `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace_addons/JunkDump/JunkDump.lua:618`, `/workspace_addons/Killer/KillerRenown.lua:108`, `/workspace_addons/Killer/KillerRenown.lua:127`, `/workspace_addons/MGRemix/MGRemix.lua:996`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:298`, `/workspace_addons/nisp/Source/Nisp.lua:174` |
 | Namespaces detected | EA_Window_Backpack |
 | Source kinds | globals, lua_calls |
 | Example locations | BankArkel: BankArkel.UpdateData, BankWindowFix: BankWindowFix.BagEquipmentRButtonUp, JunkDump: JunkDump.SetTestModeTint, Killer: Killer.CaptureInitialWarCrests, Killer: Killer.OnCurrencyUpdated, Miracle Grow Remix: MiracleGrow2.GetCursorForBackpack |
@@ -101,6 +101,7 @@ Observed shared global table or namespace surfaced in 9 addons.
 - [DialogManager.MakeOneButtonDialog](../functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
 - [EA_ChatWindow.Print](../functions/global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
 - [LibSlash.IsSlashCmdRegistered](../functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
+- [LibSlash.RegisterSlashCmd](../functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [LibSlash.RegisterWSlashCmd](../functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
 - [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function

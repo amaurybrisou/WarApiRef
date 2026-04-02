@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 33 addons
+- Seen in: 30 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, Aura, BuffHead, CM_ClosetGoblin, Crafting Info Tooltip, DAoCBuff |
-| Files seen in | `/workspace/Ace/LibGUI.lua:761`, `/workspace/Ace/LibGUI.lua:831`, `/workspace/AggroMeter/AggroMeter.lua:426`, `/workspace/AggroMeter/AggroMeter.lua:5`, `/workspace/Aura/Source/AuraShares.lua:365`, `/workspace/Aura/Source/AuraShares.lua:372`, `/workspace/Aura/Source/AuraShares.lua:68`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:761`, `/workspace_addons/Ace/LibGUI.lua:831`, `/workspace_addons/AggroMeter/AggroMeter.lua:426`, `/workspace_addons/AggroMeter/AggroMeter.lua:5`, `/workspace_addons/Aura/Source/AuraShares.lua:365`, `/workspace_addons/Aura/Source/AuraShares.lua:372`, `/workspace_addons/Aura/Source/AuraShares.lua:68`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283` |
 | Namespaces detected | ButtonSetPressedFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Checkbox:SetValue, Ace: LIBGUI_Optionbutton:SetValue, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SetLabels, AdvancedRenownTrainer: AdvancedRenownTraining.ChangeTab, AdvancedRenownTrainer: AdvancedRenownTraining.OnButtonPressedActiveTab, AdvancedRenownTrainer: AdvancedRenownTraining.OnButtonPressedAdvancedTab |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 480 |
-| Global usage count | 480 |
+| Lua usage count | 471 |
+| Global usage count | 471 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,7 +76,7 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -101,7 +101,6 @@ Observed mutating button text or pressed state on existing controls.
 - LibWBToggler
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - Pocket Palette
 - PotionBar
@@ -109,11 +108,9 @@ Observed mutating button text or pressed state on existing controls.
 - Shinies
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
 - WSCT
-- WarTriage
 - WoH-Reticle
 - nRarity
 - wbLeadHelper

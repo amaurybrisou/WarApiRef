@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | PotionBar |
-| Files seen in | `/workspace/PotionBar/source/Main.lua:189` |
+| Files seen in | `/workspace_addons/PotionBar/source/Main.lua:189` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | PotionBar: PotionBar.Initialize |

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -31,18 +31,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CombatTextNames, CombatTextNames, Effigy, RetAlert, WSCT, Effigy, LoyalPet, RetAlert, WSCT |
-| Files seen in | `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/LoyalPet/LoyalPet.lua:134`, `/workspace/LoyalPet/LoyalPet.lua:203`, `/workspace/RetAlert/Source/RetAlert.lua:49`, `/workspace/RetAlert/Source/RetAlert.lua:61`, `/workspace/combattextnames/cmd.lua:49`, `/workspace/combattextnames/cmd.lua:55`, `/workspace/wsct/wsct.lua:117` |
+| Addons seen in | CombatTextNames, CombatTextNames, Effigy, WSCT, Effigy, LoyalPet, WSCT |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace_addons/LoyalPet/LoyalPet.lua:134`, `/workspace_addons/LoyalPet/LoyalPet.lua:203`, `/workspace_addons/combattextnames/cmd.lua:49`, `/workspace_addons/combattextnames/cmd.lua:55`, `/workspace_addons/wsct/wsct.lua:117`, `/workspace_addons/wsct/wsct.lua:137` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | CombatTextNames.Disable, CombatTextNames.Enable, EA_System_EventText.AddCombatEventText, Effigy.Name..".OnWorldObjCombatEvent", Effigy.RegisterStateInfoForCastbar, LPET.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 21 |
-| Global usage count | 21 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 3 |
+| Initialization flow references | 2 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,15 +62,14 @@
 
 ## Description
 
-Observed SystemData field used by 6 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - CombatTextNames
-- CombatTextNames, Effigy, RetAlert, WSCT
+- CombatTextNames, Effigy, WSCT
 - Effigy
 - LoyalPet
-- RetAlert
 - WSCT
 
 ## Related APIs

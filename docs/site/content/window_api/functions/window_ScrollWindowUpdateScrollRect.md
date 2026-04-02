@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff, Enemy, Killer, Miracle Grow Remix, RVMOD_Manager, Shinies, wbLeadHelper |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuff.lua:752`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:1422`, `/workspace/Enemy/Code/GroupIcons/GroupIcons.lua:522`, `/workspace/Enemy/Code/Guard/Guard.lua:562`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:182`, `/workspace/Enemy/Code/Timer/Timer.lua:275`, `/workspace/Enemy/Code/UnitFrames/ClickCasting.lua:202`, `/workspace/Enemy/Code/UnitFrames/EffectsIndicator.lua:613` |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:752`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:1422`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcons.lua:522`, `/workspace_addons/Enemy/Code/Guard/Guard.lua:562`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:182`, `/workspace_addons/Enemy/Code/Timer/Timer.lua:275`, `/workspace_addons/Enemy/Code/UnitFrames/ClickCasting.lua:202`, `/workspace_addons/Enemy/Code/UnitFrames/EffectsIndicator.lua:613` |
 | Namespaces detected | ScrollWindowUpdateScrollRect |
 | Source kinds | lua_calls |
 | Example locations | DAoCBuff: DAoCBuff.ShowMessageWindow, Enemy: Enemy.CombatLogUI_ConfigDialog_OnInitialize, Enemy: Enemy.GroupIconsUI_ConfigDialog_OnInitialize, Enemy: Enemy.GuardUI_ConfigDialog_OnInitialize, Enemy: Enemy.TalismanAlerterUI_ConfigDialog_OnInitialize, Enemy: Enemy.TimerUI_ConfigDialog_OnInitialize |
@@ -75,11 +75,11 @@ Observed as a window function across 7 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

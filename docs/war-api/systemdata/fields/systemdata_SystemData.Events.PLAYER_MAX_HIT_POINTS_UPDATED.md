@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Enemy |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Effigy.RegisterStateInfoForPlayer, Enemy.GroupsInitialize, Enemy.Groups_OnCurrentPlayerUpdated, SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED, event_page, event_registration |

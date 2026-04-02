@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePlayer.lua:244`, `/workspace/Effigy/States/EffigyStatePlayer.lua:320`, `/workspace/Effigy/States/EffigyStatePlayer.lua:332`, `/workspace/Effigy/States/EffigyStatePlayer.lua:364`, `/workspace/Effigy/States/EffigyStateTargets.lua:325` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:244`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:320`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:332`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:364`, `/workspace_addons/Effigy/States/EffigyStateTargets.lua:325` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Effigy.UpdateExp, Effigy.UpdatePlayerHP, Effigy.UpdatePlayerLevel, Effigy.UpdateRestedExp, Effigy.UpdateTarget, lua_call |

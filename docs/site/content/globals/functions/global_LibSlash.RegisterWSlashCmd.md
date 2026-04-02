@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, Crafting Info Tooltip, JunkDump, TidyChat, TidyRoll, TurretRange |
-| Files seen in | `/workspace/BuffHead/Core.lua:79`, `/workspace/CraftValueTip/CraftValueTip.lua:33`, `/workspace/JunkDump/JunkDump.lua:50`, `/workspace/TidyChat/TidyChat.lua:189`, `/workspace/TidyRoll/TidyRoll.lua:265`, `/workspace/TurrentRange/Core.lua:41` |
+| Files seen in | `/workspace_addons/BuffHead/Core.lua:79`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:33`, `/workspace_addons/JunkDump/JunkDump.lua:50`, `/workspace_addons/TidyChat/TidyChat.lua:189`, `/workspace_addons/TidyRoll/TidyRoll.lua:265`, `/workspace_addons/TurrentRange/Core.lua:41` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
 | Example locations | BuffHead: BuffHead.local.RegisterLibs, BuffHead: RegisterLibs, Crafting Info Tooltip: CraftValueTip.Initialize, JunkDump: JunkDump.Initialize, TidyChat: TidyChat.OnLoad, TidyRoll: TidyRoll.OnLoad |
@@ -77,7 +77,7 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -110,6 +110,8 @@ Observed wiring slash commands through a shared command-registration table.
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
 - [LibSlash.IsSlashCmdRegistered](global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
+- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
 - [SystemData.Settings.Language.active](../../systemdata/fields/systemdata_SystemData.Settings.Language.active.md) (HIGH 100/100) - SystemData Field
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
@@ -129,3 +131,4 @@ Observed wiring slash commands through a shared command-registration table.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

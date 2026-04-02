@@ -24,24 +24,24 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CM_ClosetGoblin, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster, MegaphonePlusPlus, Shinies |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblin.lua:1218`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/Killer/KillerLifecycle.lua:4`, `/workspace/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace/MapMonster/Source/MapMonster_Player.lua:72` |
+| Addons seen in | CM_ClosetGoblin, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster, Shinies |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1283`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/Killer/KillerLifecycle.lua:4`, `/workspace_addons/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | CM_ClosetGoblin: ClosetGoblin.ZoneChangeInit, Enemy: Enemy.GroupsInitialize, Enemy: Enemy._GroupIconsEnabledChanged, Enemy: Enemy._TalismanAlerterEnabledChanged, GCDsaver: GCDsaver.RegisterEvents, Killer: Killer.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 5 |
+| Initialization flow references | 4 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 8 addons.
+Observed as a shared SystemData runtime event used by 7 addons.
 
 ## Handler Pattern
 
@@ -69,7 +69,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 
@@ -79,7 +79,6 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - Killer
 - LibWBToggler
 - MapMonster
-- MegaphonePlusPlus
 - Shinies
 
 ## Registrars And Handlers
@@ -92,7 +91,6 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - Killer.OnZoneChanged
 - LibWBTogglerManager.CheckMods
 - MapMonster.OnPlayerZoneChanged
-- Megaphone.Refresh
 - RegisterEventHandler
 - ShiniesAPI.Core_OnPlayerZoneChanged
 - global

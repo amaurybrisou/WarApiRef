@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, Aura, BankArkel, Enemy, Miracle Grow Remix, Shinies, TidyChat, wbLeadHelper |
-| Files seen in | `/workspace/Aura/Source/AuraShares.lua:419`, `/workspace/BankArkel/BankArkel.lua:85`, `/workspace/BankArkel/BankArkel.lua:95`, `/workspace/Enemy/Code/Core/Groups/EnemyEffectFilter.lua:673`, `/workspace/Enemy/Code/UnitFrames/ClickCasting.lua:441`, `/workspace/Enemy/Code/UnitFrames/EffectsIndicator.lua:1111`, `/workspace/Enemy/Code/UnitFrames/UnitFramePart.lua:1006`, `/workspace/MGRemix/MGRemix.lua:492` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraShares.lua:419`, `/workspace_addons/BankArkel/BankArkel.lua:85`, `/workspace_addons/BankArkel/BankArkel.lua:95`, `/workspace_addons/Enemy/Code/Core/Groups/EnemyEffectFilter.lua:673`, `/workspace_addons/Enemy/Code/UnitFrames/ClickCasting.lua:441`, `/workspace_addons/Enemy/Code/UnitFrames/EffectsIndicator.lua:1111`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFramePart.lua:1006`, `/workspace_addons/MGRemix/MGRemix.lua:492` |
 | Namespaces detected | DialogManager |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize, Aura: AuraShares.OnImportExportOkButton, BankArkel: BankArkel.ConvertDB, BankArkel: BankArkel.Init, Enemy: Enemy.GroupsUI_EffectFilterDialog_Ok, Enemy: Enemy.UnitFramesUI_EffectsIndicatorDialog_Ok |

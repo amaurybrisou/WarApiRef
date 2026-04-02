@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapPin |
-| Files seen in | `/workspace/MapPin/source/MapPin.xml:343`, `/workspace/MapPin/source/MapPin.xml:407` |
+| Files seen in | `/workspace_addons/MapPin/source/MapPin.xml:343`, `/workspace_addons/MapPin/source/MapPin.xml:407` |
 | Namespaces detected | OnSetMoving |
 | Source kinds | bindings, xml_handlers |
 | Example locations | MapPin: MapPinWBMarker.OnSetMoving, MapPin: MapPinWBMarker_NoBG.OnSetMoving |
@@ -94,4 +94,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

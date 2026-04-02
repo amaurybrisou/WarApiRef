@@ -287,400 +287,376 @@
             "order": 46
           },
           {
-            "label": "EA_Window_ScenarioLobby.OnJoinInstanceWait",
-            "type": "function",
-            "path": "globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md",
-            "order": 47
-          },
-          {
             "label": "EA_Window_WorldMap.SetMap",
             "type": "function",
             "path": "globals/functions/global_EA_Window_WorldMap.SetMap.md",
-            "order": 48
+            "order": 47
           },
           {
             "label": "EA_Window_WorldMap.ShowZone",
             "type": "function",
             "path": "globals/functions/global_EA_Window_WorldMap.ShowZone.md",
-            "order": 49
+            "order": 48
           },
           {
             "label": "GameData.GetScenarioPlayerGroups",
             "type": "function",
             "path": "globals/functions/global_GameData.GetScenarioPlayerGroups.md",
-            "order": 50
+            "order": 49
           },
           {
             "label": "GameData.GetScenarioPlayers",
             "type": "function",
             "path": "globals/functions/global_GameData.GetScenarioPlayers.md",
-            "order": 51
+            "order": 50
           },
           {
             "label": "GameData.Player.GetAdvanceData",
             "type": "function",
             "path": "globals/functions/global_GameData.Player.GetAdvanceData.md",
-            "order": 52
+            "order": 51
           },
           {
             "label": "GameData.Player.GetRenownRefundCost",
             "type": "function",
             "path": "globals/functions/global_GameData.Player.GetRenownRefundCost.md",
-            "order": 53
+            "order": 52
           },
           {
             "label": "Icons.GetCareerIconIDFromCareerLine",
             "type": "function",
             "path": "globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md",
-            "order": 54
+            "order": 53
           },
           {
             "label": "InterfaceCore.GetResolutionScale",
             "type": "function",
             "path": "globals/functions/global_InterfaceCore.GetResolutionScale.md",
-            "order": 55
+            "order": 54
           },
           {
             "label": "InterfaceCore.GetScale",
             "type": "function",
             "path": "globals/functions/global_InterfaceCore.GetScale.md",
-            "order": 56
+            "order": 55
           },
           {
             "label": "InterfaceCore.ReloadUI",
             "type": "function",
             "path": "globals/functions/global_InterfaceCore.ReloadUI.md",
-            "order": 57
+            "order": 56
           },
           {
             "label": "LibSlash.IsSlashCmdRegistered",
             "type": "function",
             "path": "globals/functions/global_LibSlash.IsSlashCmdRegistered.md",
-            "order": 58
+            "order": 57
           },
           {
             "label": "LibSlash.RegisterSlashCmd",
             "type": "function",
             "path": "globals/functions/global_LibSlash.RegisterSlashCmd.md",
-            "order": 59
+            "order": 58
           },
           {
             "label": "LibSlash.RegisterWSlashCmd",
             "type": "function",
             "path": "globals/functions/global_LibSlash.RegisterWSlashCmd.md",
-            "order": 60
+            "order": 59
           },
           {
             "label": "LibSlash.UnregisterSlashCmd",
             "type": "function",
             "path": "globals/functions/global_LibSlash.UnregisterSlashCmd.md",
-            "order": 61
+            "order": 60
           },
           {
             "label": "PartyUtils.GetPartyData",
             "type": "function",
             "path": "globals/functions/global_PartyUtils.GetPartyData.md",
-            "order": 62
+            "order": 61
           },
           {
             "label": "PartyUtils.GetPartyMember",
             "type": "function",
             "path": "globals/functions/global_PartyUtils.GetPartyMember.md",
-            "order": 63
+            "order": 62
           },
           {
             "label": "PartyUtils.GetWarbandData",
             "type": "function",
             "path": "globals/functions/global_PartyUtils.GetWarbandData.md",
-            "order": 64
+            "order": 63
           },
           {
             "label": "PartyUtils.GetWarbandLeader",
             "type": "function",
             "path": "globals/functions/global_PartyUtils.GetWarbandLeader.md",
-            "order": 65
+            "order": 64
           },
           {
             "label": "PartyUtils.GetWarbandMember",
             "type": "function",
             "path": "globals/functions/global_PartyUtils.GetWarbandMember.md",
-            "order": 66
+            "order": 65
           },
           {
             "label": "PartyUtils.IsPartyActive",
             "type": "function",
             "path": "globals/functions/global_PartyUtils.IsPartyActive.md",
-            "order": 67
+            "order": 66
           },
           {
             "label": "wstring.gsub",
             "type": "function",
             "path": "globals/functions/global_wstring.gsub.md",
-            "order": 68
+            "order": 67
           },
           {
             "label": "wstring.len",
             "type": "function",
             "path": "globals/functions/global_wstring.len.md",
-            "order": 69
+            "order": 68
           },
           {
             "label": "wstring.match",
             "type": "function",
             "path": "globals/functions/global_wstring.match.md",
-            "order": 70
+            "order": 69
           },
           {
             "label": "BankWindow.GetItem",
             "type": "function",
             "path": "globals/functions/global_BankWindow.GetItem.md",
-            "order": 71
+            "order": 70
           },
           {
             "label": "BankWindow.GetSlotNumberForButtonIndex",
             "type": "function",
             "path": "globals/functions/global_BankWindow.GetSlotNumberForButtonIndex.md",
-            "order": 72
+            "order": 71
           },
           {
             "label": "BankWindow.IsShowing",
             "type": "function",
             "path": "globals/functions/global_BankWindow.IsShowing.md",
-            "order": 73
+            "order": 72
           },
           {
             "label": "PetWindow.HasPet",
             "type": "function",
             "path": "globals/functions/global_PetWindow.HasPet.md",
-            "order": 74
+            "order": 73
           },
           {
             "label": "BroadcastEvent",
             "type": "function",
             "path": "globals/functions/global_BroadcastEvent.md",
-            "order": 75
+            "order": 74
           },
           {
             "label": "EA_Window_ContextMenu.HideAll",
             "type": "function",
             "path": "globals/functions/global_EA_Window_ContextMenu.HideAll.md",
-            "order": 76
+            "order": 75
           },
           {
             "label": "EA_Window_CurrentEvents.SetCurrentTier",
             "type": "function",
             "path": "globals/functions/global_EA_Window_CurrentEvents.SetCurrentTier.md",
-            "order": 77
+            "order": 76
           },
           {
             "label": "AlertTextWindow.AddAlert",
             "type": "function",
             "path": "globals/functions/global_AlertTextWindow.AddAlert.md",
-            "order": 78
+            "order": 77
           },
           {
             "label": "BankWindow.Hide",
             "type": "function",
             "path": "globals/functions/global_BankWindow.Hide.md",
-            "order": 79
+            "order": 78
           },
           {
             "label": "BankWindow.Show",
             "type": "function",
             "path": "globals/functions/global_BankWindow.Show.md",
-            "order": 80
+            "order": 79
           },
           {
             "label": "HelpTips.SetFocusOnWindow",
             "type": "function",
             "path": "globals/functions/global_HelpTips.SetFocusOnWindow.md",
-            "order": 81
-          },
-          {
-            "label": "PartyUtils.IsPlayerInWarband",
-            "type": "function",
-            "path": "globals/functions/global_PartyUtils.IsPlayerInWarband.md",
-            "order": 82
+            "order": 80
           },
           {
             "label": "PetWindow.SwitchToPassiveStance",
             "type": "function",
             "path": "globals/functions/global_PetWindow.SwitchToPassiveStance.md",
-            "order": 83
-          },
-          {
-            "label": "PlayerMenuWindow.ShowMenu",
-            "type": "function",
-            "path": "globals/functions/global_PlayerMenuWindow.ShowMenu.md",
-            "order": 84
-          },
-          {
-            "label": "wstring.upper",
-            "type": "function",
-            "path": "globals/functions/global_wstring.upper.md",
-            "order": 85
+            "order": 81
           },
           {
             "label": "DoesWindowExist",
             "type": "function",
             "path": "globals/functions/global_DoesWindowExist.md",
-            "order": 86
+            "order": 82
           },
           {
             "label": "GetBuffs",
             "type": "function",
             "path": "globals/functions/global_GetBuffs.md",
-            "order": 87
+            "order": 83
           },
           {
             "label": "GetIconData",
             "type": "function",
             "path": "globals/functions/global_GetIconData.md",
-            "order": 88
+            "order": 84
           },
           {
             "label": "EA_Window_InteractionCoreTraining.Hide",
             "type": "function",
             "path": "globals/functions/global_EA_Window_InteractionCoreTraining.Hide.md",
-            "order": 89
+            "order": 85
           },
           {
             "label": "EA_Window_InteractionCoreTraining.Show",
             "type": "function",
             "path": "globals/functions/global_EA_Window_InteractionCoreTraining.Show.md",
-            "order": 90
+            "order": 86
           },
           {
             "label": "EA_Window_InteractionLibrarianStore.ConfirmThenRepairItem",
             "type": "function",
             "path": "globals/functions/global_EA_Window_InteractionLibrarianStore.ConfirmThenRepairItem.md",
-            "order": 91
+            "order": 87
           },
           {
             "label": "EA_Window_InteractionLibrarianStore.ConfirmThenSellItem",
             "type": "function",
             "path": "globals/functions/global_EA_Window_InteractionLibrarianStore.ConfirmThenSellItem.md",
-            "order": 92
+            "order": 88
           },
           {
             "label": "EA_Window_InteractionLibrarianStore.InteractingWithLibrarianStore",
             "type": "function",
             "path": "globals/functions/global_EA_Window_InteractionLibrarianStore.InteractingWithLibrarianStore.md",
-            "order": 93
+            "order": 89
           },
           {
             "label": "EA_Window_InteractionLibrarianStore.InteractingWithRepairMan",
             "type": "function",
             "path": "globals/functions/global_EA_Window_InteractionLibrarianStore.InteractingWithRepairMan.md",
-            "order": 94
+            "order": 90
           },
           {
             "label": "EA_Window_InteractionSpecialtyTraining.Hide",
             "type": "function",
             "path": "globals/functions/global_EA_Window_InteractionSpecialtyTraining.Hide.md",
-            "order": 95
+            "order": 91
           },
           {
             "label": "EA_Window_InteractionSpecialtyTraining.Show",
             "type": "function",
             "path": "globals/functions/global_EA_Window_InteractionSpecialtyTraining.Show.md",
-            "order": 96
+            "order": 92
           },
           {
             "label": "EA_Window_InteractionTomeTraining.Hide",
             "type": "function",
             "path": "globals/functions/global_EA_Window_InteractionTomeTraining.Hide.md",
-            "order": 97
+            "order": 93
           },
           {
             "label": "EA_Window_InteractionTomeTraining.Show",
             "type": "function",
             "path": "globals/functions/global_EA_Window_InteractionTomeTraining.Show.md",
-            "order": 98
+            "order": 94
           },
           {
             "label": "CreateWindow",
             "type": "function",
             "path": "globals/functions/global_CreateWindow.md",
-            "order": 99
+            "order": 95
           },
           {
             "label": "CreateWindowFromTemplate",
             "type": "function",
             "path": "globals/functions/global_CreateWindowFromTemplate.md",
-            "order": 100
+            "order": 96
           },
           {
             "label": "DestroyWindow",
             "type": "function",
             "path": "globals/functions/global_DestroyWindow.md",
-            "order": 101
+            "order": 97
           },
           {
             "label": "towstring",
             "type": "function",
             "path": "globals/functions/global_towstring.md",
-            "order": 102
+            "order": 98
           },
           {
             "label": "wstring.format",
             "type": "function",
             "path": "globals/functions/global_wstring.format.md",
-            "order": 103
+            "order": 99
           },
           {
             "label": "wstring.sub",
             "type": "function",
             "path": "globals/functions/global_wstring.sub.md",
-            "order": 104
+            "order": 100
           },
           {
             "label": "DefaultColor.SetLabelColor",
             "type": "function",
             "path": "globals/functions/global_DefaultColor.SetLabelColor.md",
-            "order": 105
+            "order": 101
           },
           {
             "label": "PartyUtils.GetWarbandMainAssist",
             "type": "function",
             "path": "globals/functions/global_PartyUtils.GetWarbandMainAssist.md",
-            "order": 106
+            "order": 102
           },
           {
             "label": "RegisterEventHandler",
             "type": "function",
             "path": "globals/functions/global_RegisterEventHandler.md",
-            "order": 107
+            "order": 103
           },
           {
             "label": "UnregisterEventHandler",
             "type": "function",
             "path": "globals/functions/global_UnregisterEventHandler.md",
-            "order": 108
+            "order": 104
           },
           {
             "label": "wstring.find",
             "type": "function",
             "path": "globals/functions/global_wstring.find.md",
-            "order": 109
+            "order": 105
           },
           {
             "label": "wstring.char",
             "type": "function",
             "path": "globals/functions/global_wstring.char.md",
-            "order": 110
+            "order": 106
           },
           {
             "label": "wstring.lower",
             "type": "function",
             "path": "globals/functions/global_wstring.lower.md",
-            "order": 111
+            "order": 107
           },
           {
-            "label": "wstring.reverse",
+            "label": "wstring.upper",
             "type": "function",
-            "path": "globals/functions/global_wstring.reverse.md",
-            "order": 112
+            "path": "globals/functions/global_wstring.upper.md",
+            "order": 108
           }
         ]
       },
@@ -823,124 +799,112 @@
             "order": 22
           },
           {
-            "label": "EA_Window_ScenarioLobby",
-            "type": "data_structure",
-            "path": "globals/tables/table_EA_Window_ScenarioLobby.md",
-            "order": 23
-          },
-          {
             "label": "EA_Window_WorldMap",
             "type": "data_structure",
             "path": "globals/tables/table_EA_Window_WorldMap.md",
-            "order": 24
-          },
-          {
-            "label": "GroupWindow",
-            "type": "data_structure",
-            "path": "globals/tables/table_GroupWindow.md",
-            "order": 25
+            "order": 23
           },
           {
             "label": "HelpTips",
             "type": "data_structure",
             "path": "globals/tables/table_HelpTips.md",
-            "order": 26
+            "order": 24
           },
           {
             "label": "Icons",
             "type": "data_structure",
             "path": "globals/tables/table_Icons.md",
-            "order": 27
+            "order": 25
           },
           {
             "label": "InterfaceCore",
             "type": "data_structure",
             "path": "globals/tables/table_InterfaceCore.md",
-            "order": 28
+            "order": 26
           },
           {
             "label": "LibSlash",
             "type": "data_structure",
             "path": "globals/tables/table_LibSlash.md",
-            "order": 29
+            "order": 27
           },
           {
             "label": "MailWindow",
             "type": "data_structure",
             "path": "globals/tables/table_MailWindow.md",
-            "order": 30
+            "order": 28
           },
           {
             "label": "MailWindowTabSend",
             "type": "data_structure",
             "path": "globals/tables/table_MailWindowTabSend.md",
-            "order": 31
+            "order": 29
           },
           {
             "label": "MoneyFrame",
             "type": "data_structure",
             "path": "globals/tables/table_MoneyFrame.md",
-            "order": 32
+            "order": 30
           },
           {
             "label": "PartyUtils",
             "type": "data_structure",
             "path": "globals/tables/table_PartyUtils.md",
-            "order": 33
+            "order": 31
           },
           {
             "label": "PetWindow",
             "type": "data_structure",
             "path": "globals/tables/table_PetWindow.md",
-            "order": 34
+            "order": 32
           },
           {
             "label": "PlayerMenuWindow",
             "type": "data_structure",
             "path": "globals/tables/table_PlayerMenuWindow.md",
-            "order": 35
+            "order": 33
           },
           {
             "label": "Window",
             "type": "data_structure",
             "path": "globals/tables/table_Window.md",
-            "order": 36
+            "order": 34
           },
           {
             "label": "wstring",
             "type": "data_structure",
             "path": "globals/tables/table_wstring.md",
-            "order": 37
+            "order": 35
           },
           {
             "label": "EA_Window_CurrentEvents",
             "type": "data_structure",
             "path": "globals/tables/table_EA_Window_CurrentEvents.md",
-            "order": 38
+            "order": 36
           },
           {
             "label": "EA_Window_InteractionCoreTraining",
             "type": "data_structure",
             "path": "globals/tables/table_EA_Window_InteractionCoreTraining.md",
-            "order": 39
+            "order": 37
           },
           {
             "label": "EA_Window_InteractionLibrarianStore",
             "type": "data_structure",
             "path": "globals/tables/table_EA_Window_InteractionLibrarianStore.md",
-            "order": 40
+            "order": 38
           },
           {
             "label": "EA_Window_InteractionSpecialtyTraining",
             "type": "data_structure",
             "path": "globals/tables/table_EA_Window_InteractionSpecialtyTraining.md",
-            "order": 41
+            "order": 39
           },
           {
             "label": "EA_Window_InteractionTomeTraining",
             "type": "data_structure",
             "path": "globals/tables/table_EA_Window_InteractionTomeTraining.md",
-            "order": 42
+            "order": 40
           }
         ]
       },
@@ -1065,532 +1029,520 @@
             "order": 19
           },
           {
-            "label": "EA_CheckButtonLabel",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_CheckButtonLabel.md",
-            "order": 20
-          },
-          {
             "label": "EA_ComboBox_DefaultResizable",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ComboBox_DefaultResizable.md",
-            "order": 21
+            "order": 20
           },
           {
             "label": "EA_ComboBox_DefaultResizableLarge",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ComboBox_DefaultResizableLarge.md",
-            "order": 22
-          },
-          {
-            "label": "EA_ComboBox_DefaultResizableMedium",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_ComboBox_DefaultResizableMedium.md",
-            "order": 23
+            "order": 21
           },
           {
             "label": "EA_ComboBox_DefaultResizableSmall",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ComboBox_DefaultResizableSmall.md",
-            "order": 24
+            "order": 22
           },
           {
             "label": "EA_ComboBox_DefaultResizable_Fixed",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ComboBox_DefaultResizable_Fixed.md",
-            "order": 25
+            "order": 23
           },
           {
             "label": "EA_ComboBox_DefaultResizable_Fixed_Small",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ComboBox_DefaultResizable_Fixed_Small.md",
-            "order": 26
-          },
-          {
-            "label": "EA_Default_CornerImage",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_Default_CornerImage.md",
-            "order": 27
+            "order": 24
           },
           {
             "label": "EA_Default_SliderBar",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Default_SliderBar.md",
-            "order": 28
+            "order": 25
           },
           {
             "label": "EA_EditBox_DefaultFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_EditBox_DefaultFrame.md",
-            "order": 29
+            "order": 26
           },
           {
             "label": "EA_EditBox_DefaultFrame_Multiline",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_EditBox_DefaultFrame_Multiline.md",
-            "order": 30
+            "order": 27
           },
           {
             "label": "EA_FullResizeImage_BlackTransparent",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_BlackTransparent.md",
-            "order": 31
+            "order": 28
           },
           {
             "label": "EA_FullResizeImage_DefaultFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_DefaultFrame.md",
-            "order": 32
+            "order": 29
           },
           {
             "label": "EA_FullResizeImage_MetalFill",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_MetalFill.md",
-            "order": 33
+            "order": 30
           },
           {
             "label": "EA_FullResizeImage_TanBorder",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_TanBorder.md",
-            "order": 34
+            "order": 31
           },
           {
             "label": "EA_FullResizeImage_TintableFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_TintableFrame.md",
-            "order": 35
+            "order": 32
           },
           {
             "label": "EA_FullResizeImage_TintableSolidBackground",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_TintableSolidBackground.md",
-            "order": 36
+            "order": 33
           },
           {
             "label": "EA_FullResizeImage_WhiteTransparent",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_WhiteTransparent.md",
-            "order": 37
+            "order": 34
           },
           {
             "label": "EA_HorizontalResizeImage_TabSeparatorMiddle",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_HorizontalResizeImage_TabSeparatorMiddle.md",
-            "order": 38
+            "order": 35
           },
           {
             "label": "EA_Image_DefaultIcon",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Image_DefaultIcon.md",
-            "order": 39
+            "order": 36
           },
           {
             "label": "EA_Image_DefaultIconFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Image_DefaultIconFrame.md",
-            "order": 40
+            "order": 37
           },
           {
             "label": "EA_LabelCheckButton",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_LabelCheckButton.md",
-            "order": 41
+            "order": 38
           },
           {
             "label": "EA_Label_DefaultSubHeading",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Label_DefaultSubHeading.md",
-            "order": 42
+            "order": 39
           },
           {
             "label": "EA_Label_DefaultText",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Label_DefaultText.md",
-            "order": 43
+            "order": 40
           },
           {
             "label": "EA_Label_DefaultText_Small",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Label_DefaultText_Small.md",
-            "order": 44
+            "order": 41
           },
           {
             "label": "EA_ListSortDownArrow",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ListSortDownArrow.md",
-            "order": 45
+            "order": 42
           },
           {
             "label": "EA_ListSortUpArrow",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ListSortUpArrow.md",
-            "order": 46
+            "order": 43
           },
           {
             "label": "EA_MoraleButtonAnimation",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_MoraleButtonAnimation.md",
-            "order": 47
+            "order": 44
           },
           {
             "label": "EA_ScrollBar_ChatVertical",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ScrollBar_ChatVertical.md",
-            "order": 48
+            "order": 45
           },
           {
             "label": "EA_ScrollBar_DefaultVerticalChain",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ScrollBar_DefaultVerticalChain.md",
-            "order": 49
+            "order": 46
           },
           {
             "label": "EA_ScrollWindow_ModInfoTemplate",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ScrollWindow_ModInfoTemplate.md",
-            "order": 50
+            "order": 47
           },
           {
             "label": "EA_ScrollWindow_ModInfoTemplateScrollChild",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ScrollWindow_ModInfoTemplateScrollChild.md",
-            "order": 51
+            "order": 48
           },
           {
             "label": "EA_Settings_ItemTitle",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Settings_ItemTitle.md",
-            "order": 52
+            "order": 49
           },
           {
             "label": "EA_Settings_SectionTitle",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Settings_SectionTitle.md",
-            "order": 53
+            "order": 50
           },
           {
             "label": "EA_TitleBar_Default",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_TitleBar_Default.md",
-            "order": 54
+            "order": 51
           },
           {
             "label": "EA_Window_CityRating",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_CityRating.md",
-            "order": 55
+            "order": 52
           },
           {
             "label": "EA_Window_Default",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_Default.md",
-            "order": 56
+            "order": 53
           },
           {
             "label": "EA_Window_DefaultBackgroundFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultBackgroundFrame.md",
-            "order": 57
+            "order": 54
           },
           {
             "label": "EA_Window_DefaultButtonBottomFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultButtonBottomFrame.md",
-            "order": 58
+            "order": 55
           },
           {
             "label": "EA_Window_DefaultContextMenuFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultContextMenuFrame.md",
-            "order": 59
+            "order": 56
           },
           {
             "label": "EA_Window_DefaultFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultFrame.md",
-            "order": 60
+            "order": 57
           },
           {
             "label": "EA_Window_DefaultFrameStatusBar",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultFrameStatusBar.md",
-            "order": 61
+            "order": 58
           },
           {
             "label": "EA_Window_DefaultSeparator",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultSeparator.md",
-            "order": 62
+            "order": 59
           },
           {
             "label": "EA_Window_DefaultTooltipBackground",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultTooltipBackground.md",
-            "order": 63
+            "order": 60
           },
           {
             "label": "EA_Window_DefaultVerticalSeparator",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultVerticalSeparator.md",
-            "order": 64
+            "order": 61
           },
           {
             "label": "EA_Window_Macro",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_Macro.md",
-            "order": 65
+            "order": 62
           },
           {
             "label": "EA_Window_MacroDetailIconButton",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_MacroDetailIconButton.md",
-            "order": 66
+            "order": 63
           },
           {
             "label": "EA_Window_MacroDetails",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_MacroDetails.md",
-            "order": 67
+            "order": 64
           },
           {
             "label": "EA_Window_TabSeparatorLeftSide",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_TabSeparatorLeftSide.md",
-            "order": 68
+            "order": 65
           },
           {
             "label": "EA_Window_TabSeparatorRightSide",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_TabSeparatorRightSide.md",
-            "order": 69
+            "order": 66
           },
           {
             "label": "EA_ActionButtonGroup_DefaultSmall",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ActionButtonGroup_DefaultSmall.md",
-            "order": 70
+            "order": 67
           },
           {
             "label": "EA_Button_BottomTab",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_BottomTab.md",
-            "order": 71
+            "order": 68
           },
           {
             "label": "EA_Button_DefaultBigLeftArrow",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultBigLeftArrow.md",
-            "order": 72
+            "order": 69
           },
           {
             "label": "EA_Button_DefaultBigRightArrow",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultBigRightArrow.md",
-            "order": 73
+            "order": 70
           },
           {
             "label": "EA_Button_DefaultChatScrollToBottom",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultChatScrollToBottom.md",
-            "order": 74
+            "order": 71
           },
           {
             "label": "EA_Button_DefaultDown",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultDown.md",
-            "order": 75
+            "order": 72
           },
           {
             "label": "EA_Button_DefaultIconFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultIconFrame.md",
-            "order": 76
+            "order": 73
           },
           {
             "label": "EA_Button_DefaultIconFrame_Small",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultIconFrame_Small.md",
-            "order": 77
+            "order": 74
           },
           {
             "label": "EA_Button_DefaultListRow",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultListRow.md",
-            "order": 78
-          },
-          {
-            "label": "EA_Button_DefaultTextButton",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_Button_DefaultTextButton.md",
-            "order": 79
+            "order": 75
           },
           {
             "label": "EA_Button_DefaultToggleCircle",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultToggleCircle.md",
-            "order": 80
+            "order": 76
           },
           {
             "label": "EA_Button_DefaultUp",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultUp.md",
-            "order": 81
+            "order": 77
           },
           {
             "label": "EA_Button_ResizeIconFrameHighlight",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_ResizeIconFrameHighlight.md",
-            "order": 82
+            "order": 78
           },
           {
             "label": "EA_Button_ResizeIconFramePressed",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_ResizeIconFramePressed.md",
-            "order": 83
+            "order": 79
           },
           {
             "label": "EA_CheckButtonButton",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_CheckButtonButton.md",
-            "order": 84
+            "order": 80
+          },
+          {
+            "label": "EA_CheckButtonLabel",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_CheckButtonLabel.md",
+            "order": 81
           },
           {
             "label": "EA_ComboBox_DefaultResizable3",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ComboBox_DefaultResizable3.md",
-            "order": 85
+            "order": 82
+          },
+          {
+            "label": "EA_ComboBox_DefaultResizableMedium",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_ComboBox_DefaultResizableMedium.md",
+            "order": 83
           },
           {
             "label": "EA_ComboBox_DefaultResizableTiny",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ComboBox_DefaultResizableTiny.md",
-            "order": 86
+            "order": 84
           },
           {
             "label": "EA_Default_CharacterImage",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Default_CharacterImage.md",
-            "order": 87
+            "order": 85
+          },
+          {
+            "label": "EA_Default_CornerImage",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Default_CornerImage.md",
+            "order": 86
           },
           {
             "label": "EA_Default_MerchantImage",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Default_MerchantImage.md",
-            "order": 88
-          },
-          {
-            "label": "EA_Default_SocialImage",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_Default_SocialImage.md",
-            "order": 89
+            "order": 87
           },
           {
             "label": "EA_Default_TrainingImage",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Default_TrainingImage.md",
-            "order": 90
+            "order": 88
           },
           {
             "label": "EA_EditBox_NoFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_EditBox_NoFrame.md",
-            "order": 91
+            "order": 89
           },
           {
             "label": "EA_FilterMenuButtonTemplate",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FilterMenuButtonTemplate.md",
-            "order": 92
+            "order": 90
           },
           {
             "label": "EA_FullResizeImage_AlertBubbleBackground",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_AlertBubbleBackground.md",
-            "order": 93
+            "order": 91
           },
           {
             "label": "EA_FullResizeImage_DefaultBubbleBackground",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_DefaultBubbleBackground.md",
-            "order": 94
+            "order": 92
           },
           {
             "label": "EA_HorizontalResizeImage_DefaultTopFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_HorizontalResizeImage_DefaultTopFrame.md",
-            "order": 95
+            "order": 93
           },
           {
             "label": "EA_LabelCheckButtonSmallCopy",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_LabelCheckButtonSmallCopy.md",
-            "order": 96
+            "order": 94
           },
           {
             "label": "EA_ScrollWindow_ModInfoTemplateScrollChildStatus",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ScrollWindow_ModInfoTemplateScrollChildStatus.md",
-            "order": 97
+            "order": 95
           },
           {
             "label": "EA_Templates_BrassCoin",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Templates_BrassCoin.md",
-            "order": 98
+            "order": 96
           },
           {
             "label": "EA_Templates_Color_Picker_Button",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Templates_Color_Picker_Button.md",
-            "order": 99
+            "order": 97
           },
           {
             "label": "EA_Templates_GoldCoin",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Templates_GoldCoin.md",
-            "order": 100
+            "order": 98
           },
           {
             "label": "EA_Templates_SilverCoin",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Templates_SilverCoin.md",
-            "order": 101
+            "order": 99
           },
           {
             "label": "EA_Window_AdvancedMainUIPathToggle",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_AdvancedMainUIPathToggle.md",
-            "order": 102
+            "order": 100
           },
           {
             "label": "EA_Window_ComboBoxMenuBackground",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_ComboBoxMenuBackground.md",
-            "order": 103
+            "order": 101
           },
           {
             "label": "EA_Window_DefaultLabelToggleCircle",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultLabelToggleCircle.md",
-            "order": 104
+            "order": 102
           },
           {
             "label": "EA_Window_MacroIconButton",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_MacroIconButton.md",
-            "order": 105
+            "order": 103
           },
           {
             "label": "EA_Window_MacroMacros",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_MacroMacros.md",
-            "order": 106
+            "order": 104
           },
           {
             "label": "EA_Window_MacroMacrosScrollChild",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_MacroMacrosScrollChild.md",
-            "order": 107
+            "order": 105
           }
         ]
       }
@@ -2194,12 +2146,6 @@
             "type": "function",
             "path": "window_api/functions/window_TextEditBoxSetMaxChars.md",
             "order": 98
-          },
-          {
-            "label": "WindowUnRegisterEventHandler",
-            "type": "function",
-            "path": "window_api/functions/window_WindowUnRegisterEventHandler.md",
-            "order": 99
           }
         ]
       },
@@ -2678,892 +2624,844 @@
             "order": 16
           },
           {
-            "label": "SystemData.Events.EXIT_GAME",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.EXIT_GAME.md",
-            "order": 17
-          },
-          {
             "label": "SystemData.Events.GROUP_ACCEPT_INVITATION",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.GROUP_ACCEPT_INVITATION.md",
-            "order": 18
+            "order": 17
           },
           {
             "label": "SystemData.Events.GROUP_EFFECTS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.GROUP_EFFECTS_UPDATED.md",
-            "order": 19
+            "order": 18
           },
           {
             "label": "SystemData.Events.GROUP_LEAVE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.GROUP_LEAVE.md",
-            "order": 20
+            "order": 19
           },
           {
             "label": "SystemData.Events.GROUP_PLAYER_ADDED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.GROUP_PLAYER_ADDED.md",
-            "order": 21
+            "order": 20
           },
           {
             "label": "SystemData.Events.GROUP_SETTINGS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.GROUP_SETTINGS_UPDATED.md",
-            "order": 22
+            "order": 21
           },
           {
             "label": "SystemData.Events.GROUP_SET_LEADER",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.GROUP_SET_LEADER.md",
-            "order": 23
+            "order": 22
           },
           {
             "label": "SystemData.Events.GROUP_STATUS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.GROUP_STATUS_UPDATED.md",
-            "order": 24
+            "order": 23
           },
           {
             "label": "SystemData.Events.GROUP_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.GROUP_UPDATED.md",
-            "order": 25
+            "order": 24
           },
           {
             "label": "SystemData.Events.INTERACT_DEFAULT",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_DEFAULT.md",
-            "order": 26
+            "order": 25
           },
           {
             "label": "SystemData.Events.INTERACT_DONE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_DONE.md",
-            "order": 27
+            "order": 26
           },
           {
             "label": "SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE.md",
-            "order": 28
-          },
-          {
-            "label": "SystemData.Events.INTERACT_LOOT_CLOSE",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.INTERACT_LOOT_CLOSE.md",
-            "order": 29
+            "order": 27
           },
           {
             "label": "SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md",
-            "order": 30
+            "order": 28
           },
           {
             "label": "SystemData.Events.INTERACT_OPEN_BANK",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_OPEN_BANK.md",
-            "order": 31
+            "order": 29
           },
           {
             "label": "SystemData.Events.INTERACT_SHOW_HEALER",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_HEALER.md",
-            "order": 32
+            "order": 30
           },
           {
             "label": "SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md",
-            "order": 33
+            "order": 31
           },
           {
             "label": "SystemData.Events.INTERACT_SHOW_QUEST",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_QUEST.md",
-            "order": 34
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST.md",
-            "order": 35
+            "order": 32
           },
           {
             "label": "SystemData.Events.INTERACT_SHOW_STORE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_STORE.md",
-            "order": 36
-          },
-          {
-            "label": "SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST.md",
-            "order": 37
+            "order": 33
           },
           {
             "label": "SystemData.Events.INTERFACE_RELOADED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERFACE_RELOADED.md",
-            "order": 38
+            "order": 34
           },
           {
             "label": "SystemData.Events.ITEM_SET_DATA_ARRIVED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.ITEM_SET_DATA_ARRIVED.md",
-            "order": 39
+            "order": 35
           },
           {
             "label": "SystemData.Events.LOADING_BEGIN",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.LOADING_BEGIN.md",
-            "order": 40
+            "order": 36
           },
           {
             "label": "SystemData.Events.LOADING_END",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.LOADING_END.md",
-            "order": 41
+            "order": 37
           },
           {
             "label": "SystemData.Events.LOG_OUT",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.LOG_OUT.md",
-            "order": 42
+            "order": 38
           },
           {
             "label": "SystemData.Events.L_BUTTON_DOWN_PROCESSED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.L_BUTTON_DOWN_PROCESSED.md",
-            "order": 43
+            "order": 39
           },
           {
             "label": "SystemData.Events.L_BUTTON_UP_PROCESSED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.L_BUTTON_UP_PROCESSED.md",
-            "order": 44
+            "order": 40
           },
           {
             "label": "SystemData.Events.MACROS_LOADED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.MACROS_LOADED.md",
-            "order": 45
+            "order": 41
           },
           {
             "label": "SystemData.Events.MACRO_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.MACRO_UPDATED.md",
-            "order": 46
+            "order": 42
           },
           {
             "label": "SystemData.Events.M_BUTTON_DOWN_PROCESSED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.M_BUTTON_DOWN_PROCESSED.md",
-            "order": 47
+            "order": 43
           },
           {
             "label": "SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED.md",
-            "order": 48
+            "order": 44
           },
           {
             "label": "SystemData.Events.PLAYER_ACTIVE_TACTICS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_ACTIVE_TACTICS_UPDATED.md",
-            "order": 49
+            "order": 45
           },
           {
             "label": "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md",
-            "order": 50
+            "order": 46
           },
           {
             "label": "SystemData.Events.PLAYER_BEGIN_CAST",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_BEGIN_CAST.md",
-            "order": 51
+            "order": 47
           },
           {
             "label": "SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md",
-            "order": 52
+            "order": 48
           },
           {
             "label": "SystemData.Events.PLAYER_CAREER_LINE_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CAREER_LINE_UPDATED.md",
-            "order": 53
+            "order": 49
           },
           {
             "label": "SystemData.Events.PLAYER_CAREER_RANK_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CAREER_RANK_UPDATED.md",
-            "order": 54
+            "order": 50
           },
           {
             "label": "SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED.md",
-            "order": 55
+            "order": 51
           },
           {
             "label": "SystemData.Events.PLAYER_CAST_TIMER_SETBACK",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md",
-            "order": 56
+            "order": 52
           },
           {
             "label": "SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md",
-            "order": 57
+            "order": 53
           },
           {
             "label": "SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED.md",
-            "order": 58
+            "order": 54
           },
           {
             "label": "SystemData.Events.PLAYER_CULTIVATION_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CULTIVATION_UPDATED.md",
-            "order": 59
+            "order": 55
           },
           {
             "label": "SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED.md",
-            "order": 60
+            "order": 56
           },
           {
             "label": "SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md",
-            "order": 61
+            "order": 57
           },
           {
             "label": "SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md",
-            "order": 62
+            "order": 58
           },
           {
             "label": "SystemData.Events.PLAYER_DEATH",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_DEATH.md",
-            "order": 63
+            "order": 59
           },
           {
             "label": "SystemData.Events.PLAYER_DEATH_CLEARED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_DEATH_CLEARED.md",
-            "order": 64
+            "order": 60
           },
           {
             "label": "SystemData.Events.PLAYER_EFFECTS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_EFFECTS_UPDATED.md",
-            "order": 65
+            "order": 61
           },
           {
             "label": "SystemData.Events.PLAYER_END_CAST",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_END_CAST.md",
-            "order": 66
+            "order": 62
           },
           {
             "label": "SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED.md",
-            "order": 67
+            "order": 63
           },
           {
             "label": "SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED.md",
-            "order": 68
+            "order": 64
           },
           {
             "label": "SystemData.Events.PLAYER_HOT_BAR_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_HOT_BAR_UPDATED.md",
-            "order": 69
+            "order": 65
           },
           {
             "label": "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md",
-            "order": 70
+            "order": 66
           },
           {
             "label": "SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md",
-            "order": 71
+            "order": 67
           },
           {
             "label": "SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED.md",
-            "order": 72
-          },
-          {
-            "label": "SystemData.Events.PLAYER_MONEY_UPDATED",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.PLAYER_MONEY_UPDATED.md",
-            "order": 73
+            "order": 68
           },
           {
             "label": "SystemData.Events.PLAYER_MORALE_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_MORALE_UPDATED.md",
-            "order": 74
+            "order": 69
           },
           {
             "label": "SystemData.Events.PLAYER_NUM_TACTIC_SLOTS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_NUM_TACTIC_SLOTS_UPDATED.md",
-            "order": 75
+            "order": 70
           },
           {
             "label": "SystemData.Events.PLAYER_PET_HEALTH_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_PET_HEALTH_UPDATED.md",
-            "order": 76
+            "order": 71
           },
           {
             "label": "SystemData.Events.PLAYER_PET_STATE_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_PET_STATE_UPDATED.md",
-            "order": 77
+            "order": 72
           },
           {
             "label": "SystemData.Events.PLAYER_PET_TARGET_HEALTH_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_PET_TARGET_HEALTH_UPDATED.md",
-            "order": 78
+            "order": 73
           },
           {
             "label": "SystemData.Events.PLAYER_PET_TARGET_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_PET_TARGET_UPDATED.md",
-            "order": 79
+            "order": 74
           },
           {
             "label": "SystemData.Events.PLAYER_PET_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_PET_UPDATED.md",
-            "order": 80
+            "order": 75
           },
           {
             "label": "SystemData.Events.PLAYER_POSITION_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_POSITION_UPDATED.md",
-            "order": 81
+            "order": 76
           },
           {
             "label": "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_RENOWN_RANK_UPDATED.md",
-            "order": 82
+            "order": 77
           },
           {
             "label": "SystemData.Events.PLAYER_RENOWN_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_RENOWN_UPDATED.md",
-            "order": 83
+            "order": 78
           },
           {
             "label": "SystemData.Events.PLAYER_RVR_FLAG_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_RVR_FLAG_UPDATED.md",
-            "order": 84
+            "order": 79
           },
           {
             "label": "SystemData.Events.PLAYER_START_INTERACT_TIMER",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_START_INTERACT_TIMER.md",
-            "order": 85
+            "order": 80
           },
           {
             "label": "SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED.md",
-            "order": 86
+            "order": 81
           },
           {
             "label": "SystemData.Events.PLAYER_TARGET_IS_IMMUNE_TO_DISABLES",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_TARGET_IS_IMMUNE_TO_DISABLES.md",
-            "order": 87
+            "order": 82
           },
           {
             "label": "SystemData.Events.PLAYER_TARGET_IS_IMMUNE_TO_MOVEMENT_IMPARING",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_TARGET_IS_IMMUNE_TO_MOVEMENT_IMPARING.md",
-            "order": 88
+            "order": 83
           },
           {
             "label": "SystemData.Events.PLAYER_TARGET_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_TARGET_UPDATED.md",
-            "order": 89
+            "order": 84
           },
           {
             "label": "SystemData.Events.PLAYER_ZONE_CHANGED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_ZONE_CHANGED.md",
-            "order": 90
+            "order": 85
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_ADDED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PUBLIC_QUEST_ADDED.md",
-            "order": 91
+            "order": 86
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_INFO_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PUBLIC_QUEST_INFO_UPDATED.md",
-            "order": 92
+            "order": 87
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_REMOVED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PUBLIC_QUEST_REMOVED.md",
-            "order": 93
+            "order": 88
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PUBLIC_QUEST_UPDATED.md",
-            "order": 94
+            "order": 89
           },
           {
             "label": "SystemData.Events.RELEASE_CORPSE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.RELEASE_CORPSE.md",
-            "order": 95
+            "order": 90
           },
           {
             "label": "SystemData.Events.RELOAD_INTERFACE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md",
-            "order": 96
+            "order": 91
           },
           {
             "label": "SystemData.Events.R_BUTTON_DOWN_PROCESSED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.R_BUTTON_DOWN_PROCESSED.md",
-            "order": 97
-          },
-          {
-            "label": "SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED.md",
-            "order": 98
+            "order": 92
           },
           {
             "label": "SystemData.Events.SCENARIO_BEGIN",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_BEGIN.md",
-            "order": 99
+            "order": 93
           },
           {
             "label": "SystemData.Events.SCENARIO_END",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_END.md",
-            "order": 100
+            "order": 94
           },
           {
             "label": "SystemData.Events.SCENARIO_GROUP_JOIN",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_GROUP_JOIN.md",
-            "order": 101
+            "order": 95
           },
           {
             "label": "SystemData.Events.SCENARIO_GROUP_LEAVE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_GROUP_LEAVE.md",
-            "order": 102
-          },
-          {
-            "label": "SystemData.Events.SCENARIO_INSTANCE_CANCEL",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_INSTANCE_CANCEL.md",
-            "order": 103
+            "order": 96
           },
           {
             "label": "SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW.md",
-            "order": 104
+            "order": 97
           },
           {
             "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED.md",
-            "order": 105
+            "order": 98
           },
           {
             "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED.md",
-            "order": 106
+            "order": 99
           },
           {
             "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED.md",
-            "order": 107
+            "order": 100
           },
           {
             "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED.md",
-            "order": 108
+            "order": 101
           },
           {
             "label": "SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED.md",
-            "order": 109
+            "order": 102
           },
           {
             "label": "SystemData.Events.SCENARIO_POST_MODE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_POST_MODE.md",
-            "order": 110
+            "order": 103
           },
           {
             "label": "SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT.md",
-            "order": 111
+            "order": 104
           },
           {
             "label": "SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md",
-            "order": 112
+            "order": 105
           },
           {
             "label": "SystemData.Events.SCENARIO_UPDATE_POINTS",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_UPDATE_POINTS.md",
-            "order": 113
+            "order": 106
           },
           {
             "label": "SystemData.Events.SHOW_ALERT_TEXT",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SHOW_ALERT_TEXT.md",
-            "order": 114
+            "order": 107
           },
           {
             "label": "SystemData.Events.UPDATE_ITEM_ENHANCEMENT",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.UPDATE_ITEM_ENHANCEMENT.md",
-            "order": 115
+            "order": 108
           },
           {
             "label": "SystemData.Events.UPDATE_PROCESSED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md",
-            "order": 116
+            "order": 109
           },
           {
             "label": "SystemData.Events.USER_SETTINGS_CHANGED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.USER_SETTINGS_CHANGED.md",
-            "order": 117
+            "order": 110
           },
           {
             "label": "SystemData.Events.VISIBLE_EQUIPMENT_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.VISIBLE_EQUIPMENT_UPDATED.md",
-            "order": 118
+            "order": 111
           },
           {
             "label": "SystemData.Events.WORLD_OBJ_COMBAT_EVENT",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md",
-            "order": 119
+            "order": 112
           },
           {
             "label": "SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED.md",
-            "order": 120
+            "order": 113
           },
           {
             "label": "SystemData.Events.WORLD_OBJ_RENOWN_GAINED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_RENOWN_GAINED.md",
-            "order": 121
+            "order": 114
           },
           {
             "label": "SystemData.Events.WORLD_OBJ_XP_GAINED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_XP_GAINED.md",
-            "order": 122
+            "order": 115
           },
           {
             "label": "TextLogGetUpdateEventId",
             "type": "event",
             "path": "events/game_events/game_event_TextLogGetUpdateEventId.md",
-            "order": 123
-          },
-          {
-            "label": "SystemData.Events.L_BUTTON_UP",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.L_BUTTON_UP.md",
-            "order": 124
+            "order": 116
           },
           {
             "label": "SystemData.Events.PLAYER_BANK_SLOT_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_BANK_SLOT_UPDATED.md",
-            "order": 125
-          },
-          {
-            "label": "SystemData.Events.PLAYER_LOAD_COMPLETE",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.PLAYER_LOAD_COMPLETE.md",
-            "order": 126
+            "order": 117
           },
           {
             "label": "CombatLogNewCombatEvent",
             "type": "event",
             "path": "events/game_events/game_event_CombatLogNewCombatEvent.md",
-            "order": 127
+            "order": 118
           },
           {
             "label": "CombatLogSessionsUpdated",
             "type": "event",
             "path": "events/game_events/game_event_CombatLogSessionsUpdated.md",
-            "order": 128
+            "order": 119
           },
           {
             "label": "CombatLogSettingsChanged",
             "type": "event",
             "path": "events/game_events/game_event_CombatLogSettingsChanged.md",
-            "order": 129
+            "order": 120
           },
           {
             "label": "ConfigDialogInitializeSections",
             "type": "event",
             "path": "events/game_events/game_event_ConfigDialogInitializeSections.md",
-            "order": 130
+            "order": 121
           },
           {
             "label": "GroupsPlayerDistanceUpdated",
             "type": "event",
             "path": "events/game_events/game_event_GroupsPlayerDistanceUpdated.md",
-            "order": 131
+            "order": 122
           },
           {
             "label": "LPET",
             "type": "event",
             "path": "events/game_events/game_event_LPET.md",
-            "order": 132
+            "order": 123
           },
           {
             "label": "SettingsChanged",
             "type": "event",
             "path": "events/game_events/game_event_SettingsChanged.md",
-            "order": 133
+            "order": 124
           },
           {
             "label": "BroadcastMessageInvite",
             "type": "event",
             "path": "events/game_events/game_event_BroadcastMessageInvite.md",
-            "order": 134
+            "order": 125
           },
           {
             "label": "ChatTextArrived",
             "type": "event",
             "path": "events/game_events/game_event_ChatTextArrived.md",
-            "order": 135
+            "order": 126
           },
           {
             "label": "Global",
             "type": "event",
             "path": "events/game_events/game_event_Global.md",
-            "order": 136
+            "order": 127
           },
           {
             "label": "GroupsPlayerCombatUpdated",
             "type": "event",
             "path": "events/game_events/game_event_GroupsPlayerCombatUpdated.md",
-            "order": 137
+            "order": 128
           },
           {
             "label": "LibUnits.Events.FORMATION_MEMBER_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_LibUnits.Events.FORMATION_MEMBER_UPDATED.md",
-            "order": 138
+            "order": 129
           },
           {
             "label": "LibUnits.Events.FORMATION_MODE_CHANGED",
             "type": "event",
             "path": "events/game_events/game_event_LibUnits.Events.FORMATION_MODE_CHANGED.md",
-            "order": 139
+            "order": 130
           },
           {
             "label": "LibUnits.Events.PLAYER_FRIENDLY_TARGET_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_LibUnits.Events.PLAYER_FRIENDLY_TARGET_UPDATED.md",
-            "order": 140
+            "order": 131
           },
           {
             "label": "LibUnits.Events.PLAYER_HOSTILE_TARGET_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_LibUnits.Events.PLAYER_HOSTILE_TARGET_UPDATED.md",
-            "order": 141
+            "order": 132
           },
           {
             "label": "LibUnits.Events.PLAYER_MOUSEOVER_TARGET_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_LibUnits.Events.PLAYER_MOUSEOVER_TARGET_UPDATED.md",
-            "order": 142
-          },
-          {
-            "label": "Start",
-            "type": "event",
-            "path": "events/game_events/game_event_Start.md",
-            "order": 143
+            "order": 133
           },
           {
             "label": "GroupsPlayerEffectsUpdated",
             "type": "event",
             "path": "events/game_events/game_event_GroupsPlayerEffectsUpdated.md",
-            "order": 144
+            "order": 134
           },
           {
             "label": "GroupsPlayerInitialized",
             "type": "event",
             "path": "events/game_events/game_event_GroupsPlayerInitialized.md",
-            "order": 145
+            "order": 135
           },
           {
             "label": "GroupsPlayerUpdated",
             "type": "event",
             "path": "events/game_events/game_event_GroupsPlayerUpdated.md",
-            "order": 146
+            "order": 136
           },
           {
             "label": "GroupsPlayerWorldObjectIdUpdated",
             "type": "event",
             "path": "events/game_events/game_event_GroupsPlayerWorldObjectIdUpdated.md",
-            "order": 147
+            "order": 137
           },
           {
             "label": "GroupsTypeUpdated",
             "type": "event",
             "path": "events/game_events/game_event_GroupsTypeUpdated.md",
-            "order": 148
+            "order": 138
           },
           {
             "label": "GroupsUpdated",
             "type": "event",
             "path": "events/game_events/game_event_GroupsUpdated.md",
-            "order": 149
+            "order": 139
           },
           {
             "label": "IconCreateContextMenu",
             "type": "event",
             "path": "events/game_events/game_event_IconCreateContextMenu.md",
-            "order": 150
+            "order": 140
           },
           {
             "label": "PlayerTargetUpdated",
             "type": "event",
             "path": "events/game_events/game_event_PlayerTargetUpdated.md",
-            "order": 151
+            "order": 141
+          },
+          {
+            "label": "SystemData.Events.PLAYER_MONEY_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_MONEY_UPDATED.md",
+            "order": 142
           },
           {
             "label": "TargetChanged",
             "type": "event",
             "path": "events/game_events/game_event_TargetChanged.md",
-            "order": 152
+            "order": 143
           },
           {
             "label": "formation",
             "type": "event",
             "path": "events/game_events/game_event_formation.md",
-            "order": 153
+            "order": 144
           },
           {
             "label": "GroupsPlayerPetUpdated",
             "type": "event",
             "path": "events/game_events/game_event_GroupsPlayerPetUpdated.md",
-            "order": 154
+            "order": 145
           },
           {
             "label": "GroupsTargetChanged",
             "type": "event",
             "path": "events/game_events/game_event_GroupsTargetChanged.md",
-            "order": 155
+            "order": 146
           },
           {
             "label": "IconCreateTooltip",
             "type": "event",
             "path": "events/game_events/game_event_IconCreateTooltip.md",
-            "order": 156
+            "order": 147
           },
           {
             "label": "IconLButtonUp",
             "type": "event",
             "path": "events/game_events/game_event_IconLButtonUp.md",
-            "order": 157
+            "order": 148
           },
           {
             "label": "IntercomMessage",
             "type": "event",
             "path": "events/game_events/game_event_IntercomMessage.md",
-            "order": 158
+            "order": 149
           },
           {
             "label": "IntercomMessageGuard",
             "type": "event",
             "path": "events/game_events/game_event_IntercomMessageGuard.md",
-            "order": 159
+            "order": 150
           },
           {
             "label": "PlayerObjectWindowsChanged",
             "type": "event",
             "path": "events/game_events/game_event_PlayerObjectWindowsChanged.md",
-            "order": 160
+            "order": 151
+          },
+          {
+            "label": "Start",
+            "type": "event",
+            "path": "events/game_events/game_event_Start.md",
+            "order": 152
           },
           {
             "label": "Stop",
             "type": "event",
             "path": "events/game_events/game_event_Stop.md",
-            "order": 161
+            "order": 153
           },
           {
             "label": "selffriendlytarget",
             "type": "event",
             "path": "events/game_events/game_event_selffriendlytarget.md",
-            "order": 162
+            "order": 154
           },
           {
             "label": "selfhostiletarget",
             "type": "event",
             "path": "events/game_events/game_event_selfhostiletarget.md",
-            "order": 163
+            "order": 155
           },
           {
             "label": "{Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},}",
             "type": "event",
             "path": "events/game_events/game_event__Name_name_Author_author_Description_description_Textures_Normal_norm_71c4f5f6.md",
-            "order": 164
+            "order": 156
           }
         ]
       },
@@ -3961,838 +3859,778 @@
             "order": 28
           },
           {
-            "label": "SystemData.Events.EXIT_GAME",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.EXIT_GAME.md",
-            "order": 29
-          },
-          {
             "label": "SystemData.Events.GROUP_ACCEPT_INVITATION",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_ACCEPT_INVITATION.md",
-            "order": 30
+            "order": 29
           },
           {
             "label": "SystemData.Events.GROUP_EFFECTS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_EFFECTS_UPDATED.md",
-            "order": 31
+            "order": 30
           },
           {
             "label": "SystemData.Events.GROUP_LEAVE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_LEAVE.md",
-            "order": 32
+            "order": 31
           },
           {
             "label": "SystemData.Events.GROUP_PLAYER_ADDED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_PLAYER_ADDED.md",
-            "order": 33
+            "order": 32
           },
           {
             "label": "SystemData.Events.GROUP_SETTINGS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_SETTINGS_UPDATED.md",
-            "order": 34
+            "order": 33
           },
           {
             "label": "SystemData.Events.GROUP_SET_LEADER",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_SET_LEADER.md",
-            "order": 35
+            "order": 34
           },
           {
             "label": "SystemData.Events.GROUP_STATUS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_STATUS_UPDATED.md",
-            "order": 36
+            "order": 35
           },
           {
             "label": "SystemData.Events.GROUP_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_UPDATED.md",
-            "order": 37
+            "order": 36
           },
           {
             "label": "SystemData.Events.GUILD_EXP_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.GUILD_EXP_UPDATED.md",
-            "order": 38
+            "order": 37
           },
           {
             "label": "SystemData.Events.INTERACT_ACCEPT_QUEST",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_ACCEPT_QUEST.md",
-            "order": 39
+            "order": 38
           },
           {
             "label": "SystemData.Events.INTERACT_COMPLETE_QUEST",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_COMPLETE_QUEST.md",
-            "order": 40
+            "order": 39
           },
           {
             "label": "SystemData.Events.INTERACT_DEFAULT",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_DEFAULT.md",
-            "order": 41
+            "order": 40
           },
           {
             "label": "SystemData.Events.INTERACT_DONE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md",
-            "order": 42
+            "order": 41
           },
           {
             "label": "SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE.md",
-            "order": 43
-          },
-          {
-            "label": "SystemData.Events.INTERACT_LOOT_CLOSE",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_LOOT_CLOSE.md",
-            "order": 44
+            "order": 42
           },
           {
             "label": "SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md",
-            "order": 45
+            "order": 43
           },
           {
             "label": "SystemData.Events.INTERACT_OPEN_BANK",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md",
-            "order": 46
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST.md",
-            "order": 47
+            "order": 44
           },
           {
             "label": "SystemData.Events.INTERACT_SELL_ITEM",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SELL_ITEM.md",
-            "order": 48
+            "order": 45
           },
           {
             "label": "SystemData.Events.INTERACT_SHOW_HEALER",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_HEALER.md",
-            "order": 49
+            "order": 46
           },
           {
             "label": "SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md",
-            "order": 50
+            "order": 47
           },
           {
             "label": "SystemData.Events.INTERACT_SHOW_QUEST",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_QUEST.md",
-            "order": 51
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST.md",
-            "order": 52
+            "order": 48
           },
           {
             "label": "SystemData.Events.INTERACT_SHOW_STORE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_STORE.md",
-            "order": 53
-          },
-          {
-            "label": "SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_UPDATED_SCENARIO_QUEUE_LIST.md",
-            "order": 54
+            "order": 49
           },
           {
             "label": "SystemData.Events.INTERFACE_RELOADED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md",
-            "order": 55
+            "order": 50
           },
           {
             "label": "SystemData.Events.ITEM_SET_DATA_ARRIVED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.ITEM_SET_DATA_ARRIVED.md",
-            "order": 56
+            "order": 51
           },
           {
             "label": "SystemData.Events.LOADING_BEGIN",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_BEGIN.md",
-            "order": 57
+            "order": 52
           },
           {
             "label": "SystemData.Events.LOADING_END",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_END.md",
-            "order": 58
+            "order": 53
           },
           {
             "label": "SystemData.Events.LOG_OUT",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md",
-            "order": 59
+            "order": 54
           },
           {
             "label": "SystemData.Events.L_BUTTON_DOWN_PROCESSED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.L_BUTTON_DOWN_PROCESSED.md",
-            "order": 60
-          },
-          {
-            "label": "SystemData.Events.L_BUTTON_UP",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP.md",
-            "order": 61
+            "order": 55
           },
           {
             "label": "SystemData.Events.L_BUTTON_UP_PROCESSED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md",
-            "order": 62
+            "order": 56
           },
           {
             "label": "SystemData.Events.MACROS_LOADED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.MACROS_LOADED.md",
-            "order": 63
+            "order": 57
           },
           {
             "label": "SystemData.Events.MACRO_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.MACRO_UPDATED.md",
-            "order": 64
+            "order": 58
           },
           {
             "label": "SystemData.Events.M_BUTTON_DOWN_PROCESSED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.M_BUTTON_DOWN_PROCESSED.md",
-            "order": 65
+            "order": 59
           },
           {
             "label": "SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED.md",
-            "order": 66
+            "order": 60
           },
           {
             "label": "SystemData.Events.PLAYER_ACTIVE_TACTICS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_ACTIVE_TACTICS_UPDATED.md",
-            "order": 67
+            "order": 61
           },
           {
             "label": "SystemData.Events.PLAYER_ACTIVE_TITLE_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_ACTIVE_TITLE_UPDATED.md",
-            "order": 68
+            "order": 62
           },
           {
             "label": "SystemData.Events.PLAYER_AREA_CHANGED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_AREA_CHANGED.md",
-            "order": 69
+            "order": 63
           },
           {
             "label": "SystemData.Events.PLAYER_BANK_SLOT_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_BANK_SLOT_UPDATED.md",
-            "order": 70
+            "order": 64
           },
           {
             "label": "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md",
-            "order": 71
+            "order": 65
           },
           {
             "label": "SystemData.Events.PLAYER_BEGIN_CAST",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md",
-            "order": 72
+            "order": 66
           },
           {
             "label": "SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md",
-            "order": 73
+            "order": 67
           },
           {
             "label": "SystemData.Events.PLAYER_CAREER_LINE_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_LINE_UPDATED.md",
-            "order": 74
+            "order": 68
           },
           {
             "label": "SystemData.Events.PLAYER_CAREER_RANK_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_RANK_UPDATED.md",
-            "order": 75
+            "order": 69
           },
           {
             "label": "SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED.md",
-            "order": 76
+            "order": 70
           },
           {
             "label": "SystemData.Events.PLAYER_CAST_TIMER_SETBACK",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md",
-            "order": 77
+            "order": 71
           },
           {
             "label": "SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md",
-            "order": 78
+            "order": 72
           },
           {
             "label": "SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED.md",
-            "order": 79
+            "order": 73
           },
           {
             "label": "SystemData.Events.PLAYER_CULTIVATION_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CULTIVATION_UPDATED.md",
-            "order": 80
+            "order": 74
           },
           {
             "label": "SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED.md",
-            "order": 81
+            "order": 75
           },
           {
             "label": "SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md",
-            "order": 82
+            "order": 76
           },
           {
             "label": "SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md",
-            "order": 83
+            "order": 77
           },
           {
             "label": "SystemData.Events.PLAYER_DEATH",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH.md",
-            "order": 84
+            "order": 78
           },
           {
             "label": "SystemData.Events.PLAYER_DEATH_CLEARED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH_CLEARED.md",
-            "order": 85
+            "order": 79
           },
           {
             "label": "SystemData.Events.PLAYER_EFFECTS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_EFFECTS_UPDATED.md",
-            "order": 86
+            "order": 80
           },
           {
             "label": "SystemData.Events.PLAYER_END_CAST",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_END_CAST.md",
-            "order": 87
+            "order": 81
           },
           {
             "label": "SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED.md",
-            "order": 88
+            "order": 82
           },
           {
             "label": "SystemData.Events.PLAYER_EXP_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_EXP_UPDATED.md",
-            "order": 89
+            "order": 83
           },
           {
             "label": "SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED.md",
-            "order": 90
+            "order": 84
           },
           {
             "label": "SystemData.Events.PLAYER_HOT_BAR_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_HOT_BAR_UPDATED.md",
-            "order": 91
+            "order": 85
           },
           {
             "label": "SystemData.Events.PLAYER_INFLUENCE_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_INFLUENCE_UPDATED.md",
-            "order": 92
+            "order": 86
           },
           {
             "label": "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md",
-            "order": 93
-          },
-          {
-            "label": "SystemData.Events.PLAYER_LOAD_COMPLETE",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_LOAD_COMPLETE.md",
-            "order": 94
+            "order": 87
           },
           {
             "label": "SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md",
-            "order": 95
+            "order": 88
           },
           {
             "label": "SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED.md",
-            "order": 96
+            "order": 89
           },
           {
             "label": "SystemData.Events.PLAYER_MONEY_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MONEY_UPDATED.md",
-            "order": 97
+            "order": 90
           },
           {
             "label": "SystemData.Events.PLAYER_MORALE_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MORALE_UPDATED.md",
-            "order": 98
+            "order": 91
           },
           {
             "label": "SystemData.Events.PLAYER_NUM_TACTIC_SLOTS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_NUM_TACTIC_SLOTS_UPDATED.md",
-            "order": 99
+            "order": 92
           },
           {
             "label": "SystemData.Events.PLAYER_PET_HEALTH_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_PET_HEALTH_UPDATED.md",
-            "order": 100
+            "order": 93
           },
           {
             "label": "SystemData.Events.PLAYER_PET_STATE_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_PET_STATE_UPDATED.md",
-            "order": 101
+            "order": 94
           },
           {
             "label": "SystemData.Events.PLAYER_PET_TARGET_HEALTH_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_PET_TARGET_HEALTH_UPDATED.md",
-            "order": 102
+            "order": 95
           },
           {
             "label": "SystemData.Events.PLAYER_PET_TARGET_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_PET_TARGET_UPDATED.md",
-            "order": 103
+            "order": 96
           },
           {
             "label": "SystemData.Events.PLAYER_PET_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_PET_UPDATED.md",
-            "order": 104
+            "order": 97
           },
           {
             "label": "SystemData.Events.PLAYER_POSITION_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_POSITION_UPDATED.md",
-            "order": 105
+            "order": 98
           },
           {
             "label": "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_RANK_UPDATED.md",
-            "order": 106
+            "order": 99
           },
           {
             "label": "SystemData.Events.PLAYER_RENOWN_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_UPDATED.md",
-            "order": 107
+            "order": 100
           },
           {
             "label": "SystemData.Events.PLAYER_RVR_FLAG_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_RVR_FLAG_UPDATED.md",
-            "order": 108
+            "order": 101
           },
           {
             "label": "SystemData.Events.PLAYER_START_INTERACT_TIMER",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_START_INTERACT_TIMER.md",
-            "order": 109
+            "order": 102
           },
           {
             "label": "SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED.md",
-            "order": 110
+            "order": 103
           },
           {
             "label": "SystemData.Events.PLAYER_TARGET_IS_IMMUNE_TO_DISABLES",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_IS_IMMUNE_TO_DISABLES.md",
-            "order": 111
+            "order": 104
           },
           {
             "label": "SystemData.Events.PLAYER_TARGET_IS_IMMUNE_TO_MOVEMENT_IMPARING",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_IS_IMMUNE_TO_MOVEMENT_IMPARING.md",
-            "order": 112
+            "order": 105
           },
           {
             "label": "SystemData.Events.PLAYER_TARGET_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md",
-            "order": 113
+            "order": 106
           },
           {
             "label": "SystemData.Events.PLAYER_ZONE_CHANGED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md",
-            "order": 114
+            "order": 107
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_ADDED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_ADDED.md",
-            "order": 115
+            "order": 108
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_INFO_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_INFO_UPDATED.md",
-            "order": 116
+            "order": 109
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_REMOVED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_REMOVED.md",
-            "order": 117
+            "order": 110
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_UPDATED.md",
-            "order": 118
+            "order": 111
           },
           {
             "label": "SystemData.Events.RELEASE_CORPSE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.RELEASE_CORPSE.md",
-            "order": 119
+            "order": 112
           },
           {
             "label": "SystemData.Events.RELOAD_INTERFACE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md",
-            "order": 120
+            "order": 113
           },
           {
             "label": "SystemData.Events.R_BUTTON_DOWN_PROCESSED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.R_BUTTON_DOWN_PROCESSED.md",
-            "order": 121
-          },
-          {
-            "label": "SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED.md",
-            "order": 122
+            "order": 114
           },
           {
             "label": "SystemData.Events.SCENARIO_BEGIN",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_BEGIN.md",
-            "order": 123
+            "order": 115
           },
           {
             "label": "SystemData.Events.SCENARIO_END",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_END.md",
-            "order": 124
+            "order": 116
           },
           {
             "label": "SystemData.Events.SCENARIO_GROUP_JOIN",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_GROUP_JOIN.md",
-            "order": 125
+            "order": 117
           },
           {
             "label": "SystemData.Events.SCENARIO_GROUP_LEAVE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_GROUP_LEAVE.md",
-            "order": 126
-          },
-          {
-            "label": "SystemData.Events.SCENARIO_INSTANCE_CANCEL",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_INSTANCE_CANCEL.md",
-            "order": 127
+            "order": 118
           },
           {
             "label": "SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW.md",
-            "order": 128
+            "order": 119
           },
           {
             "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED.md",
-            "order": 129
+            "order": 120
           },
           {
             "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED.md",
-            "order": 130
+            "order": 121
           },
           {
             "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED.md",
-            "order": 131
+            "order": 122
           },
           {
             "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED.md",
-            "order": 132
+            "order": 123
           },
           {
             "label": "SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED.md",
-            "order": 133
+            "order": 124
           },
           {
             "label": "SystemData.Events.SCENARIO_POST_MODE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_POST_MODE.md",
-            "order": 134
+            "order": 125
           },
           {
             "label": "SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT.md",
-            "order": 135
+            "order": 126
           },
           {
             "label": "SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS.md",
-            "order": 136
+            "order": 127
           },
           {
             "label": "SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md",
-            "order": 137
+            "order": 128
           },
           {
             "label": "SystemData.Events.SCENARIO_UPDATE_POINTS",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_UPDATE_POINTS.md",
-            "order": 138
+            "order": 129
           },
           {
             "label": "SystemData.Events.SEND_CHAT_TEXT",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SEND_CHAT_TEXT.md",
-            "order": 139
+            "order": 130
           },
           {
             "label": "SystemData.Events.SHOW_ALERT_TEXT",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SHOW_ALERT_TEXT.md",
-            "order": 140
-          },
-          {
-            "label": "SystemData.Events.SPELL_CAST_CANCEL",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.SPELL_CAST_CANCEL.md",
-            "order": 141
+            "order": 131
           },
           {
             "label": "SystemData.Events.TARGET_PET",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.TARGET_PET.md",
-            "order": 142
+            "order": 132
           },
           {
             "label": "SystemData.Events.UPDATE_ITEM_ENHANCEMENT",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.UPDATE_ITEM_ENHANCEMENT.md",
-            "order": 143
+            "order": 133
           },
           {
             "label": "SystemData.Events.UPDATE_PROCESSED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md",
-            "order": 144
+            "order": 134
           },
           {
             "label": "SystemData.Events.USER_SETTINGS_CHANGED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.USER_SETTINGS_CHANGED.md",
-            "order": 145
+            "order": 135
           },
           {
             "label": "SystemData.Events.VISIBLE_EQUIPMENT_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.VISIBLE_EQUIPMENT_UPDATED.md",
-            "order": 146
+            "order": 136
           },
           {
             "label": "SystemData.Events.WORLD_OBJ_COMBAT_EVENT",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md",
-            "order": 147
+            "order": 137
           },
           {
             "label": "SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED.md",
-            "order": 148
+            "order": 138
           },
           {
             "label": "SystemData.Events.WORLD_OBJ_RENOWN_GAINED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_RENOWN_GAINED.md",
-            "order": 149
+            "order": 139
           },
           {
             "label": "SystemData.Events.WORLD_OBJ_XP_GAINED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_XP_GAINED.md",
-            "order": 150
+            "order": 140
           },
           {
             "label": "SystemData.GuildPermissons.CLAIM_KEEP",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.GuildPermissons.CLAIM_KEEP.md",
-            "order": 151
+            "order": 141
           },
           {
             "label": "SystemData.ItemRarity.UTILITY",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.ItemRarity.UTILITY.md",
-            "order": 152
+            "order": 142
           },
           {
             "label": "SystemData.MapLevel.ZONE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.MapLevel.ZONE.md",
-            "order": 153
+            "order": 143
           },
           {
             "label": "SystemData.MapTypes.NORMAL",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.MapTypes.NORMAL.md",
-            "order": 154
+            "order": 144
           },
           {
             "label": "SystemData.MapTypes.OVERHEAD",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.MapTypes.OVERHEAD.md",
-            "order": 155
+            "order": 145
           },
           {
             "label": "SystemData.MouseOverWindow.name",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md",
-            "order": 156
+            "order": 146
           },
           {
             "label": "SystemData.MousePosition.x",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.MousePosition.x.md",
-            "order": 157
+            "order": 147
           },
           {
             "label": "SystemData.MousePosition.y",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.MousePosition.y.md",
-            "order": 158
+            "order": 148
           },
           {
             "label": "SystemData.Server.Name",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Server.Name.md",
-            "order": 159
+            "order": 149
           },
           {
             "label": "SystemData.Settings.Language.active",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Settings.Language.active.md",
-            "order": 160
+            "order": 150
           },
           {
             "label": "SystemData.TargetObjectType.ALLY_PLAYER",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.TargetObjectType.ALLY_PLAYER.md",
-            "order": 161
+            "order": 151
           },
           {
             "label": "SystemData.TargetObjectType.ENEMY_PLAYER",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.TargetObjectType.ENEMY_PLAYER.md",
-            "order": 162
+            "order": 152
           },
           {
             "label": "SystemData.UiLogFilters.DEBUG",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.UiLogFilters.DEBUG.md",
-            "order": 163
+            "order": 153
           },
           {
             "label": "SystemData.UiLogFilters.ERROR",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.UiLogFilters.ERROR.md",
-            "order": 164
+            "order": 154
           },
           {
             "label": "SystemData.UiLogFilters.FUNCTION",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.UiLogFilters.FUNCTION.md",
-            "order": 165
+            "order": 155
           },
           {
             "label": "SystemData.screenResolution.x",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.screenResolution.x.md",
-            "order": 166
+            "order": 156
           },
           {
             "label": "SystemData.screenResolution.y",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.screenResolution.y.md",
-            "order": 167
+            "order": 157
           }
         ]
       }
@@ -4858,472 +4696,454 @@
             "order": 8
           },
           {
-            "label": "GameData.CareerLine.WITCH_ELF",
-            "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.CareerLine.WITCH_ELF.md",
-            "order": 9
-          },
-          {
-            "label": "GameData.CareerLine.WITCH_HUNTER",
-            "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.CareerLine.WITCH_HUNTER.md",
-            "order": 10
-          },
-          {
             "label": "GameData.ChatData.name",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ChatData.name.md",
-            "order": 11
+            "order": 9
           },
           {
             "label": "GameData.ChatData.text",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ChatData.text.md",
-            "order": 12
+            "order": 10
           },
           {
             "label": "GameData.CityId.CHAOS",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.CityId.CHAOS.md",
-            "order": 13
+            "order": 11
           },
           {
             "label": "GameData.CityId.EMPIRE",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.CityId.EMPIRE.md",
-            "order": 14
+            "order": 12
           },
           {
             "label": "GameData.CultivationTypes.NUTRIENT",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.CultivationTypes.NUTRIENT.md",
-            "order": 15
+            "order": 13
           },
           {
             "label": "GameData.CultivationTypes.SEED",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.CultivationTypes.SEED.md",
-            "order": 16
+            "order": 14
           },
           {
             "label": "GameData.CultivationTypes.SOIL",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.CultivationTypes.SOIL.md",
-            "order": 17
+            "order": 15
           },
           {
             "label": "GameData.CultivationTypes.WATERCAN",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.CultivationTypes.WATERCAN.md",
-            "order": 18
+            "order": 16
           },
           {
             "label": "GameData.EquipSlots.BACK",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.EquipSlots.BACK.md",
-            "order": 19
+            "order": 17
           },
           {
             "label": "GameData.EquipSlots.HELM",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.EquipSlots.HELM.md",
-            "order": 20
+            "order": 18
           },
           {
             "label": "GameData.EquipSlots.RIGHT_HAND",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.EquipSlots.RIGHT_HAND.md",
-            "order": 21
+            "order": 19
           },
           {
             "label": "GameData.Guild.m_GuildExpInCurrentLevel",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Guild.m_GuildExpInCurrentLevel.md",
-            "order": 22
+            "order": 20
           },
           {
             "label": "GameData.Guild.m_GuildExpNeeded",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Guild.m_GuildExpNeeded.md",
-            "order": 23
+            "order": 21
           },
           {
             "label": "GameData.Guild.m_GuildName",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Guild.m_GuildName.md",
-            "order": 24
+            "order": 22
           },
           {
             "label": "GameData.Guild.m_GuildRank",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Guild.m_GuildRank.md",
-            "order": 25
+            "order": 23
           },
           {
             "label": "GameData.HOTBAR_SWAPPABLE_PAGE_COUNT",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.HOTBAR_SWAPPABLE_PAGE_COUNT.md",
-            "order": 26
+            "order": 24
           },
           {
             "label": "GameData.InteractTimer.objectName",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.InteractTimer.objectName.md",
-            "order": 27
+            "order": 25
           },
           {
             "label": "GameData.InteractTimer.time",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.InteractTimer.time.md",
-            "order": 28
+            "order": 26
           },
           {
             "label": "GameData.ItemLocs.BANK",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ItemLocs.BANK.md",
-            "order": 29
+            "order": 27
           },
           {
             "label": "GameData.ItemLocs.CRAFTING_ITEM",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ItemLocs.CRAFTING_ITEM.md",
-            "order": 30
+            "order": 28
           },
           {
             "label": "GameData.ItemLocs.CURRENCY_ITEM",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ItemLocs.CURRENCY_ITEM.md",
-            "order": 31
+            "order": 29
           },
           {
             "label": "GameData.ItemLocs.INVENTORY",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ItemLocs.INVENTORY.md",
-            "order": 32
+            "order": 30
           },
           {
             "label": "GameData.ItemTypes.CURRENCY",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ItemTypes.CURRENCY.md",
-            "order": 33
+            "order": 31
           },
           {
             "label": "GameData.ItemTypes.ENHANCEMENT",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ItemTypes.ENHANCEMENT.md",
-            "order": 34
+            "order": 32
           },
           {
             "label": "GameData.ItemTypes.POTION",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ItemTypes.POTION.md",
-            "order": 35
+            "order": 33
           },
           {
             "label": "GameData.PetCommand.ATTACK",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.PetCommand.ATTACK.md",
-            "order": 36
+            "order": 34
           },
           {
             "label": "GameData.PetCommand.DEFENSIVE",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.PetCommand.DEFENSIVE.md",
-            "order": 37
+            "order": 35
           },
           {
             "label": "GameData.PetCommand.FOLLOW",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.PetCommand.FOLLOW.md",
-            "order": 38
+            "order": 36
           },
           {
             "label": "GameData.Player",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.md",
-            "order": 39
+            "order": 37
           },
           {
             "label": "GameData.Player.Experience.curXpEarned",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Experience.curXpEarned.md",
-            "order": 40
+            "order": 38
           },
           {
             "label": "GameData.Player.Experience.curXpNeeded",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Experience.curXpNeeded.md",
-            "order": 41
+            "order": 39
           },
           {
             "label": "GameData.Player.Experience.restXp",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Experience.restXp.md",
-            "order": 42
+            "order": 40
           },
           {
             "label": "GameData.Player.Pet",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Pet.md",
-            "order": 43
+            "order": 41
           },
           {
             "label": "GameData.Player.Pet.Target.name",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Pet.Target.name.md",
-            "order": 44
+            "order": 42
           },
           {
             "label": "GameData.Player.Pet.healthPercent",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Pet.healthPercent.md",
-            "order": 45
+            "order": 43
           },
           {
             "label": "GameData.Player.Pet.level",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Pet.level.md",
-            "order": 46
+            "order": 44
           },
           {
             "label": "GameData.Player.Pet.name",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Pet.name.md",
-            "order": 47
+            "order": 45
           },
           {
             "label": "GameData.Player.Pet.objNum",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Pet.objNum.md",
-            "order": 48
+            "order": 46
           },
           {
             "label": "GameData.Player.Renown.curRank",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Renown.curRank.md",
-            "order": 49
+            "order": 47
           },
           {
             "label": "GameData.Player.Renown.curRenownEarned",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Renown.curRenownEarned.md",
-            "order": 50
+            "order": 48
           },
           {
             "label": "GameData.Player.Renown.curRenownNeeded",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.Renown.curRenownNeeded.md",
-            "order": 51
+            "order": 49
           },
           {
             "label": "GameData.Player.actionPoints.current",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.actionPoints.current.md",
-            "order": 52
+            "order": 50
           },
           {
             "label": "GameData.Player.actionPoints.maximum",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.actionPoints.maximum.md",
-            "order": 53
+            "order": 51
           },
           {
             "label": "GameData.Player.activeTitle",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.activeTitle.md",
-            "order": 54
+            "order": 52
           },
           {
             "label": "GameData.Player.area",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.area.md",
-            "order": 55
+            "order": 53
           },
           {
             "label": "GameData.Player.area.name",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.area.name.md",
-            "order": 56
+            "order": 54
           },
           {
             "label": "GameData.Player.armorValue",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.armorValue.md",
-            "order": 57
+            "order": 55
           },
           {
             "label": "GameData.Player.career.line",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.career.line.md",
-            "order": 58
+            "order": 56
           },
           {
             "label": "GameData.Player.career.name",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.career.name.md",
-            "order": 59
+            "order": 57
           },
           {
             "label": "GameData.Player.hitPoints.current",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.hitPoints.current.md",
-            "order": 60
+            "order": 58
           },
           {
             "label": "GameData.Player.hitPoints.maximum",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.hitPoints.maximum.md",
-            "order": 61
+            "order": 59
           },
           {
             "label": "GameData.Player.inCombat",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.inCombat.md",
-            "order": 62
+            "order": 60
           },
           {
             "label": "GameData.Player.isGroupLeader",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.isGroupLeader.md",
-            "order": 63
+            "order": 61
           },
           {
             "label": "GameData.Player.killerName",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.killerName.md",
-            "order": 64
+            "order": 62
           },
           {
             "label": "GameData.Player.lastname",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.lastname.md",
-            "order": 65
+            "order": 63
           },
           {
             "label": "GameData.Player.level",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.level.md",
-            "order": 66
+            "order": 64
           },
           {
             "label": "GameData.Player.name",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.name.md",
-            "order": 67
+            "order": 65
           },
           {
             "label": "GameData.Player.rvrPermaFlagged",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.rvrPermaFlagged.md",
-            "order": 68
+            "order": 66
           },
           {
             "label": "GameData.Player.rvrZoneFlagged",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.rvrZoneFlagged.md",
-            "order": 69
+            "order": 67
           },
           {
             "label": "GameData.Player.worldObjNum",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.worldObjNum.md",
-            "order": 70
+            "order": 68
           },
           {
             "label": "GameData.Player.zone",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.zone.md",
-            "order": 71
+            "order": 69
           },
           {
             "label": "GameData.Player.zoneId",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.zoneId.md",
-            "order": 72
+            "order": 70
           },
           {
             "label": "GameData.PlayerActions.ASSIST_PLAYER",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.PlayerActions.ASSIST_PLAYER.md",
-            "order": 73
+            "order": 71
           },
           {
             "label": "GameData.PlayerActions.DO_ABILITY",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.PlayerActions.DO_ABILITY.md",
-            "order": 74
+            "order": 72
           },
           {
             "label": "GameData.PlayerActions.DO_MACRO",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.PlayerActions.DO_MACRO.md",
-            "order": 75
+            "order": 73
           },
           {
             "label": "GameData.PlayerActions.PERFORM_CRAFTING",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.PlayerActions.PERFORM_CRAFTING.md",
-            "order": 76
+            "order": 74
           },
           {
             "label": "GameData.PlayerActions.SET_TARGET",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md",
-            "order": 77
+            "order": 75
           },
           {
             "label": "GameData.ScenarioData",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ScenarioData.md",
-            "order": 78
+            "order": 76
           },
           {
             "label": "GameData.ScenarioData.startingScenario",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ScenarioData.startingScenario.md",
-            "order": 79
-          },
-          {
-            "label": "GameData.ScenarioQueueData",
-            "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.ScenarioQueueData.md",
-            "order": 80
+            "order": 77
           },
           {
             "label": "GameData.Sound",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Sound.md",
-            "order": 81
+            "order": 78
           },
           {
             "label": "GameData.Sound.BUTTON_CLICK",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Sound.BUTTON_CLICK.md",
-            "order": 82
+            "order": 79
           },
           {
             "label": "GameData.Sound.QUEST_ABANDONED",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Sound.QUEST_ABANDONED.md",
-            "order": 83
+            "order": 80
           },
           {
             "label": "GameData.TradeSkills.APOTHECARY",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.TradeSkills.APOTHECARY.md",
-            "order": 84
+            "order": 81
           },
           {
             "label": "GameData.TradeSkills.CULTIVATION",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.TradeSkills.CULTIVATION.md",
-            "order": 85
+            "order": 82
           },
           {
             "label": "GameData.TradeSkills.TALISMAN",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.TradeSkills.TALISMAN.md",
-            "order": 86
+            "order": 83
           }
         ]
       }
@@ -5378,76 +5198,88 @@
             "order": 4
           },
           {
+            "label": "XML list binding pattern",
+            "type": "pattern",
+            "path": "patterns/conventions_XML_list_binding_pattern.md",
+            "order": 5
+          },
+          {
+            "label": "XML runtime caveats",
+            "type": "pattern",
+            "path": "patterns/conventions_XML_runtime_caveats.md",
+            "order": 6
+          },
+          {
             "label": "XML to Lua binding pattern",
             "type": "pattern",
             "path": "patterns/conventions_XML_to_Lua_binding_pattern.md",
-            "order": 5
+            "order": 7
           },
           {
             "label": "BroadcastEvent",
             "type": "pattern",
             "path": "patterns/events_BroadcastEvent.md",
-            "order": 6
+            "order": 8
           },
           {
             "label": "Game event fan-in",
             "type": "pattern",
             "path": "patterns/events_Game_event_fan-in.md",
-            "order": 7
+            "order": 9
           },
           {
             "label": "RegisterEventHandler",
             "type": "pattern",
             "path": "patterns/events_RegisterEventHandler.md",
-            "order": 8
+            "order": 10
           },
           {
             "label": "UnregisterEventHandler",
             "type": "pattern",
             "path": "patterns/events_UnregisterEventHandler.md",
-            "order": 9
+            "order": 11
           },
           {
             "label": "Window event hooks",
             "type": "pattern",
             "path": "patterns/events_Window_event_hooks.md",
-            "order": 10
+            "order": 12
           },
           {
             "label": "LibSlash cleanup",
             "type": "pattern",
             "path": "patterns/slash_commands_LibSlash_cleanup.md",
-            "order": 11
+            "order": 13
           },
           {
             "label": "LibSlash registration",
             "type": "pattern",
             "path": "patterns/slash_commands_LibSlash_registration.md",
-            "order": 12
+            "order": 14
           },
           {
             "label": "Runtime anchoring",
             "type": "pattern",
             "path": "patterns/window_Runtime_anchoring.md",
-            "order": 13
+            "order": 15
           },
           {
             "label": "Template instantiation",
             "type": "pattern",
             "path": "patterns/window_Template_instantiation.md",
-            "order": 14
+            "order": 16
           },
           {
             "label": "Window creation",
             "type": "pattern",
             "path": "patterns/window_Window_creation.md",
-            "order": 15
+            "order": 17
           },
           {
             "label": "XML to Lua binding",
             "type": "pattern",
             "path": "patterns/window_XML_to_Lua_binding.md",
-            "order": 16
+            "order": 18
           }
         ]
       }

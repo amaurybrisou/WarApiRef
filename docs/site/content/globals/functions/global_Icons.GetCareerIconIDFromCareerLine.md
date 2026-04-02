@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AutoMark, Effigy, Enemy, MapPin, Moth, Swift Assist, Targets |
-| Files seen in | `/workspace/AutoMark/Source/AutoMark.lua:7`, `/workspace/Effigy/Elements/EffigyIcons.lua:138`, `/workspace/Effigy/Elements/EffigyIcons.lua:172`, `/workspace/Enemy/Code/Assist/Assist.lua:195`, `/workspace/Enemy/Code/CombatLog/CombatLogIDS.lua:211`, `/workspace/Enemy/Code/GroupIcons/GroupIcon.lua:115`, `/workspace/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/Enemy/Code/UnitFrames/Parts/CareerIcon.lua:13` |
+| Files seen in | `/workspace_addons/AutoMark/Source/AutoMark.lua:7`, `/workspace_addons/Effigy/Elements/EffigyIcons.lua:138`, `/workspace_addons/Effigy/Elements/EffigyIcons.lua:172`, `/workspace_addons/Enemy/Code/Assist/Assist.lua:195`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogIDS.lua:211`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcon.lua:115`, `/workspace_addons/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace_addons/Enemy/Code/UnitFrames/Parts/CareerIcon.lua:13` |
 | Namespaces detected | Icons |
 | Source kinds | globals, lua_calls |
 | Example locations | AutoMark: AutoMark.local.CreateMarker, AutoMark: CreateMarker, Effigy: Effigy.local.RenderCareerIcon, Effigy: Effigy.local.SetupCareerIcon, Effigy: RenderCareerIcon, Effigy: SetupCareerIcon |
@@ -76,11 +76,11 @@ Observed as a global function across 7 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

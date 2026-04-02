@@ -22,14 +22,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Busted, EA_UiDebugTools, TidyChat |
-| Files seen in | `/workspace/Busted/Busted.lua:324`, `/workspace/TidyChat/TidyChat.lua:1175`, `/workspace/ea_uidebugtools/Source/bust/Busted.lua:331` |
+| Files seen in | `/workspace_addons/Busted/Busted.lua:324`, `/workspace_addons/TidyChat/TidyChat.lua:1175`, `/workspace_addons/ea_uidebugtools/Source/bust/Busted.lua:331` |
 | Namespaces detected | TextLogGetUpdateEventId |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Busted: Busted.Initialize, EA_UiDebugTools: Busted.Initialize, TidyChat: TidyChatLogs.Initialize |
@@ -39,7 +39,7 @@
 | Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 9 |
+| Initialization flow references | 7 |
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |

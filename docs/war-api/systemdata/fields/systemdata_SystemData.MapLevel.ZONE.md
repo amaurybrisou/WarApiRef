@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapMonster |
-| Files seen in | `/workspace/MapMonster/Source/MapMonster_Calibrate.lua:63` |
+| Files seen in | `/workspace_addons/MapMonster/Source/MapMonster_Calibrate.lua:63` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Calibrate_CreateMap, MapMonster.local.Calibrate_CreateMap, lua_call |

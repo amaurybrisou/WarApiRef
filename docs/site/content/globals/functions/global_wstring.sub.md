@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 9 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CombatTextNames, Effigy, Enemy, GetStats, Killer, LibGuard, Moth, Queue Queuer |
-| Files seen in | `/workspace/Effigy/Elements/EffigyLabel.lua:16`, `/workspace/Effigy/Elements/EffigyLabel.lua:40`, `/workspace/Effigy/States/EffigyStatePlayer.lua:294`, `/workspace/Enemy/Code/Core/Utils.lua:684`, `/workspace/GetStats/GetStats.lua:119`, `/workspace/Killer/KillerUtils.lua:169`, `/workspace/LibGuard/Source/LibGuard.lua:111`, `/workspace/Moth/Moth.lua:270` |
+| Addons seen in | CombatTextNames, Effigy, Enemy, GetStats, Killer, LibGuard, Moth, WSCT |
+| Files seen in | `/workspace_addons/Effigy/Elements/EffigyLabel.lua:16`, `/workspace_addons/Effigy/Elements/EffigyLabel.lua:40`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:294`, `/workspace_addons/Enemy/Code/Core/Utils.lua:684`, `/workspace_addons/GetStats/GetStats.lua:119`, `/workspace_addons/Killer/KillerUtils.lua:169`, `/workspace_addons/LibGuard/Source/LibGuard.lua:111`, `/workspace_addons/Moth/Moth.lua:270` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
 | Example locations | CombatTextNames: CombatTextNames.TruncateAbilityName, Effigy: Effigy.UpdateTitle, Effigy: Effigy.local.WStringSplitInclDelimiter, Effigy: Effigy.local.wstringStartsWith, Effigy: WStringSplitInclDelimiter, Effigy: wstringStartsWith |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 33 |
-| Global usage count | 33 |
+| Lua usage count | 18 |
+| Global usage count | 18 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,23 +62,23 @@ wstring.sub(arg1, arg2, arg3)
 
 ## Description
 
-Observed as a global function across 9 addons.
+Observed as a global function across 8 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: WString, inString, msg |
-| arg2 | Observed as a numeric value. | Observed values: -1, -2, 0 |
-| arg3 | Observed as a numeric value. | Observed values: -1, -2, -3 |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: WString, inString, number_string |
+| arg2 | Observed as a numeric value. | Observed values: 0, 1, 11 |
+| arg3 | Observed as a numeric value. | Observed values: -3, 1, CombatTextNames.Settings.TruncateMinLength |
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -89,7 +89,6 @@ Observed as a global function across 9 addons.
 - Killer
 - LibGuard
 - Moth
-- Queue Queuer
 - WSCT
 
 ## Examples
@@ -116,14 +115,13 @@ Observed as a global function across 9 addons.
 - [wstring.gsub](global_wstring.gsub.md) (HIGH 100/100) - Global Function
 - [wstring.len](global_wstring.len.md) (HIGH 100/100) - Global Function
 - [wstring.match](global_wstring.match.md) (HIGH 100/100) - Global Function
-- [wstring.upper](global_wstring.upper.md) (HIGH 88/100) - Global Function
 - [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [CreateWindowFromTemplate](global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 - [DestroyWindow](global_DestroyWindow.md) (HIGH 75/100) - Global Function
 - [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 - [wstring.find](global_wstring.find.md) (MEDIUM 63/100) - Global Function
 - [wstring.lower](global_wstring.lower.md) (MEDIUM 45/100) - Global Function
-- [wstring.reverse](global_wstring.reverse.md) (MEDIUM 45/100) - Global Function
+- [wstring.upper](global_wstring.upper.md) (MEDIUM 45/100) - Global Function
 
 ## Triggered By
 

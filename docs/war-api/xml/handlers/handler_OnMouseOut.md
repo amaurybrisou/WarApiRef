@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Killer |
-| Files seen in | `/workspace/Killer/Killer.xml:157`, `/workspace/Killer/Killer.xml:171`, `/workspace/Killer/Killer.xml:31`, `/workspace/Killer/Killer.xml:770` |
+| Files seen in | `/workspace_addons/Killer/Killer.xml:157`, `/workspace_addons/Killer/Killer.xml:171`, `/workspace_addons/Killer/Killer.xml:31`, `/workspace_addons/Killer/Killer.xml:770` |
 | Namespaces detected | OnMouseOut |
 | Source kinds | bindings, xml_handlers |
 | Example locations | Killer: KillerFeedRowTemplate.OnMouseOut, Killer: KillerPersonalCounter.OnMouseOut, Killer: KillerWindowAllTimeHover.OnMouseOut, Killer: KillerWindowRecentHover.OnMouseOut |

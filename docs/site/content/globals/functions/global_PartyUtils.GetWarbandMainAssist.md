@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/EnemyPlayer.lua:57` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/EnemyPlayer.lua:57` |
 | Namespaces detected | PartyUtils |
 | Source kinds | globals, lua_calls |
 | Example locations | Enemy: EnemyPlayer:IsMainAssist |
@@ -69,11 +69,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

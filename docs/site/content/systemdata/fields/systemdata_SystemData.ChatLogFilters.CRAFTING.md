@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Miracle Grow Remix, MiracleGrowLight |
-| Files seen in | `/workspace/MGRemix/harvrepeat.lua:50`, `/workspace/MiracleGrowLight/MiracleGrowLight.lua:274` |
+| Files seen in | `/workspace_addons/MGRemix/harvrepeat.lua:50`, `/workspace_addons/MiracleGrowLight/MiracleGrowLight.lua:274` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Miracle Grow Remix.local.c, MiracleGrowLight.local.setMode, c, lua_call, setMode |

@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, RoR_SoR, followTheLeader |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace/RoR_SoR/RoR_SoR.lua:178`, `/workspace/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:178`, `/workspace_addons/followTheLeader/followTheLeader.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy.GroupsInitialize, Enemy: Enemy._ScenarioInfoEnabledChanged, RoR_SoR: RoR_SoR:RegisterSelfEvents, followTheLeader: followTheLeader.Initialize |
@@ -67,7 +67,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 

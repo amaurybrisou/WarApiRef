@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Modules/API/Shinies-API-Inventory.lua:114`, `/workspace/Shinies/Modules/API/Shinies-API-Inventory.lua:135`, `/workspace/Shinies/Modules/API/Shinies-API-Inventory.lua:167`, `/workspace/Shinies/Modules/API/Shinies-API-Inventory.lua:215`, `/workspace/Shinies/Modules/Data/Shinies-Data-Inventory.lua:186` |
+| Files seen in | `/workspace_addons/Shinies/Modules/API/Shinies-API-Inventory.lua:114`, `/workspace_addons/Shinies/Modules/API/Shinies-API-Inventory.lua:135`, `/workspace_addons/Shinies/Modules/API/Shinies-API-Inventory.lua:167`, `/workspace_addons/Shinies/Modules/API/Shinies-API-Inventory.lua:215`, `/workspace_addons/Shinies/Modules/Data/Shinies-Data-Inventory.lua:186` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | ShiniesDataInventory.OnPlayerCraftingSlotUpdated, _G.Shinies:GetModule:Inventory_GetAvailableSlot, _G.Shinies:GetModule:Inventory_GetItemSlotByStackCount, _G.Shinies:GetModule:Inventory_GetItemSlots, _G.Shinies:GetModule:Inventory_TotalItemCount, lua_call |

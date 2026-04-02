@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:235` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:235` |
 | Namespaces detected | EA_Window_InteractionSpecialtyTraining |
 | Source kinds | lua_calls |
 | Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickMastery |

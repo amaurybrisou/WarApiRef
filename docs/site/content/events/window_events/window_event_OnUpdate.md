@@ -24,24 +24,24 @@
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, CMap, EA_UiDebugTools, Effigy, Queue Queuer, TidyQueue, TidyRoll |
-| Files seen in | `/workspace/BuffHead/Setup/SetupLayout.xml:249`, `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:102`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:125`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:167`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:56`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:79` |
+| Addons seen in | BuffHead, CMap, EA_UiDebugTools, Effigy, TidyRoll |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupLayout.xml:249`, `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace_addons/TidyRoll/TidyRoll.xml:275`, `/workspace_addons/cmap/CMap.xml:104`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:29` |
 | Namespaces detected | OnUpdate |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
-| Example locations | BuffHead: BuffHeadSetupLayoutWindow.OnUpdate, CMap: CMapWindowWMap.OnUpdate, EA_UiDebugTools: DebugWindow.OnUpdate, Effigy: Effigy.RegisterStateInfoForCastbar, Effigy: Effigy.RegisterStateInfoForPlayer, Queue Queuer: QueueQueuer_GUI.OnUpdate |
-| XML usage count | 10 |
-| XML attribute usage count | 10 |
+| Example locations | BuffHead: BuffHeadSetupLayoutWindow.OnUpdate, CMap: CMapWindowWMap.OnUpdate, EA_UiDebugTools: DebugWindow.OnUpdate, Effigy: Effigy.RegisterStateInfoForCastbar, Effigy: Effigy.RegisterStateInfoForPlayer, TidyRoll: TidyRollTimer.OnUpdate |
+| XML usage count | 4 |
+| XML attribute usage count | 4 |
 | Lua usage count | 2 |
 | Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 3 |
-| Initialization flow references | 21 |
+| Initialization flow references | 18 |
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 7 addons.
+Observed as an engine-supplied UI event hook used by 5 addons.
 
 ## Handler Pattern
 
@@ -69,7 +69,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Payload
 
-- Window callback arguments are not fully inferable from API_Ref alone.
+- Window callback arguments are not fully inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -77,8 +77,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - CMap
 - EA_UiDebugTools
 - Effigy
-- Queue Queuer
-- TidyQueue
 - TidyRoll
 
 ## Registrars And Handlers
@@ -88,9 +86,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - DebugWindow.Update
 - Effigy.Name..".CastbarUpdate"
 - Effigy.Name..".SwingTimerUpdate"
-- QueueQueuer_GUI.MapButton_OnUpdate
-- QueueQueuer_GUI.OnUpdate
-- TidyQueue.OnUpdate
 - TidyRoll.OnUpdate
 - WindowRegisterCoreEventHandler
 - core
@@ -102,15 +97,14 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - BuffHead: BuffHeadSetupLayoutWindow -> BuffHeadSetupLayoutWindow.OnUpdate -> BuffHead.Setup.Layout.OnUpdate
 - CMap: CMapWindowWMap -> CMapWindowWMap.OnUpdate -> CMapWindow.UpdateCoordinatesWMap
 - EA_UiDebugTools: DebugWindow -> DebugWindow.OnUpdate -> DebugWindow.Update
-- Queue Queuer: QueueQueuer_GUI -> QueueQueuer_GUI.OnUpdate -> QueueQueuer_GUI.OnUpdate
+- TidyRoll: TidyRollTimer -> TidyRollTimer.OnUpdate -> TidyRoll.OnUpdate
 
 ## Related APIs
 
-- [EA_Window_ScenarioLobby.OnJoinInstanceWait](../../globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md) (HIGH 100/100) - Global Function
+- none
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [MapDisplay](../../xml/element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 100/100) - XML Handler
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type

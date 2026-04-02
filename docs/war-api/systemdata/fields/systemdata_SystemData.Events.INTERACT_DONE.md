@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Effigy, JunkDump, Shinies, JunkDump, Shinies |
-| Files seen in | `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/JunkDump/JunkDump.lua:291`, `/workspace/Shinies/Source/Shinies.lua:169`, `/workspace/Shinies/Source/Shinies.lua:206`, `/workspace/Shinies/Source/Shinies.lua:219` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace_addons/JunkDump/JunkDump.lua:291`, `/workspace_addons/Shinies/Source/Shinies.lua:169`, `/workspace_addons/Shinies/Source/Shinies.lua:206`, `/workspace_addons/Shinies/Source/Shinies.lua:219` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AuctionWindow.Hide, Effigy.Name..".EndCast", Effigy.RegisterStateInfoForCastbar, JunkDump.Finalize, JunkDump.StartListeners, LibStub:OnDisable |

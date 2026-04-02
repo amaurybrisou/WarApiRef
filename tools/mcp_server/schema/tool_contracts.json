@@ -44,6 +44,16 @@
       "name": "scaffold_addon_snippet",
       "request_fields": ["task_description", "desired_apis", "output_style", "include_xml", "include_comments"],
       "response_fields": ["generated_artifacts", "used_documented_symbols", "avoided_symbols", "uncertainty_notes", "rationale"]
+    },
+    {
+      "name": "ingest_observation",
+      "request_fields": ["observation", "dry_run", "persist", "queue_file", "source_path"],
+      "response_fields": ["accepted", "entry_id", "schema_version", "source_path", "errors", "warnings"]
+    },
+    {
+      "name": "ingest_observation_batch",
+      "request_fields": ["dry_run", "persist", "queue_file", "continue_on_error", "limit"],
+      "response_fields": ["total_files", "processed_files", "accepted_count", "rejected_count", "results", "warnings"]
     }
   ],
   "resource_uris": [

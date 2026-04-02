@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyRoll |
-| Files seen in | `/workspace/TidyRoll/TidyRoll.lua:227` |
+| Files seen in | `/workspace_addons/TidyRoll/TidyRoll.lua:227` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM, TidyRoll.Initialize, TidyRoll.OnLootRollFirstItem, event_page, event_registration, flow |

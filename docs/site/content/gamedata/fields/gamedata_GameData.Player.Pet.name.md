@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Enemy, GuardLine, LibGuard |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePets.lua:29`, `/workspace/Enemy/Code/Core/Groups/EnemyPlayer.lua:220`, `/workspace/GuardLine/GuardLine.lua:151`, `/workspace/LibGuard/Source/LibGuard.lua:362`, `/workspace/LibGuard/Source/LibGuard.lua:75` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePets.lua:29`, `/workspace_addons/Enemy/Code/Core/Groups/EnemyPlayer.lua:220`, `/workspace_addons/GuardLine/GuardLine.lua:151`, `/workspace_addons/LibGuard/Source/LibGuard.lua:362`, `/workspace_addons/LibGuard/Source/LibGuard.lua:75` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Effigy.UpdatePlayerPet, EnemyPlayer:LoadPetFromCurrentPlayer, GuardLine.GetIDs, LibGuard.UpdatePetHealthProxy, LibGuard.UpdateStateMachine, lua_call |

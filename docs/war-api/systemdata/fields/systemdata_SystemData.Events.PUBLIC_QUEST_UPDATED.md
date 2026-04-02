@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/RoR_SoR/RoR_SoR.lua:178`, `/workspace/RoR_SoR/RoR_SoR.lua:278` |
+| Files seen in | `/workspace_addons/RoR_SoR/RoR_SoR.lua:178`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:278` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | RoR_SoR.OnShutdown, RoR_SoR.UpdateObjectives, RoR_SoR:RegisterSelfEvents, SystemData.Events.PUBLIC_QUEST_UPDATED, event_page, event_registration |

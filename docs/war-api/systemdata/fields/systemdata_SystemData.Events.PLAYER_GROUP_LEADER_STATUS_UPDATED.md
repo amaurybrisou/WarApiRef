@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, followTheLeader |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace_addons/followTheLeader/followTheLeader.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | Effigy.RegisterStateInfoForPlayer, SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED, event_page, event_registration, flow, followTheLeader.Initialize |

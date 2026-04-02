@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | PotionBar |
-| Files seen in | `/workspace/PotionBar/source/Floating.lua:100`, `/workspace/PotionBar/source/Floating.lua:90` |
+| Files seen in | `/workspace_addons/PotionBar/source/Floating.lua:100`, `/workspace_addons/PotionBar/source/Floating.lua:90` |
 | Namespaces detected | WindowGetMovable |
 | Source kinds | lua_calls |
 | Example locations | PotionBar: PotionBarFloating.ActivatorRButtonUp, PotionBar: PotionBarFloating.SetMovable |

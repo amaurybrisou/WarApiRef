@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankWindowFix |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.xml:10` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.xml:10` |
 | Namespaces detected | OnActionButtonLButtonDown |
 | Source kinds | bindings, xml_handlers |
 | Example locations | BankWindowFix: BankWindowSlotsFixed.OnActionButtonLButtonDown |
@@ -94,4 +94,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

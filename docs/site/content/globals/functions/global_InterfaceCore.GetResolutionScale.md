@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, GuardLine, MapMonster, MapPin, RoR_SoR |
-| Files seen in | `/workspace/Effigy/Effigy.lua:227`, `/workspace/GuardLine/GuardLine.lua:63`, `/workspace/MapMonster/Source/MapMonster_Calibrate.lua:162`, `/workspace/MapMonster/Source/MapMonster_Calibrate.lua:255`, `/workspace/MapPin/source/MapPin.lua:3136`, `/workspace/RoR_SoR/RoR_SoR.lua:877` |
+| Files seen in | `/workspace_addons/Effigy/Effigy.lua:227`, `/workspace_addons/GuardLine/GuardLine.lua:63`, `/workspace_addons/MapMonster/Source/MapMonster_Calibrate.lua:162`, `/workspace_addons/MapMonster/Source/MapMonster_Calibrate.lua:255`, `/workspace_addons/MapPin/source/MapPin.lua:3136`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:877` |
 | Namespaces detected | InterfaceCore |
 | Source kinds | globals, lua_calls |
 | Example locations | Effigy: Effigy.LoadLayout, GuardLine: GuardLine.init, MapMonster: MapMonster_Calibrate.OnLMouseButton, MapMonster: MapMonster_Calibrate.OnMouseOverEnd, MapPin: MapPin.UpdateMapCoordinates, RoR_SoR: RoR_SoR.Restack |
@@ -76,11 +76,11 @@ Observed as a global function across 5 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

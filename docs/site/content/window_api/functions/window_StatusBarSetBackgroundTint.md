@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, TidyRoll, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1031`, `/workspace/Effigy/LibGUI.lua:1028`, `/workspace/GCDsaver/libs/LibGUI.lua:1028`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:1028`, `/workspace/Shinies/Libraries/LibGUI.lua:1028`, `/workspace/TidyRoll/TidyRollFrame.lua:105`, `/workspace/WarTriage/libs/LibGUI.lua:1028`, `/workspace/WoH-Reticle/libs/LibGUI.lua:1028` |
+| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, TidyRoll, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1031`, `/workspace_addons/Effigy/LibGUI.lua:1028`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:1028`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:1028`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:1028`, `/workspace_addons/TidyRoll/TidyRollFrame.lua:105`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:1028` |
 | Namespaces detected | StatusBarSetBackgroundTint |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Statusbar:BackColor, Effigy: LIBGUI_Statusbar:BackColor, GCDsaver: LIBGUI_Statusbar:BackColor, LibWBToggler: LIBGUI_Statusbar:BackColor, Shinies: LIBGUI_Statusbar:BackColor, TidyRoll: TidyRollFrame:InitializeTimerBar |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ StatusBarSetBackgroundTint(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a window function across 8 addons.
+Observed as a window function across 7 addons.
 
 ## Parameters
 
@@ -78,7 +78,7 @@ Observed as a window function across 8 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -92,7 +92,6 @@ Observed as a window function across 8 addons.
 - LibWBToggler
 - Shinies
 - TidyRoll
-- WarTriage
 - WoH-Reticle
 
 ## Examples

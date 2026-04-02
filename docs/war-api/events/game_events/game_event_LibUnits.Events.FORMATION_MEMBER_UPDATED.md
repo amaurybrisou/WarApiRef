@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStateFormation.lua:34` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateFormation.lua:34` |
 | Namespaces detected | LibUnits |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Effigy: Effigy.RegisterEventsForFormation |

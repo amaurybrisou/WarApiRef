@@ -25,14 +25,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, PotionBar |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace/PotionBar/source/Main.lua:189`, `/workspace/PotionBar/source/Main.lua:292` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace_addons/PotionBar/source/Main.lua:189`, `/workspace_addons/PotionBar/source/Main.lua:292` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | Effigy.RegisterStateInfoForPlayer, PotionBar.Initialize, PotionBar.OnPlayerRenownRankUpdated, PotionBar.Shutdown, SystemData.Events.PLAYER_RENOWN_RANK_UPDATED, event_page |
@@ -71,12 +71,20 @@ Observed SystemData field used by 2 addons through generated function calls, eve
 
 ## Related APIs
 
+- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 100/100) - Window Function
 - [WindowRegisterCoreEventHandler](../../window_api/functions/window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 
 ## Used With
 
-- none
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
+- [SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED](systemdata_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED](systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 100/100) - Window Function
+- [WindowGetScale](../../window_api/functions/window_WindowGetScale.md) (HIGH 100/100) - Window Function
+- [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
+- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By
 

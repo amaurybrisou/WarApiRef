@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, MapPin |
-| Files seen in | `/workspace/MapPin/source/MapPin.lua:2280`, `/workspace/MapPin/source/MapPin.lua:2465`, `/workspace/MapPin/source/MapPin.lua:2602`, `/workspace/advancedrenowntrainer/AdvancedRenownTrainingImportExport.lua:225` |
+| Files seen in | `/workspace_addons/MapPin/source/MapPin.lua:2280`, `/workspace_addons/MapPin/source/MapPin.lua:2465`, `/workspace_addons/MapPin/source/MapPin.lua:2602`, `/workspace_addons/advancedrenowntrainer/AdvancedRenownTrainingImportExport.lua:225` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink, MapPin: MapPin.LButtonUp, MapPin: MapPin.RButtonUp, MapPin: MapPin.local.SendLink, MapPin: SendLink |

@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/DebugWindow.xml:457` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:457` |
 | Namespaces detected | EA_ComboBox_DefaultResizable3 |
 | Source kinds | xml_attributes |
 | Example locations | BustedGUIAddonSelect |

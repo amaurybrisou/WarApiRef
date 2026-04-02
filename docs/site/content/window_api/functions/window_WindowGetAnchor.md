@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BuffHead, Effigy, GCDsaver, LibWBToggler, Moth, Pocket Palette, Shinies |
-| Files seen in | `/workspace/Ace/LibGUI.lua:172`, `/workspace/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace/Effigy/LibGUI.lua:172`, `/workspace/GCDsaver/libs/LibGUI.lua:172`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:172`, `/workspace/Moth/Moth.lua:578`, `/workspace/PocketPalette/PocketPalette.lua:152`, `/workspace/Shinies/Libraries/LibGUI.lua:172` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:172`, `/workspace_addons/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace_addons/Effigy/LibGUI.lua:172`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:172`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:172`, `/workspace_addons/Moth/Moth.lua:578`, `/workspace_addons/PocketPalette/PocketPalette.lua:152`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:172` |
 | Namespaces detected | WindowGetAnchor |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:GetPosition, BuffHead: BuffHead.Setup.LayoutFrame:UpdatePosition, Effigy: LIBGUI_ELEMENT:GetPosition, GCDsaver: LIBGUI_ELEMENT:GetPosition, LibWBToggler: LIBGUI_ELEMENT:GetPosition, Moth: Moth.HealthBar |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,11 +76,11 @@ Observed querying runtime window state or metadata.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -92,7 +92,6 @@ Observed querying runtime window state or metadata.
 - Moth
 - Pocket Palette
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples

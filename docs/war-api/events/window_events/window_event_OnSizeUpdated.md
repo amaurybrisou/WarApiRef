@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/RoR_SoR/RoR_SoR.xml:1928` |
+| Files seen in | `/workspace_addons/RoR_SoR/RoR_SoR.xml:1928` |
 | Namespaces detected | OnSizeUpdated |
 | Source kinds | event_page, xml_handlers |
 | Example locations | RoR_SoR: RoR_SoR_Main_Window.OnSizeUpdated |

@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyRoll |
-| Files seen in | `/workspace/TidyRoll/TidyRoll.xml:82` |
+| Files seen in | `/workspace_addons/TidyRoll/TidyRoll.xml:82` |
 | Namespaces detected | EA_Button_DefaultToggleCircle |
 | Source kinds | xml_attributes |
 | Example locations | TRollRadioTemplateButton |

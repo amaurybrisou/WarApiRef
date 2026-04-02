@@ -103,3 +103,45 @@ func TestToolsListIncludesInputSchema(t *testing.T) {
 		}
 	}
 }
+
+func TestFeedingIngestReturnsAcceptedForValidPayload(t *testing.T) {
+	app, err := NewApp(docsRoot(t))
+	if err != nil {
+		t.Fatalf("new app: %v", err)
+	}
+
+	resp := app.handlePayload([]byte(`{"jsonrpc":"2.0","id":3,"method":"feeding/ingest","params":{"observation":{"schema_version":"feeding.observation.v1","entry_id":"whm_xml_input_chain","status":"candidate","source":{"addon":"WhoHealedMe","date_utc":"2026-04-01","validation":"mixed","context":"ui input routing"},"target_seeds":["docs/platform/seeds/xml_conventions.md"],"confidence":{"overall":"MEDIUM","rationale":"validated in addon"},"claims":[{"claim_id":"c1","kind":"usage_pattern","confidence":"MEDIUM","statement":"example","guidance":"example"}],"evidence":[{"evidence_id":"e1","type":"code_change","summary":"example"}],"promotion":{"notes":"review"}},"dry_run":true}}`))
+	if resp.Error != nil {
+		t.Fatalf("feeding/ingest returned error: %#v", resp.Error)
+	}
+
+	result, ok := resp.Result.(map[string]any)
+	if !ok {
+		t.Fatalf("unexpected feeding/ingest result type: %T", resp.Result)
+	}
+	accepted, _ := result["accepted"].(bool)
+	if !accepted {
+		t.Fatalf("expected accepted=true, got %#v", result)
+	}
+}
+
+func TestFeedingIngestBatchProcessesFeedFiles(t *testing.T) {
+	app, err := NewApp(docsRoot(t))
+	if err != nil {
+		t.Fatalf("new app: %v", err)
+	}
+
+	resp := app.handlePayload([]byte(`{"jsonrpc":"2.0","id":4,"method":"feeding/ingest_batch","params":{"dry_run":true,"continue_on_error":true}}`))
+	if resp.Error != nil {
+		t.Fatalf("feeding/ingest_batch returned error: %#v", resp.Error)
+	}
+
+	result, ok := resp.Result.(map[string]any)
+	if !ok {
+		t.Fatalf("unexpected feeding/ingest_batch result type: %T", resp.Result)
+	}
+	processed, _ := result["processed_files"].(float64)
+	if processed < 1 {
+		t.Fatalf("expected at least one processed file, got %#v", result)
+	}
+}

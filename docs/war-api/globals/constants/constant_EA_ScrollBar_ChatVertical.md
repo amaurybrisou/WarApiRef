@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools, bigger_MacroWindow |
-| Files seen in | `/workspace/bigger_macrowindow/Source/MacroIcons.xml:6`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:117`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:731`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:74`, `/workspace/ea_uidebugtools/Source/objectinsp/ObjectInspector.xml:108` |
+| Files seen in | `/workspace_addons/bigger_macrowindow/Source/MacroIcons.xml:6`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:117`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:731`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:74`, `/workspace_addons/ea_uidebugtools/Source/objectinsp/ObjectInspector.xml:108` |
 | Namespaces detected | EA_ScrollBar_ChatVertical |
 | Source kinds | xml_attributes |
 | Example locations | CopyScrollBar, DebugWindowTextScrollbar, DevPadWindowDevPadCodeDevPadCodeScrollBar, MacroIconsScrollBar, ObjectInspectorObjectScrollbar |

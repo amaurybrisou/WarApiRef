@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead |
-| Files seen in | `/workspace/BuffHead/Setup/General.xml:45` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/General.xml:45` |
 | Namespaces detected | EA_Window_ComboBoxMenuBackground |
 | Source kinds | xml_attributes |
 | Example locations | BuffHeadSetupSelectTextureWindowBackground |

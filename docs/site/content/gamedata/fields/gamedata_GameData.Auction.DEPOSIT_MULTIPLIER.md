@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Modules/API/Shinies-API-Item.lua:22` |
+| Files seen in | `/workspace_addons/Shinies/Modules/API/Shinies-API-Item.lua:22` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | _G.Shinies:GetModule:Item_GetAuctionDeposit, lua_call |

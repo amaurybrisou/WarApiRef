@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, Aura, Enemy, GuardLine, GuardList, GuardRange, MapPin, Miracle Grow Remix |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:50`, `/workspace/Aura/Source/Templates.xml:73`, `/workspace/Enemy/Code/Core/Common.xml:25`, `/workspace/Enemy/Code/Timer/Timer.xml:41`, `/workspace/GuardLine/GuardLine.xml:120`, `/workspace/GuardLine/GuardLine.xml:164`, `/workspace/GuardLine/GuardLine.xml:196`, `/workspace/GuardLine/GuardLine.xml:260` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:50`, `/workspace_addons/Aura/Source/Templates.xml:73`, `/workspace_addons/Enemy/Code/Core/Common.xml:25`, `/workspace_addons/Enemy/Code/Timer/Timer.xml:41`, `/workspace_addons/GuardLine/GuardLine.xml:120`, `/workspace_addons/GuardLine/GuardLine.xml:164`, `/workspace_addons/GuardLine/GuardLine.xml:196`, `/workspace_addons/GuardLine/GuardLine.xml:260` |
 | Namespaces detected | CircleImage |
 | Source kinds | xml_frames |
 | Example locations | AggroMeter: Aggro_Button_TemplateIcon, Aura: AuraFrameImageCircle, Enemy: EnemyCircleImageTemplate, Enemy: EnemyStopwatchImage, GuardLine: GuardLineOffGuardSelfWindowIcon, GuardLine: GuardLineOffGuardTargetWindowIcon |

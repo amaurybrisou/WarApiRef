@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, MapMonster, Moth, TidyChat, TidyRoll |
-| Files seen in | `/workspace/Effigy/Effigy.xml:106`, `/workspace/MapMonster/Source/MapMonster_PinTypeEditorWindow.xml:252`, `/workspace/Moth/Moth.xml:42`, `/workspace/TidyChat/TidyChat.xml:33`, `/workspace/TidyRoll/CustomAutoRoll.xml:119` |
+| Files seen in | `/workspace_addons/Effigy/Effigy.xml:106`, `/workspace_addons/MapMonster/Source/MapMonster_PinTypeEditorWindow.xml:252`, `/workspace_addons/Moth/Moth.xml:42`, `/workspace_addons/TidyChat/TidyChat.xml:33`, `/workspace_addons/TidyRoll/CustomAutoRoll.xml:119` |
 | Namespaces detected | EA_Button_ResizeIconFrameNormal |
 | Source kinds | xml_attributes |
 | Example locations | FrameIconBack, MapMonster_PinTypeEditorWindowMapPinIconBorder, MothBorderDark, TRollAutoRollFrame, TidyChatOptionsFrame |

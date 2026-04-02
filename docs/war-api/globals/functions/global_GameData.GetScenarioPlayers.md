@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:391` |
+| Files seen in | `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:391` |
 | Namespaces detected | GameData |
 | Source kinds | globals, lua_calls |
 | Example locations | Enemy: Enemy.ScenarioInfoUpdateData |

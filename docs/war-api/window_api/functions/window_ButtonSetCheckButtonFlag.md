@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, Killer, LibWBToggler, MapMonster, Shinies, WarTriage |
-| Files seen in | `/workspace/Ace/LibGUI.lua:735`, `/workspace/Ace/LibGUI.lua:805`, `/workspace/Effigy/LibGUI.lua:734`, `/workspace/Effigy/LibGUI.lua:803`, `/workspace/GCDsaver/libs/LibGUI.lua:734`, `/workspace/GCDsaver/libs/LibGUI.lua:803`, `/workspace/Killer/KillerConfigWindow.lua:306`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:734` |
+| Addons seen in | Ace, Effigy, GCDsaver, Killer, LibWBToggler, MapMonster, Shinies, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:735`, `/workspace_addons/Ace/LibGUI.lua:805`, `/workspace_addons/Effigy/LibGUI.lua:734`, `/workspace_addons/Effigy/LibGUI.lua:803`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:734`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:803`, `/workspace_addons/Killer/KillerConfigWindow.lua:306`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:734` |
 | Namespaces detected | ButtonSetCheckButtonFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Checkbox:New, Ace: LIBGUI_Optionbutton:New, Effigy: LIBGUI_Checkbox:New, Effigy: LIBGUI_Optionbutton:New, GCDsaver: LIBGUI_Checkbox:New, GCDsaver: LIBGUI_Optionbutton:New |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 22 |
-| Global usage count | 22 |
+| Lua usage count | 20 |
+| Global usage count | 20 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -91,7 +91,6 @@ Observed mutating button text or pressed state on existing controls.
 - LibWBToggler
 - MapMonster
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples

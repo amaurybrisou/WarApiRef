@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, CM_ClosetGoblin, EA_UiModWindow, Shinies |
-| Files seen in | `/workspace/BuffHead/Setup/SetupEffectCache.xml:157`, `/workspace/ClosetGoblin/ClosetGoblin.xml:1333`, `/workspace/ClosetGoblin/ClosetGoblin.xml:1360`, `/workspace/ClosetGoblin/ClosetGoblin.xml:407`, `/workspace/ClosetGoblin/ClosetGoblin.xml:434`, `/workspace/Shinies/Source/ShiniesUITemplates.xml:170`, `/workspace/ea_uimodwindow/Source/UiModWindow.xml:202`, `/workspace/ea_uimodwindow/Source/VersionMismatchWindow.xml:139` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupEffectCache.xml:157`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1333`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1360`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:407`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:434`, `/workspace_addons/Shinies/Source/ShiniesUITemplates.xml:170`, `/workspace_addons/ea_uimodwindow/Source/UiModWindow.xml:202`, `/workspace_addons/ea_uimodwindow/Source/VersionMismatchWindow.xml:139` |
 | Namespaces detected | EA_ListSortUpArrow |
 | Source kinds | xml_attributes |
 | Example locations | BuffHeadSetupEffectCacheWindowSortBarUpArrow, ClosetGoblinCharacterWindowContentsSortTacticsUpArrow, ClosetGoblinCharacterWindowContentsSortUpArrow, ClosetGoblinZoneWindowContentsSortSetUpArrow, ClosetGoblinZoneWindowContentsSortUpArrow, Shinies_Button_DefaultListSortUpArrow |

@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, followTheLeader |
-| Files seen in | `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace_addons/followTheLeader/followTheLeader.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy._ScenarioInfoEnabledChanged, followTheLeader: followTheLeader.Initialize |
@@ -67,7 +67,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 

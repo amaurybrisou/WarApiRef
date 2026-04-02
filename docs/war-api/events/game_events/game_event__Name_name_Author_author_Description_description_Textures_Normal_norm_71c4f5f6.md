@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TexturedButtons |
-| Files seen in | `/workspace/TexturedButtons/TexturedButtons.lua:851` |
+| Files seen in | `/workspace_addons/TexturedButtons/TexturedButtons.lua:851` |
 | Namespaces detected | {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},} |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | TexturedButtons: TexturedButtons.Register |

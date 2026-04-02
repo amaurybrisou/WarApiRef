@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, Enemy, followTheLeader, followTheLeader |
-| Files seen in | `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace_addons/followTheLeader/followTheLeader.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Enemy.ScenarioInfoUpdate, Enemy._ScenarioInfoEnabledChanged, SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED, event_page, event_registration, followTheLeader.Initialize |

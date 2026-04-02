@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, DaemonAssist |
-| Files seen in | `/workspace/AdvancedPetAssist/APACore.lua:269`, `/workspace/AdvancedPetAssist/APACore.lua:283`, `/workspace/DaemonAssist/DACore.lua:23` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APACore.lua:269`, `/workspace_addons/AdvancedPetAssist/APACore.lua:283`, `/workspace_addons/DaemonAssist/DACore.lua:23` |
 | Namespaces detected | PetWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.ApplyDefaultStance, AdvancedPetAssist: AdvancedPetAssist.SetPassiveFollow, DaemonAssist: DaemonAssist.EnsurePassiveFollow |

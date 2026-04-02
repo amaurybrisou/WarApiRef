@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Miracle Grow Remix, MiracleGrow, MiracleGrowLight |
-| Files seen in | `/workspace/MGRemix/MGRemix.lua:740`, `/workspace/MGRemix/harvrepeat.lua:407`, `/workspace/MiracleGrow/MiracleGrow.lua:31`, `/workspace/MiracleGrow/MiracleGrow.lua:51`, `/workspace/MiracleGrowLight/MiracleGrowLight.lua:80` |
+| Files seen in | `/workspace_addons/MGRemix/MGRemix.lua:740`, `/workspace_addons/MGRemix/harvrepeat.lua:407`, `/workspace_addons/MiracleGrow/MiracleGrow.lua:31`, `/workspace_addons/MiracleGrow/MiracleGrow.lua:51`, `/workspace_addons/MiracleGrowLight/MiracleGrowLight.lua:80` |
 | Namespaces detected | CultivationWindow |
 | Source kinds | lua_calls |
 | Example locations | Miracle Grow Remix: MiracleGrow2.onHClick, Miracle Grow Remix: MiracleGrow2.onZone, MiracleGrow: MiracleGrow.onHHoverEnd, MiracleGrow: MiracleGrow.onZone, MiracleGrowLight: MiracleGrowLight.onZone |

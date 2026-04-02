@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, GetStats, Killer, MapMonster, MapPin, Moth, RoR_SoR, TurretRange |
-| Files seen in | `/workspace/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/GetStats/GetStats.lua:100`, `/workspace/Killer/KillerConfigWindow.lua:125`, `/workspace/Killer/KillerEvents.lua:133`, `/workspace/Killer/KillerFeed.lua:380`, `/workspace/MapMonster/Source/MapMonster_Pins.lua:823`, `/workspace/MapMonster/Source/MapMonster_Tooltips.lua:201`, `/workspace/MapPin/source/MapPin.lua:3166` |
+| Files seen in | `/workspace_addons/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace_addons/GetStats/GetStats.lua:100`, `/workspace_addons/Killer/KillerConfigWindow.lua:125`, `/workspace_addons/Killer/KillerEvents.lua:133`, `/workspace_addons/Killer/KillerFeed.lua:380`, `/workspace_addons/MapMonster/Source/MapMonster_Pins.lua:823`, `/workspace_addons/MapMonster/Source/MapMonster_Tooltips.lua:201`, `/workspace_addons/MapPin/source/MapPin.lua:3166` |
 | Namespaces detected | LabelGetTextDimensions |
 | Source kinds | lua_calls |
 | Example locations | Enemy: EnemyMarkTemplate:Apply, GetStats: GetStats.GetSafeTextWidth, Killer: Killer.RefreshPersonalCounter, Killer: Killer.ShowRowTooltip, Killer: Killer.local.MeasureLabelWidth, Killer: MeasureLabelWidth |

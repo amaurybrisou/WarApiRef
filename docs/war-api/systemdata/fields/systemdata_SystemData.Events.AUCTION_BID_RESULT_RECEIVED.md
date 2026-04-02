@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Source/Shinies.lua:169` |
+| Files seen in | `/workspace_addons/Shinies/Source/Shinies.lua:169` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AuctionWindow.ReceivedBidResult, LibStub:UpdateDefaultAuctionHouseDisable, SystemData.Events.AUCTION_BID_RESULT_RECEIVED, event_page, event_registration, flow |

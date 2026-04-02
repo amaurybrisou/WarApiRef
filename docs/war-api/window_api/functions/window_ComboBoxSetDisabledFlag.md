@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 11 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedRenownTrainer, DAoCBuff, Effigy, GCDsaver, LibWBToggler, PotionBar, Shinies |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1084`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:491`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:804`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:834`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:898`, `/workspace/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1056`, `/workspace/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1224`, `/workspace/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:401` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1084`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:491`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:804`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:834`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:898`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1056`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1224`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:401` |
 | Namespaces detected | ComboBoxSetDisabledFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Combobox:SetEnabled, AdvancedRenownTrainer: AdvancedRenownTraining.OnExportHidden, AdvancedRenownTrainer: AdvancedRenownTraining.OnExportShown, DAoCBuff: DAoCBuffSettings.ActivateStickCombos, DAoCBuff: DAoCBuffSettings.ActivateType, DAoCBuff: DAoCBuffSettings.PopulateTarget |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 30 |
-| Global usage count | 30 |
+| Lua usage count | 29 |
+| Global usage count | 29 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxSetDisabledFlag(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 11 addons.
+Observed as a window function across 10 addons.
 
 ## Parameters
 
@@ -93,7 +93,6 @@ Observed as a window function across 11 addons.
 - PotionBar
 - Shinies
 - TidyChat
-- WarTriage
 - WoH-Reticle
 
 ## Examples

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/Effigy.lua:379`, `/workspace/Effigy/States/EffigyStatePlayer.lua:244` |
+| Files seen in | `/workspace_addons/Effigy/Effigy.lua:379`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:244` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Effigy.UpdatePlayerHP, Effigy.local.PlayerRightClickMenu, PlayerRightClickMenu, lua_call |

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 11 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, DAoCBuff, Effigy, GCDsaver, GuardLine, LibWBToggler, RetAlert, RoR_SoR |
-| Files seen in | `/workspace/Ace/LibGUI.lua:200`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:111`, `/workspace/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1260`, `/workspace/Effigy/LibGUI.lua:200`, `/workspace/GCDsaver/libs/LibGUI.lua:200`, `/workspace/GuardLine/GuardLine.lua:197`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:200` |
+| Addons seen in | Ace, DAoCBuff, Effigy, GCDsaver, GuardLine, LibWBToggler, RoR_SoR, Shinies |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:200`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:111`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1260`, `/workspace_addons/Effigy/LibGUI.lua:200`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:200`, `/workspace_addons/GuardLine/GuardLine.lua:197`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:200` |
 | Namespaces detected | WindowGetAlpha |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Alpha, DAoCBuff: DAoCBuffSettings.UC, DAoCBuff: FilterSettings.Cleanup, DAoCBuff: ImExport.Cleanup, Effigy: LIBGUI_ELEMENT:Alpha, GCDsaver: LIBGUI_ELEMENT:Alpha |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 19 |
-| Global usage count | 19 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -75,11 +75,11 @@ Observed querying runtime window state or metadata.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -89,10 +89,8 @@ Observed querying runtime window state or metadata.
 - GCDsaver
 - GuardLine
 - LibWBToggler
-- RetAlert
 - RoR_SoR
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples

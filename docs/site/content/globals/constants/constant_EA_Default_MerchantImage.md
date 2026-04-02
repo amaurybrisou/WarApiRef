@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | JunkDump |
-| Files seen in | `/workspace/JunkDump/JunkDumpOptions.xml:16` |
+| Files seen in | `/workspace_addons/JunkDump/JunkDumpOptions.xml:16` |
 | Namespaces detected | EA_Default_MerchantImage |
 | Source kinds | xml_attributes |
 | Example locations | JunkDumpOptionsWinCornerImage |

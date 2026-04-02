@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, RoR_SoR |
-| Files seen in | `/workspace/Effigy/States/EffigyStateGuild.lua:10`, `/workspace/RoR_SoR/RoR_SoR.lua:1055` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateGuild.lua:10`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:1055` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Effigy.UpdateGuildXP, RoR_SoR.SET_KEEP, lua_call |

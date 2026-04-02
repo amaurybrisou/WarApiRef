@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead |
-| Files seen in | `/workspace/BuffHead/Setup/LayoutControlFrame.lua:137`, `/workspace/BuffHead/Setup/LayoutControlFrame.lua:180` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:137`, `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:180` |
 | Namespaces detected | WindowSetResizing |
 | Source kinds | lua_calls |
 | Example locations | BuffHead: BuffHead.Setup.LayoutControlFrame:BeginResize, BuffHead: BuffHead.Setup.LayoutControlFrame:EndResize |
@@ -69,12 +69,12 @@ Observed mutating runtime window state or presentation.
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: self:GetName() |
 | arg2 | Observed as a boolean toggle. | Observed values: false, true |
-| arg3 | Observed as a text or wstring payload. | Observed values: "", resizeData.sizePoint |
-| arg4 | Observed as a boolean toggle. | Observed values: false, resizeData.lockAspect |
+| arg3 | Observed as a function or method reference. | Observed values: "", resizeData.sizePoint |
+| arg4 | Observed as a function or method reference. | Observed values: false, resizeData.lockAspect |
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

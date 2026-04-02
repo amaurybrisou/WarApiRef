@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/DebugWindow.xml:11`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1479`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1489`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1500`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1516`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1517` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:11`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1479`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1489`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1500`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1516`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1517` |
 | Namespaces detected | EA_LabelCheckButtonSmallCopy |
 | Source kinds | xml_attributes |
 | Example locations | DebugWindowOptionsErrorOption1, DebugWindowOptionsErrorOption2, DebugWindowOptionsLuaDebugLibrary, EA_LabelCheckButtonSmallCopyButton, EA_LabelCheckButtonSmallCopyLabel, LogFilterButton |

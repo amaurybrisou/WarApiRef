@@ -26,16 +26,16 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DeepSleep, Enemy, GuardLine, LibGroup, LibGuard, MapPin, MegaphonePlusPlus, Queue Queuer |
-| Files seen in | `/workspace/DeepSleep/Modules.lua:99`, `/workspace/Enemy/Code/Core/Groups/EnemyPlayer.lua:57`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:281`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:523`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:558`, `/workspace/GuardLine/GuardLine.lua:197`, `/workspace/LibGroup/LibGroup.lua:538`, `/workspace/LibGroup/LibGroup.lua:660` |
+| Addons seen in | Enemy, GuardLine, LibGroup, LibGuard, MapPin, QuickWarReport, RoR_SoR, Swift Assist |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/EnemyPlayer.lua:57`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:281`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:523`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:558`, `/workspace_addons/GuardLine/GuardLine.lua:197`, `/workspace_addons/LibGroup/LibGroup.lua:538`, `/workspace_addons/LibGroup/LibGroup.lua:660`, `/workspace_addons/LibGroup/LibGroup.lua:788` |
 | Namespaces detected | PartyUtils |
 | Source kinds | globals, lua_calls |
-| Example locations | DeepSleep: AddGroupMenuItems, DeepSleep: PlayerMenuWindow.AddGroupMenuItems, Enemy: Enemy.Groups_OnBattlegroupMemberUpdated, Enemy: Enemy.Groups_OnGroupStatusUpdated, Enemy: Enemy._GroupsUpdate, Enemy: EnemyPlayer:IsMainAssist |
+| Example locations | Enemy: Enemy.Groups_OnBattlegroupMemberUpdated, Enemy: Enemy.Groups_OnGroupStatusUpdated, Enemy: Enemy._GroupsUpdate, Enemy: EnemyPlayer:IsMainAssist, GuardLine: GuardLine.update, LibGroup: GetPartyData |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 50 |
-| Global usage count | 8 |
-| Local definition count | 9 |
+| Lua usage count | 42 |
+| Global usage count | 7 |
+| Local definition count | 8 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 15 addons.
+Observed shared global table or namespace surfaced in 11 addons.
 
 ## Functions
 
@@ -68,7 +68,6 @@ Observed shared global table or namespace surfaced in 15 addons.
 - PartyUtils.GetWarbandMainAssist
 - PartyUtils.GetWarbandMember
 - PartyUtils.IsPartyActive
-- PartyUtils.IsPlayerInWarband
 
 ## Observed Members
 
@@ -76,30 +75,26 @@ Observed shared global table or namespace surfaced in 15 addons.
 
 ## Seen In
 
-- DeepSleep
 - Enemy
 - GuardLine
 - LibGroup
 - LibGuard
 - MapPin
-- MegaphonePlusPlus
-- Queue Queuer
 - QuickWarReport
 - RoR_SoR
 - Swift Assist
-- WarTriage
 - WhoHealedMe
 - followTheLeader
 - wbLeadHelper
 
 ## Examples
 
-- DeepSleep: AddGroupMenuItems -> PartyUtils.GetPartyData()
-- DeepSleep: PlayerMenuWindow.AddGroupMenuItems -> PartyUtils.GetPartyData()
 - Enemy: Enemy.Groups_OnBattlegroupMemberUpdated -> PartyUtils.GetWarbandMember(groupIndex, memberIndex)
 - Enemy: Enemy.Groups_OnGroupStatusUpdated -> PartyUtils.GetPartyMember(memberIndex)
 - Enemy: Enemy._GroupsUpdate -> PartyUtils.GetWarbandData()
 - Enemy: Enemy._GroupsUpdate -> PartyUtils.GetPartyData()
+- Enemy: EnemyPlayer:IsMainAssist -> PartyUtils.GetWarbandMainAssist()
+- GuardLine: GuardLine.update -> PartyUtils.IsPartyActive()
 
 ## Related APIs
 

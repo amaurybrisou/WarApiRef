@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, GCDsaver, MapPin, MegaphonePlusPlus, PlanB |
+| Addons seen in | Aura, GCDsaver, MapPin, PlanB |
 | Namespaces detected | AlertText |
 | Source kinds | globals, lua_calls |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
-| Local definition count | 5 |
+| Local definition count | 4 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
@@ -55,7 +55,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 5 addons.
+Observed shared global table or namespace surfaced in 4 addons.
 
 ## Functions
 
@@ -70,7 +70,6 @@ Observed shared global table or namespace surfaced in 5 addons.
 - Aura
 - GCDsaver
 - MapPin
-- MegaphonePlusPlus
 - PlanB
 
 ## Examples

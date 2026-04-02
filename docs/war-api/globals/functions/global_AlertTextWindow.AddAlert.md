@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapPin, PlanB |
-| Files seen in | `/workspace/MapPin/source/MapPin.lua:1122`, `/workspace/PlanB/PlanB.lua:28` |
+| Files seen in | `/workspace_addons/MapPin/source/MapPin.lua:1122`, `/workspace_addons/PlanB/PlanB.lua:28` |
 | Namespaces detected | AlertTextWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | MapPin: MapPin.test, PlanB: PlanB.local.display_alert, PlanB: display_alert |

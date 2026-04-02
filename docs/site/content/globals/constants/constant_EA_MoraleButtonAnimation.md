@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, GuardLine, GuardList, GuardRange, MapPin, MoraleCircle |
-| Files seen in | `/workspace/Enemy/Code/Assist/Assist.xml:57`, `/workspace/Enemy/Code/Assist/Assist.xml:67`, `/workspace/Enemy/Code/Assist/Assist.xml:77`, `/workspace/GuardLine/GuardLine.xml:131`, `/workspace/GuardLine/GuardLine.xml:223`, `/workspace/GuardList/GuardList.xml:55`, `/workspace/GuardRange/GuardRange.xml:55`, `/workspace/MapPin/source/MapPin.xml:351` |
+| Files seen in | `/workspace_addons/Enemy/Code/Assist/Assist.xml:57`, `/workspace_addons/Enemy/Code/Assist/Assist.xml:67`, `/workspace_addons/Enemy/Code/Assist/Assist.xml:77`, `/workspace_addons/GuardLine/GuardLine.xml:131`, `/workspace_addons/GuardLine/GuardLine.xml:223`, `/workspace_addons/GuardList/GuardList.xml:55`, `/workspace_addons/GuardRange/GuardRange.xml:55`, `/workspace_addons/MapPin/source/MapPin.xml:351` |
 | Namespaces detected | EA_MoraleButtonAnimation |
 | Source kinds | xml_attributes |
 | Example locations | EnemyTargetFlash, EnemyTargetGlow, EnemyTargetSpark, GuardLineSelfWindowGlow, GuardLineTargetWindowGlow, GuardList_Window0Glow |

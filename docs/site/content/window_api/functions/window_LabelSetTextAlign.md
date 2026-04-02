@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BuffHead, Effigy, Enemy, GCDsaver, LibWBToggler, Shinies, WSCT |
-| Files seen in | `/workspace/Ace/LibGUI.lua:473`, `/workspace/BuffHead/EffectFrame.lua:52`, `/workspace/Effigy/LibGUI.lua:473`, `/workspace/Enemy/Code/UnitFrames/UnitFramePart.lua:210`, `/workspace/GCDsaver/libs/LibGUI.lua:473`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:473`, `/workspace/Shinies/Libraries/LibGUI.lua:473`, `/workspace/WarTriage/libs/LibGUI.lua:473` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:473`, `/workspace_addons/BuffHead/EffectFrame.lua:52`, `/workspace_addons/Effigy/LibGUI.lua:473`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFramePart.lua:210`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:473`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:473`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:473`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:473` |
 | Namespaces detected | LabelSetTextAlign |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Label:Align, BuffHead: BuffHeadEffectFrame:SetLayout, Effigy: LIBGUI_Label:Align, Enemy: Enemy.UnitFramePart_OnUpdate_ProceedTextWindowInitialization, GCDsaver: LIBGUI_Label:Align, LibWBToggler: LIBGUI_Label:Align |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,7 +76,7 @@ Observed updating label text or label styling on existing controls.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -92,7 +92,6 @@ Observed updating label text or label styling on existing controls.
 - LibWBToggler
 - Shinies
 - WSCT
-- WarTriage
 - WoH-Reticle
 
 ## Examples

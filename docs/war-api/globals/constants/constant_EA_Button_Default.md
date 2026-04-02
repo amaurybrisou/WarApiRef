@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, BuffHead, CM_ClosetGoblin, CMap, GuardList, GuardRange, MapMonster, Miracle Grow Remix |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:39`, `/workspace/BuffHead/Setup/SetupLayout.xml:4`, `/workspace/ClosetGoblin/ClosetGoblin.xml:33`, `/workspace/GuardList/GuardList.xml:35`, `/workspace/GuardRange/GuardRange.xml:35`, `/workspace/MGRemix/MGRemix.xml:105`, `/workspace/MGRemix/MGRemix.xml:3`, `/workspace/MGRemix/MGRemix.xml:70` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:39`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:4`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:33`, `/workspace_addons/GuardList/GuardList.xml:35`, `/workspace_addons/GuardRange/GuardRange.xml:35`, `/workspace_addons/MGRemix/MGRemix.xml:105`, `/workspace_addons/MGRemix/MGRemix.xml:3`, `/workspace_addons/MGRemix/MGRemix.xml:70` |
 | Namespaces detected | EA_Button_Default |
 | Source kinds | flows, xml_attributes |
 | Example locations | Aggro_Button_Template, BuffHeadLayoutResizeButton, CMapWindowFilterMenuButton, CMapWindowOverheadCurrentEventsButton, ClosetGoblinDefaultButton, GuardList_Window0Shield |

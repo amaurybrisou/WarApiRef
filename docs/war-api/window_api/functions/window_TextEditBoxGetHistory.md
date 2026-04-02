@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/objectinsp/ObjectInspector.lua:96` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/objectinsp/ObjectInspector.lua:96` |
 | Namespaces detected | TextEditBoxGetHistory |
 | Source kinds | lua_calls |
 | Example locations | EA_UiDebugTools: ObjectInspector.OnShutdown |

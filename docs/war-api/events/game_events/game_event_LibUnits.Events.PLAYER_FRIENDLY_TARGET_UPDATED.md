@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStateTargets.lua:55` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateTargets.lua:55` |
 | Namespaces detected | LibUnits |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Effigy: Effigy.RegisterStateInfoForTargets |

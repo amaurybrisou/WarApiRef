@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:290` |
+| Files seen in | `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:290` |
 | Namespaces detected | ComboBoxExternalOpenMenu |
 | Source kinds | lua_calls |
 | Example locations | Shinies: _G.Shinies:NewModule.Criteria_ReopenComboBox |
@@ -70,11 +70,11 @@ Observed as a window function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

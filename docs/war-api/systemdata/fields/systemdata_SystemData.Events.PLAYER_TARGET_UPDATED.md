@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedPetAssist, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, GCDsaver, LoyalPet, Moth, Targets, WoH-Reticle, followTheLeader, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, GCDsaver |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/AutoMark/Source/AutoMark.lua:33`, `/workspace/AutoMark/Source/AutoMark.lua:78`, `/workspace/BuffHead/Core.lua:152`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/Enemy/Code/Core/Main.lua:41` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/AutoMark/Source/AutoMark.lua:33`, `/workspace_addons/AutoMark/Source/AutoMark.lua:78`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/Enemy/Code/Core/Main.lua:41` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedPetAssist.OnTargetUpdated, AutoMark.OnInitialize, AutoMark.OnPlayerTargetUpdated, AutoMark.OnSlashCommand, BuffHead.Initialize, BuffHead.OnTargetUpdated |
@@ -83,6 +83,7 @@ Observed SystemData field used by 13 addons through generated function calls, ev
 ## Related APIs
 
 - [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
+- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
 - [WindowSetMovable](../../window_api/functions/window_WindowSetMovable.md) (HIGH 100/100) - Window Function
@@ -90,6 +91,7 @@ Observed SystemData field used by 13 addons through generated function calls, ev
 ## Used With
 
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.CUSTOM_UI_SCALE_CHANGED](systemdata_SystemData.Events.CUSTOM_UI_SCALE_CHANGED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.ENTER_WORLD](systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field

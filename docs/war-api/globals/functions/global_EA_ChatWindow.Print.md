@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 40 addons
+- Seen in: 33 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, AutoBand, BagOMatic, BankArkel, Crafting Info Tooltip, DAoCBuff, DaemonAssist |
-| Files seen in | `/workspace/AdvancedPetAssist/APACore.lua:298`, `/workspace/Aura/Source/AuraAddon.lua:469`, `/workspace/Autoband/AB_util.lua:19`, `/workspace/BankArkel/BankArkel.lua:686`, `/workspace/BankArkel/BankArkel.lua:95`, `/workspace/CraftValueTip/CraftValueTip.lua:29`, `/workspace/CraftValueTip/CraftValueTip.lua:33`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:687` |
+| Addons seen in | AdvancedPetAssist, Aura, BagOMatic, BankArkel, Crafting Info Tooltip, DAoCBuff, DaemonAssist, Effigy |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APACore.lua:298`, `/workspace_addons/Aura/Source/AuraAddon.lua:469`, `/workspace_addons/BankArkel/BankArkel.lua:686`, `/workspace_addons/BankArkel/BankArkel.lua:95`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:29`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:33`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:687`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:772` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.Print, Aura: AuraPrint, AutoBand: AB_util.print, BagOMatic: BagOMatic.print, BankArkel: BankArkel.Init, BankArkel: BankArkel.PrintFactionGold |
+| Example locations | AdvancedPetAssist: AdvancedPetAssist.Print, Aura: AuraPrint, BagOMatic: BagOMatic.print, BankArkel: BankArkel.Init, BankArkel: BankArkel.PrintFactionGold, Crafting Info Tooltip: CraftValueTip.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 274 |
-| Global usage count | 274 |
+| Lua usage count | 225 |
+| Global usage count | 225 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -66,7 +66,7 @@ EA_ChatWindow.Print(arg1)
 
 ## Description
 
-Observed as a global function across 40 addons.
+Observed as a global function across 33 addons.
 
 ## Parameters
 
@@ -86,7 +86,6 @@ Observed as a global function across 40 addons.
 
 - AdvancedPetAssist
 - Aura
-- AutoBand
 - BagOMatic
 - BankArkel
 - Crafting Info Tooltip
@@ -102,26 +101,20 @@ Observed as a global function across 40 addons.
 - LibSlash
 - LibWBToggler
 - LoyalPet
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - NPC Item Sale Price
 - PlanB
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
-- RRCount
 - RVMOD_Manager
 - RandomMount
 - RoR_SoR
 - Shinies
 - Swift Assist
 - Targets
-- ThinkOutLoud
-- TidyQueue
 - WSCT
-- WarTriage
 - WhoHealedMe
 - wbLeadHelper
 
@@ -129,10 +122,10 @@ Observed as a global function across 40 addons.
 
 - AdvancedPetAssist: AdvancedPetAssist.Print -> EA_ChatWindow.Print(L "<icon149> "..msg)
 - Aura: AuraPrint -> EA_ChatWindow.Print(towstring(str))
-- AutoBand: AB_util.print -> EA_ChatWindow.Print(L "[AutoBand] "..towstring(text))
 - BagOMatic: BagOMatic.print -> EA_ChatWindow.Print(L "[BagOMatic] "..towstring(text))
 - BankArkel: BankArkel.Init -> EA_ChatWindow.Print(StringToWString(InitTxt))
 - BankArkel: BankArkel.PrintFactionGold -> EA_ChatWindow.Print(STWS(header))
+- BankArkel: BankArkel.PrintFactionGold -> EA_ChatWindow.Print(STWS(line))
 
 ## Related APIs
 
@@ -170,3 +163,4 @@ Observed as a global function across 40 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

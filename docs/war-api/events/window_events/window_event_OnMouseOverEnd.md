@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, CM_ClosetGoblin, CMap, Cheeseboard, DAoCBuff, Enemy, MapMonster, Miracle Grow Remix |
-| Files seen in | `/workspace/BuffHead/Display.xml:29`, `/workspace/BuffHead/Setup/General.xml:36`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.xml:48`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.xml:47`, `/workspace/BuffHead/Setup/SetupAdvancedContainers.xml:48`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.xml:47`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:47`, `/workspace/BuffHead/Setup/SetupEffectCache.xml:53` |
+| Files seen in | `/workspace_addons/BuffHead/Display.xml:29`, `/workspace_addons/BuffHead/Setup/General.xml:36`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:48`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:47`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainers.xml:48`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.xml:47`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:47`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.xml:53` |
 | Namespaces detected | OnMouseOverEnd |
 | Source kinds | event_page, xml_handlers |
 | Example locations | BuffHead: BuffHeadBuffTemplate.OnMouseOverEnd, BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnMouseOverEnd, BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate.OnMouseOverEnd, BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnMouseOverEnd, BuffHead: BuffHeadSetupAdvancedContainersItemRowTemplate.OnMouseOverEnd, BuffHead: BuffHeadSetupAdvancedContainersRowTemplate.OnMouseOverEnd |

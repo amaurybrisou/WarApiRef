@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CMap, Enemy, GuardLine, GuardList, GuardRange, MapMonster, MapPin, MoraleCircle |
-| Files seen in | `/workspace/Enemy/Code/Assist/Assist.xml:57`, `/workspace/Enemy/Code/Assist/Assist.xml:67`, `/workspace/Enemy/Code/Assist/Assist.xml:77`, `/workspace/GuardLine/GuardLine.xml:131`, `/workspace/GuardLine/GuardLine.xml:223`, `/workspace/GuardList/GuardList.xml:55`, `/workspace/GuardRange/GuardRange.xml:55`, `/workspace/MapMonster/Source/MapMonster_Templates.xml:27` |
+| Files seen in | `/workspace_addons/Enemy/Code/Assist/Assist.xml:57`, `/workspace_addons/Enemy/Code/Assist/Assist.xml:67`, `/workspace_addons/Enemy/Code/Assist/Assist.xml:77`, `/workspace_addons/GuardLine/GuardLine.xml:131`, `/workspace_addons/GuardLine/GuardLine.xml:223`, `/workspace_addons/GuardList/GuardList.xml:55`, `/workspace_addons/GuardRange/GuardRange.xml:55`, `/workspace_addons/MapMonster/Source/MapMonster_Templates.xml:27` |
 | Namespaces detected | AnimatedImage |
 | Source kinds | xml_frames |
 | Example locations | CMap: CMapWindowMapRallyCallGlowAnim, CMap: CMapWindowMapScenarioQueueGlowAnim, Enemy: EnemyTargetFlash, Enemy: EnemyTargetGlow, Enemy: EnemyTargetSpark, GuardLine: GuardLineSelfWindowGlow |

@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainerAdditions, CM_ClosetGoblin, Enemy, HotbarMorale, RandomMount, Shinies |
-| Files seen in | `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:512`, `/workspace/Enemy/Code/UnitFrames/ClickCasting.lua:379`, `/workspace/HotbarMorale/HotbarMorale.lua:10`, `/workspace/HotbarMorale/HotbarMorale.lua:5`, `/workspace/RandomMount/RandomMountUI.lua:415`, `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:1105`, `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:1141` |
+| Files seen in | `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:512`, `/workspace_addons/Enemy/Code/UnitFrames/ClickCasting.lua:379`, `/workspace_addons/HotbarMorale/HotbarMorale.lua:10`, `/workspace_addons/HotbarMorale/HotbarMorale.lua:5`, `/workspace_addons/RandomMount/RandomMountUI.lua:415`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:1105`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:1141` |
 | Namespaces detected | Cursor |
 | Source kinds | globals, lua_calls |
 | Example locations | AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown, CM_ClosetGoblin: ClosetGoblinCharacterWindow.HandleDrag, Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionLButtonUp, HotbarMorale: ActionButton.CursorSwap, HotbarMorale: CursorSwap, HotbarMorale: HotbarMorale.Initialize |
@@ -141,3 +141,4 @@ Observed as a global function across 6 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, CM_ClosetGoblin, Enemy, Targets, TexturedButtons, TurretRange, bigger_MacroWindow |
-| Files seen in | `/workspace/BuffHead/Display.xml:27`, `/workspace/BuffHead/Setup/General.xml:33`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.xml:45`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.xml:44`, `/workspace/BuffHead/Setup/SetupAdvancedContainers.xml:45`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.xml:44`, `/workspace/BuffHead/Setup/SetupLayout.xml:127`, `/workspace/BuffHead/Setup/SetupLayout.xml:216` |
+| Files seen in | `/workspace_addons/BuffHead/Display.xml:27`, `/workspace_addons/BuffHead/Setup/General.xml:33`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:45`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:44`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainers.xml:45`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.xml:44`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:127`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:216` |
 | Namespaces detected | OnRButtonDown |
 | Source kinds | bindings, xml_handlers |
 | Example locations | BuffHead: BuffHeadBuffTemplate.OnRButtonDown, BuffHead: BuffHeadLayoutControlFrameWindow.OnRButtonDown, BuffHead: BuffHeadLayoutFrameWindow.OnRButtonDown, BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnRButtonDown, BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate.OnRButtonDown, BuffHead: BuffHeadSetupAdvancedContainersItemRowTemplate.OnRButtonDown |
@@ -110,4 +110,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CMap, RoR_SoR |
-| Files seen in | `/workspace/RoR_SoR/RoR_SoR.xml:341`, `/workspace/cmap/CMap.xml:112` |
+| Files seen in | `/workspace_addons/RoR_SoR/RoR_SoR.xml:341`, `/workspace_addons/cmap/CMap.xml:112` |
 | Namespaces detected | EA_Window_CityRating |
 | Source kinds | xml_attributes |
 | Example locations | CMapWindowCityRating, RoR_SoR_City_Status_TemplateCityRating |

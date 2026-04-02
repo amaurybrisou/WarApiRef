@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Effigy, Enemy, WSCT, Enemy, WSCT |
-| Files seen in | `/workspace/Effigy/States/EffigyStateCastbarRespawn.lua:67`, `/workspace/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/wsct/wsct.lua:117`, `/workspace/wsct/wsct.lua:137` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateCastbarRespawn.lua:67`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/wsct/wsct.lua:117`, `/workspace_addons/wsct/wsct.lua:137` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | Effigy.InitializeCastbarRespawn, Effigy.RegisterStateInfoForPlayer, Effigy.RespawnHealthUpdate, Enemy.GroupsInitialize, Enemy.Groups_OnCurrentPlayerUpdated, SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED |

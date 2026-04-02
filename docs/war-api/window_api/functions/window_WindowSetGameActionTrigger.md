@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/Ace/LibGUI.lua:579`, `/workspace/Effigy/LibGUI.lua:578`, `/workspace/Effigy/States/EffigyStateTargets.lua:325`, `/workspace/GCDsaver/libs/LibGUI.lua:578`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:578`, `/workspace/Shinies/Libraries/LibGUI.lua:578`, `/workspace/WarTriage/libs/LibGUI.lua:578`, `/workspace/WoH-Reticle/libs/LibGUI.lua:578` |
+| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:579`, `/workspace_addons/Effigy/LibGUI.lua:578`, `/workspace_addons/Effigy/States/EffigyStateTargets.lua:325`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:578`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:578`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:578`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:578` |
 | Namespaces detected | WindowSetGameActionTrigger |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Button:Trigger, Effigy: Effigy.UpdateTarget, Effigy: LIBGUI_Button:Trigger, GCDsaver: LIBGUI_Button:Trigger, LibWBToggler: LIBGUI_Button:Trigger, Shinies: LIBGUI_Button:Trigger |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -89,7 +89,6 @@ Observed mutating runtime window state or presentation.
 - GCDsaver
 - LibWBToggler
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples

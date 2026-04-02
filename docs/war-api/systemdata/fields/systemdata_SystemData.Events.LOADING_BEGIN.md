@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin, CM_ClosetGoblin, MapMonster, wbLeadHelper, MapMonster, wbLeadHelper |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblin.lua:1218`, `/workspace/ClosetGoblin/ClosetGoblin.lua:1327`, `/workspace/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace/MapMonster/Source/MapMonster_Player.lua:83`, `/workspace/wbLeadHelper/wbLeadHelper.lua:34` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1283`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1392`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:83`, `/workspace_addons/wbLeadHelper/wbLeadHelper.lua:34` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | ClosetGoblin.LoadingBegin, ClosetGoblin.ZoneChangeInit, ClosetGoblin.ZoneChangeShutdown, MapMonster.InitializePlayer, MapMonster.OnLoadingBegin, MapMonster.ShutdownPlayer |
@@ -73,7 +73,7 @@ Observed SystemData field used by 4 addons through generated function calls, eve
 
 ## Related APIs
 
-- none
+- [LibSlash.IsSlashCmdRegistered](../../globals/functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
 
 ## Used With
 

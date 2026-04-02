@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Assist/Assist.lua:51`, `/workspace/Enemy/Code/CombatLog/CombatLogTargetDefenseWindow.lua:63` |
+| Files seen in | `/workspace_addons/Enemy/Code/Assist/Assist.lua:51`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogTargetDefenseWindow.lua:63` |
 | Namespaces detected | TargetChanged |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy.Assist_OnSettingsChanged, Enemy: Enemy.CombatLogUI_TargetDefenseWindow_OnSettingsChanged |
@@ -100,4 +100,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Notes
 
 - Triggered-by evidence: Enemy:Enemy.OnPlayerTargetUpdated
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

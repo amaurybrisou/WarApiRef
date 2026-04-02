@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace/Enemy/Code/Timer/Timer.lua:97` |
+| Files seen in | `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace_addons/Enemy/Code/Timer/Timer.lua:97` |
 | Namespaces detected | GroupsPlayerInitialized |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy._TalismanAlerterEnabledChanged, Enemy: Enemy._TimerEnabledChanged |

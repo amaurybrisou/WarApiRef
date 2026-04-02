@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | GuardLine |
-| Files seen in | `/workspace/GuardLine/GuardLine.lua:897` |
+| Files seen in | `/workspace_addons/GuardLine/GuardLine.lua:897` |
 | Namespaces detected | WindowRestoreDefaultSettings |
 | Source kinds | lua_calls |
 | Example locations | GuardLine: GuardLine.ResetSettings |
@@ -71,7 +71,7 @@ Observed as a window function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

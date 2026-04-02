@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoBand, LoyalPet, MegaphonePlusPlus, Pocket Palette, WSCT |
-| Files seen in | `/workspace/Autoband/AutoBandWindowConfig.xml:367`, `/workspace/LoyalPet/gui/lpet_gui.xml:102`, `/workspace/PocketPalette/PocketPalette.xml:100`, `/workspace/PocketPalette/PocketPalette.xml:160`, `/workspace/PocketPalette/PocketPalette.xml:171`, `/workspace/PocketPalette/PocketPalette.xml:301`, `/workspace/PocketPalette/PocketPalette.xml:477`, `/workspace/PocketPalette/PocketPalette.xml:489` |
+| Addons seen in | LoyalPet, Pocket Palette, WSCT |
+| Files seen in | `/workspace_addons/LoyalPet/gui/lpet_gui.xml:102`, `/workspace_addons/PocketPalette/PocketPalette.xml:100`, `/workspace_addons/PocketPalette/PocketPalette.xml:160`, `/workspace_addons/PocketPalette/PocketPalette.xml:171`, `/workspace_addons/PocketPalette/PocketPalette.xml:301`, `/workspace_addons/PocketPalette/PocketPalette.xml:477`, `/workspace_addons/PocketPalette/PocketPalette.xml:489`, `/workspace_addons/PocketPalette/PocketPalette.xml:59` |
 | Namespaces detected | EA_Label_DefaultText_Small |
 | Source kinds | xml_attributes |
-| Example locations | AutoBandWindowConfigVersionLabel, DyeListBoxRowTemplateCount, DyeListBoxRowTemplateName, DyeWindowSelectedDyeCount, DyeWindowSelectedDyeName, ItemWindowGuide |
-| XML usage count | 19 |
-| XML attribute usage count | 19 |
+| Example locations | DyeListBoxRowTemplateCount, DyeListBoxRowTemplateName, DyeWindowSelectedDyeCount, DyeWindowSelectedDyeName, ItemWindowGuide, LPETComboBoxTemplateLabel |
+| XML usage count | 14 |
+| XML attribute usage count | 14 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,29 +57,22 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 5 addons.
+Observed engine XML template or inherited constant referenced by 3 addons.
 
 ## Seen In
 
-- AutoBand
 - LoyalPet
-- MegaphonePlusPlus
 - Pocket Palette
 - WSCT
 
 ## Used By
 
-- AutoBandWindowConfigVersionLabel
 - DyeListBoxRowTemplateCount
 - DyeListBoxRowTemplateName
 - DyeWindowSelectedDyeCount
 - DyeWindowSelectedDyeName
 - ItemWindowGuide
 - LPETComboBoxTemplateLabel
-- MegaphoneMainFontTitleLabel
-- MegaphoneMainHighlightLeaderLabel
-- MegaphoneMainSFXTitleLabel
-- MegaphoneMainShowLeaderLabel
 - PPMainIntroText
 - PPMainSaveSettingsLabel
 - WSCTComboBoxTemplateLabel

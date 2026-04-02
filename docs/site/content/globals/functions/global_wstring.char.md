@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff |
-| Files seen in | `/workspace/DAoCBuff/Source/Transcode.lua:289` |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/Transcode.lua:289` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
 | Example locations | DAoCBuff: wstringdec |
@@ -69,11 +69,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

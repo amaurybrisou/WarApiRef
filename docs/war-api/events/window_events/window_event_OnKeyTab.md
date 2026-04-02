@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/DebugWindow.xml:211`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:71`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:728` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:211`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:71`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:728` |
 | Namespaces detected | OnKeyTab |
 | Source kinds | event_page, xml_handlers |
 | Example locations | EA_UiDebugTools: DebugWindowTextBox.OnKeyTab, EA_UiDebugTools: DevPadCopyLog.OnKeyTab, EA_UiDebugTools: DevPadWindowDevPadCode.OnKeyTab |

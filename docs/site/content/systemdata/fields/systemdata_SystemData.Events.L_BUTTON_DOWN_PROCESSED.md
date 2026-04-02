@@ -25,14 +25,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, LoyalPet |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/LoyalPet/LoyalPet.lua:134`, `/workspace/LoyalPet/LoyalPet.lua:203` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/LoyalPet/LoyalPet.lua:134`, `/workspace_addons/LoyalPet/LoyalPet.lua:203` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedPetAssist.OnLButtonDown, LPET.Initialize, LPET.Shutdown, SystemData.Events.L_BUTTON_DOWN_PROCESSED, event_page, event_registration |

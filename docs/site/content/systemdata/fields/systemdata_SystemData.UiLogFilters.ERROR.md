@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
@@ -11,32 +11,30 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 105
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DeepSleep, EA_UiDebugTools |
-| Files seen in | `/workspace/DeepSleep/DeepSleep.lua:41`, `/workspace/ea_uidebugtools/Source/Debug.lua:40` |
+| Addons seen in | EA_UiDebugTools |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/Debug.lua:40` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | DeepSleep.SafeCall, ERROR, lua_call |
+| Example locations | ERROR, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -44,7 +42,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -59,11 +57,10 @@
 
 ## Description
 
-Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
-- DeepSleep
 - EA_UiDebugTools
 
 ## Related APIs
@@ -84,4 +81,4 @@ Observed SystemData field used by 2 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: DeepSleep.SafeCall, ERROR, lua_call
+- Observed in contexts: ERROR, lua_call

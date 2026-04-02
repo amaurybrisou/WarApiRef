@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | PetFixWindow |
-| Files seen in | `/workspace/PetFixWindow/PetFixWindow.lua:3` |
+| Files seen in | `/workspace_addons/PetFixWindow/PetFixWindow.lua:3` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | PetFixWindow: PetFixWindow.onInit |

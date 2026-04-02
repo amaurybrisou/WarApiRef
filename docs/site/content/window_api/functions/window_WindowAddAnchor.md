@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 38 addons
+- Seen in: 36 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AnywhereTrainerAdditions, Aura, AutoMark, BagOMatic, BankArkel |
-| Files seen in | `/workspace/Ace/LibGUI.lua:140`, `/workspace/AdvancedPetAssist/APAGui.lua:552`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:18`, `/workspace/Aura/Source/Aura.lua:505`, `/workspace/Aura/Source/Aura.lua:534`, `/workspace/Aura/Source/AuraTexture.lua:41`, `/workspace/AutoMark/Source/AutoMark.lua:124`, `/workspace/BankArkel/BankArkel.lua:172` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:140`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:552`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:18`, `/workspace_addons/Aura/Source/Aura.lua:505`, `/workspace_addons/Aura/Source/Aura.lua:534`, `/workspace_addons/Aura/Source/AuraTexture.lua:41`, `/workspace_addons/AutoMark/Source/AutoMark.lua:124`, `/workspace_addons/BankArkel/BankArkel.lua:172` |
 | Namespaces detected | WindowAddAnchor |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:AddAnchor, AdvancedPetAssist: AdvancedPetAssist.local.AnchorInContent, AdvancedPetAssist: AnchorInContent, AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow, AdvancedRenownTrainer: CreateAbilityWindow, AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 371 |
-| Global usage count | 371 |
+| Lua usage count | 368 |
+| Global usage count | 368 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -80,7 +80,7 @@ Observed positioning windows relative to other runtime UI elements.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -117,11 +117,9 @@ Observed positioning windows relative to other runtime UI elements.
 - Shinies
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
 - WSCT
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - nRarity

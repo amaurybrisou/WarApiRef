@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Enemy |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePlayer.lua:271`, `/workspace/Enemy/Code/Core/Groups/EnemyPlayer.lua:198` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:271`, `/workspace_addons/Enemy/Code/Core/Groups/EnemyPlayer.lua:198` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Effigy.UpdatePlayerAP, EnemyPlayer:LoadFromCurrentPlayer, lua_call |

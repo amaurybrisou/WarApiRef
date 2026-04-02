@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Killer |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePlayer.lua:342`, `/workspace/Killer/KillerRenown.lua:61` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:342`, `/workspace_addons/Killer/KillerRenown.lua:61` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Effigy.UpdateRenown, Killer.OnRenownUpdated, lua_call |

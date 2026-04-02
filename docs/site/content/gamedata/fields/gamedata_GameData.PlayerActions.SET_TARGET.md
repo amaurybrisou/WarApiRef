@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Effigy, Enemy, RetAlert, Targets, WarTriage, followTheLeader |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.lua:242`, `/workspace/Effigy/Effigy.lua:365`, `/workspace/Effigy/Elements/EffigyIndicator.lua:132`, `/workspace/Effigy/States/EffigyStateTargets.lua:325`, `/workspace/Enemy/Code/GroupIcons/GroupIcon.lua:115`, `/workspace/Enemy/Code/Guard/Guard.lua:104`, `/workspace/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/Enemy/Code/UnitFrames/UnitFrame.lua:344` |
+| Addons seen in | AggroMeter, Effigy, Enemy, Targets, followTheLeader |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.lua:242`, `/workspace_addons/Effigy/Effigy.lua:365`, `/workspace_addons/Effigy/Elements/EffigyIndicator.lua:132`, `/workspace_addons/Effigy/States/EffigyStateTargets.lua:325`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcon.lua:115`, `/workspace_addons/Enemy/Code/Guard/Guard.lua:104`, `/workspace_addons/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFrame.lua:344` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | AggroMeter.SelectChar, Effigy.LButtonUp, Effigy.UpdateTarget, EffigyIndicator:addInteractive, Enemy.Guard_SetGuardPlayerName, Enemy.UnitFramesUI_UnitFrame_OnLButtonDown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,16 +59,14 @@
 
 ## Description
 
-Observed GameData field used by 7 addons through generated function calls, event pages, or lifecycle evidence.
+Observed GameData field used by 5 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - AggroMeter
 - Effigy
 - Enemy
-- RetAlert
 - Targets
-- WarTriage
 - followTheLeader
 
 ## Related APIs

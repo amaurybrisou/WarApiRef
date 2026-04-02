@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapMonster |
-| Files seen in | `/workspace/MapMonster/Source/MapMonster_EditorWindow.lua:822`, `/workspace/MapMonster/Source/MapMonster_Pins.lua:2492` |
+| Files seen in | `/workspace_addons/MapMonster/Source/MapMonster_EditorWindow.lua:822`, `/workspace_addons/MapMonster/Source/MapMonster_Pins.lua:2492` |
 | Namespaces detected | EA_Window_WorldMap |
 | Source kinds | globals, lua_calls |
 | Example locations | MapMonster: MapMonster.Editor.OnZoneNameChange, MapMonster: MapMonsterAPI.HighlightMapPin |

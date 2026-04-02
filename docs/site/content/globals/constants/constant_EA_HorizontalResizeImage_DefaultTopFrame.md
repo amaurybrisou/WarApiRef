@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Source/Shinies.xml:30` |
+| Files seen in | `/workspace_addons/Shinies/Source/Shinies.xml:30` |
 | Namespaces detected | EA_HorizontalResizeImage_DefaultTopFrame |
 | Source kinds | xml_attributes |
 | Example locations | Shinies_TitleBar_DefaultBackground |

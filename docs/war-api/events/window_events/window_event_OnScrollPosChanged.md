@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | bigger_MacroWindow |
-| Files seen in | `/workspace/bigger_macrowindow/Source/MacroIcons.xml:9` |
+| Files seen in | `/workspace_addons/bigger_macrowindow/Source/MacroIcons.xml:9` |
 | Namespaces detected | OnScrollPosChanged |
 | Source kinds | event_page, xml_handlers |
 | Example locations | bigger_MacroWindow: MacroIconsScrollBar.OnScrollPosChanged |

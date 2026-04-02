@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools, Shinies |
-| Files seen in | `/workspace/Shinies/Modules/UI/Shinies-UI-Auto.xml:182`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:102` |
+| Files seen in | `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Auto.xml:182`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:102` |
 | Namespaces detected | LogDisplay |
 | Source kinds | xml_frames |
 | Example locations | EA_UiDebugTools: DebugWindowText, Shinies: ShiniesAutoUI_AutoSummary |

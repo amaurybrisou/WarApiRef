@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, DaemonAssist, LoyalPet |
-| Files seen in | `/workspace/AdvancedPetAssist/APAAbilityQueue.lua:462`, `/workspace/AdvancedPetAssist/APACore.lua:269`, `/workspace/AdvancedPetAssist/APACore.lua:283`, `/workspace/AdvancedPetAssist/APAEvents.lua:285`, `/workspace/AdvancedPetAssist/APALosDetection.lua:45`, `/workspace/AdvancedPetAssist/APAUpdateKiting.lua:102`, `/workspace/AdvancedPetAssist/APAUpdateKiting.lua:180`, `/workspace/DaemonAssist/DACore.lua:23` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAAbilityQueue.lua:462`, `/workspace_addons/AdvancedPetAssist/APACore.lua:269`, `/workspace_addons/AdvancedPetAssist/APACore.lua:283`, `/workspace_addons/AdvancedPetAssist/APAEvents.lua:285`, `/workspace_addons/AdvancedPetAssist/APALosDetection.lua:45`, `/workspace_addons/AdvancedPetAssist/APAUpdateKiting.lua:102`, `/workspace_addons/AdvancedPetAssist/APAUpdateKiting.lua:180`, `/workspace_addons/DaemonAssist/DACore.lua:23` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | AdvancedPetAssist.ApplyDefaultStance, AdvancedPetAssist.SetPassiveFollow, AdvancedPetAssist.TickAbilityQueue, AdvancedPetAssist.TickLosDetection, AdvancedPetAssist.local.HandleMountCast, AdvancedPetAssist.local.TickKitingWait |

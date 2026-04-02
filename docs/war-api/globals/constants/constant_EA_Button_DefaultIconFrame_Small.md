@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura |
-| Files seen in | `/workspace/Aura/Source/AuraSettings.xml:38`, `/workspace/Aura/Source/AuraShares.xml:91` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraSettings.xml:38`, `/workspace_addons/Aura/Source/AuraShares.xml:91` |
 | Namespaces detected | EA_Button_DefaultIconFrame_Small |
 | Source kinds | xml_attributes |
 | Example locations | AuraSharesRowTexture, AuraWindowRowAuraTexture |

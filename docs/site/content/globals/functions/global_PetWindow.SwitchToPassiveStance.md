@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, DaemonAssist |
-| Files seen in | `/workspace/AdvancedPetAssist/APACore.lua:269`, `/workspace/AdvancedPetAssist/APACore.lua:283`, `/workspace/DaemonAssist/DACore.lua:23` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APACore.lua:269`, `/workspace_addons/AdvancedPetAssist/APACore.lua:283`, `/workspace_addons/DaemonAssist/DACore.lua:23` |
 | Namespaces detected | PetWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.ApplyDefaultStance, AdvancedPetAssist: AdvancedPetAssist.SetPassiveFollow, DaemonAssist: DaemonAssist.EnsurePassiveFollow |
@@ -71,11 +71,11 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

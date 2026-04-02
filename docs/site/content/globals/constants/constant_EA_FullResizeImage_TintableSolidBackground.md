@@ -27,12 +27,12 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, Aura, BuffHead, CM_ClosetGoblin, CMap, Cheeseboard, DAoCBuff, EA_UiDebugTools |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:216`, `/workspace/AggroMeter/AggroMeter.xml:221`, `/workspace/Aura/Source/AuraSettings.xml:31`, `/workspace/Aura/Source/AuraShares.xml:84`, `/workspace/Aura/Source/AuraTooltip.xml:195`, `/workspace/Aura/Source/AuraTooltip.xml:220`, `/workspace/Aura/Source/AuraTooltip.xml:56`, `/workspace/Aura/Source/AuraTooltip.xml:81` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:216`, `/workspace_addons/AggroMeter/AggroMeter.xml:221`, `/workspace_addons/Aura/Source/AuraSettings.xml:31`, `/workspace_addons/Aura/Source/AuraShares.xml:84`, `/workspace_addons/Aura/Source/AuraTooltip.xml:195`, `/workspace_addons/Aura/Source/AuraTooltip.xml:220`, `/workspace_addons/Aura/Source/AuraTooltip.xml:56`, `/workspace_addons/Aura/Source/AuraTooltip.xml:81` |
 | Namespaces detected | EA_FullResizeImage_TintableSolidBackground |
 | Source kinds | xml_attributes |
 | Example locations | $parentScrollRightPaneBackground, AggroMeterWindow_AggroWindow1BorderCheck, AggroMeterWindow_AggroWindow1Seperator1, AuraShareTooltipFooterSeperator, AuraShareTooltipHeaderSeperator, AuraSharesRowBackground |
-| XML usage count | 115 |
-| XML attribute usage count | 115 |
+| XML usage count | 117 |
+| XML attribute usage count | 117 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -200,6 +200,8 @@ Observed engine XML template or inherited constant referenced by 30 addons.
 - TurretRangeSetupDisplayWindowSelectColorBackground
 - TurretRangeSetupDistancesRowTemplateBackground
 - WarBoardBackground
+- WhoHealedMeDetailRowTemplateFill
+- WhoHealedMeDetailsContentFill
 - WhoHealedMeHealerRowTemplateFill
 - WhoHealedMeOptionsContentBackgroundFillPreviewFill
 - WhoHealedMeOptionsContentFill

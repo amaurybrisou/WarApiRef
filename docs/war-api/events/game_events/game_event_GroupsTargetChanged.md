@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
+| Files seen in | `/workspace_addons/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
 | Namespaces detected | GroupsTargetChanged |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy._UnitFramesEnabledChanged |

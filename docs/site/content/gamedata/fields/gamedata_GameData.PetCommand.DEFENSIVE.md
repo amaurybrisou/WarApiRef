@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist |
-| Files seen in | `/workspace/AdvancedPetAssist/APAAbilityQueue.lua:418`, `/workspace/AdvancedPetAssist/APAAbilityQueue.lua:462`, `/workspace/AdvancedPetAssist/APACore.lua:269` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAAbilityQueue.lua:418`, `/workspace_addons/AdvancedPetAssist/APAAbilityQueue.lua:462`, `/workspace_addons/AdvancedPetAssist/APACore.lua:269` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | AdvancedPetAssist.ApplyDefaultStance, AdvancedPetAssist.SendAttackCommands, AdvancedPetAssist.TickAbilityQueue, lua_call |

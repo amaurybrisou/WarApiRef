@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Miracle Grow Remix, MiracleGrow, MiracleGrowLight |
-| Files seen in | `/workspace/MGRemix/harvrepeat.lua:215`, `/workspace/MGRemix/harvrepeat.lua:343`, `/workspace/MiracleGrow/MiracleGrow.lua:60`, `/workspace/MiracleGrowLight/MiracleGrowLight.lua:301` |
+| Files seen in | `/workspace_addons/MGRemix/harvrepeat.lua:215`, `/workspace_addons/MGRemix/harvrepeat.lua:343`, `/workspace_addons/MiracleGrow/MiracleGrow.lua:60`, `/workspace_addons/MiracleGrowLight/MiracleGrowLight.lua:301` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | MiracleGrow.Initialize, MiracleGrow2.HRInit, MiracleGrow2.HRUpdatePlot, MiracleGrowLight.Initialize, lua_call |

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 30 addons
+- Seen in: 29 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AnywhereTrainer, Aura, BuffHead, Crafting Info Tooltip, DAoCBuff, EA_UiDebugTools |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1046`, `/workspace/Ace/LibGUI.lua:1149`, `/workspace/Ace/LibGUI.lua:1237`, `/workspace/Ace/LibGUI.lua:506`, `/workspace/Ace/LibGUI.lua:620`, `/workspace/Ace/LibGUI.lua:680`, `/workspace/Ace/LibGUI.lua:735`, `/workspace/Ace/LibGUI.lua:805` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1046`, `/workspace_addons/Ace/LibGUI.lua:1149`, `/workspace_addons/Ace/LibGUI.lua:1237`, `/workspace_addons/Ace/LibGUI.lua:506`, `/workspace_addons/Ace/LibGUI.lua:620`, `/workspace_addons/Ace/LibGUI.lua:680`, `/workspace_addons/Ace/LibGUI.lua:735`, `/workspace_addons/Ace/LibGUI.lua:805` |
 | Namespaces detected | WindowGetDimensions |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Button:New, Ace: LIBGUI_Checkbox:New, Ace: LIBGUI_Combobox:New, Ace: LIBGUI_Image:New, Ace: LIBGUI_MultiTextbox:New, Ace: LIBGUI_Optionbutton:New |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 158 |
-| Global usage count | 158 |
+| Lua usage count | 152 |
+| Global usage count | 152 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -109,7 +109,6 @@ Observed querying runtime window state or metadata.
 - TexturedButtons
 - TidyChat
 - TurretRange
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - nRarity

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 16 addons
+- Seen in: 15 addons
 
 ## Confidence Assessment
 
@@ -26,14 +26,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, Aura, CombatTextNames, Crafting Info Tooltip, EA_UiDebugTools, GuardLine, Killer, LibGuard |
-| Files seen in | `/workspace/Aura/Libraries/LibPickle.lua:428`, `/workspace/Aura/Libraries/LibPickle.lua:65`, `/workspace/CraftValueTip/CraftValueTip.lua:108`, `/workspace/GuardLine/GuardLine.lua:151`, `/workspace/Killer/KillerUtils.lua:14`, `/workspace/LibGuard/Source/LibGuard.lua:362`, `/workspace/LibGuard/Source/LibGuard.lua:75`, `/workspace/MGRemix/MGRemix.lua:424` |
+| Files seen in | `/workspace_addons/Aura/Libraries/LibPickle.lua:428`, `/workspace_addons/Aura/Libraries/LibPickle.lua:65`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:108`, `/workspace_addons/GuardLine/GuardLine.lua:151`, `/workspace_addons/Killer/KillerUtils.lua:14`, `/workspace_addons/LibGuard/Source/LibGuard.lua:362`, `/workspace_addons/LibGuard/Source/LibGuard.lua:75`, `/workspace_addons/MGRemix/MGRemix.lua:424` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.OnHyperLinkLButtonUp, Aura: Aura.local.wgsub, Aura: DePickler:unpickle, Aura: wgsub, CombatTextNames: CombatTextNames.TruncateAbilityName, Crafting Info Tooltip: CraftValueTip.GetPhrase |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 79 |
-| Global usage count | 79 |
+| Lua usage count | 77 |
+| Global usage count | 77 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ wstring.gsub(arg1, arg2, arg3)
 
 ## Description
 
-Observed as a global function across 16 addons.
+Observed as a global function across 15 addons.
 
 ## Parameters
 
@@ -92,7 +92,6 @@ Observed as a global function across 16 addons.
 - LibGuard
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - RoR_SoR
 - Shinies

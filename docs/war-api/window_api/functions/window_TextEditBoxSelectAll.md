@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, Enemy |
-| Files seen in | `/workspace/Aura/Source/AuraShares.lua:379`, `/workspace/Aura/Source/AuraShares.lua:397`, `/workspace/Enemy/Code/Core/Main.lua:842` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraShares.lua:379`, `/workspace_addons/Aura/Source/AuraShares.lua:397`, `/workspace_addons/Enemy/Code/Core/Main.lua:842` |
 | Namespaces detected | TextEditBoxSelectAll |
 | Source kinds | lua_calls |
 | Example locations | Aura: AuraShares.OnExportAura, Aura: AuraShares.OnImportAura, Enemy: Enemy.UI_TextEntryDialog_Open |

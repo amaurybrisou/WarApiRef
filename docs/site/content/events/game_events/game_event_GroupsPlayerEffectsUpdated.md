@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/CombatLog/CombatLog.lua:134`, `/workspace/Enemy/Code/Guard/Guard.lua:57`, `/workspace/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
+| Files seen in | `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:134`, `/workspace_addons/Enemy/Code/Guard/Guard.lua:57`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
 | Namespaces detected | GroupsPlayerEffectsUpdated |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy._CombatLogEnabledChanged, Enemy: Enemy._GuardEnabledChanged, Enemy: Enemy._UnitFramesEnabledChanged |
@@ -103,4 +103,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Notes
 
 - Triggered-by evidence: Enemy:Enemy.Groups_OnCurrentPlayerEffectsUpdated, Enemy:Enemy.Groups_OnGroupEffectUpdated, Enemy:Enemy.Groups_OnPlayerTargetEffectsUpdated, Enemy:EnemyPlayer:LoadEffects
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

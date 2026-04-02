@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | FastInteract, HealAll |
-| Files seen in | `/workspace/FastInteract/FastInteract.lua:30`, `/workspace/HealAll/HealAll.lua:8` |
+| Files seen in | `/workspace_addons/FastInteract/FastInteract.lua:30`, `/workspace_addons/HealAll/HealAll.lua:8` |
 | Namespaces detected | EA_Window_InteractionHealer |
 | Source kinds | lua_calls |
 | Example locations | FastInteract: FastInteract.HealAll, HealAll: HealAll.Heal |

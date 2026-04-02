@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 19 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedRenownTrainer, BankArkel, Crafting Info Tooltip, Effigy, Enemy, GCDsaver, Killer |
-| Files seen in | `/workspace/Ace/LibGUI.lua:262`, `/workspace/BankArkel/BankArkel.lua:172`, `/workspace/CraftValueTip/CraftValueTip.lua:334`, `/workspace/Effigy/LibGUI.lua:262`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:561`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:702`, `/workspace/GCDsaver/libs/LibGUI.lua:262`, `/workspace/Killer/KillerUiCache.lua:102` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:262`, `/workspace_addons/BankArkel/BankArkel.lua:172`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:334`, `/workspace_addons/Effigy/LibGUI.lua:262`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:561`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:702`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:262`, `/workspace_addons/Killer/KillerUiCache.lua:102` |
 | Namespaces detected | WindowSetId |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:SetId, AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow, AdvancedRenownTrainer: CreateAbilityWindow, BankArkel: BankArkel.CreatePackWin, Crafting Info Tooltip: CraftValueTip.ItemWindow, Effigy: LIBGUI_ELEMENT:SetId |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 42 |
-| Global usage count | 42 |
+| Lua usage count | 40 |
+| Global usage count | 40 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,7 +76,7 @@ Observed mutating runtime window state or presentation.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -98,9 +98,7 @@ Observed mutating runtime window state or presentation.
 - RoR_SoR
 - Shinies
 - TidyChat
-- TidyQueue
 - TidyRoll
-- WarTriage
 - WoH-Reticle
 - nRarity
 

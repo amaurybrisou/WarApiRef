@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1354`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1355`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:210`, `/workspace/ea_uidebugtools/Source/devpad/DebugWindowCodePad.lua:128` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1354`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1355`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:210`, `/workspace_addons/ea_uidebugtools/Source/devpad/DebugWindowCodePad.lua:128` |
 | Namespaces detected | DebugWindow |
 | Source kinds | bindings, lua_calls, xml_handlers |
 | Example locations | EA_UiDebugTools: DebugWindowOptions.OnHidden, EA_UiDebugTools: DebugWindowOptions.OnShown, EA_UiDebugTools: DebugWindowTextBox.OnShown, EA_UiDebugTools: DevPadWindow.Toggle |

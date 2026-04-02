@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, BankArkel, HealAll, JunkDump |
-| Files seen in | `/workspace/BankArkel/BankArkel.lua:242`, `/workspace/HealAll/HealAll.lua:8`, `/workspace/JunkDump/JunkDump.lua:525`, `/workspace/advancedrenowntrainer/AdvancedRenownTraining.lua:763` |
+| Files seen in | `/workspace_addons/BankArkel/BankArkel.lua:242`, `/workspace_addons/HealAll/HealAll.lua:8`, `/workspace_addons/JunkDump/JunkDump.lua:525`, `/workspace_addons/advancedrenowntrainer/AdvancedRenownTraining.lua:763` |
 | Namespaces detected | MoneyFrame |
 | Source kinds | lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize, BankArkel: BankArkel.PackShow, HealAll: HealAll.Heal, JunkDump: JunkDump.showMeDaMoney |

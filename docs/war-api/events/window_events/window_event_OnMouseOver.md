@@ -27,12 +27,12 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, Aura, BagOMatic, BankArkel, BuffHead, CM_ClosetGoblin |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:59`, `/workspace/AggroMeter/AggroMeter.xml:65`, `/workspace/AggroMeter/AggroMeter.xml:70`, `/workspace/AggroMeter/AggroMeter.xml:8`, `/workspace/AnywhereTrainer/source/AnywhereTrainer.xml:44`, `/workspace/Aura/Source/AuraConfig.xml:67`, `/workspace/Aura/Source/AuraSettings.xml:26`, `/workspace/Aura/Source/AuraShares.xml:79` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:59`, `/workspace_addons/AggroMeter/AggroMeter.xml:65`, `/workspace_addons/AggroMeter/AggroMeter.xml:70`, `/workspace_addons/AggroMeter/AggroMeter.xml:8`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.xml:44`, `/workspace_addons/Aura/Source/AuraConfig.xml:67`, `/workspace_addons/Aura/Source/AuraSettings.xml:26`, `/workspace_addons/Aura/Source/AuraShares.xml:79` |
 | Namespaces detected | OnMouseOver |
 | Source kinds | event_page, xml_handlers |
 | Example locations | AdvancedRenownTrainer: AbilityButtonTemplate.OnMouseOver, AggroMeter: AggroMeter_Button.OnMouseOver, AggroMeter: Aggro_Label_Template.OnMouseOver, AggroMeter: Aggro_Tactic_Template.OnMouseOver, AggroMeter: Aggro_Timer_Template.OnMouseOver, AnywhereTrainer: AnywhereTrainerTabTemplateInactiveImage.OnMouseOver |
-| XML usage count | 485 |
-| XML attribute usage count | 485 |
+| XML usage count | 479 |
+| XML attribute usage count | 479 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 43 addons.
+Observed as an engine-supplied UI event hook used by 41 addons.
 
 ## Handler Pattern
 
@@ -80,7 +80,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - CMap
 - Cheeseboard
 - DAoCBuff
-- DeepSleep
 - EA_ThreePartBar
 - EA_UiDebugTools
 - EA_UiModWindow
@@ -97,7 +96,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - MoraleCircle
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
 - RVMOD_Manager
@@ -168,7 +166,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - ClosetGoblinCharacterWindow.ShowShowHelm
 - ClosetGoblinCharacterWindow.ShowShowHelmOnly
 - DAoCBuffFrame.OnMouseOver
-- DeepSleep.Settings.OnMouseOver
 - DevPadWindow.OnMouseOverCode
 - EA_Window_Macro.DetailIconMouseOver
 - EA_Window_Macro.IconMouseOver
@@ -252,8 +249,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - PotionBarSettings.OnMouseoverShowLast
 - PotionBarSettings.OnMouseoverUse
 - QTS.MouseOver
-- QueueQueuer_GUI.MapButton_OnMouseOver
-- QueueQueuer_GUI.OnMouseOverTab
 - QuickWarReport.OnMouseOver
 - RVMOD_Manager.OnMouseOverFilterAll
 - RVMOD_Manager.OnMouseOverFilterEA

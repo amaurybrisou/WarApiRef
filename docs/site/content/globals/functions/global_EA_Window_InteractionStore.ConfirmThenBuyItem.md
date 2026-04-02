@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic |
-| Files seen in | `/workspace/bagomatic/BagOMatic.lua:776`, `/workspace/bagomatic/BagOMatic.lua:782` |
+| Files seen in | `/workspace_addons/bagomatic/BagOMatic.lua:776`, `/workspace_addons/bagomatic/BagOMatic.lua:782` |
 | Namespaces detected | EA_Window_InteractionStore |
 | Source kinds | globals, lua_calls |
 | Example locations | BagOMatic: BagOMatic.buyItem, BagOMatic: BagOMatic.buyLastItem |
@@ -70,16 +70,16 @@ Observed as a global function across 1 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a numeric value. | Observed values: 13, item_slot_num |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: 13, item_slot_num |
 | arg2 | Observed as a numeric value. | Observed values: 1 |
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

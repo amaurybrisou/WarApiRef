@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/CombatLog/CombatLogEpsWindow.lua:12`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:107` |
+| Files seen in | `/workspace_addons/Enemy/Code/CombatLog/CombatLogEpsWindow.lua:12`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:107` |
 | Namespaces detected | CombatLogSessionsUpdated |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Enemy: Enemy.CombatLogUI_EpsWindow_Initialize, Enemy: Enemy.CombatLogUI_StatsWindow_Open |

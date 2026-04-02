@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, Enemy, LibGuard, LibGroup, LibGuard |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/LibGroup/LibGroup.lua:343`, `/workspace/LibGuard/Source/LibGuard.lua:47`, `/workspace/LibGuard/Source/LibGuard.lua:91` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/LibGroup/LibGroup.lua:343`, `/workspace_addons/LibGuard/Source/LibGuard.lua:47`, `/workspace_addons/LibGuard/Source/LibGuard.lua:91` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | Enemy.GroupsInitialize, Enemy.GroupsUpdateType, LibGroup.Initialize, LibGuard.GROUP_UPDATED, LibGuard.Init, LibGuard.OnShutdown |

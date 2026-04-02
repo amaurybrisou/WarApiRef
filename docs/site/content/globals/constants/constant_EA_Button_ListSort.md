@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, CM_ClosetGoblin, EA_UiModWindow |
-| Files seen in | `/workspace/BuffHead/Setup/SetupEffectCache.xml:4`, `/workspace/ClosetGoblin/ClosetGoblin.xml:1320`, `/workspace/ClosetGoblin/ClosetGoblin.xml:1347`, `/workspace/ClosetGoblin/ClosetGoblin.xml:394`, `/workspace/ClosetGoblin/ClosetGoblin.xml:421`, `/workspace/ea_uimodwindow/Source/UiModWindow.xml:74` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupEffectCache.xml:4`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1320`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1347`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:394`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:421`, `/workspace_addons/ea_uimodwindow/Source/UiModWindow.xml:74` |
 | Namespaces detected | EA_Button_ListSort |
 | Source kinds | xml_attributes |
 | Example locations | BuffHeadSetupEffectCacheSortTemplate, ClosetGoblinCharacterWindowContentsSortNameButton, ClosetGoblinCharacterWindowContentsSortTacticsButton, ClosetGoblinZoneWindowContentsSortSetButton, ClosetGoblinZoneWindowContentsSortZoneButton, ModWindowSortButton |

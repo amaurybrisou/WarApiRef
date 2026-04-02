@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic, TidyRoll |
-| Files seen in | `/workspace/TidyRoll/CustomAutoRoll.lua:400`, `/workspace/bagomatic/BagOMatic.lua:818`, `/workspace/bagomatic/BagOMatic.lua:888` |
+| Files seen in | `/workspace_addons/TidyRoll/CustomAutoRoll.lua:400`, `/workspace_addons/bagomatic/BagOMatic.lua:818`, `/workspace_addons/bagomatic/BagOMatic.lua:888` |
 | Namespaces detected | EA_BackpackUtilsMediator |
 | Source kinds | globals, lua_calls |
 | Example locations | BagOMatic: BagOMatic.SalvageHook, BagOMatic: BagOMatic.findItemInBagPack, TidyRoll: TidyRoll.CustomAutoRoll.OnListLbuttonUp |

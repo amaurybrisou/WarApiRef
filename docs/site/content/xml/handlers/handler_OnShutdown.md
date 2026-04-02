@@ -27,14 +27,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoBand, CM_ClosetGoblin, CMap, EA_UiDebugTools, Queue Queuer, bigger_MacroWindow |
-| Files seen in | `/workspace/Autoband/AutoBandWindowConfig.xml:21`, `/workspace/Autoband/AutoBandWindowTemplate.xml:22`, `/workspace/Autoband/AutoBandWindowTools.xml:21`, `/workspace/ClosetGoblin/ClosetGoblin.xml:1228`, `/workspace/ClosetGoblin/ClosetGoblin.xml:264`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:168`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:40`, `/workspace/QueueQueuer/QueueQueuer_GUI_TabAbout.xml:40` |
+| Addons seen in | CM_ClosetGoblin, CMap, EA_UiDebugTools, bigger_MacroWindow |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1228`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:264`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:358`, `/workspace_addons/cmap/CMap.xml:40`, `/workspace_addons/cmap/CMap.xml:430`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:30` |
 | Namespaces detected | OnShutdown |
 | Source kinds | bindings, xml_handlers |
-| Example locations | AutoBand: AutoBandWindowConfig.OnShutdown, AutoBand: AutoBandWindowTemplate.OnShutdown, AutoBand: AutoBandWindowTools.OnShutdown, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnShutdown, CM_ClosetGoblin: ClosetGoblinZoneWindow.OnShutdown, CMap: CMapWindow.OnShutdown |
-| XML usage count | 17 |
-| XML attribute usage count | 17 |
-| Lua usage count | 17 |
+| Example locations | CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnShutdown, CM_ClosetGoblin: ClosetGoblinZoneWindow.OnShutdown, CMap: CMapWindow.OnShutdown, CMap: CMapWindowPinFilterMenu.OnShutdown, EA_UiDebugTools: DebugWindow.OnShutdown, bigger_MacroWindow: EA_Window_Macro.OnShutdown |
+| XML usage count | 6 |
+| XML attribute usage count | 6 |
+| Lua usage count | 6 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 6 addons through frame event handlers.
+Observed as an XML handler hook bound by 4 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -72,21 +72,19 @@ function(...)
 
 ## Seen In
 
-- AutoBand
 - CM_ClosetGoblin
 - CMap
 - EA_UiDebugTools
-- Queue Queuer
 - bigger_MacroWindow
 
 ## Examples
 
-- AutoBand: AutoBandWindowConfig -> AutoBandWindowConfig.OnShutdown -> AutoBandWindowConfig.Shutdown
-- AutoBand: AutoBandWindowTemplate -> AutoBandWindowTemplate.OnShutdown -> AutoBandWindowTemplate.Shutdown
-- AutoBand: AutoBandWindowTools -> AutoBandWindowTools.OnShutdown -> AutoBandWindowTools.Shutdown
 - CM_ClosetGoblin: ClosetGoblinCharacterWindow -> ClosetGoblinCharacterWindow.OnShutdown -> ClosetGoblinCharacterWindow.OnShutdown
 - CM_ClosetGoblin: ClosetGoblinZoneWindow -> ClosetGoblinZoneWindow.OnShutdown -> ClosetGoblinZoneWindow.OnShutdown
 - CMap: CMapWindow -> CMapWindow.OnShutdown -> CMapWindow.Shutdown
+- CMap: CMapWindowPinFilterMenu -> CMapWindowPinFilterMenu.OnShutdown -> EA_Window_ContextMenu.Shutdown
+- EA_UiDebugTools: DebugWindow -> DebugWindow.OnShutdown -> DebugWindow.Shutdown
+- bigger_MacroWindow: EA_Window_Macro -> EA_Window_Macro.OnShutdown -> EA_Window_Macro.Shutdown
 
 ## Related APIs
 
@@ -107,4 +105,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

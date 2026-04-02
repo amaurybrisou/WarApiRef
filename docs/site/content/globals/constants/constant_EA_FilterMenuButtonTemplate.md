@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead |
-| Files seen in | `/workspace/BuffHead/Setup/SetupLayout.xml:306` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupLayout.xml:306` |
 | Namespaces detected | EA_FilterMenuButtonTemplate |
 | Source kinds | xml_attributes |
 | Example locations | BuffHeadSetupLayoutWindowLayerButton |

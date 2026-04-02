@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, Effigy, LibGuard |
-| Files seen in | `/workspace/BuffHead/Core.lua:1088`, `/workspace/BuffHead/Core.lua:207`, `/workspace/Effigy/States/EffigyStatePlayer.lua:244`, `/workspace/Effigy/States/EffigyStatePlayer.lua:271`, `/workspace/Effigy/States/EffigyStatePlayer.lua:283`, `/workspace/Effigy/States/EffigyStatePlayer.lua:294`, `/workspace/Effigy/States/EffigyStatePlayer.lua:373`, `/workspace/Effigy/States/EffigyStatePlayer.lua:387` |
+| Files seen in | `/workspace_addons/BuffHead/Core.lua:1088`, `/workspace_addons/BuffHead/Core.lua:207`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:244`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:271`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:283`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:294`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:373`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:387` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | BuffHead.OnGroupEffectsUpdated, BuffHead.SetSelfTracking, CB_Update, Effigy.UpdateName, Effigy.UpdatePlayerAP, Effigy.UpdatePlayerCareer |

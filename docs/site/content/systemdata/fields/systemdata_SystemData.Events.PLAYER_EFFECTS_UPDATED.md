@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -25,24 +25,24 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, BuffHead, DAoCBuff, Enemy, GCDsaver, Twister, WSCT, DAoCBuff, Effigy, Enemy, GCDsaver, Twister, WSCT |
-| Files seen in | `/workspace/BuffHead/Core.lua:207`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/GCDsaver/GCDsaver.lua:268`, `/workspace/LatestAura-RoR/Twister.lua:90` |
+| Addons seen in | BuffHead, BuffHead, DAoCBuff, Enemy, GCDsaver, WSCT, DAoCBuff, Effigy, Enemy, GCDsaver, WSCT |
+| Files seen in | `/workspace_addons/BuffHead/Core.lua:207`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/GCDsaver/GCDsaver.lua:268`, `/workspace_addons/wsct/wsct.lua:117` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | BuffHead.OnGroupEffectsUpdated, BuffHead.SetSelfTracking, DAoCBuff.Initialize, DAoCBuff.OnEvent, DAoCBuff.Shutdown, Effigy.RegisterStateInfoForPlayer |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 22 |
-| Global usage count | 22 |
+| Lua usage count | 20 |
+| Global usage count | 20 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 5 |
+| Initialization flow references | 4 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,17 +62,16 @@
 
 ## Description
 
-Observed SystemData field used by 8 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 7 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - BuffHead
-- BuffHead, DAoCBuff, Enemy, GCDsaver, Twister, WSCT
+- BuffHead, DAoCBuff, Enemy, GCDsaver, WSCT
 - DAoCBuff
 - Effigy
 - Enemy
 - GCDsaver
-- Twister
 - WSCT
 
 ## Related APIs

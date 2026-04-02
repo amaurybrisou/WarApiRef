@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AutoBand, EA_UiDebugTools, EA_UiModWindow, Enemy, Killer, ObjectInspector, PotionBar |
-| Files seen in | `/workspace/Autoband/AutoBandWindowConfig.xml:107`, `/workspace/Autoband/AutoBandWindowConfig.xml:233`, `/workspace/Autoband/AutoBandWindowConfig.xml:73`, `/workspace/Autoband/AutoBandWindowTemplate.xml:81`, `/workspace/Enemy/Code/Core/Groups/EffectFilterDialog.xml:167`, `/workspace/Enemy/Code/Core/Groups/EffectFilterDialog.xml:57`, `/workspace/Enemy/Code/Intercom/IntercomDialog.xml:46`, `/workspace/Enemy/Code/UnitFrames/ClickCastingDialog.xml:203` |
+| Addons seen in | AdvancedRenownTrainer, EA_UiDebugTools, EA_UiModWindow, Enemy, Killer, ObjectInspector, PotionBar, WarBoard |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/EffectFilterDialog.xml:167`, `/workspace_addons/Enemy/Code/Core/Groups/EffectFilterDialog.xml:57`, `/workspace_addons/Enemy/Code/Intercom/IntercomDialog.xml:46`, `/workspace_addons/Enemy/Code/UnitFrames/ClickCastingDialog.xml:203`, `/workspace_addons/Enemy/Code/UnitFrames/ClickCastingDialog.xml:305`, `/workspace_addons/Enemy/Code/UnitFrames/ClickCastingDialog.xml:87`, `/workspace_addons/Enemy/Code/UnitFrames/EffectsIndicatorDialog.xml:241`, `/workspace_addons/Enemy/Code/UnitFrames/EffectsIndicatorDialog.xml:376` |
 | Namespaces detected | EA_Window_DefaultSeparator |
 | Source kinds | xml_attributes |
-| Example locations | AdvancedRenownTrainingPresetsWindowFooterSeparator, AdvancedRenownTrainingWindowFooterSeparator1, AdvancedRenownTrainingWindowFooterSeparator2, AutoBandWindowConfigDisplaySeperator1, AutoBandWindowConfigDisplaySeperator2, AutoBandWindowConfigDisplaySeperator3 |
-| XML usage count | 36 |
-| XML attribute usage count | 36 |
+| Example locations | AdvancedRenownTrainingPresetsWindowFooterSeparator, AdvancedRenownTrainingWindowFooterSeparator1, AdvancedRenownTrainingWindowFooterSeparator2, DebugWindowLogDisplaySeperator, EnemyClickCastingDialogContentScrollChildDivider1, EnemyClickCastingDialogContentScrollChildDivider2 |
+| XML usage count | 31 |
+| XML attribute usage count | 31 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,19 +57,17 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 12 addons.
+Observed engine XML template or inherited constant referenced by 10 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
-- AutoBand
 - EA_UiDebugTools
 - EA_UiModWindow
 - Enemy
 - Killer
 - ObjectInspector
 - PotionBar
-- Queue Queuer
 - WarBoard
 - WhoHealedMe
 - wbLeadHelper
@@ -79,10 +77,6 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - AdvancedRenownTrainingPresetsWindowFooterSeparator
 - AdvancedRenownTrainingWindowFooterSeparator1
 - AdvancedRenownTrainingWindowFooterSeparator2
-- AutoBandWindowConfigDisplaySeperator1
-- AutoBandWindowConfigDisplaySeperator2
-- AutoBandWindowConfigDisplaySeperator3
-- AutoBandWindowTemplateDisplaySeperator
 - DebugWindowLogDisplaySeperator
 - EnemyClickCastingDialogContentScrollChildDivider1
 - EnemyClickCastingDialogContentScrollChildDivider2
@@ -100,7 +94,6 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - ObjectInspectorHorizDivide
 - ObjectInspectorHorizDivide2
 - PotionBarTypeTemplateTitleSeperator
-- QueueQueuer_GUI_DisplaySeperator
 - UiModVersionMismatchWindowModListSeperator
 - UiModWindowListBottomSeperator
 - UiModWindowTopSeperator

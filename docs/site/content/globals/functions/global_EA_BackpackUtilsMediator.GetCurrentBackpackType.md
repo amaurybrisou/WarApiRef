@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic, TidyRoll |
-| Files seen in | `/workspace/TidyRoll/CustomAutoRoll.lua:400`, `/workspace/bagomatic/BagOMatic.lua:888` |
+| Files seen in | `/workspace_addons/TidyRoll/CustomAutoRoll.lua:400`, `/workspace_addons/bagomatic/BagOMatic.lua:888` |
 | Namespaces detected | EA_BackpackUtilsMediator |
 | Source kinds | globals, lua_calls |
 | Example locations | BagOMatic: BagOMatic.findItemInBagPack, TidyRoll: TidyRoll.CustomAutoRoll.OnListLbuttonUp |
@@ -76,11 +76,11 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

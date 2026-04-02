@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStateCastbar.lua:41` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Effigy.Name..".UpdateCurrentAbilities", Effigy.RegisterStateInfoForCastbar, SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED, event_page, event_registration, lua_call |

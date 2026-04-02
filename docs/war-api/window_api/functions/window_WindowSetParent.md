@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 16 addons
+- Seen in: 15 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BagOMatic, CM_ClosetGoblin, Effigy, GCDsaver, GetStats, JunkDump, LibWBToggler |
-| Files seen in | `/workspace/Ace/LibGUI.lua:132`, `/workspace/ClosetGoblin/ClosetGoblin.lua:83`, `/workspace/Effigy/Elements/EffigyBar.lua:135`, `/workspace/Effigy/LibGUI.lua:132`, `/workspace/GCDsaver/libs/LibGUI.lua:132`, `/workspace/GetStats/GetStats.lua:119`, `/workspace/JunkDump/JunkDump.lua:50`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:132` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:132`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:86`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:135`, `/workspace_addons/Effigy/LibGUI.lua:132`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:132`, `/workspace_addons/GetStats/GetStats.lua:119`, `/workspace_addons/JunkDump/JunkDump.lua:50`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:132` |
 | Namespaces detected | WindowSetParent |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Parent, BagOMatic: BagOMatic.init, CM_ClosetGoblin: ClosetGoblin.Initialize, Effigy: EffigyBar:setup, Effigy: LIBGUI_ELEMENT:Parent, GCDsaver: LIBGUI_ELEMENT:Parent |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 24 |
-| Global usage count | 24 |
+| Lua usage count | 23 |
+| Global usage count | 23 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -97,7 +97,6 @@ Observed mutating runtime window state or presentation.
 - Shinies
 - TidyChat
 - TurretRange
-- WarTriage
 - WoH-Reticle
 - nRarity
 

@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Swift Assist, WSCT |
-| Files seen in | `/workspace/Effigy/EffigySlashCommands.lua:32`, `/workspace/swift-assist/SwiftAssist.lua:435`, `/workspace/wsct/wsct.lua:196` |
+| Files seen in | `/workspace_addons/Effigy/EffigySlashCommands.lua:32`, `/workspace_addons/swift-assist/SwiftAssist.lua:435`, `/workspace_addons/wsct/wsct.lua:196` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | Effigy: Effigy.RegisterManually, Swift Assist: SwiftAssist.Initialize, WSCT: WSCT:HookChatWindow |
@@ -76,11 +76,11 @@ Observed as a global function across 3 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -98,6 +98,7 @@ Observed as a global function across 3 addons.
 
 - [DialogManager.MakeOneButtonDialog](global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
 - [EA_ChatWindow.Print](global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
+- [LibSlash.IsSlashCmdRegistered](global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
 - [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
 
 ## Used With
@@ -107,6 +108,7 @@ Observed as a global function across 3 addons.
 - [EA_ChatWindow.Print](global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
 - [EA_TextEntryGroupEntryBoxTextInput](../tables/table_EA_TextEntryGroupEntryBoxTextInput.md) (HIGH 100/100) - Global Table
 - [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
+- [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
 - [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
@@ -128,3 +130,4 @@ Observed as a global function across 3 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

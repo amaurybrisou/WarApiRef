@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MoraleCircle |
-| Files seen in | `/workspace/MoraleCircle/MoraleCircle.xml:116` |
+| Files seen in | `/workspace_addons/MoraleCircle/MoraleCircle.xml:116` |
 | Namespaces detected | CooldownDisplay |
 | Source kinds | xml_frames |
 | Example locations | MoraleCircle: MoraleTemplateAbilityCooldown |

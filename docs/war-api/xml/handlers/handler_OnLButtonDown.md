@@ -28,13 +28,13 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, BuffHead, CM_ClosetGoblin, CMap, DAoCBuff, DaemonAssist, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace/BuffHead/Setup/General.xml:31`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.xml:43`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.xml:42`, `/workspace/BuffHead/Setup/SetupAdvancedContainers.xml:43`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.xml:42`, `/workspace/BuffHead/Setup/SetupEffectCache.xml:49`, `/workspace/BuffHead/Setup/SetupLayout.xml:125`, `/workspace/BuffHead/Setup/SetupLayout.xml:215` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/General.xml:31`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:43`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:42`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainers.xml:43`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.xml:42`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.xml:49`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:125`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:215` |
 | Namespaces detected | OnLButtonDown |
 | Source kinds | bindings, xml_handlers |
 | Example locations | AdvancedRenownTrainer: AbilityButtonTemplate.OnLButtonDown, BuffHead: BuffHeadLayoutControlFrameWindow.OnLButtonDown, BuffHead: BuffHeadLayoutFrameWindow.OnLButtonDown, BuffHead: BuffHeadLayoutResizeButton.OnLButtonDown, BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnLButtonDown, BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate.OnLButtonDown |
-| XML usage count | 65 |
-| XML attribute usage count | 65 |
-| Lua usage count | 65 |
+| XML usage count | 66 |
+| XML attribute usage count | 66 |
+| Lua usage count | 66 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 21 addons through frame event handlers.
+Observed as an XML handler hook bound by 22 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -95,6 +95,7 @@ function(...)
 - Targets
 - TexturedButtons
 - TurretRange
+- WhoHealedMe
 - bigger_MacroWindow
 
 ## Examples

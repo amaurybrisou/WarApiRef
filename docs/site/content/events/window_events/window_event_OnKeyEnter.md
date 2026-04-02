@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, EA_UiDebugTools, MapMonster, MapPin, ObjectInspector, Pocket Palette, RandomMount, Shinies |
-| Files seen in | `/workspace/Aura/Source/AuraConfig.xml:1106`, `/workspace/Aura/Source/AuraConfig.xml:1147`, `/workspace/Aura/Source/AuraConfig.xml:1212`, `/workspace/Aura/Source/AuraConfig.xml:1253`, `/workspace/Aura/Source/AuraConfig.xml:126`, `/workspace/Aura/Source/AuraConfig.xml:1357`, `/workspace/Aura/Source/AuraConfig.xml:1481`, `/workspace/Aura/Source/AuraConfig.xml:1570` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraConfig.xml:1106`, `/workspace_addons/Aura/Source/AuraConfig.xml:1147`, `/workspace_addons/Aura/Source/AuraConfig.xml:1212`, `/workspace_addons/Aura/Source/AuraConfig.xml:1253`, `/workspace_addons/Aura/Source/AuraConfig.xml:126`, `/workspace_addons/Aura/Source/AuraConfig.xml:1357`, `/workspace_addons/Aura/Source/AuraConfig.xml:1481`, `/workspace_addons/Aura/Source/AuraConfig.xml:1570` |
 | Namespaces detected | OnKeyEnter |
 | Source kinds | event_page, xml_handlers |
 | Example locations | Aura: AuraConfigActivationAlertTextText.OnKeyEnter, Aura: AuraConfigDeactivationAlertTextText.OnKeyEnter, Aura: AuraConfigGeneralName.OnKeyEnter, Aura: AuraConfigGeneralOffsetX.OnKeyEnter, Aura: AuraConfigGeneralOffsetY.OnKeyEnter, Aura: AuraConfigTimerOffsetX.OnKeyEnter |
@@ -65,7 +65,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Payload
 
-- Window callback arguments are not fully inferable from API_Ref alone.
+- Window callback arguments are not fully inferable from addon-api docs alone.
 
 ## Seen In
 

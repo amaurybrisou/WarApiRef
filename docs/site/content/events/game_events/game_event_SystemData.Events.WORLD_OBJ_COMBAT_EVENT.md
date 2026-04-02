@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 186
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -24,24 +24,24 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CombatTextNames, Effigy, RetAlert, WSCT |
-| Files seen in | `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/RetAlert/Source/RetAlert.lua:61`, `/workspace/combattextnames/cmd.lua:55`, `/workspace/wsct/wsct.lua:117`, `/workspace/wsct/wsct.lua:137` |
+| Addons seen in | CombatTextNames, Effigy, WSCT |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace_addons/combattextnames/cmd.lua:55`, `/workspace_addons/wsct/wsct.lua:117`, `/workspace_addons/wsct/wsct.lua:137` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | CombatTextNames: CombatTextNames.Enable, Effigy: Effigy.RegisterStateInfoForCastbar, RetAlert: RetAlert.local.RetAlert_Enable, RetAlert: RetAlert_Enable, WSCT: WSCT:RegisterSelfEvents, WSCT: WSCT:UnregisterSelfEvents |
+| Example locations | CombatTextNames: CombatTextNames.Enable, Effigy: Effigy.RegisterStateInfoForCastbar, WSCT: WSCT:RegisterSelfEvents, WSCT: WSCT:UnregisterSelfEvents |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 3 |
+| Initialization flow references | 2 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 4 addons.
+Observed as a shared SystemData runtime event used by 3 addons.
 
 ## Handler Pattern
 
@@ -69,13 +69,12 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 
 - CombatTextNames
 - Effigy
-- RetAlert
 - WSCT
 
 ## Registrars And Handlers
@@ -83,7 +82,6 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - EA_System_EventText.AddCombatEventText
 - Effigy.Name..".OnWorldObjCombatEvent"
 - RegisterEventHandler
-- RetAlert_OnWorldObjCombatEvent
 - WSCT.OnCombatEvent
 - global
 
@@ -91,10 +89,10 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 - CombatTextNames: CombatTextNames.Enable -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> EA_System_EventText.AddCombatEventText
 - Effigy: Effigy.RegisterStateInfoForCastbar -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> Effigy.Name..".OnWorldObjCombatEvent"
-- RetAlert: RetAlert.local.RetAlert_Enable -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> RetAlert_OnWorldObjCombatEvent
-- RetAlert: RetAlert_Enable -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> RetAlert_OnWorldObjCombatEvent
 - WSCT: WSCT:RegisterSelfEvents -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> WSCT.OnCombatEvent
 - WSCT: WSCT:UnregisterSelfEvents -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> EA_System_EventText.AddCombatEventText
+- CombatTextNames: EA_System_EventText.AddCombatEventText -> RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, EA_System_EventText.AddCombatEventText)
+- Effigy: Effigy.Name..".OnWorldObjCombatEvent" -> RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, Effigy.Name..".OnWorldObjCombatEvent")
 
 ## Related APIs
 

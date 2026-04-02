@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, Enemy, GCDsaver, LibWBToggler, Shinies, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/Ace/LibGUI.lua:451`, `/workspace/Effigy/LibGUI.lua:451`, `/workspace/Enemy/Code/UnitFrames/UnitFramePart.lua:210`, `/workspace/GCDsaver/libs/LibGUI.lua:451`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:451`, `/workspace/Shinies/Libraries/LibGUI.lua:451`, `/workspace/WarTriage/libs/LibGUI.lua:451`, `/workspace/WoH-Reticle/libs/LibGUI.lua:451` |
+| Addons seen in | Ace, Effigy, Enemy, GCDsaver, LibWBToggler, Shinies, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:451`, `/workspace_addons/Effigy/LibGUI.lua:451`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFramePart.lua:210`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:451`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:451`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:451`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:451` |
 | Namespaces detected | LabelSetWordWrap |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Label:WordWrap, Effigy: LIBGUI_Label:WordWrap, Enemy: Enemy.UnitFramePart_OnUpdate_ProceedTextWindowInitialization, GCDsaver: LIBGUI_Label:WordWrap, LibWBToggler: LIBGUI_Label:WordWrap, Shinies: LIBGUI_Label:WordWrap |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 15 |
-| Global usage count | 15 |
+| Lua usage count | 13 |
+| Global usage count | 13 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -90,7 +90,6 @@ Observed updating label text or label styling on existing controls.
 - GCDsaver
 - LibWBToggler
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples

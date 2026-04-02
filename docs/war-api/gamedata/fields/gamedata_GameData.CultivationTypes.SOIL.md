@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Miracle Grow Remix, MiracleGrow |
-| Files seen in | `/workspace/MGRemix/context.lua:292`, `/workspace/MiracleGrow/MiracleGrow.lua:191`, `/workspace/MiracleGrow/MiracleGrow.lua:360`, `/workspace/MiracleGrow/MiracleGrow.lua:405` |
+| Files seen in | `/workspace_addons/MGRemix/context.lua:292`, `/workspace_addons/MiracleGrow/MiracleGrow.lua:191`, `/workspace_addons/MiracleGrow/MiracleGrow.lua:360`, `/workspace_addons/MiracleGrow/MiracleGrow.lua:405` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | MiracleGrow.autoGrow, MiracleGrow.autoSoil, MiracleGrow.menuShow, MiracleGrow2.onClickSoil, lua_call |

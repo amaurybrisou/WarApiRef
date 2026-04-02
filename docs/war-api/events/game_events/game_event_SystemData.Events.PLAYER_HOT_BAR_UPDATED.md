@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | GCDsaver, TexturedButtons |
-| Files seen in | `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/TexturedButtons/TexturedButtons.lua:600` |
+| Files seen in | `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/TexturedButtons/TexturedButtons.lua:600` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | GCDsaver: GCDsaver.RegisterEvents, TexturedButtons: TexturedButtons.OnLoadComplete |

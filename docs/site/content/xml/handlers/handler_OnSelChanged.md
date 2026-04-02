@@ -22,20 +22,20 @@
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, AutoBand, BankArkel, BuffHead, Busted, Cheeseboard |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:1007`, `/workspace/AdvancedPetAssist/APAGui.xml:1029`, `/workspace/AdvancedPetAssist/APAGui.xml:1051`, `/workspace/AdvancedPetAssist/APAGui.xml:1085`, `/workspace/AdvancedPetAssist/APAGui.xml:1143`, `/workspace/AdvancedPetAssist/APAGui.xml:1201`, `/workspace/AdvancedPetAssist/APAGui.xml:1221`, `/workspace/AdvancedPetAssist/APAGui.xml:1241` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BankArkel, BuffHead, Busted, Cheeseboard, DaemonAssist |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1007`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1029`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1051`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1085`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1143`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1201`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1221`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1241` |
 | Namespaces detected | OnSelChanged |
 | Source kinds | bindings, examples, xml_handlers |
 | Example locations | AdvancedPetAssist: APAComboAttackBind.OnSelChanged, AdvancedPetAssist: APAComboAutoReattack.OnSelChanged, AdvancedPetAssist: APAComboAutoReattackDelay.OnSelChanged, AdvancedPetAssist: APAComboCastDelay.OnSelChanged, AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged, AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged |
-| XML usage count | 286 |
-| XML attribute usage count | 286 |
-| Lua usage count | 286 |
+| XML usage count | 278 |
+| XML attribute usage count | 278 |
+| Lua usage count | 278 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 2 |
@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 31 addons through frame event handlers.
+Observed as an XML handler hook bound by 27 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -76,13 +76,11 @@ function(...)
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - BankArkel
 - BuffHead
 - Busted
 - Cheeseboard
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - EA_UiModWindow
 - Enemy
@@ -90,14 +88,12 @@ function(...)
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - Pocket Palette
 - PotionBar
 - RVMOD_Manager
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
 - TurretRange
@@ -137,4 +133,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

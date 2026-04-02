@@ -10,6 +10,8 @@ var ToolNames = []string{
 	"explain_confidence",
 	"explain_symbol_usage",
 	"scaffold_addon_snippet",
+	"ingest_observation",
+	"ingest_observation_batch",
 }
 
 var SupportedSymbolTypes = []string{"function", "event", "xml_handler", "data_structure", "xml_element"}

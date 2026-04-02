@@ -1,0 +1,84 @@
+{
+  "schema_version": "feeding.observation.v1",
+  "entry_id": "whohealedme_xml_input_and_layout",
+  "status": "promoted",
+  "source": {
+    "addon": "WhoHealedMe",
+    "repository": "WhoHealedMe",
+    "branch": "feat/responsive-layout-perf-tidy",
+    "date_utc": "2026-04-01",
+    "validation": "mixed",
+    "context": "Healer details window implementation and in-game user validation."
+  },
+  "target_seeds": [
+    "docs/platform/seeds/xml_conventions.md"
+  ],
+  "confidence": {
+    "overall": "MEDIUM",
+    "rationale": "Observed and user-validated during addon implementation, but still framed as behavior guidance rather than canonical engine guarantee."
+  },
+  "claims": [
+    {
+      "claim_id": "ancestor_handleinput_can_block_child_clicks",
+      "kind": "behavior_caveat",
+      "confidence": "MEDIUM",
+      "symbols": [
+        "OnLButtonDown",
+        "OnLButtonUp",
+        "handleinput"
+      ],
+      "statement": "Enabling handleinput on a child may not be sufficient if an ancestor container or template instance is not input-enabled.",
+      "guidance": "When child click handlers do not fire, validate input flags across the parent/template chain, not only on the child target.",
+      "evidence_refs": [
+        "ev_parent_chain_input_gate"
+      ]
+    },
+    {
+      "claim_id": "early_nested_dimensions_can_underreport_space",
+      "kind": "behavior_caveat",
+      "confidence": "MEDIUM",
+      "symbols": [
+        "WindowGetDimensions",
+        "ScrollWindowUpdateScrollRect"
+      ],
+      "statement": "Early show/layout reads on nested content or scroll-child windows can be smaller than eventual usable space.",
+      "guidance": "For collapsed first-render scroll layouts, size from the outer parent first, then resize children and update the scroll rect.",
+      "evidence_refs": [
+        "ev_collapsed_first_render_scroll"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_parent_chain_input_gate",
+      "type": "code_change",
+      "summary": "Child click target only worked after parent row template input handling was enabled.",
+      "file_refs": [
+        "WhoHealedMe/WHMGui.xml",
+        "WhoHealedMe/WHMGui.lua"
+      ]
+    },
+    {
+      "evidence_id": "ev_collapsed_first_render_scroll",
+      "type": "runtime_observation",
+      "summary": "Details scroll region initially showed one row until layout derived height from outer window and refreshed scroll rect.",
+      "file_refs": [
+        "WhoHealedMe/WHMGui.lua"
+      ]
+    }
+  ],
+  "promotion": {
+    "notes": "Promote as XML behavior caveats, not new API symbols.",
+    "criteria": [
+      "Corroborate in additional addons or canonical references.",
+      "Retain MEDIUM confidence unless broader evidence is collected."
+    ]
+  },
+  "tags": [
+    "xml",
+    "input",
+    "layout",
+    "scrollwindow",
+    "whohealedme"
+  ]
+}

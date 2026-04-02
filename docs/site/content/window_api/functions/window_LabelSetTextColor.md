@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 35 addons
+- Seen in: 32 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, Aura, BuffHead, Busted, CM_ClosetGoblin, CombatTextNames, DAoCBuff |
-| Files seen in | `/workspace/Ace/LibGUI.lua:463`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace/Aura/Source/Aura.lua:505`, `/workspace/Aura/Source/AuraTooltip.lua:32`, `/workspace/BuffHead/EffectFrame.lua:52` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:463`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace_addons/Aura/Source/Aura.lua:505`, `/workspace_addons/Aura/Source/AuraTooltip.lua:32`, `/workspace_addons/BuffHead/EffectFrame.lua:52` |
 | Namespaces detected | LabelSetTextColor |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Label:Color, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD, AdvancedPetAssist: APAGui.UpdatePetTargetHUD, Aura: Aura:UpdateTimerWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 203 |
-| Global usage count | 203 |
+| Lua usage count | 199 |
+| Global usage count | 199 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -78,7 +78,7 @@ Observed updating label text or label styling on existing controls.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -94,7 +94,6 @@ Observed updating label text or label styling on existing controls.
 - CM_ClosetGoblin
 - CombatTextNames
 - DAoCBuff
-- DeepSleep
 - EA_UiDebugTools
 - Effigy
 - Enemy
@@ -106,7 +105,6 @@ Observed updating label text or label styling on existing controls.
 - MiracleGrow
 - MiracleGrowLight
 - Moth
-- PeaceOut
 - PotionBar
 - RVAPI_ColorDialog
 - RVMOD_Manager
@@ -117,7 +115,6 @@ Observed updating label text or label styling on existing controls.
 - TexturedButtons
 - TurretRange
 - WSCT
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - wbLeadHelper

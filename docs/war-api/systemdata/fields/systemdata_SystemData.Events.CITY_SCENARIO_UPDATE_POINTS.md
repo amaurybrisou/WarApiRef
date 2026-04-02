@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303` |
+| Files seen in | `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Enemy.ScenarioInfoUpdate, Enemy._ScenarioInfoEnabledChanged, SystemData.Events.CITY_SCENARIO_UPDATE_POINTS, event_page, event_registration, lua_call |

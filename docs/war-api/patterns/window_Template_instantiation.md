@@ -22,7 +22,7 @@ Observed repeated UI elements being instantiated from XML templates at runtime.
 ```text
 OnLButtonUp
   -> handlers: DebugWindow.ClearTextLog, InterfaceCore.ReloadUI
-  -> ui: Button, ColorPicker, ComboBox, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
+  -> ui: Button, ColorPicker, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code

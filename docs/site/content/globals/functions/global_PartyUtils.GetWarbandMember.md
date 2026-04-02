@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, LibGroup |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:523`, `/workspace/LibGroup/LibGroup.lua:788` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:523`, `/workspace_addons/LibGroup/LibGroup.lua:788` |
 | Namespaces detected | PartyUtils |
 | Source kinds | globals, lua_calls |
 | Example locations | Enemy: Enemy.Groups_OnBattlegroupMemberUpdated, LibGroup: LibGroup.OnWarbandMemberUpdated |
@@ -77,11 +77,11 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T04:32:28.817862827Z",
+  "generated_at": "2026-04-02T04:17:20.313650004Z",
   "frequent_call_chains": [
     {
       "id": "call_chain:xml_handler.OnShown_function.global.DebugWindow.OnShowFocus",
@@ -86,7 +86,7 @@
           "path": "xml/handlers/handler_OnLButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 57 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 51 addons through frame event handlers."
         },
         {
           "id": "function:global:DebugWindow.ClearTextLog",
@@ -121,7 +121,7 @@
           "path": "xml/handlers/handler_OnLButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 57 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 51 addons through frame event handlers."
         },
         {
           "id": "function:global:InterfaceCore.ReloadUI",
@@ -156,7 +156,7 @@
           "path": "xml/handlers/handler_OnUpdate.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 6 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 4 addons through frame event handlers."
         },
         {
           "id": "function:window:WindowSetShowing",
@@ -194,7 +194,7 @@
           "path": "events/window_events/window_event_OnLButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 57 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 51 addons."
         },
         {
           "id": "xml_handler:OnLButtonUp",
@@ -204,7 +204,7 @@
           "path": "xml/handlers/handler_OnLButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 57 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 51 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -218,7 +218,7 @@
         "AdvancedPetAssist: APAOptionsClose.OnLButtonUp -\u003e APAGui.Hide",
         "AdvancedPetAssist: APAOptionsTabsAutoRecall.OnLButtonUp -\u003e APAGui.OnTabButtonUp"
       ],
-      "weight": 1829
+      "weight": 1714
     },
     {
       "id": "combination:ui.Button_xml_handler.OnLButtonUp",
@@ -234,7 +234,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "xml_handler:OnLButtonUp",
@@ -244,7 +244,7 @@
           "path": "xml/handlers/handler_OnLButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 57 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 51 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -258,7 +258,7 @@
         "AdvancedPetAssist: APAOptionsTabsFollowTarget.OnLButtonUp -\u003e APAGui.OnTabButtonUp",
         "AdvancedPetAssist: APAOptionsTabsGeneral.OnLButtonUp -\u003e APAGui.OnTabButtonUp"
       ],
-      "weight": 1288
+      "weight": 1184
     },
     {
       "id": "combination:event.window.OnLButtonUp_ui.Button",
@@ -274,7 +274,7 @@
           "path": "events/window_events/window_event_OnLButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 57 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 51 addons."
         },
         {
           "id": "ui:Button",
@@ -284,7 +284,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         }
       ],
       "flow": [
@@ -298,7 +298,7 @@
         "AdvancedPetAssist: APAOptionsTabsFollowTarget.OnLButtonUp -\u003e APAGui.OnTabButtonUp",
         "AdvancedPetAssist: APAOptionsTabsGeneral.OnLButtonUp -\u003e APAGui.OnTabButtonUp"
       ],
-      "weight": 1288
+      "weight": 1184
     },
     {
       "id": "combination:event.window.OnMouseOver_xml_handler.OnMouseOver",
@@ -314,7 +314,7 @@
           "path": "events/window_events/window_event_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 43 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 41 addons."
         },
         {
           "id": "xml_handler:OnMouseOver",
@@ -324,7 +324,7 @@
           "path": "xml/handlers/handler_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 43 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 41 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -338,7 +338,7 @@
         "AggroMeter: AggroMeter.SelectChar -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
         "AggroMeter: AggroMeter.SelectChar -\u003e WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))"
       ],
-      "weight": 971
+      "weight": 959
     },
     {
       "id": "combination:ui.ComboBox_xml_handler.OnSelChanged",
@@ -354,7 +354,7 @@
           "path": "xml/element_types/element_ComboBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 33 addons."
+          "summary": "Observed XML element type instantiated by 29 addons."
         },
         {
           "id": "xml_handler:OnSelChanged",
@@ -364,7 +364,7 @@
           "path": "xml/handlers/handler_OnSelChanged.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 31 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 27 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -378,7 +378,7 @@
         "AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged -\u003e APAGui.OnComboChanged",
         "AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged -\u003e APAGui.OnComboChanged"
       ],
-      "weight": 591
+      "weight": 575
     },
     {
       "id": "combination:event.window.OnSelChanged_ui.ComboBox",
@@ -394,7 +394,7 @@
           "path": "events/window_events/window_event_OnSelChanged.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 31 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 27 addons."
         },
         {
           "id": "ui:ComboBox",
@@ -404,7 +404,7 @@
           "path": "xml/element_types/element_ComboBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 33 addons."
+          "summary": "Observed XML element type instantiated by 29 addons."
         }
       ],
       "flow": [
@@ -418,7 +418,7 @@
         "AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged -\u003e APAGui.OnComboChanged",
         "AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged -\u003e APAGui.OnComboChanged"
       ],
-      "weight": 591
+      "weight": 575
     },
     {
       "id": "combination:event.window.OnSelChanged_xml_handler.OnSelChanged",
@@ -434,7 +434,7 @@
           "path": "events/window_events/window_event_OnSelChanged.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 31 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 27 addons."
         },
         {
           "id": "xml_handler:OnSelChanged",
@@ -444,7 +444,7 @@
           "path": "xml/handlers/handler_OnSelChanged.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 31 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 27 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -458,7 +458,7 @@
         "AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged -\u003e APAGui.OnComboChanged",
         "AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged -\u003e APAGui.OnComboChanged"
       ],
-      "weight": 591
+      "weight": 575
     },
     {
       "id": "combination:event.window.OnLButtonUp_ui.Window",
@@ -474,7 +474,7 @@
           "path": "events/window_events/window_event_OnLButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 57 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 51 addons."
         },
         {
           "id": "ui:Window",
@@ -484,7 +484,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -498,7 +498,7 @@
         "AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnLButtonUp -\u003e AnywhereTrainer.OnLButtonUp",
         "Aura: AuraConfigGeneralCircledImage.OnLButtonUp -\u003e AuraConfig.OnCircledImageChanged"
       ],
-      "weight": 320
+      "weight": 311
     },
     {
       "id": "combination:ui.Window_xml_handler.OnLButtonUp",
@@ -514,7 +514,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         },
         {
           "id": "xml_handler:OnLButtonUp",
@@ -524,7 +524,7 @@
           "path": "xml/handlers/handler_OnLButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 57 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 51 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -538,7 +538,7 @@
         "AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnLButtonUp -\u003e AnywhereTrainer.OnLButtonUp",
         "Aura: AuraConfigGeneralCircledImage.OnLButtonUp -\u003e AuraConfig.OnCircledImageChanged"
       ],
-      "weight": 320
+      "weight": 311
     },
     {
       "id": "combination:event.window.OnRButtonUp_xml_handler.OnRButtonUp",
@@ -554,7 +554,7 @@
           "path": "events/window_events/window_event_OnRButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 36 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 32 addons."
         },
         {
           "id": "xml_handler:OnRButtonUp",
@@ -564,7 +564,7 @@
           "path": "xml/handlers/handler_OnRButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 35 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 31 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -578,7 +578,7 @@
         "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
         "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"\u003cicon00057\u003e Enabled\", AggroMeter.ToggeEnable, false, true)"
       ],
-      "weight": 318
+      "weight": 301
     },
     {
       "id": "combination:ui.Label_xml_handler.OnMouseOver",
@@ -594,7 +594,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         },
         {
           "id": "xml_handler:OnMouseOver",
@@ -604,7 +604,7 @@
           "path": "xml/handlers/handler_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 43 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 41 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -618,7 +618,7 @@
         "BuffHead: BuffHeadSetupLayoutPropertiesWindowElementFontFontExampleLabel.OnMouseOver -\u003e BuffHead.Setup.Layout.Properties.OnFontExampleMouseOver",
         "BuffHead: BuffHeadSetupLayoutPropertiesWindowTitleLabel.OnMouseOver -\u003e BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOver"
       ],
-      "weight": 270
+      "weight": 268
     },
     {
       "id": "combination:event.window.OnMouseOver_ui.Label",
@@ -634,7 +634,7 @@
           "path": "events/window_events/window_event_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 43 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 41 addons."
         },
         {
           "id": "ui:Label",
@@ -644,7 +644,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         }
       ],
       "flow": [
@@ -658,7 +658,7 @@
         "BuffHead: BuffHeadSetupLayoutPropertiesWindowElementFontFontExampleLabel.OnMouseOver -\u003e BuffHead.Setup.Layout.Properties.OnFontExampleMouseOver",
         "BuffHead: BuffHeadSetupLayoutPropertiesWindowTitleLabel.OnMouseOver -\u003e BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOver"
       ],
-      "weight": 270
+      "weight": 268
     },
     {
       "id": "combination:ui.ComboBox_xml_handler.OnMouseOver",
@@ -674,7 +674,7 @@
           "path": "xml/element_types/element_ComboBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 33 addons."
+          "summary": "Observed XML element type instantiated by 29 addons."
         },
         {
           "id": "xml_handler:OnMouseOver",
@@ -684,7 +684,7 @@
           "path": "xml/handlers/handler_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 43 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 41 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -714,7 +714,7 @@
           "path": "events/window_events/window_event_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 43 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 41 addons."
         },
         {
           "id": "ui:ComboBox",
@@ -724,7 +724,7 @@
           "path": "xml/element_types/element_ComboBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 33 addons."
+          "summary": "Observed XML element type instantiated by 29 addons."
         }
       ],
       "flow": [
@@ -754,7 +754,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "Observed XML element type instantiated by 24 addons."
         },
         {
           "id": "xml_handler:OnTextChanged",
@@ -804,7 +804,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "Observed XML element type instantiated by 24 addons."
         }
       ],
       "flow": [
@@ -874,7 +874,7 @@
           "path": "events/window_events/window_event_OnHidden.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 24 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
         },
         {
           "id": "xml_handler:OnHidden",
@@ -914,7 +914,7 @@
           "path": "events/window_events/window_event_OnHidden.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 24 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
         },
         {
           "id": "ui:Window",
@@ -924,7 +924,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -954,7 +954,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         },
         {
           "id": "xml_handler:OnHidden",
@@ -994,7 +994,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "xml_handler:OnMouseOver",
@@ -1004,7 +1004,7 @@
           "path": "xml/handlers/handler_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 43 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 41 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -1018,7 +1018,7 @@
         "BankArkel: PackWinTab2.OnMouseOver -\u003e BankArkel.PackTabMover",
         "BankArkel: PackWinTab3.OnMouseOver -\u003e BankArkel.PackTabMover"
       ],
-      "weight": 183
+      "weight": 173
     },
     {
       "id": "combination:event.window.OnMouseOver_ui.Button",
@@ -1034,7 +1034,7 @@
           "path": "events/window_events/window_event_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 43 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 41 addons."
         },
         {
           "id": "ui:Button",
@@ -1044,7 +1044,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         }
       ],
       "flow": [
@@ -1058,7 +1058,7 @@
         "BankArkel: PackWinTab2.OnMouseOver -\u003e BankArkel.PackTabMover",
         "BankArkel: PackWinTab3.OnMouseOver -\u003e BankArkel.PackTabMover"
       ],
-      "weight": 183
+      "weight": 173
     },
     {
       "id": "combination:event.window.OnSlide_xml_handler.OnSlide",
@@ -1194,7 +1194,7 @@
           "path": "events/window_events/window_event_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 43 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 41 addons."
         },
         {
           "id": "ui:Window",
@@ -1204,7 +1204,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -1234,7 +1234,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         },
         {
           "id": "xml_handler:OnMouseOver",
@@ -1244,7 +1244,7 @@
           "path": "xml/handlers/handler_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 43 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 41 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -1301,166 +1301,6 @@
       "weight": 161
     },
     {
-      "id": "combination:event.window.OnRButtonUp_ui.Window",
-      "type": "common_combination",
-      "title": "OnRButtonUp + Window",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnRButtonUp",
-          "label": "OnRButtonUp",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnRButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 36 addons."
-        },
-        {
-          "id": "ui:Window",
-          "label": "Window",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Window.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
-        }
-      ],
-      "flow": [
-        "OnRButtonUp \u003c-\u003e Window"
-      ],
-      "evidence": [
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"\u003cicon00057\u003e Enabled\", AggroMeter.ToggeEnable, false, true)"
-      ],
-      "weight": 142
-    },
-    {
-      "id": "combination:ui.Window_xml_handler.OnRButtonUp",
-      "type": "common_combination",
-      "title": "Window + OnRButtonUp",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:Window",
-          "label": "Window",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Window.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
-        },
-        {
-          "id": "xml_handler:OnRButtonUp",
-          "label": "OnRButtonUp",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnRButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 35 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "Window \u003c-\u003e OnRButtonUp"
-      ],
-      "evidence": [
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"\u003cicon00057\u003e Enabled\", AggroMeter.ToggeEnable, false, true)"
-      ],
-      "weight": 142
-    },
-    {
-      "id": "combination:ui.Label_xml_handler.OnLButtonUp",
-      "type": "common_combination",
-      "title": "Label + OnLButtonUp",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:Label",
-          "label": "Label",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Label.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
-        },
-        {
-          "id": "xml_handler:OnLButtonUp",
-          "label": "OnLButtonUp",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnLButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 57 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "Label \u003c-\u003e OnLButtonUp"
-      ],
-      "evidence": [
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))",
-        "AggroMeter: Aggro_Label_Template.OnLButtonUp -\u003e AggroMeter.SelectChar",
-        "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnLButtonUp -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleLClick",
-        "BuffHead: BuffHeadSetupLayoutManagerWindowExportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnExportLUp",
-        "BuffHead: BuffHeadSetupLayoutManagerWindowImportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnImportLUp"
-      ],
-      "weight": 140
-    },
-    {
-      "id": "combination:event.window.OnLButtonUp_ui.Label",
-      "type": "common_combination",
-      "title": "OnLButtonUp + Label",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnLButtonUp",
-          "label": "OnLButtonUp",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnLButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 57 addons."
-        },
-        {
-          "id": "ui:Label",
-          "label": "Label",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Label.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
-        }
-      ],
-      "flow": [
-        "OnLButtonUp \u003c-\u003e Label"
-      ],
-      "evidence": [
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))",
-        "AggroMeter: Aggro_Label_Template.OnLButtonUp -\u003e AggroMeter.SelectChar",
-        "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnLButtonUp -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleLClick",
-        "BuffHead: BuffHeadSetupLayoutManagerWindowExportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnExportLUp",
-        "BuffHead: BuffHeadSetupLayoutManagerWindowImportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnImportLUp"
-      ],
-      "weight": 140
-    },
-    {
       "id": "combination:event.window.OnShown_xml_handler.OnShown",
       "type": "common_combination",
       "title": "OnShown + OnShown",
@@ -1498,6 +1338,86 @@
         "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsLos\", L \"LOS\")",
         "AdvancedPetAssist: APAGui.OnShown -\u003e LabelSetText(\"APALabelSectionAutoRecall\", L \"--- Auto Recall ---\")"
       ],
+      "weight": 142
+    },
+    {
+      "id": "combination:ui.Label_xml_handler.OnLButtonUp",
+      "type": "common_combination",
+      "title": "Label + OnLButtonUp",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 56 addons."
+        },
+        {
+          "id": "xml_handler:OnLButtonUp",
+          "label": "OnLButtonUp",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnLButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 51 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "Label \u003c-\u003e OnLButtonUp"
+      ],
+      "evidence": [
+        "AggroMeter: AggroMeter.SelectChar -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
+        "AggroMeter: AggroMeter.SelectChar -\u003e WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))",
+        "AggroMeter: Aggro_Label_Template.OnLButtonUp -\u003e AggroMeter.SelectChar",
+        "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnLButtonUp -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleLClick",
+        "BuffHead: BuffHeadSetupLayoutManagerWindowExportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnExportLUp",
+        "BuffHead: BuffHeadSetupLayoutManagerWindowImportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnImportLUp"
+      ],
+      "weight": 140
+    },
+    {
+      "id": "combination:event.window.OnLButtonUp_ui.Label",
+      "type": "common_combination",
+      "title": "OnLButtonUp + Label",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "event:window:OnLButtonUp",
+          "label": "OnLButtonUp",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnLButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 51 addons."
+        },
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 56 addons."
+        }
+      ],
+      "flow": [
+        "OnLButtonUp \u003c-\u003e Label"
+      ],
+      "evidence": [
+        "AggroMeter: AggroMeter.SelectChar -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
+        "AggroMeter: AggroMeter.SelectChar -\u003e WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))",
+        "AggroMeter: Aggro_Label_Template.OnLButtonUp -\u003e AggroMeter.SelectChar",
+        "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnLButtonUp -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleLClick",
+        "BuffHead: BuffHeadSetupLayoutManagerWindowExportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnExportLUp",
+        "BuffHead: BuffHeadSetupLayoutManagerWindowImportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnImportLUp"
+      ],
       "weight": 140
     },
     {
@@ -1514,7 +1434,7 @@
           "path": "events/window_events/window_event_OnLButtonDown.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 22 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
         },
         {
           "id": "xml_handler:OnLButtonDown",
@@ -1524,7 +1444,7 @@
           "path": "xml/handlers/handler_OnLButtonDown.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 21 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 22 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -1538,7 +1458,7 @@
         "BuffHead: BuffHeadLayoutResizeButton.OnLButtonDown -\u003e BuffHead.Setup.Layout.BeginResize",
         "BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedCompressionItem.OnRowLDown"
       ],
-      "weight": 135
+      "weight": 137
     },
     {
       "id": "combination:event.window.OnShown_ui.Window",
@@ -1564,7 +1484,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -1578,7 +1498,7 @@
         "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsLos\", L \"LOS\")",
         "AdvancedPetAssist: APAGui.OnShown -\u003e LabelSetText(\"APALabelSectionAutoRecall\", L \"--- Auto Recall ---\")"
       ],
-      "weight": 134
+      "weight": 136
     },
     {
       "id": "combination:ui.Window_xml_handler.OnShown",
@@ -1594,7 +1514,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         },
         {
           "id": "xml_handler:OnShown",
@@ -1618,63 +1538,23 @@
         "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsLos\", L \"LOS\")",
         "AdvancedPetAssist: APAGui.OnShown -\u003e LabelSetText(\"APALabelSectionAutoRecall\", L \"--- Auto Recall ---\")"
       ],
-      "weight": 134
+      "weight": 136
     },
     {
-      "id": "combination:event.window.OnInitialize_xml_handler.OnInitialize",
+      "id": "combination:event.window.OnRButtonUp_ui.Window",
       "type": "common_combination",
-      "title": "OnInitialize + OnInitialize",
+      "title": "OnRButtonUp + Window",
       "description": "Observed together in the same inferred usage contexts.",
       "participants": [
         {
-          "id": "event:window:OnInitialize",
-          "label": "OnInitialize",
+          "id": "event:window:OnRButtonUp",
+          "label": "OnRButtonUp",
           "type": "event",
           "category": "Window Event",
-          "path": "events/window_events/window_event_OnInitialize.md",
+          "path": "events/window_events/window_event_OnRButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 21 addons."
-        },
-        {
-          "id": "xml_handler:OnInitialize",
-          "label": "OnInitialize",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnInitialize.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 21 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "OnInitialize \u003c-\u003e OnInitialize"
-      ],
-      "evidence": [
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
-        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize"
-      ],
-      "weight": 92
-    },
-    {
-      "id": "combination:event.window.OnInitialize_ui.Window",
-      "type": "common_combination",
-      "title": "OnInitialize + Window",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnInitialize",
-          "label": "OnInitialize",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnInitialize.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 21 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 32 addons."
         },
         {
           "id": "ui:Window",
@@ -1684,26 +1564,26 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
-        "OnInitialize \u003c-\u003e Window"
+        "OnRButtonUp \u003c-\u003e Window"
       ],
       "evidence": [
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
-        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize"
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)",
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"\u003cicon00057\u003e Enabled\", AggroMeter.ToggeEnable, false, true)"
       ],
-      "weight": 88
+      "weight": 135
     },
     {
-      "id": "combination:ui.Window_xml_handler.OnInitialize",
+      "id": "combination:ui.Window_xml_handler.OnRButtonUp",
       "type": "common_combination",
-      "title": "Window + OnInitialize",
+      "title": "Window + OnRButtonUp",
       "description": "Observed together in the same inferred usage contexts.",
       "participants": [
         {
@@ -1714,31 +1594,31 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         },
         {
-          "id": "xml_handler:OnInitialize",
-          "label": "OnInitialize",
+          "id": "xml_handler:OnRButtonUp",
+          "label": "OnRButtonUp",
           "type": "xml_handler",
           "category": "XML Handler",
-          "path": "xml/handlers/handler_OnInitialize.md",
+          "path": "xml/handlers/handler_OnRButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 21 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 31 addons through frame event handlers."
         }
       ],
       "flow": [
-        "Window \u003c-\u003e OnInitialize"
+        "Window \u003c-\u003e OnRButtonUp"
       ],
       "evidence": [
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
-        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize"
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)",
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
+        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"\u003cicon00057\u003e Enabled\", AggroMeter.ToggeEnable, false, true)"
       ],
-      "weight": 88
+      "weight": 135
     },
     {
       "id": "combination:event.window.OnLButtonDown_ui.Window",
@@ -1754,7 +1634,7 @@
           "path": "events/window_events/window_event_OnLButtonDown.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 22 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
         },
         {
           "id": "ui:Window",
@@ -1764,7 +1644,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -1778,7 +1658,7 @@
         "BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedCompressionItem.OnRowLDown",
         "BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedCompression.OnRowLDown"
       ],
-      "weight": 85
+      "weight": 87
     },
     {
       "id": "combination:ui.Window_xml_handler.OnLButtonDown",
@@ -1794,7 +1674,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         },
         {
           "id": "xml_handler:OnLButtonDown",
@@ -1804,7 +1684,7 @@
           "path": "xml/handlers/handler_OnLButtonDown.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 21 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 22 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -1818,7 +1698,7 @@
         "BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedCompressionItem.OnRowLDown",
         "BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedCompression.OnRowLDown"
       ],
-      "weight": 85
+      "weight": 87
     },
     {
       "id": "combination:ui.Label_xml_handler.OnRButtonUp",
@@ -1834,7 +1714,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         },
         {
           "id": "xml_handler:OnRButtonUp",
@@ -1844,7 +1724,7 @@
           "path": "xml/handlers/handler_OnRButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 35 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 31 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -1874,7 +1754,7 @@
           "path": "events/window_events/window_event_OnRButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 36 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 32 addons."
         },
         {
           "id": "ui:Label",
@@ -1884,7 +1764,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         }
       ],
       "flow": [
@@ -1899,46 +1779,6 @@
         "Enemy: EnemyCombatLogEpsWindowInDps.OnRButtonUp -\u003e Enemy.CombatLogUI_EpsWindow_OnRButtonUp"
       ],
       "weight": 76
-    },
-    {
-      "id": "combination:ui.Button_xml_handler.OnRButtonUp",
-      "type": "common_combination",
-      "title": "Button + OnRButtonUp",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:Button",
-          "label": "Button",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Button.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
-        },
-        {
-          "id": "xml_handler:OnRButtonUp",
-          "label": "OnRButtonUp",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnRButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 35 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "Button \u003c-\u003e OnRButtonUp"
-      ],
-      "evidence": [
-        "CM_ClosetGoblin: ClosetGoblinEquipmentButton.OnRButtonUp -\u003e ClosetGoblinCharacterWindow.EquipmentRButtonUp",
-        "CMap: CMapWindowMapScenarioQueue.OnRButtonUp -\u003e CMapWindow.OnScenarioQueueRButtonUp",
-        "CMap: CMapWindowScenarioSummaryButton.OnRButtonUp -\u003e CMapWindow.OnScenarioQueueRButtonUp",
-        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn2.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick",
-        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn3.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick",
-        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn4.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick"
-      ],
-      "weight": 69
     },
     {
       "id": "combination:event.window.OnKeyEscape_xml_handler.OnKeyEscape",
@@ -1981,44 +1821,44 @@
       "weight": 69
     },
     {
-      "id": "combination:event.window.OnRButtonUp_ui.Button",
+      "id": "combination:event.window.OnInitialize_xml_handler.OnInitialize",
       "type": "common_combination",
-      "title": "OnRButtonUp + Button",
+      "title": "OnInitialize + OnInitialize",
       "description": "Observed together in the same inferred usage contexts.",
       "participants": [
         {
-          "id": "event:window:OnRButtonUp",
-          "label": "OnRButtonUp",
+          "id": "event:window:OnInitialize",
+          "label": "OnInitialize",
           "type": "event",
           "category": "Window Event",
-          "path": "events/window_events/window_event_OnRButtonUp.md",
+          "path": "events/window_events/window_event_OnInitialize.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 36 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 19 addons."
         },
         {
-          "id": "ui:Button",
-          "label": "Button",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Button.md",
+          "id": "xml_handler:OnInitialize",
+          "label": "OnInitialize",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnInitialize.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed as an XML handler hook bound by 19 addons through frame event handlers."
         }
       ],
       "flow": [
-        "OnRButtonUp \u003c-\u003e Button"
+        "OnInitialize \u003c-\u003e OnInitialize"
       ],
       "evidence": [
-        "CM_ClosetGoblin: ClosetGoblinEquipmentButton.OnRButtonUp -\u003e ClosetGoblinCharacterWindow.EquipmentRButtonUp",
-        "CMap: CMapWindowMapScenarioQueue.OnRButtonUp -\u003e CMapWindow.OnScenarioQueueRButtonUp",
-        "CMap: CMapWindowScenarioSummaryButton.OnRButtonUp -\u003e CMapWindow.OnScenarioQueueRButtonUp",
-        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn2.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick",
-        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn3.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick",
-        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn4.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick"
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")",
+        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
+        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize"
       ],
-      "weight": 69
+      "weight": 68
     },
     {
       "id": "combination:event.window.OnMouseOverEnd_ui.Window",
@@ -2044,7 +1884,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -2074,7 +1914,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         },
         {
           "id": "xml_handler:OnMouseOverEnd",
@@ -2101,6 +1941,166 @@
       "weight": 68
     },
     {
+      "id": "combination:event.window.OnInitialize_ui.Window",
+      "type": "common_combination",
+      "title": "OnInitialize + Window",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "event:window:OnInitialize",
+          "label": "OnInitialize",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnInitialize.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 19 addons."
+        },
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 60 addons."
+        }
+      ],
+      "flow": [
+        "OnInitialize \u003c-\u003e Window"
+      ],
+      "evidence": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")",
+        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
+        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize"
+      ],
+      "weight": 64
+    },
+    {
+      "id": "combination:ui.Window_xml_handler.OnInitialize",
+      "type": "common_combination",
+      "title": "Window + OnInitialize",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 60 addons."
+        },
+        {
+          "id": "xml_handler:OnInitialize",
+          "label": "OnInitialize",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnInitialize.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 19 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "Window \u003c-\u003e OnInitialize"
+      ],
+      "evidence": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")",
+        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
+        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize"
+      ],
+      "weight": 64
+    },
+    {
+      "id": "combination:ui.Button_xml_handler.OnRButtonUp",
+      "type": "common_combination",
+      "title": "Button + OnRButtonUp",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 51 addons."
+        },
+        {
+          "id": "xml_handler:OnRButtonUp",
+          "label": "OnRButtonUp",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnRButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 31 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "Button \u003c-\u003e OnRButtonUp"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: ClosetGoblinEquipmentButton.OnRButtonUp -\u003e ClosetGoblinCharacterWindow.EquipmentRButtonUp",
+        "CMap: CMapWindowMapScenarioQueue.OnRButtonUp -\u003e CMapWindow.OnScenarioQueueRButtonUp",
+        "CMap: CMapWindowScenarioSummaryButton.OnRButtonUp -\u003e CMapWindow.OnScenarioQueueRButtonUp",
+        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn2.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick",
+        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn3.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick",
+        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn4.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick"
+      ],
+      "weight": 61
+    },
+    {
+      "id": "combination:event.window.OnRButtonUp_ui.Button",
+      "type": "common_combination",
+      "title": "OnRButtonUp + Button",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "event:window:OnRButtonUp",
+          "label": "OnRButtonUp",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnRButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 32 addons."
+        },
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 51 addons."
+        }
+      ],
+      "flow": [
+        "OnRButtonUp \u003c-\u003e Button"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: ClosetGoblinEquipmentButton.OnRButtonUp -\u003e ClosetGoblinCharacterWindow.EquipmentRButtonUp",
+        "CMap: CMapWindowMapScenarioQueue.OnRButtonUp -\u003e CMapWindow.OnScenarioQueueRButtonUp",
+        "CMap: CMapWindowScenarioSummaryButton.OnRButtonUp -\u003e CMapWindow.OnScenarioQueueRButtonUp",
+        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn2.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick",
+        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn3.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick",
+        "Enemy: EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn4.OnRButtonUp -\u003e Enemy.CombatLogUI_StatsWindow_SortColumnRClick"
+      ],
+      "weight": 61
+    },
+    {
       "id": "combination:function.global.towstring_function.window.WindowSetShowing",
       "type": "common_combination",
       "title": "towstring + WindowSetShowing",
@@ -2114,7 +2114,7 @@
           "path": "globals/functions/global_towstring.md",
           "confidence": "HIGH",
           "score": 75,
-          "summary": "Observed as a global function across 68 addons."
+          "summary": "Observed as a global function across 56 addons."
         },
         {
           "id": "function:window:WindowSetShowing",
@@ -2138,7 +2138,7 @@
         "AdvancedPetAssist: APAGui.OnShown -\u003e LabelSetText(\"APALabelSectionAutoRecall\", L \"--- Auto Recall ---\")",
         "AdvancedPetAssist: APAGui.OnShown -\u003e LabelSetText(\"APALabelSectionLos\", L \"--- LOS Detection ---\")"
       ],
-      "weight": 61
+      "weight": 60
     },
     {
       "id": "combination:ui.Label_xml_handler.OnMouseOverEnd",
@@ -2154,7 +2154,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         },
         {
           "id": "xml_handler:OnMouseOverEnd",
@@ -2204,7 +2204,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         }
       ],
       "flow": [
@@ -2234,7 +2234,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 45 addons."
+          "summary": "Observed XML element type instantiated by 41 addons."
         },
         {
           "id": "xml_handler:OnMouseOver",
@@ -2244,7 +2244,7 @@
           "path": "xml/handlers/handler_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 43 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 41 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -2274,7 +2274,7 @@
           "path": "events/window_events/window_event_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 43 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 41 addons."
         },
         {
           "id": "ui:DynamicImage",
@@ -2284,7 +2284,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 45 addons."
+          "summary": "Observed XML element type instantiated by 41 addons."
         }
       ],
       "flow": [
@@ -2299,86 +2299,6 @@
         "CMap: CMapWindowRvRFlagIndicator.OnMouseOver -\u003e CMapWindow.OnMouseoverRvRIndicator"
       ],
       "weight": 50
-    },
-    {
-      "id": "combination:ui.DynamicImage_xml_handler.OnLButtonUp",
-      "type": "common_combination",
-      "title": "DynamicImage + OnLButtonUp",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:DynamicImage",
-          "label": "DynamicImage",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_DynamicImage.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 45 addons."
-        },
-        {
-          "id": "xml_handler:OnLButtonUp",
-          "label": "OnLButtonUp",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnLButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 57 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "DynamicImage \u003c-\u003e OnLButtonUp"
-      ],
-      "evidence": [
-        "BagOMatic: BagOMaticButton.OnLButtonUp -\u003e BagOMatic.wnd_on_lbutton_up",
-        "BuffHead: BuffHeadSetupContainerWindowContainerAlwaysSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
-        "BuffHead: BuffHeadSetupContainerWindowContainerBuffsSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
-        "BuffHead: BuffHeadSetupContainerWindowContainerDebuffsSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
-        "CM_ClosetGoblin: ClosetGoblinOptionWindowIcon.OnLButtonUp -\u003e ClosetGoblinOptionWindow.OnLButtonUp",
-        "CM_ClosetGoblin: yClosetGoblinButton.OnLButtonUp -\u003e ClosetGoblinOptionWindow.OnLButtonUp"
-      ],
-      "weight": 48
-    },
-    {
-      "id": "combination:event.window.OnLButtonUp_ui.DynamicImage",
-      "type": "common_combination",
-      "title": "OnLButtonUp + DynamicImage",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnLButtonUp",
-          "label": "OnLButtonUp",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnLButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 57 addons."
-        },
-        {
-          "id": "ui:DynamicImage",
-          "label": "DynamicImage",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_DynamicImage.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 45 addons."
-        }
-      ],
-      "flow": [
-        "OnLButtonUp \u003c-\u003e DynamicImage"
-      ],
-      "evidence": [
-        "BagOMatic: BagOMaticButton.OnLButtonUp -\u003e BagOMatic.wnd_on_lbutton_up",
-        "BuffHead: BuffHeadSetupContainerWindowContainerAlwaysSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
-        "BuffHead: BuffHeadSetupContainerWindowContainerBuffsSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
-        "BuffHead: BuffHeadSetupContainerWindowContainerDebuffsSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
-        "CM_ClosetGoblin: ClosetGoblinOptionWindowIcon.OnLButtonUp -\u003e ClosetGoblinOptionWindow.OnLButtonUp",
-        "CM_ClosetGoblin: yClosetGoblinButton.OnLButtonUp -\u003e ClosetGoblinOptionWindow.OnLButtonUp"
-      ],
-      "weight": 48
     },
     {
       "id": "combination:function.window.WindowAddAnchor_function.window.WindowClearAnchors",
@@ -2418,6 +2338,86 @@
         "AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -\u003e WindowAddAnchor(tab.Name, tab.Anchor.Point, tab.Anchor.RelativeTo, tab.Anchor.RelativePoint, tab.Anchor.X, tab.Anchor.Y)",
         "AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -\u003e WindowClearAnchors(\"AnywhereTrainerBottomBookend\")"
       ],
+      "weight": 49
+    },
+    {
+      "id": "combination:ui.DynamicImage_xml_handler.OnLButtonUp",
+      "type": "common_combination",
+      "title": "DynamicImage + OnLButtonUp",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:DynamicImage",
+          "label": "DynamicImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_DynamicImage.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 41 addons."
+        },
+        {
+          "id": "xml_handler:OnLButtonUp",
+          "label": "OnLButtonUp",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnLButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 51 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "DynamicImage \u003c-\u003e OnLButtonUp"
+      ],
+      "evidence": [
+        "BagOMatic: BagOMaticButton.OnLButtonUp -\u003e BagOMatic.wnd_on_lbutton_up",
+        "BuffHead: BuffHeadSetupContainerWindowContainerAlwaysSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
+        "BuffHead: BuffHeadSetupContainerWindowContainerBuffsSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
+        "BuffHead: BuffHeadSetupContainerWindowContainerDebuffsSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
+        "CM_ClosetGoblin: ClosetGoblinOptionWindowIcon.OnLButtonUp -\u003e ClosetGoblinOptionWindow.OnLButtonUp",
+        "CM_ClosetGoblin: yClosetGoblinButton.OnLButtonUp -\u003e ClosetGoblinOptionWindow.OnLButtonUp"
+      ],
+      "weight": 48
+    },
+    {
+      "id": "combination:event.window.OnLButtonUp_ui.DynamicImage",
+      "type": "common_combination",
+      "title": "OnLButtonUp + DynamicImage",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "event:window:OnLButtonUp",
+          "label": "OnLButtonUp",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnLButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 51 addons."
+        },
+        {
+          "id": "ui:DynamicImage",
+          "label": "DynamicImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_DynamicImage.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 41 addons."
+        }
+      ],
+      "flow": [
+        "OnLButtonUp \u003c-\u003e DynamicImage"
+      ],
+      "evidence": [
+        "BagOMatic: BagOMaticButton.OnLButtonUp -\u003e BagOMatic.wnd_on_lbutton_up",
+        "BuffHead: BuffHeadSetupContainerWindowContainerAlwaysSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
+        "BuffHead: BuffHeadSetupContainerWindowContainerBuffsSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
+        "BuffHead: BuffHeadSetupContainerWindowContainerDebuffsSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
+        "CM_ClosetGoblin: ClosetGoblinOptionWindowIcon.OnLButtonUp -\u003e ClosetGoblinOptionWindow.OnLButtonUp",
+        "CM_ClosetGoblin: yClosetGoblinButton.OnLButtonUp -\u003e ClosetGoblinOptionWindow.OnLButtonUp"
+      ],
       "weight": 48
     },
     {
@@ -2434,7 +2434,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "Observed XML element type instantiated by 24 addons."
         },
         {
           "id": "xml_handler:OnKeyEnter",
@@ -2484,7 +2484,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "Observed XML element type instantiated by 24 addons."
         }
       ],
       "flow": [
@@ -2554,7 +2554,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "xml_handler:OnLButtonDown",
@@ -2564,7 +2564,7 @@
           "path": "xml/handlers/handler_OnLButtonDown.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an XML handler hook bound by 21 addons through frame event handlers."
+          "summary": "Observed as an XML handler hook bound by 22 addons through frame event handlers."
         }
       ],
       "flow": [
@@ -2596,7 +2596,7 @@
           "path": "events/window_events/window_event_OnLButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 57 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 51 addons."
         },
         {
           "id": "function:global:DebugWindow.ClearTextLog",
@@ -2626,7 +2626,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "ui:ColorPicker",
@@ -2639,16 +2639,6 @@
           "summary": "Observed XML element type instantiated by 1 addons."
         },
         {
-          "id": "ui:ComboBox",
-          "label": "ComboBox",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_ComboBox.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 33 addons."
-        },
-        {
           "id": "ui:DynamicImage",
           "label": "DynamicImage",
           "type": "ui_element",
@@ -2656,7 +2646,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 45 addons."
+          "summary": "Observed XML element type instantiated by 41 addons."
         },
         {
           "id": "ui:FullResizeImage",
@@ -2666,7 +2656,7 @@
           "path": "xml/element_types/element_FullResizeImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 44 addons."
+          "summary": "Observed XML element type instantiated by 41 addons."
         },
         {
           "id": "ui:Label",
@@ -2676,7 +2666,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         },
         {
           "id": "ui:ListBox",
@@ -2706,13 +2696,13 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
         "OnLButtonUp",
         "  -\u003e handlers: DebugWindow.ClearTextLog, InterfaceCore.ReloadUI",
-        "  -\u003e ui: Button, ColorPicker, ComboBox, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window"
+        "  -\u003e ui: Button, ColorPicker, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window"
       ],
       "evidence": [
         "AdvancedPetAssist: APAFollowTargetHUD.OnLButtonUp -\u003e APAGui.OnFollowTargetHUDClicked",
@@ -2724,7 +2714,7 @@
         "AdvancedPetAssist: APAOptionsTabsFollowTarget.OnLButtonUp -\u003e APAGui.OnTabButtonUp",
         "AdvancedPetAssist: APAOptionsTabsGeneral.OnLButtonUp -\u003e APAGui.OnTabButtonUp"
       ],
-      "weight": 1768
+      "weight": 1653
     },
     {
       "id": "event_flow:event.window.OnMouseOver",
@@ -2740,7 +2730,7 @@
           "path": "events/window_events/window_event_OnMouseOver.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 43 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 41 addons."
         },
         {
           "id": "ui:Button",
@@ -2750,7 +2740,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "ui:ComboBox",
@@ -2760,7 +2750,7 @@
           "path": "xml/element_types/element_ComboBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 33 addons."
+          "summary": "Observed XML element type instantiated by 29 addons."
         },
         {
           "id": "ui:DynamicImage",
@@ -2770,7 +2760,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 45 addons."
+          "summary": "Observed XML element type instantiated by 41 addons."
         },
         {
           "id": "ui:EditBox",
@@ -2780,7 +2770,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "Observed XML element type instantiated by 24 addons."
         },
         {
           "id": "ui:FullResizeImage",
@@ -2790,7 +2780,7 @@
           "path": "xml/element_types/element_FullResizeImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 44 addons."
+          "summary": "Observed XML element type instantiated by 41 addons."
         },
         {
           "id": "ui:Label",
@@ -2800,7 +2790,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         },
         {
           "id": "ui:ListBox",
@@ -2840,7 +2830,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -2857,7 +2847,7 @@
         "Aura: AuraConfigGeneralIconButton.OnMouseOver -\u003e AuraConfig.OnIconMouseOver",
         "Aura: AuraSharesRow.OnMouseOver -\u003e AuraShares.OnMouseOverAuraList"
       ],
-      "weight": 966
+      "weight": 954
     },
     {
       "id": "event_flow:event.window.OnSelChanged",
@@ -2873,7 +2863,7 @@
           "path": "events/window_events/window_event_OnSelChanged.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 31 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 27 addons."
         },
         {
           "id": "ui:ComboBox",
@@ -2883,7 +2873,7 @@
           "path": "xml/element_types/element_ComboBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 33 addons."
+          "summary": "Observed XML element type instantiated by 29 addons."
         }
       ],
       "flow": [
@@ -2900,7 +2890,7 @@
         "AdvancedPetAssist: APAComboDebug.OnSelChanged -\u003e APAGui.OnComboChanged",
         "AdvancedPetAssist: APAComboEnabled.OnSelChanged -\u003e APAGui.OnComboChanged"
       ],
-      "weight": 572
+      "weight": 556
     },
     {
       "id": "event_flow:event.window.OnRButtonUp",
@@ -2916,7 +2906,7 @@
           "path": "events/window_events/window_event_OnRButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 36 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 32 addons."
         },
         {
           "id": "ui:Button",
@@ -2926,17 +2916,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
-        },
-        {
-          "id": "ui:ComboBox",
-          "label": "ComboBox",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_ComboBox.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 33 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "ui:DynamicImage",
@@ -2946,7 +2926,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 45 addons."
+          "summary": "Observed XML element type instantiated by 41 addons."
         },
         {
           "id": "ui:Label",
@@ -2956,7 +2936,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         },
         {
           "id": "ui:ListBox",
@@ -2986,12 +2966,12 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
         "OnRButtonUp",
-        "  -\u003e ui: Button, ComboBox, DynamicImage, Label, ListBox, MapDisplay, Window"
+        "  -\u003e ui: Button, DynamicImage, Label, ListBox, MapDisplay, Window"
       ],
       "evidence": [
         "AggroMeter: AggroMeterGrayListBox.OnRButtonUp -\u003e AggroMeter.PickedListMenu",
@@ -3003,7 +2983,7 @@
         "BuffHead: BuffHeadLayoutControlFrameWindow.OnRButtonUp -\u003e BuffHead.Setup.Layout.OnControlFrameRButtonUp",
         "BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnRButtonUp -\u003e BuffHead.Setup.AdvancedCompressionItem.OnRowRUp"
       ],
-      "weight": 297
+      "weight": 281
     },
     {
       "id": "event_flow:event.window.OnTextChanged",
@@ -3029,7 +3009,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "Observed XML element type instantiated by 24 addons."
         }
       ],
       "flow": [
@@ -3062,7 +3042,7 @@
           "path": "events/window_events/window_event_OnHidden.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 24 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
         },
         {
           "id": "function:global:DebugWindow.OnShowFocus",
@@ -3092,7 +3072,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -3179,7 +3159,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "ui:DynamicImage",
@@ -3189,7 +3169,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 45 addons."
+          "summary": "Observed XML element type instantiated by 41 addons."
         },
         {
           "id": "ui:FullResizeImage",
@@ -3199,7 +3179,7 @@
           "path": "xml/element_types/element_FullResizeImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 44 addons."
+          "summary": "Observed XML element type instantiated by 41 addons."
         },
         {
           "id": "ui:Label",
@@ -3209,7 +3189,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         },
         {
           "id": "ui:ListBox",
@@ -3239,7 +3219,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -3292,7 +3272,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "Observed XML element type instantiated by 24 addons."
         },
         {
           "id": "ui:MapDisplay",
@@ -3312,7 +3292,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -3330,7 +3310,7 @@
         "AdvancedRenownTrainer: AdvancedRenownTrainingPresetsWindow.OnShown -\u003e AdvancedRenownTraining.PresetOnShown",
         "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnShown -\u003e AdvancedRenownTraining.OnShown"
       ],
-      "weight": 136
+      "weight": 138
     },
     {
       "id": "event_flow:event.window.OnLButtonDown",
@@ -3346,7 +3326,7 @@
           "path": "events/window_events/window_event_OnLButtonDown.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 22 addons."
+          "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
         },
         {
           "id": "ui:Button",
@@ -3356,7 +3336,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "ui:DynamicImage",
@@ -3366,7 +3346,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 45 addons."
+          "summary": "Observed XML element type instantiated by 41 addons."
         },
         {
           "id": "ui:Label",
@@ -3376,7 +3356,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         },
         {
           "id": "ui:Window",
@@ -3386,7 +3366,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -3403,60 +3383,7 @@
         "BuffHead: BuffHeadSetupAdvancedContainersItemRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedContainersItem.OnRowLDown",
         "BuffHead: BuffHeadSetupAdvancedContainersRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedContainers.OnRowLDown"
       ],
-      "weight": 130
-    },
-    {
-      "id": "event_flow:event.window.OnInitialize",
-      "type": "event_handler_ui_flow",
-      "title": "OnInitialize",
-      "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
-      "participants": [
-        {
-          "id": "event:window:OnInitialize",
-          "label": "OnInitialize",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnInitialize.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 21 addons."
-        },
-        {
-          "id": "ui:Button",
-          "label": "Button",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Button.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
-        },
-        {
-          "id": "ui:Window",
-          "label": "Window",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Window.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
-        }
-      ],
-      "flow": [
-        "OnInitialize",
-        "  -\u003e ui: Button, Window"
-      ],
-      "evidence": [
-        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
-        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize",
-        "Aura: Aura_LabelCheckButton.OnInitialize -\u003e EA_LabelCheckButton.Initialize",
-        "Aura: Aura_LargeLabelCheckButton.OnInitialize -\u003e EA_LabelCheckButton.Initialize",
-        "AutoBand: AutoBandWindow.OnInitialize -\u003e AutoBandWindow.Initialize",
-        "AutoBand: AutoBandWindowConfig.OnInitialize -\u003e AutoBandWindowConfig.Initialize",
-        "AutoBand: AutoBandWindowTemplate.OnInitialize -\u003e AutoBandWindowTemplate.Initialize",
-        "AutoBand: AutoBandWindowTemplateSave.OnInitialize -\u003e AutoBandWindowTemplateSave.Initialize"
-      ],
-      "weight": 86
+      "weight": 132
     },
     {
       "id": "event_flow:event.window.OnKeyEscape",
@@ -3482,7 +3409,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "Observed XML element type instantiated by 24 addons."
         },
         {
           "id": "ui:Window",
@@ -3492,7 +3419,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -3510,6 +3437,59 @@
         "Aura: AuraConfigTriggerActionPointsSecondaryValue.OnKeyEscape -\u003e none"
       ],
       "weight": 69
+    },
+    {
+      "id": "event_flow:event.window.OnInitialize",
+      "type": "event_handler_ui_flow",
+      "title": "OnInitialize",
+      "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
+      "participants": [
+        {
+          "id": "event:window:OnInitialize",
+          "label": "OnInitialize",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnInitialize.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 19 addons."
+        },
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 51 addons."
+        },
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 60 addons."
+        }
+      ],
+      "flow": [
+        "OnInitialize",
+        "  -\u003e ui: Button, Window"
+      ],
+      "evidence": [
+        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
+        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize",
+        "Aura: Aura_LabelCheckButton.OnInitialize -\u003e EA_LabelCheckButton.Initialize",
+        "Aura: Aura_LargeLabelCheckButton.OnInitialize -\u003e EA_LabelCheckButton.Initialize",
+        "CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize -\u003e ClosetGoblinOptionWindow.OnInitialize",
+        "CMap: CMapWindow.OnInitialize -\u003e CMapWindow.Initialize",
+        "CMap: CMapWindowPinFilterMenu.OnInitialize -\u003e CMapWindow.RefreshMapPointFilterMenu",
+        "EA_UiDebugTools: DebugWindow.OnInitialize -\u003e DebugWindow.Initialize"
+      ],
+      "weight": 62
     },
     {
       "id": "event_flow:event.window.OnKeyEnter",
@@ -3535,7 +3515,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "Observed XML element type instantiated by 24 addons."
         }
       ],
       "flow": [
@@ -3578,7 +3558,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "ui:Window",
@@ -3588,7 +3568,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -3606,49 +3586,6 @@
         "BuffHead: BuffHeadSetupLayoutWindow.OnRButtonDown -\u003e BuffHead.Setup.Layout.TrapClick"
       ],
       "weight": 44
-    },
-    {
-      "id": "event_flow:event.window.OnShutdown",
-      "type": "event_handler_ui_flow",
-      "title": "OnShutdown",
-      "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
-      "participants": [
-        {
-          "id": "event:window:OnShutdown",
-          "label": "OnShutdown",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnShutdown.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 6 addons."
-        },
-        {
-          "id": "ui:Window",
-          "label": "Window",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Window.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
-        }
-      ],
-      "flow": [
-        "OnShutdown",
-        "  -\u003e ui: Window"
-      ],
-      "evidence": [
-        "AutoBand: AutoBandWindowConfig.OnShutdown -\u003e AutoBandWindowConfig.Shutdown",
-        "AutoBand: AutoBandWindowTemplate.OnShutdown -\u003e AutoBandWindowTemplate.Shutdown",
-        "AutoBand: AutoBandWindowTools.OnShutdown -\u003e AutoBandWindowTools.Shutdown",
-        "CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnShutdown -\u003e ClosetGoblinCharacterWindow.OnShutdown",
-        "CM_ClosetGoblin: ClosetGoblinZoneWindow.OnShutdown -\u003e ClosetGoblinZoneWindow.OnShutdown",
-        "CMap: CMapWindow.OnShutdown -\u003e CMapWindow.Shutdown",
-        "CMap: CMapWindowPinFilterMenu.OnShutdown -\u003e EA_Window_ContextMenu.Shutdown",
-        "EA_UiDebugTools: DebugWindow.OnShutdown -\u003e DebugWindow.Shutdown"
-      ],
-      "weight": 34
     },
     {
       "id": "event_flow:event.window.OnHyperLinkLButtonUp",
@@ -3674,7 +3611,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         }
       ],
       "flow": [
@@ -3717,7 +3654,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 66 addons."
+          "summary": "Observed XML element type instantiated by 56 addons."
         }
       ],
       "flow": [
@@ -3733,69 +3670,6 @@
         "RoR_SoR: RoR_SoR_City_Status_Template_TIMER.OnHyperLinkRButtonUp -\u003e EA_ChatWindow.OnHyperLinkRButtonUp",
         "RoR_SoR: RoR_SoR_PairingTemplate_STATUS.OnHyperLinkRButtonUp -\u003e EA_ChatWindow.OnHyperLinkRButtonUp",
         "RoR_SoR: RoR_SoR_PairingTemplate_TIMER.OnHyperLinkRButtonUp -\u003e EA_ChatWindow.OnHyperLinkRButtonUp"
-      ],
-      "weight": 20
-    },
-    {
-      "id": "event_flow:event.window.OnUpdate",
-      "type": "event_handler_ui_flow",
-      "title": "OnUpdate",
-      "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
-      "participants": [
-        {
-          "id": "event:window:OnUpdate",
-          "label": "OnUpdate",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnUpdate.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 7 addons."
-        },
-        {
-          "id": "ui:Button",
-          "label": "Button",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Button.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
-        },
-        {
-          "id": "ui:MapDisplay",
-          "label": "MapDisplay",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_MapDisplay.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 3 addons."
-        },
-        {
-          "id": "ui:Window",
-          "label": "Window",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Window.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
-        }
-      ],
-      "flow": [
-        "OnUpdate",
-        "  -\u003e ui: Button, MapDisplay, Window"
-      ],
-      "evidence": [
-        "BuffHead: BuffHeadSetupLayoutWindow.OnUpdate -\u003e BuffHead.Setup.Layout.OnUpdate",
-        "CMap: CMapWindowWMap.OnUpdate -\u003e CMapWindow.UpdateCoordinatesWMap",
-        "EA_UiDebugTools: DebugWindow.OnUpdate -\u003e DebugWindow.Update",
-        "Queue Queuer: QueueQueuer_GUI.OnUpdate -\u003e QueueQueuer_GUI.OnUpdate",
-        "Queue Queuer: QueueQueuer_GUI_MapButton.OnUpdate -\u003e QueueQueuer_GUI.MapButton_OnUpdate",
-        "Queue Queuer: QueueQueuer_GUI_MapButton_COOLDOWN.OnUpdate -\u003e QueueQueuer_GUI.MapButton_OnUpdate",
-        "Queue Queuer: QueueQueuer_GUI_MapButton_DISABLED.OnUpdate -\u003e QueueQueuer_GUI.MapButton_OnUpdate",
-        "Queue Queuer: QueueQueuer_GUI_MapButton_QUEUER.OnUpdate -\u003e QueueQueuer_GUI.MapButton_OnUpdate"
       ],
       "weight": 20
     },
@@ -3823,7 +3697,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "ui:MapDisplay",
@@ -3843,7 +3717,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -3857,6 +3731,47 @@
         "MoraleCircle: MoraleTemplate.OnMouseWheel -\u003e MoraleCircle.OnMouseWheel",
         "TidyChat: TidyChatCopy.OnMouseWheel -\u003e TidyChat.Copy.OnMouseWheel",
         "TidyRoll: TidyRollFrame.OnMouseWheel -\u003e FrameManager.OnMouseWheel"
+      ],
+      "weight": 12
+    },
+    {
+      "id": "event_flow:event.window.OnShutdown",
+      "type": "event_handler_ui_flow",
+      "title": "OnShutdown",
+      "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
+      "participants": [
+        {
+          "id": "event:window:OnShutdown",
+          "label": "OnShutdown",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnShutdown.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 4 addons."
+        },
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 60 addons."
+        }
+      ],
+      "flow": [
+        "OnShutdown",
+        "  -\u003e ui: Window"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnShutdown -\u003e ClosetGoblinCharacterWindow.OnShutdown",
+        "CM_ClosetGoblin: ClosetGoblinZoneWindow.OnShutdown -\u003e ClosetGoblinZoneWindow.OnShutdown",
+        "CMap: CMapWindow.OnShutdown -\u003e CMapWindow.Shutdown",
+        "CMap: CMapWindowPinFilterMenu.OnShutdown -\u003e EA_Window_ContextMenu.Shutdown",
+        "EA_UiDebugTools: DebugWindow.OnShutdown -\u003e DebugWindow.Shutdown",
+        "bigger_MacroWindow: EA_Window_Macro.OnShutdown -\u003e EA_Window_Macro.Shutdown"
       ],
       "weight": 12
     },
@@ -3974,7 +3889,7 @@
           "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as a shared SystemData runtime event used by 4 addons."
+          "summary": "Observed as a shared SystemData runtime event used by 3 addons."
         }
       ],
       "flow": [
@@ -4017,7 +3932,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         }
       ],
       "flow": [
@@ -4057,7 +3972,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 58 addons."
+          "summary": "Observed XML element type instantiated by 51 addons."
         },
         {
           "id": "ui:MapDisplay",
@@ -4077,7 +3992,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -4116,7 +4031,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -4128,6 +4043,55 @@
         "Killer: KillerPersonalCounter.OnMouseOut -\u003e Killer.HideRowTooltip",
         "Killer: KillerWindowAllTimeHover.OnMouseOut -\u003e Killer.HideRowTooltip",
         "Killer: KillerWindowRecentHover.OnMouseOut -\u003e Killer.HideRowTooltip"
+      ],
+      "weight": 8
+    },
+    {
+      "id": "event_flow:event.window.OnUpdate",
+      "type": "event_handler_ui_flow",
+      "title": "OnUpdate",
+      "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
+      "participants": [
+        {
+          "id": "event:window:OnUpdate",
+          "label": "OnUpdate",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnUpdate.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 5 addons."
+        },
+        {
+          "id": "ui:MapDisplay",
+          "label": "MapDisplay",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_MapDisplay.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 3 addons."
+        },
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 60 addons."
+        }
+      ],
+      "flow": [
+        "OnUpdate",
+        "  -\u003e ui: MapDisplay, Window"
+      ],
+      "evidence": [
+        "BuffHead: BuffHeadSetupLayoutWindow.OnUpdate -\u003e BuffHead.Setup.Layout.OnUpdate",
+        "CMap: CMapWindowWMap.OnUpdate -\u003e CMapWindow.UpdateCoordinatesWMap",
+        "EA_UiDebugTools: DebugWindow.OnUpdate -\u003e DebugWindow.Update",
+        "TidyRoll: TidyRollTimer.OnUpdate -\u003e TidyRoll.OnUpdate"
       ],
       "weight": 8
     },
@@ -4155,7 +4119,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "Observed XML element type instantiated by 24 addons."
         }
       ],
       "flow": [
@@ -4231,7 +4195,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -4268,7 +4232,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -4449,7 +4413,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
@@ -4485,7 +4449,7 @@
           "path": "xml/element_types/element_VerticalScrollbar.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
+          "summary": "Observed XML element type instantiated by 12 addons."
         }
       ],
       "flow": [
@@ -4521,7 +4485,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 71 addons."
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [

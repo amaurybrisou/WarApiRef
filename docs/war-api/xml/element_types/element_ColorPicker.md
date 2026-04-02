@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WSCT |
-| Files seen in | `/workspace/wsct/wsct_options/wsct_options.xml:1115` |
+| Files seen in | `/workspace_addons/wsct/wsct_options/wsct_options.xml:1115` |
 | Namespaces detected | ColorPicker |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | WSCT: WSCTOptionsColorPickerWindowColorPicker |

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | NPC Item Sale Price |
-| Files seen in | `/workspace/nisp/Source/Nisp.lua:174` |
+| Files seen in | `/workspace_addons/nisp/Source/Nisp.lua:174` |
 | Namespaces detected | EA_Window_Backpack |
 | Source kinds | globals, lua_calls |
 | Example locations | NPC Item Sale Price: Nisp.RButtonUp |

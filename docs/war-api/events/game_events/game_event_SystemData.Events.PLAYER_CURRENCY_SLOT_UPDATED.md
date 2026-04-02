@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Killer, Shinies |
-| Files seen in | `/workspace/Killer/KillerLifecycle.lua:4` |
+| Files seen in | `/workspace_addons/Killer/KillerLifecycle.lua:4` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Killer: Killer.Initialize |

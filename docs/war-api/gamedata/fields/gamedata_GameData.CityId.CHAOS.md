@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/RoR_SoR/RoR_SoR.lua:1869`, `/workspace/RoR_SoR/RoR_SoR.lua:209`, `/workspace/RoR_SoR/RoR_SoR.lua:85` |
+| Files seen in | `/workspace_addons/RoR_SoR/RoR_SoR.lua:1869`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:209`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:85` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | RoR_SoR.CheckCampaign, RoR_SoR.OnInitialize, RoR_SoR.TIMER_UPDATE, lua_call |

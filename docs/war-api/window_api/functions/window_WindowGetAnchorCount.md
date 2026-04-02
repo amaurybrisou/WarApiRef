@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer, Pocket Palette, Shinies |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:160`, `/workspace/PocketPalette/PocketPalette.lua:338`, `/workspace/Shinies/Modules/Aggregator/Shinies-Aggregator-Tooltip.lua:452` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:160`, `/workspace_addons/PocketPalette/PocketPalette.lua:338`, `/workspace_addons/Shinies/Modules/Aggregator/Shinies-Aggregator-Tooltip.lua:452` |
 | Namespaces detected | WindowGetAnchorCount |
 | Source kinds | lua_calls |
 | Example locations | AnywhereTrainer: AnywhereTrainer.ReadjustWindowAnchors, Pocket Palette: PP.ToggleWindow, Shinies: Tooltips.AddExtraWindow |

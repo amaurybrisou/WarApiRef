@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, RoR_SoR, Shinies, Targets, TidyRoll |
-| Files seen in | `/workspace/Ace/LibGUI.lua:996`, `/workspace/Effigy/LibGUI.lua:993`, `/workspace/GCDsaver/libs/LibGUI.lua:993`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:993`, `/workspace/RoR_SoR/RoR_SoR.lua:990`, `/workspace/Shinies/Libraries/LibGUI.lua:993`, `/workspace/TidyRoll/TidyRollFrame.lua:115`, `/workspace/WarTriage/libs/LibGUI.lua:993` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:996`, `/workspace_addons/Effigy/LibGUI.lua:993`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:993`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:993`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:990`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:993`, `/workspace_addons/TidyRoll/TidyRollFrame.lua:115`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:993` |
 | Namespaces detected | StatusBarSetCurrentValue |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Statusbar:SetValue, Effigy: LIBGUI_Statusbar:SetValue, GCDsaver: LIBGUI_Statusbar:SetValue, LibWBToggler: LIBGUI_Statusbar:SetValue, RoR_SoR: RoR_SoR.T1_UPDATE, Shinies: LIBGUI_Statusbar:SetValue |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ StatusBarSetCurrentValue(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 10 addons.
+Observed as a window function across 9 addons.
 
 ## Parameters
 
@@ -92,7 +92,6 @@ Observed as a window function across 10 addons.
 - Shinies
 - Targets
 - TidyRoll
-- WarTriage
 - WoH-Reticle
 
 ## Examples

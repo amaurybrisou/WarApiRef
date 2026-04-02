@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoBand, LoyalPet, Queue Queuer, RVMOD_Manager |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:131`, `/workspace/AdvancedPetAssist/APAGui.xml:145`, `/workspace/AdvancedPetAssist/APAGui.xml:159`, `/workspace/AdvancedPetAssist/APAGui.xml:173`, `/workspace/AdvancedPetAssist/APAGui.xml:187`, `/workspace/AdvancedPetAssist/APAGui.xml:201`, `/workspace/AdvancedPetAssist/APAGui.xml:215`, `/workspace/AggroMeter/AggroMeter.xml:104` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, LoyalPet, RVMOD_Manager, RandomMount, TidyChat |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:131`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:145`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:159`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:173`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:187`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:201`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:215`, `/workspace_addons/AggroMeter/AggroMeter.xml:104` |
 | Namespaces detected | EA_Button_Tab |
 | Source kinds | xml_attributes |
 | Example locations | APAOptionsTabsAutoRecall, APAOptionsTabsControls, APAOptionsTabsFollowTarget, APAOptionsTabsGeneral, APAOptionsTabsHUD, APAOptionsTabsKiting |
-| XML usage count | 31 |
-| XML attribute usage count | 31 |
+| XML usage count | 27 |
+| XML attribute usage count | 27 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 14 addons.
+Observed engine XML template or inherited constant referenced by 12 addons.
 
 ## Seen In
 
@@ -65,9 +65,7 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 - AdvancedRenownTrainer
 - AggroMeter
 - Aura
-- AutoBand
 - LoyalPet
-- Queue Queuer
 - RVMOD_Manager
 - RandomMount
 - TidyChat
@@ -93,9 +91,6 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 - AggroMeterGrayWindowListTab
 - AggroMeterGrayWindowWhiteTab
 - AuraTabButtonTemplate
-- AutoBandWindowTabsConfig
-- AutoBandWindowTabsTemplate
-- AutoBandWindowTabsTools
 - LPETTabButton
 - RVMOD_ManagerWindowTabGeneral
 - RVMOD_ManagerWindowTabSettings
@@ -104,7 +99,6 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 - RandomMountWindowTabSettings
 - TChatTabButton
 - TRollTabButton
-- TabButton
 - TabButtonTemplate
 - WSCTTabButton
 - wbLeadHelperConfigWindowTabsConfig

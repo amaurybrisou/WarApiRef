@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 11 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, MapMonster, Miracle Grow Remix, Moth, Shinies |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1326`, `/workspace/Effigy/Elements/EffigyBar.lua:135`, `/workspace/Effigy/LibGUI.lua:1323`, `/workspace/Effigy/Textures/TextureManager.lua:125`, `/workspace/GCDsaver/libs/LibGUI.lua:1323`, `/workspace/LibWarBoardToggler/LibWBToggler.lua:16`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:1323`, `/workspace/MGRemix/MGRemix.lua:797` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1326`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:135`, `/workspace_addons/Effigy/LibGUI.lua:1323`, `/workspace_addons/Effigy/Textures/TextureManager.lua:125`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:1323`, `/workspace_addons/LibWarBoardToggler/LibWBToggler.lua:16`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:1323`, `/workspace_addons/MGRemix/MGRemix.lua:797` |
 | Namespaces detected | DynamicImageSetTextureScale |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Image:TexScale, Effigy: Effigy.TextureManager.SetTexture, Effigy: EffigyBar:setup, Effigy: LIBGUI_Image:TexScale, GCDsaver: LIBGUI_Image:TexScale, LibWBToggler: LIBGUI_Image:TexScale |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 24 |
-| Global usage count | 24 |
+| Lua usage count | 23 |
+| Global usage count | 23 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,7 +76,7 @@ Observed mutating runtime image resources on existing controls.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -93,7 +93,6 @@ Observed mutating runtime image resources on existing controls.
 - Moth
 - Shinies
 - TexturedButtons
-- WarTriage
 - WoH-Reticle
 
 ## Examples

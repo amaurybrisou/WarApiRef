@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, MapPin |
-| Files seen in | `/workspace/Enemy/Code/Core/Communication.lua:46`, `/workspace/MapPin/source/MapPin.lua:1122` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Communication.lua:46`, `/workspace_addons/MapPin/source/MapPin.lua:1122` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Enemy.OnChatTextArrived, MapPin.test, lua_call |

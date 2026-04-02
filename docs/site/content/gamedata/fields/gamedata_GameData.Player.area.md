@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Killer |
-| Files seen in | `/workspace/Killer/KillerZoneHistory.lua:5` |
+| Files seen in | `/workspace_addons/Killer/KillerZoneHistory.lua:5` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Killer.local.ResolveZoneIdFromName, ResolveZoneIdFromName, lua_call |

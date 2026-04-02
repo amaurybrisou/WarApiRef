@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, BankWindowFix, CM_ClosetGoblin, Enemy, MapMonster, RoR_SoR, wbLeadHelper |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:216`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:63`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:623`, `/workspace/Enemy/Code/Core/Main.lua:422`, `/workspace/Enemy/Code/Core/Main.lua:432`, `/workspace/Enemy/Code/Marks/Marks.lua:505`, `/workspace/Enemy/Code/UnitFrames/EffectsIndicator.lua:918` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:216`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:63`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:623`, `/workspace_addons/Enemy/Code/Core/Main.lua:422`, `/workspace_addons/Enemy/Code/Core/Main.lua:432`, `/workspace_addons/Enemy/Code/Marks/Marks.lua:505`, `/workspace_addons/Enemy/Code/UnitFrames/EffectsIndicator.lua:918` |
 | Namespaces detected | DialogManager |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize, BankWindowFix: BankWindowFix.BagEquipmentRButtonUp, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickDeleteSetButton, Enemy: Enemy.CombatLogInitialize, Enemy: Enemy.CombatLogUI_StatsWindow_SessionDelete, Enemy: Enemy.MarksUI_EnemyMarkIcon_Delete |

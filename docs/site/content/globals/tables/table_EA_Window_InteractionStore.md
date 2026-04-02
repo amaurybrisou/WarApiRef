@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic, BankWindowFix, nRarity |
-| Files seen in | `/workspace/bagomatic/BagOMatic.lua:771`, `/workspace/bagomatic/BagOMatic.lua:776`, `/workspace/bagomatic/BagOMatic.lua:782`, `/workspace/nRarity/source/containers/InteractionStore.lua:41` |
+| Files seen in | `/workspace_addons/bagomatic/BagOMatic.lua:771`, `/workspace_addons/bagomatic/BagOMatic.lua:776`, `/workspace_addons/bagomatic/BagOMatic.lua:782`, `/workspace_addons/nRarity/source/containers/InteractionStore.lua:41` |
 | Namespaces detected | EA_Window_InteractionStore |
 | Source kinds | globals, lua_calls |
 | Example locations | BagOMatic: BagOMatic.buyItem, BagOMatic: BagOMatic.buyLastItem, BagOMatic: BagOMatic.sellItemAt, nRarity: InteractionStore_EA_Window_InteractionStore_OnItemLButtonDown |

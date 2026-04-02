@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, DAoCBuff, EA_UiDebugTools, PotionBar, Queue Queuer |
-| Files seen in | `/workspace/Aura/Source/AuraConfig.xml:555`, `/workspace/DAoCBuff/Source/DAoCBuffMsgWindow.xml:101`, `/workspace/PotionBar/settings/Settings.xml:630`, `/workspace/QueueQueuer/QueueQueuer_GUI_TabTier1.xml:53`, `/workspace/QueueQueuer/QueueQueuer_GUI_TabTier2.xml:53`, `/workspace/QueueQueuer/QueueQueuer_GUI_TabTier3.xml:53`, `/workspace/QueueQueuer/QueueQueuer_GUI_TabTier4.xml:145`, `/workspace/QueueQueuer/QueueQueuer_GUI_TabTier4.xml:53` |
+| Addons seen in | Aura, DAoCBuff, EA_UiDebugTools, PotionBar |
+| Files seen in | `/workspace_addons/Aura/Source/AuraConfig.xml:555`, `/workspace_addons/DAoCBuff/Source/DAoCBuffMsgWindow.xml:101`, `/workspace_addons/PotionBar/settings/Settings.xml:630`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1395`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1469` |
 | Namespaces detected | EA_Settings_SectionTitle |
 | Source kinds | xml_attributes |
-| Example locations | AuraConfigTriggerAbilityDragAndDropNote, DAoCBuffMessageWindowScrollWindowScrollChildTitleLabel, DebugWindowOptionsErrorHandlingTitle, DebugWindowOptionsFiltersTitle, PotionBarAboutVersionInfo, QueueQueuer_GUI_TabTier1Socket_BlacklistTier1Title |
-| XML usage count | 10 |
-| XML attribute usage count | 10 |
+| Example locations | AuraConfigTriggerAbilityDragAndDropNote, DAoCBuffMessageWindowScrollWindowScrollChildTitleLabel, DebugWindowOptionsErrorHandlingTitle, DebugWindowOptionsFiltersTitle, PotionBarAboutVersionInfo |
+| XML usage count | 5 |
+| XML attribute usage count | 5 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 5 addons.
+Observed engine XML template or inherited constant referenced by 4 addons.
 
 ## Seen In
 
@@ -65,7 +65,6 @@ Observed engine XML template or inherited constant referenced by 5 addons.
 - DAoCBuff
 - EA_UiDebugTools
 - PotionBar
-- Queue Queuer
 
 ## Used By
 
@@ -74,11 +73,6 @@ Observed engine XML template or inherited constant referenced by 5 addons.
 - DebugWindowOptionsErrorHandlingTitle
 - DebugWindowOptionsFiltersTitle
 - PotionBarAboutVersionInfo
-- QueueQueuer_GUI_TabTier1Socket_BlacklistTier1Title
-- QueueQueuer_GUI_TabTier2Socket_BlacklistTier2Title
-- QueueQueuer_GUI_TabTier3Socket_BlacklistTier3Title
-- QueueQueuer_GUI_TabTier4Socket_BlacklistTier4SpecialTitle
-- QueueQueuer_GUI_TabTier4Socket_BlacklistTier4Title
 
 ## Related APIs
 

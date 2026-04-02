@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -30,15 +30,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoBand, BagOMatic, Effigy, JunkDump, PlanB, wbLeadHelper |
-| Files seen in | `/workspace/Autoband/AutoBand.lua:30`, `/workspace/Effigy/EffigySlashCommands.lua:19`, `/workspace/JunkDump/JunkDump.lua:50`, `/workspace/PlanB/PlanB.lua:35`, `/workspace/bagomatic/BagOMatic.lua:15`, `/workspace/wbLeadHelper/wbLeadHelper.lua:34` |
+| Addons seen in | BagOMatic, Effigy, JunkDump, PlanB, wbLeadHelper |
+| Files seen in | `/workspace_addons/Effigy/EffigySlashCommands.lua:19`, `/workspace_addons/JunkDump/JunkDump.lua:50`, `/workspace_addons/PlanB/PlanB.lua:35`, `/workspace_addons/bagomatic/BagOMatic.lua:15`, `/workspace_addons/wbLeadHelper/wbLeadHelper.lua:34` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
-| Example locations | AutoBand: AutoBand.init, BagOMatic: BagOMatic.init, Effigy: Effigy.RegisterWithLibSlash, JunkDump: JunkDump.Initialize, PlanB: PlanB.Initialize, wbLeadHelper: wbLeadHelper.OnInitialize |
+| Example locations | BagOMatic: BagOMatic.init, Effigy: Effigy.RegisterWithLibSlash, JunkDump: JunkDump.Initialize, PlanB: PlanB.Initialize, wbLeadHelper: wbLeadHelper.OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -73,7 +73,7 @@ Observed wiring slash commands through a shared command-registration table.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "ab", "bom", "effigy" |
+| arg1 | Observed as a text or wstring payload. | Observed values: "bom", "effigy", "jd" |
 
 ## Returns
 
@@ -85,7 +85,6 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Seen In
 
-- AutoBand
 - BagOMatic
 - Effigy
 - JunkDump
@@ -94,12 +93,12 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Examples
 
-- AutoBand: AutoBand.init -> LibSlash.IsSlashCmdRegistered("ab")
 - BagOMatic: BagOMatic.init -> LibSlash.IsSlashCmdRegistered("bom")
-- Effigy: Effigy.RegisterWithLibSlash -> LibSlash.IsSlashCmdRegistered("effigy")
 - Effigy: Effigy.RegisterWithLibSlash -> LibSlash.IsSlashCmdRegistered("unitframes")
+- Effigy: Effigy.RegisterWithLibSlash -> LibSlash.IsSlashCmdRegistered("effigy")
 - JunkDump: JunkDump.Initialize -> LibSlash.IsSlashCmdRegistered("jd")
 - PlanB: PlanB.Initialize -> LibSlash.IsSlashCmdRegistered("planb")
+- wbLeadHelper: wbLeadHelper.OnInitialize -> LibSlash.IsSlashCmdRegistered("wlh")
 
 ## Related APIs
 
@@ -109,7 +108,6 @@ Observed wiring slash commands through a shared command-registration table.
 
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [LibSlash.RegisterWSlashCmd](global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
@@ -128,7 +126,9 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Affects
 
+- [EA_ChatWindow.OnKeyEnter](global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
 - [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
+- [SystemData.Events.LOADING_BEGIN](../../systemdata/fields/systemdata_SystemData.Events.LOADING_BEGIN.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
@@ -139,3 +139,4 @@ Observed wiring slash commands through a shared command-registration table.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, PetFixWindow, TurretRange |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/PetFixWindow/PetFixWindow.lua:3`, `/workspace/TurrentRange/Core.lua:74` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/PetFixWindow/PetFixWindow.lua:3`, `/workspace_addons/TurrentRange/Core.lua:74` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.local.RegisterCoreEvents, AdvancedPetAssist: RegisterCoreEvents, PetFixWindow: PetFixWindow.onInit, TurretRange: TurretRange.Initialize |

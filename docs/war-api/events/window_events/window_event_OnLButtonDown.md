@@ -31,12 +31,12 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, BuffHead, CM_ClosetGoblin, CMap, DAoCBuff, DaemonAssist, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace/BuffHead/Setup/General.xml:31`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.xml:43`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.xml:42`, `/workspace/BuffHead/Setup/SetupAdvancedContainers.xml:43`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.xml:42`, `/workspace/BuffHead/Setup/SetupEffectCache.xml:49`, `/workspace/BuffHead/Setup/SetupLayout.xml:125`, `/workspace/BuffHead/Setup/SetupLayout.xml:215` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/General.xml:31`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:43`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:42`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainers.xml:43`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.xml:42`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.xml:49`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:125`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:215` |
 | Namespaces detected | OnLButtonDown |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
 | Example locations | AdvancedRenownTrainer: AbilityButtonTemplate.OnLButtonDown, BuffHead: BuffHeadLayoutControlFrameWindow.OnLButtonDown, BuffHead: BuffHeadLayoutFrameWindow.OnLButtonDown, BuffHead: BuffHeadLayoutResizeButton.OnLButtonDown, BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnLButtonDown, BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate.OnLButtonDown |
-| XML usage count | 65 |
-| XML attribute usage count | 65 |
+| XML usage count | 66 |
+| XML attribute usage count | 66 |
 | Lua usage count | 1 |
 | Global usage count | 1 |
 | Local definition count | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 22 addons.
+Observed as an engine-supplied UI event hook used by 23 addons.
 
 ## Handler Pattern
 
@@ -94,6 +94,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - TexturedButtons
 - TidyChat
 - TurretRange
+- WhoHealedMe
 - bigger_MacroWindow
 
 ## Registrars And Handlers
@@ -152,6 +153,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - TexturedButtons.Setup.OnRowLDown
 - TidyChat.OnEntryBoxTextInputLBD
 - TurretRange.Setup.Distances.OnRowLDown
+- WHMGui.OnHealerNameMouseDown
 - WindowRegisterCoreEventHandler
 - WindowUtils.TrapClick
 - core

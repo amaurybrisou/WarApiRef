@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura |
-| Files seen in | `/workspace/Aura/Source/AuraConfig.xml:140`, `/workspace/Aura/Source/AuraConfig.xml:1618` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraConfig.xml:140`, `/workspace_addons/Aura/Source/AuraConfig.xml:1618` |
 | Namespaces detected | EA_Templates_Color_Picker_Button |
 | Source kinds | xml_attributes |
 | Example locations | AuraConfigGeneralTintColor, AuraConfigTimerTintColorColor |

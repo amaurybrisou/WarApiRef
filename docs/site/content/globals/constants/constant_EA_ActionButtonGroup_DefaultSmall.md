@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankWindowFix |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.xml:3` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.xml:3` |
 | Namespaces detected | EA_ActionButtonGroup_DefaultSmall |
 | Source kinds | xml_attributes |
 | Example locations | BankWindowSlotsFixed |

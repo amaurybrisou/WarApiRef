@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 26 addons
+- Seen in: 24 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, BankArkel, BuffHead, Crafting Info Tooltip, DAoCBuff, DaemonAssist |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1078`, `/workspace/AdvancedPetAssist/APAGui.lua:735`, `/workspace/BankArkel/BankArkel.lua:513`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:70`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.lua:342`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:228`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1078`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:735`, `/workspace_addons/BankArkel/BankArkel.lua:513`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:70`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.lua:342`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:228`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283` |
 | Namespaces detected | ComboBoxClearMenuItems |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Combobox:Clear, AdvancedPetAssist: AdvancedPetAssist.local.FillCombo, AdvancedPetAssist: FillCombo, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SaveCurrentSpecAsPreset, AdvancedRenownTrainer: AdvancedRenownTraining.DeletePreset, AdvancedRenownTrainer: AdvancedRenownTraining.SavePreset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 139 |
-| Global usage count | 139 |
+| Lua usage count | 136 |
+| Global usage count | 136 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxClearMenuItems(arg1)
 
 ## Description
 
-Observed as a window function across 26 addons.
+Observed as a window function across 24 addons.
 
 ## Parameters
 
@@ -103,10 +103,8 @@ Observed as a window function across 26 addons.
 - RVMOD_Manager
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyRoll
 - TurretRange
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 

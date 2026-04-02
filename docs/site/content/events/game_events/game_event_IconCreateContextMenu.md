@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/CombatLog/CombatLogEpsWindow.lua:12`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:16`, `/workspace/Enemy/Code/Intercom/Intercom.lua:4`, `/workspace/Enemy/Code/Marks/Marks.lua:8`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:21` |
+| Files seen in | `/workspace_addons/Enemy/Code/CombatLog/CombatLogEpsWindow.lua:12`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:16`, `/workspace_addons/Enemy/Code/Intercom/Intercom.lua:4`, `/workspace_addons/Enemy/Code/Marks/Marks.lua:8`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:21` |
 | Namespaces detected | IconCreateContextMenu |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy.CombatLogUI_EpsWindow_Initialize, Enemy: Enemy.CombatLogUI_StatsWindow_Initialize, Enemy: Enemy.IntercomInitialize, Enemy: Enemy.MarksInitialize, Enemy: Enemy.ScenarioInfoInitialize |
@@ -105,4 +105,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Notes
 
 - Triggered-by evidence: Enemy:Enemy.UI_Icon_OnRButtonUp
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

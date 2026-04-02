@@ -25,14 +25,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Killer, Killer, Shinies |
-| Files seen in | `/workspace/Killer/KillerLifecycle.lua:100`, `/workspace/Killer/KillerLifecycle.lua:4` |
+| Files seen in | `/workspace_addons/Killer/KillerLifecycle.lua:100`, `/workspace_addons/Killer/KillerLifecycle.lua:4` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | Killer.Initialize, Killer.OnCurrencyUpdated, Killer.Shutdown, SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED, event_page, event_registration |

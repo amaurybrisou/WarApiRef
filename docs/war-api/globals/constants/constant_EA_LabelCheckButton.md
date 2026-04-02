@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, EA_UiDebugTools, EA_UiModWindow, FastInteract, LibGroup, Queue Queuer, TexturedButtons, TurretRange |
-| Files seen in | `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:1015`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:319`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:344`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:990`, `/workspace/BuffHead/Setup/SetupDisplay.xml:199`, `/workspace/BuffHead/Setup/SetupEffectCache.xml:100`, `/workspace/BuffHead/Setup/SetupFilter.xml:20`, `/workspace/BuffHead/Setup/SetupLayout.xml:341` |
+| Addons seen in | BuffHead, EA_UiDebugTools, EA_UiModWindow, FastInteract, LibGroup, TexturedButtons, TurretRange, WSCT |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:1015`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:319`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:344`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:990`, `/workspace_addons/BuffHead/Setup/SetupDisplay.xml:199`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.xml:100`, `/workspace_addons/BuffHead/Setup/SetupFilter.xml:20`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:341` |
 | Namespaces detected | EA_LabelCheckButton |
 | Source kinds | xml_attributes |
-| Example locations | BlacklistCheckBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsAlwaysShowEnable, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsPermanent, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementHandleInputEnableRemovable, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementHandleInputShowTooltips, BuffHeadSetupDisplayWindowEnableSort |
-| XML usage count | 73 |
-| XML attribute usage count | 73 |
+| Example locations | BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsAlwaysShowEnable, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsPermanent, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementHandleInputEnableRemovable, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementHandleInputShowTooltips, BuffHeadSetupDisplayWindowEnableSort, BuffHeadSetupEffectCacheWindowEnableCaching |
+| XML usage count | 71 |
+| XML attribute usage count | 71 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 10 addons.
+Observed engine XML template or inherited constant referenced by 9 addons.
 
 ## Seen In
 
@@ -66,7 +66,6 @@ Observed engine XML template or inherited constant referenced by 10 addons.
 - EA_UiModWindow
 - FastInteract
 - LibGroup
-- Queue Queuer
 - TexturedButtons
 - TurretRange
 - WSCT
@@ -74,7 +73,6 @@ Observed engine XML template or inherited constant referenced by 10 addons.
 
 ## Used By
 
-- BlacklistCheckBox
 - BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsAlwaysShowEnable
 - BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsPermanent
 - BuffHeadSetupAdvancedContainersItemPropertiesWindowElementHandleInputEnableRemovable
@@ -114,7 +112,6 @@ Observed engine XML template or inherited constant referenced by 10 addons.
 - FastInteractWindowCheckVendorJD
 - FastInteractWindowCheckVendorSkip
 - LibGroupSetupWindowEnableGroupDistance
-- OptionCheckBox
 - TexturedButtonsSetupActionbarWindowEnable
 - TexturedButtonsSetupActionbarWindowHideBackground
 - TexturedButtonsSetupActionbarWindowHideEmpty

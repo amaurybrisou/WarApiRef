@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, DeepSleep, Effigy, GCDsaver, LibWBToggler, Shinies, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1099`, `/workspace/DeepSleep/Settings.lua:54`, `/workspace/Effigy/LibGUI.lua:1096`, `/workspace/GCDsaver/libs/LibGUI.lua:1096`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:1096`, `/workspace/Shinies/Libraries/LibGUI.lua:1096`, `/workspace/WarTriage/libs/LibGUI.lua:1096`, `/workspace/WoH-Reticle/libs/LibGUI.lua:1096` |
+| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1099`, `/workspace_addons/Effigy/LibGUI.lua:1096`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:1096`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:1096`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:1096`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:1096` |
 | Namespaces detected | ComboBoxGetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Combobox:Enabled, DeepSleep: Settings.ComboBoxChanged, Effigy: LIBGUI_Combobox:Enabled, GCDsaver: LIBGUI_Combobox:Enabled, LibWBToggler: LIBGUI_Combobox:Enabled, Shinies: LIBGUI_Combobox:Enabled |
+| Example locations | Ace: LIBGUI_Combobox:Enabled, Effigy: LIBGUI_Combobox:Enabled, GCDsaver: LIBGUI_Combobox:Enabled, LibWBToggler: LIBGUI_Combobox:Enabled, Shinies: LIBGUI_Combobox:Enabled, WoH-Reticle: LIBGUI_Combobox:Enabled |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ ComboBoxGetDisabledFlag(arg1)
 
 ## Description
 
-Observed as a window function across 8 addons.
+Observed as a window function across 6 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: box, self.name |
+| arg1 | Observed as a function or method reference. | Observed values: self.name |
 
 ## Returns
 
@@ -84,22 +84,20 @@ Observed as a window function across 8 addons.
 ## Seen In
 
 - Ace
-- DeepSleep
 - Effigy
 - GCDsaver
 - LibWBToggler
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples
 
 - Ace: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
-- DeepSleep: Settings.ComboBoxChanged -> ComboBoxGetDisabledFlag(box)
 - Effigy: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
 - GCDsaver: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
 - LibWBToggler: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
 - Shinies: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
+- WoH-Reticle: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
 
 ## Related APIs
 
@@ -115,7 +113,6 @@ Observed as a window function across 8 addons.
 
 ## Affects
 
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

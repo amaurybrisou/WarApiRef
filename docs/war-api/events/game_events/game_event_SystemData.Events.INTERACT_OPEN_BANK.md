@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankArkel, Shinies |
-| Files seen in | `/workspace/BankArkel/BankArkel.lua:95` |
+| Files seen in | `/workspace_addons/BankArkel/BankArkel.lua:95` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | BankArkel: BankArkel.Init |

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, bigger_MacroWindow |
-| Files seen in | `/workspace/Enemy/Code/Assist/AssistConfiguration.xml:130`, `/workspace/Enemy/Code/Assist/AssistConfiguration.xml:141`, `/workspace/Enemy/Code/Core/ConfigurationWindow.xml:417`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfoConfiguration.xml:33`, `/workspace/bigger_macrowindow/Source/MacroWindow.xml:9` |
+| Files seen in | `/workspace_addons/Enemy/Code/Assist/AssistConfiguration.xml:130`, `/workspace_addons/Enemy/Code/Assist/AssistConfiguration.xml:141`, `/workspace_addons/Enemy/Code/Core/ConfigurationWindow.xml:417`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfoConfiguration.xml:33`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:9` |
 | Namespaces detected | OnMouseDrag |
 | Source kinds | event_page, xml_handlers |
 | Example locations | Enemy: EnemyAssistConfigurationMacroMark.OnMouseDrag, Enemy: EnemyAssistConfigurationMacroTarget.OnMouseDrag, Enemy: EnemyConfigurationWindow_MacroTemplateButton.OnMouseDrag, Enemy: EnemyScenarioInfoConfigurationMacroToggle.OnMouseDrag, bigger_MacroWindow: EA_Window_MacroIconButton.OnMouseDrag |

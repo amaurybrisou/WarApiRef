@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapMonster |
-| Files seen in | `/workspace/MapMonster/Source/MapMonster_Pins.lua:938` |
+| Files seen in | `/workspace_addons/MapMonster/Source/MapMonster_Pins.lua:938` |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
 | Example locations | MapMonster: HideFilterMenus, MapMonster: MapMonster.local.HideFilterMenus |
@@ -70,11 +70,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

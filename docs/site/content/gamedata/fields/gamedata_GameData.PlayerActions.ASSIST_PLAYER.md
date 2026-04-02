@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/UnitFrames/ClickCasting.lua:147` |
+| Files seen in | `/workspace_addons/Enemy/Code/UnitFrames/ClickCasting.lua:147` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | EnemyClickCasting:Proceed, lua_call |

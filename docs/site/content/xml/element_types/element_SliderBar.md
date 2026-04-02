@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, BuffHead, Enemy, LibGroup, MapMonster, MapPin, MoraleCircle, PotionBar |
-| Files seen in | `/workspace/Aura/Source/AuraColorPicker.xml:26`, `/workspace/Aura/Source/AuraColorPicker.xml:58`, `/workspace/Aura/Source/AuraColorPicker.xml:78`, `/workspace/Aura/Source/AuraColorPicker.xml:98`, `/workspace/Aura/Source/AuraConfig.xml:1670`, `/workspace/Aura/Source/AuraConfig.xml:246`, `/workspace/Aura/Source/AuraConfig.xml:301`, `/workspace/Aura/Source/Templates.xml:317` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraColorPicker.xml:26`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:58`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:78`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:98`, `/workspace_addons/Aura/Source/AuraConfig.xml:1670`, `/workspace_addons/Aura/Source/AuraConfig.xml:246`, `/workspace_addons/Aura/Source/AuraConfig.xml:301`, `/workspace_addons/Aura/Source/Templates.xml:317` |
 | Namespaces detected | SliderBar |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | Aura: AuraColorPickerAlpha, Aura: AuraColorPickerBlue, Aura: AuraColorPickerGreen, Aura: AuraColorPickerRed, Aura: AuraConfigGeneralTextureRotationSlider, Aura: AuraConfigGeneralTextureScaleSlider |

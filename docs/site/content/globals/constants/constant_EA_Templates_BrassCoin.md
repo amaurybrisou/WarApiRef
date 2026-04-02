@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Source/ShiniesUITemplates.xml:103` |
+| Files seen in | `/workspace_addons/Shinies/Source/ShiniesUITemplates.xml:103` |
 | Namespaces detected | EA_Templates_BrassCoin |
 | Source kinds | xml_attributes |
 | Example locations | Shinies_BrassCoinImage |

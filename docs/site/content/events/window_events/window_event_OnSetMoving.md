@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapPin |
-| Files seen in | `/workspace/MapPin/source/MapPin.xml:343`, `/workspace/MapPin/source/MapPin.xml:407` |
+| Files seen in | `/workspace_addons/MapPin/source/MapPin.xml:343`, `/workspace_addons/MapPin/source/MapPin.xml:407` |
 | Namespaces detected | OnSetMoving |
 | Source kinds | event_page, xml_handlers |
 | Example locations | MapPin: MapPinWBMarker.OnSetMoving, MapPin: MapPinWBMarker_NoBG.OnSetMoving |
@@ -61,7 +61,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Payload
 
-- Window callback arguments are not fully inferable from API_Ref alone.
+- Window callback arguments are not fully inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -95,4 +95,4 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Notes
 
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

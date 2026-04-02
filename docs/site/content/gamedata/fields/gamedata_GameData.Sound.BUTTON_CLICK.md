@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | followTheLeader |
-| Files seen in | `/workspace/followTheLeader/followTheLeader.lua:458`, `/workspace/followTheLeader/followTheLeader.lua:472` |
+| Files seen in | `/workspace_addons/followTheLeader/followTheLeader.lua:458`, `/workspace_addons/followTheLeader/followTheLeader.lua:472` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | followTheLeader.OnMButtonUp, followTheLeader.OnRButtonUp, lua_call |

@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Enemy, LibGuard |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePets.lua:5`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/LibGuard/Source/LibGuard.lua:47` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePets.lua:5`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/LibGuard/Source/LibGuard.lua:47` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Effigy: Effigy.RegisterStateInfoForPets, Enemy: Enemy.GroupsInitialize, LibGuard: LibGuard.Init |

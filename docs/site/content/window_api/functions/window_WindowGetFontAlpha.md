@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/Ace/LibGUI.lua:213`, `/workspace/Effigy/LibGUI.lua:213`, `/workspace/GCDsaver/libs/LibGUI.lua:213`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:213`, `/workspace/Shinies/Libraries/LibGUI.lua:213`, `/workspace/WarTriage/libs/LibGUI.lua:213`, `/workspace/WoH-Reticle/libs/LibGUI.lua:213` |
+| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:213`, `/workspace_addons/Effigy/LibGUI.lua:213`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:213`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:213`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:213`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:213` |
 | Namespaces detected | WindowGetFontAlpha |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:FontAlpha, Effigy: LIBGUI_ELEMENT:FontAlpha, GCDsaver: LIBGUI_ELEMENT:FontAlpha, LibWBToggler: LIBGUI_ELEMENT:FontAlpha, Shinies: LIBGUI_ELEMENT:FontAlpha, WarTriage: LIBGUI_ELEMENT:FontAlpha |
+| Example locations | Ace: LIBGUI_ELEMENT:FontAlpha, Effigy: LIBGUI_ELEMENT:FontAlpha, GCDsaver: LIBGUI_ELEMENT:FontAlpha, LibWBToggler: LIBGUI_ELEMENT:FontAlpha, Shinies: LIBGUI_ELEMENT:FontAlpha, WoH-Reticle: LIBGUI_ELEMENT:FontAlpha |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -75,11 +75,11 @@ Observed querying runtime window state or metadata.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -88,7 +88,6 @@ Observed querying runtime window state or metadata.
 - GCDsaver
 - LibWBToggler
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples
@@ -98,7 +97,7 @@ Observed querying runtime window state or metadata.
 - GCDsaver: LIBGUI_ELEMENT:FontAlpha -> WindowGetFontAlpha(self.name)
 - LibWBToggler: LIBGUI_ELEMENT:FontAlpha -> WindowGetFontAlpha(self.name)
 - Shinies: LIBGUI_ELEMENT:FontAlpha -> WindowGetFontAlpha(self.name)
-- WarTriage: LIBGUI_ELEMENT:FontAlpha -> WindowGetFontAlpha(self.name)
+- WoH-Reticle: LIBGUI_ELEMENT:FontAlpha -> WindowGetFontAlpha(self.name)
 
 ## Related APIs
 

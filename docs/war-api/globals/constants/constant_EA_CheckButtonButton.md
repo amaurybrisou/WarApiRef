@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1516` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1516` |
 | Namespaces detected | EA_CheckButtonButton |
 | Source kinds | xml_attributes |
 | Example locations | EA_LabelCheckButtonSmallCopyButton |

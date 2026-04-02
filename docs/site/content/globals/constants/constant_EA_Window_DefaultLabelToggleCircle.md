@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiModWindow |
-| Files seen in | `/workspace/ea_uimodwindow/Source/UiModAdvancedWindow.xml:8` |
+| Files seen in | `/workspace_addons/ea_uimodwindow/Source/UiModAdvancedWindow.xml:8` |
 | Namespaces detected | EA_Window_DefaultLabelToggleCircle |
 | Source kinds | xml_attributes |
 | Example locations | EA_Window_AdvancedMainUIPathToggle |

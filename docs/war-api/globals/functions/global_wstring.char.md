@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff |
-| Files seen in | `/workspace/DAoCBuff/Source/Transcode.lua:289` |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/Transcode.lua:289` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
 | Example locations | DAoCBuff: wstringdec |

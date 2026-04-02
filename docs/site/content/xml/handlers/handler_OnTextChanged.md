@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, BuffHead, EA_UiDebugTools, Enemy, Killer, MapMonster, MapPin, Miracle Grow Remix |
-| Files seen in | `/workspace/Aura/Source/AuraConfig.xml:1569`, `/workspace/Aura/Source/AuraConfig.xml:1591`, `/workspace/Aura/Source/AuraConfig.xml:177`, `/workspace/Aura/Source/AuraConfig.xml:199`, `/workspace/BuffHead/Setup/General.xml:156`, `/workspace/BuffHead/Setup/General.xml:196`, `/workspace/BuffHead/Setup/General.xml:235`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:128` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraConfig.xml:1569`, `/workspace_addons/Aura/Source/AuraConfig.xml:1591`, `/workspace_addons/Aura/Source/AuraConfig.xml:177`, `/workspace_addons/Aura/Source/AuraConfig.xml:199`, `/workspace_addons/BuffHead/Setup/General.xml:156`, `/workspace_addons/BuffHead/Setup/General.xml:196`, `/workspace_addons/BuffHead/Setup/General.xml:235`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:128` |
 | Namespaces detected | OnTextChanged |
 | Source kinds | bindings, xml_handlers |
 | Example locations | Aura: AuraConfigGeneralOffsetX.OnTextChanged, Aura: AuraConfigGeneralOffsetY.OnTextChanged, Aura: AuraConfigTimerOffsetX.OnTextChanged, Aura: AuraConfigTimerOffsetY.OnTextChanged, BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowElementContainerSizeColumnsEditBox.OnTextChanged, BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowElementContainerSizeRowsEditBox.OnTextChanged |
@@ -121,4 +121,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

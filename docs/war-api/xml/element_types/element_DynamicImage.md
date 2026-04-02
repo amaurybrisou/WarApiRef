@@ -30,12 +30,12 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, Aura, AutoMark, BagOMatic, BankArkel, BuffHead |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:13`, `/workspace/AggroMeter/AggroMeter.xml:193`, `/workspace/AggroMeter/AggroMeter.xml:247`, `/workspace/AggroMeter/AggroMeter.xml:276`, `/workspace/AggroMeter/AggroMeter.xml:304`, `/workspace/AggroMeter/AggroMeter.xml:332`, `/workspace/AggroMeter/AggroMeter.xml:361`, `/workspace/AggroMeter/AggroMeter.xml:64` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:13`, `/workspace_addons/AggroMeter/AggroMeter.xml:193`, `/workspace_addons/AggroMeter/AggroMeter.xml:247`, `/workspace_addons/AggroMeter/AggroMeter.xml:276`, `/workspace_addons/AggroMeter/AggroMeter.xml:304`, `/workspace_addons/AggroMeter/AggroMeter.xml:332`, `/workspace_addons/AggroMeter/AggroMeter.xml:361`, `/workspace_addons/AggroMeter/AggroMeter.xml:64` |
 | Namespaces detected | DynamicImage |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | AdvancedRenownTrainer: AbilityButtonTemplateSquare, AdvancedRenownTrainer: AbilityButtonTemplateSquareFrame, AdvancedRenownTrainer: AdvancedRenownTrainingWindowCornorImage, AggroMeter: AggroMeterWindow_AggroWindow1Tactic, AggroMeter: AggroMeterWindow_AggroWindow2Tactic, AggroMeter: AggroMeterWindow_AggroWindow3Tactic |
-| XML usage count | 326 |
-| XML attribute usage count | 326 |
+| XML usage count | 321 |
+| XML attribute usage count | 321 |
 | Lua usage count | 5 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 45 addons.
+Observed XML element type instantiated by 41 addons.
 
 ## Common Attributes
 
@@ -72,8 +72,8 @@ Observed XML element type instantiated by 45 addons.
 - popable
 - slice
 - id
-- inherits
 - texturescale
+- inherits
 - sticky
 - alpha
 
@@ -91,14 +91,14 @@ Observed XML element type instantiated by 45 addons.
 - EA_ListSortUpArrow
 - Aggro_Tactic_Template
 - MapMonsterIconChooserWindow_IconTemplate
-- EA_Default_CornerImage
 - EA_Image_DefaultIcon
 - EA_Image_DefaultIconFrame
 - GenericEndCap
 - RVMOD_ManagerStatusTemplate
 - EA_Default_CharacterImage
+- EA_Default_CornerImage
 - EA_Default_MerchantImage
-- EA_Default_SocialImage
+- EA_Default_TrainingImage
 
 ## Seen In
 
@@ -125,19 +125,16 @@ Observed XML element type instantiated by 45 addons.
 - LibWBToggler
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - Moth
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - RVAPI_ColorDialog
 - RVMOD_Manager
 - RandomMount
-- RetAlert
 - RoR_SoR
 - Shinies
 - Swift Assist
@@ -145,7 +142,6 @@ Observed XML element type instantiated by 45 addons.
 - TexturedButtons
 - TidyRoll
 - TurretRange
-- Twister
 - WSCT
 
 ## Examples

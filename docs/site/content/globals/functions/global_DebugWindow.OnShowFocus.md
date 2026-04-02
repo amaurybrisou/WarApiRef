@@ -21,14 +21,14 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1354`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1355`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:210`, `/workspace/ea_uidebugtools/Source/devpad/DebugWindowCodePad.lua:128` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1354`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1355`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:210`, `/workspace_addons/ea_uidebugtools/Source/devpad/DebugWindowCodePad.lua:128` |
 | Namespaces detected | DebugWindow |
 | Source kinds | bindings, lua_calls, xml_handlers |
 | Example locations | EA_UiDebugTools: DebugWindowOptions.OnHidden, EA_UiDebugTools: DebugWindowOptions.OnShown, EA_UiDebugTools: DebugWindowTextBox.OnShown, EA_UiDebugTools: DevPadWindow.Toggle |
@@ -73,11 +73,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

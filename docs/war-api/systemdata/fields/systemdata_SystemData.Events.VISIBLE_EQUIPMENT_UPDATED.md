@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblin.lua:70` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | ClosetGoblin.OnInitialize, ClosetGoblin.OnVisibleEquipmentUpdated, SystemData.Events.VISIBLE_EQUIPMENT_UPDATED, event_page, event_registration, flow |

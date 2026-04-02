@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapMonster |
-| Files seen in | `/workspace/MapMonster/Source/MapMonster_Pins.lua:938` |
+| Files seen in | `/workspace_addons/MapMonster/Source/MapMonster_Pins.lua:938` |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
 | Example locations | MapMonster: HideFilterMenus, MapMonster: MapMonster.local.HideFilterMenus |

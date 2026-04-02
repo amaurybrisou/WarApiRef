@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, Effigy, GCDsaver, LibWBToggler, RoR_SoR, Shinies, WarTriage |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1316`, `/workspace/Aura/Source/AuraHelpers.lua:33`, `/workspace/Effigy/LibGUI.lua:1313`, `/workspace/GCDsaver/libs/LibGUI.lua:1313`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:1313`, `/workspace/RoR_SoR/RoR_SoR.lua:592`, `/workspace/Shinies/Libraries/LibGUI.lua:1313`, `/workspace/WarTriage/libs/LibGUI.lua:1313` |
+| Addons seen in | Ace, Aura, Effigy, GCDsaver, LibWBToggler, RoR_SoR, Shinies, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1316`, `/workspace_addons/Aura/Source/AuraHelpers.lua:33`, `/workspace_addons/Effigy/LibGUI.lua:1313`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:1313`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:1313`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:592`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:1313`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:1313` |
 | Namespaces detected | DynamicImageSetTextureOrientation |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Image:TexFlip, Aura: AuraHelpers.SetDynamicImageTexture, Effigy: LIBGUI_Image:TexFlip, GCDsaver: LIBGUI_Image:TexFlip, LibWBToggler: LIBGUI_Image:TexFlip, RoR_SoR: RoR_SoR.SET_CITY |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,7 +76,7 @@ Observed mutating runtime image resources on existing controls.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -91,7 +91,6 @@ Observed mutating runtime image resources on existing controls.
 - LibWBToggler
 - RoR_SoR
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples

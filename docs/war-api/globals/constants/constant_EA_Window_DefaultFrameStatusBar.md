@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, TidyRoll |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:69`, `/workspace/TidyRoll/TidyRoll.xml:232` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:69`, `/workspace_addons/TidyRoll/TidyRoll.xml:232` |
 | Namespaces detected | EA_Window_DefaultFrameStatusBar |
 | Source kinds | xml_attributes |
 | Example locations | Aggro_Timer_Template, TidyRollFrameTimer |

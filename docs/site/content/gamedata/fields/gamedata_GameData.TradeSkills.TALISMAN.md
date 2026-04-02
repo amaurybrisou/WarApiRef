@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:305`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:167` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:305`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:167` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | AnywhereTrainer.OnLeftClickCraft, AnywhereTrainerAdditions.OnLeftClickCraft, lua_call |

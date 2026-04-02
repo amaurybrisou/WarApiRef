@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, PlanB |
-| Files seen in | `/workspace/Aura/Source/AuraProfile.lua:23`, `/workspace/Aura/Source/AuraProfile.lua:85`, `/workspace/PlanB/PlanB.lua:225` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraProfile.lua:23`, `/workspace_addons/Aura/Source/AuraProfile.lua:85`, `/workspace_addons/PlanB/PlanB.lua:225` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | AuraProfile.LoadCharacterSettings, AuraProfile.SaveCharacterSettings, PlanB.DisplaySettings, lua_call |

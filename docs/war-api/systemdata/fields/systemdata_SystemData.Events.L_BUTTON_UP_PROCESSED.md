@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, BuffHead, Miracle Grow Remix, RVAPI_ColorDialog, RVMOD_Manager, Shinies, TidyChat, Miracle Grow Remix, RVAPI_ColorDialog, RVMOD_Manager, Shinies, TidyChat |
-| Files seen in | `/workspace/BuffHead/Setup/SetupLayout.lua:234`, `/workspace/BuffHead/Setup/SetupLayout.lua:258`, `/workspace/MGRemix/layout.lua:262`, `/workspace/RVAPI_ColorDialog/RVAPI_ColorDialog.lua:83`, `/workspace/RVAPI_ColorDialog/RVAPI_ColorDialog.lua:97`, `/workspace/RVMOD_Manager/RVMOD_Manager.lua:210`, `/workspace/RVMOD_Manager/RVMOD_Manager.lua:234`, `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:290` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupLayout.lua:234`, `/workspace_addons/BuffHead/Setup/SetupLayout.lua:258`, `/workspace_addons/MGRemix/layout.lua:262`, `/workspace_addons/RVAPI_ColorDialog/RVAPI_ColorDialog.lua:83`, `/workspace_addons/RVAPI_ColorDialog/RVAPI_ColorDialog.lua:97`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:210`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:234`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:290` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | BuffHead.Setup.Layout.OnHidden, BuffHead.Setup.Layout.OnLButtonUpProcessed, BuffHead.Setup.Layout.Show, MiracleGrow2.InitLayout, MiracleGrow2.LayoutEndDrag, RVAPI_ColorDialog.Initialize |

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankWindowFix, nRarity |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.lua:108` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108` |
 | Namespaces detected | MailWindowTabSend |
 | Source kinds | globals, lua_calls |
 | Example locations | BankWindowFix: BankWindowFix.BagEquipmentRButtonUp |

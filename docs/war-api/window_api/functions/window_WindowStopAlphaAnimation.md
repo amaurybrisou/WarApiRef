@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, Busted, DAoCBuff, EA_UiDebugTools, Enemy, Pocket Palette, RoR_SoR, TidyChat |
-| Files seen in | `/workspace/Aura/Source/Aura.lua:282`, `/workspace/Busted/Busted.lua:311`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:141`, `/workspace/Enemy/Code/Guard/Guard.lua:323`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:77`, `/workspace/PocketPalette/PocketPalette.lua:91`, `/workspace/RoR_SoR/RoR_SoR.lua:1055`, `/workspace/TidyChat/TidyChat.lua:344` |
+| Files seen in | `/workspace_addons/Aura/Source/Aura.lua:282`, `/workspace_addons/Busted/Busted.lua:311`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:141`, `/workspace_addons/Enemy/Code/Guard/Guard.lua:323`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:77`, `/workspace_addons/PocketPalette/PocketPalette.lua:91`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:1055`, `/workspace_addons/TidyChat/TidyChat.lua:344` |
 | Namespaces detected | WindowStopAlphaAnimation |
 | Source kinds | lua_calls |
 | Example locations | Aura: Aura:Deactivate, Busted: BustedGUI.ClearAlertFlash, DAoCBuff: DAoCBuffFrame:StopFading, EA_UiDebugTools: BustedGUI.ClearAlertFlash, Enemy: Enemy.Guard_GuardIndicator_Update, Enemy: Enemy.TalismanAlerter_Update |

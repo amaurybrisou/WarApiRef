@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, Enemy, Killer, MapPin, RVMOD_Manager, TexturedButtons, TidyRoll, WSCT |
-| Files seen in | `/workspace/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:80`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:843`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:865`, `/workspace/BuffHead/Setup/SetupContainer.xml:200`, `/workspace/BuffHead/Setup/SetupContainer.xml:231`, `/workspace/BuffHead/Setup/SetupContainer.xml:262`, `/workspace/BuffHead/Setup/SetupTrackers.xml:58`, `/workspace/Enemy/Code/Core/Groups/EffectFilterDialog.xml:118` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:80`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:843`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:865`, `/workspace_addons/BuffHead/Setup/SetupContainer.xml:200`, `/workspace_addons/BuffHead/Setup/SetupContainer.xml:231`, `/workspace_addons/BuffHead/Setup/SetupContainer.xml:262`, `/workspace_addons/BuffHead/Setup/SetupTrackers.xml:58`, `/workspace_addons/Enemy/Code/Core/Groups/EffectFilterDialog.xml:118` |
 | Namespaces detected | EA_ComboBox_DefaultResizableSmall |
 | Source kinds | xml_attributes |
 | Example locations | AutoRollRowTemplateChoice, BuffHeadSetupAdvancedCompressionItemEffectWindowCastByComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementGrowthHorizontalComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementGrowthVerticalComboBox, BuffHeadSetupContainerWindowContainerAlwaysShowPlacementCombo, BuffHeadSetupContainerWindowContainerBuffsPlacementCombo |

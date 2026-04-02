@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankWindowFix, EA_UiModWindow, RVMOD_Manager |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.xml:3`, `/workspace/RVMOD_Manager/RVMOD_ManagerTemplates.xml:322`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:213` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.xml:3`, `/workspace_addons/RVMOD_Manager/RVMOD_ManagerTemplates.xml:322`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:213` |
 | Namespaces detected | ActionButtonGroup |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | BankWindowFix: BankWindowSlotsFixed, EA_UiModWindow: EA_ScrollWindow_ModInfoTemplateScrollChildCareers, RVMOD_Manager: RVMOD_ManagerModInfoTemplateScrollChildCareers |

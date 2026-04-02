@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CMap, EA_UiModWindow, PeaceOut, PotionBar |
-| Files seen in | `/workspace/PeaceOut/PeaceOut.xml:26`, `/workspace/PotionBar/settings/Settings.xml:526`, `/workspace/cmap/CMap.xml:118`, `/workspace/cmap/CMap.xml:127`, `/workspace/ea_uimodwindow/Source/VersionMismatchWindow.xml:92` |
+| Addons seen in | CMap, EA_UiModWindow, PotionBar |
+| Files seen in | `/workspace_addons/PotionBar/settings/Settings.xml:526`, `/workspace_addons/cmap/CMap.xml:118`, `/workspace_addons/cmap/CMap.xml:127`, `/workspace_addons/ea_uimodwindow/Source/VersionMismatchWindow.xml:92` |
 | Namespaces detected | EA_Label_DefaultSubHeading |
 | Source kinds | xml_attributes |
-| Example locations | $parentRightPaneTitle, CMapWindowAreaNameText, CMapWindowDigitinf, PeaceOutTitle, UiModVersionMismatchWindowCurrentVersionText |
-| XML usage count | 5 |
-| XML attribute usage count | 5 |
+| Example locations | $parentRightPaneTitle, CMapWindowAreaNameText, CMapWindowDigitinf, UiModVersionMismatchWindowCurrentVersionText |
+| XML usage count | 4 |
+| XML attribute usage count | 4 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,13 +57,12 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 4 addons.
+Observed engine XML template or inherited constant referenced by 3 addons.
 
 ## Seen In
 
 - CMap
 - EA_UiModWindow
-- PeaceOut
 - PotionBar
 
 ## Used By
@@ -71,7 +70,6 @@ Observed engine XML template or inherited constant referenced by 4 addons.
 - $parentRightPaneTitle
 - CMapWindowAreaNameText
 - CMapWindowDigitinf
-- PeaceOutTitle
 - UiModVersionMismatchWindowCurrentVersionText
 
 ## Related APIs

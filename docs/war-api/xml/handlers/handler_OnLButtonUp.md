@@ -27,14 +27,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, AutoBand, BagOMatic |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:116`, `/workspace/AdvancedPetAssist/APAGui.xml:1386`, `/workspace/AdvancedPetAssist/APAGui.xml:141`, `/workspace/AdvancedPetAssist/APAGui.xml:1427`, `/workspace/AdvancedPetAssist/APAGui.xml:1468`, `/workspace/AdvancedPetAssist/APAGui.xml:155`, `/workspace/AdvancedPetAssist/APAGui.xml:169`, `/workspace/AdvancedPetAssist/APAGui.xml:183` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, BagOMatic, BankArkel |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:116`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1386`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:141`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1427`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1468`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:155`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:169`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:183` |
 | Namespaces detected | OnLButtonUp |
 | Source kinds | bindings, xml_handlers |
 | Example locations | AdvancedPetAssist: APAFollowTargetHUD.OnLButtonUp, AdvancedPetAssist: APAInstantOnlyHUD.OnLButtonUp, AdvancedPetAssist: APAKitingHUD.OnLButtonUp, AdvancedPetAssist: APAOptionsClose.OnLButtonUp, AdvancedPetAssist: APAOptionsTabsAutoRecall.OnLButtonUp, AdvancedPetAssist: APAOptionsTabsControls.OnLButtonUp |
-| XML usage count | 880 |
-| XML attribute usage count | 880 |
-| Lua usage count | 882 |
+| XML usage count | 824 |
+| XML attribute usage count | 824 |
+| Lua usage count | 823 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 57 addons through frame event handlers.
+Observed as an XML handler hook bound by 51 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -70,7 +70,6 @@ function(...)
 
 - Button
 - ColorPicker
-- ComboBox
 - DynamicImage
 - FullResizeImage
 - Label
@@ -86,7 +85,6 @@ function(...)
 - AnywhereTrainer
 - AnywhereTrainerAdditions
 - Aura
-- AutoBand
 - BagOMatic
 - BankArkel
 - BuffHead
@@ -95,7 +93,6 @@ function(...)
 - CMap
 - Cheeseboard
 - DAoCBuff
-- DeepSleep
 - EA_UiDebugTools
 - EA_UiModWindow
 - Effigy
@@ -108,7 +105,6 @@ function(...)
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
@@ -116,7 +112,6 @@ function(...)
 - ObjectInspector
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
 - RVAPI_ColorDialog
@@ -125,9 +120,7 @@ function(...)
 - RoR_SoR
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
 - Tortall_DPS
 - TurretRange
@@ -197,7 +190,6 @@ function(...)
 - [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ColorPicker](../element_types/element_ColorPicker.md) (HIGH 100/100) - XML Element Type
-- [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [ComboBoxClearMenuItems](../../window_api/functions/window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function

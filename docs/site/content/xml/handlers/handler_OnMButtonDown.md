@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, MoraleCircle |
-| Files seen in | `/workspace/Enemy/Code/UnitFrames/UnitFrame.xml:90`, `/workspace/MoraleCircle/MoraleCircle.xml:18` |
+| Files seen in | `/workspace_addons/Enemy/Code/UnitFrames/UnitFrame.xml:90`, `/workspace_addons/MoraleCircle/MoraleCircle.xml:18` |
 | Namespaces detected | OnMButtonDown |
 | Source kinds | bindings, xml_handlers |
 | Example locations | Enemy: EnemyUnitFrame.OnMButtonDown, MoraleCircle: MoraleTemplate.OnMButtonDown |
@@ -99,4 +99,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

@@ -29,13 +29,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Aura, AutoBand, BuffHead, Busted, CM_ClosetGoblin, CMap, Cheeseboard |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:158`, `/workspace/AggroMeter/AggroMeter.xml:216`, `/workspace/AggroMeter/AggroMeter.xml:221`, `/workspace/AggroMeter/AggroMeter.xml:259`, `/workspace/AggroMeter/AggroMeter.xml:288`, `/workspace/AggroMeter/AggroMeter.xml:316`, `/workspace/AggroMeter/AggroMeter.xml:344`, `/workspace/AggroMeter/AggroMeter.xml:373` |
+| Addons seen in | AggroMeter, Aura, BuffHead, Busted, CM_ClosetGoblin, CMap, Cheeseboard, DAoCBuff |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:158`, `/workspace_addons/AggroMeter/AggroMeter.xml:216`, `/workspace_addons/AggroMeter/AggroMeter.xml:221`, `/workspace_addons/AggroMeter/AggroMeter.xml:259`, `/workspace_addons/AggroMeter/AggroMeter.xml:288`, `/workspace_addons/AggroMeter/AggroMeter.xml:316`, `/workspace_addons/AggroMeter/AggroMeter.xml:344`, `/workspace_addons/AggroMeter/AggroMeter.xml:373` |
 | Namespaces detected | FullResizeImage |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | AggroMeter: AggroMeterWindowBorderCheck, AggroMeter: AggroMeterWindow_AggroWindow1BorderCheck, AggroMeter: AggroMeterWindow_AggroWindow1Seperator1, AggroMeter: AggroMeterWindow_AggroWindow2BorderCheck, AggroMeter: AggroMeterWindow_AggroWindow3BorderCheck, AggroMeter: AggroMeterWindow_AggroWindow4BorderCheck |
-| XML usage count | 201 |
-| XML attribute usage count | 201 |
+| XML usage count | 199 |
+| XML attribute usage count | 199 |
 | Lua usage count | 3 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 44 addons.
+Observed XML element type instantiated by 41 addons.
 
 ## Common Attributes
 
@@ -89,8 +89,8 @@ Observed XML element type instantiated by 44 addons.
 - AuraWindowBackground
 - EA_FullResizeImage_TanBorder
 - EA_FullResizeImage_BlackTransparent
-- EA_FullResizeImage_MetalFill
 - EA_FullResizeImage_WhiteTransparent
+- EA_FullResizeImage_MetalFill
 - EA_Button_ResizeIconFrameNormal
 - EA_FullResizeImage_TintableFrame
 - DefaultWindowBackground
@@ -102,7 +102,6 @@ Observed XML element type instantiated by 44 addons.
 
 - AggroMeter
 - Aura
-- AutoBand
 - BuffHead
 - Busted
 - CM_ClosetGoblin
@@ -123,9 +122,7 @@ Observed XML element type instantiated by 44 addons.
 - MiracleGrowLight
 - MoraleCircle
 - Moth
-- PeaceOut
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
 - RVAPI_ColorDialog

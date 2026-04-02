@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiModWindow |
-| Files seen in | `/workspace/ea_uimodwindow/Source/UiModWindow.xml:17`, `/workspace/ea_uimodwindow/Source/UiModWindow.xml:24`, `/workspace/ea_uimodwindow/Source/UiModWindow.xml:34`, `/workspace/ea_uimodwindow/Source/UiModWindow.xml:47`, `/workspace/ea_uimodwindow/Source/UiModWindow.xml:60` |
+| Files seen in | `/workspace_addons/ea_uimodwindow/Source/UiModWindow.xml:17`, `/workspace_addons/ea_uimodwindow/Source/UiModWindow.xml:24`, `/workspace_addons/ea_uimodwindow/Source/UiModWindow.xml:34`, `/workspace_addons/ea_uimodwindow/Source/UiModWindow.xml:47`, `/workspace_addons/ea_uimodwindow/Source/UiModWindow.xml:60` |
 | Namespaces detected | EA_Button_UiModuleListRowTemplate |
 | Source kinds | flows, xml_attributes |
 | Example locations | EA_Button_UiModuleListRowTemplateBackground, EA_Button_UiModuleListRowTemplateEnabled, EA_Button_UiModuleListRowTemplateModuleName, EA_Button_UiModuleListRowTemplateStatus, EA_Button_UiModuleListRowTemplateType |

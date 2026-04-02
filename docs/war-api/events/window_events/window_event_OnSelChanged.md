@@ -27,13 +27,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, AutoBand, BankArkel, BuffHead, Busted, Cheeseboard |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:1007`, `/workspace/AdvancedPetAssist/APAGui.xml:1029`, `/workspace/AdvancedPetAssist/APAGui.xml:1051`, `/workspace/AdvancedPetAssist/APAGui.xml:1085`, `/workspace/AdvancedPetAssist/APAGui.xml:1143`, `/workspace/AdvancedPetAssist/APAGui.xml:1201`, `/workspace/AdvancedPetAssist/APAGui.xml:1221`, `/workspace/AdvancedPetAssist/APAGui.xml:1241` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BankArkel, BuffHead, Busted, Cheeseboard, DaemonAssist |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1007`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1029`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1051`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1085`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1143`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1201`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1221`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1241` |
 | Namespaces detected | OnSelChanged |
 | Source kinds | event_page, examples, xml_handlers |
 | Example locations | AdvancedPetAssist: APAComboAttackBind.OnSelChanged, AdvancedPetAssist: APAComboAutoReattack.OnSelChanged, AdvancedPetAssist: APAComboAutoReattackDelay.OnSelChanged, AdvancedPetAssist: APAComboCastDelay.OnSelChanged, AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged, AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged |
-| XML usage count | 286 |
-| XML attribute usage count | 286 |
+| XML usage count | 278 |
+| XML attribute usage count | 278 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 31 addons.
+Observed as an engine-supplied UI event hook used by 27 addons.
 
 ## Handler Pattern
 
@@ -73,13 +73,11 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - BankArkel
 - BuffHead
 - Busted
 - Cheeseboard
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - EA_UiModWindow
 - Enemy
@@ -87,14 +85,12 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - Pocket Palette
 - PotionBar
 - RVMOD_Manager
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
 - TurretRange
@@ -109,8 +105,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - AuraConfig.OnActivationSoundComboChanged
 - AuraConfig.OnDeactivationSoundComboChanged
 - AuraConfig.OnTriggerTypeSelChanged
-- AutoBandWindowConfig.OnSelChangedComboBox
-- AutoBandWindowTemplate.OnSelChangedComboBox
 - BankArkel.PackCombo
 - BuffHead.Setup.AdvancedContainersItem.OnPositionChanged
 - BuffHead.Setup.AdvancedContainersItem.OnTargetTypeChanged
@@ -156,7 +150,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - Cheeseboard.OnClassComboChanged
 - Cheeseboard.OnTotalComboChanged
 - DaemonAssist.OnBindingComboChanged
-- DeepSleep.Settings.ComboBoxChanged
 - Enemy.AssistUI_ConfigDialog_OnNewTargetSoundIdSelChanged
 - Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
 - Enemy.CombatLogUI_StatsWindow_OnTypeSelChanged
@@ -279,7 +272,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - MapMonster.Editor.OnZoneNameChange
 - MapMonster.PinTypeEditor.OnSubTypeChange
 - MapPin.ComboBoxUpdate
-- Megaphone.SaveSettings
 - MiracleGrow2.LayoutPlotArrChanged
 - MiracleGrow2.LayoutShowChanged
 - PP.UpdateDyeList
@@ -293,9 +285,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - ShiniesBrowseUI.OnSelChanged_Criteria_ItemSlotCombo
 - ShiniesBrowseUI.OnSelChanged_Criteria_ItemTypeCombo
 - ShiniesBrowseUI.OnSelChanged_Criteria_ModifierCombo
-- TOLSettingsUI.OnEventSelChanged
-- TOLSettingsUI.OnPhraseSelChanged
-- TOLSettingsUI.OnSkillSelChanged
 - TexturedButtons.Setup.Actionbar.OnBarChanged
 - TexturedButtons.Setup.Actionbar.OnSelectorChanged
 - TexturedButtons.Setup.AdvancedTextures.OnCustomChanged

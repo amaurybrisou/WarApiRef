@@ -18,14 +18,14 @@
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Guard/Guard.lua:57`, `/workspace/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
+| Files seen in | `/workspace_addons/Enemy/Code/Guard/Guard.lua:57`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
 | Namespaces detected | GroupsPlayerDistanceUpdated |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Enemy: Enemy._GuardEnabledChanged, Enemy: Enemy._UnitFramesEnabledChanged |
@@ -102,4 +102,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Notes
 
 - Triggered-by evidence: Enemy:EnemyPlayer:SetDistance
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

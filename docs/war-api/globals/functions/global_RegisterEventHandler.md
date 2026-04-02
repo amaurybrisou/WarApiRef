@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: MEDIUM
 - Confidence score: 68/100
-- Seen in: 58 addons
+- Seen in: 48 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoMark, Autolooter, BagOMatic, BankArkel |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:92`, `/workspace/AggroMeter/AggroMeter.lua:5`, `/workspace/Aura/Source/AuraAddon.lua:70`, `/workspace/AutoMark/Source/AutoMark.lua:33`, `/workspace/AutoMark/Source/AutoMark.lua:78`, `/workspace/Autolooter/Autolooter.lua:3`, `/workspace/BankArkel/BankArkel.lua:95`, `/workspace/BuffHead/Core.lua:152` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoMark, BagOMatic, BankArkel, BuffHead |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:92`, `/workspace_addons/AggroMeter/AggroMeter.lua:5`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/AutoMark/Source/AutoMark.lua:33`, `/workspace_addons/AutoMark/Source/AutoMark.lua:78`, `/workspace_addons/BankArkel/BankArkel.lua:95`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/BuffHead/Core.lua:207` |
 | Namespaces detected | RegisterEventHandler |
 | Source kinds | lua_calls |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.local.RegisterLoadingEnd, AdvancedPetAssist: RegisterLoadingEnd, AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, AdvancedRenownTrainer: AdvancedRenownTraining.OnReload, AggroMeter: AggroMeter.Initialize, Aura: AuraAddon.OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 321 |
-| Global usage count | 321 |
+| Lua usage count | 281 |
+| Global usage count | 281 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -86,7 +86,6 @@ Observed registering global runtime handlers against shared event identifiers.
 - AggroMeter
 - Aura
 - AutoMark
-- Autolooter
 - BagOMatic
 - BankArkel
 - BuffHead
@@ -105,34 +104,25 @@ Observed registering global runtime handlers against shared event identifiers.
 - LibWBToggler
 - LoyalPet
 - MapMonster
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
-- PeaceOut
 - PetFixWindow
 - PlanB
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
-- RRCount
 - RVAPI_ColorDialog
 - RVMOD_Manager
-- RetAlert
 - RoR_SoR
-- ScenarioAlert
 - Shinies
 - Targets
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
-- TimeInQueue
 - TortallDPSCore
 - TurretRange
-- Twister
 - WSCT
 - WarBoard
 - WhoHealedMe
@@ -226,3 +216,4 @@ Observed registering global runtime handlers against shared event identifiers.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

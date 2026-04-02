@@ -28,11 +28,11 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, DeepSleep, EA_UiDebugTools, EA_UiModWindow, Enemy, Killer, Miracle Grow Remix, PotionBar |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuffMsgWindow.xml:63`, `/workspace/DeepSleep/Settings.xml:48`, `/workspace/Enemy/Code/CombatLog/CombatLogConfiguration.xml:13`, `/workspace/Enemy/Code/GroupIcons/GroupIconsConfiguration.xml:13`, `/workspace/Enemy/Code/Guard/GuardConfiguration.xml:13`, `/workspace/Enemy/Code/KillSpam/KillSpamConfiguration.xml:13`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerterConfiguration.xml:13`, `/workspace/Enemy/Code/Timer/TimerConfiguration.xml:13` |
+| Addons seen in | DAoCBuff, EA_UiDebugTools, EA_UiModWindow, Enemy, Killer, Miracle Grow Remix, PotionBar, RVMOD_Manager |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuffMsgWindow.xml:63`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogConfiguration.xml:13`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIconsConfiguration.xml:13`, `/workspace_addons/Enemy/Code/Guard/GuardConfiguration.xml:13`, `/workspace_addons/Enemy/Code/KillSpam/KillSpamConfiguration.xml:13`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerterConfiguration.xml:13`, `/workspace_addons/Enemy/Code/Timer/TimerConfiguration.xml:13`, `/workspace_addons/Enemy/Code/UnitFrames/ClickCastingDialog.xml:46` |
 | Namespaces detected | VerticalScrollbar |
 | Source kinds | xml_frames, xml_handlers |
-| Example locations | DAoCBuff: DAoCBuffMessageWindowScrollWindowScrollbar, DeepSleep: DeepSleep_Settings_ScrollWindow_Scrollbar, EA_UiDebugTools: CopyScrollBar, EA_UiDebugTools: DebugWindowTextScrollbar, EA_UiDebugTools: DevPadWindowDevPadCodeDevPadCodeScrollBar, EA_UiDebugTools: EA_ScrollBar_ChatVertical |
+| Example locations | DAoCBuff: DAoCBuffMessageWindowScrollWindowScrollbar, EA_UiDebugTools: CopyScrollBar, EA_UiDebugTools: DebugWindowTextScrollbar, EA_UiDebugTools: DevPadWindowDevPadCodeDevPadCodeScrollBar, EA_UiDebugTools: EA_ScrollBar_ChatVertical, EA_UiDebugTools: ObjectInspectorObjectScrollbar |
 | XML usage count | 33 |
 | XML attribute usage count | 33 |
 | Lua usage count | 1 |
@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 13 addons.
+Observed XML element type instantiated by 12 addons.
 
 ## Common Attributes
 
@@ -83,7 +83,6 @@ Observed XML element type instantiated by 13 addons.
 ## Seen In
 
 - DAoCBuff
-- DeepSleep
 - EA_UiDebugTools
 - EA_UiModWindow
 - Enemy
@@ -99,11 +98,11 @@ Observed XML element type instantiated by 13 addons.
 ## Examples
 
 - DAoCBuff: DAoCBuffMessageWindowScrollWindowScrollbar -> VerticalScrollbar DAoCBuffMessageWindowScrollWindowScrollbar
-- DeepSleep: DeepSleep_Settings_ScrollWindow_Scrollbar -> VerticalScrollbar DeepSleep_Settings_ScrollWindow_Scrollbar
 - EA_UiDebugTools: CopyScrollBar -> VerticalScrollbar CopyScrollBar
 - EA_UiDebugTools: DebugWindowTextScrollbar -> VerticalScrollbar DebugWindowTextScrollbar
 - EA_UiDebugTools: DevPadWindowDevPadCodeDevPadCodeScrollBar -> VerticalScrollbar DevPadWindowDevPadCodeDevPadCodeScrollBar
 - EA_UiDebugTools: EA_ScrollBar_ChatVertical -> VerticalScrollbar EA_ScrollBar_ChatVertical
+- EA_UiDebugTools: ObjectInspectorObjectScrollbar -> VerticalScrollbar ObjectInspectorObjectScrollbar
 
 ## Related APIs
 

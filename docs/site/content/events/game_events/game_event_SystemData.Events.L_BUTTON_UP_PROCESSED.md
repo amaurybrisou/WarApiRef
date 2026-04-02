@@ -24,14 +24,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, Miracle Grow Remix, RVAPI_ColorDialog, RVMOD_Manager, Shinies, TidyChat |
-| Files seen in | `/workspace/BuffHead/Setup/SetupLayout.lua:234`, `/workspace/MGRemix/layout.lua:262`, `/workspace/RVAPI_ColorDialog/RVAPI_ColorDialog.lua:83`, `/workspace/RVMOD_Manager/RVMOD_Manager.lua:210`, `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:463`, `/workspace/TidyChat/TidyChat.lua:676` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupLayout.lua:234`, `/workspace_addons/MGRemix/layout.lua:262`, `/workspace_addons/RVAPI_ColorDialog/RVAPI_ColorDialog.lua:83`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:210`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:463`, `/workspace_addons/TidyChat/TidyChat.lua:676` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | BuffHead: BuffHead.Setup.Layout.Show, Miracle Grow Remix: MiracleGrow2.InitLayout, RVAPI_ColorDialog: RVAPI_ColorDialog.Initialize, RVMOD_Manager: RVMOD_Manager.Initialize, Shinies: _G.Shinies:NewModule.OnSelChanged_Criteria_MultiSelCombo, TidyChat: TidyChatHooks.SetupHooks |
@@ -69,7 +69,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from API_Ref alone; treat this as an engine event identifier.
+- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
 
 ## Seen In
 

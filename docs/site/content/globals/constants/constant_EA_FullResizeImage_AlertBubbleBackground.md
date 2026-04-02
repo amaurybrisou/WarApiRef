@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/Effigy.xml:84` |
+| Files seen in | `/workspace_addons/Effigy/Effigy.xml:84` |
 | Namespaces detected | EA_FullResizeImage_AlertBubbleBackground |
 | Source kinds | xml_attributes |
 | Example locations | FrameBubble2Back |

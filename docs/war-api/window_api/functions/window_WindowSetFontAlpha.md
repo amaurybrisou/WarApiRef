@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, DAoCBuff, Effigy, GCDsaver, LibWBToggler, Shinies, TurretRange, WSCT |
-| Files seen in | `/workspace/Ace/LibGUI.lua:213`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:40`, `/workspace/Effigy/LibGUI.lua:213`, `/workspace/GCDsaver/libs/LibGUI.lua:213`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:213`, `/workspace/Shinies/Libraries/LibGUI.lua:213`, `/workspace/TurrentRange/Display.lua:338`, `/workspace/TurrentRange/Setup/SetupDisplay.lua:100` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:213`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:40`, `/workspace_addons/Effigy/LibGUI.lua:213`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:213`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:213`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:213`, `/workspace_addons/TurrentRange/Display.lua:338`, `/workspace_addons/TurrentRange/Setup/SetupDisplay.lua:100` |
 | Namespaces detected | WindowSetFontAlpha |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:FontAlpha, DAoCBuff: DAoCBuffFrame:Create, Effigy: LIBGUI_ELEMENT:FontAlpha, GCDsaver: LIBGUI_ELEMENT:FontAlpha, LibWBToggler: LIBGUI_ELEMENT:FontAlpha, Shinies: LIBGUI_ELEMENT:FontAlpha |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 16 |
-| Global usage count | 16 |
+| Lua usage count | 15 |
+| Global usage count | 15 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -92,7 +92,6 @@ Observed mutating runtime window state or presentation.
 - Shinies
 - TurretRange
 - WSCT
-- WarTriage
 - WoH-Reticle
 
 ## Examples

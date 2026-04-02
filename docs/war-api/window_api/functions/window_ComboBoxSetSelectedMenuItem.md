@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 32 addons
+- Seen in: 28 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, BankArkel, BuffHead, Busted, Crafting Info Tooltip, DAoCBuff, DaemonAssist |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1116`, `/workspace/AdvancedPetAssist/APAGui.lua:735`, `/workspace/BankArkel/BankArkel.lua:364`, `/workspace/BankArkel/BankArkel.lua:513`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:129`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:139`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:195`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1116`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:735`, `/workspace_addons/BankArkel/BankArkel.lua:364`, `/workspace_addons/BankArkel/BankArkel.lua:513`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:129`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:139`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:195`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205` |
 | Namespaces detected | ComboBoxSetSelectedMenuItem |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Combobox:SelectIndex, AdvancedPetAssist: AdvancedPetAssist.local.FillCombo, AdvancedPetAssist: FillCombo, BankArkel: BankArkel.PackClose, BankArkel: BankArkel.SetupCombos, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.ShowProperties |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 263 |
-| Global usage count | 263 |
+| Lua usage count | 244 |
+| Global usage count | 244 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxSetSelectedMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 32 addons.
+Observed as a window function across 28 addons.
 
 ## Parameters
 
@@ -92,7 +92,6 @@ Observed as a window function across 32 addons.
 - Crafting Info Tooltip
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - Effigy
 - Enemy
@@ -102,17 +101,14 @@ Observed as a window function across 32 addons.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - Pocket Palette
 - PotionBar
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
 - TurretRange
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - wbLeadHelper

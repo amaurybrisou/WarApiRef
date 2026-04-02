@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CMap, MapMonster, TurretRange |
-| Files seen in | `/workspace/MapMonster/Source/MapMonster_Calibrate.xml:83`, `/workspace/TurrentRange/Display.xml:150`, `/workspace/cmap/CMap.xml:66`, `/workspace/cmap/CMap.xml:86` |
+| Files seen in | `/workspace_addons/MapMonster/Source/MapMonster_Calibrate.xml:83`, `/workspace_addons/TurrentRange/Display.xml:150`, `/workspace_addons/cmap/CMap.xml:66`, `/workspace_addons/cmap/CMap.xml:86` |
 | Namespaces detected | MapDisplay |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | CMap: CMapWindowMapDisplay, CMap: CMapWindowWMap, MapMonster: MapMonster_CalibrateWindowMapDisplay, TurretRange: TurretMapDisplay |

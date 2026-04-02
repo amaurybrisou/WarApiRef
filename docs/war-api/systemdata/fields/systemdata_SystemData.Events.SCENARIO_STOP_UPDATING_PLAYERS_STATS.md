@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:519` |
+| Files seen in | `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:519` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Enemy.ScenarioInfoCheckBroadcast, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnHidden, Enemy._ScenarioInfoEnabledChanged, SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS, event_page, event_registration |

@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiModWindow |
-| Files seen in | `/workspace/ea_uimodwindow/Source/UiModAdvancedWindow.xml:102`, `/workspace/ea_uimodwindow/Source/UiModAdvancedWindow.xml:95` |
+| Files seen in | `/workspace_addons/ea_uimodwindow/Source/UiModAdvancedWindow.xml:102`, `/workspace_addons/ea_uimodwindow/Source/UiModAdvancedWindow.xml:95` |
 | Namespaces detected | EA_Window_AdvancedMainUIPathToggle |
 | Source kinds | xml_attributes |
 | Example locations | UiModAdvancedWindowUseCustomUIToggle, UiModAdvancedWindowUseEADefaultToggle |

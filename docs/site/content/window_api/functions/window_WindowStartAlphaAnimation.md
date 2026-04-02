@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Aura, Busted, DAoCBuff, EA_UiDebugTools, Enemy, MapPin, PeaceOut |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.lua:68`, `/workspace/Aura/Source/Aura.lua:186`, `/workspace/Aura/Source/Aura.lua:282`, `/workspace/Busted/Busted.lua:162`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:150`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:161`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:169` |
+| Addons seen in | AggroMeter, Aura, Busted, DAoCBuff, EA_UiDebugTools, Enemy, MapPin, RoR_SoR |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.lua:68`, `/workspace_addons/Aura/Source/Aura.lua:186`, `/workspace_addons/Aura/Source/Aura.lua:282`, `/workspace_addons/Busted/Busted.lua:162`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:150`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:161`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:169` |
 | Namespaces detected | WindowStartAlphaAnimation |
 | Source kinds | lua_calls |
 | Example locations | AggroMeter: AggroMeter.SplitText, Aura: Aura:Activate, Aura: Aura:Deactivate, Busted: BustedGUI.NewErrorRecorded, DAoCBuff: DAoCBuffFrame:StartFading, DAoCBuff: DAoCBuffSettings.Disable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 63 |
-| Global usage count | 63 |
+| Lua usage count | 61 |
+| Global usage count | 61 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ WindowStartAlphaAnimation(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
 
 ## Description
 
-Observed as a window function across 10 addons.
+Observed as a window function across 9 addons.
 
 ## Parameters
 
@@ -82,11 +82,11 @@ Observed as a window function across 10 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -97,7 +97,6 @@ Observed as a window function across 10 addons.
 - EA_UiDebugTools
 - Enemy
 - MapPin
-- PeaceOut
 - RoR_SoR
 - TurretRange
 

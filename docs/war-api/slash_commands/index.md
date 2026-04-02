@@ -12,8 +12,8 @@
   - Aura: LibSlash.RegisterSlashCmd("aura", AuraAddon.Slash)
   - Aura: LibSlash.RegisterSlashCmd("auraconfig", AuraAddon.Slash)
   - Aura: LibSlash.RegisterSlashCmd("showaura", AuraAddon.Slash)
-  - AutoBand: LibSlash.RegisterSlashCmd("autoband", function(msg)AutoBand.parse_cmd(msg)end)
-  - AutoBand: LibSlash.RegisterSlashCmd("ab", function(msg)AutoBand.parse_cmd(msg)end)
+  - AutoMark: LibSlash.RegisterSlashCmd("automark", AutoMark.OnSlashCommand)
+  - BagOMatic: LibSlash.RegisterSlashCmd("bagomatic", function(msg)BagOMatic.parse_cmd(msg)end)
 
 ## LibSlash cleanup
 
@@ -26,6 +26,6 @@
 - DAoCBuff: LibSlash.UnregisterSlashCmd("daocbuff")
   - DAoCBuff: LibSlash.UnregisterSlashCmd("resetdaocbuff")
   - DaemonAssist: LibSlash.UnregisterSlashCmd("da")
-  - DeepSleep: LibSlash.UnregisterSlashCmd("ds")
-  - DeepSleep: LibSlash.UnregisterSlashCmd("DeepSleep")
   - Killer: LibSlash.UnregisterSlashCmd("killer")
+  - PotionBar: LibSlash.UnregisterSlashCmd(PotionBar.LibSlashCommand)
+  - QuickWarReport: LibSlash.UnregisterSlashCmd("qwr")

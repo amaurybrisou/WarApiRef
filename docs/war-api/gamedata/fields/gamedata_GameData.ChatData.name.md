@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, MapPin, MegaphonePlusPlus |
-| Files seen in | `/workspace/Enemy/Code/Core/Communication.lua:46`, `/workspace/MapPin/source/MapPin.lua:1122`, `/workspace/megaphoneplusplus-1.0.4/MegaphonePlusPlus.lua:347` |
+| Addons seen in | Enemy, MapPin |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Communication.lua:46`, `/workspace_addons/MapPin/source/MapPin.lua:1122` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | Enemy.OnChatTextArrived, MapPin.test, Megaphone.FilterChat, lua_call |
+| Example locations | Enemy.OnChatTextArrived, MapPin.test, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,13 +59,12 @@
 
 ## Description
 
-Observed GameData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
+Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - Enemy
 - MapPin
-- MegaphonePlusPlus
 
 ## Related APIs
 
@@ -96,4 +95,4 @@ Observed GameData field used by 3 addons through generated function calls, event
 
 ## Notes
 
-- Observed in contexts: Enemy.OnChatTextArrived, MapPin.test, Megaphone.FilterChat, lua_call
+- Observed in contexts: Enemy.OnChatTextArrived, MapPin.test, lua_call

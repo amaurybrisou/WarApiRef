@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WSCT |
-| Files seen in | `/workspace/wsct/wsct.lua:590` |
+| Files seen in | `/workspace_addons/wsct/wsct.lua:590` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | WSCT:DisplayMessage, lua_call |

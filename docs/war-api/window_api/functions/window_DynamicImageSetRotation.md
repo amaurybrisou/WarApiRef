@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, Effigy, GCDsaver, LibWBToggler, Shinies, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1294`, `/workspace/Aura/Source/AuraHelpers.lua:33`, `/workspace/Effigy/LibGUI.lua:1291`, `/workspace/GCDsaver/libs/LibGUI.lua:1291`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:1291`, `/workspace/Shinies/Libraries/LibGUI.lua:1291`, `/workspace/WarTriage/libs/LibGUI.lua:1291`, `/workspace/WoH-Reticle/libs/LibGUI.lua:1291` |
+| Addons seen in | Ace, Aura, Effigy, GCDsaver, LibWBToggler, Shinies, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1294`, `/workspace_addons/Aura/Source/AuraHelpers.lua:33`, `/workspace_addons/Effigy/LibGUI.lua:1291`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:1291`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:1291`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:1291`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:1291` |
 | Namespaces detected | DynamicImageSetRotation |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Image:Rotate, Aura: AuraHelpers.SetDynamicImageTexture, Effigy: LIBGUI_Image:Rotate, GCDsaver: LIBGUI_Image:Rotate, LibWBToggler: LIBGUI_Image:Rotate, Shinies: LIBGUI_Image:Rotate |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -90,7 +90,6 @@ Observed mutating runtime image resources on existing controls.
 - GCDsaver
 - LibWBToggler
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 21 addons
+- Seen in: 19 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BankArkel, BuffHead, Busted, Crafting Info Tooltip, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1068`, `/workspace/BankArkel/BankArkel.lua:513`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:70`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.lua:342`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:431`, `/workspace/BuffHead/Setup/SetupContainer.lua:187` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1068`, `/workspace_addons/BankArkel/BankArkel.lua:513`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:70`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.lua:342`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:431`, `/workspace_addons/BuffHead/Setup/SetupContainer.lua:187` |
 | Namespaces detected | ComboBoxAddMenuItem |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Combobox:Add, BankArkel: BankArkel.SetupCombos, BuffHead: BuffHead.Setup.AdvancedCompressionItemEffect.Initialize, BuffHead: BuffHead.Setup.AdvancedContainersItem.Initialize, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Initialize, BuffHead: BuffHead.Setup.Container.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 322 |
-| Global usage count | 322 |
+| Lua usage count | 319 |
+| Global usage count | 319 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxAddMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 21 addons.
+Observed as a window function across 19 addons.
 
 ## Parameters
 
@@ -100,10 +100,8 @@ Observed as a window function across 21 addons.
 - PotionBar
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyRoll
 - TurretRange
-- WarTriage
 - WoH-Reticle
 
 ## Examples

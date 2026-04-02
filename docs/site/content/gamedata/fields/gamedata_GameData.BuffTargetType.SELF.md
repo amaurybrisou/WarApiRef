@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, Enemy, LibGuard, RandomMount, Twister, WSCT, WarTriage |
-| Files seen in | `/workspace/BuffHead/Core.lua:178`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:503`, `/workspace/LatestAura-RoR/Twister.lua:11`, `/workspace/LibGuard/Source/LibGuard.lua:153`, `/workspace/RandomMount/RandomMountCore.lua:150`, `/workspace/WarTriage/WarTriage.lua:473`, `/workspace/wsct/wsct.lua:393` |
+| Addons seen in | BuffHead, Enemy, LibGuard, RandomMount, WSCT |
+| Files seen in | `/workspace_addons/BuffHead/Core.lua:178`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:503`, `/workspace_addons/LibGuard/Source/LibGuard.lua:153`, `/workspace_addons/RandomMount/RandomMountCore.lua:150`, `/workspace_addons/wsct/wsct.lua:393` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | BuffHead.RefreshPlayerBuffs, Enemy.UpdateEffects, LibGuard.UpdateEffect, RandomMount.CheckSquigArmor, Twister.local.getSelfBuffs, WSCT.PLAYER_EFFECTS_UPDATED |
+| Example locations | BuffHead.RefreshPlayerBuffs, Enemy.UpdateEffects, LibGuard.UpdateEffect, RandomMount.CheckSquigArmor, WSCT.PLAYER_EFFECTS_UPDATED, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed GameData field used by 7 addons through generated function calls, event pages, or lifecycle evidence.
+Observed GameData field used by 5 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
@@ -67,9 +67,7 @@ Observed GameData field used by 7 addons through generated function calls, event
 - Enemy
 - LibGuard
 - RandomMount
-- Twister
 - WSCT
-- WarTriage
 
 ## Related APIs
 
@@ -89,4 +87,4 @@ Observed GameData field used by 7 addons through generated function calls, event
 
 ## Notes
 
-- Observed in contexts: BuffHead.RefreshPlayerBuffs, Enemy.UpdateEffects, LibGuard.UpdateEffect, RandomMount.CheckSquigArmor, Twister.local.getSelfBuffs, WSCT.PLAYER_EFFECTS_UPDATED
+- Observed in contexts: BuffHead.RefreshPlayerBuffs, Enemy.UpdateEffects, LibGuard.UpdateEffect, RandomMount.CheckSquigArmor, WSCT.PLAYER_EFFECTS_UPDATED, lua_call

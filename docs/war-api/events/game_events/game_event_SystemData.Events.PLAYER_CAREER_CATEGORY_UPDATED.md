@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer |
-| Files seen in | `/workspace/advancedrenowntrainer/AdvancedRenownTraining.lua:498`, `/workspace/advancedrenowntrainer/AdvancedRenownTraining.lua:580` |
+| Files seen in | `/workspace_addons/advancedrenowntrainer/AdvancedRenownTraining.lua:498`, `/workspace_addons/advancedrenowntrainer/AdvancedRenownTraining.lua:580` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, AdvancedRenownTrainer: AdvancedRenownTraining.OnReload |

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CombatTextNames, Effigy, Enemy, Queue Queuer, Shinies, WSCT |
-| Files seen in | `/workspace/Effigy/Elements/EffigyLabel.lua:40`, `/workspace/Enemy/Code/Core/Utils.lua:684`, `/workspace/QueueQueuer/QueueQueuer.lua:377`, `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:656`, `/workspace/combattextnames/combattextnames.lua:150`, `/workspace/wsct/wsct.lua:596` |
+| Addons seen in | CombatTextNames, Effigy, Enemy, Shinies, WSCT |
+| Files seen in | `/workspace_addons/Effigy/Elements/EffigyLabel.lua:40`, `/workspace_addons/Enemy/Code/Core/Utils.lua:684`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:656`, `/workspace_addons/combattextnames/combattextnames.lua:150`, `/workspace_addons/wsct/wsct.lua:596` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | CombatTextNames: CombatTextNames.SetupText, Effigy: Effigy.local.wstringStartsWith, Effigy: wstringStartsWith, Enemy: Enemy.FormatNumber, Queue Queuer: QueueQueuer.CompareWStrings, Shinies: Criteria_BuildQuery |
+| Example locations | CombatTextNames: CombatTextNames.SetupText, Effigy: Effigy.local.wstringStartsWith, Effigy: wstringStartsWith, Enemy: Enemy.FormatNumber, Shinies: Criteria_BuildQuery, WSCT: WSCT.ShortenString |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,13 +62,13 @@ wstring.len(arg1)
 
 ## Description
 
-Observed as a global function across 6 addons.
+Observed as a global function across 5 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: Start, first, hitData.name |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: Start, hitData.name, maxItemLevel |
 
 ## Returns
 
@@ -83,7 +83,6 @@ Observed as a global function across 6 addons.
 - CombatTextNames
 - Effigy
 - Enemy
-- Queue Queuer
 - Shinies
 - WSCT
 
@@ -93,8 +92,8 @@ Observed as a global function across 6 addons.
 - Effigy: Effigy.local.wstringStartsWith -> wstring.len(Start)
 - Effigy: wstringStartsWith -> wstring.len(Start)
 - Enemy: Enemy.FormatNumber -> wstring.len(number_string)
-- Queue Queuer: QueueQueuer.CompareWStrings -> wstring.len(first)
-- Queue Queuer: QueueQueuer.CompareWStrings -> wstring.len(second)
+- Shinies: Criteria_BuildQuery -> wstring.len(minItemLevel)
+- Shinies: Criteria_BuildQuery -> wstring.len(maxItemLevel)
 
 ## Related APIs
 
@@ -103,7 +102,6 @@ Observed as a global function across 6 addons.
 ## Used With
 
 - [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
-- [wstring.find](global_wstring.find.md) (MEDIUM 63/100) - Global Function
 
 ## Triggered By
 

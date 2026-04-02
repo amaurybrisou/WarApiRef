@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/RoR_SoR/RoR_SoR.lua:178` |
+| Files seen in | `/workspace_addons/RoR_SoR/RoR_SoR.lua:178` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | RoR_SoR: RoR_SoR:RegisterSelfEvents |

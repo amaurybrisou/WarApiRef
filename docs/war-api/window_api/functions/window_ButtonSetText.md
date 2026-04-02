@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 40 addons
+- Seen in: 36 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, CM_ClosetGoblin |
-| Files seen in | `/workspace/Ace/LibGUI.lua:533`, `/workspace/AdvancedPetAssist/APAGui.lua:983`, `/workspace/AggroMeter/AggroMeter.lua:5`, `/workspace/Aura/Source/AuraShares.lua:68`, `/workspace/BankArkel/BankArkel.lua:242`, `/workspace/BankArkel/BankArkel.lua:350`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.lua:82`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.lua:142` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:533`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:983`, `/workspace_addons/AggroMeter/AggroMeter.lua:5`, `/workspace_addons/Aura/Source/AuraShares.lua:68`, `/workspace_addons/BankArkel/BankArkel.lua:242`, `/workspace_addons/BankArkel/BankArkel.lua:350`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.lua:82`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.lua:142` |
 | Namespaces detected | ButtonSetText |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Button:SetText, AdvancedPetAssist: APAGui.OnShown, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SetImportExportLabels, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SetLabels, AdvancedRenownTrainer: AdvancedRenownTraining.AnywhereShow, AdvancedRenownTrainer: AdvancedRenownTraining.OnHidden |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 353 |
-| Global usage count | 353 |
+| Lua usage count | 343 |
+| Global usage count | 343 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -102,7 +102,6 @@ Observed mutating button text or pressed state on existing controls.
 - Killer
 - LibWBToggler
 - MapMonster
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - Pocket Palette
 - PotionBar
@@ -113,13 +112,10 @@ Observed mutating button text or pressed state on existing controls.
 - RandomMount
 - RoR_SoR
 - Shinies
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
 - WSCT
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - followTheLeader

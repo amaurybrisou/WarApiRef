@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyChat |
-| Files seen in | `/workspace/TidyChat/TidyChat.lua:489` |
+| Files seen in | `/workspace_addons/TidyChat/TidyChat.lua:489` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | TidyChat: TidyChatCore.AddNewChannels |
@@ -72,7 +72,7 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -106,3 +106,4 @@ Observed as a global function across 1 addons.
 
 - Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

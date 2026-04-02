@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapPin |
-| Files seen in | `/workspace/MapPin/source/MapPin.xml:343`, `/workspace/MapPin/source/MapPin.xml:407` |
+| Files seen in | `/workspace_addons/MapPin/source/MapPin.xml:343`, `/workspace_addons/MapPin/source/MapPin.xml:407` |
 | Namespaces detected | OnSetMoving |
 | Source kinds | event_page, xml_handlers |
 | Example locations | MapPin: MapPinWBMarker.OnSetMoving, MapPin: MapPinWBMarker_NoBG.OnSetMoving |

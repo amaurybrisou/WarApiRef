@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, Effigy, Miracle Grow Remix |
-| Files seen in | `/workspace/BuffHead/Setup/SetupLayout.xml:132`, `/workspace/BuffHead/Setup/SetupLayout.xml:139`, `/workspace/BuffHead/Setup/SetupLayout.xml:226`, `/workspace/Effigy/Effigy.xml:62`, `/workspace/MGRemix/layout.xml:895` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupLayout.xml:132`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:139`, `/workspace_addons/BuffHead/Setup/SetupLayout.xml:226`, `/workspace_addons/Effigy/Effigy.xml:62`, `/workspace_addons/MGRemix/layout.xml:895` |
 | Namespaces detected | EA_FullResizeImage_TintableFrame |
 | Source kinds | xml_attributes |
 | Example locations | BuffHeadLayoutControlFrameWindowFrame, BuffHeadLayoutControlFrameWindowResizeFrame, BuffHeadLayoutFrameWindowFrame, FrameDefaultBack, MiracleGrow2LayoutTemplateHover |

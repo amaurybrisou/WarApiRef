@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | JunkDump |
-| Files seen in | `/workspace/JunkDump/JunkDump.lua:291` |
+| Files seen in | `/workspace_addons/JunkDump/JunkDump.lua:291` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | JunkDump: JunkDump.StartListeners |

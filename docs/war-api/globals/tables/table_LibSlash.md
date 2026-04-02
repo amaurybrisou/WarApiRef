@@ -27,14 +27,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, AutoBand, AutoChannel, AutoMark, BagOMatic, BuffHead, CM_ClosetGoblin |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:193`, `/workspace/Aura/Source/AuraAddon.lua:70`, `/workspace/AutoMark/Source/AutoMark.lua:33`, `/workspace/Autoband/AutoBand.lua:30`, `/workspace/BuffHead/Core.lua:79`, `/workspace/ClosetGoblin/ClosetGoblin.lua:83`, `/workspace/CraftValueTip/CraftValueTip.lua:33`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:219` |
+| Addons seen in | AdvancedPetAssist, Aura, AutoMark, BagOMatic, BuffHead, CM_ClosetGoblin, Crafting Info Tooltip, DAoCBuff |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:193`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/AutoMark/Source/AutoMark.lua:33`, `/workspace_addons/BuffHead/Core.lua:79`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:86`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:33`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.Initialize, Aura: AuraAddon.OnInitialize, AutoBand: AutoBand.init, AutoChannel: AutoChannel.Initialize, AutoMark: AutoMark.OnInitialize, BagOMatic: BagOMatic.init |
+| Example locations | AdvancedPetAssist: AdvancedPetAssist.Initialize, Aura: AuraAddon.OnInitialize, AutoMark: AutoMark.OnInitialize, BagOMatic: BagOMatic.init, BuffHead: BuffHead.local.RegisterLibs, BuffHead: RegisterLibs |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 107 |
+| Lua usage count | 86 |
 | Global usage count | 4 |
 | Local definition count | 2 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 56 addons.
+Observed shared global table or namespace surfaced in 46 addons.
 
 ## Functions
 
@@ -75,8 +75,6 @@ Observed shared global table or namespace surfaced in 56 addons.
 
 - AdvancedPetAssist
 - Aura
-- AutoBand
-- AutoChannel
 - AutoMark
 - BagOMatic
 - BuffHead
@@ -84,11 +82,9 @@ Observed shared global table or namespace surfaced in 56 addons.
 - Crafting Info Tooltip
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - Effigy
 - FastInteract
 - GCDsaver
-- GoldTracker
 - GuardLine
 - JunkDump
 - Killer
@@ -98,22 +94,17 @@ Observed shared global table or namespace surfaced in 56 addons.
 - LibWBToggler
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - NPC Item Sale Price
-- PeaceOut
 - PlanB
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
-- RRCount
 - RVMOD_Manager
 - RandomMount
-- RetAlert
 - RoR_SoR
 - Shinies
 - Swift Assist
@@ -124,7 +115,6 @@ Observed shared global table or namespace surfaced in 56 addons.
 - TurretRange
 - WSCT
 - WarBoard
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - followTheLeader
@@ -136,8 +126,8 @@ Observed shared global table or namespace surfaced in 56 addons.
 - Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("aura", AuraAddon.Slash)
 - Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("auraconfig", AuraAddon.Slash)
 - Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("showaura", AuraAddon.Slash)
-- AutoBand: AutoBand.init -> LibSlash.RegisterSlashCmd("autoband", function(msg)AutoBand.parse_cmd(msg)end)
-- AutoBand: AutoBand.init -> LibSlash.IsSlashCmdRegistered("ab")
+- AutoMark: AutoMark.OnInitialize -> LibSlash.RegisterSlashCmd("automark", AutoMark.OnSlashCommand)
+- BagOMatic: BagOMatic.init -> LibSlash.RegisterSlashCmd("bagomatic", function(msg)BagOMatic.parse_cmd(msg)end)
 
 ## Related APIs
 

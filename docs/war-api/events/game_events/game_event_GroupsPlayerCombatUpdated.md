@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Timer/Timer.lua:97` |
+| Files seen in | `/workspace_addons/Enemy/Code/Timer/Timer.lua:97` |
 | Namespaces detected | GroupsPlayerCombatUpdated |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Enemy: Enemy._TimerEnabledChanged |

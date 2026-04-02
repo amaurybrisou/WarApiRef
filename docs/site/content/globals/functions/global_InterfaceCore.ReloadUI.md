@@ -26,14 +26,14 @@
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, Enemy |
-| Files seen in | `/workspace/Effigy/EffigySlashCommands.lua:53`, `/workspace/Enemy/Code/Assist/Assist.lua:412`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:1497`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:1510`, `/workspace/Enemy/Code/Core/Main.lua:166`, `/workspace/Enemy/Code/GroupIcons/GroupIcons.lua:610`, `/workspace/Enemy/Code/Guard/Guard.lua:601`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:211` |
+| Files seen in | `/workspace_addons/Effigy/EffigySlashCommands.lua:53`, `/workspace_addons/Enemy/Code/Assist/Assist.lua:412`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:1497`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:1510`, `/workspace_addons/Enemy/Code/Core/Main.lua:166`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcons.lua:610`, `/workspace_addons/Enemy/Code/Guard/Guard.lua:601`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:211` |
 | Namespaces detected | InterfaceCore |
 | Source kinds | bindings, globals, lua_calls, xml_handlers |
 | Example locations | EA_UiDebugTools: DebugWindowReloadUi.OnLButtonUp, Effigy: Effigy.SlashHandler, Enemy: Enemy.AssistUI_ConfigDialog_OnReset, Enemy: Enemy.CombatLogResetSettings, Enemy: Enemy.CombatLogUI_ConfigDialog_OnReset, Enemy: Enemy.GroupIconsUI_ConfigDialog_OnReset |
@@ -78,11 +78,11 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

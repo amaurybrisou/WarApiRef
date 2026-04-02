@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 25 addons
+- Seen in: 22 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BuffHead, Crafting Info Tooltip, DAoCBuff, Effigy, Enemy, GCDsaver, Killer |
-| Files seen in | `/workspace/Ace/LibGUI.lua:756`, `/workspace/Ace/LibGUI.lua:826`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:701`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:711`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:835`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:845`, `/workspace/BuffHead/Setup/SetupDisplay.lua:102`, `/workspace/BuffHead/Setup/SetupEffectCache.lua:419` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:756`, `/workspace_addons/Ace/LibGUI.lua:826`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:701`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:711`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:835`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:845`, `/workspace_addons/BuffHead/Setup/SetupDisplay.lua:102`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.lua:419` |
 | Namespaces detected | ButtonGetPressedFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Checkbox:GetValue, Ace: LIBGUI_Optionbutton:GetValue, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 138 |
-| Global usage count | 138 |
+| Lua usage count | 132 |
+| Global usage count | 132 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ButtonGetPressedFlag(arg1)
 
 ## Description
 
-Observed as a window function across 25 addons.
+Observed as a window function across 22 addons.
 
 ## Parameters
 
@@ -94,17 +94,14 @@ Observed as a window function across 25 addons.
 - LibGroup
 - LibWBToggler
 - MapMonster
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - PotionBar
 - Shinies
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
 - WSCT
-- WarTriage
 - WoH-Reticle
 - nRarity
 - wbLeadHelper

@@ -36,7 +36,7 @@
 | Global usage count | 0 |
 | Local definition count | 2 |
 | Documentation references | 1 |
-| Initialization flow references | 197 |
+| Initialization flow references | 170 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | no |

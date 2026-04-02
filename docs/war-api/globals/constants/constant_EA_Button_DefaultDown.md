@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblin.xml:215` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:215` |
 | Namespaces detected | EA_Button_DefaultDown |
 | Source kinds | xml_attributes |
 | Example locations | ClosetGoblinActionBarPageSelectorDown |

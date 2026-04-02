@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, TortallDPSCore |
-| Files seen in | `/workspace/Aura/Source/AuraProfile.lua:171`, `/workspace/Aura/Source/AuraProfile.lua:23`, `/workspace/Aura/Source/AuraProfile.lua:85`, `/workspace/TortallDPSCore/TortallDPSCore.lua:211` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraProfile.lua:171`, `/workspace_addons/Aura/Source/AuraProfile.lua:23`, `/workspace_addons/Aura/Source/AuraProfile.lua:85`, `/workspace_addons/TortallDPSCore/TortallDPSCore.lua:211` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | AuraProfile.GetCurrentCharacter, AuraProfile.LoadCharacterSettings, AuraProfile.SaveCharacterSettings, TortallDPSCore.Initialize, lua_call |

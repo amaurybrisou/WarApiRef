@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedPetAssist, PetFixWindow, TurretRange, Effigy, LoyalPet, PetFixWindow, TurretRange |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/Effigy/States/EffigyStatePets.lua:5`, `/workspace/LoyalPet/LoyalPet.lua:134`, `/workspace/LoyalPet/LoyalPet.lua:203`, `/workspace/LoyalPet/LoyalPet.lua:371`, `/workspace/PetFixWindow/PetFixWindow.lua:3`, `/workspace/TurrentRange/Core.lua:74`, `/workspace/TurrentRange/Core.lua:95` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/Effigy/States/EffigyStatePets.lua:5`, `/workspace_addons/LoyalPet/LoyalPet.lua:134`, `/workspace_addons/LoyalPet/LoyalPet.lua:203`, `/workspace_addons/LoyalPet/LoyalPet.lua:371`, `/workspace_addons/PetFixWindow/PetFixWindow.lua:3`, `/workspace_addons/TurrentRange/Core.lua:74`, `/workspace_addons/TurrentRange/Core.lua:95` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedPetAssist.OnPetUpdated, Effigy.RegisterStateInfoForPets, LPET.Initialize, LPET.OnUpdate, LPET.Shutdown, PetFixWindow.PetFixes |

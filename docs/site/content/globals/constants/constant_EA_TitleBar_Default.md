@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, AutoBand, BankArkel, CM_ClosetGoblin, DAoCBuff, DaemonAssist |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:111`, `/workspace/Aura/Source/AuraConfig.xml:35`, `/workspace/Aura/Source/AuraSettings.xml:85`, `/workspace/Aura/Source/AuraShares.xml:160`, `/workspace/Aura/Source/AuraShares.xml:28`, `/workspace/Aura/Source/AuraTexture.xml:105`, `/workspace/Autoband/AutoBandWindow.xml:28`, `/workspace/Autoband/AutoBandWindowTemplate.xml:165` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BankArkel, CM_ClosetGoblin, DAoCBuff, DaemonAssist, EA_UiModWindow |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:111`, `/workspace_addons/Aura/Source/AuraConfig.xml:35`, `/workspace_addons/Aura/Source/AuraSettings.xml:85`, `/workspace_addons/Aura/Source/AuraShares.xml:160`, `/workspace_addons/Aura/Source/AuraShares.xml:28`, `/workspace_addons/Aura/Source/AuraTexture.xml:105`, `/workspace_addons/BankArkel/BankArkel.xml:32`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1242` |
 | Namespaces detected | EA_TitleBar_Default |
 | Source kinds | xml_attributes |
 | Example locations | APAOptionsTitle, AdvancedRenownTrainingExportWindowTitleBar, AdvancedRenownTrainingImportNameInputWindowTitleBar, AdvancedRenownTrainingImportWindowTitleBar, AdvancedRenownTrainingLinkWindowTitleBar, AdvancedRenownTrainingWindowTitleBar |
-| XML usage count | 73 |
-| XML attribute usage count | 73 |
+| XML usage count | 66 |
+| XML attribute usage count | 66 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,19 +57,17 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 33 addons.
+Observed engine XML template or inherited constant referenced by 27 addons.
 
 ## Seen In
 
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - BankArkel
 - CM_ClosetGoblin
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_UiModWindow
 - Enemy
 - FastInteract
@@ -77,18 +75,14 @@ Observed engine XML template or inherited constant referenced by 33 addons.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - ObjectInspector
-- PeaceOut
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
 - RVMOD_Manager
 - RandomMount
 - RoR_SoR
-- ThinkOutLoud
 - TidyChat
 - WSCT
 - WarBoard
@@ -108,14 +102,11 @@ Observed engine XML template or inherited constant referenced by 33 addons.
 - AuraSharesImportExportTitleBar
 - AuraSharesTitleBar
 - AuraTextureTitleBar
-- AutoBandWindowTemplateSaveTitleBar
-- AutoBandWindowTitleBar
 - ClosetGoblinCharacterWindowTitleBar
 - ClosetGoblinZoneWindowTitleBar
 - DAoCBuffMessageWindowTitleBar
 - DAoCBuff_SettingsTitleBar
 - DaemonAssistWindowTitleBar
-- DeepSleep_SettingsTitleBar
 - DyeWindowTitleBar
 - EA_Window_MacroTitleBar
 - EnemyChooseChannelDialogTitleBar
@@ -143,14 +134,11 @@ Observed engine XML template or inherited constant referenced by 33 addons.
 - MapMonster_PinTypeEditorWindowTitleBar
 - MapPinChooseIconDialogTitleBar
 - MapPin_SetupTitleBar
-- MegaphoneMainTitleBar
 - ObjectInspectorTitleBar
 - PPMainTitleBar
 - PackWinTitleBar
-- PeaceOutTitleBar
 - PotionBarAboutTitleBar
 - PotionBarTypeTemplateTitleBar
-- QueueQueuer_GUI_TitleBar
 - QuickTacticSwitchWindowTitleBar
 - QuickWarReportConfirmTitleBar
 - RVMOD_ManagerWindowTitleBar
@@ -158,7 +146,6 @@ Observed engine XML template or inherited constant referenced by 33 addons.
 - RoR_SoR_OffsetTitleBar
 - RoR_SoR_OpacityTitleBar
 - RoR_SoR_ScaleTitleBar
-- TOLSettingsMainWindowTitleBar
 - TidyChatCopyTitleBar
 - TidyChatLootRollTitleBar
 - UiModAdvancedWindowTitleBar

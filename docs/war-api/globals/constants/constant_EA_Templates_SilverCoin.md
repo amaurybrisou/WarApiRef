@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Source/ShiniesUITemplates.xml:90` |
+| Files seen in | `/workspace_addons/Shinies/Source/ShiniesUITemplates.xml:90` |
 | Namespaces detected | EA_Templates_SilverCoin |
 | Source kinds | xml_attributes |
 | Example locations | Shinies_SilverCoinImage |

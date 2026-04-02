@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | JunkDump |
-| Files seen in | `/workspace/JunkDump/JunkDump.lua:374` |
+| Files seen in | `/workspace_addons/JunkDump/JunkDump.lua:374` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | JunkDump.SellItem, lua_call |

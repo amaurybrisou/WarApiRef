@@ -28,13 +28,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AutoBand, BuffHead, Busted, Cheeseboard, Enemy, MapMonster, Pocket Palette |
-| Files seen in | `/workspace/Autoband/AutoBandWindowConfig.xml:95`, `/workspace/Autoband/AutoBandWindowTemplate.xml:46`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.xml:116`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.xml:138`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:182`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:215`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:380`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:402` |
+| Addons seen in | AdvancedRenownTrainer, BuffHead, Busted, Cheeseboard, Enemy, MapMonster, Pocket Palette, PotionBar |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.xml:116`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.xml:138`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:182`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:215`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:380`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:402`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:52`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:646` |
 | Namespaces detected | EA_ComboBox_DefaultResizable |
 | Source kinds | flows, xml_attributes |
-| Example locations | AdvancedRenownTrainingPresetsWindowLoadComboBox, AutoBandWindowConfigComboBox, AutoBandWindowTemplateComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsBuffsComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsDebuffsComboBox |
-| XML usage count | 96 |
-| XML attribute usage count | 96 |
+| Example locations | AdvancedRenownTrainingPresetsWindowLoadComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsBuffsComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsDebuffsComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementLayerLayerComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementLayoutLayoutComboBox |
+| XML usage count | 87 |
+| XML attribute usage count | 87 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -59,12 +59,11 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 14 addons.
+Observed engine XML template or inherited constant referenced by 12 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
-- AutoBand
 - BuffHead
 - Busted
 - Cheeseboard
@@ -73,7 +72,6 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 - Pocket Palette
 - PotionBar
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TurretRange
 - wbLeadHelper
@@ -81,8 +79,6 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 ## Used By
 
 - AdvancedRenownTrainingPresetsWindowLoadComboBox
-- AutoBandWindowConfigComboBox
-- AutoBandWindowTemplateComboBox
 - BuffHeadSetupAdvancedContainersItemPropertiesWindowElementComboBox
 - BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsBuffsComboBox
 - BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsDebuffsComboBox
@@ -145,13 +141,6 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 - TChatTabTextEntryTemplateRelativeToCombo
 - TChatTabWindowsGroupTemplateScrollbarPositionCombo
 - TChatTabWindowsTemplateSelectWindowCombo
-- TOLSettingsWindowEventComboBox
-- TOLSettingsWindowPhraseComboBox
-- TOLSettingsWindowPhraseEditWindowPhraseChannelComboBox
-- TOLSettingsWindowPhraseEditWindowPhraseSayselfComboBox
-- TOLSettingsWindowSkillComboBox
-- TOLSettingsWindowSkillEditWindowSkillIsUrgentComboBox
-- TOLSettingsWindowSkillEditWindowSkillSpeakChanceComboBox
 - TexturedButtonsSetupActionbarWindowBarComboBox
 - TexturedButtonsSetupAdvancedTexturesWindowCustomButtonComboBox
 - TexturedButtonsSetupAdvancedTexturesWindowCustomTextureComboBox

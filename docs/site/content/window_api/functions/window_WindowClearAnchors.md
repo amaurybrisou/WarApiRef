@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 32 addons
+- Seen in: 31 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AnywhereTrainerAdditions, Aura, AutoMark, BankArkel, BuffHead, CombatTextNames |
-| Files seen in | `/workspace/Ace/LibGUI.lua:152`, `/workspace/AdvancedPetAssist/APAGui.lua:552`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:18`, `/workspace/Aura/Source/Aura.lua:505`, `/workspace/Aura/Source/Aura.lua:534`, `/workspace/Aura/Source/AuraTexture.lua:41`, `/workspace/AutoMark/Source/AutoMark.lua:124`, `/workspace/BankArkel/BankArkel.lua:172` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:152`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:552`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:18`, `/workspace_addons/Aura/Source/Aura.lua:505`, `/workspace_addons/Aura/Source/Aura.lua:534`, `/workspace_addons/Aura/Source/AuraTexture.lua:41`, `/workspace_addons/AutoMark/Source/AutoMark.lua:124`, `/workspace_addons/BankArkel/BankArkel.lua:172` |
 | Namespaces detected | WindowClearAnchors |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:ClearAnchors, AdvancedPetAssist: AdvancedPetAssist.local.AnchorInContent, AdvancedPetAssist: AnchorInContent, AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize, Aura: Aura:UpdateTimerWindow, Aura: Aura:UpdateWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 186 |
-| Global usage count | 186 |
+| Lua usage count | 185 |
+| Global usage count | 185 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -75,7 +75,7 @@ Observed resetting a window layout before applying new runtime anchors.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -111,7 +111,6 @@ Observed resetting a window layout before applying new runtime anchors.
 - TidyChat
 - TurretRange
 - WSCT
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - wbLeadHelper
@@ -143,6 +142,7 @@ Observed resetting a window layout before applying new runtime anchors.
 - [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.UnregisterWindow](window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.IsSlashCmdRegistered](../../globals/functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function

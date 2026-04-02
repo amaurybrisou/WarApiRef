@@ -28,18 +28,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoBand, CM_ClosetGoblin, CMap, EA_UiDebugTools, Queue Queuer, bigger_MacroWindow |
-| Files seen in | `/workspace/Autoband/AutoBandWindowConfig.xml:21`, `/workspace/Autoband/AutoBandWindowTemplate.xml:22`, `/workspace/Autoband/AutoBandWindowTools.xml:21`, `/workspace/ClosetGoblin/ClosetGoblin.xml:1228`, `/workspace/ClosetGoblin/ClosetGoblin.xml:264`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:168`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:40`, `/workspace/QueueQueuer/QueueQueuer_GUI_TabAbout.xml:40` |
+| Addons seen in | CM_ClosetGoblin, CMap, EA_UiDebugTools, bigger_MacroWindow |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1228`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:264`, `/workspace_addons/bigger_macrowindow/Source/MacroWindow.xml:358`, `/workspace_addons/cmap/CMap.xml:40`, `/workspace_addons/cmap/CMap.xml:430`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:30` |
 | Namespaces detected | OnShutdown |
 | Source kinds | event_page, flows, xml_handlers |
-| Example locations | AutoBand: AutoBandWindowConfig.OnShutdown, AutoBand: AutoBandWindowTemplate.OnShutdown, AutoBand: AutoBandWindowTools.OnShutdown, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnShutdown, CM_ClosetGoblin: ClosetGoblinZoneWindow.OnShutdown, CMap: CMapWindow.OnShutdown |
-| XML usage count | 17 |
-| XML attribute usage count | 17 |
+| Example locations | CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnShutdown, CM_ClosetGoblin: ClosetGoblinZoneWindow.OnShutdown, CMap: CMapWindow.OnShutdown, CMap: CMapWindowPinFilterMenu.OnShutdown, EA_UiDebugTools: DebugWindow.OnShutdown, bigger_MacroWindow: EA_Window_Macro.OnShutdown |
+| XML usage count | 6 |
+| XML attribute usage count | 6 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 16 |
+| Initialization flow references | 11 |
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 6 addons.
+Observed as an engine-supplied UI event hook used by 4 addons.
 
 ## Handler Pattern
 
@@ -71,41 +71,28 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Seen In
 
-- AutoBand
 - CM_ClosetGoblin
 - CMap
 - EA_UiDebugTools
-- Queue Queuer
 - bigger_MacroWindow
 
 ## Registrars And Handlers
 
-- AutoBandWindowConfig.Shutdown
-- AutoBandWindowTemplate.Shutdown
-- AutoBandWindowTools.Shutdown
 - CMapWindow.Shutdown
 - ClosetGoblinCharacterWindow.OnShutdown
 - ClosetGoblinZoneWindow.OnShutdown
 - DebugWindow.Shutdown
 - EA_Window_ContextMenu.Shutdown
 - EA_Window_Macro.Shutdown
-- QueueQueuer_GUI.OnShutdown
-- QueueQueuer_GUI_MapButtons.OnShutdown
-- QueueQueuer_GUI_TabAbout.OnShutdown
-- QueueQueuer_GUI_TabHelp.OnShutdown
-- QueueQueuer_GUI_TabTier1.OnShutdown
-- QueueQueuer_GUI_TabTier2.OnShutdown
-- QueueQueuer_GUI_TabTier3.OnShutdown
-- QueueQueuer_GUI_TabTier4.OnShutdown
 
 ## Examples
 
-- AutoBand: AutoBandWindowConfig -> AutoBandWindowConfig.OnShutdown -> AutoBandWindowConfig.Shutdown
-- AutoBand: AutoBandWindowTemplate -> AutoBandWindowTemplate.OnShutdown -> AutoBandWindowTemplate.Shutdown
-- AutoBand: AutoBandWindowTools -> AutoBandWindowTools.OnShutdown -> AutoBandWindowTools.Shutdown
 - CM_ClosetGoblin: ClosetGoblinCharacterWindow -> ClosetGoblinCharacterWindow.OnShutdown -> ClosetGoblinCharacterWindow.OnShutdown
 - CM_ClosetGoblin: ClosetGoblinZoneWindow -> ClosetGoblinZoneWindow.OnShutdown -> ClosetGoblinZoneWindow.OnShutdown
 - CMap: CMapWindow -> CMapWindow.OnShutdown -> CMapWindow.Shutdown
+- CMap: CMapWindowPinFilterMenu -> CMapWindowPinFilterMenu.OnShutdown -> EA_Window_ContextMenu.Shutdown
+- EA_UiDebugTools: DebugWindow -> DebugWindow.OnShutdown -> DebugWindow.Shutdown
+- bigger_MacroWindow: EA_Window_Macro -> EA_Window_Macro.OnShutdown -> EA_Window_Macro.Shutdown
 
 ## Related APIs
 

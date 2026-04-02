@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblin.xml:288` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:288` |
 | Namespaces detected | EA_Default_CharacterImage |
 | Source kinds | xml_attributes |
 | Example locations | ClosetGoblinCharacterWindowCornerImage |

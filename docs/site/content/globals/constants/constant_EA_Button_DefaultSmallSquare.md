@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Killer, WarBoard |
-| Files seen in | `/workspace/Killer/Killer.xml:72`, `/workspace/WarBoard/WarBoard.xml:116`, `/workspace/WarBoard/WarBoard.xml:139`, `/workspace/WarBoard/WarBoard.xml:162`, `/workspace/WarBoard/WarBoard.xml:93` |
+| Files seen in | `/workspace_addons/Killer/Killer.xml:72`, `/workspace_addons/WarBoard/WarBoard.xml:116`, `/workspace_addons/WarBoard/WarBoard.xml:139`, `/workspace_addons/WarBoard/WarBoard.xml:162`, `/workspace_addons/WarBoard/WarBoard.xml:93` |
 | Namespaces detected | EA_Button_DefaultSmallSquare |
 | Source kinds | xml_attributes |
 | Example locations | BottomBoardLayoutModeButton, BottomBoardOptionsButton, KillerWindowSettingsButton, WarBoardLayoutModeButton, WarBoardOptionsButton |

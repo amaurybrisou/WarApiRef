@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | nRarity |
-| Files seen in | `/workspace/nRarity/source/containers/InteractionStore.lua:41` |
+| Files seen in | `/workspace_addons/nRarity/source/containers/InteractionStore.lua:41` |
 | Namespaces detected | EA_Window_InteractionStore |
 | Source kinds | globals, lua_calls |
 | Example locations | nRarity: InteractionStore_EA_Window_InteractionStore_OnItemLButtonDown |
@@ -73,11 +73,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

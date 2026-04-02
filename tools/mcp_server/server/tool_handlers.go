@@ -9,13 +9,20 @@ import (
 )
 
 func (a *App) HandleToolCall(name string, args json.RawMessage) (interface{}, *model.APIError) {
-	store, storeErr := a.storeReady()
-	if storeErr != nil {
-		return nil, storeErr
-	}
 	decoded, verr := a.validator.decodeAndValidate(name, args)
 	if verr != nil {
 		return nil, verr
+	}
+	if name == "ingest_observation" {
+		return a.ingestObservation(decoded.(schema.IngestObservationRequest)), nil
+	}
+	if name == "ingest_observation_batch" {
+		return a.ingestObservationBatch(decoded.(schema.IngestObservationBatchRequest)), nil
+	}
+
+	store, storeErr := a.storeReady()
+	if storeErr != nil {
+		return nil, storeErr
 	}
 	switch name {
 	case "lookup_symbol":
@@ -36,6 +43,10 @@ func (a *App) HandleToolCall(name string, args json.RawMessage) (interface{}, *m
 		return toolops.ExplainSymbolUsage(store, decoded.(schema.ExplainSymbolUsageRequest)), nil
 	case "scaffold_addon_snippet":
 		return toolops.ScaffoldAddonSnippet(store, decoded.(schema.ScaffoldAddonSnippetRequest)), nil
+	case "ingest_observation":
+		return a.ingestObservation(decoded.(schema.IngestObservationRequest)), nil
+	case "ingest_observation_batch":
+		return a.ingestObservationBatch(decoded.(schema.IngestObservationBatchRequest)), nil
 	default:
 		return nil, &model.APIError{ErrorCode: "unknown_tool", ErrorMessage: "unknown tool"}
 	}

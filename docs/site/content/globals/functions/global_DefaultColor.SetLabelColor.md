@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead |
-| Files seen in | `/workspace/BuffHead/Setup/LayoutFrame.lua:47` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/LayoutFrame.lua:47` |
 | Namespaces detected | DefaultColor |
 | Source kinds | globals, lua_calls |
 | Example locations | BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor |
@@ -71,7 +71,7 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

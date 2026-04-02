@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin, CM_ClosetGoblin, Enemy, Miracle Grow Remix, Pocket Palette, PotionBar, Shinies, Enemy, Miracle Grow Remix, Pocket Palette, PotionBar |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblin.lua:118`, `/workspace/ClosetGoblin/ClosetGoblin.lua:70`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace/MGRemix/MGRemix.lua:195`, `/workspace/PocketPalette/PocketPalette.lua:105`, `/workspace/PotionBar/source/Main.lua:189`, `/workspace/PotionBar/source/Main.lua:292` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:121`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace_addons/MGRemix/MGRemix.lua:195`, `/workspace_addons/PocketPalette/PocketPalette.lua:105`, `/workspace_addons/PotionBar/source/Main.lua:189`, `/workspace_addons/PotionBar/source/Main.lua:292` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | ClosetGoblin.OnInitialize, ClosetGoblin.OnInventorySlotUpdated, ClosetGoblin.OnShutdown, Enemy.TalismanAlerter_Update, Enemy._TalismanAlerterEnabledChanged, MiracleGrow2.Initialize |
@@ -75,12 +75,20 @@ Observed SystemData field used by 6 addons through generated function calls, eve
 
 ## Related APIs
 
+- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 100/100) - Window Function
 - [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
 
 ## Used With
 
-- none
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
+- [SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED](systemdata_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_RENOWN_RANK_UPDATED](systemdata_SystemData.Events.PLAYER_RENOWN_RANK_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 100/100) - Window Function
+- [WindowGetScale](../../window_api/functions/window_WindowGetScale.md) (HIGH 100/100) - Window Function
+- [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
+- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By
 

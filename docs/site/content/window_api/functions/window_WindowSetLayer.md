@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 17 addons
+- Seen in: 15 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BankArkel, BuffHead, Effigy, Enemy, GCDsaver, LibWBToggler, PotionBar |
-| Files seen in | `/workspace/Ace/LibGUI.lua:178`, `/workspace/BankArkel/BankArkel.lua:95`, `/workspace/BuffHead/Container.lua:417`, `/workspace/BuffHead/EffectFrame.lua:36`, `/workspace/BuffHead/EffectFrame.lua:52`, `/workspace/BuffHead/Setup/SelectColor.lua:27`, `/workspace/BuffHead/Setup/SelectTexture.lua:59`, `/workspace/Effigy/Elements/EffigyBar.lua:135` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:178`, `/workspace_addons/BankArkel/BankArkel.lua:95`, `/workspace_addons/BuffHead/Container.lua:417`, `/workspace_addons/BuffHead/EffectFrame.lua:36`, `/workspace_addons/BuffHead/EffectFrame.lua:52`, `/workspace_addons/BuffHead/Setup/SelectColor.lua:27`, `/workspace_addons/BuffHead/Setup/SelectTexture.lua:59`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:135` |
 | Namespaces detected | WindowSetLayer |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Layer, BankArkel: BankArkel.Init, BuffHead: BuffHead.Setup.SelectColor.Show, BuffHead: BuffHead.Setup.SelectTexture.Show, BuffHead: BuffHead.local.SetLayer, BuffHead: BuffHead.local.SetupCoreFrame |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 47 |
-| Global usage count | 47 |
+| Lua usage count | 44 |
+| Global usage count | 44 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,7 +76,7 @@ Observed mutating runtime window state or presentation.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -93,12 +93,10 @@ Observed mutating runtime window state or presentation.
 - LibWBToggler
 - PotionBar
 - RVAPI_ColorDialog
-- RetAlert
 - Shinies
 - TexturedButtons
 - TidyChat
 - TidyRoll
-- WarTriage
 - WoH-Reticle
 - nRarity
 

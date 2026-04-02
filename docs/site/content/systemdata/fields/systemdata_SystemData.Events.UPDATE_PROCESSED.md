@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 17 addons
+- Seen in: 14 addons
 
 ## Confidence Assessment
 
@@ -25,24 +25,24 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Ace, Aura, BuffHead, DAoCBuff, Enemy, GCDsaver, LibWBToggler, LoyalPet, PeaceOut, RetAlert, Shinies, Swift Assist, TexturedButtons, TimeInQueue, TortallDPSCore, WarTriage, WoH-Reticle, Aura, BuffHead, DAoCBuff, Enemy, LibWBToggler, LoyalPet |
-| Files seen in | `/workspace/Ace/AceAddon-3.0.lua:591`, `/workspace/Aura/Source/TargetInfoFix.lua:54`, `/workspace/BuffHead/Setup/ContainerDemo.lua:197`, `/workspace/BuffHead/Setup/ContainerDemo.lua:223`, `/workspace/BuffHead/Setup/LayoutDemo.lua:147`, `/workspace/BuffHead/Setup/LayoutDemo.lua:166`, `/workspace/BuffHead/Setup/SetupEffectCache.lua:373`, `/workspace/BuffHead/Setup/SetupEffectCache.lua:386` |
+| Addons seen in | Ace, Ace, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, GCDsaver, LibWBToggler, LoyalPet, Shinies, Swift Assist, TexturedButtons, TortallDPSCore, WoH-Reticle, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, LibWBToggler |
+| Files seen in | `/workspace_addons/Ace/AceAddon-3.0.lua:591`, `/workspace_addons/Aura/Source/TargetInfoFix.lua:54`, `/workspace_addons/BuffHead/Setup/ContainerDemo.lua:197`, `/workspace_addons/BuffHead/Setup/ContainerDemo.lua:223`, `/workspace_addons/BuffHead/Setup/LayoutDemo.lua:147`, `/workspace_addons/BuffHead/Setup/LayoutDemo.lua:166`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.lua:373`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.lua:386` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AceAddon_OnUpdate_DONOTTOUCH, ActionBarsUpdated, BuffHead.Setup.ContainerDemo.Disable, BuffHead.Setup.ContainerDemo.Enable, BuffHead.Setup.ContainerDemo.OnUpdate, BuffHead.Setup.Demo.Disable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 48 |
-| Global usage count | 48 |
+| Lua usage count | 41 |
+| Global usage count | 41 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 12 |
+| Initialization flow references | 9 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,26 +62,23 @@
 
 ## Description
 
-Observed SystemData field used by 17 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 14 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - Ace
-- Ace, Aura, BuffHead, DAoCBuff, Enemy, GCDsaver, LibWBToggler, LoyalPet, PeaceOut, RetAlert, Shinies, Swift Assist, TexturedButtons, TimeInQueue, TortallDPSCore, WarTriage, WoH-Reticle
+- Ace, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, GCDsaver, LibWBToggler, LoyalPet, Shinies, Swift Assist, TexturedButtons, TortallDPSCore, WoH-Reticle
 - Aura
 - BuffHead
+- CM_ClosetGoblin
 - DAoCBuff
 - Enemy
 - LibWBToggler
 - LoyalPet
-- PeaceOut
-- RetAlert
 - Shinies
 - Swift Assist
 - TexturedButtons
-- TimeInQueue
 - TortallDPSCore
-- WarTriage
 - WoH-Reticle
 
 ## Related APIs

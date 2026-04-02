@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Swift Assist |
-| Files seen in | `/workspace/swift-assist/SwiftAssist.lua:435` |
+| Files seen in | `/workspace_addons/swift-assist/SwiftAssist.lua:435` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Swift Assist: SwiftAssist.Initialize |

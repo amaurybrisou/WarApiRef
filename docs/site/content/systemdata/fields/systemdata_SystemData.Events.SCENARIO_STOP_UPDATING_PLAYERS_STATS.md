@@ -22,14 +22,14 @@
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:519` |
+| Files seen in | `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:519` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Enemy.ScenarioInfoCheckBroadcast, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnHidden, Enemy._ScenarioInfoEnabledChanged, SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS, event_page, event_registration |

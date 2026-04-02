@@ -63,6 +63,33 @@
   - AdvancedPetAssist: APAComboDebug.OnSelChanged -> APAGui.OnComboChanged
   - AdvancedPetAssist: APAComboEnabled.OnSelChanged -> APAGui.OnComboChanged
 
+## XML runtime caveats
+
+- Confidence: MEDIUM
+
+- Description: Implementation-validated findings show that XML input and scroll layout behavior can depend on ancestor state and on outer-window sizing, even when child nodes appear correctly configured.
+
+- Evidence:
+
+- WhoHealedMe: a child `OnLButtonUp` target remained inert until the parent or template input chain was made input-enabled.
+  - guidance: validate ancestor `handleinput` state across the clickable chain, not only on the child node.
+  - caveat: treat this as a reusable runtime warning, not a guaranteed engine contract.
+  - WhoHealedMe: nested scroll content dimensions initially under-reported usable space during early layout.
+  - guidance: compute size from the outer parent first, then resize child content and call `ScrollWindowUpdateScrollRect`.
+
+## XML list binding pattern
+
+- Confidence: MEDIUM
+
+- Description: ListBox rows are commonly bound through ListData-backed Lua tables, with ListColumns supplying text fields and Lua population callbacks handling extra row setup such as icons or reordered display.
+
+- Evidence:
+
+- QuickTacticSwitch: `ListData table="QTS.listDisplayData" populationfunction="QTS.PopulateDisplay"` binds a ListBox to Lua-backed row data.
+  - QuickTacticSwitch: `ListColumns` binds `Name` and `Enemy`, while `QTS.PopulateDisplay` uses `QuickTacticSwitchWindowList.PopulatorIndices` to populate row icons.
+  - QuickTacticSwitch: `ListBoxSetDisplayOrder` and `ListBoxGetDataIndex` are used to manage visible ordering and row-to-data mapping.
+  - AggroMeter: `ListData table="AggroMeter.Listdata" populationfunction=""` suggests column-only text binding works without a custom population callback.
+
 ## State management pattern
 
 - Confidence: MEDIUM
@@ -74,8 +101,8 @@
 - AdvancedPetAssist: APA_Settings
   - AdvancedRenownTrainer: AdvancedRenownTraining.Presets
   - AggroMeter: AggroMeter.Settings
-  - AutoBand: AutoBand.saved
   - BagOMatic: BagOMatic.saved
   - BankArkel: BankArkel.db
   - BuffHead: BuffHead.Settings
   - CM_ClosetGoblin: ClosetGoblin.setData
+  - CM_ClosetGoblin: ClosetGoblin.settings

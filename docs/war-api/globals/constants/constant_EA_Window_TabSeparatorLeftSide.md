@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AggroMeter, Aura, AutoBand, LoyalPet, Queue Queuer, RVMOD_Manager, WSCT |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:116`, `/workspace/Aura/Source/AuraConfig.xml:380`, `/workspace/Autoband/AutoBandWindow.xml:53`, `/workspace/LoyalPet/gui/lpet_gui.xml:179`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:210`, `/workspace/RVMOD_Manager/RVMOD_ManagerWindow.xml:135`, `/workspace/WarBoard/WarBoardOptions.xml:161`, `/workspace/advancedrenowntrainer/AdvancedRenownTrainingWindow.xml:53` |
+| Addons seen in | AdvancedRenownTrainer, AggroMeter, Aura, LoyalPet, RVMOD_Manager, WSCT, WarBoard, wbLeadHelper |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:116`, `/workspace_addons/Aura/Source/AuraConfig.xml:380`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:179`, `/workspace_addons/RVMOD_Manager/RVMOD_ManagerWindow.xml:135`, `/workspace_addons/WarBoard/WarBoardOptions.xml:161`, `/workspace_addons/advancedrenowntrainer/AdvancedRenownTrainingWindow.xml:53`, `/workspace_addons/wbLeadHelper/config/wbLeadHelperConfigWindow.xml:43`, `/workspace_addons/wsct/wsct_options/wsct_options.xml:284` |
 | Namespaces detected | EA_Window_TabSeparatorLeftSide |
 | Source kinds | xml_attributes |
-| Example locations | AdvancedRenownTrainingWindowTabsTabSeparatorLeft, AggroMeterGrayWindowTabSeparatorLeft, AuraConfigTabsSeparatorLeft, AutoBandWindowTabsSeparatorLeft, LPETOptionsTabTabSeparatorLeft, QueueQueuer_GUI_TabsSeparatorLeft |
-| XML usage count | 10 |
-| XML attribute usage count | 10 |
+| Example locations | AdvancedRenownTrainingWindowTabsTabSeparatorLeft, AggroMeterGrayWindowTabSeparatorLeft, AuraConfigTabsSeparatorLeft, LPETOptionsTabTabSeparatorLeft, RVMOD_ManagerWindowTabSeparatorLeft, WSCTOptionsTabTabSeparatorLeft |
+| XML usage count | 8 |
+| XML attribute usage count | 8 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,16 +57,14 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 10 addons.
+Observed engine XML template or inherited constant referenced by 8 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - AggroMeter
 - Aura
-- AutoBand
 - LoyalPet
-- Queue Queuer
 - RVMOD_Manager
 - WSCT
 - WarBoard
@@ -77,9 +75,7 @@ Observed engine XML template or inherited constant referenced by 10 addons.
 - AdvancedRenownTrainingWindowTabsTabSeparatorLeft
 - AggroMeterGrayWindowTabSeparatorLeft
 - AuraConfigTabsSeparatorLeft
-- AutoBandWindowTabsSeparatorLeft
 - LPETOptionsTabTabSeparatorLeft
-- QueueQueuer_GUI_TabsSeparatorLeft
 - RVMOD_ManagerWindowTabSeparatorLeft
 - WSCTOptionsTabTabSeparatorLeft
 - WarBoardOptionsTabsSeparatorLeft

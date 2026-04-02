@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, DaemonAssist, LoyalPet |
-| Files seen in | `/workspace/AdvancedPetAssist/APACommands.lua:188`, `/workspace/DaemonAssist/DAAbilities.lua:64`, `/workspace/LoyalPet/LoyalPet.lua:1420`, `/workspace/LoyalPet/LoyalPet.lua:1453` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APACommands.lua:188`, `/workspace_addons/DaemonAssist/DAAbilities.lua:64`, `/workspace_addons/LoyalPet/LoyalPet.lua:1420`, `/workspace_addons/LoyalPet/LoyalPet.lua:1453` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | DaemonAssist.TryPetAbilities, LPET.GetPetAbilitiesById, LPET.GetPetAbilitiesByName, abilities, lua_call |

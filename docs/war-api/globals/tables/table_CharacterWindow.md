@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer, BankWindowFix, CM_ClosetGoblin, Effigy |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:695`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:700`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:725`, `/workspace/Effigy/States/EffigyStatePlayer.lua:193`, `/workspace/Effigy/States/EffigyStatePlayer.lua:216` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:695`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:700`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:725`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:193`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:216` |
 | Namespaces detected | CharacterWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | BankWindowFix: BankWindowFix.BagEquipmentRButtonUp, CM_ClosetGoblin: ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly, CM_ClosetGoblin: ClosetGoblinCharacterWindow.ShowShowCloakOnly, CM_ClosetGoblin: ClosetGoblinCharacterWindow.ShowShowHelmOnly, Effigy: Effigy.UpdatePlayerArmor, Effigy: Effigy.UpdatePlayerToughness |

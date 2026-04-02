@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, MoraleCircle, WSCT |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:259`, `/workspace/AggroMeter/AggroMeter.xml:316`, `/workspace/AggroMeter/AggroMeter.xml:373`, `/workspace/MoraleCircle/MoraleCircle.xml:207`, `/workspace/MoraleCircle/MoraleCircle.xml:332`, `/workspace/MoraleCircle/MoraleCircle.xml:457`, `/workspace/MoraleCircle/MoraleCircle.xml:582`, `/workspace/wsct/wsct_options/wsct_options.xml:1151` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:259`, `/workspace_addons/AggroMeter/AggroMeter.xml:316`, `/workspace_addons/AggroMeter/AggroMeter.xml:373`, `/workspace_addons/MoraleCircle/MoraleCircle.xml:207`, `/workspace_addons/MoraleCircle/MoraleCircle.xml:332`, `/workspace_addons/MoraleCircle/MoraleCircle.xml:457`, `/workspace_addons/MoraleCircle/MoraleCircle.xml:582`, `/workspace_addons/wsct/wsct_options/wsct_options.xml:1151` |
 | Namespaces detected | EA_FullResizeImage_WhiteTransparent |
 | Source kinds | xml_attributes |
 | Example locations | AggroMeterWindow_AggroWindow2BorderCheck, AggroMeterWindow_AggroWindow4BorderCheck, AggroMeterWindow_AggroWindow6BorderCheck, MoraleSlidersCustomColorSwatch, MoraleSlidersEmptyCustomColorSwatch, MoraleSlidersFillCustomColorSwatch |

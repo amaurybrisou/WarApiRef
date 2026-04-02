@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DeepSleep, Enemy, LibGroup, LibGuard, WarTriage, WhoHealedMe, followTheLeader, wbLeadHelper |
-| Files seen in | `/workspace/DeepSleep/Modules.lua:99`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:281`, `/workspace/LibGroup/LibGroup.lua:538`, `/workspace/LibGuard/Source/LibGuard.lua:186`, `/workspace/WarTriage/WarTriage.lua:347`, `/workspace/WhoHealedMe/WHMCore.lua:197`, `/workspace/followTheLeader/followTheLeader.lua:209`, `/workspace/followTheLeader/followTheLeader.lua:262` |
+| Addons seen in | Enemy, LibGroup, LibGuard, WhoHealedMe, followTheLeader, wbLeadHelper |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:281`, `/workspace_addons/LibGroup/LibGroup.lua:538`, `/workspace_addons/LibGuard/Source/LibGuard.lua:186`, `/workspace_addons/WhoHealedMe/WHMCore.lua:201`, `/workspace_addons/followTheLeader/followTheLeader.lua:209`, `/workspace_addons/followTheLeader/followTheLeader.lua:262`, `/workspace_addons/wbLeadHelper/wbLeadHelper.lua:996` |
 | Namespaces detected | PartyUtils |
 | Source kinds | globals, lua_calls |
-| Example locations | DeepSleep: AddGroupMenuItems, DeepSleep: PlayerMenuWindow.AddGroupMenuItems, Enemy: Enemy._GroupsUpdate, LibGroup: GetPartyData, LibGroup: LibGroup.local.GetPartyData, LibGuard: LibGuard.GetIdFromName |
+| Example locations | Enemy: Enemy._GroupsUpdate, LibGroup: GetPartyData, LibGroup: LibGroup.local.GetPartyData, LibGuard: LibGuard.GetIdFromName, WhoHealedMe: WHMCore.IsHealerInPartyOrWarband, followTheLeader: followTheLeader.GetDynamicLeaderName |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -66,7 +66,7 @@ PartyUtils.GetPartyData()
 
 ## Description
 
-Observed as a global function across 8 addons.
+Observed as a global function across 6 addons.
 
 ## Parameters
 
@@ -75,31 +75,29 @@ Observed as a global function across 8 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
-- DeepSleep
 - Enemy
 - LibGroup
 - LibGuard
-- WarTriage
 - WhoHealedMe
 - followTheLeader
 - wbLeadHelper
 
 ## Examples
 
-- DeepSleep: AddGroupMenuItems -> PartyUtils.GetPartyData()
-- DeepSleep: PlayerMenuWindow.AddGroupMenuItems -> PartyUtils.GetPartyData()
 - Enemy: Enemy._GroupsUpdate -> PartyUtils.GetPartyData()
 - LibGroup: GetPartyData -> PartyUtils.GetPartyData()
 - LibGroup: LibGroup.local.GetPartyData -> PartyUtils.GetPartyData()
 - LibGuard: LibGuard.GetIdFromName -> PartyUtils.GetPartyData()
+- WhoHealedMe: WHMCore.IsHealerInPartyOrWarband -> PartyUtils.GetPartyData()
+- followTheLeader: followTheLeader.GetDynamicLeaderName -> PartyUtils.GetPartyData()
 
 ## Related APIs
 
@@ -110,7 +108,6 @@ Observed as a global function across 8 addons.
 ## Used With
 
 - [GameData.GetScenarioPlayerGroups](global_GameData.GetScenarioPlayerGroups.md) (HIGH 100/100) - Global Function
-- [GroupWindow](../tables/table_GroupWindow.md) (HIGH 100/100) - Global Table
 - [PartyUtils.GetWarbandData](global_PartyUtils.GetWarbandData.md) (HIGH 100/100) - Global Function
 - [PartyUtils.IsPartyActive](global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 
@@ -121,9 +118,11 @@ Observed as a global function across 8 addons.
 ## Affects
 
 - [GameData.GetScenarioPlayerGroups](global_GameData.GetScenarioPlayerGroups.md) (HIGH 100/100) - Global Function
-- [GroupWindow](../tables/table_GroupWindow.md) (HIGH 100/100) - Global Table
+- [GameData.Player.name](../../gamedata/fields/gamedata_GameData.Player.name.md) (HIGH 100/100) - GameData Field
 - [PartyUtils.GetWarbandData](global_PartyUtils.GetWarbandData.md) (HIGH 100/100) - Global Function
+- [PartyUtils.GetWarbandLeader](global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 18 addons
+- Seen in: 16 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, BuffHead, CM_ClosetGoblin, Effigy, Enemy, Killer, MapMonster, MapPin |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.lua:251`, `/workspace/AggroMeter/AggroMeter.lua:378`, `/workspace/BuffHead/Setup/LayoutControlFrame.lua:72`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.lua:130`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.lua:217`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.lua:439`, `/workspace/BuffHead/Setup/SetupEffectCache.lua:195`, `/workspace/BuffHead/Setup/SetupFilter.lua:154` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.lua:251`, `/workspace_addons/AggroMeter/AggroMeter.lua:378`, `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:72`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.lua:130`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.lua:217`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.lua:439`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.lua:195`, `/workspace_addons/BuffHead/Setup/SetupFilter.lua:154` |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
 | Example locations | AggroMeter: AggroMeter.OnTabRBU, AggroMeter: AggroMeter.PickedListMenu, BuffHead: BuffHead.Setup.AdvancedContainersItem.OnContainerRClick, BuffHead: BuffHead.Setup.EffectCache.CreateContextMenu, BuffHead: BuffHead.Setup.Filter.CreateContextMenu, BuffHead: BuffHead.Setup.LayoutControlFrame:CreateContextMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 194 |
-| Global usage count | 194 |
+| Lua usage count | 189 |
+| Global usage count | 189 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ EA_Window_ContextMenu.AddMenuItem(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a global function across 18 addons.
+Observed as a global function across 16 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_TO_LOCK), GetString(StringTables.Default.LABEL_TO_UNLOCK), GetStringFormat(StringTables.Default.TEXT_LEAVE_SCENARIO,{L "All Scenarios"}) |
+| arg1 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_TO_LOCK), GetString(StringTables.Default.LABEL_TO_UNLOCK), GetStringFromTable("HUDStrings",StringTables.HUD.LABEL_FLAG_PLAYER_RVR) |
 | arg2 | Observed as a function or method reference. | Observed values: AbilitiesWindow.ToggleShowing, AggroMeter.Close, AggroMeter.ToggeBar |
 | arg3 | Observed as a boolean toggle. | Observed values: (not GameData.Player.rvrZoneFlagged), (not IsWarBandActive()), (not PartyUtils.IsPartyActive()) |
 | arg4 | Observed as a boolean toggle. | Observed values: true |
@@ -95,13 +95,11 @@ Observed as a global function across 18 addons.
 - MapMonster
 - MapPin
 - Miracle Grow Remix
-- PeaceOut
 - PotionBar
 - RandomMount
 - RoR_SoR
 - Shinies
 - TidyChat
-- TidyQueue
 - TurretRange
 - WarBoard
 

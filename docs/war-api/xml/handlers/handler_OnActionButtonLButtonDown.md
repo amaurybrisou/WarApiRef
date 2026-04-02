@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankWindowFix |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.xml:10` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.xml:10` |
 | Namespaces detected | OnActionButtonLButtonDown |
 | Source kinds | bindings, xml_handlers |
 | Example locations | BankWindowFix: BankWindowSlotsFixed.OnActionButtonLButtonDown |

@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Assist/Assist.lua:7`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:63`, `/workspace/Enemy/Code/Guard/Guard.lua:6`, `/workspace/Enemy/Code/Intercom/Intercom.lua:4`, `/workspace/Enemy/Code/ScenarioAlerter/ScenarioAlerter.lua:4`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:21`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:7`, `/workspace/Enemy/Code/Timer/Timer.lua:7` |
+| Files seen in | `/workspace_addons/Enemy/Code/Assist/Assist.lua:7`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:63`, `/workspace_addons/Enemy/Code/Guard/Guard.lua:6`, `/workspace_addons/Enemy/Code/Intercom/Intercom.lua:4`, `/workspace_addons/Enemy/Code/ScenarioAlerter/ScenarioAlerter.lua:4`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:21`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:7`, `/workspace_addons/Enemy/Code/Timer/Timer.lua:7` |
 | Namespaces detected | ConfigDialogInitializeSections |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Enemy: Enemy.AssistInitialize, Enemy: Enemy.CombatLogInitialize, Enemy: Enemy.GuardInitialize, Enemy: Enemy.IntercomInitialize, Enemy: Enemy.ScenarioAlerterInitialize, Enemy: Enemy.ScenarioInfoInitialize |

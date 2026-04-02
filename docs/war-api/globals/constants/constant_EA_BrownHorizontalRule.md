@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | PotionBar, WSCT |
-| Files seen in | `/workspace/PotionBar/settings/Settings.xml:14`, `/workspace/wsct/wsct_options/wsct_options.xml:1051`, `/workspace/wsct/wsct_options/wsct_options.xml:118` |
+| Files seen in | `/workspace_addons/PotionBar/settings/Settings.xml:14`, `/workspace_addons/wsct/wsct_options/wsct_options.xml:1051`, `/workspace_addons/wsct/wsct_options/wsct_options.xml:118` |
 | Namespaces detected | EA_BrownHorizontalRule |
 | Source kinds | xml_attributes |
 | Example locations | PotionBarConfigHorizontalSeparator, WSCTEventSeperator, WSCTOptionsProfileWindowSeperator |

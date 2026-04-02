@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | LoyalPet |
-| Files seen in | `/workspace/LoyalPet/LoyalPet.lua:134` |
+| Files seen in | `/workspace_addons/LoyalPet/LoyalPet.lua:134` |
 | Namespaces detected | LPET |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | LoyalPet: LPET.Initialize |

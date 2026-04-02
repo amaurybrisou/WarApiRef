@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 68 addons
+- Seen in: 56 addons
 
 ## Confidence Assessment
 
@@ -24,15 +24,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoBand, AutoChannel, BagOMatic |
-| Files seen in | `/workspace/Ace/AceLocale-3.0.lua:57`, `/workspace/Ace/LibGUI.lua:1068`, `/workspace/Ace/LibGUI.lua:1124`, `/workspace/Ace/LibGUI.lua:426`, `/workspace/Ace/LibGUI.lua:533`, `/workspace/Ace/LibGUI.lua:656`, `/workspace/Ace/LibGUI.lua:711`, `/workspace/AdvancedPetAssist/APACommands.lua:207` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BagOMatic, BankArkel, BuffHead |
+| Files seen in | `/workspace_addons/Ace/AceLocale-3.0.lua:57`, `/workspace_addons/Ace/LibGUI.lua:1068`, `/workspace_addons/Ace/LibGUI.lua:1124`, `/workspace_addons/Ace/LibGUI.lua:426`, `/workspace_addons/Ace/LibGUI.lua:533`, `/workspace_addons/Ace/LibGUI.lua:656`, `/workspace_addons/Ace/LibGUI.lua:711`, `/workspace_addons/AdvancedPetAssist/APACommands.lua:207` |
 | Namespaces detected | towstring |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Button:SetText, Ace: LIBGUI_Combobox:Add, Ace: LIBGUI_Combobox:Select, Ace: LIBGUI_Label:SetText, Ace: LIBGUI_MultiTextbox:SetText, Ace: LIBGUI_Textbox:SetText |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1528 |
-| Global usage count | 1528 |
+| Lua usage count | 1468 |
+| Global usage count | 1468 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -61,7 +61,7 @@ towstring(arg1)
 
 ## Description
 
-Observed as a global function across 68 addons.
+Observed as a global function across 56 addons.
 
 ## Parameters
 
@@ -71,11 +71,11 @@ Observed as a global function across 68 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -84,8 +84,6 @@ Observed as a global function across 68 addons.
 - AdvancedRenownTrainer
 - AggroMeter
 - Aura
-- AutoBand
-- AutoChannel
 - BagOMatic
 - BankArkel
 - BuffHead
@@ -95,13 +93,11 @@ Observed as a global function across 68 addons.
 - Crafting Info Tooltip
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - Effigy
 - Enemy
 - GCDsaver
 - GetStats
-- GoldTracker
 - GuardLine
 - HealAll
 - JunkDump
@@ -113,36 +109,28 @@ Observed as a global function across 68 addons.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
 - NPC Item Sale Price
-- PeaceOut
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
-- RRCount
 - RVAPI_ColorDialog
 - RVMOD_Manager
 - RandomMount
-- RetAlert
 - RoR_SoR
-- ScenarioAlert
 - Shinies
 - Swift Assist
 - Targets
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
 - TortallDPSCore
 - TurretRange
 - WSCT
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - followTheLeader
@@ -198,7 +186,6 @@ Observed as a global function across 68 addons.
 - [EditBox](../../xml/element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
 - [GameData.ChatData.name](../../gamedata/fields/gamedata_GameData.ChatData.name.md) (HIGH 100/100) - GameData Field
 - [GameData.ChatData.text](../../gamedata/fields/gamedata_GameData.ChatData.text.md) (HIGH 100/100) - GameData Field
-- [GameData.Player.zone](../../gamedata/fields/gamedata_GameData.Player.zone.md) (HIGH 100/100) - GameData Field
 - [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
 - [GameData.Sound.QUEST_ABANDONED](../../gamedata/fields/gamedata_GameData.Sound.QUEST_ABANDONED.md) (HIGH 100/100) - GameData Field
 - [Icons.GetCareerIconIDFromCareerLine](global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
@@ -213,12 +200,12 @@ Observed as a global function across 68 addons.
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
 - [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
+- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
 - [OnTextChanged](../../xml/handlers/handler_OnTextChanged.md) (HIGH 100/100) - XML Handler
 - [OnTextChanged](../../events/window_events/window_event_OnTextChanged.md) (HIGH 100/100) - Window Event
 - [PartyUtils.GetWarbandLeader](global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
@@ -257,7 +244,6 @@ Observed as a global function across 68 addons.
 - [WindowStartAlphaAnimation](../../window_api/functions/window_WindowStartAlphaAnimation.md) (HIGH 100/100) - Window Function
 - [wstring.gsub](global_wstring.gsub.md) (HIGH 100/100) - Global Function
 - [wstring.match](global_wstring.match.md) (HIGH 100/100) - Global Function
-- [BroadcastEvent](global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 - [EA_Window_CurrentEvents.SetCurrentTier](global_EA_Window_CurrentEvents.SetCurrentTier.md) (HIGH 90/100) - Global Function
 - [WindowStartScaleAnimation](../../window_api/functions/window_WindowStartScaleAnimation.md) (HIGH 90/100) - Window Function
 - [AlertTextWindow.AddAlert](global_AlertTextWindow.AddAlert.md) (HIGH 88/100) - Global Function
@@ -268,8 +254,6 @@ Observed as a global function across 68 addons.
 - [DestroyWindow](global_DestroyWindow.md) (HIGH 75/100) - Global Function
 - [wstring.format](global_wstring.format.md) (HIGH 75/100) - Global Function
 - [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
-- [wstring.find](global_wstring.find.md) (MEDIUM 63/100) - Global Function
-- [wstring.reverse](global_wstring.reverse.md) (MEDIUM 45/100) - Global Function
 
 ## Triggered By
 
@@ -282,3 +266,4 @@ Observed as a global function across 68 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 30 addons
+- Seen in: 28 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, Aura, AutoMark, BuffHead, Busted, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace/Ace/LibGUI.lua:200`, `/workspace/Aura/Source/Aura.lua:505`, `/workspace/Aura/Source/AuraHelpers.lua:33`, `/workspace/Aura/Source/AuraHelpers.lua:55`, `/workspace/Aura/Source/AuraTooltip.lua:21`, `/workspace/AutoMark/Source/AutoMark.lua:124`, `/workspace/BuffHead/Setup/SelectColor.lua:15`, `/workspace/BuffHead/Setup/SetupLayout.lua:160` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:200`, `/workspace_addons/Aura/Source/Aura.lua:505`, `/workspace_addons/Aura/Source/AuraHelpers.lua:33`, `/workspace_addons/Aura/Source/AuraHelpers.lua:55`, `/workspace_addons/Aura/Source/AuraTooltip.lua:21`, `/workspace_addons/AutoMark/Source/AutoMark.lua:124`, `/workspace_addons/BuffHead/Setup/SelectColor.lua:15`, `/workspace_addons/BuffHead/Setup/SetupLayout.lua:160` |
 | Namespaces detected | WindowSetAlpha |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Alpha, Aura: Aura:UpdateTimerWindow, Aura: AuraHelpers.SetCircleImageTexture, Aura: AuraHelpers.SetDynamicImageTexture, Aura: AuraTooltip.OnInitialize, AutoMark: AutoMark.OnUpdate |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 165 |
-| Global usage count | 165 |
+| Lua usage count | 152 |
+| Global usage count | 152 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -103,7 +103,6 @@ Observed mutating runtime window state or presentation.
 - PotionBar
 - RVAPI_ColorDialog
 - RandomMount
-- RetAlert
 - RoR_SoR
 - Shinies
 - Targets
@@ -111,7 +110,6 @@ Observed mutating runtime window state or presentation.
 - TidyChat
 - TurretRange
 - WSCT
-- WarTriage
 - WoH-Reticle
 - wbLeadHelper
 

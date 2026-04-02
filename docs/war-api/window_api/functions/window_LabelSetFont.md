@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 18 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BuffHead, DAoCBuff, Effigy, Enemy, GCDsaver, Killer, LibWBToggler |
-| Files seen in | `/workspace/Ace/LibGUI.lua:444`, `/workspace/BuffHead/EffectFrame.lua:52`, `/workspace/BuffHead/Setup/SetupLayoutProperties.lua:223`, `/workspace/BuffHead/Setup/SetupLayoutProperties.lua:538`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:40`, `/workspace/Effigy/LibGUI.lua:444`, `/workspace/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/Enemy/Code/UnitFrames/UnitFramePart.lua:210` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:444`, `/workspace_addons/BuffHead/EffectFrame.lua:52`, `/workspace_addons/BuffHead/Setup/SetupLayoutProperties.lua:223`, `/workspace_addons/BuffHead/Setup/SetupLayoutProperties.lua:538`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:40`, `/workspace_addons/Effigy/LibGUI.lua:444`, `/workspace_addons/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFramePart.lua:210` |
 | Namespaces detected | LabelSetFont |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Label:Font, BuffHead: BuffHead.local.LoadFontSettings, BuffHead: BuffHead.local.SelectFont, BuffHead: BuffHeadEffectFrame:SetLayout, BuffHead: LoadFontSettings, BuffHead: SelectFont |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 51 |
-| Global usage count | 51 |
+| Lua usage count | 50 |
+| Global usage count | 50 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -101,7 +101,6 @@ Observed updating label text or label styling on existing controls.
 - TidyRoll
 - TurretRange
 - WSCT
-- WarTriage
 - WoH-Reticle
 
 ## Examples

@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankArkel, BankWindowFix, Killer, Shinies |
-| Files seen in | `/workspace/BankArkel/BankArkel.lua:371`, `/workspace/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace/Killer/KillerRenown.lua:108`, `/workspace/Killer/KillerRenown.lua:127`, `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:298` |
+| Files seen in | `/workspace_addons/BankArkel/BankArkel.lua:371`, `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace_addons/Killer/KillerRenown.lua:108`, `/workspace_addons/Killer/KillerRenown.lua:127`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:298` |
 | Namespaces detected | EA_Window_Backpack |
 | Source kinds | globals, lua_calls |
 | Example locations | BankArkel: BankArkel.UpdateData, BankWindowFix: BankWindowFix.BagEquipmentRButtonUp, Killer: Killer.CaptureInitialWarCrests, Killer: Killer.OnCurrencyUpdated, Shinies: _G.Shinies:NewModule.EA_Window_Backpack_EquipmentLButtonDown |
@@ -77,11 +77,11 @@ Observed as a global function across 4 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, AnywhereTrainer |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:243` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:243` |
 | Namespaces detected | EA_Window_InteractionRenownTraining |
 | Source kinds | globals, lua_calls |
 | Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickRenown |

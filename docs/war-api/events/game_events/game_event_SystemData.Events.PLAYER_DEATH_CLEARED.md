@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuff.lua:25` |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | DAoCBuff: DAoCBuff.Initialize |

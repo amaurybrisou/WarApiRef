@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:22` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Enemy.GroupsInitialize, Enemy.Groups_OnScenarioPlayerHitsUpdated, SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED, event_page, event_registration, lua_call |

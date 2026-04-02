@@ -27,14 +27,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, CMap, EA_UiDebugTools, Queue Queuer, TidyQueue, TidyRoll |
-| Files seen in | `/workspace/BuffHead/Setup/SetupLayout.xml:249`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:102`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:125`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:167`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:56`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:79`, `/workspace/TidyQueue/TidyQueue.xml:126`, `/workspace/TidyRoll/TidyRoll.xml:275` |
+| Addons seen in | BuffHead, CMap, EA_UiDebugTools, TidyRoll |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupLayout.xml:249`, `/workspace_addons/TidyRoll/TidyRoll.xml:275`, `/workspace_addons/cmap/CMap.xml:104`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:29` |
 | Namespaces detected | OnUpdate |
 | Source kinds | bindings, xml_handlers |
-| Example locations | BuffHead: BuffHeadSetupLayoutWindow.OnUpdate, CMap: CMapWindowWMap.OnUpdate, EA_UiDebugTools: DebugWindow.OnUpdate, Queue Queuer: QueueQueuer_GUI.OnUpdate, Queue Queuer: QueueQueuer_GUI_MapButton.OnUpdate, Queue Queuer: QueueQueuer_GUI_MapButton_COOLDOWN.OnUpdate |
-| XML usage count | 10 |
-| XML attribute usage count | 10 |
-| Lua usage count | 10 |
+| Example locations | BuffHead: BuffHeadSetupLayoutWindow.OnUpdate, CMap: CMapWindowWMap.OnUpdate, EA_UiDebugTools: DebugWindow.OnUpdate, TidyRoll: TidyRollTimer.OnUpdate |
+| XML usage count | 4 |
+| XML attribute usage count | 4 |
+| Lua usage count | 4 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 6 addons through frame event handlers.
+Observed as an XML handler hook bound by 4 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -68,7 +68,6 @@ function(...)
 
 ## Element Types
 
-- Button
 - MapDisplay
 - Window
 
@@ -77,8 +76,6 @@ function(...)
 - BuffHead
 - CMap
 - EA_UiDebugTools
-- Queue Queuer
-- TidyQueue
 - TidyRoll
 
 ## Examples
@@ -86,18 +83,14 @@ function(...)
 - BuffHead: BuffHeadSetupLayoutWindow -> BuffHeadSetupLayoutWindow.OnUpdate -> BuffHead.Setup.Layout.OnUpdate
 - CMap: CMapWindowWMap -> CMapWindowWMap.OnUpdate -> CMapWindow.UpdateCoordinatesWMap
 - EA_UiDebugTools: DebugWindow -> DebugWindow.OnUpdate -> DebugWindow.Update
-- Queue Queuer: QueueQueuer_GUI -> QueueQueuer_GUI.OnUpdate -> QueueQueuer_GUI.OnUpdate
-- Queue Queuer: QueueQueuer_GUI_MapButton -> QueueQueuer_GUI_MapButton.OnUpdate -> QueueQueuer_GUI.MapButton_OnUpdate
-- Queue Queuer: QueueQueuer_GUI_MapButton_COOLDOWN -> QueueQueuer_GUI_MapButton_COOLDOWN.OnUpdate -> QueueQueuer_GUI.MapButton_OnUpdate
+- TidyRoll: TidyRollTimer -> TidyRollTimer.OnUpdate -> TidyRoll.OnUpdate
 
 ## Related APIs
 
-- [EA_Window_ScenarioLobby.OnJoinInstanceWait](../../globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md) (HIGH 100/100) - Global Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Used With
 
-- [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnUpdate](../../events/window_events/window_event_OnUpdate.md) (HIGH 100/100) - Window Event
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type

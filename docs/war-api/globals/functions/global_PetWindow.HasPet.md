@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, Aura, DaemonAssist |
-| Files seen in | `/workspace/AdvancedPetAssist/APACore.lua:214`, `/workspace/Aura/Source/AuraEngine.lua:1142`, `/workspace/DaemonAssist/DACore.lua:7` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APACore.lua:214`, `/workspace_addons/Aura/Source/AuraEngine.lua:1142`, `/workspace_addons/DaemonAssist/DACore.lua:7` |
 | Namespaces detected | PetWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.HasPet, Aura: AuraEngine.HandleTriggerType_PetStatus, DaemonAssist: DaemonAssist.HasPet |
@@ -109,3 +109,4 @@ Observed as a global function across 3 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

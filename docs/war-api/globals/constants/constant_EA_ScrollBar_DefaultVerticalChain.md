@@ -26,11 +26,11 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, DeepSleep, EA_UiModWindow, Enemy, Killer, Miracle Grow Remix, PotionBar, RVMOD_Manager |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuffMsgWindow.xml:63`, `/workspace/DeepSleep/Settings.xml:48`, `/workspace/Enemy/Code/CombatLog/CombatLogConfiguration.xml:13`, `/workspace/Enemy/Code/GroupIcons/GroupIconsConfiguration.xml:13`, `/workspace/Enemy/Code/Guard/GuardConfiguration.xml:13`, `/workspace/Enemy/Code/KillSpam/KillSpamConfiguration.xml:13`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerterConfiguration.xml:13`, `/workspace/Enemy/Code/Timer/TimerConfiguration.xml:13` |
+| Addons seen in | DAoCBuff, EA_UiModWindow, Enemy, Killer, Miracle Grow Remix, PotionBar, RVMOD_Manager, Shinies |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuffMsgWindow.xml:63`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogConfiguration.xml:13`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIconsConfiguration.xml:13`, `/workspace_addons/Enemy/Code/Guard/GuardConfiguration.xml:13`, `/workspace_addons/Enemy/Code/KillSpam/KillSpamConfiguration.xml:13`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerterConfiguration.xml:13`, `/workspace_addons/Enemy/Code/Timer/TimerConfiguration.xml:13`, `/workspace_addons/Enemy/Code/UnitFrames/ClickCastingDialog.xml:46` |
 | Namespaces detected | EA_ScrollBar_DefaultVerticalChain |
 | Source kinds | xml_attributes |
-| Example locations | $parentScrollBar, DAoCBuffMessageWindowScrollWindowScrollbar, DeepSleep_Settings_ScrollWindow_Scrollbar, EA_ScrollWindow_ModInfoTemplateScrollbar, EA_Window_MacroMacrosScrollbar, EnemyClickCastingDialogContentScrollbar |
+| Example locations | $parentScrollBar, DAoCBuffMessageWindowScrollWindowScrollbar, EA_ScrollWindow_ModInfoTemplateScrollbar, EA_Window_MacroMacrosScrollbar, EnemyClickCastingDialogContentScrollbar, EnemyCombatLogConfigurationContentScrollbar |
 | XML usage count | 27 |
 | XML attribute usage count | 27 |
 | Lua usage count | 0 |
@@ -57,12 +57,11 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 12 addons.
+Observed engine XML template or inherited constant referenced by 11 addons.
 
 ## Seen In
 
 - DAoCBuff
-- DeepSleep
 - EA_UiModWindow
 - Enemy
 - Killer
@@ -78,7 +77,6 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 
 - $parentScrollBar
 - DAoCBuffMessageWindowScrollWindowScrollbar
-- DeepSleep_Settings_ScrollWindow_Scrollbar
 - EA_ScrollWindow_ModInfoTemplateScrollbar
 - EA_Window_MacroMacrosScrollbar
 - EnemyClickCastingDialogContentScrollbar
@@ -102,6 +100,7 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - ShiniesAutoUI_AutoSummaryScrollbar
 - ShiniesConfigUI_DisplayBar
 - WbLeadHelperMessageContentScrollbar
+- WhoHealedMeDetailsContentSpellListScrollbar
 - WhoHealedMeWindowContentHealerListScrollbar
 
 ## Related APIs

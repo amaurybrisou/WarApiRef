@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, Aura, CombatTextNames, EA_UiDebugTools, Enemy, MapPin, RoR_SoR, TidyChat |
-| Files seen in | `/workspace/Aura/Libraries/LibPickle.lua:428`, `/workspace/Aura/Source/AuraHelpers.lua:129`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:700`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:709`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:773`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:816`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:863`, `/workspace/Enemy/Code/Core/Utils.lua:370` |
+| Files seen in | `/workspace_addons/Aura/Libraries/LibPickle.lua:428`, `/workspace_addons/Aura/Source/AuraHelpers.lua:129`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:700`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:709`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:773`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:816`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:863`, `/workspace_addons/Enemy/Code/Core/Utils.lua:370` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed, Aura: AuraHelpers.cleanWString, Aura: DePickler:unpickle, CombatTextNames: CombatTextNames.TruncateAbilityName, EA_UiDebugTools: DevPad.TestPrint, EA_UiDebugTools: DevPadWindow.OnCodeChanged |
@@ -116,8 +116,8 @@ Observed as a global function across 9 addons.
 - [GameData.ChatData.text](../../gamedata/fields/gamedata_GameData.ChatData.text.md) (HIGH 100/100) - GameData Field
 - [GameData.Sound.QUEST_ABANDONED](../../gamedata/fields/gamedata_GameData.Sound.QUEST_ABANDONED.md) (HIGH 100/100) - GameData Field
 - [LabelGetText](../../window_api/functions/window_LabelGetText.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [PartyUtils.GetWarbandLeader](global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
 - [PartyUtils.IsPartyActive](global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
@@ -129,6 +129,7 @@ Observed as a global function across 9 addons.
 - [AlertTextWindow.AddAlert](global_AlertTextWindow.AddAlert.md) (HIGH 88/100) - Global Function
 - [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 - [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
+- [wstring.find](global_wstring.find.md) (MEDIUM 63/100) - Global Function
 
 ## Triggered By
 

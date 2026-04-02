@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, BuffHead, MapMonster, TurretRange, MapMonster, TurretRange |
-| Files seen in | `/workspace/BuffHead/Core.lua:152`, `/workspace/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace/MapMonster/Source/MapMonster_Player.lua:83`, `/workspace/TurrentRange/Core.lua:74`, `/workspace/TurrentRange/Core.lua:95` |
+| Files seen in | `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:83`, `/workspace_addons/TurrentRange/Core.lua:74`, `/workspace_addons/TurrentRange/Core.lua:95` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | BuffHead.Initialize, BuffHead.OnPlayerPositionUpdated, MapMonster.InitializePlayer, MapMonster.OnPlayerPositionUpdated, MapMonster.ShutdownPlayer, SystemData.Events.PLAYER_POSITION_UPDATED |

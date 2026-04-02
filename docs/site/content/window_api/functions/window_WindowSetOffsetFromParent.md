@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | GetStats, MapPin, RoR_SoR |
-| Files seen in | `/workspace/GetStats/GetStats.lua:119`, `/workspace/MapPin/source/MapPin.lua:1122`, `/workspace/MapPin/source/MapPin.lua:144`, `/workspace/RoR_SoR/RoR_SoR.lua:2881` |
+| Files seen in | `/workspace_addons/GetStats/GetStats.lua:119`, `/workspace_addons/MapPin/source/MapPin.lua:1122`, `/workspace_addons/MapPin/source/MapPin.lua:144`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:2881` |
 | Namespaces detected | WindowSetOffsetFromParent |
 | Source kinds | lua_calls |
 | Example locations | GetStats: GetStats.OnChatLogUpdated, MapPin: MapPin.local.OnHyperLinkLButtonUp2, MapPin: MapPin.test, MapPin: OnHyperLinkLButtonUp2, RoR_SoR: RoR_SoR.DefaultSettings |
@@ -77,7 +77,7 @@ Observed mutating runtime window state or presentation.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

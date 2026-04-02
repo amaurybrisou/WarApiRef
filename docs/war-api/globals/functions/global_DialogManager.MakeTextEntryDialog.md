@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin, Enemy, MapPin, Shinies |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:147`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:154`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:212`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:234`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:612`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:645`, `/workspace/MapPin/source/MapPin.lua:144`, `/workspace/MapPin/source/MapPin.lua:2280` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:147`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:154`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:212`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:234`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:612`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:645`, `/workspace_addons/MapPin/source/MapPin.lua:144`, `/workspace_addons/MapPin/source/MapPin.lua:2280` |
 | Namespaces detected | DialogManager |
 | Source kinds | globals, lua_calls |
 | Example locations | CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickNewSetButton, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnSubmitNewSetName, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnSubmitSetRename, Enemy: Enemy.CombatLogUI_StatsWindow_SessionAdd, Enemy: Enemy.CombatLogUI_StatsWindow_SessionRename |

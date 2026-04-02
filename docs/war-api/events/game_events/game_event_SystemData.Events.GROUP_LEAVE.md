@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | LibGuard, followTheLeader |
-| Files seen in | `/workspace/LibGuard/Source/LibGuard.lua:47`, `/workspace/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | `/workspace_addons/LibGuard/Source/LibGuard.lua:47`, `/workspace_addons/followTheLeader/followTheLeader.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | LibGuard: LibGuard.Init, followTheLeader: followTheLeader.Initialize |

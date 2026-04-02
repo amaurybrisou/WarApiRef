@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoBand, Effigy, LoyalPet, PeaceOut, Queue Queuer, TidyChat, WSCT, WarBoard |
-| Files seen in | `/workspace/Autoband/AutoBandWindow.xml:46`, `/workspace/Effigy/Effigy.xml:95`, `/workspace/LoyalPet/gui/lpet_gui.xml:171`, `/workspace/PeaceOut/PeaceOut.xml:37`, `/workspace/QueueQueuer/QueueQueuer_GUI.xml:203`, `/workspace/TidyChat/TidyChatLootRoll.xml:76`, `/workspace/WarBoard/WarBoardOptions.xml:154`, `/workspace/wbLeadHelper/config/wbLeadHelperConfigWindow.xml:36` |
+| Addons seen in | Effigy, LoyalPet, TidyChat, WSCT, WarBoard, wbLeadHelper |
+| Files seen in | `/workspace_addons/Effigy/Effigy.xml:95`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:171`, `/workspace_addons/TidyChat/TidyChatLootRoll.xml:76`, `/workspace_addons/WarBoard/WarBoardOptions.xml:154`, `/workspace_addons/wbLeadHelper/config/wbLeadHelperConfigWindow.xml:36`, `/workspace_addons/wsct/wsct_options/wsct_options.xml:276` |
 | Namespaces detected | EA_FullResizeImage_MetalFill |
 | Source kinds | xml_attributes |
-| Example locations | AutoBandWindowTabsBackground, FrameMetalBack, LPETOptionsTabBackground, PeaceOutBg, QueueQueuer_GUI_TabsBackground, TidyChatLootRollInfoBackground |
-| XML usage count | 9 |
-| XML attribute usage count | 9 |
+| Example locations | FrameMetalBack, LPETOptionsTabBackground, TidyChatLootRollInfoBackground, WSCTOptionsTabBackground, WarBoardOptionsTabsBackground, wbLeadHelperConfigWindowTabsBackground |
+| XML usage count | 6 |
+| XML attribute usage count | 6 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,15 +57,12 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 9 addons.
+Observed engine XML template or inherited constant referenced by 6 addons.
 
 ## Seen In
 
-- AutoBand
 - Effigy
 - LoyalPet
-- PeaceOut
-- Queue Queuer
 - TidyChat
 - WSCT
 - WarBoard
@@ -73,11 +70,8 @@ Observed engine XML template or inherited constant referenced by 9 addons.
 
 ## Used By
 
-- AutoBandWindowTabsBackground
 - FrameMetalBack
 - LPETOptionsTabBackground
-- PeaceOutBg
-- QueueQueuer_GUI_TabsBackground
 - TidyChatLootRollInfoBackground
 - WSCTOptionsTabBackground
 - WarBoardOptionsTabsBackground

@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Busted, CM_ClosetGoblin, DAoCBuff, DeepSleep, EA_UiDebugTools, EA_UiModWindow |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:101`, `/workspace/Busted/Busted.xml:19`, `/workspace/ClosetGoblin/ClosetGoblin.xml:1232`, `/workspace/ClosetGoblin/ClosetGoblin.xml:1310`, `/workspace/ClosetGoblin/ClosetGoblin.xml:268`, `/workspace/ClosetGoblin/ClosetGoblin.xml:384`, `/workspace/ClosetGoblin/ClosetGoblin.xml:478`, `/workspace/DAoCBuff/Source/DAoCBuffMsgWindow.xml:30` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Busted, CM_ClosetGoblin, DAoCBuff, EA_UiDebugTools, EA_UiModWindow, Enemy |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:101`, `/workspace_addons/Busted/Busted.xml:19`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1232`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1310`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:268`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:384`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:478`, `/workspace_addons/DAoCBuff/Source/DAoCBuffMsgWindow.xml:30` |
 | Namespaces detected | EA_Window_DefaultFrame |
 | Source kinds | xml_attributes |
 | Example locations | APAOptionsBackground, AdvancedRenownTrainingExportWindowBackground, AdvancedRenownTrainingImportNameInputWindowBackground, AdvancedRenownTrainingImportWindowBackground, AdvancedRenownTrainingLinkWindowBackground, AdvancedRenownTrainingPresetsWindowBackground |
-| XML usage count | 87 |
-| XML attribute usage count | 87 |
+| XML usage count | 85 |
+| XML attribute usage count | 85 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 25 addons.
+Observed engine XML template or inherited constant referenced by 22 addons.
 
 ## Seen In
 
@@ -66,7 +66,6 @@ Observed engine XML template or inherited constant referenced by 25 addons.
 - Busted
 - CM_ClosetGoblin
 - DAoCBuff
-- DeepSleep
 - EA_UiDebugTools
 - EA_UiModWindow
 - Enemy
@@ -80,9 +79,7 @@ Observed engine XML template or inherited constant referenced by 25 addons.
 - RandomMount
 - RoR_SoR
 - TidyChat
-- TidyQueue
 - Tortall_DPS
-- Twister
 - WSCT
 - WhoHealedMe
 - wbLeadHelper
@@ -107,7 +104,6 @@ Observed engine XML template or inherited constant referenced by 25 addons.
 - DebugWindowBackground
 - DebugWindowLogDisplaySeperator2
 - DebugWindowOptionsBackground
-- DeepSleep_SettingsBackground
 - DevPadConfirmLoadBackground
 - DevPadConfirmLoadNameSeperator
 - DevPadDeleteWindowBackground
@@ -153,7 +149,6 @@ Observed engine XML template or inherited constant referenced by 25 addons.
 - RoR_SoR_OpacityBackground
 - RoR_SoR_ScaleBackground
 - TidyChatCopyBackground
-- TidyQueueBackground
 - TortallDPSDetailTemplateBG
 - TortallDPSGroupTemplateBG
 - TortallDPSMeterAbilitiesBG
@@ -167,12 +162,12 @@ Observed engine XML template or inherited constant referenced by 25 addons.
 - TortallDPSMeterWhatHMBG
 - TortallDPSMeterWhoHMBG
 - TortallDPSToggleBG
-- Twister
 - UiModAdvancedWindowCustomUIBackground
 - UiModAdvancedWindowModsBackground
 - WSCTOptionsBackground
 - WSCTOptionsColorPickerWindowBackground
 - WbLeadHelperMessageBackground
+- WhoHealedMeDetailsBackground
 - WhoHealedMeOptionsBackground
 - WhoHealedMeWindowBackground
 - wbLeadHelperChooseIconDialogBackground

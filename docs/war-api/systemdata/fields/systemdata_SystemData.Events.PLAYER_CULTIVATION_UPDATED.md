@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Miracle Grow Remix, Miracle Grow Remix, MiracleGrow, MiracleGrow |
-| Files seen in | `/workspace/MGRemix/MGRemix.lua:195`, `/workspace/MiracleGrow/MiracleGrow.lua:155`, `/workspace/MiracleGrow/MiracleGrow.lua:163` |
+| Files seen in | `/workspace_addons/MGRemix/MGRemix.lua:195`, `/workspace_addons/MiracleGrow/MiracleGrow.lua:155`, `/workspace_addons/MiracleGrow/MiracleGrow.lua:163` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | MiracleGrow.disableAddon, MiracleGrow.enableAddon, MiracleGrow.fired, MiracleGrow2.Initialize, MiracleGrow2.onCultUpdate, SystemData.Events.PLAYER_CULTIVATION_UPDATED |

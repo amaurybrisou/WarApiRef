@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic, BankWindowFix |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace/bagomatic/BagOMatic.lua:202` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace_addons/bagomatic/BagOMatic.lua:202` |
 | Namespaces detected | BankWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | BagOMatic: BagOMatic.cmd_sortall, BankWindowFix: BankWindowFix.BagEquipmentRButtonUp |
@@ -133,3 +133,4 @@ Observed as a global function across 2 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

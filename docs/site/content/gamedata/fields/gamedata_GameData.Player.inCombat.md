@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist |
-| Files seen in | `/workspace/AdvancedPetAssist/APAEvents.lua:165` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAEvents.lua:165` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | AdvancedPetAssist.OnPetUpdated, lua_call |

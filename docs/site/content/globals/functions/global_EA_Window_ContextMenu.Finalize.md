@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 22 addons
+- Seen in: 20 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, BuffHead, CM_ClosetGoblin, EA_UiDebugTools, Effigy, Enemy, Killer, MapMonster |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.lua:251`, `/workspace/AggroMeter/AggroMeter.lua:378`, `/workspace/BuffHead/Setup/LayoutControlFrame.lua:72`, `/workspace/BuffHead/Setup/SelectFont.lua:76`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.lua:130`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.lua:217`, `/workspace/BuffHead/Setup/SetupAdvancedContainersItem.lua:439`, `/workspace/BuffHead/Setup/SetupEffectCache.lua:195` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.lua:251`, `/workspace_addons/AggroMeter/AggroMeter.lua:378`, `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:72`, `/workspace_addons/BuffHead/Setup/SelectFont.lua:76`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.lua:130`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.lua:217`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.lua:439`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.lua:195` |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
 | Example locations | AggroMeter: AggroMeter.OnTabRBU, AggroMeter: AggroMeter.PickedListMenu, BuffHead: BuffHead.Setup.AdvancedContainersItem.OnContainerRClick, BuffHead: BuffHead.Setup.EffectCache.CreateContextMenu, BuffHead: BuffHead.Setup.Filter.CreateContextMenu, BuffHead: BuffHead.Setup.LayoutControlFrame:CreateContextMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 70 |
-| Global usage count | 70 |
+| Lua usage count | 66 |
+| Global usage count | 66 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ EA_Window_ContextMenu.Finalize()
 
 ## Description
 
-Observed as a global function across 22 addons.
+Observed as a global function across 20 addons.
 
 ## Parameters
 
@@ -74,11 +74,11 @@ Observed as a global function across 22 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -94,14 +94,12 @@ Observed as a global function across 22 addons.
 - Miracle Grow Remix
 - MiracleGrow
 - MoraleCircle
-- PeaceOut
 - PotionBar
 - RandomMount
 - RoR_SoR
 - Shinies
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TurretRange
 - WarBoard
 
@@ -163,3 +161,4 @@ Observed as a global function across 22 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

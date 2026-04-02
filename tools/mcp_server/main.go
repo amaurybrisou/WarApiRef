@@ -16,6 +16,7 @@ import (
 func main() {
 	var cfg Config
 	flag.StringVar(&cfg.DocsRoot, "docs-root", defaultDocsRoot(), "Path to docs/war-api root")
+	flag.StringVar(&cfg.FeedingRoot, "feeding-root", defaultFeedingRoot(), "Path to docs/platform/feeding root")
 	flag.StringVar(&cfg.Transport, "transport", "stdio", "Transport: stdio or http")
 	flag.StringVar(&cfg.ListenAddr, "listen", ":8091", "HTTP listen address when transport=http")
 	flag.Parse()
@@ -24,6 +25,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("load docs store: %v", err)
 	}
+	app.SetFeedingRoot(cfg.FeedingRoot)
 
 	switch cfg.Transport {
 	case "stdio":

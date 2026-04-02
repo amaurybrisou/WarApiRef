@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, Aura, Enemy, LoyalPet, MapMonster, Miracle Grow Remix, RVMOD_Manager, RandomMount |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.lua:205`, `/workspace/AggroMeter/AggroMeter.lua:242`, `/workspace/Aura/Source/AuraTexture.lua:147`, `/workspace/Enemy/Code/Marks/MarkTemplate.lua:264`, `/workspace/Enemy/Code/Marks/MarkTemplate.lua:281`, `/workspace/LoyalPet/gui/lpet_gui.lua:189`, `/workspace/MGRemix/MGRemix.lua:630`, `/workspace/MGRemix/MGRemix.lua:642` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.lua:205`, `/workspace_addons/AggroMeter/AggroMeter.lua:242`, `/workspace_addons/Aura/Source/AuraTexture.lua:147`, `/workspace_addons/Enemy/Code/Marks/MarkTemplate.lua:264`, `/workspace_addons/Enemy/Code/Marks/MarkTemplate.lua:281`, `/workspace_addons/LoyalPet/gui/lpet_gui.lua:189`, `/workspace_addons/MGRemix/MGRemix.lua:630`, `/workspace_addons/MGRemix/MGRemix.lua:642` |
 | Namespaces detected | WindowGetParent |
 | Source kinds | lua_calls |
 | Example locations | AggroMeter: AggroMeter.OnMouseOverStart, AggroMeter: AggroMeter.SelectChar, Aura: AuraTexture.OnIconLButtonUp, Enemy: Enemy.MarkUI_EnemyMark_OnLButtonDown, Enemy: Enemy.MarkUI_EnemyMark_OnRButtonUp, LoyalPet: LPET.OnMouseOver |
@@ -75,11 +75,11 @@ Observed querying runtime window state or metadata.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 

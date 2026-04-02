@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 31 addons
+- Seen in: 29 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, Busted, DAoCBuff, EA_UiDebugTools |
-| Files seen in | `/workspace/Ace/LibGUI.lua:656`, `/workspace/Ace/LibGUI.lua:669`, `/workspace/Ace/LibGUI.lua:711`, `/workspace/Ace/LibGUI.lua:724`, `/workspace/AdvancedPetAssist/APAGui.lua:983`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:147`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:163`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:220` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:656`, `/workspace_addons/Ace/LibGUI.lua:669`, `/workspace_addons/Ace/LibGUI.lua:711`, `/workspace_addons/Ace/LibGUI.lua:724`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:983`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:147`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:163`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:220` |
 | Namespaces detected | TextEditBoxSetText |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_MultiTextbox:Clear, Ace: LIBGUI_MultiTextbox:SetText, Ace: LIBGUI_Textbox:Clear, Ace: LIBGUI_Textbox:SetText, AdvancedPetAssist: APAGui.ApplyHUDColorOff, AdvancedPetAssist: APAGui.ApplyHUDColorOn |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 335 |
-| Global usage count | 335 |
+| Lua usage count | 327 |
+| Global usage count | 327 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -107,11 +107,9 @@ Observed reading from or writing to edit-box controls.
 - RandomMount
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
 - TurretRange
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - wbLeadHelper

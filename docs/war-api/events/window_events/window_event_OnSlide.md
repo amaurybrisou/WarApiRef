@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, BuffHead, Enemy, LibGroup, MapMonster, MapPin, MoraleCircle, PotionBar |
-| Files seen in | `/workspace/Aura/Source/AuraColorPicker.xml:105`, `/workspace/Aura/Source/AuraColorPicker.xml:33`, `/workspace/Aura/Source/AuraColorPicker.xml:65`, `/workspace/Aura/Source/AuraColorPicker.xml:85`, `/workspace/Aura/Source/AuraConfig.xml:1680`, `/workspace/Aura/Source/AuraConfig.xml:256`, `/workspace/Aura/Source/AuraConfig.xml:311`, `/workspace/BuffHead/Setup/General.xml:142` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraColorPicker.xml:105`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:33`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:65`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:85`, `/workspace_addons/Aura/Source/AuraConfig.xml:1680`, `/workspace_addons/Aura/Source/AuraConfig.xml:256`, `/workspace_addons/Aura/Source/AuraConfig.xml:311`, `/workspace_addons/BuffHead/Setup/General.xml:142` |
 | Namespaces detected | OnSlide |
 | Source kinds | event_page, xml_handlers |
 | Example locations | Aura: AuraColorPickerAlpha.OnSlide, Aura: AuraColorPickerBlue.OnSlide, Aura: AuraColorPickerGreen.OnSlide, Aura: AuraColorPickerRed.OnSlide, Aura: AuraConfigGeneralTextureRotationSlider.OnSlide, Aura: AuraConfigGeneralTextureScaleSlider.OnSlide |

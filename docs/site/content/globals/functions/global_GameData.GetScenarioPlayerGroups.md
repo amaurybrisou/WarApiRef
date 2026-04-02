@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -30,15 +30,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoBand, Enemy, LibGroup, Targets, WarTriage, followTheLeader |
-| Files seen in | `/workspace/Autoband/AB_util.lua:42`, `/workspace/Autoband/AB_wb.lua:44`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:281`, `/workspace/LibGroup/LibGroup.lua:553`, `/workspace/WarTriage/WarTriage.lua:347`, `/workspace/followTheLeader/followTheLeader.lua:237`, `/workspace/targets/Targets.lua:100` |
+| Addons seen in | Enemy, LibGroup, Targets, followTheLeader |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:281`, `/workspace_addons/LibGroup/LibGroup.lua:553`, `/workspace_addons/followTheLeader/followTheLeader.lua:237`, `/workspace_addons/targets/Targets.lua:100` |
 | Namespaces detected | GameData |
 | Source kinds | globals, lua_calls |
-| Example locations | AutoBand: AB_util.get_hot_scdata, AutoBand: AB_wb:load_from_scdata, Enemy: Enemy._GroupsUpdate, LibGroup: GetScenarioData, LibGroup: LibGroup.local.GetScenarioData, Targets: Targets.filter_scenario |
+| Example locations | Enemy: Enemy._GroupsUpdate, LibGroup: GetScenarioData, LibGroup: LibGroup.local.GetScenarioData, Targets: Targets.filter_scenario, followTheLeader: followTheLeader.GetScenarioLeader |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -67,7 +67,7 @@ GameData.GetScenarioPlayerGroups()
 
 ## Description
 
-Observed as a global function across 6 addons.
+Observed as a global function across 4 addons.
 
 ## Parameters
 
@@ -76,29 +76,26 @@ Observed as a global function across 6 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from API_Ref alone.
+- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from API_Ref alone.
+- No side effect is confidently inferable from addon-api docs alone.
 
 ## Seen In
 
-- AutoBand
 - Enemy
 - LibGroup
 - Targets
-- WarTriage
 - followTheLeader
 
 ## Examples
 
-- AutoBand: AB_util.get_hot_scdata -> GameData.GetScenarioPlayerGroups()
-- AutoBand: AB_wb:load_from_scdata -> GameData.GetScenarioPlayerGroups()
 - Enemy: Enemy._GroupsUpdate -> GameData.GetScenarioPlayerGroups()
 - LibGroup: GetScenarioData -> GameData.GetScenarioPlayerGroups()
 - LibGroup: LibGroup.local.GetScenarioData -> GameData.GetScenarioPlayerGroups()
 - Targets: Targets.filter_scenario -> GameData.GetScenarioPlayerGroups()
+- followTheLeader: followTheLeader.GetScenarioLeader -> GameData.GetScenarioPlayerGroups()
 
 ## Related APIs
 

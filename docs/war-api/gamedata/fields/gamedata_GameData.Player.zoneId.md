@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | wbLeadHelper |
-| Files seen in | `/workspace/wbLeadHelper/wbLeadHelperConstants.lua:273` |
+| Files seen in | `/workspace_addons/wbLeadHelper/wbLeadHelperConstants.lua:273` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | lua_call, wbLeadHelper.GetCurrentZoneId |

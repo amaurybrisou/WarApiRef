@@ -18,7 +18,7 @@ Observed layouts being finalized in Lua by clearing and re-adding anchors after 
 ```text
 OnLButtonUp
   -> handlers: DebugWindow.ClearTextLog, InterfaceCore.ReloadUI
-  -> ui: Button, ColorPicker, ComboBox, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
+  -> ui: Button, ColorPicker, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code

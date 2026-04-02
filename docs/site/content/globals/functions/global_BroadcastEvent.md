@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 93/100
-- Seen in: 11 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Effigy, Enemy, FastInteract, GCDsaver, JunkDump, LoyalPet, PeaceOut, Queue Queuer |
-| Files seen in | `/workspace/Effigy/Effigy.lua:337`, `/workspace/Effigy/Effigy.lua:376`, `/workspace/Enemy/Code/GroupIcons/GroupIcons.lua:200`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:371`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:507`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:519`, `/workspace/FastInteract/FastInteract.lua:20`, `/workspace/GCDsaver/GCDsaver.lua:76` |
+| Addons seen in | Effigy, Enemy, FastInteract, GCDsaver, JunkDump, LoyalPet, RVMOD_Manager, Targets |
+| Files seen in | `/workspace_addons/Effigy/Effigy.lua:337`, `/workspace_addons/Effigy/Effigy.lua:376`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcons.lua:200`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:371`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:507`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:519`, `/workspace_addons/FastInteract/FastInteract.lua:20`, `/workspace_addons/GCDsaver/GCDsaver.lua:76` |
 | Namespaces detected | BroadcastEvent |
 | Source kinds | lua_calls |
 | Example locations | Effigy: Effigy.LButtonDown, Effigy: Effigy.local.OnMenuClickLeaveGroup, Effigy: OnMenuClickLeaveGroup, Enemy: Enemy.GroupIcons_GroupIcon_OnLButtonDown, Enemy: Enemy.ScenarioInfoCheckBroadcast, Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnHidden |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 26 |
-| Global usage count | 26 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -68,11 +68,11 @@ Observed triggering a runtime event so existing handlers are notified.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| eventId | Observed as a runtime event identifier dispatched to listeners. | Observed values: EA_Window_ScenarioLobby.joinModes[EA_Window_ScenarioLobby.joinMode].joinSingleEvent, SystemData.Events.GROUP_LEAVE, SystemData.Events.INTERACT_ACCEPT_QUEST |
+| eventId | Observed as a runtime event identifier dispatched to listeners. | Observed values: SystemData.Events.GROUP_LEAVE, SystemData.Events.INTERACT_ACCEPT_QUEST, SystemData.Events.INTERACT_COMPLETE_QUEST |
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -86,11 +86,8 @@ Observed triggering a runtime event so existing handlers are notified.
 - GCDsaver
 - JunkDump
 - LoyalPet
-- PeaceOut
-- Queue Queuer
 - RVMOD_Manager
 - Targets
-- TidyQueue
 
 ## Examples
 
@@ -115,7 +112,6 @@ Observed triggering a runtime event so existing handlers are notified.
 - [SystemData.Events.TARGET_PET](../../systemdata/fields/systemdata_SystemData.Events.TARGET_PET.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

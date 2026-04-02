@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, RVMOD_Manager, Shinies, wbLeadHelper |
-| Files seen in | `/workspace/Enemy/Code/Core/Main.lua:300`, `/workspace/Enemy/Code/UnitFrames/ClickCasting.lua:202`, `/workspace/Enemy/Code/UnitFrames/EffectsIndicator.lua:613`, `/workspace/Enemy/Code/UnitFrames/UnitFramePart.lua:701`, `/workspace/Enemy/Code/UnitFrames/UnitFrames.lua:637`, `/workspace/RVMOD_Manager/RVMOD_Manager.lua:526`, `/workspace/RVMOD_Manager/RVMOD_Manager.lua:709`, `/workspace/RVMOD_Manager/RVMOD_Manager.lua:752` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Main.lua:300`, `/workspace_addons/Enemy/Code/UnitFrames/ClickCasting.lua:202`, `/workspace_addons/Enemy/Code/UnitFrames/EffectsIndicator.lua:613`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFramePart.lua:701`, `/workspace_addons/Enemy/Code/UnitFrames/UnitFrames.lua:637`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:526`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:709`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:752` |
 | Namespaces detected | ScrollWindowSetOffset |
 | Source kinds | lua_calls |
 | Example locations | Enemy: Enemy.UI_ConfigDialog_Open, Enemy: Enemy.UnitFramesUI_ConfigDialog_Import, Enemy: Enemy.UnitFramesUI_EffectsIndicatorDialog_Open, Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open, Enemy: Enemy.UnitFramesUI_UnitFramePartDialog_Open, RVMOD_Manager: RVMOD_Manager.FilterAddonsList |
@@ -76,7 +76,7 @@ Observed as a window function across 4 addons.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

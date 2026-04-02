@@ -1,10 +1,10 @@
 # WAR Addon Development API Reference
 
-This documentation is the platform-facing second layer derived from the generated addon corpus under API_Ref. It attempts to answer a narrower question: which APIs, events, XML hooks, tables, and lifecycle patterns are shared across WAR addons.
+This documentation is the platform-facing second layer derived from the generated addon corpus under docs/addon-api. It attempts to answer a narrower question: which APIs, events, XML hooks, tables, and lifecycle patterns are shared across WAR addons.
 
 ## Method
 
-- Input: generated markdown under API_Ref only.
+- Input: generated markdown under docs/addon-api only.
 
 - Output: canonical platform symbols with explicit confidence score, level, evidence signals, and rationale.
 
@@ -39,12 +39,3 @@ This documentation is the platform-facing second layer derived from the generate
 - [API graph](graph/api_graph.json)
 
 - [Coverage report](meta/coverage_report.md)
-
-## MCP Diagnostics in the Site UI
-
-The docs UI includes an **MCP Live Console** panel that can send:
-
-- `initialize`
-- `tools/list`
-
-Use it to quickly validate endpoint reachability and inspect tool contracts while browsing docs.

@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, MapMonster, Miracle Grow Remix, TexturedButtons, TurretRange |
-| Files seen in | `/workspace/BuffHead/Setup/SelectFont.lua:62`, `/workspace/MGRemix/context.lua:105`, `/workspace/MapMonster/Source/MapMonster_Pins.lua:947`, `/workspace/TexturedButtons/Setup/SelectFont.lua:64`, `/workspace/TurrentRange/Setup/SetupDisplay.lua:366` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SelectFont.lua:62`, `/workspace_addons/MGRemix/context.lua:105`, `/workspace_addons/MapMonster/Source/MapMonster_Pins.lua:947`, `/workspace_addons/TexturedButtons/Setup/SelectFont.lua:64`, `/workspace_addons/TurrentRange/Setup/SetupDisplay.lua:366` |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
 | Example locations | BuffHead: BuffHead.Setup.SelectFont.SetFont, MapMonster: HideLastFilterSubMenus, MapMonster: MapMonster.local.HideLastFilterSubMenus, Miracle Grow Remix: MiracleGrow2.ContextItem, TexturedButtons: TexturedButtons.Setup.SelectFont.SetFont, TurretRange: TurretRange.Setup.Distance.SetFont |
@@ -125,3 +125,4 @@ Observed as a global function across 5 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapPin |
-| Files seen in | `/workspace/MapPin/source/MapPin.xml:855`, `/workspace/MapPin/source/MapPin.xml:866` |
+| Files seen in | `/workspace_addons/MapPin/source/MapPin.xml:855`, `/workspace_addons/MapPin/source/MapPin.xml:866` |
 | Namespaces detected | EA_ComboBox_DefaultResizableTiny |
 | Source kinds | xml_attributes |
 | Example locations | MapPin_SetupComboMark, MapPin_SetupComboOwner |

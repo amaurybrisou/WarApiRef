@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, MapMonster, TurretRange |
-| Files seen in | `/workspace/BuffHead/Core.lua:152`, `/workspace/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace/TurrentRange/Core.lua:74` |
+| Files seen in | `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace_addons/TurrentRange/Core.lua:74` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | BuffHead: BuffHead.Initialize, MapMonster: MapMonster.InitializePlayer, TurretRange: TurretRange.Initialize |

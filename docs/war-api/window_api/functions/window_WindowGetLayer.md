@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, Effigy, GCDsaver, LibWBToggler, Shinies, TexturedButtons, WarTriage |
-| Files seen in | `/workspace/Ace/LibGUI.lua:178`, `/workspace/BuffHead/Setup/SelectColor.lua:27`, `/workspace/BuffHead/Setup/SelectTexture.lua:59`, `/workspace/Effigy/LibGUI.lua:178`, `/workspace/GCDsaver/libs/LibGUI.lua:178`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:178`, `/workspace/Shinies/Libraries/LibGUI.lua:178`, `/workspace/TexturedButtons/Setup/SelectColor.lua:27` |
+| Addons seen in | Ace, BuffHead, Effigy, GCDsaver, LibWBToggler, Shinies, TexturedButtons, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:178`, `/workspace_addons/BuffHead/Setup/SelectColor.lua:27`, `/workspace_addons/BuffHead/Setup/SelectTexture.lua:59`, `/workspace_addons/Effigy/LibGUI.lua:178`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:178`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:178`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:178`, `/workspace_addons/TexturedButtons/Setup/SelectColor.lua:27` |
 | Namespaces detected | WindowGetLayer |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Layer, BuffHead: BuffHead.Setup.SelectColor.Show, BuffHead: BuffHead.Setup.SelectTexture.Show, Effigy: LIBGUI_ELEMENT:Layer, GCDsaver: LIBGUI_ELEMENT:Layer, LibWBToggler: LIBGUI_ELEMENT:Layer |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -90,7 +90,6 @@ Observed querying runtime window state or metadata.
 - LibWBToggler
 - Shinies
 - TexturedButtons
-- WarTriage
 - WoH-Reticle
 - nRarity
 

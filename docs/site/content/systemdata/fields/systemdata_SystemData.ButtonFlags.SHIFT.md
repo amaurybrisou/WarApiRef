@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Modules/UI/Shinies-UI-Auto.lua:1353`, `/workspace/Shinies/Modules/UI/Shinies-UI-Post.lua:1216` |
+| Files seen in | `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Auto.lua:1353`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Post.lua:1216` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | ShowItemTooltip, ShowRowTooltip, lua_call |

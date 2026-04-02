@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Effigy, Enemy, WarTriage |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePlayer.lua:244`, `/workspace/Enemy/Code/Core/Groups/EnemyPlayer.lua:198`, `/workspace/WarTriage/WarTriage.lua:347` |
+| Addons seen in | Effigy, Enemy |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:244`, `/workspace_addons/Enemy/Code/Core/Groups/EnemyPlayer.lua:198` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | Effigy.UpdatePlayerHP, EnemyPlayer:LoadFromCurrentPlayer, WarTriage.GetFriendlyPlayers, lua_call |
+| Example locations | Effigy.UpdatePlayerHP, EnemyPlayer:LoadFromCurrentPlayer, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,17 +59,16 @@
 
 ## Description
 
-Observed GameData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
+Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - Effigy
 - Enemy
-- WarTriage
 
 ## Related APIs
 
-- [PartyUtils.GetWarbandData](../../globals/functions/global_PartyUtils.GetWarbandData.md) (HIGH 100/100) - Global Function
+- none
 
 ## Used With
 
@@ -85,4 +84,4 @@ Observed GameData field used by 3 addons through generated function calls, event
 
 ## Notes
 
-- Observed in contexts: Effigy.UpdatePlayerHP, EnemyPlayer:LoadFromCurrentPlayer, WarTriage.GetFriendlyPlayers, lua_call
+- Observed in contexts: Effigy.UpdatePlayerHP, EnemyPlayer:LoadFromCurrentPlayer, lua_call

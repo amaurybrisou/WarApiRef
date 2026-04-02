@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/Debug.lua:448`, `/workspace/ea_uidebugtools/Source/Debug.lua:456`, `/workspace/ea_uidebugtools/Source/Debug.lua:470` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/Debug.lua:448`, `/workspace_addons/ea_uidebugtools/Source/Debug.lua:456`, `/workspace_addons/ea_uidebugtools/Source/Debug.lua:470` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | END_FUNCTION, START_FUNCTION, TRACE, lua_call |

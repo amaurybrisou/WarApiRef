@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedPetAssist, Effigy, LibGuard, TurretRange, Effigy, LibGuard, LoyalPet, TurretRange |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/LibGuard/Source/LibGuard.lua:47`, `/workspace/LibGuard/Source/LibGuard.lua:91`, `/workspace/LoyalPet/LoyalPet.lua:134`, `/workspace/LoyalPet/LoyalPet.lua:203`, `/workspace/TurrentRange/Core.lua:74`, `/workspace/TurrentRange/Core.lua:95` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace_addons/LibGuard/Source/LibGuard.lua:47`, `/workspace_addons/LibGuard/Source/LibGuard.lua:91`, `/workspace_addons/LoyalPet/LoyalPet.lua:134`, `/workspace_addons/LoyalPet/LoyalPet.lua:203`, `/workspace_addons/TurrentRange/Core.lua:74`, `/workspace_addons/TurrentRange/Core.lua:95` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedPetAssist.OnPlayerCast, Effigy.Name..".StartCast", Effigy.RegisterStateInfoForCastbar, LPET.Initialize, LPET.Shutdown, LibGuard.Init |

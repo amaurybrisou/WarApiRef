@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, LoyalPet, MapMonster, MapPin, MegaphonePlusPlus, PlanB, Targets, WSCT |
-| Files seen in | `/workspace/Aura/Source/Aura.lua:186`, `/workspace/Aura/Source/Aura.lua:282`, `/workspace/MapMonster/Source/MapMonster.lua:54`, `/workspace/MapMonster/Source/MapMonster.lua:65`, `/workspace/MapMonster/Source/MapMonster_EditorWindow.lua:1024`, `/workspace/MapMonster/Source/MapMonster_EditorWindow.lua:763`, `/workspace/MapMonster/Source/MapMonster_PinTypeEditorWindow.lua:682`, `/workspace/MapPin/source/MapPin.lua:1122` |
+| Addons seen in | Aura, LoyalPet, MapMonster, MapPin, PlanB, Targets, WSCT |
+| Files seen in | `/workspace_addons/Aura/Source/Aura.lua:186`, `/workspace_addons/Aura/Source/Aura.lua:282`, `/workspace_addons/MapMonster/Source/MapMonster.lua:54`, `/workspace_addons/MapMonster/Source/MapMonster.lua:65`, `/workspace_addons/MapMonster/Source/MapMonster_EditorWindow.lua:1024`, `/workspace_addons/MapMonster/Source/MapMonster_EditorWindow.lua:763`, `/workspace_addons/MapMonster/Source/MapMonster_PinTypeEditorWindow.lua:682`, `/workspace_addons/MapPin/source/MapPin.lua:1122` |
 | Namespaces detected | AlertTextWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | Aura: Aura:Activate, Aura: Aura:Deactivate, MapMonster: ConfirmCreateSubType, MapMonster: MapMonster.Editor.OnClickLeft, MapMonster: MapMonster.Editor.OpenEditWindow, MapMonster: MapMonster.PinTypeEditor.LeftButton |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 24 |
+| Lua usage count | 23 |
 | Global usage count | 2 |
 | Local definition count | 1 |
 | Documentation references | 1 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 8 addons.
+Observed shared global table or namespace surfaced in 7 addons.
 
 ## Functions
 
@@ -74,7 +74,6 @@ Observed shared global table or namespace surfaced in 8 addons.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - PlanB
 - Targets
 - WSCT

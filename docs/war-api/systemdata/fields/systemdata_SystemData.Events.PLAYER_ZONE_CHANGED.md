@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -31,18 +31,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CM_ClosetGoblin, CM_ClosetGoblin, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster, MegaphonePlusPlus, Shinies, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster, MegaphonePlusPlus |
-| Files seen in | `/workspace/ClosetGoblin/ClosetGoblin.lua:1218`, `/workspace/ClosetGoblin/ClosetGoblin.lua:1327`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/GCDsaver/GCDsaver.lua:268`, `/workspace/Killer/KillerLifecycle.lua:100` |
+| Addons seen in | CM_ClosetGoblin, CM_ClosetGoblin, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster, Shinies, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1283`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1392`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/GCDsaver/GCDsaver.lua:268`, `/workspace_addons/Killer/KillerLifecycle.lua:100` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | ClosetGoblin.PlayerZoneChanged, ClosetGoblin.ZoneChangeInit, ClosetGoblin.ZoneChangeShutdown, Enemy.GroupIcons_OnPlayerZoneChanged, Enemy.GroupsCheckTarget, Enemy.GroupsInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 29 |
-| Global usage count | 29 |
+| Lua usage count | 26 |
+| Global usage count | 26 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 5 |
+| Initialization flow references | 4 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,18 +62,17 @@
 
 ## Description
 
-Observed SystemData field used by 8 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 7 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - CM_ClosetGoblin
-- CM_ClosetGoblin, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster, MegaphonePlusPlus, Shinies
+- CM_ClosetGoblin, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster, Shinies
 - Enemy
 - GCDsaver
 - Killer
 - LibWBToggler
 - MapMonster
-- MegaphonePlusPlus
 
 ## Related APIs
 

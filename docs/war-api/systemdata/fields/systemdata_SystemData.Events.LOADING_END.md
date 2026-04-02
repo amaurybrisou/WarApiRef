@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 31 addons
+- Seen in: 27 addons
 
 ## Confidence Assessment
 
@@ -31,18 +31,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, Enemy, Killer, LibWBToggler, MapMonster, MegaphonePlusPlus, Miracle Grow Remix, MiracleGrow, MiracleGrowLight, PeaceOut, PetFixWindow, PlanB, Pocket Palette, RoR_SoR, TexturedButtons, TidyChat, TidyQueue, TidyRoll, TurretRange, Twister, WarBoard, WhoHealedMe, wbLeadHelper, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:92`, `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:98`, `/workspace/Aura/Source/AuraAddon.lua:70`, `/workspace/BuffHead/Core.lua:152`, `/workspace/ClosetGoblin/ClosetGoblin.lua:1218`, `/workspace/ClosetGoblin/ClosetGoblin.lua:1327`, `/workspace/ClosetGoblin/ClosetGoblin.lua:70`, `/workspace/ClosetGoblin/ClosetGoblin.lua:83` |
+| Addons seen in | AdvancedPetAssist, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, Enemy, Killer, LibWBToggler, MapMonster, Miracle Grow Remix, MiracleGrow, MiracleGrowLight, PetFixWindow, PlanB, Pocket Palette, RoR_SoR, TexturedButtons, TidyChat, TidyRoll, TurretRange, WarBoard, WhoHealedMe, wbLeadHelper, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:92`, `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:98`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1283`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1392`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:86` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedPetAssist.OnLoadingEnd, AdvancedPetAssist.local.RegisterLoadingEnd, AdvancedPetAssist.local.UnregisterLoadingEnd, AdvancedRenownTraining.Initialize, AdvancedRenownTraining.OnReload, AuraAddon.OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 86 |
-| Global usage count | 86 |
+| Lua usage count | 77 |
+| Global usage count | 77 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 27 |
+| Initialization flow references | 23 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,12 +62,12 @@
 
 ## Description
 
-Observed SystemData field used by 31 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 27 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
 - AdvancedPetAssist
-- AdvancedPetAssist, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, Enemy, Killer, LibWBToggler, MapMonster, MegaphonePlusPlus, Miracle Grow Remix, MiracleGrow, MiracleGrowLight, PeaceOut, PetFixWindow, PlanB, Pocket Palette, RoR_SoR, TexturedButtons, TidyChat, TidyQueue, TidyRoll, TurretRange, Twister, WarBoard, WhoHealedMe, wbLeadHelper
+- AdvancedPetAssist, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, Enemy, Killer, LibWBToggler, MapMonster, Miracle Grow Remix, MiracleGrow, MiracleGrowLight, PetFixWindow, PlanB, Pocket Palette, RoR_SoR, TexturedButtons, TidyChat, TidyRoll, TurretRange, WarBoard, WhoHealedMe, wbLeadHelper
 - AdvancedRenownTrainer
 - Aura
 - BagOMatic
@@ -79,21 +79,17 @@ Observed SystemData field used by 31 addons through generated function calls, ev
 - LibGroup
 - LibWBToggler
 - MapMonster
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
-- PeaceOut
 - PetFixWindow
 - PlanB
 - Pocket Palette
 - RoR_SoR
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
-- Twister
 - WarBoard
 - WhoHealedMe
 - wbLeadHelper
@@ -108,7 +104,6 @@ Observed SystemData field used by 31 addons through generated function calls, ev
 - [WindowRegisterCoreEventHandler](../../window_api/functions/window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 - [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
 - [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
-- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function

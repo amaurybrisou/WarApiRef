@@ -39,3 +39,19 @@ func TestValidationRejectsEmptyScaffoldTask(t *testing.T) {
 		t.Fatalf("expected invalid_params for empty task description")
 	}
 }
+
+func TestValidationRejectsMissingIngestObservationPayload(t *testing.T) {
+	v := NewValidator()
+	_, err := v.decodeAndValidate("ingest_observation", json.RawMessage(`{"dry_run":true}`))
+	if err == nil || err.ErrorCode != "invalid_params" {
+		t.Fatalf("expected invalid_params for missing observation")
+	}
+}
+
+func TestValidationRejectsNegativeIngestBatchLimit(t *testing.T) {
+	v := NewValidator()
+	_, err := v.decodeAndValidate("ingest_observation_batch", json.RawMessage(`{"limit":-1}`))
+	if err == nil || err.ErrorCode != "invalid_params" {
+		t.Fatalf("expected invalid_params for negative batch limit")
+	}
+}

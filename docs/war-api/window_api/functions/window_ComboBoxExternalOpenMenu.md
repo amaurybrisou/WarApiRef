@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Modules/UI/Shinies-UI-Browse.lua:290` |
+| Files seen in | `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:290` |
 | Namespaces detected | ComboBoxExternalOpenMenu |
 | Source kinds | lua_calls |
 | Example locations | Shinies: _G.Shinies:NewModule.Criteria_ReopenComboBox |

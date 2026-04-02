@@ -23,14 +23,14 @@
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | GCDsaver |
-| Files seen in | `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/GCDsaver/GCDsaver.lua:268` |
+| Files seen in | `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/GCDsaver/GCDsaver.lua:268` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | GCDsaver.PLAYER_TARGET_IS_IMMUNE_TO_MOVEMENT_IMPARING, GCDsaver.RegisterEvents, GCDsaver.UnregisterEvents, SystemData.Events.PLAYER_TARGET_IS_IMMUNE_TO_MOVEMENT_IMPARING, event_page, event_registration |

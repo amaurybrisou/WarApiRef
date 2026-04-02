@@ -24,14 +24,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, AggroMeter, Aura, CombatTextNames, Crafting Info Tooltip, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.lua:205`, `/workspace/Aura/Libraries/LibPickle.lua:428`, `/workspace/Aura/Libraries/LibPickle.lua:65`, `/workspace/Aura/Source/AuraHelpers.lua:129`, `/workspace/CraftValueTip/CraftValueTip.lua:108`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:121`, `/workspace/DAoCBuff/Source/Transcode.lua:289`, `/workspace/Effigy/Effigy.lua:227` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.lua:205`, `/workspace_addons/Aura/Libraries/LibPickle.lua:428`, `/workspace_addons/Aura/Libraries/LibPickle.lua:65`, `/workspace_addons/Aura/Source/AuraHelpers.lua:129`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:108`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:121`, `/workspace_addons/DAoCBuff/Source/Transcode.lua:289`, `/workspace_addons/Effigy/Effigy.lua:227` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.OnHyperLinkLButtonUp, AggroMeter: AggroMeter.OnMouseOverStart, Aura: Aura.local.wgsub, Aura: AuraHelpers.cleanWString, Aura: DePickler:unpickle |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 192 |
-| Global usage count | 10 |
+| Lua usage count | 166 |
+| Global usage count | 9 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -54,7 +54,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 25 addons.
+Observed shared global table or namespace surfaced in 23 addons.
 
 ## Functions
 
@@ -65,7 +65,6 @@ Observed shared global table or namespace surfaced in 25 addons.
 - wstring.len
 - wstring.lower
 - wstring.match
-- wstring.reverse
 - wstring.sub
 - wstring.upper
 
@@ -90,11 +89,9 @@ Observed shared global table or namespace surfaced in 25 addons.
 - LibGuard
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - Moth
 - PotionBar
-- Queue Queuer
 - RoR_SoR
 - Shinies
 - TexturedButtons

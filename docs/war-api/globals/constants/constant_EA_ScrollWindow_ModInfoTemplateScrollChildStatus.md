@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiModWindow |
-| Files seen in | `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:108`, `/workspace/ea_uimodwindow/Source/UiModInfoTemplate.xml:119` |
+| Files seen in | `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:108`, `/workspace_addons/ea_uimodwindow/Source/UiModInfoTemplate.xml:119` |
 | Namespaces detected | EA_ScrollWindow_ModInfoTemplateScrollChildStatus |
 | Source kinds | xml_attributes |
 | Example locations | EA_ScrollWindow_ModInfoTemplateScrollChildStatusFrame, EA_ScrollWindow_ModInfoTemplateScrollChildStatusText |

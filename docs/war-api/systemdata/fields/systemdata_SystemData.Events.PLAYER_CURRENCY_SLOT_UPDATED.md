@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Killer, Killer, Shinies |
-| Files seen in | `/workspace/Killer/KillerLifecycle.lua:100`, `/workspace/Killer/KillerLifecycle.lua:4` |
+| Files seen in | `/workspace_addons/Killer/KillerLifecycle.lua:100`, `/workspace_addons/Killer/KillerLifecycle.lua:4` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | Killer.Initialize, Killer.OnCurrencyUpdated, Killer.Shutdown, SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED, event_page, event_registration |

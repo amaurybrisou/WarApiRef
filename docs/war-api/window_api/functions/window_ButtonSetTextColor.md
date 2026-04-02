@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, TidyChat, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/Ace/LibGUI.lua:543`, `/workspace/Effigy/LibGUI.lua:543`, `/workspace/GCDsaver/libs/LibGUI.lua:543`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:543`, `/workspace/Shinies/Libraries/LibGUI.lua:543`, `/workspace/TidyChat/TidyChat.lua:1013`, `/workspace/WarTriage/libs/LibGUI.lua:543`, `/workspace/WoH-Reticle/libs/LibGUI.lua:543` |
+| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, TidyChat, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:543`, `/workspace_addons/Effigy/LibGUI.lua:543`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:543`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:543`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:543`, `/workspace_addons/TidyChat/TidyChat.lua:1013`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:543` |
 | Namespaces detected | ButtonSetTextColor |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Button:TextColor, Effigy: LIBGUI_Button:TextColor, GCDsaver: LIBGUI_Button:TextColor, LibWBToggler: LIBGUI_Button:TextColor, Shinies: LIBGUI_Button:TextColor, TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 19 |
-| Global usage count | 19 |
+| Lua usage count | 18 |
+| Global usage count | 18 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -93,7 +93,6 @@ Observed mutating button text or pressed state on existing controls.
 - LibWBToggler
 - Shinies
 - TidyChat
-- WarTriage
 - WoH-Reticle
 
 ## Examples

@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | GCDsaver |
-| Files seen in | `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/GCDsaver/GCDsaver.lua:268` |
+| Files seen in | `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/GCDsaver/GCDsaver.lua:268` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | GCDsaver.PLAYER_TARGET_IS_IMMUNE_TO_DISABLES, GCDsaver.RegisterEvents, GCDsaver.UnregisterEvents, SystemData.Events.PLAYER_TARGET_IS_IMMUNE_TO_DISABLES, event_page, event_registration |

@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, CMap, EA_UiDebugTools, EA_UiModWindow |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:1385`, `/workspace/AdvancedPetAssist/APAGui.xml:1426`, `/workspace/AdvancedPetAssist/APAGui.xml:1467`, `/workspace/AdvancedPetAssist/APAGui.xml:96`, `/workspace/Aura/Source/AuraConfig.xml:27`, `/workspace/Aura/Source/AuraSettings.xml:78`, `/workspace/Aura/Source/AuraShares.xml:153`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.xml:54` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1385`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1426`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1467`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:96`, `/workspace_addons/Aura/Source/AuraConfig.xml:27`, `/workspace_addons/Aura/Source/AuraSettings.xml:78`, `/workspace_addons/Aura/Source/AuraShares.xml:153`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:54` |
 | Namespaces detected | OnHidden |
 | Source kinds | bindings, xml_handlers |
 | Example locations | AdvancedPetAssist: APAFollowTargetHUD.OnHidden, AdvancedPetAssist: APAInstantOnlyHUD.OnHidden, AdvancedPetAssist: APAKitingHUD.OnHidden, AdvancedPetAssist: APAOptions.OnHidden, AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow.OnHidden, AdvancedRenownTrainer: AdvancedRenownTrainingImportNameInputWindow.OnHidden |
@@ -130,4 +130,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

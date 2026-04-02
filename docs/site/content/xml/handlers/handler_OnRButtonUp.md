@@ -28,13 +28,13 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, BuffHead, Busted, CM_ClosetGoblin, CMap |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:135`, `/workspace/AggroMeter/AggroMeter.xml:8`, `/workspace/AnywhereTrainer/source/AnywhereTrainer.xml:50`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.xml:6`, `/workspace/Aura/Source/AuraSettings.xml:28`, `/workspace/Aura/Source/AuraShares.xml:81`, `/workspace/BuffHead/Setup/General.xml:34`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.xml:46` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:135`, `/workspace_addons/AggroMeter/AggroMeter.xml:8`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.xml:50`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.xml:6`, `/workspace_addons/Aura/Source/AuraSettings.xml:28`, `/workspace_addons/Aura/Source/AuraShares.xml:81`, `/workspace_addons/BuffHead/Setup/General.xml:34`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:46` |
 | Namespaces detected | OnRButtonUp |
 | Source kinds | bindings, xml_handlers |
 | Example locations | AggroMeter: AggroMeterGrayListBox.OnRButtonUp, AggroMeter: AggroMeter_Button.OnRButtonUp, AnywhereTrainer: AnywhereTrainerTabTemplate.OnRButtonUp, AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnRButtonUp, Aura: AuraSharesRow.OnRButtonUp, Aura: AuraWindowRow.OnRButtonUp |
-| XML usage count | 150 |
-| XML attribute usage count | 150 |
-| Lua usage count | 147 |
+| XML usage count | 142 |
+| XML attribute usage count | 142 |
+| Lua usage count | 139 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 35 addons through frame event handlers.
+Observed as an XML handler hook bound by 31 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -69,7 +69,6 @@ function(...)
 ## Element Types
 
 - Button
-- ComboBox
 - DynamicImage
 - Label
 - ListBox
@@ -97,16 +96,12 @@ function(...)
 - Miracle Grow Remix
 - MiracleGrowLight
 - MoraleCircle
-- PeaceOut
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - RandomMount
 - RoR_SoR
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
-- TidyQueue
 - TidyRoll
 - Tortall_DPS
 - TurretRange
@@ -133,12 +128,10 @@ function(...)
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 - [WindowStopAlphaAnimation](../../window_api/functions/window_WindowStopAlphaAnimation.md) (HIGH 100/100) - Window Function
 - [WindowGetMovable](../../window_api/functions/window_WindowGetMovable.md) (HIGH 90/100) - Window Function
-- [PlayerMenuWindow.ShowMenu](../../globals/functions/global_PlayerMenuWindow.ShowMenu.md) (HIGH 88/100) - Global Function
 
 ## Used With
 
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [EA_Window_ContextMenu.AddMenuDivider](../../globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.AddMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
@@ -164,4 +157,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Aura, AutoBand, BankArkel, BuffHead, DaemonAssist, EA_UiDebugTools, EA_UiModWindow |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:94`, `/workspace/Aura/Source/AuraColorPicker.xml:25`, `/workspace/Aura/Source/AuraConfig.xml:33`, `/workspace/Aura/Source/AuraSettings.xml:83`, `/workspace/Aura/Source/AuraShares.xml:158`, `/workspace/Aura/Source/AuraShares.xml:27`, `/workspace/Aura/Source/AuraTexture.xml:104`, `/workspace/Autoband/AutoBandWindow.xml:147` |
+| Addons seen in | AggroMeter, Aura, BankArkel, BuffHead, DaemonAssist, EA_UiDebugTools, EA_UiModWindow, FastInteract |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:94`, `/workspace_addons/Aura/Source/AuraColorPicker.xml:25`, `/workspace_addons/Aura/Source/AuraConfig.xml:33`, `/workspace_addons/Aura/Source/AuraSettings.xml:83`, `/workspace_addons/Aura/Source/AuraShares.xml:158`, `/workspace_addons/Aura/Source/AuraShares.xml:27`, `/workspace_addons/Aura/Source/AuraTexture.xml:104`, `/workspace_addons/BankArkel/BankArkel.xml:302` |
 | Namespaces detected | EA_Window_DefaultBackgroundFrame |
 | Source kinds | xml_attributes |
 | Example locations | AggroMeterGrayWindowBackground, AuraColorPickerBackground, AuraConfigBackground, AuraSettingsBackground, AuraSharesBackground, AuraSharesImportExportBackground |
-| XML usage count | 72 |
-| XML attribute usage count | 72 |
+| XML usage count | 67 |
+| XML attribute usage count | 67 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,13 +57,12 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 26 addons.
+Observed engine XML template or inherited constant referenced by 22 addons.
 
 ## Seen In
 
 - AggroMeter
 - Aura
-- AutoBand
 - BankArkel
 - BuffHead
 - DaemonAssist
@@ -73,15 +72,12 @@ Observed engine XML template or inherited constant referenced by 26 addons.
 - LibGroup
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - ObjectInspector
 - Pocket Palette
-- Queue Queuer
 - QuickTacticSwitch
 - RVMOD_Manager
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TurretRange
 - WarBoard
@@ -97,8 +93,6 @@ Observed engine XML template or inherited constant referenced by 26 addons.
 - AuraSharesBackground
 - AuraSharesImportExportBackground
 - AuraTextureBackground
-- AutoBandWindowBackground
-- AutoBandWindowTemplateSaveBackground
 - BankArkelBackpackComboFrame
 - BuffHeadSetupAdvancedCompressionItemEffectWindowBackground
 - BuffHeadSetupAdvancedCompressionItemWindowBackground
@@ -132,15 +126,12 @@ Observed engine XML template or inherited constant referenced by 26 addons.
 - MapMonster_IconChooserWindowBackground
 - MapMonster_PinTypeEditorWindowBackground
 - MapPin_SetupBackground
-- MegaphoneMainBackground
 - ObjectInspectorBackground
 - PackWinBackground
-- QueueQueuer_GUI_Background
 - QuickTacticSwitchWindowBackground
 - RVMOD_ManagerWindowBackground
 - ShiniesBrowseUI_SearchesBackground
 - ShiniesWindowBackground
-- TOLSettingsMainWindowBackground
 - TexturedButtonsSetupActionbarWindowBackground
 - TexturedButtonsSetupAdvancedTexturesWindowBackground
 - TexturedButtonsSetupCooldownWindowBackground

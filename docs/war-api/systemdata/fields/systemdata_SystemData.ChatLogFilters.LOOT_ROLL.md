@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyRoll |
-| Files seen in | `/workspace/TidyRoll/TidyRoll.lua:213` |
+| Files seen in | `/workspace_addons/TidyRoll/TidyRoll.lua:213` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | TidyRoll.local.print_autoroll, lua_call, print_autoroll |

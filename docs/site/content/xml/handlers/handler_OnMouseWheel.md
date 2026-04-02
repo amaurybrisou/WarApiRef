@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CMap, MoraleCircle, TidyChat, TidyRoll |
-| Files seen in | `/workspace/MoraleCircle/MoraleCircle.xml:21`, `/workspace/TidyChat/TidyChatCopy.xml:17`, `/workspace/TidyRoll/TidyRoll.xml:203`, `/workspace/cmap/CMap.xml:105`, `/workspace/cmap/CMap.xml:156`, `/workspace/cmap/CMap.xml:79` |
+| Files seen in | `/workspace_addons/MoraleCircle/MoraleCircle.xml:21`, `/workspace_addons/TidyChat/TidyChatCopy.xml:17`, `/workspace_addons/TidyRoll/TidyRoll.xml:203`, `/workspace_addons/cmap/CMap.xml:105`, `/workspace_addons/cmap/CMap.xml:156`, `/workspace_addons/cmap/CMap.xml:79` |
 | Namespaces detected | OnMouseWheel |
 | Source kinds | bindings, xml_handlers |
 | Example locations | CMap: CMapWindowMapDisplay.OnMouseWheel, CMap: CMapWindowMapWorldMapButton.OnMouseWheel, CMap: CMapWindowWMap.OnMouseWheel, MoraleCircle: MoraleTemplate.OnMouseWheel, TidyChat: TidyChatCopy.OnMouseWheel, TidyRoll: TidyRollFrame.OnMouseWheel |
@@ -109,4 +109,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

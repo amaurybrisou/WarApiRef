@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:622` |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:622` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | DAoCBuffTracker:BeginTestMode, lua_call |

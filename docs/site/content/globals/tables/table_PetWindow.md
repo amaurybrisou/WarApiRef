@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, Aura, DaemonAssist, TexturedButtons |
-| Files seen in | `/workspace/AdvancedPetAssist/APACore.lua:214`, `/workspace/AdvancedPetAssist/APACore.lua:269`, `/workspace/AdvancedPetAssist/APACore.lua:283`, `/workspace/Aura/Source/AuraEngine.lua:1142`, `/workspace/DaemonAssist/DACore.lua:23`, `/workspace/DaemonAssist/DACore.lua:7` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APACore.lua:214`, `/workspace_addons/AdvancedPetAssist/APACore.lua:269`, `/workspace_addons/AdvancedPetAssist/APACore.lua:283`, `/workspace_addons/Aura/Source/AuraEngine.lua:1142`, `/workspace_addons/DaemonAssist/DACore.lua:23`, `/workspace_addons/DaemonAssist/DACore.lua:7` |
 | Namespaces detected | PetWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.ApplyDefaultStance, AdvancedPetAssist: AdvancedPetAssist.HasPet, AdvancedPetAssist: AdvancedPetAssist.SetPassiveFollow, Aura: AuraEngine.HandleTriggerType_PetStatus, DaemonAssist: DaemonAssist.EnsurePassiveFollow, DaemonAssist: DaemonAssist.HasPet |

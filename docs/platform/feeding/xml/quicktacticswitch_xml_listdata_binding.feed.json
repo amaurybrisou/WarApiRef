@@ -1,0 +1,156 @@
+{
+  "schema_version": "feeding.observation.v1",
+  "entry_id": "quicktacticswitch_xml_listdata_binding",
+  "status": "promoted",
+  "source": {
+    "addon": "QuickTacticSwitch",
+    "repository": "QuickTacticSwitch",
+    "branch": "main",
+    "date_utc": "2026-04-02",
+    "validation": "dev_observed",
+    "context": "XML and Lua implementation review of QuickTacticSwitch, corroborated against other in-workspace addons using ListBox/ListData patterns."
+  },
+  "target_seeds": [
+    "docs/platform/seeds/xml_conventions.md"
+  ],
+  "confidence": {
+    "overall": "MEDIUM",
+    "rationale": "Observed repeatedly in addon implementations, but ListData itself is not yet covered by canonical platform documentation."
+  },
+  "claims": [
+    {
+      "claim_id": "listdata_binds_listbox_to_lua_table",
+      "kind": "usage_pattern",
+      "confidence": "MEDIUM",
+      "symbols": [
+        "ListBox",
+        "ListData"
+      ],
+      "statement": "ListData appears to bind a ListBox to a named Lua table through its table attribute.",
+      "guidance": "Treat the table attribute as the backing collection for list rows, and rebuild that Lua table before refreshing or reordering the list.",
+      "evidence_refs": [
+        "ev_qts_xml_listdata",
+        "ev_qts_lua_backing_table"
+      ]
+    },
+    {
+      "claim_id": "listcolumns_map_table_fields_to_row_children",
+      "kind": "usage_pattern",
+      "confidence": "MEDIUM",
+      "symbols": [
+        "ListData",
+        "ListColumns",
+        "ListColumn"
+      ],
+      "statement": "ListColumn entries under ListData appear to map fields from each backing-table entry onto row-template child windows.",
+      "guidance": "Use windowname and variable to bind text-bearing row children from structured table entries, and keep format declarations conservative.",
+      "evidence_refs": [
+        "ev_qts_xml_listcolumns"
+      ]
+    },
+    {
+      "claim_id": "populationfunction_and_populatorindices_support_custom_rows",
+      "kind": "usage_pattern",
+      "confidence": "MEDIUM",
+      "symbols": [
+        "ListData",
+        "ListBoxSetDisplayOrder",
+        "ListBoxGetDataIndex",
+        "PopulatorIndices"
+      ],
+      "statement": "When populationfunction is present, Lua can perform custom row population and use PopulatorIndices plus ListBox APIs to manage visible-row ordering and row-to-data mapping.",
+      "guidance": "Use ListColumns for straightforward text binding, and reserve populationfunction for extra row work such as icons or row-specific state that is not expressed directly in XML.",
+      "evidence_refs": [
+        "ev_qts_lua_display_order",
+        "ev_qts_lua_population",
+        "ev_qts_lua_row_mapping"
+      ]
+    },
+    {
+      "claim_id": "populationfunction_can_be_blank_for_text_only_lists",
+      "kind": "usage_pattern",
+      "confidence": "MEDIUM",
+      "symbols": [
+        "ListData"
+      ],
+      "statement": "A blank populationfunction appears to be accepted when XML column binding alone is sufficient for the list.",
+      "guidance": "If the list only needs ListColumns text binding, an empty populationfunction may be enough; add a Lua population function only when the row requires extra runtime setup.",
+      "evidence_refs": [
+        "ev_aggrometer_blank_populationfunction"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_qts_xml_listdata",
+      "type": "code_change",
+      "summary": "QuickTacticSwitch ListBox declares ListData with a Lua table path and population function.",
+      "file_refs": [
+        "QuickTacticSwitch/QuickTacticSwitch.xml"
+      ]
+    },
+    {
+      "evidence_id": "ev_qts_xml_listcolumns",
+      "type": "code_change",
+      "summary": "QuickTacticSwitch ListColumns binds Name and Enemy fields from the Lua row table to row-template child windows.",
+      "file_refs": [
+        "QuickTacticSwitch/QuickTacticSwitch.xml"
+      ]
+    },
+    {
+      "evidence_id": "ev_qts_lua_backing_table",
+      "type": "code_change",
+      "summary": "QuickTacticSwitch builds QTS.listDisplayData before refreshing the list.",
+      "file_refs": [
+        "QuickTacticSwitch/QuickTacticSwitch.lua"
+      ]
+    },
+    {
+      "evidence_id": "ev_qts_lua_display_order",
+      "type": "code_change",
+      "summary": "QuickTacticSwitch sets visible list ordering with ListBoxSetDisplayOrder.",
+      "file_refs": [
+        "QuickTacticSwitch/QuickTacticSwitch.lua"
+      ]
+    },
+    {
+      "evidence_id": "ev_qts_lua_population",
+      "type": "code_change",
+      "summary": "QuickTacticSwitch PopulateDisplay iterates QuickTacticSwitchWindowList.PopulatorIndices and sets row icons.",
+      "file_refs": [
+        "QuickTacticSwitch/QuickTacticSwitch.lua"
+      ]
+    },
+    {
+      "evidence_id": "ev_qts_lua_row_mapping",
+      "type": "code_change",
+      "summary": "QuickTacticSwitch uses ListBoxGetDataIndex to map a clicked row back to the current data entry.",
+      "file_refs": [
+        "QuickTacticSwitch/QuickTacticSwitch.lua"
+      ]
+    },
+    {
+      "evidence_id": "ev_aggrometer_blank_populationfunction",
+      "type": "code_change",
+      "summary": "AggroMeter declares a ListData node with an empty populationfunction value for a text-only list.",
+      "file_refs": [
+        "AddOns/AggroMeter/AggroMeter.xml"
+      ]
+    }
+  ],
+  "promotion": {
+    "notes": "Promote as an observed XML list-binding pattern, not as a guaranteed engine-side symbol contract.",
+    "criteria": [
+      "Corroborate in additional addons or canonical references before promoting callback semantics beyond the observed binding model.",
+      "Keep MEDIUM confidence unless canonical platform documentation or broader evidence is added."
+    ]
+  },
+  "tags": [
+    "xml",
+    "listbox",
+    "listdata",
+    "listcolumns",
+    "ui_binding",
+    "quicktacticswitch"
+  ]
+}

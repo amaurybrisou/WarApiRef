@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 28 addons
+- Seen in: 27 addons
 
 ## Confidence Assessment
 
@@ -25,14 +25,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, Aura, AutoMark, BankWindowFix, BuffHead, DAoCBuff, Effigy, Enemy |
-| Files seen in | `/workspace/Ace/LibGUI.lua:120`, `/workspace/Aura/Source/Aura.lua:359`, `/workspace/AutoMark/Source/AutoMark.lua:27`, `/workspace/BankWindowFix/Source/BankWindowFix.lua:15`, `/workspace/BuffHead/Container.lua:886`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:767`, `/workspace/DAoCBuff/Source/DAoCBuffHeadFrames.lua:212`, `/workspace/Effigy/EffigySlashCommands.lua:53` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:120`, `/workspace_addons/Aura/Source/Aura.lua:359`, `/workspace_addons/AutoMark/Source/AutoMark.lua:27`, `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:15`, `/workspace_addons/BuffHead/Container.lua:886`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:767`, `/workspace_addons/DAoCBuff/Source/DAoCBuffHeadFrames.lua:212`, `/workspace_addons/Effigy/EffigySlashCommands.lua:53` |
 | Namespaces detected | DestroyWindow |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Destroy, Aura: Aura:DeleteWindow, AutoMark: AutoMark.local.DestroyMarker, AutoMark: DestroyMarker, BankWindowFix: BankWindowFix.Initialize, BuffHead: BuffHeadContainer:Destroy |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 70 |
-| Global usage count | 70 |
+| Lua usage count | 69 |
+| Global usage count | 69 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -103,7 +103,6 @@ Observed tearing down runtime-created windows.
 - Shinies
 - TidyRoll
 - WSCT
-- WarTriage
 - WoH-Reticle
 - nRarity
 - wbLeadHelper
@@ -123,11 +122,17 @@ Observed tearing down runtime-created windows.
 
 ## Used With
 
+- [InterfaceCore.GetScale](global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
+- [LibSlash.UnregisterSlashCmd](global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [ScrollWindowSetOffset](../../window_api/functions/window_ScrollWindowSetOffset.md) (HIGH 100/100) - Window Function
+- [SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_RENOWN_RANK_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_RANK_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 100/100) - Window Function
 - [WindowGetScale](../../window_api/functions/window_WindowGetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetOffsetFromParent](../../window_api/functions/window_WindowSetOffsetFromParent.md) (HIGH 100/100) - Window Function
 - [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
@@ -136,6 +141,7 @@ Observed tearing down runtime-created windows.
 - [CreateWindowFromTemplate](global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 - [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 - [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
+- [UnregisterEventHandler](global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By
 

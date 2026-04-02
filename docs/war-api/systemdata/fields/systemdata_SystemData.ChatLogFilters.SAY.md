@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Pocket Palette, PotionBar, Shinies |
-| Files seen in | `/workspace/PocketPalette/PocketPalette.lua:105`, `/workspace/PotionBar/source/Main.lua:112`, `/workspace/PotionBar/source/Main.lua:580`, `/workspace/Shinies/Source/Shinies.lua:294` |
+| Files seen in | `/workspace_addons/PocketPalette/PocketPalette.lua:105`, `/workspace_addons/PotionBar/source/Main.lua:112`, `/workspace_addons/PotionBar/source/Main.lua:580`, `/workspace_addons/Shinies/Source/Shinies.lua:294` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | LibStub:Print, PP.Initialize, PotionBar.LibSlashHandler, PotionBar.ListUnknowns, lua_call |

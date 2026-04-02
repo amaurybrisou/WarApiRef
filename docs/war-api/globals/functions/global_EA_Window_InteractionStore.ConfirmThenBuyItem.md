@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic |
-| Files seen in | `/workspace/bagomatic/BagOMatic.lua:776`, `/workspace/bagomatic/BagOMatic.lua:782` |
+| Files seen in | `/workspace_addons/bagomatic/BagOMatic.lua:776`, `/workspace_addons/bagomatic/BagOMatic.lua:782` |
 | Namespaces detected | EA_Window_InteractionStore |
 | Source kinds | globals, lua_calls |
 | Example locations | BagOMatic: BagOMatic.buyItem, BagOMatic: BagOMatic.buyLastItem |

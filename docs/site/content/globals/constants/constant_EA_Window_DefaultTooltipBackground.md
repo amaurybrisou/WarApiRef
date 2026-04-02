@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, DAoCBuff, Enemy, GetStats, Killer, MapMonster, MapPin, Miracle Grow Remix |
-| Files seen in | `/workspace/Aura/Source/AuraTooltip.xml:161`, `/workspace/Aura/Source/AuraTooltip.xml:22`, `/workspace/DAoCBuff/Source/DAoCTooltips.xml:38`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:436`, `/workspace/GetStats/GetStats.xml:115`, `/workspace/GetStats/GetStats.xml:41`, `/workspace/Killer/Killer.xml:216`, `/workspace/MGRemix/MGRemix.xml:337` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraTooltip.xml:161`, `/workspace_addons/Aura/Source/AuraTooltip.xml:22`, `/workspace_addons/DAoCBuff/Source/DAoCTooltips.xml:38`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:436`, `/workspace_addons/GetStats/GetStats.xml:115`, `/workspace_addons/GetStats/GetStats.xml:41`, `/workspace_addons/Killer/Killer.xml:216`, `/workspace_addons/MGRemix/MGRemix.xml:337` |
 | Namespaces detected | EA_Window_DefaultTooltipBackground |
 | Source kinds | xml_attributes |
 | Example locations | AuraShareTooltipBackground, AuraTooltipBackground, DAoCBuffCondenseTooltipBackground, EnemyCombatLogStatsWindowTooltipBackground, GetStatsCompareWindowBackground, GetStatsWindowBackground |

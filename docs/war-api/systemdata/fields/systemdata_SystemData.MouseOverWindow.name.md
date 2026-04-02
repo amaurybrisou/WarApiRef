@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 26 addons
+- Seen in: 24 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AggroMeter, BankArkel, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, GoldTracker |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.lua:205`, `/workspace/AggroMeter/AggroMeter.lua:242`, `/workspace/AggroMeter/AggroMeter.lua:251`, `/workspace/AggroMeter/AggroMeter.lua:378`, `/workspace/BankArkel/BankArkel.lua:153`, `/workspace/BankArkel/BankArkel.lua:160`, `/workspace/BankArkel/BankArkel.lua:438`, `/workspace/BuffHead/Setup/SelectTexture.lua:107` |
+| Addons seen in | AdvancedRenownTrainer, AggroMeter, BankArkel, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, JunkDump |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.lua:205`, `/workspace_addons/AggroMeter/AggroMeter.lua:242`, `/workspace_addons/AggroMeter/AggroMeter.lua:251`, `/workspace_addons/AggroMeter/AggroMeter.lua:378`, `/workspace_addons/BankArkel/BankArkel.lua:153`, `/workspace_addons/BankArkel/BankArkel.lua:160`, `/workspace_addons/BankArkel/BankArkel.lua:438`, `/workspace_addons/BuffHead/Setup/SelectTexture.lua:107` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | AdvancedRenownTraining.AbilityTooltip, AggroMeter.OnMouseOverStart, AggroMeter.OnTabRBU, AggroMeter.PickedListMenu, AggroMeter.SelectChar, BankArkel.PackIconOver |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 105 |
-| Global usage count | 105 |
+| Lua usage count | 100 |
+| Global usage count | 100 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed SystemData field used by 26 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 24 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
@@ -70,7 +70,6 @@ Observed SystemData field used by 26 addons through generated function calls, ev
 - CM_ClosetGoblin
 - DAoCBuff
 - Enemy
-- GoldTracker
 - JunkDump
 - Killer
 - LoyalPet
@@ -84,7 +83,6 @@ Observed SystemData field used by 26 addons through generated function calls, ev
 - Shinies
 - Swift Assist
 - TexturedButtons
-- TidyQueue
 - TidyRoll
 - TurretRange
 - nRarity
@@ -105,7 +103,6 @@ Observed SystemData field used by 26 addons through generated function calls, ev
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 - [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
 - [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-- [PlayerMenuWindow.ShowMenu](../../globals/functions/global_PlayerMenuWindow.ShowMenu.md) (HIGH 88/100) - Global Function
 - [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 
 ## Used With

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: MEDIUM
 - Confidence score: 63/100
-- Seen in: 3 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Effigy, Queue Queuer, TidyChat |
-| Files seen in | `/workspace/Effigy/Elements/EffigyLabel.lua:16`, `/workspace/Effigy/States/EffigyStatePlayer.lua:294`, `/workspace/QueueQueuer/QueueQueuer.lua:338`, `/workspace/QueueQueuer/QueueQueuer.lua:377`, `/workspace/TidyChat/TidyChat.lua:1469` |
+| Addons seen in | Effigy, TidyChat |
+| Files seen in | `/workspace_addons/Effigy/Elements/EffigyLabel.lua:16`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:294`, `/workspace_addons/TidyChat/TidyChat.lua:1469` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | Effigy: Effigy.UpdateTitle, Effigy: Effigy.local.WStringSplitInclDelimiter, Effigy: WStringSplitInclDelimiter, Queue Queuer: QueueQueuer.CompareWStrings, Queue Queuer: QueueQueuer.FixName, TidyChat: TidyChatLogs.ProcessLootRollEntry |
+| Example locations | Effigy: Effigy.UpdateTitle, Effigy: Effigy.local.WStringSplitInclDelimiter, Effigy: WStringSplitInclDelimiter, TidyChat: TidyChatLogs.ProcessLootRollEntry |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,21 +57,19 @@
 ## Signature (inferred)
 
 ```lua
-wstring.find(arg1, arg2, arg3, arg4)
+wstring.find(arg1, arg2)
 ```
 
 ## Description
 
-Observed as a global function across 3 addons.
+Observed as a global function across 2 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: first, inString, name |
-| arg2 | Observed as a text or wstring payload. | Observed values: L "	", L " ", L "," |
-| arg3 | Observed as a numeric value. | Observed values: 1, pos |
-| arg4 | Observed as a boolean toggle. | Observed values: true |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: inString, text, titleData.name |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: L ",", delimiter, find_TEXT_NEEDGREED_ROLL_HEADER |
 
 ## Returns
 
@@ -84,7 +82,6 @@ Observed as a global function across 3 addons.
 ## Seen In
 
 - Effigy
-- Queue Queuer
 - TidyChat
 
 ## Examples
@@ -92,9 +89,9 @@ Observed as a global function across 3 addons.
 - Effigy: Effigy.UpdateTitle -> wstring.find(titleData.name, L ",")
 - Effigy: Effigy.local.WStringSplitInclDelimiter -> wstring.find(inString, delimiter, pos, true)
 - Effigy: WStringSplitInclDelimiter -> wstring.find(inString, delimiter, pos, true)
-- Queue Queuer: QueueQueuer.CompareWStrings -> wstring.find(first, second, 1, true)
-- Queue Queuer: QueueQueuer.FixName -> wstring.find(name, L "^", 1, true)
-- Queue Queuer: QueueQueuer.FixName -> wstring.find(name, L "	", 1, true)
+- TidyChat: TidyChatLogs.ProcessLootRollEntry -> wstring.find(text, find_TEXT_SELECT)
+- TidyChat: TidyChatLogs.ProcessLootRollEntry -> wstring.find(text, find_TEXT_WINNER_HEADER)
+- TidyChat: TidyChatLogs.ProcessLootRollEntry -> wstring.find(text, find_TEXT_NEEDGREED_ROLL_HEADER)
 
 ## Related APIs
 
@@ -104,10 +101,8 @@ Observed as a global function across 3 addons.
 
 - [GameData.Player.activeTitle](../../gamedata/fields/gamedata_GameData.Player.activeTitle.md) (HIGH 100/100) - GameData Field
 - [GameData.Player.worldObjNum](../../gamedata/fields/gamedata_GameData.Player.worldObjNum.md) (HIGH 100/100) - GameData Field
-- [wstring.len](global_wstring.len.md) (HIGH 100/100) - Global Function
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
+- [wstring.match](global_wstring.match.md) (HIGH 100/100) - Global Function
 - [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
-- [wstring.reverse](global_wstring.reverse.md) (MEDIUM 45/100) - Global Function
 
 ## Triggered By
 

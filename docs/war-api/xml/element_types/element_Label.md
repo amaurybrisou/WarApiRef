@@ -29,13 +29,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoBand, BankArkel, BuffHead, Busted |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:1012`, `/workspace/AdvancedPetAssist/APAGui.xml:1034`, `/workspace/AdvancedPetAssist/APAGui.xml:1056`, `/workspace/AdvancedPetAssist/APAGui.xml:1068`, `/workspace/AdvancedPetAssist/APAGui.xml:1090`, `/workspace/AdvancedPetAssist/APAGui.xml:1102`, `/workspace/AdvancedPetAssist/APAGui.xml:1114`, `/workspace/AdvancedPetAssist/APAGui.xml:1126` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, Busted, CM_ClosetGoblin |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1012`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1034`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1056`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1068`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1090`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1102`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1114`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1126` |
 | Namespaces detected | Label |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | AdvancedPetAssist: APAFollowTargetHUDLabel, AdvancedPetAssist: APAInstantOnlyHUDLabel, AdvancedPetAssist: APAKitingHUDLabel, AdvancedPetAssist: APALabelAttackBind, AdvancedPetAssist: APALabelAutoReattack, AdvancedPetAssist: APALabelAutoReattackDelay |
-| XML usage count | 1606 |
-| XML attribute usage count | 1606 |
+| XML usage count | 1572 |
+| XML attribute usage count | 1572 |
 | Lua usage count | 7 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 66 addons.
+Observed XML element type instantiated by 56 addons.
 
 ## Common Attributes
 
@@ -70,8 +70,8 @@ Observed XML element type instantiated by 66 addons.
 - inherits
 - handleinput
 - autoresize
-- maxchars
 - warnOnTextCropped
+- maxchars
 - wordwrap
 - layer
 - popable
@@ -94,12 +94,12 @@ Observed XML element type instantiated by 66 addons.
 - ClosetGoblinTalismanLabel
 - Shinies_Default_Label_ClearSmallFont
 - ModDetailsTextDef
-- EA_Label_DefaultText_Small
 - ModDetailsLabelDef
 - DefaultWindowSmallText
 - EA_Settings_ItemTitle
 - MapMonsterEditorWindowLabelDefault
 - DefaultWindowText
+- EA_Label_DefaultText_Small
 - IraConfigHeading
 
 ## Seen In
@@ -108,26 +108,22 @@ Observed XML element type instantiated by 66 addons.
 - AdvancedRenownTrainer
 - AggroMeter
 - Aura
-- AutoBand
 - BankArkel
 - BuffHead
 - Busted
 - CM_ClosetGoblin
 - CMap
 - Cheeseboard
-- Clock
 - CombatTextNames
 - Crafting Info Tooltip
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - EA_UiModWindow
 - Effigy
 - Enemy
 - FastInteract
 - GetStats
-- GoldTracker
 - GuardLine
 - GuardList
 - GuardRange
@@ -138,16 +134,13 @@ Observed XML element type instantiated by 66 addons.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
 - Moth
-- PeaceOut
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
 - RVAPI_ColorDialog
@@ -158,11 +151,8 @@ Observed XML element type instantiated by 66 addons.
 - Swift Assist
 - Targets
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
-- TimeInQueue
 - Tortall_DPS
 - TurretRange
 - WSCT

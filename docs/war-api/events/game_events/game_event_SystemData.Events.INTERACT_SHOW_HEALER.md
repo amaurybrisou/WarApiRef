@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | FastInteract, HealAll |
-| Files seen in | `/workspace/FastInteract/FastInteract.lua:132`, `/workspace/HealAll/HealAll.lua:3` |
+| Files seen in | `/workspace_addons/FastInteract/FastInteract.lua:132`, `/workspace_addons/HealAll/HealAll.lua:3` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | FastInteract: FastInteract.Initialize, HealAll: HealAll.Initialize |

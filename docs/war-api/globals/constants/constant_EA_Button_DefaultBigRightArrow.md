@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WarBoard |
-| Files seen in | `/workspace/WarBoard/WarBoard.xml:47` |
+| Files seen in | `/workspace_addons/WarBoard/WarBoard.xml:47` |
 | Namespaces detected | EA_Button_DefaultBigRightArrow |
 | Source kinds | xml_attributes |
 | Example locations | LayoutTemplateRight |

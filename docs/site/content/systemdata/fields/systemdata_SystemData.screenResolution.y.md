@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/Effigy.lua:227` |
+| Files seen in | `/workspace_addons/Effigy/Effigy.lua:227` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Effigy.LoadLayout, lua_call |

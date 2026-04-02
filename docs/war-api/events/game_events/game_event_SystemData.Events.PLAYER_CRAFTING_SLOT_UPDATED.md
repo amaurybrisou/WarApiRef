@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Miracle Grow Remix, Shinies |
-| Files seen in | `/workspace/MGRemix/MGRemix.lua:195` |
+| Files seen in | `/workspace_addons/MGRemix/MGRemix.lua:195` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Miracle Grow Remix: MiracleGrow2.Initialize |

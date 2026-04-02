@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, DAoCBuff, Enemy |
-| Files seen in | `/workspace/BuffHead/Core.lua:229`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22` |
+| Files seen in | `/workspace_addons/BuffHead/Core.lua:229`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | BuffHead: BuffHead.SetGroupTracking, DAoCBuff: DAoCBuff.Initialize, Enemy: Enemy.GroupsInitialize |

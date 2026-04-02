@@ -98,6 +98,5 @@
 - [WindowStartAlphaAnimation](window_WindowStartAlphaAnimation.md) (HIGH 100/100)
 - [WindowStartScaleAnimation](window_WindowStartScaleAnimation.md) (HIGH 90/100)
 - [WindowStopAlphaAnimation](window_WindowStopAlphaAnimation.md) (HIGH 100/100)
-- [WindowUnRegisterEventHandler](window_WindowUnRegisterEventHandler.md) (HIGH 80/100)
 - [WindowUnregisterCoreEventHandler](window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100)
 - [WindowUnregisterEventHandler](window_WindowUnregisterEventHandler.md) (HIGH 100/100)

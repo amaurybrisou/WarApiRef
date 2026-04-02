@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainerAdditions, Enemy, HotbarMorale |
-| Files seen in | `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace/Enemy/Code/Assist/Assist.lua:363`, `/workspace/Enemy/Code/Core/ConfigurationWindow.lua:65`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:1447`, `/workspace/HotbarMorale/HotbarMorale.lua:10`, `/workspace/HotbarMorale/HotbarMorale.lua:5` |
+| Files seen in | `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace_addons/Enemy/Code/Assist/Assist.lua:363`, `/workspace_addons/Enemy/Code/Core/ConfigurationWindow.lua:65`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:1447`, `/workspace_addons/HotbarMorale/HotbarMorale.lua:10`, `/workspace_addons/HotbarMorale/HotbarMorale.lua:5` |
 | Namespaces detected | Cursor |
 | Source kinds | globals, lua_calls |
 | Example locations | AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown, Enemy: Enemy.ConfigurationWindow_OnMacroMouseDrag, Enemy: Enemy.local.OnMacroMouseDrag, Enemy: OnMacroMouseDrag, HotbarMorale: ActionButton.CursorSwap, HotbarMorale: CursorSwap |
@@ -72,7 +72,7 @@ Observed as a global function across 3 addons.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | arg1 | Observed as a function or method reference. | Observed values: Cursor.SOURCE_BANK, Cursor.SOURCE_MACRO, slotType |
-| arg2 | Observed as a numeric value. | Observed values: 0, macro_id, p.macroId |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, macro_id, p.macroId |
 | arg3 | Observed as a runtime window or control identifier. | Observed values: itemData.uniqueID, macro_id, p.macroId |
 | arg4 | Observed as a function or method reference. | Observed values: itemData.iconNum, macros[macro_id].iconNum, p.macroIconNum |
 | arg5 | Observed as a boolean toggle. | Observed values: Cursor.AUTO_PICKUP_ON_LBUTTON_UP, false, true |

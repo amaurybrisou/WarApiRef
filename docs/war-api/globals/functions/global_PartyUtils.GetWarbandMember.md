@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, LibGroup |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/Groups.lua:523`, `/workspace/LibGroup/LibGroup.lua:788` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:523`, `/workspace_addons/LibGroup/LibGroup.lua:788` |
 | Namespaces detected | PartyUtils |
 | Source kinds | globals, lua_calls |
 | Example locations | Enemy: Enemy.Groups_OnBattlegroupMemberUpdated, LibGroup: LibGroup.OnWarbandMemberUpdated |

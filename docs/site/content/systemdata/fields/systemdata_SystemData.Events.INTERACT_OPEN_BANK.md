@@ -25,14 +25,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankArkel, BankArkel, Shinies, Shinies |
-| Files seen in | `/workspace/BankArkel/BankArkel.lua:95` |
+| Files seen in | `/workspace_addons/BankArkel/BankArkel.lua:95` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | BankArkel.Init, BankArkel.OnOpenBank, SystemData.Events.INTERACT_OPEN_BANK, event_page, event_registration, flow |

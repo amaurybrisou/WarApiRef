@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Source/Shinies.lua:169` |
+| Files seen in | `/workspace_addons/Shinies/Source/Shinies.lua:169` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Shinies: LibStub:UpdateDefaultAuctionHouseDisable |

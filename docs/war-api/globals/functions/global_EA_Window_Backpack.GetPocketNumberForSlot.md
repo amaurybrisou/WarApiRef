@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | JunkDump |
-| Files seen in | `/workspace/JunkDump/JunkDump.lua:618` |
+| Files seen in | `/workspace_addons/JunkDump/JunkDump.lua:618` |
 | Namespaces detected | EA_Window_Backpack |
 | Source kinds | globals, lua_calls |
 | Example locations | JunkDump: JunkDump.SetTestModeTint |

@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, TidyRoll, TurretRange, followTheLeader |
-| Files seen in | `/workspace/Enemy/Code/UnitFrames/UnitFrame.xml:93`, `/workspace/TidyRoll/TidyRoll.xml:202`, `/workspace/TurrentRange/Display.xml:167`, `/workspace/followTheLeader/followTheLeader.xml:11` |
+| Files seen in | `/workspace_addons/Enemy/Code/UnitFrames/UnitFrame.xml:93`, `/workspace_addons/TidyRoll/TidyRoll.xml:202`, `/workspace_addons/TurrentRange/Display.xml:167`, `/workspace_addons/followTheLeader/followTheLeader.xml:11` |
 | Namespaces detected | OnMButtonUp |
 | Source kinds | bindings, xml_handlers |
 | Example locations | Enemy: EnemyUnitFrame.OnMButtonUp, TidyRoll: TidyRollFrame.OnMButtonUp, TurretRange: TurretMapDisplay.OnMButtonUp, followTheLeader: followTheLeaderWindow.OnMButtonUp |
@@ -107,4 +107,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

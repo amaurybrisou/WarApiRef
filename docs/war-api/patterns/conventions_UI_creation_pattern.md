@@ -19,7 +19,7 @@ UI is commonly created from XML, then positioned in Lua through CreateWindow or 
 ```text
 OnLButtonUp
   -> handlers: DebugWindow.ClearTextLog, InterfaceCore.ReloadUI
-  -> ui: Button, ColorPicker, ComboBox, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
+  -> ui: Button, ColorPicker, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code

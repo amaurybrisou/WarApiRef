@@ -28,18 +28,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, AutoBand, CM_ClosetGoblin, CMap, EA_UiDebugTools, EA_UiModWindow, FastInteract |
-| Files seen in | `/workspace/Aura/Source/AuraConfig.xml:28`, `/workspace/Aura/Source/Templates.xml:358`, `/workspace/Aura/Source/Templates.xml:389`, `/workspace/Autoband/AutoBandWindow.xml:21`, `/workspace/Autoband/AutoBandWindowConfig.xml:20`, `/workspace/Autoband/AutoBandWindowTemplate.xml:158`, `/workspace/Autoband/AutoBandWindowTemplate.xml:21`, `/workspace/Autoband/AutoBandWindowTools.xml:20` |
+| Addons seen in | AdvancedRenownTrainer, Aura, CM_ClosetGoblin, CMap, EA_UiDebugTools, EA_UiModWindow, FastInteract, LoyalPet |
+| Files seen in | `/workspace_addons/Aura/Source/AuraConfig.xml:28`, `/workspace_addons/Aura/Source/Templates.xml:358`, `/workspace_addons/Aura/Source/Templates.xml:389`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1405`, `/workspace_addons/FastInteract/FastInteract.xml:13`, `/workspace_addons/LoyalPet/gui/lpet_gui.xml:2646`, `/workspace_addons/MGRemix/MGRemix.xml:253`, `/workspace_addons/MGRemix/config.xml:378` |
 | Namespaces detected | OnInitialize |
 | Source kinds | event_page, flows, xml_handlers |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize, Aura: AuraConfig.OnInitialize, Aura: Aura_LabelCheckButton.OnInitialize, Aura: Aura_LargeLabelCheckButton.OnInitialize, AutoBand: AutoBandWindow.OnInitialize, AutoBand: AutoBandWindowConfig.OnInitialize |
-| XML usage count | 43 |
-| XML attribute usage count | 43 |
+| Example locations | AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize, Aura: AuraConfig.OnInitialize, Aura: Aura_LabelCheckButton.OnInitialize, Aura: Aura_LargeLabelCheckButton.OnInitialize, CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize, CMap: CMapWindow.OnInitialize |
+| XML usage count | 31 |
+| XML attribute usage count | 31 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 14 |
+| Initialization flow references | 10 |
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 21 addons.
+Observed as an engine-supplied UI event hook used by 19 addons.
 
 ## Handler Pattern
 
@@ -73,7 +73,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - CM_ClosetGoblin
 - CMap
 - EA_UiDebugTools
@@ -83,7 +82,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - MapMonster
 - Miracle Grow Remix
 - MiracleGrow
-- Queue Queuer
 - RandomMount
 - Shinies
 - TidyRoll
@@ -97,11 +95,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 - AdvancedRenownTraining.Initialize
 - AuraConfig.OnInitialize
-- AutoBandWindow.Initialize
-- AutoBandWindowConfig.Initialize
-- AutoBandWindowTemplate.Initialize
-- AutoBandWindowTemplateSave.Initialize
-- AutoBandWindowTools.Initialize
 - CMapWindow.Initialize
 - CMapWindow.RefreshMapPointFilterMenu
 - ClosetGoblinOptionWindow.OnInitialize
@@ -116,19 +109,12 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - MapMonster_Calibrate.WindowInit
 - MiracleGrow.Initialize
 - MiracleGrow2.Initialize
-- QueueQueuer_GUI.OnInitialize
-- QueueQueuer_GUI_MapButtons.OnInitialize
-- QueueQueuer_GUI_TabAbout.OnInitialize
-- QueueQueuer_GUI_TabHelp.OnInitialize
-- QueueQueuer_GUI_TabTier1.OnInitialize
-- QueueQueuer_GUI_TabTier2.OnInitialize
-- QueueQueuer_GUI_TabTier3.OnInitialize
-- QueueQueuer_GUI_TabTier4.OnInitialize
 - RandomMountUI.OnInitialize
 - TortallDPSMeter.Initialize
 - UiModVersionMismatchWindow.Initialize
 - UiModWindow.InitAdvancedWindow
 - UiModWindow.Initialize
+- WHMGui.OnDetailsInitialize
 - WHMGui.OnOptionsInitialize
 - WHMGui.OnWindowInitialize
 - WSCT.ColorOnInitialize
@@ -143,8 +129,8 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - Aura: AuraConfig -> AuraConfig.OnInitialize -> AuraConfig.OnInitialize
 - Aura: Aura_LabelCheckButton -> Aura_LabelCheckButton.OnInitialize -> EA_LabelCheckButton.Initialize
 - Aura: Aura_LargeLabelCheckButton -> Aura_LargeLabelCheckButton.OnInitialize -> EA_LabelCheckButton.Initialize
-- AutoBand: AutoBandWindow -> AutoBandWindow.OnInitialize -> AutoBandWindow.Initialize
-- AutoBand: AutoBandWindowConfig -> AutoBandWindowConfig.OnInitialize -> AutoBandWindowConfig.Initialize
+- CM_ClosetGoblin: ClosetGoblinOptionWindow -> ClosetGoblinOptionWindow.OnInitialize -> ClosetGoblinOptionWindow.OnInitialize
+- CMap: CMapWindow -> CMapWindow.OnInitialize -> CMapWindow.Initialize
 
 ## Related APIs
 

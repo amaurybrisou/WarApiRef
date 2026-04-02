@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | FastInteract |
-| Files seen in | `/workspace/FastInteract/FastInteract.lua:20` |
+| Files seen in | `/workspace_addons/FastInteract/FastInteract.lua:20` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | FastInteract.ProcessQuest, lua_call |

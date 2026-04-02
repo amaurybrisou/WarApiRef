@@ -9,8 +9,8 @@ UI is commonly created from XML, then positioned in Lua through CreateWindow or 
 
 ## Involved APIs
 
-- [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
+- [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [CreateWindow](../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [CreateWindowFromTemplate](../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 
@@ -19,7 +19,7 @@ UI is commonly created from XML, then positioned in Lua through CreateWindow or 
 ```text
 OnLButtonUp
   -> handlers: DebugWindow.ClearTextLog, InterfaceCore.ReloadUI
-  -> ui: Button, ColorPicker, ComboBox, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
+  -> ui: Button, ColorPicker, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code

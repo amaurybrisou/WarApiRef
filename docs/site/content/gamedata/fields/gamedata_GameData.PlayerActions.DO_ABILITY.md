@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy, HotbarMorale |
-| Files seen in | `/workspace/Enemy/Code/UnitFrames/ClickCasting.lua:147`, `/workspace/HotbarMorale/HotbarMorale.lua:10`, `/workspace/HotbarMorale/HotbarMorale.lua:5` |
+| Files seen in | `/workspace_addons/Enemy/Code/UnitFrames/ClickCasting.lua:147`, `/workspace_addons/HotbarMorale/HotbarMorale.lua:10`, `/workspace_addons/HotbarMorale/HotbarMorale.lua:5` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | ActionButton.CursorSwap, CursorSwap, EnemyClickCasting:Proceed, HotbarMorale.Initialize, lua_call |

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 13 addons
+- Seen in: 12 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, Aura, Busted, EA_UiDebugTools, Effigy, Enemy, GCDsaver, LibWBToggler |
-| Files seen in | `/workspace/Ace/LibGUI.lua:226`, `/workspace/Ace/LibGUI.lua:231`, `/workspace/Aura/Source/AuraShares.lua:379`, `/workspace/Aura/Source/AuraShares.lua:397`, `/workspace/Busted/Busted.lua:209`, `/workspace/Effigy/LibGUI.lua:226`, `/workspace/Effigy/LibGUI.lua:231`, `/workspace/Enemy/Code/Core/Main.lua:842` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:226`, `/workspace_addons/Ace/LibGUI.lua:231`, `/workspace_addons/Aura/Source/AuraShares.lua:379`, `/workspace_addons/Aura/Source/AuraShares.lua:397`, `/workspace_addons/Busted/Busted.lua:209`, `/workspace_addons/Effigy/LibGUI.lua:226`, `/workspace_addons/Effigy/LibGUI.lua:231`, `/workspace_addons/Enemy/Code/Core/Main.lua:842` |
 | Namespaces detected | WindowAssignFocus |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Defocus, Ace: LIBGUI_ELEMENT:Focus, Aura: AuraShares.OnExportAura, Aura: AuraShares.OnImportAura, Busted: BustedGUI.UpdateErrorView, EA_UiDebugTools: BustedGUI.UpdateErrorView |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 48 |
-| Global usage count | 48 |
+| Lua usage count | 46 |
+| Global usage count | 46 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ WindowAssignFocus(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 13 addons.
+Observed as a window function across 12 addons.
 
 ## Parameters
 
@@ -95,7 +95,6 @@ Observed as a window function across 13 addons.
 - MapMonster
 - Shinies
 - TidyChat
-- WarTriage
 - WoH-Reticle
 
 ## Examples

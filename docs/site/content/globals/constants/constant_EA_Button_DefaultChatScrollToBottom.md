@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/DebugWindow.xml:126` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:126` |
 | Namespaces detected | EA_Button_DefaultChatScrollToBottom |
 | Source kinds | xml_attributes |
 | Example locations | DebugWindowTextToBottomButton |

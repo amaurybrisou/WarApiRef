@@ -29,14 +29,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, AutoBand, BankArkel, BuffHead, Busted, Cheeseboard |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.xml:1000`, `/workspace/AdvancedPetAssist/APAGui.xml:1022`, `/workspace/AdvancedPetAssist/APAGui.xml:1044`, `/workspace/AdvancedPetAssist/APAGui.xml:1078`, `/workspace/AdvancedPetAssist/APAGui.xml:1136`, `/workspace/AdvancedPetAssist/APAGui.xml:1194`, `/workspace/AdvancedPetAssist/APAGui.xml:1214`, `/workspace/AdvancedPetAssist/APAGui.xml:1234` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BankArkel, BuffHead, Busted, Cheeseboard, Crafting Info Tooltip |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1000`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1022`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1044`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1078`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1136`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1194`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1214`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1234` |
 | Namespaces detected | ComboBox |
 | Source kinds | xml_frames, xml_handlers |
 | Example locations | AdvancedPetAssist: APAComboAttackBind, AdvancedPetAssist: APAComboAutoReattack, AdvancedPetAssist: APAComboAutoReattackDelay, AdvancedPetAssist: APAComboCastDelay, AdvancedPetAssist: APAComboCastOnAcquire, AdvancedPetAssist: APAComboCombatExitDelay |
-| XML usage count | 359 |
-| XML attribute usage count | 359 |
-| Lua usage count | 4 |
+| XML usage count | 347 |
+| XML attribute usage count | 347 |
+| Lua usage count | 2 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 33 addons.
+Observed XML element type instantiated by 29 addons.
 
 ## Common Attributes
 
@@ -81,8 +81,6 @@ Observed XML element type instantiated by 33 addons.
 
 - OnSelChanged
 - OnMouseOver
-- OnLButtonUp
-- OnRButtonUp
 
 ## Common Inherits
 
@@ -91,8 +89,8 @@ Observed XML element type instantiated by 33 addons.
 - APA_ComboBox
 - EA_ComboBox_DefaultResizableSmall
 - Aura_ComboBox_DefaultResizableTiny
-- EA_ComboBox_DefaultResizableLarge
 - Aura_ComboBox_DefaultResizableLarge
+- EA_ComboBox_DefaultResizableLarge
 - EA_ComboBox_DefaultResizable_Fixed
 - IraConfigCombo
 - Shinies_ComboBox_DefaultResizableLarge
@@ -104,14 +102,12 @@ Observed XML element type instantiated by 33 addons.
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - BankArkel
 - BuffHead
 - Busted
 - Cheeseboard
 - Crafting Info Tooltip
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - EA_UiModWindow
 - Enemy
@@ -119,14 +115,12 @@ Observed XML element type instantiated by 33 addons.
 - LoyalPet
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - Pocket Palette
 - PotionBar
 - RVMOD_Manager
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
 - TurretRange
@@ -154,12 +148,8 @@ Observed XML element type instantiated by 33 addons.
 
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
 - [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
-- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnSelChanged](../../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
 - [OnSelChanged](../handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Handler
 

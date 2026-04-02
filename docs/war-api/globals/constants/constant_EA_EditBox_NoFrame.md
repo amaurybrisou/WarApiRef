@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/DebugWindow.xml:56` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:56` |
 | Namespaces detected | EA_EditBox_NoFrame |
 | Source kinds | xml_attributes |
 | Example locations | DevPadCopyLog |

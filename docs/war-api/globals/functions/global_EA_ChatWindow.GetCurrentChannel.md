@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WhoHealedMe |
-| Files seen in | `/workspace/WhoHealedMe/WHMCommands.lua:437` |
+| Files seen in | `/workspace_addons/WhoHealedMe/WHMCommands.lua:405` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | WhoHealedMe: GetCurrentChannelCmd, WhoHealedMe: WhoHealedMe.local.GetCurrentChannelCmd |

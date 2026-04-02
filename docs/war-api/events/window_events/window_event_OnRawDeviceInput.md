@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead |
-| Files seen in | `/workspace/BuffHead/Setup/SetupLayout.xml:252` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupLayout.xml:252` |
 | Namespaces detected | OnRawDeviceInput |
 | Source kinds | event_page, xml_handlers |
 | Example locations | BuffHead: BuffHeadSetupLayoutWindow.OnRawDeviceInput |

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 30 addons
+- Seen in: 29 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, AggroMeter, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.lua:426`, `/workspace/Aura/Source/AuraShares.lua:257`, `/workspace/Aura/Source/AuraShares.lua:297`, `/workspace/Aura/Source/AuraShares.lua:319`, `/workspace/Aura/Source/AuraTexture.lua:147`, `/workspace/Aura/Source/AuraTexture.lua:195`, `/workspace/Aura/Source/AuraTexture.lua:65`, `/workspace/BuffHead/EffectFrame.lua:381` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.lua:426`, `/workspace_addons/Aura/Source/AuraShares.lua:257`, `/workspace_addons/Aura/Source/AuraShares.lua:297`, `/workspace_addons/Aura/Source/AuraShares.lua:319`, `/workspace_addons/Aura/Source/AuraTexture.lua:147`, `/workspace_addons/Aura/Source/AuraTexture.lua:195`, `/workspace_addons/Aura/Source/AuraTexture.lua:65`, `/workspace_addons/BuffHead/EffectFrame.lua:381` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | AdvancedRenownTraining.AbilityTooltip, AdvancedRenownTraining.OnLButtonUpTab, AggroMeter.OnTabLBU, AuraShares.ChangeSorting, AuraShares.DisplayTooltip, AuraShares.GetSlotRowNumForActiveListRow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 152 |
-| Global usage count | 152 |
+| Lua usage count | 151 |
+| Global usage count | 151 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed SystemData field used by 30 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 29 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
@@ -77,7 +77,6 @@ Observed SystemData field used by 30 addons through generated function calls, ev
 - Miracle Grow Remix
 - MiracleGrow
 - NPC Item Sale Price
-- PeaceOut
 - Pocket Palette
 - PotionBar
 - QuickTacticSwitch
@@ -98,7 +97,6 @@ Observed SystemData field used by 30 addons through generated function calls, ev
 
 - [ButtonGetDisabledFlag](../../window_api/functions/window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetDisabledFlag](../../window_api/functions/window_ComboBoxGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
 - [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
 - [DialogManager.MakeOneButtonDialog](../../globals/functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function

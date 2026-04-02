@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, TexturedButtons, TurretRange |
-| Files seen in | `/workspace/BuffHead/Setup/Setup.lua:141`, `/workspace/TexturedButtons/Setup/Setup.lua:123`, `/workspace/TurrentRange/Setup/Setup.lua:31` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/Setup.lua:141`, `/workspace_addons/TexturedButtons/Setup/Setup.lua:123`, `/workspace_addons/TurrentRange/Setup/Setup.lua:31` |
 | Namespaces detected | ActiveWindow |
 | Source kinds | lua_calls |
 | Example locations | BuffHead: BuffHead.Setup.SetActiveWindow, TexturedButtons: TexturedButtons.Setup.SetActiveWindow, TurretRange: TurretRange.Setup.SetActiveWindow |

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 23 addons
+- Seen in: 20 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, Aura, BuffHead, DAoCBuff, Effigy, Enemy, GCDsaver, GuardLine |
-| Files seen in | `/workspace/Ace/LibGUI.lua:236`, `/workspace/Aura/Source/Aura.lua:505`, `/workspace/Aura/Source/Aura.lua:534`, `/workspace/BuffHead/AdvancedContainers.lua:36`, `/workspace/BuffHead/Container.lua:758`, `/workspace/BuffHead/EffectFrame.lua:52`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:480`, `/workspace/DAoCBuff/Source/DAoCBuffFrames.lua:346` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:236`, `/workspace_addons/Aura/Source/Aura.lua:505`, `/workspace_addons/Aura/Source/Aura.lua:534`, `/workspace_addons/BuffHead/AdvancedContainers.lua:36`, `/workspace_addons/BuffHead/Container.lua:758`, `/workspace_addons/BuffHead/EffectFrame.lua:52`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:480`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:346` |
 | Namespaces detected | WindowSetScale |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Scale, Aura: Aura:UpdateTimerWindow, Aura: Aura:UpdateWindow, BuffHead: BuffHead.local.RegisterLayoutEditor, BuffHead: BuffHeadContainer:AnchorContainers, BuffHead: BuffHeadEffectFrame:SetLayout |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 104 |
-| Global usage count | 104 |
+| Lua usage count | 100 |
+| Global usage count | 100 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,7 +76,7 @@ Observed mutating runtime window state or presentation.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -99,11 +99,8 @@ Observed mutating runtime window state or presentation.
 - RVMOD_Manager
 - RoR_SoR
 - Shinies
-- TidyQueue
-- TimeInQueue
 - TurretRange
 - WSCT
-- WarTriage
 - WoH-Reticle
 - nRarity
 - wbLeadHelper

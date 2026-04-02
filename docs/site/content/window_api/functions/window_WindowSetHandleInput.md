@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 14 addons
+- Seen in: 13 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BuffHead, DAoCBuff, Effigy, Enemy, GCDsaver, LibWBToggler, Miracle Grow Remix |
-| Files seen in | `/workspace/Ace/LibGUI.lua:104`, `/workspace/Ace/LibGUI.lua:89`, `/workspace/Ace/LibGUI.lua:94`, `/workspace/BuffHead/EffectContainer.lua:75`, `/workspace/BuffHead/EffectFrame.lua:309`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:161`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:169` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:104`, `/workspace_addons/Ace/LibGUI.lua:89`, `/workspace_addons/Ace/LibGUI.lua:94`, `/workspace_addons/BuffHead/EffectContainer.lua:75`, `/workspace_addons/BuffHead/EffectFrame.lua:309`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:161`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:169` |
 | Namespaces detected | WindowSetHandleInput |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:CaptureInput, Ace: LIBGUI_ELEMENT:IgnoreInput, Ace: LIBGUI_ELEMENT:MakeMovable, BuffHead: BuffHeadEffectContainer:Create, BuffHead: BuffHeadEffectFrame:Create, DAoCBuff: DAoCBuffSettings.CreateOptionswindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 72 |
-| Global usage count | 72 |
+| Lua usage count | 69 |
+| Global usage count | 69 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,7 +76,7 @@ Observed mutating runtime window state or presentation.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -95,7 +95,6 @@ Observed mutating runtime window state or presentation.
 - Shinies
 - TidyChat
 - TidyRoll
-- WarTriage
 - WoH-Reticle
 - nRarity
 

@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff, GCDsaver, PetFixWindow, RoR_SoR |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/PetFixWindow/PetFixWindow.lua:3`, `/workspace/RoR_SoR/RoR_SoR.lua:178` |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/PetFixWindow/PetFixWindow.lua:3`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:178` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | DAoCBuff: DAoCBuff.Initialize, GCDsaver: GCDsaver.RegisterEvents, PetFixWindow: PetFixWindow.onInit, RoR_SoR: RoR_SoR:RegisterSelfEvents |

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 12 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, DAoCBuff, EA_UiDebugTools, Effigy, GCDsaver, LibWBToggler, Queue Queuer, RoR_SoR |
-| Files seen in | `/workspace/Ace/LibGUI.lua:434`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:215`, `/workspace/Effigy/LibGUI.lua:434`, `/workspace/GCDsaver/libs/LibGUI.lua:434`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:434`, `/workspace/QueueQueuer/QueueQueuer.lua:773`, `/workspace/RoR_SoR/RoR_SoR.lua:1055`, `/workspace/Shinies/Libraries/LibGUI.lua:434` |
+| Addons seen in | Ace, DAoCBuff, EA_UiDebugTools, Effigy, GCDsaver, LibWBToggler, RoR_SoR, Shinies |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:434`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:215`, `/workspace_addons/Effigy/LibGUI.lua:434`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:434`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:434`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:1055`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:434`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:434` |
 | Namespaces detected | LabelGetText |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Label:GetText, DAoCBuff: DAoCBuffSettings.FilterRowOnLButtonUp, EA_UiDebugTools: DevPad.TestPrint, EA_UiDebugTools: DevPadWindow.ConfirmLoadFile, EA_UiDebugTools: DevPadWindow.CreateContextMenu, EA_UiDebugTools: DevPadWindow.DeleteFile |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 27 |
-| Global usage count | 27 |
+| Lua usage count | 25 |
+| Global usage count | 25 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ LabelGetText(arg1)
 
 ## Description
 
-Observed as a window function across 12 addons.
+Observed as a window function across 10 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_ScenarioJoinPromptBoxName", "SoR_"..Window_Name.."KEEP1HEALTH", "SoR_"..Window_Name.."KEEP1SAFETIMER" |
+| arg1 | Observed as a function or method reference. | Observed values: "SoR_"..Window_Name.."KEEP1HEALTH", "SoR_"..Window_Name.."KEEP1SAFETIMER", "SoR_"..Window_Name.."KEEP2HEALTH" |
 
 ## Returns
 
@@ -89,11 +89,9 @@ Observed as a window function across 12 addons.
 - Effigy
 - GCDsaver
 - LibWBToggler
-- Queue Queuer
 - RoR_SoR
 - Shinies
 - Targets
-- WarTriage
 - WoH-Reticle
 
 ## Examples

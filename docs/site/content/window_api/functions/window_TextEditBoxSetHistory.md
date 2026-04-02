@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/objectinsp/ObjectInspector.lua:60` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/objectinsp/ObjectInspector.lua:60` |
 | Namespaces detected | TextEditBoxSetHistory |
 | Source kinds | lua_calls |
 | Example locations | EA_UiDebugTools: ObjectInspector.WindowInit |
@@ -71,7 +71,7 @@ Observed reading from or writing to edit-box controls.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

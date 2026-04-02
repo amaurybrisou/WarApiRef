@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, AutoBand, BuffHead, EA_UiDebugTools, EA_UiModWindow, Enemy, Killer |
-| Files seen in | `/workspace/Aura/Source/AuraShares.xml:41`, `/workspace/Autoband/AutoBandWindowTemplate.xml:198`, `/workspace/BuffHead/Setup/General.xml:146`, `/workspace/BuffHead/Setup/General.xml:186`, `/workspace/BuffHead/Setup/General.xml:225`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.xml:105`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.xml:138`, `/workspace/BuffHead/Setup/SetupAdvancedCompressionItem.xml:160` |
+| Addons seen in | AdvancedRenownTrainer, Aura, BuffHead, EA_UiDebugTools, EA_UiModWindow, Enemy, Killer, LoyalPet |
+| Files seen in | `/workspace_addons/Aura/Source/AuraShares.xml:41`, `/workspace_addons/BuffHead/Setup/General.xml:146`, `/workspace_addons/BuffHead/Setup/General.xml:186`, `/workspace_addons/BuffHead/Setup/General.xml:225`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:105`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:138`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.xml:160`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:58` |
 | Namespaces detected | EA_EditBox_DefaultFrame |
 | Source kinds | xml_attributes |
 | Example locations | AdvancedRenownTrainingImportNameInputWindowNameInputBox, AdvancedRenownTrainingImportWindowLinkInputBox, AdvancedRenownTrainingImportWindowNameInputBox, AdvancedRenownTrainingLinkWindowLinkBox, AdvancedRenownTrainingPresetsWindowSaveNameInput, AuraSharesImportExportAuraText |
-| XML usage count | 135 |
-| XML attribute usage count | 135 |
+| XML usage count | 132 |
+| XML attribute usage count | 132 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,13 +57,12 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 23 addons.
+Observed engine XML template or inherited constant referenced by 21 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - BuffHead
 - EA_UiDebugTools
 - EA_UiModWindow
@@ -79,7 +78,6 @@ Observed engine XML template or inherited constant referenced by 23 addons.
 - RandomMount
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyRoll
 - TurretRange
 - bigger_MacroWindow
@@ -93,7 +91,6 @@ Observed engine XML template or inherited constant referenced by 23 addons.
 - AdvancedRenownTrainingLinkWindowLinkBox
 - AdvancedRenownTrainingPresetsWindowSaveNameInput
 - AuraSharesImportExportAuraText
-- AutoBandWindowTemplateSaveNameEditBox
 - BuffHeadSetupAdvancedCompressionItemEffectWindowAbilityEditBox
 - BuffHeadSetupAdvancedCompressionItemWindowNameEditBox
 - BuffHeadSetupAdvancedCompressionItemWindowOverrideIconEditBox
@@ -192,8 +189,6 @@ Observed engine XML template or inherited constant referenced by 23 addons.
 - Shinies_Default_Editbox_DefaultGiant
 - Shinies_Default_Editbox_DefaultHuge
 - Shinies_Default_Editbox_DefaultLarge
-- TOLSettingsWindowPhraseEditWindowPhraseTextEdit
-- TOLSettingsWindowSkillEditWindowSkillNameEdit
 - TRollAutoRollAddByIdIdEditBox
 - TRollAutoRollAddByIdNameEditBox
 - TexturedButtonsSetupActionbarWindowPaddingXEditBox

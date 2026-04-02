@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, GCDsaver, LoyalPet |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/AutoMark/Source/AutoMark.lua:33`, `/workspace/AutoMark/Source/AutoMark.lua:78`, `/workspace/BuffHead/Core.lua:152`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/Enemy/Code/Core/Main.lua:41`, `/workspace/GCDsaver/GCDsaver.lua:253` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace_addons/AutoMark/Source/AutoMark.lua:33`, `/workspace_addons/AutoMark/Source/AutoMark.lua:78`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/Enemy/Code/Core/Main.lua:41`, `/workspace_addons/GCDsaver/GCDsaver.lua:253` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.local.RegisterCoreEvents, AdvancedPetAssist: RegisterCoreEvents, AutoMark: AutoMark.OnInitialize, AutoMark: AutoMark.OnSlashCommand, BuffHead: BuffHead.Initialize, DAoCBuff: DAoCBuff.Initialize |

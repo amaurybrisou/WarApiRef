@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions, BagOMatic, BankArkel, BankWindowFix, nRarity |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:131`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace/BankArkel/BankArkel.lua:563`, `/workspace/BankArkel/BankArkel.lua:573`, `/workspace/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace/BankWindowFix/Source/BankWindowFix.lua:30`, `/workspace/bagomatic/BagOMatic.lua:202` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:131`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace_addons/BankArkel/BankArkel.lua:563`, `/workspace_addons/BankArkel/BankArkel.lua:573`, `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:30`, `/workspace_addons/bagomatic/BagOMatic.lua:202` |
 | Namespaces detected | BankWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickBank, AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown, AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickBank, BagOMatic: BagOMatic.cmd_showbank, BagOMatic: BagOMatic.cmd_sortall, BankArkel: BankArkel.CloseBank |

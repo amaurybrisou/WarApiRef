@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, Busted, EA_UiDebugTools, Enemy, MapMonster, MapPin, ObjectInspector, TidyChat |
-| Files seen in | `/workspace/BuffHead/Setup/SetupEffectCacheTable.xml:58`, `/workspace/BuffHead/Setup/SetupLayoutManager.xml:142`, `/workspace/BuffHead/Setup/SetupLayoutManager.xml:203`, `/workspace/Busted/Busted.xml:96`, `/workspace/Enemy/Code/Core/Common.xml:128`, `/workspace/MapMonster/Source/MapMonster_EditorWindow.xml:386`, `/workspace/MapPin/source/MapPin.xml:588`, `/workspace/MapPin/source/MapPin.xml:599` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/SetupEffectCacheTable.xml:58`, `/workspace_addons/BuffHead/Setup/SetupLayoutManager.xml:142`, `/workspace_addons/BuffHead/Setup/SetupLayoutManager.xml:203`, `/workspace_addons/Busted/Busted.xml:96`, `/workspace_addons/Enemy/Code/Core/Common.xml:128`, `/workspace_addons/MapMonster/Source/MapMonster_EditorWindow.xml:386`, `/workspace_addons/MapPin/source/MapPin.xml:588`, `/workspace_addons/MapPin/source/MapPin.xml:599` |
 | Namespaces detected | EA_EditBox_DefaultFrame_Multiline |
 | Source kinds | xml_attributes |
 | Example locations | BuffHeadSetupEffectCacheTableWindowTableEditBox, BuffHeadSetupLayoutManagerWindowElementExportEditBox, BuffHeadSetupLayoutManagerWindowElementImportEditBox, BustedGUIErrorMessage, DevPadWindowDevPadCode, EA_Window_MacroDetailsText |

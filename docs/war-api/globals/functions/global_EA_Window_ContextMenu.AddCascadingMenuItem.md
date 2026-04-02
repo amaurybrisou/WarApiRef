@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | MapPin, MoraleCircle, RoR_SoR |
-| Files seen in | `/workspace/MapPin/source/MapPin.lua:2861`, `/workspace/MapPin/source/MapPin.lua:449`, `/workspace/MoraleCircle/MoraleCircle.lua:374`, `/workspace/RoR_SoR/RoR_SoR.lua:2400`, `/workspace/RoR_SoR/RoR_SoR.lua:2425` |
+| Files seen in | `/workspace_addons/MapPin/source/MapPin.lua:2861`, `/workspace_addons/MapPin/source/MapPin.lua:449`, `/workspace_addons/MoraleCircle/MoraleCircle.lua:374`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:2400`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:2425` |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
 | Example locations | MapPin: MapPin.CreateMainContextMenu, MapPin: MapPin.OptionsMenu, MoraleCircle: MoraleCircle.ColorChanger, RoR_SoR: RoR_SoR.BroadCastOption, RoR_SoR: RoR_SoR.POPOption |

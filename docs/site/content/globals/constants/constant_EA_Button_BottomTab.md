@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Source/ShiniesUITemplates.xml:216` |
+| Files seen in | `/workspace_addons/Shinies/Source/ShiniesUITemplates.xml:216` |
 | Namespaces detected | EA_Button_BottomTab |
 | Source kinds | xml_attributes |
 | Example locations | Shinies_Button_BottomTab |

@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/devpad/DebugWindowCodePad.lua:178` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/devpad/DebugWindowCodePad.lua:178` |
 | Namespaces detected | TextEditBoxInsertText |
 | Source kinds | lua_calls |
 | Example locations | EA_UiDebugTools: DevPadWindow.OnKeyTab |

@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankWindowFix |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.lua:108` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108` |
 | Namespaces detected | EA_Window_Backpack |
 | Source kinds | globals, lua_calls |
 | Example locations | BankWindowFix: BankWindowFix.BagEquipmentRButtonUp |

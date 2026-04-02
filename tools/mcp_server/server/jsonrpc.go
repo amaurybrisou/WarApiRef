@@ -15,6 +15,7 @@ import (
 	"sync"
 
 	"roraddons/tools/mcp_server/model"
+	"roraddons/tools/mcp_server/schema"
 )
 
 type jsonRPCRequest struct {
@@ -33,6 +34,7 @@ type jsonRPCResponse struct {
 
 type App struct {
 	docsRoot  string
+	feedingRoot string
 	store     *Store
 	storeErr  error
 	storeOnce sync.Once
@@ -43,12 +45,20 @@ type App struct {
 
 func NewApp(docsRoot string) (*App, error) {
 	app := &App{
-		docsRoot:  docsRoot,
-		validator: NewValidator(),
-		storeDone: make(chan struct{}),
+		docsRoot:    docsRoot,
+		feedingRoot: inferFeedingRoot(docsRoot),
+		validator:   NewValidator(),
+		storeDone:   make(chan struct{}),
 	}
 	app.ensureStoreLoaded()
 	return app, nil
+}
+
+func (a *App) SetFeedingRoot(path string) {
+	if strings.TrimSpace(path) == "" {
+		return
+	}
+	a.feedingRoot = path
 }
 
 func (a *App) ServeStdio(ctx context.Context, input io.Reader, output io.Writer) error {
@@ -171,6 +181,24 @@ func (a *App) dispatch(method string, params json.RawMessage) (interface{}, *mod
 		return map[string]any{"prompts": []map[string]string{{"name": "warapi_symbol_research", "description": "Canonical symbol research workflow"}}}, nil
 	case "prompts/get":
 		return map[string]any{"description": "WAR symbol research", "messages": []map[string]any{{"role": "user", "content": map[string]string{"type": "text", "text": "Use lookup_symbol, explain_symbol_usage, explain_confidence, and get_related_symbols in that order."}}}}, nil
+	case "feeding/ingest":
+		var req schema.IngestObservationRequest
+		if err := json.Unmarshal(params, &req); err != nil {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "invalid feeding/ingest payload"}
+		}
+		if len(req.Observation) == 0 {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "observation is required"}
+		}
+		return a.ingestObservation(req), nil
+	case "feeding/ingest_batch":
+		var req schema.IngestObservationBatchRequest
+		if err := json.Unmarshal(params, &req); err != nil {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "invalid feeding/ingest_batch payload"}
+		}
+		if req.Limit < 0 {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "limit must be >= 0"}
+		}
+		return a.ingestObservationBatch(req), nil
 	default:
 		return nil, &model.APIError{ErrorCode: "method_not_found", ErrorMessage: "method not found"}
 	}

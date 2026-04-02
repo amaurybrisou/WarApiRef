@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead |
-| Files seen in | `/workspace/BuffHead/Setup/LayoutControlFrame.lua:137`, `/workspace/BuffHead/Setup/LayoutControlFrame.lua:180` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:137`, `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:180` |
 | Namespaces detected | WindowSetResizing |
 | Source kinds | lua_calls |
 | Example locations | BuffHead: BuffHead.Setup.LayoutControlFrame:BeginResize, BuffHead: BuffHead.Setup.LayoutControlFrame:EndResize |

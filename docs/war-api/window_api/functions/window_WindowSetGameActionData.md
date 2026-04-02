@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 15 addons
+- Seen in: 13 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AggroMeter, Effigy, Enemy, GCDsaver, LibWBToggler, Miracle Grow Remix, MiracleGrow |
-| Files seen in | `/workspace/Ace/LibGUI.lua:574`, `/workspace/AggroMeter/AggroMeter.lua:242`, `/workspace/Effigy/Effigy.lua:337`, `/workspace/Effigy/Effigy.lua:365`, `/workspace/Effigy/Elements/EffigyIndicator.lua:132`, `/workspace/Effigy/LibGUI.lua:573`, `/workspace/Effigy/States/EffigyStateTargets.lua:325`, `/workspace/Enemy/Code/GroupIcons/GroupIcon.lua:115` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:574`, `/workspace_addons/AggroMeter/AggroMeter.lua:242`, `/workspace_addons/Effigy/Effigy.lua:337`, `/workspace_addons/Effigy/Effigy.lua:365`, `/workspace_addons/Effigy/Elements/EffigyIndicator.lua:132`, `/workspace_addons/Effigy/LibGUI.lua:573`, `/workspace_addons/Effigy/States/EffigyStateTargets.lua:325`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcon.lua:115` |
 | Namespaces detected | WindowSetGameActionData |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Button:Action, AggroMeter: AggroMeter.SelectChar, Effigy: Effigy.LButtonDown, Effigy: Effigy.LButtonUp, Effigy: Effigy.UpdateTarget, Effigy: EffigyIndicator:addInteractive |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 37 |
-| Global usage count | 37 |
+| Lua usage count | 34 |
+| Global usage count | 34 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -95,10 +95,8 @@ Observed mutating runtime window state or presentation.
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
-- RetAlert
 - Shinies
 - Targets
-- WarTriage
 - WoH-Reticle
 - followTheLeader
 

@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead |
-| Files seen in | `/workspace/BuffHead/Setup/LayoutControlFrame.lua:203`, `/workspace/BuffHead/Setup/LayoutControlFrame.lua:210` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:203`, `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:210` |
 | Namespaces detected | WindowSetMoving |
 | Source kinds | lua_calls |
 | Example locations | BuffHead: BuffHead.Setup.LayoutControlFrame:BeginMoving, BuffHead: BuffHead.Setup.LayoutControlFrame:EndMoving |
@@ -72,7 +72,7 @@ Observed mutating runtime window state or presentation.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 

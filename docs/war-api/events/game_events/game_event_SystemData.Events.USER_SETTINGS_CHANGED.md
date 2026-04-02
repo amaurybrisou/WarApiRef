@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | RVMOD_Manager, TexturedButtons |
-| Files seen in | `/workspace/RVMOD_Manager/RVMOD_Manager.lua:210`, `/workspace/TexturedButtons/TexturedButtons.lua:600` |
+| Files seen in | `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:210`, `/workspace_addons/TexturedButtons/TexturedButtons.lua:600` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | RVMOD_Manager: RVMOD_Manager.Initialize, TexturedButtons: TexturedButtons.OnLoadComplete |

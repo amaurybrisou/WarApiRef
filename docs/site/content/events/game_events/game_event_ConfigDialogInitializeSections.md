@@ -18,14 +18,14 @@
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Assist/Assist.lua:7`, `/workspace/Enemy/Code/CombatLog/CombatLog.lua:63`, `/workspace/Enemy/Code/Guard/Guard.lua:6`, `/workspace/Enemy/Code/Intercom/Intercom.lua:4`, `/workspace/Enemy/Code/ScenarioAlerter/ScenarioAlerter.lua:4`, `/workspace/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:21`, `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:7`, `/workspace/Enemy/Code/Timer/Timer.lua:7` |
+| Files seen in | `/workspace_addons/Enemy/Code/Assist/Assist.lua:7`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:63`, `/workspace_addons/Enemy/Code/Guard/Guard.lua:6`, `/workspace_addons/Enemy/Code/Intercom/Intercom.lua:4`, `/workspace_addons/Enemy/Code/ScenarioAlerter/ScenarioAlerter.lua:4`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:21`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:7`, `/workspace_addons/Enemy/Code/Timer/Timer.lua:7` |
 | Namespaces detected | ConfigDialogInitializeSections |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Enemy: Enemy.AssistInitialize, Enemy: Enemy.CombatLogInitialize, Enemy: Enemy.GuardInitialize, Enemy: Enemy.IntercomInitialize, Enemy: Enemy.ScenarioAlerterInitialize, Enemy: Enemy.ScenarioInfoInitialize |
@@ -108,4 +108,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Notes
 
 - Triggered-by evidence: Enemy:Enemy.UI_ConfigDialog_Open
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

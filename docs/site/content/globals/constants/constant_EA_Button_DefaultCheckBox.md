@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, AutoBand, CM_ClosetGoblin, CMap, Cheeseboard, EA_UiModWindow, Enemy |
-| Files seen in | `/workspace/Aura/Source/Templates.xml:362`, `/workspace/Aura/Source/Templates.xml:393`, `/workspace/Autoband/AutoBandWindowConfig.xml:138`, `/workspace/Autoband/AutoBandWindowConfig.xml:163`, `/workspace/Autoband/AutoBandWindowConfig.xml:320`, `/workspace/Autoband/AutoBandWindowTemplate.xml:70`, `/workspace/Autoband/AutoBandWindowTools.xml:50`, `/workspace/Autoband/AutoBandWindowTools.xml:74` |
+| Addons seen in | AdvancedRenownTrainer, Aura, CM_ClosetGoblin, CMap, Cheeseboard, EA_UiModWindow, Enemy, Killer |
+| Files seen in | `/workspace_addons/Aura/Source/Templates.xml:362`, `/workspace_addons/Aura/Source/Templates.xml:393`, `/workspace_addons/Cheeseboard/Cheeseboard.xml:204`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:372`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:508`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:535`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:562`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:589` |
 | Namespaces detected | EA_Button_DefaultCheckBox |
 | Source kinds | xml_attributes |
-| Example locations | AdvancedRenownTrainingPresetsWindowSaveSelectedCheckBox, Aura_LabelCheckButtonButton, Aura_LargeLabelCheckButtonButton, AutoBandWindowConfigKickCheckBox, AutoBandWindowConfigKickToofarCheckBox, AutoBandWindowConfigMapIconCheckBox |
-| XML usage count | 76 |
-| XML attribute usage count | 76 |
+| Example locations | AdvancedRenownTrainingPresetsWindowSaveSelectedCheckBox, Aura_LabelCheckButtonButton, Aura_LargeLabelCheckButtonButton, CheeseboardWindowDefaultCheck, ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1, ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2 |
+| XML usage count | 66 |
+| XML attribute usage count | 66 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,13 +57,12 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 20 addons.
+Observed engine XML template or inherited constant referenced by 17 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - Aura
-- AutoBand
 - CM_ClosetGoblin
 - CMap
 - Cheeseboard
@@ -72,13 +71,11 @@ Observed engine XML template or inherited constant referenced by 20 addons.
 - Killer
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - Pocket Palette
 - PotionBar
 - Shinies
 - TidyChat
-- TidyQueue
 - TidyRoll
 - wbLeadHelper
 
@@ -87,13 +84,6 @@ Observed engine XML template or inherited constant referenced by 20 addons.
 - AdvancedRenownTrainingPresetsWindowSaveSelectedCheckBox
 - Aura_LabelCheckButtonButton
 - Aura_LargeLabelCheckButtonButton
-- AutoBandWindowConfigKickCheckBox
-- AutoBandWindowConfigKickToofarCheckBox
-- AutoBandWindowConfigMapIconCheckBox
-- AutoBandWindowTemplateDefaultCheckBox
-- AutoBandWindowToolsKickOfflineCheckBox
-- AutoBandWindowToolsKickRankCheckBox
-- AutoBandWindowToolsKickZoneCheckBox
 - CheeseboardWindowDefaultCheck
 - ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1
 - ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2
@@ -140,8 +130,6 @@ Observed engine XML template or inherited constant referenced by 20 addons.
 - MapMonster_PinTypeEditorWindowIsLockedCheckBox
 - MapMonster_PinTypeEditorWindowIsPrivateCheckBox
 - MapPin_SetupBGBox
-- MegaphoneMainHighlightLeaderCheckbox
-- MegaphoneMainShowLeaderCheckbox
 - MiracleGrow2LayoutSettingsTemplateStage0
 - MiracleGrow2LayoutSettingsTemplateStage1
 - MiracleGrow2LayoutSettingsTemplateStage2
@@ -157,7 +145,6 @@ Observed engine XML template or inherited constant referenced by 20 addons.
 - ShiniesConfigPrice_PriorityRowEnable
 - Shinies_CheckButtonWithLabelButton
 - TChatCheckboxTemplateButton
-- TQueueCheckboxTemplateButton
 - TRollCheckboxTemplateButton
 - wbLeadHelperConfigTabLfgIconsCheckBox
 

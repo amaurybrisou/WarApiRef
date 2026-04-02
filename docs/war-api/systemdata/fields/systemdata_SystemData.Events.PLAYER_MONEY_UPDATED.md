@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
@@ -11,43 +11,38 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 186
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Autolooter, Autolooter, Shinies |
-| Files seen in | `/workspace/Autolooter/Autolooter.lua:3` |
+| Addons seen in | Shinies |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | Autolooter.Loot, Autolooter.onInit, SystemData.Events.PLAYER_MONEY_UPDATED, event_page, event_registration, flow |
+| Source kinds | event_page |
+| Example locations | SystemData.Events.PLAYER_MONEY_UPDATED, event_page |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 1 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -62,12 +57,11 @@
 
 ## Description
 
-Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
-- Autolooter
-- Autolooter, Shinies
+- Shinies
 
 ## Related APIs
 
@@ -87,4 +81,4 @@ Observed SystemData field used by 2 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: Autolooter.Loot, Autolooter.onInit, SystemData.Events.PLAYER_MONEY_UPDATED, event_page, event_registration, flow
+- Observed in contexts: SystemData.Events.PLAYER_MONEY_UPDATED, event_page

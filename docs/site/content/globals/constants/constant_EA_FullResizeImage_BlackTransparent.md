@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, CMap, MapMonster, RVAPI_ColorDialog, TidyChat, TidyRoll |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:158`, `/workspace/AggroMeter/AggroMeter.xml:288`, `/workspace/AggroMeter/AggroMeter.xml:344`, `/workspace/MapMonster/Source/MapMonster_Calibrate.xml:56`, `/workspace/MapMonster/Source/MapMonster_Calibrate.xml:71`, `/workspace/RVAPI_ColorDialog/RVAPI_ColorDialog.xml:110`, `/workspace/TidyChat/TidyChat.xml:21`, `/workspace/TidyRoll/CustomAutoRoll.xml:107` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:158`, `/workspace_addons/AggroMeter/AggroMeter.xml:288`, `/workspace_addons/AggroMeter/AggroMeter.xml:344`, `/workspace_addons/MapMonster/Source/MapMonster_Calibrate.xml:56`, `/workspace_addons/MapMonster/Source/MapMonster_Calibrate.xml:71`, `/workspace_addons/RVAPI_ColorDialog/RVAPI_ColorDialog.xml:110`, `/workspace_addons/TidyChat/TidyChat.xml:21`, `/workspace_addons/TidyRoll/CustomAutoRoll.xml:107` |
 | Namespaces detected | EA_FullResizeImage_BlackTransparent |
 | Source kinds | xml_attributes |
 | Example locations | AggroMeterWindowBorderCheck, AggroMeterWindow_AggroWindow3BorderCheck, AggroMeterWindow_AggroWindow5BorderCheck, CMapWindowPinFilterMenuBackground, MapMonster_CalibrateWindowBackground, MapMonster_CalibrateWindowClickLayer |

@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Intercom/Intercom.lua:4` |
+| Files seen in | `/workspace_addons/Enemy/Code/Intercom/Intercom.lua:4` |
 | Namespaces detected | BroadcastMessageInvite |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Enemy: Enemy.IntercomInitialize |

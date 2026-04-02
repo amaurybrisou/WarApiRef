@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | GuardLine, LibGuard, MapPin, QuickWarReport, RoR_SoR, Swift Assist |
-| Files seen in | `/workspace/GuardLine/GuardLine.lua:197`, `/workspace/LibGuard/Source/LibGuard.lua:186`, `/workspace/LibGuard/Source/LibGuard.lua:362`, `/workspace/MapPin/source/MapPin.lua:1122`, `/workspace/MapPin/source/MapPin.lua:2280`, `/workspace/MapPin/source/MapPin.lua:2861`, `/workspace/MapPin/source/MapPin.lua:3008`, `/workspace/MapPin/source/MapPin.lua:3011` |
+| Files seen in | `/workspace_addons/GuardLine/GuardLine.lua:197`, `/workspace_addons/LibGuard/Source/LibGuard.lua:186`, `/workspace_addons/LibGuard/Source/LibGuard.lua:362`, `/workspace_addons/MapPin/source/MapPin.lua:1122`, `/workspace_addons/MapPin/source/MapPin.lua:2280`, `/workspace_addons/MapPin/source/MapPin.lua:2861`, `/workspace_addons/MapPin/source/MapPin.lua:3008`, `/workspace_addons/MapPin/source/MapPin.lua:3011` |
 | Namespaces detected | PartyUtils |
 | Source kinds | globals, lua_calls |
 | Example locations | GuardLine: GuardLine.update, LibGuard: LibGuard.GetIdFromName, LibGuard: LibGuard.UpdateStateMachine, MapPin: MapPin.CreateMainContextMenu, MapPin: MapPin.CreateRequestContextMenu, MapPin: MapPin.LButtonUp |

@@ -26,11 +26,11 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, DeepSleep, EA_UiModWindow, Enemy, Killer, Miracle Grow Remix, PotionBar, RVMOD_Manager |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuffMsgWindow.xml:53`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.xml:128`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.xml:139`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.xml:150`, `/workspace/DeepSleep/Settings.xml:38`, `/workspace/Enemy/Code/CombatLog/CombatLogConfiguration.xml:8`, `/workspace/Enemy/Code/GroupIcons/GroupIconsConfiguration.xml:8`, `/workspace/Enemy/Code/Guard/GuardConfiguration.xml:8` |
+| Addons seen in | DAoCBuff, EA_UiModWindow, Enemy, Killer, Miracle Grow Remix, PotionBar, RVMOD_Manager, Shinies |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuffMsgWindow.xml:53`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.xml:128`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.xml:139`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.xml:150`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogConfiguration.xml:8`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIconsConfiguration.xml:8`, `/workspace_addons/Enemy/Code/Guard/GuardConfiguration.xml:8`, `/workspace_addons/Enemy/Code/KillSpam/KillSpamConfiguration.xml:8` |
 | Namespaces detected | ScrollWindow |
 | Source kinds | xml_frames |
-| Example locations | DAoCBuff: DAoCBuffMessageWindowScrollWindow, DAoCBuff: DAoCBuff_Settings_FrameSettings, DAoCBuff: DAoCBuff_Settings_GeneralSettings, DAoCBuff: DAoCBuff_Settings_ListManagerSettings, DeepSleep: DeepSleep_Settings_ScrollWindow, EA_UiModWindow: EA_ScrollWindow_ModInfoTemplate |
+| Example locations | DAoCBuff: DAoCBuffMessageWindowScrollWindow, DAoCBuff: DAoCBuff_Settings_FrameSettings, DAoCBuff: DAoCBuff_Settings_GeneralSettings, DAoCBuff: DAoCBuff_Settings_ListManagerSettings, EA_UiModWindow: EA_ScrollWindow_ModInfoTemplate, EA_UiModWindow: UiModWindowModDetails |
 | XML usage count | 31 |
 | XML attribute usage count | 31 |
 | Lua usage count | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 12 addons.
+Observed XML element type instantiated by 11 addons.
 
 ## Common Attributes
 
@@ -85,7 +85,6 @@ Observed XML element type instantiated by 12 addons.
 ## Seen In
 
 - DAoCBuff
-- DeepSleep
 - EA_UiModWindow
 - Enemy
 - Killer
@@ -103,8 +102,8 @@ Observed XML element type instantiated by 12 addons.
 - DAoCBuff: DAoCBuff_Settings_FrameSettings -> ScrollWindow DAoCBuff_Settings_FrameSettings
 - DAoCBuff: DAoCBuff_Settings_GeneralSettings -> ScrollWindow DAoCBuff_Settings_GeneralSettings
 - DAoCBuff: DAoCBuff_Settings_ListManagerSettings -> ScrollWindow DAoCBuff_Settings_ListManagerSettings
-- DeepSleep: DeepSleep_Settings_ScrollWindow -> ScrollWindow DeepSleep_Settings_ScrollWindow
 - EA_UiModWindow: EA_ScrollWindow_ModInfoTemplate -> ScrollWindow EA_ScrollWindow_ModInfoTemplate
+- EA_UiModWindow: UiModWindowModDetails -> ScrollWindow UiModWindowModDetails
 
 ## Related APIs
 

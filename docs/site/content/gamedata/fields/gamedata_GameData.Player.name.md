@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 12 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, Effigy, Enemy, GuardLine, LibGuard, MegaphonePlusPlus, Queue Queuer, QuickWarReport |
-| Files seen in | `/workspace/Aura/Source/AuraProfile.lua:171`, `/workspace/Effigy/Elements/EffigyIndicator.lua:132`, `/workspace/Enemy/Code/Core/Main.lua:4`, `/workspace/GuardLine/GuardLine.lua:151`, `/workspace/LibGuard/Source/LibGuard.lua:362`, `/workspace/LibGuard/Source/LibGuard.lua:75`, `/workspace/QueueQueuer/QueueQueuer.lua:1527`, `/workspace/QuickWarReport/QWRComms.lua:287` |
+| Addons seen in | Aura, Effigy, Enemy, GuardLine, LibGuard, QuickWarReport, Shinies, TortallDPSCore |
+| Files seen in | `/workspace_addons/Aura/Source/AuraProfile.lua:171`, `/workspace_addons/Effigy/Elements/EffigyIndicator.lua:132`, `/workspace_addons/Enemy/Code/Core/Main.lua:4`, `/workspace_addons/GuardLine/GuardLine.lua:151`, `/workspace_addons/LibGuard/Source/LibGuard.lua:362`, `/workspace_addons/LibGuard/Source/LibGuard.lua:75`, `/workspace_addons/QuickWarReport/QWRComms.lua:287`, `/workspace_addons/QuickWarReport/QWRComms.lua:68` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | AuraProfile.GetCurrentCharacter, EffigyIndicator:addInteractive, Enemy.Initialize, GetCurrentLeaderName, GuardLine.GetIDs, LibGuard.UpdatePetHealthProxy |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 21 |
-| Global usage count | 21 |
+| Lua usage count | 17 |
+| Global usage count | 17 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed GameData field used by 12 addons through generated function calls, event pages, or lifecycle evidence.
+Observed GameData field used by 9 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
@@ -68,23 +68,20 @@ Observed GameData field used by 12 addons through generated function calls, even
 - Enemy
 - GuardLine
 - LibGuard
-- MegaphonePlusPlus
-- Queue Queuer
 - QuickWarReport
 - Shinies
-- ThinkOutLoud
 - TortallDPSCore
 - followTheLeader
 
 ## Related APIs
 
+- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
 - [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 - [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-- [PartyUtils.IsPlayerInWarband](../../globals/functions/global_PartyUtils.IsPlayerInWarband.md) (HIGH 88/100) - Global Function
 
 ## Used With
 
-- [PartyUtils.IsPlayerInWarband](../../globals/functions/global_PartyUtils.IsPlayerInWarband.md) (HIGH 88/100) - Global Function
+- none
 
 ## Triggered By
 

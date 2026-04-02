@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 22 addons
+- Seen in: 21 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedRenownTrainer, BuffHead, Busted, CM_ClosetGoblin, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace/Ace/LibGUI.lua:553`, `/workspace/Ace/LibGUI.lua:778`, `/workspace/Ace/LibGUI.lua:844`, `/workspace/BuffHead/Setup/SetupTrackers.lua:17`, `/workspace/Busted/Busted.lua:130`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:465`, `/workspace/ClosetGoblin/ClosetGoblinCharacterWindow.lua:671`, `/workspace/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1056` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:553`, `/workspace_addons/Ace/LibGUI.lua:778`, `/workspace_addons/Ace/LibGUI.lua:844`, `/workspace_addons/BuffHead/Setup/SetupTrackers.lua:17`, `/workspace_addons/Busted/Busted.lua:130`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:465`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:671`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1056` |
 | Namespaces detected | ButtonSetDisabledFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Button:SetEnabled, Ace: LIBGUI_Checkbox:SetEnabled, Ace: LIBGUI_Optionbutton:SetEnabled, AdvancedRenownTrainer: AdvancedRenownTraining.AnywhereShow, AdvancedRenownTrainer: AdvancedRenownTraining.OnHidden, BuffHead: BuffHead.local.SetTracker |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 194 |
-| Global usage count | 194 |
+| Lua usage count | 191 |
+| Global usage count | 191 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,7 +76,7 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -103,7 +103,6 @@ Observed mutating button text or pressed state on existing controls.
 - Shinies
 - TidyRoll
 - WSCT
-- WarTriage
 - WoH-Reticle
 - wbLeadHelper
 

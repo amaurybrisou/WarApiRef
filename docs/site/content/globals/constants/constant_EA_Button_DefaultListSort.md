@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, Enemy, QuickTacticSwitch |
-| Files seen in | `/workspace/Aura/Source/AuraSettings.xml:60`, `/workspace/Aura/Source/AuraShares.xml:135`, `/workspace/Aura/Source/Templates.xml:134`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:11`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:19`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:33`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:47`, `/workspace/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:61` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraSettings.xml:60`, `/workspace_addons/Aura/Source/AuraShares.xml:135`, `/workspace_addons/Aura/Source/Templates.xml:134`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:11`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:19`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:33`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:47`, `/workspace_addons/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:61` |
 | Namespaces detected | EA_Button_DefaultListSort |
 | Source kinds | xml_attributes |
 | Example locations | AuraSharesSortButton, AuraSortingHeaderTemplate, AuraWindowSortButton, EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn1, EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn2, EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn3 |

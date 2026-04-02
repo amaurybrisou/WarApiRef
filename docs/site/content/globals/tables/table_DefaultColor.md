@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, CM_ClosetGoblin, DAoCBuff, MapMonster, Moth, TidyRoll |
-| Files seen in | `/workspace/BuffHead/Setup/LayoutControlFrame.lua:55`, `/workspace/BuffHead/Setup/LayoutFrame.lua:47`, `/workspace/TidyRoll/CustomAutoRoll.lua:145` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:55`, `/workspace_addons/BuffHead/Setup/LayoutFrame.lua:47`, `/workspace_addons/TidyRoll/CustomAutoRoll.lua:145` |
 | Namespaces detected | DefaultColor |
 | Source kinds | globals, lua_calls |
 | Example locations | BuffHead: BuffHead.Setup.LayoutControlFrame:Create, BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor, TidyRoll: TidyRoll.CustomAutoRoll.Initialize |

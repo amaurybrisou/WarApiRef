@@ -24,19 +24,19 @@
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, BuffHead, Busted, CM_ClosetGoblin, CMap |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:135`, `/workspace/AggroMeter/AggroMeter.xml:8`, `/workspace/AnywhereTrainer/source/AnywhereTrainer.xml:50`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.xml:6`, `/workspace/Aura/Source/AuraSettings.xml:28`, `/workspace/Aura/Source/AuraShares.xml:81`, `/workspace/BuffHead/Setup/General.xml:34`, `/workspace/BuffHead/Setup/SetupAdvancedCompression.xml:46` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:135`, `/workspace_addons/AggroMeter/AggroMeter.xml:8`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.xml:50`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.xml:6`, `/workspace_addons/Aura/Source/AuraSettings.xml:28`, `/workspace_addons/Aura/Source/AuraShares.xml:81`, `/workspace_addons/BuffHead/Setup/General.xml:34`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:46` |
 | Namespaces detected | OnRButtonUp |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
 | Example locations | AggroMeter: AggroMeterGrayListBox.OnRButtonUp, AggroMeter: AggroMeter_Button.OnRButtonUp, AnywhereTrainer: AnywhereTrainerTabTemplate.OnRButtonUp, AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnRButtonUp, Aura: AuraSharesRow.OnRButtonUp, Aura: AuraWindowRow.OnRButtonUp |
-| XML usage count | 150 |
-| XML attribute usage count | 150 |
+| XML usage count | 142 |
+| XML attribute usage count | 142 |
 | Lua usage count | 1 |
 | Global usage count | 1 |
 | Local definition count | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 36 addons.
+Observed as an engine-supplied UI event hook used by 32 addons.
 
 ## Handler Pattern
 
@@ -69,7 +69,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Payload
 
-- Window callback arguments are not fully inferable from API_Ref alone.
+- Window callback arguments are not fully inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -92,17 +92,13 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - Miracle Grow Remix
 - MiracleGrowLight
 - MoraleCircle
-- PeaceOut
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - RandomMount
 - RoR_SoR
 - Shinies
 - TexturedButtons
-- ThinkOutLoud
 - TidyChat
-- TidyQueue
 - TidyRoll
 - Tortall_DPS
 - TurretRange
@@ -172,10 +168,8 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - MiracleGrowLight.switchMode
 - MoraleCircle.RightClick
 - PP.ItemSlotRMouse
-- PeaceOut.OnRButtonUp
 - PotionBarFloating.ActivatorRButtonUp
 - PotionBarFloating.RButtonUp
-- QueueQueuer_GUI.MapButton_OnRButtonUp
 - RandomMountUI.OnRowRightClick
 - RoR_SoR.BroadCastOption
 - RoR_SoR.OnTabRBU
@@ -184,11 +178,8 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - ShiniesBrowseUI.OnRButtonUp_Results_ListItem
 - ShiniesBrowseUI.OnRButtonUp_Searches
 - ShiniesPostUI.OnRButtonUp_Results_ListItem
-- TOLSettingsUI.OnEventSelChanged
 - TexturedButtons.Setup.OnRowRUp
 - TidyChat.ToggleOptions
-- TidyQueue.OnAutojoinLBU
-- TidyQueue.OnCheckboxRBU
 - TortallDPSDetail.ShowColumnMenu
 - TortallDPSMeter.OnRButtonUp
 - TurretRange.Setup.Distances.OnRowRUp
@@ -218,12 +209,10 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 - [WindowStopAlphaAnimation](../../window_api/functions/window_WindowStopAlphaAnimation.md) (HIGH 100/100) - Window Function
 - [WindowGetMovable](../../window_api/functions/window_WindowGetMovable.md) (HIGH 90/100) - Window Function
-- [PlayerMenuWindow.ShowMenu](../../globals/functions/global_PlayerMenuWindow.ShowMenu.md) (HIGH 88/100) - Global Function
 
 ## Used With
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [DynamicImage](../../xml/element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [EA_Window_ContextMenu.AddMenuDivider](../../globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.AddMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function

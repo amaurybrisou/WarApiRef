@@ -31,17 +31,17 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, Enemy |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:92`, `/workspace/Aura/Source/AuraAddon.lua:70`, `/workspace/BuffHead/Core.lua:152`, `/workspace/ClosetGoblin/ClosetGoblin.lua:1218`, `/workspace/ClosetGoblin/ClosetGoblin.lua:70`, `/workspace/Effigy/Effigy.lua:111`, `/workspace/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace/Effigy/States/EffigyStatePlayer.lua:45` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:92`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1283`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/Effigy/States/EffigyStateCastbar.lua:41`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:45` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.local.RegisterLoadingEnd, AdvancedPetAssist: RegisterLoadingEnd, AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, Aura: AuraAddon.OnInitialize, BagOMatic: BagOMatic.init, BuffHead: BuffHead.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 34 |
-| Global usage count | 34 |
+| Lua usage count | 30 |
+| Global usage count | 30 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 27 |
+| Initialization flow references | 23 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 29 addons.
+Observed as a shared SystemData runtime event used by 25 addons.
 
 ## Handler Pattern
 
@@ -84,21 +84,17 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - Killer
 - LibWBToggler
 - MapMonster
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
-- PeaceOut
 - PetFixWindow
 - PlanB
 - Pocket Palette
 - RoR_SoR
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
-- Twister
 - WarBoard
 - WhoHealedMe
 - wbLeadHelper
@@ -120,22 +116,18 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - Killer.OnLoadingEnd
 - LibWBTogglerManager.CheckMods
 - MapMonster.OnLoadingEnd
-- Megaphone.Refresh
 - MiracleGrow.onZone
 - MiracleGrow2.onZone
 - MiracleGrowLight.onZone
 - PP.PreviewDyes
-- PeaceOut.DelayInit
 - PetFixWindow.PetFixes
 - PlanB.HandleLoading
 - RegisterEventHandler
 - RoR_SoR.OnLoadingEnd
 - TexturedButtons.OnLoadComplete
 - TidyChat.OnLoad
-- TidyQueue.OnLoad
 - TidyRoll.OnLoad
 - TurretRange.OnLoadComplete
-- Twister.OnLoad
 - WHMEvents.OnLoadingEnd
 - WarBoard.SortMods
 - global
@@ -155,13 +147,16 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
+- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Used With
 
+- [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 

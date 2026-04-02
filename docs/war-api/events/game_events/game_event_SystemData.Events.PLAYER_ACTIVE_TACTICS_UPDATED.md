@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | QuickTacticSwitch |
-| Files seen in | `/workspace/QuickTacticSwitch/quicktacticswitch.lua:30` |
+| Files seen in | `/workspace_addons/QuickTacticSwitch/quicktacticswitch.lua:59` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | QuickTacticSwitch: QTS.Initialize |

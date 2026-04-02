@@ -28,7 +28,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, EA_UiDebugTools, Enemy, MapPin, Pocket Palette, Shinies, bigger_MacroWindow, wbLeadHelper |
-| Files seen in | `/workspace/Aura/Source/AuraConfig.xml:1107`, `/workspace/Aura/Source/AuraConfig.xml:1148`, `/workspace/Aura/Source/AuraConfig.xml:1213`, `/workspace/Aura/Source/AuraConfig.xml:1254`, `/workspace/Aura/Source/AuraConfig.xml:127`, `/workspace/Aura/Source/AuraConfig.xml:1358`, `/workspace/Aura/Source/AuraConfig.xml:1482`, `/workspace/Aura/Source/AuraConfig.xml:1571` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraConfig.xml:1107`, `/workspace_addons/Aura/Source/AuraConfig.xml:1148`, `/workspace_addons/Aura/Source/AuraConfig.xml:1213`, `/workspace_addons/Aura/Source/AuraConfig.xml:1254`, `/workspace_addons/Aura/Source/AuraConfig.xml:127`, `/workspace_addons/Aura/Source/AuraConfig.xml:1358`, `/workspace_addons/Aura/Source/AuraConfig.xml:1482`, `/workspace_addons/Aura/Source/AuraConfig.xml:1571` |
 | Namespaces detected | OnKeyEscape |
 | Source kinds | bindings, xml_handlers |
 | Example locations | Aura: AuraConfigActivationAlertTextText.OnKeyEscape, Aura: AuraConfigDeactivationAlertTextText.OnKeyEscape, Aura: AuraConfigGeneralName.OnKeyEscape, Aura: AuraConfigGeneralOffsetX.OnKeyEscape, Aura: AuraConfigGeneralOffsetY.OnKeyEscape, Aura: AuraConfigTimerOffsetX.OnKeyEscape |

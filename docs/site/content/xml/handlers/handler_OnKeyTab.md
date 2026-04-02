@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | EA_UiDebugTools |
-| Files seen in | `/workspace/ea_uidebugtools/Source/DebugWindow.xml:211`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:71`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:728` |
+| Files seen in | `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:211`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:71`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:728` |
 | Namespaces detected | OnKeyTab |
 | Source kinds | bindings, xml_handlers |
 | Example locations | EA_UiDebugTools: DebugWindowTextBox.OnKeyTab, EA_UiDebugTools: DevPadCopyLog.OnKeyTab, EA_UiDebugTools: DevPadWindowDevPadCode.OnKeyTab |
@@ -95,4 +95,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because API_Ref captures symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.

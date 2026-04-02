@@ -23,14 +23,14 @@
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/RoR_SoR/RoR_SoR.lua:178`, `/workspace/RoR_SoR/RoR_SoR.lua:278` |
+| Files seen in | `/workspace_addons/RoR_SoR/RoR_SoR.lua:178`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:278` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | RoR_SoR.OnShutdown, RoR_SoR.UpdateObjectives, RoR_SoR:RegisterSelfEvents, SystemData.Events.PUBLIC_QUEST_ADDED, event_page, event_registration |

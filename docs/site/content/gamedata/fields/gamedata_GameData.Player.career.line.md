@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, WSCT, wbLeadHelper |
-| Files seen in | `/workspace/Effigy/Elements/EffigyIcons.lua:138`, `/workspace/Effigy/States/EffigyStatePlayer.lua:244`, `/workspace/wbLeadHelper/wbLeadHelper.lua:996`, `/workspace/wsct/wsct.lua:265` |
+| Files seen in | `/workspace_addons/Effigy/Elements/EffigyIcons.lua:138`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:244`, `/workspace_addons/wbLeadHelper/wbLeadHelper.lua:996`, `/workspace_addons/wsct/wsct.lua:265` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Effigy.UpdatePlayerHP, Effigy.local.SetupCareerIcon, SetupCareerIcon, WSCT:CreateCareerStrings, lua_call, wbLeadHelper.gatherGroupPlayers |

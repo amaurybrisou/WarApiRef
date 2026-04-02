@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Core/Main.lua:492`, `/workspace/Enemy/Code/Core/Utils.lua:588`, `/workspace/ea_uidebugtools/Source/DebugWindow.xml:1392` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Main.lua:492`, `/workspace_addons/Enemy/Code/Core/Utils.lua:588`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:1392` |
 | Namespaces detected | DebugWindow |
 | Source kinds | bindings, lua_calls, xml_handlers |
 | Example locations | EA_UiDebugTools: DebugWindowOptionsClearLogText.OnLButtonUp, Enemy: Enemy._DebugTest, Enemy: cls |

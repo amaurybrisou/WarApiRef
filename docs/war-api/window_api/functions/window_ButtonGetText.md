@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, EA_UiDebugTools |
-| Files seen in | `/workspace/advancedrenowntrainer/AdvancedRenownTraining.lua:763`, `/workspace/ea_uidebugtools/Source/devpad/DebugWindowCodePad.lua:320`, `/workspace/ea_uidebugtools/Source/devpad/DebugWindowCodePad.lua:785` |
+| Files seen in | `/workspace_addons/advancedrenowntrainer/AdvancedRenownTraining.lua:763`, `/workspace_addons/ea_uidebugtools/Source/devpad/DebugWindowCodePad.lua:320`, `/workspace_addons/ea_uidebugtools/Source/devpad/DebugWindowCodePad.lua:785` |
 | Namespaces detected | ButtonGetText |
 | Source kinds | lua_calls |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize, EA_UiDebugTools: DevPad.TestPrint, EA_UiDebugTools: DevPadWindow.OnFileButtonUp |

@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy, RoR_SoR |
-| Files seen in | `/workspace/Effigy/Effigy.lua:379`, `/workspace/Effigy/States/EffigyStatePlayer.lua:244`, `/workspace/RoR_SoR/RoR_SoR.lua:2468` |
+| Files seen in | `/workspace_addons/Effigy/Effigy.lua:379`, `/workspace_addons/Effigy/States/EffigyStatePlayer.lua:244`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:2468` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | Effigy.UpdatePlayerHP, Effigy.local.PlayerRightClickMenu, PlayerRightClickMenu, RoR_SoR.ContextMenu1, lua_call |

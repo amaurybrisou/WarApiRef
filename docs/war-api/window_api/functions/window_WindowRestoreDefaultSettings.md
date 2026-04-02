@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | GuardLine |
-| Files seen in | `/workspace/GuardLine/GuardLine.lua:897` |
+| Files seen in | `/workspace_addons/GuardLine/GuardLine.lua:897` |
 | Namespaces detected | WindowRestoreDefaultSettings |
 | Source kinds | lua_calls |
 | Example locations | GuardLine: GuardLine.ResetSettings |

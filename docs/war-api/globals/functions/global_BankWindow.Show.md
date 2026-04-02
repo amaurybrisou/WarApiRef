@@ -26,7 +26,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer, BagOMatic, BankArkel |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace/BankArkel/BankArkel.lua:563`, `/workspace/bagomatic/BagOMatic.lua:287` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace_addons/BankArkel/BankArkel.lua:563`, `/workspace_addons/bagomatic/BagOMatic.lua:287` |
 | Namespaces detected | BankWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickBank, BagOMatic: BagOMatic.cmd_showbank, BankArkel: BankArkel.ShowBank |
@@ -109,3 +109,4 @@ Observed as a global function across 3 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

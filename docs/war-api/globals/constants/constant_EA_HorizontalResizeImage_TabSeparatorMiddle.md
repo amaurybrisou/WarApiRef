@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AggroMeter, Aura |
-| Files seen in | `/workspace/AggroMeter/AggroMeter.xml:126`, `/workspace/Aura/Source/AuraConfig.xml:390`, `/workspace/Aura/Source/AuraConfig.xml:400`, `/workspace/Aura/Source/AuraConfig.xml:410` |
+| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:126`, `/workspace_addons/Aura/Source/AuraConfig.xml:390`, `/workspace_addons/Aura/Source/AuraConfig.xml:400`, `/workspace_addons/Aura/Source/AuraConfig.xml:410` |
 | Namespaces detected | EA_HorizontalResizeImage_TabSeparatorMiddle |
 | Source kinds | xml_attributes |
 | Example locations | AggroMeterGrayWindowSeparatorMiddle, AuraConfigTabsSeparatorActivation, AuraConfigTabsSeparatorDeactivation, AuraConfigTabsSeparatorTrigger |

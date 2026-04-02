@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/Shinies/Source/Shinies.lua:503` |
+| Files seen in | `/workspace_addons/Shinies/Source/Shinies.lua:503` |
 | Namespaces detected | ButtonSetStayDownFlag |
 | Source kinds | lua_calls |
 | Example locations | Shinies: ShowUITab |

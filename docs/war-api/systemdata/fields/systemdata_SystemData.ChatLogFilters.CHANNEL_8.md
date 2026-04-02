@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | LoyalPet |
-| Files seen in | `/workspace/LoyalPet/LoyalPet.lua:194` |
+| Files seen in | `/workspace_addons/LoyalPet/LoyalPet.lua:194` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | LPET.PrintDebug, lua_call |

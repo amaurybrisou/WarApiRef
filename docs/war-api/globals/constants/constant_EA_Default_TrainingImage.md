@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer |
-| Files seen in | `/workspace/advancedrenowntrainer/AdvancedRenownTrainingWindow.xml:23` |
+| Files seen in | `/workspace_addons/advancedrenowntrainer/AdvancedRenownTrainingWindow.xml:23` |
 | Namespaces detected | EA_Default_TrainingImage |
 | Source kinds | xml_attributes |
 | Example locations | AdvancedRenownTrainingWindowCornorImage |

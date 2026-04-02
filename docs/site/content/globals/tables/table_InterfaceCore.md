@@ -27,13 +27,13 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BuffHead, DAoCBuff, EA_UiDebugTools, Effigy, Enemy, GCDsaver, GuardLine |
-| Files seen in | `/workspace/Ace/LibGUI.lua:236`, `/workspace/BuffHead/AdvancedContainers.lua:275`, `/workspace/BuffHead/Container.lua:758`, `/workspace/BuffHead/EffectFrame.lua:52`, `/workspace/BuffHead/Setup/LayoutControlFrame.lua:8`, `/workspace/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace/BuffHead/Setup/LayoutFrame.lua:3`, `/workspace/BuffHead/Setup/LayoutFrame.lua:71` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:236`, `/workspace_addons/BuffHead/AdvancedContainers.lua:275`, `/workspace_addons/BuffHead/Container.lua:758`, `/workspace_addons/BuffHead/EffectFrame.lua:52`, `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:8`, `/workspace_addons/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace_addons/BuffHead/Setup/LayoutFrame.lua:3`, `/workspace_addons/BuffHead/Setup/LayoutFrame.lua:71` |
 | Namespaces detected | InterfaceCore |
 | Source kinds | globals, lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Scale, BuffHead: AutoSize, BuffHead: BuffHead.AdvancedContainers.OnLayoutEditorFinished, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show, BuffHead: BuffHead.Setup.Layout.Properties.Show, BuffHead: BuffHead.Setup.LayoutFrame:Create |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 68 |
+| Lua usage count | 66 |
 | Global usage count | 3 |
 | Local definition count | 9 |
 | Documentation references | 1 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 23 addons.
+Observed shared global table or namespace surfaced in 21 addons.
 
 ## Functions
 
@@ -89,9 +89,7 @@ Observed shared global table or namespace surfaced in 23 addons.
 - RoR_SoR
 - Shinies
 - TexturedButtons
-- TidyQueue
 - TurretRange
-- WarTriage
 - WoH-Reticle
 - wbLeadHelper
 

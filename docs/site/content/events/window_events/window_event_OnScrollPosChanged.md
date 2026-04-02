@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | bigger_MacroWindow |
-| Files seen in | `/workspace/bigger_macrowindow/Source/MacroIcons.xml:9` |
+| Files seen in | `/workspace_addons/bigger_macrowindow/Source/MacroIcons.xml:9` |
 | Namespaces detected | OnScrollPosChanged |
 | Source kinds | event_page, xml_handlers |
 | Example locations | bigger_MacroWindow: MacroIconsScrollBar.OnScrollPosChanged |
@@ -62,7 +62,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Payload
 
-- Window callback arguments are not fully inferable from API_Ref alone.
+- Window callback arguments are not fully inferable from addon-api docs alone.
 
 ## Seen In
 
@@ -95,4 +95,4 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Notes
 
-- Only one addon surfaced this event in the current API_Ref corpus.
+- Only one addon surfaced this event in the current addon-api corpus.

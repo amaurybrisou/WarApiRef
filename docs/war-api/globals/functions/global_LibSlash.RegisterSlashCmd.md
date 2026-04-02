@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 50 addons
+- Seen in: 40 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, AutoBand, AutoChannel, AutoMark, BagOMatic, CM_ClosetGoblin, DAoCBuff |
-| Files seen in | `/workspace/AdvancedPetAssist/AdvancedPetAssist.lua:193`, `/workspace/Aura/Source/AuraAddon.lua:70`, `/workspace/AutoMark/Source/AutoMark.lua:33`, `/workspace/Autoband/AutoBand.lua:30`, `/workspace/ClosetGoblin/ClosetGoblin.lua:83`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/DaemonAssist/DALifecycle.lua:3`, `/workspace/DeepSleep/DeepSleep.lua:8` |
+| Addons seen in | AdvancedPetAssist, Aura, AutoMark, BagOMatic, CM_ClosetGoblin, DAoCBuff, DaemonAssist, Effigy |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:193`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/AutoMark/Source/AutoMark.lua:33`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:86`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/DaemonAssist/DALifecycle.lua:3`, `/workspace_addons/Effigy/EffigySlashCommands.lua:19`, `/workspace_addons/FastInteract/FastInteract.lua:132` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.Initialize, Aura: AuraAddon.OnInitialize, AutoBand: AutoBand.init, AutoChannel: AutoChannel.Initialize, AutoMark: AutoMark.OnInitialize, BagOMatic: BagOMatic.init |
+| Example locations | AdvancedPetAssist: AdvancedPetAssist.Initialize, Aura: AuraAddon.OnInitialize, AutoMark: AutoMark.OnInitialize, BagOMatic: BagOMatic.init, CM_ClosetGoblin: ClosetGoblin.Initialize, DAoCBuff: DAoCBuff.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 80 |
-| Global usage count | 80 |
+| Lua usage count | 62 |
+| Global usage count | 62 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -72,8 +72,8 @@ Observed wiring slash commands through a shared command-registration table.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| slashName | Observed as a slash command token. | Observed values: "DeepSleep", "FastInteract", "MiracleGrow" |
-| handler | Observed as a command handler callback. | Observed values: AuraAddon.Slash, AutoChannel.sendChatBand, AutoChannel.sendChatBandSay |
+| slashName | Observed as a slash command token. | Observed values: "FastInteract", "MiracleGrow", "MiracleGrow2" |
+| handler | Observed as a command handler callback. | Observed values: AuraAddon.Slash, AutoMark.OnSlashCommand, ClosetGoblin.OnSlashCommand |
 
 ## Returns
 
@@ -87,18 +87,14 @@ Observed wiring slash commands through a shared command-registration table.
 
 - AdvancedPetAssist
 - Aura
-- AutoBand
-- AutoChannel
 - AutoMark
 - BagOMatic
 - CM_ClosetGoblin
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - Effigy
 - FastInteract
 - GCDsaver
-- GoldTracker
 - GuardLine
 - Killer
 - LibGroup
@@ -107,22 +103,17 @@ Observed wiring slash commands through a shared command-registration table.
 - LibWBToggler
 - MapMonster
 - MapPin
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - NPC Item Sale Price
-- PeaceOut
 - PlanB
 - Pocket Palette
 - PotionBar
-- Queue Queuer
 - QuickTacticSwitch
 - QuickWarReport
-- RRCount
 - RVMOD_Manager
 - RandomMount
-- RetAlert
 - RoR_SoR
 - Shinies
 - Swift Assist
@@ -130,7 +121,6 @@ Observed wiring slash commands through a shared command-registration table.
 - TexturedButtons
 - WSCT
 - WarBoard
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - followTheLeader
@@ -142,8 +132,8 @@ Observed wiring slash commands through a shared command-registration table.
 - Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("aura", AuraAddon.Slash)
 - Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("auraconfig", AuraAddon.Slash)
 - Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("showaura", AuraAddon.Slash)
-- AutoBand: AutoBand.init -> LibSlash.RegisterSlashCmd("autoband", function(msg)AutoBand.parse_cmd(msg)end)
-- AutoBand: AutoBand.init -> LibSlash.RegisterSlashCmd("ab", function(msg)AutoBand.parse_cmd(msg)end)
+- AutoMark: AutoMark.OnInitialize -> LibSlash.RegisterSlashCmd("automark", AutoMark.OnSlashCommand)
+- BagOMatic: BagOMatic.init -> LibSlash.RegisterSlashCmd("bagomatic", function(msg)BagOMatic.parse_cmd(msg)end)
 
 ## Related APIs
 
@@ -151,6 +141,7 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Used With
 
+- [EA_ChatWindow.OnKeyEnter](global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
 - [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
 - [InterfaceCore.GetResolutionScale](global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
 - [InterfaceCore.GetScale](global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
@@ -160,6 +151,7 @@ Observed wiring slash commands through a shared command-registration table.
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Handler
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](../../window_api/functions/window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
@@ -177,9 +169,12 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Affects
 
+- [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

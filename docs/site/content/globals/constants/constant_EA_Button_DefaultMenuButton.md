@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, MapMonster, Miracle Grow Remix, TexturedButtons, TurretRange |
-| Files seen in | `/workspace/BuffHead/Setup/General.xml:70`, `/workspace/MGRemix/MGRemix.xml:478`, `/workspace/MGRemix/MGRemix.xml:518`, `/workspace/MapMonster/Source/MapMonster_Templates.xml:75`, `/workspace/TexturedButtons/Setup/General.xml:7`, `/workspace/TurrentRange/Setup/SetupDisplay.xml:4` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/General.xml:70`, `/workspace_addons/MGRemix/MGRemix.xml:478`, `/workspace_addons/MGRemix/MGRemix.xml:518`, `/workspace_addons/MapMonster/Source/MapMonster_Templates.xml:75`, `/workspace_addons/TexturedButtons/Setup/General.xml:7`, `/workspace_addons/TurrentRange/Setup/SetupDisplay.xml:4` |
 | Namespaces detected | EA_Button_DefaultMenuButton |
 | Source kinds | xml_attributes |
 | Example locations | BuffHeadContextMenuItemFontSelection, MapFilterContextMenuChoice, MiracleGrow2ContextItem, MiracleGrow2ContextItemCIT, TexturedButtonsContextMenuItemFontSelection, TurretRangeContextMenuItemFontSelection |

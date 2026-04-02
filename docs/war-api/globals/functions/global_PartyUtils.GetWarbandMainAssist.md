@@ -24,7 +24,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/Core/Groups/EnemyPlayer.lua:57` |
+| Files seen in | `/workspace_addons/Enemy/Code/Core/Groups/EnemyPlayer.lua:57` |
 | Namespaces detected | PartyUtils |
 | Source kinds | globals, lua_calls |
 | Example locations | Enemy: EnemyPlayer:IsMainAssist |

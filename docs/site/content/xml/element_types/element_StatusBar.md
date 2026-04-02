@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | RoR_SoR, Targets |
-| Files seen in | `/workspace/RoR_SoR/RoR_SoR.xml:1138`, `/workspace/RoR_SoR/RoR_SoR.xml:1156`, `/workspace/RoR_SoR/RoR_SoR.xml:1337`, `/workspace/RoR_SoR/RoR_SoR.xml:1352`, `/workspace/targets/TargetsWindow.xml:42` |
+| Files seen in | `/workspace_addons/RoR_SoR/RoR_SoR.xml:1138`, `/workspace_addons/RoR_SoR/RoR_SoR.xml:1156`, `/workspace_addons/RoR_SoR/RoR_SoR.xml:1337`, `/workspace_addons/RoR_SoR/RoR_SoR.xml:1352`, `/workspace_addons/targets/TargetsWindow.xml:42` |
 | Namespaces detected | StatusBar |
 | Source kinds | xml_frames |
 | Example locations | RoR_SoR: RoR_SoR_FortTemplateLORDLEFTBAR, RoR_SoR: RoR_SoR_FortTemplateLORDRIGHTBAR, RoR_SoR: RoR_SoR_RealmTemplateVPDESTROBAR, RoR_SoR: RoR_SoR_RealmTemplateVPORDERBAR, Targets: TargetsUnitFrameHPBar |

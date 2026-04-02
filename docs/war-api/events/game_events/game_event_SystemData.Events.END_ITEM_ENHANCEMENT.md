@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37` |
+| Files seen in | `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, lua_event_registration |
 | Example locations | Enemy: Enemy._TalismanAlerterEnabledChanged |

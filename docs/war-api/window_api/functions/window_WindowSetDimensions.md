@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 32 addons
+- Seen in: 30 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedPetAssist, AnywhereTrainer, Aura, BankArkel, BuffHead, Crafting Info Tooltip, DAoCBuff |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1174`, `/workspace/Ace/LibGUI.lua:1261`, `/workspace/Ace/LibGUI.lua:367`, `/workspace/Ace/LibGUI.lua:419`, `/workspace/Ace/LibGUI.lua:527`, `/workspace/Ace/LibGUI.lua:650`, `/workspace/Ace/LibGUI.lua:704`, `/workspace/Ace/LibGUI.lua:983` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1174`, `/workspace_addons/Ace/LibGUI.lua:1261`, `/workspace_addons/Ace/LibGUI.lua:367`, `/workspace_addons/Ace/LibGUI.lua:419`, `/workspace_addons/Ace/LibGUI.lua:527`, `/workspace_addons/Ace/LibGUI.lua:650`, `/workspace_addons/Ace/LibGUI.lua:704`, `/workspace_addons/Ace/LibGUI.lua:983` |
 | Namespaces detected | WindowSetDimensions |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Button:Resize, Ace: LIBGUI_Image:Resize, Ace: LIBGUI_Label:Resize, Ace: LIBGUI_MultiTextbox:Resize, Ace: LIBGUI_Scrollbar:Resize, Ace: LIBGUI_Statusbar:Resize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 212 |
-| Global usage count | 212 |
+| Lua usage count | 203 |
+| Global usage count | 203 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -73,7 +73,7 @@ Observed mutating runtime window state or presentation.
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: "APAOptions", "APAOptionsContent", "APAOptionsTitleText" |
 | arg2 | Observed as a runtime window or control identifier. | Observed values: (mg.vLayout.dimx)*nMult+5, 0, 1 |
-| arg3 | Observed as a runtime window or control identifier. | Observed values: (c_TOP_HEIGHT+c_BOTTOM_HEIGHT+c_CHECKBOX_HEIGHT*count), (mg.vLayout.dimy)*nMult+5, 0 |
+| arg3 | Observed as a runtime window or control identifier. | Observed values: (mg.vLayout.dimy)*nMult+5, 0, 1 |
 
 ## Returns
 
@@ -109,11 +109,9 @@ Observed mutating runtime window state or presentation.
 - Shinies
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
 - WSCT
-- WarTriage
 - WhoHealedMe
 - WoH-Reticle
 - wbLeadHelper

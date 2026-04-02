@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 83/100
-- Seen in: 44 addons
+- Seen in: 41 addons
 
 ## Confidence Assessment
 
@@ -26,14 +26,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AggroMeter, Aura, BagOMatic, Busted, CM_ClosetGoblin, Crafting Info Tooltip, DAoCBuff |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.lua:1063`, `/workspace/AdvancedPetAssist/APAGui.lua:546`, `/workspace/AdvancedPetAssist/APAGui.lua:683`, `/workspace/AdvancedPetAssist/APAGui.lua:704`, `/workspace/AdvancedPetAssist/APAGui.lua:983`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:138`, `/workspace/AdvancedPetAssist/APAGuiHUD.lua:147` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.lua:1063`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:546`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:683`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:704`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:983`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:138`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:147` |
 | Namespaces detected | DoesWindowExist |
 | Source kinds | lua_calls |
 | Example locations | AdvancedPetAssist: APAGui.ApplyKitingHUDColorOff, AdvancedPetAssist: APAGui.ApplyKitingHUDColorOn, AdvancedPetAssist: APAGui.ApplyPTColor, AdvancedPetAssist: APAGui.ApplyPetTargetHUDLayout, AdvancedPetAssist: APAGui.HidePetTargetHUD, AdvancedPetAssist: APAGui.InitHUDEditBoxes |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 319 |
-| Global usage count | 319 |
+| Lua usage count | 337 |
+| Global usage count | 337 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -89,7 +89,6 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - Crafting Info Tooltip
 - DAoCBuff
 - DaemonAssist
-- DeepSleep
 - EA_UiDebugTools
 - Effigy
 - Enemy
@@ -115,10 +114,8 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - Targets
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
-- Twister
 - WSCT
 - WhoHealedMe
 - WoH-Reticle
@@ -156,8 +153,8 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.IsSlashCmdRegistered](global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
 - [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
 - [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
 - [ScrollWindowSetOffset](../../window_api/functions/window_ScrollWindowSetOffset.md) (HIGH 100/100) - Window Function
 - [StatusBarSetCurrentValue](../../window_api/functions/window_StatusBarSetCurrentValue.md) (HIGH 100/100) - Window Function
 - [StatusBarSetForegroundTint](../../window_api/functions/window_StatusBarSetForegroundTint.md) (HIGH 100/100) - Window Function
@@ -166,8 +163,10 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - [SystemData.Events.AUCTION_INIT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_INIT_RECEIVED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
 - [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
@@ -197,6 +196,7 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 - [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- [UnregisterEventHandler](global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By
 

@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions, JunkDump |
-| Files seen in | `/workspace/AnywhereTrainer/source/AnywhereTrainer.lua:305`, `/workspace/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:167`, `/workspace/JunkDump/JunkDump.lua:481`, `/workspace/JunkDump/JunkDump.lua:498` |
+| Files seen in | `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:305`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:167`, `/workspace_addons/JunkDump/JunkDump.lua:481`, `/workspace_addons/JunkDump/JunkDump.lua:498` |
 | Namespaces detected | CraftingSystem |
 | Source kinds | lua_calls |
 | Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickCraft, AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickCraft, JunkDump: JunkDump.professionChecks, JunkDump: JunkDump.professionChecks2 |

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 22 addons
+- Seen in: 20 addons
 
 ## Confidence Assessment
 
@@ -31,14 +31,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BuffHead, DAoCBuff, EA_UiDebugTools, Effigy, Enemy, GCDsaver, GuardLine |
-| Files seen in | `/workspace/Ace/LibGUI.lua:236`, `/workspace/BuffHead/AdvancedContainers.lua:275`, `/workspace/BuffHead/Container.lua:758`, `/workspace/BuffHead/EffectFrame.lua:52`, `/workspace/BuffHead/Setup/LayoutControlFrame.lua:8`, `/workspace/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace/BuffHead/Setup/LayoutFrame.lua:3`, `/workspace/BuffHead/Setup/LayoutFrame.lua:71` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:236`, `/workspace_addons/BuffHead/AdvancedContainers.lua:275`, `/workspace_addons/BuffHead/Container.lua:758`, `/workspace_addons/BuffHead/EffectFrame.lua:52`, `/workspace_addons/BuffHead/Setup/LayoutControlFrame.lua:8`, `/workspace_addons/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace_addons/BuffHead/Setup/LayoutFrame.lua:3`, `/workspace_addons/BuffHead/Setup/LayoutFrame.lua:71` |
 | Namespaces detected | InterfaceCore |
 | Source kinds | globals, lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Scale, BuffHead: AutoSize, BuffHead: BuffHead.AdvancedContainers.OnLayoutEditorFinished, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show, BuffHead: BuffHead.Setup.Layout.Properties.Show, BuffHead: BuffHead.Setup.LayoutFrame:Create |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 57 |
-| Global usage count | 57 |
+| Lua usage count | 54 |
+| Global usage count | 54 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -67,7 +67,7 @@ InterfaceCore.GetScale()
 
 ## Description
 
-Observed as a global function across 22 addons.
+Observed as a global function across 20 addons.
 
 ## Parameters
 
@@ -101,9 +101,7 @@ Observed as a global function across 22 addons.
 - RoR_SoR
 - Shinies
 - TexturedButtons
-- TidyQueue
 - TurretRange
-- WarTriage
 - WoH-Reticle
 - wbLeadHelper
 
@@ -137,7 +135,11 @@ Observed as a global function across 22 addons.
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
+- [LibSlash.UnregisterSlashCmd](global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [StatusBar](../../xml/element_types/element_StatusBar.md) (HIGH 100/100) - XML Element Type
+- [SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_RENOWN_RANK_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_RANK_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.screenResolution.x](../../systemdata/fields/systemdata_SystemData.screenResolution.x.md) (HIGH 100/100) - SystemData Field
 - [SystemData.screenResolution.y](../../systemdata/fields/systemdata_SystemData.screenResolution.y.md) (HIGH 100/100) - SystemData Field
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
@@ -157,8 +159,10 @@ Observed as a global function across 22 addons.
 - [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 - [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
 - [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [DestroyWindow](global_DestroyWindow.md) (HIGH 75/100) - Global Function
 - [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 - [wstring.format](global_wstring.format.md) (HIGH 75/100) - Global Function
+- [UnregisterEventHandler](global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By
 

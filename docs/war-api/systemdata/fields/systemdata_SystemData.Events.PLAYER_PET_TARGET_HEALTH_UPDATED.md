@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Effigy |
-| Files seen in | `/workspace/Effigy/States/EffigyStatePets.lua:5` |
+| Files seen in | `/workspace_addons/Effigy/States/EffigyStatePets.lua:5` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Effigy.Name..".OnPlayerPetTargetHealthUpdated", Effigy.RegisterStateInfoForPets, SystemData.Events.PLAYER_PET_TARGET_HEALTH_UPDATED, event_page, event_registration, lua_call |

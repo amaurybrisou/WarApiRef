@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 21 addons
+- Seen in: 18 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, Effigy, Enemy, GCDsaver |
-| Files seen in | `/workspace/Ace/LibGUI.lua:558`, `/workspace/Ace/LibGUI.lua:783`, `/workspace/Ace/LibGUI.lua:849`, `/workspace/Aura/Source/AuraTexture.lua:147`, `/workspace/BuffHead/Setup/SetupTrackers.lua:239`, `/workspace/BuffHead/Setup/SetupTrackers.lua:253`, `/workspace/BuffHead/Setup/SetupTrackers.lua:267`, `/workspace/DAoCBuff/Source/DAoCBuffSettings.lua:1350` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:558`, `/workspace_addons/Ace/LibGUI.lua:783`, `/workspace_addons/Ace/LibGUI.lua:849`, `/workspace_addons/Aura/Source/AuraTexture.lua:147`, `/workspace_addons/BuffHead/Setup/SetupTrackers.lua:239`, `/workspace_addons/BuffHead/Setup/SetupTrackers.lua:253`, `/workspace_addons/BuffHead/Setup/SetupTrackers.lua:267`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:1350` |
 | Namespaces detected | ButtonGetDisabledFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Button:Enabled, Ace: LIBGUI_Checkbox:Enabled, Ace: LIBGUI_Optionbutton:Enabled, AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances, Aura: AuraTexture.OnIconLButtonUp, BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 81 |
-| Global usage count | 81 |
+| Lua usage count | 76 |
+| Global usage count | 76 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ ButtonGetDisabledFlag(arg1)
 
 ## Description
 
-Observed as a window function across 21 addons.
+Observed as a window function across 18 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_ScenarioJoinPromptBoxJoinWaitButton", "EnemyConfigDialogResetAllButton", "EnemyConfigDialogResetButton" |
+| arg1 | Observed as a function or method reference. | Observed values: "EnemyConfigDialogResetAllButton", "EnemyConfigDialogResetButton", "EnemyEffectsIndicatorDialogContentScrollChildChooseIconButton" |
 
 ## Returns
 
@@ -94,13 +94,10 @@ Observed as a window function across 21 addons.
 - JunkDump
 - LibWBToggler
 - PotionBar
-- Queue Queuer
 - RVMOD_Manager
 - Shinies
 - TidyChat
-- TidyQueue
 - TidyRoll
-- WarTriage
 - WoH-Reticle
 - nRarity
 - wbLeadHelper
@@ -121,13 +118,10 @@ Observed as a window function across 21 addons.
 ## Used With
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [EA_Window_ScenarioLobby.OnJoinInstanceWait](../../globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md) (HIGH 100/100) - Global Function
 - [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowGetParent](window_WindowGetParent.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 

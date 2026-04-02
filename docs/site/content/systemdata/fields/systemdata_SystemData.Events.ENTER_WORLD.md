@@ -25,14 +25,14 @@
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent API_Ref source types.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff, DAoCBuff, GCDsaver, PetFixWindow, RoR_SoR, GCDsaver, PetFixWindow, RoR_SoR |
-| Files seen in | `/workspace/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/GCDsaver/GCDsaver.lua:268`, `/workspace/PetFixWindow/PetFixWindow.lua:3`, `/workspace/RoR_SoR/RoR_SoR.lua:178`, `/workspace/RoR_SoR/RoR_SoR.lua:278` |
+| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/GCDsaver/GCDsaver.lua:268`, `/workspace_addons/PetFixWindow/PetFixWindow.lua:3`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:178`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:278` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | DAoCBuff.Initialize, DAoCBuff.OnReload, DAoCBuff.Shutdown, DAoCBuff.TargetsCleared, GCDsaver.ENTER_WORLD, GCDsaver.RegisterEvents |

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 27 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedRenownTrainer, Aura, AutoMark, BankArkel, BuffHead, CM_ClosetGoblin, CombatTextNames |
-| Files seen in | `/workspace/Ace/LibGUI.lua:1270`, `/workspace/Aura/Source/AuraHelpers.lua:33`, `/workspace/AutoMark/Source/AutoMark.lua:7`, `/workspace/BankArkel/BankArkel.lua:242`, `/workspace/BankArkel/BankArkel.lua:350`, `/workspace/BuffHead/EffectFrame.lua:359`, `/workspace/BuffHead/EffectFrame.lua:52`, `/workspace/BuffHead/Setup/SetupLayoutProperties.lua:117` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1270`, `/workspace_addons/Aura/Source/AuraHelpers.lua:33`, `/workspace_addons/AutoMark/Source/AutoMark.lua:7`, `/workspace_addons/BankArkel/BankArkel.lua:242`, `/workspace_addons/BankArkel/BankArkel.lua:350`, `/workspace_addons/BuffHead/EffectFrame.lua:359`, `/workspace_addons/BuffHead/EffectFrame.lua:52`, `/workspace_addons/BuffHead/Setup/SetupLayoutProperties.lua:117` |
 | Namespaces detected | DynamicImageSetTexture |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_Image:Texture, AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow, AdvancedRenownTrainer: CreateAbilityWindow, Aura: AuraHelpers.SetDynamicImageTexture, AutoMark: AutoMark.local.CreateMarker, AutoMark: CreateMarker |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 127 |
-| Global usage count | 127 |
+| Lua usage count | 122 |
+| Global usage count | 122 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -111,9 +111,7 @@ Observed mutating runtime image resources on existing controls.
 - Swift Assist
 - Targets
 - TexturedButtons
-- Twister
 - WSCT
-- WarTriage
 - WoH-Reticle
 
 ## Examples

@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankWindowFix, PotionBar, RandomMount, Shinies |
-| Files seen in | `/workspace/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace/PotionBar/source/Floating.lua:33`, `/workspace/RandomMount/RandomMountCore.lua:203`, `/workspace/Shinies/Modules/API/Shinies-API-Inventory.lua:114`, `/workspace/Shinies/Modules/API/Shinies-API-Inventory.lua:135`, `/workspace/Shinies/Modules/API/Shinies-API-Inventory.lua:167`, `/workspace/Shinies/Modules/API/Shinies-API-Inventory.lua:193`, `/workspace/Shinies/Modules/API/Shinies-API-Inventory.lua:215` |
+| Files seen in | `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace_addons/PotionBar/source/Floating.lua:33`, `/workspace_addons/RandomMount/RandomMountCore.lua:203`, `/workspace_addons/Shinies/Modules/API/Shinies-API-Inventory.lua:114`, `/workspace_addons/Shinies/Modules/API/Shinies-API-Inventory.lua:135`, `/workspace_addons/Shinies/Modules/API/Shinies-API-Inventory.lua:167`, `/workspace_addons/Shinies/Modules/API/Shinies-API-Inventory.lua:193`, `/workspace_addons/Shinies/Modules/API/Shinies-API-Inventory.lua:215` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | BankWindowFix.BagEquipmentRButtonUp, PotionBarFloating.LButtonUp, RandomMount.Mount, ShiniesDataInventory.OnPlayerInventorySlotUpdated, _G.Shinies:GetModule:Inventory_GetAvailableSlot, _G.Shinies:GetModule:Inventory_GetItemSlotByStackCount |

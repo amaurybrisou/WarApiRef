@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 32 addons
+- Seen in: 30 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, Aura, BagOMatic, BankArkel, BuffHead, CM_ClosetGoblin |
-| Files seen in | `/workspace/Ace/LibGUI.lua:269`, `/workspace/AggroMeter/AggroMeter.lua:378`, `/workspace/AggroMeter/AggroMeter.lua:426`, `/workspace/Aura/Source/AuraShares.lua:257`, `/workspace/Aura/Source/AuraShares.lua:297`, `/workspace/Aura/Source/AuraTexture.lua:195`, `/workspace/Aura/Source/AuraTexture.lua:65`, `/workspace/BankArkel/BankArkel.lua:153` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:269`, `/workspace_addons/AggroMeter/AggroMeter.lua:378`, `/workspace_addons/AggroMeter/AggroMeter.lua:426`, `/workspace_addons/Aura/Source/AuraShares.lua:257`, `/workspace_addons/Aura/Source/AuraShares.lua:297`, `/workspace_addons/Aura/Source/AuraTexture.lua:195`, `/workspace_addons/Aura/Source/AuraTexture.lua:65`, `/workspace_addons/BankArkel/BankArkel.lua:153` |
 | Namespaces detected | WindowGetId |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:GetId, AdvancedRenownTrainer: AdvancedRenownTraining.AbilityTooltip, AdvancedRenownTrainer: AdvancedRenownTraining.OnLButtonUpTab, AdvancedRenownTrainer: AdvancedRenownTraining.Select, AggroMeter: AggroMeter.OnTabLBU, AggroMeter: AggroMeter.PickedListMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 183 |
-| Global usage count | 183 |
+| Lua usage count | 180 |
+| Global usage count | 180 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -108,10 +108,8 @@ Observed querying runtime window state or metadata.
 - Shinies
 - TexturedButtons
 - TidyChat
-- TidyQueue
 - TidyRoll
 - TurretRange
-- WarTriage
 - WoH-Reticle
 - nRarity
 - wbLeadHelper

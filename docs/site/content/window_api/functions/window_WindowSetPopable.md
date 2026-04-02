@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WarTriage, WoH-Reticle |
-| Files seen in | `/workspace/Ace/LibGUI.lua:191`, `/workspace/Effigy/LibGUI.lua:191`, `/workspace/GCDsaver/libs/LibGUI.lua:191`, `/workspace/LibWarBoardToggler/libs/LibGUI.lua:191`, `/workspace/Shinies/Libraries/LibGUI.lua:191`, `/workspace/WarTriage/libs/LibGUI.lua:191`, `/workspace/WoH-Reticle/libs/LibGUI.lua:191` |
+| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, WoH-Reticle |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:191`, `/workspace_addons/Effigy/LibGUI.lua:191`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:191`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:191`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:191`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:191` |
 | Namespaces detected | WindowSetPopable |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Popable, Effigy: LIBGUI_ELEMENT:Popable, GCDsaver: LIBGUI_ELEMENT:Popable, LibWBToggler: LIBGUI_ELEMENT:Popable, Shinies: LIBGUI_ELEMENT:Popable, WarTriage: LIBGUI_ELEMENT:Popable |
+| Example locations | Ace: LIBGUI_ELEMENT:Popable, Effigy: LIBGUI_ELEMENT:Popable, GCDsaver: LIBGUI_ELEMENT:Popable, LibWBToggler: LIBGUI_ELEMENT:Popable, Shinies: LIBGUI_ELEMENT:Popable, WoH-Reticle: LIBGUI_ELEMENT:Popable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -76,7 +76,7 @@ Observed mutating runtime window state or presentation.
 
 ## Returns
 
-- Not confidently inferable from API_Ref alone.
+- Not confidently inferable from addon-api docs alone.
 
 ## Side Effects
 
@@ -89,7 +89,6 @@ Observed mutating runtime window state or presentation.
 - GCDsaver
 - LibWBToggler
 - Shinies
-- WarTriage
 - WoH-Reticle
 
 ## Examples
@@ -99,7 +98,7 @@ Observed mutating runtime window state or presentation.
 - GCDsaver: LIBGUI_ELEMENT:Popable -> WindowSetPopable(self.name, val)
 - LibWBToggler: LIBGUI_ELEMENT:Popable -> WindowSetPopable(self.name, val)
 - Shinies: LIBGUI_ELEMENT:Popable -> WindowSetPopable(self.name, val)
-- WarTriage: LIBGUI_ELEMENT:Popable -> WindowSetPopable(self.name, val)
+- WoH-Reticle: LIBGUI_ELEMENT:Popable -> WindowSetPopable(self.name, val)
 
 ## Related APIs
 

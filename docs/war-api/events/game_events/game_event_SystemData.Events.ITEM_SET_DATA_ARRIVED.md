@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Pocket Palette |
-| Files seen in | `/workspace/PocketPalette/PocketPalette.lua:105` |
+| Files seen in | `/workspace_addons/PocketPalette/PocketPalette.lua:105` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | Pocket Palette: PP.Initialize |

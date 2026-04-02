@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 44 addons
+- Seen in: 37 addons
 
 ## Confidence Assessment
 
@@ -25,14 +25,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoMark, BagOMatic, BankArkel, Busted |
-| Files seen in | `/workspace/AdvancedPetAssist/APAGui.lua:1063`, `/workspace/AggroMeter/AggroMeter.lua:5`, `/workspace/Aura/Source/AuraTooltip.lua:21`, `/workspace/AutoMark/Source/AutoMark.lua:33`, `/workspace/BankArkel/BankArkel.lua:172`, `/workspace/BankArkel/BankArkel.lua:95`, `/workspace/Busted/Busted.lua:324`, `/workspace/Busted/Busted.lua:333` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.lua:1063`, `/workspace_addons/AggroMeter/AggroMeter.lua:5`, `/workspace_addons/Aura/Source/AuraTooltip.lua:21`, `/workspace_addons/AutoMark/Source/AutoMark.lua:33`, `/workspace_addons/BankArkel/BankArkel.lua:172`, `/workspace_addons/BankArkel/BankArkel.lua:95`, `/workspace_addons/Busted/Busted.lua:324`, `/workspace_addons/Busted/Busted.lua:333` |
 | Namespaces detected | CreateWindow |
 | Source kinds | lua_calls |
 | Example locations | AdvancedPetAssist: APAGui.Show, AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, AdvancedRenownTrainer: AdvancedRenownTraining.InitializeImportExport, AggroMeter: AggroMeter.Initialize, Aura: AuraTooltip.OnInitialize, AutoMark: AutoMark.OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 130 |
-| Global usage count | 130 |
+| Lua usage count | 122 |
+| Global usage count | 122 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -90,7 +90,6 @@ Observed creating a top-level XML window from a loaded definition.
 - Busted
 - CM_ClosetGoblin
 - DAoCBuff
-- DeepSleep
 - EA_UiDebugTools
 - Enemy
 - FastInteract
@@ -100,27 +99,21 @@ Observed creating a top-level XML window from a loaded definition.
 - Killer
 - LoyalPet
 - MapMonster
-- MegaphonePlusPlus
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
 - Moth
-- PeaceOut
 - PotionBar
 - QuickWarReport
 - RVAPI_ColorDialog
 - RVMOD_Manager
 - RandomMount
-- RetAlert
 - RoR_SoR
 - Shinies
 - Swift Assist
-- ThinkOutLoud
 - TidyChat
 - TidyRoll
-- TimeInQueue
-- Twister
 - WSCT
 - followTheLeader
 - wbLeadHelper
@@ -208,3 +201,4 @@ Observed creating a top-level XML window from a loaded definition.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

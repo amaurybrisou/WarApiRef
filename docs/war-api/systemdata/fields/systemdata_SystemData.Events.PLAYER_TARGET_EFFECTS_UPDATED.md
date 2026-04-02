@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, BuffHead, DAoCBuff, Enemy, GCDsaver, DAoCBuff, Enemy, GCDsaver |
-| Files seen in | `/workspace/BuffHead/Core.lua:152`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/GCDsaver/GCDsaver.lua:253`, `/workspace/GCDsaver/GCDsaver.lua:268` |
+| Files seen in | `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/GCDsaver/GCDsaver.lua:268` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | BuffHead.Initialize, BuffHead.OnTargetEffectsUpdated, DAoCBuff.Initialize, DAoCBuff.OnEventH, DAoCBuff.Shutdown, Enemy.GroupsInitialize |
