@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Moth |
-| Files seen in | `/workspace_addons/Moth/MothHelpers.lua:39` |
+| Files seen in | `/workspace/data/raw/Moth/MothHelpers.lua:39` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
 | Example locations | Moth: MothHelpers.CapitalizeWString |
@@ -89,7 +89,8 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- none
+- [wstring.lower](global_wstring.lower.md) (MEDIUM 45/100) - Global Function
+- [wstring.sub](global_wstring.sub.md) (MEDIUM 40/100) - Global Function
 
 ## Triggered By
 

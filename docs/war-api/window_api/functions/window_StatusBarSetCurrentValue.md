@@ -2,41 +2,36 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 9 addons
+- Confidence score: 80/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 80/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, RoR_SoR, Shinies, Targets, TidyRoll |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:996`, `/workspace_addons/Effigy/LibGUI.lua:993`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:993`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:993`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:990`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:993`, `/workspace_addons/TidyRoll/TidyRollFrame.lua:115`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:993` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:115` |
 | Namespaces detected | StatusBarSetCurrentValue |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Statusbar:SetValue, Effigy: LIBGUI_Statusbar:SetValue, GCDsaver: LIBGUI_Statusbar:SetValue, LibWBToggler: LIBGUI_Statusbar:SetValue, RoR_SoR: RoR_SoR.T1_UPDATE, Shinies: LIBGUI_Statusbar:SetValue |
+| Example locations | TidyRoll: TidyRollFrame:SetTimer |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,8 +39,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent role | no |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -65,14 +60,14 @@ StatusBarSetCurrentValue(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 9 addons.
+Observed as a window function across 1 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "SoR_"..Window_Name.."VPDESTROBAR", "SoR_"..Window_Name.."VPORDERBAR", self.name |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: player.hp, timer, tonumber(ZoneVP.controlPoints[1]) |
+| arg1 | Observed as a function or method reference. | Observed values: timerFrame:GetName().."Bar" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: timer |
 
 ## Returns
 
@@ -84,24 +79,11 @@ Observed as a window function across 9 addons.
 
 ## Seen In
 
-- Ace
-- Effigy
-- GCDsaver
-- LibWBToggler
-- RoR_SoR
-- Shinies
-- Targets
 - TidyRoll
-- WoH-Reticle
 
 ## Examples
 
-- Ace: LIBGUI_Statusbar:SetValue -> StatusBarSetCurrentValue(self.name, value)
-- Effigy: LIBGUI_Statusbar:SetValue -> StatusBarSetCurrentValue(self.name, value)
-- GCDsaver: LIBGUI_Statusbar:SetValue -> StatusBarSetCurrentValue(self.name, value)
-- LibWBToggler: LIBGUI_Statusbar:SetValue -> StatusBarSetCurrentValue(self.name, value)
-- RoR_SoR: RoR_SoR.T1_UPDATE -> StatusBarSetCurrentValue("SoR_"..Window_Name.."VPORDERBAR", tonumber(ZoneVP.controlPoints[1]))
-- RoR_SoR: RoR_SoR.T1_UPDATE -> StatusBarSetCurrentValue("SoR_"..Window_Name.."VPDESTROBAR", tonumber(ZoneVP.controlPoints[2]))
+- TidyRoll: TidyRollFrame:SetTimer -> StatusBarSetCurrentValue(timerFrame:GetName().."Bar", timer)
 
 ## Related APIs
 
@@ -109,9 +91,7 @@ Observed as a window function across 9 addons.
 
 ## Used With
 
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
+- none
 
 ## Triggered By
 
@@ -123,4 +103,4 @@ Observed as a window function across 9 addons.
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

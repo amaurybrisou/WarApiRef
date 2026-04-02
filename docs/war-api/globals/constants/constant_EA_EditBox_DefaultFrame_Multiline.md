@@ -2,37 +2,33 @@
 
 - Category: Constant
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 90/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 90/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, Busted, EA_UiDebugTools, Enemy, MapMonster, MapPin, ObjectInspector, TidyChat |
-| Files seen in | `/workspace_addons/BuffHead/Setup/SetupEffectCacheTable.xml:58`, `/workspace_addons/BuffHead/Setup/SetupLayoutManager.xml:142`, `/workspace_addons/BuffHead/Setup/SetupLayoutManager.xml:203`, `/workspace_addons/Busted/Busted.xml:96`, `/workspace_addons/Enemy/Code/Core/Common.xml:128`, `/workspace_addons/MapMonster/Source/MapMonster_EditorWindow.xml:386`, `/workspace_addons/MapPin/source/MapPin.xml:588`, `/workspace_addons/MapPin/source/MapPin.xml:599` |
+| Addons seen in | TidyChat |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChatCopy.xml:38` |
 | Namespaces detected | EA_EditBox_DefaultFrame_Multiline |
 | Source kinds | xml_attributes |
-| Example locations | BuffHeadSetupEffectCacheTableWindowTableEditBox, BuffHeadSetupLayoutManagerWindowElementExportEditBox, BuffHeadSetupLayoutManagerWindowElementImportEditBox, BustedGUIErrorMessage, DevPadWindowDevPadCode, EA_Window_MacroDetailsText |
-| XML usage count | 12 |
-| XML attribute usage count | 12 |
+| Example locations | TidyChatCopyLog |
+| XML usage count | 1 |
+| XML attribute usage count | 1 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,33 +53,14 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 9 addons.
+Observed engine XML template or inherited constant referenced by 1 addons.
 
 ## Seen In
 
-- BuffHead
-- Busted
-- EA_UiDebugTools
-- Enemy
-- MapMonster
-- MapPin
-- ObjectInspector
 - TidyChat
-- bigger_MacroWindow
 
 ## Used By
 
-- BuffHeadSetupEffectCacheTableWindowTableEditBox
-- BuffHeadSetupLayoutManagerWindowElementExportEditBox
-- BuffHeadSetupLayoutManagerWindowElementImportEditBox
-- BustedGUIErrorMessage
-- DevPadWindowDevPadCode
-- EA_Window_MacroDetailsText
-- EnemyTextEntryDialogValue
-- MapMonster_EditorWindowNoteEditBox
-- MapPin_SetupDescBox
-- MapPin_SetupTextBox
-- ObjectInspectorObjectEditBox
 - TidyChatCopyLog
 
 ## Related APIs

@@ -1,37 +1,34 @@
 # TintColor
 
 - Category: XML Element Type
-- Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence level: MEDIUM
+- Confidence score: 45/100
 
 ## Confidence Assessment
 
-- Level: HIGH
+- Level: MEDIUM
 
-- Final score: 100/100
+- Score: 45/100
 
-- Raw weighted score: 110
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AggroMeter, Aura, AutoMark, BuffHead, CMap, EA_UiDebugTools, GuardLine |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1389`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1430`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1471`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1509`, `/workspace_addons/AggroMeter/AggroMeter.xml:216`, `/workspace_addons/AggroMeter/AggroMeter.xml:221`, `/workspace_addons/Aura/Source/AuraTooltip.xml:195`, `/workspace_addons/Aura/Source/AuraTooltip.xml:220` |
+| Addons seen in | Moth |
+| Files seen in | `/workspace/data/raw/Moth/Moth.xml:128`, `/workspace/data/raw/Moth/Moth.xml:157`, `/workspace/data/raw/Moth/Moth.xml:18`, `/workspace/data/raw/Moth/Moth.xml:30` |
 | Namespaces detected | TintColor |
 | Source kinds | xml_frames |
-| Example locations | AdvancedPetAssist: APAFollowTargetHUDFill, AdvancedPetAssist: APAInstantOnlyHUDFill, AdvancedPetAssist: APAKitingHUDFill, AdvancedPetAssist: APAPetTargetHUDBg, AggroMeter: AggroMeterWindow_AggroWindow1BorderCheck, AggroMeter: AggroMeterWindow_AggroWindow1Seperator1 |
-| XML usage count | 99 |
-| XML attribute usage count | 99 |
+| Example locations | Moth: MothBackground, Moth: MothBordertronned, Moth: MothCellTemplateBackground, Moth: MothRowTemplateBackground |
+| XML usage count | 4 |
+| XML attribute usage count | 4 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -41,11 +38,11 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
-| Weak usage only | no |
+| Weak usage only | yes |
 | Project-specific name | no |
 | Placeholder or computed name | no |
 | Conflicting signatures | no |
@@ -56,14 +53,13 @@
 
 ## Description
 
-Observed XML element type instantiated by 21 addons.
+Observed XML element type instantiated by 1 addons.
 
 ## Common Attributes
 
 - b
 - g
 - r
-- a
 
 ## Common Inherits
 
@@ -71,53 +67,25 @@ Observed XML element type instantiated by 21 addons.
 
 ## Common Parent Elements
 
-- [FullResizeImage](element_FullResizeImage.md) — 37× (HIGH)
-- [DynamicImage](element_DynamicImage.md) — 27× (HIGH)
-- [Label](element_Label.md) — 14× (HIGH)
-- [HorizontalResizeImage](element_HorizontalResizeImage.md) — 10× (HIGH)
-- [CircleImage](element_CircleImage.md) — 8× (MEDIUM)
-- [VerticalResizeImage](element_VerticalResizeImage.md) — 3× (MEDIUM)
+- [FullResizeImage](element_FullResizeImage.md) — 4× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `b` | **required** | 100% |  |
-| `g` | **required** | 100% |  |
-| `r` | **required** | 100% |  |
-| `a` | optional | 37% |  |
+| `b` | **required** | 100% | 0, 36, 166 |
+| `g` | **required** | 100% | 0, 28, 84 |
+| `r` | **required** | 100% | 0, 237 |
 ## Seen In
 
-- AdvancedPetAssist
-- AggroMeter
-- Aura
-- AutoMark
-- BuffHead
-- CMap
-- EA_UiDebugTools
-- GuardLine
-- Killer
-- LibGroup
-- MapMonster
-- MapPin
 - Moth
-- Pocket Palette
-- RVAPI_ColorDialog
-- RoR_SoR
-- Shinies
-- Targets
-- TexturedButtons
-- Tortall_DPS
-- TurretRange
 
 ## Examples
 
-- AdvancedPetAssist: APAFollowTargetHUDFill -> TintColor in HorizontalResizeImage APAFollowTargetHUDFill
-- AdvancedPetAssist: APAInstantOnlyHUDFill -> TintColor in HorizontalResizeImage APAInstantOnlyHUDFill
-- AdvancedPetAssist: APAKitingHUDFill -> TintColor in HorizontalResizeImage APAKitingHUDFill
-- AdvancedPetAssist: APAPetTargetHUDBg -> TintColor in HorizontalResizeImage APAPetTargetHUDBg
-- AggroMeter: AggroMeterWindow_AggroWindow1BorderCheck -> TintColor in FullResizeImage AggroMeterWindow_AggroWindow1BorderCheck
-- AggroMeter: AggroMeterWindow_AggroWindow1Seperator1 -> TintColor in FullResizeImage AggroMeterWindow_AggroWindow1Seperator1
+- Moth: MothBackground -> TintColor in FullResizeImage MothBackground
+- Moth: MothBordertronned -> TintColor in FullResizeImage MothBordertronned
+- Moth: MothCellTemplateBackground -> TintColor in FullResizeImage MothCellTemplateBackground
+- Moth: MothRowTemplateBackground -> TintColor in FullResizeImage MothRowTemplateBackground
 
 ## Related APIs
 

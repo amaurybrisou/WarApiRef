@@ -2,41 +2,37 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 21 addons
+- Confidence score: 90/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 90/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, BuffHead, Busted, CM_ClosetGoblin, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:553`, `/workspace_addons/Ace/LibGUI.lua:778`, `/workspace_addons/Ace/LibGUI.lua:844`, `/workspace_addons/BuffHead/Setup/SetupTrackers.lua:17`, `/workspace_addons/Busted/Busted.lua:130`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:465`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:671`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1056` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:828` |
 | Namespaces detected | ButtonSetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Button:SetEnabled, Ace: LIBGUI_Checkbox:SetEnabled, Ace: LIBGUI_Optionbutton:SetEnabled, AdvancedRenownTrainer: AdvancedRenownTraining.AnywhereShow, AdvancedRenownTrainer: AdvancedRenownTraining.OnHidden, BuffHead: BuffHead.local.SetTracker |
+| Example locations | TidyRoll: TidyRollOptions.OnCheckboxLBU, TidyRoll: TidyRollOptions.Reset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 191 |
-| Global usage count | 191 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,7 +40,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -71,8 +67,8 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "BustedGUINextError", "BustedGUIPrevError", "ClosetGoblinCharacterWindowContentsDeleteSet" |
-| arg2 | Observed as a boolean toggle. | Observed values: (onTargetChangeEnabled==false), config_dlg.clickCastingsListSelectedIndex==nil, config_dlg.clickCastingsListSelectedIndex==nil or config_dlg.clickCastingsListSelectedIndex==#config_dlg.clickCastings |
+| arg1 | Observed as a function or method reference. | Observed values: c_TROLL_FLASH_ONLY_NEW_ITEM.."Button", c_TROLL_GLOW_ONLY_NEW_ITEM.."Button" |
+| arg2 | Observed as a function or method reference. | Observed values: not ButtonGetPressedFlag(c_TROLL_FLASH_ON_NEW.."Button"), not ButtonGetPressedFlag(c_TROLL_GLOW_ON_NEW.."Button"), not ButtonGetPressedFlag(checkboxName) |
 
 ## Returns
 
@@ -84,36 +80,14 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
-- Ace
-- AdvancedRenownTrainer
-- BuffHead
-- Busted
-- CM_ClosetGoblin
-- DAoCBuff
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- GCDsaver
-- JunkDump
-- LibWBToggler
-- MapMonster
-- Miracle Grow Remix
-- PotionBar
-- RVMOD_Manager
-- Shinies
 - TidyRoll
-- WSCT
-- WoH-Reticle
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_Button:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- Ace: LIBGUI_Checkbox:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- Ace: LIBGUI_Optionbutton:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- AdvancedRenownTrainer: AdvancedRenownTraining.AnywhereShow -> ButtonSetDisabledFlag(WindowName.."PurchaseButton", true)
-- AdvancedRenownTrainer: AdvancedRenownTraining.OnHidden -> ButtonSetDisabledFlag(WindowName.."PurchaseButton", false)
-- BuffHead: BuffHead.local.SetTracker -> ButtonSetDisabledFlag(windowName.."OnTargetChangeClearAlwaysShow".."Button", (onTargetChangeEnabled==false))
+- TidyRoll: TidyRollOptions.OnCheckboxLBU -> ButtonSetDisabledFlag(c_TROLL_FLASH_ONLY_NEW_ITEM.."Button", not ButtonGetPressedFlag(checkboxName))
+- TidyRoll: TidyRollOptions.OnCheckboxLBU -> ButtonSetDisabledFlag(c_TROLL_GLOW_ONLY_NEW_ITEM.."Button", not ButtonGetPressedFlag(checkboxName))
+- TidyRoll: TidyRollOptions.Reset -> ButtonSetDisabledFlag(c_TROLL_FLASH_ONLY_NEW_ITEM.."Button", not ButtonGetPressedFlag(c_TROLL_FLASH_ON_NEW.."Button"))
+- TidyRoll: TidyRollOptions.Reset -> ButtonSetDisabledFlag(c_TROLL_GLOW_ONLY_NEW_ITEM.."Button", not ButtonGetPressedFlag(c_TROLL_GLOW_ON_NEW.."Button"))
 
 ## Related APIs
 
@@ -121,17 +95,21 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Used With
 
-- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
-- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Handler
-- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

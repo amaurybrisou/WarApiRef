@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Effigy, MapMonster, Moth, TidyChat, TidyRoll |
-| Files seen in | `/workspace_addons/Effigy/Effigy.xml:106`, `/workspace_addons/MapMonster/Source/MapMonster_PinTypeEditorWindow.xml:252`, `/workspace_addons/Moth/Moth.xml:42`, `/workspace_addons/TidyChat/TidyChat.xml:33`, `/workspace_addons/TidyRoll/CustomAutoRoll.xml:119` |
+| Addons seen in | Moth, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/Moth/Moth.xml:42`, `/workspace/data/raw/TidyChat/TidyChat.xml:33`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:119` |
 | Namespaces detected | EA_Button_ResizeIconFrameNormal |
 | Source kinds | xml_attributes |
-| Example locations | FrameIconBack, MapMonster_PinTypeEditorWindowMapPinIconBorder, MothBorderDark, TRollAutoRollFrame, TidyChatOptionsFrame |
-| XML usage count | 5 |
-| XML attribute usage count | 5 |
+| Example locations | MothBorderDark, TRollAutoRollFrame, TidyChatOptionsFrame |
+| XML usage count | 3 |
+| XML attribute usage count | 3 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,20 +57,16 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 5 addons.
+Observed engine XML template or inherited constant referenced by 3 addons.
 
 ## Seen In
 
-- Effigy
-- MapMonster
 - Moth
 - TidyChat
 - TidyRoll
 
 ## Used By
 
-- FrameIconBack
-- MapMonster_PinTypeEditorWindowMapPinIconBorder
 - MothBorderDark
 - TRollAutoRollFrame
 - TidyChatOptionsFrame

@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 115
+- Raw weighted score: 105
 
 - Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, referenced by generated docs or reference files.
 
@@ -18,7 +18,6 @@
 
 - +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Appears in slash command registration patterns: Observed in shared command registration flows.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
@@ -27,18 +26,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, AutoMark, BagOMatic, BuffHead, CM_ClosetGoblin, Crafting Info Tooltip, DAoCBuff |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:193`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/AutoMark/Source/AutoMark.lua:33`, `/workspace_addons/BuffHead/Core.lua:79`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:87`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:33`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25` |
+| Addons seen in | LibSlash, NPC Item Sale Price, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:189`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:265`, `/workspace/data/raw/nisp/Source/Nisp.lua:26` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.Initialize, Aura: AuraAddon.OnInitialize, AutoMark: AutoMark.OnInitialize, BagOMatic: BagOMatic.init, BuffHead: BuffHead.local.RegisterLibs, BuffHead: RegisterLibs |
+| Example locations | NPC Item Sale Price: Nisp.Init, TidyChat: TidyChat.OnLoad, TidyRoll: TidyRoll.OnLoad |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 86 |
-| Global usage count | 4 |
-| Local definition count | 2 |
+| Lua usage count | 3 |
+| Global usage count | 2 |
+| Local definition count | 1 |
 | Documentation references | 1 |
-| Initialization flow references | 3 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | no |
 | Event binding presence | no |
@@ -58,14 +57,12 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 46 addons.
+Observed shared global table or namespace surfaced in 4 addons.
 
 ## Functions
 
-- LibSlash.IsSlashCmdRegistered
 - LibSlash.RegisterSlashCmd
 - LibSlash.RegisterWSlashCmd
-- LibSlash.UnregisterSlashCmd
 
 ## Observed Members
 
@@ -73,61 +70,16 @@ Observed shared global table or namespace surfaced in 46 addons.
 
 ## Seen In
 
-- AdvancedPetAssist
-- Aura
-- AutoMark
-- BagOMatic
-- BuffHead
-- CM_ClosetGoblin
-- Crafting Info Tooltip
-- DAoCBuff
-- DaemonAssist
-- Effigy
-- FastInteract
-- GCDsaver
-- GuardLine
-- JunkDump
-- Killer
-- LibGroup
-- LibGuard
 - LibSlash
-- LibWBToggler
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- MiracleGrow
-- MiracleGrowLight
 - NPC Item Sale Price
-- PlanB
-- Pocket Palette
-- PotionBar
-- QuickTacticSwitch
-- QuickWarReport
-- RVMOD_Manager
-- RandomMount
-- RoR_SoR
-- Shinies
-- Swift Assist
-- Targets
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WSCT
-- WarBoard
-- WhoHealedMe
-- WoH-Reticle
-- followTheLeader
-- wbLeadHelper
 
 ## Examples
 
-- AdvancedPetAssist: AdvancedPetAssist.Initialize -> LibSlash.RegisterSlashCmd("apa", function(input)APA.SlashHandler(input)end)
-- Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("aura", AuraAddon.Slash)
-- Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("auraconfig", AuraAddon.Slash)
-- Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("showaura", AuraAddon.Slash)
-- AutoMark: AutoMark.OnInitialize -> LibSlash.RegisterSlashCmd("automark", AutoMark.OnSlashCommand)
-- BagOMatic: BagOMatic.init -> LibSlash.RegisterSlashCmd("bagomatic", function(msg)BagOMatic.parse_cmd(msg)end)
+- NPC Item Sale Price: Nisp.Init -> LibSlash.RegisterSlashCmd("nisp", function(args)Nisp.SlashHandler(args)end)
+- TidyChat: TidyChat.OnLoad -> LibSlash.RegisterWSlashCmd("tchat", TidyChat.ToggleOptions)
+- TidyRoll: TidyRoll.OnLoad -> LibSlash.RegisterWSlashCmd("troll", TidyRoll.ToggleOptions)
 
 ## Related APIs
 

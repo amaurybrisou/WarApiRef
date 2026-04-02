@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 36 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AnywhereTrainerAdditions, Aura, AutoMark, BagOMatic, BankArkel |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:140`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:552`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:18`, `/workspace_addons/Aura/Source/Aura.lua:505`, `/workspace_addons/Aura/Source/Aura.lua:534`, `/workspace_addons/Aura/Source/AuraTexture.lua:41`, `/workspace_addons/AutoMark/Source/AutoMark.lua:124`, `/workspace_addons/BankArkel/BankArkel.lua:172` |
+| Addons seen in | Moth, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:205`, `/workspace/data/raw/Moth/Moth.lua:578`, `/workspace/data/raw/TidyChat/TidyChat.lua:239`, `/workspace/data/raw/TidyChat/TidyChat.lua:344`, `/workspace/data/raw/TidyChat/TidyChat.lua:404`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyChat/TidyChat.lua:980`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
 | Namespaces detected | WindowAddAnchor |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:AddAnchor, AdvancedPetAssist: AdvancedPetAssist.local.AnchorInContent, AdvancedPetAssist: AnchorInContent, AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow, AdvancedRenownTrainer: CreateAbilityWindow, AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize |
+| Example locations | Moth: Moth.Anchor, Moth: Moth.HealthBar, TidyChat: TidyChatCore.SetTextEntry, TidyChat: TidyChatCore.SetWindowGroup, TidyChat: TidyChatCore.SetWindowTextLog, TidyChat: TidyChatFrames.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 368 |
-| Global usage count | 368 |
+| Lua usage count | 90 |
+| Global usage count | 90 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed positioning windows relative to other runtime UI elements.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as the window being positioned. | Observed values: "BagOMaticButton", "BankArkelBackpack", "EnemyCombatLogEpsWindowInDpsLabel" |
-| point | Observed as an anchor point string. | Observed values: "LEFT", "RIGHT", "bottom" |
-| relativeTo | Observed as a reference window name. | Observed values: "APAOptionsContent", "CursorWindow", "EA_Window_Backpack" |
-| relativePoint | Observed as a reference anchor point string. | Observed values: "LEFT", "RIGHT", "bottom" |
-| offsetX | Observed as a numeric horizontal offset. | Observed values: (i-1)*28, (layout.Distance.Offset.X or 0), (settings.Distance.Offset.X or 0) |
-| offsetY | Observed as a numeric vertical offset. | Observed values: (2/InterfaceCore.GetScale())*wbLeadHelper.activeSettings.windowSize, (g.settings.combatLogIDSRowSize[2]+g.settings.combatLogIDSRowPadding)*(index-1), (layout.Distance.Offset.Y or 0) |
+| windowName | Observed as the window being positioned. | Observed values: "Moth", "MothHealthBar", c_CHANNEL_MENU.."AdviceButton" |
+| point | Observed as an anchor point string. | Observed values: "bottom", "bottomleft", "bottomright" |
+| relativeTo | Observed as a reference window name. | Observed values: "CursorWindow", "MothBackground", "Root" |
+| relativePoint | Observed as a reference anchor point string. | Observed values: "bottom", "bottomleft", "bottomright" |
+| offsetX | Observed as a numeric horizontal offset. | Observed values: -10, -2, -24 |
+| offsetY | Observed as a numeric vertical offset. | Observed values: -10, -2, -29 |
 
 ## Returns
 
@@ -88,51 +88,18 @@ Observed positioning windows relative to other runtime UI elements.
 
 ## Seen In
 
-- Ace
-- AdvancedPetAssist
-- AdvancedRenownTrainer
-- AnywhereTrainerAdditions
-- Aura
-- AutoMark
-- BagOMatic
-- BankArkel
-- BuffHead
-- CombatTextNames
-- Crafting Info Tooltip
-- DAoCBuff
-- Effigy
-- Enemy
-- GCDsaver
-- JunkDump
-- Killer
-- LibWBToggler
-- MapMonster
-- Miracle Grow Remix
 - Moth
-- PotionBar
-- QuickWarReport
-- RVAPI_ColorDialog
-- RVMOD_Manager
-- RoR_SoR
-- Shinies
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WSCT
-- WhoHealedMe
-- WoH-Reticle
-- nRarity
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:AddAnchor -> WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
-- AdvancedPetAssist: AdvancedPetAssist.local.AnchorInContent -> WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
-- AdvancedPetAssist: AnchorInContent -> WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
-- AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow -> WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
-- AdvancedRenownTrainer: CreateAbilityWindow -> WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -> WindowAddAnchor(tab.Name, tab.Anchor.Point, tab.Anchor.RelativeTo, tab.Anchor.RelativePoint, tab.Anchor.X, tab.Anchor.Y)
+- Moth: Moth.Anchor -> WindowAddAnchor("Moth", "bottomleft", "CursorWindow", "topleft", 0, 0)
+- Moth: Moth.HealthBar -> WindowAddAnchor("MothHealthBar", "bottomleft", "MothBackground", "topleft", 0, yOffset)
+- TidyChat: TidyChatCore.SetTextEntry -> WindowAddAnchor(c_TEXT_ENTRY_WINDOW.."EntryBox", "topleft", c_TEXT_ENTRY_WINDOW, "topleft", EntryBoxAnchorXOffset, 0)
+- TidyChat: TidyChatCore.SetTextEntry -> WindowAddAnchor(c_TEXT_ENTRY_WINDOW.."EntryBox", "bottomright", c_TEXT_ENTRY_WINDOW, "bottomright", 0, 0)
+- TidyChat: TidyChatCore.SetTextEntry -> WindowAddAnchor(c_TEXT_ENTRY_WINDOW, TEAnchorPoint.."left", TEAnchorRelativeWindow, TEAnchorRelativePoint.."left", 0, 0)
+- TidyChat: TidyChatCore.SetTextEntry -> WindowAddAnchor(c_TEXT_ENTRY_WINDOW, TEAnchorPoint.."right", TEAnchorRelativeWindow, TEAnchorRelativePoint.."right", 0, 0)
 
 ## Related APIs
 
@@ -140,21 +107,24 @@ Observed positioning windows relative to other runtime UI elements.
 
 ## Used With
 
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [SystemData.ChatLogFilters.ADVICE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ADVICE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.ALLIANCE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ALLIANCE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SCENARIO](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SCENARIO.md) (HIGH 100/100) - SystemData Field
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetId](window_WindowSetId.md) (HIGH 100/100) - Window Function
-- [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
+- [WindowRegisterCoreEventHandler](window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
+- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
+- [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
-- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
+- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 90/100) - Window Function
+- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 90/100) - Window Function
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 90/100) - Window Function
+- [WindowGetOffsetFromParent](window_WindowGetOffsetFromParent.md) (HIGH 80/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
 
 ## Triggered By
 

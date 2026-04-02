@@ -2,48 +2,30 @@
 
 ## RegisterEventHandler
 
-- Confidence: HIGH
+- Confidence: MEDIUM
 
 - Description: Observed registering global runtime handlers against shared event identifiers.
 
 - Evidence:
 
-- AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
-  - AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
-  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.LOADING_END, "AdvancedRenownTraining.OnReload")
-  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
-  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "AdvancedRenownTraining.OnReload")
-  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
+- TidyChat: RegisterEventHandler(SystemData.Events.LOADING_END, "TidyChat.OnLoad")
+  - TidyChat: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "TidyChat.OnLoad")
+  - TidyChat: RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, "TidyChat.OnLBU")
+  - TidyChat: RegisterEventHandler(chatLogEventId, "TidyChat.OnChatLogUpdated")
+  - TidyChat: RegisterEventHandler(combatLogEventId, "TidyChat.OnCombatLogUpdated")
+  - TidyChat: RegisterEventHandler(systemLogEventId, "TidyChat.OnSystemLogUpdated")
 
 ## UnregisterEventHandler
 
-- Confidence: HIGH
+- Confidence: MEDIUM
 
 - Description: Observed removing previously registered global runtime handlers.
 
 - Evidence:
 
-- Ace: UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "AceAddon_OnUpdate_DONOTTOUCH")
-  - AdvancedPetAssist: UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
-  - AdvancedPetAssist: UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
-  - AdvancedRenownTrainer: UnregisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
-  - AggroMeter: UnregisterEventHandler(TextLogGetUpdateEventId("Chat"), "AggroMeter.OnChatLogUpdated")
-  - Aura: UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "TargetInfoFix.APPLY_TARGETINFO_FIX_DONOTTOUCH")
-
-## BroadcastEvent
-
-- Confidence: HIGH
-
-- Description: Observed triggering a runtime event so existing handlers are notified.
-
-- Evidence:
-
-- Effigy: BroadcastEvent(SystemData.Events.TARGET_PET)
-  - Effigy: BroadcastEvent(SystemData.Events.GROUP_LEAVE)
-  - Effigy: BroadcastEvent(SystemData.Events.GROUP_LEAVE)
-  - Enemy: BroadcastEvent(custom_target_event)
-  - Enemy: BroadcastEvent(SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS)
-  - Enemy: BroadcastEvent(SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS)
+- TidyRoll: UnregisterEventHandler(SystemData.Events.LOADING_END, "TidyRoll.OnLoad")
+  - TidyRoll: UnregisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "TidyRoll.OnLoad")
+  - TidyRoll: UnregisterEventHandler(SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA, "TidyRoll.UpdateLootRollData")
 
 ## Game event fan-in
 
@@ -53,14 +35,13 @@
 
 - Evidence:
 
-- BroadcastMessageInvite (HIGH)
-  - ChatTextArrived (HIGH)
-  - CombatLogNewCombatEvent (HIGH)
-  - CombatLogSessionsUpdated (HIGH)
-  - CombatLogSettingsChanged (HIGH)
-  - ConfigDialogInitializeSections (HIGH)
-  - EA_CareerResourceWindow (HIGH)
-  - Global (HIGH)
+- SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM (HIGH)
+  - SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA (HIGH)
+  - SystemData.Events.LOADING_END (HIGH)
+  - SystemData.Events.L_BUTTON_UP_PROCESSED (HIGH)
+  - SystemData.Events.PLAYER_TARGET_UPDATED (HIGH)
+  - SystemData.Events.RELOAD_INTERFACE (HIGH)
+  - TextLogGetUpdateEventId (MEDIUM)
 
 ## Window event hooks
 
@@ -70,11 +51,11 @@
 
 - Evidence:
 
-- OnActionButtonLButtonDown (MEDIUM)
-  - OnActionButtonLButtonUp (MEDIUM)
-  - OnActionButtonMouseOver (MEDIUM)
-  - OnActionButtonRButtonDown (MEDIUM)
-  - OnHidden (HIGH)
-  - OnHyperLinkLButtonUp (HIGH)
-  - OnHyperLinkRButtonUp (HIGH)
-  - OnInitialize (HIGH)
+- OnHidden (HIGH)
+  - OnInitialize (MEDIUM)
+  - OnLButtonDown (HIGH)
+  - OnLButtonUp (HIGH)
+  - OnMButtonUp (HIGH)
+  - OnMouseOver (MEDIUM)
+  - OnMouseWheel (HIGH)
+  - OnRButtonUp (HIGH)

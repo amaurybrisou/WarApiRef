@@ -2,48 +2,48 @@
 
 ## Window creation
 
-- Confidence: HIGH
+- Confidence: MEDIUM
 
 - Description: Observed top-level UI windows being created from XML definitions at initialization time.
 
 - Evidence:
 
-- AdvancedPetAssist: CreateWindow("APAOptions", true)
-  - AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
-  - AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
-  - AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
-  - AdvancedRenownTrainer: CreateWindow(ExportWindowName, false)
-  - AdvancedRenownTrainer: CreateWindow(LinkWindowName, false)
+- Moth: CreateWindow("Moth", true)
+  - TidyChat: CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
+  - TidyRoll: CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
+  - TidyRoll: CreateWindow(c_TIDY_ROLL_ANCHOR, false)
+  - TidyRoll: CreateWindow(c_TIDY_ROLL_TIMER, false)
+  - TidyRoll: CreateWindow(c_TIDY_ROLL_ESC, false)
 
 ## Template instantiation
 
-- Confidence: HIGH
+- Confidence: MEDIUM
 
 - Description: Observed repeated UI elements being instantiated from XML templates at runtime.
 
 - Evidence:
 
-- Ace: CreateWindowFromTemplate(w.name, base, w.parent)
-  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
-  - Ace: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
-  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
-  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
-  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+- TidyChat: CreateWindowFromTemplate(c_CHANNEL_MENU.."AllianceButton", "ChannelMenuButton", "ChatChannelSelectionWindow")
+  - TidyChat: CreateWindowFromTemplate(c_CHANNEL_MENU.."AdviceButton", "ChannelMenuButton", "ChatChannelSelectionWindow")
+  - TidyChat: CreateWindowFromTemplate(c_CHANNEL_MENU.."ScenarioButton", "ChannelMenuButton", "ChatChannelSelectionWindow")
+  - TidyRoll: CreateWindowFromTemplate(c_TROLL_TITLE, "EA_Label_DefaultText", c_TIDY_ROLL_OPTIONS)
+  - TidyRoll: CreateWindowFromTemplate(c_TROLL_VERSION, "EA_Label_DefaultText", c_TIDY_ROLL_OPTIONS)
+  - TidyRoll: CreateWindowFromTemplate(c_TROLL_CLOSE, "EA_Button_DefaultWindowClose", c_TIDY_ROLL_OPTIONS)
 
 ## Runtime anchoring
 
-- Confidence: HIGH
+- Confidence: MEDIUM
 
 - Description: Observed layouts being finalized in Lua by clearing and re-adding anchors after window creation.
 
 - Evidence:
 
-- Ace: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
-  - AdvancedPetAssist: WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
-  - AdvancedPetAssist: WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
-  - AdvancedRenownTrainer: WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
-  - AdvancedRenownTrainer: WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
-  - AnywhereTrainerAdditions: WindowAddAnchor(tab.Name, tab.Anchor.Point, tab.Anchor.RelativeTo, tab.Anchor.RelativePoint, tab.Anchor.X, tab.Anchor.Y)
+- Moth: WindowAddAnchor("Moth", "bottomleft", "CursorWindow", "topleft", 0, 0)
+  - Moth: WindowAddAnchor("MothHealthBar", "bottomleft", "MothBackground", "topleft", 0, yOffset)
+  - TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW.."EntryBox", "topleft", c_TEXT_ENTRY_WINDOW, "topleft", EntryBoxAnchorXOffset, 0)
+  - TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW.."EntryBox", "bottomright", c_TEXT_ENTRY_WINDOW, "bottomright", 0, 0)
+  - TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW, TEAnchorPoint.."left", TEAnchorRelativeWindow, TEAnchorRelativePoint.."left", 0, 0)
+  - TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW, TEAnchorPoint.."right", TEAnchorRelativeWindow, TEAnchorRelativePoint.."right", 0, 0)
 
 ## XML to Lua binding
 
@@ -53,9 +53,9 @@
 
 - Evidence:
 
-- AdvancedPetAssist: APAComboAttackBind.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboAutoReattack.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboAutoReattackDelay.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCastDelay.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged -> APAGui.OnComboChanged
+- TidyChat: TChatCheckboxTemplate.OnLButtonUp -> TidyChat.Options.OnCheckboxLBU
+  - TidyChat: TChatTabButton.OnLButtonUp -> TidyChat.Options.OnTabLBU
+  - TidyChat: TChatTabWindowsTemplateSelectWindowCombo.OnSelChanged -> TidyChat.Options.UpdateGroupTabs
+  - TidyChat: TidyChatCopy.OnHidden -> TidyChat.Copy.OnHidden
+  - TidyChat: TidyChatCopy.OnMouseWheel -> TidyChat.Copy.OnMouseWheel
+  - TidyChat: TidyChatCopy.OnShown -> TidyChat.Copy.OnShown

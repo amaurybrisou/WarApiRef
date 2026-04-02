@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches a known engine namespace, referenced by generated docs or reference files, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, Crafting Info Tooltip, JunkDump, TidyChat, TidyRoll, TurretRange |
-| Files seen in | `/workspace_addons/BuffHead/Core.lua:79`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:33`, `/workspace_addons/JunkDump/JunkDump.lua:50`, `/workspace_addons/TidyChat/TidyChat.lua:189`, `/workspace_addons/TidyRoll/TidyRoll.lua:265`, `/workspace_addons/TurrentRange/Core.lua:41` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:189`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:265` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
-| Example locations | BuffHead: BuffHead.local.RegisterLibs, BuffHead: RegisterLibs, Crafting Info Tooltip: CraftValueTip.Initialize, JunkDump: JunkDump.Initialize, TidyChat: TidyChat.OnLoad, TidyRoll: TidyRoll.OnLoad |
+| Example locations | TidyChat: TidyChat.OnLoad, TidyRoll: TidyRoll.OnLoad |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -72,8 +72,8 @@ Observed wiring slash commands through a shared command-registration table.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "buffhead", "craftvaluetip", "jd" |
-| arg2 | Observed as a function or method reference. | Observed values: TidyChat.ToggleOptions, TidyRoll.ToggleOptions, function(args)BuffHead.SlashCommand(args)end |
+| arg1 | Observed as a text or wstring payload. | Observed values: "tchat", "troll" |
+| arg2 | Observed as a function or method reference. | Observed values: TidyChat.ToggleOptions, TidyRoll.ToggleOptions |
 
 ## Returns
 
@@ -85,29 +85,25 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Seen In
 
-- BuffHead
-- Crafting Info Tooltip
-- JunkDump
 - TidyChat
 - TidyRoll
-- TurretRange
 
 ## Examples
 
-- BuffHead: BuffHead.local.RegisterLibs -> LibSlash.RegisterWSlashCmd("buffhead", function(args)BuffHead.SlashCommand(args)end)
-- BuffHead: RegisterLibs -> LibSlash.RegisterWSlashCmd("buffhead", function(args)BuffHead.SlashCommand(args)end)
-- Crafting Info Tooltip: CraftValueTip.Initialize -> LibSlash.RegisterWSlashCmd("craftvaluetip", function(args)CraftValueTip.SlashCmd(args)end)
-- JunkDump: JunkDump.Initialize -> LibSlash.RegisterWSlashCmd("jd", function(args)JunkDump.SlashHandler(args)end)
-- JunkDump: JunkDump.Initialize -> LibSlash.RegisterWSlashCmd("junkdump", function(args)JunkDump.SlashHandler(args)end)
 - TidyChat: TidyChat.OnLoad -> LibSlash.RegisterWSlashCmd("tchat", TidyChat.ToggleOptions)
+- TidyRoll: TidyRoll.OnLoad -> LibSlash.RegisterWSlashCmd("troll", TidyRoll.ToggleOptions)
 
 ## Related APIs
 
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
+- none
 
 ## Used With
 
-- none
+- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
+- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 90/100) - Window Function
+- [DoesWindowExist](global_DoesWindowExist.md) (HIGH 71/100) - Global Function
 
 ## Triggered By
 
@@ -116,10 +112,8 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Affects
 
-- [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [SystemData.Settings.Language.active](../../systemdata/fields/systemdata_SystemData.Settings.Language.active.md) (HIGH 100/100) - SystemData Field
+- none
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
-- Advanced return analysis: No strong return evidence observed

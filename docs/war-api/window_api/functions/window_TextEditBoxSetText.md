@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, Busted, DAoCBuff, EA_UiDebugTools |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:656`, `/workspace_addons/Ace/LibGUI.lua:669`, `/workspace_addons/Ace/LibGUI.lua:711`, `/workspace_addons/Ace/LibGUI.lua:724`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:983`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:147`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:163`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:220` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:2249`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:329`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:434`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746` |
 | Namespaces detected | TextEditBoxSetText |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_MultiTextbox:Clear, Ace: LIBGUI_MultiTextbox:SetText, Ace: LIBGUI_Textbox:Clear, Ace: LIBGUI_Textbox:SetText, AdvancedPetAssist: APAGui.ApplyHUDColorOff, AdvancedPetAssist: APAGui.ApplyHUDColorOn |
+| Example locations | TidyChat: TidyChat.Copy.OnHidden, TidyRoll: TidyRoll.CustomAutoRoll.AddById, TidyRoll: TidyRoll.CustomAutoRoll.Reset, TidyRoll: TidyRollOptions.Reset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 327 |
-| Global usage count | 327 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed reading from or writing to edit-box controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target control name. | Observed values: "APAEditHUDOffB", "APAEditHUDOffG", "APAEditHUDOffR" |
-| text | Observed as a text or wstring payload. | Observed values: AddonToShow.RVProjectURL, DAoCBuffSettings.TmpFilter[activefilter.index].name, DAoCBuffVar.Frames[activewindow.index].name |
+| windowName | Observed as a target control name. | Observed values: c_AUTO_ROLL_ADD_BY_ID_ID_EDITBOX, c_AUTO_ROLL_ADD_BY_ID_NAME_EDITBOX, c_TIDY_CHAT_COPY.."Log" |
+| text | Observed as a text or wstring payload. | Observed values: L "", towstring(GetSetting("button-number")), towstring(GetSetting("button-offset")) |
 
 ## Returns
 
@@ -84,44 +84,17 @@ Observed reading from or writing to edit-box controls.
 
 ## Seen In
 
-- Ace
-- AdvancedPetAssist
-- AdvancedRenownTrainer
-- Aura
-- BuffHead
-- Busted
-- DAoCBuff
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- GCDsaver
-- JunkDump
-- Killer
-- LibWBToggler
-- LoyalPet
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- RVAPI_ColorDialog
-- RVMOD_Manager
-- RandomMount
-- Shinies
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WhoHealedMe
-- WoH-Reticle
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_MultiTextbox:Clear -> TextEditBoxSetText(self.name, L "")
-- Ace: LIBGUI_MultiTextbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
-- Ace: LIBGUI_Textbox:Clear -> TextEditBoxSetText(self.name, L "")
-- Ace: LIBGUI_Textbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
-- AdvancedPetAssist: APAGui.ApplyHUDColorOff -> TextEditBoxSetText("APAEditHUDOffR", towstring(APA.hudColorOffR))
-- AdvancedPetAssist: APAGui.ApplyHUDColorOff -> TextEditBoxSetText("APAEditHUDOffG", towstring(APA.hudColorOffG))
+- TidyChat: TidyChat.Copy.OnHidden -> TextEditBoxSetText(c_TIDY_CHAT_COPY.."Log", L "")
+- TidyRoll: TidyRoll.CustomAutoRoll.AddById -> TextEditBoxSetText(c_AUTO_ROLL_ADD_BY_ID_ID_EDITBOX, L "")
+- TidyRoll: TidyRoll.CustomAutoRoll.AddById -> TextEditBoxSetText(c_AUTO_ROLL_ADD_BY_ID_NAME_EDITBOX, L "")
+- TidyRoll: TidyRoll.CustomAutoRoll.Reset -> TextEditBoxSetText(c_AUTO_ROLL_ADD_BY_ID_ID_EDITBOX, L "")
+- TidyRoll: TidyRoll.CustomAutoRoll.Reset -> TextEditBoxSetText(c_AUTO_ROLL_ADD_BY_ID_NAME_EDITBOX, L "")
+- TidyRoll: TidyRollOptions.Reset -> TextEditBoxSetText(c_TROLL_BNUM_TBOX, towstring(GetSetting("button-number")))
 
 ## Related APIs
 
@@ -129,22 +102,25 @@ Observed reading from or writing to edit-box controls.
 
 ## Used With
 
-- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-- [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
-- [WindowAssignFocus](window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 90/100) - Window Function
+- [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 90/100) - Window Function
 
 ## Triggered By
 
-- none
+- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Handler
+- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

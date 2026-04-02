@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 28 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, BankArkel, BuffHead, Busted, Crafting Info Tooltip, DAoCBuff, DaemonAssist |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1116`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:735`, `/workspace_addons/BankArkel/BankArkel.lua:364`, `/workspace_addons/BankArkel/BankArkel.lua:513`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:129`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:139`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:195`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1936`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746` |
 | Namespaces detected | ComboBoxSetSelectedMenuItem |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Combobox:SelectIndex, AdvancedPetAssist: AdvancedPetAssist.local.FillCombo, AdvancedPetAssist: FillCombo, BankArkel: BankArkel.PackClose, BankArkel: BankArkel.SetupCombos, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.ShowProperties |
+| Example locations | TidyChat: TidyChat.Options.Reset, TidyRoll: TidyRollOptions.Reset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 244 |
-| Global usage count | 244 |
+| Lua usage count | 9 |
+| Global usage count | 9 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,14 +65,14 @@ ComboBoxSetSelectedMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 28 addons.
+Observed as a window function across 2 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", "BustedGUIAddonSelect", "EnemyChooseChannelDialogChannelList" |
-| arg2 | Observed as a function or method reference. | Observed values: #ACTIVE_CONDITION, #CONDITIONS, #CONDITIONS-1 |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: TCHAT_TEXT_ENTRY_ANCHOR_POINT_COMBO, TCHAT_TEXT_ENTRY_RELATIVE_TO_COMBO, c_TROLL_DIRECTION_COMBO |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: GetSetting("managment-bind-greed"), GetSetting("managment-bind-need"), GetSetting("managment-bind-pass") |
 
 ## Returns
 
@@ -84,43 +84,17 @@ Observed as a window function across 28 addons.
 
 ## Seen In
 
-- Ace
-- AdvancedPetAssist
-- BankArkel
-- BuffHead
-- Busted
-- Crafting Info Tooltip
-- DAoCBuff
-- DaemonAssist
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- GCDsaver
-- Killer
-- LibWBToggler
-- LoyalPet
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- Pocket Palette
-- PotionBar
-- Shinies
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WhoHealedMe
-- WoH-Reticle
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_Combobox:SelectIndex -> ComboBoxSetSelectedMenuItem(self.name, index)
-- AdvancedPetAssist: AdvancedPetAssist.local.FillCombo -> ComboBoxSetSelectedMenuItem(comboName, selIdx)
-- AdvancedPetAssist: FillCombo -> ComboBoxSetSelectedMenuItem(comboName, selIdx)
-- BankArkel: BankArkel.PackClose -> ComboBoxSetSelectedMenuItem("BankArkelBackpackCombo", 1)
-- BankArkel: BankArkel.SetupCombos -> ComboBoxSetSelectedMenuItem("BankArkelBackpackCombo", 1)
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.ShowProperties -> ComboBoxSetSelectedMenuItem(windowName.."PropertiesComboBox", propertyToIndex[propertyId]or 1)
+- TidyChat: TidyChat.Options.Reset -> ComboBoxSetSelectedMenuItem(TCHAT_TEXT_ENTRY_RELATIVE_TO_COMBO, Settings.textentry_relative_to)
+- TidyChat: TidyChat.Options.Reset -> ComboBoxSetSelectedMenuItem(TCHAT_TEXT_ENTRY_ANCHOR_POINT_COMBO, Settings.textentry_anchor_point)
+- TidyRoll: TidyRollOptions.Reset -> ComboBoxSetSelectedMenuItem(c_TROLL_DIRECTION_COMBO, directionComboIndex[GetSetting("button-growth-direction")])
+- TidyRoll: TidyRollOptions.Reset -> ComboBoxSetSelectedMenuItem(c_TROLL_ONESC_COMBO, GetSetting("managment-onesc-rollchoice")+2)
+- TidyRoll: TidyRollOptions.Reset -> ComboBoxSetSelectedMenuItem(c_TROLL_NEED_COMBO, GetSetting("managment-bind-need"))
+- TidyRoll: TidyRollOptions.Reset -> ComboBoxSetSelectedMenuItem(c_TROLL_GREED_COMBO, GetSetting("managment-bind-greed"))
 
 ## Related APIs
 
@@ -128,9 +102,13 @@ Observed as a window function across 28 addons.
 
 ## Used With
 
-- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 90/100) - Window Function
 
 ## Triggered By
 

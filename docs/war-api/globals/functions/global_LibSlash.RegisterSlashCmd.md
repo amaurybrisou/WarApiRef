@@ -2,26 +2,21 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 40 addons
+- Confidence score: 80/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 80/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches a known engine namespace, referenced by generated docs or reference files, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +10 Appears in slash command registration patterns: Observed in shared command registration flows.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
@@ -29,15 +24,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, AutoMark, BagOMatic, CM_ClosetGoblin, DAoCBuff, DaemonAssist, Effigy |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:193`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/AutoMark/Source/AutoMark.lua:33`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:87`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/DaemonAssist/DALifecycle.lua:3`, `/workspace_addons/Effigy/EffigySlashCommands.lua:19`, `/workspace_addons/FastInteract/FastInteract.lua:132` |
+| Addons seen in | NPC Item Sale Price |
+| Files seen in | `/workspace/data/raw/nisp/Source/Nisp.lua:26` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.Initialize, Aura: AuraAddon.OnInitialize, AutoMark: AutoMark.OnInitialize, BagOMatic: BagOMatic.init, CM_ClosetGoblin: ClosetGoblin.Initialize, DAoCBuff: DAoCBuff.Initialize |
+| Example locations | NPC Item Sale Price: Nisp.Init |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 62 |
-| Global usage count | 62 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -45,8 +40,8 @@
 | Default UI presence | no |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent role | no |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | yes |
 | Weak usage only | no |
@@ -72,8 +67,8 @@ Observed wiring slash commands through a shared command-registration table.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| slashName | Observed as a slash command token. | Observed values: "FastInteract", "MiracleGrow", "MiracleGrow2" |
-| handler | Observed as a command handler callback. | Observed values: AuraAddon.Slash, AutoMark.OnSlashCommand, ClosetGoblin.OnSlashCommand |
+| slashName | Observed as a slash command token. | Observed values: "nisp" |
+| handler | Observed as a command handler callback. | Observed values: function(args)Nisp.SlashHandler(args)end |
 
 ## Returns
 
@@ -85,65 +80,19 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Seen In
 
-- AdvancedPetAssist
-- Aura
-- AutoMark
-- BagOMatic
-- CM_ClosetGoblin
-- DAoCBuff
-- DaemonAssist
-- Effigy
-- FastInteract
-- GCDsaver
-- GuardLine
-- Killer
-- LibGroup
-- LibGuard
-- LibSlash
-- LibWBToggler
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- MiracleGrow
-- MiracleGrowLight
 - NPC Item Sale Price
-- PlanB
-- Pocket Palette
-- PotionBar
-- QuickTacticSwitch
-- QuickWarReport
-- RVMOD_Manager
-- RandomMount
-- RoR_SoR
-- Shinies
-- Swift Assist
-- Targets
-- TexturedButtons
-- WSCT
-- WarBoard
-- WhoHealedMe
-- WoH-Reticle
-- followTheLeader
-- wbLeadHelper
 
 ## Examples
 
-- AdvancedPetAssist: AdvancedPetAssist.Initialize -> LibSlash.RegisterSlashCmd("apa", function(input)APA.SlashHandler(input)end)
-- Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("aura", AuraAddon.Slash)
-- Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("auraconfig", AuraAddon.Slash)
-- Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("showaura", AuraAddon.Slash)
-- AutoMark: AutoMark.OnInitialize -> LibSlash.RegisterSlashCmd("automark", AutoMark.OnSlashCommand)
-- BagOMatic: BagOMatic.init -> LibSlash.RegisterSlashCmd("bagomatic", function(msg)BagOMatic.parse_cmd(msg)end)
+- NPC Item Sale Price: Nisp.Init -> LibSlash.RegisterSlashCmd("nisp", function(args)Nisp.SlashHandler(args)end)
 
 ## Related APIs
 
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
+- none
 
 ## Used With
 
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [RegisterEventHandler](global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- [EA_ChatWindow.Print](global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
 
 ## Triggered By
 
@@ -151,12 +100,9 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Affects
 
-- [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- none
 
 ## Notes
 
+- Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
-- Advanced return analysis: No strong return evidence observed

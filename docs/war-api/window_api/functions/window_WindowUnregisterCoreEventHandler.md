@@ -2,41 +2,37 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 8 addons
+- Confidence score: 90/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 90/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, TidyRoll, WoH-Reticle, nRarity |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:294`, `/workspace_addons/Effigy/LibGUI.lua:294`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:294`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:294`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:294`, `/workspace_addons/TidyRoll/TidyRoll.lua:265`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:294`, `/workspace_addons/nRarity/source/Border.lua:70` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.lua:265` |
 | Namespaces detected | WindowUnregisterCoreEventHandler |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:UnregisterEvent, Effigy: LIBGUI_ELEMENT:UnregisterEvent, GCDsaver: LIBGUI_ELEMENT:UnregisterEvent, LibWBToggler: LIBGUI_ELEMENT:UnregisterEvent, Shinies: LIBGUI_ELEMENT:UnregisterEvent, TidyRoll: TidyRoll.OnLoad |
+| Example locations | TidyRoll: TidyRoll.OnLoad |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,7 +40,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -65,14 +61,14 @@ WindowUnregisterCoreEventHandler(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 8 addons.
+Observed as a window function across 1 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_LootRoll", self.name |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: "OnHidden", "OnShown", e |
+| arg1 | Observed as a text or wstring payload. | Observed values: "EA_Window_LootRoll" |
+| arg2 | Observed as a text or wstring payload. | Observed values: "OnHidden", "OnShown" |
 
 ## Returns
 
@@ -84,23 +80,12 @@ Observed as a window function across 8 addons.
 
 ## Seen In
 
-- Ace
-- Effigy
-- GCDsaver
-- LibWBToggler
-- Shinies
 - TidyRoll
-- WoH-Reticle
-- nRarity
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
-- Effigy: LIBGUI_ELEMENT:UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
-- GCDsaver: LIBGUI_ELEMENT:UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
-- LibWBToggler: LIBGUI_ELEMENT:UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
-- Shinies: LIBGUI_ELEMENT:UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
 - TidyRoll: TidyRoll.OnLoad -> WindowUnregisterCoreEventHandler("EA_Window_LootRoll", "OnShown")
+- TidyRoll: TidyRoll.OnLoad -> WindowUnregisterCoreEventHandler("EA_Window_LootRoll", "OnHidden")
 
 ## Related APIs
 
@@ -108,7 +93,11 @@ Observed as a window function across 8 addons.
 
 ## Used With
 
-- none
+- [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
+- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
 
 ## Triggered By
 
@@ -121,4 +110,4 @@ Observed as a window function across 8 addons.
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

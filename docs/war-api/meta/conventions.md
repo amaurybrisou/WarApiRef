@@ -8,9 +8,9 @@
 
 - Evidence:
 
-- initialize: AdvancedPetAssist: APAFollowTargetHUD, AdvancedPetAssist: APAInstantOnlyHUD
-  - runtime: Ace: SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, Ace: SystemData.Events.UPDATE_PROCESSED
-  - xml: AdvancedPetAssist: APAComboAttackBind, AdvancedPetAssist: APAComboAutoReattack
+- initialize: Creates 0 windows and calls 1 initialize hooks, Creates 3 windows and calls 1 initialize hooks
+  - runtime: Moth: SystemData.Events.PLAYER_TARGET_UPDATED, Registers 1 runtime events
+  - xml: Defines 20 XML frames and 0 bound handlers, Defines 47 XML frames and 22 bound handlers
 
 ## Event registration pattern
 
@@ -20,14 +20,14 @@
 
 - Evidence:
 
-- RegisterEventHandler: AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
-  - RegisterEventHandler: AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
-  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.LOADING_END, "AdvancedRenownTraining.OnReload")
-  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
-  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "AdvancedRenownTraining.OnReload")
-  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
-  - UnregisterEventHandler: Ace: UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "AceAddon_OnUpdate_DONOTTOUCH")
-  - UnregisterEventHandler: AdvancedPetAssist: UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+- RegisterEventHandler: TidyChat: RegisterEventHandler(SystemData.Events.LOADING_END, "TidyChat.OnLoad")
+  - RegisterEventHandler: TidyChat: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "TidyChat.OnLoad")
+  - RegisterEventHandler: TidyChat: RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, "TidyChat.OnLBU")
+  - RegisterEventHandler: TidyChat: RegisterEventHandler(chatLogEventId, "TidyChat.OnChatLogUpdated")
+  - RegisterEventHandler: TidyChat: RegisterEventHandler(combatLogEventId, "TidyChat.OnCombatLogUpdated")
+  - RegisterEventHandler: TidyChat: RegisterEventHandler(systemLogEventId, "TidyChat.OnSystemLogUpdated")
+  - UnregisterEventHandler: TidyRoll: UnregisterEventHandler(SystemData.Events.LOADING_END, "TidyRoll.OnLoad")
+  - UnregisterEventHandler: TidyRoll: UnregisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "TidyRoll.OnLoad")
 
 ## UI creation pattern
 
@@ -37,14 +37,14 @@
 
 - Evidence:
 
-- Window creation: AdvancedPetAssist: CreateWindow("APAOptions", true)
-  - Window creation: AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
-  - Window creation: AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
-  - Window creation: AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
-  - Window creation: AdvancedRenownTrainer: CreateWindow(ExportWindowName, false)
-  - Window creation: AdvancedRenownTrainer: CreateWindow(LinkWindowName, false)
-  - Template instantiation: Ace: CreateWindowFromTemplate(w.name, base, w.parent)
-  - Template instantiation: Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+- Window creation: Moth: CreateWindow("Moth", true)
+  - Window creation: TidyChat: CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
+  - Window creation: TidyRoll: CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
+  - Window creation: TidyRoll: CreateWindow(c_TIDY_ROLL_ANCHOR, false)
+  - Window creation: TidyRoll: CreateWindow(c_TIDY_ROLL_TIMER, false)
+  - Window creation: TidyRoll: CreateWindow(c_TIDY_ROLL_ESC, false)
+  - Template instantiation: TidyChat: CreateWindowFromTemplate(c_CHANNEL_MENU.."AllianceButton", "ChannelMenuButton", "ChatChannelSelectionWindow")
+  - Template instantiation: TidyChat: CreateWindowFromTemplate(c_CHANNEL_MENU.."AdviceButton", "ChannelMenuButton", "ChatChannelSelectionWindow")
 
 ## XML to Lua binding pattern
 
@@ -54,14 +54,14 @@
 
 - Evidence:
 
-- AdvancedPetAssist: APAComboAttackBind.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboAutoReattack.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboAutoReattackDelay.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCastDelay.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboDebug.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboEnabled.OnSelChanged -> APAGui.OnComboChanged
+- TidyChat: TChatCheckboxTemplate.OnLButtonUp -> TidyChat.Options.OnCheckboxLBU
+  - TidyChat: TChatTabButton.OnLButtonUp -> TidyChat.Options.OnTabLBU
+  - TidyChat: TChatTabWindowsTemplateSelectWindowCombo.OnSelChanged -> TidyChat.Options.UpdateGroupTabs
+  - TidyChat: TidyChatCopy.OnHidden -> TidyChat.Copy.OnHidden
+  - TidyChat: TidyChatCopy.OnMouseWheel -> TidyChat.Copy.OnMouseWheel
+  - TidyChat: TidyChatCopy.OnShown -> TidyChat.Copy.OnShown
+  - TidyChat: TidyChatCopyClose.OnLButtonUp -> TidyChat.Copy.OnClose
+  - TidyChat: TidyChatCopyNext.OnLButtonUp -> TidyChat.Copy.CopyNext
 
 ## XML runtime caveats
 
@@ -98,11 +98,7 @@
 
 - Evidence:
 
-- AdvancedPetAssist: APA_Settings
-  - AdvancedRenownTrainer: AdvancedRenownTraining.Presets
-  - AggroMeter: AggroMeter.Settings
-  - BagOMatic: BagOMatic.saved
-  - BankArkel: BankArkel.db
-  - BuffHead: BuffHead.Settings
-  - CM_ClosetGoblin: ClosetGoblin.setData
-  - CM_ClosetGoblin: ClosetGoblin.settings
+- NPC Item Sale Price: Nisp.DebugEnabled
+  - NPC Item Sale Price: Nisp.DumpItemsTable
+  - NPC Item Sale Price: Nisp.Enabled
+  - TidyChat: TidyChat.Settings

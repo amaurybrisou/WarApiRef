@@ -4,18 +4,16 @@ This page reconstructs the window-facing lifecycle from observed function calls,
 
 ## Creation APIs
 
-- CreateWindow (HIGH)
-- CreateWindowFromTemplate (HIGH)
+- none
 
 ## Visibility Hooks
 
-- OnInitialize (HIGH)
+- OnInitialize (MEDIUM)
 - OnShown (HIGH)
 - OnHidden (HIGH)
 
 ## Destruction APIs
 
-- DestroyWindow (HIGH)
 - DoesWindowExist (HIGH)
 
 ## Observed Flow

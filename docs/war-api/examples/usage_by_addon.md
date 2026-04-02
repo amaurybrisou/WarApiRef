@@ -4,38 +4,38 @@
 
 | Addon | Frame | Event | Lua Function |
 | --- | --- | --- | --- |
-| AdvancedPetAssist | APAComboAttackBind | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboAutoReattack | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboAutoReattackDelay | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboCastDelay | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboCastOnAcquire | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboCombatExitDelay | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboDebug | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboEnabled | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboFTAutoArmMount | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboFTFollowOnMount | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboFTPendingDelay | OnSelChanged | APAGui.OnComboChanged |
-| AdvancedPetAssist | APAComboFTRedirectCooldown | OnSelChanged | APAGui.OnComboChanged |
+| TidyChat | TChatCheckboxTemplate | OnLButtonUp | TidyChat.Options.OnCheckboxLBU |
+| TidyChat | TChatTabButton | OnLButtonUp | TidyChat.Options.OnTabLBU |
+| TidyChat | TChatTabWindowsTemplateSelectWindowCombo | OnSelChanged | TidyChat.Options.UpdateGroupTabs |
+| TidyChat | TidyChatCopy | OnHidden | TidyChat.Copy.OnHidden |
+| TidyChat | TidyChatCopy | OnMouseWheel | TidyChat.Copy.OnMouseWheel |
+| TidyChat | TidyChatCopy | OnShown | TidyChat.Copy.OnShown |
+| TidyChat | TidyChatCopyClose | OnLButtonUp | TidyChat.Copy.OnClose |
+| TidyChat | TidyChatCopyNext | OnLButtonUp | TidyChat.Copy.CopyNext |
+| TidyChat | TidyChatCopyPrev | OnLButtonUp | TidyChat.Copy.CopyPrev |
+| TidyChat | TidyChatLootRoll | OnHidden | TidyChat.LootRoll.OnHidden |
+| TidyChat | TidyChatLootRoll | OnShown | TidyChat.LootRoll.OnShown |
+| TidyChat | TidyChatLootRollClose | OnLButtonUp | TidyChat.LootRoll.OnClose |
 
 ## Representative Function Usage
 
-- AlertTextWindow.AddAlert: MapPin -> AlertTextWindow.AddAlert()
-- AlertTextWindow.AddAlert: PlanB -> AlertTextWindow.AddAlert()
-- AlertTextWindow.AddAlert: PlanB -> AlertTextWindow.AddAlert()
-- AlertTextWindow.AddLine: Aura -> AlertTextWindow.AddLine(AuraConstants.AlertText[self:Get("activation-alerttexttype")].type, self:Get("activation-alerttext"))
-- AlertTextWindow.AddLine: Aura -> AlertTextWindow.AddLine(AuraConstants.AlertText[self:Get("deactivation-alerttexttype")].type, self:Get("deactivation-alerttext"))
-- AlertTextWindow.AddLine: MapMonster -> AlertTextWindow.AddLine(MapMonster.AlertTypes.SUCCESS, T["SubTypeCreatedSuccess"])
-- AlertTextWindow.AddLine: MapMonster -> AlertTextWindow.AddLine(MapMonster.AlertTypes.ERROR, T["SubTypeCreatedFailed"])
-- AlertTextWindow.AddLine: MapMonster -> AlertTextWindow.AddLine(MapMonster.AlertTypes.ERROR, errorMessage)
-- AlertTextWindow.AddLine: MapMonster -> AlertTextWindow.AddLine(MapMonster.AlertTypes.SUCCESS, T["SuccessAlert"])
-- BankWindow.GetItem: AnywhereTrainerAdditions -> BankWindow.GetItem(slot)
-- BankWindow.GetItem: BankWindowFix -> BankWindow.GetItem(slot)
-- BankWindow.GetSlotNumberForButtonIndex: AnywhereTrainerAdditions -> BankWindow.GetSlotNumberForButtonIndex(buttonIndex)
-- BankWindow.GetSlotNumberForButtonIndex: BankWindowFix -> BankWindow.GetSlotNumberForButtonIndex(buttonIndex)
-- BankWindow.Hide: AnywhereTrainer -> BankWindow.Hide()
-- BankWindow.Hide: AnywhereTrainerAdditions -> BankWindow.Hide()
-- BankWindow.Hide: BankArkel -> BankWindow.Hide()
-- BankWindow.IsShowing: BagOMatic -> BankWindow.IsShowing()
-- BankWindow.IsShowing: BankWindowFix -> BankWindow.IsShowing()
-- BankWindow.Show: AnywhereTrainer -> BankWindow.Show()
-- BankWindow.Show: BagOMatic -> BankWindow.Show()
+- DefaultColor.SetWindowTint: TidyRoll -> DefaultColor.SetWindowTint(rowName.."Background", color)
+- DialogManager.MakeOneButtonDialog: TidyChat -> DialogManager.MakeOneButtonDialog(L "Log is empty\n", L "Ok")
+- DoesWindowExist: TidyChat -> DoesWindowExist(c_TEXT_ENTRY_WINDOW.."EntryBoxLanguageButton")
+- DoesWindowExist: TidyRoll -> DoesWindowExist("EA_Window_LootRoll")
+- DoesWindowExist: TidyRoll -> DoesWindowExist(radioGroupName..index)
+- DoesWindowExist: TidyRoll -> DoesWindowExist(radioGroupName..index)
+- EA_ChatWindow.OnSettingsChanged: TidyChat -> EA_ChatWindow.OnSettingsChanged()
+- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Dump Table Cleared")
+- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Dumped item: "..itemData.name)
+- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Item Dump contains item: "..itemData.name)
+- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Nisp Installed and Enabled")
+- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Nisp Initialized and Enabled (/nisp for commands)")
+- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Nisp Initialized, but disabled (/nisp for commands)")
+- EA_ChatWindow.ShowTabCycleButtons: TidyChat -> EA_ChatWindow.ShowTabCycleButtons(wndGroupName, false)
+- EA_ChatWindow.UpdateTabScrollWindow: TidyChat -> EA_ChatWindow.UpdateTabScrollWindow(wndGroupId)
+- EA_Window_ContextMenu.AddMenuItem: TidyChat -> EA_Window_ContextMenu.AddMenuItem(L "Copy...", TidyChatCopy.OnCopyButton, false, true)
+- EA_Window_ContextMenu.AddMenuItem: TidyChat -> EA_Window_ContextMenu.AddMenuItem(L "To Bottom", TidyChatFrames.OnToBottomButton, false, true)
+- EA_Window_ContextMenu.Finalize: TidyChat -> EA_Window_ContextMenu.Finalize()
+- GetIconData: Moth -> GetIconData(Icons.GetCareerIconIDFromCareerLine(text))
+- GetIconData: TidyRoll -> GetIconData(careerIconNum)

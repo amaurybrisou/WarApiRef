@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 36 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, CM_ClosetGoblin |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:533`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:983`, `/workspace_addons/AggroMeter/AggroMeter.lua:5`, `/workspace_addons/Aura/Source/AuraShares.lua:68`, `/workspace_addons/BankArkel/BankArkel.lua:242`, `/workspace_addons/BankArkel/BankArkel.lua:350`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.lua:82`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.lua:142` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:2201`, `/workspace/data/raw/TidyChat/TidyChat.lua:980`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
 | Namespaces detected | ButtonSetText |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Button:SetText, AdvancedPetAssist: APAGui.OnShown, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SetImportExportLabels, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SetLabels, AdvancedRenownTrainer: AdvancedRenownTraining.AnywhereShow, AdvancedRenownTrainer: AdvancedRenownTraining.OnHidden |
+| Example locations | TidyChat: TidyChat.Copy.InitializeCopyWindow, TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons, TidyRoll: TidyRoll.CustomAutoRoll.Initialize, TidyRoll: TidyRollOptions.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 343 |
-| Global usage count | 343 |
+| Lua usage count | 13 |
+| Global usage count | 13 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target control name. | Observed values: "APAOptionsTabsAutoRecall", "APAOptionsTabsFollowTarget", "APAOptionsTabsGeneral" |
-| text | Observed as a text or wstring payload. | Observed values: DA.enabled and L "Disable" or L "Enable", GetChatString(StringTables.Chat.LABEL_CHAT_SETTINGS_ACCEPT), GetString(StringTables.Default.LABEL_CLOSE) |
+| windowName | Observed as a target control name. | Observed values: c_AUTO_ROLL_ADD_BY_ID_BUTTON, c_AUTO_ROLL_APPLY_BUTTON, c_CHANNEL_MENU.."AdviceButton" |
+| text | Observed as a text or wstring payload. | Observed values: L "/"..GetChatString(StringTables.Chat.CHAT_CHANNEL_NAME_ADVICE), L "/"..GetChatString(StringTables.Chat.CHAT_CHANNEL_NAME_ALLIANCE), L "/"..GetChatString(StringTables.Chat.CHAT_CHANNEL_NAME_SCENARIO) |
 
 ## Returns
 
@@ -84,51 +84,17 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
-- Ace
-- AdvancedPetAssist
-- AdvancedRenownTrainer
-- AggroMeter
-- Aura
-- BankArkel
-- BuffHead
-- CM_ClosetGoblin
-- DAoCBuff
-- DaemonAssist
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- GCDsaver
-- JunkDump
-- Killer
-- LibWBToggler
-- MapMonster
-- Miracle Grow Remix
-- Pocket Palette
-- PotionBar
-- QuickTacticSwitch
-- QuickWarReport
-- RVAPI_ColorDialog
-- RVMOD_Manager
-- RandomMount
-- RoR_SoR
-- Shinies
 - TidyChat
 - TidyRoll
-- TurretRange
-- WSCT
-- WhoHealedMe
-- WoH-Reticle
-- followTheLeader
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_Button:SetText -> ButtonSetText(self.name, text and L "true" or L "false")
-- Ace: LIBGUI_Button:SetText -> ButtonSetText(self.name, towstring(text))
-- AdvancedPetAssist: APAGui.OnShown -> ButtonSetText("APAOptionsTabsGeneral", L "General")
-- AdvancedPetAssist: APAGui.OnShown -> ButtonSetText("APAOptionsTabsFollowTarget", L "Follow Target")
-- AdvancedPetAssist: APAGui.OnShown -> ButtonSetText("APAOptionsTabsAutoRecall", L "Auto Recall")
-- AdvancedPetAssist: APAGui.OnShown -> ButtonSetText("APAOptionsTabsLos", L "LOS")
+- TidyChat: TidyChat.Copy.InitializeCopyWindow -> ButtonSetText(c_TIDY_CHAT_COPY.."Prev", L "Prev "..entriesPerPage)
+- TidyChat: TidyChat.Copy.InitializeCopyWindow -> ButtonSetText(c_TIDY_CHAT_COPY.."Next", L "Next "..entriesPerPage)
+- TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons -> ButtonSetText(c_CHANNEL_MENU.."AllianceButton", L "/"..GetChatString(StringTables.Chat.CHAT_CHANNEL_NAME_ALLIANCE))
+- TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons -> ButtonSetText(c_CHANNEL_MENU.."AdviceButton", L "/"..GetChatString(StringTables.Chat.CHAT_CHANNEL_NAME_ADVICE))
+- TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons -> ButtonSetText(c_CHANNEL_MENU.."ScenarioButton", L "/"..GetChatString(StringTables.Chat.CHAT_CHANNEL_NAME_SCENARIO))
+- TidyRoll: TidyRoll.CustomAutoRoll.Initialize -> ButtonSetText(c_AUTO_ROLL_APPLY_BUTTON, L "Ok")
 
 ## Related APIs
 
@@ -136,23 +102,25 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Used With
 
-- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
+- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
+- [SystemData.ChatLogFilters.ADVICE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ADVICE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.ALLIANCE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ALLIANCE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SCENARIO](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SCENARIO.md) (HIGH 100/100) - SystemData Field
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 90/100) - Window Function
+- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 90/100) - Window Function
 
 ## Triggered By
 
-- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- none
 
 ## Affects
 
+- [SystemData.ChatLogFilters.ADVICE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ADVICE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.ALLIANCE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ALLIANCE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SCENARIO](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SCENARIO.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

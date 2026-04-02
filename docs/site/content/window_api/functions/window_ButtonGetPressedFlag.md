@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 22 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, Crafting Info Tooltip, DAoCBuff, Effigy, Enemy, GCDsaver, Killer |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:756`, `/workspace_addons/Ace/LibGUI.lua:826`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:701`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:711`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:835`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:845`, `/workspace_addons/BuffHead/Setup/SetupDisplay.lua:102`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.lua:419` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1915`, `/workspace/data/raw/TidyChat/TidyChat.lua:1973`, `/workspace/data/raw/TidyChat/TidyChat.lua:2031`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:782`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:828`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:853`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:865` |
 | Namespaces detected | ButtonGetPressedFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Checkbox:GetValue, Ace: LIBGUI_Optionbutton:GetValue, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp |
+| Example locations | TidyChat: TidyChat.Options.OnApply, TidyChat: TidyChat.Options.OnCheckboxLBU, TidyChat: TidyChat.Options.UpdateDisabledFlags, TidyRoll: TidyRollOptions.OnApply, TidyRoll: TidyRollOptions.OnCheckboxLBU, TidyRoll: TidyRollOptions.RadioGetId |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 132 |
-| Global usage count | 132 |
+| Lua usage count | 28 |
+| Global usage count | 28 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ ButtonGetPressedFlag(arg1)
 
 ## Description
 
-Observed as a window function across 22 addons.
+Observed as a window function across 2 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "EnemyClickCastingDialogContentScrollChildArchetype1", "EnemyClickCastingDialogContentScrollChildArchetype2", "EnemyClickCastingDialogContentScrollChildArchetype3" |
+| arg1 | Observed as a function or method reference. | Observed values: TCHAT_LOGS_AUCTION_FILTER_CHECKBOX.."Button", TCHAT_LOGS_COPY_SHOWING_CHECKBOX.."Button", TCHAT_LOGS_LOOT_ROLL_FILTER_CHECKBOX.."Button" |
 
 ## Returns
 
@@ -83,37 +83,17 @@ Observed as a window function across 22 addons.
 
 ## Seen In
 
-- Ace
-- BuffHead
-- Crafting Info Tooltip
-- DAoCBuff
-- Effigy
-- Enemy
-- GCDsaver
-- Killer
-- LibGroup
-- LibWBToggler
-- MapMonster
-- Miracle Grow Remix
-- PotionBar
-- Shinies
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WSCT
-- WoH-Reticle
-- nRarity
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_Checkbox:GetValue -> ButtonGetPressedFlag(self.name)
-- Ace: LIBGUI_Optionbutton:GetValue -> ButtonGetPressedFlag(self.name)
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp -> ButtonGetPressedFlag(windowName.."ElementEffectsAlwaysShowEnable".."Button")
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp -> ButtonGetPressedFlag(windowName.."ElementEffectsPermanent".."Button")
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp -> ButtonGetPressedFlag(windowName.."ElementHandleInputEnableRemovable".."Button")
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp -> ButtonGetPressedFlag(windowName.."ElementHandleInputShowTooltips".."Button")
+- TidyChat: TidyChat.Options.OnApply -> ButtonGetPressedFlag(TCHAT_TEXT_ENTRY_FREE_TEXT_ENTRY_CHECKBOX.."Button")
+- TidyChat: TidyChat.Options.OnApply -> ButtonGetPressedFlag(TCHAT_TEXT_ENTRY_CHANNEL_SHOWING_CHECKBOX.."Button")
+- TidyChat: TidyChat.Options.OnApply -> ButtonGetPressedFlag(TCHAT_LOGS_AUCTION_FILTER_CHECKBOX.."Button")
+- TidyChat: TidyChat.Options.OnApply -> ButtonGetPressedFlag(TCHAT_LOGS_LOOT_ROLL_FILTER_CHECKBOX.."Button")
+- TidyChat: TidyChat.Options.OnApply -> ButtonGetPressedFlag(TCHAT_LOGS_COPY_SHOWING_CHECKBOX.."Button")
+- TidyChat: TidyChat.Options.OnApply -> ButtonGetPressedFlag(TCHAT_MISC_SOCIAL_SHOWING_CHECKBOX.."Button")
 
 ## Related APIs
 
@@ -121,9 +101,17 @@ Observed as a window function across 22 addons.
 
 ## Used With
 
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [ButtonGetDisabledFlag](window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ComboBoxGetSelectedMenuItem](window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 90/100) - Window Function
+- [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 90/100) - Window Function
 
 ## Triggered By
 
@@ -132,6 +120,7 @@ Observed as a window function across 22 addons.
 
 ## Affects
 
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

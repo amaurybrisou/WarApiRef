@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 150
+- Raw weighted score: 138
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AggroMeter, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.lua:426`, `/workspace_addons/Aura/Source/AuraShares.lua:257`, `/workspace_addons/Aura/Source/AuraShares.lua:297`, `/workspace_addons/Aura/Source/AuraShares.lua:319`, `/workspace_addons/Aura/Source/AuraTexture.lua:147`, `/workspace_addons/Aura/Source/AuraTexture.lua:195`, `/workspace_addons/Aura/Source/AuraTexture.lua:65`, `/workspace_addons/BuffHead/EffectFrame.lua:381` |
+| Addons seen in | NPC Item Sale Price, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:2094`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:378`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:895`, `/workspace/data/raw/nisp/Source/Nisp.lua:174` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | AdvancedRenownTraining.AbilityTooltip, AdvancedRenownTraining.OnLButtonUpTab, AggroMeter.OnTabLBU, AuraShares.ChangeSorting, AuraShares.DisplayTooltip, AuraShares.GetSlotRowNumForActiveListRow |
+| Example locations | Nisp.RButtonUp, TidyChat.Options.OnTabLBU, TidyRoll.CustomAutoRoll.OnChoiceChange, TidyRollOptions.OnTabLBU, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 151 |
-| Global usage count | 151 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,71 +59,23 @@
 
 ## Description
 
-Observed SystemData field used by 29 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
-- AdvancedRenownTrainer
-- AggroMeter
-- Aura
-- BuffHead
-- CM_ClosetGoblin
-- DAoCBuff
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- JunkDump
-- MapPin
-- Miracle Grow Remix
-- MiracleGrow
 - NPC Item Sale Price
-- Pocket Palette
-- PotionBar
-- QuickTacticSwitch
-- QuickWarReport
-- RVMOD_Manager
-- RandomMount
-- RoR_SoR
-- Shinies
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- followTheLeader
-- nRarity
-- wbLeadHelper
 
 ## Related APIs
 
 - [ButtonGetDisabledFlag](../../window_api/functions/window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
-- [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 100/100) - Window Function
-- [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
-- [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
-- [DialogManager.MakeOneButtonDialog](../../globals/functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
-- [EA_ChatTabManager.GetTabName](../../globals/functions/global_EA_ChatTabManager.GetTabName.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack.GetSlotFromActionButtonGroup](../../globals/functions/global_EA_Window_Backpack.GetSlotFromActionButtonGroup.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.Hide](../../globals/functions/global_EA_Window_ContextMenu.Hide.md) (HIGH 100/100) - Global Function
-- [EA_Window_InteractionStore.OnItemLButtonDown](../../globals/functions/global_EA_Window_InteractionStore.OnItemLButtonDown.md) (HIGH 100/100) - Global Function
-- [LabelGetText](../../window_api/functions/window_LabelGetText.md) (HIGH 100/100) - Window Function
-- [TextEditBoxSetTextColor](../../window_api/functions/window_TextEditBoxSetTextColor.md) (HIGH 100/100) - Window Function
+- [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
-- [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
-- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-- [WindowSetOffsetFromParent](../../window_api/functions/window_WindowSetOffsetFromParent.md) (HIGH 100/100) - Window Function
-- [BroadcastEvent](../../globals/functions/global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [DialogManager.MakeTextEntryDialog](../../globals/functions/global_DialogManager.MakeTextEntryDialog.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindowGroups](../../globals/tables/table_EA_ChatWindowGroups.md) (HIGH 100/100) - Global Table
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
-- [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
@@ -135,4 +87,4 @@ Observed SystemData field used by 29 addons through generated function calls, ev
 
 ## Notes
 
-- Observed in contexts: AdvancedRenownTraining.AbilityTooltip, AdvancedRenownTraining.OnLButtonUpTab, AggroMeter.OnTabLBU, AuraShares.ChangeSorting, AuraShares.DisplayTooltip, AuraShares.GetSlotRowNumForActiveListRow
+- Observed in contexts: Nisp.RButtonUp, TidyChat.Options.OnTabLBU, TidyRoll.CustomAutoRoll.OnChoiceChange, TidyRollOptions.OnTabLBU, lua_call

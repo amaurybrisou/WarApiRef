@@ -1,39 +1,36 @@
 # wstring.match
 
 - Category: Global Function
-- Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 9 addons
+- Confidence level: MEDIUM
+- Confidence score: 45/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
-- Level: HIGH
+- Level: MEDIUM
 
-- Score: 100/100
+- Score: 45/100
 
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as MEDIUM confidence because matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, CombatTextNames, EA_UiDebugTools, Enemy, MapPin, RoR_SoR, TidyChat |
-| Files seen in | `/workspace_addons/Aura/Libraries/LibPickle.lua:428`, `/workspace_addons/Aura/Source/AuraHelpers.lua:129`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:700`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:709`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:773`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:816`, `/workspace_addons/Enemy/Code/CombatLog/CombatLog.lua:863`, `/workspace_addons/Enemy/Code/Core/Utils.lua:370` |
+| Addons seen in | TidyChat |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1469` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed, Aura: AuraHelpers.cleanWString, Aura: DePickler:unpickle, CombatTextNames: CombatTextNames.TruncateAbilityName, EA_UiDebugTools: DevPad.TestPrint, EA_UiDebugTools: DevPadWindow.OnCodeChanged |
+| Example locations | TidyChat: TidyChatLogs.ProcessLootRollEntry |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 44 |
-| Global usage count | 44 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -41,8 +38,8 @@
 | Default UI presence | no |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent role | no |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -62,14 +59,14 @@ wstring.match(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 9 addons.
+Observed as a global function across 1 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: CText, DevPad_Settings.Code, Enemy.toWString(str) |
-| arg2 | Observed as a function or method reference. | Observed values: BuildPattern, L "%]%[.+%]:(.+)", L "([^\^]+).*" |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: text |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: match_TEXT_ROLL_NUMBER |
 
 ## Returns
 
@@ -81,24 +78,11 @@ Observed as a global function across 9 addons.
 
 ## Seen In
 
-- AdvancedRenownTrainer
-- Aura
-- CombatTextNames
-- EA_UiDebugTools
-- Enemy
-- MapPin
-- RoR_SoR
 - TidyChat
-- WSCT
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, arsenalUrl..BuildPattern)
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, BuildPattern)
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, wardrobeUrl..BuildPattern)
-- Aura: AuraHelpers.cleanWString -> wstring.match(wstr, L "([^\^]+).*")
-- Aura: DePickler:unpickle -> wstring.match(s, L "P1$")
-- CombatTextNames: CombatTextNames.TruncateAbilityName -> wstring.match(wstring.gsub(text,L "%l*",L ""), L "([^^]+)^?.*")
+- TidyChat: TidyChatLogs.ProcessLootRollEntry -> wstring.match(text, match_TEXT_ROLL_NUMBER)
 
 ## Related APIs
 
@@ -106,27 +90,17 @@ Observed as a global function across 9 addons.
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [DialogManager.MakeTextEntryDialog](global_DialogManager.MakeTextEntryDialog.md) (HIGH 100/100) - Global Function
-- [EA_ChatTabManager.GetTabName](global_EA_ChatTabManager.GetTabName.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindowGroups](../tables/table_EA_ChatWindowGroups.md) (HIGH 100/100) - Global Table
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [wstring.gsub](global_wstring.gsub.md) (HIGH 100/100) - Global Function
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
-- [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
+- [wstring.find](global_wstring.find.md) (MEDIUM 55/100) - Global Function
 
 ## Triggered By
 
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- none
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- none
 
 ## Notes
 
+- Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.

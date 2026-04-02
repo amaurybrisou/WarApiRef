@@ -2,41 +2,36 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 7 addons
+- Confidence score: 80/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 80/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, TidyRoll, WoH-Reticle |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1031`, `/workspace_addons/Effigy/LibGUI.lua:1028`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:1028`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:1028`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:1028`, `/workspace_addons/TidyRoll/TidyRollFrame.lua:105`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:1028` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:105` |
 | Namespaces detected | StatusBarSetBackgroundTint |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Statusbar:BackColor, Effigy: LIBGUI_Statusbar:BackColor, GCDsaver: LIBGUI_Statusbar:BackColor, LibWBToggler: LIBGUI_Statusbar:BackColor, Shinies: LIBGUI_Statusbar:BackColor, TidyRoll: TidyRollFrame:InitializeTimerBar |
+| Example locations | TidyRoll: TidyRollFrame:InitializeTimerBar |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,8 +39,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent role | no |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -65,16 +60,16 @@ StatusBarSetBackgroundTint(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a window function across 7 addons.
+Observed as a window function across 1 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: self.name, timerBarName |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: DefaultColor.BLACK.r, red |
-| arg3 | Observed as a runtime window or control identifier. | Observed values: DefaultColor.BLACK.g, green |
-| arg4 | Observed as a runtime window or control identifier. | Observed values: DefaultColor.BLACK.b, blue |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: timerBarName |
+| arg2 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.r |
+| arg3 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.g |
+| arg4 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.b |
 
 ## Returns
 
@@ -86,21 +81,10 @@ Observed as a window function across 7 addons.
 
 ## Seen In
 
-- Ace
-- Effigy
-- GCDsaver
-- LibWBToggler
-- Shinies
 - TidyRoll
-- WoH-Reticle
 
 ## Examples
 
-- Ace: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
-- Effigy: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
-- GCDsaver: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
-- LibWBToggler: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
-- Shinies: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
 - TidyRoll: TidyRollFrame:InitializeTimerBar -> StatusBarSetBackgroundTint(timerBarName, DefaultColor.BLACK.r, DefaultColor.BLACK.g, DefaultColor.BLACK.b)
 
 ## Related APIs
@@ -121,4 +105,4 @@ Observed as a window function across 7 addons.
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

@@ -2,41 +2,37 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 28 addons
+- Confidence score: 90/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 90/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, AutoMark, BuffHead, Busted, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:200`, `/workspace_addons/Aura/Source/Aura.lua:505`, `/workspace_addons/Aura/Source/AuraHelpers.lua:33`, `/workspace_addons/Aura/Source/AuraHelpers.lua:55`, `/workspace_addons/Aura/Source/AuraTooltip.lua:21`, `/workspace_addons/AutoMark/Source/AutoMark.lua:124`, `/workspace_addons/BuffHead/Setup/SelectColor.lua:15`, `/workspace_addons/BuffHead/Setup/SetupLayout.lua:160` |
+| Addons seen in | TidyChat |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:329`, `/workspace/data/raw/TidyChat/TidyChat.lua:344`, `/workspace/data/raw/TidyChat/TidyChat.lua:404` |
 | Namespaces detected | WindowSetAlpha |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Alpha, Aura: Aura:UpdateTimerWindow, Aura: AuraHelpers.SetCircleImageTexture, Aura: AuraHelpers.SetDynamicImageTexture, Aura: AuraTooltip.OnInitialize, AutoMark: AutoMark.OnUpdate |
+| Example locations | TidyChat: TidyChatCore.SetTextEntry, TidyChat: TidyChatCore.SetWindowTabsHandleInput, TidyChat: TidyChatCore.SetWindowTextLog |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 152 |
-| Global usage count | 152 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,7 +40,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -71,8 +67,8 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "BustedMiniGUIText", "DAoCBuff_SettingsGeneralButtonBackground", "DAoCBuff_SettingsListMngrButtonBackground" |
-| arg2 | Observed as a function or method reference. | Observed values: (chatwindow_tabs_handle_input~=false and 1)or 0, (scrollbar_position==c_SCROLLBAR_POSITION_HIDDEN and 0)or scrollbar_alpha, .1 |
+| windowName | Observed as a target window name. | Observed values: c_TEXT_ENTRY_WINDOW.."ChannelButton", c_TEXT_ENTRY_WINDOW.."EntryBoxBG", logDisplayName.."ToBottomButton" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: (chatwindow_tabs_handle_input~=false and 1)or 0, (scrollbar_position==c_SCROLLBAR_POSITION_HIDDEN and 0)or scrollbar_alpha, textentry_background_alpha |
 
 ## Returns
 
@@ -84,43 +80,15 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- Ace
-- Aura
-- AutoMark
-- BuffHead
-- Busted
-- DAoCBuff
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- GCDsaver
-- GuardLine
-- Killer
-- LibWBToggler
-- MapMonster
-- Miracle Grow Remix
-- Pocket Palette
-- PotionBar
-- RVAPI_ColorDialog
-- RandomMount
-- RoR_SoR
-- Shinies
-- Targets
-- TexturedButtons
 - TidyChat
-- TurretRange
-- WSCT
-- WoH-Reticle
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Alpha -> WindowSetAlpha(self.name, alpha)
-- Aura: Aura:UpdateTimerWindow -> WindowSetAlpha(windowId, self:Get("timer-alpha"))
-- Aura: AuraHelpers.SetCircleImageTexture -> WindowSetAlpha(window, a)
-- Aura: AuraHelpers.SetDynamicImageTexture -> WindowSetAlpha(window, a)
-- Aura: AuraTooltip.OnInitialize -> WindowSetAlpha(windowId.."BackgroundInner", .9)
-- Aura: AuraTooltip.OnInitialize -> WindowSetAlpha(shareWindowId.."BackgroundInner", .9)
+- TidyChat: TidyChatCore.SetTextEntry -> WindowSetAlpha(c_TEXT_ENTRY_WINDOW.."ChannelButton", textentry_channel_alpha)
+- TidyChat: TidyChatCore.SetTextEntry -> WindowSetAlpha(c_TEXT_ENTRY_WINDOW.."EntryBoxBG", textentry_background_alpha)
+- TidyChat: TidyChatCore.SetWindowTabsHandleInput -> WindowSetAlpha(wndGroupName.."TabWindow", (chatwindow_tabs_handle_input~=false and 1)or 0)
+- TidyChat: TidyChatCore.SetWindowTextLog -> WindowSetAlpha(scrollbarName, (scrollbar_position==c_SCROLLBAR_POSITION_HIDDEN and 0)or scrollbar_alpha)
+- TidyChat: TidyChatCore.SetWindowTextLog -> WindowSetAlpha(logDisplayName.."ToBottomButton", (scrollbar_position==c_SCROLLBAR_POSITION_HIDDEN and 0)or scrollbar_alpha)
 
 ## Related APIs
 
@@ -128,12 +96,11 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [DynamicImageSetRotation](window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureOrientation](window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [WindowGetAlpha](window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
-- [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowStopAlphaAnimation](window_WindowStopAlphaAnimation.md) (HIGH 90/100) - Window Function
 
 ## Triggered By
 
@@ -145,4 +112,4 @@ Observed mutating runtime window state or presentation.
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

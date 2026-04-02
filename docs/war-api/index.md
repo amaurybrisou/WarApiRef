@@ -1,30 +1,30 @@
 # WAR Addon Development API Reference
 
-Generated from addon-api rooted at `/workspace/docs/addon-api`. The source corpus contained 9352 function docs, 5207 frame docs, 2428 handler docs, and 228 event docs.
+Generated from addon-api rooted at `/workspace/docs/addon-api`. The source corpus contained 232 function docs, 148 frame docs, 40 handler docs, and 18 event docs.
 
 ## Coverage
 
 | Category | Count |
 | --- | --- |
-| Global functions | 108 |
-| Window functions | 98 |
-| Global tables | 40 |
-| Constants | 105 |
-| XML element types | 60 |
-| XML handlers | 33 |
-| Game events | 156 |
-| Window events | 33 |
-| SystemData fields | 157 |
-| GameData fields | 83 |
+| Global functions | 19 |
+| Window functions | 47 |
+| Global tables | 6 |
+| Constants | 27 |
+| XML element types | 20 |
+| XML handlers | 10 |
+| Game events | 7 |
+| Window events | 11 |
+| SystemData fields | 13 |
+| GameData fields | 3 |
 
 ## Candidate Outcomes
 
 | Outcome | Count |
 | --- | --- |
-| High confidence platform | 823 |
-| Medium confidence candidates | 64 |
-| Low confidence symbols | 4 |
-| Rejected addon-local | 56 |
+| High confidence platform | 145 |
+| Medium confidence candidates | 21 |
+| Low confidence symbols | 0 |
+| Rejected addon-local | 2 |
 
 ## Sections
 

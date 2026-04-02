@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyChat |
-| Files seen in | `/workspace_addons/TidyChat/TidyChat.lua:305` |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:305` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | TidyChat: TidyChatCore.SetWindowTabs |
@@ -101,7 +101,7 @@ Observed as a global function across 1 addons.
 
 ## Affects
 
-- [EA_ChatWindowGroups](../tables/table_EA_ChatWindowGroups.md) (HIGH 100/100) - Global Table
+- none
 
 ## Notes
 

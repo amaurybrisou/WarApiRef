@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyChat |
-| Files seen in | `/workspace_addons/TidyChat/TidyChat.lua:489` |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:489` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
 | Example locations | TidyChat: TidyChatCore.AddNewChannels |

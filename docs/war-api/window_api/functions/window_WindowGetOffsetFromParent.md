@@ -2,41 +2,36 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 3 addons
+- Confidence score: 80/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
-
-- Raw weighted score: 123
+- Score: 80/100
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, PotionBar, TidyChat |
-| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:653`, `/workspace_addons/PotionBar/source/Main.lua:292`, `/workspace_addons/TidyChat/TidyChat.lua:239` |
+| Addons seen in | TidyChat |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:239` |
 | Namespaces detected | WindowGetOffsetFromParent |
 | Source kinds | lua_calls |
-| Example locations | DAoCBuff: DAoCBuffTracker:Shutdown, PotionBar: PotionBar.Shutdown, TidyChat: TidyChatCore.SetWindowGroup |
+| Example locations | TidyChat: TidyChatCore.SetWindowGroup |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,8 +39,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent role | no |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -71,7 +66,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "PotionBarFloatingActivator", self.m_windowName, wndGroupName |
+| windowName | Observed as a target window name. | Observed values: wndGroupName |
 
 ## Returns
 
@@ -83,14 +78,10 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- DAoCBuff
-- PotionBar
 - TidyChat
 
 ## Examples
 
-- DAoCBuff: DAoCBuffTracker:Shutdown -> WindowGetOffsetFromParent(self.m_windowName)
-- PotionBar: PotionBar.Shutdown -> WindowGetOffsetFromParent("PotionBarFloatingActivator")
 - TidyChat: TidyChatCore.SetWindowGroup -> WindowGetOffsetFromParent(wndGroupName)
 
 ## Related APIs
@@ -99,7 +90,11 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- none
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
+- [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
@@ -107,12 +102,8 @@ Observed querying runtime window state or metadata.
 
 ## Affects
 
-- [EA_ChatWindowGroups](../../globals/tables/table_EA_ChatWindowGroups.md) (HIGH 100/100) - Global Table
-- [SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_RENOWN_RANK_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_RANK_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

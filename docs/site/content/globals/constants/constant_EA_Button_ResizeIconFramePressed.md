@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Moth |
-| Files seen in | `/workspace_addons/Moth/Moth.xml:53` |
+| Files seen in | `/workspace/data/raw/Moth/Moth.xml:53` |
 | Namespaces detected | EA_Button_ResizeIconFramePressed |
 | Source kinds | xml_attributes |
 | Example locations | MothBorderGold |

@@ -1,37 +1,34 @@
 # Disabled
 
 - Category: XML Element Type
-- Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence level: MEDIUM
+- Confidence score: 45/100
 
 ## Confidence Assessment
 
-- Level: HIGH
+- Level: MEDIUM
 
-- Final score: 100/100
+- Score: 45/100
 
-- Raw weighted score: 110
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AggroMeter, AnywhereTrainer, Aura, CM_ClosetGoblin, CMap, DaemonAssist, EA_UiDebugTools |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:46`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:6`, `/workspace_addons/AggroMeter/AggroMeter.xml:39`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.xml:28`, `/workspace_addons/Aura/Source/Templates.xml:147`, `/workspace_addons/Aura/Source/Templates.xml:176`, `/workspace_addons/Aura/Source/Templates.xml:205`, `/workspace_addons/Aura/Source/Templates.xml:234` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.xml:103` |
 | Namespaces detected | Disabled |
 | Source kinds | xml_frames |
-| Example locations | AdvancedPetAssist: APA_ComboBoxButton, AdvancedPetAssist: APA_ComboBoxButtonWide, AggroMeter: Aggro_Button_Template, AnywhereTrainer: AnywhereTrainerTabTemplateInactiveImage, Aura: Aura_Button_DefaultMenuButton, Aura: Aura_Button_DefaultMenuButtonLarge |
-| XML usage count | 60 |
-| XML attribute usage count | 60 |
+| Example locations | TidyRoll: TRollItemButton |
+| XML usage count | 1 |
+| XML attribute usage count | 1 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -41,11 +38,11 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
-| Weak usage only | no |
+| Weak usage only | yes |
 | Project-specific name | no |
 | Placeholder or computed name | no |
 | Conflicting signatures | no |
@@ -56,72 +53,32 @@
 
 ## Description
 
-Observed XML element type instantiated by 20 addons.
+Observed XML element type instantiated by 1 addons.
 
 ## Common Attributes
 
+- texture
 - x
 - y
-- b
-- g
-- id
-- r
-- a
-- def
-- texture
 
 ## Common Inherits
 
 - none
 
-## Common Parent Elements
-
-- [Button](element_Button.md) — 60× (HIGH)
-
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | optional | 43% |  |
-| `y` | optional | 43% |  |
-| `b` | optional | 38% |  |
-| `g` | optional | 38% |  |
-| `id` | optional | 38% |  |
-| `r` | optional | 38% |  |
-| `a` | optional | 36% |  |
-| `def` | optional | 23% |  |
-| `texture` | optional | 18% |  |
+| `texture` | **required** | 100% | TidyRoll_SquareFrame |
+| `x` | **required** | 100% | 0 |
+| `y` | **required** | 100% | 0 |
 ## Seen In
 
-- AdvancedPetAssist
-- AggroMeter
-- AnywhereTrainer
-- Aura
-- CM_ClosetGoblin
-- CMap
-- DaemonAssist
-- EA_UiDebugTools
-- GuardList
-- GuardRange
-- LoyalPet
-- MapPin
-- Miracle Grow Remix
-- Pocket Palette
-- PotionBar
-- RoR_SoR
-- Shinies
 - TidyRoll
-- WSCT
-- nRarity
 
 ## Examples
 
-- AdvancedPetAssist: APA_ComboBoxButton -> Disabled in Button APA_ComboBoxButton
-- AdvancedPetAssist: APA_ComboBoxButtonWide -> Disabled in Button APA_ComboBoxButtonWide
-- AggroMeter: Aggro_Button_Template -> Disabled in Button Aggro_Button_Template
-- AnywhereTrainer: AnywhereTrainerTabTemplateInactiveImage -> Disabled in Button AnywhereTrainerTabTemplateInactiveImage
-- Aura: Aura_Button_DefaultMenuButton -> Disabled in Button Aura_Button_DefaultMenuButton
-- Aura: Aura_Button_DefaultMenuButtonLarge -> Disabled in Button Aura_Button_DefaultMenuButtonLarge
+- TidyRoll: TRollItemButton -> Disabled in Button TRollItemButton
 
 ## Related APIs
 

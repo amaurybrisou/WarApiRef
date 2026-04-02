@@ -2,41 +2,37 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 27 addons
+- Confidence score: 90/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 90/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:664`, `/workspace_addons/Ace/LibGUI.lua:719`, `/workspace_addons/AdvancedPetAssist/APAGuiHelpers.lua:9`, `/workspace_addons/Aura/Source/AuraShares.lua:419`, `/workspace_addons/BuffHead/Setup/SelectColor.lua:78`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItem.lua:310`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:147`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:601` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:434`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:782` |
 | Namespaces detected | TextEditBoxGetText |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_MultiTextbox:GetText, Ace: LIBGUI_Textbox:GetText, AdvancedPetAssist: APAGuiHelpers.ParseRGB, AdvancedRenownTrainer: AdvancedRenownTraining.ImportNameInputOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.SavePreset |
+| Example locations | TidyRoll: TidyRoll.CustomAutoRoll.AddById, TidyRoll: TidyRollOptions.OnApply |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 190 |
-| Global usage count | 190 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,7 +40,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -71,7 +67,7 @@ Observed reading from or writing to edit-box controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "DyeWindowFilterEditBox", "EnemyChooseChannelDialogTellDetailsName", "EnemyClickCastingDialogContentScrollChildActionConfig2Command" |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: c_AUTO_ROLL_ADD_BY_ID_ID_EDITBOX, c_AUTO_ROLL_ADD_BY_ID_NAME_EDITBOX, c_TROLL_BNUM_TBOX |
 
 ## Returns
 
@@ -83,42 +79,14 @@ Observed reading from or writing to edit-box controls.
 
 ## Seen In
 
-- Ace
-- AdvancedPetAssist
-- AdvancedRenownTrainer
-- Aura
-- BuffHead
-- DAoCBuff
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- GCDsaver
-- JunkDump
-- Killer
-- LibWBToggler
-- LoyalPet
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- Pocket Palette
-- RVAPI_ColorDialog
-- RandomMount
-- Shinies
-- TexturedButtons
 - TidyRoll
-- TurretRange
-- WhoHealedMe
-- WoH-Reticle
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_MultiTextbox:GetText -> TextEditBoxGetText(self.name)
-- Ace: LIBGUI_Textbox:GetText -> TextEditBoxGetText(self.name)
-- AdvancedPetAssist: APAGuiHelpers.ParseRGB -> TextEditBoxGetText(name)
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportNameInputOkButtonPressed -> TextEditBoxGetText(ImportNameInputWindowName.."NameInputBox")
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> TextEditBoxGetText(ImportWindowName.."NameInputBox")
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> TextEditBoxGetText(ImportWindowName.."LinkInputBox")
+- TidyRoll: TidyRoll.CustomAutoRoll.AddById -> TextEditBoxGetText(c_AUTO_ROLL_ADD_BY_ID_ID_EDITBOX)
+- TidyRoll: TidyRoll.CustomAutoRoll.AddById -> TextEditBoxGetText(c_AUTO_ROLL_ADD_BY_ID_NAME_EDITBOX)
+- TidyRoll: TidyRollOptions.OnApply -> TextEditBoxGetText(c_TROLL_BNUM_TBOX)
+- TidyRoll: TidyRollOptions.OnApply -> TextEditBoxGetText(c_TROLL_OFFSET_TBOX)
 
 ## Related APIs
 
@@ -127,10 +95,11 @@ Observed reading from or writing to edit-box controls.
 ## Used With
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ComboBoxGetSelectedMenuItem](window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
+- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [ComboBoxGetSelectedText](window_ComboBoxGetSelectedText.md) (HIGH 80/100) - Window Function
 
 ## Triggered By
 
@@ -144,4 +113,4 @@ Observed reading from or writing to edit-box controls.
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

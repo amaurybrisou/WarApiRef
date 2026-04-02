@@ -2,41 +2,37 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 15 addons
+- Confidence score: 90/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 90/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BagOMatic, CM_ClosetGoblin, Effigy, GCDsaver, GetStats, JunkDump, LibWBToggler |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:132`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:87`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:135`, `/workspace_addons/Effigy/LibGUI.lua:132`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:132`, `/workspace_addons/GetStats/GetStats.lua:119`, `/workspace_addons/JunkDump/JunkDump.lua:50`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:132` |
+| Addons seen in | TidyChat |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:930` |
 | Namespaces detected | WindowSetParent |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Parent, BagOMatic: BagOMatic.init, CM_ClosetGoblin: ClosetGoblin.Initialize, Effigy: EffigyBar:setup, Effigy: LIBGUI_ELEMENT:Parent, GCDsaver: LIBGUI_ELEMENT:Parent |
+| Example locations | TidyChat: TidyChatFrames.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 23 |
-| Global usage count | 23 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,7 +40,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -71,8 +67,8 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "BagOMaticButton", "GetStatsCompareLine"..i, "GetStatsLine"..GetStats.LineNumber |
-| arg2 | Observed as a text or wstring payload. | Observed values: "CharacterWindow", "EA_Window_Backpack", "EA_Window_InteractionStore" |
+| windowName | Observed as a target window name. | Observed values: c_TEXT_ENTRY_WINDOW, c_TEXT_ENTRY_WINDOW.."ChannelButton" |
+| arg2 | Observed as a text or wstring payload. | Observed values: "Root" |
 
 ## Returns
 
@@ -84,30 +80,12 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- Ace
-- BagOMatic
-- CM_ClosetGoblin
-- Effigy
-- GCDsaver
-- GetStats
-- JunkDump
-- LibWBToggler
-- MapMonster
-- RVMOD_Manager
-- Shinies
 - TidyChat
-- TurretRange
-- WoH-Reticle
-- nRarity
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Parent -> WindowSetParent(self.name, self.parent)
-- BagOMatic: BagOMatic.init -> WindowSetParent("BagOMaticButton", "EA_Window_Backpack")
-- CM_ClosetGoblin: ClosetGoblin.Initialize -> WindowSetParent("yClosetGoblinButton", "CharacterWindow")
-- Effigy: EffigyBar:setup -> WindowSetParent(self.name, invisiName)
-- Effigy: LIBGUI_ELEMENT:Parent -> WindowSetParent(self.name, self.parent)
-- GCDsaver: LIBGUI_ELEMENT:Parent -> WindowSetParent(self.name, self.parent)
+- TidyChat: TidyChatFrames.Initialize -> WindowSetParent(c_TEXT_ENTRY_WINDOW.."ChannelButton", "Root")
+- TidyChat: TidyChatFrames.Initialize -> WindowSetParent(c_TEXT_ENTRY_WINDOW, "Root")
 
 ## Related APIs
 
@@ -119,16 +97,12 @@ Observed mutating runtime window state or presentation.
 
 ## Triggered By
 
-- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
+- none
 
 ## Affects
 
-- [EA_Window_Backpack](../../globals/tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

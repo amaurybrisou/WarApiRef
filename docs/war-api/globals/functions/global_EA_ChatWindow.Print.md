@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 33 addons
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
@@ -11,33 +11,31 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 115
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, BagOMatic, BankArkel, Crafting Info Tooltip, DAoCBuff, DaemonAssist, Effigy |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/APACore.lua:298`, `/workspace_addons/Aura/Source/AuraAddon.lua:469`, `/workspace_addons/BankArkel/BankArkel.lua:686`, `/workspace_addons/BankArkel/BankArkel.lua:95`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:29`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:33`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:687`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:772` |
+| Addons seen in | NPC Item Sale Price |
+| Files seen in | `/workspace/data/raw/nisp/Source/Nisp.lua:120`, `/workspace/data/raw/nisp/Source/Nisp.lua:184`, `/workspace/data/raw/nisp/Source/Nisp.lua:213`, `/workspace/data/raw/nisp/Source/Nisp.lua:26`, `/workspace/data/raw/nisp/Source/Nisp.lua:51` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.Print, Aura: AuraPrint, BagOMatic: BagOMatic.print, BankArkel: BankArkel.Init, BankArkel: BankArkel.PrintFactionGold, Crafting Info Tooltip: CraftValueTip.Initialize |
+| Example locations | NPC Item Sale Price: Nisp.DumpClear, NPC Item Sale Price: Nisp.DumpItem, NPC Item Sale Price: Nisp.Init, NPC Item Sale Price: Nisp.SetItemTooltipData, NPC Item Sale Price: Nisp.SlashHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 225 |
-| Global usage count | 225 |
+| Lua usage count | 19 |
+| Global usage count | 19 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -45,14 +43,14 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | no |
+| Consistent role | no |
+| Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | yes |
+| Conflicting signatures | no |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -66,13 +64,13 @@ EA_ChatWindow.Print(arg1)
 
 ## Description
 
-Observed as a global function across 33 addons.
+Observed as a global function across 1 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "That state does not exist", C.ADDON..L "Broadcasted Tier "..towstring(tostring(tier))..(scope=="wb" and L " request to warband." or L " request to party."), C.ADDON..L "Declined leader request." |
+| arg1 | Observed as a text or wstring payload. | Observed values: L "/nisp debug dumpclear - to clear dumped items", L "/nisp debug off - to turn debugging off", L "/nisp debug on - to turn debugging on" |
 
 ## Returns
 
@@ -84,48 +82,16 @@ Observed as a global function across 33 addons.
 
 ## Seen In
 
-- AdvancedPetAssist
-- Aura
-- BagOMatic
-- BankArkel
-- Crafting Info Tooltip
-- DAoCBuff
-- DaemonAssist
-- Effigy
-- Enemy
-- GCDsaver
-- GuardLine
-- HealAll
-- Killer
-- LibGuard
-- LibSlash
-- LibWBToggler
-- LoyalPet
-- Miracle Grow Remix
-- MiracleGrow
-- MiracleGrowLight
 - NPC Item Sale Price
-- PlanB
-- QuickTacticSwitch
-- QuickWarReport
-- RVMOD_Manager
-- RandomMount
-- RoR_SoR
-- Shinies
-- Swift Assist
-- Targets
-- WSCT
-- WhoHealedMe
-- wbLeadHelper
 
 ## Examples
 
-- AdvancedPetAssist: AdvancedPetAssist.Print -> EA_ChatWindow.Print(L "<icon149> "..msg)
-- Aura: AuraPrint -> EA_ChatWindow.Print(towstring(str))
-- BagOMatic: BagOMatic.print -> EA_ChatWindow.Print(L "[BagOMatic] "..towstring(text))
-- BankArkel: BankArkel.Init -> EA_ChatWindow.Print(StringToWString(InitTxt))
-- BankArkel: BankArkel.PrintFactionGold -> EA_ChatWindow.Print(STWS(header))
-- BankArkel: BankArkel.PrintFactionGold -> EA_ChatWindow.Print(STWS(line))
+- NPC Item Sale Price: Nisp.DumpClear -> EA_ChatWindow.Print(L "Dump Table Cleared")
+- NPC Item Sale Price: Nisp.DumpItem -> EA_ChatWindow.Print(L "Dumped item: "..itemData.name)
+- NPC Item Sale Price: Nisp.DumpItem -> EA_ChatWindow.Print(L "Item Dump contains item: "..itemData.name)
+- NPC Item Sale Price: Nisp.Init -> EA_ChatWindow.Print(L "Nisp Installed and Enabled")
+- NPC Item Sale Price: Nisp.Init -> EA_ChatWindow.Print(L "Nisp Initialized and Enabled (/nisp for commands)")
+- NPC Item Sale Price: Nisp.Init -> EA_ChatWindow.Print(L "Nisp Initialized, but disabled (/nisp for commands)")
 
 ## Related APIs
 
@@ -133,7 +99,7 @@ Observed as a global function across 33 addons.
 
 ## Used With
 
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
+- [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 80/100) - Global Function
 
 ## Triggered By
 
@@ -141,14 +107,10 @@ Observed as a global function across 33 addons.
 
 ## Affects
 
-- [BankWindow](../tables/table_BankWindow.md) (HIGH 100/100) - Global Table
-- [EA_ChatWindow.OnKeyEnter](global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
-- [BankWindow.Hide](global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
+- none
 
 ## Notes
 
+- Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
 - Advanced return analysis: No strong return evidence observed

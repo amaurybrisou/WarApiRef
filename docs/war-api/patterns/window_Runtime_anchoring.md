@@ -1,7 +1,7 @@
 # Runtime anchoring
 
 - Category: window
-- Confidence: HIGH
+- Confidence: MEDIUM
 
 ## Description
 
@@ -9,29 +9,26 @@ Observed layouts being finalized in Lua by clearing and re-adding anchors after 
 
 ## Involved APIs
 
-- [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowAddAnchor](../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 
 ## Flow Diagram
 
 ```text
-OnLButtonUp
-  -> handlers: DebugWindow.ClearTextLog, InterfaceCore.ReloadUI
-  -> ui: Button, ColorPicker, DynamicImage, FullResizeImage, Label, ListBox, MapDisplay, Window
+WindowAddAnchor <-> WindowClearAnchors
 ```
 
 ## Example Code
 
 ```lua
-Ace: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
+Moth: WindowAddAnchor("Moth", "bottomleft", "CursorWindow", "topleft", 0, 0)
 ```
 
 ## Evidence
 
-- Ace: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
-- AdvancedPetAssist: WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
-- AdvancedPetAssist: WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
-- AdvancedRenownTrainer: WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
-- AdvancedRenownTrainer: WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
-- AnywhereTrainerAdditions: WindowAddAnchor(tab.Name, tab.Anchor.Point, tab.Anchor.RelativeTo, tab.Anchor.RelativePoint, tab.Anchor.X, tab.Anchor.Y)
+- Moth: WindowAddAnchor("Moth", "bottomleft", "CursorWindow", "topleft", 0, 0)
+- Moth: WindowAddAnchor("MothHealthBar", "bottomleft", "MothBackground", "topleft", 0, yOffset)
+- TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW.."EntryBox", "topleft", c_TEXT_ENTRY_WINDOW, "topleft", EntryBoxAnchorXOffset, 0)
+- TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW.."EntryBox", "bottomright", c_TEXT_ENTRY_WINDOW, "bottomright", 0, 0)
+- TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW, TEAnchorPoint.."left", TEAnchorRelativeWindow, TEAnchorRelativePoint.."left", 0, 0)
+- TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW, TEAnchorPoint.."right", TEAnchorRelativeWindow, TEAnchorRelativePoint.."right", 0, 0)

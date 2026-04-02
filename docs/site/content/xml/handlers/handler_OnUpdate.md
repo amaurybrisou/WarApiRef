@@ -2,39 +2,36 @@
 
 - Type: XML Handler
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 73/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 73/100
 
-- Raw weighted score: 138
-
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, observed in both xml and lua paths.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, CMap, EA_UiDebugTools, TidyRoll |
-| Files seen in | `/workspace_addons/BuffHead/Setup/SetupLayout.xml:249`, `/workspace_addons/TidyRoll/TidyRoll.xml:275`, `/workspace_addons/cmap/CMap.xml:104`, `/workspace_addons/ea_uidebugtools/Source/DebugWindow.xml:29` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.xml:275` |
 | Namespaces detected | OnUpdate |
 | Source kinds | bindings, xml_handlers |
-| Example locations | BuffHead: BuffHeadSetupLayoutWindow.OnUpdate, CMap: CMapWindowWMap.OnUpdate, EA_UiDebugTools: DebugWindow.OnUpdate, TidyRoll: TidyRollTimer.OnUpdate |
-| XML usage count | 4 |
-| XML attribute usage count | 4 |
-| Lua usage count | 4 |
+| Example locations | TidyRoll: TidyRollTimer.OnUpdate |
+| XML usage count | 1 |
+| XML attribute usage count | 1 |
+| Lua usage count | 1 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -43,11 +40,11 @@
 | Default UI presence | no |
 | Event binding presence | yes |
 | Observed in XML and Lua | yes |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
-| Weak usage only | no |
+| Weak usage only | yes |
 | Project-specific name | no |
 | Placeholder or computed name | no |
 | Conflicting signatures | no |
@@ -58,7 +55,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 4 addons through frame event handlers.
+Observed as an XML handler hook bound by 1 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -68,30 +65,23 @@ function(elapsed)
 
 ## Element Types
 
-- MapDisplay
 - Window
 
 ## Seen In
 
-- BuffHead
-- CMap
-- EA_UiDebugTools
 - TidyRoll
 
 ## Examples
 
-- BuffHead: BuffHeadSetupLayoutWindow -> BuffHeadSetupLayoutWindow.OnUpdate -> BuffHead.Setup.Layout.OnUpdate
-- CMap: CMapWindowWMap -> CMapWindowWMap.OnUpdate -> CMapWindow.UpdateCoordinatesWMap
-- EA_UiDebugTools: DebugWindow -> DebugWindow.OnUpdate -> DebugWindow.Update
 - TidyRoll: TidyRollTimer -> TidyRollTimer.OnUpdate -> TidyRoll.OnUpdate
 
 ## Related APIs
 
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- none
 
 ## Used With
 
-- [OnUpdate](../../events/window_events/window_event_OnUpdate.md) (HIGH 100/100) - Window Event
+- none
 
 ## Triggered By
 

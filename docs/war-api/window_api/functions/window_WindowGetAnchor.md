@@ -2,41 +2,36 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 9 addons
+- Confidence score: 80/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 80/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, Effigy, GCDsaver, LibWBToggler, Moth, Pocket Palette, Shinies |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:172`, `/workspace_addons/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace_addons/Effigy/LibGUI.lua:172`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:172`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:172`, `/workspace_addons/Moth/Moth.lua:578`, `/workspace_addons/PocketPalette/PocketPalette.lua:152`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:172` |
+| Addons seen in | Moth |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:578` |
 | Namespaces detected | WindowGetAnchor |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:GetPosition, BuffHead: BuffHead.Setup.LayoutFrame:UpdatePosition, Effigy: LIBGUI_ELEMENT:GetPosition, GCDsaver: LIBGUI_ELEMENT:GetPosition, LibWBToggler: LIBGUI_ELEMENT:GetPosition, Moth: Moth.HealthBar |
+| Example locations | Moth: Moth.HealthBar |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,8 +39,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent role | no |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -71,7 +66,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "MothHealthBar", PP.settings.windows["main"].name, self.name |
+| windowName | Observed as a target window name. | Observed values: "MothHealthBar" |
 | arg2 | Observed as a numeric value. | Observed values: 1 |
 
 ## Returns
@@ -84,23 +79,10 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- Ace
-- BuffHead
-- Effigy
-- GCDsaver
-- LibWBToggler
 - Moth
-- Pocket Palette
-- Shinies
-- WoH-Reticle
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
-- BuffHead: BuffHead.Setup.LayoutFrame:UpdatePosition -> WindowGetAnchor(self:GetName(), 1)
-- Effigy: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
-- GCDsaver: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
-- LibWBToggler: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
 - Moth: Moth.HealthBar -> WindowGetAnchor("MothHealthBar", 1)
 
 ## Related APIs
@@ -109,7 +91,7 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- none
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
@@ -117,9 +99,8 @@ Observed querying runtime window state or metadata.
 
 ## Affects
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

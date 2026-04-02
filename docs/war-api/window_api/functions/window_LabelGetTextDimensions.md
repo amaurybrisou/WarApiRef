@@ -2,41 +2,36 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 10 addons
+- Confidence score: 80/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 80/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, GetStats, Killer, MapMonster, MapPin, Moth, RoR_SoR, TurretRange |
-| Files seen in | `/workspace_addons/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace_addons/GetStats/GetStats.lua:100`, `/workspace_addons/Killer/KillerConfigWindow.lua:125`, `/workspace_addons/Killer/KillerEvents.lua:133`, `/workspace_addons/Killer/KillerFeed.lua:380`, `/workspace_addons/MapMonster/Source/MapMonster_Pins.lua:823`, `/workspace_addons/MapMonster/Source/MapMonster_Tooltips.lua:201`, `/workspace_addons/MapPin/source/MapPin.lua:3166` |
+| Addons seen in | Moth |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:215` |
 | Namespaces detected | LabelGetTextDimensions |
 | Source kinds | lua_calls |
-| Example locations | Enemy: EnemyMarkTemplate:Apply, GetStats: GetStats.GetSafeTextWidth, Killer: Killer.RefreshPersonalCounter, Killer: Killer.ShowRowTooltip, Killer: Killer.local.MeasureLabelWidth, Killer: MeasureLabelWidth |
+| Example locations | Moth: Moth.SetCellText |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 29 |
-| Global usage count | 29 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,8 +39,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent role | no |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -65,13 +60,13 @@ LabelGetTextDimensions(arg1)
 
 ## Description
 
-Observed as a window function across 10 addons.
+Observed as a window function across 1 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "KillerPersonalCounterCount", "KillerTooltipAbility", "MapPinTooltipsAuthor" |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: cellText |
 
 ## Returns
 
@@ -83,25 +78,11 @@ Observed as a window function across 10 addons.
 
 ## Seen In
 
-- Enemy
-- GetStats
-- Killer
-- MapMonster
-- MapPin
 - Moth
-- RoR_SoR
-- TurretRange
-- WSCT
-- WhoHealedMe
 
 ## Examples
 
-- Enemy: EnemyMarkTemplate:Apply -> LabelGetTextDimensions(windowName.."ContentText")
-- GetStats: GetStats.GetSafeTextWidth -> LabelGetTextDimensions(labelName)
-- Killer: Killer.RefreshPersonalCounter -> LabelGetTextDimensions("KillerPersonalCounterCount")
-- Killer: Killer.ShowRowTooltip -> LabelGetTextDimensions("KillerTooltipAbility")
-- Killer: Killer.local.MeasureLabelWidth -> LabelGetTextDimensions(labelName)
-- Killer: MeasureLabelWidth -> LabelGetTextDimensions(labelName)
+- Moth: Moth.SetCellText -> LabelGetTextDimensions(cellText)
 
 ## Related APIs
 
@@ -109,7 +90,10 @@ Observed as a window function across 10 addons.
 
 ## Used With
 
-- none
+- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
+- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 90/100) - Window Function
 
 ## Triggered By
 
@@ -117,10 +101,8 @@ Observed as a window function across 10 addons.
 
 ## Affects
 
-- [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

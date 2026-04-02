@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyChat |
-| Files seen in | `/workspace_addons/TidyChat/TidyChat.lua:980` |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:980` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | TidyChatFrames.InitializeChannelMenuTidyChannelButtons, lua_call |
@@ -65,11 +65,18 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 
 ## Related APIs
 
-- none
+- [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetId](../../window_api/functions/window_WindowSetId.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
 
 ## Used With
 
-- none
+- [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [SystemData.ChatLogFilters.ALLIANCE](systemdata_SystemData.ChatLogFilters.ALLIANCE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SCENARIO](systemdata_SystemData.ChatLogFilters.SCENARIO.md) (HIGH 100/100) - SystemData Field
+- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 

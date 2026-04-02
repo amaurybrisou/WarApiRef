@@ -2,22 +2,20 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 35 addons
+- Confidence score: 98/100
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 98/100
 
-- Raw weighted score: 110
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Effigy |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:249`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace_addons/Aura/Source/Aura.lua:417`, `/workspace_addons/Aura/Source/AuraHelpers.lua:33`, `/workspace_addons/Aura/Source/AuraHelpers.lua:55` |
+| Addons seen in | Moth, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:270`, `/workspace/data/raw/Moth/Moth.lua:591`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:134`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:196` |
 | Namespaces detected | WindowSetTintColor |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Tint, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD, AdvancedPetAssist: APAGui.UpdatePetTargetHUD, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SelectAdvantage |
+| Example locations | Moth: Moth.UpdateHealthBar, Moth: Moth.UpdateLevel, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollFrame:SetIcon, TidyRoll: TidyRollFrame:SetLootData |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 272 |
-| Global usage count | 272 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -60,7 +58,7 @@
 ## Signature (inferred)
 
 ```lua
-WindowSetTintColor(windowName, arg2, arg3, arg4)
+WindowSetTintColor(windowName, arg2)
 ```
 
 ## Description
@@ -71,10 +69,8 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "APAFollowTargetHUDFill", "APAInstantOnlyHUDFill", "APAKitingHUDFill" |
-| arg2 | Observed as a function or method reference. | Observed values: 0, 100, 12 |
-| arg3 | Observed as a numeric value. | Observed values: 0, 100, 110 |
-| arg4 | Observed as a numeric value. | Observed values: 0, 10, 100 |
+| windowName | Observed as a target window name. | Observed values: "MothHealthBar", buttonName, c_TEXT_ENTRY_WINDOW.."EntryBoxBG" |
+| arg2 | Observed as a function or method reference. | Observed values: 0, Moth.Helpers.DefaultColorConvert(DefaultColor.GREEN), Moth.Helpers.DefaultColorConvert(DefaultColor.ORANGE) |
 
 ## Returns
 
@@ -86,50 +82,18 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- Ace
-- AdvancedPetAssist
-- AdvancedRenownTrainer
-- Aura
-- BuffHead
-- CM_ClosetGoblin
-- DAoCBuff
-- Effigy
-- Enemy
-- GCDsaver
-- GuardLine
-- Killer
-- LibWBToggler
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- MiracleGrow
-- MoraleCircle
 - Moth
-- Pocket Palette
-- PotionBar
-- QuickWarReport
-- RVAPI_ColorDialog
-- RandomMount
-- RoR_SoR
-- Shinies
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WSCT
-- WhoHealedMe
-- WoH-Reticle
-- nRarity
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Tint -> WindowSetTintColor(self.name, r, g, b)
-- AdvancedPetAssist: APAGui.UpdateFollowTargetHUD -> WindowSetTintColor("APAFollowTargetHUDFill", APA.hudColorOnR, APA.hudColorOnG, APA.hudColorOnB)
-- AdvancedPetAssist: APAGui.UpdateFollowTargetHUD -> WindowSetTintColor("APAFollowTargetHUDFill", APA.hudColorOffR, APA.hudColorOffG, APA.hudColorOffB)
-- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 128, 128, 128)
-- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 0, 200, 0)
-- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 200, 100, 0)
+- Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.GREEN))
+- Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.YELLOW))
+- Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.ORANGE))
+- Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.RED))
+- Moth: Moth.UpdateLevel -> WindowSetTintColor(cellName.."RankBackgroundTint", Moth.Helpers.DefaultColorConvert(unitConColor))
+- TidyChat: TidyChatFrames.Initialize -> WindowSetTintColor(c_TEXT_ENTRY_WINDOW.."EntryBoxBG", 0, 0, 0)
 
 ## Related APIs
 
@@ -137,12 +101,9 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [EA_Window_ContextMenu.AddUserDefinedMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
 
 ## Triggered By
 

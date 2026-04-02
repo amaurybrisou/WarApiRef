@@ -2,20 +2,20 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 83/100
-- Seen in: 23 addons
+- Confidence score: 71/100
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 83/100
+- Score: 71/100
 
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, called globally with no local definition, role is consistent across addons.
+- Rationale: Promoted as HIGH confidence because called globally with no local definition, seen in 2 to 3 addons, role is consistent across addons.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, AutoMark, BankArkel, BuffHead, CM_ClosetGoblin, CombatTextNames, DAoCBuff |
-| Files seen in | `/workspace_addons/Aura/Source/AuraAddon.lua:238`, `/workspace_addons/AutoMark/Source/AutoMark.lua:7`, `/workspace_addons/BankArkel/BankArkel.lua:242`, `/workspace_addons/BuffHead/EffectFrame.lua:52`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:384`, `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:159`, `/workspace_addons/Effigy/Elements/EffigyIcons.lua:138`, `/workspace_addons/Effigy/Elements/EffigyIcons.lua:172` |
+| Addons seen in | Moth, TidyRoll |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:134`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:180` |
 | Namespaces detected | GetIconData |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow, AdvancedRenownTrainer: CreateAbilityWindow, Aura: AuraAddon.GetTextureData, AutoMark: AutoMark.local.CreateMarker, AutoMark: CreateMarker, BankArkel: BankArkel.PackShow |
+| Example locations | Moth: Moth.SetCellTextIcon, TidyRoll: TidyRollFrame:SetCareerIcon, TidyRoll: TidyRollFrame:SetIcon |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 68 |
-| Global usage count | 68 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,13 +62,13 @@ GetIconData(arg1)
 
 ## Description
 
-Observed as a shared query API across 23 addons.
+Observed as a shared query API across 2 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: 005118, 32000+tarCareerID, 64 |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: Icons.GetCareerIconIDFromCareerLine(text), careerIconNum, iconNum |
 
 ## Returns
 
@@ -80,38 +80,14 @@ Observed as a shared query API across 23 addons.
 
 ## Seen In
 
-- AdvancedRenownTrainer
-- Aura
-- AutoMark
-- BankArkel
-- BuffHead
-- CM_ClosetGoblin
-- CombatTextNames
-- DAoCBuff
-- Effigy
-- Enemy
-- GetStats
-- MapPin
-- MoraleCircle
 - Moth
-- PotionBar
-- RandomMount
-- Shinies
-- Swift Assist
-- Targets
-- TexturedButtons
 - TidyRoll
-- WSCT
-- wbLeadHelper
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow -> GetIconData(t.icon)
-- AdvancedRenownTrainer: CreateAbilityWindow -> GetIconData(t.icon)
-- Aura: AuraAddon.GetTextureData -> GetIconData(tonumber(id))
-- AutoMark: AutoMark.local.CreateMarker -> GetIconData(career_icon_id)
-- AutoMark: CreateMarker -> GetIconData(career_icon_id)
-- BankArkel: BankArkel.PackShow -> GetIconData(BankArkel.db.Entry[index].Equip[i].iconNum)
+- Moth: Moth.SetCellTextIcon -> GetIconData(Icons.GetCareerIconIDFromCareerLine(text))
+- TidyRoll: TidyRollFrame:SetCareerIcon -> GetIconData(careerIconNum)
+- TidyRoll: TidyRollFrame:SetIcon -> GetIconData(iconNum)
 
 ## Related APIs
 
@@ -119,20 +95,11 @@ Observed as a shared query API across 23 addons.
 
 ## Used With
 
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [EA_Window_ContextMenu.AddCascadingMenuItem](global_EA_Window_ContextMenu.AddCascadingMenuItem.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.AddMenuDivider](global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.AddMenuItem](global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.CreateContextMenu](global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.Finalize](global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
-- [Icons.GetCareerIconIDFromCareerLine](global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
-- [LabelSetTextAlign](../../window_api/functions/window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowSetId](../../window_api/functions/window_WindowSetId.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [CreateWindowFromTemplate](global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
+- [LabelSetFont](../../window_api/functions/window_LabelSetFont.md) (HIGH 100/100) - Window Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 90/100) - Window Function
+- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 90/100) - Window Function
 
 ## Triggered By
 
@@ -140,7 +107,7 @@ Observed as a shared query API across 23 addons.
 
 ## Affects
 
-- [Icons.GetCareerIconIDFromCareerLine](global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
+- [DefaultColor](../tables/table_DefaultColor.md) (HIGH 100/100) - Global Table
 
 ## Notes
 

@@ -2,37 +2,33 @@
 
 - Category: Constant
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 90/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
-
-- Raw weighted score: 123
+- Score: 90/100
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | MapPin, TidyRoll |
-| Files seen in | `/workspace_addons/MapPin/source/MapPin.xml:618`, `/workspace_addons/TidyRoll/CustomAutoRoll.xml:26` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:26` |
 | Namespaces detected | EA_Image_DefaultIconFrame |
 | Source kinds | xml_attributes |
-| Example locations | AutoRollRowTemplateIconFrame, MapPin_SetupIconFrame |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
+| Example locations | AutoRollRowTemplateIconFrame |
+| XML usage count | 1 |
+| XML attribute usage count | 1 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,17 +53,15 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Observed engine XML template or inherited constant referenced by 1 addons.
 
 ## Seen In
 
-- MapPin
 - TidyRoll
 
 ## Used By
 
 - AutoRollRowTemplateIconFrame
-- MapPin_SetupIconFrame
 
 ## Related APIs
 

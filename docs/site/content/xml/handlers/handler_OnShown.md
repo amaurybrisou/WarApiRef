@@ -10,34 +10,35 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 146
 
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, observed in both xml and lua paths.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, CM_ClosetGoblin, CMap, EA_UiDebugTools, EA_UiModWindow, Enemy |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1384`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1425`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1466`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1506`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:95`, `/workspace_addons/Aura/Source/AuraTexture.xml:100`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:1226`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:262` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.xml:14`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:15`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:51`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:100`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:287`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:308` |
 | Namespaces detected | OnShown |
-| Source kinds | bindings, xml_handlers |
-| Example locations | AdvancedPetAssist: APAFollowTargetHUD.OnShown, AdvancedPetAssist: APAInstantOnlyHUD.OnShown, AdvancedPetAssist: APAKitingHUD.OnShown, AdvancedPetAssist: APAOptions.OnShown, AdvancedPetAssist: APAPetTargetHUD.OnShown, AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow.OnShown |
-| XML usage count | 66 |
-| XML attribute usage count | 66 |
-| Lua usage count | 66 |
+| Source kinds | bindings, examples, xml_handlers |
+| Example locations | TidyChat: TidyChatCopy.OnShown, TidyChat: TidyChatLootRoll.OnShown, TidyChat: TidyChatOptions.OnShown, TidyRoll: TRollAutoRoll.OnShown, TidyRoll: TidyRollEsc.OnShown, TidyRoll: TidyRollOptions.OnShown |
+| XML usage count | 6 |
+| XML attribute usage count | 6 |
+| Lua usage count | 6 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 2 |
 | Initialization flow references | 0 |
 | Known engine namespace | no |
 | Default UI presence | no |
@@ -58,7 +59,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 23 addons through frame event handlers.
+Observed as an XML handler hook bound by 2 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -68,57 +69,28 @@ function()
 
 ## Element Types
 
-- EditBox
-- MapDisplay
 - Window
 
 ## Seen In
 
-- AdvancedPetAssist
-- AdvancedRenownTrainer
-- Aura
-- CM_ClosetGoblin
-- CMap
-- EA_UiDebugTools
-- EA_UiModWindow
-- Enemy
-- LoyalPet
-- MapMonster
-- MapPin
-- Pocket Palette
-- PotionBar
-- RandomMount
-- RoR_SoR
-- Shinies
 - TidyChat
 - TidyRoll
-- WSCT
-- WarBoard
-- WhoHealedMe
-- bigger_MacroWindow
-- wbLeadHelper
 
 ## Examples
 
-- AdvancedPetAssist: APAFollowTargetHUD -> APAFollowTargetHUD.OnShown -> APAGui.OnFollowTargetHUDShown
-- AdvancedPetAssist: APAInstantOnlyHUD -> APAInstantOnlyHUD.OnShown -> APAGui.OnInstantOnlyHUDShown
-- AdvancedPetAssist: APAKitingHUD -> APAKitingHUD.OnShown -> APAGui.OnKitingHUDShown
-- AdvancedPetAssist: APAOptions -> APAOptions.OnShown -> APAGui.OnShown
-- AdvancedPetAssist: APAPetTargetHUD -> APAPetTargetHUD.OnShown -> APAGui.OnPetTargetHUDShown
-- AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow -> AdvancedRenownTrainingExportWindow.OnShown -> AdvancedRenownTraining.OnExportShown
+- TidyChat: TidyChatCopy -> TidyChatCopy.OnShown -> TidyChat.Copy.OnShown
+- TidyChat: TidyChatLootRoll -> TidyChatLootRoll.OnShown -> TidyChat.LootRoll.OnShown
+- TidyChat: TidyChatOptions -> TidyChatOptions.OnShown -> TidyChat.Options.OnShown
+- TidyRoll: TRollAutoRoll -> TRollAutoRoll.OnShown -> TidyRoll.CustomAutoRoll.OnShown
+- TidyRoll: TidyRollEsc -> TidyRollEsc.OnShown -> WindowUtils.OnShown
+- TidyRoll: TidyRollOptions -> TidyRollOptions.OnShown -> TidyRollOptions.OnShown
 
 ## Related APIs
 
-- [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxSetDisabledFlag](../../window_api/functions/window_ComboBoxSetDisabledFlag.md) (HIGH 100/100) - Window Function
-- [DebugWindow.OnShowFocus](../../globals/functions/global_DebugWindow.OnShowFocus.md) (HIGH 100/100) - Global Function
-- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- none
 
 ## Used With
 
-- [DebugWindow.OnShowFocus](../../globals/functions/global_DebugWindow.OnShowFocus.md) (HIGH 100/100) - Global Function
-- [EditBox](../element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
 - [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 

@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 186
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -30,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibWBToggler, PlanB |
-| Files seen in | `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:73`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace_addons/PlanB/PlanB.lua:35`, `/workspace_addons/TexturedButtons/TexturedButtons.lua:492`, `/workspace_addons/TidyChat/TidyChat.lua:144` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, Aura: AuraAddon.OnInitialize, BagOMatic: BagOMatic.init, BuffHead: BuffHead.Initialize, CM_ClosetGoblin: ClosetGoblin.OnInitialize, Effigy: Effigy.Initialize |
+| Example locations | TidyChat: TidyChat.Initialize, TidyRoll: TidyRoll.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 13 |
+| Initialization flow references | 2 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 15 addons.
+Observed as a shared SystemData runtime event used by 2 addons.
 
 ## Handler Pattern
 
@@ -73,62 +73,36 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Seen In
 
-- AdvancedRenownTrainer
-- Aura
-- BagOMatic
-- BuffHead
-- CM_ClosetGoblin
-- Effigy
-- LibWBToggler
-- PlanB
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WarBoard
-- WhoHealedMe
-- wbLeadHelper
 
 ## Registrars And Handlers
 
-- AdvancedRenownTraining.OnReload
-- AuraAddon.OnLoad
-- BagOMatic.restore_filters
-- BuffHead.OnLoadingEnd
-- ClosetGoblin.Initialize
-- Effigy.Name..".OnLoad"
-- LibWBTogglerManager.CheckMods
-- PlanB.HandleLoading
 - RegisterEventHandler
-- TexturedButtons.OnLoadComplete
 - TidyChat.OnLoad
 - TidyRoll.OnLoad
-- TurretRange.OnLoadComplete
-- WHMEvents.OnLoadingEnd
-- WarBoard.SortMods
 - global
-- wbLeadHelper._ApplyMiscWhitelistGate
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -> SystemData.Events.RELOAD_INTERFACE -> AdvancedRenownTraining.OnReload
-- Aura: AuraAddon.OnInitialize -> SystemData.Events.RELOAD_INTERFACE -> AuraAddon.OnLoad
-- BagOMatic: BagOMatic.init -> SystemData.Events.RELOAD_INTERFACE -> BagOMatic.restore_filters
-- BuffHead: BuffHead.Initialize -> SystemData.Events.RELOAD_INTERFACE -> BuffHead.OnLoadingEnd
-- CM_ClosetGoblin: ClosetGoblin.OnInitialize -> SystemData.Events.RELOAD_INTERFACE -> ClosetGoblin.Initialize
-- Effigy: Effigy.Initialize -> SystemData.Events.RELOAD_INTERFACE -> Effigy.Name..".OnLoad"
+- TidyChat: TidyChat.Initialize -> SystemData.Events.RELOAD_INTERFACE -> TidyChat.OnLoad
+- TidyRoll: TidyRoll.Initialize -> SystemData.Events.RELOAD_INTERFACE -> TidyRoll.OnLoad
+- TidyChat: TidyChat.OnLoad -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, TidyChat.OnLoad)
+- TidyRoll: TidyRoll.OnLoad -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, TidyRoll.OnLoad)
 
 ## Related APIs
 
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
-- [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
-- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
-- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 90/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
 
 ## Used With
 
+- [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.LOADING_END](game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
+- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 90/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
 
 ## Triggered By
 

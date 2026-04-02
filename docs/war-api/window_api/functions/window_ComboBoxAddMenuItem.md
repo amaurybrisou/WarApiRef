@@ -2,41 +2,37 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 19 addons
+- Confidence score: 90/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 90/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BankArkel, BuffHead, Busted, Crafting Info Tooltip, DAoCBuff, EA_UiDebugTools, Effigy |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1068`, `/workspace_addons/BankArkel/BankArkel.lua:513`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:70`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItem.lua:342`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283`, `/workspace_addons/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:431`, `/workspace_addons/BuffHead/Setup/SetupContainer.lua:187` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
 | Namespaces detected | ComboBoxAddMenuItem |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Combobox:Add, BankArkel: BankArkel.SetupCombos, BuffHead: BuffHead.Setup.AdvancedCompressionItemEffect.Initialize, BuffHead: BuffHead.Setup.AdvancedContainersItem.Initialize, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Initialize, BuffHead: BuffHead.Setup.Container.Initialize |
+| Example locations | TidyRoll: TidyRollOptions.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 319 |
-| Global usage count | 319 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,7 +40,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -65,14 +61,14 @@ ComboBoxAddMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 19 addons.
+Observed as a window function across 1 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", "BustedGUIAddonSelect", "EnemyChooseChannelDialogChannelList" |
-| arg2 | Observed as a function or method reference. | Observed values: BankArkel.db.Entry[i].Name, CraftValueTip.GetPhrase("config","langdefault"), L "---" |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: c_TROLL_DIRECTION_COMBO |
+| arg2 | Observed as a text or wstring payload. | Observed values: L "down", L "left", L "right" |
 
 ## Returns
 
@@ -84,34 +80,14 @@ Observed as a window function across 19 addons.
 
 ## Seen In
 
-- Ace
-- BankArkel
-- BuffHead
-- Busted
-- Crafting Info Tooltip
-- DAoCBuff
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- GCDsaver
-- Killer
-- LibWBToggler
-- Miracle Grow Remix
-- PotionBar
-- Shinies
-- TexturedButtons
 - TidyRoll
-- TurretRange
-- WoH-Reticle
 
 ## Examples
 
-- Ace: LIBGUI_Combobox:Add -> ComboBoxAddMenuItem(self.name, itemText)
-- BankArkel: BankArkel.SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", StringToWString(tbNone))
-- BankArkel: BankArkel.SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", StringToWString(tbSelf))
-- BankArkel: BankArkel.SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", BankArkel.db.Entry[i].Name)
-- BuffHead: BuffHead.Setup.AdvancedCompressionItemEffect.Initialize -> ComboBoxAddMenuItem(windowName.."CastByComboBox", localization["Setup.AdvancedCompressionItemEffect.CastBy.Self"])
-- BuffHead: BuffHead.Setup.AdvancedCompressionItemEffect.Initialize -> ComboBoxAddMenuItem(windowName.."CastByComboBox", localization["Setup.AdvancedCompressionItemEffect.CastBy.Others"])
+- TidyRoll: TidyRollOptions.Initialize -> ComboBoxAddMenuItem(c_TROLL_DIRECTION_COMBO, L "down")
+- TidyRoll: TidyRollOptions.Initialize -> ComboBoxAddMenuItem(c_TROLL_DIRECTION_COMBO, L "up")
+- TidyRoll: TidyRollOptions.Initialize -> ComboBoxAddMenuItem(c_TROLL_DIRECTION_COMBO, L "left")
+- TidyRoll: TidyRollOptions.Initialize -> ComboBoxAddMenuItem(c_TROLL_DIRECTION_COMBO, L "right")
 
 ## Related APIs
 
@@ -119,12 +95,11 @@ Observed as a window function across 19 addons.
 
 ## Used With
 
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
-- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 90/100) - Window Function
 
 ## Triggered By
 
@@ -136,4 +111,4 @@ Observed as a window function across 19 addons.
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

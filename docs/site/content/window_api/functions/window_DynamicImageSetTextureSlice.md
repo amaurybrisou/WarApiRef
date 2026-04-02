@@ -2,41 +2,36 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 15 addons
+- Confidence score: 80/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 80/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, Effigy, GCDsaver, LibWBToggler, MapMonster, MapPin, Miracle Grow Remix |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:1284`, `/workspace_addons/Aura/Source/AuraHelpers.lua:33`, `/workspace_addons/Effigy/LibGUI.lua:1281`, `/workspace_addons/Effigy/Textures/TextureManager.lua:125`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:1281`, `/workspace_addons/LibWarBoardToggler/LibWBToggler.lua:16`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:1281`, `/workspace_addons/MGRemix/MGRemix.lua:797` |
+| Addons seen in | Moth |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:421` |
 | Namespaces detected | DynamicImageSetTextureSlice |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Image:TexSlice, Aura: AuraHelpers.SetDynamicImageTexture, Effigy: Effigy.TextureManager.SetTexture, Effigy: LIBGUI_Image:TexSlice, GCDsaver: LIBGUI_Image:TexSlice, LibWBToggler: LIBGUI_Image:TexSlice |
+| Example locations | Moth: Moth.UpdateNPCIcon |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 57 |
-| Global usage count | 57 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,8 +39,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent role | no |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -71,8 +66,8 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "MapPinTooltipsIcon", "SoR_"..Window_Name.."BG", "SoR_"..Window_Name.."CITY_RANK" |
-| arg2 | Observed as a text or wstring payload. | Observed values: "Black-Slot", "Dirt", "Dirt-Slot" |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: iconWindow |
+| arg2 | Observed as a function or method reference. | Observed values: filterData.slice |
 
 ## Returns
 
@@ -84,30 +79,11 @@ Observed mutating runtime image resources on existing controls.
 
 ## Seen In
 
-- Ace
-- Aura
-- Effigy
-- GCDsaver
-- LibWBToggler
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- MiracleGrow
-- MiracleGrowLight
 - Moth
-- RoR_SoR
-- Shinies
-- TexturedButtons
-- WoH-Reticle
 
 ## Examples
 
-- Ace: LIBGUI_Image:TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
-- Aura: AuraHelpers.SetDynamicImageTexture -> DynamicImageSetTextureSlice(window, slice)
-- Effigy: Effigy.TextureManager.SetTexture -> DynamicImageSetTextureSlice(win_name, Addon.texture_list[t].slice)
-- Effigy: LIBGUI_Image:TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
-- GCDsaver: LIBGUI_Image:TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
-- LibWBToggler: LIBGUI_Image:TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
+- Moth: Moth.UpdateNPCIcon -> DynamicImageSetTextureSlice(iconWindow, filterData.slice)
 
 ## Related APIs
 
@@ -115,10 +91,11 @@ Observed mutating runtime image resources on existing controls.
 
 ## Used With
 
-- [DynamicImageSetRotation](window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureOrientation](window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
-- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 90/100) - Window Function
+- [DynamicImageSetTextureScale](window_DynamicImageSetTextureScale.md) (HIGH 80/100) - Window Function
 
 ## Triggered By
 
@@ -130,4 +107,4 @@ Observed mutating runtime image resources on existing controls.
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

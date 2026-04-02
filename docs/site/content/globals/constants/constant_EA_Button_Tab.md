@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, LoyalPet, RVMOD_Manager, RandomMount, TidyChat |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:131`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:145`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:159`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:173`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:187`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:201`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:215`, `/workspace_addons/AggroMeter/AggroMeter.xml:104` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChatTemplates.xml:20`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:24` |
 | Namespaces detected | EA_Button_Tab |
 | Source kinds | xml_attributes |
-| Example locations | APAOptionsTabsAutoRecall, APAOptionsTabsControls, APAOptionsTabsFollowTarget, APAOptionsTabsGeneral, APAOptionsTabsHUD, APAOptionsTabsKiting |
-| XML usage count | 27 |
-| XML attribute usage count | 27 |
+| Example locations | TChatTabButton, TRollTabButton |
+| XML usage count | 2 |
+| XML attribute usage count | 2 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,52 +57,17 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 12 addons.
+Observed engine XML template or inherited constant referenced by 2 addons.
 
 ## Seen In
 
-- AdvancedPetAssist
-- AdvancedRenownTrainer
-- AggroMeter
-- Aura
-- LoyalPet
-- RVMOD_Manager
-- RandomMount
 - TidyChat
 - TidyRoll
-- WSCT
-- WarBoard
-- wbLeadHelper
 
 ## Used By
 
-- APAOptionsTabsAutoRecall
-- APAOptionsTabsControls
-- APAOptionsTabsFollowTarget
-- APAOptionsTabsGeneral
-- APAOptionsTabsHUD
-- APAOptionsTabsKiting
-- APAOptionsTabsLos
-- AdvancedRenownTrainingWindowTabsActiveTab
-- AdvancedRenownTrainingWindowTabsAdvancedTab
-- AdvancedRenownTrainingWindowTabsBasicTab
-- AdvancedRenownTrainingWindowTabsDefTab
-- AggroMeterGrayWindowBlackTab
-- AggroMeterGrayWindowListTab
-- AggroMeterGrayWindowWhiteTab
-- AuraTabButtonTemplate
-- LPETTabButton
-- RVMOD_ManagerWindowTabGeneral
-- RVMOD_ManagerWindowTabSettings
-- RandomMountWindowTabBlacklist
-- RandomMountWindowTabMounts
-- RandomMountWindowTabSettings
 - TChatTabButton
 - TRollTabButton
-- TabButtonTemplate
-- WSCTTabButton
-- wbLeadHelperConfigWindowTabsConfig
-- wbLeadHelperConfigWindowTabsMessages
 
 ## Related APIs
 

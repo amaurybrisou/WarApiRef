@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 17 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, BankArkel, Crafting Info Tooltip, Effigy, Enemy, GCDsaver, Killer |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:262`, `/workspace_addons/BankArkel/BankArkel.lua:172`, `/workspace_addons/CraftValueTip/CraftValueTip.lua:334`, `/workspace_addons/Effigy/LibGUI.lua:262`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:561`, `/workspace_addons/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:702`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:262`, `/workspace_addons/Killer/KillerUiCache.lua:102` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:980`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
 | Namespaces detected | WindowSetId |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:SetId, AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow, AdvancedRenownTrainer: CreateAbilityWindow, BankArkel: BankArkel.CreatePackWin, Crafting Info Tooltip: CraftValueTip.ItemWindow, Effigy: LIBGUI_ELEMENT:SetId |
+| Example locations | TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons, TidyRoll: TidyRollOptions.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 40 |
-| Global usage count | 40 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "EnemyScenarioInfoDialog"..data.windowName.."NameLabel", "EnemyScenarioInfoDialogScoreDestrLabel", "EnemyScenarioInfoDialogScoreOrderLabel" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 1, 2, ChatSettings.Channels[SystemData.ChatLogFilters.ADVICE].id |
+| windowName | Observed as a target window name. | Observed values: c_CHANNEL_MENU.."AdviceButton", c_CHANNEL_MENU.."AllianceButton", c_CHANNEL_MENU.."ScenarioButton" |
+| arg2 | Observed as a numeric value. | Observed values: 1, 2, ChatSettings.Channels[SystemData.ChatLogFilters.ADVICE].id |
 
 ## Returns
 
@@ -84,32 +84,17 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- Ace
-- AdvancedRenownTrainer
-- BankArkel
-- Crafting Info Tooltip
-- Effigy
-- Enemy
-- GCDsaver
-- Killer
-- LibWBToggler
-- MapMonster
-- Miracle Grow Remix
-- RoR_SoR
-- Shinies
 - TidyChat
 - TidyRoll
-- WoH-Reticle
-- nRarity
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:SetId -> WindowSetId(self.name, id)
-- AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow -> WindowSetId(t.windowName, t.id)
-- AdvancedRenownTrainer: CreateAbilityWindow -> WindowSetId(t.windowName, t.id)
-- BankArkel: BankArkel.CreatePackWin -> WindowSetId("PackIcon"..i, i)
-- Crafting Info Tooltip: CraftValueTip.ItemWindow -> WindowSetId(windowName, itemId)
-- Effigy: LIBGUI_ELEMENT:SetId -> WindowSetId(self.name, id)
+- TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons -> WindowSetId(c_CHANNEL_MENU.."AllianceButton", ChatSettings.Channels[SystemData.ChatLogFilters.ALLIANCE].id)
+- TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons -> WindowSetId(c_CHANNEL_MENU.."AdviceButton", ChatSettings.Channels[SystemData.ChatLogFilters.ADVICE].id)
+- TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons -> WindowSetId(c_CHANNEL_MENU.."ScenarioButton", ChatSettings.Channels[SystemData.ChatLogFilters.SCENARIO].id)
+- TidyRoll: TidyRollOptions.Initialize -> WindowSetId(tabButton, c_TROLL_GENERAL_TAB)
+- TidyRoll: TidyRollOptions.Initialize -> WindowSetId(tabButton, c_TROLL_CONTROLS_TAB)
+- TidyRoll: TidyRollOptions.Initialize -> WindowSetId(tabButton, c_TROLL_MISC_TAB)
 
 ## Related APIs
 
@@ -117,10 +102,7 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
-- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
+- none
 
 ## Triggered By
 
@@ -128,6 +110,9 @@ Observed mutating runtime window state or presentation.
 
 ## Affects
 
+- [SystemData.ChatLogFilters.ADVICE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ADVICE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.ALLIANCE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ALLIANCE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SCENARIO](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SCENARIO.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

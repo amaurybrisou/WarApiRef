@@ -2,41 +2,36 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 10 addons
+- Confidence score: 80/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 80/100
 
-- Raw weighted score: 135
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, Effigy, Killer, Miracle Grow Remix, QuickWarReport, RVMOD_Manager, TexturedButtons, TidyRoll |
-| Files seen in | `/workspace_addons/DAoCBuff/Source/DAoCBuffFrames.lua:653`, `/workspace_addons/DAoCBuff/Source/DAoCBuffHeadFrames.lua:212`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:135`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:640`, `/workspace_addons/Killer/KillerLifecycle.lua:100`, `/workspace_addons/MGRemix/config.lua:87`, `/workspace_addons/MGRemix/preset.lua:298`, `/workspace_addons/QuickWarReport/QWRLifecycle.lua:90` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.lua:249` |
 | Namespaces detected | LayoutEditor |
 | Source kinds | lua_calls |
-| Example locations | DAoCBuff: DAoCBuffHeadTracker:Shutdown, DAoCBuff: DAoCBuffTracker:Shutdown, Effigy: EffigyBar:destroy, Effigy: EffigyBar:setup, Killer: Killer.Shutdown, Miracle Grow Remix: MiracleGrow2.ConfigCallback |
+| Example locations | TidyRoll: TidyRoll.Shutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,8 +39,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent role | no |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -65,13 +60,13 @@ LayoutEditor.UnregisterWindow(arg1)
 
 ## Description
 
-Observed as a window function across 10 addons.
+Observed as a window function across 1 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "KillerPersonalCounter", "KillerWindow", "QuickWarReportBar" |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: c_TIDY_ROLL_ANCHOR |
 
 ## Returns
 
@@ -83,25 +78,11 @@ Observed as a window function across 10 addons.
 
 ## Seen In
 
-- DAoCBuff
-- Effigy
-- Killer
-- Miracle Grow Remix
-- QuickWarReport
-- RVMOD_Manager
-- TexturedButtons
 - TidyRoll
-- TurretRange
-- WhoHealedMe
 
 ## Examples
 
-- DAoCBuff: DAoCBuffHeadTracker:Shutdown -> LayoutEditor.UnregisterWindow(self.m_windowName)
-- DAoCBuff: DAoCBuffTracker:Shutdown -> LayoutEditor.UnregisterWindow(self.m_windowName)
-- Effigy: EffigyBar:destroy -> LayoutEditor.UnregisterWindow(self.name)
-- Effigy: EffigyBar:setup -> LayoutEditor.UnregisterWindow(self.name)
-- Killer: Killer.Shutdown -> LayoutEditor.UnregisterWindow("KillerWindow")
-- Killer: Killer.Shutdown -> LayoutEditor.UnregisterWindow("KillerPersonalCounter")
+- TidyRoll: TidyRoll.Shutdown -> LayoutEditor.UnregisterWindow(c_TIDY_ROLL_ANCHOR)
 
 ## Related APIs
 
@@ -117,13 +98,11 @@ Observed as a window function across 10 addons.
 
 ## Affects
 
-- [SystemData.Events.CAMPAIGN_ZONE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.CAMPAIGN_ZONE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_RENOWN_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_ZONE_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

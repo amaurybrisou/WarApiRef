@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, CM_ClosetGoblin, CMap, Cheeseboard, EA_UiModWindow, Enemy, Killer |
-| Files seen in | `/workspace_addons/Aura/Source/Templates.xml:362`, `/workspace_addons/Aura/Source/Templates.xml:393`, `/workspace_addons/Cheeseboard/Cheeseboard.xml:204`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:372`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:508`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:535`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:562`, `/workspace_addons/ClosetGoblin/ClosetGoblin.xml:589` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChatTemplates.xml:35`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:52` |
 | Namespaces detected | EA_Button_DefaultCheckBox |
 | Source kinds | xml_attributes |
-| Example locations | AdvancedRenownTrainingPresetsWindowSaveSelectedCheckBox, Aura_LabelCheckButtonButton, Aura_LargeLabelCheckButtonButton, CheeseboardWindowDefaultCheck, ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1, ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2 |
-| XML usage count | 66 |
-| XML attribute usage count | 66 |
+| Example locations | TChatCheckboxTemplateButton, TRollCheckboxTemplateButton |
+| XML usage count | 2 |
+| XML attribute usage count | 2 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,96 +57,17 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 17 addons.
+Observed engine XML template or inherited constant referenced by 2 addons.
 
 ## Seen In
 
-- AdvancedRenownTrainer
-- Aura
-- CM_ClosetGoblin
-- CMap
-- Cheeseboard
-- EA_UiModWindow
-- Enemy
-- Killer
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- Pocket Palette
-- PotionBar
-- Shinies
 - TidyChat
 - TidyRoll
-- wbLeadHelper
 
 ## Used By
 
-- AdvancedRenownTrainingPresetsWindowSaveSelectedCheckBox
-- Aura_LabelCheckButtonButton
-- Aura_LargeLabelCheckButtonButton
-- CheeseboardWindowDefaultCheck
-- ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1
-- ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2
-- ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB3
-- ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB4
-- ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB5
-- ClosetGoblinCharacterWindowContentsCheckboxUseItemRack
-- ClosetGoblinCharacterWindowContentsEquipmentShowCloak
-- ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry
-- ClosetGoblinCharacterWindowContentsEquipmentShowHelm
-- Cmap_MapPinFilterEntryButton1
-- Cmap_MapPinFilterEntryButton2
-- Cmap_MapPinGutterEntryButton1
-- Cmap_MapPinGutterEntryButton2
-- EA_Button_UiModuleListRowTemplateEnabled
-- EnemyAssistConfigurationMarkNewTarget
-- EnemyAssistConfigurationNewTargetSound
-- EnemyAssistConfigurationTargetOnNotifyClick
-- EnemyClickCastingDialogContentScrollChildArchetype1
-- EnemyClickCastingDialogContentScrollChildArchetype2
-- EnemyClickCastingDialogContentScrollChildArchetype3
-- EnemyClickCastingDialogContentScrollChildExceptMe
-- EnemyClickCastingDialogContentScrollChildKeyModifier1
-- EnemyClickCastingDialogContentScrollChildKeyModifier2
-- EnemyClickCastingDialogContentScrollChildKeyModifier3
-- EnemyConfigurationWindow_PropertyBoolTemplateValue
-- EnemyEffectsIndicatorDialogContentScrollChildArchetype1
-- EnemyEffectsIndicatorDialogContentScrollChildArchetype2
-- EnemyEffectsIndicatorDialogContentScrollChildArchetype3
-- EnemyEffectsIndicatorDialogContentScrollChildCircleIcon
-- EnemyEffectsIndicatorDialogContentScrollChildExceptMe
-- EnemyEffectsIndicatorDialogContentScrollChildLScaleCheckBox
-- EnemyScenarioAlerterConfigurationEnabled
-- EnemyUnitFramePartDialogContentScrollChildArchetype1
-- EnemyUnitFramePartDialogContentScrollChildArchetype2
-- EnemyUnitFramePartDialogContentScrollChildArchetype3
-- EnemyUnitFramePartDialogContentScrollChildExceptMe
-- EnemyUnitFramesConfigurationContentScrollChildEnabled
-- EnemyUnitFramesConfigurationContentScrollChildSortingEnabled
-- KillerSettingsWindowContentPersonalEnabled
-- MapFilterContextMenuChoiceCheckBox
-- MapMonster_EditorWindowIsLockedCheckBox
-- MapMonster_EditorWindowIsPrivateCheckBox
-- MapMonster_PinTypeEditorWindowIsLockedCheckBox
-- MapMonster_PinTypeEditorWindowIsPrivateCheckBox
-- MapPin_SetupBGBox
-- MiracleGrow2LayoutSettingsTemplateStage0
-- MiracleGrow2LayoutSettingsTemplateStage1
-- MiracleGrow2LayoutSettingsTemplateStage2
-- MiracleGrow2LayoutSettingsTemplateStage3
-- MiracleGrow2LayoutSettingsTemplateStage4
-- PPMainSaveSettingsButton
-- PotionBarTypeTemplateAutohideCheck
-- PotionBarTypeTemplateCheck
-- PotionBarTypeTemplateDontSplitNameCheck
-- PotionBarTypeTemplateShow1Check
-- PotionBarTypeTemplateShowLastCheck
-- ShiniesConfigPrice_CheckBox
-- ShiniesConfigPrice_PriorityRowEnable
-- Shinies_CheckButtonWithLabelButton
 - TChatCheckboxTemplateButton
 - TRollCheckboxTemplateButton
-- wbLeadHelperConfigTabLfgIconsCheckBox
 
 ## Related APIs
 

@@ -1,37 +1,34 @@
 # AnimatedImage
 
 - Category: XML Element Type
-- Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence level: MEDIUM
+- Confidence score: 45/100
 
 ## Confidence Assessment
 
-- Level: HIGH
+- Level: MEDIUM
 
-- Final score: 100/100
+- Score: 45/100
 
-- Raw weighted score: 110
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CMap, Enemy, GuardLine, GuardList, GuardRange, MapMonster, MapPin, MoraleCircle |
-| Files seen in | `/workspace_addons/Enemy/Code/Assist/Assist.xml:57`, `/workspace_addons/Enemy/Code/Assist/Assist.xml:67`, `/workspace_addons/Enemy/Code/Assist/Assist.xml:77`, `/workspace_addons/GuardLine/GuardLine.xml:131`, `/workspace_addons/GuardLine/GuardLine.xml:223`, `/workspace_addons/GuardList/GuardList.xml:55`, `/workspace_addons/GuardRange/GuardRange.xml:55`, `/workspace_addons/MapMonster/Source/MapMonster_Templates.xml:27` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.xml:137`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:156` |
 | Namespaces detected | AnimatedImage |
 | Source kinds | xml_frames |
-| Example locations | CMap: CMapWindowMapRallyCallGlowAnim, CMap: CMapWindowMapScenarioQueueGlowAnim, Enemy: EnemyTargetFlash, Enemy: EnemyTargetGlow, Enemy: EnemyTargetSpark, GuardLine: GuardLineSelfWindowGlow |
-| XML usage count | 19 |
-| XML attribute usage count | 19 |
+| Example locations | TidyRoll: TRollOverlayFlash, TidyRoll: TRollOverlayGlow |
+| XML usage count | 2 |
+| XML attribute usage count | 2 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -41,11 +38,11 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
-| Weak usage only | no |
+| Weak usage only | yes |
 | Project-specific name | no |
 | Placeholder or computed name | no |
 | Conflicting signatures | no |
@@ -56,122 +53,56 @@
 
 ## Description
 
-Observed XML element type instantiated by 10 addons.
+Observed XML element type instantiated by 1 addons.
 
 ## Common Attributes
 
-- name
-- layer
-- handleinput
-- texture
 - fps
-- inherits
-- textureScale
-- alpha
+- handleinput
+- layer
+- name
 - sticky
-- popable
-- savesettings
+- texture
+- textureScale
 - texturescale
 
 ## Common Inherits
 
-- EA_MoraleButtonAnimation
-- LoadingScreenWarSymbolAnimation
+- none
 
 ## Common Parent Elements
 
-- [Window](element_Window.md) — 12× (HIGH)
-- [Button](element_Button.md) — 2× (MEDIUM)
+- [Window](element_Window.md)
 
 ## Common Structural Child Elements
 
-- [AnimFrame](element_AnimFrame.md) — 5× (MEDIUM)
-- [AnimFrames](element_AnimFrames.md) — 5× (MEDIUM)
-
-## Common Template Bases
-
-- EA_MoraleButtonAnimation
-- LoadingScreenWarSymbolAnimation
-
-
-> **Note**: This element type commonly acts as a template base.
-
-## Typical XML Structure
-
-```xml
-<AnimatedImage name="..." texture="MM_AniArrows_Tintable" fps="8" sticky="false" handleinput="false" alpha="1" popable="true" savesettings="false">
-  <AnimFrames>
-    <AnimFrame id="1" x="0" y="0"/>
-    <AnimFrame id="2" x="64" y="0"/>
-    <AnimFrame id="3" x="128" y="0"/>
-    <AnimFrame id="4" x="192" y="0"/>
-    <AnimFrame id="5" x="256" y="0"/>
-    <AnimFrame id="6" x="0" y="64"/>
-    <AnimFrame id="7" x="64" y="64"/>
-    <AnimFrame id="8" x="128" y="64"/>
-    <AnimFrame id="9" x="192" y="64"/>
-    <AnimFrame id="10" x="256" y="64"/>
-  </AnimFrames>
-</AnimatedImage>
-```
+- [AnimFrames](element_AnimFrames.md) — 2× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `layer` | optional | 54% | secondary, overlay, default, background |
-| `handleinput` | optional | 48% | false |
-| `texture` | optional | 48% | anim_morale_glow, MM_AniArrows_Tintable, anim_morale_flash, recharge_flash_anim, ... |
-| `fps` | optional | 45% | 13, 8, 20, 10, ... |
-| `inherits` | optional | 42% | EA_MoraleButtonAnimation, LoadingScreenWarSymbolAnimation |
-| `textureScale` | optional | 42% | 0.74, 0.6, 1.2, 0.43, ... |
-| `alpha` | optional | 24% | 1, 0.9 |
-| `sticky` | optional | 15% | false |
-| `popable` | optional | 3% | true |
-| `savesettings` | optional | 3% | false |
-| `texturescale` | optional | 3% | 1 |
+| `fps` | **required** | 100% | 10 |
+| `handleinput` | **required** | 100% | false |
+| `layer` | **required** | 100% | overlay |
+| `sticky` | **required** | 100% | false |
+| `texture` | **required** | 100% | EA_ActionBarAnim_Casting, recharge_flash_anim |
+| `textureScale` | optional | 50% | 0.9444 |
+| `texturescale` | optional | 50% | 1 |
 ## Structural Sub-Elements
 
-### [AnimFrame](element_AnimFrame.md)
-
-Observed 5 times as an unnamed child.
-
-| Attribute | Required | Sample Values |
-| --- | --- | --- |
-| `id` | **required** |  |
-| `x` | **required** |  |
-| `y` | **required** |  |
 ### [AnimFrames](element_AnimFrames.md)
 
-Observed 5 times as an unnamed child.
-
-## Lua Functions Manipulating This Type
-
-- Enemy.Enemy.AssistUI_Target_Show
-- MapMonster.MapMonster.InitializeMapPins
-- GuardLine.GuardLine.update
+Observed 2 times as an unnamed child.
 
 ## Seen In
 
-- CMap
-- Enemy
-- GuardLine
-- GuardList
-- GuardRange
-- MapMonster
-- MapPin
-- MoraleCircle
-- Shinies
 - TidyRoll
 
 ## Examples
 
-- CMap: CMapWindowMapRallyCallGlowAnim -> AnimatedImage CMapWindowMapRallyCallGlowAnim
-- CMap: CMapWindowMapScenarioQueueGlowAnim -> AnimatedImage CMapWindowMapScenarioQueueGlowAnim
-- Enemy: EnemyTargetFlash -> AnimatedImage EnemyTargetFlash
-- Enemy: EnemyTargetGlow -> AnimatedImage EnemyTargetGlow
-- Enemy: EnemyTargetSpark -> AnimatedImage EnemyTargetSpark
-- GuardLine: GuardLineSelfWindowGlow -> AnimatedImage GuardLineSelfWindowGlow
+- TidyRoll: TRollOverlayFlash -> AnimatedImage TRollOverlayFlash
+- TidyRoll: TRollOverlayGlow -> AnimatedImage TRollOverlayGlow
 
 ## Related APIs
 

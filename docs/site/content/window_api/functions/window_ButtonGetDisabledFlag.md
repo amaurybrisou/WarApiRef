@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 18 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, Effigy, Enemy, GCDsaver |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:558`, `/workspace_addons/Ace/LibGUI.lua:783`, `/workspace_addons/Ace/LibGUI.lua:849`, `/workspace_addons/Aura/Source/AuraTexture.lua:147`, `/workspace_addons/BuffHead/Setup/SetupTrackers.lua:239`, `/workspace_addons/BuffHead/Setup/SetupTrackers.lua:253`, `/workspace_addons/BuffHead/Setup/SetupTrackers.lua:267`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:1350` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:2031`, `/workspace/data/raw/TidyChat/TidyChat.lua:2275`, `/workspace/data/raw/TidyChat/TidyChat.lua:2287`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:387`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:828` |
 | Namespaces detected | ButtonGetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Button:Enabled, Ace: LIBGUI_Checkbox:Enabled, Ace: LIBGUI_Optionbutton:Enabled, AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances, Aura: AuraTexture.OnIconLButtonUp, BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp |
+| Example locations | TidyChat: TidyChat.Copy.CopyNext, TidyChat: TidyChat.Copy.CopyPrev, TidyChat: TidyChat.Options.OnCheckboxLBU, TidyRoll: TidyRoll.CustomAutoRoll.OnDeleteButton, TidyRoll: TidyRollOptions.OnCheckboxLBU |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 76 |
-| Global usage count | 76 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ ButtonGetDisabledFlag(arg1)
 
 ## Description
 
-Observed as a window function across 18 addons.
+Observed as a window function across 2 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "EnemyConfigDialogResetAllButton", "EnemyConfigDialogResetButton", "EnemyEffectsIndicatorDialogContentScrollChildChooseIconButton" |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: buttonName, c_TIDY_CHAT_COPY.."Next", c_TIDY_CHAT_COPY.."Prev" |
 
 ## Returns
 
@@ -83,33 +83,16 @@ Observed as a window function across 18 addons.
 
 ## Seen In
 
-- Ace
-- AdvancedRenownTrainer
-- Aura
-- BuffHead
-- DAoCBuff
-- Effigy
-- Enemy
-- GCDsaver
-- JunkDump
-- LibWBToggler
-- PotionBar
-- RVMOD_Manager
-- Shinies
 - TidyChat
 - TidyRoll
-- WoH-Reticle
-- nRarity
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_Button:Enabled -> ButtonGetDisabledFlag(self.name)
-- Ace: LIBGUI_Checkbox:Enabled -> ButtonGetDisabledFlag(self.name)
-- Ace: LIBGUI_Optionbutton:Enabled -> ButtonGetDisabledFlag(self.name)
-- AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances -> ButtonGetDisabledFlag(WindowName.."PurchaseButton")
-- Aura: AuraTexture.OnIconLButtonUp -> ButtonGetDisabledFlag(SystemData.ActiveWindow.name)
-- BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -> ButtonGetDisabledFlag(windowName.."OnTargetChangeClearAlwaysShow".."Button")
+- TidyChat: TidyChat.Copy.CopyNext -> ButtonGetDisabledFlag(c_TIDY_CHAT_COPY.."Next")
+- TidyChat: TidyChat.Copy.CopyPrev -> ButtonGetDisabledFlag(c_TIDY_CHAT_COPY.."Prev")
+- TidyChat: TidyChat.Options.OnCheckboxLBU -> ButtonGetDisabledFlag(checkboxName)
+- TidyRoll: TidyRoll.CustomAutoRoll.OnDeleteButton -> ButtonGetDisabledFlag(buttonName)
+- TidyRoll: TidyRollOptions.OnCheckboxLBU -> ButtonGetDisabledFlag(checkboxName)
 
 ## Related APIs
 
@@ -118,8 +101,10 @@ Observed as a window function across 18 addons.
 ## Used With
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [WindowGetParent](window_WindowGetParent.md) (HIGH 100/100) - Window Function
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Triggered By
 
@@ -130,6 +115,7 @@ Observed as a window function across 18 addons.
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

@@ -2,39 +2,36 @@
 
 - Type: XML Handler
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 73/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 73/100
 
-- Raw weighted score: 138
-
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, observed in both xml and lua paths.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, BuffHead, Busted, CM_ClosetGoblin, CMap |
-| Files seen in | `/workspace_addons/AggroMeter/AggroMeter.xml:135`, `/workspace_addons/AggroMeter/AggroMeter.xml:8`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.xml:50`, `/workspace_addons/AnywhereTrainerAdditions/AnywhereTrainerAdditions.xml:6`, `/workspace_addons/Aura/Source/AuraSettings.xml:28`, `/workspace_addons/Aura/Source/AuraShares.xml:81`, `/workspace_addons/BuffHead/Setup/General.xml:34`, `/workspace_addons/BuffHead/Setup/SetupAdvancedCompression.xml:46` |
+| Addons seen in | TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.xml:201` |
 | Namespaces detected | OnRButtonUp |
 | Source kinds | bindings, xml_handlers |
-| Example locations | AggroMeter: AggroMeterGrayListBox.OnRButtonUp, AggroMeter: AggroMeter_Button.OnRButtonUp, AnywhereTrainer: AnywhereTrainerTabTemplate.OnRButtonUp, AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnRButtonUp, Aura: AuraSharesRow.OnRButtonUp, Aura: AuraWindowRow.OnRButtonUp |
-| XML usage count | 142 |
-| XML attribute usage count | 142 |
-| Lua usage count | 139 |
+| Example locations | TidyRoll: TidyRollFrame.OnRButtonUp |
+| XML usage count | 1 |
+| XML attribute usage count | 1 |
+| Lua usage count | 1 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -43,11 +40,11 @@
 | Default UI presence | no |
 | Event binding presence | yes |
 | Observed in XML and Lua | yes |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
-| Weak usage only | no |
+| Weak usage only | yes |
 | Project-specific name | no |
 | Placeholder or computed name | no |
 | Conflicting signatures | no |
@@ -58,7 +55,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 31 addons through frame event handlers.
+Observed as an XML handler hook bound by 1 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -68,74 +65,23 @@ function(...)
 
 ## Element Types
 
-- Button
-- DynamicImage
-- Label
-- ListBox
-- MapDisplay
 - Window
 
 ## Seen In
 
-- AggroMeter
-- AnywhereTrainer
-- AnywhereTrainerAdditions
-- Aura
-- BuffHead
-- Busted
-- CM_ClosetGoblin
-- CMap
-- DAoCBuff
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- JunkDump
-- Killer
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- MiracleGrowLight
-- MoraleCircle
-- Pocket Palette
-- PotionBar
-- RandomMount
-- RoR_SoR
-- Shinies
-- TexturedButtons
 - TidyRoll
-- Tortall_DPS
-- TurretRange
-- WarBoard
-- followTheLeader
-- wbLeadHelper
 
 ## Examples
 
-- AggroMeter: AggroMeterGrayListBox -> AggroMeterGrayListBox.OnRButtonUp -> AggroMeter.PickedListMenu
-- AggroMeter: AggroMeter_Button -> AggroMeter_Button.OnRButtonUp -> AggroMeter.OnTabRBU
-- AnywhereTrainer: AnywhereTrainerTabTemplate -> AnywhereTrainerTabTemplate.OnRButtonUp -> AnywhereTrainer.OnRButtonUp
-- AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate -> AnywhereTrainerAdditionsTabTemplate.OnRButtonUp -> AnywhereTrainerAdditions.OnRButtonUp
-- Aura: AuraSharesRow -> AuraSharesRow.OnRButtonUp -> AuraShares.OnRButtonUpAuraList
-- Aura: AuraWindowRow -> AuraWindowRow.OnRButtonUp -> AuraSettings.OnRButtonUpAuraList
+- TidyRoll: TidyRollFrame -> TidyRollFrame.OnRButtonUp -> FrameManager.OnRButtonUp
 
 ## Related APIs
 
-- [EA_ChatWindow.InsertText](../../globals/functions/global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.AddMenuDivider](../../globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.AddMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
-- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
-- [WindowStopAlphaAnimation](../../window_api/functions/window_WindowStopAlphaAnimation.md) (HIGH 100/100) - Window Function
-- [WindowGetMovable](../../window_api/functions/window_WindowGetMovable.md) (HIGH 90/100) - Window Function
+- none
 
 ## Used With
 
-- [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
-- [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- none
 
 ## Triggered By
 

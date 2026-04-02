@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 158
+- Raw weighted score: 146
 
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, observed in both xml and lua paths.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
@@ -28,14 +28,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BankArkel, BuffHead, Busted, Cheeseboard, DaemonAssist |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:1007`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1029`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1051`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1085`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1143`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1201`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1221`, `/workspace_addons/AdvancedPetAssist/APAGui.xml:1241` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChatTabWindows.xml:29`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:58` |
 | Namespaces detected | OnSelChanged |
 | Source kinds | bindings, examples, xml_handlers |
-| Example locations | AdvancedPetAssist: APAComboAttackBind.OnSelChanged, AdvancedPetAssist: APAComboAutoReattack.OnSelChanged, AdvancedPetAssist: APAComboAutoReattackDelay.OnSelChanged, AdvancedPetAssist: APAComboCastDelay.OnSelChanged, AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged, AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged |
-| XML usage count | 278 |
-| XML attribute usage count | 278 |
-| Lua usage count | 278 |
+| Example locations | TidyChat: TChatTabWindowsTemplateSelectWindowCombo.OnSelChanged, TidyRoll: AutoRollRowTemplateChoice.OnSelChanged |
+| XML usage count | 2 |
+| XML attribute usage count | 2 |
+| Lua usage count | 2 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 2 |
@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 27 addons through frame event handlers.
+Observed as an XML handler hook bound by 2 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -73,53 +73,22 @@ function(...)
 
 ## Seen In
 
-- AdvancedPetAssist
-- AdvancedRenownTrainer
-- Aura
-- BankArkel
-- BuffHead
-- Busted
-- Cheeseboard
-- DaemonAssist
-- EA_UiDebugTools
-- EA_UiModWindow
-- Enemy
-- Killer
-- LoyalPet
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- Pocket Palette
-- PotionBar
-- RVMOD_Manager
-- Shinies
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WSCT
-- WhoHealedMe
-- wbLeadHelper
 
 ## Examples
 
-- AdvancedPetAssist: APAComboAttackBind -> APAComboAttackBind.OnSelChanged -> APAGui.OnComboChanged
-- AdvancedPetAssist: APAComboAutoReattack -> APAComboAutoReattack.OnSelChanged -> APAGui.OnComboChanged
-- AdvancedPetAssist: APAComboAutoReattackDelay -> APAComboAutoReattackDelay.OnSelChanged -> APAGui.OnComboChanged
-- AdvancedPetAssist: APAComboCastDelay -> APAComboCastDelay.OnSelChanged -> APAGui.OnComboChanged
-- AdvancedPetAssist: APAComboCastOnAcquire -> APAComboCastOnAcquire.OnSelChanged -> APAGui.OnComboChanged
-- AdvancedPetAssist: APAComboCombatExitDelay -> APAComboCombatExitDelay.OnSelChanged -> APAGui.OnComboChanged
+- TidyChat: TChatTabWindowsTemplateSelectWindowCombo -> TChatTabWindowsTemplateSelectWindowCombo.OnSelChanged -> TidyChat.Options.UpdateGroupTabs
+- TidyRoll: AutoRollRowTemplateChoice -> AutoRollRowTemplateChoice.OnSelChanged -> TidyRoll.CustomAutoRoll.OnChoiceChange
 
 ## Related APIs
 
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
-- [EA_Window_WorldMap.SetMap](../../globals/functions/global_EA_Window_WorldMap.SetMap.md) (HIGH 100/100) - Global Function
+- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 
 ## Used With
 
 - [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
-- [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [OnSelChanged](../../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
 
 ## Triggered By

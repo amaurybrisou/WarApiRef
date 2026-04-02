@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 48 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, Busted |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:426`, `/workspace_addons/Ace/LibGUI.lua:439`, `/workspace_addons/AdvancedPetAssist/APAGui.lua:983`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace_addons/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace_addons/AggroMeter/AggroMeter.lua:5` |
+| Addons seen in | Moth, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:215`, `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/TidyChat/TidyChat.lua:2117`, `/workspace/data/raw/TidyChat/TidyChat.lua:2201`, `/workspace/data/raw/TidyChat/TidyChat.lua:2321`, `/workspace/data/raw/TidyChat/TidyChat.lua:2333`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:115` |
 | Namespaces detected | LabelSetText |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Label:Clear, Ace: LIBGUI_Label:SetText, AdvancedPetAssist: APAGui.OnShown, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD |
+| Example locations | Moth: Moth.SetCellText, Moth: Moth.SetCellTextIcon, TidyChat: TidyChat.Copy.InitializeCopyWindow, TidyChat: TidyChat.LootRoll.InitializeLootRollWindow, TidyChat: TidyChat.LootRoll.OnRollLinkLButtonUp, TidyChat: TidyChat.Options.UpdateGroupTabs |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1401 |
-| Global usage count | 1401 |
+| Lua usage count | 46 |
+| Global usage count | 46 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed updating label text or label styling on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target control name. | Observed values: "APAFollowTargetHUDLabel", "APAInstantOnlyHUDLabel", "APAKitingHUDLabel" |
-| text | Observed as a text or wstring payload. | Observed values: APA.PetTarget.cachedName, AddonToShow.RVCredits, AddonToShow.RVLicense |
+| windowName | Observed as a target control name. | Observed values: TCHAT_WINDOWS_TABS_INFO_LABEL, c_AUTO_ROLL_ADD_BY_ID_ID_LABEL, c_AUTO_ROLL_ADD_BY_ID_LABEL |
+| text | Observed as a text or wstring payload. | Observed values: L " Icon               Name                    Id           Choice", L "", L "Add item to auto roll list by id" |
 
 ## Returns
 
@@ -84,63 +84,18 @@ Observed updating label text or label styling on existing controls.
 
 ## Seen In
 
-- Ace
-- AdvancedPetAssist
-- AdvancedRenownTrainer
-- AggroMeter
-- Aura
-- BankArkel
-- BuffHead
-- Busted
-- CM_ClosetGoblin
-- CombatTextNames
-- Crafting Info Tooltip
-- DAoCBuff
-- DaemonAssist
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- FastInteract
-- GCDsaver
-- GetStats
-- JunkDump
-- Killer
-- LibGroup
-- LibWBToggler
-- MapMonster
-- Miracle Grow Remix
-- MiracleGrow
-- MiracleGrowLight
-- MoraleCircle
 - Moth
-- Pocket Palette
-- PotionBar
-- QuickTacticSwitch
-- QuickWarReport
-- RVAPI_ColorDialog
-- RVMOD_Manager
-- RandomMount
-- RoR_SoR
-- Shinies
-- Swift Assist
-- Targets
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WSCT
-- WhoHealedMe
-- WoH-Reticle
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_Label:Clear -> LabelSetText(self.name, L "")
-- Ace: LIBGUI_Label:SetText -> LabelSetText(self.name, towstring(text))
-- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APAOptionsTitleText", L "AdvancedPetAssist")
-- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APALabelSectionAutoRecall", L "--- Auto Recall ---")
-- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APALabelSectionMouseControls", L "--- Mouse Controls ---")
-- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APALabelSectionLos", L "--- LOS Detection ---")
+- Moth: Moth.SetCellText -> LabelSetText(cellText, L "")
+- Moth: Moth.SetCellText -> LabelSetText(cellText, text)
+- Moth: Moth.SetCellTextIcon -> LabelSetText(cellText, L "")
+- TidyChat: TidyChat.Copy.InitializeCopyWindow -> LabelSetText(c_TIDY_CHAT_COPY.."TitleBarText", L "Chat Copy")
+- TidyChat: TidyChat.LootRoll.InitializeLootRollWindow -> LabelSetText(c_TIDY_CHAT_LOOT_ROLL.."TitleBarText", L "Roll History")
+- TidyChat: TidyChat.LootRoll.OnRollLinkLButtonUp -> LabelSetText(c_TIDY_CHAT_LOOT_ROLL.."InfoLabel", TidyChatLootRoll.itemRollData.info)
 
 ## Related APIs
 
@@ -149,25 +104,19 @@ Observed updating label text or label styling on existing controls.
 ## Used With
 
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [EA_Window_ContextMenu.AddUserDefinedMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-- [StatusBarSetCurrentValue](window_StatusBarSetCurrentValue.md) (HIGH 100/100) - Window Function
-- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
-- [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
+- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
+- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 90/100) - Window Function
+- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 90/100) - Window Function
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 90/100) - Window Function
+- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 90/100) - Window Function
+- [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 80/100) - Window Function
+- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 71/100) - Global Function
 
 ## Triggered By
 
-- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- none
 
 ## Affects
 

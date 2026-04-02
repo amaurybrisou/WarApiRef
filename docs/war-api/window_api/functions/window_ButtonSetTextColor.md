@@ -2,41 +2,37 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 7 addons
+- Confidence score: 90/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 90/100
 
-- Raw weighted score: 110
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Effigy, GCDsaver, LibWBToggler, Shinies, TidyChat, WoH-Reticle |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:543`, `/workspace_addons/Effigy/LibGUI.lua:543`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:543`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:543`, `/workspace_addons/Shinies/Libraries/LibGUI.lua:543`, `/workspace_addons/TidyChat/TidyChat.lua:1013`, `/workspace_addons/WoH-Reticle/libs/LibGUI.lua:543` |
+| Addons seen in | TidyChat |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1013` |
 | Namespaces detected | ButtonSetTextColor |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Button:TextColor, Effigy: LIBGUI_Button:TextColor, GCDsaver: LIBGUI_Button:TextColor, LibWBToggler: LIBGUI_Button:TextColor, Shinies: LIBGUI_Button:TextColor, TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors |
+| Example locations | TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 18 |
-| Global usage count | 18 |
+| Lua usage count | 12 |
+| Global usage count | 12 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -44,14 +40,14 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | no |
+| Consistent role | no |
+| Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | yes |
+| Conflicting signatures | no |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -71,10 +67,10 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: channelButton, self.name |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: channelButton |
 | arg2 | Observed as a function or method reference. | Observed values: Button.ButtonState.HIGHLIGHTED, Button.ButtonState.NORMAL, Button.ButtonState.PRESSED |
-| arg3 | Observed as a function or method reference. | Observed values: channelColor.r, green |
-| arg4 | Observed as a function or method reference. | Observed values: blue, channelColor.g |
+| arg3 | Observed as a function or method reference. | Observed values: channelColor.r |
+| arg4 | Observed as a function or method reference. | Observed values: channelColor.g |
 | arg5 | Observed as a function or method reference. | Observed values: channelColor.b |
 
 ## Returns
@@ -87,22 +83,14 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
-- Ace
-- Effigy
-- GCDsaver
-- LibWBToggler
-- Shinies
 - TidyChat
-- WoH-Reticle
 
 ## Examples
 
-- Ace: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
-- Effigy: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
-- GCDsaver: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
-- LibWBToggler: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
-- Shinies: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
 - TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors -> ButtonSetTextColor(channelButton, Button.ButtonState.NORMAL, channelColor.r, channelColor.g, channelColor.b)
+- TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors -> ButtonSetTextColor(channelButton, Button.ButtonState.HIGHLIGHTED, channelColor.r, channelColor.g, channelColor.b)
+- TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors -> ButtonSetTextColor(channelButton, Button.ButtonState.PRESSED, channelColor.r, channelColor.g, channelColor.b)
+- TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors -> ButtonSetTextColor(channelButton, Button.ButtonState.PRESSED_HIGHLIGHTED, channelColor.r, channelColor.g, channelColor.b)
 
 ## Related APIs
 
@@ -110,7 +98,7 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Used With
 
-- [ButtonGetTextColor](window_ButtonGetTextColor.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 
@@ -122,4 +110,4 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

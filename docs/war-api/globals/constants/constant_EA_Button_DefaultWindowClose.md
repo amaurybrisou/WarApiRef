@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, CM_ClosetGoblin, Cheeseboard |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/APAGui.xml:114`, `/workspace_addons/AggroMeter/AggroMeter.xml:84`, `/workspace_addons/Aura/Source/AuraConfig.xml:37`, `/workspace_addons/Aura/Source/AuraSettings.xml:87`, `/workspace_addons/Aura/Source/AuraShares.xml:162`, `/workspace_addons/Aura/Source/AuraShares.xml:29`, `/workspace_addons/Aura/Source/AuraTexture.xml:106`, `/workspace_addons/BankArkel/BankArkel.xml:244` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.xml:63`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:32`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:58`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:138` |
 | Namespaces detected | EA_Button_DefaultWindowClose |
 | Source kinds | xml_attributes |
-| Example locations | APAOptionsClose, AdvancedRenownTrainingLinkWindowClose, AdvancedRenownTrainingWindowClose, AggroMeterGrayWindowClose, AuraConfigClose, AuraSettingsClose |
-| XML usage count | 106 |
-| XML attribute usage count | 106 |
+| Example locations | TRollAutoRollCloseButton, TidyChatCopyClose, TidyChatLootRollClose, TidyChatOptionsCloseButton |
+| XML usage count | 4 |
+| XML attribute usage count | 4 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,157 +57,19 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 38 addons.
+Observed engine XML template or inherited constant referenced by 2 addons.
 
 ## Seen In
 
-- AdvancedPetAssist
-- AdvancedRenownTrainer
-- AggroMeter
-- Aura
-- BankArkel
-- BuffHead
-- CM_ClosetGoblin
-- Cheeseboard
-- DAoCBuff
-- DaemonAssist
-- EA_UiModWindow
-- Enemy
-- FastInteract
-- GetStats
-- JunkDump
-- Killer
-- LibGroup
-- LoyalPet
-- MapMonster
-- MapPin
-- ObjectInspector
-- Pocket Palette
-- PotionBar
-- QuickTacticSwitch
-- QuickWarReport
-- RVMOD_Manager
-- RandomMount
-- RoR_SoR
-- Shinies
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WSCT
-- WarBoard
-- WhoHealedMe
-- bigger_MacroWindow
-- wbLeadHelper
 
 ## Used By
 
-- APAOptionsClose
-- AdvancedRenownTrainingLinkWindowClose
-- AdvancedRenownTrainingWindowClose
-- AggroMeterGrayWindowClose
-- AuraConfigClose
-- AuraSettingsClose
-- AuraSharesClose
-- AuraSharesImportExportClose
-- AuraTextureClose
-- BuffHeadSetupAdvancedCompressionItemEffectWindowClose
-- BuffHeadSetupAdvancedCompressionItemWindowClose
-- BuffHeadSetupAdvancedCompressionWindowClose
-- BuffHeadSetupAdvancedContainersItemPropertiesWindowClose
-- BuffHeadSetupAdvancedContainersItemWindowClose
-- BuffHeadSetupAdvancedContainersWindowClose
-- BuffHeadSetupContainerWindowClose
-- BuffHeadSetupDisplayWindowClose
-- BuffHeadSetupEffectCacheTableWindowClose
-- BuffHeadSetupEffectCacheWindowClose
-- BuffHeadSetupFilterWindowClose
-- BuffHeadSetupGeneralWindowClose
-- BuffHeadSetupLayoutManagerWindowClose
-- BuffHeadSetupLayoutPropertiesWindowClose
-- BuffHeadSetupLayoutWindowClose
-- BuffHeadSetupMenuWindowClose
-- BuffHeadSetupPerformanceWindowClose
-- BuffHeadSetupPriorityEffectsItemWindowClose
-- BuffHeadSetupPriorityEffectsWindowClose
-- BuffHeadSetupTrackersWindowClose
-- CheeseboardWindowClose
-- ClosetGoblinCharacterWindowClose
-- ClosetGoblinZoneWindowClose
-- DAoCBuffMessageWindowClose
-- DAoCBuff_SettingsClose
-- DaemonAssistWindowClose
-- EA_Window_MacroClose
-- EnemyChooseChannelDialogClose
-- EnemyChooseIconDialogClose
-- EnemyClickCastingDialogClose
-- EnemyCombatLogSnapshotWindowClose
-- EnemyCombatLogStatsWindowClose
-- EnemyConfigDialogClose
-- EnemyEffectFilterDialogClose
-- EnemyEffectsIndicatorDialogClose
-- EnemyIntercomDialogClose
-- EnemyIntercomJoinDialogClose
-- EnemyKillSpamAreaStatsDialogClose
-- EnemyMarkConfigDialogClose
-- EnemyScenarioInfoDialogCancelButton
-- EnemyTextEntryDialogClose
-- EnemyUnitFramePartDialogClose
-- FastInteractWindowClose
-- GetStatsWindowClose
-- JunkDumpOptionsWinClose
-- KillerScoreDetailsWindowClose
-- KillerSettingsWindowClose
-- LPETOptionsClose
-- LibGroupSetupWindowClose
-- MacroIconSelectionWindowClose
-- MapMonster_CalibrateWindowClose
-- MapMonster_EditorWindowClose
-- MapMonster_IconChooserWindowClose
-- MapMonster_PinTypeEditorWindowClose
-- MapPinChooseIconDialogClose
-- MapPin_SetupClose
-- ObjectInspectorClose
-- PPMainClose
-- PackWinClose
-- PotionBarAboutClose
-- PotionBarTypeTemplateClose
-- QuickTacticSwitchWindowClose
-- QuickWarReportConfirmClose
-- RVMOD_ManagerWindowClose
-- RandomMountWindowClose
-- RoR_SoR_OffsetClose
-- RoR_SoR_OpacityClose
-- RoR_SoR_ScaleClose
-- ShiniesWindowClose
 - TRollAutoRollCloseButton
-- TexturedButtonsSetupActionbarWindowClose
-- TexturedButtonsSetupAdvancedTexturesWindowClose
-- TexturedButtonsSetupCooldownWindowClose
-- TexturedButtonsSetupFontsWindowClose
-- TexturedButtonsSetupMenuWindowClose
-- TexturedButtonsSetupMiscWindowClose
-- TexturedButtonsSetupTexturesWindowClose
-- TexturedButtonsSetupTintWindowClose
 - TidyChatCopyClose
 - TidyChatLootRollClose
 - TidyChatOptionsCloseButton
-- TurretRangeSetupDisplayWindowClose
-- TurretRangeSetupDistanceWindowClose
-- TurretRangeSetupDistancesWindowClose
-- TurretRangeSetupGeneralWindowClose
-- TurretRangeSetupMenuWindowClose
-- UiModAdvancedWindowClose
-- UiModVersionMismatchWindowClose
-- UiModWindowClose
-- WSCTOptionsClose
-- WSCTOptionsColorPickerWindowClose
-- WarBoardOptionsClose
-- WbLeadHelperMessageClose
-- WhoHealedMeDetailsClose
-- WhoHealedMeOptionsClose
-- wbLeadHelperChooseIconDialogClose
-- wbLeadHelperConfigWindowClose
 
 ## Related APIs
 

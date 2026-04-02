@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Busted, JunkDump, TidyChat, TidyRoll |
-| Files seen in | `/workspace_addons/Busted/Busted.xml:146`, `/workspace_addons/JunkDump/JunkDumpOptions.xml:23`, `/workspace_addons/TidyChat/TidyChat.xml:4`, `/workspace_addons/TidyRoll/CustomAutoRoll.xml:90`, `/workspace_addons/TidyRoll/TidyRoll.xml:298` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.xml:4`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:90`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:298` |
 | Namespaces detected | EA_Window_DefaultContextMenuFrame |
 | Source kinds | xml_attributes |
-| Example locations | BustedMiniGUIBack, JunkDumpOptionsWinBackground, TRollAutoRoll, TidyChatOptions, TidyRollOptions |
-| XML usage count | 5 |
-| XML attribute usage count | 5 |
+| Example locations | TRollAutoRoll, TidyChatOptions, TidyRollOptions |
+| XML usage count | 3 |
+| XML attribute usage count | 3 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,19 +57,15 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 4 addons.
+Observed engine XML template or inherited constant referenced by 2 addons.
 
 ## Seen In
 
-- Busted
-- JunkDump
 - TidyChat
 - TidyRoll
 
 ## Used By
 
-- BustedMiniGUIBack
-- JunkDumpOptionsWinBackground
 - TRollAutoRoll
 - TidyChatOptions
 - TidyRollOptions

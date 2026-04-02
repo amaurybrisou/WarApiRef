@@ -2,42 +2,37 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 100/100
-- Seen in: 6 addons
+- Confidence score: 98/100
+- Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 98/100
 
-- Raw weighted score: 153
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Busted, EA_UiDebugTools, Miracle Grow Remix, MiracleGrow, Moth, Shinies |
-| Files seen in | `/workspace_addons/Busted/Busted.lua:324`, `/workspace_addons/MGRemix/MGRemix.lua:195`, `/workspace_addons/MiracleGrow/MiracleGrow.lua:155`, `/workspace_addons/Moth/Moth.lua:721`, `/workspace_addons/Shinies/Modules/UI/Shinies-UI-Browse.lua:463`, `/workspace_addons/Shinies/Source/Shinies.lua:169`, `/workspace_addons/ea_uidebugtools/Source/bust/Busted.lua:331` |
+| Addons seen in | Moth |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:721` |
 | Namespaces detected | WindowRegisterEventHandler |
 | Source kinds | lua_calls |
-| Example locations | Busted: Busted.Initialize, EA_UiDebugTools: Busted.Initialize, Miracle Grow Remix: MiracleGrow2.Initialize, MiracleGrow: MiracleGrow.enableAddon, Moth: Moth.Initialize, Shinies: LibStub:UpdateDefaultAuctionHouseDisable |
+| Example locations | Moth: Moth.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -45,8 +40,8 @@
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent role | no |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -72,9 +67,9 @@ Observed binding SystemData events directly to a named window.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "AuctionWindow", "BustedProxy", "Moth" |
-| eventId | Observed as a SystemData event identifier. | Observed values: SystemData.Events.AUCTION_BID_RESULT_RECEIVED, SystemData.Events.AUCTION_INIT_RECEIVED, SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED |
-| handlerName | Observed as a Lua handler reference. | Observed values: "AuctionWindow.Hide", "AuctionWindow.OnSearchResultsReceived", "AuctionWindow.ReceivedBidResult" |
+| windowName | Observed as a target window name. | Observed values: "Moth" |
+| eventId | Observed as a SystemData event identifier. | Observed values: SystemData.Events.PLAYER_TARGET_UPDATED |
+| handlerName | Observed as a Lua handler reference. | Observed values: "Moth.UpdateTarget" |
 
 ## Returns
 
@@ -86,21 +81,11 @@ Observed binding SystemData events directly to a named window.
 
 ## Seen In
 
-- Busted
-- EA_UiDebugTools
-- Miracle Grow Remix
-- MiracleGrow
 - Moth
-- Shinies
 
 ## Examples
 
-- Busted: Busted.Initialize -> WindowRegisterEventHandler("BustedProxy", uiLogEventId, "Busted.ProcessUiLogUpdateProxy")
-- EA_UiDebugTools: Busted.Initialize -> WindowRegisterEventHandler("BustedProxy", uiLogEventId, "Busted.ProcessUiLogUpdateProxy")
-- Miracle Grow Remix: MiracleGrow2.Initialize -> WindowRegisterEventHandler(mg.sWindowName, SystemData.Events.PLAYER_CULTIVATION_UPDATED, "MiracleGrow2.onCultUpdate")
-- MiracleGrow: MiracleGrow.enableAddon -> WindowRegisterEventHandler(windowName, SystemData.Events.PLAYER_CULTIVATION_UPDATED, "MiracleGrow.fired")
 - Moth: Moth.Initialize -> WindowRegisterEventHandler("Moth", SystemData.Events.PLAYER_TARGET_UPDATED, "Moth.UpdateTarget")
-- Shinies: LibStub:UpdateDefaultAuctionHouseDisable -> WindowRegisterEventHandler("AuctionWindow", SystemData.Events.AUCTION_INIT_RECEIVED, "AuctionWindow.Show")
 
 ## Related APIs
 
@@ -108,30 +93,17 @@ Observed binding SystemData events directly to a named window.
 
 ## Used With
 
-- [SystemData.Events.AUCTION_BID_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_INIT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_INIT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- none
 
 ## Triggered By
 
-- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Handler
-- [OnInitialize](../../events/window_events/window_event_OnInitialize.md) (HIGH 100/100) - Window Event
+- none
 
 ## Affects
 
-- [SystemData.Events.AUCTION_BID_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_INIT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_INIT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CULTIVATION_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CULTIVATION_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Only one addon surfaced this symbol in the current corpus.

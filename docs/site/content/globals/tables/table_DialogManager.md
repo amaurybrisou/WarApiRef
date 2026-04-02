@@ -2,41 +2,37 @@
 
 - Category: Global Table
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 80/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 80/100
 
-- Raw weighted score: 130
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, BankArkel, BankWindowFix, CM_ClosetGoblin, Effigy, Enemy, MapMonster |
-| Files seen in | `/workspace_addons/Aura/Source/AuraShares.lua:419`, `/workspace_addons/BankArkel/BankArkel.lua:85`, `/workspace_addons/BankArkel/BankArkel.lua:95`, `/workspace_addons/BankWindowFix/Source/BankWindowFix.lua:108`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:147`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:154`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:212`, `/workspace_addons/ClosetGoblin/ClosetGoblinCharacterWindow.lua:216` |
+| Addons seen in | TidyChat |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:2210` |
 | Namespaces detected | DialogManager |
-| Source kinds | globals, lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize, Aura: AuraShares.OnImportExportOkButton, BankArkel: BankArkel.ConvertDB, BankArkel: BankArkel.Init, BankWindowFix: BankWindowFix.BagEquipmentRButtonUp, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickDeleteSetButton |
+| Source kinds | lua_calls |
+| Example locations | TidyChat: TidyChat.Copy.OnCopyButton |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 63 |
-| Global usage count | 3 |
-| Local definition count | 1 |
-| Documentation references | 1 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
+| Local definition count | 0 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -57,13 +53,11 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 14 addons.
+Observed shared global table or namespace surfaced in 1 addons.
 
 ## Functions
 
 - DialogManager.MakeOneButtonDialog
-- DialogManager.MakeTextEntryDialog
-- DialogManager.MakeTwoButtonDialog
 
 ## Observed Members
 
@@ -71,29 +65,11 @@ Observed shared global table or namespace surfaced in 14 addons.
 
 ## Seen In
 
-- AdvancedRenownTrainer
-- Aura
-- BankArkel
-- BankWindowFix
-- CM_ClosetGoblin
-- Effigy
-- Enemy
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- RoR_SoR
-- Shinies
 - TidyChat
-- wbLeadHelper
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize -> DialogManager.MakeOneButtonDialog(GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_NOT_ENOUGH_MONEY,{MoneyFrame.FormatMoneyString(respecCost)}), GetString(StringTables.Default.LABEL_OKAY), nil)
-- AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize -> DialogManager.MakeTwoButtonDialog(GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_CONFIRMATION,{MoneyFrame.FormatMoneyString(respecCost)}), GetString(StringTables.Default.LABEL_YES), AdvancedRenownTraining.RefundRenownPoints, GetString(StringTables.Default.LABEL_NO))
-- Aura: AuraShares.OnImportExportOkButton -> DialogManager.MakeOneButtonDialog(T["An error occurred attempting to load the Aura.  Verify you have entered the correct data."], L "Ok", nil)
-- BankArkel: BankArkel.ConvertDB -> DialogManager.MakeOneButtonDialog(StringToWString(convTxt.."v.1 >>> v.2"), StringToWString(errBtn1), nil)
-- BankArkel: BankArkel.Init -> DialogManager.MakeOneButtonDialog(StringToWString(errTxt1), StringToWString(errBtn1), BankArkel.ResetDB)
-- BankWindowFix: BankWindowFix.BagEquipmentRButtonUp -> DialogManager.MakeTwoButtonDialog(text, GetString(StringTables.Default.LABEL_YES), function()DestroyItem(cursorType,slot)end, GetString(StringTables.Default.LABEL_NO), nil, nil, nil, nil, nil, nil, DIALOGID_DESTROY_ITEM)
+- TidyChat: TidyChat.Copy.OnCopyButton -> DialogManager.MakeOneButtonDialog(L "Log is empty\n", L "Ok")
 
 ## Related APIs
 

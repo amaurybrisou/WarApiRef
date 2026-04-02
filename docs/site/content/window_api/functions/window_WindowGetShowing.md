@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 38 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,32 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 110
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, AutoMark, BankWindowFix |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:84`, `/workspace_addons/AggroMeter/AggroMeter.lua:374`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:227`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:235`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:243`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:261`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace_addons/AnywhereTrainer/source/AnywhereTrainer.lua:280` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1089`, `/workspace/data/raw/TidyChat/TidyChat.lua:218`, `/workspace/data/raw/TidyChat/TidyChat.lua:808`, `/workspace/data/raw/TidyChat/TidyChat.lua:825`, `/workspace/data/raw/TidyChat/TidyChat.lua:868`, `/workspace/data/raw/TidyChat/TidyChat.lua:904`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:140` |
 | Namespaces detected | WindowGetShowing |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Showing, AdvancedRenownTrainer: AdvancedRenownTraining.TogglePresets, AggroMeter: AggroMeter.Close, AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction, AnywhereTrainer: AnywhereTrainer.OnLeftClickBank, AnywhereTrainer: AnywhereTrainer.OnLeftClickCareer |
+| Example locations | TidyChat: TidyChat.OnEntryBoxUpdateShowing, TidyChat: TidyChat.OnLBU, TidyChat: TidyChat.ToggleOptions, TidyChat: TidyChatFrames.Initialize, TidyChat: TidyChatHooks.DestroyWindowGroupHook, TidyChat: TidyChatHooks.OnEnterChatTextHook |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 273 |
-| Global usage count | 273 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -45,13 +45,13 @@
 | Event binding presence | no |
 | Observed in XML and Lua | no |
 | Consistent role | yes |
-| Consistent arguments | no |
+| Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | yes |
+| Conflicting signatures | no |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "AbilitiesWindow", "AdvancedRenownTrainingWindow", "AggroMeterGrayWindow" |
+| windowName | Observed as a target window name. | Observed values: c_TEXT_ENTRY_WINDOW.."EntryBox", c_TEXT_ENTRY_WINDOW.."EntryBoxLanguageButton", c_TIDY_CHAT_OPTIONS |
 
 ## Returns
 
@@ -83,53 +83,17 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- Ace
-- AdvancedRenownTrainer
-- AggroMeter
-- AnywhereTrainer
-- AnywhereTrainerAdditions
-- Aura
-- AutoMark
-- BankWindowFix
-- BuffHead
-- Busted
-- CombatTextNames
-- DAoCBuff
-- DaemonAssist
-- EA_UiDebugTools
-- Effigy
-- Enemy
-- GCDsaver
-- GuardLine
-- LibGroup
-- LibWBToggler
-- MapMonster
-- MapPin
-- Miracle Grow Remix
-- Pocket Palette
-- PotionBar
-- QuickTacticSwitch
-- RandomMount
-- RoR_SoR
-- Shinies
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- TurretRange
-- WarBoard
-- WhoHealedMe
-- WoH-Reticle
-- nRarity
-- wbLeadHelper
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Showing -> WindowGetShowing(self.name)
-- AdvancedRenownTrainer: AdvancedRenownTraining.TogglePresets -> WindowGetShowing(PresetWindowName)
-- AggroMeter: AggroMeter.Close -> WindowGetShowing("AggroMeterGrayWindow")
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction -> WindowGetShowing("ShiniesWindow")
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction -> WindowGetShowing("AuctionWindow")
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickBank -> WindowGetShowing("BankWindow")
+- TidyChat: TidyChat.OnEntryBoxUpdateShowing -> WindowGetShowing(c_TEXT_ENTRY_WINDOW.."EntryBox")
+- TidyChat: TidyChat.OnLBU -> WindowGetShowing(c_TEXT_ENTRY_WINDOW.."EntryBox")
+- TidyChat: TidyChat.ToggleOptions -> WindowGetShowing(c_TIDY_CHAT_OPTIONS)
+- TidyChat: TidyChatFrames.Initialize -> WindowGetShowing(c_TEXT_ENTRY_WINDOW.."EntryBoxLanguageButton")
+- TidyChat: TidyChatHooks.DestroyWindowGroupHook -> WindowGetShowing(c_TIDY_CHAT_OPTIONS)
+- TidyChat: TidyChatHooks.OnEnterChatTextHook -> WindowGetShowing(c_TEXT_ENTRY_WINDOW.."EntryBox")
 
 ## Related APIs
 
@@ -137,23 +101,22 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowGetLayer](window_WindowGetLayer.md) (HIGH 100/100) - Window Function
-- [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- [WindowRegisterCoreEventHandler](window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [BankWindow.Hide](../../globals/functions/global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
 
 ## Triggered By
 
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
+- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
+- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../events/game_events/game_event_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - Game Event
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

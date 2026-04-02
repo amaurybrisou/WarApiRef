@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 15 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BankArkel, BuffHead, Effigy, Enemy, GCDsaver, LibWBToggler, PotionBar |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:178`, `/workspace_addons/BankArkel/BankArkel.lua:95`, `/workspace_addons/BuffHead/Container.lua:417`, `/workspace_addons/BuffHead/EffectFrame.lua:36`, `/workspace_addons/BuffHead/EffectFrame.lua:52`, `/workspace_addons/BuffHead/Setup/SelectColor.lua:27`, `/workspace_addons/BuffHead/Setup/SelectTexture.lua:59`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:135` |
+| Addons seen in | TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:239`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
 | Namespaces detected | WindowSetLayer |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Layer, BankArkel: BankArkel.Init, BuffHead: BuffHead.Setup.SelectColor.Show, BuffHead: BuffHead.Setup.SelectTexture.Show, BuffHead: BuffHead.local.SetLayer, BuffHead: BuffHead.local.SetupCoreFrame |
+| Example locations | TidyChat: TidyChatCore.SetWindowGroup, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollOptions.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 44 |
-| Global usage count | 44 |
+| Lua usage count | 12 |
+| Global usage count | 12 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "BankArkelBackpack", "EA_Window_ContextMenu1", "PotionBar" |
+| windowName | Observed as a target window name. | Observed values: c_TEXT_ENTRY_WINDOW, c_TEXT_ENTRY_WINDOW.."ChannelButton", c_TROLL_BNUM_TBOX |
 | arg2 | Observed as a function or method reference. | Observed values: 0, 2, 3 |
 
 ## Returns
@@ -84,30 +84,17 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- Ace
-- BankArkel
-- BuffHead
-- Effigy
-- Enemy
-- GCDsaver
-- LibWBToggler
-- PotionBar
-- RVAPI_ColorDialog
-- Shinies
-- TexturedButtons
 - TidyChat
 - TidyRoll
-- WoH-Reticle
-- nRarity
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Layer -> WindowSetLayer(self.name, layer)
-- BankArkel: BankArkel.Init -> WindowSetLayer("BankArkelBackpack", 4)
-- BuffHead: BuffHead.Setup.SelectColor.Show -> WindowSetLayer(windowName, WindowGetLayer(window)+1)
-- BuffHead: BuffHead.Setup.SelectTexture.Show -> WindowSetLayer(windowName, WindowGetLayer(window)+1)
-- BuffHead: BuffHead.local.SetLayer -> WindowSetLayer(frame:GetName(), frame.Settings.Layer)
-- BuffHead: BuffHead.local.SetupCoreFrame -> WindowSetLayer(windowName, layoutSettings.Layer)
+- TidyChat: TidyChatCore.SetWindowGroup -> WindowSetLayer(wndGroupName.."Background", 0)
+- TidyChat: TidyChatFrames.Initialize -> WindowSetLayer(c_TEXT_ENTRY_WINDOW.."ChannelButton", 3)
+- TidyChat: TidyChatFrames.Initialize -> WindowSetLayer(c_TEXT_ENTRY_WINDOW, 2)
+- TidyRoll: TidyRollOptions.Initialize -> WindowSetLayer(c_TROLL_BNUM_TBOX, Window.Layers.POPUP)
+- TidyRoll: TidyRollOptions.Initialize -> WindowSetLayer(c_TROLL_OFFSET_TBOX, Window.Layers.POPUP)
+- TidyRoll: TidyRollOptions.Initialize -> WindowSetLayer(c_TROLL_DIRECTION_COMBO, Window.Layers.POPUP)
 
 ## Related APIs
 
@@ -115,7 +102,11 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [WindowGetLayer](window_WindowGetLayer.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowGetOffsetFromParent](window_WindowGetOffsetFromParent.md) (HIGH 80/100) - Window Function
 
 ## Triggered By
 
@@ -123,13 +114,7 @@ Observed mutating runtime window state or presentation.
 
 ## Affects
 
-- [BankWindow](../../globals/tables/table_BankWindow.md) (HIGH 100/100) - Global Table
-- [EA_ChatWindow.OnKeyEnter](../../globals/functions/global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack](../../globals/tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [BankWindow.Hide](../../globals/functions/global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
 
 ## Notes
 
