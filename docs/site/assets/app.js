@@ -256,10 +256,19 @@ async function loadDoc(path) {
 
 // --- Graph (Cytoscape.js) ----------------------------------------------------
 async function loadGraph() {
-  try {
-    graphData = await loadJSON("content/graph/api_graph.json");
-  } catch {
-    graphData = null;
+  const candidates = [
+    "content/graph/api_graph.json",
+    "graph/api_graph.json",
+  ];
+
+  graphData = null;
+  for (const path of candidates) {
+    try {
+      graphData = await loadJSON(path);
+      return;
+    } catch {
+      // Try next candidate path.
+    }
   }
 }
 
@@ -328,15 +337,99 @@ const EDGE_LINE_COLOR = {
   structural_child_of:"#a08030",
 };
 
+function showGraphMessage(message) {
+  if (!graphSvg) return;
+
+  const viewport = graphSvg.parentElement;
+  const cyContainer = document.getElementById("cyContainer");
+  if (cyContainer) cyContainer.style.display = "none";
+
+  graphSvg.style.display = "block";
+  graphSvg.setAttribute("viewBox", "0 0 1000 600");
+  graphSvg.innerHTML =
+    `<rect x="0" y="0" width="1000" height="600" fill="#1a1812"></rect>` +
+    `<text x="500" y="300" text-anchor="middle" fill="#cfc8b8" font-size="18" font-family="Inter, system-ui, sans-serif">${message}</text>`;
+
+  if (viewport) viewport.appendChild(graphSvg);
+}
+
+function drawFallbackSvg(nodes, links) {
+  if (!graphSvg) return;
+
+  const viewport = graphSvg.parentElement;
+  const cyContainer = document.getElementById("cyContainer");
+  if (cyContainer) cyContainer.style.display = "none";
+
+  graphSvg.style.display = "block";
+  graphSvg.setAttribute("viewBox", "0 0 1200 700");
+
+  const cols = Math.max(8, Math.ceil(Math.sqrt(nodes.length * 1.8)));
+  const cellW = 1150 / cols;
+  const rows = Math.max(1, Math.ceil(nodes.length / cols));
+  const cellH = 650 / rows;
+  const positions = new Map();
+
+  nodes.forEach((n, idx) => {
+    const col = idx % cols;
+    const row = Math.floor(idx / cols);
+    const jitterX = ((idx * 37) % 11) - 5;
+    const jitterY = ((idx * 53) % 11) - 5;
+    positions.set(n.id, {
+      x: 25 + (col * cellW) + (cellW / 2) + jitterX,
+      y: 25 + (row * cellH) + (cellH / 2) + jitterY,
+    });
+  });
+
+  const edgesSvg = links.slice(0, 500).map((l) => {
+    const sid = l.source?.id ?? l.source;
+    const tid = l.target?.id ?? l.target;
+    const s = positions.get(sid);
+    const t = positions.get(tid);
+    if (!s || !t) return "";
+    const color = EDGE_LINE_COLOR[l.type] || "#4a4030";
+    return `<line x1="${s.x}" y1="${s.y}" x2="${t.x}" y2="${t.y}" stroke="${color}" stroke-opacity="0.32" stroke-width="1"></line>`;
+  }).join("");
+
+  const nodesSvg = nodes.map((n) => {
+    const p = positions.get(n.id);
+    if (!p) return "";
+    const label = String(n.label || n.id || "").replace(/[&<>\"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+    return (
+      `<g>` +
+      `<circle cx="${p.x}" cy="${p.y}" r="4.2" fill="${kindColor(n.type)}"></circle>` +
+      `<title>${label}</title>` +
+      `</g>`
+    );
+  }).join("");
+
+  graphSvg.innerHTML =
+    `<rect x="0" y="0" width="1200" height="700" fill="#1a1812"></rect>` +
+    edgesSvg +
+    nodesSvg;
+
+  if (viewport) viewport.appendChild(graphSvg);
+}
+
+function graphViewportHeightPx() {
+  if (window.matchMedia && window.matchMedia("(max-width: 960px)").matches) {
+    return 420;
+  }
+  return 600;
+}
+
 function drawGraph(filterText, filterKind) {
-  if (!graphData || !Array.isArray(graphData.nodes)) return;
+  if (!graphData || !Array.isArray(graphData.nodes) || graphData.nodes.length === 0) {
+    showGraphMessage("Graph data unavailable");
+    return;
+  }
 
   const q = (filterText || "").toLowerCase().trim();
   const k = filterKind || "";
 
   const filteredNodes = graphData.nodes.filter((n) => {
     if (!matchesKind(n.type, k)) return false;
-    if (q && !n.label.toLowerCase().includes(q)) return false;
+    const label = String(n.label || n.id || "").toLowerCase();
+    if (q && !label.includes(q)) return false;
     return true;
   });
 
@@ -348,6 +441,11 @@ function drawGraph(filterText, filterKind) {
     const tid = l.target?.id ?? l.target;
     return visibleIds.has(sid) && visibleIds.has(tid);
   }).slice(0, 800);
+
+  if (typeof cytoscape !== "function") {
+    drawFallbackSvg(visibleNodes, visibleLinks);
+    return;
+  }
 
   // Degree for label display.
   const degMap = new Map();
@@ -366,12 +464,13 @@ function drawGraph(filterText, filterKind) {
   visibleNodes.forEach((n) => {
     const deg  = degMap.get(n.id) || 0;
     const size = 18 + Math.min(deg * 2, 22);
+    const fullLabel = String(n.label || n.id || "");
     cyElements.push({
       group: "nodes",
       data: {
         id:         n.id,
-        label:      topLabels.has(n.id) ? (n.label.length > 22 ? n.label.slice(0, 20) + "…" : n.label) : "",
-        fullLabel:  n.label,
+        label:      topLabels.has(n.id) ? (fullLabel.length > 22 ? fullLabel.slice(0, 20) + "..." : fullLabel) : "",
+        fullLabel:  fullLabel,
         type:       n.type,
         category:   n.category || n.type,
         confidence: n.confidence,
@@ -411,11 +510,12 @@ function drawGraph(filterText, filterKind) {
     cyContainer = document.createElement("div");
     cyContainer.id = "cyContainer";
     cyContainer.style.width  = "100%";
-    cyContainer.style.height = "100%";
+    cyContainer.style.height = graphViewportHeightPx() + "px";
     cyContainer.style.background = "transparent";
     graphSvg.style.display = "none";
     viewport.appendChild(cyContainer);
   }
+  cyContainer.style.height = graphViewportHeightPx() + "px";
   cyContainer.style.display = "block";
 
   cyInstance = cytoscape({
@@ -542,6 +642,13 @@ function drawGraph(filterText, filterKind) {
 
   cyInstance.on("click", (e) => {
     if (e.target === cyInstance) resetHighlight();
+  });
+
+  // Ensure canvas dimensions match the visible container after panel toggle.
+  requestAnimationFrame(() => {
+    if (!cyInstance) return;
+    cyInstance.resize();
+    cyInstance.fit(undefined, 24);
   });
 }
 
