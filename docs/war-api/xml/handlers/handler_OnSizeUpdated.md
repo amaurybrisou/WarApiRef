@@ -81,8 +81,7 @@ function(...)
 
 ## Used With
 
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [OnSizeUpdated](../../events/window_events/window_event_OnSizeUpdated.md) (MEDIUM 53/100) - Window Event
+- none
 
 ## Triggered By
 

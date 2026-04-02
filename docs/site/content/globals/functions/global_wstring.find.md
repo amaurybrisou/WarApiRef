@@ -99,9 +99,6 @@ Observed as a global function across 2 addons.
 
 ## Used With
 
-- [GameData.Player.activeTitle](../../gamedata/fields/gamedata_GameData.Player.activeTitle.md) (HIGH 100/100) - GameData Field
-- [GameData.Player.worldObjNum](../../gamedata/fields/gamedata_GameData.Player.worldObjNum.md) (HIGH 100/100) - GameData Field
-- [wstring.match](global_wstring.match.md) (HIGH 100/100) - Global Function
 - [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Triggered By

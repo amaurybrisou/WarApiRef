@@ -91,12 +91,7 @@ Observed reading from or writing to edit-box controls.
 
 ## Used With
 
-- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
-- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
-- [WindowAssignFocus](window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
-- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
+- none
 
 ## Triggered By
 

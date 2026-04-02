@@ -150,20 +150,9 @@ function(...)
 - [EditBox](../element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](../element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [GameData.PlayerActions.DO_ABILITY](../../gamedata/fields/gamedata_GameData.PlayerActions.DO_ABILITY.md) (HIGH 100/100) - GameData Field
-- [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
 - [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [ListBox](../element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
-- [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
-- [SliderBar](../element_types/element_SliderBar.md) (HIGH 100/100) - XML Element Type
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
-- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-- [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

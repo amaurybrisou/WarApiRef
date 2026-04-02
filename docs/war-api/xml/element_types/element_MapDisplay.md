@@ -111,26 +111,11 @@ Observed XML element type instantiated by 3 addons.
 
 ## Used With
 
-- [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Handler
-- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnMButtonUp](../../events/window_events/window_event_OnMButtonUp.md) (HIGH 100/100) - Window Event
-- [OnMButtonUp](../handlers/handler_OnMButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
-- [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
-- [OnMouseOverEnd](../../events/window_events/window_event_OnMouseOverEnd.md) (HIGH 100/100) - Window Event
-- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 100/100) - XML Handler
 - [OnMouseWheel](../../events/window_events/window_event_OnMouseWheel.md) (HIGH 100/100) - Window Event
 - [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Handler
 - [OnPointMouseOver](../../events/window_events/window_event_OnPointMouseOver.md) (HIGH 100/100) - Window Event
 - [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) (HIGH 100/100) - XML Handler
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
-- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-- [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
-- [OnUpdate](../../events/window_events/window_event_OnUpdate.md) (HIGH 100/100) - Window Event
-- [OnUpdate](../handlers/handler_OnUpdate.md) (HIGH 100/100) - XML Handler
 
 ## Triggered By
 

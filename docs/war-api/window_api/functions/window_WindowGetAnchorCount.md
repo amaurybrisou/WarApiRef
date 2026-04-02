@@ -99,8 +99,7 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 

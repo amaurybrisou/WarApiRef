@@ -94,8 +94,7 @@ Observed as a global function across 2 addons.
 
 ## Used With
 
-- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 

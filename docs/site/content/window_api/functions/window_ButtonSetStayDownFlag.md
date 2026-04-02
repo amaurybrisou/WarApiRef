@@ -93,8 +93,7 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Used With
 
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 

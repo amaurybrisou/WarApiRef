@@ -103,7 +103,6 @@ Observed as a global function across 2 addons.
 - [Cursor.Clear](global_Cursor.Clear.md) (HIGH 100/100) - Global Function
 - [Cursor.IconOnCursor](global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
 - [Cursor.PickUp](global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.InsertItemLink](global_EA_ChatWindow.InsertItemLink.md) (HIGH 100/100) - Global Function
 - [BankWindow.GetSlotNumberForButtonIndex](global_BankWindow.GetSlotNumberForButtonIndex.md) (HIGH 96/100) - Global Function
 
 ## Triggered By

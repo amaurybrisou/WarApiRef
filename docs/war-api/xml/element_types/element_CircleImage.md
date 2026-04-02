@@ -81,6 +81,10 @@ Observed XML element type instantiated by 11 addons.
 
 - none
 
+## Common Structural Child Elements
+
+- [TintColor](element_TintColor.md)
+
 ## Seen In
 
 - AggroMeter

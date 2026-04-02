@@ -109,10 +109,7 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 

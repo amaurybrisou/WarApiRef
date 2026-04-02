@@ -133,19 +133,7 @@ Observed as a global function across 33 addons.
 
 ## Used With
 
-- [BankWindow](../tables/table_BankWindow.md) (HIGH 100/100) - Global Table
-- [DialogManager.MakeOneButtonDialog](global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.OnKeyEnter](global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
-- [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [EA_Window_CurrentEvents.SetCurrentTier](global_EA_Window_CurrentEvents.SetCurrentTier.md) (HIGH 90/100) - Global Function
-- [BankWindow.Hide](global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
-- [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [towstring](global_towstring.md) (HIGH 75/100) - Global Function
-- [RegisterEventHandler](global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By
 

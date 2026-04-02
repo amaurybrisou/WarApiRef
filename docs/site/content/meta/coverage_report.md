@@ -17,7 +17,7 @@
 | Symbol Type | Count |
 | --- | --- |
 | constants | 105 |
-| element_types | 21 |
+| element_types | 60 |
 | game_events | 156 |
 | gamedata | 83 |
 | global_functions | 108 |
@@ -31,24 +31,24 @@
 
 | Level | Count |
 | --- | --- |
-| HIGH | 797 |
-| MEDIUM | 51 |
+| HIGH | 823 |
+| MEDIUM | 64 |
 | LOW | 60 |
 
 ## Candidate Outcomes
 
 | Outcome | Count |
 | --- | --- |
-| High confidence platform | 797 |
-| Medium confidence candidates | 51 |
+| High confidence platform | 823 |
+| Medium confidence candidates | 64 |
 | Low confidence symbols | 4 |
 | Rejected addon-local | 56 |
 
 ## Spread
 
-- Symbols seen once: 435
+- Symbols seen once: 448
 
-- Symbols seen in multiple addons: 473
+- Symbols seen in multiple addons: 499
 
 ## High Confidence Platform
 
@@ -693,16 +693,40 @@
 | CircleImage | XML Element Type | 100 | HIGH | addons=11; xml=29; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | ColorPicker | XML Element Type | 100 | HIGH | addons=1; xml=1; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, referenced by generated docs or reference files. |
 | ComboBox | XML Element Type | 100 | HIGH | addons=29; xml=347; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| Disabled | XML Element Type | 100 | HIGH | addons=20; xml=60; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| DisabledPressed | XML Element Type | 100 | HIGH | addons=8; xml=14; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | DynamicImage | XML Element Type | 100 | HIGH | addons=41; xml=321; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | EditBox | XML Element Type | 100 | HIGH | addons=24; xml=212; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | FullResizeImage | XML Element Type | 100 | HIGH | addons=41; xml=199; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | HorizontalResizeImage | XML Element Type | 100 | HIGH | addons=12; xml=31; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | Label | XML Element Type | 100 | HIGH | addons=56; xml=1572; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| Left | XML Element Type | 100 | HIGH | addons=5; xml=10; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | ListBox | XML Element Type | 100 | HIGH | addons=20; xml=51; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| ListColumn | XML Element Type | 100 | HIGH | addons=14; xml=27; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| ListColumns | XML Element Type | 100 | HIGH | addons=15; xml=28; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| ListData | XML Element Type | 100 | HIGH | addons=20; xml=51; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | MapDisplay | XML Element Type | 100 | HIGH | addons=3; xml=4; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace. |
+| MenuButtonOffset | XML Element Type | 100 | HIGH | addons=8; xml=13; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| Middle | XML Element Type | 100 | HIGH | addons=11; xml=30; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| Normal | XML Element Type | 100 | HIGH | addons=24; xml=84; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| NormalHighlit | XML Element Type | 100 | HIGH | addons=23; xml=65; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| OverlayOffset | XML Element Type | 100 | HIGH | addons=7; xml=14; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| OverlaySize | XML Element Type | 100 | HIGH | addons=7; xml=14; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| OverlayTexCoords | XML Element Type | 100 | HIGH | addons=7; xml=14; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| Pressed | XML Element Type | 100 | HIGH | addons=22; xml=77; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| PressedHighlit | XML Element Type | 100 | HIGH | addons=17; xml=53; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| ResizeImages | XML Element Type | 100 | HIGH | addons=9; xml=21; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| Right | XML Element Type | 100 | HIGH | addons=5; xml=10; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | ScrollWindow | XML Element Type | 100 | HIGH | addons=11; xml=31; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | SliderBar | XML Element Type | 100 | HIGH | addons=17; xml=91; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| Sound | XML Element Type | 100 | HIGH | addons=4; xml=8; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| Sounds | XML Element Type | 100 | HIGH | addons=4; xml=8; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | StatusBar | XML Element Type | 100 | HIGH | addons=2; xml=5; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace. |
+| TexSlices | XML Element Type | 100 | HIGH | addons=13; xml=54; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| Text | XML Element Type | 100 | HIGH | addons=4; xml=72; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| TextColors | XML Element Type | 100 | HIGH | addons=9; xml=23; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| TextOffset | XML Element Type | 100 | HIGH | addons=15; xml=51; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
+| TintColor | XML Element Type | 100 | HIGH | addons=21; xml=99; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | VerticalResizeImage | XML Element Type | 100 | HIGH | addons=3; xml=7; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace. |
 | VerticalScrollbar | XML Element Type | 100 | HIGH | addons=12; xml=33; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
 | Window | XML Element Type | 100 | HIGH | addons=60; xml=1331; sources=xml_frames,xml_handlers | Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes. |
@@ -730,6 +754,8 @@
 | OnTextChanged | XML Handler | 100 | HIGH | addons=14; xml=112; sources=bindings,xml_handlers | Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files. |
 | OnUpdate | XML Handler | 100 | HIGH | addons=4; xml=4; sources=bindings,xml_handlers | Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files. |
 | SystemData.Events.PLAYER_BANK_SLOT_UPDATED | Game Event | 98 | HIGH | addons=1; sources=event_page,flows | Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files. |
+| AnimFrame | XML Element Type | 98 | HIGH | addons=3; xml=5; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, seen in 2 to 3 addons. |
+| AnimFrames | XML Element Type | 98 | HIGH | addons=3; xml=5; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, seen in 2 to 3 addons. |
 | LogDisplay | XML Element Type | 98 | HIGH | addons=2; xml=2; sources=xml_frames | Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, seen in 2 to 3 addons. |
 | BankWindow.GetItem | Global Function | 96 | HIGH | addons=2; global=2; sources=globals,lua_calls | Promoted as HIGH confidence because referenced by generated docs or reference files, called globally with no local definition, seen in 2 to 3 addons. |
 | BankWindow.GetSlotNumberForButtonIndex | Global Function | 96 | HIGH | addons=2; global=2; sources=globals,lua_calls | Promoted as HIGH confidence because referenced by generated docs or reference files, called globally with no local definition, seen in 2 to 3 addons. |
@@ -894,7 +920,20 @@
 | wstring.char | Global Function | 45 | MEDIUM | addons=1; global=1; sources=lua_calls | Promoted as MEDIUM confidence because matches a known engine namespace, called globally with no local definition. |
 | wstring.lower | Global Function | 45 | MEDIUM | addons=1; global=1; sources=lua_calls | Promoted as MEDIUM confidence because matches a known engine namespace, called globally with no local definition. |
 | wstring.upper | Global Function | 45 | MEDIUM | addons=1; global=1; sources=lua_calls | Promoted as MEDIUM confidence because matches a known engine namespace, called globally with no local definition. |
+| ActiveZoneOffset | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| AnimatedImages | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| Bottom | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| ColorSize | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| ColorSpacing | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| ColorTexCoords | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| ColorTexDims | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
 | CooldownDisplay | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| DownOffset | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| Eventhandlers | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| ThumbOffset | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| Top | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| UpOffset | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
+| Visual | XML Element Type | 45 | MEDIUM | addons=1; xml=1; sources=xml_frames | Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes. |
 | GroupsPlayerPetUpdated | Game Event | 43 | MEDIUM | addons=1; global=1; sources=event_page,lua_event_registration | Promoted as MEDIUM confidence because referenced by generated docs or reference files, called globally with no local definition, used in event registration or dispatch. |
 | GroupsTargetChanged | Game Event | 43 | MEDIUM | addons=1; global=1; sources=event_page,lua_event_registration | Promoted as MEDIUM confidence because referenced by generated docs or reference files, called globally with no local definition, used in event registration or dispatch. |
 | IconCreateTooltip | Game Event | 43 | MEDIUM | addons=1; global=1; sources=event_page,lua_event_registration | Promoted as MEDIUM confidence because referenced by generated docs or reference files, called globally with no local definition, used in event registration or dispatch. |

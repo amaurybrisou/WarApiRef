@@ -109,12 +109,7 @@ Observed querying runtime window state or metadata.
 ## Used With
 
 - [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.UPDATE_PROCESSED](../../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
-- [WindowGetHandleInput](window_WindowGetHandleInput.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
-- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowStartAlphaAnimation](window_WindowStartAlphaAnimation.md) (HIGH 100/100) - Window Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By

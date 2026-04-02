@@ -92,8 +92,7 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [EA_ChatWindow.Print](global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
+- none
 
 ## Triggered By
 

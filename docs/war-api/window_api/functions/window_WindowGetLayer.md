@@ -108,13 +108,9 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

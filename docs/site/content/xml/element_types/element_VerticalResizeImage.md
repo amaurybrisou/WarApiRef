@@ -77,6 +77,13 @@ Observed XML element type instantiated by 3 addons.
 
 - BuffHeadLayoutVerticalResizeImage
 
+## Common Structural Child Elements
+
+- [Middle](element_Middle.md)
+- [TintColor](element_TintColor.md)
+- [Bottom](element_Bottom.md)
+- [Top](element_Top.md)
+
 ## Seen In
 
 - BuffHead

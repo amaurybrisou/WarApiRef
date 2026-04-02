@@ -10,6 +10,7 @@ Observed multiple addons converging on a small set of runtime events such as LOA
 ## Involved APIs
 
 - [EA_CareerResourceWindow](../events/game_events/game_event_EA_CareerResourceWindow.md) (HIGH 100/100) - Game Event
+- [Text](../xml/element_types/element_Text.md) (HIGH 100/100) - XML Element Type
 - [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [CombatLogNewCombatEvent](../events/game_events/game_event_CombatLogNewCombatEvent.md) (HIGH 93/100) - Game Event

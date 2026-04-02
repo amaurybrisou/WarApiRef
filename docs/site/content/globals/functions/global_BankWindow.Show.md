@@ -95,8 +95,7 @@ Observed as a global function across 3 addons.
 
 ## Used With
 
-- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [BankWindow.Hide](global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
+- none
 
 ## Triggered By
 

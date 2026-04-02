@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin, Effigy, RVAPI_ColorDialog, RVMOD_Manager, RoR_SoR |
-| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/RVAPI_ColorDialog/RVAPI_ColorDialog.lua:83`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:210`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:178` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:73`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/RVAPI_ColorDialog/RVAPI_ColorDialog.lua:83`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:210`, `/workspace_addons/RoR_SoR/RoR_SoR.lua:178` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | CM_ClosetGoblin: ClosetGoblin.OnInitialize, Effigy: Effigy.Initialize, RVAPI_ColorDialog: RVAPI_ColorDialog.Initialize, RVMOD_Manager: RVMOD_Manager.Initialize, RoR_SoR: RoR_SoR:RegisterSelfEvents |

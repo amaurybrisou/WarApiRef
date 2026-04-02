@@ -88,17 +88,8 @@ Observed GameData field used by 4 addons through generated function calls, event
 - [DialogManager.MakeTwoButtonDialog](../../globals/functions/global_DialogManager.MakeTwoButtonDialog.md) (HIGH 100/100) - Global Function
 - [EA_Window_Backpack.AutoAddCraftingItemIfPossible](../../globals/functions/global_EA_Window_Backpack.AutoAddCraftingItemIfPossible.md) (HIGH 100/100) - Global Function
 - [EA_Window_Backpack.ConfirmThenRefine](../../globals/functions/global_EA_Window_Backpack.ConfirmThenRefine.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack.GetCursorForBackpack](../../globals/functions/global_EA_Window_Backpack.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack.GetItemsFromBackpack](../../globals/functions/global_EA_Window_Backpack.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack.IsRefinable](../../globals/functions/global_EA_Window_Backpack.IsRefinable.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack.IsSlotLocked](../../globals/functions/global_EA_Window_Backpack.IsSlotLocked.md) (HIGH 100/100) - Global Function
 - [EA_Window_InteractionStore](../../globals/tables/table_EA_Window_InteractionStore.md) (HIGH 100/100) - Global Table
-- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [BankWindow.IsShowing](../../globals/functions/global_BankWindow.IsShowing.md) (HIGH 96/100) - Global Function
-- [EA_Window_InteractionLibrarianStore.ConfirmThenRepairItem](../../globals/functions/global_EA_Window_InteractionLibrarianStore.ConfirmThenRepairItem.md) (HIGH 80/100) - Global Function
-- [EA_Window_InteractionLibrarianStore.ConfirmThenSellItem](../../globals/functions/global_EA_Window_InteractionLibrarianStore.ConfirmThenSellItem.md) (HIGH 80/100) - Global Function
-- [EA_Window_InteractionLibrarianStore.InteractingWithLibrarianStore](../../globals/functions/global_EA_Window_InteractionLibrarianStore.InteractingWithLibrarianStore.md) (HIGH 80/100) - Global Function
-- [EA_Window_InteractionLibrarianStore.InteractingWithRepairMan](../../globals/functions/global_EA_Window_InteractionLibrarianStore.InteractingWithRepairMan.md) (HIGH 80/100) - Global Function
 
 ## Triggered By
 

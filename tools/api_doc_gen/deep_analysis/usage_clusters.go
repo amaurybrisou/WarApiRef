@@ -1,6 +1,7 @@
 package deep_analysis
 
 import (
+	"fmt"
 	"sort"
 	"strings"
 )
@@ -50,15 +51,25 @@ func (uc *UsageClustering) RecordCoOccurrence(symbol1, symbol2 string) {
 	uc.AllSymbols[symbol2] = true
 }
 
+// maxCooccurrenceSymbolsPerContext caps the number of unique calls considered per
+// function context during co-occurrence recording. Without a cap, a function with
+// N calls produces N*(N-1)/2 pairs, causing combinatorial edge explosion.
+const maxCooccurrenceSymbolsPerContext = 10
+
 // AnalyzeSymbolCalls identifies which symbols call each other frequently
 func (uc *UsageClustering) AnalyzeSymbolCalls(functionPath string, calledFunctions []string) {
+	// Cap to avoid combinatorial explosion: N*(N-1)/2 pairs grows quickly.
+	limited := calledFunctions
+	if len(limited) > maxCooccurrenceSymbolsPerContext {
+		limited = limited[:maxCooccurrenceSymbolsPerContext]
+	}
 	// Record pairwise co-occurrences
-	for i, called1 := range calledFunctions {
+	for i, called1 := range limited {
 		uc.SymbolFrequency[called1]++
 		uc.AllSymbols[called1] = true
 
 		// Record co-occurrence with other calls in same function
-		for _, called2 := range calledFunctions[i+1:] {
+		for _, called2 := range limited[i+1:] {
 			uc.RecordCoOccurrence(called1, called2)
 		}
 	}
@@ -255,7 +266,7 @@ func (uc *UsageClustering) FindCommonlyUsedWith(minCooccur int) []EdgeRelation {
 					RelationType:    "commonly_used_with",
 					ConfidenceScore: calculateCooccurrenceConfidence(count),
 					EvidenceCount:   count,
-					Rationale:       "Used together " + string(rune(count)) + " times",
+					Rationale:       fmt.Sprintf("Used together %d times", count),
 				})
 			}
 		}
@@ -321,8 +332,8 @@ func (uc *UsageClustering) SummarizeCluster(cluster UsageCluster) string {
 
 	summary += "\n" +
 		"Type: " + patternType + "\n" +
-		"Co-occurrence frequency: " + string(rune(cluster.Frequency)) + "\n" +
-		"Confidence: " + string(rune(cluster.Confidence)) + "%"
+		"Co-occurrence frequency: " + fmt.Sprintf("%d", cluster.Frequency) + "\n" +
+		"Confidence: " + fmt.Sprintf("%d", cluster.Confidence) + "%"
 
 	return summary
 }

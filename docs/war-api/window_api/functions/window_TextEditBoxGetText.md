@@ -127,34 +127,10 @@ Observed reading from or writing to edit-box controls.
 ## Used With
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetSelectedMenuItem](window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [DialogManager.MakeOneButtonDialog](../../globals/functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
-- [EditBox](../../xml/element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [LayoutEditor.UnregisterWindow](window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnTextChanged](../../events/window_events/window_event_OnTextChanged.md) (HIGH 100/100) - Window Event
-- [OnTextChanged](../../xml/handlers/handler_OnTextChanged.md) (HIGH 100/100) - XML Handler
-- [ScrollWindowUpdateScrollRect](window_ScrollWindowUpdateScrollRect.md) (HIGH 100/100) - Window Function
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
-- [TextEditBoxSetTextColor](window_TextEditBoxSetTextColor.md) (HIGH 100/100) - Window Function
-- [WindowGetId](window_WindowGetId.md) (HIGH 100/100) - Window Function
-- [WindowGetParent](window_WindowGetParent.md) (HIGH 100/100) - Window Function
-- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

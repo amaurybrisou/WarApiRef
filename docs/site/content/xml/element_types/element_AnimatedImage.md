@@ -82,6 +82,11 @@ Observed XML element type instantiated by 10 addons.
 - EA_MoraleButtonAnimation
 - LoadingScreenWarSymbolAnimation
 
+## Common Structural Child Elements
+
+- [AnimFrame](element_AnimFrame.md)
+- [AnimFrames](element_AnimFrames.md)
+
 ## Seen In
 
 - CMap

@@ -82,8 +82,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Used With
 
-- [VerticalScrollbar](../../xml/element_types/element_VerticalScrollbar.md) (HIGH 100/100) - XML Element Type
-- [OnScrollPosChanged](../../xml/handlers/handler_OnScrollPosChanged.md) (HIGH 73/100) - XML Handler
+- none
 
 ## Triggered By
 

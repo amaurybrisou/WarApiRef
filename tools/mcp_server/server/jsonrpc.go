@@ -33,14 +33,15 @@ type jsonRPCResponse struct {
 }
 
 type App struct {
-	docsRoot  string
+	docsRoot    string
 	feedingRoot string
-	store     *Store
-	storeErr  error
-	storeOnce sync.Once
-	storeDone chan struct{}
-	storeMu   sync.RWMutex
-	validator *Validator
+	queueMu     sync.Mutex   // protects queue read-modify-write operations
+	store       *Store
+	storeErr    error
+	storeOnce   sync.Once
+	storeDone   chan struct{}
+	storeMu     sync.RWMutex
+	validator   *Validator
 }
 
 func NewApp(docsRoot string) (*App, error) {
@@ -199,6 +200,45 @@ func (a *App) dispatch(method string, params json.RawMessage) (interface{}, *mod
 			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "limit must be >= 0"}
 		}
 		return a.ingestObservationBatch(req), nil
+	case "feeding/list_pending":
+		var req schema.ListPendingObservationsRequest
+		if err := json.Unmarshal(params, &req); err != nil {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "invalid feeding/list_pending payload"}
+		}
+		return a.listPendingObservations(req), nil
+	case "feeding/review":
+		var req schema.ReviewObservationRequest
+		if err := json.Unmarshal(params, &req); err != nil {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "invalid feeding/review payload"}
+		}
+		if strings.TrimSpace(req.ObservationID) == "" {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "observation_id is required"}
+		}
+		if req.Verdict != "accept" && req.Verdict != "reject" {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "verdict must be 'accept' or 'reject'"}
+		}
+		return a.reviewObservation(req), nil
+	case "feeding/promote":
+		var req schema.PromoteObservationRequest
+		if err := json.Unmarshal(params, &req); err != nil {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "invalid feeding/promote payload"}
+		}
+		if strings.TrimSpace(req.ObservationID) == "" {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "observation_id is required"}
+		}
+		return a.promoteObservation(req), nil
+	case "feeding/list_rejected":
+		var req schema.ListRejectedObservationsRequest
+		if err := json.Unmarshal(params, &req); err != nil {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "invalid feeding/list_rejected payload"}
+		}
+		return a.listRejectedObservations(req), nil
+	case "feeding/regenerate":
+		var req schema.RegenerateRequest
+		if err := json.Unmarshal(params, &req); err != nil {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "invalid feeding/regenerate payload"}
+		}
+		return a.regenerateFromPromotedKnowledge(req), nil
 	default:
 		return nil, &model.APIError{ErrorCode: "method_not_found", ErrorMessage: "method not found"}
 	}

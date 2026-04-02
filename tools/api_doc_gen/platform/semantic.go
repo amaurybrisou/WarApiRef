@@ -38,6 +38,20 @@ type eventFlowAccumulator struct {
 	Weight     int
 }
 
+// maxCombinationContextSize caps the number of symbol IDs considered per context
+// in recordCombination. Without a cap, a function with N context symbols produces
+// N*(N-1)/2 relation pairs (e.g. 20 symbols → 190 pairs), inflating commonly_used_with edges.
+const maxCombinationContextSize = 6
+
+// minCommonlyUsedWithWeight is the minimum accumulator weight to emit a commonly_used_with edge.
+// Raised from 2 to 4 to suppress low-signal combinatorial pairs.
+const minCommonlyUsedWithWeight = 4
+
+// maxCommonlyUsedWithPerNode caps the number of commonly_used_with edges emitted per
+// source node after weight-based sorting. Prevents hub nodes from generating dozens of
+// low-quality associations.
+const maxCommonlyUsedWithPerNode = 8
+
 func enrichSemanticArtifacts(corpus *Corpus) {
 	catalog := buildSymbolCatalog(*corpus)
 
@@ -226,6 +240,10 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 		if len(uniqueIDs) < 2 {
 			return
 		}
+		// Cap context size to prevent combinatorial pair explosion.
+		if len(uniqueIDs) > maxCombinationContextSize {
+			uniqueIDs = uniqueIDs[:maxCombinationContextSize]
+		}
 		sort.Strings(uniqueIDs)
 		for leftIndex := 0; leftIndex < len(uniqueIDs); leftIndex++ {
 			for rightIndex := leftIndex + 1; rightIndex < len(uniqueIDs); rightIndex++ {
@@ -265,6 +283,13 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 		contextIDs := []string{sourceEntry.ID}
 		for _, call := range doc.Calls {
 			targetEntry, found := catalog.lookup(call.Name, "function")
+			if !found {
+				// Qualified call names (e.g. "SystemData.GetCurrentCareer") may not match
+				// the catalog entry label directly. Try the last dot-component as a fallback.
+				if dotIdx := strings.LastIndex(call.Name, "."); dotIdx >= 0 {
+					targetEntry, found = catalog.lookup(call.Name[dotIdx+1:], "function")
+				}
+			}
 			if !found {
 				continue
 			}
@@ -489,20 +514,40 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 		}
 	}
 
-	edges := materializeGraphEdges(edgeAccumulators)
+	// Emit commonly_used_with edges directly into edgeAccumulators so that the
+	// final graph edge carries the real relation-accumulator weight (>= minCommonlyUsedWithWeight)
+	// and the actual co-occurrence evidence strings.  Using addEdge() here would always
+	// produce weight=1 (one call = one increment), hiding the true co-occurrence count
+	// from downstream enrichment and cap logic.
 	for _, relation := range materializeCombinationRelations(relationAccumulators, catalog) {
-		if relation.Weight < 2 {
+		if relation.Weight < minCommonlyUsedWithWeight {
 			continue
 		}
-		participants := []string{}
-		for _, participant := range relation.Participants {
-			participants = append(participants, participant.ID)
+		if len(relation.Participants) != 2 {
+			continue
 		}
-		if len(participants) == 2 {
-			addEdge(participants[0], participants[1], "commonly_used_with", relation.Title)
+		leftID := relation.Participants[0].ID
+		rightID := relation.Participants[1].ID
+		if leftID == "" || rightID == "" || leftID == rightID {
+			continue
 		}
+		key := "commonly_used_with|" + leftID + "|" + rightID
+		acc := &graphEdgeAccumulator{
+			From:     leftID,
+			To:       rightID,
+			Type:     "commonly_used_with",
+			Weight:   relation.Weight,
+			Evidence: map[string]bool{},
+		}
+		for _, ev := range relation.Evidence {
+			if strings.TrimSpace(ev) != "" {
+				acc.Evidence[ev] = true
+			}
+		}
+		edgeAccumulators[key] = acc
 	}
-	edges = materializeGraphEdges(edgeAccumulators)
+	edges := materializeGraphEdges(edgeAccumulators)
+	edges = capCommonlyUsedWithEdges(edges, maxCommonlyUsedWithPerNode)
 
 	// Enrich edges with deep analysis findings (confidence scores, rationales, missing edge types)
 	edges = enrichEdgesWithDeepAnalysis(edges, corpus, catalog)
@@ -644,6 +689,38 @@ func materializeGraphEdges(accumulators map[string]*graphEdgeAccumulator) []Grap
 	return edges
 }
 
+// capCommonlyUsedWithEdges limits the number of commonly_used_with edges per source
+// node to maxPerNode (sorted by descending weight). This prevents high-degree hub
+// nodes from dominating the graph with many low-quality association edges.
+func capCommonlyUsedWithEdges(edges []GraphEdge, maxPerNode int) []GraphEdge {
+	// Separate commonly_used_with from other edges.
+	var cwEdges []GraphEdge
+	var otherEdges []GraphEdge
+	for _, e := range edges {
+		if e.Type == "commonly_used_with" {
+			cwEdges = append(cwEdges, e)
+		} else {
+			otherEdges = append(otherEdges, e)
+		}
+	}
+	if len(cwEdges) == 0 {
+		return otherEdges
+	}
+	// Sort by descending weight so each node keeps its strongest associations.
+	sort.Slice(cwEdges, func(i, j int) bool {
+		return cwEdges[i].Weight > cwEdges[j].Weight
+	})
+	// Count how many edges have been kept per source node.
+	keptPerNode := make(map[string]int)
+	for _, e := range cwEdges {
+		if keptPerNode[e.From] < maxPerNode {
+			otherEdges = append(otherEdges, e)
+			keptPerNode[e.From]++
+		}
+	}
+	return otherEdges
+}
+
 // enrichEdgesWithDeepAnalysis applies deep_analysis inference to enrich edges with confidence scores
 func enrichEdgesWithDeepAnalysis(edges []GraphEdge, corpus Corpus, catalog symbolCatalog) []GraphEdge {
 	if len(corpus.Source.Functions) == 0 {
@@ -782,131 +859,76 @@ func generateEdgeRationale(edgeType, from, to string, weight int) string {
 	}
 }
 
-// buildMissingEdgesFromAnalysis discovers new edges using deep_analysis
+// buildMissingEdgesFromAnalysis discovers new edges using deep_analysis.
+// Only edges whose target resolves to a real catalog entry are emitted; phantom
+// fallback IDs (e.g. "systemdata_collective", "ui_visibility") are dropped entirely
+// to avoid unresolvable graph nodes.
 func buildMissingEdgesFromAnalysis(enricher *deep_analysis.EdgeEnricher, catalog symbolCatalog) []deep_analysis.EnrichedEdge {
 	enrichedEdges := []deep_analysis.EnrichedEdge{}
 
 	// Discover data access edges
 	for functionPath, fa := range enricher.EdgeInference.AllFunctions {
-		// reads_systemdata
+		// reads_systemdata — only emit when catalog resolves "SystemData"
 		if enricher.EdgeInference.InferReadsSystemData(functionPath) {
-			systemDataID := "systemdata_collective"
-			if entry, ok := catalog.lookup("SystemData", "data_structure"); ok {
-				systemDataID = entry.ID
-			}
-
-			if fromID, ok := findFunctionID(functionPath, catalog); ok {
-				enrichedEdges = append(enrichedEdges, deep_analysis.EnrichedEdge{
-					From:            fromID,
-					To:              systemDataID,
-					Type:            "reads_systemdata",
-					ConfidenceScore: 72,
-					EvidenceCount:   len(fa.AccessedGlobals),
-					EvidenceSources: []string{"static_analysis:global_access"},
-					Rationale:       fmt.Sprintf("%s reads SystemData (%d access points)", functionPath, len(fa.AccessedGlobals)),
-				})
+			systemDataEntry, ok := catalog.lookup("SystemData", "data_structure")
+			if ok {
+				if fromID, fromOK := findFunctionID(functionPath, catalog); fromOK {
+					enrichedEdges = append(enrichedEdges, deep_analysis.EnrichedEdge{
+						From:            fromID,
+						To:              systemDataEntry.ID,
+						Type:            "reads_systemdata",
+						ConfidenceScore: 72,
+						EvidenceCount:   len(fa.AccessedGlobals),
+						EvidenceSources: []string{"static_analysis:global_access"},
+						Rationale:       fmt.Sprintf("%s reads SystemData (%d access points)", functionPath, len(fa.AccessedGlobals)),
+					})
+				}
 			}
 		}
 
-		// reads_gamedata
+		// reads_gamedata — only emit when catalog resolves "GameData"
 		if enricher.EdgeInference.InferReadsGameData(functionPath) {
-			gameDataID := "gamedata_collective"
-			if entry, ok := catalog.lookup("GameData", "data_structure"); ok {
-				gameDataID = entry.ID
-			}
-
-			if fromID, ok := findFunctionID(functionPath, catalog); ok {
-				enrichedEdges = append(enrichedEdges, deep_analysis.EnrichedEdge{
-					From:            fromID,
-					To:              gameDataID,
-					Type:            "reads_gamedata",
-					ConfidenceScore: 72,
-					EvidenceCount:   len(fa.AccessedGlobals),
-					EvidenceSources: []string{"static_analysis:global_access"},
-					Rationale:       fmt.Sprintf("%s reads GameData (%d access points)", functionPath, len(fa.AccessedGlobals)),
-				})
+			gameDataEntry, ok := catalog.lookup("GameData", "data_structure")
+			if ok {
+				if fromID, fromOK := findFunctionID(functionPath, catalog); fromOK {
+					enrichedEdges = append(enrichedEdges, deep_analysis.EnrichedEdge{
+						From:            fromID,
+						To:              gameDataEntry.ID,
+						Type:            "reads_gamedata",
+						ConfidenceScore: 72,
+						EvidenceCount:   len(fa.AccessedGlobals),
+						EvidenceSources: []string{"static_analysis:global_access"},
+						Rationale:       fmt.Sprintf("%s reads GameData (%d access points)", functionPath, len(fa.AccessedGlobals)),
+					})
+				}
 			}
 		}
 
-		// updates_ui
+		// updates_ui — only emit when catalog resolves "Window"
 		if enricher.EdgeInference.InferUpdatesUI(functionPath) {
-			uiID := "ui_update_collective"
-			if entry, ok := catalog.lookup("Window", "ui_element"); ok {
-				uiID = entry.ID
-			}
-
-			if fromID, ok := findFunctionID(functionPath, catalog); ok {
-				enrichedEdges = append(enrichedEdges, deep_analysis.EnrichedEdge{
-					From:            fromID,
-					To:              uiID,
-					Type:            "updates_ui",
-					ConfidenceScore: 70,
-					EvidenceCount:   len(fa.CallsSites),
-					EvidenceSources: []string{"static_analysis:ui_patterns"},
-					Rationale:       fmt.Sprintf("%s performs UI updates", functionPath),
-				})
+			windowEntry, ok := catalog.lookup("Window", "ui_element")
+			if ok {
+				if fromID, fromOK := findFunctionID(functionPath, catalog); fromOK {
+					enrichedEdges = append(enrichedEdges, deep_analysis.EnrichedEdge{
+						From:            fromID,
+						To:              windowEntry.ID,
+						Type:            "updates_ui",
+						ConfidenceScore: 70,
+						EvidenceCount:   len(fa.CallsSites),
+						EvidenceSources: []string{"static_analysis:ui_patterns"},
+						Rationale:       fmt.Sprintf("%s performs UI updates", functionPath),
+					})
+				}
 			}
 		}
 
-		// toggles_visibility
-		if enricher.EdgeInference.InferTogglesVisibility(functionPath) {
-			if fromID, ok := findFunctionID(functionPath, catalog); ok {
-				enrichedEdges = append(enrichedEdges, deep_analysis.EnrichedEdge{
-					From:            fromID,
-					To:              "ui_visibility",
-					Type:            "toggles_visibility",
-					ConfidenceScore: 75,
-					EvidenceCount:   len(fa.UIOperations),
-					EvidenceSources: []string{"static_analysis:visibility_ops"},
-					Rationale:       fmt.Sprintf("%s toggles UI element visibility", functionPath),
-				})
-			}
-		}
+		// toggles_visibility and updates_layout are dropped: they previously pointed to
+		// "ui_visibility" / "ui_layout" — placeholder strings that are not catalog entries.
+		// Re-enable if a canonical ui_element entry for these concepts is added to the catalog.
 
-		// updates_layout
-		if enricher.EdgeInference.InferUpdatesLayout(functionPath) {
-			if fromID, ok := findFunctionID(functionPath, catalog); ok {
-				enrichedEdges = append(enrichedEdges, deep_analysis.EnrichedEdge{
-					From:            fromID,
-					To:              "ui_layout",
-					Type:            "updates_layout",
-					ConfidenceScore: 73,
-					EvidenceCount:   len(fa.UIOperations),
-					EvidenceSources: []string{"static_analysis:layout_ops"},
-					Rationale:       fmt.Sprintf("%s modifies UI layout", functionPath),
-				})
-			}
-		}
-
-		// initializes
-		if fa.IsInitFunction {
-			if fromID, ok := findFunctionID(functionPath, catalog); ok {
-				enrichedEdges = append(enrichedEdges, deep_analysis.EnrichedEdge{
-					From:            fromID,
-					To:              "addon_init_phase",
-					Type:            "initializes",
-					ConfidenceScore: 80,
-					EvidenceCount:   1,
-					EvidenceSources: []string{"semantic:function_name"},
-					Rationale:       fmt.Sprintf("%s is called during addon initialization", functionPath),
-				})
-			}
-		}
-
-		// refreshes
-		if fa.IsUpdateFunction {
-			if fromID, ok := findFunctionID(functionPath, catalog); ok {
-				enrichedEdges = append(enrichedEdges, deep_analysis.EnrichedEdge{
-					From:            fromID,
-					To:              "addon_update_phase",
-					Type:            "refreshes",
-					ConfidenceScore: 78,
-					EvidenceCount:   1,
-					EvidenceSources: []string{"semantic:function_name"},
-					Rationale:       fmt.Sprintf("%s is called during periodic updates", functionPath),
-				})
-			}
-		}
+		// initializes and refreshes are dropped: they previously pointed to
+		// "addon_init_phase" / "addon_update_phase" — phantom IDs with no catalog backing.
+		// Re-enable if lifecycle phase nodes are added as proper catalog entries.
 	}
 
 	return enrichedEdges

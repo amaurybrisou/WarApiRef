@@ -196,8 +196,6 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Used With
 
-- [DebugWindow.OnShowFocus](../../globals/functions/global_DebugWindow.OnShowFocus.md) (HIGH 100/100) - Global Function
-- [MapDisplay](../../xml/element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Handler
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 

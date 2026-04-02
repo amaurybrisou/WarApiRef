@@ -90,8 +90,7 @@ Observed as a window function across 1 addons.
 
 ## Used With
 
-- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
-- [WindowUnregisterEventHandler](window_WindowUnregisterEventHandler.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 

@@ -77,7 +77,7 @@ Observed SystemData field used by 4 addons through generated function calls, eve
 
 ## Used With
 
-- [BroadcastEvent](../../globals/functions/global_BroadcastEvent.md) (HIGH 93/100) - Global Function
+- none
 
 ## Triggered By
 

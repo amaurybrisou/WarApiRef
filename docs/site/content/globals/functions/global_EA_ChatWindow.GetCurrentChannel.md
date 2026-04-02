@@ -95,7 +95,7 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
+- none
 
 ## Triggered By
 

@@ -97,6 +97,11 @@ Observed XML element type instantiated by 29 addons.
 - APA_ComboBoxWide
 - DaemonAssist_ComboBoxWide
 
+## Common Structural Child Elements
+
+- [MenuButtonOffset](element_MenuButtonOffset.md)
+- [TextOffset](element_TextOffset.md)
+
 ## Seen In
 
 - AdvancedPetAssist
@@ -147,7 +152,6 @@ Observed XML element type instantiated by 29 addons.
 ## Used With
 
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
 - [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
 - [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
 - [OnSelChanged](../../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event

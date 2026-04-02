@@ -109,46 +109,7 @@ Observed as a window function across 10 addons.
 
 ## Used With
 
-- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetSelectedMenuItem](window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureScale](window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [ScrollWindowUpdateScrollRect](window_ScrollWindowUpdateScrollRect.md) (HIGH 100/100) - Window Function
-- [SystemData.Events.CAMPAIGN_ZONE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.CAMPAIGN_ZONE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_RENOWN_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_ZONE_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md) (HIGH 100/100) - SystemData Field
-- [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
-- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
-- [TextEditBoxSetTextColor](window_TextEditBoxSetTextColor.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowGetOffsetFromParent](window_WindowGetOffsetFromParent.md) (HIGH 100/100) - Window Function
-- [WindowGetScale](window_WindowGetScale.md) (HIGH 100/100) - Window Function
-- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
-- [WindowSetParent](window_WindowSetParent.md) (HIGH 100/100) - Window Function
-- [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-- [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- none
 
 ## Triggered By
 

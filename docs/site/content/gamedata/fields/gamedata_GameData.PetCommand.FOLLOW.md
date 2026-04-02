@@ -73,7 +73,7 @@ Observed GameData field used by 3 addons through generated function calls, event
 
 ## Used With
 
-- [PetWindow.SwitchToPassiveStance](../../globals/functions/global_PetWindow.SwitchToPassiveStance.md) (HIGH 88/100) - Global Function
+- none
 
 ## Triggered By
 

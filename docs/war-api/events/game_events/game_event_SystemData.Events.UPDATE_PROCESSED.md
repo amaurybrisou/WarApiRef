@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, GCDsaver, LibWBToggler |
-| Files seen in | `/workspace_addons/BuffHead/Setup/ContainerDemo.lua:197`, `/workspace_addons/BuffHead/Setup/LayoutDemo.lua:147`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.lua:386`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:148`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:104`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1253`, `/workspace_addons/TexturedButtons/TexturedButtons.lua:408` |
+| Files seen in | `/workspace_addons/BuffHead/Setup/ContainerDemo.lua:197`, `/workspace_addons/BuffHead/Setup/LayoutDemo.lua:147`, `/workspace_addons/BuffHead/Setup/SetupEffectCache.lua:386`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:73`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings.lua:148`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:104`, `/workspace_addons/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1253`, `/workspace_addons/TexturedButtons/TexturedButtons.lua:408` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | BuffHead: BuffHead.Setup.ContainerDemo.Enable, BuffHead: BuffHead.Setup.Demo.Enable, BuffHead: BuffHead.Setup.EffectCache.OnSearchChanged, CM_ClosetGoblin: ClosetGoblin.OnInitialize, DAoCBuff: DAoCBuffSettings.CloseOptionswindow, DAoCBuff: FilterSettings.Close |
@@ -126,13 +126,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Used With
 
-- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
-- [WindowGetAlpha](../../window_api/functions/window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
-- [WindowGetHandleInput](../../window_api/functions/window_WindowGetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowSetHandleInput](../../window_api/functions/window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowStartAlphaAnimation](../../window_api/functions/window_WindowStartAlphaAnimation.md) (HIGH 100/100) - Window Function
-- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- none
 
 ## Triggered By
 

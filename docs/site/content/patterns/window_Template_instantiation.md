@@ -12,8 +12,8 @@ Observed repeated UI elements being instantiated from XML templates at runtime.
 - [Button](../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [EA_Button_Default](../globals/constants/constant_EA_Button_Default.md) (HIGH 100/100) - Constant
 - [EA_Button_DefaultWindowClose](../globals/constants/constant_EA_Button_DefaultWindowClose.md) (HIGH 100/100) - Constant
-- [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
 - [CreateWindow](../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [CreateWindowFromTemplate](../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 

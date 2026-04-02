@@ -119,15 +119,9 @@ function(...)
 ## Used With
 
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
-- [GameData.PlayerActions.DO_MACRO](../../gamedata/fields/gamedata_GameData.PlayerActions.DO_MACRO.md) (HIGH 100/100) - GameData Field
 - [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
 - [OnLButtonDown](../../events/window_events/window_event_OnLButtonDown.md) (HIGH 100/100) - Window Event
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.TARGET_PET](../../systemdata/fields/systemdata_SystemData.Events.TARGET_PET.md) (HIGH 100/100) - SystemData Field
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-- [BroadcastEvent](../../globals/functions/global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 
 ## Triggered By
 

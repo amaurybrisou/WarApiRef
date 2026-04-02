@@ -83,7 +83,6 @@ function(...)
 
 ## Used With
 
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [OnMouseOut](../../events/window_events/window_event_OnMouseOut.md) (HIGH 73/100) - Window Event
 
 ## Triggered By

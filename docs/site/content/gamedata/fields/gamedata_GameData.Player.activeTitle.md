@@ -70,9 +70,7 @@ Observed GameData field used by 1 addons through generated function calls, event
 
 ## Used With
 
-- [GameData.Player.worldObjNum](gamedata_GameData.Player.worldObjNum.md) (HIGH 100/100) - GameData Field
-- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
-- [wstring.find](../../globals/functions/global_wstring.find.md) (MEDIUM 63/100) - Global Function
+- none
 
 ## Triggered By
 

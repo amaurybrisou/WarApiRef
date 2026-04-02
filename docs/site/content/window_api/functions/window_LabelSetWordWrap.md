@@ -107,17 +107,7 @@ Observed updating label text or label styling on existing controls.
 
 ## Used With
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [LabelGetWordWrap](window_LabelGetWordWrap.md) (HIGH 100/100) - Window Function
-- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
-- [LabelSetTextAlign](window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
-- [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 

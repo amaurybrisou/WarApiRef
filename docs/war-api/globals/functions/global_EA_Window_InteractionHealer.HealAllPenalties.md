@@ -96,7 +96,7 @@ Observed as a global function across 2 addons.
 
 ## Used With
 
-- [SystemData.Events.INTERACT_SHOW_HEALER](../../events/game_events/game_event_SystemData.Events.INTERACT_SHOW_HEALER.md) (HIGH 100/100) - Game Event
+- none
 
 ## Triggered By
 

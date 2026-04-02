@@ -87,7 +87,6 @@ function(...)
 ## Used With
 
 - [OnMButtonDown](../../events/window_events/window_event_OnMButtonDown.md) (HIGH 100/100) - Window Event
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

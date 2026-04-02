@@ -77,8 +77,7 @@ Observed GameData field used by 6 addons through generated function calls, event
 
 ## Used With
 
-- [EA_Window_Backpack.GetItemsFromBackpack](../../globals/functions/global_EA_Window_Backpack.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
-- [GameData.Player](gamedata_GameData.Player.md) (HIGH 100/100) - GameData Field
+- none
 
 ## Triggered By
 

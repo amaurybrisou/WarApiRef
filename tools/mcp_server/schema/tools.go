@@ -12,6 +12,11 @@ var ToolNames = []string{
 	"scaffold_addon_snippet",
 	"ingest_observation",
 	"ingest_observation_batch",
+	"list_pending_observations",
+	"review_observation",
+	"promote_observation",
+	"list_rejected_observations",
+	"regenerate_from_promoted_knowledge",
 }
 
 var SupportedSymbolTypes = []string{"function", "event", "xml_handler", "data_structure", "xml_element"}

@@ -115,8 +115,6 @@ function(...)
 
 ## Used With
 
-- [DebugWindow.OnShowFocus](../../globals/functions/global_DebugWindow.OnShowFocus.md) (HIGH 100/100) - Global Function
-- [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 

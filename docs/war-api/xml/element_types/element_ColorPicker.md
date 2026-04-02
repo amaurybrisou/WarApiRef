@@ -74,6 +74,13 @@ Observed XML element type instantiated by 1 addons.
 
 - none
 
+## Common Structural Child Elements
+
+- [ColorSize](element_ColorSize.md)
+- [ColorSpacing](element_ColorSpacing.md)
+- [ColorTexCoords](element_ColorTexCoords.md)
+- [ColorTexDims](element_ColorTexDims.md)
+
 ## Seen In
 
 - WSCT
@@ -88,8 +95,7 @@ Observed XML element type instantiated by 1 addons.
 
 ## Used With
 
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- none
 
 ## Triggered By
 

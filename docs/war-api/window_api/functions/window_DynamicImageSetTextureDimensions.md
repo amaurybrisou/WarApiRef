@@ -114,9 +114,6 @@ Observed mutating runtime image resources on existing controls.
 ## Used With
 
 - [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureScale](window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 

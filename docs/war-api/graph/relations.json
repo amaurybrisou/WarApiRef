@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T04:17:20.313650004Z",
+  "generated_at": "2026-04-02T10:10:00.174625662Z",
   "frequent_call_chains": [
     {
       "id": "call_chain:xml_handler.OnShown_function.global.DebugWindow.OnShowFocus",
@@ -218,47 +218,7 @@
         "AdvancedPetAssist: APAOptionsClose.OnLButtonUp -\u003e APAGui.Hide",
         "AdvancedPetAssist: APAOptionsTabsAutoRecall.OnLButtonUp -\u003e APAGui.OnTabButtonUp"
       ],
-      "weight": 1714
-    },
-    {
-      "id": "combination:ui.Button_xml_handler.OnLButtonUp",
-      "type": "common_combination",
-      "title": "Button + OnLButtonUp",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:Button",
-          "label": "Button",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Button.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 51 addons."
-        },
-        {
-          "id": "xml_handler:OnLButtonUp",
-          "label": "OnLButtonUp",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnLButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 51 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "Button \u003c-\u003e OnLButtonUp"
-      ],
-      "evidence": [
-        "AdvancedPetAssist: APAGui.Hide -\u003e WindowSetShowing(\"APAOptions\", false)",
-        "AdvancedPetAssist: APAOptionsClose.OnLButtonUp -\u003e APAGui.Hide",
-        "AdvancedPetAssist: APAOptionsTabsAutoRecall.OnLButtonUp -\u003e APAGui.OnTabButtonUp",
-        "AdvancedPetAssist: APAOptionsTabsControls.OnLButtonUp -\u003e APAGui.OnTabButtonUp",
-        "AdvancedPetAssist: APAOptionsTabsFollowTarget.OnLButtonUp -\u003e APAGui.OnTabButtonUp",
-        "AdvancedPetAssist: APAOptionsTabsGeneral.OnLButtonUp -\u003e APAGui.OnTabButtonUp"
-      ],
-      "weight": 1184
+      "weight": 1694
     },
     {
       "id": "combination:event.window.OnLButtonUp_ui.Button",
@@ -298,7 +258,47 @@
         "AdvancedPetAssist: APAOptionsTabsFollowTarget.OnLButtonUp -\u003e APAGui.OnTabButtonUp",
         "AdvancedPetAssist: APAOptionsTabsGeneral.OnLButtonUp -\u003e APAGui.OnTabButtonUp"
       ],
-      "weight": 1184
+      "weight": 1179
+    },
+    {
+      "id": "combination:ui.Button_xml_handler.OnLButtonUp",
+      "type": "common_combination",
+      "title": "Button + OnLButtonUp",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 51 addons."
+        },
+        {
+          "id": "xml_handler:OnLButtonUp",
+          "label": "OnLButtonUp",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnLButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 51 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "Button \u003c-\u003e OnLButtonUp"
+      ],
+      "evidence": [
+        "AdvancedPetAssist: APAGui.Hide -\u003e WindowSetShowing(\"APAOptions\", false)",
+        "AdvancedPetAssist: APAOptionsClose.OnLButtonUp -\u003e APAGui.Hide",
+        "AdvancedPetAssist: APAOptionsTabsAutoRecall.OnLButtonUp -\u003e APAGui.OnTabButtonUp",
+        "AdvancedPetAssist: APAOptionsTabsControls.OnLButtonUp -\u003e APAGui.OnTabButtonUp",
+        "AdvancedPetAssist: APAOptionsTabsFollowTarget.OnLButtonUp -\u003e APAGui.OnTabButtonUp",
+        "AdvancedPetAssist: APAOptionsTabsGeneral.OnLButtonUp -\u003e APAGui.OnTabButtonUp"
+      ],
+      "weight": 1175
     },
     {
       "id": "combination:event.window.OnMouseOver_xml_handler.OnMouseOver",
@@ -333,12 +333,12 @@
       "evidence": [
         "AdvancedRenownTrainer: AbilityButtonTemplate.OnMouseOver -\u003e AdvancedRenownTraining.AbilityTooltip",
         "AdvancedRenownTrainer: AdvancedRenownTraining.AbilityTooltip -\u003e WindowGetId(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e wstring.format(L \"%.01f\", (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100)",
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))"
+        "AggroMeter: AggroMeter_Button.OnMouseOver -\u003e AggroMeter.OnMouseOverStart",
+        "AggroMeter: Aggro_Label_Template.OnMouseOver -\u003e AggroMeter.SelectChar",
+        "AggroMeter: Aggro_Tactic_Template.OnMouseOver -\u003e AggroMeter.OnMouseOverStart",
+        "AggroMeter: Aggro_Timer_Template.OnMouseOver -\u003e AggroMeter.OnMouseOverStart"
       ],
-      "weight": 959
+      "weight": 955
     },
     {
       "id": "combination:ui.ComboBox_xml_handler.OnSelChanged",
@@ -498,7 +498,7 @@
         "AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnLButtonUp -\u003e AnywhereTrainer.OnLButtonUp",
         "Aura: AuraConfigGeneralCircledImage.OnLButtonUp -\u003e AuraConfig.OnCircledImageChanged"
       ],
-      "weight": 311
+      "weight": 306
     },
     {
       "id": "combination:ui.Window_xml_handler.OnLButtonUp",
@@ -538,7 +538,7 @@
         "AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnLButtonUp -\u003e AnywhereTrainer.OnLButtonUp",
         "Aura: AuraConfigGeneralCircledImage.OnLButtonUp -\u003e AuraConfig.OnCircledImageChanged"
       ],
-      "weight": 311
+      "weight": 306
     },
     {
       "id": "combination:event.window.OnRButtonUp_xml_handler.OnRButtonUp",
@@ -571,14 +571,14 @@
         "OnRButtonUp \u003c-\u003e OnRButtonUp"
       ],
       "evidence": [
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"\u003cicon00057\u003e Enabled\", AggroMeter.ToggeEnable, false, true)"
+        "AggroMeter: AggroMeterGrayListBox.OnRButtonUp -\u003e AggroMeter.PickedListMenu",
+        "AggroMeter: AggroMeter_Button.OnRButtonUp -\u003e AggroMeter.OnTabRBU",
+        "AnywhereTrainer: AnywhereTrainerTabTemplate.OnRButtonUp -\u003e AnywhereTrainer.OnRButtonUp",
+        "AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnRButtonUp -\u003e AnywhereTrainerAdditions.OnRButtonUp",
+        "Aura: AuraSharesRow.OnRButtonUp -\u003e AuraShares.OnRButtonUpAuraList",
+        "Aura: AuraWindowRow.OnRButtonUp -\u003e AuraSettings.OnRButtonUpAuraList"
       ],
-      "weight": 301
+      "weight": 281
     },
     {
       "id": "combination:ui.Label_xml_handler.OnMouseOver",
@@ -611,14 +611,14 @@
         "Label \u003c-\u003e OnMouseOver"
       ],
       "evidence": [
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))",
         "AggroMeter: Aggro_Label_Template.OnMouseOver -\u003e AggroMeter.SelectChar",
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnMouseOver -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOver",
         "BuffHead: BuffHeadSetupLayoutPropertiesWindowElementFontFontExampleLabel.OnMouseOver -\u003e BuffHead.Setup.Layout.Properties.OnFontExampleMouseOver",
-        "BuffHead: BuffHeadSetupLayoutPropertiesWindowTitleLabel.OnMouseOver -\u003e BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOver"
+        "BuffHead: BuffHeadSetupLayoutPropertiesWindowTitleLabel.OnMouseOver -\u003e BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOver",
+        "CMap: CMapWindowDigitinf.OnMouseOver -\u003e CMapWindow.OnMouseOverDigitinf",
+        "Cheeseboard: CheeseboardRowTemplateCell10.OnMouseOver -\u003e Cheeseboard.OnMouseOver"
       ],
-      "weight": 268
+      "weight": 266
     },
     {
       "id": "combination:event.window.OnMouseOver_ui.Label",
@@ -651,14 +651,14 @@
         "OnMouseOver \u003c-\u003e Label"
       ],
       "evidence": [
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))",
         "AggroMeter: Aggro_Label_Template.OnMouseOver -\u003e AggroMeter.SelectChar",
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnMouseOver -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOver",
         "BuffHead: BuffHeadSetupLayoutPropertiesWindowElementFontFontExampleLabel.OnMouseOver -\u003e BuffHead.Setup.Layout.Properties.OnFontExampleMouseOver",
-        "BuffHead: BuffHeadSetupLayoutPropertiesWindowTitleLabel.OnMouseOver -\u003e BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOver"
+        "BuffHead: BuffHeadSetupLayoutPropertiesWindowTitleLabel.OnMouseOver -\u003e BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOver",
+        "CMap: CMapWindowDigitinf.OnMouseOver -\u003e CMapWindow.OnMouseOverDigitinf",
+        "Cheeseboard: CheeseboardRowTemplateCell10.OnMouseOver -\u003e Cheeseboard.OnMouseOver"
       ],
-      "weight": 268
+      "weight": 266
     },
     {
       "id": "combination:ui.ComboBox_xml_handler.OnMouseOver",
@@ -778,7 +778,7 @@
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowElementContainerSizeColumnsEditBox.OnTextChanged -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeColumnsChanged",
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowElementContainerSizeRowsEditBox.OnTextChanged -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeRowsChanged"
       ],
-      "weight": 227
+      "weight": 224
     },
     {
       "id": "combination:event.window.OnTextChanged_ui.EditBox",
@@ -818,7 +818,7 @@
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowElementContainerSizeColumnsEditBox.OnTextChanged -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeColumnsChanged",
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowElementContainerSizeRowsEditBox.OnTextChanged -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeRowsChanged"
       ],
-      "weight": 227
+      "weight": 224
     },
     {
       "id": "combination:event.window.OnTextChanged_xml_handler.OnTextChanged",
@@ -858,7 +858,7 @@
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowElementContainerSizeColumnsEditBox.OnTextChanged -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeColumnsChanged",
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowElementContainerSizeRowsEditBox.OnTextChanged -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeRowsChanged"
       ],
-      "weight": 227
+      "weight": 224
     },
     {
       "id": "combination:event.window.OnHidden_xml_handler.OnHidden",
@@ -1213,12 +1213,12 @@
       "evidence": [
         "AdvancedRenownTrainer: AbilityButtonTemplate.OnMouseOver -\u003e AdvancedRenownTraining.AbilityTooltip",
         "AdvancedRenownTrainer: AdvancedRenownTraining.AbilityTooltip -\u003e WindowGetId(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e wstring.format(L \"%.01f\", (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100)",
         "AggroMeter: AggroMeter_Button.OnMouseOver -\u003e AggroMeter.OnMouseOverStart",
-        "AggroMeter: Aggro_Timer_Template.OnMouseOver -\u003e AggroMeter.OnMouseOverStart"
+        "AggroMeter: Aggro_Timer_Template.OnMouseOver -\u003e AggroMeter.OnMouseOverStart",
+        "Aura: AuraSharesRow.OnMouseOver -\u003e AuraShares.OnMouseOverAuraList",
+        "Aura: AuraWindowRow.OnMouseOver -\u003e AuraSettings.OnMouseOverAuraList"
       ],
-      "weight": 163
+      "weight": 161
     },
     {
       "id": "combination:ui.Window_xml_handler.OnMouseOver",
@@ -1253,12 +1253,12 @@
       "evidence": [
         "AdvancedRenownTrainer: AbilityButtonTemplate.OnMouseOver -\u003e AdvancedRenownTraining.AbilityTooltip",
         "AdvancedRenownTrainer: AdvancedRenownTraining.AbilityTooltip -\u003e WindowGetId(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e wstring.format(L \"%.01f\", (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100)",
         "AggroMeter: AggroMeter_Button.OnMouseOver -\u003e AggroMeter.OnMouseOverStart",
-        "AggroMeter: Aggro_Timer_Template.OnMouseOver -\u003e AggroMeter.OnMouseOverStart"
+        "AggroMeter: Aggro_Timer_Template.OnMouseOver -\u003e AggroMeter.OnMouseOverStart",
+        "Aura: AuraSharesRow.OnMouseOver -\u003e AuraShares.OnMouseOverAuraList",
+        "Aura: AuraWindowRow.OnMouseOver -\u003e AuraSettings.OnMouseOverAuraList"
       ],
-      "weight": 163
+      "weight": 161
     },
     {
       "id": "combination:event.window.OnMouseOverEnd_xml_handler.OnMouseOverEnd",
@@ -1298,47 +1298,7 @@
         "BuffHead: BuffHeadSetupAdvancedContainersItemRowTemplate.OnMouseOverEnd -\u003e BuffHead.Setup.AdvancedContainersItem.OnRowMouseOut",
         "BuffHead: BuffHeadSetupAdvancedContainersRowTemplate.OnMouseOverEnd -\u003e BuffHead.Setup.AdvancedContainers.OnRowMouseOut"
       ],
-      "weight": 161
-    },
-    {
-      "id": "combination:event.window.OnShown_xml_handler.OnShown",
-      "type": "common_combination",
-      "title": "OnShown + OnShown",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnShown",
-          "label": "OnShown",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnShown.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
-        },
-        {
-          "id": "xml_handler:OnShown",
-          "label": "OnShown",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnShown.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 23 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "OnShown \u003c-\u003e OnShown"
-      ],
-      "evidence": [
-        "AdvancedPetAssist: APAFollowTargetHUD.OnShown -\u003e APAGui.OnFollowTargetHUDShown",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsAutoRecall\", L \"Auto Recall\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsFollowTarget\", L \"Follow Target\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsGeneral\", L \"General\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsLos\", L \"LOS\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e LabelSetText(\"APALabelSectionAutoRecall\", L \"--- Auto Recall ---\")"
-      ],
-      "weight": 142
+      "weight": 160
     },
     {
       "id": "combination:ui.Label_xml_handler.OnLButtonUp",
@@ -1371,14 +1331,14 @@
         "Label \u003c-\u003e OnLButtonUp"
       ],
       "evidence": [
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))",
         "AggroMeter: Aggro_Label_Template.OnLButtonUp -\u003e AggroMeter.SelectChar",
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnLButtonUp -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleLClick",
         "BuffHead: BuffHeadSetupLayoutManagerWindowExportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnExportLUp",
-        "BuffHead: BuffHeadSetupLayoutManagerWindowImportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnImportLUp"
+        "BuffHead: BuffHeadSetupLayoutManagerWindowImportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnImportLUp",
+        "BuffHead: BuffHeadSetupLayoutManagerWindowLayoutsCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnLayoutsLUp",
+        "BuffHead: BuffHeadSetupLayoutPropertiesWindowElementFontFontExampleLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Properties.OnFontFontLUp"
       ],
-      "weight": 140
+      "weight": 138
     },
     {
       "id": "combination:event.window.OnLButtonUp_ui.Label",
@@ -1411,14 +1371,14 @@
         "OnLButtonUp \u003c-\u003e Label"
       ],
       "evidence": [
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.SelectChar -\u003e WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))",
         "AggroMeter: Aggro_Label_Template.OnLButtonUp -\u003e AggroMeter.SelectChar",
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnLButtonUp -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleLClick",
         "BuffHead: BuffHeadSetupLayoutManagerWindowExportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnExportLUp",
-        "BuffHead: BuffHeadSetupLayoutManagerWindowImportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnImportLUp"
+        "BuffHead: BuffHeadSetupLayoutManagerWindowImportCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnImportLUp",
+        "BuffHead: BuffHeadSetupLayoutManagerWindowLayoutsCheckboxLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Manager.OnLayoutsLUp",
+        "BuffHead: BuffHeadSetupLayoutPropertiesWindowElementFontFontExampleLabel.OnLButtonUp -\u003e BuffHead.Setup.Layout.Properties.OnFontFontLUp"
       ],
-      "weight": 140
+      "weight": 138
     },
     {
       "id": "combination:event.window.OnLButtonDown_xml_handler.OnLButtonDown",
@@ -1458,7 +1418,47 @@
         "BuffHead: BuffHeadLayoutResizeButton.OnLButtonDown -\u003e BuffHead.Setup.Layout.BeginResize",
         "BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedCompressionItem.OnRowLDown"
       ],
-      "weight": 137
+      "weight": 135
+    },
+    {
+      "id": "combination:event.window.OnShown_xml_handler.OnShown",
+      "type": "common_combination",
+      "title": "OnShown + OnShown",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "event:window:OnShown",
+          "label": "OnShown",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnShown.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
+        },
+        {
+          "id": "xml_handler:OnShown",
+          "label": "OnShown",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnShown.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 23 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "OnShown \u003c-\u003e OnShown"
+      ],
+      "evidence": [
+        "AdvancedPetAssist: APAFollowTargetHUD.OnShown -\u003e APAGui.OnFollowTargetHUDShown",
+        "AdvancedPetAssist: APAInstantOnlyHUD.OnShown -\u003e APAGui.OnInstantOnlyHUDShown",
+        "AdvancedPetAssist: APAKitingHUD.OnShown -\u003e APAGui.OnKitingHUDShown",
+        "AdvancedPetAssist: APAOptions.OnShown -\u003e APAGui.OnShown",
+        "AdvancedPetAssist: APAPetTargetHUD.OnShown -\u003e APAGui.OnPetTargetHUDShown",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnExportShown -\u003e ComboBoxSetDisabledFlag(\"AdvancedRenownTrainingPresetsWindowLoadComboBox\", true)"
+      ],
+      "weight": 133
     },
     {
       "id": "combination:event.window.OnShown_ui.Window",
@@ -1492,13 +1492,13 @@
       ],
       "evidence": [
         "AdvancedPetAssist: APAFollowTargetHUD.OnShown -\u003e APAGui.OnFollowTargetHUDShown",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsAutoRecall\", L \"Auto Recall\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsFollowTarget\", L \"Follow Target\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsGeneral\", L \"General\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsLos\", L \"LOS\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e LabelSetText(\"APALabelSectionAutoRecall\", L \"--- Auto Recall ---\")"
+        "AdvancedPetAssist: APAInstantOnlyHUD.OnShown -\u003e APAGui.OnInstantOnlyHUDShown",
+        "AdvancedPetAssist: APAKitingHUD.OnShown -\u003e APAGui.OnKitingHUDShown",
+        "AdvancedPetAssist: APAOptions.OnShown -\u003e APAGui.OnShown",
+        "AdvancedPetAssist: APAPetTargetHUD.OnShown -\u003e APAGui.OnPetTargetHUDShown",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnExportShown -\u003e ComboBoxSetDisabledFlag(\"AdvancedRenownTrainingPresetsWindowLoadComboBox\", true)"
       ],
-      "weight": 136
+      "weight": 127
     },
     {
       "id": "combination:ui.Window_xml_handler.OnShown",
@@ -1532,13 +1532,13 @@
       ],
       "evidence": [
         "AdvancedPetAssist: APAFollowTargetHUD.OnShown -\u003e APAGui.OnFollowTargetHUDShown",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsAutoRecall\", L \"Auto Recall\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsFollowTarget\", L \"Follow Target\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsGeneral\", L \"General\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsLos\", L \"LOS\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e LabelSetText(\"APALabelSectionAutoRecall\", L \"--- Auto Recall ---\")"
+        "AdvancedPetAssist: APAInstantOnlyHUD.OnShown -\u003e APAGui.OnInstantOnlyHUDShown",
+        "AdvancedPetAssist: APAKitingHUD.OnShown -\u003e APAGui.OnKitingHUDShown",
+        "AdvancedPetAssist: APAOptions.OnShown -\u003e APAGui.OnShown",
+        "AdvancedPetAssist: APAPetTargetHUD.OnShown -\u003e APAGui.OnPetTargetHUDShown",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnExportShown -\u003e ComboBoxSetDisabledFlag(\"AdvancedRenownTrainingPresetsWindowLoadComboBox\", true)"
       ],
-      "weight": 136
+      "weight": 127
     },
     {
       "id": "combination:event.window.OnRButtonUp_ui.Window",
@@ -1571,14 +1571,14 @@
         "OnRButtonUp \u003c-\u003e Window"
       ],
       "evidence": [
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"\u003cicon00057\u003e Enabled\", AggroMeter.ToggeEnable, false, true)"
+        "AggroMeter: AggroMeter_Button.OnRButtonUp -\u003e AggroMeter.OnTabRBU",
+        "AnywhereTrainer: AnywhereTrainerTabTemplate.OnRButtonUp -\u003e AnywhereTrainer.OnRButtonUp",
+        "AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnRButtonUp -\u003e AnywhereTrainerAdditions.OnRButtonUp",
+        "Aura: AuraSharesRow.OnRButtonUp -\u003e AuraShares.OnRButtonUpAuraList",
+        "Aura: AuraWindowRow.OnRButtonUp -\u003e AuraSettings.OnRButtonUpAuraList",
+        "BuffHead: BuffHeadLayoutControlFrameWindow.OnRButtonUp -\u003e BuffHead.Setup.Layout.OnControlFrameRButtonUp"
       ],
-      "weight": 135
+      "weight": 125
     },
     {
       "id": "combination:ui.Window_xml_handler.OnRButtonUp",
@@ -1611,14 +1611,14 @@
         "Window \u003c-\u003e OnRButtonUp"
       ],
       "evidence": [
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00057\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Champions\", MakeCallBack(1), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"   \u003cicon00058\u003e Heroes\", MakeCallBack(2), not AggroMeter.Enabled, true)",
-        "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"\u003cicon00057\u003e Enabled\", AggroMeter.ToggeEnable, false, true)"
+        "AggroMeter: AggroMeter_Button.OnRButtonUp -\u003e AggroMeter.OnTabRBU",
+        "AnywhereTrainer: AnywhereTrainerTabTemplate.OnRButtonUp -\u003e AnywhereTrainer.OnRButtonUp",
+        "AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnRButtonUp -\u003e AnywhereTrainerAdditions.OnRButtonUp",
+        "Aura: AuraSharesRow.OnRButtonUp -\u003e AuraShares.OnRButtonUpAuraList",
+        "Aura: AuraWindowRow.OnRButtonUp -\u003e AuraSettings.OnRButtonUpAuraList",
+        "BuffHead: BuffHeadLayoutControlFrameWindow.OnRButtonUp -\u003e BuffHead.Setup.Layout.OnControlFrameRButtonUp"
       ],
-      "weight": 135
+      "weight": 122
     },
     {
       "id": "combination:event.window.OnLButtonDown_ui.Window",
@@ -1658,7 +1658,7 @@
         "BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedCompressionItem.OnRowLDown",
         "BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedCompression.OnRowLDown"
       ],
-      "weight": 87
+      "weight": 85
     },
     {
       "id": "combination:ui.Window_xml_handler.OnLButtonDown",
@@ -1698,47 +1698,7 @@
         "BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedCompressionItem.OnRowLDown",
         "BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate.OnLButtonDown -\u003e BuffHead.Setup.AdvancedCompression.OnRowLDown"
       ],
-      "weight": 87
-    },
-    {
-      "id": "combination:ui.Label_xml_handler.OnRButtonUp",
-      "type": "common_combination",
-      "title": "Label + OnRButtonUp",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:Label",
-          "label": "Label",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Label.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 56 addons."
-        },
-        {
-          "id": "xml_handler:OnRButtonUp",
-          "label": "OnRButtonUp",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnRButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 31 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "Label \u003c-\u003e OnRButtonUp"
-      ],
-      "evidence": [
-        "CM_ClosetGoblin: ClosetGoblinSetRowName.OnRButtonUp -\u003e ClosetGoblinCharacterWindow.OnSetRowContextMenu",
-        "CM_ClosetGoblin: ClosetGoblinSetRowTactics.OnRButtonUp -\u003e ClosetGoblinCharacterWindow.OnSetRowContextMenu",
-        "CM_ClosetGoblin: ClosetGoblinZoneRowSet.OnRButtonUp -\u003e ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
-        "CM_ClosetGoblin: ClosetGoblinZoneRowZone.OnRButtonUp -\u003e ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
-        "Enemy: Enemy.CombatLogUI_EpsWindow_OnRButtonUp -\u003e EA_Window_ContextMenu.AddMenuDivider()",
-        "Enemy: EnemyCombatLogEpsWindowInDps.OnRButtonUp -\u003e Enemy.CombatLogUI_EpsWindow_OnRButtonUp"
-      ],
-      "weight": 76
+      "weight": 85
     },
     {
       "id": "combination:event.window.OnRButtonUp_ui.Label",
@@ -1778,7 +1738,47 @@
         "Enemy: Enemy.CombatLogUI_EpsWindow_OnRButtonUp -\u003e EA_Window_ContextMenu.AddMenuDivider()",
         "Enemy: EnemyCombatLogEpsWindowInDps.OnRButtonUp -\u003e Enemy.CombatLogUI_EpsWindow_OnRButtonUp"
       ],
-      "weight": 76
+      "weight": 75
+    },
+    {
+      "id": "combination:ui.Label_xml_handler.OnRButtonUp",
+      "type": "common_combination",
+      "title": "Label + OnRButtonUp",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 56 addons."
+        },
+        {
+          "id": "xml_handler:OnRButtonUp",
+          "label": "OnRButtonUp",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnRButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 31 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "Label \u003c-\u003e OnRButtonUp"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: ClosetGoblinSetRowName.OnRButtonUp -\u003e ClosetGoblinCharacterWindow.OnSetRowContextMenu",
+        "CM_ClosetGoblin: ClosetGoblinSetRowTactics.OnRButtonUp -\u003e ClosetGoblinCharacterWindow.OnSetRowContextMenu",
+        "CM_ClosetGoblin: ClosetGoblinZoneRowSet.OnRButtonUp -\u003e ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
+        "CM_ClosetGoblin: ClosetGoblinZoneRowZone.OnRButtonUp -\u003e ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
+        "Enemy: EnemyCombatLogEpsWindowInDps.OnRButtonUp -\u003e Enemy.CombatLogUI_EpsWindow_OnRButtonUp",
+        "Enemy: EnemyCombatLogEpsWindowInDpsLabel.OnRButtonUp -\u003e Enemy.CombatLogUI_EpsWindow_OnRButtonUp"
+      ],
+      "weight": 74
     },
     {
       "id": "combination:event.window.OnKeyEscape_xml_handler.OnKeyEscape",
@@ -1819,46 +1819,6 @@
         "Aura: AuraConfigTimerOffsetX.OnKeyEscape -\u003e none"
       ],
       "weight": 69
-    },
-    {
-      "id": "combination:event.window.OnInitialize_xml_handler.OnInitialize",
-      "type": "common_combination",
-      "title": "OnInitialize + OnInitialize",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnInitialize",
-          "label": "OnInitialize",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnInitialize.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 19 addons."
-        },
-        {
-          "id": "xml_handler:OnInitialize",
-          "label": "OnInitialize",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnInitialize.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 19 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "OnInitialize \u003c-\u003e OnInitialize"
-      ],
-      "evidence": [
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
-        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize"
-      ],
-      "weight": 68
     },
     {
       "id": "combination:event.window.OnMouseOverEnd_ui.Window",
@@ -1941,9 +1901,9 @@
       "weight": 68
     },
     {
-      "id": "combination:event.window.OnInitialize_ui.Window",
+      "id": "combination:event.window.OnInitialize_xml_handler.OnInitialize",
       "type": "common_combination",
-      "title": "OnInitialize + Window",
+      "title": "OnInitialize + OnInitialize",
       "description": "Observed together in the same inferred usage contexts.",
       "participants": [
         {
@@ -1957,46 +1917,6 @@
           "summary": "Observed as an engine-supplied UI event hook used by 19 addons."
         },
         {
-          "id": "ui:Window",
-          "label": "Window",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Window.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 60 addons."
-        }
-      ],
-      "flow": [
-        "OnInitialize \u003c-\u003e Window"
-      ],
-      "evidence": [
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
-        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize"
-      ],
-      "weight": 64
-    },
-    {
-      "id": "combination:ui.Window_xml_handler.OnInitialize",
-      "type": "common_combination",
-      "title": "Window + OnInitialize",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:Window",
-          "label": "Window",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Window.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 60 addons."
-        },
-        {
           "id": "xml_handler:OnInitialize",
           "label": "OnInitialize",
           "type": "xml_handler",
@@ -2008,17 +1928,17 @@
         }
       ],
       "flow": [
-        "Window \u003c-\u003e OnInitialize"
+        "OnInitialize \u003c-\u003e OnInitialize"
       ],
       "evidence": [
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")",
         "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
-        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize"
+        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize",
+        "Aura: Aura_LabelCheckButton.OnInitialize -\u003e EA_LabelCheckButton.Initialize",
+        "Aura: Aura_LargeLabelCheckButton.OnInitialize -\u003e EA_LabelCheckButton.Initialize",
+        "CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize -\u003e ClosetGoblinOptionWindow.OnInitialize",
+        "CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize -\u003e LayoutEditor.RegisterWindow(\"ClosetGoblinOptionWindow\", L \"Closet Goblin\", L \"Option Button\", true, true, true, nil)"
       ],
-      "weight": 64
+      "weight": 63
     },
     {
       "id": "combination:ui.Button_xml_handler.OnRButtonUp",
@@ -2101,44 +2021,84 @@
       "weight": 61
     },
     {
-      "id": "combination:function.global.towstring_function.window.WindowSetShowing",
+      "id": "combination:event.window.OnInitialize_ui.Window",
       "type": "common_combination",
-      "title": "towstring + WindowSetShowing",
+      "title": "OnInitialize + Window",
       "description": "Observed together in the same inferred usage contexts.",
       "participants": [
         {
-          "id": "function:global:towstring",
-          "label": "towstring",
-          "type": "function",
-          "category": "Global Function",
-          "path": "globals/functions/global_towstring.md",
-          "confidence": "HIGH",
-          "score": 75,
-          "summary": "Observed as a global function across 56 addons."
-        },
-        {
-          "id": "function:window:WindowSetShowing",
-          "label": "WindowSetShowing",
-          "type": "function",
-          "category": "Window Function",
-          "path": "window_api/functions/window_WindowSetShowing.md",
+          "id": "event:window:OnInitialize",
+          "label": "OnInitialize",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnInitialize.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed mutating runtime window state or presentation."
+          "summary": "Observed as an engine-supplied UI event hook used by 19 addons."
+        },
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 60 addons."
         }
       ],
       "flow": [
-        "towstring \u003c-\u003e WindowSetShowing"
+        "OnInitialize \u003c-\u003e Window"
       ],
       "evidence": [
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsAutoRecall\", L \"Auto Recall\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsFollowTarget\", L \"Follow Target\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsGeneral\", L \"General\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e ButtonSetText(\"APAOptionsTabsLos\", L \"LOS\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e LabelSetText(\"APALabelSectionAutoRecall\", L \"--- Auto Recall ---\")",
-        "AdvancedPetAssist: APAGui.OnShown -\u003e LabelSetText(\"APALabelSectionLos\", L \"--- LOS Detection ---\")"
+        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
+        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize",
+        "Aura: Aura_LabelCheckButton.OnInitialize -\u003e EA_LabelCheckButton.Initialize",
+        "Aura: Aura_LargeLabelCheckButton.OnInitialize -\u003e EA_LabelCheckButton.Initialize",
+        "CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize -\u003e ClosetGoblinOptionWindow.OnInitialize",
+        "CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize -\u003e LayoutEditor.RegisterWindow(\"ClosetGoblinOptionWindow\", L \"Closet Goblin\", L \"Option Button\", true, true, true, nil)"
       ],
-      "weight": 60
+      "weight": 59
+    },
+    {
+      "id": "combination:ui.Window_xml_handler.OnInitialize",
+      "type": "common_combination",
+      "title": "Window + OnInitialize",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 60 addons."
+        },
+        {
+          "id": "xml_handler:OnInitialize",
+          "label": "OnInitialize",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnInitialize.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 19 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "Window \u003c-\u003e OnInitialize"
+      ],
+      "evidence": [
+        "AdvancedRenownTrainer: AdvancedRenownTrainingWindow.OnInitialize -\u003e AdvancedRenownTraining.Initialize",
+        "Aura: AuraConfig.OnInitialize -\u003e AuraConfig.OnInitialize",
+        "Aura: Aura_LabelCheckButton.OnInitialize -\u003e EA_LabelCheckButton.Initialize",
+        "Aura: Aura_LargeLabelCheckButton.OnInitialize -\u003e EA_LabelCheckButton.Initialize",
+        "CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize -\u003e ClosetGoblinOptionWindow.OnInitialize",
+        "CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize -\u003e LayoutEditor.RegisterWindow(\"ClosetGoblinOptionWindow\", L \"Closet Goblin\", L \"Option Button\", true, true, true, nil)"
+      ],
+      "weight": 59
     },
     {
       "id": "combination:ui.Label_xml_handler.OnMouseOverEnd",
@@ -2221,46 +2181,6 @@
       "weight": 52
     },
     {
-      "id": "combination:ui.DynamicImage_xml_handler.OnMouseOver",
-      "type": "common_combination",
-      "title": "DynamicImage + OnMouseOver",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:DynamicImage",
-          "label": "DynamicImage",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_DynamicImage.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 41 addons."
-        },
-        {
-          "id": "xml_handler:OnMouseOver",
-          "label": "OnMouseOver",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnMouseOver.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 41 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "DynamicImage \u003c-\u003e OnMouseOver"
-      ],
-      "evidence": [
-        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
-        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e wstring.format(L \"%.01f\", (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100)",
-        "AggroMeter: Aggro_Tactic_Template.OnMouseOver -\u003e AggroMeter.OnMouseOverStart",
-        "BagOMatic: BagOMaticButton.OnMouseOver -\u003e BagOMatic.wnd_on_mouse_over",
-        "CMap: CMapWindowMapMailNotificationIcon.OnMouseOver -\u003e CMapWindow.MouseoverMail",
-        "CMap: CMapWindowRvRFlagIndicator.OnMouseOver -\u003e CMapWindow.OnMouseoverRvRIndicator"
-      ],
-      "weight": 50
-    },
-    {
       "id": "combination:event.window.OnMouseOver_ui.DynamicImage",
       "type": "common_combination",
       "title": "OnMouseOver + DynamicImage",
@@ -2301,46 +2221,6 @@
       "weight": 50
     },
     {
-      "id": "combination:function.window.WindowAddAnchor_function.window.WindowClearAnchors",
-      "type": "common_combination",
-      "title": "WindowAddAnchor + WindowClearAnchors",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "function:window:WindowAddAnchor",
-          "label": "WindowAddAnchor",
-          "type": "function",
-          "category": "Window Function",
-          "path": "window_api/functions/window_WindowAddAnchor.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed positioning windows relative to other runtime UI elements."
-        },
-        {
-          "id": "function:window:WindowClearAnchors",
-          "label": "WindowClearAnchors",
-          "type": "function",
-          "category": "Window Function",
-          "path": "window_api/functions/window_WindowClearAnchors.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed resetting a window layout before applying new runtime anchors."
-        }
-      ],
-      "flow": [
-        "WindowAddAnchor \u003c-\u003e WindowClearAnchors"
-      ],
-      "evidence": [
-        "AdvancedPetAssist: AdvancedPetAssist.local.AnchorInContent -\u003e WindowAddAnchor(name, \"topleft\", \"APAOptionsContent\", \"topleft\", x, y)",
-        "AdvancedPetAssist: AdvancedPetAssist.local.AnchorInContent -\u003e WindowClearAnchors(name)",
-        "AdvancedPetAssist: AnchorInContent -\u003e WindowAddAnchor(name, \"topleft\", \"APAOptionsContent\", \"topleft\", x, y)",
-        "AdvancedPetAssist: AnchorInContent -\u003e WindowClearAnchors(name)",
-        "AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -\u003e WindowAddAnchor(tab.Name, tab.Anchor.Point, tab.Anchor.RelativeTo, tab.Anchor.RelativePoint, tab.Anchor.X, tab.Anchor.Y)",
-        "AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -\u003e WindowClearAnchors(\"AnywhereTrainerBottomBookend\")"
-      ],
-      "weight": 49
-    },
-    {
       "id": "combination:ui.DynamicImage_xml_handler.OnLButtonUp",
       "type": "common_combination",
       "title": "DynamicImage + OnLButtonUp",
@@ -2377,6 +2257,46 @@
         "BuffHead: BuffHeadSetupContainerWindowContainerDebuffsSquare.OnLButtonUp -\u003e BuffHead.Setup.Container.OnContainerClick",
         "CM_ClosetGoblin: ClosetGoblinOptionWindowIcon.OnLButtonUp -\u003e ClosetGoblinOptionWindow.OnLButtonUp",
         "CM_ClosetGoblin: yClosetGoblinButton.OnLButtonUp -\u003e ClosetGoblinOptionWindow.OnLButtonUp"
+      ],
+      "weight": 48
+    },
+    {
+      "id": "combination:ui.DynamicImage_xml_handler.OnMouseOver",
+      "type": "common_combination",
+      "title": "DynamicImage + OnMouseOver",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:DynamicImage",
+          "label": "DynamicImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_DynamicImage.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 41 addons."
+        },
+        {
+          "id": "xml_handler:OnMouseOver",
+          "label": "OnMouseOver",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnMouseOver.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 41 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "DynamicImage \u003c-\u003e OnMouseOver"
+      ],
+      "evidence": [
+        "AggroMeter: Aggro_Tactic_Template.OnMouseOver -\u003e AggroMeter.OnMouseOverStart",
+        "BagOMatic: BagOMaticButton.OnMouseOver -\u003e BagOMatic.wnd_on_mouse_over",
+        "CMap: CMapWindowMapMailNotificationIcon.OnMouseOver -\u003e CMapWindow.MouseoverMail",
+        "CMap: CMapWindowRvRFlagIndicator.OnMouseOver -\u003e CMapWindow.OnMouseoverRvRIndicator",
+        "Enemy: EnemyClickCastingDialogContentScrollChildActionConfig1Ability.OnMouseOver -\u003e Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionMouseOver",
+        "Enemy: EnemyGuardDistanceIndicator.OnMouseOver -\u003e Enemy.Guard_GuardIndicator_OnMouseOver"
       ],
       "weight": 48
     },
@@ -2577,6 +2497,86 @@
         "CM_ClosetGoblin: ClosetGoblinEquipmentButton.OnLButtonDown -\u003e ClosetGoblinCharacterWindow.EquipmentLButtonDown",
         "CMap: CMapWindowResizeResizeButtonLO.OnLButtonDown -\u003e CMapWindow.OnResizeBeginLO",
         "CMap: CMapWindowResizeResizeButtonLU.OnLButtonDown -\u003e CMapWindow.OnResizeBeginLU"
+      ],
+      "weight": 44
+    },
+    {
+      "id": "combination:event.window.OnLButtonDown_ui.Button",
+      "type": "common_combination",
+      "title": "OnLButtonDown + Button",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "event:window:OnLButtonDown",
+          "label": "OnLButtonDown",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnLButtonDown.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 23 addons."
+        },
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 51 addons."
+        }
+      ],
+      "flow": [
+        "OnLButtonDown \u003c-\u003e Button"
+      ],
+      "evidence": [
+        "BuffHead: BuffHeadLayoutResizeButton.OnLButtonDown -\u003e BuffHead.Setup.Layout.BeginResize",
+        "CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsEquipmentSlot13.OnLButtonDown -\u003e ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsEquipmentSlot9.OnLButtonDown -\u003e ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "CM_ClosetGoblin: ClosetGoblinEquipmentButton.OnLButtonDown -\u003e ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "CMap: CMapWindowResizeResizeButtonLO.OnLButtonDown -\u003e CMapWindow.OnResizeBeginLO",
+        "CMap: CMapWindowResizeResizeButtonLU.OnLButtonDown -\u003e CMapWindow.OnResizeBeginLU"
+      ],
+      "weight": 44
+    },
+    {
+      "id": "combination:event.window.OnRButtonDown_xml_handler.OnRButtonDown",
+      "type": "common_combination",
+      "title": "OnRButtonDown + OnRButtonDown",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "event:window:OnRButtonDown",
+          "label": "OnRButtonDown",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnRButtonDown.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 7 addons."
+        },
+        {
+          "id": "xml_handler:OnRButtonDown",
+          "label": "OnRButtonDown",
+          "type": "xml_handler",
+          "category": "XML Handler",
+          "path": "xml/handlers/handler_OnRButtonDown.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 7 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "OnRButtonDown \u003c-\u003e OnRButtonDown"
+      ],
+      "evidence": [
+        "BuffHead: BuffHeadBuffTemplate.OnRButtonDown -\u003e FrameManager.OnRButtonDown",
+        "BuffHead: BuffHeadLayoutControlFrameWindow.OnRButtonDown -\u003e BuffHead.Setup.Layout.OnControlFrameRButtonDown",
+        "BuffHead: BuffHeadLayoutFrameWindow.OnRButtonDown -\u003e BuffHead.Setup.Layout.OnLayoutWindowRButtonDown",
+        "BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnRButtonDown -\u003e BuffHead.Setup.AdvancedCompressionItem.OnRowRDown",
+        "BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate.OnRButtonDown -\u003e BuffHead.Setup.AdvancedCompression.OnRowRDown",
+        "BuffHead: BuffHeadSetupAdvancedContainersItemRowTemplate.OnRButtonDown -\u003e BuffHead.Setup.AdvancedContainersItem.OnRowRDown"
       ],
       "weight": 44
     }

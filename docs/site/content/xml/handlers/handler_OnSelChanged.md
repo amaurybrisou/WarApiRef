@@ -120,7 +120,6 @@ function(...)
 
 - [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
 - [OnSelChanged](../../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
 
 ## Triggered By

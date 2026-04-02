@@ -91,7 +91,7 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [DefaultColor.SetWindowTint](global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
+- none
 
 ## Triggered By
 

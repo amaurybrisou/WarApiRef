@@ -508,10 +508,24 @@ func writeFrames(outputRoot string, corpus graph.Corpus) error {
 			content += "- Addon: " + frame.Addon + "\n"
 			content += "- Type: " + frame.Type + "\n"
 			content += "- Parent: " + safeValue(frame.Parent) + "\n"
+			content += "- Parent Type: " + safeValue(frame.ParentType) + "\n"
 			content += "- Inherits: " + safeValue(frame.Inherits) + "\n"
 			content += "- Template: " + boolLabel(frame.Template) + "\n"
 			content += "- Source: `" + frame.File + ":" + fmt.Sprintf("%d", frame.Line) + "`\n\n"
 			content += md.Section("Children", md.BulletList(frame.Children))
+			content += md.Section("Child Element Types", md.BulletList(frame.ChildElementTypes))
+			structuralChildLines := make([]string, 0, len(frame.StructuralChildTypes))
+			for _, childType := range frame.StructuralChildTypes {
+				if attrKeys, ok := frame.StructuralChildAttrKeys[childType]; ok && len(attrKeys) > 0 {
+					structuralChildLines = append(structuralChildLines, childType+": "+strings.Join(attrKeys, ", "))
+				} else {
+					structuralChildLines = append(structuralChildLines, childType)
+				}
+			}
+			content += md.Section("Structural Child Types", md.BulletList(structuralChildLines))
+			if frame.CompositionSnippet != "" {
+				content += md.Section("Composition Pattern", "```xml\n"+frame.CompositionSnippet+"\n```\n")
+			}
 			content += md.Section("Attributes", md.BulletList(attributeLines(frame.Attributes)))
 			content += md.Section("Handlers", md.Table([]string{"Event", "Function"}, handlerRows(handlerByFrame[addon.Name+"|"+frame.Name])))
 			path := filepath.Join(outputRoot, "xml", "frames", docName(frame.Addon, frame.Name))
@@ -536,6 +550,18 @@ func writeTemplates(outputRoot string, corpus graph.Corpus) error {
 			content += "- Source: `" + frame.File + ":" + fmt.Sprintf("%d", frame.Line) + "`\n\n"
 			content += md.Section("Attributes", md.BulletList(attributeLines(frame.Attributes)))
 			content += md.Section("Children", md.BulletList(frame.Children))
+			structuralChildLines := make([]string, 0, len(frame.StructuralChildTypes))
+			for _, childType := range frame.StructuralChildTypes {
+				if attrKeys, ok := frame.StructuralChildAttrKeys[childType]; ok && len(attrKeys) > 0 {
+					structuralChildLines = append(structuralChildLines, childType+": "+strings.Join(attrKeys, ", "))
+				} else {
+					structuralChildLines = append(structuralChildLines, childType)
+				}
+			}
+			content += md.Section("Structural Child Types", md.BulletList(structuralChildLines))
+			if frame.CompositionSnippet != "" {
+				content += md.Section("Composition Pattern", "```xml\n"+frame.CompositionSnippet+"\n```\n")
+			}
 			path := filepath.Join(outputRoot, "xml", "templates", docName(frame.Addon, frame.Name))
 			if err := writeFile(path, content); err != nil {
 				return err

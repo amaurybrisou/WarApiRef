@@ -70,9 +70,7 @@ Observed GameData field used by 1 addons through generated function calls, event
 
 ## Used With
 
-- [GameData.PlayerActions.SET_TARGET](gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
-- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-- [WindowSetGameActionTrigger](../../window_api/functions/window_WindowSetGameActionTrigger.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 

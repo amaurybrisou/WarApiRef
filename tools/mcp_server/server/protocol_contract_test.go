@@ -4,6 +4,8 @@ package server
 import (
 	"encoding/json"
 	"testing"
+
+	"roraddons/tools/mcp_server/schema"
 )
 
 func TestInitializeCapabilitiesAreStructured(t *testing.T) {
@@ -115,12 +117,11 @@ func TestFeedingIngestReturnsAcceptedForValidPayload(t *testing.T) {
 		t.Fatalf("feeding/ingest returned error: %#v", resp.Error)
 	}
 
-	result, ok := resp.Result.(map[string]any)
+	result, ok := resp.Result.(schema.IngestObservationResponse)
 	if !ok {
 		t.Fatalf("unexpected feeding/ingest result type: %T", resp.Result)
 	}
-	accepted, _ := result["accepted"].(bool)
-	if !accepted {
+	if !result.Accepted {
 		t.Fatalf("expected accepted=true, got %#v", result)
 	}
 }
@@ -136,12 +137,11 @@ func TestFeedingIngestBatchProcessesFeedFiles(t *testing.T) {
 		t.Fatalf("feeding/ingest_batch returned error: %#v", resp.Error)
 	}
 
-	result, ok := resp.Result.(map[string]any)
+	result, ok := resp.Result.(schema.IngestObservationBatchResponse)
 	if !ok {
 		t.Fatalf("unexpected feeding/ingest_batch result type: %T", resp.Result)
 	}
-	processed, _ := result["processed_files"].(float64)
-	if processed < 1 {
-		t.Fatalf("expected at least one processed file, got %#v", result)
+	if result.ProcessedFiles < 1 {
+		t.Fatalf("expected at least one processed file, got %d", result.ProcessedFiles)
 	}
 }

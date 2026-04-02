@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster, Shinies |
-| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1283`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/Killer/KillerLifecycle.lua:4`, `/workspace_addons/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1300`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/Killer/KillerLifecycle.lua:4`, `/workspace_addons/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | CM_ClosetGoblin: ClosetGoblin.ZoneChangeInit, Enemy: Enemy.GroupsInitialize, Enemy: Enemy._GroupIconsEnabledChanged, Enemy: Enemy._TalismanAlerterEnabledChanged, GCDsaver: GCDsaver.RegisterEvents, Killer: Killer.Initialize |

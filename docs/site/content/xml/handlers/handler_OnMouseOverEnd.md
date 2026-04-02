@@ -112,11 +112,8 @@ function(...)
 ## Used With
 
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](../element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [ListBox](../element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
-- [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnMouseOverEnd](../../events/window_events/window_event_OnMouseOverEnd.md) (HIGH 100/100) - Window Event
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 

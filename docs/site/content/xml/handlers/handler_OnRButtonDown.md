@@ -98,7 +98,6 @@ function(...)
 
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [OnRButtonDown](../../events/window_events/window_event_OnRButtonDown.md) (HIGH 100/100) - Window Event
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

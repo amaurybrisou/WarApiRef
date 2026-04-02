@@ -94,10 +94,8 @@ function(...)
 
 ## Used With
 
-- [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnMouseWheel](../../events/window_events/window_event_OnMouseWheel.md) (HIGH 100/100) - Window Event
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

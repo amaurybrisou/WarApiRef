@@ -93,12 +93,7 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [BankWindow](../tables/table_BankWindow.md) (HIGH 100/100) - Global Table
-- [Cursor.Clear](global_Cursor.Clear.md) (HIGH 100/100) - Global Function
-- [Cursor.IconOnCursor](global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
-- [Cursor.PickUp](global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
-- [BankWindow.GetItem](global_BankWindow.GetItem.md) (HIGH 96/100) - Global Function
-- [BankWindow.GetSlotNumberForButtonIndex](global_BankWindow.GetSlotNumberForButtonIndex.md) (HIGH 96/100) - Global Function
+- none
 
 ## Triggered By
 

@@ -94,9 +94,7 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [EA_ChatWindow.UpdateTabScrollWindow](global_EA_ChatWindow.UpdateTabScrollWindow.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindowGroups](../tables/table_EA_ChatWindowGroups.md) (HIGH 100/100) - Global Table
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 

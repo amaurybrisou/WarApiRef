@@ -167,12 +167,17 @@ type constantAccumulator struct {
 }
 
 type elementAccumulator struct {
-	Name       string
-	Addons     map[string]bool
-	Attributes map[string]int
-	Handlers   map[string]int
-	Inherits   map[string]int
-	Examples   []UsageExample
+	Name                string
+	Addons              map[string]bool
+	Attributes          map[string]int
+	Handlers            map[string]int
+	HandlerFunctions    map[string]int // Lua function names bound via XML handlers
+	Inherits            map[string]int
+	ChildTypes          map[string]int // structural (unnamed) child element types
+	ChildElementTypes   map[string]int // named child frame element types
+	ParentTypes         map[string]int // element types that contain this one
+	Snippets            []string       // CompositionSnippet candidates from real frames
+	Examples            []UsageExample
 }
 
 type lifecycleAccumulator struct {
@@ -282,9 +287,51 @@ func Build(source SourceModel) Corpus {
 		}
 		for _, handler := range frame.Handlers {
 			acc.Handlers[handler.Event]++
+			if handler.Function != "" {
+				acc.HandlerFunctions[handler.Function]++
+			}
 		}
 		if frame.Inherits != "" {
 			acc.Inherits[frame.Inherits]++
+		}
+		// Track the element type of the parent that contains this frame.
+		if frame.ParentType != "" {
+			acc.ParentTypes[frame.ParentType]++
+		}
+		// Track named child element types.
+		for _, childElemType := range frame.ChildElementTypes {
+			if childElemType != "" {
+				acc.ChildElementTypes[childElemType]++
+				// Record the reverse: this child type has the current frame type as a parent.
+				childAcc := ensureElementAccumulator(elements, childElemType)
+				childAcc.ParentTypes[frame.Type]++
+			}
+		}
+		for _, childType := range frame.StructuralChildTypes {
+			if childType != "" {
+				acc.ChildTypes[childType]++
+			}
+		}
+		// Feed structural children through their own elementAccumulator entries so that
+		// they get first-class pages alongside named element types (ListBox, Button, etc.).
+		for _, childType := range frame.StructuralChildTypes {
+			if childType == "" {
+				continue
+			}
+			childAcc := ensureElementAccumulator(elements, childType)
+			childAcc.Addons[frame.Addon] = true
+			// Carry over attribute keys captured from the XML source.
+			for _, attrKey := range frame.StructuralChildAttrKeys[childType] {
+				if attrKey != "" {
+					childAcc.Attributes[attrKey]++
+				}
+			}
+			childAcc.Examples = appendUniqueExample(childAcc.Examples, UsageExample{
+				Addon:   frame.Addon,
+				Caller:  frame.Name,
+				Snippet: childType + " in " + frame.Type + " " + frame.Name,
+				Source:  frame.Source,
+			})
 		}
 		acc.Examples = appendUniqueExample(acc.Examples, UsageExample{
 			Addon:   frame.Addon,
@@ -292,6 +339,10 @@ func Build(source SourceModel) Corpus {
 			Snippet: frame.Type + " " + frame.Name,
 			Source:  frame.Source,
 		})
+		// Collect etree-derived composition snippets for later selection.
+		if frame.CompositionSnippet != "" {
+			acc.Snippets = append(acc.Snippets, frame.CompositionSnippet)
+		}
 
 		if shouldKeepConstant(frame.Inherits, frame.Addon, nil) {
 			constantAcc := ensureConstantAccumulator(constants, frame.Inherits)
@@ -934,11 +985,16 @@ func finalizeElementSymbols(values map[string]*elementAccumulator, ctx scoringCo
 			Evidence:         assessment.Evidence,
 			Description:      describeElement(acc.Name, len(acc.Addons)),
 			SeenIn:           mapKeys(acc.Addons),
-			CommonAttributes: topKeysByCount(acc.Attributes, 12),
-			CommonHandlers:   topKeysByCount(acc.Handlers, 12),
-			CommonInherits:   topKeysByCount(acc.Inherits, 12),
-			Examples:         firstUsageExamples(acc.Examples, 6),
-			Notes:            nil,
+			CommonAttributes:        topKeysByCount(acc.Attributes, 12),
+			CommonHandlers:          topKeysByCount(acc.Handlers, 12),
+			CommonHandlerFunctions:  topKeysByCount(acc.HandlerFunctions, 12),
+			CommonInherits:          topKeysByCount(acc.Inherits, 12),
+			CommonChildTypes:        topKeysByCount(acc.ChildTypes, 8),
+			CommonChildElementTypes: topKeysByCount(acc.ChildElementTypes, 8),
+			CommonParentTypes:       topKeysByCount(acc.ParentTypes, 6),
+			CompositionSnippet:      bestCompositionSnippet(acc.Snippets),
+			Examples:                firstUsageExamples(acc.Examples, 6),
+			Notes:                   nil,
 		})
 	}
 	sort.Slice(result, func(i, j int) bool { return result[i].Name < result[j].Name })
@@ -1571,7 +1627,7 @@ func isKnownEngineNamespace(name string, category string) bool {
 	}
 	if category == "XML Element Type" {
 		switch trimmed {
-		case "Window", "Button", "Label", "DynamicImage", "ComboBox", "ScrollWindow", "StatusBar", "EditBox", "MapDisplay", "SliderBar", "ListBox", "FullResizeImage", "HorizontalResizeImage", "VerticalResizeImage":
+		case "Window", "Button", "Label", "DynamicImage", "ComboBox", "ScrollWindow", "StatusBar", "EditBox", "MapDisplay", "SliderBar", "ListBox", "FullResizeImage", "HorizontalResizeImage", "VerticalResizeImage", "ListData", "ListColumns", "ListColumn":
 			return true
 		}
 	}
@@ -2195,7 +2251,38 @@ func describeConstant(name string, addonCount int) string {
 }
 
 func describeElement(name string, addonCount int) string {
+	switch name {
+	case "ListData":
+		return "Structural XML sub-element of ListBox that binds a list to a named Lua backing table. The `table` attribute names the Lua table supplying row data; the optional `populationfunction` attribute names a Lua callback for custom per-row population."
+	case "ListColumns":
+		return "Structural XML container inside ListBox that groups one or more ListColumn declarations, mapping backing-table fields to row-template child windows."
+	case "ListColumn":
+		return "Structural XML element inside ListColumns that maps a single field of each backing-table row entry to a named child window of the row template. Key attributes: `windowname` (child window target) and `variable` (field name in the row table)."
+	}
 	return fmt.Sprintf("Observed XML element type instantiated by %d addons.", addonCount)
+}
+
+// bestCompositionSnippet picks the most representative composition snippet from
+// all observed frames of an element type. "Most representative" means the one
+// with the most XML structure lines (more sub-elements visible), which tends to
+// come from the most fully-populated real usage.
+func bestCompositionSnippet(snippets []string) string {
+	if len(snippets) == 0 {
+		return ""
+	}
+	best := ""
+	bestLines := 0
+	for _, s := range snippets {
+		n := strings.Count(s, "\n")
+		if n > bestLines {
+			bestLines = n
+			best = s
+		}
+	}
+	if best == "" {
+		return snippets[0]
+	}
+	return best
 }
 
 func describeLifecycle(phase string, acc *lifecycleAccumulator) string {
@@ -2406,7 +2493,17 @@ func ensureConstantAccumulator(target map[string]*constantAccumulator, name stri
 func ensureElementAccumulator(target map[string]*elementAccumulator, name string) *elementAccumulator {
 	acc, ok := target[name]
 	if !ok {
-		acc = &elementAccumulator{Name: name, Addons: map[string]bool{}, Attributes: map[string]int{}, Handlers: map[string]int{}, Inherits: map[string]int{}}
+		acc = &elementAccumulator{
+			Name:              name,
+			Addons:            map[string]bool{},
+			Attributes:        map[string]int{},
+			Handlers:          map[string]int{},
+			HandlerFunctions:  map[string]int{},
+			Inherits:          map[string]int{},
+			ChildTypes:        map[string]int{},
+			ChildElementTypes: map[string]int{},
+			ParentTypes:       map[string]int{},
+		}
 		target[name] = acc
 	}
 	return acc

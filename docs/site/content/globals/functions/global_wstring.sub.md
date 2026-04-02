@@ -106,22 +106,10 @@ Observed as a global function across 8 addons.
 
 ## Used With
 
-- [GameData.Player.activeTitle](../../gamedata/fields/gamedata_GameData.Player.activeTitle.md) (HIGH 100/100) - GameData Field
-- [GameData.Player.worldObjNum](../../gamedata/fields/gamedata_GameData.Player.worldObjNum.md) (HIGH 100/100) - GameData Field
-- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [WindowSetOffsetFromParent](../../window_api/functions/window_WindowSetOffsetFromParent.md) (HIGH 100/100) - Window Function
-- [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [wstring.gsub](global_wstring.gsub.md) (HIGH 100/100) - Global Function
 - [wstring.len](global_wstring.len.md) (HIGH 100/100) - Global Function
 - [wstring.match](global_wstring.match.md) (HIGH 100/100) - Global Function
-- [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [CreateWindowFromTemplate](global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-- [DestroyWindow](global_DestroyWindow.md) (HIGH 75/100) - Global Function
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 - [wstring.find](global_wstring.find.md) (MEDIUM 63/100) - Global Function
-- [wstring.lower](global_wstring.lower.md) (MEDIUM 45/100) - Global Function
-- [wstring.upper](global_wstring.upper.md) (MEDIUM 45/100) - Global Function
 
 ## Triggered By
 

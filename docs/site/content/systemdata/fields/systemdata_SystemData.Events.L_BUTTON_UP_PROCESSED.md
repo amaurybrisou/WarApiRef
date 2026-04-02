@@ -81,8 +81,7 @@ Observed SystemData field used by 7 addons through generated function calls, eve
 
 ## Used With
 
-- [WindowUnregisterEventHandler](../../window_api/functions/window_WindowUnregisterEventHandler.md) (HIGH 100/100) - Window Function
-- [ComboBoxExternalOpenMenu](../../window_api/functions/window_ComboBoxExternalOpenMenu.md) (HIGH 80/100) - Window Function
+- none
 
 ## Triggered By
 

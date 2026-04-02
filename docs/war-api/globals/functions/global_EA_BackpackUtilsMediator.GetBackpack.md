@@ -92,7 +92,7 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [EA_BackpackUtilsMediator.GetItemsFromBackpack](global_EA_BackpackUtilsMediator.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
+- none
 
 ## Triggered By
 

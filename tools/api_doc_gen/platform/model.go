@@ -34,16 +34,21 @@ type EventRegistrationDoc struct {
 }
 
 type FrameDoc struct {
-	Name       string
-	Addon      string
-	Type       string
-	Parent     string
-	Inherits   string
-	Template   bool
-	Source     string
-	Children   []string
-	Attributes map[string]string
-	Handlers   []FrameHandlerDoc
+	Name                    string
+	Addon                   string
+	Type                    string
+	Parent                  string
+	ParentType              string              // element type tag of the direct parent named frame
+	Inherits                string
+	Template                bool
+	Source                  string
+	Children                []string
+	ChildElementTypes       []string            // element type tags of named child frames
+	StructuralChildTypes    []string            // unnamed structural element type names inside this frame
+	StructuralChildAttrKeys map[string][]string // attribute keys per structural child type
+	CompositionSnippet      string              // etree-derived XML snippet showing the structural hierarchy
+	Attributes              map[string]string
+	Handlers                []FrameHandlerDoc
 }
 
 type FrameHandlerDoc struct {
@@ -291,20 +296,25 @@ type ConstantSymbol struct {
 }
 
 type ElementTypeSymbol struct {
-	Name             string
-	Confidence       Confidence
-	RawScore         int
-	Score            int
-	Signals          []confidence.Signal
-	Rationale        string
-	Evidence         confidence.Evidence
-	Description      string
-	SeenIn           []string
-	CommonAttributes []string
-	CommonHandlers   []string
-	CommonInherits   []string
-	Examples         []UsageExample
-	Notes            []string
+	Name                     string
+	Confidence               Confidence
+	RawScore                 int
+	Score                    int
+	Signals                  []confidence.Signal
+	Rationale                string
+	Evidence                 confidence.Evidence
+	Description              string
+	SeenIn                   []string
+	CommonAttributes         []string
+	CommonHandlers           []string
+	CommonHandlerFunctions   []string // Lua function names commonly bound via XML handlers on this element type
+	CommonInherits           []string
+	CommonChildTypes         []string // structural (unnamed) child element types (e.g. ListData in ListBox)
+	CommonChildElementTypes  []string // named child frame element types (e.g. Button inside Window)
+	CommonParentTypes        []string // element types that commonly contain this one (e.g. Window for Button)
+	CompositionSnippet       string   // representative XML snippet showing the hierarchy of structural children
+	Examples                 []UsageExample
+	Notes                    []string
 }
 
 type PatternDoc struct {

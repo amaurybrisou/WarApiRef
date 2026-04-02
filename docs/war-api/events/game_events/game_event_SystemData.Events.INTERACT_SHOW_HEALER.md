@@ -96,7 +96,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Used With
 
-- [EA_Window_InteractionHealer.HealAllPenalties](../../globals/functions/global_EA_Window_InteractionHealer.HealAllPenalties.md) (HIGH 100/100) - Global Function
+- none
 
 ## Triggered By
 

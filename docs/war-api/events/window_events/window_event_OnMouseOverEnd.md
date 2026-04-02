@@ -155,11 +155,8 @@ Observed as an On* callback routed into a module-qualified Lua function.
 ## Used With
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [DynamicImage](../../xml/element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](../../xml/element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [Label](../../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [ListBox](../../xml/element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
-- [MapDisplay](../../xml/element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [OnMouseOverEnd](../../xml/handlers/handler_OnMouseOverEnd.md) (HIGH 100/100) - XML Handler
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 

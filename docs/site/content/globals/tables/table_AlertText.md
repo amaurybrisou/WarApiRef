@@ -86,16 +86,7 @@ Observed shared global table or namespace surfaced in 4 addons.
 
 ## Used With
 
-- [GameData.ChatData.name](../../gamedata/fields/gamedata_GameData.ChatData.name.md) (HIGH 100/100) - GameData Field
-- [GameData.ChatData.text](../../gamedata/fields/gamedata_GameData.ChatData.text.md) (HIGH 100/100) - GameData Field
-- [GameData.Sound.QUEST_ABANDONED](../../gamedata/fields/gamedata_GameData.Sound.QUEST_ABANDONED.md) (HIGH 100/100) - GameData Field
-- [PartyUtils.GetWarbandLeader](../functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
-- [PartyUtils.IsPartyActive](../functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
-- [WindowSetOffsetFromParent](../../window_api/functions/window_WindowSetOffsetFromParent.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [wstring.match](../functions/global_wstring.match.md) (HIGH 100/100) - Global Function
 - [AlertTextWindow.AddAlert](../functions/global_AlertTextWindow.AddAlert.md) (HIGH 88/100) - Global Function
-- [towstring](../functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

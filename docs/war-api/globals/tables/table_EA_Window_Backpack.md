@@ -110,27 +110,8 @@ Observed shared global table or namespace surfaced in 9 addons.
 ## Used With
 
 - [BankWindow](table_BankWindow.md) (HIGH 100/100) - Global Table
-- [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [DialogManager.MakeOneButtonDialog](../functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.OnKeyEnter](../functions/global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.Print](../functions/global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
 - [LibSlash.IsSlashCmdRegistered](../functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
-- [LibSlash.RegisterSlashCmd](../functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [LibSlash.RegisterWSlashCmd](../functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
-- [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Settings.Language.active](../../systemdata/fields/systemdata_SystemData.Settings.Language.active.md) (HIGH 100/100) - SystemData Field
-- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
-- [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [BankWindow.Hide](../functions/global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
-- [DoesWindowExist](../functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [CreateWindow](../functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [RegisterEventHandler](../functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Triggered By
 

@@ -82,8 +82,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Used With
 
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [OnRawDeviceInput](../../xml/handlers/handler_OnRawDeviceInput.md) (HIGH 73/100) - XML Handler
+- none
 
 ## Triggered By
 

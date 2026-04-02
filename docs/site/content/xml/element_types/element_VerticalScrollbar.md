@@ -80,6 +80,13 @@ Observed XML element type instantiated by 12 addons.
 - EA_ScrollBar_DefaultVerticalChain
 - EA_ScrollBar_ChatVertical
 
+## Common Structural Child Elements
+
+- [ActiveZoneOffset](element_ActiveZoneOffset.md)
+- [DownOffset](element_DownOffset.md)
+- [ThumbOffset](element_ThumbOffset.md)
+- [UpOffset](element_UpOffset.md)
+
 ## Seen In
 
 - DAoCBuff
@@ -110,8 +117,7 @@ Observed XML element type instantiated by 12 addons.
 
 ## Used With
 
-- [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md) (HIGH 73/100) - XML Handler
-- [OnScrollPosChanged](../../events/window_events/window_event_OnScrollPosChanged.md) (MEDIUM 53/100) - Window Event
+- none
 
 ## Triggered By
 
