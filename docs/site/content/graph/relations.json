@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T09:04:22.161887157Z",
+  "generated_at": "2026-04-02T10:10:00.174625662Z",
   "frequent_call_chains": [
     {
       "id": "call_chain:xml_handler.OnShown_function.global.DebugWindow.OnShowFocus",

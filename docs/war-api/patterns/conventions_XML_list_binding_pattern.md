@@ -13,8 +13,8 @@ ListBox rows are commonly bound through ListData-backed Lua tables, with ListCol
 - [ListColumn](../xml/element_types/element_ListColumn.md) (HIGH 100/100) - XML Element Type
 - [ListColumns](../xml/element_types/element_ListColumns.md) (HIGH 100/100) - XML Element Type
 - [ListData](../xml/element_types/element_ListData.md) (HIGH 100/100) - XML Element Type
-- [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
 
 ## Flow Diagram
 
