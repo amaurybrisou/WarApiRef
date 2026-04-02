@@ -130,20 +130,27 @@ func BuildEnrichedCatalog(
 			}
 			sortEventBindings(elem.EventBindings)
 
-			// Manipulating functions
+			// Manipulating functions — build from the binding set's frame manipulations.
+			// Each manipulation already carries a CallPattern and the function name,
+			// so we associate them directly without blind pattern assignment.
+			manipByFunc := make(map[string]*LuaManipulatorRef)
 			for _, funcName := range etb.ManipulatingFunctions {
-				elem.LuaManipulators = append(elem.LuaManipulators, LuaManipulatorRef{
+				manipByFunc[funcName] = &LuaManipulatorRef{
 					Function: funcName,
-				})
+				}
 			}
-			for pattern, count := range etb.ManipulationPatterns {
-				for i := range elem.LuaManipulators {
-					if elem.LuaManipulators[i].CallPattern == "" {
-						elem.LuaManipulators[i].CallPattern = pattern
-						elem.LuaManipulators[i].Count = count
-						break
+			// Now fill in patterns/counts from the binding set
+			if bindings != nil {
+				for _, m := range bindings.FrameManipulations {
+					if ref, ok := manipByFunc[m.LuaFunction]; ok {
+						ref.CallPattern = m.CallPattern
+						ref.Count++
+						ref.Confidence = m.Confidence
 					}
 				}
+			}
+			for _, ref := range manipByFunc {
+				elem.LuaManipulators = append(elem.LuaManipulators, *ref)
 			}
 		}
 	}

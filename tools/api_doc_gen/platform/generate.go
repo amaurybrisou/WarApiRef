@@ -486,6 +486,26 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		if symbol.CompositionSnippet != "" {
 			content += md.Section("Typical XML Structure", "```xml\n"+symbol.CompositionSnippet+"\n```\n")
 		}
+		// Phase 4 enrichment: Attribute Reference table
+		if len(symbol.AttributeProfiles) > 0 {
+			content += renderAttributeProfiles(symbol.AttributeProfiles)
+		}
+		// Phase 4 enrichment: Structural Sub-Elements with attribute data
+		if len(symbol.StructuralChildProfiles) > 0 {
+			content += renderStructuralChildProfiles(symbol.StructuralChildProfiles, elementTypePageNames)
+		}
+		// Phase 4 enrichment: Lua API Usage from Handlers
+		if len(symbol.LuaAPICallsFromHandlers) > 0 {
+			content += renderLuaAPICallsFromHandlers(symbol.LuaAPICallsFromHandlers)
+		}
+		// Phase 4 enrichment: Handler Argument Patterns
+		if len(symbol.HandlerArgPatterns) > 0 {
+			content += renderHandlerArgPatterns(symbol.HandlerArgPatterns)
+		}
+		// Phase 4 enrichment: Lua Manipulators
+		if len(symbol.LuaManipulators) > 0 {
+			content += md.Section("Lua Functions Manipulating This Type", md.BulletList(symbol.LuaManipulators))
+		}
 		content += md.Section("Seen In", md.BulletList(symbol.SeenIn))
 		content += md.Section("Examples", md.BulletList(formatUsageExamples(symbol.Examples)))
 		content += renderSemanticSections(currentPath, corpus.SymbolLinks[elementTypeID(symbol.Name)])
@@ -1044,4 +1064,119 @@ func yesNo(value bool) string {
 		return "yes"
 	}
 	return "no"
+}
+
+// ---------------------------------------------------------------------------
+// Phase 4 rendering helpers for enriched element type data
+// ---------------------------------------------------------------------------
+
+// renderAttributeProfiles generates a markdown table showing attribute reference
+// data with required/optional status and sample values.
+func renderAttributeProfiles(profiles []AttributeProfileEntry) string {
+	if len(profiles) == 0 {
+		return ""
+	}
+	rows := make([][]string, 0, len(profiles))
+	for _, p := range profiles {
+		required := "optional"
+		if p.IsRequired {
+			required = "**required**"
+		}
+		samples := ""
+		if len(p.SampleValues) > 0 {
+			vals := p.SampleValues
+			if len(vals) > 4 {
+				vals = vals[:4]
+			}
+			samples = strings.Join(vals, ", ")
+			if len(p.SampleValues) > 4 {
+				samples += ", ..."
+			}
+		}
+		pct := ""
+		if p.TotalCount > 0 {
+			pct = fmt.Sprintf("%d%%", p.Count*100/p.TotalCount)
+		}
+		rows = append(rows, []string{"`" + p.Name + "`", required, pct, samples})
+	}
+	content := "## Attribute Reference\n\n"
+	content += md.Table([]string{"Attribute", "Required", "Usage %", "Sample Values"}, rows)
+	return content + "\n"
+}
+
+// renderStructuralChildProfiles generates detailed documentation for unnamed
+// structural child elements, including their attributes.
+func renderStructuralChildProfiles(profiles []StructuralChildProfile, elementTypePages map[string]bool) string {
+	if len(profiles) == 0 {
+		return ""
+	}
+	content := "## Structural Sub-Elements\n\n"
+	for _, sc := range profiles {
+		heading := sc.Tag
+		if elementTypePages[sc.Tag] {
+			heading = markdownLink(sc.Tag, docName("element", sc.Tag))
+		}
+		content += fmt.Sprintf("### %s\n\n", heading)
+		content += fmt.Sprintf("Observed %d times as an unnamed child.\n\n", sc.Count)
+
+		if len(sc.Attributes) > 0 {
+			rows := make([][]string, 0, len(sc.Attributes))
+			for _, attr := range sc.Attributes {
+				required := "optional"
+				if attr.IsRequired {
+					required = "**required**"
+				}
+				samples := strings.Join(firstStrings(attr.SampleValues, 4), ", ")
+				rows = append(rows, []string{"`" + attr.Name + "`", required, samples})
+			}
+			content += md.Table([]string{"Attribute", "Required", "Sample Values"}, rows)
+			content += "\n"
+		}
+	}
+	return content
+}
+
+// renderLuaAPICallsFromHandlers generates a section showing API calls commonly
+// made from XML event handler functions on this element type.
+func renderLuaAPICallsFromHandlers(calls []LuaAPICallEntry) string {
+	if len(calls) == 0 {
+		return ""
+	}
+	content := "## Lua API Usage (from Handlers)\n\n"
+	content += "API functions commonly called from event handler Lua functions on this element type:\n\n"
+	rows := make([][]string, 0, len(calls))
+	for _, c := range calls {
+		events := strings.Join(c.FromEvents, ", ")
+		rows = append(rows, []string{"`" + c.Function + "`", fmt.Sprintf("%d", c.Count), events})
+	}
+	content += md.Table([]string{"API Function", "Call Count", "From Events"}, rows)
+	return content + "\n"
+}
+
+// renderHandlerArgPatterns generates a section showing expected callback argument
+// patterns for XML event handler functions on this element type.
+func renderHandlerArgPatterns(patterns []HandlerArgPatternEntry) string {
+	if len(patterns) == 0 {
+		return ""
+	}
+	content := "## Handler Callback Signatures\n\n"
+	content += "Expected callback argument patterns for event handlers on this element type:\n\n"
+	for _, p := range patterns {
+		content += fmt.Sprintf("### %s\n\n", p.Event)
+		content += fmt.Sprintf("Confidence: %s\n\n", p.Confidence)
+		if len(p.Params) > 0 {
+			rows := make([][]string, 0, len(p.Params))
+			for _, param := range p.Params {
+				rows = append(rows, []string{
+					fmt.Sprintf("%d", param.Position),
+					"`" + param.Name + "`",
+					param.Type,
+					param.Role,
+				})
+			}
+			content += md.Table([]string{"Position", "Name", "Type", "Role"}, rows)
+			content += "\n"
+		}
+	}
+	return content
 }

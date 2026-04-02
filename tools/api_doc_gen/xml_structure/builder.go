@@ -135,51 +135,35 @@ func buildElementTree(etreeElem *etree.Element, parent *XMLElement, addon, file 
 }
 
 // resolveFrameContext does a second pass to extract EventHandler declarations
-// and assign line numbers from a token-based parse.
+// and assign them to their owning named elements.
+// Note: etree does not expose source line numbers, so Line fields remain 0
+// for etree-based parses. Line numbers are only available when the fallback
+// token-based parser is used.
 func resolveFrameContext(tree *XMLTree) {
-	// Build a map of handlers from the tree structure
+	// Walk all nodes and collect EventHandler elements. Handlers can appear
+	// either as direct children of a frame element or inside an <EventHandlers>
+	// container. We process only <EventHandlers> containers (which is the
+	// canonical XML pattern) to avoid double-counting.
 	for _, node := range tree.AllNodes {
-		if node.Tag == "EventHandlers" || node.IsIgnored {
+		if node.Tag != "EventHandlers" {
 			continue
 		}
-		// Collect handlers from EventHandler children
-		for _, child := range node.Children {
-			if child.Tag == "EventHandler" {
-				handler := XMLHandlerDecl{
-					Event:    strings.TrimSpace(child.Attributes["event"]),
-					Function: strings.TrimSpace(child.Attributes["function"]),
-					Line:     child.Line,
-				}
-				if handler.Event != "" {
-					// Handlers belong to the nearest named ancestor
-					target := findNearestNamedAncestor(node)
-					if target != nil {
-						target.Handlers = append(target.Handlers, handler)
-					}
-				}
-			}
+		// Find the owning frame: the nearest named ancestor of the EventHandlers container.
+		target := findNearestNamedAncestor(node)
+		if target == nil {
+			continue
 		}
-		// Also check for EventHandlers container
-		for _, child := range node.Children {
-			if child.Tag == "EventHandlers" {
-				for _, handlerElem := range child.Children {
-					if handlerElem.Tag == "EventHandler" {
-						handler := XMLHandlerDecl{
-							Event:    strings.TrimSpace(handlerElem.Attributes["event"]),
-							Function: strings.TrimSpace(handlerElem.Attributes["function"]),
-							Line:     handlerElem.Line,
-						}
-						if handler.Event != "" {
-							target := node
-							if !node.IsNamed {
-								target = findNearestNamedAncestor(node)
-							}
-							if target != nil {
-								target.Handlers = append(target.Handlers, handler)
-							}
-						}
-					}
-				}
+		for _, handlerElem := range node.Children {
+			if handlerElem.Tag != "EventHandler" {
+				continue
+			}
+			handler := XMLHandlerDecl{
+				Event:    strings.TrimSpace(handlerElem.Attributes["event"]),
+				Function: strings.TrimSpace(handlerElem.Attributes["function"]),
+				Line:     handlerElem.Line,
+			}
+			if handler.Event != "" {
+				target.Handlers = append(target.Handlers, handler)
 			}
 		}
 	}
