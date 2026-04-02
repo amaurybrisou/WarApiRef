@@ -292,6 +292,27 @@ func Build(source SourceModel) Corpus {
 				acc.ChildTypes[childType]++
 			}
 		}
+		// Feed structural children through their own elementAccumulator entries so that
+		// they get first-class pages alongside named element types (ListBox, Button, etc.).
+		for _, childType := range frame.StructuralChildTypes {
+			if childType == "" {
+				continue
+			}
+			childAcc := ensureElementAccumulator(elements, childType)
+			childAcc.Addons[frame.Addon] = true
+			// Carry over attribute keys captured from the XML source.
+			for _, attrKey := range frame.StructuralChildAttrKeys[childType] {
+				if attrKey != "" {
+					childAcc.Attributes[attrKey]++
+				}
+			}
+			childAcc.Examples = appendUniqueExample(childAcc.Examples, UsageExample{
+				Addon:   frame.Addon,
+				Caller:  frame.Name,
+				Snippet: childType + " in " + frame.Type + " " + frame.Name,
+				Source:  frame.Source,
+			})
+		}
 		acc.Examples = appendUniqueExample(acc.Examples, UsageExample{
 			Addon:   frame.Addon,
 			Caller:  frame.Name,
@@ -1578,7 +1599,7 @@ func isKnownEngineNamespace(name string, category string) bool {
 	}
 	if category == "XML Element Type" {
 		switch trimmed {
-		case "Window", "Button", "Label", "DynamicImage", "ComboBox", "ScrollWindow", "StatusBar", "EditBox", "MapDisplay", "SliderBar", "ListBox", "FullResizeImage", "HorizontalResizeImage", "VerticalResizeImage":
+		case "Window", "Button", "Label", "DynamicImage", "ComboBox", "ScrollWindow", "StatusBar", "EditBox", "MapDisplay", "SliderBar", "ListBox", "FullResizeImage", "HorizontalResizeImage", "VerticalResizeImage", "ListData", "ListColumns", "ListColumn":
 			return true
 		}
 	}
@@ -2202,6 +2223,14 @@ func describeConstant(name string, addonCount int) string {
 }
 
 func describeElement(name string, addonCount int) string {
+	switch name {
+	case "ListData":
+		return "Structural XML sub-element of ListBox that binds a list to a named Lua backing table. The `table` attribute names the Lua table supplying row data; the optional `populationfunction` attribute names a Lua callback for custom per-row population."
+	case "ListColumns":
+		return "Structural XML container inside ListBox that groups one or more ListColumn declarations, mapping backing-table fields to row-template child windows."
+	case "ListColumn":
+		return "Structural XML element inside ListColumns that maps a single field of each backing-table row entry to a named child window of the row template. Key attributes: `windowname` (child window target) and `variable` (field name in the row table)."
+	}
 	return fmt.Sprintf("Observed XML element type instantiated by %d addons.", addonCount)
 }
 

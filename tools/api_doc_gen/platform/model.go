@@ -42,7 +42,8 @@ type FrameDoc struct {
 	Template             bool
 	Source               string
 	Children             []string
-	StructuralChildTypes []string // unnamed structural element types inside this frame (e.g. ListData, ListColumns)
+	StructuralChildTypes []string            // unnamed structural element type names inside this frame
+	StructuralChildAttrKeys map[string][]string // attribute keys per structural child type
 	Attributes           map[string]string
 	Handlers             []FrameHandlerDoc
 }

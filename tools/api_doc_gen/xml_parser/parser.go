@@ -111,9 +111,23 @@ func ParseFile(addonName string, filePath string) (graph.XMLFileResult, error) {
 				}
 			} else if !ignoredFrameTags[typed.Name.Local] && strings.TrimSpace(attributes["name"]) == "" && parentFrame != "" {
 				// Unnamed structural element inside a named frame (e.g. ListData, ListColumns, ListColumn).
-				// Track its type so element-type documentation can surface common sub-structure.
+				// Track its type and attribute keys so element-type documentation can surface sub-structure.
 				if parentIndex, ok := frameIndexes[parentFrame]; ok {
 					frames[parentIndex].StructuralChildTypes = append(frames[parentIndex].StructuralChildTypes, typed.Name.Local)
+					// Collect attribute keys (not values) for this structural child occurrence.
+					attrKeys := make([]string, 0, len(attributes))
+					for k := range attributes {
+						k = strings.TrimSpace(k)
+						if k != "" && k != "name" {
+							attrKeys = append(attrKeys, k)
+						}
+					}
+					sort.Strings(attrKeys)
+					if frames[parentIndex].StructuralChildAttrKeys == nil {
+						frames[parentIndex].StructuralChildAttrKeys = map[string][]string{}
+					}
+					existing := frames[parentIndex].StructuralChildAttrKeys[typed.Name.Local]
+					frames[parentIndex].StructuralChildAttrKeys[typed.Name.Local] = UniqueStringsSorted(append(existing, attrKeys...))
 				}
 			}
 
@@ -322,4 +336,19 @@ func looksLikeEntity(value string) bool {
 		}
 	}
 	return true
+}
+
+
+// UniqueStringsSorted returns a deduplicated, sorted copy of the input slice.
+func UniqueStringsSorted(input []string) []string {
+seen := map[string]bool{}
+result := make([]string, 0, len(input))
+for _, s := range input {
+if s != "" && !seen[s] {
+seen[s] = true
+result = append(result, s)
+}
+}
+sort.Strings(result)
+return result
 }

@@ -404,6 +404,13 @@ func writeWindowPatterns(outputRoot string, corpus Corpus) error {
 }
 
 func writeElementTypes(outputRoot string, corpus Corpus) error {
+	// Build set of element type names that will have their own pages in this run.
+	// Used to decide whether CommonChildTypes entries can be rendered as links.
+	elementTypePageNames := map[string]bool{}
+	for _, s := range corpus.ElementTypes {
+		elementTypePageNames[s.Name] = true
+	}
+
 	links := []string{}
 	for _, symbol := range corpus.ElementTypes {
 		currentPath := slashPath("xml", "element_types", docName("element", symbol.Name))
@@ -417,7 +424,16 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		content += md.Section("Common Handlers", md.BulletList(symbol.CommonHandlers))
 		content += md.Section("Common Inherits", md.BulletList(symbol.CommonInherits))
 		if len(symbol.CommonChildTypes) > 0 {
-			content += md.Section("Common Structural Child Elements", md.BulletList(symbol.CommonChildTypes))
+			childLinks := make([]string, 0, len(symbol.CommonChildTypes))
+			for _, childType := range symbol.CommonChildTypes {
+				if elementTypePageNames[childType] {
+					childDocName := docName("element", childType)
+					childLinks = append(childLinks, markdownLink(childType, childDocName))
+				} else {
+					childLinks = append(childLinks, childType)
+				}
+			}
+			content += md.Section("Common Structural Child Elements", md.BulletList(childLinks))
 		}
 		content += md.Section("Seen In", md.BulletList(symbol.SeenIn))
 		content += md.Section("Examples", md.BulletList(formatUsageExamples(symbol.Examples)))

@@ -173,17 +173,18 @@ func parseFrameDoc(path string) (FrameDoc, error) {
 		handlers = append(handlers, FrameHandlerDoc{Event: strings.TrimSpace(row["Event"]), Function: strings.TrimSpace(row["Function"])})
 	}
 	return FrameDoc{
-		Name:                 strings.TrimSpace(strings.TrimPrefix(lines[0], "# Frame ")),
-		Addon:                strings.TrimSpace(meta["Addon"]),
-		Type:                 strings.TrimSpace(meta["Type"]),
-		Parent:               normalizeNone(meta["Parent"]),
-		Inherits:             normalizeNone(meta["Inherits"]),
-		Template:             parseBoolish(meta["Template"]),
-		Source:               strings.TrimSpace(meta["Source"]),
-		Children:             parseBulletList(sections["Children"]),
-		StructuralChildTypes: parseBulletList(sections["Structural Child Types"]),
-		Attributes:           attributes,
-		Handlers:             handlers,
+		Name:     strings.TrimSpace(strings.TrimPrefix(lines[0], "# Frame ")),
+		Addon:    strings.TrimSpace(meta["Addon"]),
+		Type:     strings.TrimSpace(meta["Type"]),
+		Parent:   normalizeNone(meta["Parent"]),
+		Inherits: normalizeNone(meta["Inherits"]),
+		Template: parseBoolish(meta["Template"]),
+		Source:   strings.TrimSpace(meta["Source"]),
+		Children: parseBulletList(sections["Children"]),
+		StructuralChildTypes:    parseStructuralChildTypes(sections["Structural Child Types"]),
+		StructuralChildAttrKeys: parseStructuralChildAttrKeys(sections["Structural Child Types"]),
+		Attributes: attributes,
+		Handlers:   handlers,
 	}, nil
 }
 
@@ -642,4 +643,55 @@ func normalizeNone(value string) string {
 		return ""
 	}
 	return trimmed
+}
+
+// parseStructuralChildTypes extracts just the type-name portion from lines that may be
+// in "TypeName" or "TypeName: attr1, attr2" format.
+func parseStructuralChildTypes(lines []string) []string {
+	result := []string{}
+	for _, line := range parseBulletList(lines) {
+		line = strings.TrimSpace(line)
+		if line == "" {
+			continue
+		}
+		if idx := strings.Index(line, ":"); idx > 0 {
+			line = strings.TrimSpace(line[:idx])
+		}
+		if line != "" {
+			result = append(result, line)
+		}
+	}
+	return result
+}
+
+// parseStructuralChildAttrKeys extracts a map of type name → attribute keys from lines
+// that may be in "TypeName: attr1, attr2" format.
+func parseStructuralChildAttrKeys(lines []string) map[string][]string {
+	result := map[string][]string{}
+	for _, line := range parseBulletList(lines) {
+		line = strings.TrimSpace(line)
+		if line == "" {
+			continue
+		}
+		idx := strings.Index(line, ":")
+		if idx <= 0 {
+			continue
+		}
+		typeName := strings.TrimSpace(line[:idx])
+		attrPart := strings.TrimSpace(line[idx+1:])
+		if typeName == "" || attrPart == "" {
+			continue
+		}
+		attrs := []string{}
+		for _, a := range strings.Split(attrPart, ",") {
+			a = strings.TrimSpace(a)
+			if a != "" {
+				attrs = append(attrs, a)
+			}
+		}
+		if len(attrs) > 0 {
+			result[typeName] = attrs
+		}
+	}
+	return result
 }
