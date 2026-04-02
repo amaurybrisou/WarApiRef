@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"roraddons/tools/api_doc_gen/lua_ast"
+	"roraddons/tools/api_doc_gen/mod_semantic"
 	"roraddons/tools/api_doc_gen/semantic_merge"
 	"roraddons/tools/api_doc_gen/source_scan"
 	"roraddons/tools/api_doc_gen/xml_lua_binding"
@@ -87,12 +88,39 @@ func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot s
 		})
 	}
 
+	// Build indexes for .mod semantic correlation from the already-collected
+	// Lua definitions and XML trees.
+	luaQualifiedNames := make([]string, 0, len(luaDefs))
+	for _, def := range luaDefs {
+		luaQualifiedNames = append(luaQualifiedNames, def.QualifiedName)
+	}
+	luaNameIndex := mod_semantic.BuildLuaNameIndex(luaQualifiedNames)
+
+	xmlFrameNameIndex := buildXMLFrameNameIndex(trees)
+
+	// Build a lookup from named frame name to element type tag for startup
+	// window annotation (used in enrichElementTypesFromModSemantics).
+	frameTypeByName := buildFrameTypeByName(trees)
+
+	// Perform .mod semantic analysis for every addon that has a ModuleTree.
+	// Addons with a .toc manifest have ModuleTree == nil and are skipped.
+	var modSemantics []*mod_semantic.ModuleSemantic
+	for _, addon := range addonSources {
+		if addon.ModuleTree == nil {
+			continue
+		}
+		sem := mod_semantic.AnalyzeTree(addon.AddonName, addon.ModuleTree, luaNameIndex, xmlFrameNameIndex)
+		modSemantics = append(modSemantics, sem)
+	}
+
 	output := semantic_merge.RunPipeline(&semantic_merge.PipelineInput{
 		XMLTrees:            trees,
 		LuaFunctions:        luaDefs,
 		PreResolvedBindings: preResolved,
+		ModSemantics:        modSemantics,
 	})
-	return enrichElementTypesFromCatalog(elementTypes, output.Catalog)
+	enriched := enrichElementTypesFromCatalog(elementTypes, output.Catalog)
+	return enrichElementTypesFromModSemantics(enriched, output.ModSemantics, frameTypeByName)
 }
 
 // runPhasedPipelineFromDocs is the DEGRADED FALLBACK path.
@@ -506,4 +534,95 @@ func confidenceRank(c string) int {
 	default:
 		return 0
 	}
+}
+
+// buildXMLFrameNameIndex collects every named frame name from parsed XML trees
+// and returns a presence index suitable for mod_semantic.AnalyzeTree.
+func buildXMLFrameNameIndex(trees []*xml_structure.XMLTree) map[string]bool {
+	names := make(map[string]bool)
+	for _, tree := range trees {
+		for _, node := range tree.AllNodes {
+			if node.IsNamed && node.Name != "" {
+				names[node.Name] = true
+			}
+		}
+	}
+	return names
+}
+
+// buildFrameTypeByName builds a lookup from named frame name to element type
+// tag across all parsed XML trees.  This is used by
+// enrichElementTypesFromModSemantics to resolve which element type corresponds
+// to a startup-created window.
+func buildFrameTypeByName(trees []*xml_structure.XMLTree) map[string]string {
+	m := make(map[string]string)
+	for _, tree := range trees {
+		for _, node := range tree.AllNodes {
+			if node.IsNamed && node.Name != "" && node.Tag != "" {
+				m[node.Name] = node.Tag
+			}
+		}
+	}
+	return m
+}
+
+// enrichElementTypesFromModSemantics applies .mod lifecycle facts to the
+// enriched element types.  For each CreateWindow action that was exactly
+// resolved to an XML frame name, the element type of that frame (looked up
+// from frameTypeByName) receives a note indicating that it is instantiated at
+// startup via the OnInitialize lifecycle hook.
+//
+// This is the concrete "influence" that .mod semantic analysis has on the
+// element-type enrichment step: element types used as startup windows are
+// annotated so that downstream generators can surface this fact.
+func enrichElementTypesFromModSemantics(elementTypes []ElementTypeSymbol, modSemantics []*mod_semantic.ModuleSemantic, frameTypeByName map[string]string) []ElementTypeSymbol {
+	if len(modSemantics) == 0 {
+		return elementTypes
+	}
+
+	// Build an index from element type tag → slice position for fast update.
+	typeIndex := make(map[string]int, len(elementTypes))
+	for i, sym := range elementTypes {
+		typeIndex[sym.Name] = i
+	}
+
+	for _, sem := range modSemantics {
+		for _, hook := range sem.LifecycleHooks {
+			if hook.Kind != mod_semantic.HookKindOnInitialize {
+				continue
+			}
+			for _, action := range hook.Actions {
+				if action.Kind != mod_semantic.ActionKindCreateWindow {
+					continue
+				}
+				if action.Resolution != mod_semantic.ResolutionExact {
+					continue
+				}
+				for _, frameName := range action.MatchedXMLNames {
+					elemTag, ok := frameTypeByName[frameName]
+					if !ok {
+						continue
+					}
+					idx, found := typeIndex[elemTag]
+					if !found {
+						continue
+					}
+					note := "Startup-created window: " + frameName + " (from " + sem.AddonName + " OnInitialize)"
+					// Avoid duplicate notes.
+					duplicate := false
+					for _, existing := range elementTypes[idx].Notes {
+						if existing == note {
+							duplicate = true
+							break
+						}
+					}
+					if !duplicate {
+						elementTypes[idx].Notes = append(elementTypes[idx].Notes, note)
+					}
+				}
+			}
+		}
+	}
+
+	return elementTypes
 }

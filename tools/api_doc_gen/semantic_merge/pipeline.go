@@ -5,6 +5,7 @@ package semantic_merge
 
 import (
 	"roraddons/tools/api_doc_gen/lua_semantic"
+	"roraddons/tools/api_doc_gen/mod_semantic"
 	"roraddons/tools/api_doc_gen/xml_lua_binding"
 	"roraddons/tools/api_doc_gen/xml_structure"
 )
@@ -21,6 +22,13 @@ type PipelineInput struct {
 	// from the platform SourceModel.Bindings, enabling Phase 2 to start with
 	// already-known binding evidence.
 	PreResolvedBindings []PreResolvedBinding
+
+	// ModSemantics carries the semantic analysis results derived from each
+	// addon's .mod manifest tree.  It is nil for addons with a .toc manifest.
+	// The pipeline passes this through to PipelineOutput unchanged so that
+	// callers can apply .mod-level facts (lifecycle entrypoints, startup
+	// windows, etc.) to the enriched model.
+	ModSemantics []*mod_semantic.ModuleSemantic
 }
 
 // PreResolvedBinding is a pre-existing XML↔Lua binding from the SourceModel,
@@ -47,6 +55,12 @@ type PipelineOutput struct {
 
 	// Phase 4 output (final merged catalog)
 	Catalog *EnrichedElementCatalog
+
+	// ModSemantics carries the .mod semantic analysis results passed in via
+	// PipelineInput.ModSemantics.  The pipeline does not transform this data;
+	// it passes it through so that callers (e.g. platform layer) can apply
+	// .mod lifecycle facts to the element-type enrichment step.
+	ModSemantics []*mod_semantic.ModuleSemantic
 }
 
 // RunPipeline executes the complete 4-phase XML↔Lua analysis pipeline.
@@ -73,6 +87,9 @@ func RunPipeline(input *PipelineInput) *PipelineOutput {
 
 	// Phase 4: Merge all findings into enriched element catalog
 	output.Catalog = BuildEnrichedCatalog(output.XMLCorpus, output.Bindings, output.LuaSemantic)
+
+	// Pass .mod semantic analysis through to the caller unchanged.
+	output.ModSemantics = input.ModSemantics
 
 	return output
 }
