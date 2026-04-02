@@ -240,3 +240,156 @@ func hasHandlerEvent(sym *ElementTypeSymbol, event string) bool {
 	}
 	return false
 }
+
+// ---- mod_semantic pipeline integration tests ----
+
+// TestModManifestAddonProducesStartupWindowNote verifies the end-to-end
+// source-first pipeline integration with a .mod manifest:
+//   - A .mod addon whose OnInitialize section contains a CreateWindow that
+//     matches a real XML frame gets a "Startup-created window" note on the
+//     corresponding element type.
+//   - ModuleTree (not only Manifest) is the source of truth used to derive
+//     this fact.
+func TestModManifestAddonProducesStartupWindowNote(t *testing.T) {
+	root := t.TempDir()
+	addonDir := filepath.Join(root, "StartupAddon")
+	if err := os.MkdirAll(addonDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	// .mod manifest: OnInitialize calls CreateWindow for StartupAddon_Main.
+	modContent := `<UiMod name="StartupAddon" version="1.0">
+  <Files>
+    <File name="StartupAddon.xml"/>
+    <File name="StartupAddon.lua"/>
+  </Files>
+  <OnInitialize>
+    <CreateWindow name="StartupAddon_Main"/>
+    <CallFunction name="StartupAddon.Initialize"/>
+  </OnInitialize>
+</UiMod>`
+	if err := os.WriteFile(filepath.Join(addonDir, "StartupAddon.mod"), []byte(modContent), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	// XML: a Window named StartupAddon_Main.
+	xmlSrc := `<Interface>
+  <Window name="StartupAddon_Main" inherits="Default_UIPanelWindow">
+    <EventHandlers>
+      <EventHandler event="OnInitialize" function="StartupAddon.Initialize"/>
+    </EventHandlers>
+  </Window>
+</Interface>`
+	if err := os.WriteFile(filepath.Join(addonDir, "StartupAddon.xml"), []byte(xmlSrc), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	// Lua: a function StartupAddon.Initialize.
+	luaSrc := "function StartupAddon.Initialize() end\n"
+	if err := os.WriteFile(filepath.Join(addonDir, "StartupAddon.lua"), []byte(luaSrc), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	types := []ElementTypeSymbol{{Name: "Window"}}
+	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+
+	windowSym := findType(result, "Window")
+	if windowSym == nil {
+		t.Fatal("Window element type not found after pipeline")
+	}
+
+	// The Window element type should have a startup-created note from the .mod
+	// CreateWindow action that resolved to StartupAddon_Main.
+	foundNote := false
+	for _, note := range windowSym.Notes {
+		if strings.Contains(note, "StartupAddon_Main") && strings.Contains(note, "OnInitialize") {
+			foundNote = true
+			break
+		}
+	}
+	if !foundNote {
+		t.Errorf("Window element type missing startup-created note; Notes = %v", windowSym.Notes)
+	}
+}
+
+// TestTOCAddonHasNoModSemantics verifies that the source-first pipeline does
+// not produce any .mod semantic notes for addons that use a .toc manifest.
+// .toc addons have no ModuleTree, so no lifecycle analysis should occur.
+func TestTOCAddonHasNoModSemantics(t *testing.T) {
+	root := t.TempDir()
+	addonDir := filepath.Join(root, "TOCAddon")
+	if err := os.MkdirAll(addonDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	if err := os.WriteFile(filepath.Join(addonDir, "TOCAddon.toc"),
+		[]byte("## Title: TOCAddon\nTOCAddon.xml\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	xmlSrc := `<Interface>
+  <Window name="TOCAddon_Main"/>
+</Interface>`
+	if err := os.WriteFile(filepath.Join(addonDir, "TOCAddon.xml"), []byte(xmlSrc), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	types := []ElementTypeSymbol{{Name: "Window"}}
+	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+
+	windowSym := findType(result, "Window")
+	if windowSym == nil {
+		t.Fatal("Window element type not found after pipeline")
+	}
+	// No startup notes should exist because there is no .mod manifest.
+	for _, note := range windowSym.Notes {
+		if strings.Contains(note, "Startup-created") {
+			t.Errorf("unexpected startup note on TOC addon Window: %q", note)
+		}
+	}
+}
+
+// TestModManifestUnresolvedCreateWindowIsNotDropped verifies that a CreateWindow
+// action whose name does not match any parsed XML frame does not produce an
+// element-type note, but the source-first pipeline still completes successfully.
+func TestModManifestUnresolvedCreateWindowIsNotDropped(t *testing.T) {
+	root := t.TempDir()
+	addonDir := filepath.Join(root, "UnresolvedAddon")
+	if err := os.MkdirAll(addonDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	modContent := `<UiMod name="UnresolvedAddon" version="1.0">
+  <Files>
+    <File name="UnresolvedAddon.xml"/>
+  </Files>
+  <OnInitialize>
+    <CreateWindow name="UnresolvedAddon_NoSuchWindow"/>
+  </OnInitialize>
+</UiMod>`
+	if err := os.WriteFile(filepath.Join(addonDir, "UnresolvedAddon.mod"), []byte(modContent), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	// XML does NOT contain a frame named UnresolvedAddon_NoSuchWindow.
+	xmlSrc := `<Interface>
+  <Window name="UnresolvedAddon_DifferentWindow"/>
+</Interface>`
+	if err := os.WriteFile(filepath.Join(addonDir, "UnresolvedAddon.xml"), []byte(xmlSrc), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	types := []ElementTypeSymbol{{Name: "Window"}}
+	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+
+	windowSym := findType(result, "Window")
+	if windowSym == nil {
+		t.Fatal("Window element type not found after pipeline")
+	}
+	// The unresolved reference should not produce any startup note.
+	for _, note := range windowSym.Notes {
+		if strings.Contains(note, "UnresolvedAddon_NoSuchWindow") {
+			t.Errorf("unexpected note for unresolved window: %q", note)
+		}
+	}
+}
