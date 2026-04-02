@@ -9,6 +9,7 @@ import (
 
 	"roraddons/tools/api_doc_gen/confidence"
 	"roraddons/tools/api_doc_gen/graph"
+	"roraddons/tools/api_doc_gen/xmlsemantic"
 )
 
 var namespaceTokenPattern = regexp.MustCompile(`\b(?:SystemData|GameData)(?:\.[A-Za-z_][A-Za-z0-9_]*)+\b`)
@@ -542,6 +543,7 @@ func Build(source SourceModel) Corpus {
 	corpus.GlobalTables = finalizeTableSymbols(tables, ctx, collector)
 	corpus.Constants = finalizeConstantSymbols(constants, ctx, collector)
 	corpus.ElementTypes = finalizeElementSymbols(elements, ctx, collector)
+	corpus.ElementTypes = enrichElementTypesWithXMLSemantic(corpus.ElementTypes, source)
 	corpus.XMLHandlers = finalizeXMLHandlerSymbols(xmlHandlers, ctx, collector)
 	corpus.GameEvents = finalizeEventSymbols(gameEvents, "Game Event", ctx, collector)
 	corpus.WindowEvents = finalizeEventSymbols(windowEvents, "Window Event", ctx, collector)
@@ -1007,6 +1009,132 @@ func finalizeElementSymbols(values map[string]*elementAccumulator, ctx scoringCo
 	}
 	sort.Slice(result, func(i, j int) bool { return result[i].Name < result[j].Name })
 	return result
+}
+
+// enrichElementTypesWithXMLSemantic runs the xmlsemantic builder over all source
+// frames, handlers, and function call data, then back-fills the richer semantic
+// fields (AttributeProfiles, LuaAPICallsFromHandlers, and LuaAPICalls on each
+// XMLEventBinding) onto each ElementTypeSymbol.
+//
+// This is a targeted post-processing step: it does NOT replace the existing
+// accumulator-based model but adds call-graph-derived data that the accumulator
+// alone cannot produce.
+func enrichElementTypesWithXMLSemantic(symbols []ElementTypeSymbol, source SourceModel) []ElementTypeSymbol {
+	// Convert source data to xmlsemantic input types.
+	xmlFrames := make([]xmlsemantic.FrameInput, 0, len(source.Frames))
+	for _, f := range source.Frames {
+		xmlFrames = append(xmlFrames, xmlsemantic.FrameInput{
+			Addon:                f.Addon,
+			Name:                 f.Name,
+			Type:                 f.Type,
+			ParentType:           f.ParentType,
+			Attributes:           f.Attributes,
+			StructuralChildTypes: f.StructuralChildTypes,
+			NamedChildTypes:      f.ChildElementTypes,
+		})
+	}
+
+	xmlHandlers := make([]xmlsemantic.HandlerInput, 0, len(source.Handlers))
+	for _, h := range source.Handlers {
+		xmlHandlers = append(xmlHandlers, xmlsemantic.HandlerInput{
+			Addon:    h.Addon,
+			Frame:    h.Frame,
+			Event:    h.Event,
+			Function: h.Function,
+		})
+	}
+
+	xmlFuncs := make([]xmlsemantic.FunctionCallInput, 0, len(source.Functions))
+	for _, fn := range source.Functions {
+		calls := make([]string, 0, len(fn.Calls))
+		for _, c := range fn.Calls {
+			calls = append(calls, c.Name)
+		}
+		xmlFuncs = append(xmlFuncs, xmlsemantic.FunctionCallInput{
+			Name:  fn.Name,
+			Addon: fn.Addon,
+			Calls: calls,
+		})
+	}
+
+	schemas := xmlsemantic.Build(xmlFrames, xmlHandlers, xmlFuncs)
+
+	enriched := make([]ElementTypeSymbol, len(symbols))
+	for i, sym := range symbols {
+		schema, ok := schemas[sym.Name]
+		if !ok {
+			enriched[i] = sym
+			continue
+		}
+
+		// Populate AttributeProfiles from xmlsemantic schema.
+		attrProfiles := make([]AttributeProfile, 0, len(schema.AttributeProfiles))
+		for _, ap := range schema.AttributeProfiles {
+			attrProfiles = append(attrProfiles, AttributeProfile{
+				Name:       ap.Name,
+				Count:      ap.Count,
+				Total:      ap.Total,
+				TopValues:  ap.TopValues,
+				IsRequired: ap.IsRequired,
+			})
+		}
+		sym.AttributeProfiles = attrProfiles
+
+		// Build a lookup from event name → HandlerEventBinding for merging.
+		schemaBindingByEvent := make(map[string]xmlsemantic.HandlerEventBinding, len(schema.HandlerBindings))
+		for _, hb := range schema.HandlerBindings {
+			schemaBindingByEvent[hb.Event] = hb
+		}
+
+		// Merge LuaAPICalls into existing XMLEventBindings.
+		updatedBindings := make([]XMLEventBinding, len(sym.XMLEventBindings))
+		for j, binding := range sym.XMLEventBindings {
+			if hb, found := schemaBindingByEvent[binding.Event]; found {
+				calls := make([]LuaAPICallFromHandler, 0, len(hb.LuaAPICalls))
+				for _, lc := range hb.LuaAPICalls {
+					calls = append(calls, LuaAPICallFromHandler{
+						FunctionName: lc.FunctionName,
+						ViaEvent:     lc.ViaEvent,
+						Count:        lc.Count,
+					})
+				}
+				binding.LuaAPICalls = calls
+			}
+			updatedBindings[j] = binding
+		}
+		sym.XMLEventBindings = updatedBindings
+
+		// Build LuaAPICallsFromHandlers: aggregate all LuaAPICall entries across
+		// all events, so there is a single cross-event "what APIs does this element
+		// type use" list.
+		apiCallTotals := make(map[string]LuaAPICallFromHandler)
+		for _, hb := range schema.HandlerBindings {
+			for _, lc := range hb.LuaAPICalls {
+				existing := apiCallTotals[lc.FunctionName]
+				existing.FunctionName = lc.FunctionName
+				existing.ViaEvent = lc.ViaEvent // last event seen (arbitrary but stable)
+				existing.Count += lc.Count
+				apiCallTotals[lc.FunctionName] = existing
+			}
+		}
+		luaAPICalls := make([]LuaAPICallFromHandler, 0, len(apiCallTotals))
+		for _, lc := range apiCallTotals {
+			luaAPICalls = append(luaAPICalls, lc)
+		}
+		sort.Slice(luaAPICalls, func(a, b int) bool {
+			if luaAPICalls[a].Count != luaAPICalls[b].Count {
+				return luaAPICalls[a].Count > luaAPICalls[b].Count
+			}
+			return luaAPICalls[a].FunctionName < luaAPICalls[b].FunctionName
+		})
+		if len(luaAPICalls) > 12 {
+			luaAPICalls = luaAPICalls[:12]
+		}
+		sym.LuaAPICallsFromHandlers = luaAPICalls
+
+		enriched[i] = sym
+	}
+	return enriched
 }
 
 func finalizeLifecycle(values map[string]*lifecycleAccumulator) []LifecyclePhase {
@@ -2332,47 +2460,52 @@ func inferEventPayload(name string) []string {
 }
 
 // knownXMLHandlerArgs maps well-known WAR XML handler event names to their
-// expected Lua callback signature string.  Confidence is HIGH for engine-standard
+// expected Lua callback signature string.  Confidence is MEDIUM for engine-standard
 // events whose argument conventions are widely observed across many addons.
 var knownXMLHandlerArgs = map[string]string{
 	// Lifecycle hooks – no engine-supplied arguments.
-	"OnInitialize":    "function()",
-	"OnShutdown":      "function()",
-	"OnShow":          "function()",
-	"OnHide":          "function()",
-	"OnShown":         "function()",
-	"OnHidden":        "function()",
+	"OnInitialize":           "function()",
+	"OnShutdown":             "function()",
+	"OnShow":                 "function()",
+	"OnHide":                 "function()",
+	"OnShown":                "function()",
+	"OnHidden":               "function()",
 	// Mouse / pointer events.
-	"OnMouseOver":     "function()",
-	"OnMouseOut":      "function()",
-	"OnMouseDown":     "function(button)",
-	"OnMouseUp":       "function(button)",
-	"OnClick":         "function()",
-	"OnDoubleClick":   "function()",
-	"OnMouseWheel":    "function(delta)",
+	"OnMouseOver":            "function()",
+	"OnMouseOut":             "function()",
+	"OnMouseOverEnd":         "function()",
+	"OnMouseDown":            "function(button)",
+	"OnMouseUp":              "function(button)",
+	"OnLButtonUp":            "function()",
+	"OnLButtonDown":          "function()",
+	"OnRButtonUp":            "function()",
+	"OnRButtonDown":          "function()",
+	"OnClick":                "function()",
+	"OnDoubleClick":          "function()",
+	"OnMouseWheel":           "function(delta)",
 	// Keyboard events.
-	"OnEnterPressed":  "function()",
-	"OnEscapePressed": "function()",
-	"OnKeyDown":       "function(key)",
-	"OnKeyUp":         "function(key)",
+	"OnEnterPressed":         "function()",
+	"OnEscapePressed":        "function()",
+	"OnKeyDown":              "function(key)",
+	"OnKeyUp":                "function(key)",
 	// Value / text change events.
-	"OnTextChanged":   "function()",
-	"OnValueChanged":  "function(value)",
+	"OnTextChanged":          "function()",
+	"OnValueChanged":         "function(value)",
 	// Drag events.
-	"OnDragStart":     "function()",
-	"OnDragStop":      "function()",
-	"OnReceiveDrag":   "function()",
+	"OnDragStart":            "function()",
+	"OnDragStop":             "function()",
+	"OnReceiveDrag":          "function()",
 	// Resize / move events.
-	"OnSizeChanged":   "function(width, height)",
-	"OnMove":          "function()",
+	"OnSizeChanged":          "function(width, height)",
+	"OnMove":                 "function()",
 	// Per-frame update hook – elapsed time in seconds.
-	"OnUpdate":        "function(elapsed)",
+	"OnUpdate":               "function(elapsed)",
 	// Edit box events.
-	"OnCursorChanged": "function()",
+	"OnCursorChanged":        "function()",
 	"OnInputLanguageChanged": "function()",
 	// Selection / list events.
-	"OnSelectionChanged": "function(selectedRow)",
-	"OnScrollChanged":    "function()",
+	"OnSelectionChanged":     "function(selectedRow)",
+	"OnScrollChanged":        "function()",
 }
 
 func inferXMLBinding(name string) string {

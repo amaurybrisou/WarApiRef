@@ -418,6 +418,19 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		xmlHandlerPageNames[h.Name] = true
 	}
 
+	// Build function page lookups: function name → relative path from element pages.
+	// Element pages live at xml/element_types/; function pages are at:
+	//   globals/functions/global_*.md    (2 levels up, then down)
+	//   window_api/functions/window_*.md (2 levels up, then down)
+	globalFuncPages := make(map[string]string, len(corpus.GlobalFunctions))
+	for _, f := range corpus.GlobalFunctions {
+		globalFuncPages[f.Name] = "../../globals/functions/" + docName("global", f.Name)
+	}
+	windowFuncPages := make(map[string]string, len(corpus.WindowFunctions))
+	for _, f := range corpus.WindowFunctions {
+		windowFuncPages[f.Name] = "../../window_api/functions/" + docName("window", f.Name)
+	}
+
 	links := []string{}
 	for _, symbol := range corpus.ElementTypes {
 		currentPath := slashPath("xml", "element_types", docName("element", symbol.Name))
@@ -427,7 +440,14 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		content += fmt.Sprintf("- Confidence score: %d/100\n\n", symbol.Score)
 		content += renderConfidenceSections(symbol.Confidence, symbol.Score, symbol.RawScore, symbol.Rationale, symbol.Signals, symbol.Evidence)
 		content += md.Section("Description", symbol.Description)
-		content += md.Section("Common Attributes", md.BulletList(symbol.CommonAttributes))
+		// Render attribute profiles (required vs optional) when available; fall
+		// back to the plain CommonAttributes list for element types where the
+		// richer profile data is absent.
+		if len(symbol.AttributeProfiles) > 0 {
+			content += renderAttributeProfiles(symbol.AttributeProfiles)
+		} else {
+			content += md.Section("Common Attributes", md.BulletList(symbol.CommonAttributes))
+		}
 		// Render "Common Handlers" with links to XMLHandler pages where available.
 		if len(symbol.CommonHandlers) > 0 {
 			handlerLinks := make([]string, 0, len(symbol.CommonHandlers))
@@ -444,9 +464,15 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 			content += md.Section("Common Handler Functions", md.BulletList(symbol.CommonHandlerFunctions))
 		}
 		// XML Event Bindings: per-event table showing which Lua functions are
-		// commonly bound and what the expected callback signature looks like.
+		// commonly bound, what the expected callback signature looks like, and
+		// which Lua API functions those handlers typically call.
 		if len(symbol.XMLEventBindings) > 0 {
-			content += renderXMLEventBindings(symbol.XMLEventBindings, xmlHandlerPageNames)
+			content += renderXMLEventBindings(symbol.XMLEventBindings, xmlHandlerPageNames, globalFuncPages, windowFuncPages)
+		}
+		// Lua API Usage: call-graph-derived list of platform/window API functions
+		// called from handlers bound to this element type.
+		if len(symbol.LuaAPICallsFromHandlers) > 0 {
+			content += renderLuaAPICallsFromHandlers(symbol.LuaAPICallsFromHandlers, globalFuncPages, windowFuncPages)
 		}
 		content += md.Section("Common Inherits", md.BulletList(symbol.CommonInherits))
 		if len(symbol.CommonParentTypes) > 0 {
@@ -768,10 +794,21 @@ func formatUsageExamples(examples []UsageExample) []string {
 }
 
 // renderXMLEventBindings produces a ## XML Event Bindings section that shows,
-// for each observed XML handler event on this element type, which Lua functions
-// are commonly bound and what the expected callback signature looks like.
+// for each observed XML handler event on this element type:
+//   - which Lua functions are commonly bound (with links when available)
+//   - the expected callback signature
+//   - the args confidence level
+//   - which Lua API functions those handler functions typically call
+//
 // Event names that have a dedicated XMLHandler page are rendered as links.
-func renderXMLEventBindings(bindings []XMLEventBinding, handlerPages map[string]bool) string {
+// Bound Lua function names are rendered as links to their function pages when
+// either a global or window function page is known.
+func renderXMLEventBindings(
+	bindings []XMLEventBinding,
+	handlerPages map[string]bool,
+	globalFuncPages map[string]string,
+	windowFuncPages map[string]string,
+) string {
 	if len(bindings) == 0 {
 		return ""
 	}
@@ -784,12 +821,103 @@ func renderXMLEventBindings(bindings []XMLEventBinding, handlerPages map[string]
 		if handlerPages[binding.Event] {
 			eventCell = markdownLink(binding.Event, "../handlers/"+docName("handler", binding.Event))
 		}
-		luaCell := strings.Join(binding.LuaFunctions, ", ")
+		// Render Lua function names with links where possible.
+		luaParts := make([]string, 0, len(binding.LuaFunctions))
+		for _, fn := range binding.LuaFunctions {
+			if path, ok := globalFuncPages[fn]; ok {
+				luaParts = append(luaParts, markdownLink(fn, path))
+			} else if path, ok := windowFuncPages[fn]; ok {
+				luaParts = append(luaParts, markdownLink(fn, path))
+			} else {
+				luaParts = append(luaParts, fn)
+			}
+		}
+		luaCell := strings.Join(luaParts, ", ")
 		if luaCell == "" {
 			luaCell = "-"
 		}
 		argsCell := "`" + strings.ReplaceAll(binding.InferredArgs, "`", "\\`") + "`"
 		b.WriteString("| " + eventCell + " | " + luaCell + " | " + argsCell + " | " + binding.ArgsConfidence + " |\n")
+	}
+	b.WriteString("\n")
+	// For each binding that has Lua API call data, render a compact sub-list.
+	for _, binding := range bindings {
+		if len(binding.LuaAPICalls) == 0 {
+			continue
+		}
+		b.WriteString("### " + binding.Event + " — Handler API Calls\n\n")
+		b.WriteString("Lua API functions called by handlers bound to this event:\n\n")
+		for _, lc := range binding.LuaAPICalls {
+			name := lc.FunctionName
+			if path, ok := globalFuncPages[name]; ok {
+				name = markdownLink(name, path)
+			} else if path, ok := windowFuncPages[name]; ok {
+				name = markdownLink(name, path)
+			}
+			b.WriteString(fmt.Sprintf("- %s (observed %d time(s))\n", name, lc.Count))
+		}
+		b.WriteString("\n")
+	}
+	return b.String()
+}
+
+// renderAttributeProfiles produces a ## Attribute Profiles section that shows,
+// for each attribute, its frequency, whether it is required, and the most
+// commonly observed values. This replaces the plain ## Common Attributes list
+// for element types where the richer xmlsemantic profile data is available.
+func renderAttributeProfiles(profiles []AttributeProfile) string {
+	if len(profiles) == 0 {
+		return ""
+	}
+	var b strings.Builder
+	b.WriteString("\n## Attribute Profiles\n\n")
+	b.WriteString("| Attribute | Required | Observed | Top Values |\n")
+	b.WriteString("|-----------|----------|----------|------------|\n")
+	for _, ap := range profiles {
+		required := "optional"
+		if ap.IsRequired {
+			required = "**required**"
+		}
+		var pct string
+		if ap.Total > 0 {
+			pct = fmt.Sprintf("%d/%d (%.0f%%)", ap.Count, ap.Total, float64(ap.Count)/float64(ap.Total)*100)
+		} else {
+			pct = fmt.Sprintf("%d", ap.Count)
+		}
+		valCell := strings.Join(ap.TopValues, ", ")
+		if valCell == "" {
+			valCell = "-"
+		}
+		b.WriteString("| `" + ap.Name + "` | " + required + " | " + pct + " | " + valCell + " |\n")
+	}
+	b.WriteString("\n")
+	return b.String()
+}
+
+// renderLuaAPICallsFromHandlers produces a ## Lua API Usage (from Handlers)
+// section listing the Lua platform/window API functions called from handlers
+// bound to this element type, derived from actual call graph analysis.
+// This is structural evidence, not graph co-occurrence.
+func renderLuaAPICallsFromHandlers(
+	calls []LuaAPICallFromHandler,
+	globalFuncPages map[string]string,
+	windowFuncPages map[string]string,
+) string {
+	if len(calls) == 0 {
+		return ""
+	}
+	var b strings.Builder
+	b.WriteString("\n## Lua API Usage (from Handlers)\n\n")
+	b.WriteString("Lua API functions called from handlers bound to this element type ")
+	b.WriteString("(derived from call graph analysis — not graph co-occurrence):\n\n")
+	for _, lc := range calls {
+		name := lc.FunctionName
+		if path, ok := globalFuncPages[name]; ok {
+			name = markdownLink(name, path)
+		} else if path, ok := windowFuncPages[name]; ok {
+			name = markdownLink(name, path)
+		}
+		b.WriteString(fmt.Sprintf("- %s — via `%s` (%d observation(s))\n", name, lc.ViaEvent, lc.Count))
 	}
 	b.WriteString("\n")
 	return b.String()

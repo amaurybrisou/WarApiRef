@@ -295,15 +295,40 @@ type ConstantSymbol struct {
 	Notes       []string
 }
 
+// LuaAPICallFromHandler describes a Lua API function call observed in handler
+// functions bound to an XML element type. Unlike graph co-occurrence links, this
+// is derived from actual Lua call graph analysis: for each handler bound to an
+// element type, its FunctionDoc.Calls are traced to find which platform/window
+// API functions it invokes.
+type LuaAPICallFromHandler struct {
+	FunctionName string // called Lua API function name (e.g. "WindowGetId")
+	ViaEvent     string // XML handler event through which it is invoked (e.g. "OnLButtonUp")
+	Count        int    // total observed invocations across all addons
+}
+
+// AttributeProfile captures usage statistics for one attribute observed on an
+// XML element type, including a required/optional heuristic derived from corpus
+// evidence.
+type AttributeProfile struct {
+	Name       string   // attribute name (e.g. "rowdef")
+	Count      int      // number of observed element instances that carry this attribute
+	Total      int      // total observed instances of the element type
+	TopValues  []string // up to 5 most commonly observed values
+	IsRequired bool     // true when Count/Total >= 0.75
+}
+
 // XMLEventBinding records the observed association between one XML handler event
 // name and the Lua functions commonly bound to it on a specific element type.
 // InferredArgs is a best-effort Lua function signature string; ArgsConfidence
 // is "HIGH", "MEDIUM", or "LOW" to indicate how reliable the inference is.
+// LuaAPICalls records Lua API calls made by the handler functions — derived from
+// actual call graph analysis, not graph co-occurrence.
 type XMLEventBinding struct {
-	Event         string
-	LuaFunctions  []string
-	InferredArgs  string
+	Event          string
+	LuaFunctions   []string
+	InferredArgs   string
 	ArgsConfidence string
+	LuaAPICalls    []LuaAPICallFromHandler // call-graph-derived API calls from handler functions
 }
 
 type ElementTypeSymbol struct {
@@ -325,6 +350,8 @@ type ElementTypeSymbol struct {
 	CommonParentTypes        []string // element types that commonly contain this one (e.g. Window for Button)
 	CompositionSnippet       string   // representative XML snippet showing the hierarchy of structural children
 	XMLEventBindings         []XMLEventBinding // per-event bindings with Lua functions and inferred args
+	AttributeProfiles        []AttributeProfile       // per-attribute profiles with required/optional heuristic
+	LuaAPICallsFromHandlers  []LuaAPICallFromHandler  // Lua API calls derived from handler function analysis
 	Examples                 []UsageExample
 	Notes                    []string
 }
