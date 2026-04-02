@@ -171,7 +171,8 @@ type elementAccumulator struct {
 	Addons              map[string]bool
 	Attributes          map[string]int
 	Handlers            map[string]int
-	HandlerFunctions    map[string]int // Lua function names bound via XML handlers
+	HandlerFunctions    map[string]int            // Lua function names bound via XML handlers
+	HandlerBindings     map[string]map[string]int // event → {lua_function → count}
 	Inherits            map[string]int
 	ChildTypes          map[string]int // structural (unnamed) child element types
 	ChildElementTypes   map[string]int // named child frame element types
@@ -289,6 +290,12 @@ func Build(source SourceModel) Corpus {
 			acc.Handlers[handler.Event]++
 			if handler.Function != "" {
 				acc.HandlerFunctions[handler.Function]++
+				// Track the (event, lua_function) binding pair so element pages can
+				// surface which Lua functions are commonly bound per XML event.
+				if acc.HandlerBindings[handler.Event] == nil {
+					acc.HandlerBindings[handler.Event] = map[string]int{}
+				}
+				acc.HandlerBindings[handler.Event][handler.Function]++
 			}
 		}
 		if frame.Inherits != "" {
@@ -993,6 +1000,7 @@ func finalizeElementSymbols(values map[string]*elementAccumulator, ctx scoringCo
 			CommonChildElementTypes: topKeysByCount(acc.ChildElementTypes, 8),
 			CommonParentTypes:       topKeysByCount(acc.ParentTypes, 6),
 			CompositionSnippet:      bestCompositionSnippet(acc.Snippets),
+			XMLEventBindings:        buildXMLEventBindings(acc.HandlerBindings),
 			Examples:                firstUsageExamples(acc.Examples, 6),
 			Notes:                   nil,
 		})
@@ -2323,11 +2331,96 @@ func inferEventPayload(name string) []string {
 	return []string{"Payload not inferable from addon-level documentation alone."}
 }
 
+// knownXMLHandlerArgs maps well-known WAR XML handler event names to their
+// expected Lua callback signature string.  Confidence is HIGH for engine-standard
+// events whose argument conventions are widely observed across many addons.
+var knownXMLHandlerArgs = map[string]string{
+	// Lifecycle hooks – no engine-supplied arguments.
+	"OnInitialize":    "function()",
+	"OnShutdown":      "function()",
+	"OnShow":          "function()",
+	"OnHide":          "function()",
+	"OnShown":         "function()",
+	"OnHidden":        "function()",
+	// Mouse / pointer events.
+	"OnMouseOver":     "function()",
+	"OnMouseOut":      "function()",
+	"OnMouseDown":     "function(button)",
+	"OnMouseUp":       "function(button)",
+	"OnClick":         "function()",
+	"OnDoubleClick":   "function()",
+	"OnMouseWheel":    "function(delta)",
+	// Keyboard events.
+	"OnEnterPressed":  "function()",
+	"OnEscapePressed": "function()",
+	"OnKeyDown":       "function(key)",
+	"OnKeyUp":         "function(key)",
+	// Value / text change events.
+	"OnTextChanged":   "function()",
+	"OnValueChanged":  "function(value)",
+	// Drag events.
+	"OnDragStart":     "function()",
+	"OnDragStop":      "function()",
+	"OnReceiveDrag":   "function()",
+	// Resize / move events.
+	"OnSizeChanged":   "function(width, height)",
+	"OnMove":          "function()",
+	// Per-frame update hook – elapsed time in seconds.
+	"OnUpdate":        "function(elapsed)",
+	// Edit box events.
+	"OnCursorChanged": "function()",
+	"OnInputLanguageChanged": "function()",
+	// Selection / list events.
+	"OnSelectionChanged": "function(selectedRow)",
+	"OnScrollChanged":    "function()",
+}
+
 func inferXMLBinding(name string) string {
-	if name == "OnMouseWheel" {
-		return "function(...)"
+	if sig, ok := knownXMLHandlerArgs[name]; ok {
+		return sig
 	}
 	return "function(...)"
+}
+
+// xmlHandlerArgsConfidence returns "HIGH", "MEDIUM", or "LOW" for the inferred
+// argument signature of an XML handler event name.
+func xmlHandlerArgsConfidence(name string) string {
+	if _, ok := knownXMLHandlerArgs[name]; ok {
+		return "MEDIUM" // known pattern, but runtime engine args are not verified from source
+	}
+	return "LOW"
+}
+
+// buildXMLEventBindings converts the per-event Lua-function binding counts
+// from an elementAccumulator into a sorted slice of XMLEventBinding records.
+// Events with no associated Lua functions are skipped.
+func buildXMLEventBindings(bindings map[string]map[string]int) []XMLEventBinding {
+	if len(bindings) == 0 {
+		return nil
+	}
+	// Order by event name for stable output.
+	events := make([]string, 0, len(bindings))
+	for event := range bindings {
+		if strings.TrimSpace(event) != "" {
+			events = append(events, event)
+		}
+	}
+	sort.Strings(events)
+	result := make([]XMLEventBinding, 0, len(events))
+	for _, event := range events {
+		funcCounts := bindings[event]
+		topFuncs := topKeysByCount(funcCounts, 6)
+		if len(topFuncs) == 0 {
+			continue
+		}
+		result = append(result, XMLEventBinding{
+			Event:          event,
+			LuaFunctions:   topFuncs,
+			InferredArgs:   inferXMLBinding(event),
+			ArgsConfidence: xmlHandlerArgsConfidence(event),
+		})
+	}
+	return result
 }
 
 func inferGenericRole(samples []string) string {
@@ -2409,7 +2502,13 @@ func eventNotes(acc *eventAccumulator) []string {
 }
 
 func xmlHandlerNotes(name string) []string {
-	notes := []string{"Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures."}
+	var notes []string
+	if _, known := knownXMLHandlerArgs[name]; known {
+		conf := xmlHandlerArgsConfidence(name)
+		notes = append(notes, "Expected callback signature inferred from common WAR XML handler conventions ("+conf+" confidence).")
+	} else {
+		notes = append(notes, "Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.")
+	}
 	if !strings.HasPrefix(name, "On") {
 		notes = append(notes, "Non-On* handler names should be reviewed manually; most XML hooks are On* events.")
 	}
@@ -2499,6 +2598,7 @@ func ensureElementAccumulator(target map[string]*elementAccumulator, name string
 			Attributes:        map[string]int{},
 			Handlers:          map[string]int{},
 			HandlerFunctions:  map[string]int{},
+			HandlerBindings:   map[string]map[string]int{},
 			Inherits:          map[string]int{},
 			ChildTypes:        map[string]int{},
 			ChildElementTypes: map[string]int{},
