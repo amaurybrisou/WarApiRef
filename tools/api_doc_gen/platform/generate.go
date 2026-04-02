@@ -416,6 +416,9 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		content += md.Section("Common Attributes", md.BulletList(symbol.CommonAttributes))
 		content += md.Section("Common Handlers", md.BulletList(symbol.CommonHandlers))
 		content += md.Section("Common Inherits", md.BulletList(symbol.CommonInherits))
+		if len(symbol.CommonChildTypes) > 0 {
+			content += md.Section("Common Structural Child Elements", md.BulletList(symbol.CommonChildTypes))
+		}
 		content += md.Section("Seen In", md.BulletList(symbol.SeenIn))
 		content += md.Section("Examples", md.BulletList(formatUsageExamples(symbol.Examples)))
 		content += renderSemanticSections(currentPath, corpus.SymbolLinks[elementTypeID(symbol.Name)])

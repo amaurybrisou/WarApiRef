@@ -512,6 +512,7 @@ func writeFrames(outputRoot string, corpus graph.Corpus) error {
 			content += "- Template: " + boolLabel(frame.Template) + "\n"
 			content += "- Source: `" + frame.File + ":" + fmt.Sprintf("%d", frame.Line) + "`\n\n"
 			content += md.Section("Children", md.BulletList(frame.Children))
+			content += md.Section("Structural Child Types", md.BulletList(frame.StructuralChildTypes))
 			content += md.Section("Attributes", md.BulletList(attributeLines(frame.Attributes)))
 			content += md.Section("Handlers", md.Table([]string{"Event", "Function"}, handlerRows(handlerByFrame[addon.Name+"|"+frame.Name])))
 			path := filepath.Join(outputRoot, "xml", "frames", docName(frame.Addon, frame.Name))
@@ -536,6 +537,7 @@ func writeTemplates(outputRoot string, corpus graph.Corpus) error {
 			content += "- Source: `" + frame.File + ":" + fmt.Sprintf("%d", frame.Line) + "`\n\n"
 			content += md.Section("Attributes", md.BulletList(attributeLines(frame.Attributes)))
 			content += md.Section("Children", md.BulletList(frame.Children))
+			content += md.Section("Structural Child Types", md.BulletList(frame.StructuralChildTypes))
 			path := filepath.Join(outputRoot, "xml", "templates", docName(frame.Addon, frame.Name))
 			if err := writeFile(path, content); err != nil {
 				return err

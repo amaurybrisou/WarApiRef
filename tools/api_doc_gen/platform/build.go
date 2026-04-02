@@ -172,6 +172,7 @@ type elementAccumulator struct {
 	Attributes map[string]int
 	Handlers   map[string]int
 	Inherits   map[string]int
+	ChildTypes map[string]int // structural child element types observed inside this element type
 	Examples   []UsageExample
 }
 
@@ -285,6 +286,11 @@ func Build(source SourceModel) Corpus {
 		}
 		if frame.Inherits != "" {
 			acc.Inherits[frame.Inherits]++
+		}
+		for _, childType := range frame.StructuralChildTypes {
+			if childType != "" {
+				acc.ChildTypes[childType]++
+			}
 		}
 		acc.Examples = appendUniqueExample(acc.Examples, UsageExample{
 			Addon:   frame.Addon,
@@ -937,6 +943,7 @@ func finalizeElementSymbols(values map[string]*elementAccumulator, ctx scoringCo
 			CommonAttributes: topKeysByCount(acc.Attributes, 12),
 			CommonHandlers:   topKeysByCount(acc.Handlers, 12),
 			CommonInherits:   topKeysByCount(acc.Inherits, 12),
+			CommonChildTypes: topKeysByCount(acc.ChildTypes, 8),
 			Examples:         firstUsageExamples(acc.Examples, 6),
 			Notes:            nil,
 		})
@@ -2406,7 +2413,7 @@ func ensureConstantAccumulator(target map[string]*constantAccumulator, name stri
 func ensureElementAccumulator(target map[string]*elementAccumulator, name string) *elementAccumulator {
 	acc, ok := target[name]
 	if !ok {
-		acc = &elementAccumulator{Name: name, Addons: map[string]bool{}, Attributes: map[string]int{}, Handlers: map[string]int{}, Inherits: map[string]int{}}
+		acc = &elementAccumulator{Name: name, Addons: map[string]bool{}, Attributes: map[string]int{}, Handlers: map[string]int{}, Inherits: map[string]int{}, ChildTypes: map[string]int{}}
 		target[name] = acc
 	}
 	return acc

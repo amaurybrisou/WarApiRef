@@ -109,6 +109,12 @@ func ParseFile(addonName string, filePath string) (graph.XMLFileResult, error) {
 						frames[parentIndex].Children = append(frames[parentIndex].Children, currentFrame)
 					}
 				}
+			} else if !ignoredFrameTags[typed.Name.Local] && strings.TrimSpace(attributes["name"]) == "" && parentFrame != "" {
+				// Unnamed structural element inside a named frame (e.g. ListData, ListColumns, ListColumn).
+				// Track its type so element-type documentation can surface common sub-structure.
+				if parentIndex, ok := frameIndexes[parentFrame]; ok {
+					frames[parentIndex].StructuralChildTypes = append(frames[parentIndex].StructuralChildTypes, typed.Name.Local)
+				}
 			}
 
 			if typed.Name.Local == "EventHandler" {
@@ -133,6 +139,7 @@ func ParseFile(addonName string, filePath string) (graph.XMLFileResult, error) {
 
 	for index := range frames {
 		frames[index].Children = graph.UniqueStrings(frames[index].Children)
+		frames[index].StructuralChildTypes = graph.UniqueStrings(frames[index].StructuralChildTypes)
 	}
 
 	return graph.XMLFileResult{

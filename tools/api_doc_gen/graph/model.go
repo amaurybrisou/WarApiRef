@@ -83,16 +83,17 @@ type Function struct {
 }
 
 type Frame struct {
-	Addon      string
-	Name       string
-	Type       string
-	Parent     string
-	File       string
-	Line       int
-	Children   []string
-	Inherits   string
-	Attributes map[string]string
-	Template   bool
+	Addon                string
+	Name                 string
+	Type                 string
+	Parent               string
+	File                 string
+	Line                 int
+	Children             []string
+	StructuralChildTypes []string // element type tags that appear as unnamed structural children (e.g. ListData, ListColumns)
+	Inherits             string
+	Attributes           map[string]string
+	Template             bool
 }
 
 type XMLHandler struct {

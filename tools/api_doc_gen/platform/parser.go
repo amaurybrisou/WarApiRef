@@ -173,16 +173,17 @@ func parseFrameDoc(path string) (FrameDoc, error) {
 		handlers = append(handlers, FrameHandlerDoc{Event: strings.TrimSpace(row["Event"]), Function: strings.TrimSpace(row["Function"])})
 	}
 	return FrameDoc{
-		Name:       strings.TrimSpace(strings.TrimPrefix(lines[0], "# Frame ")),
-		Addon:      strings.TrimSpace(meta["Addon"]),
-		Type:       strings.TrimSpace(meta["Type"]),
-		Parent:     normalizeNone(meta["Parent"]),
-		Inherits:   normalizeNone(meta["Inherits"]),
-		Template:   parseBoolish(meta["Template"]),
-		Source:     strings.TrimSpace(meta["Source"]),
-		Children:   parseBulletList(sections["Children"]),
-		Attributes: attributes,
-		Handlers:   handlers,
+		Name:                 strings.TrimSpace(strings.TrimPrefix(lines[0], "# Frame ")),
+		Addon:                strings.TrimSpace(meta["Addon"]),
+		Type:                 strings.TrimSpace(meta["Type"]),
+		Parent:               normalizeNone(meta["Parent"]),
+		Inherits:             normalizeNone(meta["Inherits"]),
+		Template:             parseBoolish(meta["Template"]),
+		Source:               strings.TrimSpace(meta["Source"]),
+		Children:             parseBulletList(sections["Children"]),
+		StructuralChildTypes: parseBulletList(sections["Structural Child Types"]),
+		Attributes:           attributes,
+		Handlers:             handlers,
 	}, nil
 }
 

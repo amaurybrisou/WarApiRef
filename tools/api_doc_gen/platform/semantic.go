@@ -514,20 +514,39 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 		}
 	}
 
-	edges := materializeGraphEdges(edgeAccumulators)
+	// Emit commonly_used_with edges directly into edgeAccumulators so that the
+	// final graph edge carries the real relation-accumulator weight (>= minCommonlyUsedWithWeight)
+	// and the actual co-occurrence evidence strings.  Using addEdge() here would always
+	// produce weight=1 (one call = one increment), hiding the true co-occurrence count
+	// from downstream enrichment and cap logic.
 	for _, relation := range materializeCombinationRelations(relationAccumulators, catalog) {
 		if relation.Weight < minCommonlyUsedWithWeight {
 			continue
 		}
-		participants := []string{}
-		for _, participant := range relation.Participants {
-			participants = append(participants, participant.ID)
+		if len(relation.Participants) != 2 {
+			continue
 		}
-		if len(participants) == 2 {
-			addEdge(participants[0], participants[1], "commonly_used_with", relation.Title)
+		leftID := relation.Participants[0].ID
+		rightID := relation.Participants[1].ID
+		if leftID == "" || rightID == "" || leftID == rightID {
+			continue
 		}
+		key := "commonly_used_with|" + leftID + "|" + rightID
+		acc := &graphEdgeAccumulator{
+			From:     leftID,
+			To:       rightID,
+			Type:     "commonly_used_with",
+			Weight:   relation.Weight,
+			Evidence: map[string]bool{},
+		}
+		for _, ev := range relation.Evidence {
+			if strings.TrimSpace(ev) != "" {
+				acc.Evidence[ev] = true
+			}
+		}
+		edgeAccumulators[key] = acc
 	}
-	edges = materializeGraphEdges(edgeAccumulators)
+	edges := materializeGraphEdges(edgeAccumulators)
 	edges = capCommonlyUsedWithEdges(edges, maxCommonlyUsedWithPerNode)
 
 	// Enrich edges with deep analysis findings (confidence scores, rationales, missing edge types)

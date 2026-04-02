@@ -34,16 +34,17 @@ type EventRegistrationDoc struct {
 }
 
 type FrameDoc struct {
-	Name       string
-	Addon      string
-	Type       string
-	Parent     string
-	Inherits   string
-	Template   bool
-	Source     string
-	Children   []string
-	Attributes map[string]string
-	Handlers   []FrameHandlerDoc
+	Name                 string
+	Addon                string
+	Type                 string
+	Parent               string
+	Inherits             string
+	Template             bool
+	Source               string
+	Children             []string
+	StructuralChildTypes []string // unnamed structural element types inside this frame (e.g. ListData, ListColumns)
+	Attributes           map[string]string
+	Handlers             []FrameHandlerDoc
 }
 
 type FrameHandlerDoc struct {
@@ -303,6 +304,7 @@ type ElementTypeSymbol struct {
 	CommonAttributes []string
 	CommonHandlers   []string
 	CommonInherits   []string
+	CommonChildTypes []string // structural child element types observed inside this element (e.g. ListData in ListBox)
 	Examples         []UsageExample
 	Notes            []string
 }
