@@ -110,7 +110,7 @@ func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot s
 func runPhasedPipelineFromDocs(elementTypes []ElementTypeSymbol, source SourceModel) []ElementTypeSymbol {
 	fmt.Fprintln(os.Stderr,
 		"[DEGRADED] platform pipeline: running from flattened docs (no source root). "+
-			"Hierarchy will be partial; use --source-root for source-first analysis.")
+			"Hierarchy will be partial; provide a source root via BuildOptions.SourceRoot for source-first analysis.")
 
 	trees := synthesizeXMLTrees(source)
 	luaDefs := synthesizeLuaDefs(source)
