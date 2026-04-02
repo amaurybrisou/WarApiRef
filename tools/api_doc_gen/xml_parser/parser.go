@@ -122,7 +122,8 @@ func ParseFile(addonName string, filePath string) (graph.XMLFileResult, error) {
 				}
 			} else if !ignoredFrameTags[typed.Name.Local] && strings.TrimSpace(attributes["name"]) == "" && parentFrame != "" {
 				// Unnamed structural element inside a named frame (e.g. ListData, ListColumns, ListColumn).
-				// Track its type and attribute keys so element-type documentation can surface sub-structure.
+				// Track its type, attribute keys, and sample attribute values so element-type
+				// documentation can surface sub-structure with value-level semantics.
 				if parentIndex, ok := frameIndexes[parentFrame]; ok {
 					frames[parentIndex].StructuralChildTypes = append(frames[parentIndex].StructuralChildTypes, typed.Name.Local)
 					// Collect attribute keys (not values) for this structural child occurrence.
@@ -139,6 +140,25 @@ func ParseFile(addonName string, filePath string) (graph.XMLFileResult, error) {
 					}
 					existing := frames[parentIndex].StructuralChildAttrKeys[typed.Name.Local]
 					frames[parentIndex].StructuralChildAttrKeys[typed.Name.Local] = UniqueStringsSorted(append(existing, attrKeys...))
+
+					// Also sample actual attribute values (up to 8 unique per key) so that
+					// platform docs can show value conventions (e.g. "populationfunction" holds
+					// a Lua function name like "AggroMeterGrayList.Populate").
+					if frames[parentIndex].StructuralChildAttrValues == nil {
+						frames[parentIndex].StructuralChildAttrValues = map[string]map[string][]string{}
+					}
+					if frames[parentIndex].StructuralChildAttrValues[typed.Name.Local] == nil {
+						frames[parentIndex].StructuralChildAttrValues[typed.Name.Local] = map[string][]string{}
+					}
+					for k, v := range attributes {
+						k = strings.TrimSpace(k)
+						v = strings.TrimSpace(v)
+						if k == "" || k == "name" || v == "" {
+							continue
+						}
+						frames[parentIndex].StructuralChildAttrValues[typed.Name.Local][k] =
+							sampleValues(frames[parentIndex].StructuralChildAttrValues[typed.Name.Local][k], v, 8)
+					}
 				}
 			}
 
@@ -362,16 +382,34 @@ func looksLikeEntity(value string) bool {
 
 // UniqueStringsSorted returns a deduplicated, sorted copy of the input slice.
 func UniqueStringsSorted(input []string) []string {
-seen := map[string]bool{}
-result := make([]string, 0, len(input))
-for _, s := range input {
-if s != "" && !seen[s] {
-seen[s] = true
-result = append(result, s)
+	seen := map[string]bool{}
+	result := make([]string, 0, len(input))
+	for _, s := range input {
+		if s != "" && !seen[s] {
+			seen[s] = true
+			result = append(result, s)
+		}
+	}
+	sort.Strings(result)
+	return result
 }
-}
-sort.Strings(result)
-return result
+
+// sampleValues appends value to existing if it is not already present, up to max
+// entries. It returns the (possibly unchanged) slice. Empty strings are skipped.
+func sampleValues(existing []string, value string, max int) []string {
+	v := strings.TrimSpace(value)
+	if v == "" {
+		return existing
+	}
+	for _, s := range existing {
+		if s == v {
+			return existing
+		}
+	}
+	if len(existing) >= max {
+		return existing
+	}
+	return append(existing, v)
 }
 
 // ---------------------------------------------------------------------------

@@ -173,21 +173,22 @@ func parseFrameDoc(path string) (FrameDoc, error) {
 		handlers = append(handlers, FrameHandlerDoc{Event: strings.TrimSpace(row["Event"]), Function: strings.TrimSpace(row["Function"])})
 	}
 	return FrameDoc{
-		Name:                    strings.TrimSpace(strings.TrimPrefix(lines[0], "# Frame ")),
-		Addon:                   strings.TrimSpace(meta["Addon"]),
-		Type:                    strings.TrimSpace(meta["Type"]),
-		Parent:                  normalizeNone(meta["Parent"]),
-		ParentType:              normalizeNone(meta["Parent Type"]),
-		Inherits:                normalizeNone(meta["Inherits"]),
-		Template:                parseBoolish(meta["Template"]),
-		Source:                  strings.TrimSpace(meta["Source"]),
-		Children:                parseBulletList(sections["Children"]),
-		ChildElementTypes:       parseBulletList(sections["Child Element Types"]),
-		StructuralChildTypes:    parseStructuralChildTypes(sections["Structural Child Types"]),
-		StructuralChildAttrKeys: parseStructuralChildAttrKeys(sections["Structural Child Types"]),
-		CompositionSnippet:      parseCodeBlock(sections["Composition Pattern"]),
-		Attributes:              attributes,
-		Handlers:                handlers,
+		Name:                     strings.TrimSpace(strings.TrimPrefix(lines[0], "# Frame ")),
+		Addon:                    strings.TrimSpace(meta["Addon"]),
+		Type:                     strings.TrimSpace(meta["Type"]),
+		Parent:                   normalizeNone(meta["Parent"]),
+		ParentType:               normalizeNone(meta["Parent Type"]),
+		Inherits:                 normalizeNone(meta["Inherits"]),
+		Template:                 parseBoolish(meta["Template"]),
+		Source:                   strings.TrimSpace(meta["Source"]),
+		Children:                 parseBulletList(sections["Children"]),
+		ChildElementTypes:        parseBulletList(sections["Child Element Types"]),
+		StructuralChildTypes:     parseStructuralChildTypes(sections["Structural Child Types"]),
+		StructuralChildAttrKeys:  parseStructuralChildAttrKeys(sections["Structural Child Types"]),
+		StructuralChildAttrValues: parseStructuralChildAttrValues(sections["Structural Child Attr Values"]),
+		CompositionSnippet:       parseCodeBlock(sections["Composition Pattern"]),
+		Attributes:               attributes,
+		Handlers:                 handlers,
 	}, nil
 }
 
@@ -718,4 +719,43 @@ body = append(body, line)
 }
 }
 return strings.TrimSpace(strings.Join(body, "\n"))
+}
+
+// parseStructuralChildAttrValues parses lines in "ChildType.attrKey: val1|val2|val3"
+// format, as written by structuralChildAttrValueLines in the addon generator.
+// The pipe separator is used because WAR XML attribute values do not contain pipes.
+func parseStructuralChildAttrValues(lines []string) map[string]map[string][]string {
+	result := map[string]map[string][]string{}
+	for _, item := range parseBulletList(lines) {
+		item = strings.TrimSpace(item)
+		if item == "" {
+			continue
+		}
+		dotIdx := strings.Index(item, ".")
+		colonIdx := strings.Index(item, ": ")
+		if dotIdx < 0 || colonIdx < 0 || dotIdx >= colonIdx {
+			continue
+		}
+		childType := strings.TrimSpace(item[:dotIdx])
+		attrKey := strings.TrimSpace(item[dotIdx+1 : colonIdx])
+		valStr := strings.TrimSpace(item[colonIdx+2:])
+		if childType == "" || attrKey == "" || valStr == "" {
+			continue
+		}
+		if result[childType] == nil {
+			result[childType] = map[string][]string{}
+		}
+		vals := strings.Split(valStr, "|")
+		cleaned := make([]string, 0, len(vals))
+		for _, v := range vals {
+			v = strings.TrimSpace(v)
+			if v != "" {
+				cleaned = append(cleaned, v)
+			}
+		}
+		if len(cleaned) > 0 {
+			result[childType][attrKey] = cleaned
+		}
+	}
+	return result
 }

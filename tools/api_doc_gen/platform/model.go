@@ -34,21 +34,24 @@ type EventRegistrationDoc struct {
 }
 
 type FrameDoc struct {
-	Name                    string
-	Addon                   string
-	Type                    string
-	Parent                  string
-	ParentType              string              // element type tag of the direct parent named frame
-	Inherits                string
-	Template                bool
-	Source                  string
-	Children                []string
-	ChildElementTypes       []string            // element type tags of named child frames
-	StructuralChildTypes    []string            // unnamed structural element type names inside this frame
-	StructuralChildAttrKeys map[string][]string // attribute keys per structural child type
-	CompositionSnippet      string              // etree-derived XML snippet showing the structural hierarchy
-	Attributes              map[string]string
-	Handlers                []FrameHandlerDoc
+	Name                     string
+	Addon                    string
+	Type                     string
+	Parent                   string
+	ParentType               string              // element type tag of the direct parent named frame
+	Inherits                 string
+	Template                 bool
+	Source                   string
+	Children                 []string
+	ChildElementTypes        []string            // element type tags of named child frames
+	StructuralChildTypes     []string            // unnamed structural element type names inside this frame
+	StructuralChildAttrKeys  map[string][]string // attribute keys per structural child type
+	// StructuralChildAttrValues samples up to 8 unique observed values per structural
+	// child attribute key, enabling attribute-role inference in the platform build step.
+	StructuralChildAttrValues map[string]map[string][]string
+	CompositionSnippet        string              // etree-derived XML snippet showing the structural hierarchy
+	Attributes                map[string]string
+	Handlers                  []FrameHandlerDoc
 }
 
 type FrameHandlerDoc struct {
@@ -306,6 +309,28 @@ type XMLEventBinding struct {
 	ArgsConfidence string
 }
 
+// StructuralChildProfile captures the observed structural (unnamed) XML child
+// element for an element type, with its own attribute keys and sampled values.
+// This enables element pages to show not just "ListData" but also what attributes
+// it carries (e.g. populationfunction, table) and what those values look like.
+type StructuralChildProfile struct {
+	Tag              string
+	ObservedCount    int                    // how many frames of the parent type carry this child
+	CommonAttrKeys   []string               // attribute names ordered by frequency
+	AttrValueSamples map[string][]string    // key → up to 8 representative unique values
+}
+
+// AttributeProfile captures observed attribute semantics for an XML element type,
+// including sampled values and a best-effort inference of the attribute's role.
+// InferredRole is one of: "boolean", "number", "frame-ref", "lua-function", "string".
+type AttributeProfile struct {
+	Name          string
+	ObservedCount int
+	InferredRole  string   // best-effort classification of the attribute's value type
+	SampleValues  []string // up to 8 representative unique observed values
+	Confidence    string   // HIGH / MEDIUM / LOW — reflects how many samples informed the inference
+}
+
 type ElementTypeSymbol struct {
 	Name                     string
 	Confidence               Confidence
@@ -325,6 +350,11 @@ type ElementTypeSymbol struct {
 	CommonParentTypes        []string // element types that commonly contain this one (e.g. Window for Button)
 	CompositionSnippet       string   // representative XML snippet showing the hierarchy of structural children
 	XMLEventBindings         []XMLEventBinding // per-event bindings with Lua functions and inferred args
+	// StructuralChildProfiles replaces/extends CommonChildTypes with per-child attribute profiles.
+	// Each entry describes one observed structural (unnamed) XML child type and its attribute conventions.
+	StructuralChildProfiles  []StructuralChildProfile
+	// AttributeProfiles extends CommonAttributes with value samples and inferred attribute roles.
+	AttributeProfiles        []AttributeProfile
 	Examples                 []UsageExample
 	Notes                    []string
 }

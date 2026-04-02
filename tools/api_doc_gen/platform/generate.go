@@ -471,7 +471,11 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 			}
 			content += md.Section("Common Named Child Elements", md.BulletList(namedChildLinks))
 		}
-		if len(symbol.CommonChildTypes) > 0 {
+		// Structural sub-elements: prefer the richer StructuralChildProfiles if available;
+		// fall back to the flat CommonChildTypes list for backward compatibility.
+		if len(symbol.StructuralChildProfiles) > 0 {
+			content += renderStructuralChildProfiles(symbol.StructuralChildProfiles, elementTypePageNames)
+		} else if len(symbol.CommonChildTypes) > 0 {
 			childLinks := make([]string, 0, len(symbol.CommonChildTypes))
 			for _, childType := range symbol.CommonChildTypes {
 				if elementTypePageNames[childType] {
@@ -485,6 +489,11 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		}
 		if symbol.CompositionSnippet != "" {
 			content += md.Section("Typical XML Structure", "```xml\n"+symbol.CompositionSnippet+"\n```\n")
+		}
+		// Attribute reference: prefer AttributeProfiles (with value samples and role) if available;
+		// fall back to the flat CommonAttributes list.
+		if len(symbol.AttributeProfiles) > 0 {
+			content += renderAttributeProfiles(symbol.AttributeProfiles)
 		}
 		content += md.Section("Seen In", md.BulletList(symbol.SeenIn))
 		content += md.Section("Examples", md.BulletList(formatUsageExamples(symbol.Examples)))
@@ -790,6 +799,72 @@ func renderXMLEventBindings(bindings []XMLEventBinding, handlerPages map[string]
 		}
 		argsCell := "`" + strings.ReplaceAll(binding.InferredArgs, "`", "\\`") + "`"
 		b.WriteString("| " + eventCell + " | " + luaCell + " | " + argsCell + " | " + binding.ArgsConfidence + " |\n")
+	}
+	b.WriteString("\n")
+	return b.String()
+}
+
+// renderStructuralChildProfiles produces a ## Structural Sub-Elements section
+// showing, for each structural (unnamed) XML child of this element type, the
+// observed attributes and a sample of their real values. This replaces the
+// flat "## Common Structural Child Elements" bullet list with semantic content.
+func renderStructuralChildProfiles(profiles []StructuralChildProfile, elementPageNames map[string]bool) string {
+	if len(profiles) == 0 {
+		return ""
+	}
+	var b strings.Builder
+	b.WriteString("\n## Structural Sub-Elements\n\n")
+	for _, p := range profiles {
+		header := p.Tag
+		if elementPageNames[p.Tag] {
+			header = markdownLink(p.Tag, docName("element", p.Tag))
+		}
+		b.WriteString("### " + header + "\n\n")
+		b.WriteString(fmt.Sprintf("- Observed in %d parent frames\n", p.ObservedCount))
+		if len(p.CommonAttrKeys) > 0 {
+			b.WriteString("- Attributes: `" + strings.Join(p.CommonAttrKeys, "`, `") + "`\n")
+			for _, k := range p.CommonAttrKeys {
+				samples := p.AttrValueSamples[k]
+				if len(samples) == 0 {
+					continue
+				}
+				quoted := make([]string, 0, len(samples))
+				for _, s := range samples {
+					quoted = append(quoted, "`"+s+"`")
+				}
+				b.WriteString("  - `" + k + "`: " + strings.Join(quoted, ", ") + "\n")
+			}
+		}
+		b.WriteString("\n")
+	}
+	return b.String()
+}
+
+// renderAttributeProfiles produces a ## Attribute Reference section that
+// presents each observed attribute with its inferred role and sample values.
+// This extends the flat ## Common Attributes list with semantic content.
+func renderAttributeProfiles(profiles []AttributeProfile) string {
+	if len(profiles) == 0 {
+		return ""
+	}
+	var b strings.Builder
+	b.WriteString("\n## Attribute Reference\n\n")
+	b.WriteString("| Attribute | Role | Observed Values | Count |\n")
+	b.WriteString("|-----------|------|-----------------|-------|\n")
+	for _, attr := range profiles {
+		samples := firstStrings(attr.SampleValues, 4)
+		quoted := make([]string, 0, len(samples))
+		for _, s := range samples {
+			quoted = append(quoted, "`"+s+"`")
+		}
+		sampleStr := strings.Join(quoted, ", ")
+		if len(attr.SampleValues) > 4 {
+			sampleStr += ", …"
+		}
+		if sampleStr == "" {
+			sampleStr = "-"
+		}
+		b.WriteString("| `" + attr.Name + "` | " + attr.InferredRole + " | " + sampleStr + " | " + fmt.Sprintf("%d", attr.ObservedCount) + " |\n")
 	}
 	b.WriteString("\n")
 	return b.String()

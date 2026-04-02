@@ -523,6 +523,7 @@ func writeFrames(outputRoot string, corpus graph.Corpus) error {
 				}
 			}
 			content += md.Section("Structural Child Types", md.BulletList(structuralChildLines))
+			content += md.Section("Structural Child Attr Values", md.BulletList(structuralChildAttrValueLines(frame.StructuralChildAttrValues)))
 			if frame.CompositionSnippet != "" {
 				content += md.Section("Composition Pattern", "```xml\n"+frame.CompositionSnippet+"\n```\n")
 			}
@@ -559,6 +560,7 @@ func writeTemplates(outputRoot string, corpus graph.Corpus) error {
 				}
 			}
 			content += md.Section("Structural Child Types", md.BulletList(structuralChildLines))
+			content += md.Section("Structural Child Attr Values", md.BulletList(structuralChildAttrValueLines(frame.StructuralChildAttrValues)))
 			if frame.CompositionSnippet != "" {
 				content += md.Section("Composition Pattern", "```xml\n"+frame.CompositionSnippet+"\n```\n")
 			}
@@ -730,6 +732,29 @@ func attributeLines(attributes map[string]string) []string {
 	result := make([]string, 0, len(keys))
 	for _, key := range keys {
 		result = append(result, key+": "+attributes[key])
+	}
+	return result
+}
+
+// structuralChildAttrValueLines serializes the structural-child attribute value
+// samples as flat bullet entries: "ChildType.attrKey: val1|val2|val3".
+// The pipe separator is safe because WAR XML attribute values do not contain pipes.
+func structuralChildAttrValueLines(values map[string]map[string][]string) []string {
+	if len(values) == 0 {
+		return nil
+	}
+	childTypes := mapKeys(values)
+	var result []string
+	for _, childType := range childTypes {
+		attrMap := values[childType]
+		attrKeys := mapKeys(attrMap)
+		for _, k := range attrKeys {
+			vals := attrMap[k]
+			if len(vals) == 0 {
+				continue
+			}
+			result = append(result, childType+"."+k+": "+strings.Join(vals, "|"))
+		}
 	}
 	return result
 }

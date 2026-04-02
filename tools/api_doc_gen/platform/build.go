@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 
@@ -179,6 +180,12 @@ type elementAccumulator struct {
 	ParentTypes         map[string]int // element types that contain this one
 	Snippets            []string       // CompositionSnippet candidates from real frames
 	Examples            []UsageExample
+	// AttributeValueSamples collects up to 8 unique observed values per attribute key.
+	// Used to infer the attribute's role (boolean, frame-ref, lua-function, number, string).
+	AttributeValueSamples map[string][]string
+	// ChildAttrValues collects up to 8 unique observed values per structural child attribute.
+	// key: structural child type; value: attr key → []sampled values.
+	ChildAttrValues map[string]map[string][]string
 }
 
 type lifecycleAccumulator struct {
@@ -283,8 +290,12 @@ func Build(source SourceModel) Corpus {
 		frameTypes[frame.Addon+"|"+frame.Name] = frame.Type
 		acc := ensureElementAccumulator(elements, frame.Type)
 		acc.Addons[frame.Addon] = true
-		for key := range frame.Attributes {
+		for key, val := range frame.Attributes {
 			acc.Attributes[key]++
+			// Sample the attribute's observed values for role inference later.
+			if val != "" {
+				acc.AttributeValueSamples[key] = appendUniqueSample(acc.AttributeValueSamples[key], val, 8)
+			}
 		}
 		for _, handler := range frame.Handlers {
 			acc.Handlers[handler.Event]++
@@ -319,6 +330,21 @@ func Build(source SourceModel) Corpus {
 				acc.ChildTypes[childType]++
 			}
 		}
+		// Accumulate structural child attribute value samples into acc.ChildAttrValues
+		// so that element pages for this parent type can surface per-child profiles.
+		for childType, attrMap := range frame.StructuralChildAttrValues {
+			if childType == "" {
+				continue
+			}
+			if acc.ChildAttrValues[childType] == nil {
+				acc.ChildAttrValues[childType] = map[string][]string{}
+			}
+			for k, vals := range attrMap {
+				for _, v := range vals {
+					acc.ChildAttrValues[childType][k] = appendUniqueSample(acc.ChildAttrValues[childType][k], v, 8)
+				}
+			}
+		}
 		// Feed structural children through their own elementAccumulator entries so that
 		// they get first-class pages alongside named element types (ListBox, Button, etc.).
 		for _, childType := range frame.StructuralChildTypes {
@@ -327,10 +353,15 @@ func Build(source SourceModel) Corpus {
 			}
 			childAcc := ensureElementAccumulator(elements, childType)
 			childAcc.Addons[frame.Addon] = true
-			// Carry over attribute keys captured from the XML source.
+			// Carry over attribute keys and sample their values for this structural child type.
 			for _, attrKey := range frame.StructuralChildAttrKeys[childType] {
 				if attrKey != "" {
 					childAcc.Attributes[attrKey]++
+				}
+			}
+			for k, vals := range frame.StructuralChildAttrValues[childType] {
+				for _, v := range vals {
+					childAcc.AttributeValueSamples[k] = appendUniqueSample(childAcc.AttributeValueSamples[k], v, 8)
 				}
 			}
 			childAcc.Examples = appendUniqueExample(childAcc.Examples, UsageExample{
@@ -1001,6 +1032,8 @@ func finalizeElementSymbols(values map[string]*elementAccumulator, ctx scoringCo
 			CommonParentTypes:       topKeysByCount(acc.ParentTypes, 6),
 			CompositionSnippet:      bestCompositionSnippet(acc.Snippets),
 			XMLEventBindings:        buildXMLEventBindings(acc.HandlerBindings),
+			StructuralChildProfiles: buildStructuralChildProfiles(acc.ChildTypes, acc.ChildAttrValues),
+			AttributeProfiles:       buildAttributeProfiles(acc.Attributes, acc.AttributeValueSamples),
 			Examples:                firstUsageExamples(acc.Examples, 6),
 			Notes:                   nil,
 		})
@@ -2423,6 +2456,232 @@ func buildXMLEventBindings(bindings map[string]map[string]int) []XMLEventBinding
 	return result
 }
 
+// knownBooleanAttrs is the set of WAR XML attribute names that are known to carry
+// boolean ("true"/"false") values. Used by inferAttributeRole.
+var knownBooleanAttrs = map[string]bool{
+	"handleinput":      true,
+	"hidden":           true,
+	"enabled":          true,
+	"movable":          true,
+	"resizable":        true,
+	"clampedtoscreen":  true,
+	"draganddrop":      true,
+	"lockposition":     true,
+	"visible":          true,
+}
+
+// knownLuaFunctionAttrs is the set of WAR XML attribute names that are known to carry
+// Lua function name values. Used by inferAttributeRole.
+var knownLuaFunctionAttrs = map[string]bool{
+	"populationfunction":   true,
+	"rowcreatefunction":    true,
+	"rowactivatefunction":  true,
+	"rowmouseoverfunction": true,
+}
+
+// knownFrameRefAttrs is the set of WAR XML attribute names that are known to hold
+// the name of another frame/window. Used by inferAttributeRole.
+var knownFrameRefAttrs = map[string]bool{
+	"scrollbar":      true,
+	"parent":         true,
+	"relativeto":     true,
+	"inherits":       true,
+}
+
+// frameRefValueSuffixes are lowercase suffixes that, when matched at the end of a
+// CamelCase attribute value, strongly suggest it is a frame name reference.
+var frameRefValueSuffixes = []string{
+	"window", "frame", "scrollbar", "bar", "box", "list", "pane", "panel", "scroll",
+	"button", "label", "image", "display",
+}
+
+// inferAttributeRole classifies an XML attribute's role based on its name and a
+// sample of observed values. The returned string is one of:
+//   - "boolean"       — carries true/false values
+//   - "number"        — carries numeric values
+//   - "frame-ref"     — references another named window/frame
+//   - "lua-function"  — references a Lua function or module.Function
+//   - "string"        — free-form text or unclassified
+func inferAttributeRole(key string, samples []string) string {
+	lower := strings.ToLower(strings.TrimSpace(key))
+	if knownBooleanAttrs[lower] {
+		return "boolean"
+	}
+	if knownLuaFunctionAttrs[lower] {
+		return "lua-function"
+	}
+	if knownFrameRefAttrs[lower] {
+		return "frame-ref"
+	}
+	if strings.HasSuffix(lower, "function") || strings.HasSuffix(lower, "func") ||
+		strings.HasSuffix(lower, "handler") || strings.HasSuffix(lower, "callback") {
+		return "lua-function"
+	}
+
+	if len(samples) == 0 {
+		return "string"
+	}
+
+	boolCount, numCount, luaFuncCount, frameRefCount := 0, 0, 0, 0
+	for _, v := range samples {
+		vl := strings.ToLower(strings.TrimSpace(v))
+		if v == "true" || v == "false" {
+			boolCount++
+			continue
+		}
+		if _, err := strconv.Atoi(v); err == nil {
+			numCount++
+			continue
+		}
+		// Dotted identifiers without spaces are either frame refs or Lua functions.
+		if strings.Contains(v, ".") && !strings.Contains(v, " ") {
+			matched := false
+			for _, suf := range frameRefValueSuffixes {
+				if strings.HasSuffix(vl, suf) {
+					frameRefCount++
+					matched = true
+					break
+				}
+			}
+			if !matched {
+				luaFuncCount++
+			}
+			continue
+		}
+		// Non-dotted PascalCase/CamelCase string without spaces that ends with a
+		// known widget suffix is likely a frame name reference.
+		if !strings.Contains(v, " ") && len(v) > 3 {
+			for _, suf := range frameRefValueSuffixes {
+				if strings.HasSuffix(vl, suf) {
+					frameRefCount++
+					break
+				}
+			}
+		}
+	}
+	total := len(samples)
+	if boolCount == total {
+		return "boolean"
+	}
+	if numCount*2 > total {
+		return "number"
+	}
+	if frameRefCount*2 > total {
+		return "frame-ref"
+	}
+	if luaFuncCount*2 > total {
+		return "lua-function"
+	}
+	return "string"
+}
+
+// appendUniqueSample appends value to existing if not already present, up to max
+// entries. Empty strings are always skipped.
+func appendUniqueSample(existing []string, value string, max int) []string {
+	v := strings.TrimSpace(value)
+	if v == "" {
+		return existing
+	}
+	for _, s := range existing {
+		if s == v {
+			return existing
+		}
+	}
+	if len(existing) >= max {
+		return existing
+	}
+	return append(existing, v)
+}
+
+// buildAttributeProfiles builds a slice of AttributeProfile from the accumulated
+// attribute counts and value samples of an element type. Results are ordered by
+// observed frequency (descending). At most 15 profiles are returned.
+func buildAttributeProfiles(counts map[string]int, valueSamples map[string][]string) []AttributeProfile {
+	type kv struct {
+		key   string
+		count int
+	}
+	sorted := make([]kv, 0, len(counts))
+	for k, c := range counts {
+		if strings.TrimSpace(k) != "" {
+			sorted = append(sorted, kv{k, c})
+		}
+	}
+	sort.Slice(sorted, func(i, j int) bool {
+		if sorted[i].count == sorted[j].count {
+			return sorted[i].key < sorted[j].key
+		}
+		return sorted[i].count > sorted[j].count
+	})
+
+	result := make([]AttributeProfile, 0, 15)
+	for _, item := range sorted {
+		if len(result) >= 15 {
+			break
+		}
+		samples := valueSamples[item.key]
+		role := inferAttributeRole(item.key, samples)
+		conf := "LOW"
+		if len(samples) >= 4 {
+			conf = "MEDIUM"
+		}
+		if len(samples) >= 6 {
+			conf = "HIGH"
+		}
+		result = append(result, AttributeProfile{
+			Name:          item.key,
+			ObservedCount: item.count,
+			InferredRole:  role,
+			SampleValues:  samples,
+			Confidence:    conf,
+		})
+	}
+	return result
+}
+
+// buildStructuralChildProfiles builds a slice of StructuralChildProfile from the
+// per-element accumulated structural child type counts and their attribute value
+// samples. Results are ordered by observed frequency (descending).
+func buildStructuralChildProfiles(childCounts map[string]int, childAttrValues map[string]map[string][]string) []StructuralChildProfile {
+	type kv struct {
+		key   string
+		count int
+	}
+	sorted := make([]kv, 0, len(childCounts))
+	for k, c := range childCounts {
+		if strings.TrimSpace(k) != "" {
+			sorted = append(sorted, kv{k, c})
+		}
+	}
+	sort.Slice(sorted, func(i, j int) bool {
+		if sorted[i].count == sorted[j].count {
+			return sorted[i].key < sorted[j].key
+		}
+		return sorted[i].count > sorted[j].count
+	})
+
+	result := make([]StructuralChildProfile, 0, len(sorted))
+	for _, item := range sorted {
+		attrValues := childAttrValues[item.key]
+		attrKeys := []string{}
+		if attrValues != nil {
+			for k := range attrValues {
+				if strings.TrimSpace(k) != "" {
+					attrKeys = append(attrKeys, k)
+				}
+			}
+			sort.Strings(attrKeys)
+		}
+		result = append(result, StructuralChildProfile{
+			Tag:              item.key,
+			ObservedCount:    item.count,
+			CommonAttrKeys:   attrKeys,
+			AttrValueSamples: attrValues,
+		})
+	}
+	return result
+}
+
 func inferGenericRole(samples []string) string {
 	counts := map[string]int{"event": 0, "handler": 0, "window": 0, "boolean": 0, "number": 0, "text": 0}
 	for _, sample := range samples {
@@ -2593,16 +2852,18 @@ func ensureElementAccumulator(target map[string]*elementAccumulator, name string
 	acc, ok := target[name]
 	if !ok {
 		acc = &elementAccumulator{
-			Name:              name,
-			Addons:            map[string]bool{},
-			Attributes:        map[string]int{},
-			Handlers:          map[string]int{},
-			HandlerFunctions:  map[string]int{},
-			HandlerBindings:   map[string]map[string]int{},
-			Inherits:          map[string]int{},
-			ChildTypes:        map[string]int{},
-			ChildElementTypes: map[string]int{},
-			ParentTypes:       map[string]int{},
+			Name:                  name,
+			Addons:                map[string]bool{},
+			Attributes:            map[string]int{},
+			Handlers:              map[string]int{},
+			HandlerFunctions:      map[string]int{},
+			HandlerBindings:       map[string]map[string]int{},
+			Inherits:              map[string]int{},
+			ChildTypes:            map[string]int{},
+			ChildElementTypes:     map[string]int{},
+			ParentTypes:           map[string]int{},
+			AttributeValueSamples: map[string][]string{},
+			ChildAttrValues:       map[string]map[string][]string{},
 		}
 		target[name] = acc
 	}
