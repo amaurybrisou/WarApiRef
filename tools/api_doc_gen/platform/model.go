@@ -348,6 +348,10 @@ type ElementTypeSymbol struct {
 	BindingResolvedPct       int    // Percentage of handler bindings resolved to Lua source
 	BindingTotalHandlers     int    // Total handler declarations observed
 	BindingResolvedCount     int    // Number resolved to Lua functions
+
+	// .mod lifecycle enrichment: structured startup-window facts.
+	// Notes about startup-created windows are derived from these records.
+	StartupWindowFacts []WindowLifecycleSemantic
 }
 
 // ElementRelRef describes a relationship to another element type with frequency data.
@@ -395,6 +399,69 @@ type HandlerExpectedParam struct {
 	Name     string // Expected parameter name
 	Type     string // Expected type
 	Role     string // Semantic role
+}
+
+// ModProvenance records that an enriched fact originated from a .mod manifest.
+type ModProvenance struct {
+	AddonName   string // Addon whose .mod manifest produced this fact
+	HookKind    string // Lifecycle hook kind: "OnInitialize", "OnUpdate", "OnShutdown", or ""
+	HookTag     string // Raw element tag of the lifecycle hook
+	ActionTag   string // Raw element tag of the action (e.g. "CreateWindow", "CallFunction")
+	ActionIndex int    // Zero-based position of the action within its hook
+	Resolution  string // "exact", "ambiguous", or "unresolved"
+	Confidence  string // "HIGH", "MEDIUM", or "" (empty when unresolved)
+}
+
+// FunctionLifecycleRole describes the lifecycle role of a Lua function as
+// derived from .mod manifest semantic analysis.
+type FunctionLifecycleRole struct {
+	FuncName   string       // Qualified Lua function name (or RefName when unresolved)
+	RefName    string       // Original .mod name attribute value
+	Role       string       // "startup_entrypoint", "shutdown_entrypoint", "update_callback", "unresolved_lifecycle_ref", "unknown_lifecycle_ref"
+	Provenance ModProvenance
+}
+
+// WindowLifecycleSemantic holds structured facts about a window that is
+// created during an addon lifecycle hook, derived from .mod semantic analysis.
+type WindowLifecycleSemantic struct {
+	FrameName   string       // XML frame name from the .mod CreateWindow action
+	ElementType string       // Element type tag resolved for the frame (empty if unresolved)
+	HookKind    string       // Lifecycle hook kind: "OnInitialize", "OnUpdate", "OnShutdown", or ""
+	Resolution  string       // "exact", "ambiguous", or "unresolved"
+	Confidence  string       // "HIGH", "MEDIUM", or ""
+	Provenance  ModProvenance
+}
+
+// AddonLifecycleSemantic holds structured addon-level lifecycle facts derived
+// from .mod manifest semantic analysis.  One entry per .mod addon.
+type AddonLifecycleSemantic struct {
+	AddonName      string
+	HookKinds      []string // Distinct lifecycle hook kinds found
+
+	// Actions grouped by lifecycle phase
+	StartupActions  []LifecycleActionRecord // Actions from OnInitialize
+	ShutdownActions []LifecycleActionRecord // Actions from OnShutdown
+	UpdateActions   []LifecycleActionRecord // Actions from OnUpdate
+	UnknownActions  []LifecycleActionRecord // Actions from unrecognised lifecycle sections
+
+	// All unresolved action references (across all lifecycle sections)
+	UnresolvedRefs []LifecycleActionRecord
+
+	// Addon manifest declarations
+	SavedVariables []string
+}
+
+// LifecycleActionRecord is a structured record of a single lifecycle action
+// from a .mod manifest.
+type LifecycleActionRecord struct {
+	ActionKind  string   // "CallFunction", "CreateWindow", or "" (unknown)
+	ActionTag   string   // Raw element tag from the .mod file
+	Name        string   // "name" attribute value from the action
+	HookKind    string   // Parent hook kind
+	HookTag     string   // Parent hook raw tag
+	Resolution  string   // "exact", "ambiguous", or "unresolved"
+	Confidence  string   // "HIGH", "MEDIUM", or ""
+	MatchedNames []string // Matched Lua function names or XML frame names
 }
 
 type PatternDoc struct {
@@ -574,4 +641,8 @@ type Corpus struct {
 	Relations            RelationReport
 	PatternPages         []PatternPage
 	GeneratedAt          time.Time
+
+	// .mod lifecycle enrichment: addon-level and function-level lifecycle facts.
+	AddonLifecycleSemantics []AddonLifecycleSemantic  // One per .mod addon
+	FunctionLifecycleRoles  []FunctionLifecycleRole   // Function-level lifecycle roles
 }

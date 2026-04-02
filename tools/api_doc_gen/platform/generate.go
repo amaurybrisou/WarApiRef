@@ -71,6 +71,12 @@ func Generate(outputRoot string, corpus Corpus) error {
 	if err := writeLifecycle(outputRoot, corpus); err != nil {
 		return err
 	}
+	if err := writeAddonLifecycleSemantics(outputRoot, corpus); err != nil {
+		return err
+	}
+	if err := writeFunctionLifecycleRoles(outputRoot, corpus); err != nil {
+		return err
+	}
 	if err := writeExamples(outputRoot, corpus); err != nil {
 		return err
 	}
@@ -550,6 +556,10 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 			content += fmt.Sprintf("\n## Binding Resolution\n\n")
 			content += fmt.Sprintf("- Total handler declarations: %d\n", symbol.BindingTotalHandlers)
 			content += fmt.Sprintf("- Resolved to Lua functions: %d (%d%%)\n\n", symbol.BindingResolvedCount, symbol.BindingResolvedPct)
+		}
+		// .mod lifecycle enrichment: startup-created window facts (structured)
+		if len(symbol.StartupWindowFacts) > 0 {
+			content += renderStartupWindowFacts(symbol.StartupWindowFacts)
 		}
 		content += md.Section("Seen In", md.BulletList(symbol.SeenIn))
 		content += md.Section("Examples", md.BulletList(formatUsageExamples(symbol.Examples)))
@@ -1260,4 +1270,166 @@ func renderHandlerArgPatterns(patterns []HandlerArgPatternEntry) string {
 		}
 	}
 	return content
+}
+
+// renderStartupWindowFacts generates a structured section for element types
+// that are instantiated as startup windows via .mod lifecycle hooks.
+func renderStartupWindowFacts(facts []WindowLifecycleSemantic) string {
+if len(facts) == 0 {
+return ""
+}
+content := "## .mod Lifecycle: Startup Windows\n\n"
+content += "This element type is instantiated as a startup window by the following .mod addon(s):\n\n"
+rows := make([][]string, 0, len(facts))
+for _, f := range facts {
+hook := f.HookKind
+if hook == "" {
+hook = "(unknown)"
+}
+rows = append(rows, []string{
+f.FrameName,
+f.Provenance.AddonName,
+hook,
+f.Resolution,
+f.Confidence,
+})
+}
+content += md.Table([]string{"Frame Name", "Addon", "Hook", "Resolution", "Confidence"}, rows)
+content += "\n"
+return content
+}
+
+// writeAddonLifecycleSemantics writes addon-level lifecycle semantic pages
+// derived from .mod manifest analysis.
+func writeAddonLifecycleSemantics(outputRoot string, corpus Corpus) error {
+if len(corpus.AddonLifecycleSemantics) == 0 {
+return nil
+}
+dir := filepath.Join(outputRoot, "lifecycle", "addons")
+if err := os.MkdirAll(dir, 0o755); err != nil {
+return fmt.Errorf("create addon lifecycle dir: %w", err)
+}
+
+links := []string{}
+for _, addon := range corpus.AddonLifecycleSemantics {
+content := "# " + addon.AddonName + " Lifecycle\n\n"
+content += "> Source: `.mod` manifest semantic analysis\n\n"
+
+if len(addon.HookKinds) > 0 {
+content += md.Section("Lifecycle Hooks", md.BulletList(addon.HookKinds))
+}
+if len(addon.SavedVariables) > 0 {
+content += md.Section("Saved Variables", md.BulletList(addon.SavedVariables))
+}
+
+content += renderLifecycleActionTable("Startup Actions (OnInitialize)", addon.StartupActions)
+content += renderLifecycleActionTable("Shutdown Actions (OnShutdown)", addon.ShutdownActions)
+content += renderLifecycleActionTable("Update Actions (OnUpdate)", addon.UpdateActions)
+content += renderLifecycleActionTable("Unknown / Custom Hook Actions", addon.UnknownActions)
+
+if len(addon.UnresolvedRefs) > 0 {
+content += renderLifecycleActionTable("Unresolved References", addon.UnresolvedRefs)
+}
+
+slug := strings.ToLower(strings.ReplaceAll(addon.AddonName, " ", "_"))
+path := filepath.Join(dir, slug+".md")
+if err := writeFile(path, content); err != nil {
+return err
+}
+links = append(links, "- "+markdownLink(addon.AddonName, "addons/"+slug))
+}
+
+index := "# Addon Lifecycle Semantics\n\n"
+index += "> Structured lifecycle facts derived from `.mod` manifest analysis.\n\n"
+index += md.Section("Addons", bulletOrNone(links))
+return writeFile(filepath.Join(outputRoot, "lifecycle", "addon_lifecycle.md"), index)
+}
+
+// renderLifecycleActionTable renders a table of LifecycleActionRecord entries
+// under the given section heading.  Returns an empty string when the slice is
+// empty so that callers can safely call it unconditionally.
+func renderLifecycleActionTable(heading string, actions []LifecycleActionRecord) string {
+if len(actions) == 0 {
+return ""
+}
+content := "## " + heading + "\n\n"
+rows := make([][]string, 0, len(actions))
+for _, a := range actions {
+matched := strings.Join(a.MatchedNames, ", ")
+if matched == "" {
+matched = "—"
+}
+rows = append(rows, []string{
+a.ActionKind,
+a.Name,
+a.Resolution,
+a.Confidence,
+matched,
+})
+}
+content += md.Table([]string{"Kind", "Name", "Resolution", "Confidence", "Matched"}, rows)
+content += "\n"
+return content
+}
+
+// writeFunctionLifecycleRoles writes a summary page for function-level
+// lifecycle roles derived from .mod manifest analysis.
+func writeFunctionLifecycleRoles(outputRoot string, corpus Corpus) error {
+if len(corpus.FunctionLifecycleRoles) == 0 {
+return nil
+}
+dir := filepath.Join(outputRoot, "lifecycle")
+if err := os.MkdirAll(dir, 0o755); err != nil {
+return fmt.Errorf("create lifecycle dir: %w", err)
+}
+
+// Group by role for readability.
+byRole := make(map[string][]FunctionLifecycleRole)
+for _, r := range corpus.FunctionLifecycleRoles {
+byRole[r.Role] = append(byRole[r.Role], r)
+}
+
+roleOrder := []string{
+"startup_entrypoint",
+"shutdown_entrypoint",
+"update_callback",
+"unresolved_lifecycle_ref",
+"unknown_lifecycle_ref",
+}
+roleLabels := map[string]string{
+"startup_entrypoint":       "Startup Entrypoints (OnInitialize)",
+"shutdown_entrypoint":      "Shutdown Entrypoints (OnShutdown)",
+"update_callback":          "Update Callbacks (OnUpdate)",
+"unresolved_lifecycle_ref": "Unresolved Lifecycle References",
+"unknown_lifecycle_ref":    "Unknown / Custom Lifecycle Refs",
+}
+
+content := "# Function Lifecycle Roles\n\n"
+content += "> Lua functions with lifecycle roles derived from `.mod` manifest analysis.\n\n"
+
+for _, role := range roleOrder {
+roles, ok := byRole[role]
+if !ok {
+continue
+}
+label := roleLabels[role]
+if label == "" {
+label = role
+}
+content += "## " + label + "\n\n"
+rows := make([][]string, 0, len(roles))
+for _, r := range roles {
+rows = append(rows, []string{
+"`" + r.FuncName + "`",
+r.RefName,
+r.Provenance.AddonName,
+r.Provenance.Resolution,
+r.Provenance.Confidence,
+})
+}
+content += md.Table([]string{"Function", "Ref Name", "Addon", "Resolution", "Confidence"}, rows)
+content += "\n"
+}
+
+return writeFile(filepath.Join(dir, "function_lifecycle_roles.md"), content)
 }

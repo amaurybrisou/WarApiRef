@@ -566,9 +566,12 @@ func BuildWithOptions(source SourceModel, opts BuildOptions) Corpus {
 
 	// Run the new phased XML↔Lua semantic pipeline (Phases 1-4).
 	// This enriches ElementTypes with structured attribute profiles,
-	// structural child profiles, Lua API call aggregations, and handler
-	// argument patterns from a real tree-based XML parse.
-	corpus.ElementTypes = runPhasedPipeline(corpus.ElementTypes, source, opts.SourceRoot)
+	// structural child profiles, Lua API call aggregations, handler
+	// argument patterns, and .mod lifecycle facts.
+	pipelineResult := runPhasedPipeline(corpus.ElementTypes, source, opts.SourceRoot)
+	corpus.ElementTypes = pipelineResult.ElementTypes
+	corpus.AddonLifecycleSemantics = pipelineResult.AddonLifecycleSemantics
+	corpus.FunctionLifecycleRoles = pipelineResult.FunctionLifecycleRoles
 	corpus.GameEvents = finalizeEventSymbols(gameEvents, "Game Event", ctx, collector)
 	corpus.WindowEvents = finalizeEventSymbols(windowEvents, "Window Event", ctx, collector)
 	corpus.SystemDataFields = finalizeFieldSymbols(systemFields, "SystemData", ctx, collector)

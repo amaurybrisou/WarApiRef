@@ -55,15 +55,15 @@ func TestPipelineSourceFirstProducesRicherHierarchy(t *testing.T) {
 	}
 
 	// --- Source-first path ---
-	enrichedFromSources := runPhasedPipelineFromSources(cloneTypes(baseTypes), root, SourceModel{})
+	srcResult := runPhasedPipelineFromSources(cloneTypes(baseTypes), root, SourceModel{})
 
 	// --- Degraded docs path (no real source data) ---
-	enrichedFromDocs := runPhasedPipelineFromDocs(cloneTypes(baseTypes), SourceModel{})
+	docsResult := runPhasedPipelineFromDocs(cloneTypes(baseTypes), SourceModel{})
 
 	// The source-first path must have enriched element type data:
 	// Window must appear as a parent of Button (or Button as a child of Window).
-	windowFromSources := findType(enrichedFromSources, "Window")
-	buttonFromSources := findType(enrichedFromSources, "Button")
+	windowFromSources := findType(srcResult.ElementTypes, "Window")
+	buttonFromSources := findType(srcResult.ElementTypes, "Button")
 
 	if windowFromSources == nil {
 		t.Fatal("source-first: Window element type not found after pipeline")
@@ -83,8 +83,8 @@ func TestPipelineSourceFirstProducesRicherHierarchy(t *testing.T) {
 
 	// The degraded docs path has no real source data, so it should not
 	// produce any event bindings for these types.
-	windowFromDocs := findType(enrichedFromDocs, "Window")
-	buttonFromDocs := findType(enrichedFromDocs, "Button")
+	windowFromDocs := findType(docsResult.ElementTypes, "Window")
+	buttonFromDocs := findType(docsResult.ElementTypes, "Button")
 
 	if windowFromDocs != nil && hasHandlerEvent(windowFromDocs, "OnInitialize") {
 		t.Error("degraded: Window unexpectedly has OnInitialize — source data leaked into fallback path")
@@ -104,8 +104,8 @@ func TestPipelineFallbackIsExplicitlyDegraded(t *testing.T) {
 
 	// dispatch with empty sourceRoot → should call degraded path without panic
 	result := runPhasedPipeline(cloneTypes(types), source, "")
-	if len(result) != 2 {
-		t.Fatalf("expected 2 element types back, got %d", len(result))
+	if len(result.ElementTypes) != 2 {
+		t.Fatalf("expected 2 element types back, got %d", len(result.ElementTypes))
 	}
 }
 
@@ -120,8 +120,8 @@ func TestPipelineDispatchSelectsSourceFirstWhenRootProvided(t *testing.T) {
 
 	// Should not panic; gracefully falls back with a warning.
 	result := runPhasedPipeline(cloneTypes(types), source, emptyRoot)
-	if len(result) != 1 {
-		t.Fatalf("expected 1 element type back, got %d", len(result))
+	if len(result.ElementTypes) != 1 {
+		t.Fatalf("expected 1 element type back, got %d", len(result.ElementTypes))
 	}
 }
 
@@ -156,7 +156,7 @@ func TestSourceFirstPreservesNamedAndStructuralChildren(t *testing.T) {
 	types := []ElementTypeSymbol{{Name: "ListBox"}, {Name: "Button"}, {Name: "ListData"}}
 	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
 
-	listBox := findType(result, "ListBox")
+	listBox := findType(result.ElementTypes, "ListBox")
 	if listBox == nil {
 		t.Fatal("ListBox not found in enriched types")
 	}
@@ -293,7 +293,7 @@ func TestModManifestAddonProducesStartupWindowNote(t *testing.T) {
 	types := []ElementTypeSymbol{{Name: "Window"}}
 	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
 
-	windowSym := findType(result, "Window")
+	windowSym := findType(result.ElementTypes, "Window")
 	if windowSym == nil {
 		t.Fatal("Window element type not found after pipeline")
 	}
@@ -337,7 +337,7 @@ func TestTOCAddonHasNoModSemantics(t *testing.T) {
 	types := []ElementTypeSymbol{{Name: "Window"}}
 	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
 
-	windowSym := findType(result, "Window")
+	windowSym := findType(result.ElementTypes, "Window")
 	if windowSym == nil {
 		t.Fatal("Window element type not found after pipeline")
 	}
@@ -382,7 +382,7 @@ func TestModManifestUnresolvedCreateWindowIsNotDropped(t *testing.T) {
 	types := []ElementTypeSymbol{{Name: "Window"}}
 	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
 
-	windowSym := findType(result, "Window")
+	windowSym := findType(result.ElementTypes, "Window")
 	if windowSym == nil {
 		t.Fatal("Window element type not found after pipeline")
 	}
@@ -392,4 +392,316 @@ func TestModManifestUnresolvedCreateWindowIsNotDropped(t *testing.T) {
 			t.Errorf("unexpected note for unresolved window: %q", note)
 		}
 	}
+}
+
+// ---- deep integration tests (.mod lifecycle semantics) ----
+
+// TestModCallFunctionProducesLifecycleRole verifies that a .mod CallFunction
+// action in OnInitialize produces a FunctionLifecycleRole with:
+//   - Role == "startup_entrypoint"
+//   - FuncName set to the matched qualified Lua function name
+//   - Provenance.AddonName, HookKind, Resolution, and Confidence populated
+func TestModCallFunctionProducesLifecycleRole(t *testing.T) {
+root := t.TempDir()
+addonDir := filepath.Join(root, "RoleAddon")
+if err := os.MkdirAll(addonDir, 0o755); err != nil {
+t.Fatal(err)
+}
+
+modContent := `<UiMod name="RoleAddon" version="1.0">
+  <Files>
+    <File name="RoleAddon.lua"/>
+  </Files>
+  <OnInitialize>
+    <CallFunction name="RoleAddon.OnInit"/>
+  </OnInitialize>
+</UiMod>`
+if err := os.WriteFile(filepath.Join(addonDir, "RoleAddon.mod"), []byte(modContent), 0o644); err != nil {
+t.Fatal(err)
+}
+
+luaSrc := "function RoleAddon.OnInit() end\n"
+if err := os.WriteFile(filepath.Join(addonDir, "RoleAddon.lua"), []byte(luaSrc), 0o644); err != nil {
+t.Fatal(err)
+}
+
+result := runPhasedPipelineFromSources([]ElementTypeSymbol{}, root, SourceModel{})
+
+if len(result.FunctionLifecycleRoles) == 0 {
+t.Fatal("expected at least one FunctionLifecycleRole but got none")
+}
+
+var found *FunctionLifecycleRole
+for i := range result.FunctionLifecycleRoles {
+r := &result.FunctionLifecycleRoles[i]
+if strings.Contains(r.FuncName, "OnInit") || strings.Contains(r.RefName, "OnInit") {
+found = r
+break
+}
+}
+if found == nil {
+t.Fatalf("no lifecycle role found for RoleAddon.OnInit; roles = %+v", result.FunctionLifecycleRoles)
+}
+
+if found.Role != "startup_entrypoint" {
+t.Errorf("expected role=startup_entrypoint, got %q", found.Role)
+}
+if found.Provenance.AddonName != "RoleAddon" {
+t.Errorf("expected Provenance.AddonName=RoleAddon, got %q", found.Provenance.AddonName)
+}
+if found.Provenance.HookKind != "OnInitialize" {
+t.Errorf("expected Provenance.HookKind=OnInitialize, got %q", found.Provenance.HookKind)
+}
+if found.Provenance.Resolution != "exact" {
+t.Errorf("expected Provenance.Resolution=exact, got %q", found.Provenance.Resolution)
+}
+}
+
+// TestModCreateWindowProducesStructuredWindowFact verifies that a .mod
+// CreateWindow action produces a structured WindowLifecycleSemantic on the
+// matched element type, not just a text note.
+func TestModCreateWindowProducesStructuredWindowFact(t *testing.T) {
+root := t.TempDir()
+addonDir := filepath.Join(root, "StructAddon")
+if err := os.MkdirAll(addonDir, 0o755); err != nil {
+t.Fatal(err)
+}
+
+modContent := `<UiMod name="StructAddon" version="1.0">
+  <Files>
+    <File name="StructAddon.xml"/>
+  </Files>
+  <OnInitialize>
+    <CreateWindow name="StructAddon_Main"/>
+  </OnInitialize>
+</UiMod>`
+if err := os.WriteFile(filepath.Join(addonDir, "StructAddon.mod"), []byte(modContent), 0o644); err != nil {
+t.Fatal(err)
+}
+
+xmlSrc := `<Interface>
+  <Window name="StructAddon_Main"/>
+</Interface>`
+if err := os.WriteFile(filepath.Join(addonDir, "StructAddon.xml"), []byte(xmlSrc), 0o644); err != nil {
+t.Fatal(err)
+}
+
+types := []ElementTypeSymbol{{Name: "Window"}}
+result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+
+windowSym := findType(result.ElementTypes, "Window")
+if windowSym == nil {
+t.Fatal("Window element type not found")
+}
+
+if len(windowSym.StartupWindowFacts) == 0 {
+t.Fatal("expected StartupWindowFacts on Window but got none")
+}
+
+var fact *WindowLifecycleSemantic
+for i := range windowSym.StartupWindowFacts {
+if windowSym.StartupWindowFacts[i].FrameName == "StructAddon_Main" {
+fact = &windowSym.StartupWindowFacts[i]
+break
+}
+}
+if fact == nil {
+t.Fatalf("no WindowLifecycleSemantic for StructAddon_Main; facts=%+v", windowSym.StartupWindowFacts)
+}
+
+if fact.HookKind != "OnInitialize" {
+t.Errorf("expected HookKind=OnInitialize, got %q", fact.HookKind)
+}
+	if fact.Resolution != "exact" {
+		t.Errorf("expected Resolution=exact, got %q", fact.Resolution)
+	}
+	if fact.Provenance.AddonName != "StructAddon" {
+		t.Errorf("expected Provenance.AddonName=StructAddon, got %q", fact.Provenance.AddonName)
+	}
+	// ModProvenance type implies source=mod (it is only produced by .mod analysis).
+}
+
+// TestModAddonLevelSemanticsIncludesSavedVariables verifies that
+// AddonLifecycleSemantics carries saved variable declarations from the .mod
+// manifest.
+func TestModAddonLevelSemanticsIncludesSavedVariables(t *testing.T) {
+root := t.TempDir()
+addonDir := filepath.Join(root, "SVAddon")
+if err := os.MkdirAll(addonDir, 0o755); err != nil {
+t.Fatal(err)
+}
+
+modContent := `<UiMod name="SVAddon" version="1.0">
+  <Files>
+    <File name="SVAddon.lua"/>
+  </Files>
+  <SavedVariables>
+    <SavedVariable name="SVAddon_Settings"/>
+    <SavedVariable name="SVAddon_Profile"/>
+  </SavedVariables>
+  <OnInitialize>
+    <CallFunction name="SVAddon.Init"/>
+  </OnInitialize>
+</UiMod>`
+if err := os.WriteFile(filepath.Join(addonDir, "SVAddon.mod"), []byte(modContent), 0o644); err != nil {
+t.Fatal(err)
+}
+if err := os.WriteFile(filepath.Join(addonDir, "SVAddon.lua"),
+[]byte("function SVAddon.Init() end\n"), 0o644); err != nil {
+t.Fatal(err)
+}
+
+result := runPhasedPipelineFromSources([]ElementTypeSymbol{}, root, SourceModel{})
+
+if len(result.AddonLifecycleSemantics) == 0 {
+t.Fatal("expected AddonLifecycleSemantics but got none")
+}
+
+var addonSem *AddonLifecycleSemantic
+for i := range result.AddonLifecycleSemantics {
+if result.AddonLifecycleSemantics[i].AddonName == "SVAddon" {
+addonSem = &result.AddonLifecycleSemantics[i]
+break
+}
+}
+if addonSem == nil {
+t.Fatalf("no AddonLifecycleSemantic for SVAddon; got=%+v", result.AddonLifecycleSemantics)
+}
+
+if len(addonSem.SavedVariables) == 0 {
+t.Error("expected SavedVariables to be populated")
+}
+hasSV := false
+for _, sv := range addonSem.SavedVariables {
+if sv == "SVAddon_Settings" {
+hasSV = true
+break
+}
+}
+if !hasSV {
+t.Errorf("expected SVAddon_Settings in SavedVariables; got=%v", addonSem.SavedVariables)
+}
+}
+
+// TestModUnresolvedRefSurvivesIntoAddonSemantics verifies that an unresolved
+// CallFunction reference remains visible in the addon's lifecycle semantics.
+func TestModUnresolvedRefSurvivesIntoAddonSemantics(t *testing.T) {
+root := t.TempDir()
+addonDir := filepath.Join(root, "UnresolvedFuncAddon")
+if err := os.MkdirAll(addonDir, 0o755); err != nil {
+t.Fatal(err)
+}
+
+modContent := `<UiMod name="UnresolvedFuncAddon" version="1.0">
+  <Files>
+    <File name="UnresolvedFuncAddon.lua"/>
+  </Files>
+  <OnInitialize>
+    <CallFunction name="UnresolvedFuncAddon.DoesNotExist"/>
+  </OnInitialize>
+</UiMod>`
+if err := os.WriteFile(filepath.Join(addonDir, "UnresolvedFuncAddon.mod"), []byte(modContent), 0o644); err != nil {
+t.Fatal(err)
+}
+// Lua file does NOT define DoesNotExist.
+if err := os.WriteFile(filepath.Join(addonDir, "UnresolvedFuncAddon.lua"),
+[]byte("-- no functions\n"), 0o644); err != nil {
+t.Fatal(err)
+}
+
+result := runPhasedPipelineFromSources([]ElementTypeSymbol{}, root, SourceModel{})
+
+var addonSem *AddonLifecycleSemantic
+for i := range result.AddonLifecycleSemantics {
+if result.AddonLifecycleSemantics[i].AddonName == "UnresolvedFuncAddon" {
+addonSem = &result.AddonLifecycleSemantics[i]
+break
+}
+}
+if addonSem == nil {
+t.Fatal("no AddonLifecycleSemantic for UnresolvedFuncAddon")
+}
+
+// The unresolved reference must survive in StartupActions (not silently dropped).
+found := false
+for _, a := range addonSem.StartupActions {
+if strings.Contains(a.Name, "DoesNotExist") {
+found = true
+if a.Resolution != "unresolved" {
+t.Errorf("expected resolution=unresolved for DoesNotExist, got %q", a.Resolution)
+}
+break
+}
+}
+if !found {
+t.Errorf("unresolved CallFunction ref not found in StartupActions; actions=%+v", addonSem.StartupActions)
+}
+
+// It must also appear in UnresolvedRefs.
+foundUnresolved := false
+for _, u := range addonSem.UnresolvedRefs {
+if strings.Contains(u.Name, "DoesNotExist") {
+foundUnresolved = true
+break
+}
+}
+if !foundUnresolved {
+t.Error("unresolved ref not found in AddonLifecycleSemantic.UnresolvedRefs")
+}
+}
+
+// TestModProvenanceIsRecordedOnWindowFact verifies that the Provenance field
+// of a WindowLifecycleSemantic is fully populated with .mod-specific metadata.
+func TestModProvenanceIsRecordedOnWindowFact(t *testing.T) {
+root := t.TempDir()
+addonDir := filepath.Join(root, "ProvenanceAddon")
+if err := os.MkdirAll(addonDir, 0o755); err != nil {
+t.Fatal(err)
+}
+
+modContent := `<UiMod name="ProvenanceAddon" version="1.0">
+  <Files>
+    <File name="ProvenanceAddon.xml"/>
+  </Files>
+  <OnInitialize>
+    <CreateWindow name="ProvenanceAddon_Win"/>
+  </OnInitialize>
+</UiMod>`
+if err := os.WriteFile(filepath.Join(addonDir, "ProvenanceAddon.mod"), []byte(modContent), 0o644); err != nil {
+t.Fatal(err)
+}
+
+xmlSrc := `<Interface>
+  <Window name="ProvenanceAddon_Win"/>
+</Interface>`
+if err := os.WriteFile(filepath.Join(addonDir, "ProvenanceAddon.xml"), []byte(xmlSrc), 0o644); err != nil {
+t.Fatal(err)
+}
+
+types := []ElementTypeSymbol{{Name: "Window"}}
+result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+
+windowSym := findType(result.ElementTypes, "Window")
+if windowSym == nil {
+t.Fatal("Window element type not found")
+}
+if len(windowSym.StartupWindowFacts) == 0 {
+t.Fatal("expected StartupWindowFacts on Window")
+}
+
+fact := windowSym.StartupWindowFacts[0]
+
+// Provenance must be fully populated.
+if fact.Provenance.AddonName == "" {
+t.Error("Provenance.AddonName must not be empty")
+}
+if fact.Provenance.HookKind == "" {
+t.Error("Provenance.HookKind must not be empty")
+}
+if fact.Provenance.Resolution == "" {
+t.Error("Provenance.Resolution must not be empty")
+}
+if fact.Provenance.ActionTag == "" {
+t.Error("Provenance.ActionTag must not be empty")
+}
 }
