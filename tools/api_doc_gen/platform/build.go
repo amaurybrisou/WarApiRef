@@ -167,14 +167,17 @@ type constantAccumulator struct {
 }
 
 type elementAccumulator struct {
-	Name       string
-	Addons     map[string]bool
-	Attributes map[string]int
-	Handlers   map[string]int
-	Inherits   map[string]int
-	ChildTypes map[string]int // structural child element types observed inside this element type
-	Snippets   []string       // CompositionSnippet candidates from real frames
-	Examples   []UsageExample
+	Name                string
+	Addons              map[string]bool
+	Attributes          map[string]int
+	Handlers            map[string]int
+	HandlerFunctions    map[string]int // Lua function names bound via XML handlers
+	Inherits            map[string]int
+	ChildTypes          map[string]int // structural (unnamed) child element types
+	ChildElementTypes   map[string]int // named child frame element types
+	ParentTypes         map[string]int // element types that contain this one
+	Snippets            []string       // CompositionSnippet candidates from real frames
+	Examples            []UsageExample
 }
 
 type lifecycleAccumulator struct {
@@ -284,9 +287,25 @@ func Build(source SourceModel) Corpus {
 		}
 		for _, handler := range frame.Handlers {
 			acc.Handlers[handler.Event]++
+			if handler.Function != "" {
+				acc.HandlerFunctions[handler.Function]++
+			}
 		}
 		if frame.Inherits != "" {
 			acc.Inherits[frame.Inherits]++
+		}
+		// Track the element type of the parent that contains this frame.
+		if frame.ParentType != "" {
+			acc.ParentTypes[frame.ParentType]++
+		}
+		// Track named child element types.
+		for _, childElemType := range frame.ChildElementTypes {
+			if childElemType != "" {
+				acc.ChildElementTypes[childElemType]++
+				// Record the reverse: this child type has the current frame type as a parent.
+				childAcc := ensureElementAccumulator(elements, childElemType)
+				childAcc.ParentTypes[frame.Type]++
+			}
 		}
 		for _, childType := range frame.StructuralChildTypes {
 			if childType != "" {
@@ -966,13 +985,16 @@ func finalizeElementSymbols(values map[string]*elementAccumulator, ctx scoringCo
 			Evidence:         assessment.Evidence,
 			Description:      describeElement(acc.Name, len(acc.Addons)),
 			SeenIn:           mapKeys(acc.Addons),
-			CommonAttributes: topKeysByCount(acc.Attributes, 12),
-			CommonHandlers:   topKeysByCount(acc.Handlers, 12),
-			CommonInherits:   topKeysByCount(acc.Inherits, 12),
-			CommonChildTypes: topKeysByCount(acc.ChildTypes, 8),
-			CompositionSnippet: bestCompositionSnippet(acc.Snippets),
-			Examples:         firstUsageExamples(acc.Examples, 6),
-			Notes:            nil,
+			CommonAttributes:        topKeysByCount(acc.Attributes, 12),
+			CommonHandlers:          topKeysByCount(acc.Handlers, 12),
+			CommonHandlerFunctions:  topKeysByCount(acc.HandlerFunctions, 12),
+			CommonInherits:          topKeysByCount(acc.Inherits, 12),
+			CommonChildTypes:        topKeysByCount(acc.ChildTypes, 8),
+			CommonChildElementTypes: topKeysByCount(acc.ChildElementTypes, 8),
+			CommonParentTypes:       topKeysByCount(acc.ParentTypes, 6),
+			CompositionSnippet:      bestCompositionSnippet(acc.Snippets),
+			Examples:                firstUsageExamples(acc.Examples, 6),
+			Notes:                   nil,
 		})
 	}
 	sort.Slice(result, func(i, j int) bool { return result[i].Name < result[j].Name })
@@ -2471,7 +2493,17 @@ func ensureConstantAccumulator(target map[string]*constantAccumulator, name stri
 func ensureElementAccumulator(target map[string]*elementAccumulator, name string) *elementAccumulator {
 	acc, ok := target[name]
 	if !ok {
-		acc = &elementAccumulator{Name: name, Addons: map[string]bool{}, Attributes: map[string]int{}, Handlers: map[string]int{}, Inherits: map[string]int{}, ChildTypes: map[string]int{}}
+		acc = &elementAccumulator{
+			Name:              name,
+			Addons:            map[string]bool{},
+			Attributes:        map[string]int{},
+			Handlers:          map[string]int{},
+			HandlerFunctions:  map[string]int{},
+			Inherits:          map[string]int{},
+			ChildTypes:        map[string]int{},
+			ChildElementTypes: map[string]int{},
+			ParentTypes:       map[string]int{},
+		}
 		target[name] = acc
 	}
 	return acc

@@ -508,10 +508,12 @@ func writeFrames(outputRoot string, corpus graph.Corpus) error {
 			content += "- Addon: " + frame.Addon + "\n"
 			content += "- Type: " + frame.Type + "\n"
 			content += "- Parent: " + safeValue(frame.Parent) + "\n"
+			content += "- Parent Type: " + safeValue(frame.ParentType) + "\n"
 			content += "- Inherits: " + safeValue(frame.Inherits) + "\n"
 			content += "- Template: " + boolLabel(frame.Template) + "\n"
 			content += "- Source: `" + frame.File + ":" + fmt.Sprintf("%d", frame.Line) + "`\n\n"
 			content += md.Section("Children", md.BulletList(frame.Children))
+			content += md.Section("Child Element Types", md.BulletList(frame.ChildElementTypes))
 			structuralChildLines := make([]string, 0, len(frame.StructuralChildTypes))
 			for _, childType := range frame.StructuralChildTypes {
 				if attrKeys, ok := frame.StructuralChildAttrKeys[childType]; ok && len(attrKeys) > 0 {

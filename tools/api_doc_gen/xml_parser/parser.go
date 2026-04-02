@@ -91,11 +91,19 @@ func ParseFile(addonName string, filePath string) (graph.XMLFileResult, error) {
 			currentFrame := ""
 			if shouldCaptureFrame(typed.Name.Local, attributes) {
 				currentFrame = attributes["name"]
+				// Determine the element type of the parent frame, if any.
+				parentType := ""
+				if parentFrame != "" {
+					if parentIndex, ok := frameIndexes[parentFrame]; ok {
+						parentType = frames[parentIndex].Type
+					}
+				}
 				frame := graph.Frame{
 					Addon:      addonName,
 					Name:       currentFrame,
 					Type:       typed.Name.Local,
 					Parent:     parentFrame,
+					ParentType: parentType,
 					File:       normalizedPath,
 					Line:       line,
 					Children:   []string{},
@@ -108,6 +116,8 @@ func ParseFile(addonName string, filePath string) (graph.XMLFileResult, error) {
 				if parentFrame != "" {
 					if parentIndex, ok := frameIndexes[parentFrame]; ok {
 						frames[parentIndex].Children = append(frames[parentIndex].Children, currentFrame)
+						// Record the element type of this named child in the parent's ChildElementTypes.
+						frames[parentIndex].ChildElementTypes = append(frames[parentIndex].ChildElementTypes, typed.Name.Local)
 					}
 				}
 			} else if !ignoredFrameTags[typed.Name.Local] && strings.TrimSpace(attributes["name"]) == "" && parentFrame != "" {
@@ -154,6 +164,7 @@ func ParseFile(addonName string, filePath string) (graph.XMLFileResult, error) {
 
 	for index := range frames {
 		frames[index].Children = graph.UniqueStrings(frames[index].Children)
+		frames[index].ChildElementTypes = graph.UniqueStrings(frames[index].ChildElementTypes)
 		frames[index].StructuralChildTypes = graph.UniqueStrings(frames[index].StructuralChildTypes)
 	}
 

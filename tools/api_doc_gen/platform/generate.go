@@ -422,7 +422,32 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		content += md.Section("Description", symbol.Description)
 		content += md.Section("Common Attributes", md.BulletList(symbol.CommonAttributes))
 		content += md.Section("Common Handlers", md.BulletList(symbol.CommonHandlers))
+		if len(symbol.CommonHandlerFunctions) > 0 {
+			content += md.Section("Common Handler Functions", md.BulletList(symbol.CommonHandlerFunctions))
+		}
 		content += md.Section("Common Inherits", md.BulletList(symbol.CommonInherits))
+		if len(symbol.CommonParentTypes) > 0 {
+			parentLinks := make([]string, 0, len(symbol.CommonParentTypes))
+			for _, pt := range symbol.CommonParentTypes {
+				if elementTypePageNames[pt] {
+					parentLinks = append(parentLinks, markdownLink(pt, docName("element", pt)))
+				} else {
+					parentLinks = append(parentLinks, pt)
+				}
+			}
+			content += md.Section("Common Parent Elements", md.BulletList(parentLinks))
+		}
+		if len(symbol.CommonChildElementTypes) > 0 {
+			namedChildLinks := make([]string, 0, len(symbol.CommonChildElementTypes))
+			for _, ct := range symbol.CommonChildElementTypes {
+				if elementTypePageNames[ct] {
+					namedChildLinks = append(namedChildLinks, markdownLink(ct, docName("element", ct)))
+				} else {
+					namedChildLinks = append(namedChildLinks, ct)
+				}
+			}
+			content += md.Section("Common Named Child Elements", md.BulletList(namedChildLinks))
+		}
 		if len(symbol.CommonChildTypes) > 0 {
 			childLinks := make([]string, 0, len(symbol.CommonChildTypes))
 			for _, childType := range symbol.CommonChildTypes {
