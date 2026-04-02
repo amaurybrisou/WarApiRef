@@ -68,11 +68,26 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Handlers
 
-- OnLButtonUp
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+
+## Common Handler Functions
+
+- WSCT.OnLButtonUpColorPicker
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | WSCT.OnLButtonUpColorPicker | `function(...)` | LOW |
 
 ## Common Inherits
 
 - none
+
+## Common Parent Elements
+
+- [Window](element_Window.md)
 
 ## Common Structural Child Elements
 
@@ -81,6 +96,68 @@ Observed XML element type instantiated by 1 addons.
 - [ColorTexCoords](element_ColorTexCoords.md)
 - [ColorTexDims](element_ColorTexDims.md)
 
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `columnsPerRow` | **required** | 100% | 4 |
+| `texture` | **required** | 100% | EA_HUD_01 |
+## Structural Sub-Elements
+
+### [ColorSize](element_ColorSize.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+### [ColorSpacing](element_ColorSpacing.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+### [ColorTexCoords](element_ColorTexCoords.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+### [ColorTexDims](element_ColorTexDims.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Call Count | From Events |
+| --- | --- | --- |
+| `LabelSetTextColor` | 2 | OnLButtonUp |
+| `WindowSetShowing` | 1 | OnLButtonUp |
+| `WindowSetTintColor` | 1 | OnLButtonUp |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
 ## Seen In
 
 - WSCT

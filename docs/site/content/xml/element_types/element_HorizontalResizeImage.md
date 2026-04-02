@@ -69,10 +69,6 @@ Observed XML element type instantiated by 12 addons.
 - savesettings
 - alpha
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - EA_HorizontalResizeImage_TabSeparatorMiddle
@@ -85,6 +81,10 @@ Observed XML element type instantiated by 12 addons.
 - VictoryPointsFilledBarDestruction
 - VictoryPointsFilledBarOrder
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
 ## Common Structural Child Elements
 
 - [Middle](element_Middle.md)
@@ -92,6 +92,74 @@ Observed XML element type instantiated by 12 addons.
 - [Right](element_Right.md)
 - [TintColor](element_TintColor.md)
 - [TexSlices](element_TexSlices.md)
+
+## Typical XML Structure
+
+```xml
+<HorizontalResizeImage name="..." texture="EA_VictoryPoints01_32b" handleinput="false">
+  <TexSlices>
+    <Left id="Loser-Bar-horiz-End-Cap"/>
+    <Middle id="Loser-Bar-horiz"/>
+  </TexSlices>
+</HorizontalResizeImage>
+```
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `inherits` | optional | 51% | EA_HorizontalResizeImage_TabSeparatorMiddle, RewardPoolFilledBarLoser, RewardPoolFilledBarVictor, EA_BrownHorizontalRule, ... |
+| `texture` | optional | 48% | EA_TintableImage, EA_HUD_01, EA_VictoryPoints01_32b, shared_01 |
+| `handleinput` | optional | 38% | false |
+| `layer` | optional | 16% | background |
+| `savesettings` | optional | 16% | false |
+| `alpha` | optional | 3% | 1 |
+## Structural Sub-Elements
+
+### [Middle](element_Middle.md)
+
+Observed 15 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+| `id` | optional |  |
+### [Left](element_Left.md)
+
+Observed 10 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | optional |  |
+| `y` | optional |  |
+| `id` | optional |  |
+### [Right](element_Right.md)
+
+Observed 10 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | optional |  |
+| `y` | optional |  |
+| `id` | optional |  |
+### [TintColor](element_TintColor.md)
+
+Observed 10 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `b` | **required** |  |
+| `g` | **required** |  |
+| `r` | **required** |  |
+| `a` | optional |  |
+### [TexSlices](element_TexSlices.md)
+
+Observed 5 times as an unnamed child.
+
+## Lua Functions Manipulating This Type
+
+- PotionBar.PotionBarSettings.OnShown
 
 ## Seen In
 

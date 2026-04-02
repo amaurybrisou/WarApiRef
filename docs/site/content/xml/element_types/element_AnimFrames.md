@@ -60,13 +60,13 @@ Observed XML element type instantiated by 3 addons.
 
 - none
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+## Common Parent Elements
+
+- [AnimatedImage](element_AnimatedImage.md)
 
 ## Seen In
 

@@ -62,13 +62,15 @@ Observed XML element type instantiated by 13 addons.
 
 - none
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+## Common Parent Elements
+
+- [Button](element_Button.md)
+- [FullResizeImage](element_FullResizeImage.md)
+- [HorizontalResizeImage](element_HorizontalResizeImage.md)
 
 ## Seen In
 

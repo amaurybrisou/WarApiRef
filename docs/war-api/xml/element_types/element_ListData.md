@@ -64,14 +64,20 @@ Structural XML sub-element of ListBox that binds a list to a named Lua backing t
 - table
 - populationfunction
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [ListBox](element_ListBox.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `table` | **required** | 100% |  |
+| `populationfunction` | **required** | 98% |  |
 ## Seen In
 
 - AggroMeter

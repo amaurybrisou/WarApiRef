@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T10:37:10.041832299Z",
+  "generated_at": "2026-04-02T11:42:04.921241624Z",
   "nodes": [
     {
       "id": "data:table:ActiveWindow",
@@ -1232,16 +1232,6 @@
       "summary": "Observed shared global table or namespace surfaced in 1 addons."
     },
     {
-      "id": "data:table:EA_Window_Macro",
-      "label": "EA_Window_Macro",
-      "type": "data_structure",
-      "category": "Global Table",
-      "path": "globals/tables/table_EA_Window_Macro.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 4 addons."
-    },
-    {
       "id": "data:constant:EA_Window_Macro",
       "label": "EA_Window_Macro",
       "type": "data_structure",
@@ -1250,6 +1240,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
+    },
+    {
+      "id": "data:table:EA_Window_Macro",
+      "label": "EA_Window_Macro",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_EA_Window_Macro.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed shared global table or namespace surfaced in 4 addons."
     },
     {
       "id": "data:constant:EA_Window_MacroDetailIconButton",

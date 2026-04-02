@@ -73,17 +73,53 @@ Observed XML element type instantiated by 11 addons.
 - filtering
 - movable
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+
+## Common Named Child Elements
+
+- [Label](element_Label.md)
+
 ## Common Structural Child Elements
 
 - [TintColor](element_TintColor.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `layer` | **required** | 93% | default, overlay, background, secondary, ... |
+| `handleinput` | **required** | 82% | false |
+| `numsegments` | **required** | 82% | 16, 32, 64 |
+| `textureScale` | optional | 75% | 0.48, 0.62, 0.12, 0.38, ... |
+| `popable` | optional | 68% | false |
+| `texture` | optional | 68% | EA_TintableImage, StopwatchButton, Circle, EA_Cultivating01_d5, ... |
+| `sticky` | optional | 62% | true, false |
+| `alpha` | optional | 17% | 0.9, 0, 0.85 |
+| `texturescale` | optional | 10% | 0.18, 1.11 |
+| `filtering` | optional | 3% | true |
+| `movable` | optional | 3% | false |
+## Structural Sub-Elements
+
+### [TintColor](element_TintColor.md)
+
+Observed 8 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `b` | **required** |  |
+| `g` | **required** |  |
+| `r` | **required** |  |
+| `a` | optional |  |
+## Lua Functions Manipulating This Type
+
+- Enemy.EnemyEffectsIndicator:Update
 
 ## Seen In
 

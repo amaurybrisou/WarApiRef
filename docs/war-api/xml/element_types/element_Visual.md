@@ -59,13 +59,13 @@ Observed XML element type instantiated by 1 addons.
 
 - none
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+## Common Parent Elements
+
+- [Window](element_Window.md)
 
 ## Seen In
 

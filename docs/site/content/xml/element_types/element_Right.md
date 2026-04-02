@@ -64,14 +64,21 @@ Observed XML element type instantiated by 5 addons.
 - y
 - id
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [HorizontalResizeImage](element_HorizontalResizeImage.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `x` | optional | 80% |  |
+| `y` | optional | 80% |  |
+| `id` | optional | 20% |  |
 ## Seen In
 
 - AdvancedPetAssist

@@ -79,11 +79,37 @@ Observed XML element type instantiated by 41 addons.
 
 ## Common Handlers
 
-- OnMouseOver
-- OnLButtonUp
-- OnRButtonUp
-- OnLButtonDown
-- OnMouseOverEnd
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
+- [OnLButtonDown](../handlers/handler_OnLButtonDown.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+
+## Common Handler Functions
+
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip
+- BuffHead.Setup.AdvancedContainersItem.OnContainerRClick
+- BuffHead.Setup.Container.OnContainerClick
+- ClosetGoblinOptionWindow.OnLButtonUp
+- ClosetGoblinOptionWindow.OnRButtonUp
+- MapPin.ShowIcons
+- AggroMeter.OnMouseOverStart
+- BagOMatic.wnd_on_lbutton_up
+- BagOMatic.wnd_on_mouse_over
+- CMapWindow.MouseoverMail
+- CMapWindow.OnMouseoverRvRIndicator
+- Enemy.CombatLogUI_IDS_OnRowLButtonDown
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | Enemy.CombatLogUI_IDS_OnRowLButtonDown | `function(...)` | LOW |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | BuffHead.Setup.Container.OnContainerClick, ClosetGoblinOptionWindow.OnLButtonUp, MapPin.ShowIcons, BagOMatic.wnd_on_lbutton_up, Enemy.Guard_GuardIndicator_OnLButtonUp, Enemy.MarksUI_EnemyMarksWindow_OnAddLButtonUp | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip, AggroMeter.OnMouseOverStart, BagOMatic.wnd_on_mouse_over, CMapWindow.MouseoverMail, CMapWindow.OnMouseoverRvRIndicator, Enemy.Guard_GuardIndicator_OnMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | Enemy.MarksUI_EnemyMarksWindow_OnAddMouseOverEnd | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | BuffHead.Setup.AdvancedContainersItem.OnContainerRClick, ClosetGoblinOptionWindow.OnRButtonUp, Enemy.MarksUI_EnemyMarksWindow_OnAddRButtonUp, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick, Enemy.UI_Icon_OnRButtonUp, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionRButtonUp | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -100,9 +126,419 @@ Observed XML element type instantiated by 41 addons.
 - EA_Default_MerchantImage
 - EA_Default_TrainingImage
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+- [DynamicImage](element_DynamicImage.md)
+- [Label](element_Label.md)
+
+## Common Named Child Elements
+
+- [DynamicImage](element_DynamicImage.md)
+- [Label](element_Label.md)
+
 ## Common Structural Child Elements
 
 - [TintColor](element_TintColor.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `handleinput` | optional | 75% | false, true |
+| `texture` | optional | 73% | map_markers01, EA_Campaign01_d5, EA_TintableImage, shared_01, ... |
+| `layer` | optional | 62% | overlay, background, default, secondary, ... |
+| `textureScale` | optional | 24% | 1.0, 0.6, 1.25, 1, ... |
+| `popable` | optional | 17% | false, true |
+| `slice` | optional | 17% | Waypoint, Fort-CONTESTED, Zone-CONTESTED, GuildStandard, ... |
+| `id` | optional | 14% | 1, 3, 2, 5, ... |
+| `texturescale` | optional | 14% | 0.37, 0.35, 0.45, 0.2, ... |
+| `inherits` | optional | 13% | EA_Image_DefaultIcon, EA_ListSortDownArrow, TargetLevelBackgroundTemplate, EA_Image_DefaultIconFrame, ... |
+| `sticky` | optional | 8% | false, true |
+| `alpha` | optional | 4% | 0.5, 0.9, 0.75, 0.1, ... |
+| `savesettings` | optional | 2% | false, true |
+| `poppable` | optional | 1% | false |
+| `filtering` | optional | 1% | true |
+| `movable` | optional | 1% | false, true |
+| `numsegments` | optional | 0% | 64 |
+| `mirrorTexCoords` | optional | 0% | false |
+| `parent` | optional | 0% | $parent |
+| `skipinput` | optional | 0% | true |
+| `Slice` | optional | 0% | Influence-Reward |
+| `draganddrop` | optional | 0% | true |
+| `textureAlpha` | optional | 0% | 0.5 |
+## Structural Sub-Elements
+
+### [TintColor](element_TintColor.md)
+
+Observed 27 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `b` | **required** |  |
+| `g` | **required** |  |
+| `r` | **required** |  |
+| `a` | optional |  |
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Call Count | From Events |
+| --- | --- | --- |
+| `WindowGetId` | 20 | OnLButtonUp, OnMouseOver, OnRButtonUp |
+| `WindowSetShowing` | 5 | OnLButtonUp, OnRButtonUp |
+| `SystemData.ActiveWindow.name:match` | 1 | OnLButtonDown |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonDown
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+## Lua Functions Manipulating This Type
+
+- Swift Assist.SwiftAssist.Initialize
+- MapMonster.MapMonster.Editor.ShowZoneHooked
+- WSCT.WSCT.ColorHideMenu
+- Swift Assist.SwiftAssist.OnMacroUpdated
+- RoR_SoR.RoR_SoR.OnInitialize
+- Enemy.Enemy.TalismanAlerter_Update
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
+- Moth.Moth.UpdateTarget
+- Enemy.Enemy.AssistUI_Target_Show
+- WSCT.WSCT.OnLButtonUpColorPicker
+- MapMonster.DisplayPin
+- MapMonster.CreateMarker
+- MapMonster.MapMonster.local.CreateMarker
+- RoR_SoR.RoR_SoR.OnCombat
+- Enemy.EnemyEffectsIndicator:Update
+- MapMonster.MapMonster.local.DisplayPinsForZone
+- Enemy.Enemy.GuardInitialize
+- Enemy.Enemy.Guard_OnSettingsChanged
+- CM_ClosetGoblin.ClosetGoblin.Initialize
+- Enemy.Enemy._Initialize
+- MapMonster.MapMonster.local.DisplayPin
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize
+- Swift Assist.SetSmartLabel
+- Swift Assist.Swift Assist.local.SetSmartLabel
+- GuardLine.GuardLine.update
+- Swift Assist.SetTexLabel
+- RoR_SoR.RoR_SoR.OnScenario
+- Enemy.Enemy.TalismanAlerterInitialize
+- BankArkel.BankArkel.PackImg
+- MapMonster.DisplayPinsForZone
+- Swift Assist.Swift Assist.local.SetTexLabel
+- Enemy.Enemy.TalismanAlerter_OnSettingsChanged
+- WSCT.WSCT.ColorOnInitialize
+- WSCT.WSCT.ColorAcceptButtonOnButtonUp
+- Enemy.Enemy.Guard_GuardIndicator_Update
+- BagOMatic.BagOMatic.init
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- MapMonster.MapMonster.local.CleanEditorWindow
 
 ## Seen In
 

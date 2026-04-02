@@ -70,14 +70,27 @@ Observed XML element type instantiated by 23 addons.
 - def
 - texture
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Button](element_Button.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `x` | optional | 40% |  |
+| `y` | optional | 40% |  |
+| `id` | optional | 38% |  |
+| `b` | optional | 35% |  |
+| `g` | optional | 35% |  |
+| `r` | optional | 35% |  |
+| `a` | optional | 33% |  |
+| `def` | optional | 33% |  |
+| `texture` | optional | 16% |  |
 ## Seen In
 
 - AdvancedPetAssist

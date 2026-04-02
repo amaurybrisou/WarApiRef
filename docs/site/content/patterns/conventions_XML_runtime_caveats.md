@@ -14,8 +14,8 @@ Implementation-validated findings show that XML input and scroll layout behavior
 - [OnLButtonUp](../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [ScrollWindow](../xml/element_types/element_ScrollWindow.md) (HIGH 100/100) - XML Element Type
 - [ScrollWindowUpdateScrollRect](../window_api/functions/window_ScrollWindowUpdateScrollRect.md) (HIGH 100/100) - Window Function
-- [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
 
 ## Flow Diagram
 

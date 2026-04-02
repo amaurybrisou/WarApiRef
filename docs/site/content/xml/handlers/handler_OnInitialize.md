@@ -63,7 +63,7 @@ Observed as an XML handler hook bound by 19 addons through frame event handlers.
 ## Expected Lua Binding
 
 ```lua
-function(...)
+function()
 ```
 
 ## Element Types
@@ -125,4 +125,4 @@ function(...)
 
 ## Notes
 
-- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.
+- Expected callback signature inferred from common WAR XML handler conventions (MEDIUM confidence).

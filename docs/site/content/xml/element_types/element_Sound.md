@@ -63,14 +63,21 @@ Observed XML element type instantiated by 4 addons.
 - event
 - script
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Button](element_Button.md)
+- [Window](element_Window.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `event` | **required** | 100% |  |
+| `script` | **required** | 100% |  |
 ## Seen In
 
 - CMap

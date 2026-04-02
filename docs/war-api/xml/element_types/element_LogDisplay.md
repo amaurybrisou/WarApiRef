@@ -69,14 +69,32 @@ Observed XML element type instantiated by 2 addons.
 - handleinput
 - textFadeTime
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Common Named Child Elements
+
+- [VerticalScrollbar](element_VerticalScrollbar.md)
+- [Button](element_Button.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `background` | **required** | 100% |  |
+| `font` | **required** | 100% | font_clear_small_bold, font_chat_text |
+| `maxchars` | **required** | 100% | 4096 |
+| `maxentries` | **required** | 100% | -1, 256 |
+| `scrollbar` | **required** | 100% | $parentScrollbar |
+| `scrollbarPosition` | **required** | 100% | right |
+| `autoHideScrollBar` | optional | 50% | true |
+| `handleinput` | optional | 50% | true |
+| `textFadeTime` | optional | 50% | 30 |
 ## Seen In
 
 - EA_UiDebugTools

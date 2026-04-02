@@ -79,12 +79,39 @@ Observed XML element type instantiated by 24 addons.
 
 ## Common Handlers
 
-- OnTextChanged
-- OnKeyEnter
-- OnKeyEscape
-- OnMouseOver
-- OnKeyTab
-- OnShown
+- [OnTextChanged](../handlers/handler_OnTextChanged.md)
+- [OnKeyEnter](../handlers/handler_OnKeyEnter.md)
+- [OnKeyEscape](../handlers/handler_OnKeyEscape.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnKeyTab](../handlers/handler_OnKeyTab.md)
+- [OnShown](../handlers/handler_OnShown.md)
+
+## Common Handler Functions
+
+- Enemy.ConfigurationWindow_OnChange
+- Enemy.ConfigurationWindow_ShowTooltip
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- Killer.OnSettingsEditChanged
+- MiracleGrow2.LayoutBarCChanged
+- MiracleGrow2.LayoutProgDimChanged
+- BuffHead.Setup.SelectColor.OnTintChanged
+- MapMonster.PinTypeEditor.MouseOverDescription
+- MapPin.TimeChanged
+- MiracleGrow2.ConfigThrobCChanged
+- ShiniesAutoUI.OnPriceChange
+- ShiniesPostUI.OnPriceChange
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnKeyEnter](../handlers/handler_OnKeyEnter.md) | MapPin.SendCommand, MapPin.SendText, ObjectInspector.InspectObject, DebugWindow.TextSend, DevPadWindow.ConfirmRename, DevPadWindow.CreateNewFile | `function(...)` | LOW |
+| [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | DebugWindow.TextClear, DevPadWindow.OnKeyEscape | `function(...)` | LOW |
+| [OnKeyTab](../handlers/handler_OnKeyTab.md) | DebugWindow.OnKeyTab, DevPadWindow.OnKeyTab | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.ConfigurationWindow_ShowTooltip, MapMonster.PinTypeEditor.MouseOverDescription, Enemy.GroupsUI_EffectFilterDialog_OnAbilityIdsMouseOver, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig2CommandMouseOver, LPET.OnMouseOver, WbLeadHelperMessage.OnMouseOverLabelEditBox | `function()` | MEDIUM |
+| [OnShown](../handlers/handler_OnShown.md) | DebugWindow.OnShowFocus, DevPadWindow.OnShown | `function()` | MEDIUM |
+| [OnTextChanged](../handlers/handler_OnTextChanged.md) | Enemy.ConfigurationWindow_OnChange, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsEditChanged, MiracleGrow2.LayoutBarCChanged, MiracleGrow2.LayoutProgDimChanged, BuffHead.Setup.SelectColor.OnTintChanged | `function()` | MEDIUM |
 
 ## Common Inherits
 
@@ -101,9 +128,823 @@ Observed XML element type instantiated by 24 addons.
 - Shinies_SilverCoin_EditBox_DefaultFrame
 - EA_EditBox_NoFrame
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Common Named Child Elements
+
+- [VerticalScrollbar](element_VerticalScrollbar.md)
+- [Label](element_Label.md)
+
 ## Common Structural Child Elements
 
 - [TextOffset](element_TextOffset.md)
+
+## Typical XML Structure
+
+```xml
+<EditBox name="..." font="font_chat_text" background="EA_FullResizeImage_TanBorder">
+  <TextOffset x="4" y="2"/>
+</EditBox>
+```
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `inherits` | **required** | 94% | IraConfigNumSpin, EA_EditBox_DefaultFrame, IraConfigNumEdit, EA_EditBox_DefaultFrame_Multiline, ... |
+| `maxchars` | optional | 62% | 4096, 10, 3, 5, ... |
+| `input` | optional | 33% | numbers, nospaces |
+| `layer` | optional | 25% | default, secondary |
+| `warnOnTextCropped` | optional | 17% | false |
+| `font` | optional | 16% | font_clear_small_bold, font_chat_text, font_clear_small, font_clear_medium, ... |
+| `taborder` | optional | 15% | 3, 2, 1, 6, ... |
+| `handleinput` | optional | 7% | true |
+| `scrolling` | optional | 7% | none, vert |
+| `maxChars` | optional | 6% | 3, 2, 5, 64, ... |
+| `background` | optional | 5% | EA_FullResizeImage_TanBorder |
+| `id` | optional | 5% | 2, 1, 4, 3, ... |
+| `align` | optional | 3% | rightcenter, center |
+| `scrollbar` | optional | 3% | $parentDevPadCodeScrollBar, EA_ScrollBar_DefaultVerticalChain, CopyScrollBar, $parentObjectScrollbar |
+| `alpha` | optional | 2% | 0.97 |
+| `history` | optional | 2% | 30, 10 |
+| `textalign` | optional | 1% | leftcenter |
+| `autoHideScrollBar` | optional | 0% | true |
+| `maxchar` | optional | 0% | 79000 |
+| `wordwrap` | optional | 0% | false |
+| `linecount` | optional | 0% | 9 |
+## Structural Sub-Elements
+
+### [TextOffset](element_TextOffset.md)
+
+Observed 20 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Call Count | From Events |
+| --- | --- | --- |
+| `TextEditBoxGetText` | 182 | OnKeyEnter, OnKeyEscape, OnTextChanged |
+| `WindowSetAlpha` | 36 | OnTextChanged |
+| `WindowGetId` | 16 | OnMouseOver, OnTextChanged |
+| `WindowSetTintColor` | 9 | OnTextChanged |
+| `WindowSetShowing` | 7 | OnKeyEnter, OnKeyEscape |
+| `LabelSetText` | 5 | OnTextChanged |
+| `LabelSetTextColor` | 3 | OnTextChanged |
+| `TextEditBoxSetText` | 3 | OnKeyEnter, OnTextChanged |
+| `WindowSetDimensions` | 3 | OnTextChanged |
+| `WindowGetShowing` | 2 | OnKeyEscape, OnShown |
+| `LabelGetText` | 1 | OnKeyEnter |
+| `RegisterEventHandler` | 1 | OnTextChanged |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+## Lua Functions Manipulating This Type
+
+- LibSlash.LibSlash.Initialize
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
 
 ## Seen In
 

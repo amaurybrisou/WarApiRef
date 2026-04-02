@@ -79,8 +79,31 @@ Observed XML element type instantiated by 17 addons.
 
 ## Common Handlers
 
-- OnSlide
-- OnMouseOver
+- [OnSlide](../handlers/handler_OnSlide.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+
+## Common Handler Functions
+
+- AuraColorPicker.OnSlide
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- BuffHead.Setup.SelectColor.OnSlideTint
+- MapMonster.PinTypeEditor.OnSetCustomColor
+- MoraleCircle.OnSetCustomColor
+- MoraleCircle.OnSetCustomColorEmpty
+- MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.OnSetCustomColorFull
+- TexturedButtons.Setup.SelectColor.OnSlideTint
+- TexturedButtons.Setup.Tint.OnSlideTint
+- TurretRange.Setup.Display.OnSlideTint
+- TurretRange.Setup.Distance.OnSlideTint
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | WSCT.OnMouseOver | `function()` | MEDIUM |
+| [OnSlide](../handlers/handler_OnSlide.md) | AuraColorPicker.OnSlide, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, BuffHead.Setup.SelectColor.OnSlideTint, MapMonster.PinTypeEditor.OnSetCustomColor, MoraleCircle.OnSetCustomColor, MoraleCircle.OnSetCustomColorEmpty | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -89,6 +112,41 @@ Observed XML element type instantiated by 17 addons.
 - RVMOD_ManagerSliderTemplate
 - RVAPI_ColorDialogSliderTemplate
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Common Named Child Elements
+
+- [Label](element_Label.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `inherits` | **required** | 98% | EA_Default_SliderBar, RVAPI_ColorDialogSliderTemplate, Aura_Default_SliderBar, RVMOD_ManagerSliderTemplate |
+| `numticks` | optional | 9% | 360, 9, 250, 200, ... |
+| `handleinput` | optional | 7% | true |
+| `scale` | optional | 4% | 0.4 |
+| `locktoticks` | optional | 3% | false |
+| `autoresize` | optional | 2% | true |
+| `handlinput` | optional | 2% | true |
+| `numTicks` | optional | 2% | 11 |
+| `background` | optional | 1% | EA_BrownHorizontalRule |
+| `sliderbutton` | optional | 1% | Aura_Default_SliderButton |
+| `tickmark` | optional | 1% | Aura_Default_SliderTick |
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Call Count | From Events |
+| --- | --- | --- |
+| `LabelSetText` | 66 | OnSlide |
+| `TextEditBoxSetText` | 46 | OnSlide |
+| `TextEditBoxGetText` | 36 | OnSlide |
+| `WindowSetTintColor` | 18 | OnSlide |
+| `LabelSetTextColor` | 6 | OnSlide |
+| `WindowSetAlpha` | 6 | OnSlide |
 ## Seen In
 
 - Aura

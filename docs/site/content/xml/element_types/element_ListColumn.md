@@ -65,14 +65,21 @@ Structural XML element inside ListColumns that maps a single field of each backi
 - variable
 - windowname
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [ListBox](element_ListBox.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `format` | **required** | 100% |  |
+| `variable` | **required** | 100% |  |
+| `windowname` | **required** | 100% |  |
 ## Seen In
 
 - AggroMeter

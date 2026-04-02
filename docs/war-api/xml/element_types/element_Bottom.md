@@ -60,14 +60,20 @@ Observed XML element type instantiated by 1 addons.
 - x
 - y
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [VerticalResizeImage](element_VerticalResizeImage.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `x` | **required** | 100% |  |
+| `y` | **required** | 100% |  |
 ## Seen In
 
 - EA_UiDebugTools

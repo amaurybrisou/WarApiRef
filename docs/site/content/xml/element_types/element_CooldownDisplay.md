@@ -66,14 +66,25 @@ Observed XML element type instantiated by 1 addons.
 - segments
 - sticky
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `cooldownshape` | **required** | 100% | circle |
+| `handleinput` | **required** | 100% | false |
+| `layer` | **required** | 100% | overlay |
+| `movable` | **required** | 100% | true |
+| `popable` | **required** | 100% | false |
+| `segments` | **required** | 100% | 32 |
+| `sticky` | **required** | 100% | true |
 ## Seen In
 
 - MoraleCircle
