@@ -204,9 +204,9 @@ func synthesizeLuaDefs(source SourceModel) []xml_lua_binding.LuaFunctionDef {
 
 // enrichElementTypesFromCatalog applies the Phase 4 EnrichedElementCatalog to the
 // existing ElementTypeSymbol slice, adding structured attribute profiles,
-// structural child profiles, Lua API call aggregations, and handler argument
-// patterns. This bridges the new phased pipeline output into the existing
-// platform corpus model.
+// structural child profiles, Lua API call aggregations, handler argument
+// patterns, relationship data with counts, inheritance info, binding stats,
+// per-event API calls, and event categories.
 func enrichElementTypesFromCatalog(elementTypes []ElementTypeSymbol, catalog *semantic_merge.EnrichedElementCatalog) []ElementTypeSymbol {
 	if catalog == nil {
 		return elementTypes
@@ -247,11 +247,12 @@ func enrichElementTypesFromCatalog(elementTypes []ElementTypeSymbol, catalog *se
 			elementTypes[i].StructuralChildProfiles = append(elementTypes[i].StructuralChildProfiles, profile)
 		}
 
-		// Lua API calls from handlers
+		// Lua API calls from handlers — now including Category
 		for _, call := range enriched.LuaAPICalls {
 			elementTypes[i].LuaAPICallsFromHandlers = append(elementTypes[i].LuaAPICallsFromHandlers, LuaAPICallEntry{
 				Function:   call.Function,
 				Count:      call.Count,
+				Category:   call.Category,
 				FromEvents: call.FromEvents,
 			})
 		}
@@ -278,7 +279,34 @@ func enrichElementTypesFromCatalog(elementTypes []ElementTypeSymbol, catalog *se
 			elementTypes[i].LuaManipulators = append(elementTypes[i].LuaManipulators, m.Function)
 		}
 
-		// Enrich parents/children if more data from Phase 1
+		// Enriched parent references with counts and confidence
+		for _, p := range enriched.Parents {
+			elementTypes[i].ParentRefs = append(elementTypes[i].ParentRefs, ElementRelRef{
+				Tag:        p.Tag,
+				Count:      p.Count,
+				Confidence: p.Confidence,
+			})
+		}
+
+		// Enriched named child references with counts and confidence
+		for _, c := range enriched.Children {
+			elementTypes[i].ChildRefs = append(elementTypes[i].ChildRefs, ElementRelRef{
+				Tag:        c.Tag,
+				Count:      c.Count,
+				Confidence: c.Confidence,
+			})
+		}
+
+		// Enriched structural child references with counts
+		for _, sc := range enriched.StructuralChildren {
+			elementTypes[i].StructuralChildRefs = append(elementTypes[i].StructuralChildRefs, ElementRelRef{
+				Tag:        sc.Tag,
+				Count:      sc.Count,
+				Confidence: sc.Confidence,
+			})
+		}
+
+		// Enrich parents/children flat lists if empty (backward compat)
 		if len(enriched.Parents) > 0 && len(sym.CommonParentTypes) == 0 {
 			for _, p := range enriched.Parents {
 				elementTypes[i].CommonParentTypes = append(elementTypes[i].CommonParentTypes, p.Tag)
@@ -294,7 +322,95 @@ func enrichElementTypesFromCatalog(elementTypes []ElementTypeSymbol, catalog *se
 				elementTypes[i].CommonChildTypes = append(elementTypes[i].CommonChildTypes, sc.Tag)
 			}
 		}
+
+		// Inheritance data
+		if len(enriched.InheritsBases) > 0 {
+			elementTypes[i].InheritsBases = enriched.InheritsBases
+		}
+		elementTypes[i].IsTemplate = enriched.IsTemplate
+
+		// Composition snippet (if available from Phase 4 and not already set)
+		if enriched.CompositionSnippet != "" && elementTypes[i].CompositionSnippet == "" {
+			elementTypes[i].CompositionSnippet = enriched.CompositionSnippet
+		}
+
+		// Enrich event bindings with per-event Lua API calls and categories
+		enrichEventBindingsFromCatalog(&elementTypes[i], enriched)
+
+		// Binding resolution statistics
+		enrichBindingStats(&elementTypes[i], enriched)
 	}
 
 	return elementTypes
+}
+
+// enrichEventBindingsFromCatalog transfers per-event Lua API calls and category
+// data from the Phase 4 enriched event bindings into the platform model's
+// XMLEventBinding entries.
+func enrichEventBindingsFromCatalog(sym *ElementTypeSymbol, enriched *semantic_merge.EnrichedElement) {
+	if len(enriched.EventBindings) == 0 || len(sym.XMLEventBindings) == 0 {
+		return
+	}
+
+	// Build lookup from enriched event bindings
+	enrichedByEvent := make(map[string]*semantic_merge.EnrichedEventBinding, len(enriched.EventBindings))
+	for i := range enriched.EventBindings {
+		enrichedByEvent[enriched.EventBindings[i].Event] = &enriched.EventBindings[i]
+	}
+
+	for i := range sym.XMLEventBindings {
+		eb, ok := enrichedByEvent[sym.XMLEventBindings[i].Event]
+		if !ok {
+			continue
+		}
+
+		// Transfer per-event Lua API calls
+		if len(eb.LuaAPICalls) > 0 {
+			sym.XMLEventBindings[i].LuaAPICalls = eb.LuaAPICalls
+		}
+
+		// Transfer handler category
+		if eb.Category != "" {
+			sym.XMLEventBindings[i].Category = eb.Category
+		}
+
+		// Upgrade args confidence if enriched data has better analysis
+		if eb.ArgsConfidence != "" && confidenceRank(eb.ArgsConfidence) > confidenceRank(sym.XMLEventBindings[i].ArgsConfidence) {
+			sym.XMLEventBindings[i].InferredArgs = eb.InferredArgs
+			sym.XMLEventBindings[i].ArgsConfidence = eb.ArgsConfidence
+		}
+	}
+}
+
+// enrichBindingStats computes binding resolution statistics from the enriched
+// event bindings. Counts how many handler bindings were resolved to Lua functions.
+func enrichBindingStats(sym *ElementTypeSymbol, enriched *semantic_merge.EnrichedElement) {
+	totalHandlers := 0
+	resolvedCount := 0
+	for _, eb := range enriched.EventBindings {
+		for _, bf := range eb.LuaFunctions {
+			totalHandlers += bf.Count
+			if bf.Resolved {
+				resolvedCount += bf.Count
+			}
+		}
+	}
+	sym.BindingTotalHandlers = totalHandlers
+	sym.BindingResolvedCount = resolvedCount
+	if totalHandlers > 0 {
+		sym.BindingResolvedPct = resolvedCount * 100 / totalHandlers
+	}
+}
+
+func confidenceRank(c string) int {
+	switch c {
+	case "HIGH":
+		return 3
+	case "MEDIUM":
+		return 2
+	case "LOW":
+		return 1
+	default:
+		return 0
+	}
 }

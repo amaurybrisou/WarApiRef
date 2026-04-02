@@ -300,10 +300,12 @@ type ConstantSymbol struct {
 // InferredArgs is a best-effort Lua function signature string; ArgsConfidence
 // is "HIGH", "MEDIUM", or "LOW" to indicate how reliable the inference is.
 type XMLEventBinding struct {
-	Event         string
-	LuaFunctions  []string
-	InferredArgs  string
+	Event          string
+	LuaFunctions   []string
+	InferredArgs   string
 	ArgsConfidence string
+	Category       string   // Handler category: "lifecycle", "input", "data", "layout", "focus", "tooltip", "custom"
+	LuaAPICalls    []string // Per-event downstream API calls made by handlers of this event
 }
 
 type ElementTypeSymbol struct {
@@ -334,6 +336,25 @@ type ElementTypeSymbol struct {
 	LuaAPICallsFromHandlers  []LuaAPICallEntry        // Aggregated Lua API calls made from XML event handlers
 	HandlerArgPatterns       []HandlerArgPatternEntry // Expected callback argument patterns per event
 	LuaManipulators          []string                 // Lua functions that manipulate frames of this type
+
+	// Phase 4 enrichment: relationship data with counts and confidence
+	ParentRefs               []ElementRelRef // Parent element types with observation counts
+	ChildRefs                []ElementRelRef // Named child element types with observation counts
+	StructuralChildRefs      []ElementRelRef // Structural children with observation counts
+	InheritsBases            []string        // Template bases commonly inherited
+	IsTemplate               bool            // Whether this type commonly acts as a template
+
+	// Phase 4 enrichment: binding resolution statistics
+	BindingResolvedPct       int    // Percentage of handler bindings resolved to Lua source
+	BindingTotalHandlers     int    // Total handler declarations observed
+	BindingResolvedCount     int    // Number resolved to Lua functions
+}
+
+// ElementRelRef describes a relationship to another element type with frequency data.
+type ElementRelRef struct {
+	Tag        string // Element type tag
+	Count      int    // Observation count
+	Confidence string // HIGH, MEDIUM, LOW
 }
 
 // AttributeProfileEntry describes an observed XML attribute with usage statistics.
@@ -357,6 +378,7 @@ type StructuralChildProfile struct {
 type LuaAPICallEntry struct {
 	Function   string   // Called function name
 	Count      int      // How many handlers make this call
+	Category   string   // Call classification: "ui", "data", "event", "utility", "unknown"
 	FromEvents []string // Which XML events' handlers make this call
 }
 

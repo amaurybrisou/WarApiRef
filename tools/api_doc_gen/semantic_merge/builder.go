@@ -34,14 +34,9 @@ func BuildEnrichedCatalog(
 		}
 		sort.Strings(elem.SeenIn)
 
-		// Parents
+		// Parents — confidence weighted by count relative to total instances
 		for parentTag, count := range profile.ParentTags {
-			confidence := "LOW"
-			if count >= 5 {
-				confidence = "HIGH"
-			} else if count >= 2 {
-				confidence = "MEDIUM"
-			}
+			confidence := relationshipConfidence(count, profile.TotalCount)
 			elem.Parents = append(elem.Parents, ElementRef{
 				Tag:        parentTag,
 				Count:      count,
@@ -50,14 +45,9 @@ func BuildEnrichedCatalog(
 		}
 		sortElementRefs(elem.Parents)
 
-		// Named children
+		// Named children — same weighted confidence
 		for childTag, count := range profile.NamedChildren {
-			confidence := "LOW"
-			if count >= 5 {
-				confidence = "HIGH"
-			} else if count >= 2 {
-				confidence = "MEDIUM"
-			}
+			confidence := relationshipConfidence(count, profile.TotalCount)
 			elem.Children = append(elem.Children, ElementRef{
 				Tag:        childTag,
 				Count:      count,
@@ -68,9 +58,11 @@ func BuildEnrichedCatalog(
 
 		// Structural children
 		for childTag, count := range profile.StructuralChildren {
+			confidence := relationshipConfidence(count, profile.TotalCount)
 			scr := StructuralChildRef{
-				Tag:   childTag,
-				Count: count,
+				Tag:        childTag,
+				Count:      count,
+				Confidence: confidence,
 			}
 			// Carry over attribute profiles from the structural child's own profile
 			if childProfile, ok := xmlCorpus.ElementTypes[childTag]; ok {
@@ -320,6 +312,47 @@ func BuildEnrichedCatalog(
 				sortHandlerArgPatterns(elem.HandlerArgPatterns)
 			}
 		}
+
+		// Populate per-event LuaAPICalls on individual event bindings.
+		// This aggregates API calls per (element type, event) so each
+		// EnrichedEventBinding carries its own downstream call list.
+		perEventCalls := make(map[string]map[string]map[string]bool) // tag → event → api_call set
+		for key, ha := range luaSemantic.HandlerAnalyses {
+			parts := strings.SplitN(key, "|", 3)
+			if len(parts) < 3 {
+				continue
+			}
+			event := parts[2]
+			elemTag := ha.FrameType
+			if elemTag == "" || ha.FunctionAnalysis == nil {
+				continue
+			}
+			if perEventCalls[elemTag] == nil {
+				perEventCalls[elemTag] = make(map[string]map[string]bool)
+			}
+			if perEventCalls[elemTag][event] == nil {
+				perEventCalls[elemTag][event] = make(map[string]bool)
+			}
+			for _, call := range ha.FunctionAnalysis.Calls {
+				if call.IsAPICall {
+					perEventCalls[elemTag][event][call.Callee] = true
+				}
+			}
+		}
+		for tag, eventCalls := range perEventCalls {
+			if elem, ok := catalog.Elements[tag]; ok {
+				for i := range elem.EventBindings {
+					if calls, ok := eventCalls[elem.EventBindings[i].Event]; ok {
+						callList := make([]string, 0, len(calls))
+						for c := range calls {
+							callList = append(callList, c)
+						}
+						sort.Strings(callList)
+						elem.EventBindings[i].LuaAPICalls = callList
+					}
+				}
+			}
+		}
 	}
 
 	// Step 4: Compute confidence scores
@@ -357,8 +390,10 @@ func computeConfidence(elem *EnrichedElement) (int, string) {
 		score += 10
 	}
 
-	// Has event bindings
-	if len(elem.EventBindings) > 0 {
+	// Has event bindings — weighted by count
+	if len(elem.EventBindings) >= 5 {
+		score += 25
+	} else if len(elem.EventBindings) > 0 {
 		score += 20
 	}
 
@@ -370,6 +405,26 @@ func computeConfidence(elem *EnrichedElement) (int, string) {
 	// Has Lua API calls
 	if len(elem.LuaAPICalls) > 0 {
 		score += 10
+	}
+
+	// Has parent relationships (element is nested in known contexts)
+	if len(elem.Parents) > 0 {
+		score += 5
+	}
+
+	// Has named children (element is a container)
+	if len(elem.Children) > 0 {
+		score += 5
+	}
+
+	// Template inheritance
+	if len(elem.InheritsBases) > 0 {
+		score += 5
+	}
+
+	// Handler arg patterns available
+	if len(elem.HandlerArgPatterns) > 0 {
+		score += 5
 	}
 
 	// Clamp
@@ -477,4 +532,30 @@ func confidenceRank(c string) int {
 	default:
 		return 0
 	}
+}
+
+// relationshipConfidence computes a confidence level for a relationship based
+// on both the absolute count and the percentage relative to the total.
+// This ensures that a relationship seen 5 times out of 100 instances is
+// weighted differently from one seen 5 times out of 5 instances.
+func relationshipConfidence(count, total int) string {
+	if total <= 0 {
+		if count >= 2 {
+			return "MEDIUM"
+		}
+		return "LOW"
+	}
+	pct := count * 100 / total
+	// HIGH: either >=10 observations, or >=50% of instances, or (>=5 obs AND >=20%)
+	if count >= 10 || pct >= 50 || (count >= 5 && pct >= 20) {
+		return "HIGH"
+	}
+	// MEDIUM: >=2 observations and >=5% of instances
+	if count >= 2 && pct >= 5 {
+		return "MEDIUM"
+	}
+	if count >= 3 {
+		return "MEDIUM"
+	}
+	return "LOW"
 }

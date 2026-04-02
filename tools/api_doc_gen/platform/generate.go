@@ -449,7 +449,18 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 			content += renderXMLEventBindings(symbol.XMLEventBindings, xmlHandlerPageNames)
 		}
 		content += md.Section("Common Inherits", md.BulletList(symbol.CommonInherits))
-		if len(symbol.CommonParentTypes) > 0 {
+		// Enriched parent relationships with counts and confidence
+		if len(symbol.ParentRefs) > 0 {
+			parentLinks := make([]string, 0, len(symbol.ParentRefs))
+			for _, pr := range symbol.ParentRefs {
+				label := pr.Tag
+				if elementTypePageNames[pr.Tag] {
+					label = markdownLink(pr.Tag, docName("element", pr.Tag))
+				}
+				parentLinks = append(parentLinks, fmt.Sprintf("%s — %d× (%s)", label, pr.Count, pr.Confidence))
+			}
+			content += md.Section("Common Parent Elements", md.BulletList(parentLinks))
+		} else if len(symbol.CommonParentTypes) > 0 {
 			parentLinks := make([]string, 0, len(symbol.CommonParentTypes))
 			for _, pt := range symbol.CommonParentTypes {
 				if elementTypePageNames[pt] {
@@ -460,7 +471,17 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 			}
 			content += md.Section("Common Parent Elements", md.BulletList(parentLinks))
 		}
-		if len(symbol.CommonChildElementTypes) > 0 {
+		if len(symbol.ChildRefs) > 0 {
+			namedChildLinks := make([]string, 0, len(symbol.ChildRefs))
+			for _, cr := range symbol.ChildRefs {
+				label := cr.Tag
+				if elementTypePageNames[cr.Tag] {
+					label = markdownLink(cr.Tag, docName("element", cr.Tag))
+				}
+				namedChildLinks = append(namedChildLinks, fmt.Sprintf("%s — %d× (%s)", label, cr.Count, cr.Confidence))
+			}
+			content += md.Section("Common Named Child Elements", md.BulletList(namedChildLinks))
+		} else if len(symbol.CommonChildElementTypes) > 0 {
 			namedChildLinks := make([]string, 0, len(symbol.CommonChildElementTypes))
 			for _, ct := range symbol.CommonChildElementTypes {
 				if elementTypePageNames[ct] {
@@ -471,7 +492,18 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 			}
 			content += md.Section("Common Named Child Elements", md.BulletList(namedChildLinks))
 		}
-		if len(symbol.CommonChildTypes) > 0 {
+		if len(symbol.StructuralChildRefs) > 0 {
+			childLinks := make([]string, 0, len(symbol.StructuralChildRefs))
+			for _, scr := range symbol.StructuralChildRefs {
+				label := scr.Tag
+				if elementTypePageNames[scr.Tag] {
+					childDocName := docName("element", scr.Tag)
+					label = markdownLink(scr.Tag, childDocName)
+				}
+				childLinks = append(childLinks, fmt.Sprintf("%s — %d× (%s)", label, scr.Count, scr.Confidence))
+			}
+			content += md.Section("Common Structural Child Elements", md.BulletList(childLinks))
+		} else if len(symbol.CommonChildTypes) > 0 {
 			childLinks := make([]string, 0, len(symbol.CommonChildTypes))
 			for _, childType := range symbol.CommonChildTypes {
 				if elementTypePageNames[childType] {
@@ -482,6 +514,13 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 				}
 			}
 			content += md.Section("Common Structural Child Elements", md.BulletList(childLinks))
+		}
+		// Template inheritance
+		if len(symbol.InheritsBases) > 0 {
+			content += md.Section("Common Template Bases", md.BulletList(symbol.InheritsBases))
+		}
+		if symbol.IsTemplate {
+			content += "\n> **Note**: This element type commonly acts as a template base.\n\n"
 		}
 		if symbol.CompositionSnippet != "" {
 			content += md.Section("Typical XML Structure", "```xml\n"+symbol.CompositionSnippet+"\n```\n")
@@ -505,6 +544,12 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		// Phase 4 enrichment: Lua Manipulators
 		if len(symbol.LuaManipulators) > 0 {
 			content += md.Section("Lua Functions Manipulating This Type", md.BulletList(symbol.LuaManipulators))
+		}
+		// Phase 4 enrichment: Binding resolution statistics
+		if symbol.BindingTotalHandlers > 0 {
+			content += fmt.Sprintf("\n## Binding Resolution\n\n")
+			content += fmt.Sprintf("- Total handler declarations: %d\n", symbol.BindingTotalHandlers)
+			content += fmt.Sprintf("- Resolved to Lua functions: %d (%d%%)\n\n", symbol.BindingResolvedCount, symbol.BindingResolvedPct)
 		}
 		content += md.Section("Seen In", md.BulletList(symbol.SeenIn))
 		content += md.Section("Examples", md.BulletList(formatUsageExamples(symbol.Examples)))
@@ -789,16 +834,16 @@ func formatUsageExamples(examples []UsageExample) []string {
 
 // renderXMLEventBindings produces a ## XML Event Bindings section that shows,
 // for each observed XML handler event on this element type, which Lua functions
-// are commonly bound and what the expected callback signature looks like.
-// Event names that have a dedicated XMLHandler page are rendered as links.
+// are commonly bound, the expected callback signature, handler category, and
+// per-event downstream Lua API calls.
 func renderXMLEventBindings(bindings []XMLEventBinding, handlerPages map[string]bool) string {
 	if len(bindings) == 0 {
 		return ""
 	}
 	var b strings.Builder
 	b.WriteString("\n## XML Event Bindings\n\n")
-	b.WriteString("| Event | Common Lua Bindings | Expected Callback | Args Confidence |\n")
-	b.WriteString("|-------|---------------------|-------------------|-----------------|\n")
+	b.WriteString("| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |\n")
+	b.WriteString("|-------|----------|---------------------|-------------------|-----------------|\n")
 	for _, binding := range bindings {
 		eventCell := binding.Event
 		if handlerPages[binding.Event] {
@@ -809,9 +854,32 @@ func renderXMLEventBindings(bindings []XMLEventBinding, handlerPages map[string]
 			luaCell = "-"
 		}
 		argsCell := "`" + strings.ReplaceAll(binding.InferredArgs, "`", "\\`") + "`"
-		b.WriteString("| " + eventCell + " | " + luaCell + " | " + argsCell + " | " + binding.ArgsConfidence + " |\n")
+		catCell := binding.Category
+		if catCell == "" {
+			catCell = "-"
+		}
+		b.WriteString("| " + eventCell + " | " + catCell + " | " + luaCell + " | " + argsCell + " | " + binding.ArgsConfidence + " |\n")
 	}
 	b.WriteString("\n")
+
+	// Render per-event API call details for events that have them
+	hasPerEventCalls := false
+	for _, binding := range bindings {
+		if len(binding.LuaAPICalls) > 0 {
+			hasPerEventCalls = true
+			break
+		}
+	}
+	if hasPerEventCalls {
+		b.WriteString("### Per-Event Lua API Calls\n\n")
+		for _, binding := range bindings {
+			if len(binding.LuaAPICalls) == 0 {
+				continue
+			}
+			b.WriteString(fmt.Sprintf("**%s** handlers call: %s\n\n", binding.Event, strings.Join(formatAPICalls(binding.LuaAPICalls), ", ")))
+		}
+	}
+
 	return b.String()
 }
 
@@ -1147,10 +1215,23 @@ func renderLuaAPICallsFromHandlers(calls []LuaAPICallEntry) string {
 	rows := make([][]string, 0, len(calls))
 	for _, c := range calls {
 		events := strings.Join(c.FromEvents, ", ")
-		rows = append(rows, []string{"`" + c.Function + "`", fmt.Sprintf("%d", c.Count), events})
+		cat := c.Category
+		if cat == "" {
+			cat = "-"
+		}
+		rows = append(rows, []string{"`" + c.Function + "`", cat, fmt.Sprintf("%d", c.Count), events})
 	}
-	content += md.Table([]string{"API Function", "Call Count", "From Events"}, rows)
+	content += md.Table([]string{"API Function", "Category", "Call Count", "From Events"}, rows)
 	return content + "\n"
+}
+
+// formatAPICalls formats API call names for inline display.
+func formatAPICalls(calls []string) []string {
+	result := make([]string, 0, len(calls))
+	for _, call := range calls {
+		result = append(result, "`"+call+"`")
+	}
+	return result
 }
 
 // renderHandlerArgPatterns generates a section showing expected callback argument
