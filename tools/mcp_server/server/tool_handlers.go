@@ -13,11 +13,23 @@ func (a *App) HandleToolCall(name string, args json.RawMessage) (interface{}, *m
 	if verr != nil {
 		return nil, verr
 	}
-	if name == "ingest_observation" {
+
+	// Feeding / lifecycle tools operate on feedingRoot and do not need the store.
+	switch name {
+	case "ingest_observation":
 		return a.ingestObservation(decoded.(schema.IngestObservationRequest)), nil
-	}
-	if name == "ingest_observation_batch" {
+	case "ingest_observation_batch":
 		return a.ingestObservationBatch(decoded.(schema.IngestObservationBatchRequest)), nil
+	case "list_pending_observations":
+		return a.listPendingObservations(decoded.(schema.ListPendingObservationsRequest)), nil
+	case "review_observation":
+		return a.reviewObservation(decoded.(schema.ReviewObservationRequest)), nil
+	case "promote_observation":
+		return a.promoteObservation(decoded.(schema.PromoteObservationRequest)), nil
+	case "list_rejected_observations":
+		return a.listRejectedObservations(decoded.(schema.ListRejectedObservationsRequest)), nil
+	case "regenerate_from_promoted_knowledge":
+		return a.regenerateFromPromotedKnowledge(decoded.(schema.RegenerateRequest)), nil
 	}
 
 	store, storeErr := a.storeReady()
@@ -43,11 +55,8 @@ func (a *App) HandleToolCall(name string, args json.RawMessage) (interface{}, *m
 		return toolops.ExplainSymbolUsage(store, decoded.(schema.ExplainSymbolUsageRequest)), nil
 	case "scaffold_addon_snippet":
 		return toolops.ScaffoldAddonSnippet(store, decoded.(schema.ScaffoldAddonSnippetRequest)), nil
-	case "ingest_observation":
-		return a.ingestObservation(decoded.(schema.IngestObservationRequest)), nil
-	case "ingest_observation_batch":
-		return a.ingestObservationBatch(decoded.(schema.IngestObservationBatchRequest)), nil
 	default:
 		return nil, &model.APIError{ErrorCode: "unknown_tool", ErrorMessage: "unknown tool"}
 	}
 }
+

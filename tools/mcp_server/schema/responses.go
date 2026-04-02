@@ -80,10 +80,89 @@ type IngestObservationBatchItem struct {
 }
 
 type IngestObservationBatchResponse struct {
-	TotalFiles    int                         `json:"total_files"`
-	ProcessedFiles int                        `json:"processed_files"`
-	AcceptedCount int                         `json:"accepted_count"`
-	RejectedCount int                         `json:"rejected_count"`
-	Results       []IngestObservationBatchItem `json:"results"`
-	Warnings      []model.Warning              `json:"warnings,omitempty"`
+	TotalFiles     int                          `json:"total_files"`
+	ProcessedFiles int                          `json:"processed_files"`
+	AcceptedCount  int                          `json:"accepted_count"`
+	RejectedCount  int                          `json:"rejected_count"`
+	Results        []IngestObservationBatchItem `json:"results"`
+	Warnings       []model.Warning              `json:"warnings,omitempty"`
+}
+
+// ObservationSummary is a compact representation of a queued observation for listing.
+type ObservationSummary struct {
+	ObservationID string   `json:"observation_id"`
+	Status        string   `json:"status"`
+	TargetSeeds   []string `json:"target_seeds"`
+	ClaimSummary  string   `json:"claim_summary"`
+	Confidence    string   `json:"confidence"`
+	EvidenceCount int      `json:"evidence_count"`
+	CreatedAt     string   `json:"created_at"`
+	SourceAddon   string   `json:"source_addon,omitempty"`
+}
+
+type ListPendingObservationsResponse struct {
+	TotalCount   int                  `json:"total_count"`
+	Observations []ObservationSummary `json:"observations"`
+	Warnings     []model.Warning      `json:"warnings,omitempty"`
+}
+
+type ReviewObservationResponse struct {
+	ObservationID string          `json:"observation_id"`
+	Status        string          `json:"status"`
+	Verdict       string          `json:"verdict"`
+	Warnings      []model.Warning `json:"warnings,omitempty"`
+	Errors        []string        `json:"errors,omitempty"`
+}
+
+// SeedUpdate describes one seed-file change performed during promotion.
+type SeedUpdate struct {
+	SeedPath  string `json:"seed_path"`
+	Appended  bool   `json:"appended"`
+	Duplicate bool   `json:"duplicate,omitempty"`
+}
+
+type PromoteObservationResponse struct {
+	ObservationID string          `json:"observation_id"`
+	Promoted      bool            `json:"promoted"`
+	TargetSeeds   []string        `json:"target_seeds"`
+	SeedUpdates   []SeedUpdate    `json:"seed_updates"`
+	DryRun        bool            `json:"dry_run,omitempty"`
+	Warnings      []model.Warning `json:"warnings,omitempty"`
+	Errors        []string        `json:"errors,omitempty"`
+}
+
+// RejectedObservationSummary is a compact view of a rejected record.
+type RejectedObservationSummary struct {
+	ObservationID   string   `json:"observation_id"`
+	Status          string   `json:"status"`
+	TargetSeeds     []string `json:"target_seeds"`
+	ClaimSummary    string   `json:"claim_summary"`
+	Confidence      string   `json:"confidence"`
+	RejectionReason string   `json:"rejection_reason,omitempty"`
+	RejectedAt      string   `json:"rejected_at,omitempty"`
+	Reviewer        string   `json:"reviewer,omitempty"`
+	CreatedAt       string   `json:"created_at"`
+}
+
+type ListRejectedObservationsResponse struct {
+	TotalCount   int                          `json:"total_count"`
+	Observations []RejectedObservationSummary `json:"observations"`
+	Warnings     []model.Warning              `json:"warnings,omitempty"`
+}
+
+// RegenerationStep describes one command in a regeneration run.
+type RegenerationStep struct {
+	Label   string `json:"label"`
+	Command string `json:"command"`
+	Success bool   `json:"success,omitempty"`
+	Output  string `json:"output,omitempty"`
+	Error   string `json:"error,omitempty"`
+}
+
+type RegenerateResponse struct {
+	Scope    string             `json:"scope"`
+	DryRun   bool               `json:"dry_run"`
+	Steps    []RegenerationStep `json:"steps"`
+	Success  bool               `json:"success"`
+	Warnings []model.Warning    `json:"warnings,omitempty"`
 }

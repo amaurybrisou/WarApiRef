@@ -121,6 +121,54 @@ func (v *Validator) decodeAndValidate(toolName string, raw json.RawMessage) (int
 			return nil, invalidParams("ingest_observation_batch", "limit must be >= 0")
 		}
 		return req, nil
+	case "list_pending_observations":
+		var req schema.ListPendingObservationsRequest
+		if err := json.Unmarshal(raw, &req); err != nil {
+			return nil, invalidParams("list_pending_observations", "invalid request payload")
+		}
+		if req.Limit < 0 {
+			return nil, invalidParams("list_pending_observations", "limit must be >= 0")
+		}
+		return req, nil
+	case "review_observation":
+		var req schema.ReviewObservationRequest
+		if err := json.Unmarshal(raw, &req); err != nil {
+			return nil, invalidParams("review_observation", "invalid request payload")
+		}
+		if strings.TrimSpace(req.ObservationID) == "" {
+			return nil, invalidParams("review_observation", "observation_id is required")
+		}
+		if req.Verdict != "accept" && req.Verdict != "reject" {
+			return nil, invalidParams("review_observation", "verdict must be 'accept' or 'reject'")
+		}
+		return req, nil
+	case "promote_observation":
+		var req schema.PromoteObservationRequest
+		if err := json.Unmarshal(raw, &req); err != nil {
+			return nil, invalidParams("promote_observation", "invalid request payload")
+		}
+		if strings.TrimSpace(req.ObservationID) == "" {
+			return nil, invalidParams("promote_observation", "observation_id is required")
+		}
+		return req, nil
+	case "list_rejected_observations":
+		var req schema.ListRejectedObservationsRequest
+		if err := json.Unmarshal(raw, &req); err != nil {
+			return nil, invalidParams("list_rejected_observations", "invalid request payload")
+		}
+		if req.Limit < 0 {
+			return nil, invalidParams("list_rejected_observations", "limit must be >= 0")
+		}
+		return req, nil
+	case "regenerate_from_promoted_knowledge":
+		var req schema.RegenerateRequest
+		if err := json.Unmarshal(raw, &req); err != nil {
+			return nil, invalidParams("regenerate_from_promoted_knowledge", "invalid request payload")
+		}
+		if req.Scope != "" && req.Scope != "platform" && req.Scope != "site" && req.Scope != "full" {
+			return nil, invalidParams("regenerate_from_promoted_knowledge", "scope must be 'platform', 'site', or 'full'")
+		}
+		return req, nil
 	default:
 		return nil, &model.APIError{ErrorCode: "unknown_tool", ErrorMessage: "unknown tool: " + toolName}
 	}

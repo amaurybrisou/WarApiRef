@@ -75,3 +75,31 @@ type IngestObservationBatchRequest struct {
 	ContinueOnError bool   `json:"continue_on_error,omitempty"`
 	Limit           int    `json:"limit,omitempty"`
 }
+
+type ListPendingObservationsRequest struct {
+	StatusFilter string `json:"status_filter,omitempty"` // candidate, accepted, or empty for both
+	TargetFilter string `json:"target_filter,omitempty"` // match against target_seeds entries
+	Limit        int    `json:"limit,omitempty"`
+}
+
+type ReviewObservationRequest struct {
+	ObservationID string `json:"observation_id"`
+	Verdict       string `json:"verdict"` // "accept" or "reject"
+	Reviewer      string `json:"reviewer,omitempty"`
+	Notes         string `json:"notes,omitempty"`
+}
+
+type PromoteObservationRequest struct {
+	ObservationID    string `json:"observation_id"`
+	DryRun           bool   `json:"dry_run,omitempty"`
+	SeedPathOverride string `json:"seed_path_override,omitempty"`
+}
+
+type ListRejectedObservationsRequest struct {
+	Limit int `json:"limit,omitempty"`
+}
+
+type RegenerateRequest struct {
+	Scope  string `json:"scope,omitempty"` // "platform", "site", or "full" (default)
+	DryRun bool   `json:"dry_run,omitempty"`
+}
