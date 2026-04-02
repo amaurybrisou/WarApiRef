@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, Enemy, Killer, LibWBToggler, MapMonster, Miracle Grow Remix, MiracleGrow, MiracleGrowLight, PetFixWindow, PlanB, Pocket Palette, RoR_SoR, TexturedButtons, TidyChat, TidyRoll, TurretRange, WarBoard, WhoHealedMe, wbLeadHelper, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:92`, `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:98`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1240`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1349`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:86` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:92`, `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:98`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1300`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1409`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:73`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:87` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedPetAssist.OnLoadingEnd, AdvancedPetAssist.local.RegisterLoadingEnd, AdvancedPetAssist.local.UnregisterLoadingEnd, AdvancedRenownTraining.Initialize, AdvancedRenownTraining.OnReload, AuraAddon.OnInitialize |

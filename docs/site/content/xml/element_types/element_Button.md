@@ -107,14 +107,14 @@ Observed XML element type instantiated by 51 addons.
 
 ## Common Structural Child Elements
 
-- Normal
-- Pressed
-- NormalHighlit
-- Disabled
-- PressedHighlit
-- TexSlices
-- TextOffset
-- TextColors
+- [Normal](element_Normal.md)
+- [Pressed](element_Pressed.md)
+- [NormalHighlit](element_NormalHighlit.md)
+- [Disabled](element_Disabled.md)
+- [PressedHighlit](element_PressedHighlit.md)
+- [TexSlices](element_TexSlices.md)
+- [TextOffset](element_TextOffset.md)
+- [TextColors](element_TextColors.md)
 
 ## Seen In
 

@@ -109,9 +109,9 @@ Observed XML element type instantiated by 60 addons.
 
 ## Common Structural Child Elements
 
-- Sound
-- Sounds
-- Visual
+- [Sound](element_Sound.md)
+- [Sounds](element_Sounds.md)
+- [Visual](element_Visual.md)
 
 ## Seen In
 

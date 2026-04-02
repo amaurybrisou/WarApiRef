@@ -88,9 +88,9 @@ Observed XML element type instantiated by 20 addons.
 
 ## Common Structural Child Elements
 
-- ListData
-- ListColumns
-- ListColumn
+- [ListData](element_ListData.md)
+- [ListColumns](element_ListColumns.md)
+- [ListColumn](element_ListColumn.md)
 
 ## Seen In
 

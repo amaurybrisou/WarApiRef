@@ -87,11 +87,11 @@ Observed XML element type instantiated by 12 addons.
 
 ## Common Structural Child Elements
 
-- Middle
-- Left
-- Right
-- TintColor
-- TexSlices
+- [Middle](element_Middle.md)
+- [Left](element_Left.md)
+- [Right](element_Right.md)
+- [TintColor](element_TintColor.md)
+- [TexSlices](element_TexSlices.md)
 
 ## Seen In
 

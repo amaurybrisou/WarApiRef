@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibWBToggler, PlanB |
-| Files seen in | `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace_addons/PlanB/PlanB.lua:35`, `/workspace_addons/TexturedButtons/TexturedButtons.lua:492`, `/workspace_addons/TidyChat/TidyChat.lua:144` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:73`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace_addons/PlanB/PlanB.lua:35`, `/workspace_addons/TexturedButtons/TexturedButtons.lua:492`, `/workspace_addons/TidyChat/TidyChat.lua:144` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, Aura: AuraAddon.OnInitialize, BagOMatic: BagOMatic.init, BuffHead: BuffHead.Initialize, CM_ClosetGoblin: ClosetGoblin.OnInitialize, Effigy: Effigy.Initialize |

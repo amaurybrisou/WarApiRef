@@ -30,7 +30,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, Aura, AutoMark, BagOMatic, CM_ClosetGoblin, DAoCBuff, DaemonAssist, Effigy |
-| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:193`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/AutoMark/Source/AutoMark.lua:33`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:86`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/DaemonAssist/DALifecycle.lua:3`, `/workspace_addons/Effigy/EffigySlashCommands.lua:19`, `/workspace_addons/FastInteract/FastInteract.lua:132` |
+| Files seen in | `/workspace_addons/AdvancedPetAssist/AdvancedPetAssist.lua:193`, `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/AutoMark/Source/AutoMark.lua:33`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:87`, `/workspace_addons/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace_addons/DaemonAssist/DALifecycle.lua:3`, `/workspace_addons/Effigy/EffigySlashCommands.lua:19`, `/workspace_addons/FastInteract/FastInteract.lua:132` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
 | Example locations | AdvancedPetAssist: AdvancedPetAssist.Initialize, Aura: AuraAddon.OnInitialize, AutoMark: AutoMark.OnInitialize, BagOMatic: BagOMatic.init, CM_ClosetGoblin: ClosetGoblin.Initialize, DAoCBuff: DAoCBuff.Initialize |

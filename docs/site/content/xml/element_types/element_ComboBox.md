@@ -99,8 +99,8 @@ Observed XML element type instantiated by 29 addons.
 
 ## Common Structural Child Elements
 
-- MenuButtonOffset
-- TextOffset
+- [MenuButtonOffset](element_MenuButtonOffset.md)
+- [TextOffset](element_TextOffset.md)
 
 ## Seen In
 

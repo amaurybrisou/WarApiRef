@@ -82,10 +82,10 @@ Observed XML element type instantiated by 12 addons.
 
 ## Common Structural Child Elements
 
-- ActiveZoneOffset
-- DownOffset
-- ThumbOffset
-- UpOffset
+- [ActiveZoneOffset](element_ActiveZoneOffset.md)
+- [DownOffset](element_DownOffset.md)
+- [ThumbOffset](element_ThumbOffset.md)
+- [UpOffset](element_UpOffset.md)
 
 ## Seen In
 

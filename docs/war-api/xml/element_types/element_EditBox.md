@@ -103,7 +103,7 @@ Observed XML element type instantiated by 24 addons.
 
 ## Common Structural Child Elements
 
-- TextOffset
+- [TextOffset](element_TextOffset.md)
 
 ## Seen In
 

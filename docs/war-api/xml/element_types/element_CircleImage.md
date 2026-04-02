@@ -83,7 +83,7 @@ Observed XML element type instantiated by 11 addons.
 
 ## Common Structural Child Elements
 
-- TintColor
+- [TintColor](element_TintColor.md)
 
 ## Seen In
 

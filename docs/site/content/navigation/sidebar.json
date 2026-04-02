@@ -2211,94 +2211,328 @@
             "order": 6
           },
           {
+            "label": "Disabled",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Disabled.md",
+            "order": 7
+          },
+          {
+            "label": "DisabledPressed",
+            "type": "ui_element",
+            "path": "xml/element_types/element_DisabledPressed.md",
+            "order": 8
+          },
+          {
             "label": "DynamicImage",
             "type": "ui_element",
             "path": "xml/element_types/element_DynamicImage.md",
-            "order": 7
+            "order": 9
           },
           {
             "label": "EditBox",
             "type": "ui_element",
             "path": "xml/element_types/element_EditBox.md",
-            "order": 8
+            "order": 10
           },
           {
             "label": "FullResizeImage",
             "type": "ui_element",
             "path": "xml/element_types/element_FullResizeImage.md",
-            "order": 9
+            "order": 11
           },
           {
             "label": "HorizontalResizeImage",
             "type": "ui_element",
             "path": "xml/element_types/element_HorizontalResizeImage.md",
-            "order": 10
+            "order": 12
           },
           {
             "label": "Label",
             "type": "ui_element",
             "path": "xml/element_types/element_Label.md",
-            "order": 11
+            "order": 13
+          },
+          {
+            "label": "Left",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Left.md",
+            "order": 14
           },
           {
             "label": "ListBox",
             "type": "ui_element",
             "path": "xml/element_types/element_ListBox.md",
-            "order": 12
+            "order": 15
+          },
+          {
+            "label": "ListColumn",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ListColumn.md",
+            "order": 16
+          },
+          {
+            "label": "ListColumns",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ListColumns.md",
+            "order": 17
+          },
+          {
+            "label": "ListData",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ListData.md",
+            "order": 18
           },
           {
             "label": "MapDisplay",
             "type": "ui_element",
             "path": "xml/element_types/element_MapDisplay.md",
-            "order": 13
+            "order": 19
+          },
+          {
+            "label": "MenuButtonOffset",
+            "type": "ui_element",
+            "path": "xml/element_types/element_MenuButtonOffset.md",
+            "order": 20
+          },
+          {
+            "label": "Middle",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Middle.md",
+            "order": 21
+          },
+          {
+            "label": "Normal",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Normal.md",
+            "order": 22
+          },
+          {
+            "label": "NormalHighlit",
+            "type": "ui_element",
+            "path": "xml/element_types/element_NormalHighlit.md",
+            "order": 23
+          },
+          {
+            "label": "OverlayOffset",
+            "type": "ui_element",
+            "path": "xml/element_types/element_OverlayOffset.md",
+            "order": 24
+          },
+          {
+            "label": "OverlaySize",
+            "type": "ui_element",
+            "path": "xml/element_types/element_OverlaySize.md",
+            "order": 25
+          },
+          {
+            "label": "OverlayTexCoords",
+            "type": "ui_element",
+            "path": "xml/element_types/element_OverlayTexCoords.md",
+            "order": 26
+          },
+          {
+            "label": "Pressed",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Pressed.md",
+            "order": 27
+          },
+          {
+            "label": "PressedHighlit",
+            "type": "ui_element",
+            "path": "xml/element_types/element_PressedHighlit.md",
+            "order": 28
+          },
+          {
+            "label": "ResizeImages",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ResizeImages.md",
+            "order": 29
+          },
+          {
+            "label": "Right",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Right.md",
+            "order": 30
           },
           {
             "label": "ScrollWindow",
             "type": "ui_element",
             "path": "xml/element_types/element_ScrollWindow.md",
-            "order": 14
+            "order": 31
           },
           {
             "label": "SliderBar",
             "type": "ui_element",
             "path": "xml/element_types/element_SliderBar.md",
-            "order": 15
+            "order": 32
+          },
+          {
+            "label": "Sound",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Sound.md",
+            "order": 33
+          },
+          {
+            "label": "Sounds",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Sounds.md",
+            "order": 34
           },
           {
             "label": "StatusBar",
             "type": "ui_element",
             "path": "xml/element_types/element_StatusBar.md",
-            "order": 16
+            "order": 35
+          },
+          {
+            "label": "TexSlices",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TexSlices.md",
+            "order": 36
+          },
+          {
+            "label": "Text",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Text.md",
+            "order": 37
+          },
+          {
+            "label": "TextColors",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TextColors.md",
+            "order": 38
+          },
+          {
+            "label": "TextOffset",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TextOffset.md",
+            "order": 39
+          },
+          {
+            "label": "TintColor",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TintColor.md",
+            "order": 40
           },
           {
             "label": "VerticalResizeImage",
             "type": "ui_element",
             "path": "xml/element_types/element_VerticalResizeImage.md",
-            "order": 17
+            "order": 41
           },
           {
             "label": "VerticalScrollbar",
             "type": "ui_element",
             "path": "xml/element_types/element_VerticalScrollbar.md",
-            "order": 18
+            "order": 42
           },
           {
             "label": "Window",
             "type": "ui_element",
             "path": "xml/element_types/element_Window.md",
-            "order": 19
+            "order": 43
+          },
+          {
+            "label": "AnimFrame",
+            "type": "ui_element",
+            "path": "xml/element_types/element_AnimFrame.md",
+            "order": 44
+          },
+          {
+            "label": "AnimFrames",
+            "type": "ui_element",
+            "path": "xml/element_types/element_AnimFrames.md",
+            "order": 45
           },
           {
             "label": "LogDisplay",
             "type": "ui_element",
             "path": "xml/element_types/element_LogDisplay.md",
-            "order": 20
+            "order": 46
+          },
+          {
+            "label": "ActiveZoneOffset",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ActiveZoneOffset.md",
+            "order": 47
+          },
+          {
+            "label": "AnimatedImages",
+            "type": "ui_element",
+            "path": "xml/element_types/element_AnimatedImages.md",
+            "order": 48
+          },
+          {
+            "label": "Bottom",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Bottom.md",
+            "order": 49
+          },
+          {
+            "label": "ColorSize",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ColorSize.md",
+            "order": 50
+          },
+          {
+            "label": "ColorSpacing",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ColorSpacing.md",
+            "order": 51
+          },
+          {
+            "label": "ColorTexCoords",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ColorTexCoords.md",
+            "order": 52
+          },
+          {
+            "label": "ColorTexDims",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ColorTexDims.md",
+            "order": 53
           },
           {
             "label": "CooldownDisplay",
             "type": "ui_element",
             "path": "xml/element_types/element_CooldownDisplay.md",
-            "order": 21
+            "order": 54
+          },
+          {
+            "label": "DownOffset",
+            "type": "ui_element",
+            "path": "xml/element_types/element_DownOffset.md",
+            "order": 55
+          },
+          {
+            "label": "Eventhandlers",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Eventhandlers.md",
+            "order": 56
+          },
+          {
+            "label": "ThumbOffset",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ThumbOffset.md",
+            "order": 57
+          },
+          {
+            "label": "Top",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Top.md",
+            "order": 58
+          },
+          {
+            "label": "UpOffset",
+            "type": "ui_element",
+            "path": "xml/element_types/element_UpOffset.md",
+            "order": 59
+          },
+          {
+            "label": "Visual",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Visual.md",
+            "order": 60
           }
         ]
       },

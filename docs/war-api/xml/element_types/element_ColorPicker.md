@@ -76,10 +76,10 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Structural Child Elements
 
-- ColorSize
-- ColorSpacing
-- ColorTexCoords
-- ColorTexDims
+- [ColorSize](element_ColorSize.md)
+- [ColorSpacing](element_ColorSpacing.md)
+- [ColorTexCoords](element_ColorTexCoords.md)
+- [ColorTexDims](element_ColorTexDims.md)
 
 ## Seen In
 

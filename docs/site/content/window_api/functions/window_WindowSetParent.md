@@ -29,7 +29,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, BagOMatic, CM_ClosetGoblin, Effigy, GCDsaver, GetStats, JunkDump, LibWBToggler |
-| Files seen in | `/workspace_addons/Ace/LibGUI.lua:132`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:86`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:135`, `/workspace_addons/Effigy/LibGUI.lua:132`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:132`, `/workspace_addons/GetStats/GetStats.lua:119`, `/workspace_addons/JunkDump/JunkDump.lua:50`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:132` |
+| Files seen in | `/workspace_addons/Ace/LibGUI.lua:132`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:87`, `/workspace_addons/Effigy/Elements/EffigyBar.lua:135`, `/workspace_addons/Effigy/LibGUI.lua:132`, `/workspace_addons/GCDsaver/libs/LibGUI.lua:132`, `/workspace_addons/GetStats/GetStats.lua:119`, `/workspace_addons/JunkDump/JunkDump.lua:50`, `/workspace_addons/LibWarBoardToggler/libs/LibGUI.lua:132` |
 | Namespaces detected | WindowSetParent |
 | Source kinds | lua_calls |
 | Example locations | Ace: LIBGUI_ELEMENT:Parent, BagOMatic: BagOMatic.init, CM_ClosetGoblin: ClosetGoblin.Initialize, Effigy: EffigyBar:setup, Effigy: LIBGUI_ELEMENT:Parent, GCDsaver: LIBGUI_ELEMENT:Parent |

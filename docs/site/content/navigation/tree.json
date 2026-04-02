@@ -2573,6 +2573,20 @@
               "importance": 100
             },
             {
+              "id": "ui:Disabled",
+              "label": "Disabled",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Disabled.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:DisabledPressed",
+              "label": "DisabledPressed",
+              "type": "ui_element",
+              "path": "xml/element_types/element_DisabledPressed.md",
+              "importance": 100
+            },
+            {
               "id": "ui:DynamicImage",
               "label": "DynamicImage",
               "type": "ui_element",
@@ -2608,6 +2622,13 @@
               "importance": 100
             },
             {
+              "id": "ui:Left",
+              "label": "Left",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Left.md",
+              "importance": 100
+            },
+            {
               "id": "ui:ListBox",
               "label": "ListBox",
               "type": "ui_element",
@@ -2615,10 +2636,108 @@
               "importance": 100
             },
             {
+              "id": "ui:ListColumn",
+              "label": "ListColumn",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ListColumn.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:ListColumns",
+              "label": "ListColumns",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ListColumns.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:ListData",
+              "label": "ListData",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ListData.md",
+              "importance": 100
+            },
+            {
               "id": "ui:MapDisplay",
               "label": "MapDisplay",
               "type": "ui_element",
               "path": "xml/element_types/element_MapDisplay.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:MenuButtonOffset",
+              "label": "MenuButtonOffset",
+              "type": "ui_element",
+              "path": "xml/element_types/element_MenuButtonOffset.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:Middle",
+              "label": "Middle",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Middle.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:Normal",
+              "label": "Normal",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Normal.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:NormalHighlit",
+              "label": "NormalHighlit",
+              "type": "ui_element",
+              "path": "xml/element_types/element_NormalHighlit.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:OverlayOffset",
+              "label": "OverlayOffset",
+              "type": "ui_element",
+              "path": "xml/element_types/element_OverlayOffset.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:OverlaySize",
+              "label": "OverlaySize",
+              "type": "ui_element",
+              "path": "xml/element_types/element_OverlaySize.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:OverlayTexCoords",
+              "label": "OverlayTexCoords",
+              "type": "ui_element",
+              "path": "xml/element_types/element_OverlayTexCoords.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:Pressed",
+              "label": "Pressed",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Pressed.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:PressedHighlit",
+              "label": "PressedHighlit",
+              "type": "ui_element",
+              "path": "xml/element_types/element_PressedHighlit.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:ResizeImages",
+              "label": "ResizeImages",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ResizeImages.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:Right",
+              "label": "Right",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Right.md",
               "importance": 100
             },
             {
@@ -2636,10 +2755,59 @@
               "importance": 100
             },
             {
+              "id": "ui:Sound",
+              "label": "Sound",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Sound.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:Sounds",
+              "label": "Sounds",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Sounds.md",
+              "importance": 100
+            },
+            {
               "id": "ui:StatusBar",
               "label": "StatusBar",
               "type": "ui_element",
               "path": "xml/element_types/element_StatusBar.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:TexSlices",
+              "label": "TexSlices",
+              "type": "ui_element",
+              "path": "xml/element_types/element_TexSlices.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:Text",
+              "label": "Text",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Text.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:TextColors",
+              "label": "TextColors",
+              "type": "ui_element",
+              "path": "xml/element_types/element_TextColors.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:TextOffset",
+              "label": "TextOffset",
+              "type": "ui_element",
+              "path": "xml/element_types/element_TextOffset.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:TintColor",
+              "label": "TintColor",
+              "type": "ui_element",
+              "path": "xml/element_types/element_TintColor.md",
               "importance": 100
             },
             {
@@ -2664,6 +2832,20 @@
               "importance": 100
             },
             {
+              "id": "ui:AnimFrame",
+              "label": "AnimFrame",
+              "type": "ui_element",
+              "path": "xml/element_types/element_AnimFrame.md",
+              "importance": 98
+            },
+            {
+              "id": "ui:AnimFrames",
+              "label": "AnimFrames",
+              "type": "ui_element",
+              "path": "xml/element_types/element_AnimFrames.md",
+              "importance": 98
+            },
+            {
               "id": "ui:LogDisplay",
               "label": "LogDisplay",
               "type": "ui_element",
@@ -2671,10 +2853,101 @@
               "importance": 98
             },
             {
+              "id": "ui:ActiveZoneOffset",
+              "label": "ActiveZoneOffset",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ActiveZoneOffset.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:AnimatedImages",
+              "label": "AnimatedImages",
+              "type": "ui_element",
+              "path": "xml/element_types/element_AnimatedImages.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:Bottom",
+              "label": "Bottom",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Bottom.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:ColorSize",
+              "label": "ColorSize",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ColorSize.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:ColorSpacing",
+              "label": "ColorSpacing",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ColorSpacing.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:ColorTexCoords",
+              "label": "ColorTexCoords",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ColorTexCoords.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:ColorTexDims",
+              "label": "ColorTexDims",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ColorTexDims.md",
+              "importance": 45
+            },
+            {
               "id": "ui:CooldownDisplay",
               "label": "CooldownDisplay",
               "type": "ui_element",
               "path": "xml/element_types/element_CooldownDisplay.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:DownOffset",
+              "label": "DownOffset",
+              "type": "ui_element",
+              "path": "xml/element_types/element_DownOffset.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:Eventhandlers",
+              "label": "Eventhandlers",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Eventhandlers.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:ThumbOffset",
+              "label": "ThumbOffset",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ThumbOffset.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:Top",
+              "label": "Top",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Top.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:UpOffset",
+              "label": "UpOffset",
+              "type": "ui_element",
+              "path": "xml/element_types/element_UpOffset.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:Visual",
+              "label": "Visual",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Visual.md",
               "importance": 45
             }
           ]

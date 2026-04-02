@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer, AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibWBToggler, PlanB, TexturedButtons, TidyChat, TidyRoll, TurretRange, WarBoard, WhoHealedMe, wbLeadHelper, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, Effigy, LibGroup |
-| Files seen in | `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:72`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/LibGroup/LibGroup.lua:343`, `/workspace_addons/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace_addons/PlanB/PlanB.lua:35`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:1199` |
+| Files seen in | `/workspace_addons/Aura/Source/AuraAddon.lua:70`, `/workspace_addons/BuffHead/Core.lua:152`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:73`, `/workspace_addons/Effigy/Effigy.lua:111`, `/workspace_addons/LibGroup/LibGroup.lua:343`, `/workspace_addons/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace_addons/PlanB/PlanB.lua:35`, `/workspace_addons/RVMOD_Manager/RVMOD_Manager.lua:1199` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | AdvancedRenownTraining.Initialize, AdvancedRenownTraining.OnReload, AuraAddon.OnInitialize, AuraAddon.OnLoad, BagOMatic.init, BagOMatic.restore_filters |

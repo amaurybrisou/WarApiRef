@@ -104,8 +104,8 @@ Observed XML element type instantiated by 56 addons.
 
 ## Common Structural Child Elements
 
-- Text
-- TintColor
+- [Text](element_Text.md)
+- [TintColor](element_TintColor.md)
 
 ## Seen In
 

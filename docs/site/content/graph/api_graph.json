@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T06:52:23.744038743Z",
+  "generated_at": "2026-04-02T09:04:22.161519854Z",
   "nodes": [
     {
       "id": "data:table:ActiveWindow",
@@ -1232,16 +1232,6 @@
       "summary": "Observed shared global table or namespace surfaced in 1 addons."
     },
     {
-      "id": "data:constant:EA_Window_Macro",
-      "label": "EA_Window_Macro",
-      "type": "data_structure",
-      "category": "Constant",
-      "path": "globals/constants/constant_EA_Window_Macro.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
-    },
-    {
       "id": "data:table:EA_Window_Macro",
       "label": "EA_Window_Macro",
       "type": "data_structure",
@@ -1250,6 +1240,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed shared global table or namespace surfaced in 4 addons."
+    },
+    {
+      "id": "data:constant:EA_Window_Macro",
+      "label": "EA_Window_Macro",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Window_Macro.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
     },
     {
       "id": "data:constant:EA_Window_MacroDetailIconButton",
@@ -7812,6 +7812,36 @@
       "summary": "Observed XML element type instantiated by 3 addons."
     },
     {
+      "id": "ui:ActiveZoneOffset",
+      "label": "ActiveZoneOffset",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ActiveZoneOffset.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
+      "id": "ui:AnimFrame",
+      "label": "AnimFrame",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_AnimFrame.md",
+      "confidence": "HIGH",
+      "score": 98,
+      "summary": "Observed XML element type instantiated by 3 addons."
+    },
+    {
+      "id": "ui:AnimFrames",
+      "label": "AnimFrames",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_AnimFrames.md",
+      "confidence": "HIGH",
+      "score": 98,
+      "summary": "Observed XML element type instantiated by 3 addons."
+    },
+    {
       "id": "ui:AnimatedImage",
       "label": "AnimatedImage",
       "type": "ui_element",
@@ -7820,6 +7850,26 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 10 addons."
+    },
+    {
+      "id": "ui:AnimatedImages",
+      "label": "AnimatedImages",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_AnimatedImages.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
+      "id": "ui:Bottom",
+      "label": "Bottom",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Bottom.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
     },
     {
       "id": "ui:Button",
@@ -7852,6 +7902,46 @@
       "summary": "Observed XML element type instantiated by 1 addons."
     },
     {
+      "id": "ui:ColorSize",
+      "label": "ColorSize",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ColorSize.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
+      "id": "ui:ColorSpacing",
+      "label": "ColorSpacing",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ColorSpacing.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
+      "id": "ui:ColorTexCoords",
+      "label": "ColorTexCoords",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ColorTexCoords.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
+      "id": "ui:ColorTexDims",
+      "label": "ColorTexDims",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ColorTexDims.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
       "id": "ui:ComboBox",
       "label": "ComboBox",
       "type": "ui_element",
@@ -7867,6 +7957,36 @@
       "type": "ui_element",
       "category": "XML Element Type",
       "path": "xml/element_types/element_CooldownDisplay.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
+      "id": "ui:Disabled",
+      "label": "Disabled",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Disabled.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 20 addons."
+    },
+    {
+      "id": "ui:DisabledPressed",
+      "label": "DisabledPressed",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_DisabledPressed.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 8 addons."
+    },
+    {
+      "id": "ui:DownOffset",
+      "label": "DownOffset",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_DownOffset.md",
       "confidence": "MEDIUM",
       "score": 45,
       "summary": "Observed XML element type instantiated by 1 addons."
@@ -7890,6 +8010,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 24 addons."
+    },
+    {
+      "id": "ui:Eventhandlers",
+      "label": "Eventhandlers",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Eventhandlers.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
     },
     {
       "id": "ui:FullResizeImage",
@@ -7922,6 +8052,16 @@
       "summary": "Observed XML element type instantiated by 56 addons."
     },
     {
+      "id": "ui:Left",
+      "label": "Left",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Left.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
       "id": "ui:ListBox",
       "label": "ListBox",
       "type": "ui_element",
@@ -7930,6 +8070,36 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 20 addons."
+    },
+    {
+      "id": "ui:ListColumn",
+      "label": "ListColumn",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ListColumn.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Structural XML element inside ListColumns that maps a single field of each backing-table row entry to a named child window of the row template. Key attributes: `windowname` (child window target) and `variable` (field name in the row table)."
+    },
+    {
+      "id": "ui:ListColumns",
+      "label": "ListColumns",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ListColumns.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Structural XML container inside ListBox that groups one or more ListColumn declarations, mapping backing-table fields to row-template child windows."
+    },
+    {
+      "id": "ui:ListData",
+      "label": "ListData",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ListData.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Structural XML sub-element of ListBox that binds a list to a named Lua backing table. The `table` attribute names the Lua table supplying row data; the optional `populationfunction` attribute names a Lua callback for custom per-row population."
     },
     {
       "id": "ui:LogDisplay",
@@ -7952,6 +8122,116 @@
       "summary": "Observed XML element type instantiated by 3 addons."
     },
     {
+      "id": "ui:MenuButtonOffset",
+      "label": "MenuButtonOffset",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_MenuButtonOffset.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 8 addons."
+    },
+    {
+      "id": "ui:Middle",
+      "label": "Middle",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Middle.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 11 addons."
+    },
+    {
+      "id": "ui:Normal",
+      "label": "Normal",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Normal.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 24 addons."
+    },
+    {
+      "id": "ui:NormalHighlit",
+      "label": "NormalHighlit",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_NormalHighlit.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 23 addons."
+    },
+    {
+      "id": "ui:OverlayOffset",
+      "label": "OverlayOffset",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_OverlayOffset.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 7 addons."
+    },
+    {
+      "id": "ui:OverlaySize",
+      "label": "OverlaySize",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_OverlaySize.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 7 addons."
+    },
+    {
+      "id": "ui:OverlayTexCoords",
+      "label": "OverlayTexCoords",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_OverlayTexCoords.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 7 addons."
+    },
+    {
+      "id": "ui:Pressed",
+      "label": "Pressed",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Pressed.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 22 addons."
+    },
+    {
+      "id": "ui:PressedHighlit",
+      "label": "PressedHighlit",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_PressedHighlit.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 17 addons."
+    },
+    {
+      "id": "ui:ResizeImages",
+      "label": "ResizeImages",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ResizeImages.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 9 addons."
+    },
+    {
+      "id": "ui:Right",
+      "label": "Right",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Right.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
       "id": "ui:ScrollWindow",
       "label": "ScrollWindow",
       "type": "ui_element",
@@ -7972,6 +8252,26 @@
       "summary": "Observed XML element type instantiated by 17 addons."
     },
     {
+      "id": "ui:Sound",
+      "label": "Sound",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Sound.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 4 addons."
+    },
+    {
+      "id": "ui:Sounds",
+      "label": "Sounds",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Sounds.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 4 addons."
+    },
+    {
       "id": "ui:StatusBar",
       "label": "StatusBar",
       "type": "ui_element",
@@ -7980,6 +8280,86 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 2 addons."
+    },
+    {
+      "id": "ui:TexSlices",
+      "label": "TexSlices",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TexSlices.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 13 addons."
+    },
+    {
+      "id": "ui:Text",
+      "label": "Text",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Text.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 4 addons."
+    },
+    {
+      "id": "ui:TextColors",
+      "label": "TextColors",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TextColors.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 9 addons."
+    },
+    {
+      "id": "ui:TextOffset",
+      "label": "TextOffset",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TextOffset.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 15 addons."
+    },
+    {
+      "id": "ui:ThumbOffset",
+      "label": "ThumbOffset",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ThumbOffset.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
+      "id": "ui:TintColor",
+      "label": "TintColor",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TintColor.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed XML element type instantiated by 21 addons."
+    },
+    {
+      "id": "ui:Top",
+      "label": "Top",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Top.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
+      "id": "ui:UpOffset",
+      "label": "UpOffset",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_UpOffset.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
     },
     {
       "id": "ui:VerticalResizeImage",
@@ -8000,6 +8380,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 12 addons."
+    },
+    {
+      "id": "ui:Visual",
+      "label": "Visual",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Visual.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 1 addons."
     },
     {
       "id": "ui:Window",

@@ -10,7 +10,7 @@ Generated from addon-api rooted at `/workspace/docs/addon-api`. The source corpu
 | Window functions | 98 |
 | Global tables | 40 |
 | Constants | 105 |
-| XML element types | 21 |
+| XML element types | 60 |
 | XML handlers | 33 |
 | Game events | 156 |
 | Window events | 33 |
@@ -21,8 +21,8 @@ Generated from addon-api rooted at `/workspace/docs/addon-api`. The source corpu
 
 | Outcome | Count |
 | --- | --- |
-| High confidence platform | 797 |
-| Medium confidence candidates | 51 |
+| High confidence platform | 823 |
+| Medium confidence candidates | 64 |
 | Low confidence symbols | 4 |
 | Rejected addon-local | 56 |
 

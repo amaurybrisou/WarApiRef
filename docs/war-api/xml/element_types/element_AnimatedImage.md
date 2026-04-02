@@ -84,8 +84,8 @@ Observed XML element type instantiated by 10 addons.
 
 ## Common Structural Child Elements
 
-- AnimFrame
-- AnimFrames
+- [AnimFrame](element_AnimFrame.md)
+- [AnimFrames](element_AnimFrames.md)
 
 ## Seen In
 
