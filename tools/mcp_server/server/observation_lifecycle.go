@@ -655,8 +655,12 @@ func buildPromotionFragment(rec lifecycleRecord, entryID, promotedAt string) str
 		}
 	}
 	if sourceAddon != "" || overallConf != "" {
+		promotedDate := promotedAt
+		if len(promotedDate) > 10 {
+			promotedDate = promotedDate[:10]
+		}
 		sb.WriteString(fmt.Sprintf("> Source: %s | Confidence: %s | Promoted: %s\n\n",
-			sourceAddon, overallConf, promotedAt[:10]))
+			sourceAddon, overallConf, promotedDate))
 	}
 
 	if claims, ok := obs["claims"].([]any); ok {
