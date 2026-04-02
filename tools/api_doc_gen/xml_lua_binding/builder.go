@@ -100,10 +100,37 @@ func BuildBindings(xmlCorpus *xml_structure.XMLCorpus, luaIndex *LuaFunctionInde
 		}
 	}
 
+	// Compute binding statistics
+	result.computeStatistics()
+
 	return result
 }
 
-// resolveHandlerBinding attempts to find the Lua function referenced by an XML handler.
+// computeStatistics populates the summary statistics on the binding set.
+func (bs *XMLLuaBindingSet) computeStatistics() {
+	events := make(map[string]bool)
+	for _, b := range bs.HandlerBindings {
+		bs.Statistics.TotalHandlers++
+		events[b.Event] = true
+		if b.Resolved {
+			bs.Statistics.ResolvedHandlers++
+			switch b.Confidence {
+			case "HIGH":
+				bs.Statistics.HighConfidence++
+			case "MEDIUM":
+				bs.Statistics.MediumConfidence++
+			default:
+				bs.Statistics.LowConfidence++
+			}
+		} else {
+			bs.Statistics.LowConfidence++
+		}
+	}
+	bs.Statistics.UnresolvedCount = len(bs.UnresolvedHandlers)
+	bs.Statistics.UniqueEvents = len(events)
+	bs.Statistics.UniqueElementTypes = len(bs.ElementTypeBindings)
+	bs.Statistics.ManipulationCount = len(bs.FrameManipulations)
+}
 func resolveHandlerBinding(node *xml_structure.XMLElement, handler xml_structure.XMLHandlerDecl, luaIndex *LuaFunctionIndex) *HandlerBinding {
 	binding := &HandlerBinding{
 		Addon:       node.Addon,
@@ -167,12 +194,60 @@ func findFrameManipulations(node *xml_structure.XMLElement, luaIndex *LuaFunctio
 
 	// Window manipulation API patterns that take a frame name as argument
 	windowAPIs := map[string]bool{
-		"CreateWindowFromTemplate": true,
-		"CreateWindow":             true,
-		"DestroyWindow":            true,
-		"WindowSetShowing":         true,
-		"WindowGetId":              true,
-		"WindowSetId":              true,
+		"CreateWindowFromTemplate":  true,
+		"CreateWindow":              true,
+		"DestroyWindow":             true,
+		"DoesWindowExist":           true,
+		"WindowSetShowing":          true,
+		"WindowGetShowing":          true,
+		"WindowGetId":               true,
+		"WindowSetId":               true,
+		"WindowSetAlpha":            true,
+		"WindowGetAlpha":            true,
+		"WindowSetDimensions":       true,
+		"WindowGetDimensions":       true,
+		"WindowSetTintColor":        true,
+		"WindowGetTintColor":        true,
+		"WindowSetScale":            true,
+		"WindowSetLayer":            true,
+		"WindowSetHandleInput":      true,
+		"WindowSetParent":           true,
+		"WindowGetParent":           true,
+		"WindowGetScreenPosition":   true,
+		"WindowClearAnchors":        true,
+		"WindowAddAnchor":           true,
+		"WindowForceProcessAnchors": true,
+		"WindowSetOffsetFromParent": true,
+		"WindowSetMovable":          true,
+		"WindowSetResizable":        true,
+		"LabelSetText":              true,
+		"LabelGetText":              true,
+		"LabelSetTextColor":         true,
+		"ButtonSetText":             true,
+		"ButtonGetText":             true,
+		"ButtonSetStayDownFlag":     true,
+		"ButtonSetDisabledFlag":     true,
+		"ButtonSetPressedFlag":      true,
+		"DynamicImageSetTexture":    true,
+		"DynamicImageSetTextureSlice": true,
+		"TextEditBoxGetText":        true,
+		"TextEditBoxSetText":        true,
+		"TextEditBoxSetFocus":       true,
+		"ComboBoxSetSelectedIndex":  true,
+		"ComboBoxGetSelectedIndex":  true,
+		"ComboBoxAddMenuItem":       true,
+		"ComboBoxClearMenuItems":    true,
+		"ScrollWindowSetOffset":     true,
+		"ScrollWindowGetOffset":     true,
+		"StatusBarSetCurrentValue":  true,
+		"StatusBarSetMaximumValue":  true,
+		"StatusBarGetCurrentValue":  true,
+		"SliderBarSetCurrentPosition": true,
+		"SliderBarGetCurrentPosition": true,
+		"ListBoxSetDisplay":         true,
+		"ListBoxGetItemCount":       true,
+		"ListBoxGetSelectedRow":     true,
+		"ListBoxSetSelectedRow":     true,
 	}
 
 	for _, def := range luaIndex.ByQualifiedName {

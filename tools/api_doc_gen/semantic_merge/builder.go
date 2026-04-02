@@ -36,18 +36,32 @@ func BuildEnrichedCatalog(
 
 		// Parents
 		for parentTag, count := range profile.ParentTags {
+			confidence := "LOW"
+			if count >= 5 {
+				confidence = "HIGH"
+			} else if count >= 2 {
+				confidence = "MEDIUM"
+			}
 			elem.Parents = append(elem.Parents, ElementRef{
-				Tag:   parentTag,
-				Count: count,
+				Tag:        parentTag,
+				Count:      count,
+				Confidence: confidence,
 			})
 		}
 		sortElementRefs(elem.Parents)
 
 		// Named children
 		for childTag, count := range profile.NamedChildren {
+			confidence := "LOW"
+			if count >= 5 {
+				confidence = "HIGH"
+			} else if count >= 2 {
+				confidence = "MEDIUM"
+			}
 			elem.Children = append(elem.Children, ElementRef{
-				Tag:   childTag,
-				Count: count,
+				Tag:        childTag,
+				Count:      count,
+				Confidence: confidence,
 			})
 		}
 		sortElementRefs(elem.Children)
@@ -160,6 +174,7 @@ func BuildEnrichedCatalog(
 		// Aggregate API calls from handlers per element type
 		handlerCallsByType := make(map[string]map[string]int) // tag → api_call → count
 		handlerCallEventsByType := make(map[string]map[string]map[string]bool) // tag → api_call → events
+		handlerCallCategoryByType := make(map[string]map[string]string) // tag → api_call → category
 
 		for key, ha := range luaSemantic.HandlerAnalyses {
 			parts := strings.SplitN(key, "|", 3)
@@ -180,6 +195,9 @@ func BuildEnrichedCatalog(
 			if handlerCallEventsByType[elemTag] == nil {
 				handlerCallEventsByType[elemTag] = make(map[string]map[string]bool)
 			}
+			if handlerCallCategoryByType[elemTag] == nil {
+				handlerCallCategoryByType[elemTag] = make(map[string]string)
+			}
 
 			// Collect API calls from this handler
 			if ha.FunctionAnalysis != nil {
@@ -190,6 +208,7 @@ func BuildEnrichedCatalog(
 							handlerCallEventsByType[elemTag][call.Callee] = make(map[string]bool)
 						}
 						handlerCallEventsByType[elemTag][call.Callee][event] = true
+						handlerCallCategoryByType[elemTag][call.Callee] = call.Category
 					}
 				}
 			}
@@ -223,24 +242,6 @@ func BuildEnrichedCatalog(
 						break
 					}
 				}
-
-				// Store handler argument patterns
-				if len(ha.InferredHandlerArgs) > 0 {
-					pattern := HandlerArgPattern{
-						Event:      event,
-						Confidence: ha.HandlerConfidence,
-						Source:     "xml_handler",
-					}
-					for _, param := range ha.InferredHandlerArgs {
-						pattern.ExpectedParams = append(pattern.ExpectedParams, ExpectedParam{
-							Position: param.Position,
-							Name:     param.Name,
-							Type:     param.Type,
-							Role:     param.Role,
-						})
-					}
-					elem.HandlerArgPatterns = append(elem.HandlerArgPatterns, pattern)
-				}
 			}
 		}
 
@@ -255,13 +256,68 @@ func BuildEnrichedCatalog(
 						}
 						sort.Strings(fromEvents)
 					}
+					category := ""
+					if cat, ok := handlerCallCategoryByType[tag][apiCall]; ok {
+						category = cat
+					}
 					elem.LuaAPICalls = append(elem.LuaAPICalls, LuaAPICallRef{
 						Function:   apiCall,
 						Count:      count,
+						Category:   category,
 						FromEvents: fromEvents,
 					})
 				}
 				sortLuaAPICallRefs(elem.LuaAPICalls)
+			}
+		}
+
+		// Deduplicate handler arg patterns: one pattern per event per element type
+		// (not per handler binding). This prevents the same OnLButtonUp signature
+		// from appearing 7 times on a Button page.
+		handlerArgsByTypeEvent := make(map[string]map[string]*HandlerArgPattern) // tag → event → pattern
+		for key, ha := range luaSemantic.HandlerAnalyses {
+			parts := strings.SplitN(key, "|", 3)
+			if len(parts) < 3 {
+				continue
+			}
+			event := parts[2]
+			elemTag := ha.FrameType
+			if elemTag == "" {
+				continue
+			}
+
+			if handlerArgsByTypeEvent[elemTag] == nil {
+				handlerArgsByTypeEvent[elemTag] = make(map[string]*HandlerArgPattern)
+			}
+
+			// Only store the best (highest confidence) pattern per event
+			existing, exists := handlerArgsByTypeEvent[elemTag][event]
+			if !exists || confidenceRank(ha.HandlerConfidence) > confidenceRank(existing.Confidence) {
+				pattern := &HandlerArgPattern{
+					Event:      event,
+					Confidence: ha.HandlerConfidence,
+					Source:     "xml_handler",
+				}
+				for _, param := range ha.InferredHandlerArgs {
+					pattern.ExpectedParams = append(pattern.ExpectedParams, ExpectedParam{
+						Position: param.Position,
+						Name:     param.Name,
+						Type:     param.Type,
+						Role:     param.Role,
+					})
+				}
+				handlerArgsByTypeEvent[elemTag][event] = pattern
+			}
+		}
+
+		// Apply deduplicated handler arg patterns to elements
+		for tag, eventPatterns := range handlerArgsByTypeEvent {
+			if elem, ok := catalog.Elements[tag]; ok {
+				elem.HandlerArgPatterns = nil // Clear any previously accumulated patterns
+				for _, pattern := range eventPatterns {
+					elem.HandlerArgPatterns = append(elem.HandlerArgPatterns, *pattern)
+				}
+				sortHandlerArgPatterns(elem.HandlerArgPatterns)
 			}
 		}
 	}
@@ -402,4 +458,23 @@ func sortLuaAPICallRefs(refs []LuaAPICallRef) {
 		}
 		return refs[i].Function < refs[j].Function
 	})
+}
+
+func sortHandlerArgPatterns(patterns []HandlerArgPattern) {
+	sort.Slice(patterns, func(i, j int) bool {
+		return patterns[i].Event < patterns[j].Event
+	})
+}
+
+func confidenceRank(c string) int {
+	switch c {
+	case "HIGH":
+		return 3
+	case "MEDIUM":
+		return 2
+	case "LOW":
+		return 1
+	default:
+		return 0
+	}
 }

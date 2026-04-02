@@ -18,10 +18,24 @@ func runPhasedPipeline(elementTypes []ElementTypeSymbol, source SourceModel) []E
 	// Build Lua function definitions from FunctionDocs for Phase 2.
 	luaDefs := synthesizeLuaDefs(source)
 
+	// Convert pre-resolved bindings from SourceModel.
+	var preResolved []semantic_merge.PreResolvedBinding
+	for _, b := range source.Bindings {
+		preResolved = append(preResolved, semantic_merge.PreResolvedBinding{
+			Addon:       b.Addon,
+			Frame:       b.Frame,
+			Event:       b.Event,
+			XMLFunction: b.XMLFunction,
+			LuaFunction: b.LuaFunction,
+			Resolved:    b.Resolved,
+		})
+	}
+
 	// Run the full 4-phase pipeline.
 	output := semantic_merge.RunPipeline(&semantic_merge.PipelineInput{
-		XMLTrees:     trees,
-		LuaFunctions: luaDefs,
+		XMLTrees:            trees,
+		LuaFunctions:        luaDefs,
+		PreResolvedBindings: preResolved,
 	})
 
 	// Enrich element types from the Phase 4 catalog.
@@ -85,6 +99,21 @@ func synthesizeXMLTrees(source SourceModel) []*xml_structure.XMLTree {
 				for _, k := range attrKeys {
 					childElem.Attributes[k] = ""
 				}
+			}
+			elem.Children = append(elem.Children, childElem)
+		}
+
+		// Synthesize named child element types
+		for _, childType := range frame.ChildElementTypes {
+			childElem := &xml_structure.XMLElement{
+				Tag:             childType,
+				Addon:           frame.Addon,
+				File:            fileKey,
+				Parent:          elem,
+				IsNamed:         true, // Named child placeholder
+				Attributes:      make(map[string]string),
+				ParentFrameName: frame.Name,
+				ParentFrameType: frame.Type,
 			}
 			elem.Children = append(elem.Children, childElem)
 		}

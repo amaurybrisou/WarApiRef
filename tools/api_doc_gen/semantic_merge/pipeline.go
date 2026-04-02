@@ -16,6 +16,22 @@ type PipelineInput struct {
 
 	// Lua function definitions for Phase 2 correlation
 	LuaFunctions []xml_lua_binding.LuaFunctionDef
+
+	// PreResolvedBindings provides pre-existing XML↔Lua binding resolution data
+	// from the platform SourceModel.Bindings, enabling Phase 2 to start with
+	// already-known binding evidence.
+	PreResolvedBindings []PreResolvedBinding
+}
+
+// PreResolvedBinding is a pre-existing XML↔Lua binding from the SourceModel,
+// providing additional evidence for Phase 2 correlation.
+type PreResolvedBinding struct {
+	Addon       string
+	Frame       string
+	Event       string
+	XMLFunction string
+	LuaFunction string
+	Resolved    bool
 }
 
 // PipelineOutput contains the results of all four phases.
@@ -49,6 +65,9 @@ func RunPipeline(input *PipelineInput) *PipelineOutput {
 	luaIndex := buildLuaIndex(input.LuaFunctions)
 	output.Bindings = xml_lua_binding.BuildBindings(output.XMLCorpus, luaIndex)
 
+	// Inject pre-resolved bindings from the SourceModel as additional evidence
+	injectPreResolvedBindings(output.Bindings, input.PreResolvedBindings, luaIndex)
+
 	// Phase 3: Deep semantic analysis of correlated Lua functions
 	output.LuaSemantic = lua_semantic.BuildSemanticCorpus(output.Bindings, luaIndex)
 
@@ -56,6 +75,58 @@ func RunPipeline(input *PipelineInput) *PipelineOutput {
 	output.Catalog = BuildEnrichedCatalog(output.XMLCorpus, output.Bindings, output.LuaSemantic)
 
 	return output
+}
+
+// injectPreResolvedBindings adds evidence from platform-level binding data
+// that the Phase 2 tree walk may have missed (e.g., bindings established
+// via Lua RegisterEventHandler calls rather than XML EventHandler declarations).
+func injectPreResolvedBindings(bindings *xml_lua_binding.XMLLuaBindingSet, preResolved []PreResolvedBinding, luaIndex *xml_lua_binding.LuaFunctionIndex) {
+	if len(preResolved) == 0 || bindings == nil {
+		return
+	}
+
+	// Build a set of already-known bindings to avoid duplicates
+	existing := make(map[string]bool)
+	for _, b := range bindings.HandlerBindings {
+		key := b.Addon + "|" + b.FrameName + "|" + b.Event + "|" + b.LuaFunction
+		existing[key] = true
+	}
+
+	for _, prb := range preResolved {
+		key := prb.Addon + "|" + prb.Frame + "|" + prb.Event + "|" + prb.LuaFunction
+		if existing[key] {
+			continue
+		}
+
+		binding := &xml_lua_binding.HandlerBinding{
+			Addon:       prb.Addon,
+			FrameName:   prb.Frame,
+			Event:       prb.Event,
+			LuaFunction: prb.LuaFunction,
+			Resolved:    prb.Resolved,
+			Confidence:  "MEDIUM", // pre-resolved from platform analysis
+		}
+
+		// Try to resolve the function in the lua index for additional data
+		if !binding.Resolved {
+			qualifiedKey := prb.Addon + "." + prb.LuaFunction
+			if def, ok := luaIndex.ByQualifiedName[qualifiedKey]; ok {
+				binding.Resolved = true
+				binding.LuaFile = def.File
+				binding.LuaLine = def.Line
+				binding.LuaParams = def.Params
+				binding.LuaIsLocal = def.Local
+				binding.LuaQualifiedName = def.QualifiedName
+				binding.Confidence = "MEDIUM"
+			}
+		}
+
+		bindings.HandlerBindings = append(bindings.HandlerBindings, binding)
+
+		// Aggregate into element type bindings
+		// Frame type is unknown from pre-resolved data, so skip element type aggregation
+		// (it will be picked up if the frame exists in the XML corpus)
+	}
 }
 
 // buildLuaIndex creates the LuaFunctionIndex from a slice of definitions.

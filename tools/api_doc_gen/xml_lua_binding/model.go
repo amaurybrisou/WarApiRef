@@ -27,6 +27,22 @@ type XMLLuaBindingSet struct {
 
 	// UnresolvedHandlers lists handler declarations where the Lua function was not found.
 	UnresolvedHandlers []*UnresolvedHandler
+
+	// Statistics provides summary statistics about the binding process.
+	Statistics BindingStatistics
+}
+
+// BindingStatistics tracks resolution success rates and binding quality.
+type BindingStatistics struct {
+	TotalHandlers     int // Total XML handler declarations processed
+	ResolvedHandlers  int // Successfully resolved to Lua functions
+	UnresolvedCount   int // Handler declarations with no Lua match
+	HighConfidence    int // HIGH confidence resolutions
+	MediumConfidence  int // MEDIUM confidence resolutions
+	LowConfidence     int // LOW confidence resolutions (including unresolved)
+	UniqueEvents      int // Distinct event names seen
+	UniqueElementTypes int // Distinct element types with handlers
+	ManipulationCount int // Frame manipulation patterns found
 }
 
 // HandlerBinding is a resolved link between an XML EventHandler declaration
