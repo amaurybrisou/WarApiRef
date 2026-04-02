@@ -114,14 +114,10 @@ func runAddonMode(args []string) error {
 }
 
 func runPlatformMode(args []string) error {
-	// Parse optional --source-root flag before positional arguments.
-	fs := flag.NewFlagSet("platform", flag.ContinueOnError)
-	fs.SetOutput(os.Stderr)
-	sourceRootFlag := fs.String("source-root", "", "path to addon source root for source-first pipeline (recommended)")
-	if err := fs.Parse(args); err != nil {
+	positional, sourceRootArg, err := extractPlatformArgs(args)
+	if err != nil {
 		return err
 	}
-	positional := fs.Args()
 	if len(positional) < 2 {
 		return fmt.Errorf("usage: go run tools/api_doc_gen/main.go generate platform <addonApiRoot> <outputRoot> [--source-root <sourceRoot>]")
 	}
@@ -135,8 +131,8 @@ func runPlatformMode(args []string) error {
 	}
 
 	var sourceRoot string
-	if *sourceRootFlag != "" {
-		sourceRoot, err = resolveExistingDirectory(*sourceRootFlag)
+	if sourceRootArg != "" {
+		sourceRoot, err = resolveExistingDirectory(sourceRootArg)
 		if err != nil {
 			return fmt.Errorf("resolve source root: %w", err)
 		}
@@ -148,6 +144,42 @@ func runPlatformMode(args []string) error {
 	}
 	corpus := platform.BuildWithOptions(source, platform.BuildOptions{SourceRoot: sourceRoot})
 	return platform.Generate(outputRoot, corpus)
+}
+
+func extractPlatformArgs(args []string) ([]string, string, error) {
+	positional := make([]string, 0, len(args))
+	sourceRoot := ""
+
+	for i := 0; i < len(args); i++ {
+		arg := strings.TrimSpace(args[i])
+		if arg == "" {
+			continue
+		}
+
+		if arg == "--source-root" {
+			if i+1 >= len(args) {
+				return nil, "", fmt.Errorf("--source-root requires a value")
+			}
+			i++
+			sourceRoot = strings.TrimSpace(args[i])
+			if sourceRoot == "" {
+				return nil, "", fmt.Errorf("--source-root requires a non-empty value")
+			}
+			continue
+		}
+
+		if strings.HasPrefix(arg, "--source-root=") {
+			sourceRoot = strings.TrimSpace(strings.TrimPrefix(arg, "--source-root="))
+			if sourceRoot == "" {
+				return nil, "", fmt.Errorf("--source-root requires a non-empty value")
+			}
+			continue
+		}
+
+		positional = append(positional, arg)
+	}
+
+	return positional, sourceRoot, nil
 }
 
 func runSiteMode(args []string) error {

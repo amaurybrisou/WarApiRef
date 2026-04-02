@@ -1,4 +1,5 @@
 SHELL := /bin/sh
+SOURCE_ROOT := /workspace/data/raw
 
 .PHONY: build generate-addon generate-platform generate-site preview up down build-mcp run-mcp up-mcp test-mcp
 
@@ -6,10 +7,10 @@ build:
 	docker compose build api-doc-gen docs-site mcp-server
 
 generate-addon:
-	docker compose run --rm api-doc-gen generate addon /workspace/data/raw /workspace/docs/addon-api
+	docker compose run --rm api-doc-gen generate addon $(SOURCE_ROOT) /workspace/docs/addon-api
 
 generate-platform:
-	docker compose run --rm api-doc-gen generate platform /workspace/docs/addon-api /workspace/docs/war-api
+	docker compose run --rm api-doc-gen generate platform /workspace/docs/addon-api /workspace/docs/war-api --source-root $(SOURCE_ROOT)
 
 generate-site:
 	docker compose run --rm api-doc-gen generate site /workspace/docs/war-api /workspace/docs/site/content
