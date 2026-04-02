@@ -521,6 +521,9 @@ func writeFrames(outputRoot string, corpus graph.Corpus) error {
 				}
 			}
 			content += md.Section("Structural Child Types", md.BulletList(structuralChildLines))
+			if frame.CompositionSnippet != "" {
+				content += md.Section("Composition Pattern", "```xml\n"+frame.CompositionSnippet+"\n```\n")
+			}
 			content += md.Section("Attributes", md.BulletList(attributeLines(frame.Attributes)))
 			content += md.Section("Handlers", md.Table([]string{"Event", "Function"}, handlerRows(handlerByFrame[addon.Name+"|"+frame.Name])))
 			path := filepath.Join(outputRoot, "xml", "frames", docName(frame.Addon, frame.Name))
@@ -554,6 +557,9 @@ func writeTemplates(outputRoot string, corpus graph.Corpus) error {
 				}
 			}
 			content += md.Section("Structural Child Types", md.BulletList(structuralChildLines))
+			if frame.CompositionSnippet != "" {
+				content += md.Section("Composition Pattern", "```xml\n"+frame.CompositionSnippet+"\n```\n")
+			}
 			path := filepath.Join(outputRoot, "xml", "templates", docName(frame.Addon, frame.Name))
 			if err := writeFile(path, content); err != nil {
 				return err

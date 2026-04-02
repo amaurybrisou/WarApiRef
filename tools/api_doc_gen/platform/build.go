@@ -173,6 +173,7 @@ type elementAccumulator struct {
 	Handlers   map[string]int
 	Inherits   map[string]int
 	ChildTypes map[string]int // structural child element types observed inside this element type
+	Snippets   []string       // CompositionSnippet candidates from real frames
 	Examples   []UsageExample
 }
 
@@ -319,6 +320,10 @@ func Build(source SourceModel) Corpus {
 			Snippet: frame.Type + " " + frame.Name,
 			Source:  frame.Source,
 		})
+		// Collect etree-derived composition snippets for later selection.
+		if frame.CompositionSnippet != "" {
+			acc.Snippets = append(acc.Snippets, frame.CompositionSnippet)
+		}
 
 		if shouldKeepConstant(frame.Inherits, frame.Addon, nil) {
 			constantAcc := ensureConstantAccumulator(constants, frame.Inherits)
@@ -965,6 +970,7 @@ func finalizeElementSymbols(values map[string]*elementAccumulator, ctx scoringCo
 			CommonHandlers:   topKeysByCount(acc.Handlers, 12),
 			CommonInherits:   topKeysByCount(acc.Inherits, 12),
 			CommonChildTypes: topKeysByCount(acc.ChildTypes, 8),
+			CompositionSnippet: bestCompositionSnippet(acc.Snippets),
 			Examples:         firstUsageExamples(acc.Examples, 6),
 			Notes:            nil,
 		})
@@ -2232,6 +2238,29 @@ func describeElement(name string, addonCount int) string {
 		return "Structural XML element inside ListColumns that maps a single field of each backing-table row entry to a named child window of the row template. Key attributes: `windowname` (child window target) and `variable` (field name in the row table)."
 	}
 	return fmt.Sprintf("Observed XML element type instantiated by %d addons.", addonCount)
+}
+
+// bestCompositionSnippet picks the most representative composition snippet from
+// all observed frames of an element type. "Most representative" means the one
+// with the most XML structure lines (more sub-elements visible), which tends to
+// come from the most fully-populated real usage.
+func bestCompositionSnippet(snippets []string) string {
+	if len(snippets) == 0 {
+		return ""
+	}
+	best := ""
+	bestLines := 0
+	for _, s := range snippets {
+		n := strings.Count(s, "\n")
+		if n > bestLines {
+			bestLines = n
+			best = s
+		}
+	}
+	if best == "" {
+		return snippets[0]
+	}
+	return best
 }
 
 func describeLifecycle(phase string, acc *lifecycleAccumulator) string {

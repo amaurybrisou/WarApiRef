@@ -92,6 +92,7 @@ type Frame struct {
 	Children                 []string
 	StructuralChildTypes     []string            // element type tags that appear as unnamed structural children (e.g. ListData, ListColumns)
 	StructuralChildAttrKeys  map[string][]string // attribute keys per structural child type, e.g. {"ListData": ["populationfunction", "table"]}
+	CompositionSnippet       string              // etree-derived XML snippet showing the structural hierarchy of unnamed children
 	Inherits                 string
 	Attributes               map[string]string
 	Template                 bool

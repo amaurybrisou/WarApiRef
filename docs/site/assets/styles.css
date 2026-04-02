@@ -329,9 +329,9 @@ main {
 .graph-controls button { margin: 0; padding: 6px 12px; font-size: .85rem; white-space: nowrap; }
 
 .graph-viewport { position: relative; }
-
-#graphSvg { display: block; width: 100%; height: 600px; background: #1a1812; cursor: grab; }
-#graphSvg:active { cursor: grabbing; }
+#graphSvg        { display: none; width: 100%; height: 600px; background: #1a1812; }
+#cyContainer     { display: none; width: 100%; height: 600px; background: #1a1812; cursor: grab; }
+#cyContainer:active { cursor: grabbing; }
 
 .graph-tooltip {
   position:       absolute;
@@ -364,6 +364,7 @@ main {
   .nav-tree  { max-height: 260px; }
   main       { padding: 12px; }
   #graphSvg  { height: 420px; }
+  #cyContainer { height: 420px; }
 
   .mcp-console-controls {
     grid-template-columns: 1fr;

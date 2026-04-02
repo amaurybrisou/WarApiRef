@@ -20,8 +20,7 @@ const mcpConsoleOut   = document.getElementById("mcpConsoleOutput");
 const DEFAULT_PATH = "index.md";
 let searchEntries  = [];
 let graphData      = null;
-let d3sim          = null;
-let d3zoom         = null;
+let cyInstance     = null;   // Cytoscape instance
 
 // --- Routing helpers ----------------------------------------------------------
 function activePath() {
@@ -255,7 +254,7 @@ async function loadDoc(path) {
   });
 }
 
-// --- Graph --------------------------------------------------------------------
+// --- Graph (Cytoscape.js) ----------------------------------------------------
 async function loadGraph() {
   try {
     graphData = await loadJSON("content/graph/api_graph.json");
@@ -284,56 +283,50 @@ function matchesKind(nodeType, selectedKind) {
   return nodeType === selectedKind;
 }
 
-function capNodes(nodes, maxNodes) {
+function capNodesDiverse(nodes, maxNodes) {
   if (nodes.length <= maxNodes) return nodes;
-
-  // In all-types mode, preserve type diversity so one type does not dominate the first N entries.
   const grouped = new Map();
   nodes.forEach((n) => {
     const bucket = grouped.get(n.type) || [];
     bucket.push(n);
     grouped.set(n.type, bucket);
   });
-
   const types = [...grouped.keys()];
   if (types.length <= 1) return nodes.slice(0, maxNodes);
-
   const result = [];
   let remaining = maxNodes;
   let active = types.filter((t) => (grouped.get(t) || []).length > 0);
-
   while (remaining > 0 && active.length > 0) {
-    for (let i = 0; i < active.length && remaining > 0; i += 1) {
-      const t = active[i];
-      const arr = grouped.get(t);
+    for (let i = 0; i < active.length && remaining > 0; i++) {
+      const arr = grouped.get(active[i]);
       if (!arr || arr.length === 0) continue;
       result.push(arr.shift());
-      remaining -= 1;
+      remaining--;
     }
     active = active.filter((t) => (grouped.get(t) || []).length > 0);
   }
-
   return result;
 }
 
 function normalizeGraphLinks(data) {
   if (!data) return [];
-
-  if (Array.isArray(data.links) && data.links.length > 0) {
-    return data.links;
-  }
-
+  if (Array.isArray(data.links) && data.links.length > 0) return data.links;
   if (Array.isArray(data.edges) && data.edges.length > 0) {
     return data.edges.map((e) => ({
       source: e.source?.id ?? e.source ?? e.from,
       target: e.target?.id ?? e.target ?? e.to,
-      type: e.type || "related",
+      type:   e.type || "related",
       weight: e.weight || 1,
     }));
   }
-
   return [];
 }
+
+const EDGE_LINE_COLOR = {
+  commonly_used_with: "#c8a070",
+  triggers:           "#2ea87e",
+  structural_child_of:"#a08030",
+};
 
 function drawGraph(filterText, filterKind) {
   if (!graphData || !Array.isArray(graphData.nodes)) return;
@@ -341,181 +334,217 @@ function drawGraph(filterText, filterKind) {
   const q = (filterText || "").toLowerCase().trim();
   const k = filterKind || "";
 
-  // -- filter & cap ----------------------------------------------------------
   const filteredNodes = graphData.nodes.filter((n) => {
     if (!matchesKind(n.type, k)) return false;
     if (q && !n.label.toLowerCase().includes(q)) return false;
     return true;
   });
 
-  const visibleNodes = capNodes(filteredNodes, 300);
-  const allLinks = normalizeGraphLinks(graphData);
-
-  const visibleIds = new Set(visibleNodes.map((n) => n.id));
+  const visibleNodes = capNodesDiverse(filteredNodes, 300);
+  const allLinks     = normalizeGraphLinks(graphData);
+  const visibleIds   = new Set(visibleNodes.map((n) => n.id));
   const visibleLinks = allLinks.filter((l) => {
     const sid = l.source?.id ?? l.source;
     const tid = l.target?.id ?? l.target;
     return visibleIds.has(sid) && visibleIds.has(tid);
   }).slice(0, 800);
 
-  // -- SVG setup -------------------------------------------------------------
-  const svg = d3.select(graphSvg);
-  svg.selectAll("*").remove();
-  if (d3sim) { d3sim.stop(); d3sim = null; }
-
-  const W = graphSvg.clientWidth  || 900;
-  const H = graphSvg.clientHeight || 600;
-  svg.attr("viewBox", `0 0 ${W} ${H}`);
-
-  // Subtle dot-grid background
-  const defs = svg.append("defs");
-  const pat  = defs.append("pattern").attr("id", "dot").attr("width", 22).attr("height", 22).attr("patternUnits", "userSpaceOnUse");
-  pat.append("circle").attr("cx", 11).attr("cy", 11).attr("r", 0.8).attr("fill", "rgba(160,145,110,.25)");
-  svg.append("rect").attr("width", "100%").attr("height", "100%").attr("fill", "url(#dot)");
-
-  // Zoom + pan
-  const g = svg.append("g");
-  d3zoom = d3.zoom().scaleExtent([0.05, 8]).on("zoom", (e) => g.attr("transform", e.transform));
-  svg.call(d3zoom);
-
-  // -- Data prep -------------------------------------------------------------
-  const nodes    = visibleNodes.map((n) => ({ ...n }));
-  const nodeById = new Map(nodes.map((n) => [n.id, n]));
-  const links    = visibleLinks.map((l) => ({
-    source: nodeById.get(l.source?.id ?? l.source) ?? (l.source?.id ?? l.source),
-    target: nodeById.get(l.target?.id ?? l.target) ?? (l.target?.id ?? l.target),
-    type:   l.type || "related",
-  }));
-
-  // Degree-based sizing
+  // Degree for label display.
   const degMap = new Map();
-  links.forEach((l) => {
-    const s = typeof l.source === "object" ? l.source.id : l.source;
-    const t = typeof l.target === "object" ? l.target.id : l.target;
+  visibleLinks.forEach((l) => {
+    const s = l.source?.id ?? l.source;
+    const t = l.target?.id ?? l.target;
     degMap.set(s, (degMap.get(s) || 0) + 1);
     degMap.set(t, (degMap.get(t) || 0) + 1);
   });
-  const nodeR = (d) => 4 + Math.min((degMap.get(d.id) || 0) * 0.45, 8);
-
-  // Top-N by degree get permanent labels
   const topLabels = new Set(
-    [...degMap.entries()].sort((a, b) => b[1] - a[1]).slice(0, 28).map(([id]) => id)
+    [...degMap.entries()].sort((a, b) => b[1] - a[1]).slice(0, 30).map(([id]) => id)
   );
 
-  // -- Render links ----------------------------------------------------------
-  const linkEl = g.append("g").selectAll("line").data(links).join("line")
-    .attr("stroke", "#4a4030")
-    .attr("stroke-opacity", 0.38)
-    .attr("stroke-width", 1);
-
-  // -- Drag ------------------------------------------------------------------
-  const drag = d3.drag()
-    .on("start", (e, d) => { if (!e.active) d3sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
-    .on("drag",  (e, d) => { d.fx = e.x; d.fy = e.y; })
-    .on("end",   (e, d) => { if (!e.active) d3sim.alphaTarget(0); d.fx = null; d.fy = null; });
-
-  // -- Render nodes ----------------------------------------------------------
-  const nodeEl = g.append("g").selectAll("circle").data(nodes).join("circle")
-    .attr("r",            nodeR)
-    .attr("fill",         (d) => kindColor(d.type))
-    .attr("stroke",       "rgba(240,235,220,.55)")
-    .attr("stroke-width", 1.2)
-    .attr("cursor",       "pointer")
-    .call(drag);
-
-  // -- Permanent labels for high-degree nodes -----------------------------
-  const labelEl = g.append("g").selectAll("text")
-    .data(nodes.filter((n) => topLabels.has(n.id))).join("text")
-    .attr("fill",             "#cfc8b8")
-    .attr("font-size",        9.5)
-    .attr("font-family",      "Inter, system-ui, sans-serif")
-    .attr("text-anchor",      "middle")
-    .attr("pointer-events",   "none")
-    .text((d) => d.label.length > 22 ? d.label.slice(0, 20) + "..." : d.label);
-
-  // -- Neighbour highlight on click ------------------------------------------
-  function neighbours(id) {
-    const s = new Set([id]);
-    links.forEach((l) => {
-      const sid = l.source?.id ?? l.source;
-      const tid = l.target?.id ?? l.target;
-      if (sid === id) s.add(tid);
-      if (tid === id) s.add(sid);
+  // Build Cytoscape elements.
+  const cyElements = [];
+  visibleNodes.forEach((n) => {
+    const deg  = degMap.get(n.id) || 0;
+    const size = 18 + Math.min(deg * 2, 22);
+    cyElements.push({
+      group: "nodes",
+      data: {
+        id:         n.id,
+        label:      topLabels.has(n.id) ? (n.label.length > 22 ? n.label.slice(0, 20) + "…" : n.label) : "",
+        fullLabel:  n.label,
+        type:       n.type,
+        category:   n.category || n.type,
+        confidence: n.confidence,
+        summary:    n.summary || "",
+        path:       n.path || "",
+        color:      kindColor(n.type),
+        size,
+      },
     });
-    return s;
+  });
+  visibleLinks.forEach((l, i) => {
+    const sid = l.source?.id ?? l.source;
+    const tid = l.target?.id ?? l.target;
+    if (!visibleIds.has(sid) || !visibleIds.has(tid)) return;
+    cyElements.push({
+      group: "edges",
+      data: {
+        id:     "e" + i,
+        source: sid,
+        target: tid,
+        type:   l.type || "related",
+        color:  EDGE_LINE_COLOR[l.type] || "#4a4030",
+      },
+    });
+  });
+
+  // Destroy previous instance.
+  if (cyInstance) {
+    cyInstance.destroy();
+    cyInstance = null;
   }
 
-  let selectedId = null;
+  // Swap SVG for a div (Cytoscape needs a div container).
+  const viewport = graphSvg.parentElement;
+  let cyContainer = document.getElementById("cyContainer");
+  if (!cyContainer) {
+    cyContainer = document.createElement("div");
+    cyContainer.id = "cyContainer";
+    cyContainer.style.width  = "100%";
+    cyContainer.style.height = "100%";
+    cyContainer.style.background = "transparent";
+    graphSvg.style.display = "none";
+    viewport.appendChild(cyContainer);
+  }
+  cyContainer.style.display = "block";
+
+  cyInstance = cytoscape({
+    container: cyContainer,
+    elements:  cyElements,
+    style: [
+      {
+        selector: "node",
+        style: {
+          "width":              "data(size)",
+          "height":             "data(size)",
+          "background-color":   "data(color)",
+          "label":              "data(label)",
+          "font-size":          9,
+          "font-family":        "Inter, system-ui, sans-serif",
+          "color":              "#cfc8b8",
+          "text-valign":        "top",
+          "text-halign":        "center",
+          "text-margin-y":      -3,
+          "border-width":       1.2,
+          "border-color":       "rgba(240,235,220,.45)",
+          "cursor":             "pointer",
+        },
+      },
+      {
+        selector: "node:selected",
+        style: {
+          "border-width":   3,
+          "border-color":   "#fff",
+        },
+      },
+      {
+        selector: "node.faded",
+        style: { "opacity": 0.12 },
+      },
+      {
+        selector: "edge",
+        style: {
+          "width":            1,
+          "line-color":       "data(color)",
+          "opacity":          0.38,
+          "curve-style":      "bezier",
+          "target-arrow-shape": "none",
+        },
+      },
+      {
+        selector: "edge.highlighted",
+        style: {
+          "width":   2,
+          "opacity": 0.85,
+        },
+      },
+      {
+        selector: "edge.faded",
+        style: { "opacity": 0.04 },
+      },
+    ],
+    layout: {
+      name:           "cose",
+      animate:        false,
+      nodeRepulsion:  8000,
+      idealEdgeLength: 80,
+      nodeOverlap:    10,
+      padding:        20,
+      randomize:      false,
+    },
+    userZoomingEnabled:    true,
+    userPanningEnabled:    true,
+    boxSelectionEnabled:   false,
+    minZoom:               0.05,
+    maxZoom:               8,
+  });
+
+  // -- Tooltip on mouseover ---------------------------------------------------
+  cyInstance.on("mouseover", "node", (e) => {
+    const d = e.target.data();
+    graphTooltip.classList.remove("hidden");
+    graphTooltip.innerHTML =
+      `<strong>${d.fullLabel}</strong>` +
+      `<div class="tt-type">${d.category}${d.confidence != null ? ` - ${d.confidence}% confidence` : ""}</div>` +
+      (d.summary ? `<div class="tt-summary">${d.summary}</div>` : "") +
+      (d.path ? `<div class="tt-type" style="margin-top:6px;color:#a08060">Click to open docs →</div>` : "");
+  });
+
+  cyInstance.on("mousemove", "node", (e) => {
+    const r   = graphPanel.getBoundingClientRect();
+    const pos = e.renderedPosition || { x: 0, y: 0 };
+    const canvasRect = cyContainer.getBoundingClientRect();
+    let left = (canvasRect.left - r.left) + pos.x + 14;
+    const top  = (canvasRect.top  - r.top)  + pos.y - 10;
+    if (left + 284 > r.width - 10) left -= 298;
+    graphTooltip.style.left = left + "px";
+    graphTooltip.style.top  = Math.max(4, top) + "px";
+  });
+
+  cyInstance.on("mouseout", "node", () => graphTooltip.classList.add("hidden"));
+
+  // -- Click: highlight neighbours -------------------------------------------
+  let selectedNodeId = null;
 
   function resetHighlight() {
-    selectedId = null;
-    nodeEl.attr("opacity", 1).attr("stroke-width", 1.2).attr("stroke", "rgba(240,235,220,.55)");
-    linkEl.attr("stroke-opacity", 0.38).attr("stroke", "#4a4030");
+    selectedNodeId = null;
+    cyInstance.elements().removeClass("faded highlighted");
   }
 
-  nodeEl
-    .on("mouseover", (e, d) => {
-      graphTooltip.classList.remove("hidden");
-      graphTooltip.innerHTML =
-        `<strong>${d.label}</strong>` +
-        `<div class="tt-type">${d.category || d.type}${d.confidence != null ? ` - ${d.confidence}% confidence` : ""}</div>` +
-        (d.summary ? `<div class="tt-summary">${d.summary}</div>` : "") +
-        (d.path    ? `<div class="tt-type" style="margin-top:6px;color:#a08060">Click to open docs -></div>` : "");
-    })
-    .on("mousemove", (e) => {
-      const r = graphPanel.getBoundingClientRect();
-      let left = e.clientX - r.left + 14;
-      const top  = e.clientY - r.top  - 10;
-      if (left + 284 > r.width - 10) left = e.clientX - r.left - 284 - 14;
-      graphTooltip.style.left = left + "px";
-      graphTooltip.style.top  = Math.max(4, top) + "px";
-    })
-    .on("mouseout",  () => graphTooltip.classList.add("hidden"))
-    .on("click", (e, d) => {
-      e.stopPropagation();
-      if (selectedId === d.id) {
-        resetHighlight();
-        if (d.path) window.location.hash = d.path;
-        return;
-      }
-      selectedId = d.id;
-      const nb = neighbours(d.id);
-      nodeEl
-        .attr("opacity",      (n) => nb.has(n.id) ? 1 : 0.12)
-        .attr("stroke",       (n) => n.id === d.id ? "#fff" : "rgba(240,235,220,.55)")
-        .attr("stroke-width", (n) => n.id === d.id ? 3 : 1.2);
-      linkEl
-        .attr("stroke-opacity", (l) => {
-          const s = l.source?.id ?? l.source;
-          const t = l.target?.id ?? l.target;
-          return (s === d.id || t === d.id) ? 0.85 : 0.04;
-        })
-        .attr("stroke", (l) => {
-          const s = l.source?.id ?? l.source;
-          const t = l.target?.id ?? l.target;
-          return (s === d.id || t === d.id) ? "#c8a070" : "#4a4030";
-        });
-    });
+  cyInstance.on("click", "node", (e) => {
+    e.stopPropagation();
+    const node = e.target;
+    const id   = node.data("id");
 
-  svg.on("click", resetHighlight);
+    if (selectedNodeId === id) {
+      resetHighlight();
+      const path = node.data("path");
+      if (path) window.location.hash = path;
+      return;
+    }
 
-  // -- Force simulation ------------------------------------------------------
-  d3sim = d3.forceSimulation(nodes)
-    .force("link",      d3.forceLink(links).id((d) => d.id).distance(75).strength(0.38))
-    .force("charge",    d3.forceManyBody().strength(-130).distanceMax(380))
-    .force("center",    d3.forceCenter(W / 2, H / 2))
-    .force("collision", d3.forceCollide((d) => nodeR(d) + 3));
+    selectedNodeId = id;
+    const neighbourhood = node.closedNeighborhood();
+    cyInstance.elements().addClass("faded");
+    neighbourhood.removeClass("faded");
+    neighbourhood.edges().addClass("highlighted").removeClass("faded");
+  });
 
-  d3sim.on("tick", () => {
-    linkEl
-      .attr("x1", (d) => d.source.x).attr("y1", (d) => d.source.y)
-      .attr("x2", (d) => d.target.x).attr("y2", (d) => d.target.y);
-    nodeEl
-      .attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-    labelEl
-      .attr("x", (d) => d.x).attr("y", (d) => d.y - nodeR(d) - 3);
+  cyInstance.on("click", (e) => {
+    if (e.target === cyInstance) resetHighlight();
   });
 }
+
 
 // --- Event listeners ---------------------------------------------------------
 window.addEventListener("hashchange", () => {
@@ -544,7 +573,7 @@ graphKindFilter.addEventListener("change",  () => { if (!graphPanel.classList.co
 graphReset.addEventListener("click", () => {
   graphSearch.value     = "";
   graphKindFilter.value = "";
-  if (d3zoom) d3.select(graphSvg).transition().duration(300).call(d3zoom.transform, d3.zoomIdentity);
+  if (cyInstance) cyInstance.fit();
   drawGraph("", "");
 });
 

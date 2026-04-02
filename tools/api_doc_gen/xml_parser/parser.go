@@ -9,6 +9,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/beevik/etree"
 	"roraddons/tools/api_doc_gen/graph"
 )
 
@@ -154,6 +155,15 @@ func ParseFile(addonName string, filePath string) (graph.XMLFileResult, error) {
 	for index := range frames {
 		frames[index].Children = graph.UniqueStrings(frames[index].Children)
 		frames[index].StructuralChildTypes = graph.UniqueStrings(frames[index].StructuralChildTypes)
+	}
+
+	// Second pass: use etree to extract structural hierarchy (nesting of unnamed children).
+	// This produces CompositionSnippet per named frame.
+	snippets := extractCompositionSnippets(bytesContent)
+	for index := range frames {
+		if snippet, ok := snippets[frames[index].Name]; ok {
+			frames[index].CompositionSnippet = snippet
+		}
 	}
 
 	return graph.XMLFileResult{
@@ -351,4 +361,125 @@ result = append(result, s)
 }
 sort.Strings(result)
 return result
+}
+
+// ---------------------------------------------------------------------------
+// etree-based structural composition extraction
+// ---------------------------------------------------------------------------
+
+// extractCompositionSnippets parses the XML file a second time using etree to
+// build a proper in-memory element tree. For each named frame element it finds,
+// it generates a CompositionSnippet — a compact XML representation that shows
+// the hierarchy of unnamed structural children (e.g. ListBox → ListColumns →
+// ListColumn), not just the flat list that the token parser produces.
+//
+// The result is keyed by frame name (value of the "name" attribute).
+func extractCompositionSnippets(content []byte) map[string]string {
+doc := etree.NewDocument()
+if err := doc.ReadFromBytes(content); err != nil {
+return map[string]string{}
+}
+
+result := map[string]string{}
+
+// Find all elements that have a "name" attribute — these are the named frames.
+for _, elem := range doc.FindElements("//*[@name]") {
+name := strings.TrimSpace(elem.SelectAttrValue("name", ""))
+if name == "" {
+continue
+}
+// Only build snippets for element types we'd capture as frames.
+if ignoredFrameTags[elem.Tag] {
+continue
+}
+// Only bother when the element has structural (unnamed) children.
+if !hasStructuralChildren(elem) {
+continue
+}
+snippet := buildCompositionSnippet(elem, 0)
+if snippet != "" {
+result[name] = snippet
+}
+}
+
+return result
+}
+
+// hasStructuralChildren returns true when elem contains at least one child
+// element that is not in ignoredFrameTags and has no name attribute.
+func hasStructuralChildren(elem *etree.Element) bool {
+for _, child := range elem.ChildElements() {
+if ignoredFrameTags[child.Tag] {
+continue
+}
+if strings.TrimSpace(child.SelectAttrValue("name", "")) != "" {
+continue // named child = separate frame
+}
+return true
+}
+return false
+}
+
+// buildCompositionSnippet recursively renders elem and its unnamed structural
+// children as a compact XML snippet, indented by depth.
+func buildCompositionSnippet(elem *etree.Element, depth int) string {
+indent := strings.Repeat("  ", depth)
+
+// Collect representative attributes for the outer element.
+attrStr := compositionAttrs(elem, depth == 0)
+tag := elem.Tag
+
+// Collect structural (unnamed, non-ignored) children.
+var childLines []string
+for _, child := range elem.ChildElements() {
+if ignoredFrameTags[child.Tag] {
+continue
+}
+// Named children are separate documented frames — skip them here.
+if strings.TrimSpace(child.SelectAttrValue("name", "")) != "" {
+continue
+}
+childLines = append(childLines, buildCompositionSnippet(child, depth+1))
+}
+
+if len(childLines) == 0 {
+return indent + "<" + tag + attrStr + "/>"
+}
+var b strings.Builder
+b.WriteString(indent + "<" + tag + attrStr + ">")
+for _, cl := range childLines {
+b.WriteString("\n")
+b.WriteString(cl)
+}
+b.WriteString("\n" + indent + "</" + tag + ">")
+return b.String()
+}
+
+// compositionAttrs builds a concise attribute string for a snippet element.
+// For the root element (isRoot=true) we use placeholder values; for inner
+// elements we use the real attribute values from the parsed XML.
+func compositionAttrs(elem *etree.Element, isRoot bool) string {
+var parts []string
+for _, attr := range elem.Attr {
+key := attr.Key
+if key == "name" {
+if isRoot {
+parts = append(parts, `name="..."`)
+}
+continue
+}
+val := strings.TrimSpace(attr.Value)
+if val == "" {
+continue
+}
+// Truncate long values so the snippet stays readable.
+if len(val) > 32 {
+val = val[:29] + "..."
+}
+parts = append(parts, key+`="`+val+`"`)
+}
+if len(parts) == 0 {
+return ""
+}
+return " " + strings.Join(parts, " ")
 }

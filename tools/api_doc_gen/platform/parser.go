@@ -173,18 +173,19 @@ func parseFrameDoc(path string) (FrameDoc, error) {
 		handlers = append(handlers, FrameHandlerDoc{Event: strings.TrimSpace(row["Event"]), Function: strings.TrimSpace(row["Function"])})
 	}
 	return FrameDoc{
-		Name:     strings.TrimSpace(strings.TrimPrefix(lines[0], "# Frame ")),
-		Addon:    strings.TrimSpace(meta["Addon"]),
-		Type:     strings.TrimSpace(meta["Type"]),
-		Parent:   normalizeNone(meta["Parent"]),
-		Inherits: normalizeNone(meta["Inherits"]),
-		Template: parseBoolish(meta["Template"]),
-		Source:   strings.TrimSpace(meta["Source"]),
-		Children: parseBulletList(sections["Children"]),
+		Name:                    strings.TrimSpace(strings.TrimPrefix(lines[0], "# Frame ")),
+		Addon:                   strings.TrimSpace(meta["Addon"]),
+		Type:                    strings.TrimSpace(meta["Type"]),
+		Parent:                  normalizeNone(meta["Parent"]),
+		Inherits:                normalizeNone(meta["Inherits"]),
+		Template:                parseBoolish(meta["Template"]),
+		Source:                  strings.TrimSpace(meta["Source"]),
+		Children:                parseBulletList(sections["Children"]),
 		StructuralChildTypes:    parseStructuralChildTypes(sections["Structural Child Types"]),
 		StructuralChildAttrKeys: parseStructuralChildAttrKeys(sections["Structural Child Types"]),
-		Attributes: attributes,
-		Handlers:   handlers,
+		CompositionSnippet:      parseCodeBlock(sections["Composition Pattern"]),
+		Attributes:              attributes,
+		Handlers:                handlers,
 	}, nil
 }
 
@@ -694,4 +695,25 @@ func parseStructuralChildAttrKeys(lines []string) map[string][]string {
 		}
 	}
 	return result
+}
+
+// parseCodeBlock extracts the raw text content from inside the first fenced
+// code block (``` or ```xml etc.) found in the section lines.
+func parseCodeBlock(lines []string) string {
+inFence := false
+var body []string
+for _, line := range lines {
+trimmed := strings.TrimSpace(line)
+if strings.HasPrefix(trimmed, "```") {
+if inFence {
+break // end of fence
+}
+inFence = true
+continue
+}
+if inFence {
+body = append(body, line)
+}
+}
+return strings.TrimSpace(strings.Join(body, "\n"))
 }

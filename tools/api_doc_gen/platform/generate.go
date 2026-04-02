@@ -435,6 +435,9 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 			}
 			content += md.Section("Common Structural Child Elements", md.BulletList(childLinks))
 		}
+		if symbol.CompositionSnippet != "" {
+			content += md.Section("Typical XML Structure", "```xml\n"+symbol.CompositionSnippet+"\n```\n")
+		}
 		content += md.Section("Seen In", md.BulletList(symbol.SeenIn))
 		content += md.Section("Examples", md.BulletList(formatUsageExamples(symbol.Examples)))
 		content += renderSemanticSections(currentPath, corpus.SymbolLinks[elementTypeID(symbol.Name)])

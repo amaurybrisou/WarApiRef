@@ -34,18 +34,19 @@ type EventRegistrationDoc struct {
 }
 
 type FrameDoc struct {
-	Name                 string
-	Addon                string
-	Type                 string
-	Parent               string
-	Inherits             string
-	Template             bool
-	Source               string
-	Children             []string
-	StructuralChildTypes []string            // unnamed structural element type names inside this frame
+	Name                    string
+	Addon                   string
+	Type                    string
+	Parent                  string
+	Inherits                string
+	Template                bool
+	Source                  string
+	Children                []string
+	StructuralChildTypes    []string            // unnamed structural element type names inside this frame
 	StructuralChildAttrKeys map[string][]string // attribute keys per structural child type
-	Attributes           map[string]string
-	Handlers             []FrameHandlerDoc
+	CompositionSnippet      string              // etree-derived XML snippet showing the structural hierarchy
+	Attributes              map[string]string
+	Handlers                []FrameHandlerDoc
 }
 
 type FrameHandlerDoc struct {
@@ -306,6 +307,7 @@ type ElementTypeSymbol struct {
 	CommonHandlers   []string
 	CommonInherits   []string
 	CommonChildTypes []string // structural child element types observed inside this element (e.g. ListData in ListBox)
+	CompositionSnippet string // representative XML snippet showing the hierarchy of structural children
 	Examples         []UsageExample
 	Notes            []string
 }
