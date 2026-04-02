@@ -257,6 +257,26 @@ func newScoringContext(source SourceModel) scoringContext {
 }
 
 func Build(source SourceModel) Corpus {
+	return BuildWithOptions(source, BuildOptions{})
+}
+
+// BuildOptions configures optional behaviour for [Build].
+type BuildOptions struct {
+	// SourceRoot, when non-empty, enables the source-first pipeline path.
+	// The directory must contain addon sub-directories with manifest files
+	// (*.mod or *.toc). When set, real XML and Lua source files are parsed
+	// directly; the flattened SourceModel is used only as supplementary data.
+	//
+	// When empty (the default), the pipeline runs in degraded compatibility
+	// mode: it reconstructs XML trees and Lua definitions from the pre-flattened
+	// SourceModel docs. This path is lossy and should not be used when real
+	// source files are available.
+	SourceRoot string
+}
+
+// BuildWithOptions builds the platform corpus with explicit options.
+// Use this instead of [Build] to enable the source-first pipeline path.
+func BuildWithOptions(source SourceModel, opts BuildOptions) Corpus {
 	corpus := Corpus{
 		SourceRoot:  source.Root,
 		Source:      source,
@@ -548,7 +568,7 @@ func Build(source SourceModel) Corpus {
 	// This enriches ElementTypes with structured attribute profiles,
 	// structural child profiles, Lua API call aggregations, and handler
 	// argument patterns from a real tree-based XML parse.
-	corpus.ElementTypes = runPhasedPipeline(corpus.ElementTypes, source)
+	corpus.ElementTypes = runPhasedPipeline(corpus.ElementTypes, source, opts.SourceRoot)
 	corpus.GameEvents = finalizeEventSymbols(gameEvents, "Game Event", ctx, collector)
 	corpus.WindowEvents = finalizeEventSymbols(windowEvents, "Window Event", ctx, collector)
 	corpus.SystemDataFields = finalizeFieldSymbols(systemFields, "SystemData", ctx, collector)

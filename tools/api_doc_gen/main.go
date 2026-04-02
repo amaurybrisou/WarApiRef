@@ -114,22 +114,39 @@ func runAddonMode(args []string) error {
 }
 
 func runPlatformMode(args []string) error {
-	if len(args) < 2 {
-		return fmt.Errorf("usage: go run tools/api_doc_gen/main.go generate platform <addonApiRoot> <outputRoot>")
+	// Parse optional --source-root flag before positional arguments.
+	fs := flag.NewFlagSet("platform", flag.ContinueOnError)
+	fs.SetOutput(os.Stderr)
+	sourceRootFlag := fs.String("source-root", "", "path to addon source root for source-first pipeline (recommended)")
+	if err := fs.Parse(args); err != nil {
+		return err
 	}
-	apiRefRoot, err := resolveExistingDirectory(args[0])
+	positional := fs.Args()
+	if len(positional) < 2 {
+		return fmt.Errorf("usage: go run tools/api_doc_gen/main.go generate platform <addonApiRoot> <outputRoot> [--source-root <sourceRoot>]")
+	}
+	apiRefRoot, err := resolveExistingDirectory(positional[0])
 	if err != nil {
 		return err
 	}
-	outputRoot, err := filepath.Abs(args[1])
+	outputRoot, err := filepath.Abs(positional[1])
 	if err != nil {
 		return fmt.Errorf("resolve output root: %w", err)
 	}
+
+	var sourceRoot string
+	if *sourceRootFlag != "" {
+		sourceRoot, err = resolveExistingDirectory(*sourceRootFlag)
+		if err != nil {
+			return fmt.Errorf("resolve source root: %w", err)
+		}
+	}
+
 	source, err := platform.ParseAPIRef(apiRefRoot)
 	if err != nil {
 		return err
 	}
-	corpus := platform.Build(source)
+	corpus := platform.BuildWithOptions(source, platform.BuildOptions{SourceRoot: sourceRoot})
 	return platform.Generate(outputRoot, corpus)
 }
 
