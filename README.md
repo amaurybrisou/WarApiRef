@@ -177,12 +177,15 @@ Use `promote_observation` or `feeding/promote` to write an accepted observation 
 { "observation_id": "my_obs_id", "dry_run": true }
 ```
 
+- Only `accepted` observations may be promoted. Attempting to promote a `candidate` or `rejected` observation returns a hard error.
 - `dry_run: true` — previews seed changes without writing
 - `dry_run: false` (default) — appends the observation's claims to each `target_seeds` path and marks the queue record as `promoted`
 - Duplicate detection: if the seed file already contains a promotion marker for the same `entry_id`, the update is skipped and marked `duplicate: true`
 - The observation's `target_seeds` field controls which seed files receive the promotion. Use `seed_path_override` to redirect to a different seed file.
 
 Promotion targets `docs/platform/seeds/` files. Generated docs under `docs/war-api/` are **not** the primary persistence layer.
+
+**Promoted observations are immutable.** Once an observation reaches `promoted` status, it cannot be re-reviewed (accept or reject). This prevents incoherent states where the queue says `rejected` but the seed file already contains the promoted content. A future superseding workflow will handle intentional updates.
 
 ### 5. Regenerate
 
@@ -222,9 +225,9 @@ All lifecycle operations are also accessible as `feeding/*` JSON-RPC methods (wi
 | Status | Meaning |
 |--------|---------|
 | `candidate` | Ingested, awaiting review |
-| `accepted` | Reviewed and approved |
-| `rejected` | Reviewed and rejected; durable copy in `rejected.ndjson` |
-| `promoted` | Claims written into target seed files |
+| `accepted` | Reviewed and approved; eligible for promotion |
+| `rejected` | Reviewed and rejected; durable copy in `rejected.ndjson`; cannot be promoted |
+| `promoted` | Claims written into target seed files; **immutable** — cannot be re-reviewed |
 
 ## Site Features
 

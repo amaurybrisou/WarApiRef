@@ -79,6 +79,25 @@ func (a *App) workspaceRoot() string {
 	return filepath.Clean(filepath.Join(abs, "..", "..", ".."))
 }
 
+// workspaceRootMarkers lists filesystem artifacts whose presence confirms a valid project root.
+var workspaceRootMarkers = []string{
+	"Makefile",
+	"docker-compose.yml",
+	filepath.Join("tools", "api_doc_gen"),
+}
+
+// validateWorkspaceRoot returns an error if wsRoot does not contain at least one expected project marker.
+// This guards against silent mis-computation from an unexpected feedingRoot configuration.
+func validateWorkspaceRoot(wsRoot string) error {
+	for _, marker := range workspaceRootMarkers {
+		if _, err := os.Stat(filepath.Join(wsRoot, marker)); err == nil {
+			return nil
+		}
+	}
+	return fmt.Errorf("computed workspace root %q does not look like the project root (none of %s found); check feedingRoot configuration",
+		wsRoot, strings.Join(workspaceRootMarkers, ", "))
+}
+
 // readQueueRecords reads all lifecycle records from an ndjson file.
 // Missing or empty files return an empty slice (not an error).
 func readQueueRecords(path string) ([]lifecycleRecord, []model.Warning, error) {
@@ -261,6 +280,9 @@ func (a *App) reviewObservation(req schema.ReviewObservationRequest) schema.Revi
 		Verdict:       req.Verdict,
 	}
 
+	a.queueMu.Lock()
+	defer a.queueMu.Unlock()
+
 	queuePath := a.queueFilePath()
 	records, warnings, err := readQueueRecords(queuePath)
 	resp.Warnings = warnings
@@ -283,10 +305,8 @@ func (a *App) reviewObservation(req schema.ReviewObservationRequest) schema.Revi
 
 	current := records[idx].effectiveStatus()
 	if current == lifecycleStatusPromoted {
-		resp.Warnings = append(resp.Warnings, model.Warning{
-			Code:    "already_promoted",
-			Message: "observation is already promoted; review has no effect on promotion status",
-		})
+		resp.Errors = append(resp.Errors, "cannot re-review a promoted observation; promoted records are immutable until a superseding workflow is available")
+		return resp
 	}
 	if current == lifecycleStatusRejected && req.Verdict == "reject" {
 		resp.Warnings = append(resp.Warnings, model.Warning{
@@ -314,13 +334,23 @@ func (a *App) reviewObservation(req schema.ReviewObservationRequest) schema.Revi
 		return resp
 	}
 
-	// For rejections: also append to the durable rejected store.
+	// For rejections: append to the durable rejected store, skipping duplicates.
 	if newStatus == lifecycleStatusRejected {
-		if err := appendRejectedRecord(a.rejectedFilePath(), records[idx]); err != nil {
-			resp.Warnings = append(resp.Warnings, model.Warning{
-				Code:    "rejected_store_write_failed",
-				Message: "rejection written to queue but rejected store append failed: " + err.Error(),
-			})
+		existing, _, _ := readQueueRecords(a.rejectedFilePath())
+		alreadyPresent := false
+		for _, r := range existing {
+			if r.entryID() == req.ObservationID {
+				alreadyPresent = true
+				break
+			}
+		}
+		if !alreadyPresent {
+			if err := appendRejectedRecord(a.rejectedFilePath(), records[idx]); err != nil {
+				resp.Warnings = append(resp.Warnings, model.Warning{
+					Code:    "rejected_store_write_failed",
+					Message: "rejection written to queue but rejected store append failed: " + err.Error(),
+				})
+			}
 		}
 	}
 
@@ -334,6 +364,9 @@ func (a *App) promoteObservation(req schema.PromoteObservationRequest) schema.Pr
 		ObservationID: req.ObservationID,
 		DryRun:        req.DryRun,
 	}
+
+	a.queueMu.Lock()
+	defer a.queueMu.Unlock()
 
 	queuePath := a.queueFilePath()
 	records, warnings, err := readQueueRecords(queuePath)
@@ -370,10 +403,8 @@ func (a *App) promoteObservation(req schema.PromoteObservationRequest) schema.Pr
 		return resp
 	}
 	if status == lifecycleStatusCandidate {
-		resp.Warnings = append(resp.Warnings, model.Warning{
-			Code:    "not_yet_reviewed",
-			Message: "promoting a candidate observation that has not been explicitly accepted; consider using review_observation first",
-		})
+		resp.Errors = append(resp.Errors, "cannot promote a candidate observation; use review_observation to accept it first")
+		return resp
 	}
 
 	// Determine seed targets.
@@ -396,6 +427,15 @@ func (a *App) promoteObservation(req schema.PromoteObservationRequest) schema.Pr
 	resp.TargetSeeds = seedPaths
 
 	wsRoot := a.workspaceRoot()
+
+	// Validate workspace root before any real writes.
+	if !req.DryRun {
+		if err := validateWorkspaceRoot(wsRoot); err != nil {
+			resp.Errors = append(resp.Errors, err.Error())
+			return resp
+		}
+	}
+
 	entryID := rec.entryID()
 	promotedAt := time.Now().UTC().Format(time.RFC3339)
 
@@ -522,6 +562,15 @@ func (a *App) regenerateFromPromotedKnowledge(req schema.RegenerateRequest) sche
 	}
 
 	wsRoot := a.workspaceRoot()
+
+	// Validate workspace root before executing real commands.
+	if !req.DryRun {
+		if err := validateWorkspaceRoot(wsRoot); err != nil {
+			resp.Errors = append(resp.Errors, err.Error())
+			resp.Success = false
+			return resp
+		}
+	}
 
 	type stepDef struct {
 		label string

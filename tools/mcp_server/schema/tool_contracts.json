@@ -78,7 +78,7 @@
     {
       "name": "regenerate_from_promoted_knowledge",
       "request_fields": ["scope", "dry_run"],
-      "response_fields": ["scope", "dry_run", "steps", "success", "warnings"]
+      "response_fields": ["scope", "dry_run", "steps", "success", "errors", "warnings"]
     }
   ],
   "resource_uris": [

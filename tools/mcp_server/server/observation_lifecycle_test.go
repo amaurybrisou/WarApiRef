@@ -5,6 +5,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"sync"
 	"testing"
 	"time"
 
@@ -58,6 +59,7 @@ func buildTestRecord(entryID, status string) lifecycleRecord {
 // as the real project: tempDir/docs/platform/feeding.
 // The returned feedingRoot path is at tempDir/docs/platform/feeding so that
 // workspaceRoot() resolves correctly to tempDir.
+// A Makefile is created in the workspace root so validateWorkspaceRoot passes.
 func setupTestFeedingRoot(t *testing.T, records []lifecycleRecord) (feedingRoot string) {
 	t.Helper()
 	wsRoot := t.TempDir()
@@ -65,6 +67,10 @@ func setupTestFeedingRoot(t *testing.T, records []lifecycleRecord) (feedingRoot 
 	queueDir := filepath.Join(feedingRoot, "review_queue")
 	if err := os.MkdirAll(queueDir, 0o755); err != nil {
 		t.Fatalf("mkdir queue dir: %v", err)
+	}
+	// Create workspace marker so validateWorkspaceRoot passes during promote/regenerate.
+	if err := os.WriteFile(filepath.Join(wsRoot, "Makefile"), []byte("# test\n"), 0o644); err != nil {
+		t.Fatalf("write Makefile marker: %v", err)
 	}
 	queuePath := filepath.Join(queueDir, defaultQueueFileName)
 	if err := writeQueueRecords(queuePath, records); err != nil {
@@ -479,6 +485,201 @@ func TestFeedingRegenerateDryRunViaDispatch(t *testing.T) {
 	resp := app.handlePayload([]byte(`{"jsonrpc":"2.0","id":13,"method":"feeding/regenerate","params":{"dry_run":true}}`))
 	if resp.Error != nil {
 		t.Fatalf("feeding/regenerate returned error: %#v", resp.Error)
+	}
+}
+
+// --- hardening: candidate promotion blocked ---
+
+func TestPromoteCandidateBlocked(t *testing.T) {
+	rec := buildTestRecord("obs_candidate_block", lifecycleStatusCandidate)
+	app := newTestApp(t, setupTestFeedingRoot(t, []lifecycleRecord{rec}))
+	resp := app.promoteObservation(schema.PromoteObservationRequest{
+		ObservationID: "obs_candidate_block",
+	})
+	if len(resp.Errors) == 0 {
+		t.Fatalf("expected error when promoting a candidate observation, got none")
+	}
+	if !strings.Contains(resp.Errors[0], "candidate") {
+		t.Fatalf("expected error message to mention 'candidate', got: %s", resp.Errors[0])
+	}
+	if resp.Promoted {
+		t.Fatalf("candidate must not be promoted")
+	}
+}
+
+// --- hardening: promoted record cannot be re-reviewed ---
+
+func TestReviewPromotedObservationBlocked(t *testing.T) {
+	rec := buildTestRecord("obs_promoted_immutable", lifecycleStatusPromoted)
+	app := newTestApp(t, setupTestFeedingRoot(t, []lifecycleRecord{rec}))
+
+	for _, verdict := range []string{"accept", "reject"} {
+		resp := app.reviewObservation(schema.ReviewObservationRequest{
+			ObservationID: "obs_promoted_immutable",
+			Verdict:       verdict,
+			Reviewer:      "alice",
+			Notes:         "trying to change a promoted record",
+		})
+		if len(resp.Errors) == 0 {
+			t.Fatalf("verdict=%s: expected error when reviewing a promoted observation, got none", verdict)
+		}
+		if !strings.Contains(resp.Errors[0], "promoted") {
+			t.Fatalf("verdict=%s: expected error to mention 'promoted', got: %s", verdict, resp.Errors[0])
+		}
+	}
+
+	// Verify the queue record is still promoted.
+	records, _, err := readQueueRecords(filepath.Join(app.feedingRoot, "review_queue", defaultQueueFileName))
+	if err != nil {
+		t.Fatalf("read queue: %v", err)
+	}
+	if len(records) == 0 {
+		t.Fatalf("expected 1 queue record")
+	}
+	if records[0].effectiveStatus() != lifecycleStatusPromoted {
+		t.Fatalf("promoted record must remain promoted after blocked re-review, got %s", records[0].effectiveStatus())
+	}
+}
+
+// --- hardening: concurrent queue writes are protected ---
+
+func TestConcurrentQueueWritesAreProtected(t *testing.T) {
+	const n = 10
+	var records []lifecycleRecord
+	for i := 0; i < n; i++ {
+		records = append(records, buildTestRecord(fmt.Sprintf("obs_concurrent_%d", i), lifecycleStatusCandidate))
+	}
+	feedRoot := setupTestFeedingRoot(t, records)
+	app := newTestApp(t, feedRoot)
+
+	var wg sync.WaitGroup
+	for i := 0; i < n; i++ {
+		wg.Add(1)
+		go func(idx int) {
+			defer wg.Done()
+			app.reviewObservation(schema.ReviewObservationRequest{
+				ObservationID: fmt.Sprintf("obs_concurrent_%d", idx),
+				Verdict:       "accept",
+				Reviewer:      fmt.Sprintf("reviewer_%d", idx),
+			})
+		}(i)
+	}
+	wg.Wait()
+
+	// Every observation must be persisted with status accepted.
+	result, _, err := readQueueRecords(filepath.Join(feedRoot, "review_queue", defaultQueueFileName))
+	if err != nil {
+		t.Fatalf("read queue after concurrent writes: %v", err)
+	}
+	if len(result) != n {
+		t.Fatalf("expected %d records after concurrent review, got %d", n, len(result))
+	}
+	for _, r := range result {
+		if r.effectiveStatus() != lifecycleStatusAccepted {
+			t.Fatalf("record %s should be accepted after concurrent review, got %s", r.entryID(), r.effectiveStatus())
+		}
+	}
+}
+
+// --- hardening: invalid workspace root fails clearly ---
+
+func TestInvalidWorkspaceRootFails(t *testing.T) {
+	// feedingRoot without workspace markers: wsRoot will be a bare tempDir with no Makefile etc.
+	wsRoot := t.TempDir()
+	feedingRoot := filepath.Join(wsRoot, "docs", "platform", "feeding")
+	queueDir := filepath.Join(feedingRoot, "review_queue")
+	if err := os.MkdirAll(queueDir, 0o755); err != nil {
+		t.Fatalf("mkdir queue dir: %v", err)
+	}
+	// Deliberately do NOT create any workspace marker files.
+	rec := buildTestRecord("obs_wsroot_test", lifecycleStatusAccepted)
+	queuePath := filepath.Join(queueDir, defaultQueueFileName)
+	if err := writeQueueRecords(queuePath, []lifecycleRecord{rec}); err != nil {
+		t.Fatalf("write test queue: %v", err)
+	}
+
+	app, err := NewApp(docsRoot(t))
+	if err != nil {
+		t.Fatalf("new app: %v", err)
+	}
+	app.SetFeedingRoot(feedingRoot)
+
+	// promote (non-dry-run) must fail with a clear workspace root error.
+	seedDir := filepath.Join(wsRoot, "docs", "platform", "seeds")
+	if err := os.MkdirAll(seedDir, 0o755); err != nil {
+		t.Fatalf("mkdir seed dir: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(seedDir, "xml_conventions.md"), []byte("# XML Conventions\n"), 0o644); err != nil {
+		t.Fatalf("write seed: %v", err)
+	}
+
+	promResp := app.promoteObservation(schema.PromoteObservationRequest{
+		ObservationID: "obs_wsroot_test",
+	})
+	if len(promResp.Errors) == 0 {
+		t.Fatalf("expected error for invalid workspace root during promote, got none")
+	}
+	found := false
+	for _, e := range promResp.Errors {
+		if strings.Contains(e, "workspace root") {
+			found = true
+			break
+		}
+	}
+	if !found {
+		t.Fatalf("expected error to mention 'workspace root', got: %v", promResp.Errors)
+	}
+
+	// regenerate (non-dry-run) must also fail.
+	regenResp := app.regenerateFromPromotedKnowledge(schema.RegenerateRequest{Scope: "full", DryRun: false})
+	if len(regenResp.Errors) == 0 {
+		t.Fatalf("expected error for invalid workspace root during regenerate, got none")
+	}
+}
+
+// --- hardening: duplicate rejection not appended ---
+
+func TestDuplicateRejectionNotAppended(t *testing.T) {
+	rec := buildTestRecord("obs_dup_reject", lifecycleStatusCandidate)
+	feedRoot := setupTestFeedingRoot(t, []lifecycleRecord{rec})
+	app := newTestApp(t, feedRoot)
+
+	// Reject once.
+	resp1 := app.reviewObservation(schema.ReviewObservationRequest{
+		ObservationID: "obs_dup_reject",
+		Verdict:       "reject",
+		Reviewer:      "alice",
+		Notes:         "first rejection",
+	})
+	if len(resp1.Errors) > 0 {
+		t.Fatalf("first rejection unexpected errors: %v", resp1.Errors)
+	}
+
+	// Reject again (same ID already in rejected store).
+	resp2 := app.reviewObservation(schema.ReviewObservationRequest{
+		ObservationID: "obs_dup_reject",
+		Verdict:       "reject",
+		Reviewer:      "bob",
+		Notes:         "second rejection attempt",
+	})
+	if len(resp2.Errors) > 0 {
+		t.Fatalf("second rejection unexpected errors: %v", resp2.Errors)
+	}
+
+	// The rejected store must contain exactly one entry for this observation_id.
+	rejectedPath := filepath.Join(feedRoot, "review_queue", defaultRejectedFileName)
+	rejRecords, _, err := readQueueRecords(rejectedPath)
+	if err != nil {
+		t.Fatalf("read rejected file: %v", err)
+	}
+	count := 0
+	for _, r := range rejRecords {
+		if r.entryID() == "obs_dup_reject" {
+			count++
+		}
+	}
+	if count != 1 {
+		t.Fatalf("rejected store should contain exactly 1 entry for obs_dup_reject, got %d", count)
 	}
 }
 

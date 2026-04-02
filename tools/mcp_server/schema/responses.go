@@ -164,5 +164,6 @@ type RegenerateResponse struct {
 	DryRun   bool               `json:"dry_run"`
 	Steps    []RegenerationStep `json:"steps"`
 	Success  bool               `json:"success"`
+	Errors   []string           `json:"errors,omitempty"`
 	Warnings []model.Warning    `json:"warnings,omitempty"`
 }

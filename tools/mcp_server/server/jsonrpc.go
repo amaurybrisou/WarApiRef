@@ -33,14 +33,15 @@ type jsonRPCResponse struct {
 }
 
 type App struct {
-	docsRoot  string
+	docsRoot    string
 	feedingRoot string
-	store     *Store
-	storeErr  error
-	storeOnce sync.Once
-	storeDone chan struct{}
-	storeMu   sync.RWMutex
-	validator *Validator
+	queueMu     sync.Mutex   // protects queue read-modify-write operations
+	store       *Store
+	storeErr    error
+	storeOnce   sync.Once
+	storeDone   chan struct{}
+	storeMu     sync.RWMutex
+	validator   *Validator
 }
 
 func NewApp(docsRoot string) (*App, error) {
