@@ -6,9 +6,8 @@ applyTo: '**/*.lua'
 
 ## Scope
 
-- Keep this file to coding conventions only.
 - API facts belong in:
-  - `docs/platform/`
+  - `docs/war-api/`
   - `docs/platform/seeds/`
   - MCP server responses
 

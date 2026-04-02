@@ -6,9 +6,8 @@ applyTo: '**/*.xml'
 
 ## Scope
 
-- Keep this file to XML/UI authoring conventions only.
 - API and event facts belong in:
-  - `docs/platform/`
+  - `docs/war-api/`
   - `docs/platform/seeds/`
   - MCP server responses
 

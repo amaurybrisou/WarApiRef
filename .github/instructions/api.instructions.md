@@ -9,7 +9,7 @@ This file is policy only. It is not an API catalog.
 ## Source of Truth
 
 - Treat API facts as authoritative only when they come from:
-  - `docs/platform/`
+  - `docs/war-api/`
   - `docs/platform/seeds/`
   - MCP server responses backed by generated WAR docs
 - Prefer MCP/resource lookups before making assumptions.
