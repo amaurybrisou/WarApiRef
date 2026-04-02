@@ -404,6 +404,14 @@ func (a *App) promoteObservation(req schema.PromoteObservationRequest) schema.Pr
 
 	for _, seedRelPath := range seedPaths {
 		seedAbsPath := filepath.Join(wsRoot, filepath.FromSlash(seedRelPath))
+
+		// Ensure the resolved path stays within the workspace root (prevent traversal).
+		rel, err := filepath.Rel(wsRoot, seedAbsPath)
+		if err != nil || strings.HasPrefix(rel, "..") {
+			resp.Errors = append(resp.Errors, fmt.Sprintf("seed path %q escapes workspace root; skipped", seedRelPath))
+			continue
+		}
+
 		update := schema.SeedUpdate{SeedPath: seedRelPath}
 
 		// Check for duplicate promotion marker.
@@ -546,7 +554,9 @@ func (a *App) regenerateFromPromotedKnowledge(req schema.RegenerateRequest) sche
 			resp.Steps = append(resp.Steps, step)
 			continue
 		}
-		cmd := exec.Command("go", s.args...) //nolint:gosec
+		// s.args are hardcoded constants selected by the validated scope parameter;
+		// they are not derived from user input, so passing them to exec.Command is safe.
+		cmd := exec.Command("go", s.args...)
 		cmd.Dir = wsRoot
 		out, execErr := cmd.CombinedOutput()
 		step.Output = strings.TrimSpace(string(out))

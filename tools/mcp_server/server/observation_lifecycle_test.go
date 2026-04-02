@@ -1,6 +1,7 @@
 package server
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -127,7 +128,7 @@ func TestListPendingObservationsStatusFilter(t *testing.T) {
 func TestListPendingObservationsLimitRespected(t *testing.T) {
 	var records []lifecycleRecord
 	for i := 0; i < 5; i++ {
-		records = append(records, buildTestRecord("obs_limit_"+string(rune('a'+i)), lifecycleStatusCandidate))
+		records = append(records, buildTestRecord(fmt.Sprintf("obs_limit_%d", i), lifecycleStatusCandidate))
 	}
 	app := newTestApp(t, setupTestFeedingRoot(t, records))
 
