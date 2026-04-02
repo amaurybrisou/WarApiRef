@@ -98,6 +98,12 @@ Observed XML element type instantiated by 41 addons.
 - ClosetGoblinDefaultBG
 - EA_Button_ResizeIconFrameHighlight
 
+## Common Structural Child Elements
+
+- TintColor
+- Middle
+- TexSlices
+
 ## Seen In
 
 - AggroMeter

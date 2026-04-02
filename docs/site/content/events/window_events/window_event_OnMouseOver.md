@@ -326,9 +326,8 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - [EditBox](../../xml/element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](../../xml/element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [Label](../../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
+- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

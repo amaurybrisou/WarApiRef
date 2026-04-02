@@ -134,6 +134,8 @@ function(...)
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
+- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
+- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

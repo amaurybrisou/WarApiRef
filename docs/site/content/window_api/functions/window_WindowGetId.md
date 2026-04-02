@@ -132,6 +132,7 @@ Observed querying runtime window state or metadata.
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [EA_Window_ContextMenu.Hide](../../globals/functions/global_EA_Window_ContextMenu.Hide.md) (HIGH 100/100) - Global Function
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Triggered By
 

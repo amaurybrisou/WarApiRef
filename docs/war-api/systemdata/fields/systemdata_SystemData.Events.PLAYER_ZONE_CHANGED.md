@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin, CM_ClosetGoblin, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster, Shinies, Enemy, GCDsaver, Killer, LibWBToggler, MapMonster |
-| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1283`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1392`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/GCDsaver/GCDsaver.lua:268`, `/workspace_addons/Killer/KillerLifecycle.lua:100` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1240`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1349`, `/workspace_addons/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace_addons/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace_addons/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace_addons/GCDsaver/GCDsaver.lua:253`, `/workspace_addons/GCDsaver/GCDsaver.lua:268`, `/workspace_addons/Killer/KillerLifecycle.lua:100` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | ClosetGoblin.PlayerZoneChanged, ClosetGoblin.ZoneChangeInit, ClosetGoblin.ZoneChangeShutdown, Enemy.GroupIcons_OnPlayerZoneChanged, Enemy.GroupsCheckTarget, Enemy.GroupsInitialize |

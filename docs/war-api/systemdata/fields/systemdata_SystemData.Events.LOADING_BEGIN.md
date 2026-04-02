@@ -32,7 +32,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin, CM_ClosetGoblin, MapMonster, wbLeadHelper, MapMonster, wbLeadHelper |
-| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1283`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1392`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:83`, `/workspace_addons/wbLeadHelper/wbLeadHelper.lua:34` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1240`, `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:1349`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:72`, `/workspace_addons/MapMonster/Source/MapMonster_Player.lua:83`, `/workspace_addons/wbLeadHelper/wbLeadHelper.lua:34` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
 | Example locations | ClosetGoblin.LoadingBegin, ClosetGoblin.ZoneChangeInit, ClosetGoblin.ZoneChangeShutdown, MapMonster.InitializePlayer, MapMonster.OnLoadingBegin, MapMonster.ShutdownPlayer |

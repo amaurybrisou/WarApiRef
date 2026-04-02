@@ -100,6 +100,10 @@ Observed XML element type instantiated by 41 addons.
 - EA_Default_MerchantImage
 - EA_Default_TrainingImage
 
+## Common Structural Child Elements
+
+- TintColor
+
 ## Seen In
 
 - AdvancedRenownTrainer
@@ -164,6 +168,7 @@ Observed XML element type instantiated by 41 addons.
 
 ## Used With
 
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
 - [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler

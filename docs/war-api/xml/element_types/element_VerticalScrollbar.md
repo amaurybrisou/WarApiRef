@@ -80,6 +80,13 @@ Observed XML element type instantiated by 12 addons.
 - EA_ScrollBar_DefaultVerticalChain
 - EA_ScrollBar_ChatVertical
 
+## Common Structural Child Elements
+
+- ActiveZoneOffset
+- DownOffset
+- ThumbOffset
+- UpOffset
+
 ## Seen In
 
 - DAoCBuff

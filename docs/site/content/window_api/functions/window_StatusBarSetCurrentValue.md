@@ -109,7 +109,6 @@ Observed as a window function across 9 addons.
 
 ## Used With
 
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
 - [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function

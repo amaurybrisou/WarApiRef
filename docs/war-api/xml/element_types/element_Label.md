@@ -102,6 +102,11 @@ Observed XML element type instantiated by 56 addons.
 - EA_Label_DefaultText_Small
 - IraConfigHeading
 
+## Common Structural Child Elements
+
+- Text
+- TintColor
+
 ## Seen In
 
 - AdvancedPetAssist
@@ -185,6 +190,7 @@ Observed XML element type instantiated by 56 addons.
 - [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnLButtonDown](../../events/window_events/window_event_OnLButtonDown.md) (HIGH 100/100) - Window Event
 - [OnLButtonDown](../handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Handler
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 - [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
 - [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler

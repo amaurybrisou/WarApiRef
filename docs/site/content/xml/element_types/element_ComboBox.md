@@ -97,6 +97,11 @@ Observed XML element type instantiated by 29 addons.
 - APA_ComboBoxWide
 - DaemonAssist_ComboBoxWide
 
+## Common Structural Child Elements
+
+- MenuButtonOffset
+- TextOffset
+
 ## Seen In
 
 - AdvancedPetAssist

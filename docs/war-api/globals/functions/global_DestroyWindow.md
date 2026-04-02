@@ -123,7 +123,6 @@ Observed tearing down runtime-created windows.
 ## Used With
 
 - [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [CreateWindowFromTemplate](global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

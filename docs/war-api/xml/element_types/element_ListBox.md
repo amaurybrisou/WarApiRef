@@ -86,6 +86,12 @@ Observed XML element type instantiated by 20 addons.
 
 - none
 
+## Common Structural Child Elements
+
+- ListData
+- ListColumns
+- ListColumn
+
 ## Seen In
 
 - AggroMeter
@@ -130,6 +136,7 @@ Observed XML element type instantiated by 20 addons.
 
 ## Used With
 
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
 
 ## Triggered By

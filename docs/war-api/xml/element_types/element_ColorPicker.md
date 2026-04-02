@@ -74,6 +74,13 @@ Observed XML element type instantiated by 1 addons.
 
 - none
 
+## Common Structural Child Elements
+
+- ColorSize
+- ColorSpacing
+- ColorTexCoords
+- ColorTexDims
+
 ## Seen In
 
 - WSCT

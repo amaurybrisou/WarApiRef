@@ -195,6 +195,8 @@ function(...)
 - [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
 - [ListBox](../element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
 - [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function

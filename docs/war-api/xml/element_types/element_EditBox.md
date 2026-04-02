@@ -101,6 +101,10 @@ Observed XML element type instantiated by 24 addons.
 - Shinies_SilverCoin_EditBox_DefaultFrame
 - EA_EditBox_NoFrame
 
+## Common Structural Child Elements
+
+- TextOffset
+
 ## Seen In
 
 - AdvancedRenownTrainer
@@ -151,7 +155,6 @@ Observed XML element type instantiated by 24 addons.
 - [OnKeyEscape](../handlers/handler_OnKeyEscape.md) (HIGH 100/100) - XML Handler
 - [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
 - [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Handler
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
 - [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
 - [OnTextChanged](../../events/window_events/window_event_OnTextChanged.md) (HIGH 100/100) - Window Event
 - [OnTextChanged](../handlers/handler_OnTextChanged.md) (HIGH 100/100) - XML Handler

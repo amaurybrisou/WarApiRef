@@ -109,7 +109,6 @@ Observed wiring slash commands through a shared command-registration table.
 - [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
-- [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Triggered By

@@ -168,8 +168,8 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [DebugWindow.OnShowFocus](../../globals/functions/global_DebugWindow.OnShowFocus.md) (HIGH 100/100) - Global Function
-- [EditBox](../../xml/element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
 - [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function

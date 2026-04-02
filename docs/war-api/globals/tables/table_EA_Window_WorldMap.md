@@ -93,7 +93,6 @@ Observed shared global table or namespace surfaced in 2 addons.
 - [EA_ChatWindow.InsertText](../functions/global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
 - [EA_Window_WorldMap.ShowZone](../functions/global_EA_Window_WorldMap.ShowZone.md) (HIGH 100/100) - Global Function
 - [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Triggered By
 

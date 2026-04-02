@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | CM_ClosetGoblin |
-| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:687` |
+| Files seen in | `/workspace_addons/ClosetGoblin/ClosetGoblin.lua:672` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | ClosetGoblin.FinalizeSetActivation, lua_call |

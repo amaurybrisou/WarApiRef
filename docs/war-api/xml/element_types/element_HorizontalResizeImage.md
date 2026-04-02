@@ -85,6 +85,14 @@ Observed XML element type instantiated by 12 addons.
 - VictoryPointsFilledBarDestruction
 - VictoryPointsFilledBarOrder
 
+## Common Structural Child Elements
+
+- Middle
+- Left
+- Right
+- TintColor
+- TexSlices
+
 ## Seen In
 
 - AdvancedPetAssist
