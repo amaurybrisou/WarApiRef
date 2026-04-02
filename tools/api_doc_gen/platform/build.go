@@ -2525,11 +2525,11 @@ func inferAttributeRole(key string, samples []string) string {
 	boolCount, numCount, luaFuncCount, frameRefCount := 0, 0, 0, 0
 	for _, v := range samples {
 		vl := strings.ToLower(strings.TrimSpace(v))
-		if v == "true" || v == "false" {
+		if vl == "true" || vl == "false" {
 			boolCount++
 			continue
 		}
-		if _, err := strconv.Atoi(v); err == nil {
+		if _, err := strconv.ParseFloat(v, 64); err == nil {
 			numCount++
 			continue
 		}
