@@ -411,6 +411,13 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		elementTypePageNames[s.Name] = true
 	}
 
+	// Build set of XMLHandler event names that have dedicated pages so we can
+	// produce links from element event lists to those handler pages.
+	xmlHandlerPageNames := map[string]bool{}
+	for _, h := range corpus.XMLHandlers {
+		xmlHandlerPageNames[h.Name] = true
+	}
+
 	links := []string{}
 	for _, symbol := range corpus.ElementTypes {
 		currentPath := slashPath("xml", "element_types", docName("element", symbol.Name))
@@ -421,9 +428,25 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		content += renderConfidenceSections(symbol.Confidence, symbol.Score, symbol.RawScore, symbol.Rationale, symbol.Signals, symbol.Evidence)
 		content += md.Section("Description", symbol.Description)
 		content += md.Section("Common Attributes", md.BulletList(symbol.CommonAttributes))
-		content += md.Section("Common Handlers", md.BulletList(symbol.CommonHandlers))
+		// Render "Common Handlers" with links to XMLHandler pages where available.
+		if len(symbol.CommonHandlers) > 0 {
+			handlerLinks := make([]string, 0, len(symbol.CommonHandlers))
+			for _, evt := range symbol.CommonHandlers {
+				if xmlHandlerPageNames[evt] {
+					handlerLinks = append(handlerLinks, markdownLink(evt, "../handlers/"+docName("handler", evt)))
+				} else {
+					handlerLinks = append(handlerLinks, evt)
+				}
+			}
+			content += md.Section("Common Handlers", md.BulletList(handlerLinks))
+		}
 		if len(symbol.CommonHandlerFunctions) > 0 {
 			content += md.Section("Common Handler Functions", md.BulletList(symbol.CommonHandlerFunctions))
+		}
+		// XML Event Bindings: per-event table showing which Lua functions are
+		// commonly bound and what the expected callback signature looks like.
+		if len(symbol.XMLEventBindings) > 0 {
+			content += renderXMLEventBindings(symbol.XMLEventBindings, xmlHandlerPageNames)
 		}
 		content += md.Section("Common Inherits", md.BulletList(symbol.CommonInherits))
 		if len(symbol.CommonParentTypes) > 0 {
@@ -742,6 +765,34 @@ func formatUsageExamples(examples []UsageExample) []string {
 		lines = append(lines, line)
 	}
 	return lines
+}
+
+// renderXMLEventBindings produces a ## XML Event Bindings section that shows,
+// for each observed XML handler event on this element type, which Lua functions
+// are commonly bound and what the expected callback signature looks like.
+// Event names that have a dedicated XMLHandler page are rendered as links.
+func renderXMLEventBindings(bindings []XMLEventBinding, handlerPages map[string]bool) string {
+	if len(bindings) == 0 {
+		return ""
+	}
+	var b strings.Builder
+	b.WriteString("\n## XML Event Bindings\n\n")
+	b.WriteString("| Event | Common Lua Bindings | Expected Callback | Args Confidence |\n")
+	b.WriteString("|-------|---------------------|-------------------|-----------------|\n")
+	for _, binding := range bindings {
+		eventCell := binding.Event
+		if handlerPages[binding.Event] {
+			eventCell = markdownLink(binding.Event, "../handlers/"+docName("handler", binding.Event))
+		}
+		luaCell := strings.Join(binding.LuaFunctions, ", ")
+		if luaCell == "" {
+			luaCell = "-"
+		}
+		argsCell := "`" + strings.ReplaceAll(binding.InferredArgs, "`", "\\`") + "`"
+		b.WriteString("| " + eventCell + " | " + luaCell + " | " + argsCell + " | " + binding.ArgsConfidence + " |\n")
+	}
+	b.WriteString("\n")
+	return b.String()
 }
 
 func bulletOrNone(lines []string) string {

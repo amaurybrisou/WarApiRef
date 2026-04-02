@@ -295,6 +295,17 @@ type ConstantSymbol struct {
 	Notes       []string
 }
 
+// XMLEventBinding records the observed association between one XML handler event
+// name and the Lua functions commonly bound to it on a specific element type.
+// InferredArgs is a best-effort Lua function signature string; ArgsConfidence
+// is "HIGH", "MEDIUM", or "LOW" to indicate how reliable the inference is.
+type XMLEventBinding struct {
+	Event         string
+	LuaFunctions  []string
+	InferredArgs  string
+	ArgsConfidence string
+}
+
 type ElementTypeSymbol struct {
 	Name                     string
 	Confidence               Confidence
@@ -313,6 +324,7 @@ type ElementTypeSymbol struct {
 	CommonChildElementTypes  []string // named child frame element types (e.g. Button inside Window)
 	CommonParentTypes        []string // element types that commonly contain this one (e.g. Window for Button)
 	CompositionSnippet       string   // representative XML snippet showing the hierarchy of structural children
+	XMLEventBindings         []XMLEventBinding // per-event bindings with Lua functions and inferred args
 	Examples                 []UsageExample
 	Notes                    []string
 }

@@ -71,7 +71,7 @@ Observed as a window function across 4 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "EnemyClickCastingDialogContent", "EnemyConfigDialogSectionsUnitFramesContent", "EnemyEffectsIndicatorDialogContent" |
+| arg1 | Observed as a function or method reference. | Observed values: "EnemyClickCastingDialogContent", "EnemyConfigDialogSectionsUnitFramesContent", "EnemyEffectsIndicatorDialogContent" |
 | arg2 | Observed as a numeric value. | Observed values: 0, scroll |
 
 ## Returns
