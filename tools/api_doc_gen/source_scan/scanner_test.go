@@ -94,3 +94,101 @@ func TestDiscoverAddonSourcesMissingFiles(t *testing.T) {
 		t.Errorf("expected 1 Lua file (the existing one), got %d", len(sources[0].LuaFiles))
 	}
 }
+
+// TestDiscoverAddonSourcesModManifestTree verifies that when an addon uses a
+// .mod manifest, the returned AddonSource carries a non-nil ModuleTree that
+// faithfully represents the manifest's XML tree — including any unknown
+// sections that should be preserved.
+func TestDiscoverAddonSourcesModManifestTree(t *testing.T) {
+	root := t.TempDir()
+	addonDir := filepath.Join(root, "ModAddon")
+	if err := os.MkdirAll(addonDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	modContent := `<?xml version="1.0" encoding="UTF-8"?>
+<UiMod name="ModAddon" version="1.0">
+  <Files>
+    <File name="ModAddon.lua"/>
+  </Files>
+  <OnInitialize>
+    <CallFunction name="ModAddon.Init"/>
+  </OnInitialize>
+  <CustomSection key="discovery_test"/>
+</UiMod>`
+	if err := os.WriteFile(filepath.Join(addonDir, "ModAddon.mod"), []byte(modContent), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(addonDir, "ModAddon.lua"), []byte(`function ModAddon.Init() end`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	sources, err := DiscoverAddonSources(root)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if len(sources) != 1 {
+		t.Fatalf("expected 1 source addon, got %d", len(sources))
+	}
+
+	src := sources[0]
+	if src.ModuleTree == nil {
+		t.Fatal("expected non-nil ModuleTree for .mod manifest addon")
+	}
+	if src.ModuleTree.Root == nil {
+		t.Fatal("expected non-nil ModuleTree.Root")
+	}
+	if src.ModuleTree.Root.Tag != "UiMod" {
+		t.Errorf("root tag: got %q, want UiMod", src.ModuleTree.Root.Tag)
+	}
+
+	// The unknown <CustomSection> node must be preserved in the tree.
+	found := false
+	for _, child := range src.ModuleTree.Root.Children {
+		if child.Tag == "CustomSection" {
+			found = true
+			if child.Attrs["key"] != "discovery_test" {
+				t.Errorf("<CustomSection> attr key: got %q, want discovery_test", child.Attrs["key"])
+			}
+		}
+	}
+	if !found {
+		t.Error("<CustomSection> was discarded from ModuleTree; expected preservation")
+	}
+
+	// Manifest is still correctly populated.
+	if src.Manifest.Name != "ModAddon" {
+		t.Errorf("manifest name: got %q", src.Manifest.Name)
+	}
+}
+
+// TestDiscoverAddonSourcesTOCManifestNoTree verifies that when an addon uses a
+// .toc manifest (not .mod), ModuleTree is nil — the field is only populated
+// for .mod-based addons.
+func TestDiscoverAddonSourcesTOCManifestNoTree(t *testing.T) {
+	root := t.TempDir()
+	addonDir := filepath.Join(root, "TOCAddon")
+	if err := os.MkdirAll(addonDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	toc := "## Title: TOCAddon\nTOCAddon.lua\n"
+	if err := os.WriteFile(filepath.Join(addonDir, "TOCAddon.toc"), []byte(toc), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(addonDir, "TOCAddon.lua"), []byte(`function TOCAddon.Init() end`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	sources, err := DiscoverAddonSources(root)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if len(sources) != 1 {
+		t.Fatalf("expected 1 source addon, got %d", len(sources))
+	}
+	if sources[0].ModuleTree != nil {
+		t.Error("expected nil ModuleTree for .toc manifest addon")
+	}
+}
+

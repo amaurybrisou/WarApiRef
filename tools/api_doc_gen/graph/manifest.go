@@ -1,13 +1,14 @@
 package graph
 
 import (
-	"encoding/xml"
 	"fmt"
 	"os"
 	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
+
+	"github.com/beevik/etree"
 )
 
 var skippedSourceDirectories = map[string]struct{}{
@@ -17,50 +18,6 @@ var skippedSourceDirectories = map[string]struct{}{
 	"data":        {},
 	"infra":       {},
 	"tools":       {},
-}
-
-type moduleFileXML struct {
-	UIMod uiModXML `xml:"UiMod"`
-}
-
-type uiModXML struct {
-	Name          string             `xml:"name,attr"`
-	Version       string             `xml:"version,attr"`
-	Date          string             `xml:"date,attr"`
-	Author        authorXML          `xml:"Author"`
-	Description   descriptionXML     `xml:"Description"`
-	Files         []namedFileXML     `xml:"Files>File"`
-	SavedVars     []savedVariableXML `xml:"SavedVariables>SavedVariable"`
-	CreateWindows []createWindowXML  `xml:"OnInitialize>CreateWindow"`
-	InitCalls     []callFunctionXML  `xml:"OnInitialize>CallFunction"`
-	UpdateCalls   []callFunctionXML  `xml:"OnUpdate>CallFunction"`
-	ShutdownCalls []callFunctionXML  `xml:"OnShutdown>CallFunction"`
-}
-
-type authorXML struct {
-	Name string `xml:"name,attr"`
-}
-
-type descriptionXML struct {
-	Text string `xml:"text,attr"`
-}
-
-type namedFileXML struct {
-	Name string `xml:"name,attr"`
-}
-
-type savedVariableXML struct {
-	Name   string `xml:"name,attr"`
-	Global string `xml:"global,attr"`
-}
-
-type createWindowXML struct {
-	Name string `xml:"name,attr"`
-	Show string `xml:"show,attr"`
-}
-
-type callFunctionXML struct {
-	Name string `xml:"name,attr"`
 }
 
 func DiscoverAddons(sourceRoot string, filters []string) ([]AddonSpec, error) {
@@ -136,89 +93,178 @@ func discoverManifest(addonPath string) (Manifest, bool, error) {
 	return Manifest{}, false, nil
 }
 
-func ParseModManifest(path string) (Manifest, error) {
-	bytes, err := os.ReadFile(path)
+// ParseModManifestTree parses a .mod file into a fully-preserved ModuleTree.
+//
+// Unlike ParseModManifest, this function never discards nodes.  Every XML
+// element in the file is captured in the tree, with attributes stored
+// generically.  Top-level children of the root element that match known
+// section names (Files, SavedVariables, OnInitialize, OnUpdate, OnShutdown,
+// Author, Description) are annotated with a non-empty ModSectionKind so
+// that callers can quickly locate classified sections without losing access
+// to the raw shape.
+//
+// The Manifest field of the returned ModuleTree is populated from the
+// classified sections and is provided for backwards compatibility.
+func ParseModManifestTree(path string) (ModuleTree, error) {
+	raw, err := os.ReadFile(path)
 	if err != nil {
-		return Manifest{}, fmt.Errorf("read mod manifest %s: %w", path, err)
+		return ModuleTree{}, fmt.Errorf("read mod manifest %s: %w", path, err)
 	}
-	bytes = sanitizeXMLDeclaration(bytes)
-	bytes = sanitizeXMLAmpersands(bytes)
-	bytes = sanitizeXMLComments(bytes)
+	raw = sanitizeXMLDeclaration(raw)
+	raw = sanitizeXMLAmpersands(raw)
+	raw = sanitizeXMLComments(raw)
 
-	var document moduleFileXML
-	if err := xml.Unmarshal(bytes, &document); err != nil {
-		manifest, fallbackErr := parseModManifestFallback(string(bytes), path)
+	doc := etree.NewDocument()
+	if err := doc.ReadFromBytes(raw); err != nil {
+		// etree failed: fall back to the legacy struct-based parser so we
+		// still produce a Manifest for callers that depend on it.  The tree
+		// will contain only what the fallback can reconstruct.
+		manifest, fallbackErr := parseModManifestFallback(string(raw), path)
 		if fallbackErr != nil {
-			return Manifest{}, fmt.Errorf("parse mod manifest %s: %w", path, err)
+			return ModuleTree{}, fmt.Errorf("parse mod manifest %s: %w", path, err)
 		}
-		return manifest, nil
+		return ModuleTree{Manifest: manifest}, nil
 	}
 
+	// Find the root element (expected to be <UiMod>, but captured generically).
+	var rootElem *etree.Element
+	for _, child := range doc.ChildElements() {
+		rootElem = child
+		break
+	}
+	if rootElem == nil {
+		return ModuleTree{}, fmt.Errorf("parse mod manifest %s: no root element found", path)
+	}
+
+	root := buildModNode(rootElem, ModSectionUnknown)
+	classifyModChildren(root)
+
+	manifest := extractManifestFromTree(root, path)
+	return ModuleTree{Root: root, Manifest: manifest}, nil
+}
+
+// knownModSections maps a top-level child tag name to its ModSectionKind.
+var knownModSections = map[string]ModSectionKind{
+	"Files":         ModSectionFiles,
+	"SavedVariables": ModSectionSavedVars,
+	"OnInitialize":  ModSectionOnInitialize,
+	"OnUpdate":      ModSectionOnUpdate,
+	"OnShutdown":    ModSectionOnShutdown,
+	"Author":        ModSectionAuthor,
+	"Description":   ModSectionDescription,
+}
+
+// buildModNode recursively converts an etree.Element into a ModNode,
+// capturing all attributes and children without filtering.
+func buildModNode(elem *etree.Element, section ModSectionKind) *ModNode {
+	attrs := make(map[string]string, len(elem.Attr))
+	for _, a := range elem.Attr {
+		attrs[a.Key] = a.Value
+	}
+	node := &ModNode{
+		Tag:     elem.Tag,
+		Attrs:   attrs,
+		Section: section,
+	}
+	for _, child := range elem.ChildElements() {
+		node.Children = append(node.Children, buildModNode(child, ModSectionUnknown))
+	}
+	return node
+}
+
+// classifyModChildren annotates the direct children of root with the
+// appropriate ModSectionKind where the tag name is recognised.
+// Children whose tags are not in knownModSections retain Section == ModSectionUnknown.
+func classifyModChildren(root *ModNode) {
+	for _, child := range root.Children {
+		if kind, ok := knownModSections[child.Tag]; ok {
+			child.Section = kind
+		}
+	}
+}
+
+// extractManifestFromTree walks the ModuleTree and builds a Manifest from
+// the classified sections.  It mirrors the extraction logic that was
+// previously embedded in ParseModManifest.
+func extractManifestFromTree(root *ModNode, path string) Manifest {
 	manifest := Manifest{
-		Name:            strings.TrimSpace(document.UIMod.Name),
+		Name:            strings.TrimSpace(root.Attrs["name"]),
 		Path:            NormalizePath(path),
 		Type:            "mod",
-		Version:         strings.TrimSpace(document.UIMod.Version),
-		Files:           make([]string, 0, len(document.UIMod.Files)),
-		SavedVariables:  make([]string, 0, len(document.UIMod.SavedVars)),
-		CreateWindows:   make([]string, 0, len(document.UIMod.CreateWindows)),
-		InitializeCalls: make([]string, 0, len(document.UIMod.InitCalls)),
-		UpdateCalls:     make([]string, 0, len(document.UIMod.UpdateCalls)),
-		ShutdownCalls:   make([]string, 0, len(document.UIMod.ShutdownCalls)),
+		Version:         strings.TrimSpace(root.Attrs["version"]),
+		Files:           []string{},
+		SavedVariables:  []string{},
+		CreateWindows:   []string{},
+		InitializeCalls: []string{},
+		UpdateCalls:     []string{},
+		ShutdownCalls:   []string{},
 		Metadata: map[string]string{
-			"author":      strings.TrimSpace(document.UIMod.Author.Name),
-			"description": strings.TrimSpace(document.UIMod.Description.Text),
-			"date":        strings.TrimSpace(document.UIMod.Date),
+			"date": strings.TrimSpace(root.Attrs["date"]),
 		},
 	}
 
-	for _, fileEntry := range document.UIMod.Files {
-		trimmed := strings.TrimSpace(fileEntry.Name)
-		if trimmed == "" {
-			continue
+	for _, section := range root.Children {
+		switch section.Section {
+		case ModSectionFiles:
+			for _, child := range section.Children {
+				if name := strings.TrimSpace(child.Attrs["name"]); name != "" {
+					manifest.Files = append(manifest.Files, NormalizePath(name))
+				}
+			}
+		case ModSectionSavedVars:
+			for _, child := range section.Children {
+				if name := strings.TrimSpace(child.Attrs["name"]); name != "" {
+					manifest.SavedVariables = append(manifest.SavedVariables, name)
+				}
+			}
+		case ModSectionOnInitialize:
+			for _, child := range section.Children {
+				switch child.Tag {
+				case "CreateWindow":
+					if name := strings.TrimSpace(child.Attrs["name"]); name != "" {
+						manifest.CreateWindows = append(manifest.CreateWindows, name)
+					}
+				case "CallFunction":
+					if name := strings.TrimSpace(child.Attrs["name"]); name != "" {
+						manifest.InitializeCalls = append(manifest.InitializeCalls, name)
+					}
+				}
+			}
+		case ModSectionOnUpdate:
+			for _, child := range section.Children {
+				if child.Tag == "CallFunction" {
+					if name := strings.TrimSpace(child.Attrs["name"]); name != "" {
+						manifest.UpdateCalls = append(manifest.UpdateCalls, name)
+					}
+				}
+			}
+		case ModSectionOnShutdown:
+			for _, child := range section.Children {
+				if child.Tag == "CallFunction" {
+					if name := strings.TrimSpace(child.Attrs["name"]); name != "" {
+						manifest.ShutdownCalls = append(manifest.ShutdownCalls, name)
+					}
+				}
+			}
+		case ModSectionAuthor:
+			manifest.Metadata["author"] = strings.TrimSpace(section.Attrs["name"])
+		case ModSectionDescription:
+			manifest.Metadata["description"] = strings.TrimSpace(section.Attrs["text"])
 		}
-		manifest.Files = append(manifest.Files, NormalizePath(trimmed))
-	}
-	for _, saved := range document.UIMod.SavedVars {
-		trimmed := strings.TrimSpace(saved.Name)
-		if trimmed == "" {
-			continue
-		}
-		manifest.SavedVariables = append(manifest.SavedVariables, trimmed)
-	}
-	for _, action := range document.UIMod.CreateWindows {
-		trimmed := strings.TrimSpace(action.Name)
-		if trimmed == "" {
-			continue
-		}
-		manifest.CreateWindows = append(manifest.CreateWindows, trimmed)
-	}
-	for _, action := range document.UIMod.InitCalls {
-		trimmed := strings.TrimSpace(action.Name)
-		if trimmed == "" {
-			continue
-		}
-		manifest.InitializeCalls = append(manifest.InitializeCalls, trimmed)
-	}
-	for _, action := range document.UIMod.UpdateCalls {
-		trimmed := strings.TrimSpace(action.Name)
-		if trimmed == "" {
-			continue
-		}
-		manifest.UpdateCalls = append(manifest.UpdateCalls, trimmed)
-	}
-	for _, action := range document.UIMod.ShutdownCalls {
-		trimmed := strings.TrimSpace(action.Name)
-		if trimmed == "" {
-			continue
-		}
-		manifest.ShutdownCalls = append(manifest.ShutdownCalls, trimmed)
 	}
 
 	if manifest.Name == "" {
 		manifest.Name = filepath.Base(filepath.Dir(path))
 	}
-	return manifest, nil
+	return manifest
+}
+
+func ParseModManifest(path string) (Manifest, error) {
+	tree, err := ParseModManifestTree(path)
+	if err != nil {
+		return Manifest{}, err
+	}
+	return tree.Manifest, nil
 }
 
 func ParseTOCManifest(path string) (Manifest, error) {
