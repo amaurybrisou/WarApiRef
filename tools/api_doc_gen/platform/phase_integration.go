@@ -1,0 +1,271 @@
+package platform
+
+import (
+	"roraddons/tools/api_doc_gen/semantic_merge"
+	"roraddons/tools/api_doc_gen/xml_lua_binding"
+	"roraddons/tools/api_doc_gen/xml_structure"
+)
+
+// runPhasedPipeline converts the existing SourceModel data into PipelineInput,
+// runs the 4-phase XML↔Lua semantic pipeline, and enriches the ElementTypeSymbol
+// slice with the resulting Phase 4 catalog.
+func runPhasedPipeline(elementTypes []ElementTypeSymbol, source SourceModel) []ElementTypeSymbol {
+	// Build Phase 1 XMLTrees from the existing FrameDoc/HandlerDoc data.
+	// Since we don't have access to raw XML files in platform mode (we work
+	// from pre-parsed API_Ref docs), we synthesise XMLElements from FrameDocs.
+	trees := synthesizeXMLTrees(source)
+
+	// Build Lua function definitions from FunctionDocs for Phase 2.
+	luaDefs := synthesizeLuaDefs(source)
+
+	// Run the full 4-phase pipeline.
+	output := semantic_merge.RunPipeline(&semantic_merge.PipelineInput{
+		XMLTrees:     trees,
+		LuaFunctions: luaDefs,
+	})
+
+	// Enrich element types from the Phase 4 catalog.
+	return enrichElementTypesFromCatalog(elementTypes, output.Catalog)
+}
+
+// synthesizeXMLTrees converts SourceModel.Frames into XMLTrees that the Phase 1
+// corpus builder can aggregate. Each frame becomes an XMLElement; handlers from
+// FrameDoc.Handlers and SourceModel.Handlers are attached.
+func synthesizeXMLTrees(source SourceModel) []*xml_structure.XMLTree {
+	// Group frames by file
+	byFile := make(map[string][]*xml_structure.XMLElement)
+	addonByFile := make(map[string]string)
+
+	for _, frame := range source.Frames {
+		fileKey := frame.Source
+		if fileKey == "" {
+			fileKey = frame.Addon + "/_synthetic"
+		}
+		addonByFile[fileKey] = frame.Addon
+
+		elem := &xml_structure.XMLElement{
+			Tag:             frame.Type,
+			Name:            frame.Name,
+			RawName:         frame.Name,
+			Addon:           frame.Addon,
+			File:            fileKey,
+			IsNamed:         frame.Name != "",
+			IsTemplate:      frame.Template,
+			Inherits:        frame.Inherits,
+			Attributes:      frame.Attributes,
+			ParentFrameName: frame.Parent,
+			ParentFrameType: frame.ParentType,
+		}
+		if elem.Attributes == nil {
+			elem.Attributes = make(map[string]string)
+		}
+
+		// Add handlers from the frame doc
+		for _, h := range frame.Handlers {
+			elem.Handlers = append(elem.Handlers, xml_structure.XMLHandlerDecl{
+				Event:    h.Event,
+				Function: h.Function,
+			})
+		}
+
+		// Synthesize structural children
+		for _, childType := range frame.StructuralChildTypes {
+			childElem := &xml_structure.XMLElement{
+				Tag:             childType,
+				Addon:           frame.Addon,
+				File:            fileKey,
+				Parent:          elem,
+				IsStructural:    true,
+				Attributes:      make(map[string]string),
+				ParentFrameName: frame.Name,
+				ParentFrameType: frame.Type,
+			}
+			// Carry over attribute keys
+			if attrKeys, ok := frame.StructuralChildAttrKeys[childType]; ok {
+				for _, k := range attrKeys {
+					childElem.Attributes[k] = ""
+				}
+			}
+			elem.Children = append(elem.Children, childElem)
+		}
+
+		byFile[fileKey] = append(byFile[fileKey], elem)
+	}
+
+	// Also attach handlers from source.Handlers to the synthesized elements
+	elemByName := make(map[string]*xml_structure.XMLElement)
+	for _, elems := range byFile {
+		for _, elem := range elems {
+			if elem.IsNamed {
+				elemByName[elem.Addon+"|"+elem.Name] = elem
+			}
+		}
+	}
+	for _, handler := range source.Handlers {
+		key := handler.Addon + "|" + handler.Frame
+		if elem, ok := elemByName[key]; ok {
+			// Check if handler already exists
+			exists := false
+			for _, h := range elem.Handlers {
+				if h.Event == handler.Event && h.Function == handler.Function {
+					exists = true
+					break
+				}
+			}
+			if !exists {
+				elem.Handlers = append(elem.Handlers, xml_structure.XMLHandlerDecl{
+					Event:    handler.Event,
+					Function: handler.Function,
+				})
+			}
+		}
+	}
+
+	// Build trees
+	var trees []*xml_structure.XMLTree
+	for file, elems := range byFile {
+		tree := &xml_structure.XMLTree{
+			Addon: addonByFile[file],
+			File:  file,
+			Root:  elems,
+		}
+		// Build flat AllNodes index
+		var allNodes []*xml_structure.XMLElement
+		var walk func(e *xml_structure.XMLElement)
+		walk = func(e *xml_structure.XMLElement) {
+			allNodes = append(allNodes, e)
+			for _, c := range e.Children {
+				walk(c)
+			}
+		}
+		for _, root := range elems {
+			walk(root)
+		}
+		tree.AllNodes = allNodes
+		trees = append(trees, tree)
+	}
+
+	return trees
+}
+
+// synthesizeLuaDefs converts SourceModel.Functions into LuaFunctionDefs for the
+// Phase 2 Lua correlation step.
+func synthesizeLuaDefs(source SourceModel) []xml_lua_binding.LuaFunctionDef {
+	var defs []xml_lua_binding.LuaFunctionDef
+	for _, fn := range source.Functions {
+		def := xml_lua_binding.LuaFunctionDef{
+			Name:          fn.Name,
+			QualifiedName: fn.Addon + "." + fn.Name,
+			Addon:         fn.Addon,
+			File:          fn.Source,
+			Local:         fn.Local,
+			Params:        fn.Parameters,
+		}
+		for _, call := range fn.Calls {
+			def.Calls = append(def.Calls, xml_lua_binding.LuaCallRef{
+				Name:      call.Name,
+				Arguments: call.Arguments,
+				Line:      call.Line,
+			})
+		}
+		defs = append(defs, def)
+	}
+	return defs
+}
+
+// enrichElementTypesFromCatalog applies the Phase 4 EnrichedElementCatalog to the
+// existing ElementTypeSymbol slice, adding structured attribute profiles,
+// structural child profiles, Lua API call aggregations, and handler argument
+// patterns. This bridges the new phased pipeline output into the existing
+// platform corpus model.
+func enrichElementTypesFromCatalog(elementTypes []ElementTypeSymbol, catalog *semantic_merge.EnrichedElementCatalog) []ElementTypeSymbol {
+	if catalog == nil {
+		return elementTypes
+	}
+
+	for i, sym := range elementTypes {
+		enriched, ok := catalog.Elements[sym.Name]
+		if !ok {
+			continue
+		}
+
+		// Attribute profiles
+		for _, attr := range enriched.AttributeProfiles {
+			elementTypes[i].AttributeProfiles = append(elementTypes[i].AttributeProfiles, AttributeProfileEntry{
+				Name:         attr.Name,
+				IsRequired:   attr.IsRequired,
+				SampleValues: attr.SampleValues,
+				Count:        attr.Count,
+				TotalCount:   attr.TotalCount,
+			})
+		}
+
+		// Structural child profiles
+		for _, sc := range enriched.StructuralChildren {
+			profile := StructuralChildProfile{
+				Tag:   sc.Tag,
+				Count: sc.Count,
+			}
+			for _, attr := range sc.Attributes {
+				profile.Attributes = append(profile.Attributes, AttributeProfileEntry{
+					Name:         attr.Name,
+					IsRequired:   attr.IsRequired,
+					SampleValues: attr.SampleValues,
+					Count:        attr.Count,
+					TotalCount:   attr.TotalCount,
+				})
+			}
+			elementTypes[i].StructuralChildProfiles = append(elementTypes[i].StructuralChildProfiles, profile)
+		}
+
+		// Lua API calls from handlers
+		for _, call := range enriched.LuaAPICalls {
+			elementTypes[i].LuaAPICallsFromHandlers = append(elementTypes[i].LuaAPICallsFromHandlers, LuaAPICallEntry{
+				Function:   call.Function,
+				Count:      call.Count,
+				FromEvents: call.FromEvents,
+			})
+		}
+
+		// Handler argument patterns
+		for _, pattern := range enriched.HandlerArgPatterns {
+			entry := HandlerArgPatternEntry{
+				Event:      pattern.Event,
+				Confidence: pattern.Confidence,
+			}
+			for _, p := range pattern.ExpectedParams {
+				entry.Params = append(entry.Params, HandlerExpectedParam{
+					Position: p.Position,
+					Name:     p.Name,
+					Type:     p.Type,
+					Role:     p.Role,
+				})
+			}
+			elementTypes[i].HandlerArgPatterns = append(elementTypes[i].HandlerArgPatterns, entry)
+		}
+
+		// Lua manipulators
+		for _, m := range enriched.LuaManipulators {
+			elementTypes[i].LuaManipulators = append(elementTypes[i].LuaManipulators, m.Function)
+		}
+
+		// Enrich parents/children if more data from Phase 1
+		if len(enriched.Parents) > 0 && len(sym.CommonParentTypes) == 0 {
+			for _, p := range enriched.Parents {
+				elementTypes[i].CommonParentTypes = append(elementTypes[i].CommonParentTypes, p.Tag)
+			}
+		}
+		if len(enriched.Children) > 0 && len(sym.CommonChildElementTypes) == 0 {
+			for _, c := range enriched.Children {
+				elementTypes[i].CommonChildElementTypes = append(elementTypes[i].CommonChildElementTypes, c.Tag)
+			}
+		}
+		if len(enriched.StructuralChildren) > 0 && len(sym.CommonChildTypes) == 0 {
+			for _, sc := range enriched.StructuralChildren {
+				elementTypes[i].CommonChildTypes = append(elementTypes[i].CommonChildTypes, sc.Tag)
+			}
+		}
+	}
+
+	return elementTypes
+}

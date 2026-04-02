@@ -327,6 +327,52 @@ type ElementTypeSymbol struct {
 	XMLEventBindings         []XMLEventBinding // per-event bindings with Lua functions and inferred args
 	Examples                 []UsageExample
 	Notes                    []string
+
+	// Phase 4 enrichment: structured data from the semantic merge pipeline
+	AttributeProfiles        []AttributeProfileEntry  // Attribute reference table with required/optional and sample values
+	StructuralChildProfiles  []StructuralChildProfile // Detailed structural sub-element profiles
+	LuaAPICallsFromHandlers  []LuaAPICallEntry        // Aggregated Lua API calls made from XML event handlers
+	HandlerArgPatterns       []HandlerArgPatternEntry // Expected callback argument patterns per event
+	LuaManipulators          []string                 // Lua functions that manipulate frames of this type
+}
+
+// AttributeProfileEntry describes an observed XML attribute with usage statistics.
+type AttributeProfileEntry struct {
+	Name         string   // Attribute key
+	IsRequired   bool     // Present in >80% of instances
+	SampleValues []string // Distinct observed values (up to 8)
+	Count        int      // How many elements have this attribute
+	TotalCount   int      // Total elements of this type
+}
+
+// StructuralChildProfile describes an unnamed structural child element type
+// with its own attribute data.
+type StructuralChildProfile struct {
+	Tag        string                  // Child element tag (e.g. "ListData")
+	Count      int                     // Observation count
+	Attributes []AttributeProfileEntry // Attributes observed on this child type
+}
+
+// LuaAPICallEntry describes an API call commonly made from event handlers.
+type LuaAPICallEntry struct {
+	Function   string   // Called function name
+	Count      int      // How many handlers make this call
+	FromEvents []string // Which XML events' handlers make this call
+}
+
+// HandlerArgPatternEntry describes expected callback argument patterns for a handler event.
+type HandlerArgPatternEntry struct {
+	Event      string                // XML event name
+	Params     []HandlerExpectedParam // Expected parameters
+	Confidence string                // HIGH, MEDIUM, LOW
+}
+
+// HandlerExpectedParam describes one expected parameter in a handler callback.
+type HandlerExpectedParam struct {
+	Position int    // 0-based position
+	Name     string // Expected parameter name
+	Type     string // Expected type
+	Role     string // Semantic role
 }
 
 type PatternDoc struct {
