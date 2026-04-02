@@ -66,7 +66,7 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Parent Elements
 
-- [VerticalScrollbar](element_VerticalScrollbar.md)
+- [VerticalScrollbar](element_VerticalScrollbar.md) — 1× (HIGH)
 
 ## Attribute Reference
 

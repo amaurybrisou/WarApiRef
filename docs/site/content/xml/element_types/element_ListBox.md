@@ -97,12 +97,18 @@ Observed XML element type instantiated by 20 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | Enemy.UnitFramesUI_ConfigDialog_OnClickCastingsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnUnitFramePartsListLButtonUp, Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListLButtonUp, TidyRoll.CustomAutoRoll.OnListLbuttonUp, wbLeadHelperMessagesTab.OnListLButtonUp | `function(...)` | LOW |
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.KillSpamUI_KillSpamDialog_OnMouseOver | `function()` | MEDIUM |
-| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | Enemy.KillSpamUI_KillSpamDialog_OnMouseOverEnd | `function(...)` | LOW |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | AggroMeter.PickedListMenu | `function(...)` | LOW |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Enemy.UnitFramesUI_ConfigDialog_OnClickCastingsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnUnitFramePartsListLButtonUp, Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListLButtonUp, TidyRoll.CustomAutoRoll.OnListLbuttonUp, wbLeadHelperMessagesTab.OnListLButtonUp | `flags, x, y` | MEDIUM |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.KillSpamUI_KillSpamDialog_OnMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | Enemy.KillSpamUI_KillSpamDialog_OnMouseOverEnd | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | AggroMeter.PickedListMenu | `flags, x, y` | MEDIUM |
+
+### Per-Event Lua API Calls
+
+**OnLButtonUp** handlers call: `Cursor.Clear`, `Cursor.IconOnCursor`, `ListBoxGetDataIndex`, `WindowGetId`
+
+**OnRButtonUp** handlers call: `ListBoxGetDataIndex`, `WindowGetId`
 
 ## Common Inherits
 
@@ -110,13 +116,16 @@ Observed XML element type instantiated by 20 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 47× (HIGH)
 
 ## Common Structural Child Elements
 
-- [ListData](element_ListData.md)
-- [ListColumns](element_ListColumns.md)
-- [ListColumn](element_ListColumn.md)
+- [ListData](element_ListData.md) — 51× (HIGH)
+- [ListColumns](element_ListColumns.md) — 28× (HIGH)
+- [ListColumn](element_ListColumn.md) — 27× (HIGH)
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Typical XML Structure
 
@@ -135,11 +144,11 @@ Observed XML element type instantiated by 20 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `rowdef` | optional | 52% | DAoCBuff_FrameSettingsRow, BuffHeadSetupFilterRowTemplate, ShiniesAutoUI_ItemRow, EnemyKillSpam_AreaStatsRowTemplate, ... |
-| `rowspacing` | optional | 52% | 1, 0, 6, 2, ... |
-| `visiblerows` | optional | 52% | 12, 5, 10, 3, ... |
+| `rowdef` | optional | 52% | AuraSharesRow, BuffHeadSetupSelectTextureRowTemplate, ShiniesBrowseUI_SearchesRow, AutoRollRowTemplate, ... |
+| `rowspacing` | optional | 52% | 0, 1, 2, 5, ... |
+| `visiblerows` | optional | 52% | 5, 6, 15, 7, ... |
 | `scrollbar` | optional | 43% | EA_ScrollBar_DefaultVerticalChain |
-| `rowcount` | optional | 12% | 120, 25, 500, 2, ... |
+| `rowcount` | optional | 12% | 500, 100, 120, 25, ... |
 | `layer` | optional | 4% | secondary |
 | `color` | optional | 1% | 155, 255, 155, 0 |
 | `draganddrop` | optional | 1% | true |
@@ -171,12 +180,12 @@ Observed 27 times as an unnamed child.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `ListBoxGetDataIndex` | 6 | OnLButtonUp, OnRButtonUp |
-| `WindowGetId` | 6 | OnLButtonUp, OnRButtonUp |
-| `Cursor.Clear` | 1 | OnLButtonUp |
-| `Cursor.IconOnCursor` | 1 | OnLButtonUp |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `ListBoxGetDataIndex` | ui | 6 | OnLButtonUp, OnRButtonUp |
+| `WindowGetId` | ui | 6 | OnLButtonUp, OnRButtonUp |
+| `Cursor.Clear` | ui | 1 | OnLButtonUp |
+| `Cursor.IconOnCursor` | data | 1 | OnLButtonUp |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -209,12 +218,18 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.UpdateHighlightOnRow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateHighlightOnRow
 - DAoCBuff.DAoCBuffSettings.SetLabels
 - DAoCBuff.DAoCBuffSettings.Change_Setting
 - DAoCBuff.DAoCBuffSettings.CreateOptionswindow
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateHighlightOnRow
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.UpdateHighlightOnRow
+
+
+## Binding Resolution
+
+- Total handler declarations: 11
+- Resolved to Lua functions: 9 (81%)
 
 ## Seen In
 

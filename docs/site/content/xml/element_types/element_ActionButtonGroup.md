@@ -86,12 +86,20 @@ Observed XML element type instantiated by 3 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnActionButtonLButtonDown](../handlers/handler_OnActionButtonLButtonDown.md) | BankWindow.EquipmentLButtonDown | `function(...)` | LOW |
-| [OnActionButtonLButtonUp](../handlers/handler_OnActionButtonLButtonUp.md) | BankWindow.EquipmentLButtonUp | `function(...)` | LOW |
-| [OnActionButtonMouseOver](../handlers/handler_OnActionButtonMouseOver.md) | BankWindow.EquipmentMouseOver | `function(...)` | LOW |
-| [OnActionButtonRButtonDown](../handlers/handler_OnActionButtonRButtonDown.md) | BankWindow.EquipmentRButtonDown | `function(...)` | LOW |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnActionButtonLButtonDown](../handlers/handler_OnActionButtonLButtonDown.md) | custom | BankWindow.EquipmentLButtonDown | `function(...)` | LOW |
+| [OnActionButtonLButtonUp](../handlers/handler_OnActionButtonLButtonUp.md) | custom | BankWindow.EquipmentLButtonUp | `function(...)` | LOW |
+| [OnActionButtonMouseOver](../handlers/handler_OnActionButtonMouseOver.md) | custom | BankWindow.EquipmentMouseOver | `function(...)` | LOW |
+| [OnActionButtonRButtonDown](../handlers/handler_OnActionButtonRButtonDown.md) | custom | BankWindow.EquipmentRButtonDown | `function(...)` | LOW |
+
+### Per-Event Lua API Calls
+
+**OnActionButtonLButtonDown** handlers call: `Cursor.Clear`, `Cursor.IconOnCursor`, `Cursor.PickUp`
+
+**OnActionButtonLButtonUp** handlers call: `WindowGetId`
+
+**OnActionButtonMouseOver** handlers call: `WindowGetId`
 
 ## Common Inherits
 
@@ -100,7 +108,15 @@ Observed XML element type instantiated by 3 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 2× (MEDIUM)
+
+## Common Template Bases
+
+- EA_ActionButtonGroup_CareerIconsWithTooltip
+- EA_ActionButtonGroup_DefaultSmall
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Attribute Reference
 
@@ -114,12 +130,12 @@ Observed XML element type instantiated by 3 addons.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `WindowGetId` | 2 | OnActionButtonLButtonUp, OnActionButtonMouseOver |
-| `Cursor.Clear` | 1 | OnActionButtonLButtonDown |
-| `Cursor.IconOnCursor` | 1 | OnActionButtonLButtonDown |
-| `Cursor.PickUp` | 1 | OnActionButtonLButtonDown |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `WindowGetId` | ui | 2 | OnActionButtonLButtonUp, OnActionButtonMouseOver |
+| `Cursor.Clear` | ui | 1 | OnActionButtonLButtonDown |
+| `Cursor.IconOnCursor` | data | 1 | OnActionButtonLButtonDown |
+| `Cursor.PickUp` | data | 1 | OnActionButtonLButtonDown |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -150,6 +166,12 @@ Confidence: LOW
 ## Lua Functions Manipulating This Type
 
 - BankWindowFix.BankWindowFix.Initialize
+
+
+## Binding Resolution
+
+- Total handler declarations: 4
+- Resolved to Lua functions: 3 (75%)
 
 ## Seen In
 

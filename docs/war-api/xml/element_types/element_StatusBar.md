@@ -76,14 +76,21 @@ Observed XML element type instantiated by 2 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 5× (HIGH)
+
+## Common Template Bases
+
+- UnitFrameFriendlyHealthStatusSmallBar
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `popable` | optional | 50% | false |
-| `foreground` | optional | 40% | T1_DefaultTintableBar, FORT_DefaultTintableBar |
+| `foreground` | optional | 40% | FORT_DefaultTintableBar, T1_DefaultTintableBar |
 | `handleinput` | optional | 40% | false |
 | `reverseFill` | optional | 20% | true |
 | `inherits` | optional | 10% | UnitFrameFriendlyHealthStatusSmallBar |

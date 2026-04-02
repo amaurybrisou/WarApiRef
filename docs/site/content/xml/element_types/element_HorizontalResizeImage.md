@@ -83,15 +83,30 @@ Observed XML element type instantiated by 12 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 12× (HIGH)
 
 ## Common Structural Child Elements
 
-- [Middle](element_Middle.md)
-- [Left](element_Left.md)
-- [Right](element_Right.md)
-- [TintColor](element_TintColor.md)
-- [TexSlices](element_TexSlices.md)
+- [Middle](element_Middle.md) — 15× (HIGH)
+- [Left](element_Left.md) — 10× (HIGH)
+- [Right](element_Right.md) — 10× (HIGH)
+- [TintColor](element_TintColor.md) — 10× (HIGH)
+- [TexSlices](element_TexSlices.md) — 5× (MEDIUM)
+
+## Common Template Bases
+
+- BuffHeadLayoutHorizontalResizeImage
+- EA_BrownHorizontalRule
+- EA_HorizontalResizeImage_DefaultTopFrame
+- EA_HorizontalResizeImage_TabSeparatorMiddle
+- RVAPI_ColorDialogHorizontalLineTintable
+- RewardPoolFilledBarLoser
+- RewardPoolFilledBarVictor
+- VictoryPointsFilledBarDestruction
+- VictoryPointsFilledBarOrder
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Typical XML Structure
 
@@ -108,8 +123,8 @@ Observed XML element type instantiated by 12 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 37% | EA_HorizontalResizeImage_TabSeparatorMiddle, VictoryPointsFilledBarOrder, EA_BrownHorizontalRule, RewardPoolFilledBarLoser, ... |
-| `texture` | optional | 34% | EA_VictoryPoints01_32b, EA_HUD_01, EA_TintableImage, shared_01 |
+| `inherits` | optional | 37% | RVAPI_ColorDialogHorizontalLineTintable, EA_HorizontalResizeImage_TabSeparatorMiddle, VictoryPointsFilledBarOrder, EA_BrownHorizontalRule, ... |
+| `texture` | optional | 34% | EA_TintableImage, EA_HUD_01, EA_VictoryPoints01_32b, shared_01 |
 | `handleinput` | optional | 27% | false |
 | `layer` | optional | 11% | background |
 | `savesettings` | optional | 11% | false |
@@ -159,11 +174,11 @@ Observed 5 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- AdvancedPetAssist.APAGui.UpdateInstantOnlyHUD
 - AdvancedPetAssist.APAGui.UpdateFollowTargetHUD
+- AdvancedPetAssist.APAGui.UpdatePetTargetHUD
 - AdvancedPetAssist.APAGui.UpdateKitingHUD
 - PotionBar.PotionBarSettings.OnShown
-- AdvancedPetAssist.APAGui.UpdatePetTargetHUD
+- AdvancedPetAssist.APAGui.UpdateInstantOnlyHUD
 
 ## Seen In
 

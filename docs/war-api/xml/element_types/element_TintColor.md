@@ -71,12 +71,12 @@ Observed XML element type instantiated by 21 addons.
 
 ## Common Parent Elements
 
-- [FullResizeImage](element_FullResizeImage.md)
-- [DynamicImage](element_DynamicImage.md)
-- [Label](element_Label.md)
-- [HorizontalResizeImage](element_HorizontalResizeImage.md)
-- [CircleImage](element_CircleImage.md)
-- [VerticalResizeImage](element_VerticalResizeImage.md)
+- [FullResizeImage](element_FullResizeImage.md) — 37× (HIGH)
+- [DynamicImage](element_DynamicImage.md) — 27× (HIGH)
+- [Label](element_Label.md) — 14× (HIGH)
+- [HorizontalResizeImage](element_HorizontalResizeImage.md) — 10× (HIGH)
+- [CircleImage](element_CircleImage.md) — 8× (MEDIUM)
+- [VerticalResizeImage](element_VerticalResizeImage.md) — 3× (MEDIUM)
 
 ## Attribute Reference
 

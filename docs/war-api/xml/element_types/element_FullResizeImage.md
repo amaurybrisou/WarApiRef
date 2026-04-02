@@ -100,11 +100,19 @@ Observed XML element type instantiated by 41 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | MapMonster_Calibrate.OnLMouseButton, MiracleGrow.autoGrow, MiracleGrow.onAutoConsumeToggle | `function(...)` | LOW |
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.ConfigurationWindow_ShowTooltip, MiracleGrow.OverAutoConsume, MiracleGrow.OverStartAll, wbLeadHelper.onMouseOver | `function()` | MEDIUM |
-| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | MapMonster_Calibrate.OnMouseOverEnd, MiracleGrow.OverEndStartAll, MiracleGrow.setAutoGrowColor, wbLeadHelper.onMouseOut | `function(...)` | LOW |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | MapMonster_Calibrate.OnLMouseButton, MiracleGrow.autoGrow, MiracleGrow.onAutoConsumeToggle | `flags, x, y` | MEDIUM |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.ConfigurationWindow_ShowTooltip, MiracleGrow.OverAutoConsume, MiracleGrow.OverStartAll, wbLeadHelper.onMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | MapMonster_Calibrate.OnMouseOverEnd, MiracleGrow.OverEndStartAll, MiracleGrow.setAutoGrowColor, wbLeadHelper.onMouseOut | `function(...)` | LOW |
+
+### Per-Event Lua API Calls
+
+**OnLButtonUp** handlers call: `LabelSetText`, `WindowGetScreenPosition`, `WindowSetTintColor`
+
+**OnMouseOver** handlers call: `LabelSetTextColor`, `WindowSetTintColor`
+
+**OnMouseOverEnd** handlers call: `LabelSetText`, `LabelSetTextColor`, `WindowGetScreenPosition`, `WindowSetTintColor`
 
 ## Common Inherits
 
@@ -123,28 +131,52 @@ Observed XML element type instantiated by 41 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
-- [Button](element_Button.md)
+- [Window](element_Window.md) — 153× (HIGH)
+- [Button](element_Button.md) — 5× (MEDIUM)
 
 ## Common Named Child Elements
 
-- [Label](element_Label.md)
+- [Label](element_Label.md) — 3× (MEDIUM)
 
 ## Common Structural Child Elements
 
-- [TintColor](element_TintColor.md)
-- [Middle](element_Middle.md)
-- [TexSlices](element_TexSlices.md)
+- [TintColor](element_TintColor.md) — 37× (HIGH)
+- [Middle](element_Middle.md) — 11× (HIGH)
+- [TexSlices](element_TexSlices.md) — 5× (MEDIUM)
+
+## Common Template Bases
+
+- AuraWindowBackground
+- ClosetGoblinDefaultBG
+- DefaultWindowBackground
+- EA_Button_ResizeIconFrameHighlight
+- EA_Button_ResizeIconFrameNormal
+- EA_Button_ResizeIconFramePressed
+- EA_FullResizeImage_AlertBubbleBackground
+- EA_FullResizeImage_BlackTransparent
+- EA_FullResizeImage_DefaultBubbleBackground
+- EA_FullResizeImage_DefaultFrame
+- EA_FullResizeImage_MetalFill
+- EA_FullResizeImage_TanBorder
+- EA_FullResizeImage_TintableFrame
+- EA_FullResizeImage_TintableSolidBackground
+- EA_FullResizeImage_WhiteTransparent
+- IraConfigUFrame
+- ModBackgroundTemplate
+- SettingsSectionBackground
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 52% | EA_FullResizeImage_TintableSolidBackground, AuraWindowBackground, DefaultWindowBackground, EA_FullResizeImage_DefaultBubbleBackground, ... |
+| `inherits` | optional | 52% | EA_FullResizeImage_TintableSolidBackground, EA_FullResizeImage_WhiteTransparent, EA_FullResizeImage_TintableFrame, EA_Button_ResizeIconFrameNormal, ... |
 | `handleinput` | optional | 28% | true, false |
-| `layer` | optional | 17% | default, overlay, background, popup, ... |
-| `alpha` | optional | 14% | 1, 0.9, 0.5, 1.0, ... |
-| `texture` | optional | 3% | Shinies3pxBorder, enemy_bar_rect, Frame_1, shared_01, ... |
+| `layer` | optional | 17% | secondary, overlay, default, background, ... |
+| `alpha` | optional | 14% | 0, 0.25, 0.5, 0.6, ... |
+| `texture` | optional | 3% | Shinies3pxBorder, Frame_BG, enemy_bar_rect, Frame_1, ... |
 | `skipinput` | optional | 2% | true |
 | `frameonly` | optional | 1% | true |
 | `showing` | optional | 1% | false |
@@ -182,12 +214,12 @@ Observed 5 times as an unnamed child.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `WindowSetTintColor` | 10 | OnLButtonUp, OnMouseOver, OnMouseOverEnd |
-| `LabelSetText` | 7 | OnLButtonUp, OnMouseOverEnd |
-| `LabelSetTextColor` | 2 | OnMouseOver, OnMouseOverEnd |
-| `WindowGetScreenPosition` | 2 | OnLButtonUp, OnMouseOverEnd |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `WindowSetTintColor` | ui | 10 | OnLButtonUp, OnMouseOver, OnMouseOverEnd |
+| `LabelSetText` | ui | 7 | OnLButtonUp, OnMouseOverEnd |
+| `LabelSetTextColor` | ui | 2 | OnMouseOver, OnMouseOverEnd |
+| `WindowGetScreenPosition` | ui | 2 | OnLButtonUp, OnMouseOverEnd |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -211,36 +243,42 @@ Confidence: HIGH
 
 ## Lua Functions Manipulating This Type
 
-- RandomMount.RandomMountUI.OnInitialize
-- Moth.Moth.HideBorders
+- WhoHealedMe.WHMCore.ApplyBackgroundFillColor
+- MoraleCircle.MoraleCircle.OnSetCustomColor
+- WSCT.WSCT.ColorOnButtonUp
+- MoraleCircle.MoraleCircle.ColorChanger4
+- WhoHealedMe.WHMGui.RefreshConfigurationWindow
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- Enemy.Enemy.MarksInitialize
+- Killer.Killer.Initialize
+- MoraleCircle.MoraleCircle.ColorChanger1
 - MoraleCircle.MoraleCircle.OnSetCustomColorFull
+- MoraleCircle.MoraleCircle.ColorChanger3
+- Moth.Moth.HealthBar
+- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
+- RandomMount.RandomMountUI.OnInitialize
+- Killer.Killer.ShowTopKillersTooltip
+- WSCT.WSCT.OnSetCustomColor
+- Enemy.Enemy._Initialize
+- Moth.Moth.HideBorders
+- WSCT.WSCT.OnLButtonUpColorPicker
+- Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
 - MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
 - Enemy.Enemy.CombatLogUI_IDS_Initialize
 - Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- WSCT.WSCT.OnSetCustomColor
-- MoraleCircle.MoraleCircle.OnSetCustomColor
-- Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
-- Moth.Moth.Clear
-- Killer.Killer.Initialize
-- Killer.Killer.ShowTopKillersTooltip
-- WSCT.WSCT.OnLButtonUpColorPicker
-- MoraleCircle.MoraleCircle.ColorChanger1
 - Moth.Moth.UpdateHealthBar
-- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
 - Killer.Killer.ShowRowTooltip
-- WhoHealedMe.WHMCore.ApplyBackgroundFillColor
-- MoraleCircle.MoraleCircle.ColorChanger4
-- Enemy.Enemy._Initialize
-- MoraleCircle.MoraleCircle.ColorChanger2
-- Moth.Moth.HealthBar
-- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
-- WhoHealedMe.WHMGui.RefreshConfigurationWindow
 - Killer.Killer.ShowPersonalStatsTooltip
-- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- MoraleCircle.MoraleCircle.ColorChanger3
-- Enemy.Enemy.MarksInitialize
+- Moth.Moth.Clear
+- MoraleCircle.MoraleCircle.ColorChanger2
 - MoraleCircle.MoraleCircle.OnSetCustomColorFill
-- WSCT.WSCT.ColorOnButtonUp
+- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
+
+
+## Binding Resolution
+
+- Total handler declarations: 11
+- Resolved to Lua functions: 11 (100%)
 
 ## Seen In
 

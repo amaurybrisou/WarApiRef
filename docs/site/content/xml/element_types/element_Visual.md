@@ -65,7 +65,7 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 1× (HIGH)
 
 ## Seen In
 

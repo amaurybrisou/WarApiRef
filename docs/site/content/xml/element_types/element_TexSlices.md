@@ -68,9 +68,9 @@ Observed XML element type instantiated by 13 addons.
 
 ## Common Parent Elements
 
-- [Button](element_Button.md)
-- [FullResizeImage](element_FullResizeImage.md)
-- [HorizontalResizeImage](element_HorizontalResizeImage.md)
+- [Button](element_Button.md) — 44× (HIGH)
+- [FullResizeImage](element_FullResizeImage.md) — 5× (MEDIUM)
+- [HorizontalResizeImage](element_HorizontalResizeImage.md) — 5× (MEDIUM)
 
 ## Seen In
 

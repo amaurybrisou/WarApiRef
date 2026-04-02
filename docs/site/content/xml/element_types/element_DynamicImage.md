@@ -103,13 +103,23 @@ Observed XML element type instantiated by 41 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | Enemy.CombatLogUI_IDS_OnRowLButtonDown | `function(...)` | LOW |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | BuffHead.Setup.Container.OnContainerClick, ClosetGoblinOptionWindow.OnLButtonUp, MapPin.ShowIcons, BagOMatic.wnd_on_lbutton_up, Enemy.Guard_GuardIndicator_OnLButtonUp, Enemy.MarksUI_EnemyMarksWindow_OnAddLButtonUp | `function(...)` | LOW |
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip, AggroMeter.OnMouseOverStart, BagOMatic.wnd_on_mouse_over, CMapWindow.MouseoverMail, CMapWindow.OnMouseoverRvRIndicator, Enemy.Guard_GuardIndicator_OnMouseOver | `function()` | MEDIUM |
-| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | Enemy.MarksUI_EnemyMarksWindow_OnAddMouseOverEnd | `function(...)` | LOW |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | BuffHead.Setup.AdvancedContainersItem.OnContainerRClick, ClosetGoblinOptionWindow.OnRButtonUp, Enemy.MarksUI_EnemyMarksWindow_OnAddRButtonUp, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick, Enemy.UI_Icon_OnRButtonUp, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionRButtonUp | `function(...)` | LOW |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | input | Enemy.CombatLogUI_IDS_OnRowLButtonDown | `flags, x, y` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | BuffHead.Setup.Container.OnContainerClick, ClosetGoblinOptionWindow.OnLButtonUp, MapPin.ShowIcons, BagOMatic.wnd_on_lbutton_up, Enemy.Guard_GuardIndicator_OnLButtonUp, Enemy.MarksUI_EnemyMarksWindow_OnAddLButtonUp | `flags, x, y` | MEDIUM |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip, AggroMeter.OnMouseOverStart, BagOMatic.wnd_on_mouse_over, CMapWindow.MouseoverMail, CMapWindow.OnMouseoverRvRIndicator, Enemy.Guard_GuardIndicator_OnMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | Enemy.MarksUI_EnemyMarksWindow_OnAddMouseOverEnd | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | BuffHead.Setup.AdvancedContainersItem.OnContainerRClick, ClosetGoblinOptionWindow.OnRButtonUp, Enemy.MarksUI_EnemyMarksWindow_OnAddRButtonUp, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick, Enemy.UI_Icon_OnRButtonUp, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionRButtonUp | `flags, x, y` | MEDIUM |
+
+### Per-Event Lua API Calls
+
+**OnLButtonDown** handlers call: `SystemData.ActiveWindow.name:match`
+
+**OnLButtonUp** handlers call: `ComboBoxSetSelectedMenuItem`, `Cursor.Clear`, `Cursor.IconOnCursor`, `Player.GetAbilityData`, `WindowGetId`, `WindowGetParent`, `WindowSetShowing`
+
+**OnMouseOver** handlers call: `WindowGetId`, `WindowGetParent`
+
+**OnRButtonUp** handlers call: `WindowGetId`, `WindowSetShowing`
 
 ## Common Inherits
 
@@ -128,35 +138,58 @@ Observed XML element type instantiated by 41 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
-- [Button](element_Button.md)
-- [DynamicImage](element_DynamicImage.md)
-- [Label](element_Label.md)
+- [Window](element_Window.md) — 132× (HIGH)
+- [Button](element_Button.md) — 29× (HIGH)
+- [DynamicImage](element_DynamicImage.md) — 4× (MEDIUM)
+- [Label](element_Label.md) — 1× (LOW)
 
 ## Common Named Child Elements
 
-- [DynamicImage](element_DynamicImage.md)
-- [Label](element_Label.md)
+- [DynamicImage](element_DynamicImage.md) — 4× (MEDIUM)
+- [Label](element_Label.md) — 3× (MEDIUM)
 
 ## Common Structural Child Elements
 
-- [TintColor](element_TintColor.md)
+- [TintColor](element_TintColor.md) — 27× (HIGH)
+
+## Common Template Bases
+
+- Aggro_Tactic_Template
+- EA_Default_CharacterImage
+- EA_Default_CornerImage
+- EA_Default_MerchantImage
+- EA_Default_TrainingImage
+- EA_Image_DefaultIcon
+- EA_Image_DefaultIconFrame
+- EA_ListSortDownArrow
+- EA_ListSortUpArrow
+- EA_Templates_BrassCoin
+- EA_Templates_GoldCoin
+- EA_Templates_SilverCoin
+- GenericEndCap
+- MapMonsterIconChooserWindow_IconTemplate
+- RVMOD_ManagerStatusTemplate
+- RvRFlagIndicator
+- TargetLevelBackgroundTemplate
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `handleinput` | optional | 49% | false, true |
-| `texture` | optional | 48% | SoR_Neutral, map_markers01, EA_TintableImage, TurretRange_Graphic, ... |
-| `layer` | optional | 41% | default, overlay, background, popup, ... |
-| `textureScale` | optional | 16% | 1.0, 1.3, 0.6, 0.8, ... |
+| `texture` | optional | 48% | Realm1, City_162, EA_HUD_01, EA_Campaign01_d5, ... |
+| `layer` | optional | 41% | default, background, overlay, secondary, ... |
+| `textureScale` | optional | 16% | 1, 0.4, 0.7, 0.8, ... |
 | `popable` | optional | 11% | false, true |
-| `slice` | optional | 11% | Waypoint, LordHeroSpecial-Skull, KeepDifficulty-5-star, Radio-Button, ... |
-| `id` | optional | 9% | 2, 1, 3, 5, ... |
-| `texturescale` | optional | 9% | .5, 0.37, 0.45, 0.8, ... |
-| `inherits` | optional | 9% | Aggro_Tactic_Template, EA_Image_DefaultIconFrame, EA_ListSortDownArrow, RVMOD_ManagerStatusTemplate, ... |
+| `slice` | optional | 11% | RvR-Flag, Zone-CONTESTED, Keep-Grayed, Dirt, ... |
+| `id` | optional | 9% | 1, 2, 4, 5, ... |
+| `texturescale` | optional | 9% | 0.6, 0.37, 0.8, 0.125, ... |
+| `inherits` | optional | 9% | EA_ListSortUpArrow, TargetLevelBackgroundTemplate, EA_Default_TrainingImage, EA_ListSortDownArrow, ... |
 | `sticky` | optional | 5% | false, true |
-| `alpha` | optional | 3% | 0.1, 0.5, 0.8, 0.9, ... |
+| `alpha` | optional | 3% | 0, 0.9, 0.1, 0.0, ... |
 | `savesettings` | optional | 1% | false, true |
 | `poppable` | optional | 1% | false |
 | `filtering` | optional | 1% | true |
@@ -184,16 +217,16 @@ Observed 27 times as an unnamed child.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `WindowGetId` | 20 | OnLButtonUp, OnMouseOver, OnRButtonUp |
-| `WindowSetShowing` | 5 | OnLButtonUp, OnRButtonUp |
-| `ComboBoxSetSelectedMenuItem` | 3 | OnLButtonUp |
-| `WindowGetParent` | 3 | OnLButtonUp, OnMouseOver |
-| `Cursor.Clear` | 1 | OnLButtonUp |
-| `Cursor.IconOnCursor` | 1 | OnLButtonUp |
-| `Player.GetAbilityData` | 1 | OnLButtonUp |
-| `SystemData.ActiveWindow.name:match` | 1 | OnLButtonDown |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `WindowGetId` | ui | 20 | OnLButtonUp, OnMouseOver, OnRButtonUp |
+| `WindowSetShowing` | ui | 5 | OnLButtonUp, OnRButtonUp |
+| `ComboBoxSetSelectedMenuItem` | ui | 3 | OnLButtonUp |
+| `WindowGetParent` | ui | 3 | OnLButtonUp, OnMouseOver |
+| `Cursor.Clear` | ui | 1 | OnLButtonUp |
+| `Cursor.IconOnCursor` | data | 1 | OnLButtonUp |
+| `Player.GetAbilityData` | data | 1 | OnLButtonUp |
+| `SystemData.ActiveWindow.name:match` | data | 1 | OnLButtonDown |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -235,53 +268,59 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- RoR_SoR.RoR_SoR.OnCombat
-- Moth.Moth.UpdateTarget
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- MapMonster.DisplayPinsForZone
-- MapMonster.MapMonster.local.CreateMarker
-- WSCT.WSCT.OnLButtonUpColorPicker
-- RandomMount.RandomMountUI.OnDropSlotLButtonUp
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize
-- Enemy.Enemy.UI_Icon_Switch
-- Swift Assist.Swift Assist.local.SetSmartLabel
-- WSCT.WSCT.ColorHideMenu
-- Enemy.Enemy.TalismanAlerter_Update
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
-- Swift Assist.SetTexLabel
-- MapMonster.DisplayPin
-- Swift Assist.SetSmartLabel
-- Enemy.Enemy.GuardInitialize
-- Enemy.Enemy.AssistUI_Target_Show
-- BagOMatic.BagOMatic.init
-- GetStats.GetStats.OnInitialize
-- Enemy.EnemyEffectsIndicator:Update
-- TurretRange.TurretRange.OnUpdate
-- CM_ClosetGoblin.ClosetGoblin.Initialize
-- Swift Assist.SwiftAssist.Initialize
-- Swift Assist.SwiftAssist.OnMacroUpdated
-- MapMonster.MapMonster.local.CleanEditorWindow
 - MapMonster.MapMonster.Editor.ShowZoneHooked
-- WSCT.WSCT.ColorAcceptButtonOnButtonUp
-- RandomMount.RandomMountUI.OnAddCustomMount
-- Enemy.Enemy.TalismanAlerterInitialize
-- RoR_SoR.RoR_SoR.OnScenario
-- GuardLine.GuardLine.update
-- Enemy.Enemy.Guard_GuardIndicator_Update
-- BankArkel.BankArkel.PackImg
+- MapMonster.DisplayPinsForZone
+- GetStats.GetStats.OnInitialize
 - MapPin.MapPin.TestTooltip
-- RoR_SoR.RoR_SoR.OnInitialize
-- Swift Assist.Swift Assist.local.SetTexLabel
-- MapMonster.MapMonster.local.DisplayPin
-- MapMonster.CreateMarker
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSortButtonIcon
-- Enemy.Enemy.MarksInitialize
 - Pocket Palette.PP.UpdateListRow
-- MapMonster.MapMonster.local.DisplayPinsForZone
-- Enemy.Enemy._Initialize
-- Enemy.Enemy.Guard_OnSettingsChanged
+- RoR_SoR.RoR_SoR.OnScenario
+- Enemy.Enemy.AssistUI_Target_Show
+- CM_ClosetGoblin.ClosetGoblin.Initialize
+- MapMonster.MapMonster.local.DisplayPin
+- Enemy.Enemy.GuardInitialize
+- Swift Assist.Swift Assist.local.SetSmartLabel
 - WSCT.WSCT.ColorOnInitialize
+- RandomMount.RandomMountUI.OnAddCustomMount
+- RandomMount.RandomMountUI.OnDropSlotLButtonUp
+- Enemy.Enemy.MarksInitialize
+- BankArkel.BankArkel.PackImg
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- Enemy.Enemy._Initialize
+- Enemy.Enemy.TalismanAlerter_Update
+- RoR_SoR.RoR_SoR.OnCombat
+- MapMonster.DisplayPin
+- Enemy.Enemy.Guard_OnSettingsChanged
+- Enemy.Enemy.Guard_GuardIndicator_Update
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize
+- MapMonster.MapMonster.local.CleanEditorWindow
+- Moth.Moth.UpdateTarget
+- MapMonster.CreateMarker
+- Swift Assist.Swift Assist.local.SetTexLabel
+- Swift Assist.SwiftAssist.OnMacroUpdated
+- GuardLine.GuardLine.update
+- Enemy.Enemy.UI_Icon_Switch
+- BagOMatic.BagOMatic.init
+- Enemy.Enemy.TalismanAlerterInitialize
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Swift Assist.SetSmartLabel
+- WSCT.WSCT.ColorAcceptButtonOnButtonUp
+- WSCT.WSCT.ColorHideMenu
+- Swift Assist.SetTexLabel
+- TurretRange.TurretRange.OnUpdate
 - Enemy.Enemy.TalismanAlerter_OnSettingsChanged
+- MapMonster.MapMonster.local.CreateMarker
+- MapMonster.MapMonster.local.DisplayPinsForZone
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
+- WSCT.WSCT.OnLButtonUpColorPicker
+- Swift Assist.SwiftAssist.Initialize
+- Enemy.EnemyEffectsIndicator:Update
+- RoR_SoR.RoR_SoR.OnInitialize
+
+
+## Binding Resolution
+
+- Total handler declarations: 59
+- Resolved to Lua functions: 59 (100%)
 
 ## Seen In
 

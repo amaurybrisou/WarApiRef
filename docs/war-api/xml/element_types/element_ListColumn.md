@@ -71,7 +71,7 @@ Structural XML element inside ListColumns that maps a single field of each backi
 
 ## Common Parent Elements
 
-- [ListBox](element_ListBox.md)
+- [ListBox](element_ListBox.md) — 27× (HIGH)
 
 ## Attribute Reference
 

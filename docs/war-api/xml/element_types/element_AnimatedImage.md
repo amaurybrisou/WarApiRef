@@ -80,13 +80,21 @@ Observed XML element type instantiated by 10 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
-- [Button](element_Button.md)
+- [Window](element_Window.md) — 12× (HIGH)
+- [Button](element_Button.md) — 2× (MEDIUM)
 
 ## Common Structural Child Elements
 
-- [AnimFrame](element_AnimFrame.md)
-- [AnimFrames](element_AnimFrames.md)
+- [AnimFrame](element_AnimFrame.md) — 5× (MEDIUM)
+- [AnimFrames](element_AnimFrames.md) — 5× (MEDIUM)
+
+## Common Template Bases
+
+- EA_MoraleButtonAnimation
+- LoadingScreenWarSymbolAnimation
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Typical XML Structure
 
@@ -113,10 +121,10 @@ Observed XML element type instantiated by 10 addons.
 | --- | --- | --- | --- |
 | `layer` | optional | 54% | secondary, overlay, default, background |
 | `handleinput` | optional | 48% | false |
-| `texture` | optional | 48% | anim_morale_glow, MM_AniArrows_Tintable, anim_morale_flash, anim_fury_round_1, ... |
-| `fps` | optional | 45% | 8, 13, 20, 10, ... |
+| `texture` | optional | 48% | anim_morale_glow, MM_AniArrows_Tintable, anim_morale_flash, recharge_flash_anim, ... |
+| `fps` | optional | 45% | 13, 8, 20, 10, ... |
 | `inherits` | optional | 42% | EA_MoraleButtonAnimation, LoadingScreenWarSymbolAnimation |
-| `textureScale` | optional | 42% | 0.74, 1.2, 0.73, 0.6, ... |
+| `textureScale` | optional | 42% | 0.74, 0.6, 1.2, 0.43, ... |
 | `alpha` | optional | 24% | 1, 0.9 |
 | `sticky` | optional | 15% | false |
 | `popable` | optional | 3% | true |

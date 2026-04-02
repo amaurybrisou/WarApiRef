@@ -82,9 +82,9 @@ Observed XML element type instantiated by 12 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md) | MacroIcons.ScrollPos | `function(...)` | LOW |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md) | data | MacroIcons.ScrollPos | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -93,17 +93,25 @@ Observed XML element type instantiated by 12 addons.
 
 ## Common Parent Elements
 
-- [ScrollWindow](element_ScrollWindow.md)
-- [EditBox](element_EditBox.md)
-- [LogDisplay](element_LogDisplay.md)
-- [Window](element_Window.md)
+- [ScrollWindow](element_ScrollWindow.md) — 26× (HIGH)
+- [EditBox](element_EditBox.md) — 2× (LOW)
+- [LogDisplay](element_LogDisplay.md) — 2× (LOW)
+- [Window](element_Window.md) — 2× (LOW)
 
 ## Common Structural Child Elements
 
-- [ActiveZoneOffset](element_ActiveZoneOffset.md)
-- [DownOffset](element_DownOffset.md)
-- [ThumbOffset](element_ThumbOffset.md)
-- [UpOffset](element_UpOffset.md)
+- [ActiveZoneOffset](element_ActiveZoneOffset.md) — 1× (LOW)
+- [DownOffset](element_DownOffset.md) — 1× (LOW)
+- [ThumbOffset](element_ThumbOffset.md) — 1× (LOW)
+- [UpOffset](element_UpOffset.md) — 1× (LOW)
+
+## Common Template Bases
+
+- EA_ScrollBar_ChatVertical
+- EA_ScrollBar_DefaultVerticalChain
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Typical XML Structure
 
@@ -171,6 +179,12 @@ Confidence: LOW
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
 | 0 | `scrollPos` | number | scroll_position |
+
+## Binding Resolution
+
+- Total handler declarations: 1
+- Resolved to Lua functions: 0 (0%)
+
 ## Seen In
 
 - DAoCBuff

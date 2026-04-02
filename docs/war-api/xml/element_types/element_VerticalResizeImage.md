@@ -75,14 +75,18 @@ Observed XML element type instantiated by 3 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 1× (LOW)
 
 ## Common Structural Child Elements
 
-- [Middle](element_Middle.md)
-- [TintColor](element_TintColor.md)
-- [Bottom](element_Bottom.md)
-- [Top](element_Top.md)
+- [Middle](element_Middle.md) — 4× (HIGH)
+- [TintColor](element_TintColor.md) — 3× (MEDIUM)
+- [Bottom](element_Bottom.md) — 1× (LOW)
+- [Top](element_Top.md) — 1× (LOW)
+
+## Common Template Bases
+
+- BuffHeadLayoutVerticalResizeImage
 
 ## Typical XML Structure
 
@@ -96,7 +100,7 @@ Observed XML element type instantiated by 3 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `texture` | optional | 50% | EA_HUD_01, ui_main, EA_TintableImage |
+| `texture` | optional | 50% | ui_main, EA_TintableImage, EA_HUD_01 |
 | `inherits` | optional | 37% | BuffHeadLayoutVerticalResizeImage |
 | `handleinput` | optional | 25% | false |
 | `reverseFill` | optional | 12% | true |

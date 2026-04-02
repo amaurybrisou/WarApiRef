@@ -75,12 +75,12 @@ Observed XML element type instantiated by 2 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 2× (HIGH)
 
 ## Common Named Child Elements
 
-- [VerticalScrollbar](element_VerticalScrollbar.md)
-- [Button](element_Button.md)
+- [VerticalScrollbar](element_VerticalScrollbar.md) — 2× (HIGH)
+- [Button](element_Button.md) — 1× (LOW)
 
 ## Attribute Reference
 

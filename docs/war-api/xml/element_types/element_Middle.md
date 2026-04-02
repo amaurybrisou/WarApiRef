@@ -70,9 +70,9 @@ Observed XML element type instantiated by 11 addons.
 
 ## Common Parent Elements
 
-- [HorizontalResizeImage](element_HorizontalResizeImage.md)
-- [FullResizeImage](element_FullResizeImage.md)
-- [VerticalResizeImage](element_VerticalResizeImage.md)
+- [HorizontalResizeImage](element_HorizontalResizeImage.md) — 15× (HIGH)
+- [FullResizeImage](element_FullResizeImage.md) — 11× (HIGH)
+- [VerticalResizeImage](element_VerticalResizeImage.md) — 4× (MEDIUM)
 
 ## Attribute Reference
 

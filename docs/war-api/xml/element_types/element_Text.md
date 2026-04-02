@@ -69,8 +69,8 @@ Observed XML element type instantiated by 4 addons.
 
 ## Common Parent Elements
 
-- [Label](element_Label.md)
-- [Button](element_Button.md)
+- [Label](element_Label.md) — 69× (HIGH)
+- [Button](element_Button.md) — 3× (MEDIUM)
 
 ## Attribute Reference
 

@@ -106,18 +106,22 @@ Observed XML element type instantiated by 3 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnHidden](../handlers/handler_OnHidden.md) | WindowUtils.OnHidden | `function()` | MEDIUM |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | CMapWindow.OnClickMap, CMapWindow.WmapOnClickMap, Map.OnClickMap | `function(...)` | LOW |
-| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | Map.OnMButtonUp | `function(...)` | LOW |
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | CMapWindow.WmapOver | `function()` | MEDIUM |
-| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | CMapWindow.WmapOverEnd | `function(...)` | LOW |
-| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | CMapWindow.MWheel | `function(delta)` | MEDIUM |
-| [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) | CMapWindow.OnMouseOverPoint, CMapWindow.WmapOnMouseOverPoint, Map.OnMouseOverPoint | `function(...)` | LOW |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | Map.OnRClickMap | `function(...)` | LOW |
-| [OnShown](../handlers/handler_OnShown.md) | WindowUtils.OnShown | `function()` | MEDIUM |
-| [OnUpdate](../handlers/handler_OnUpdate.md) | CMapWindow.UpdateCoordinatesWMap | `function(elapsed)` | MEDIUM |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnHidden](../handlers/handler_OnHidden.md) | lifecycle | WindowUtils.OnHidden | `function()` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | CMapWindow.OnClickMap, CMapWindow.WmapOnClickMap, Map.OnClickMap | `function(...)` | LOW |
+| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | Map.OnMButtonUp | `flags, x, y` | MEDIUM |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | CMapWindow.WmapOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | CMapWindow.WmapOverEnd | `function(...)` | LOW |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | CMapWindow.MWheel | `function(delta)` | MEDIUM |
+| [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) | custom | CMapWindow.OnMouseOverPoint, CMapWindow.WmapOnMouseOverPoint, Map.OnMouseOverPoint | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Map.OnRClickMap | `function(...)` | LOW |
+| [OnShown](../handlers/handler_OnShown.md) | lifecycle | WindowUtils.OnShown | `function()` | MEDIUM |
+| [OnUpdate](../handlers/handler_OnUpdate.md) | lifecycle | CMapWindow.UpdateCoordinatesWMap | `function(elapsed)` | MEDIUM |
+
+### Per-Event Lua API Calls
+
+**OnShown** handlers call: `ButtonSetText`, `DoesWindowExist`, `LabelSetText`, `TextEditBoxSetText`, `WindowSetDimensions`, `WindowSetShowing`
 
 ## Common Inherits
 
@@ -125,17 +129,17 @@ Observed XML element type instantiated by 3 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 3× (MEDIUM)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `pinTexture` | optional | 57% | map_markers01 |
-| `layer` | optional | 42% | Overlay, secondary, default |
+| `layer` | optional | 42% | default, secondary, Overlay |
 | `movable` | optional | 42% | false |
-| `shape` | optional | 42% | circle, square |
-| `iconScale` | optional | 28% | 0.45, 0.70 |
+| `shape` | optional | 42% | square, circle |
+| `iconScale` | optional | 28% | 0.70, 0.45 |
 | `loadingAnim` | optional | 28% | MapLoadingAnim |
 | `sticky` | optional | 28% | true, false |
 | `gutterIcon` | optional | 14% | 39 |
@@ -144,14 +148,14 @@ Observed XML element type instantiated by 3 addons.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `TextEditBoxSetText` | 15 | OnShown |
-| `LabelSetText` | 13 | OnShown |
-| `ButtonSetText` | 6 | OnShown |
-| `WindowSetDimensions` | 3 | OnShown |
-| `DoesWindowExist` | 2 | OnShown |
-| `WindowSetShowing` | 1 | OnShown |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `TextEditBoxSetText` | ui | 15 | OnShown |
+| `LabelSetText` | ui | 13 | OnShown |
+| `ButtonSetText` | ui | 6 | OnShown |
+| `WindowSetDimensions` | ui | 3 | OnShown |
+| `DoesWindowExist` | ui | 2 | OnShown |
+| `WindowSetShowing` | ui | 1 | OnShown |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -219,6 +223,12 @@ Confidence: LOW
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
 | 0 | `elapsed` | number | time_delta |
+
+## Binding Resolution
+
+- Total handler declarations: 15
+- Resolved to Lua functions: 3 (20%)
+
 ## Seen In
 
 - CMap

@@ -69,7 +69,7 @@ Observed XML element type instantiated by 8 addons.
 
 ## Common Parent Elements
 
-- [ComboBox](element_ComboBox.md)
+- [ComboBox](element_ComboBox.md) — 13× (HIGH)
 
 ## Attribute Reference
 

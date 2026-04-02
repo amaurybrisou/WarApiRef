@@ -77,9 +77,13 @@ Observed XML element type instantiated by 1 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | WSCT.OnLButtonUpColorPicker | `function(...)` | LOW |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | WSCT.OnLButtonUpColorPicker | `flags, x, y` | MEDIUM |
+
+### Per-Event Lua API Calls
+
+**OnLButtonUp** handlers call: `LabelSetTextColor`, `SliderBarSetCurrentPosition`, `WindowAddAnchor`, `WindowClearAnchors`, `WindowSetShowing`, `WindowSetTintColor`
 
 ## Common Inherits
 
@@ -87,14 +91,14 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 1× (HIGH)
 
 ## Common Structural Child Elements
 
-- [ColorSize](element_ColorSize.md)
-- [ColorSpacing](element_ColorSpacing.md)
-- [ColorTexCoords](element_ColorTexCoords.md)
-- [ColorTexDims](element_ColorTexDims.md)
+- [ColorSize](element_ColorSize.md) — 1× (HIGH)
+- [ColorSpacing](element_ColorSpacing.md) — 1× (HIGH)
+- [ColorTexCoords](element_ColorTexCoords.md) — 1× (HIGH)
+- [ColorTexDims](element_ColorTexDims.md) — 1× (HIGH)
 
 ## Attribute Reference
 
@@ -140,14 +144,14 @@ Observed 1 times as an unnamed child.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `SliderBarSetCurrentPosition` | 3 | OnLButtonUp |
-| `LabelSetTextColor` | 2 | OnLButtonUp |
-| `WindowAddAnchor` | 1 | OnLButtonUp |
-| `WindowClearAnchors` | 1 | OnLButtonUp |
-| `WindowSetShowing` | 1 | OnLButtonUp |
-| `WindowSetTintColor` | 1 | OnLButtonUp |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `SliderBarSetCurrentPosition` | ui | 3 | OnLButtonUp |
+| `LabelSetTextColor` | ui | 2 | OnLButtonUp |
+| `WindowAddAnchor` | ui | 1 | OnLButtonUp |
+| `WindowClearAnchors` | ui | 1 | OnLButtonUp |
+| `WindowSetShowing` | ui | 1 | OnLButtonUp |
+| `WindowSetTintColor` | ui | 1 | OnLButtonUp |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -164,6 +168,12 @@ Confidence: MEDIUM
 ## Lua Functions Manipulating This Type
 
 - WSCT.WSCT.OnLButtonUpColorPicker
+
+
+## Binding Resolution
+
+- Total handler declarations: 1
+- Resolved to Lua functions: 1 (100%)
 
 ## Seen In
 

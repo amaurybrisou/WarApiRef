@@ -108,8 +108,8 @@ Observed querying runtime window state or metadata.
 - BuffHead: BuffHead.local.RegisterLayoutEditor -> WindowGetScale(container:GetName())
 - BuffHead: RegisterLayoutEditor -> WindowGetScale(container:GetName())
 - DAoCBuff: DAoCBuff.SetSize -> WindowGetScale(sourceWnd)
-- DAoCBuff: DAoCBuffFrame:SetScale -> WindowGetScale(self.m_parentname)
 - DAoCBuff: DAoCBuffFrame:SetScale -> WindowGetScale(self.m_name)
+- DAoCBuff: DAoCBuffFrame:SetScale -> WindowGetScale(self.m_parentname)
 
 ## Related APIs
 

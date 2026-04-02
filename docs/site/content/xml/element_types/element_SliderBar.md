@@ -100,10 +100,16 @@ Observed XML element type instantiated by 17 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | WSCT.OnMouseOver | `function()` | MEDIUM |
-| [OnSlide](../handlers/handler_OnSlide.md) | AuraColorPicker.OnSlide, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, BuffHead.Setup.SelectColor.OnSlideTint, MapMonster.PinTypeEditor.OnSetCustomColor, MoraleCircle.OnSetCustomColor, MoraleCircle.OnSetCustomColorEmpty | `function(...)` | LOW |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | WSCT.OnMouseOver | `function()` | MEDIUM |
+| [OnSlide](../handlers/handler_OnSlide.md) | custom | AuraColorPicker.OnSlide, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, BuffHead.Setup.SelectColor.OnSlideTint, MapMonster.PinTypeEditor.OnSetCustomColor, MoraleCircle.OnSetCustomColor, MoraleCircle.OnSetCustomColorEmpty | `function(...)` | LOW |
+
+### Per-Event Lua API Calls
+
+**OnMouseOver** handlers call: `WindowGetParent`
+
+**OnSlide** handlers call: `ButtonGetPressedFlag`, `ComboBoxGetSelectedMenuItem`, `LabelSetText`, `LabelSetTextColor`, `SliderBarGetCurrentPosition`, `SliderBarSetCurrentPosition`, `TextEditBoxGetText`, `TextEditBoxSetText`, `WindowGetParent`, `WindowGetScale`, `WindowSetAlpha`, `WindowSetScale`, `WindowSetTintColor`
 
 ## Common Inherits
 
@@ -114,18 +120,28 @@ Observed XML element type instantiated by 17 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 41× (HIGH)
 
 ## Common Named Child Elements
 
-- [Label](element_Label.md)
+- [Label](element_Label.md) — 2× (LOW)
+
+## Common Template Bases
+
+- Aura_Default_SliderBar
+- EA_Default_SliderBar
+- RVAPI_ColorDialogSliderTemplate
+- RVMOD_ManagerSliderTemplate
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 68% | EA_Default_SliderBar, RVAPI_ColorDialogSliderTemplate, Aura_Default_SliderBar, RVMOD_ManagerSliderTemplate |
-| `numticks` | optional | 6% | 360, 11, 250, 5, ... |
+| `inherits` | optional | 68% | EA_Default_SliderBar, Aura_Default_SliderBar, RVMOD_ManagerSliderTemplate, RVAPI_ColorDialogSliderTemplate |
+| `numticks` | optional | 6% | 200, 250, 11, 5, ... |
 | `handleinput` | optional | 5% | true |
 | `scale` | optional | 3% | 0.4 |
 | `locktoticks` | optional | 2% | false |
@@ -139,21 +155,21 @@ Observed XML element type instantiated by 17 addons.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `SliderBarGetCurrentPosition` | 150 | OnSlide |
-| `LabelSetText` | 66 | OnSlide |
-| `TextEditBoxSetText` | 46 | OnSlide |
-| `TextEditBoxGetText` | 36 | OnSlide |
-| `ComboBoxGetSelectedMenuItem` | 28 | OnSlide |
-| `WindowSetTintColor` | 18 | OnSlide |
-| `ButtonGetPressedFlag` | 12 | OnSlide |
-| `SliderBarSetCurrentPosition` | 9 | OnSlide |
-| `LabelSetTextColor` | 6 | OnSlide |
-| `WindowSetAlpha` | 6 | OnSlide |
-| `WindowGetParent` | 4 | OnMouseOver, OnSlide |
-| `WindowSetScale` | 2 | OnSlide |
-| `WindowGetScale` | 1 | OnSlide |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `SliderBarGetCurrentPosition` | ui | 150 | OnSlide |
+| `LabelSetText` | ui | 66 | OnSlide |
+| `TextEditBoxSetText` | ui | 46 | OnSlide |
+| `TextEditBoxGetText` | ui | 36 | OnSlide |
+| `ComboBoxGetSelectedMenuItem` | ui | 28 | OnSlide |
+| `WindowSetTintColor` | ui | 18 | OnSlide |
+| `ButtonGetPressedFlag` | ui | 12 | OnSlide |
+| `SliderBarSetCurrentPosition` | ui | 9 | OnSlide |
+| `LabelSetTextColor` | ui | 6 | OnSlide |
+| `WindowSetAlpha` | ui | 6 | OnSlide |
+| `WindowGetParent` | ui | 4 | OnMouseOver, OnSlide |
+| `WindowSetScale` | ui | 2 | OnSlide |
+| `WindowGetScale` | ui | 1 | OnSlide |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -168,22 +184,28 @@ Confidence: LOW
 
 ## Lua Functions Manipulating This Type
 
-- WSCT.WSCT.OnLButtonUpColorPicker
-- MoraleCircle.MoraleCircle.ColorChanger4
-- MoraleCircle.MoraleCircle.ColorChanger3
-- MoraleCircle.MoraleCircle.ColorChanger1
-- MoraleCircle.MoraleCircle.OnSetCustomColor
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- RoR_SoR.RoR_SoR.OnWindowOptionsSetOffset
 - MoraleCircle.MoraleCircle.OnSetCustomColorFill
-- MoraleCircle.MoraleCircle.ColorChanger2
-- WSCT.WSCT.OnSetCustomColor
-- WSCT.WSCT.ColorOnButtonUp
-- RoR_SoR.RoR_SoR.OnWindowOptionsSetScale
 - MoraleCircle.MoraleCircle.OnSetCustomColorFull
 - Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
+- WSCT.WSCT.OnSetCustomColor
+- WSCT.WSCT.ColorOnButtonUp
+- MoraleCircle.MoraleCircle.ColorChanger1
+- MoraleCircle.MoraleCircle.OnSetCustomColor
 - RoR_SoR.RoR_SoR.OnWindowOptionsSetOpacity
+- MoraleCircle.MoraleCircle.ColorChanger2
+- MoraleCircle.MoraleCircle.ColorChanger4
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetOffset
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetScale
+- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- MoraleCircle.MoraleCircle.ColorChanger3
+- WSCT.WSCT.OnLButtonUpColorPicker
+
+
+## Binding Resolution
+
+- Total handler declarations: 84
+- Resolved to Lua functions: 84 (100%)
 
 ## Seen In
 

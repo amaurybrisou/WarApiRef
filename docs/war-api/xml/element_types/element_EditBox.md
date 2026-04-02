@@ -104,14 +104,28 @@ Observed XML element type instantiated by 24 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnKeyEnter](../handlers/handler_OnKeyEnter.md) | MapPin.SendCommand, MapPin.SendText, ObjectInspector.InspectObject, DebugWindow.TextSend, DevPadWindow.ConfirmRename, DevPadWindow.CreateNewFile | `function(...)` | LOW |
-| [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | DebugWindow.TextClear, DevPadWindow.OnKeyEscape | `function(...)` | LOW |
-| [OnKeyTab](../handlers/handler_OnKeyTab.md) | DebugWindow.OnKeyTab, DevPadWindow.OnKeyTab | `function(...)` | LOW |
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.ConfigurationWindow_ShowTooltip, MapMonster.PinTypeEditor.MouseOverDescription, Enemy.GroupsUI_EffectFilterDialog_OnAbilityIdsMouseOver, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig2CommandMouseOver, LPET.OnMouseOver, WbLeadHelperMessage.OnMouseOverLabelEditBox | `function()` | MEDIUM |
-| [OnShown](../handlers/handler_OnShown.md) | DebugWindow.OnShowFocus, DevPadWindow.OnShown | `function()` | MEDIUM |
-| [OnTextChanged](../handlers/handler_OnTextChanged.md) | Enemy.ConfigurationWindow_OnChange, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsEditChanged, MiracleGrow2.LayoutBarCChanged, MiracleGrow2.LayoutProgDimChanged, BuffHead.Setup.SelectColor.OnTintChanged | `function()` | MEDIUM |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnKeyEnter](../handlers/handler_OnKeyEnter.md) | custom | MapPin.SendCommand, MapPin.SendText, ObjectInspector.InspectObject, DebugWindow.TextSend, DevPadWindow.ConfirmRename, DevPadWindow.CreateNewFile | `function(...)` | LOW |
+| [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | custom | DebugWindow.TextClear, DevPadWindow.OnKeyEscape | `function(...)` | LOW |
+| [OnKeyTab](../handlers/handler_OnKeyTab.md) | custom | DebugWindow.OnKeyTab, DevPadWindow.OnKeyTab | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.ConfigurationWindow_ShowTooltip, MapMonster.PinTypeEditor.MouseOverDescription, Enemy.GroupsUI_EffectFilterDialog_OnAbilityIdsMouseOver, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig2CommandMouseOver, LPET.OnMouseOver, WbLeadHelperMessage.OnMouseOverLabelEditBox | `function()` | MEDIUM |
+| [OnShown](../handlers/handler_OnShown.md) | lifecycle | DebugWindow.OnShowFocus, DevPadWindow.OnShown | `function()` | MEDIUM |
+| [OnTextChanged](../handlers/handler_OnTextChanged.md) | data | Enemy.ConfigurationWindow_OnChange, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsEditChanged, MiracleGrow2.LayoutBarCChanged, MiracleGrow2.LayoutProgDimChanged, BuffHead.Setup.SelectColor.OnTintChanged | `function()` | MEDIUM |
+
+### Per-Event Lua API Calls
+
+**OnKeyEnter** handlers call: `ComboBoxAddMenuItem`, `ComboBoxGetSelectedMenuItem`, `ComboBoxGetSelectedText`, `ComboBoxSetSelectedMenuItem`, `LabelGetText`, `TextEditBoxGetText`, `TextEditBoxSetText`, `WindowAssignFocus`, `WindowSetShowing`, `WindowStartAlphaAnimation`, `WindowStartScaleAnimation`
+
+**OnKeyEscape** handlers call: `TextEditBoxGetText`, `WindowAssignFocus`, `WindowGetShowing`, `WindowSetShowing`
+
+**OnKeyTab** handlers call: `TextEditBoxInsertText`
+
+**OnMouseOver** handlers call: `WindowGetId`, `WindowGetParent`
+
+**OnShown** handlers call: `WindowAssignFocus`, `WindowGetShowing`
+
+**OnTextChanged** handlers call: `ButtonGetPressedFlag`, `ButtonSetDisabledFlag`, `ComboBoxGetSelectedMenuItem`, `LabelSetText`, `LabelSetTextColor`, `RegisterEventHandler`, `SliderBarGetCurrentPosition`, `SliderBarSetCurrentPosition`, `TextEditBoxGetText`, `TextEditBoxSetText`, `TextEditBoxSetTextColor`, `WindowGetId`, `WindowGetParent`, `WindowSetAlpha`, `WindowSetDimensions`, `WindowSetTintColor`
 
 ## Common Inherits
 
@@ -130,16 +144,35 @@ Observed XML element type instantiated by 24 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 88× (HIGH)
 
 ## Common Named Child Elements
 
-- [VerticalScrollbar](element_VerticalScrollbar.md)
-- [Label](element_Label.md)
+- [VerticalScrollbar](element_VerticalScrollbar.md) — 2× (LOW)
+- [Label](element_Label.md) — 1× (LOW)
 
 ## Common Structural Child Elements
 
-- [TextOffset](element_TextOffset.md)
+- [TextOffset](element_TextOffset.md) — 20× (HIGH)
+
+## Common Template Bases
+
+- Aura_EditBox_DefaultFrame
+- EA_EditBox_DefaultFrame
+- EA_EditBox_DefaultFrame_Multiline
+- EA_EditBox_NoFrame
+- IraConfigNumEdit
+- IraConfigNumSpin
+- MapMonsterEditorWindowEditBoxCoord
+- MapMonsterEditorWindowEditBoxDefault
+- MapMonsterPinTypeEditorWindowEditBoxDefault
+- RVAPI_ColorDialogEditBoxTemplate
+- Shinies_BrassCoin_EditBox_DefaultFrame
+- Shinies_GoldCoin_EditBox_DefaultFrame
+- Shinies_SilverCoin_EditBox_DefaultFrame
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Typical XML Structure
 
@@ -153,20 +186,20 @@ Observed XML element type instantiated by 24 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 67% | EA_EditBox_DefaultFrame, EA_EditBox_DefaultFrame_Multiline, MapMonsterEditorWindowEditBoxCoord, Shinies_GoldCoin_EditBox_DefaultFrame, ... |
-| `maxchars` | optional | 44% | 5, 2, 3, 10, ... |
+| `inherits` | optional | 67% | EA_EditBox_DefaultFrame, IraConfigNumEdit, Shinies_GoldCoin_EditBox_DefaultFrame, EA_EditBox_NoFrame, ... |
+| `maxchars` | optional | 44% | 2048, 5, 163840, 9, ... |
 | `input` | optional | 23% | numbers, nospaces |
-| `layer` | optional | 18% | secondary, default |
+| `layer` | optional | 18% | default, secondary |
 | `warnOnTextCropped` | optional | 12% | false |
-| `font` | optional | 11% | font_clear_small, font_clear_small_bold, font_chat_text, font_clear_medium, ... |
-| `taborder` | optional | 10% | 3, 2, 1, 6, ... |
+| `font` | optional | 11% | font_default_text_giant, font_clear_small_bold, font_clear_small, font_chat_text, ... |
+| `taborder` | optional | 10% | 1, 2, 3, 4, ... |
 | `handleinput` | optional | 5% | true |
-| `scrolling` | optional | 5% | none, vert |
-| `maxChars` | optional | 4% | 300, 3, 2, 5, ... |
+| `scrolling` | optional | 5% | vert, none |
+| `maxChars` | optional | 4% | 3, 2, 64, 300, ... |
 | `background` | optional | 3% | EA_FullResizeImage_TanBorder |
-| `id` | optional | 3% | 3, 1, 2, 4, ... |
-| `align` | optional | 2% | rightcenter, center |
-| `scrollbar` | optional | 2% | $parentDevPadCodeScrollBar, CopyScrollBar, EA_ScrollBar_DefaultVerticalChain, $parentObjectScrollbar |
+| `id` | optional | 3% | 4, 1, 3, 5, ... |
+| `align` | optional | 2% | center, rightcenter |
+| `scrollbar` | optional | 2% | CopyScrollBar, EA_ScrollBar_DefaultVerticalChain, $parentDevPadCodeScrollBar, $parentObjectScrollbar |
 | `alpha` | optional | 2% | 0.97 |
 | `history` | optional | 2% | 30, 10 |
 | `textalign` | optional | 1% | leftcenter |
@@ -188,34 +221,34 @@ Observed 20 times as an unnamed child.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `TextEditBoxGetText` | 182 | OnKeyEnter, OnKeyEscape, OnTextChanged |
-| `ComboBoxGetSelectedMenuItem` | 53 | OnKeyEnter, OnTextChanged |
-| `SliderBarSetCurrentPosition` | 46 | OnTextChanged |
-| `WindowSetAlpha` | 36 | OnTextChanged |
-| `SliderBarGetCurrentPosition` | 28 | OnTextChanged |
-| `ButtonGetPressedFlag` | 21 | OnTextChanged |
-| `WindowGetId` | 16 | OnMouseOver, OnTextChanged |
-| `WindowSetTintColor` | 9 | OnTextChanged |
-| `WindowGetParent` | 7 | OnMouseOver, OnTextChanged |
-| `WindowSetShowing` | 7 | OnKeyEnter, OnKeyEscape |
-| `LabelSetText` | 5 | OnTextChanged |
-| `WindowAssignFocus` | 5 | OnKeyEnter, OnKeyEscape, OnShown |
-| `TextEditBoxSetTextColor` | 4 | OnTextChanged |
-| `LabelSetTextColor` | 3 | OnTextChanged |
-| `TextEditBoxInsertText` | 3 | OnKeyTab |
-| `TextEditBoxSetText` | 3 | OnKeyEnter, OnTextChanged |
-| `WindowSetDimensions` | 3 | OnTextChanged |
-| `ButtonSetDisabledFlag` | 2 | OnTextChanged |
-| `ComboBoxAddMenuItem` | 2 | OnKeyEnter |
-| `ComboBoxSetSelectedMenuItem` | 2 | OnKeyEnter |
-| `WindowGetShowing` | 2 | OnKeyEscape, OnShown |
-| `WindowStartAlphaAnimation` | 2 | OnKeyEnter |
-| `WindowStartScaleAnimation` | 2 | OnKeyEnter |
-| `ComboBoxGetSelectedText` | 1 | OnKeyEnter |
-| `LabelGetText` | 1 | OnKeyEnter |
-| `RegisterEventHandler` | 1 | OnTextChanged |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `TextEditBoxGetText` | ui | 182 | OnKeyEnter, OnKeyEscape, OnTextChanged |
+| `ComboBoxGetSelectedMenuItem` | ui | 53 | OnKeyEnter, OnTextChanged |
+| `SliderBarSetCurrentPosition` | ui | 46 | OnTextChanged |
+| `WindowSetAlpha` | ui | 36 | OnTextChanged |
+| `SliderBarGetCurrentPosition` | ui | 28 | OnTextChanged |
+| `ButtonGetPressedFlag` | ui | 21 | OnTextChanged |
+| `WindowGetId` | ui | 16 | OnMouseOver, OnTextChanged |
+| `WindowSetTintColor` | ui | 9 | OnTextChanged |
+| `WindowGetParent` | ui | 7 | OnMouseOver, OnTextChanged |
+| `WindowSetShowing` | ui | 7 | OnKeyEnter, OnKeyEscape |
+| `LabelSetText` | ui | 5 | OnTextChanged |
+| `WindowAssignFocus` | ui | 5 | OnKeyEnter, OnKeyEscape, OnShown |
+| `TextEditBoxSetTextColor` | ui | 4 | OnTextChanged |
+| `LabelSetTextColor` | ui | 3 | OnTextChanged |
+| `TextEditBoxInsertText` | ui | 3 | OnKeyTab |
+| `TextEditBoxSetText` | ui | 3 | OnKeyEnter, OnTextChanged |
+| `WindowSetDimensions` | ui | 3 | OnTextChanged |
+| `ButtonSetDisabledFlag` | ui | 2 | OnTextChanged |
+| `ComboBoxAddMenuItem` | ui | 2 | OnKeyEnter |
+| `ComboBoxSetSelectedMenuItem` | ui | 2 | OnKeyEnter |
+| `WindowGetShowing` | ui | 2 | OnKeyEscape, OnShown |
+| `WindowStartAlphaAnimation` | ui | 2 | OnKeyEnter |
+| `WindowStartScaleAnimation` | ui | 2 | OnKeyEnter |
+| `ComboBoxGetSelectedText` | ui | 1 | OnKeyEnter |
+| `LabelGetText` | ui | 1 | OnKeyEnter |
+| `RegisterEventHandler` | event | 1 | OnTextChanged |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -249,34 +282,40 @@ Confidence: MEDIUM
 | 0 | `text` | wstring | current_text |
 ## Lua Functions Manipulating This Type
 
-- MapPin.MapPin.RButtonUp
+- MapPin.MapPin.local.EditMarker
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- Pocket Palette.PP.UpdateDyeFilter
+- Busted.BustedGUI.UpdateErrorView
+- MapPin.MapPin.OnUpdate
+- LoyalPet.LPET.RenameProfileOnButtonUp
 - Enemy.Enemy.GroupsUI_EffectFilterDialog_Ok
 - MapPin.MapPin.SendText
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- wbLeadHelper.WbLeadHelperMessage.OnOk
-- EA_UiDebugTools.BustedGUI.UpdateErrorView
-- Busted.BustedGUI.UpdateErrorView
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- LibSlash.LibSlash.Initialize
-- MapPin.MapPin.OnUpdate
-- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
-- Pocket Palette.PP.UpdateDyeFilter
-- LoyalPet.LPET.AddProfileOnButtonUp
+- RandomMount.RandomMountUI.OnMinLevelChanged
 - Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
 - Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
 - MapPin.EditMarker
-- MapPin.MapPin.SetupAccept
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- RandomMount.RandomMountUI.Refresh
-- RandomMount.RandomMountUI.OnMinLevelChanged
-- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- LoyalPet.LPET.RenameProfileOnButtonUp
-- LoyalPet.LPET.SaveProfileOnButtonUp
-- MapPin.MapPin.local.EditMarker
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- MapPin.MapPin.RButtonUp
+- LoyalPet.LPET.AddProfileOnButtonUp
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
+- wbLeadHelper.WbLeadHelperMessage.OnOk
 - Enemy.Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
+- LibSlash.LibSlash.Initialize
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- MapPin.MapPin.SetupAccept
+- LoyalPet.LPET.SaveProfileOnButtonUp
+- EA_UiDebugTools.BustedGUI.UpdateErrorView
+- RandomMount.RandomMountUI.Refresh
+
+
+## Binding Resolution
+
+- Total handler declarations: 257
+- Resolved to Lua functions: 257 (100%)
 
 ## Seen In
 

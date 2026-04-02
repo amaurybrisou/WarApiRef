@@ -105,15 +105,31 @@ Observed XML element type instantiated by 56 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md) | EA_ChatWindow.OnHyperLinkLButtonUp | `function(...)` | LOW |
-| [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) | EA_ChatWindow.OnHyperLinkRButtonUp, MapPin.RButtonUp | `function(...)` | LOW |
-| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | Enemy.CombatLogUI_IDS_OnRowLButtonDown | `function(...)` | LOW |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | Cheeseboard.SortColumnClick, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueLClick, Enemy.KillSpamUI_KillSpamDialog_OnTotalLButtonUp, ClosetGoblinCharacterWindow.OnClickSetRow, ClosetGoblinZoneWindow.OnClickZoneRow, Enemy.CombatLogUI_EpsWindow_OnInDpsLButtonUp | `function(...)` | LOW |
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | LPET.OnMouseOver, Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip, Cheeseboard.OnMouseOver, Enemy.CombatLogUI_EpsWindow_OnMouseOver, Enemy.ConfigurationWindow_ShowTooltip, Enemy.CombatLogUI_StatsWindow_ListRowMouseOver | `function()` | MEDIUM |
-| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | FrameManager.OnMouseOverEnd, TexturedButtons.Setup.Fonts.OnFontExampleMouseOut, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOut, BuffHead.Setup.Layout.Properties.OnFontExampleMouseOut, BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOut, TurretRange.Setup.Display.OnDistanceFontMouseOut | `function(...)` | LOW |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick, Enemy.CombatLogUI_EpsWindow_OnRButtonUp, Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp, ClosetGoblinCharacterWindow.OnSetRowContextMenu, ClosetGoblinZoneWindow.OnSetZoneRowContextMenu, MiracleGrowLight.switchMode | `function(...)` | LOW |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md) | custom | EA_ChatWindow.OnHyperLinkLButtonUp | `function(...)` | LOW |
+| [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) | custom | EA_ChatWindow.OnHyperLinkRButtonUp, MapPin.RButtonUp | `function(...)` | LOW |
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | input | Enemy.CombatLogUI_IDS_OnRowLButtonDown | `flags, x, y` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Cheeseboard.SortColumnClick, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueLClick, Enemy.KillSpamUI_KillSpamDialog_OnTotalLButtonUp, ClosetGoblinCharacterWindow.OnClickSetRow, ClosetGoblinZoneWindow.OnClickZoneRow, Enemy.CombatLogUI_EpsWindow_OnInDpsLButtonUp | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | LPET.OnMouseOver, Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip, Cheeseboard.OnMouseOver, Enemy.CombatLogUI_EpsWindow_OnMouseOver, Enemy.ConfigurationWindow_ShowTooltip, Enemy.CombatLogUI_StatsWindow_ListRowMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | FrameManager.OnMouseOverEnd, TexturedButtons.Setup.Fonts.OnFontExampleMouseOut, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOut, BuffHead.Setup.Layout.Properties.OnFontExampleMouseOut, BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOut, TurretRange.Setup.Display.OnDistanceFontMouseOut | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick, Enemy.CombatLogUI_EpsWindow_OnRButtonUp, Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp, ClosetGoblinCharacterWindow.OnSetRowContextMenu, ClosetGoblinZoneWindow.OnSetZoneRowContextMenu, MiracleGrowLight.switchMode | `flags, x, y` | MEDIUM |
+
+### Per-Event Lua API Calls
+
+**OnHyperLinkLButtonUp** handlers call: `WindowSetShowing`
+
+**OnHyperLinkRButtonUp** handlers call: `ButtonSetPressedFlag`, `ComboBoxSetSelectedMenuItem`, `SliderBarSetCurrentPosition`, `TextEditBoxSetText`, `WindowGetId`, `WindowSetMovable`, `WindowSetShowing`
+
+**OnLButtonDown** handlers call: `SystemData.ActiveWindow.name:match`
+
+**OnLButtonUp** handlers call: `WindowGetId`, `WindowGetParent`, `WindowSetGameActionData`, `WindowSetShowing`
+
+**OnMouseOver** handlers call: `CreateWindow`, `LabelSetText`, `LabelSetTextColor`, `ListBoxGetDataIndex`, `SystemData.ActiveWindow.name:match`, `WindowGetDimensions`, `WindowGetId`, `WindowGetParent`, `WindowGetScreenPosition`, `WindowSetGameActionData`
+
+**OnMouseOverEnd** handlers call: `LabelSetTextColor`
+
+**OnRButtonUp** handlers call: `SystemData.MouseOverWindow.name:match`, `WindowGetId`
 
 ## Common Inherits
 
@@ -132,49 +148,87 @@ Observed XML element type instantiated by 56 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
-- [Button](element_Button.md)
-- [SliderBar](element_SliderBar.md)
-- [DynamicImage](element_DynamicImage.md)
-- [FullResizeImage](element_FullResizeImage.md)
-- [EditBox](element_EditBox.md)
+- [Window](element_Window.md) — 379× (HIGH)
+- [Button](element_Button.md) — 28× (HIGH)
+- [DynamicImage](element_DynamicImage.md) — 3× (MEDIUM)
+- [FullResizeImage](element_FullResizeImage.md) — 3× (MEDIUM)
+- [SliderBar](element_SliderBar.md) — 2× (LOW)
+- [CircleImage](element_CircleImage.md) — 1× (LOW)
+- [EditBox](element_EditBox.md) — 1× (LOW)
 
 ## Common Named Child Elements
 
-- [DynamicImage](element_DynamicImage.md)
+- [DynamicImage](element_DynamicImage.md) — 1× (LOW)
 
 ## Common Structural Child Elements
 
-- [Text](element_Text.md)
-- [TintColor](element_TintColor.md)
+- [Text](element_Text.md) — 69× (HIGH)
+- [TintColor](element_TintColor.md) — 14× (HIGH)
+
+## Common Template Bases
+
+- Aggro_Label_Template
+- Aura_CheckButtonLabel
+- Aura_Default_Label
+- Aura_Default_Label_SmallFont
+- ClosetGoblinTalismanLabel
+- DefaultWindowSmallText
+- DefaultWindowSubTitle
+- DefaultWindowText
+- EA_CheckButtonLabel
+- EA_Label_DefaultSubHeading
+- EA_Label_DefaultText
+- EA_Label_DefaultText_Small
+- EA_Settings_ItemTitle
+- EA_Settings_SectionTitle
+- IraConfigHeading
+- IraConfigLabel
+- MapMonsterEditorWindowHeaderDefault
+- MapMonsterEditorWindowLabelDefault
+- MapMonsterPinTypeEditorWindowHeaderDefault
+- MapMonsterPinTypeEditorWindowLabelDefault
+- MiracleGrow2Label
+- ModDetailsLabelDef
+- ModDetailsTextDef
+- Shinies_Default_Label
+- Shinies_Default_Label_ClearLargeFont
+- Shinies_Default_Label_ClearMediumFont
+- Shinies_Default_Label_ClearSmallFont
+- TChatLabel
+- TOKHeadingSmall
+- TOKText
+- TRollLabel
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `textalign` | optional | 58% | left, center, leftcenter, right, ... |
-| `font` | optional | 56% | font_clear_small, font_default_text_small, font_clear_small_bold, font_clear_medium, ... |
-| `inherits` | optional | 24% | EA_Label_DefaultText, MapMonsterPinTypeEditorWindowHeaderDefault, Aura_Default_Label_SmallFont, DefaultWindowText, ... |
-| `handleinput` | optional | 22% | true, false |
+| `textalign` | optional | 58% | left, center, right, rightcenter, ... |
+| `font` | optional | 56% | font_clear_tiny, font_chat_text, font_clear_small, font_clear_small_bold, ... |
+| `inherits` | optional | 24% | EA_Label_DefaultText, TRollLabel, Aura_Default_Label_SmallFont, IraConfigHeading, ... |
+| `handleinput` | optional | 22% | false, true |
 | `autoresize` | optional | 18% | true, false |
 | `warnOnTextCropped` | optional | 17% | false |
-| `maxchars` | optional | 16% | 35, 30, 100, 80, ... |
+| `maxchars` | optional | 16% | 100, 50, 255, 200, ... |
 | `wordwrap` | optional | 13% | true, false |
-| `layer` | optional | 13% | overlay, secondary, background, popup, ... |
+| `layer` | optional | 13% | default, overlay, background, secondary, ... |
 | `popable` | optional | 5% | false |
 | `skipinput` | optional | 3% | true |
-| `autoresizewidth` | optional | 2% | true, false |
-| `textAutoFitMinScale` | optional | 2% | 0.3, 0.75, 0.5 |
+| `autoresizewidth` | optional | 2% | false, true |
+| `textAutoFitMinScale` | optional | 2% | 0.3, 0.5, 0.75 |
 | `hanldeinput` | optional | 1% | false |
-| `sticky` | optional | 1% | true, false |
-| `alpha` | optional | 0% | 0, 1, .1 |
+| `sticky` | optional | 1% | false, true |
+| `alpha` | optional | 0% | .1, 1, 0 |
 | `show` | optional | 0% | false |
 | `handlinput` | optional | 0% | false |
 | `text` | optional | 0% |  |
 | `autoresizeheight` | optional | 0% | true |
 | `ellipsisOnCrop` | optional | 0% | true |
 | `ignoreFormattingTags` | optional | 0% | true |
-| `linespacing` | optional | 0% | 12, 13 |
+| `linespacing` | optional | 0% | 13, 12 |
 | `showing` | optional | 0% | false |
 | `background` | optional | 0% | EA_FullResizeImage_TanBorder |
 | `id` | optional | 0% | 1 |
@@ -202,25 +256,25 @@ Observed 14 times as an unnamed child.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `WindowGetParent` | 86 | OnLButtonUp, OnMouseOver |
-| `WindowGetId` | 30 | OnHyperLinkRButtonUp, OnLButtonUp, OnMouseOver, OnRButtonUp |
-| `WindowSetShowing` | 18 | OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonUp |
-| `LabelSetTextColor` | 12 | OnMouseOver, OnMouseOverEnd |
-| `TextEditBoxSetText` | 12 | OnHyperLinkRButtonUp |
-| `SystemData.ActiveWindow.name:match` | 8 | OnLButtonDown, OnMouseOver |
-| `CreateWindow` | 6 | OnMouseOver |
-| `LabelSetText` | 6 | OnMouseOver |
-| `ListBoxGetDataIndex` | 6 | OnMouseOver |
-| `ComboBoxSetSelectedMenuItem` | 4 | OnHyperLinkRButtonUp |
-| `SliderBarSetCurrentPosition` | 2 | OnHyperLinkRButtonUp |
-| `WindowSetGameActionData` | 2 | OnLButtonUp, OnMouseOver |
-| `ButtonSetPressedFlag` | 1 | OnHyperLinkRButtonUp |
-| `SystemData.MouseOverWindow.name:match` | 1 | OnRButtonUp |
-| `WindowGetDimensions` | 1 | OnMouseOver |
-| `WindowGetScreenPosition` | 1 | OnMouseOver |
-| `WindowSetMovable` | 1 | OnHyperLinkRButtonUp |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `WindowGetParent` | ui | 86 | OnLButtonUp, OnMouseOver |
+| `WindowGetId` | ui | 30 | OnHyperLinkRButtonUp, OnLButtonUp, OnMouseOver, OnRButtonUp |
+| `WindowSetShowing` | ui | 18 | OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonUp |
+| `LabelSetTextColor` | ui | 12 | OnMouseOver, OnMouseOverEnd |
+| `TextEditBoxSetText` | ui | 12 | OnHyperLinkRButtonUp |
+| `SystemData.ActiveWindow.name:match` | data | 8 | OnLButtonDown, OnMouseOver |
+| `CreateWindow` | ui | 6 | OnMouseOver |
+| `LabelSetText` | ui | 6 | OnMouseOver |
+| `ListBoxGetDataIndex` | ui | 6 | OnMouseOver |
+| `ComboBoxSetSelectedMenuItem` | ui | 4 | OnHyperLinkRButtonUp |
+| `SliderBarSetCurrentPosition` | ui | 2 | OnHyperLinkRButtonUp |
+| `WindowSetGameActionData` | ui | 2 | OnLButtonUp, OnMouseOver |
+| `ButtonSetPressedFlag` | ui | 1 | OnHyperLinkRButtonUp |
+| `SystemData.MouseOverWindow.name:match` | data | 1 | OnRButtonUp |
+| `WindowGetDimensions` | ui | 1 | OnMouseOver |
+| `WindowGetScreenPosition` | ui | 1 | OnMouseOver |
+| `WindowSetMovable` | ui | 1 | OnHyperLinkRButtonUp |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -276,89 +330,95 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- AggroMeter.AggroMeter.Initialize
-- Busted.BustedGUI.Initialize
-- MoraleCircle.MoraleCircle.ColorChanger4
-- TidyRoll.TidyRollOptions.Initialize
-- wbLeadHelper.wbLeadHelper.onZoneMouseOver
-- AdvancedPetAssist.APAGui.UpdateInstantOnlyHUD
-- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Update
-- Enemy.Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.Enemy.CombatLogUI_EpsWindow_Update
-- Swift Assist.SwiftAssist.aaLabelColorSet
-- Busted.BustedGUI.NewErrorRecorded
-- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateList
-- DaemonAssist.DaemonAssist.UpdateWindow
-- EA_UiDebugTools.BustedGUI.Initialize
-- EA_UiDebugTools.BustedGUI.ClearAlertFlash
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
-- Enemy.Enemy.CombatLogUI_EpsWindow_Initialize
-- QuickWarReport.QuickWarReport.local.ShowConfirmWindow
-- Killer.Killer.ShowPersonalStatsTooltip
-- Enemy.Enemy.IntercomInitialize
-- RoR_SoR.RoR_SoR.OnInitialize
-- Busted.BustedGUI.ClearAlertFlash
-- PotionBar.PotionBarSettings.OnAboutShown
-- DAoCBuff.DAoCBuff.ShowMessageWindow
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Swift Assist.Swift Assist.local.WriteLabels
-- DAoCBuff.DAoCTooltips.CreateCondenseTooltip
-- MoraleCircle.MoraleCircle.OnSetCustomColorFull
-- FastInteract.FastInteract.OptionsSetup
-- AdvancedPetAssist.APAGui.ApplyPetTargetHUDLayout
-- Swift Assist.WriteLabels
 - BankArkel.BankArkel.PackHide
-- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Pocket Palette.PP.UpdateDyeFilter
-- MoraleCircle.MoraleCircle.ColorChanger3
-- EA_UiDebugTools.BustedGUI.NewErrorRecorded
-- EA_UiDebugTools.BustedGUI.UpdateErrorView
-- GetStats.GetStats.OnChatLogUpdated
-- MoraleCircle.MoraleCircle.ColorChanger2
-- Enemy.Enemy.UI_ConfigDialog_Open
-- Killer.Killer.ShowRowTooltip
-- Enemy.Enemy.CombatLogUI_EpsWindow_UpdateLayout
-- WSCT.WSCT.ColorOnInitialize
-- wbLeadHelper.wbLeadHelper.showNormalTitle
-- Enemy.Enemy.CombatLogUI_StatsWindow_Open
-- QuickWarReport.QuickWarReport.local.PrepareConfirmWindowChrome
-- Enemy.Enemy.Stopwatch_Update
-- Killer.Killer.Initialize
-- Pocket Palette.PP.UpdateListRow
-- AdvancedPetAssist.APAGui.UpdateFollowTargetHUD
-- QuickWarReport.QuickWarReport.TestConfirmWindow
-- Swift Assist.Swift Assist.local.SetSmartLabel
-- Enemy.Enemy.Timer_Update
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.RefreshOption
-- Enemy.Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
-- Enemy.Enemy.AssistUI_Target_Show
-- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- MoraleCircle.MoraleCircle.ColorChanger1
-- QuickWarReport.PrepareConfirmWindowChrome
-- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
-- RandomMount.RandomMountUI.OnDropSlotLButtonUp
-- AdvancedPetAssist.APAGui.UpdateKitingHUD
-- AdvancedPetAssist.APAGui.UpdatePetTargetHUD
-- RandomMount.RandomMountUI.OnInitialize
-- Busted.BustedGUI.UpdateErrorView
-- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- Enemy.Enemy.IntercomUI_IntercomDialog_Open
-- MoraleCircle.MoraleCircle.OnSetCustomColor
-- Enemy.Enemy.Guard_GuardIndicator_Update
-- MoraleCircle.MoraleCircle.init
-- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
-- Swift Assist.SetSmartLabel
-- AdvancedPetAssist.APAGui.OnShown
-- DAoCBuff.DAoCTooltips.UpdateCondenseTooltip
-- MoraleCircle.MoraleCircle.OnSetCustomColorFill
+- EA_UiDebugTools.BustedGUI.Initialize
 - QuickWarReport.ShowConfirmWindow
-- RandomMount.RandomMountUI.OnAddCustomMount
+- Busted.BustedGUI.NewErrorRecorded
+- AdvancedPetAssist.APAGui.UpdateKitingHUD
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- TidyRoll.TidyRollOptions.Initialize
+- MoraleCircle.MoraleCircle.OnSetCustomColor
+- DAoCBuff.DAoCTooltips.CreateCondenseTooltip
+- wbLeadHelper.wbLeadHelper.onZoneMouseOver
+- Enemy.Enemy.UI_ConfigDialog_Open
+- Enemy.Enemy.CombatLogUI_EpsWindow_Update
+- AdvancedPetAssist.APAGui.UpdatePetTargetHUD
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.RefreshOption
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
+- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
+- MoraleCircle.MoraleCircle.ColorChanger4
+- QuickWarReport.PrepareConfirmWindowChrome
+- Swift Assist.WriteLabels
+- MoraleCircle.MoraleCircle.OnSetCustomColorFull
+- MoraleCircle.MoraleCircle.ColorChanger3
+- Enemy.Enemy.IntercomInitialize
 - Killer.Killer.ShowTopKillersTooltip
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- MoraleCircle.MoraleCircle.init
+- EA_UiDebugTools.BustedGUI.NewErrorRecorded
+- Enemy.Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
+- Swift Assist.SwiftAssist.aaLabelColorSet
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- Enemy.Enemy.Stopwatch_Update
+- Enemy.Enemy.AssistUI_Target_Show
+- RoR_SoR.RoR_SoR.OnInitialize
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
+- MoraleCircle.MoraleCircle.OnSetCustomColorFill
+- PotionBar.PotionBarSettings.OnAboutShown
+- Enemy.Enemy.Guard_GuardIndicator_Update
+- Pocket Palette.PP.UpdateListRow
+- Busted.BustedGUI.UpdateErrorView
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
+- WSCT.WSCT.ColorOnInitialize
+- AggroMeter.AggroMeter.Initialize
 - BankArkel.BankArkel.SetCharInfo
+- Busted.BustedGUI.Initialize
+- AdvancedPetAssist.APAGui.UpdateFollowTargetHUD
+- Busted.BustedGUI.ClearAlertFlash
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- AdvancedPetAssist.APAGui.UpdateInstantOnlyHUD
+- Killer.Killer.ShowRowTooltip
+- GetStats.GetStats.OnChatLogUpdated
+- MoraleCircle.MoraleCircle.ColorChanger1
+- QuickWarReport.QuickWarReport.TestConfirmWindow
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- DaemonAssist.DaemonAssist.UpdateWindow
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- EA_UiDebugTools.BustedGUI.UpdateErrorView
+- RandomMount.RandomMountUI.OnDropSlotLButtonUp
+- QuickWarReport.QuickWarReport.local.PrepareConfirmWindowChrome
+- Swift Assist.Swift Assist.local.WriteLabels
+- Enemy.Enemy.CombatLogUI_StatsWindow_Open
+- Swift Assist.Swift Assist.local.SetSmartLabel
+- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateList
+- Killer.Killer.ShowPersonalStatsTooltip
+- RandomMount.RandomMountUI.OnAddCustomMount
+- Enemy.Enemy.CombatLogUI_EpsWindow_Initialize
+- MoraleCircle.MoraleCircle.ColorChanger2
+- EA_UiDebugTools.BustedGUI.ClearAlertFlash
+- Killer.Killer.Initialize
+- FastInteract.FastInteract.OptionsSetup
+- QuickWarReport.QuickWarReport.local.ShowConfirmWindow
+- AdvancedPetAssist.APAGui.ApplyPetTargetHUDLayout
+- DAoCBuff.DAoCTooltips.UpdateCondenseTooltip
+- Enemy.Enemy.Timer_Update
+- AdvancedPetAssist.APAGui.OnShown
+- RandomMount.RandomMountUI.OnInitialize
+- DAoCBuff.DAoCBuff.ShowMessageWindow
+- Swift Assist.SetSmartLabel
+- Enemy.Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Update
+- Enemy.Enemy.IntercomUI_IntercomDialog_Open
+- Enemy.Enemy.CombatLogUI_EpsWindow_UpdateLayout
+- wbLeadHelper.wbLeadHelper.showNormalTitle
+- Pocket Palette.PP.UpdateDyeFilter
+- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
+
+
+## Binding Resolution
+
+- Total handler declarations: 287
+- Resolved to Lua functions: 287 (100%)
 
 ## Seen In
 

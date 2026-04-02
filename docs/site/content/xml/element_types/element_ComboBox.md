@@ -100,10 +100,16 @@ Observed XML element type instantiated by 29 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | LPET.OnMouseOver, Enemy.ConfigurationWindow_ShowTooltip, DevPadWindow.OnMouseOverCode, PotionBarSettings.OnMouseoverActivator, PotionBarSettings.OnMouseoverBuild, PotionBarSettings.OnMouseoverInfoTextBR | `function()` | MEDIUM |
-| [OnSelChanged](../handlers/handler_OnSelChanged.md) | APAGui.OnComboChanged, LPET.QuickHealthOnSelChanged, LPET.QuickModeOnSelChanged, LPET.QuickPriorityOnSelChanged, WHMGui.OnOptionsComboChanged, MapPin.ComboBoxUpdate | `function(...)` | LOW |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | LPET.OnMouseOver, Enemy.ConfigurationWindow_ShowTooltip, DevPadWindow.OnMouseOverCode, PotionBarSettings.OnMouseoverActivator, PotionBarSettings.OnMouseoverBuild, PotionBarSettings.OnMouseoverInfoTextBR | `function()` | MEDIUM |
+| [OnSelChanged](../handlers/handler_OnSelChanged.md) | data | APAGui.OnComboChanged, LPET.QuickHealthOnSelChanged, LPET.QuickModeOnSelChanged, LPET.QuickPriorityOnSelChanged, WHMGui.OnOptionsComboChanged, MapPin.ComboBoxUpdate | `index` | MEDIUM |
+
+### Per-Event Lua API Calls
+
+**OnMouseOver** handlers call: `ComboBoxGetSelectedText`, `WindowGetParent`
+
+**OnSelChanged** handlers call: `ButtonGetPressedFlag`, `ButtonSetDisabledFlag`, `ButtonSetPressedFlag`, `ButtonSetText`, `ComboBoxGetSelectedMenuItem`, `ComboBoxGetSelectedText`, `ComboBoxSetSelectedMenuItem`, `CreateWindowFromTemplate`, `DestroyWindow`, `DoesWindowExist`, `DynamicImageSetTexture`, `DynamicImageSetTextureSlice`, `LabelSetText`, `LabelSetTextColor`, `ListBoxSetDisplayOrder`, `ScrollWindowUpdateScrollRect`, `SliderBarGetCurrentPosition`, `TextEditBoxGetText`, `TextEditBoxSetText`, `TextEditBoxSetTextColor`, `WindowAddAnchor`, `WindowClearAnchors`, `WindowGetId`, `WindowGetParent`, `WindowSetHandleInput`, `WindowSetShowing`
 
 ## Common Inherits
 
@@ -122,12 +128,35 @@ Observed XML element type instantiated by 29 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Window](element_Window.md) — 97× (HIGH)
 
 ## Common Structural Child Elements
 
-- [MenuButtonOffset](element_MenuButtonOffset.md)
-- [TextOffset](element_TextOffset.md)
+- [MenuButtonOffset](element_MenuButtonOffset.md) — 13× (HIGH)
+- [TextOffset](element_TextOffset.md) — 1× (LOW)
+
+## Common Template Bases
+
+- APA_ComboBox
+- APA_ComboBoxWide
+- Aura_ComboBox_DefaultResizable
+- Aura_ComboBox_DefaultResizableLarge
+- Aura_ComboBox_DefaultResizableTiny
+- DaemonAssist_ComboBoxWide
+- EA_ComboBox_DefaultResizable
+- EA_ComboBox_DefaultResizable3
+- EA_ComboBox_DefaultResizableLarge
+- EA_ComboBox_DefaultResizableMedium
+- EA_ComboBox_DefaultResizableSmall
+- EA_ComboBox_DefaultResizableTiny
+- EA_ComboBox_DefaultResizable_Fixed
+- EA_ComboBox_DefaultResizable_Fixed_Small
+- IraConfigCombo
+- MapMonsterPinTypeEditor_ComboBox_DefaultResizable
+- Shinies_ComboBox_DefaultResizableLarge
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Typical XML Structure
 
@@ -142,16 +171,16 @@ Observed XML element type instantiated by 29 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 75% | APA_ComboBoxWide, EA_ComboBox_DefaultResizable, EA_ComboBox_DefaultResizable_Fixed_Small, IraConfigCombo, ... |
-| `layer` | optional | 43% | secondary, default, popup, overlay |
-| `maxvisibleitems` | optional | 6% | 10, 8, 6, 5, ... |
+| `inherits` | optional | 75% | APA_ComboBox, EA_ComboBox_DefaultResizable, EA_ComboBox_DefaultResizable_Fixed_Small, EA_ComboBox_DefaultResizableSmall, ... |
+| `layer` | optional | 43% | secondary, popup, default, overlay |
+| `maxvisibleitems` | optional | 6% | 5, 8, 15, 10, ... |
 | `menubackground` | optional | 2% | EA_Window_ComboBoxMenuBackground, EA_Window_DefaultFrame |
-| `menuitembutton` | optional | 2% | Aura_Button_DefaultMenuButtonLarge, EA_Button_DefaultMenuButtonSmall, EA_Button_DefaultMenuButton2, Aura_Button_DefaultMenuButtonTiny, ... |
+| `menuitembutton` | optional | 2% | Shinies_Button_DefaultMenuButtonLarge, EA_Button_DefaultMenuButtonSmall, EA_Button_DefaultMenuButton, Aura_Button_DefaultMenuButtonLarge, ... |
 | `scrollbar` | optional | 2% | EA_ScrollBar_DefaultVerticalChain, EA_ScrollBar_ChatVertical |
-| `selectedbutton` | optional | 2% | Aura_ComboBox_DefaultResizableComboBoxSelectedLarge, EA_Button_DefaultResizableComboBoxSelected_Mouseover_Fixed_Small, EA_Button_DefaultResizableComboBoxSelected2, Aura_Button_DefaultResizableTinyComboBoxSelected, ... |
+| `selectedbutton` | optional | 2% | Shinies_ComboBox_DefaultResizableComboBoxSelectedLarge, APA_ComboBoxButton, DaemonAssist_ComboBoxButtonWide, APA_ComboBoxButtonWide, ... |
 | `show` | optional | 2% | false |
 | `autoresize` | optional | 2% | true |
-| `id` | optional | 0% | 2, 3, 1 |
+| `id` | optional | 0% | 1, 2, 3 |
 | `warnOnTextCropped` | optional | 0% | false |
 ## Structural Sub-Elements
 
@@ -175,34 +204,34 @@ Observed 1 times as an unnamed child.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `WindowGetParent` | 227 | OnMouseOver, OnSelChanged |
-| `ComboBoxGetSelectedMenuItem` | 95 | OnSelChanged |
-| `TextEditBoxGetText` | 20 | OnSelChanged |
-| `WindowSetShowing` | 19 | OnSelChanged |
-| `LabelSetText` | 16 | OnSelChanged |
-| `SliderBarGetCurrentPosition` | 8 | OnSelChanged |
-| `ButtonSetDisabledFlag` | 7 | OnSelChanged |
-| `ButtonGetPressedFlag` | 6 | OnSelChanged |
-| `ButtonSetPressedFlag` | 6 | OnSelChanged |
-| `ComboBoxGetSelectedText` | 6 | OnMouseOver, OnSelChanged |
-| `WindowSetHandleInput` | 6 | OnSelChanged |
-| `DynamicImageSetTexture` | 4 | OnSelChanged |
-| `ButtonSetText` | 3 | OnSelChanged |
-| `WindowAddAnchor` | 3 | OnSelChanged |
-| `ComboBoxSetSelectedMenuItem` | 2 | OnSelChanged |
-| `DoesWindowExist` | 2 | OnSelChanged |
-| `DynamicImageSetTextureSlice` | 2 | OnSelChanged |
-| `LabelSetTextColor` | 2 | OnSelChanged |
-| `ListBoxSetDisplayOrder` | 2 | OnSelChanged |
-| `TextEditBoxSetTextColor` | 2 | OnSelChanged |
-| `WindowClearAnchors` | 2 | OnSelChanged |
-| `CreateWindowFromTemplate` | 1 | OnSelChanged |
-| `DestroyWindow` | 1 | OnSelChanged |
-| `ScrollWindowUpdateScrollRect` | 1 | OnSelChanged |
-| `TextEditBoxSetText` | 1 | OnSelChanged |
-| `WindowGetId` | 1 | OnSelChanged |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `WindowGetParent` | ui | 227 | OnMouseOver, OnSelChanged |
+| `ComboBoxGetSelectedMenuItem` | ui | 95 | OnSelChanged |
+| `TextEditBoxGetText` | ui | 20 | OnSelChanged |
+| `WindowSetShowing` | ui | 19 | OnSelChanged |
+| `LabelSetText` | ui | 16 | OnSelChanged |
+| `SliderBarGetCurrentPosition` | ui | 8 | OnSelChanged |
+| `ButtonSetDisabledFlag` | ui | 7 | OnSelChanged |
+| `ButtonGetPressedFlag` | ui | 6 | OnSelChanged |
+| `ButtonSetPressedFlag` | ui | 6 | OnSelChanged |
+| `ComboBoxGetSelectedText` | ui | 6 | OnMouseOver, OnSelChanged |
+| `WindowSetHandleInput` | ui | 6 | OnSelChanged |
+| `DynamicImageSetTexture` | ui | 4 | OnSelChanged |
+| `ButtonSetText` | ui | 3 | OnSelChanged |
+| `WindowAddAnchor` | ui | 3 | OnSelChanged |
+| `ComboBoxSetSelectedMenuItem` | ui | 2 | OnSelChanged |
+| `DoesWindowExist` | ui | 2 | OnSelChanged |
+| `DynamicImageSetTextureSlice` | ui | 2 | OnSelChanged |
+| `LabelSetTextColor` | ui | 2 | OnSelChanged |
+| `ListBoxSetDisplayOrder` | ui | 2 | OnSelChanged |
+| `TextEditBoxSetTextColor` | ui | 2 | OnSelChanged |
+| `WindowClearAnchors` | ui | 2 | OnSelChanged |
+| `CreateWindowFromTemplate` | ui | 1 | OnSelChanged |
+| `DestroyWindow` | ui | 1 | OnSelChanged |
+| `ScrollWindowUpdateScrollRect` | ui | 1 | OnSelChanged |
+| `TextEditBoxSetText` | ui | 1 | OnSelChanged |
+| `WindowGetId` | ui | 1 | OnSelChanged |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -220,32 +249,38 @@ Confidence: MEDIUM
 | 0 | `index` | number | selected_index |
 ## Lua Functions Manipulating This Type
 
-- MapPin.MapPin.local.EditMarker
 - MapPin.MapPin.RButtonUp
-- Enemy.Enemy.CombatLogUI_StatsWindow_Open
-- Busted.BustedGUI.Initialize
-- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
 - Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.Enemy.IntercomUI_IntercomJoinDialog_Open
-- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Open
+- Busted.BustedGUI.NewErrorRecorded
+- Busted.BustedGUI.Initialize
 - EA_UiDebugTools.BustedGUI.NewErrorRecorded
-- Enemy.Enemy.UI_ConfigDialog_OnSectionSelChanged
+- AdvancedRenownTrainer.GeneratePresetByLinkData
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Open
 - Enemy.Enemy.UI_ConfigDialog_Open
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Enemy.Enemy.UI_ConfigDialog_OnSectionSelChanged
+- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- MapPin.MapPin.local.EditMarker
 - Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
 - BankArkel.BankArkel.SetupCombos
-- AdvancedRenownTrainer.GeneratePresetByLinkData
-- DaemonAssist.DaemonAssist.PopulateBindingCombos
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- EA_UiDebugTools.BustedGUI.Initialize
-- Enemy.Enemy.UnitFramesUI_ConfigDialog_Import
-- Enemy.Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- Busted.BustedGUI.NewErrorRecorded
 - Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- MapPin.EditMarker
-- Enemy.Enemy.IntercomUI_IntercomJoinDialog_AddGroup
 - Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- EA_UiDebugTools.BustedGUI.Initialize
+- Enemy.Enemy.IntercomUI_IntercomJoinDialog_Open
+- MapPin.EditMarker
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- DaemonAssist.DaemonAssist.PopulateBindingCombos
 - Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.Enemy.CombatLogUI_StatsWindow_Open
+- Enemy.Enemy.UnitFramesUI_ConfigDialog_Import
+- Enemy.Enemy.IntercomUI_IntercomJoinDialog_AddGroup
+
+
+## Binding Resolution
+
+- Total handler declarations: 409
+- Resolved to Lua functions: 409 (100%)
 
 ## Seen In
 

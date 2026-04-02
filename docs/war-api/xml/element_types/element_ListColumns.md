@@ -69,7 +69,7 @@ Structural XML container inside ListBox that groups one or more ListColumn decla
 
 ## Common Parent Elements
 
-- [ListBox](element_ListBox.md)
+- [ListBox](element_ListBox.md) — 28× (HIGH)
 
 ## Seen In
 

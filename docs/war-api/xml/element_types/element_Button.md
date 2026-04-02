@@ -108,18 +108,32 @@ Observed XML element type instantiated by 51 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnInitialize](../handlers/handler_OnInitialize.md) | EA_GenericCheckButton.Initialize, IraConfig.HelpBtnInit | `function()` | MEDIUM |
-| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | ClosetGoblinCharacterWindow.EquipmentLButtonDown, MiracleGrow2.onHClick, QuickWarReport.OnConfirmNoop, BuffHead.Setup.Layout.BeginResize, CMapWindow.OnResizeBeginLO, CMapWindow.OnResizeBeginLU | `function(...)` | LOW |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | APAGui.OnTabButtonUp, BankArkel.PackTab, Enemy.CombatLogUI_StatsWindow_SortColumnClick, TortallDPSDetail.GenericSort, Enemy.ScenarioInfoUI_ScenarioInfoDialog_SortColumnClick, AdvancedRenownTraining.OnLButtonUpTab | `function(...)` | LOW |
-| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | followTheLeader.OnMButtonUp | `function(...)` | LOW |
-| [OnMouseDrag](../handlers/handler_OnMouseDrag.md) | EA_Window_Macro.IconMouseDrag, Enemy.AssistUI_ConfigDialog_OnMacroMarkMouseDrag, Enemy.AssistUI_ConfigDialog_OnMacroTargetMouseDrag, Enemy.ConfigurationWindow_OnMacroMouseDrag, Enemy.ScenarioInfoUI_ConfigDialog_OnMacroToggleMouseDrag | `function(...)` | LOW |
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | BankArkel.PackTabMover, MapMonster.PinTypeEditor.MouseOverDescription, Enemy.ConfigurationWindow_ShowTooltip, MiracleGrow2.ContextHover, MiracleGrow2.onHHover, WarBoard.OnMouseOver | `function()` | MEDIUM |
-| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | ClosetGoblinCharacterWindow.HideCloakOptions, ClosetGoblinCharacterWindow.HideShowHelm, WarBoard.OnMouseOverEnd, WarBoard.OnMouseOverEndBottom, ClosetGoblinCharacterWindow.EquipmentMouseOverEnd, MiracleGrow.onHHoverEnd | `function(...)` | LOW |
-| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | CMapWindow.MWheelWholeZoom | `function(delta)` | MEDIUM |
-| [OnRButtonDown](../handlers/handler_OnRButtonDown.md) | ClosetGoblinCharacterWindow.EquipmentRButtonDown, CG_ItemRack.EquipmentRButtonDown, EA_Window_Macro.DetailIconRButtonDown, EA_Window_Macro.IconRButtonDown, EA_Window_Macro.SelectionIconRButtonDown | `function(...)` | LOW |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | Enemy.CombatLogUI_StatsWindow_SortColumnRClick, TortallDPSDetail.ShowColumnMenu, MiracleGrow2.onRClick, CMapWindow.OnScenarioQueueRButtonUp, Enemy.ScenarioInfoUI_ScenarioInfoDialog_SortColumnRClick, MapMonster.OnMouseRightClickFilter | `function(...)` | LOW |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnInitialize](../handlers/handler_OnInitialize.md) | lifecycle | EA_GenericCheckButton.Initialize, IraConfig.HelpBtnInit | `function()` | MEDIUM |
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | input | ClosetGoblinCharacterWindow.EquipmentLButtonDown, MiracleGrow2.onHClick, QuickWarReport.OnConfirmNoop, BuffHead.Setup.Layout.BeginResize, CMapWindow.OnResizeBeginLO, CMapWindow.OnResizeBeginLU | `flags, x, y` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | APAGui.OnTabButtonUp, BankArkel.PackTab, Enemy.CombatLogUI_StatsWindow_SortColumnClick, TortallDPSDetail.GenericSort, Enemy.ScenarioInfoUI_ScenarioInfoDialog_SortColumnClick, AdvancedRenownTraining.OnLButtonUpTab | `flags, x, y` | MEDIUM |
+| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | followTheLeader.OnMButtonUp | `flags, x, y` | MEDIUM |
+| [OnMouseDrag](../handlers/handler_OnMouseDrag.md) | input | EA_Window_Macro.IconMouseDrag, Enemy.AssistUI_ConfigDialog_OnMacroMarkMouseDrag, Enemy.AssistUI_ConfigDialog_OnMacroTargetMouseDrag, Enemy.ConfigurationWindow_OnMacroMouseDrag, Enemy.ScenarioInfoUI_ConfigDialog_OnMacroToggleMouseDrag | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | BankArkel.PackTabMover, MapMonster.PinTypeEditor.MouseOverDescription, Enemy.ConfigurationWindow_ShowTooltip, MiracleGrow2.ContextHover, MiracleGrow2.onHHover, WarBoard.OnMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | ClosetGoblinCharacterWindow.HideCloakOptions, ClosetGoblinCharacterWindow.HideShowHelm, WarBoard.OnMouseOverEnd, WarBoard.OnMouseOverEndBottom, ClosetGoblinCharacterWindow.EquipmentMouseOverEnd, MiracleGrow.onHHoverEnd | `function(...)` | LOW |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | CMapWindow.MWheelWholeZoom | `function(delta)` | MEDIUM |
+| [OnRButtonDown](../handlers/handler_OnRButtonDown.md) | input | ClosetGoblinCharacterWindow.EquipmentRButtonDown, CG_ItemRack.EquipmentRButtonDown, EA_Window_Macro.DetailIconRButtonDown, EA_Window_Macro.IconRButtonDown, EA_Window_Macro.SelectionIconRButtonDown | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Enemy.CombatLogUI_StatsWindow_SortColumnRClick, TortallDPSDetail.ShowColumnMenu, MiracleGrow2.onRClick, CMapWindow.OnScenarioQueueRButtonUp, Enemy.ScenarioInfoUI_ScenarioInfoDialog_SortColumnRClick, MapMonster.OnMouseRightClickFilter | `flags, x, y` | MEDIUM |
+
+### Per-Event Lua API Calls
+
+**OnLButtonDown** handlers call: `WindowGetId`, `WindowGetParent`, `WindowSetShowing`, `WindowUtils.BeginResize`
+
+**OnLButtonUp** handlers call: `BroadcastEvent`, `ButtonGetDisabledFlag`, `ButtonGetPressedFlag`, `ButtonGetText`, `ButtonSetDisabledFlag`, `ButtonSetPressedFlag`, `ComboBoxAddMenuItem`, `ComboBoxClearMenuItems`, `ComboBoxGetSelectedMenuItem`, `ComboBoxGetSelectedText`, `ComboBoxSetSelectedMenuItem`, `CreateWindow`, `CreateWindowFromTemplate`, `Cursor.Clear`, `Cursor.IconOnCursor`, `DestroyWindow`, `DoesWindowExist`, `DynamicImageSetTexture`, `GameData.Player.GetRenownRefundCost`, `LabelGetText`, `LabelSetText`, `LabelSetTextColor`, `ListBoxGetDataIndex`, `ListBoxSetDisplayOrder`, `Player.GetMoney`, `Player.GetRenownRefundCost`, `RegisterEventHandler`, `SliderBarGetCurrentPosition`, `SliderBarSetCurrentPosition`, `SystemData.ActiveWindow.name:find`, `SystemData.ActiveWindow.name:match`, `TextEditBoxGetText`, `TextEditBoxGetText:len`, `TextEditBoxSelectAll`, `TextEditBoxSetText`, `WindowAddAnchor`, `WindowAssignFocus`, `WindowClearAnchors`, `WindowGetAnchorCount`, `WindowGetDimensions`, `WindowGetHandleInput`, `WindowGetId`, `WindowGetParent`, `WindowGetScreenPosition`, `WindowGetShowing`, `WindowSetHandleInput`, `WindowSetId`, `WindowSetShowing`, `WindowSetTintColor`, `WindowStartAlphaAnimation`
+
+**OnMouseDrag** handlers call: `Cursor.IconOnCursor`, `Cursor.PickUp`
+
+**OnMouseOver** handlers call: `LabelSetText`, `LabelSetTextColor`, `ListBoxGetDataIndex`, `SystemData.ActiveWindow.name:match`, `SystemData.MouseOverWindow.name:match`, `WindowGetDimensions`, `WindowGetId`, `WindowGetParent`, `WindowGetScreenPosition`, `WindowSetShowing`
+
+**OnMouseOverEnd** handlers call: `WindowSetShowing`
+
+**OnRButtonUp** handlers call: `SystemData.ActiveWindow.name:match`, `SystemData.MouseOverWindow.name:match`, `WindowGetId`, `WindowGetShowing`, `WindowSetLayer`, `WindowSetShowing`
 
 ## Common Inherits
 
@@ -138,30 +152,140 @@ Observed XML element type instantiated by 51 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
-- [Button](element_Button.md)
-- [LogDisplay](element_LogDisplay.md)
+- [Window](element_Window.md) — 241× (HIGH)
+- [Button](element_Button.md) — 2× (LOW)
+- [LogDisplay](element_LogDisplay.md) — 1× (LOW)
 
 ## Common Named Child Elements
 
-- [DynamicImage](element_DynamicImage.md)
-- [Label](element_Label.md)
-- [Window](element_Window.md)
-- [CircleImage](element_CircleImage.md)
-- [FullResizeImage](element_FullResizeImage.md)
-- [AnimatedImage](element_AnimatedImage.md)
-- [Button](element_Button.md)
+- [DynamicImage](element_DynamicImage.md) — 29× (HIGH)
+- [Label](element_Label.md) — 28× (HIGH)
+- [Window](element_Window.md) — 10× (HIGH)
+- [CircleImage](element_CircleImage.md) — 5× (MEDIUM)
+- [FullResizeImage](element_FullResizeImage.md) — 5× (MEDIUM)
+- [AnimatedImage](element_AnimatedImage.md) — 2× (LOW)
+- [Button](element_Button.md) — 2× (LOW)
 
 ## Common Structural Child Elements
 
-- [Normal](element_Normal.md)
-- [Pressed](element_Pressed.md)
-- [NormalHighlit](element_NormalHighlit.md)
-- [Disabled](element_Disabled.md)
-- [PressedHighlit](element_PressedHighlit.md)
-- [TexSlices](element_TexSlices.md)
-- [TextOffset](element_TextOffset.md)
-- [TextColors](element_TextColors.md)
+- [Normal](element_Normal.md) — 84× (HIGH)
+- [Pressed](element_Pressed.md) — 77× (HIGH)
+- [NormalHighlit](element_NormalHighlit.md) — 65× (HIGH)
+- [Disabled](element_Disabled.md) — 60× (HIGH)
+- [PressedHighlit](element_PressedHighlit.md) — 53× (HIGH)
+- [TexSlices](element_TexSlices.md) — 44× (HIGH)
+- [TextOffset](element_TextOffset.md) — 30× (HIGH)
+- [TextColors](element_TextColors.md) — 23× (HIGH)
+- [ResizeImages](element_ResizeImages.md) — 21× (HIGH)
+- [DisabledPressed](element_DisabledPressed.md) — 14× (HIGH)
+- [OverlayOffset](element_OverlayOffset.md) — 14× (HIGH)
+- [OverlaySize](element_OverlaySize.md) — 14× (HIGH)
+- [OverlayTexCoords](element_OverlayTexCoords.md) — 14× (HIGH)
+- [Sound](element_Sound.md) — 7× (MEDIUM)
+- [Sounds](element_Sounds.md) — 7× (MEDIUM)
+- [Text](element_Text.md) — 3× (MEDIUM)
+- [AnimatedImages](element_AnimatedImages.md) — 1× (LOW)
+- [Eventhandlers](element_Eventhandlers.md) — 1× (LOW)
+
+## Common Template Bases
+
+- AbilitiesWindowButtonDef
+- Aggro_Button_Template
+- AuraIconButton
+- AuraSharesSortButton
+- AuraTabButtonTemplate
+- AuraWindowButton
+- AuraWindowSortButton
+- BuffHeadLayoutBottomLeftButton
+- BuffHeadLayoutBottomRightButton
+- BuffHeadLayoutCornerResizeButton
+- BuffHeadLayoutHorizontalButton
+- BuffHeadLayoutResizeButton
+- BuffHeadLayoutTopLeftButton
+- BuffHeadLayoutTopRightButton
+- BuffHeadLayoutVerticalButton
+- BuffHeadSetupEffectCacheSortTemplate
+- CG_ItemRackEquipmentButton
+- CharacterWindowDefaultButton
+- ClosetGoblinDefaultButton
+- ClosetGoblinEquipmentButton
+- CoreWindowResizeButton
+- CoreWindowResizeButtonBottomRight
+- DefaultButton
+- DefaultIconButton
+- EA_Button_BottomTab
+- EA_Button_Default
+- EA_Button_DefaultBigLeftArrow
+- EA_Button_DefaultBigRightArrow
+- EA_Button_DefaultChatScrollToBottom
+- EA_Button_DefaultCheckBox
+- EA_Button_DefaultDown
+- EA_Button_DefaultIconFrame
+- EA_Button_DefaultIconFrame_Large
+- EA_Button_DefaultIconFrame_Small
+- EA_Button_DefaultListRow
+- EA_Button_DefaultListSort
+- EA_Button_DefaultMenuButton
+- EA_Button_DefaultMinus
+- EA_Button_DefaultPlus
+- EA_Button_DefaultResizableComboBoxSelected
+- EA_Button_DefaultResizeable
+- EA_Button_DefaultSmallSquare
+- EA_Button_DefaultText
+- EA_Button_DefaultToggleCircle
+- EA_Button_DefaultUp
+- EA_Button_DefaultWindowClose
+- EA_Button_ListSort
+- EA_Button_ResizeIconFrame_NoNormalImage
+- EA_Button_Tab
+- EA_CheckButtonButton
+- EA_FilterMenuButtonTemplate
+- EA_Templates_Color_Picker_Button
+- EA_Window_MacroDetailIconButton
+- EA_Window_MacroIconButton
+- EnemyChooseIconDialogList_IconButton
+- IraConfigHelpBtn
+- ItemWindowSlotButton
+- LPETTabButton
+- MacroIconSelectionWindowIconButton
+- MapFilterContextMenuChoice
+- MapMonsterEditorWindowButtonDefault
+- MapMonsterPinTypeEditorWindowButtonDefault
+- MapPinButton
+- MapPinButton_NoBG
+- MapPinChooseIconDialogList_IconButton
+- MapPinNumberButtonTemplate
+- MiracleGrow2Button
+- MiracleGrow2HarvestRptButton
+- MiracleGrow2Repeat
+- MiracleGrow2SoundButton
+- MiracleGrowButton
+- MiracleGrowLightButton
+- ModWindowSortButton
+- PotionBarWindowButton
+- QuickTacticSwitchWindowSortButton
+- ShiniesAuctionsUI_SortButton
+- ShiniesBrowseUI_ResultsSortButton
+- ShiniesBrowseUI_SearchesSortButton
+- ShiniesConfigPrice_DecreaseButton
+- ShiniesConfigPrice_IncreaseButton
+- ShiniesPostUI_SortButton
+- Shinies_Button_DefaultListSort
+- Shinies_Button_ListSort
+- Shinies_Default_Button_ClearMediumFont
+- Shinies_IconButton
+- Shinies_IconButton_Overlay
+- TChatButton
+- TChatTabButton
+- TRollButton
+- TRollItemButton
+- TabButtonTemplate
+- WSCTButtonTemplate
+- WSCTTabButton
+- wbLeadHelperChooseIconDialogList_IconButton
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Typical XML Structure
 
@@ -198,23 +322,23 @@ Observed XML element type instantiated by 51 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 74% | EA_Button_DefaultText, EA_Button_DefaultCheckBox, ModWindowSortButton, Shinies_Default_Button_ClearMediumFont, ... |
-| `id` | optional | 21% | 3, 4, 5, 1, ... |
-| `textalign` | optional | 13% | left, center, bottomright, right, ... |
-| `font` | optional | 11% | font_chat_text, font_clear_medium, font_clear_small_bold, font_clear_small, ... |
-| `layer` | optional | 7% | secondary, popup, overlay, default, ... |
-| `handleinput` | optional | 6% | true, false |
-| `backgroundtexture` | optional | 6% | shared_01, EA_Cultivating01_d5, EA_HUD_01, EA_Guild, ... |
-| `highlighttexture` | optional | 5% | shared_01, EA_Cultivating01_d5, EA_HUD_01, EA_Guild, ... |
+| `inherits` | optional | 74% | MacroIconSelectionWindowIconButton, BuffHeadLayoutCornerResizeButton, EA_Button_Default, EA_Button_DefaultResizeable, ... |
+| `id` | optional | 21% | 10, 1, 18, 5, ... |
+| `textalign` | optional | 13% | center, left, leftcenter, right, ... |
+| `font` | optional | 11% | font_clear_small_bold, font_chat_text, font_default_text, font_clear_medium, ... |
+| `layer` | optional | 7% | overlay, popup, background, default, ... |
+| `handleinput` | optional | 6% | false, true |
+| `backgroundtexture` | optional | 6% | shared_01, EA_HUD_01, chKtxt, EA_Cultivating01_d5, ... |
+| `highlighttexture` | optional | 5% | shared_01, EA_HUD_01, EA_Cultivating01_d5, EA_Guild, ... |
 | `drawchildrenfirst` | optional | 2% | true, false |
-| `texturescale` | optional | 2% | 0.37, .75, 0.3, 0.41, ... |
+| `texturescale` | optional | 2% | 2.0, 0.37, 1.171, 0.75, ... |
 | `alpha` | optional | 2% | 0, 1 |
-| `textureScale` | optional | 1% | 0.75, 0.5, 1.4, 0.625, ... |
-| `overlayhighlighttexture` | optional | 1% | shared_01, EA_HUD_01 |
-| `overlaytexture` | optional | 1% | shared_01, EA_HUD_01 |
+| `textureScale` | optional | 1% | 0.625, 0.75, 1, 0.62, ... |
+| `overlayhighlighttexture` | optional | 1% | EA_HUD_01, shared_01 |
+| `overlaytexture` | optional | 1% | EA_HUD_01, shared_01 |
 | `warnOnTextCropped` | optional | 1% | false |
 | `sticky` | optional | 0% | false |
-| `gameactionbutton` | optional | 0% | right, left |
+| `gameactionbutton` | optional | 0% | left, right |
 | `savesettings` | optional | 0% | false, true |
 | `autoresize` | optional | 0% | false |
 | `draganddrop` | optional | 0% | true, false |
@@ -385,62 +509,62 @@ Observed 1 times as an unnamed child.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `WindowSetShowing` | 168 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnMouseOverEnd, OnRButtonUp |
-| `WindowGetId` | 79 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnRButtonUp |
-| `TextEditBoxGetText` | 59 | OnLButtonUp |
-| `ButtonGetDisabledFlag` | 45 | OnLButtonUp |
-| `ButtonSetPressedFlag` | 45 | OnLButtonUp |
-| `ComboBoxGetSelectedMenuItem` | 35 | OnLButtonUp |
-| `WindowGetShowing` | 32 | OnLButtonUp, OnRButtonUp |
-| `TextEditBoxSetText` | 28 | OnLButtonUp |
-| `WindowGetParent` | 24 | OnLButtonDown, OnLButtonUp, OnMouseOver |
-| `LabelSetTextColor` | 22 | OnLButtonUp, OnMouseOver |
-| `SystemData.ActiveWindow.name:match` | 22 | OnLButtonUp, OnMouseOver, OnRButtonUp |
-| `LabelSetText` | 18 | OnLButtonUp, OnMouseOver |
-| `WindowAssignFocus` | 18 | OnLButtonUp |
-| `DoesWindowExist` | 16 | OnLButtonUp |
-| `ButtonGetPressedFlag` | 15 | OnLButtonUp |
-| `ButtonSetDisabledFlag` | 15 | OnLButtonUp |
-| `DestroyWindow` | 10 | OnLButtonUp |
-| `WindowAddAnchor` | 8 | OnLButtonUp |
-| `ComboBoxSetSelectedMenuItem` | 7 | OnLButtonUp |
-| `WindowSetLayer` | 7 | OnRButtonUp |
-| `ComboBoxGetSelectedText` | 6 | OnLButtonUp |
-| `LabelGetText` | 6 | OnLButtonUp |
-| `WindowClearAnchors` | 6 | OnLButtonUp |
-| `ListBoxGetDataIndex` | 5 | OnLButtonUp, OnMouseOver |
-| `SliderBarSetCurrentPosition` | 5 | OnLButtonUp |
-| `SliderBarGetCurrentPosition` | 4 | OnLButtonUp |
-| `SystemData.ActiveWindow.name:find` | 4 | OnLButtonUp |
-| `CreateWindow` | 3 | OnLButtonUp |
-| `SystemData.MouseOverWindow.name:match` | 3 | OnMouseOver, OnRButtonUp |
-| `WindowGetDimensions` | 3 | OnLButtonUp, OnMouseOver |
-| `WindowGetScreenPosition` | 3 | OnLButtonUp, OnMouseOver |
-| `WindowUtils.BeginResize` | 3 | OnLButtonDown |
-| `ComboBoxAddMenuItem` | 2 | OnLButtonUp |
-| `ComboBoxClearMenuItems` | 2 | OnLButtonUp |
-| `CreateWindowFromTemplate` | 2 | OnLButtonUp |
-| `Cursor.Clear` | 2 | OnLButtonUp |
-| `Cursor.IconOnCursor` | 2 | OnLButtonUp, OnMouseDrag |
-| `DynamicImageSetTexture` | 2 | OnLButtonUp |
-| `TextEditBoxGetText:len` | 2 | OnLButtonUp |
-| `WindowSetId` | 2 | OnLButtonUp |
-| `BroadcastEvent` | 1 | OnLButtonUp |
-| `ButtonGetText` | 1 | OnLButtonUp |
-| `Cursor.PickUp` | 1 | OnMouseDrag |
-| `GameData.Player.GetRenownRefundCost` | 1 | OnLButtonUp |
-| `ListBoxSetDisplayOrder` | 1 | OnLButtonUp |
-| `Player.GetMoney` | 1 | OnLButtonUp |
-| `Player.GetRenownRefundCost` | 1 | OnLButtonUp |
-| `RegisterEventHandler` | 1 | OnLButtonUp |
-| `TextEditBoxSelectAll` | 1 | OnLButtonUp |
-| `WindowGetAnchorCount` | 1 | OnLButtonUp |
-| `WindowGetHandleInput` | 1 | OnLButtonUp |
-| `WindowSetHandleInput` | 1 | OnLButtonUp |
-| `WindowSetTintColor` | 1 | OnLButtonUp |
-| `WindowStartAlphaAnimation` | 1 | OnLButtonUp |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `WindowSetShowing` | ui | 168 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnMouseOverEnd, OnRButtonUp |
+| `WindowGetId` | ui | 79 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnRButtonUp |
+| `TextEditBoxGetText` | ui | 59 | OnLButtonUp |
+| `ButtonGetDisabledFlag` | ui | 45 | OnLButtonUp |
+| `ButtonSetPressedFlag` | ui | 45 | OnLButtonUp |
+| `ComboBoxGetSelectedMenuItem` | ui | 35 | OnLButtonUp |
+| `WindowGetShowing` | ui | 32 | OnLButtonUp, OnRButtonUp |
+| `TextEditBoxSetText` | ui | 28 | OnLButtonUp |
+| `WindowGetParent` | ui | 24 | OnLButtonDown, OnLButtonUp, OnMouseOver |
+| `LabelSetTextColor` | ui | 22 | OnLButtonUp, OnMouseOver |
+| `SystemData.ActiveWindow.name:match` | data | 22 | OnLButtonUp, OnMouseOver, OnRButtonUp |
+| `LabelSetText` | ui | 18 | OnLButtonUp, OnMouseOver |
+| `WindowAssignFocus` | ui | 18 | OnLButtonUp |
+| `DoesWindowExist` | ui | 16 | OnLButtonUp |
+| `ButtonGetPressedFlag` | ui | 15 | OnLButtonUp |
+| `ButtonSetDisabledFlag` | ui | 15 | OnLButtonUp |
+| `DestroyWindow` | ui | 10 | OnLButtonUp |
+| `WindowAddAnchor` | ui | 8 | OnLButtonUp |
+| `ComboBoxSetSelectedMenuItem` | ui | 7 | OnLButtonUp |
+| `WindowSetLayer` | ui | 7 | OnRButtonUp |
+| `ComboBoxGetSelectedText` | ui | 6 | OnLButtonUp |
+| `LabelGetText` | ui | 6 | OnLButtonUp |
+| `WindowClearAnchors` | ui | 6 | OnLButtonUp |
+| `ListBoxGetDataIndex` | ui | 5 | OnLButtonUp, OnMouseOver |
+| `SliderBarSetCurrentPosition` | ui | 5 | OnLButtonUp |
+| `SliderBarGetCurrentPosition` | ui | 4 | OnLButtonUp |
+| `SystemData.ActiveWindow.name:find` | data | 4 | OnLButtonUp |
+| `CreateWindow` | ui | 3 | OnLButtonUp |
+| `SystemData.MouseOverWindow.name:match` | data | 3 | OnMouseOver, OnRButtonUp |
+| `WindowGetDimensions` | ui | 3 | OnLButtonUp, OnMouseOver |
+| `WindowGetScreenPosition` | ui | 3 | OnLButtonUp, OnMouseOver |
+| `WindowUtils.BeginResize` | ui | 3 | OnLButtonDown |
+| `ComboBoxAddMenuItem` | ui | 2 | OnLButtonUp |
+| `ComboBoxClearMenuItems` | ui | 2 | OnLButtonUp |
+| `CreateWindowFromTemplate` | ui | 2 | OnLButtonUp |
+| `Cursor.Clear` | ui | 2 | OnLButtonUp |
+| `Cursor.IconOnCursor` | data | 2 | OnLButtonUp, OnMouseDrag |
+| `DynamicImageSetTexture` | ui | 2 | OnLButtonUp |
+| `TextEditBoxGetText:len` | ui | 2 | OnLButtonUp |
+| `WindowSetId` | ui | 2 | OnLButtonUp |
+| `BroadcastEvent` | event | 1 | OnLButtonUp |
+| `ButtonGetText` | ui | 1 | OnLButtonUp |
+| `Cursor.PickUp` | data | 1 | OnMouseDrag |
+| `GameData.Player.GetRenownRefundCost` | data | 1 | OnLButtonUp |
+| `ListBoxSetDisplayOrder` | ui | 1 | OnLButtonUp |
+| `Player.GetMoney` | data | 1 | OnLButtonUp |
+| `Player.GetRenownRefundCost` | data | 1 | OnLButtonUp |
+| `RegisterEventHandler` | event | 1 | OnLButtonUp |
+| `TextEditBoxSelectAll` | ui | 1 | OnLButtonUp |
+| `WindowGetAnchorCount` | ui | 1 | OnLButtonUp |
+| `WindowGetHandleInput` | ui | 1 | OnLButtonUp |
+| `WindowSetHandleInput` | ui | 1 | OnLButtonUp |
+| `WindowSetTintColor` | ui | 1 | OnLButtonUp |
+| `WindowStartAlphaAnimation` | ui | 1 | OnLButtonUp |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -522,88 +646,94 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.Enemy.UI_ConfigDialog_OnSectionSelChanged
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloak
-- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- MapMonster.MapMonster.InitializeMapPins
-- Enemy.Enemy.MarksUI_MarkConfigDialog_Open
-- AggroMeter.AggroMeter.OnTabLBU
-- RandomMount.RandomMountUI.OnInitialize
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSetRow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelmOnly
-- TidyRoll.TidyRollOptions.Initialize
-- Enemy.Enemy.ScenarioInfoInitialize
-- nRarity.nRarity.Border:new
-- QuickWarReport.PrepareConfirmWindowChrome
-- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
-- Enemy.Enemy.IntercomUI_IntercomDialog_Open
-- MapPin.EditMarker
-- DAoCBuff.DAoCBuff.ShowMessageWindow
-- MapMonster.CleanEditorWindow
-- WSCT.WSCT.ColorOnInitialize
-- PotionBar.UpdateButton
-- PotionBar.PotionBarSettings.OnAboutShown
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- MapPin.MapPin.local.EditMarker
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnShow
-- Miracle Grow Remix.MiracleGrow2.InitConfig
-- MapMonster.MapMonster.local.OpenTypeViewerWindow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled5
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize
-- LibWBToggler.LibWBTogglerManager.Initialize
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
-- PotionBar.PotionBar.local.UpdateButton
-- AdvancedPetAssist.APAGui.OnShown
-- Enemy.Enemy.CombatLogUI_StatsWindow_Open
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideShowHelm
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled2
-- EA_UiDebugTools.BustedGUI.UpdateNextPrevButtonStatus
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled1
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateActionBarSettings
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakOptions
-- RandomMount.RandomMountUI.OnAddCustomMount
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UseItemRackToggled
 - DaemonAssist.DaemonAssist.UpdateWindow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled3
-- RandomMount.RandomMountUI.OnDropSlotLButtonUp
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakOnly
-- MapMonster.MapMonster.ShutdownPins
-- MapMonster.MapMonster.local.FilterButtonState
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
+- BankArkel.BankArkel.CreatePackWin
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- PotionBar.PotionBar.local.UpdateButton
+- Killer.Killer.Initialize
+- RoR_SoR.RoR_SoR.Restack
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloak
+- MapPin.EditMarker
+- MapMonster.MapMonster.PinTypeEditor.Initialize
+- DAoCBuff.DAoCBuff.ShowMessageWindow
+- Enemy.Enemy.ScenarioInfoInitialize
+- MapMonster.FilterButtonState
+- AdvancedPetAssist.APAGui.OnShown
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.Enemy.IntercomUI_IntercomDialog_Open
 - MapMonster.MapMonster.local.CreateFilterMenuEntry
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize
+- MapMonster.MapMonster.local.OpenTypeViewerWindow
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
+- QuickWarReport.PrepareConfirmWindowChrome
+- MapMonster.MapMonster.local.FilterButtonState
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSetRow
+- DAoCBuff.DAoCBuffSettings.SetLabels
+- LibWBToggler.LibWBTogglerManager.Initialize
+- Miracle Grow Remix.MiracleGrow2.InitConfig
+- Enemy.Enemy.UI_ConfigDialog_OnSectionSelChanged
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateActionBarSettings
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakHeraldry
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnShow
+- Enemy.Enemy.CombatLogUI_StatsWindow_Open
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- RandomMount.RandomMountUI.OnAddCustomMount
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled3
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled5
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- MapMonster.CleanEditorWindow
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakOptions
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideCloakOptions
+- TidyRoll.TidyRollOptions.Initialize
+- Enemy.Enemy.IntercomInitialize
+- PotionBar.PotionBarSettings.OnAboutShown
+- RandomMount.RandomMountUI.OnInitialize
+- WSCT.WSCT.ColorOnInitialize
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideShowHelm
+- GetStats.GetStats.OnInitialize
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakOnly
+- MapMonster.MapMonster.InitializeMapPins
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled4
+- EA_UiDebugTools.BustedGUI.UpdateNextPrevButtonStatus
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- JunkDump.JunkDump.Initialize
+- Enemy.Enemy.MarksUI_MarkConfigDialog_Open
+- QuickWarReport.QuickWarReport.local.PrepareConfirmWindowChrome
+- Enemy.Enemy.UI_ConfigDialog_Open
+- Enemy.Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelm
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelmOnly
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- MapPin.MapPin.local.EditMarker
+- nRarity.nRarity.Border:new
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled2
+- AggroMeter.AggroMeter.OnTabLBU
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UseItemRackToggled
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Open
 - AggroMeter.AggroMeter.Initialize
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowHelm
+- MapPin.MapPin.RButtonUp
+- RandomMount.RandomMountUI.OnDropSlotLButtonUp
+- PotionBar.UpdateButton
+- MapMonster.MapMonster.ShutdownPins
+- MapMonster.CreateFilterMenuEntry
+- MapMonster.OpenTypeViewerWindow
 - Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
 - Busted.BustedGUI.UpdateNextPrevButtonStatus
-- DAoCBuff.DAoCBuffSettings.SetLabels
-- BankArkel.BankArkel.CreatePackWin
-- JunkDump.JunkDump.Initialize
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideCloakOptions
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakHeraldry
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
-- MapMonster.CreateFilterMenuEntry
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelm
-- Killer.Killer.Initialize
-- Enemy.Enemy.UI_ConfigDialog_Open
-- Enemy.Enemy.IntercomInitialize
-- MapPin.MapPin.RButtonUp
-- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- GetStats.GetStats.OnInitialize
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- RoR_SoR.RoR_SoR.Restack
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled4
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
-- MapMonster.MapMonster.PinTypeEditor.Initialize
-- MapMonster.OpenTypeViewerWindow
-- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Open
-- QuickWarReport.QuickWarReport.local.PrepareConfirmWindowChrome
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
-- MapMonster.FilterButtonState
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowHelm
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled1
+
+
+## Binding Resolution
+
+- Total handler declarations: 741
+- Resolved to Lua functions: 734 (99%)
 
 ## Seen In
 

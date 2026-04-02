@@ -66,7 +66,7 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Parent Elements
 
-- [VerticalResizeImage](element_VerticalResizeImage.md)
+- [VerticalResizeImage](element_VerticalResizeImage.md) — 1× (HIGH)
 
 ## Attribute Reference
 

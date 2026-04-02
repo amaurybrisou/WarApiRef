@@ -110,27 +110,53 @@ Observed XML element type instantiated by 60 addons.
 
 ## XML Event Bindings
 
-| Event | Common Lua Bindings | Expected Callback | Args Confidence |
-|-------|---------------------|-------------------|-----------------|
-| [OnHidden](../handlers/handler_OnHidden.md) | WindowUtils.OnHidden, APAGui.OnFollowTargetHUDHidden, APAGui.OnHidden, APAGui.OnInstantOnlyHUDHidden, APAGui.OnKitingHUDHidden, AdvancedRenownTraining.OnExportHidden | `function()` | MEDIUM |
-| [OnInitialize](../handlers/handler_OnInitialize.md) | EA_LabelCheckButton.Initialize, AdvancedRenownTraining.Initialize, AuraConfig.OnInitialize, CMapWindow.Initialize, CMapWindow.RefreshMapPointFilterMenu, ClosetGoblinOptionWindow.OnInitialize | `function()` | MEDIUM |
-| [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | DebugWindow.OnKeyEscape, Enemy.CombatLogUI_SnapshotWindow_Hide, Enemy.CombatLogUI_StatsWindow_Hide, Enemy.GroupsUI_EffectFilterDialog_Hide, Enemy.IntercomUI_ChooseChannelDialog_Hide, Enemy.IntercomUI_IntercomDialog_Hide | `function(...)` | LOW |
-| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | WindowUtils.TrapClick, Enemy.UnitFramesUI_Anchor_OnLButtonDown, AdvancedRenownTraining.Select, BuffHead.Setup.AdvancedCompression.OnRowLDown, BuffHead.Setup.AdvancedCompressionItem.OnRowLDown, BuffHead.Setup.AdvancedContainers.OnRowLDown | `function(...)` | LOW |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | BuffHead.Setup.Layout.OnLayersChanged, BuffHead.Setup.PriorityEffectsItem.OnTargetTypeLUp, EA_LabelCheckButton.Toggle, MapPin.LButtonUp, AnywhereTrainer.OnLButtonUp, BustedGUI.ToggleMainWindow | `function(...)` | LOW |
-| [OnMButtonDown](../handlers/handler_OnMButtonDown.md) | Enemy.UnitFramesUI_UnitFrame_OnMButtonDown, MoraleCircle.Reset | `function(...)` | LOW |
-| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | Enemy.UnitFramesUI_UnitFrame_OnMButtonUp, TidyRollFrame.OnMButtonUp | `function(...)` | LOW |
-| [OnMouseOut](../handlers/handler_OnMouseOut.md) | Killer.HideRowTooltip | `function()` | MEDIUM |
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | BuffHead.Setup.Layout.Properties.OnColorExampleMouseOver, RoR_SoR.OnMouseOverStart, MapPin.MouseOver, AggroMeter.OnMouseOverStart, Enemy.ConfigurationWindow_ShowTooltip, Enemy.UnitFramesUI_Anchor_OnMouseOver | `function()` | MEDIUM |
-| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | BuffHead.Setup.Layout.Properties.OnColorExampleMouseOut, Enemy.UnitFramesUI_Anchor_OnMouseOverEnd, TexturedButtons.Setup.Fonts.OnColorExampleMouseOut, BuffHead.Setup.AdvancedCompression.OnRowMouseOut, BuffHead.Setup.AdvancedCompressionItem.OnRowMouseOut, BuffHead.Setup.AdvancedContainers.OnRowMouseOut | `function(...)` | LOW |
-| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | FrameManager.OnMouseWheel, MoraleCircle.OnMouseWheel, TidyChat.Copy.OnMouseWheel | `function(delta)` | MEDIUM |
-| [OnRButtonDown](../handlers/handler_OnRButtonDown.md) | BuffHead.Setup.AdvancedCompression.OnRowRDown, BuffHead.Setup.AdvancedCompressionItem.OnRowRDown, BuffHead.Setup.AdvancedContainers.OnRowRDown, BuffHead.Setup.AdvancedContainersItem.OnRowRDown, BuffHead.Setup.Layout.OnControlFrameRButtonDown, BuffHead.Setup.Layout.OnLayoutWindowRButtonDown | `function(...)` | LOW |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | MapPin.RButtonUp, RoR_SoR.BroadCastOption, BustedGUI.ClearAlertFlash, MiracleGrow2.onRClick, RoR_SoR.POPOption, AggroMeter.OnTabRBU | `function(...)` | LOW |
-| [OnRawDeviceInput](../handlers/handler_OnRawDeviceInput.md) | BuffHead.Setup.Layout.OnRawDeviceInput | `function(...)` | LOW |
-| [OnSetMoving](../handlers/handler_OnSetMoving.md) | MapPin.OnMoving | `function(...)` | LOW |
-| [OnShown](../handlers/handler_OnShown.md) | WindowUtils.OnShown, APAGui.OnFollowTargetHUDShown, APAGui.OnInstantOnlyHUDShown, APAGui.OnKitingHUDShown, APAGui.OnPetTargetHUDShown, APAGui.OnShown | `function()` | MEDIUM |
-| [OnShutdown](../handlers/handler_OnShutdown.md) | CMapWindow.Shutdown, ClosetGoblinCharacterWindow.OnShutdown, ClosetGoblinZoneWindow.OnShutdown, DebugWindow.Shutdown, EA_Window_ContextMenu.Shutdown, EA_Window_Macro.Shutdown | `function()` | MEDIUM |
-| [OnSizeUpdated](../handlers/handler_OnSizeUpdated.md) | RoR_SoR.OnSizeUpdated | `function(...)` | LOW |
-| [OnUpdate](../handlers/handler_OnUpdate.md) | BuffHead.Setup.Layout.OnUpdate, DebugWindow.Update, TidyRoll.OnUpdate | `function(elapsed)` | MEDIUM |
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnHidden](../handlers/handler_OnHidden.md) | lifecycle | WindowUtils.OnHidden, APAGui.OnFollowTargetHUDHidden, APAGui.OnHidden, APAGui.OnInstantOnlyHUDHidden, APAGui.OnKitingHUDHidden, AdvancedRenownTraining.OnExportHidden | `function()` | MEDIUM |
+| [OnInitialize](../handlers/handler_OnInitialize.md) | lifecycle | EA_LabelCheckButton.Initialize, AdvancedRenownTraining.Initialize, AuraConfig.OnInitialize, CMapWindow.Initialize, CMapWindow.RefreshMapPointFilterMenu, ClosetGoblinOptionWindow.OnInitialize | `function()` | MEDIUM |
+| [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | custom | DebugWindow.OnKeyEscape, Enemy.CombatLogUI_SnapshotWindow_Hide, Enemy.CombatLogUI_StatsWindow_Hide, Enemy.GroupsUI_EffectFilterDialog_Hide, Enemy.IntercomUI_ChooseChannelDialog_Hide, Enemy.IntercomUI_IntercomDialog_Hide | `function(...)` | LOW |
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | input | WindowUtils.TrapClick, Enemy.UnitFramesUI_Anchor_OnLButtonDown, AdvancedRenownTraining.Select, BuffHead.Setup.AdvancedCompression.OnRowLDown, BuffHead.Setup.AdvancedCompressionItem.OnRowLDown, BuffHead.Setup.AdvancedContainers.OnRowLDown | `flags, x, y` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | BuffHead.Setup.Layout.OnLayersChanged, BuffHead.Setup.PriorityEffectsItem.OnTargetTypeLUp, EA_LabelCheckButton.Toggle, MapPin.LButtonUp, AnywhereTrainer.OnLButtonUp, BustedGUI.ToggleMainWindow | `flags, x, y` | MEDIUM |
+| [OnMButtonDown](../handlers/handler_OnMButtonDown.md) | input | Enemy.UnitFramesUI_UnitFrame_OnMButtonDown, MoraleCircle.Reset | `flags, x, y` | MEDIUM |
+| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | Enemy.UnitFramesUI_UnitFrame_OnMButtonUp, TidyRollFrame.OnMButtonUp | `flags, x, y` | MEDIUM |
+| [OnMouseOut](../handlers/handler_OnMouseOut.md) | input | Killer.HideRowTooltip | `function()` | MEDIUM |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | BuffHead.Setup.Layout.Properties.OnColorExampleMouseOver, RoR_SoR.OnMouseOverStart, MapPin.MouseOver, AggroMeter.OnMouseOverStart, Enemy.ConfigurationWindow_ShowTooltip, Enemy.UnitFramesUI_Anchor_OnMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | BuffHead.Setup.Layout.Properties.OnColorExampleMouseOut, Enemy.UnitFramesUI_Anchor_OnMouseOverEnd, TexturedButtons.Setup.Fonts.OnColorExampleMouseOut, BuffHead.Setup.AdvancedCompression.OnRowMouseOut, BuffHead.Setup.AdvancedCompressionItem.OnRowMouseOut, BuffHead.Setup.AdvancedContainers.OnRowMouseOut | `function(...)` | LOW |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | FrameManager.OnMouseWheel, MoraleCircle.OnMouseWheel, TidyChat.Copy.OnMouseWheel | `function(delta)` | MEDIUM |
+| [OnRButtonDown](../handlers/handler_OnRButtonDown.md) | input | BuffHead.Setup.AdvancedCompression.OnRowRDown, BuffHead.Setup.AdvancedCompressionItem.OnRowRDown, BuffHead.Setup.AdvancedContainers.OnRowRDown, BuffHead.Setup.AdvancedContainersItem.OnRowRDown, BuffHead.Setup.Layout.OnControlFrameRButtonDown, BuffHead.Setup.Layout.OnLayoutWindowRButtonDown | `flags, x, y` | MEDIUM |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | MapPin.RButtonUp, RoR_SoR.BroadCastOption, BustedGUI.ClearAlertFlash, MiracleGrow2.onRClick, RoR_SoR.POPOption, AggroMeter.OnTabRBU | `flags, x, y` | MEDIUM |
+| [OnRawDeviceInput](../handlers/handler_OnRawDeviceInput.md) | custom | BuffHead.Setup.Layout.OnRawDeviceInput | `function(...)` | LOW |
+| [OnSetMoving](../handlers/handler_OnSetMoving.md) | custom | MapPin.OnMoving | `function(...)` | LOW |
+| [OnShown](../handlers/handler_OnShown.md) | lifecycle | WindowUtils.OnShown, APAGui.OnFollowTargetHUDShown, APAGui.OnInstantOnlyHUDShown, APAGui.OnKitingHUDShown, APAGui.OnPetTargetHUDShown, APAGui.OnShown | `function()` | MEDIUM |
+| [OnShutdown](../handlers/handler_OnShutdown.md) | lifecycle | CMapWindow.Shutdown, ClosetGoblinCharacterWindow.OnShutdown, ClosetGoblinZoneWindow.OnShutdown, DebugWindow.Shutdown, EA_Window_ContextMenu.Shutdown, EA_Window_Macro.Shutdown | `function()` | MEDIUM |
+| [OnSizeUpdated](../handlers/handler_OnSizeUpdated.md) | custom | RoR_SoR.OnSizeUpdated | `function(...)` | LOW |
+| [OnUpdate](../handlers/handler_OnUpdate.md) | lifecycle | BuffHead.Setup.Layout.OnUpdate, DebugWindow.Update, TidyRoll.OnUpdate | `function(elapsed)` | MEDIUM |
+
+### Per-Event Lua API Calls
+
+**OnHidden** handlers call: `BroadcastEvent`, `ButtonSetDisabledFlag`, `ButtonSetText`, `ComboBoxSetDisabledFlag`, `DoesWindowExist`, `TextEditBoxSetText`, `UnregisterEventHandler`, `WindowSetShowing`, `WindowUtils.OnHidden`, `WindowUtils.RemoveFromOpenList`
+
+**OnInitialize** handlers call: `ButtonSetDisabledFlag`, `ButtonSetText`, `CreateWindow`, `DoesWindowExist`, `LabelSetText`, `LabelSetTextColor`, `RegisterEventHandler`, `WindowRegisterEventHandler`, `WindowSetAlpha`, `WindowSetGameActionData`, `WindowSetShowing`, `WindowSetTintColor`
+
+**OnKeyEscape** handlers call: `DestroyWindow`, `DoesWindowExist`, `TextEditBoxGetText`, `WindowAssignFocus`, `WindowGetShowing`, `WindowSetShowing`
+
+**OnLButtonDown** handlers call: `BroadcastEvent`, `LabelGetText`, `SystemData.MouseOverWindow.name:find`, `SystemData.MouseOverWindow.name:sub`, `WindowAddAnchor`, `WindowClearAnchors`, `WindowGetId`, `WindowGetParent`, `WindowGetScreenPosition`, `WindowSetDimensions`, `WindowSetGameActionData`, `WindowSetTintColor`
+
+**OnLButtonUp** handlers call: `AnimatedImageStartAnimation`, `ButtonGetDisabledFlag`, `ButtonGetPressedFlag`, `ButtonSetDisabledFlag`, `ButtonSetPressedFlag`, `TextEditBoxSetText`, `WindowGetId`, `WindowGetParent`, `WindowGetScale`, `WindowGetShowing`, `WindowSetGameActionData`, `WindowSetMovable`, `WindowSetShowing`, `WindowUtils.ToggleShowing`
+
+**OnMouseOver** handlers call: `DoesWindowExist`, `LabelSetTextColor`, `WindowGetAlpha`, `WindowGetDimensions`, `WindowGetId`, `WindowGetParent`, `WindowGetScreenPosition`, `WindowSetAlpha`, `WindowSetShowing`, `WindowSetTintColor`, `WindowStartAlphaAnimation`
+
+**OnMouseOverEnd** handlers call: `DoesWindowExist`, `LabelSetTextColor`, `WindowSetAlpha`, `WindowSetShowing`, `WindowSetTintColor`, `WindowStartAlphaAnimation`
+
+**OnRButtonDown** handlers call: `SystemData.MouseOverWindow.name:find`, `SystemData.MouseOverWindow.name:sub`, `WindowGetId`, `WindowSetTintColor`
+
+**OnRButtonUp** handlers call: `ButtonSetPressedFlag`, `ComboBoxSetSelectedMenuItem`, `LabelSetTextColor`, `SliderBarSetCurrentPosition`, `TextEditBoxSetText`, `WindowGetId`, `WindowGetMovable`, `WindowGetParent`, `WindowSetAlpha`, `WindowSetMovable`, `WindowSetShowing`, `WindowStopAlphaAnimation`
+
+**OnSetMoving** handlers call: `WindowGetShowing`
+
+**OnShown** handlers call: `BroadcastEvent`, `ButtonSetPressedFlag`, `ButtonSetText`, `ComboBoxSetDisabledFlag`, `DoesWindowExist`, `LabelSetText`, `TextEditBoxSetText`, `WindowAddAnchor`, `WindowAssignFocus`, `WindowClearAnchors`, `WindowGetShowing`, `WindowSetDimensions`, `WindowSetShowing`, `WindowUtils.AddToOpenList`, `WindowUtils.OnShown`
+
+**OnUpdate** handlers call: `ListBoxSetDisplayOrder`
 
 ## Common Inherits
 
@@ -149,26 +175,124 @@ Observed XML element type instantiated by 60 addons.
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
-- [ScrollWindow](element_ScrollWindow.md)
-- [Button](element_Button.md)
+- [Window](element_Window.md) — 262× (HIGH)
+- [ScrollWindow](element_ScrollWindow.md) — 26× (HIGH)
+- [Button](element_Button.md) — 10× (HIGH)
 
 ## Common Named Child Elements
 
-- [Label](element_Label.md)
-- [Window](element_Window.md)
-- [Button](element_Button.md)
-- [FullResizeImage](element_FullResizeImage.md)
-- [DynamicImage](element_DynamicImage.md)
-- [ComboBox](element_ComboBox.md)
-- [EditBox](element_EditBox.md)
-- [ListBox](element_ListBox.md)
+- [Label](element_Label.md) — 379× (HIGH)
+- [Window](element_Window.md) — 262× (HIGH)
+- [Button](element_Button.md) — 241× (HIGH)
+- [FullResizeImage](element_FullResizeImage.md) — 153× (HIGH)
+- [DynamicImage](element_DynamicImage.md) — 132× (HIGH)
+- [ComboBox](element_ComboBox.md) — 97× (HIGH)
+- [EditBox](element_EditBox.md) — 88× (HIGH)
+- [ListBox](element_ListBox.md) — 47× (HIGH)
+- [SliderBar](element_SliderBar.md) — 41× (HIGH)
+- [ScrollWindow](element_ScrollWindow.md) — 25× (HIGH)
+- [CircleImage](element_CircleImage.md) — 13× (HIGH)
+- [AnimatedImage](element_AnimatedImage.md) — 12× (HIGH)
+- [HorizontalResizeImage](element_HorizontalResizeImage.md) — 12× (HIGH)
+- [StatusBar](element_StatusBar.md) — 5× (MEDIUM)
+- [MapDisplay](element_MapDisplay.md) — 3× (MEDIUM)
+- [ActionButtonGroup](element_ActionButtonGroup.md) — 2× (LOW)
+- [LogDisplay](element_LogDisplay.md) — 2× (LOW)
+- [VerticalScrollbar](element_VerticalScrollbar.md) — 2× (LOW)
+- [ColorPicker](element_ColorPicker.md) — 1× (LOW)
+- [CooldownDisplay](element_CooldownDisplay.md) — 1× (LOW)
+- [VerticalResizeImage](element_VerticalResizeImage.md) — 1× (LOW)
 
 ## Common Structural Child Elements
 
-- [Sound](element_Sound.md)
-- [Sounds](element_Sounds.md)
-- [Visual](element_Visual.md)
+- [Sound](element_Sound.md) — 1× (LOW)
+- [Sounds](element_Sounds.md) — 1× (LOW)
+- [Visual](element_Visual.md) — 1× (LOW)
+
+## Common Template Bases
+
+- Aggro_Timer_Template
+- AnywhereTrainerTabTemplate
+- Aura_LabelCheckButton
+- Aura_LargeLabelCheckButton
+- BuffHeadColorExample
+- BuffHeadSetupSelectTextureRowTemplate
+- ClosetGoblinActionBarPageSelector
+- Cmap_Template_OverheadMapZoomSlider
+- DAoCBuffCondenseTooltipItem
+- DAoCBuff_FakeSettingsRow
+- EA_LabelCheckButton
+- EA_LabelCheckButtonSmallCopy
+- EA_TitleBar_Default
+- EA_Window_AdvancedMainUIPathToggle
+- EA_Window_CityRating
+- EA_Window_ComboBoxMenuBackground
+- EA_Window_Default
+- EA_Window_DefaultBackgroundFrame
+- EA_Window_DefaultButtonBottomFrame
+- EA_Window_DefaultContextMenuFrame
+- EA_Window_DefaultFrame
+- EA_Window_DefaultFrameStatusBar
+- EA_Window_DefaultLabelToggleCircle
+- EA_Window_DefaultSeparator
+- EA_Window_DefaultTooltipBackground
+- EA_Window_DefaultVerticalSeparator
+- EA_Window_TabSeparatorLeftSide
+- EA_Window_TabSeparatorRightSide
+- EnemyCombatLogStatsWindow_ListHeaderTemplate
+- EnemyMark
+- EnemyScenarioInfoDialog_CareerStatsTemplate
+- EnemyScenarioInfoDialog_PlayerStatsHeaderTemplate
+- EnemyScenarioInfoDialog_StatsRowTemplate
+- EnemyScenarioInfoDialog_StatsRowTemplateBig
+- EnemyScenarioInfoDialog_StatsRowTemplateBig2
+- EnemyScenarioInfoDialog_StatsRowTemplateBig3
+- Frame_BG_Temlate
+- GuardList_Window0
+- GuardRange_Window0
+- IraConfigCheckBox
+- LogFilterButton
+- MapMonster_TooltipDefault
+- MapMonster_TooltipInfoTemplate
+- MapPinCallTemplateWindow
+- MiracleGrow2BarTint
+- MiracleGrow2Check
+- MiracleGrow2Checker
+- MiracleGrow2ConfigTemplate
+- MiracleGrow2LayoutPlotsTemplate
+- MiracleGrow2LayoutProgTemplate
+- MiracleGrow2LayoutSettingsTemplate
+- MiracleGrow2LayoutTemplate
+- MiracleGrow2Line
+- MiracleGrow2PresetTemplate
+- MiracleGrow2SoundLine
+- MiracleGrowLightLine
+- MiracleGrowLine
+- MiracleGrowStartAllLine
+- MoneyFrame
+- OptionsTemplate
+- RVAPI_ColorDialogColorBoxTemplate
+- RoR_SoR_BO_Template
+- Shinies_TitleBar_Default
+- SliderWindowTemplate
+- TChatCheckboxTemplate
+- TChatTabLogsTemplate
+- TChatTabMiscTemplate
+- TChatTabTextEntryTemplate
+- TChatTabWindowsTemplate
+- TRollOverlay
+- TexturedButtonsColorExample
+- TooltipBase
+- TurretRangeDisplay
+- WSCTCheckBox
+- WSCTComboBoxTemplate
+- WSCTEvent
+- WSCTSliderTemplate
+- wbLeadHelperConfigTab
+- wbLeadHelperMessagesTab
+
+
+> **Note**: This element type commonly acts as a template base.
 
 ## Typical XML Structure
 
@@ -185,23 +309,23 @@ Observed XML element type instantiated by 60 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 49% | MiracleGrow2Check, MapMonster_TooltipInfoTemplate, EA_Window_Default, Aggro_Timer_Template, ... |
-| `layer` | optional | 25% | default, background, secondary, overlay, ... |
-| `handleinput` | optional | 18% | true, false |
-| `movable` | optional | 16% | false, true |
+| `inherits` | optional | 49% | EA_Window_DefaultSeparator, EA_Window_DefaultFrame, EA_Window_DefaultBackgroundFrame, EA_LabelCheckButton, ... |
+| `layer` | optional | 25% | popup, background, secondary, default, ... |
+| `handleinput` | optional | 18% | false, true |
+| `movable` | optional | 16% | true, false |
 | `savesettings` | optional | 10% | false, true |
 | `popable` | optional | 5% | false, true |
 | `sticky` | optional | 4% | false, true |
 | `scale` | optional | 2% | 1.0, 0.7 |
-| `id` | optional | 1% | 1, 6, 2, 10, ... |
+| `id` | optional | 1% | 1, 2, 9, 10, ... |
 | `skipinput` | optional | 1% | false, true |
-| `alpha` | optional | 1% | 50, 0.85, 0.97, 1, ... |
+| `alpha` | optional | 1% | 0.97, 0.0, 50, 1, ... |
 | `font` | optional | 0% | font_clear_small_bold, font_chat_text |
 | `Scale` | optional | 0% | 0.7 |
 | `drawchildrenfirst` | optional | 0% | true |
 | `textalign` | optional | 0% | center |
 | `draganddrop` | optional | 0% | true |
-| `parent` | optional | 0% | root, Root |
+| `parent` | optional | 0% | Root, root |
 | `show` | optional | 0% | false |
 | `autoresize` | optional | 0% | true |
 | `layout` | optional | 0% | background |
@@ -237,56 +361,56 @@ Observed 1 times as an unnamed child.
 
 API functions commonly called from event handler Lua functions on this element type:
 
-| API Function | Call Count | From Events |
-| --- | --- | --- |
-| `TextEditBoxSetText` | 414 | OnHidden, OnLButtonUp, OnRButtonUp, OnShown |
-| `LabelSetText` | 354 | OnInitialize, OnShown |
-| `ButtonSetText` | 167 | OnHidden, OnInitialize, OnShown |
-| `WindowSetShowing` | 134 | OnHidden, OnInitialize, OnKeyEscape, OnLButtonUp, OnMouseOver, OnMouseOverEnd, OnRButtonUp, OnShown |
-| `ButtonSetPressedFlag` | 84 | OnLButtonUp, OnRButtonUp, OnShown |
-| `DoesWindowExist` | 75 | OnHidden, OnInitialize, OnKeyEscape, OnMouseOver, OnMouseOverEnd, OnShown |
-| `WindowSetDimensions` | 73 | OnLButtonDown, OnShown |
-| `ButtonGetPressedFlag` | 62 | OnLButtonUp |
-| `WindowGetId` | 46 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnRButtonDown, OnRButtonUp |
-| `WindowSetTintColor` | 39 | OnInitialize, OnLButtonDown, OnMouseOver, OnMouseOverEnd, OnRButtonDown |
-| `WindowUtils.OnHidden` | 19 | OnHidden |
-| `WindowUtils.OnShown` | 19 | OnShown |
-| `WindowGetParent` | 17 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnRButtonUp |
-| `ComboBoxSetSelectedMenuItem` | 16 | OnRButtonUp |
-| `AnimatedImageStartAnimation` | 12 | OnLButtonUp |
-| `WindowStartAlphaAnimation` | 11 | OnMouseOver, OnMouseOverEnd |
-| `RegisterEventHandler` | 9 | OnInitialize |
-| `WindowSetAlpha` | 9 | OnInitialize, OnMouseOver, OnMouseOverEnd, OnRButtonUp |
-| `SliderBarSetCurrentPosition` | 8 | OnRButtonUp |
-| `WindowGetShowing` | 8 | OnKeyEscape, OnLButtonUp, OnSetMoving, OnShown |
-| `WindowSetGameActionData` | 8 | OnInitialize, OnLButtonDown, OnLButtonUp |
-| `ButtonGetDisabledFlag` | 6 | OnLButtonUp |
-| `ButtonSetDisabledFlag` | 6 | OnHidden, OnInitialize, OnLButtonUp |
-| `BroadcastEvent` | 5 | OnHidden, OnLButtonDown, OnShown |
-| `LabelSetTextColor` | 5 | OnInitialize, OnMouseOver, OnMouseOverEnd, OnRButtonUp |
-| `WindowSetMovable` | 5 | OnLButtonUp, OnRButtonUp |
-| `CreateWindow` | 3 | OnInitialize |
-| `DestroyWindow` | 3 | OnKeyEscape |
-| `WindowGetScale` | 3 | OnLButtonUp |
-| `WindowUtils.AddToOpenList` | 3 | OnShown |
-| `WindowUtils.RemoveFromOpenList` | 3 | OnHidden |
-| `ComboBoxSetDisabledFlag` | 2 | OnHidden, OnShown |
-| `SystemData.MouseOverWindow.name:find` | 2 | OnLButtonDown, OnRButtonDown |
-| `SystemData.MouseOverWindow.name:sub` | 2 | OnLButtonDown, OnRButtonDown |
-| `WindowAddAnchor` | 2 | OnLButtonDown, OnShown |
-| `WindowAssignFocus` | 2 | OnKeyEscape, OnShown |
-| `WindowClearAnchors` | 2 | OnLButtonDown, OnShown |
-| `WindowGetAlpha` | 2 | OnMouseOver |
-| `WindowGetScreenPosition` | 2 | OnLButtonDown, OnMouseOver |
-| `WindowRegisterEventHandler` | 2 | OnInitialize |
-| `WindowStopAlphaAnimation` | 2 | OnRButtonUp |
-| `LabelGetText` | 1 | OnLButtonDown |
-| `ListBoxSetDisplayOrder` | 1 | OnUpdate |
-| `TextEditBoxGetText` | 1 | OnKeyEscape |
-| `UnregisterEventHandler` | 1 | OnHidden |
-| `WindowGetDimensions` | 1 | OnMouseOver |
-| `WindowGetMovable` | 1 | OnRButtonUp |
-| `WindowUtils.ToggleShowing` | 1 | OnLButtonUp |
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `TextEditBoxSetText` | ui | 414 | OnHidden, OnLButtonUp, OnRButtonUp, OnShown |
+| `LabelSetText` | ui | 354 | OnInitialize, OnShown |
+| `ButtonSetText` | ui | 167 | OnHidden, OnInitialize, OnShown |
+| `WindowSetShowing` | ui | 134 | OnHidden, OnInitialize, OnKeyEscape, OnLButtonUp, OnMouseOver, OnMouseOverEnd, OnRButtonUp, OnShown |
+| `ButtonSetPressedFlag` | ui | 84 | OnLButtonUp, OnRButtonUp, OnShown |
+| `DoesWindowExist` | ui | 75 | OnHidden, OnInitialize, OnKeyEscape, OnMouseOver, OnMouseOverEnd, OnShown |
+| `WindowSetDimensions` | ui | 73 | OnLButtonDown, OnShown |
+| `ButtonGetPressedFlag` | ui | 62 | OnLButtonUp |
+| `WindowGetId` | ui | 46 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnRButtonDown, OnRButtonUp |
+| `WindowSetTintColor` | ui | 39 | OnInitialize, OnLButtonDown, OnMouseOver, OnMouseOverEnd, OnRButtonDown |
+| `WindowUtils.OnHidden` | ui | 19 | OnHidden |
+| `WindowUtils.OnShown` | ui | 19 | OnShown |
+| `WindowGetParent` | ui | 17 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnRButtonUp |
+| `ComboBoxSetSelectedMenuItem` | ui | 16 | OnRButtonUp |
+| `AnimatedImageStartAnimation` | ui | 12 | OnLButtonUp |
+| `WindowStartAlphaAnimation` | ui | 11 | OnMouseOver, OnMouseOverEnd |
+| `RegisterEventHandler` | event | 9 | OnInitialize |
+| `WindowSetAlpha` | ui | 9 | OnInitialize, OnMouseOver, OnMouseOverEnd, OnRButtonUp |
+| `SliderBarSetCurrentPosition` | ui | 8 | OnRButtonUp |
+| `WindowGetShowing` | ui | 8 | OnKeyEscape, OnLButtonUp, OnSetMoving, OnShown |
+| `WindowSetGameActionData` | ui | 8 | OnInitialize, OnLButtonDown, OnLButtonUp |
+| `ButtonGetDisabledFlag` | ui | 6 | OnLButtonUp |
+| `ButtonSetDisabledFlag` | ui | 6 | OnHidden, OnInitialize, OnLButtonUp |
+| `BroadcastEvent` | event | 5 | OnHidden, OnLButtonDown, OnShown |
+| `LabelSetTextColor` | ui | 5 | OnInitialize, OnMouseOver, OnMouseOverEnd, OnRButtonUp |
+| `WindowSetMovable` | ui | 5 | OnLButtonUp, OnRButtonUp |
+| `CreateWindow` | ui | 3 | OnInitialize |
+| `DestroyWindow` | ui | 3 | OnKeyEscape |
+| `WindowGetScale` | ui | 3 | OnLButtonUp |
+| `WindowUtils.AddToOpenList` | ui | 3 | OnShown |
+| `WindowUtils.RemoveFromOpenList` | ui | 3 | OnHidden |
+| `ComboBoxSetDisabledFlag` | ui | 2 | OnHidden, OnShown |
+| `SystemData.MouseOverWindow.name:find` | data | 2 | OnLButtonDown, OnRButtonDown |
+| `SystemData.MouseOverWindow.name:sub` | data | 2 | OnLButtonDown, OnRButtonDown |
+| `WindowAddAnchor` | ui | 2 | OnLButtonDown, OnShown |
+| `WindowAssignFocus` | ui | 2 | OnKeyEscape, OnShown |
+| `WindowClearAnchors` | ui | 2 | OnLButtonDown, OnShown |
+| `WindowGetAlpha` | ui | 2 | OnMouseOver |
+| `WindowGetScreenPosition` | ui | 2 | OnLButtonDown, OnMouseOver |
+| `WindowRegisterEventHandler` | event | 2 | OnInitialize |
+| `WindowStopAlphaAnimation` | ui | 2 | OnRButtonUp |
+| `LabelGetText` | ui | 1 | OnLButtonDown |
+| `ListBoxSetDisplayOrder` | ui | 1 | OnUpdate |
+| `TextEditBoxGetText` | ui | 1 | OnKeyEscape |
+| `UnregisterEventHandler` | event | 1 | OnHidden |
+| `WindowGetDimensions` | ui | 1 | OnMouseOver |
+| `WindowGetMovable` | ui | 1 | OnRButtonUp |
+| `WindowUtils.ToggleShowing` | ui | 1 | OnLButtonUp |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -415,476 +539,482 @@ Confidence: MEDIUM
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
-- MapPin.MapPin.OnMoving
-- wbLeadHelper.wbLeadHelperMessagesTab.OnSaveMessages
-- WSCT.WSCT.ColorHideMenu
-- Swift Assist.WriteLabels
-- GetStats.GetStats.OnInitialize
-- EA_UiDebugTools.ObjectInspector.DisplayObject
-- PotionBar.PotionBarFloating.ReflowButtons
-- WhoHealedMe.IsMainWindowVisible
-- wbLeadHelper.wbLeadHelperMessagesTab.ListUp
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakOnly
-- LoyalPet.LPET.HideMenu
-- RandomMount.RandomMountUI.Toggle
-- WSCT.WSCT.OnSetCustomColor
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled4
-- MapPin.MapPin.UI_ChooseIconDialog_Hide
-- wbLeadHelper.wbLeadHelperConfigWindow.Show
-- WSCT.WSCT:OpenMenu
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled1
-- WSCT.WSCT.HideMenu
-- AggroMeter.AggroMeter.Initialize
-- Enemy._OnArchetypeChanged
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.Show
-- PotionBar.PotionBarSettings.OnUseCheck
-- GuardLine.GuardLine.OnLayoutEditorFinished
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSlotIcons
-- MoraleCircle.MoraleCircle.ColorChanger3
-- PotionBar.PotionBarSettings.OnShown
-- DaemonAssist.DaemonAssist.NormalizeWindowLayout
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSlotIcon
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
-- Enemy.Enemy.IntercomUI_IntercomJoinDialog_AddGroup
-- JunkDump.JunkDumpOptions.DynamicBagOptions
-- PotionBar.PotionBarSettings.RefreshSingleRightLine
-- Swift Assist.SetSmartLabel
-- WarBoard.WarBoard.Options.OnSlide
-- WarBoard.WarBoard.Options.EnableBoard
-- Moth.Moth.HideBorders
-- RandomMount.RandomMountUI.Show
-- EA_UiDebugTools.BustedGUI.UpdateErrorView
-- EA_UiDebugTools.BustedGUI.ClearAlertFlash
-- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Update
-- RandomMount.RandomMountUI.OnMinLevelChanged
-- EA_UiDebugTools.BustedGUI.NewErrorRecorded
-- Effigy.Effigy.RegisterStateInfoForCastbar
-- GetStats.GetStats.CloseWindow
-- wbLeadHelper.wbLeadHelperMessagesTab.ListEnable
-- AdvancedPetAssist.APAGui.ToggleInstantOnlyHUD
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Hide
-- RoR_SoR.RoR_SoR.Restack
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarPageUpProxy
-- DAoCBuff.DAoCTooltips.Init
-- Enemy.Enemy.MarksUI_MarkConfigDialog_Hide
-- PotionBar.PotionBar.LibSlashHandler
-- DAoCBuff.DAoCBuffHeadTracker:Create
-- MapPin.MapPin.OnUpdate
-- DAoCBuff.DAoCTooltips.CreateCondenseTooltip
-- PotionBar.UpdateButton
-- PotionBar.PotionBarSettings.OnResetButton
-- PotionBar.PotionBarSettings.OnAlphaSliderChanged
-- GuardLine.GuardLine.update
-- wbLeadHelper.WbLeadHelperMessage.OnOk
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakOptions
-- DaemonAssist.DaemonAssist.PopulateBindingCombos
-- Aura.Aura:CreateEditWindows
-- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Hide
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelm
-- TurretRange.TurretRange.OnUpdate
-- RoR_SoR.RoR_SoR.SET_BO
-- wbLeadHelper.wbLeadHelperMessagesTab.ListSelChanged
-- Busted.Busted.Initialize
-- AnywhereTrainerAdditions.AnywhereTrainerAdditions.OnLeftClickAuction
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_IsOpen
-- DAoCBuff.DAoCTooltips.UpdateCondenseTooltip
-- PotionBar.PotionBarFloating.ShowSettings
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloak
-- wbLeadHelper.wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
-- Enemy.Enemy.UI_ConfigDialog_Hide
-- DAoCBuff.DAoCBuffSettings.CreateOptionswindow
-- EA_UiDebugTools.ObjectInspector.ShowWindow
-- EA_UiDebugTools.BustedGUI.ToggleMainWindow
-- RoR_SoR.RoR_SoR.OnWindowOptionsSetOpacity
-- LoyalPet.LPET.SaveProfileOnButtonUp
-- RoR_SoR.RoR_SoR.CloseSetOffsetWindow
-- MapPin.MapPin.SetupCancel
-- MoraleCircle.MoraleCircle.OnSetCustomColor
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelmOnly
-- EA_UiDebugTools.BustedGUI.Initialize
-- Aura.Aura:CreateRuntimeWindows
-- wbLeadHelper.WbLeadHelperMessage.MessageDialogHide
-- wbLeadHelper.wbLeadHelperConfigTab.OnReset
-- DAoCBuff.DAoCBuffSettings.Disable
-- MoraleCircle.MoraleCircle.ColorChanger2
-- WhoHealedMe.WhoHealedMe.Initialize
-- Enemy.Enemy.TimerInitialize
-- RandomMount.RandomMountUI.OnDropSlotLButtonUp
-- PotionBar.PotionBarSettings.OnAboutShown
-- AggroMeter.AggroMeter.SplitText
-- JunkDump.JunkDumpOptions.Done
-- WSCT.WSCT.OnHidden
-- wbLeadHelper.wbLeadHelper.drawWindows
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
-- JunkDump.JunkDumpOptions.Show
-- wbLeadHelper.WbLeadHelperMessage.MessageDialogIsOpen
-- Swift Assist.SwiftAssist.OnMacroUpdated
-- Enemy.Enemy.GroupsInitialize
-- PotionBar.PotionBarSettings.OnAboutButton
-- MoraleCircle.MoraleCircle.init
-- DAoCBuff.DAoCBuffSettings.OpenOptionswindow
-- AdvancedPetAssist.APAGui.Show
-- RoR_SoR.RoR_SoR.SET_CITY
-- DAoCBuff.DAoCBuffSettings.PopulateSettings
-- Aura.AuraAddon.Slash
-- GuardLine.GuardLine.Libguard_Toggle
-- Killer.Killer.ShowRowTooltip
-- EA_UiDebugTools.ObjectInspector.DepthMinus
-- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Hide
-- PotionBar.PotionBarSettings.OnUseCheckUpdateHighlighting
 - TurretRange.TurretRange.local.UpdateDisplay
-- Enemy.Enemy.CombatLogUI_IDS_Initialize
-- WSCT.WSCT.ColorAcceptButtonOnButtonUp
-- Swift Assist.Swift Assist.local.SetSmartLabel
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Hide
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.Hide
-- Enemy.Enemy.IntercomUI_IntercomJoinDialog_Hide
-- WSCT.WSCT.ColorOnButtonUp
-- AdvancedRenownTrainer.AdvancedRenownTrainer.local.CreateAbilityWindow
-- Enemy.Enemy.MarksUI_MarkConfigDialog_Open
-- Enemy.Enemy.CombatLogUI_EpsWindow_Hide
-- RandomMount.RandomMountUI.Hide
-- Enemy.Enemy._CombatLogUI_IDS_UpdateWindow
-- Moth.Moth.Initialize
-- BankArkel.BankArkel.CreatePackWin
-- MapPin.MapPin.local.OnHyperLinkLButtonUp2
-- Swift Assist.SetTexLabel
-- wbLeadHelper.wbLeadHelperMessagesTab.ListDown
-- Enemy.Enemy.UI_TextEntryDialog_Open
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_IsOpen
-- DAoCBuff.DAoCBuffSettings.SetLabels
-- QuickWarReport.QuickWarReport.Initialize
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSetRow
-- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Open
-- AdvancedPetAssist.APAGui.UpdateInstantOnlyHUD
-- Aura.AuraTexture.OnLoad
-- FastInteract.FastInteract.OptionsShow
-- WarBoard.WarBoard.Options.OpenUiModWindow
-- Killer.Killer.ShowTopKillersTooltip
-- RoR_SoR.RoR_SoR.SET_KEEP
-- wbLeadHelper.wbLeadHelper.OnInitialize
-- MapPin.MapPin.local.EditMarker
-- RoR_SoR.RoR_SoR.Text_Stream_Fetch
-- wbLeadHelper.wbLeadHelperConfigTab.OnSave
-- AnywhereTrainer.AnywhereTrainer.OnLeftClickRenown
-- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
-- WSCT.WSCT:DisplayText
-- Effigy.Effigy.RegisterStateInfoForPlayer
-- Enemy.Enemy.UI_ChooseIconDialog_Open
-- WhoHealedMe.WHMGui.OnOptionsInitialize
-- Enemy.Enemy.Timer_Update
-- Shinies.Searches_UpdateWindowDisplay
-- WhoHealedMe.WhoHealedMe.local.IsMainWindowVisible
-- Enemy.Enemy.local.SetStatsRow
-- wbLeadHelper.wbLeadHelperMessagesTab.OnResetMessages
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled5
-- Enemy.Enemy.MarksUI_EnemyMarksWindow_Update
-- FastInteract.FastInteract.OptionsClose
-- MapMonster.InitializeFilters
-- AggroMeter.AggroMeter.OnTabLBU
-- GuardLine.GuardLine.OnLayoutEditorStart
-- wbLeadHelper.wbLeadHelperConfigTab.Initialize
-- PotionBar.PotionBarSettings.OnDontSplitNameCheck
-- PotionBar.PotionBarSettings.OnScaleSliderChanged
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateActionBarSettings
-- MapPin.MapPin.UI_ChooseIconDialog_IsOpen
-- EA_UiDebugTools.DevPadWindow.CancelRename
-- Swift Assist.Swift Assist.local.WriteLabels
-- AdvancedRenownTrainer.CreateAbilityWindow
-- MapPin.MapPin.SetupAccept
-- PotionBar.PotionBarSettings.OnAboutClose
-- Enemy.Enemy.UI_ChooseIconDialog_IsOpen
-- RoR_SoR.RoR_SoR.DefaultSettings
-- Enemy.Enemy._Initialize
-- AdvancedPetAssist.APAGui.UpdateKitingHUD
-- RoR_SoR.RoR_SoR.ShowPopper
-- AdvancedPetAssist.APAGui.OnShown
-- AdvancedRenownTrainer.CreateTab
-- AdvancedRenownTrainer.AdvancedRenownTrainer.local.CreateTab
-- Swift Assist.Swift Assist.local.SetTexLabel
-- WarBoard.WarBoard.OnOptionsButton
-- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_IsOpen
-- RoR_SoR.RoR_SoR.OnWindowOptionsSetOffset
-- DAoCBuff.DAoCBuffSettings.Change_Setting
-- Moth.Moth.UpdateHealthBar
-- TidyRoll.TidyRollOptions.Initialize
-- WhoHealedMe.WhoHealedMe.Shutdown
-- wbLeadHelper.wbLeadHelperMessagesTab.MessageAdd
-- wbLeadHelper.wbLeadHelperMessagesTab.MessageClone
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideCloakOptions
-- RoR_SoR.RoR_SoR.CloseSetOpacityWindow
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize
-- DaemonAssist.DaemonAssist.HideWindow
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
-- Pocket Palette.PP.UpdateDyeFilter
-- RoR_SoR.RoR_SoR.OnInitialize
-- Miracle Grow Remix.MiracleGrow2.InitConfig
-- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- BankArkel.BankArkel.PackShow
-- BankArkel.BankArkel.PackImg
-- MapPin.MapPin.RButtonUp
-- GetStats.GetStats.OnChatLogUpdated
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
-- MapPin.MapPin.SendText
-- MoraleCircle.MoraleCircle.ColorChanger1
-- AnywhereTrainer.AnywhereTrainer.OnLeftClickAuction
-- DaemonAssist.DaemonAssist.ToggleWindow
-- Killer.Killer.RefreshPersonalCounter
-- LoyalPet.LPET.RenameProfileOnButtonUp
-- wbLeadHelper.wbLeadHelper.createWbLeadHelperWindow
-- EA_UiDebugTools.DevPadWindow.Hide
-- PotionBar.PotionBar.Initialize
-- FastInteract.FastInteract.OptionsSetup
-- Enemy.Enemy.CombatLogUI_EpsWindow_IsOpen
-- WhoHealedMe.WHMCommands.CmdConfig
-- LoyalPet.LPET.AddProfileOnButtonUp
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_IsOpen
-- GuardLine.GuardLine.OffTarget
-- EA_UiDebugTools.ObjectInspector.AddInputHistory
-- LibSlash.LibSlash.Initialize
 - Busted.BustedGUI.NewErrorRecorded
-- Enemy.Enemy.IntercomInitialize
-- wbLeadHelper.wbLeadHelperMessagesTab.Hide
-- LoyalPet.LPET.OpenMenu
-- MapPin.MapPin.UI_ChooseIconDialog_Open
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UseItemRackToggled
-- Enemy.Enemy.local._OnKeyModifierChanged
-- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Open
-- JunkDump.JunkDumpOptions.InitSettings
-- PotionBar.PotionBar.local.UpdateButton
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakHeraldry
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideShowHelm
-- Enemy.Enemy.UI_ChooseIconDialog_Hide
-- QuickWarReport.QuickWarReport.local.PrepareConfirmWindowChrome
-- DAoCBuff.DAoCBuffSettings.UC
-- MapPin.MapPin.TestTooltip
-- EA_UiDebugTools.ObjectInspector.DepthPlus
-- Effigy.Effigy.RegisterStateInfoForTargets
-- RoR_SoR.RoR_SoR.SetWindowShow
-- WhoHealedMe.WHMGui.RefreshConfigurationWindow
-- BuffHead.BuffHead.local.RegisterLayoutEditor
-- WhoHealedMe.WHMGui.ShowOptionsWindow
-- RoR_SoR.RoR_SoR.OnSlideWindowOptionsOpacity
-- GuardLine.GuardLine.update2
-- Effigy.EffigyBar.Init
-- RandomMount.RandomMountUI.Refresh
-- Enemy.Enemy.MarksUI_EnemyMarksWindow_Open
-- QuickWarReport.PrepareConfirmWindowChrome
-- RoR_SoR.RoR_SoR.OnWindowOptionsSetScale
-- MapMonster.MapMonster.local.InitializeFilters
-- MoraleCircle.MoraleCircle.OnSetCustomColorFill
-- GuardLine.GuardLine.GetIDs
-- Busted.BustedGUI.ClearAlertFlash
-- Moth.Moth.Clear
-- AdvancedPetAssist.APAGui.UpdateFollowTargetHUD
-- BankArkel.BankArkel.BackPackShow
-- wbLeadHelper.wbLeadHelper.chat
-- MoraleCircle.MoraleCircle.OnSetCustomColorFull
-- Enemy.Enemy.StopwatchEnabledChanged
-- WSCT.WSCT.OnLButtonUpColorPicker
-- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Initialize
-- AdvancedPetAssist.ApplyHUDVisibilityFromSettings
-- Enemy.Enemy.local._OnArchetypeChanged
-- QuickWarReport.QuickWarReport.local.ShowConfirmWindow
-- DaemonAssist.DaemonAssist.UpdateWindow
-- BankArkel.BankArkel.Init
-- Enemy.Enemy.Assist_OnIntercomMessage
-- GuardLine.GuardLine.init
-- DAoCBuff.DAoCBuffFrame.MouseOverUpdate
-- AdvancedRenownTrainer.AdvancedRenownTraining.OnShown
-- QuickWarReport.QuickWarReport.local.HideConfirmWindow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateHighlightOnRow
-- PotionBar.PotionBarFloating.Alpha
-- PotionBar.PotionBarSettings.Show1Check
-- AdvancedRenownTrainer.AdvancedRenownTraining.OnHidden
-- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateList
-- WhoHealedMe.WHMCore.ApplyBackgroundFillColor
-- WSCT.WSCT.UpdateAnimationOptions
-- Enemy.Enemy.CombatLogUI_EpsWindow_Open
-- Enemy.Enemy.Stopwatch_Update
-- Enemy.Enemy.IntercomUI_IntercomDialog_Open
-- JunkDump.JunkDumpOptions.DestroyOptionsWindow
-- PotionBar.PotionBar.Hide
-- TurretRange.TurretRange.OnLoadComplete
-- AdvancedPetAssist.APAGui.ToggleKitingHUD
-- wbLeadHelper.wbLeadHelperConfigTab.Hide
-- AdvancedRenownTrainer.AdvancedRenownTraining.Initialize
-- Enemy.Enemy.CombatLogUI_StatsWindow_Open
-- Enemy.Enemy.CombatLogUI_StatsWindow_Hide
-- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Hide
-- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_IsOpen
-- Enemy._OnKeyModifierChanged
-- Enemy.Enemy.MarksUI_MarkConfigDialog_IsOpen
-- PotionBar.PotionBarSettings.OnCancelButton
-- Killer.Killer.Initialize
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- AdvancedPetAssist.APAGui.ApplyPetTargetHUDLayout
-- Enemy.Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- AdvancedPetAssist.APAGui.UpdatePetTargetHUD
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_Ok
-- MapPin.MapPin.ShowIcons
-- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
-- QuickWarReport.ShowConfirmWindow
-- AggroMeter.AggroMeter.Close
-- PotionBar.PotionBarFloating.Scale
-- wbLeadHelper.wbLeadHelperConfigTab.OnChanged
-- wbLeadHelper.wbLeadHelperMessagesTab.ListDelete
-- EA_UiDebugTools.DevPadWindow.HideSaveWindow
-- Enemy.Enemy.MarksInitialize
-- Enemy.Enemy.UI_ConfigDialog_OnSectionSelChanged
-- DAoCBuff.DAoCBuff.CloseMessageWindow
-- wbLeadHelper.wbLeadHelper.onZoneMouseOver
-- DaemonAssist.DaemonAssist.ShowWindow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled3
-- Enemy.Enemy.CombatLogUI_IDS_OnSettingsChanged
-- EA_UiDebugTools.ObjectInspector.Toggle
-- JunkDump.JunkDumpOptions.CreateOptionsWindow
 - PotionBar.PotionBarSettings.UpdateLastCheckBasedOnInfoText
-- Busted.BustedGUI.UpdateNextPrevButtonStatus
-- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
-- AutoMark.AutoMark.local.CreateMarker
-- Swift Assist.SwiftAssist.aaLabelColorSet
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSortButtonIcon
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnShow
-- RandomMount.RandomMountUI.OnAddCustomMount
-- MiracleGrowLight.MiracleGrowLight.switchBackground
-- Enemy.Enemy.IntercomUI_IntercomDialog_Hide
-- JunkDump.CheckAndSetButton
-- QuickWarReport.QuickWarReport.local.EnsureConfirmWindow
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- WhoHealedMe.WHMGui.ToggleOptionsWindow
-- BankArkel.BankArkel.SetupCombos
-- PotionBar.PotionBar.Shutdown
-- MoraleCircle.MoraleCircle.ColorChanger4
-- wbLeadHelper.wbLeadHelper.showNormalTitle
-- AdvancedPetAssist.AnchorInContent
-- Enemy.Enemy.MarksUI_EnemyMarksWindow_IsOpen
-- JunkDump.JunkDump.local.CheckAndSetButton
-- RoR_SoR.RoR_SoR.OnChatLogUpdated
-- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_IsOpen
-- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_IsOpen
-- RoR_SoR.RoR_SoR.OnCombat
-- RoR_SoR.RoR_SoR.SET_CAMPAIGN
-- BankArkel.BankArkel.BackPackHide
-- DAoCBuff.DAoCBuffSettings.Reactivate
-- Enemy.Enemy.CombatLogUI_EpsWindow_Update
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled2
-- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Hide
-- wbLeadHelper.wbLeadHelperConfigTab.ChooseIconMessageStart
-- PotionBar.PotionBar.Show
-- MiracleGrow.MiracleGrow.Initialize
-- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.Show
-- EA_UiDebugTools.ObjectInspector.InspectObject
-- Moth.Moth.Anchor
-- Enemy.Enemy.IntercomUI_ChooseChannelDialog_ChannelListChanged
-- Enemy.Enemy.AssistInitialize
-- Enemy.SetStatsRow
-- AutoMark.CreateMarker
-- RandomMount.RandomMountUI.OnInitialize
-- QuickWarReport.QuickWarReport.TestConfirmWindow
-- EA_UiDebugTools.ObjectInspector.ClearObjects
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Hide
-- WSCT.WSCT.ColorOnInitialize
-- Swift Assist.SwiftAssist.Initialize
-- RoR_SoR.RoR_SoR.OnSlideWindowOptionsScale
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.RefreshOption
-- wbLeadHelper.wbLeadHelperConfigTab.locallyStoreFormData
-- PotionBar.PotionBarSettings.OnHidden
-- BankArkel.BankArkel.PackHide
-- MapPin.MapPin.test
-- DAoCBuff.DAoCBuffSettings.CloseOptionswindow
-- Miracle Grow Remix.MiracleGrow2.ConfigTabChange
-- WarBoard.WarBoard.LoadGeneralSettings
-- AdvancedPetAssist.AdvancedPetAssist.local.ApplyHUDVisibilityFromSettings
-- EA_UiDebugTools.DevPadWindow.HideLoadProject
-- QuickWarReport.EnsureConfirmWindow
-- QuickWarReport.QuickWarReport.Shutdown
-- Aura.AuraAddon.OnLoad
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.Enemy.CombatLogUI_EpsWindow_UpdateLayout
-- WhoHealedMe.WHMCore.RunSettingEffects
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarPageDownProxy
-- TidyChat.TidyChat.LootRoll.OnRollLinkLButtonUp
-- MapPin.OnHyperLinkLButtonUp2
-- EA_UiDebugTools.BustedGUI.UpdateNextPrevButtonStatus
-- RoR_SoR.RoR_SoR.CloseSetScaleWindow
-- LibWBToggler.LibWBTogglerManager.Initialize
-- wbLeadHelper.wbLeadHelperConfigTab.ChooseIconMessageEnd
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Open
-- AdvancedPetAssist.AdvancedPetAssist.local.AnchorInContent
-- Killer.Killer.ShowPersonalStatsTooltip
-- wbLeadHelper.wbLeadHelperConfigWindow.Initialize
-- PotionBar.PotionBarSettings.AutohideCheck
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowHelm
-- Enemy.Enemy.IntercomUI_IntercomJoinDialog_Open
-- EA_UiDebugTools.DevPadWindow.HideNewWindow
-- Busted.BustedGUI.Initialize
-- EA_UiDebugTools.ObjectInspector.WindowInit
-- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Open
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.EnemyMarkTemplate:ToggleMark
-- wbLeadHelper.wbLeadHelperConfigWindow.Hide
-- Enemy.Enemy.UI_ConfigDialog_Open
-- Enemy.Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
-- RoR_SoR.RoR_SoR.OnScenario
+- wbLeadHelper.wbLeadHelperMessagesTab.ListDelete
 - EA_UiDebugTools.ObjectInspector.CloseWindow
+- WhoHealedMe.WHMCore.RunSettingEffects
+- Busted.BustedGUI.UpdateNextPrevButtonStatus
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakOptions
+- Swift Assist.SwiftAssist.aaLabelColorSet
+- RoR_SoR.RoR_SoR.OnSlideWindowOptionsScale
+- Enemy.Enemy.CombatLogUI_EpsWindow_Update
+- RoR_SoR.RoR_SoR.OnScenario
+- Aura.Aura:CreateEditWindows
 - Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- Busted.BustedGUI.UpdateErrorView
-- Enemy.Enemy.CombatLogUI_IDS_Update
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_Hide
-- wbLeadHelper.wbLeadHelperMessagesTab.Initialize
-- EA_UiDebugTools.DevPadWindow.OnKeyEscape
-- EA_UiDebugTools.DevPadWindow.HideDeleteWindow
-- BankArkel.BankArkel.SetCharInfo
-- Enemy.Enemy.CombatLogUI_StatsWindow_IsOpen
-- Effigy.EffigyBar:setup
-- MapPin.EditMarker
-- Enemy.EnemyGroupIcon:Attach
-- BuffHead.RegisterLayoutEditor
-- Enemy.Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
-- Killer.Killer.ApplyFeedLayout
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.Hide
-- wbLeadHelper.wbLeadHelperMessagesTab.Show
-- wbLeadHelper.wbLeadHelperMessagesTab.MessageEdit
-- wbLeadHelper.wbLeadHelperConfigTab.Show
-- wbLeadHelper.wbLeadHelperConfigTab.OnLoad
-- RoR_SoR.RoR_SoR.HidePopper
-- WSCT.WSCT:ObjectIDAnimation
-- WhoHealedMe.WHMGui.HideOptionsWindow
-- PotionBar.PotionBarSettings.QuickActionsSelChanged
-- AdvancedRenownTrainer.GeneratePresetByLinkData
-- TurretRange.UpdateDisplay
-- WarBoard.WarBoard.SlashCommand
-- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
+- JunkDump.JunkDumpOptions.DestroyOptionsWindow
+- RandomMount.RandomMountUI.Show
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetOffset
+- PotionBar.PotionBarSettings.OnDontSplitNameCheck
+- RandomMount.RandomMountUI.OnMinLevelChanged
+- DaemonAssist.DaemonAssist.NormalizeWindowLayout
+- RandomMount.RandomMountUI.OnInitialize
+- PotionBar.PotionBarSettings.OnUseCheckUpdateHighlighting
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogHide
 - MapPin.MapPin.LButtonUp
-- Enemy.EnemyUnitFrame:ApplySettings
-- DAoCBuff.DAoCBuff.ShowMessageWindow
-- Aura.AuraTexture.OnClose
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.UpdateHighlightOnRow
+- Enemy.Enemy.CombatLogUI_IDS_Initialize
+- Enemy.Enemy.IntercomUI_IntercomDialog_Hide
+- wbLeadHelper.wbLeadHelperConfigWindow.Hide
+- Enemy.Enemy.CombatLogUI_StatsWindow_Open
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- PotionBar.PotionBarFloating.ReflowButtons
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowHelm
+- PotionBar.PotionBarSettings.OnHidden
+- AdvancedPetAssist.APAGui.ApplyPetTargetHUDLayout
+- PotionBar.PotionBarSettings.OnCancelButton
+- GuardLine.GuardLine.update
+- PotionBar.PotionBarFloating.Scale
+- AutoMark.AutoMark.local.CreateMarker
+- Effigy.Effigy.RegisterStateInfoForTargets
+- WarBoard.WarBoard.LoadGeneralSettings
+- RoR_SoR.RoR_SoR.DefaultSettings
+- wbLeadHelper.wbLeadHelperConfigTab.Show
+- EA_UiDebugTools.DevPadWindow.Hide
+- Busted.Busted.Initialize
 - Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
-- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
-- Moth.Moth.UpdateTarget
-- Enemy.Enemy.AssistUI_Target_Show
-- JunkDump.JunkDumpOptions.UpdateBagModeOnOff
-- EA_UiDebugTools.DevPadWindow.HideConfirmLoadWindow
-- Enemy.Enemy.MarksUI_EnemyMarksWindow_Hide
-- AdvancedPetAssist.APAGui.Hide
-- QuickWarReport.HideConfirmWindow
-- Moth.Moth.HealthBar
-- AdvancedPetAssist.APAGui.HidePetTargetHUD
-- Pocket Palette.PP.UpdateListRow
-- Enemy.Enemy.UnitFramesUI_ConfigDialog_Import
-- AdvancedRenownTrainer.AdvancedRenownTraining.ChangeTab
+- DaemonAssist.DaemonAssist.HideWindow
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- RoR_SoR.RoR_SoR.HidePopper
+- LoyalPet.LPET.HideMenu
+- AdvancedRenownTrainer.AdvancedRenownTraining.Initialize
+- RoR_SoR.RoR_SoR.OnInitialize
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled4
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakOnly
+- Enemy.Enemy.CombatLogUI_StatsWindow_Hide
+- Swift Assist.Swift Assist.local.SetTexLabel
+- wbLeadHelper.wbLeadHelperMessagesTab.OnResetMessages
+- BankArkel.BankArkel.Init
+- BankArkel.BankArkel.PackHide
+- DAoCBuff.DAoCTooltips.CreateCondenseTooltip
+- WSCT.WSCT.HideMenu
+- Enemy.Enemy.TimerInitialize
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- WarBoard.WarBoard.Options.OnSlide
+- RoR_SoR.RoR_SoR.SET_CITY
+- JunkDump.JunkDump.local.CheckAndSetButton
+- Enemy.SetStatsRow
+- Enemy.Enemy.local._OnKeyModifierChanged
+- Enemy.Enemy.IntercomInitialize
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSlotIcons
+- MiracleGrow.MiracleGrow.Initialize
+- BankArkel.BankArkel.BackPackShow
+- AdvancedPetAssist.APAGui.UpdateInstantOnlyHUD
+- QuickWarReport.QuickWarReport.local.EnsureConfirmWindow
+- MoraleCircle.MoraleCircle.ColorChanger3
+- wbLeadHelper.wbLeadHelperMessagesTab.Initialize
+- AdvancedRenownTrainer.AdvancedRenownTraining.OnHidden
+- QuickWarReport.QuickWarReport.Shutdown
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnShow
+- Enemy.Enemy.CombatLogUI_EpsWindow_Hide
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelm
+- DAoCBuff.DAoCBuff.ShowMessageWindow
+- PotionBar.PotionBar.local.UpdateButton
+- WhoHealedMe.WhoHealedMe.Initialize
+- Enemy._OnArchetypeChanged
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled3
+- PotionBar.PotionBarSettings.OnAboutButton
+- Enemy.Enemy.IntercomUI_IntercomDialog_Open
+- DAoCBuff.DAoCBuffSettings.Disable
+- BankArkel.BankArkel.PackShow
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- PotionBar.PotionBarSettings.AutohideCheck
+- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateList
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Open
+- AdvancedPetAssist.AdvancedPetAssist.local.ApplyHUDVisibilityFromSettings
+- Shinies.Searches_UpdateWindowDisplay
+- AdvancedRenownTrainer.AdvancedRenownTraining.OnShown
+- Effigy.Effigy.RegisterStateInfoForPlayer
+- Enemy.Enemy.CombatLogUI_EpsWindow_UpdateLayout
+- RoR_SoR.RoR_SoR.OnSlideWindowOptionsOpacity
+- Moth.Moth.Anchor
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.Hide
+- DAoCBuff.DAoCBuffSettings.UC
+- Killer.Killer.Initialize
+- AggroMeter.AggroMeter.Close
+- MapPin.MapPin.OnUpdate
+- Enemy.Enemy.StopwatchEnabledChanged
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_IsOpen
+- QuickWarReport.PrepareConfirmWindowChrome
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideCloakOptions
+- MapPin.MapPin.RButtonUp
+- wbLeadHelper.wbLeadHelperMessagesTab.ListSelChanged
+- Enemy.Enemy.UI_ConfigDialog_OnSectionSelChanged
+- WhoHealedMe.WHMGui.ShowOptionsWindow
+- WhoHealedMe.WHMGui.ToggleOptionsWindow
+- MoraleCircle.MoraleCircle.ColorChanger1
+- EA_UiDebugTools.DevPadWindow.HideSaveWindow
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Hide
+- MiracleGrowLight.MiracleGrowLight.switchBackground
+- RoR_SoR.RoR_SoR.SET_KEEP
+- WSCT.WSCT.ColorHideMenu
+- Enemy.Enemy.UI_ChooseIconDialog_Open
+- Enemy.Enemy.IntercomUI_IntercomJoinDialog_Open
+- wbLeadHelper.wbLeadHelperConfigTab.Initialize
+- GuardLine.GuardLine.update2
 - Moth.Moth.UpdateLevel
+- WSCT.WSCT:DisplayText
+- MapPin.MapPin.OnMoving
+- Enemy.Enemy.CombatLogUI_IDS_Update
+- GetStats.GetStats.OnInitialize
+- Enemy.Enemy._Initialize
+- RandomMount.RandomMountUI.Hide
+- EA_UiDebugTools.DevPadWindow.HideLoadProject
+- AdvancedPetAssist.APAGui.HidePetTargetHUD
+- Moth.Moth.UpdateHealthBar
+- wbLeadHelper.wbLeadHelper.createWbLeadHelperWindow
+- wbLeadHelper.wbLeadHelperConfigWindow.Show
+- PotionBar.PotionBarSettings.OnAboutClose
+- MoraleCircle.MoraleCircle.OnSetCustomColor
+- Enemy.Enemy.Timer_Update
+- RoR_SoR.RoR_SoR.CloseSetScaleWindow
+- wbLeadHelper.wbLeadHelperMessagesTab.ListUp
+- EA_UiDebugTools.ObjectInspector.ShowWindow
+- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelmOnly
+- Swift Assist.SetTexLabel
+- AdvancedPetAssist.ApplyHUDVisibilityFromSettings
+- AdvancedPetAssist.APAGui.Hide
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_IsOpen
+- GuardLine.GuardLine.init
+- wbLeadHelper.wbLeadHelper.OnInitialize
+- RoR_SoR.RoR_SoR.SET_BO
+- WhoHealedMe.WHMCore.ApplyBackgroundFillColor
+- WhoHealedMe.IsMainWindowVisible
+- Enemy.Enemy.CombatLogUI_IDS_OnSettingsChanged
+- Enemy.Enemy.UI_ChooseIconDialog_IsOpen
+- Enemy.Enemy.CombatLogUI_EpsWindow_IsOpen
+- RoR_SoR.RoR_SoR.SET_CAMPAIGN
+- Effigy.EffigyBar.Init
+- Swift Assist.SwiftAssist.Initialize
+- PotionBar.PotionBar.Initialize
+- JunkDump.CheckAndSetButton
+- EA_UiDebugTools.ObjectInspector.AddInputHistory
+- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_IsOpen
+- WSCT.WSCT:OpenMenu
+- RandomMount.RandomMountUI.OnDropSlotLButtonUp
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.UpdateHighlightOnRow
+- RoR_SoR.RoR_SoR.Restack
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled2
+- Effigy.EffigyBar:setup
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Hide
+- Enemy.Enemy.CombatLogUI_StatsWindow_IsOpen
+- DAoCBuff.DAoCBuffSettings.Reactivate
+- AdvancedRenownTrainer.AdvancedRenownTrainer.local.CreateTab
+- Aura.AuraTexture.OnClose
+- MapPin.OnHyperLinkLButtonUp2
+- EA_UiDebugTools.BustedGUI.ClearAlertFlash
+- FastInteract.FastInteract.OptionsClose
+- MoraleCircle.MoraleCircle.OnSetCustomColorFill
+- QuickWarReport.QuickWarReport.local.PrepareConfirmWindowChrome
+- wbLeadHelper.wbLeadHelperConfigTab.OnLoad
+- Killer.Killer.ShowRowTooltip
+- Swift Assist.Swift Assist.local.SetSmartLabel
+- AdvancedPetAssist.APAGui.UpdatePetTargetHUD
+- MapPin.MapPin.ShowIcons
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
+- DAoCBuff.DAoCBuffSettings.PopulateSettings
+- PotionBar.PotionBar.Shutdown
+- EA_UiDebugTools.BustedGUI.ToggleMainWindow
+- AnywhereTrainer.AnywhereTrainer.OnLeftClickRenown
+- DAoCBuff.DAoCTooltips.Init
+- MapPin.MapPin.SetupAccept
+- WSCT.WSCT.OnSetCustomColor
+- Miracle Grow Remix.MiracleGrow2.ConfigTabChange
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_IsOpen
+- FastInteract.FastInteract.OptionsSetup
+- WhoHealedMe.WhoHealedMe.Shutdown
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- JunkDump.JunkDumpOptions.UpdateBagModeOnOff
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSetRow
+- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Hide
+- LibSlash.LibSlash.Initialize
+- Moth.Moth.HealthBar
+- Enemy.Enemy.MarksUI_EnemyMarksWindow_Hide
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Hide
+- DaemonAssist.DaemonAssist.ToggleWindow
+- RoR_SoR.RoR_SoR.CloseSetOffsetWindow
+- AutoMark.CreateMarker
+- MapPin.MapPin.TestTooltip
+- MapPin.MapPin.SetupCancel
+- WarBoard.WarBoard.SlashCommand
+- PotionBar.PotionBarSettings.OnScaleSliderChanged
+- Moth.Moth.HideBorders
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_IsOpen
+- Swift Assist.WriteLabels
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateActionBarSettings
+- Moth.Moth.Initialize
+- DAoCBuff.DAoCBuffSettings.OpenOptionswindow
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.RefreshOption
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Open
+- Killer.Killer.RefreshPersonalCounter
+- Enemy.Enemy.UnitFramesUI_ConfigDialog_Import
+- Enemy.Enemy.Assist_OnIntercomMessage
+- BankArkel.BankArkel.BackPackHide
+- JunkDump.JunkDumpOptions.CreateOptionsWindow
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- TurretRange.TurretRange.OnLoadComplete
+- wbLeadHelper.wbLeadHelperConfigTab.Hide
+- WSCT.WSCT.ColorAcceptButtonOnButtonUp
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.Show
+- PotionBar.PotionBarSettings.OnAlphaSliderChanged
+- MoraleCircle.MoraleCircle.ColorChanger4
+- wbLeadHelper.wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
+- Enemy.Enemy.UI_ConfigDialog_Open
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- AdvancedRenownTrainer.GeneratePresetByLinkData
+- LoyalPet.LPET.SaveProfileOnButtonUp
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_IsOpen
+- GuardLine.GuardLine.GetIDs
+- Pocket Palette.PP.UpdateListRow
+- wbLeadHelper.wbLeadHelperConfigTab.OnChanged
+- AdvancedRenownTrainer.AdvancedRenownTrainer.local.CreateAbilityWindow
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.Enemy.MarksInitialize
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled5
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.Hide
+- Enemy.Enemy.CombatLogUI_EpsWindow_Open
+- EA_UiDebugTools.ObjectInspector.Toggle
+- Swift Assist.SetSmartLabel
+- DAoCBuff.DAoCBuff.CloseMessageWindow
+- PotionBar.PotionBarSettings.OnResetButton
+- MapMonster.MapMonster.local.InitializeFilters
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_ChannelListChanged
+- PotionBar.PotionBar.LibSlashHandler
+- Enemy.Enemy.AssistInitialize
+- MapPin.MapPin.local.OnHyperLinkLButtonUp2
+- BuffHead.RegisterLayoutEditor
+- PotionBar.PotionBarSettings.OnShown
 - Enemy.Enemy.CombatLogUI_EpsWindow_Initialize
+- AdvancedPetAssist.APAGui.ToggleInstantOnlyHUD
+- RandomMount.RandomMountUI.OnAddCustomMount
+- EA_UiDebugTools.BustedGUI.UpdateErrorView
+- DAoCBuff.DAoCBuffHeadTracker:Create
+- QuickWarReport.QuickWarReport.local.HideConfirmWindow
+- RoR_SoR.RoR_SoR.OnCombat
+- GetStats.GetStats.CloseWindow
+- wbLeadHelper.wbLeadHelper.drawWindows
+- GuardLine.GuardLine.OnLayoutEditorStart
+- Enemy.Enemy.local.SetStatsRow
+- LibWBToggler.LibWBTogglerManager.Initialize
+- PotionBar.PotionBar.Show
+- JunkDump.JunkDumpOptions.Show
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize
+- TidyRoll.TidyRollOptions.Initialize
+- DAoCBuff.DAoCBuffSettings.CreateOptionswindow
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- AggroMeter.AggroMeter.SplitText
+- BuffHead.BuffHead.local.RegisterLayoutEditor
+- GuardLine.GuardLine.OffTarget
+- Enemy.Enemy.GroupsInitialize
+- WSCT.WSCT.OnHidden
+- WarBoard.WarBoard.OnOptionsButton
+- JunkDump.JunkDumpOptions.InitSettings
+- AdvancedPetAssist.AnchorInContent
+- PotionBar.PotionBarFloating.Alpha
+- wbLeadHelper.wbLeadHelperMessagesTab.MessageAdd
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogIsOpen
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarPageUpProxy
+- WhoHealedMe.WHMCommands.CmdConfig
+- WarBoard.WarBoard.Options.OpenUiModWindow
+- JunkDump.JunkDumpOptions.DynamicBagOptions
+- AdvancedPetAssist.AdvancedPetAssist.local.AnchorInContent
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- MoraleCircle.MoraleCircle.init
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled1
+- AdvancedPetAssist.APAGui.ToggleKitingHUD
+- Pocket Palette.PP.UpdateDyeFilter
+- wbLeadHelper.wbLeadHelperConfigTab.ChooseIconMessageEnd
+- AdvancedRenownTrainer.CreateAbilityWindow
+- TidyChat.TidyChat.LootRoll.OnRollLinkLButtonUp
+- MapPin.MapPin.UI_ChooseIconDialog_IsOpen
+- Enemy.EnemyUnitFrame:ApplySettings
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Update
+- QuickWarReport.QuickWarReport.TestConfirmWindow
+- RoR_SoR.RoR_SoR.Text_Stream_Fetch
+- wbLeadHelper.wbLeadHelperConfigWindow.Initialize
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Ok
+- MapMonster.InitializeFilters
+- wbLeadHelper.wbLeadHelperConfigTab.OnSave
+- EA_UiDebugTools.DevPadWindow.CancelRename
+- Enemy._OnKeyModifierChanged
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- AdvancedPetAssist.APAGui.UpdateFollowTargetHUD
+- AdvancedPetAssist.APAGui.Show
+- Aura.AuraTexture.OnLoad
+- wbLeadHelper.wbLeadHelper.onZoneMouseOver
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetScale
+- Busted.BustedGUI.UpdateErrorView
+- Moth.Moth.UpdateTarget
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_IsOpen
+- RoR_SoR.RoR_SoR.OnChatLogUpdated
+- GuardLine.GuardLine.Libguard_Toggle
+- MoraleCircle.MoraleCircle.OnSetCustomColorFull
+- RandomMount.RandomMountUI.Refresh
+- wbLeadHelper.wbLeadHelperMessagesTab.ListDown
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Hide
+- WSCT.WSCT:ObjectIDAnimation
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- EA_UiDebugTools.ObjectInspector.DepthPlus
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Open
+- DAoCBuff.DAoCBuffFrame.MouseOverUpdate
+- QuickWarReport.QuickWarReport.local.ShowConfirmWindow
+- EA_UiDebugTools.BustedGUI.NewErrorRecorded
+- TurretRange.UpdateDisplay
+- LoyalPet.LPET.OpenMenu
+- WSCT.WSCT.OnLButtonUpColorPicker
+- Enemy.EnemyGroupIcon:Attach
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSlotIcon
+- WhoHealedMe.WHMGui.RefreshConfigurationWindow
+- WSCT.WSCT.UpdateAnimationOptions
+- EA_UiDebugTools.DevPadWindow.HideConfirmLoadWindow
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
+- Killer.Killer.ShowPersonalStatsTooltip
+- TurretRange.TurretRange.OnUpdate
+- PotionBar.PotionBar.Hide
+- EA_UiDebugTools.ObjectInspector.DepthMinus
+- Enemy.Enemy.MarksUI_EnemyMarksWindow_IsOpen
+- RoR_SoR.RoR_SoR.CloseSetOpacityWindow
+- wbLeadHelper.wbLeadHelperMessagesTab.MessageEdit
+- QuickWarReport.QuickWarReport.Initialize
+- Aura.AuraAddon.OnLoad
+- wbLeadHelper.wbLeadHelperConfigTab.OnReset
+- Enemy.Enemy.Stopwatch_Update
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Initialize
+- DAoCBuff.DAoCBuffSettings.SetLabels
+- EA_UiDebugTools.ObjectInspector.InspectObject
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarPageDownProxy
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- EA_UiDebugTools.ObjectInspector.DisplayObject
+- RandomMount.RandomMountUI.Toggle
+- EA_UiDebugTools.BustedGUI.UpdateNextPrevButtonStatus
+- Enemy.Enemy.local._OnArchetypeChanged
+- RoR_SoR.RoR_SoR.SetWindowShow
+- FastInteract.FastInteract.OptionsShow
+- EA_UiDebugTools.ObjectInspector.ClearObjects
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Hide
+- BankArkel.BankArkel.CreatePackWin
+- Moth.Moth.Clear
+- AnywhereTrainer.AnywhereTrainer.OnLeftClickAuction
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetOpacity
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakHeraldry
+- Enemy.Enemy.MarksUI_MarkConfigDialog_Hide
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- BankArkel.BankArkel.SetCharInfo
+- DAoCBuff.DAoCTooltips.UpdateCondenseTooltip
+- DAoCBuff.DAoCBuffSettings.Change_Setting
+- AggroMeter.AggroMeter.OnTabLBU
+- Enemy.Enemy._CombatLogUI_IDS_UpdateWindow
+- wbLeadHelper.wbLeadHelperMessagesTab.OnSaveMessages
+- Killer.Killer.ApplyFeedLayout
+- Busted.BustedGUI.Initialize
+- Enemy.Enemy.MarksUI_EnemyMarksWindow_Update
+- AggroMeter.AggroMeter.Initialize
+- AdvancedPetAssist.APAGui.OnShown
+- MoraleCircle.MoraleCircle.ColorChanger2
+- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Open
+- QuickWarReport.ShowConfirmWindow
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideShowHelm
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloak
+- EA_UiDebugTools.DevPadWindow.OnKeyEscape
+- WSCT.WSCT.ColorOnButtonUp
+- QuickWarReport.EnsureConfirmWindow
+- EA_UiDebugTools.BustedGUI.Initialize
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateHighlightOnRow
+- AdvancedPetAssist.APAGui.UpdateKitingHUD
+- wbLeadHelper.wbLeadHelperMessagesTab.MessageClone
+- WhoHealedMe.WHMGui.HideOptionsWindow
+- Enemy.Enemy.UI_ChooseIconDialog_Hide
+- AnywhereTrainerAdditions.AnywhereTrainerAdditions.OnLeftClickAuction
+- Swift Assist.Swift Assist.local.WriteLabels
+- WSCT.WSCT.ColorOnInitialize
+- Enemy.Enemy.IntercomUI_IntercomJoinDialog_Hide
+- RoR_SoR.RoR_SoR.ShowPopper
+- MapPin.MapPin.UI_ChooseIconDialog_Hide
+- PotionBar.PotionBarFloating.ShowSettings
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- EA_UiDebugTools.DevPadWindow.HideNewWindow
+- PotionBar.UpdateButton
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.Show
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UseItemRackToggled
+- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
+- PotionBar.PotionBarSettings.OnUseCheck
+- PotionBar.PotionBarSettings.Show1Check
+- Enemy.Enemy.IntercomUI_IntercomJoinDialog_AddGroup
+- QuickWarReport.HideConfirmWindow
+- DaemonAssist.DaemonAssist.UpdateWindow
+- Miracle Grow Remix.MiracleGrow2.InitConfig
+- Enemy.Enemy.UI_TextEntryDialog_Open
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Hide
+- MapPin.MapPin.local.EditMarker
+- EA_UiDebugTools.ObjectInspector.WindowInit
+- BankArkel.BankArkel.SetupCombos
+- Busted.BustedGUI.ClearAlertFlash
+- BankArkel.BankArkel.PackImg
+- Enemy.Enemy.MarksUI_EnemyMarksWindow_Open
+- Aura.Aura:CreateRuntimeWindows
+- wbLeadHelper.wbLeadHelperConfigTab.locallyStoreFormData
+- AdvancedRenownTrainer.CreateTab
+- Enemy.Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- Enemy.Enemy.AssistUI_Target_Show
+- Effigy.Effigy.RegisterStateInfoForCastbar
+- Enemy.Enemy.MarksUI_MarkConfigDialog_Open
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Hide
+- Enemy.EnemyMarkTemplate:ToggleMark
+- MapPin.EditMarker
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
+- WarBoard.WarBoard.Options.EnableBoard
+- wbLeadHelper.WbLeadHelperMessage.OnOk
+- AdvancedRenownTrainer.AdvancedRenownTraining.ChangeTab
+- Enemy.Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
+- wbLeadHelper.wbLeadHelperMessagesTab.Hide
+- JunkDump.JunkDumpOptions.Done
+- PotionBar.PotionBarSettings.OnAboutShown
+- wbLeadHelper.wbLeadHelperMessagesTab.Show
+- DAoCBuff.DAoCBuffSettings.CloseOptionswindow
+- MapPin.MapPin.test
+- LoyalPet.LPET.AddProfileOnButtonUp
+- WhoHealedMe.WhoHealedMe.local.IsMainWindowVisible
+- MapPin.MapPin.SendText
+- Swift Assist.SwiftAssist.OnMacroUpdated
+- Enemy.Enemy.UI_ConfigDialog_Hide
+- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
+- GuardLine.GuardLine.OnLayoutEditorFinished
+- wbLeadHelper.wbLeadHelper.showNormalTitle
+- LoyalPet.LPET.RenameProfileOnButtonUp
+- wbLeadHelper.wbLeadHelper.chat
+- PotionBar.PotionBarSettings.RefreshSingleRightLine
+- GetStats.GetStats.OnChatLogUpdated
+- DaemonAssist.DaemonAssist.PopulateBindingCombos
+- Aura.AuraAddon.Slash
+- wbLeadHelper.wbLeadHelperConfigTab.ChooseIconMessageStart
+- EA_UiDebugTools.DevPadWindow.HideDeleteWindow
+- Enemy.Enemy.MarksUI_MarkConfigDialog_IsOpen
+- DaemonAssist.DaemonAssist.ShowWindow
+- wbLeadHelper.wbLeadHelperMessagesTab.ListEnable
+- WhoHealedMe.WHMGui.OnOptionsInitialize
+- MapPin.MapPin.UI_ChooseIconDialog_Open
+- Killer.Killer.ShowTopKillersTooltip
+- PotionBar.PotionBarSettings.QuickActionsSelChanged
+
+
+## Binding Resolution
+
+- Total handler declarations: 609
+- Resolved to Lua functions: 609 (100%)
 
 ## Seen In
 

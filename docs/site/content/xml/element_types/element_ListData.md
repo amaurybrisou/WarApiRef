@@ -70,7 +70,7 @@ Structural XML sub-element of ListBox that binds a list to a named Lua backing t
 
 ## Common Parent Elements
 
-- [ListBox](element_ListBox.md)
+- [ListBox](element_ListBox.md) — 51× (HIGH)
 
 ## Attribute Reference
 

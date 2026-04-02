@@ -75,7 +75,7 @@ Observed XML element type instantiated by 17 addons.
 
 ## Common Parent Elements
 
-- [Button](element_Button.md)
+- [Button](element_Button.md) — 53× (HIGH)
 
 ## Attribute Reference
 

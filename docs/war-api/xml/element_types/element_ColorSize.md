@@ -66,7 +66,7 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Parent Elements
 
-- [ColorPicker](element_ColorPicker.md)
+- [ColorPicker](element_ColorPicker.md) — 1× (HIGH)
 
 ## Attribute Reference
 

@@ -69,9 +69,9 @@ Observed XML element type instantiated by 15 addons.
 
 ## Common Parent Elements
 
-- [Button](element_Button.md)
-- [EditBox](element_EditBox.md)
-- [ComboBox](element_ComboBox.md)
+- [Button](element_Button.md) — 30× (HIGH)
+- [EditBox](element_EditBox.md) — 20× (HIGH)
+- [ComboBox](element_ComboBox.md) — 1× (LOW)
 
 ## Attribute Reference
 

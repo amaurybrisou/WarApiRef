@@ -68,7 +68,7 @@ Observed XML element type instantiated by 3 addons.
 
 ## Common Parent Elements
 
-- [AnimatedImage](element_AnimatedImage.md)
+- [AnimatedImage](element_AnimatedImage.md) — 5× (HIGH)
 
 ## Attribute Reference
 
