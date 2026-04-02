@@ -79,8 +79,31 @@ Observed XML element type instantiated by 17 addons.
 
 ## Common Handlers
 
-- OnSlide
-- OnMouseOver
+- [OnSlide](../handlers/handler_OnSlide.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+
+## Common Handler Functions
+
+- AuraColorPicker.OnSlide
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- BuffHead.Setup.SelectColor.OnSlideTint
+- MapMonster.PinTypeEditor.OnSetCustomColor
+- MoraleCircle.OnSetCustomColor
+- MoraleCircle.OnSetCustomColorEmpty
+- MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.OnSetCustomColorFull
+- TexturedButtons.Setup.SelectColor.OnSlideTint
+- TexturedButtons.Setup.Tint.OnSlideTint
+- TurretRange.Setup.Display.OnSlideTint
+- TurretRange.Setup.Distance.OnSlideTint
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | WSCT.OnMouseOver | `function()` | MEDIUM |
+| [OnSlide](../handlers/handler_OnSlide.md) | AuraColorPicker.OnSlide, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, BuffHead.Setup.SelectColor.OnSlideTint, MapMonster.PinTypeEditor.OnSetCustomColor, MoraleCircle.OnSetCustomColor, MoraleCircle.OnSetCustomColorEmpty | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -88,6 +111,79 @@ Observed XML element type instantiated by 17 addons.
 - Aura_Default_SliderBar
 - RVMOD_ManagerSliderTemplate
 - RVAPI_ColorDialogSliderTemplate
+
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Common Named Child Elements
+
+- [Label](element_Label.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `inherits` | optional | 68% | EA_Default_SliderBar, RVAPI_ColorDialogSliderTemplate, Aura_Default_SliderBar, RVMOD_ManagerSliderTemplate |
+| `numticks` | optional | 6% | 360, 11, 250, 5, ... |
+| `handleinput` | optional | 5% | true |
+| `scale` | optional | 3% | 0.4 |
+| `locktoticks` | optional | 2% | false |
+| `autoresize` | optional | 1% | true |
+| `handlinput` | optional | 1% | true |
+| `numTicks` | optional | 1% | 11 |
+| `background` | optional | 0% | EA_BrownHorizontalRule |
+| `sliderbutton` | optional | 0% | Aura_Default_SliderButton |
+| `tickmark` | optional | 0% | Aura_Default_SliderTick |
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Call Count | From Events |
+| --- | --- | --- |
+| `SliderBarGetCurrentPosition` | 150 | OnSlide |
+| `LabelSetText` | 66 | OnSlide |
+| `TextEditBoxSetText` | 46 | OnSlide |
+| `TextEditBoxGetText` | 36 | OnSlide |
+| `ComboBoxGetSelectedMenuItem` | 28 | OnSlide |
+| `WindowSetTintColor` | 18 | OnSlide |
+| `ButtonGetPressedFlag` | 12 | OnSlide |
+| `SliderBarSetCurrentPosition` | 9 | OnSlide |
+| `LabelSetTextColor` | 6 | OnSlide |
+| `WindowSetAlpha` | 6 | OnSlide |
+| `WindowGetParent` | 4 | OnMouseOver, OnSlide |
+| `WindowSetScale` | 2 | OnSlide |
+| `WindowGetScale` | 1 | OnSlide |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnMouseOver
+
+Confidence: HIGH
+
+### OnSlide
+
+Confidence: LOW
+
+## Lua Functions Manipulating This Type
+
+- WSCT.WSCT.OnLButtonUpColorPicker
+- MoraleCircle.MoraleCircle.ColorChanger4
+- MoraleCircle.MoraleCircle.ColorChanger3
+- MoraleCircle.MoraleCircle.ColorChanger1
+- MoraleCircle.MoraleCircle.OnSetCustomColor
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetOffset
+- MoraleCircle.MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.MoraleCircle.ColorChanger2
+- WSCT.WSCT.OnSetCustomColor
+- WSCT.WSCT.ColorOnButtonUp
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetScale
+- MoraleCircle.MoraleCircle.OnSetCustomColorFull
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetOpacity
 
 ## Seen In
 

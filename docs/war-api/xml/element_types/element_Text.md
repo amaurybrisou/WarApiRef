@@ -63,14 +63,21 @@ Observed XML element type instantiated by 4 addons.
 - text
 - alignment
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Label](element_Label.md)
+- [Button](element_Button.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `text` | optional | 73% |  |
+| `alignment` | optional | 29% |  |
 ## Seen In
 
 - DaemonAssist

@@ -79,9 +79,32 @@ Observed XML element type instantiated by 41 addons.
 
 ## Common Handlers
 
-- OnMouseOver
-- OnMouseOverEnd
-- OnLButtonUp
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+
+## Common Handler Functions
+
+- Enemy.ConfigurationWindow_ShowTooltip
+- MapMonster_Calibrate.OnLMouseButton
+- MapMonster_Calibrate.OnMouseOverEnd
+- MiracleGrow.OverAutoConsume
+- MiracleGrow.OverEndStartAll
+- MiracleGrow.OverStartAll
+- MiracleGrow.autoGrow
+- MiracleGrow.onAutoConsumeToggle
+- MiracleGrow.setAutoGrowColor
+- wbLeadHelper.onMouseOut
+- wbLeadHelper.onMouseOver
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | MapMonster_Calibrate.OnLMouseButton, MiracleGrow.autoGrow, MiracleGrow.onAutoConsumeToggle | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.ConfigurationWindow_ShowTooltip, MiracleGrow.OverAutoConsume, MiracleGrow.OverStartAll, wbLeadHelper.onMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | MapMonster_Calibrate.OnMouseOverEnd, MiracleGrow.OverEndStartAll, MiracleGrow.setAutoGrowColor, wbLeadHelper.onMouseOut | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -98,11 +121,126 @@ Observed XML element type instantiated by 41 addons.
 - ClosetGoblinDefaultBG
 - EA_Button_ResizeIconFrameHighlight
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+
+## Common Named Child Elements
+
+- [Label](element_Label.md)
+
 ## Common Structural Child Elements
 
 - [TintColor](element_TintColor.md)
 - [Middle](element_Middle.md)
 - [TexSlices](element_TexSlices.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `inherits` | optional | 52% | EA_FullResizeImage_TintableSolidBackground, AuraWindowBackground, DefaultWindowBackground, EA_FullResizeImage_DefaultBubbleBackground, ... |
+| `handleinput` | optional | 28% | true, false |
+| `layer` | optional | 17% | default, overlay, background, popup, ... |
+| `alpha` | optional | 14% | 1, 0.9, 0.5, 1.0, ... |
+| `texture` | optional | 3% | Shinies3pxBorder, enemy_bar_rect, Frame_1, shared_01, ... |
+| `skipinput` | optional | 2% | true |
+| `frameonly` | optional | 1% | true |
+| `showing` | optional | 1% | false |
+| `hanldeinput` | optional | 0% | false |
+| `drawchildrenfirst` | optional | 0% | true |
+| `font` | optional | 0% | font_clear_small_bold |
+| `sticky` | optional | 0% | false |
+| `textalign` | optional | 0% | center |
+## Structural Sub-Elements
+
+### [TintColor](element_TintColor.md)
+
+Observed 37 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `b` | **required** |  |
+| `g` | **required** |  |
+| `r` | **required** |  |
+| `a` | optional |  |
+### [Middle](element_Middle.md)
+
+Observed 11 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+| `id` | optional |  |
+### [TexSlices](element_TexSlices.md)
+
+Observed 5 times as an unnamed child.
+
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Call Count | From Events |
+| --- | --- | --- |
+| `WindowSetTintColor` | 10 | OnLButtonUp, OnMouseOver, OnMouseOverEnd |
+| `LabelSetText` | 7 | OnLButtonUp, OnMouseOverEnd |
+| `LabelSetTextColor` | 2 | OnMouseOver, OnMouseOverEnd |
+| `WindowGetScreenPosition` | 2 | OnLButtonUp, OnMouseOverEnd |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnMouseOver
+
+Confidence: HIGH
+
+### OnMouseOverEnd
+
+Confidence: HIGH
+
+## Lua Functions Manipulating This Type
+
+- RandomMount.RandomMountUI.OnInitialize
+- Moth.Moth.HideBorders
+- MoraleCircle.MoraleCircle.OnSetCustomColorFull
+- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
+- Enemy.Enemy.CombatLogUI_IDS_Initialize
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- WSCT.WSCT.OnSetCustomColor
+- MoraleCircle.MoraleCircle.OnSetCustomColor
+- Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
+- Moth.Moth.Clear
+- Killer.Killer.Initialize
+- Killer.Killer.ShowTopKillersTooltip
+- WSCT.WSCT.OnLButtonUpColorPicker
+- MoraleCircle.MoraleCircle.ColorChanger1
+- Moth.Moth.UpdateHealthBar
+- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
+- Killer.Killer.ShowRowTooltip
+- WhoHealedMe.WHMCore.ApplyBackgroundFillColor
+- MoraleCircle.MoraleCircle.ColorChanger4
+- Enemy.Enemy._Initialize
+- MoraleCircle.MoraleCircle.ColorChanger2
+- Moth.Moth.HealthBar
+- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
+- WhoHealedMe.WHMGui.RefreshConfigurationWindow
+- Killer.Killer.ShowPersonalStatsTooltip
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- MoraleCircle.MoraleCircle.ColorChanger3
+- Enemy.Enemy.MarksInitialize
+- MoraleCircle.MoraleCircle.OnSetCustomColorFill
+- WSCT.WSCT.ColorOnButtonUp
 
 ## Seen In
 

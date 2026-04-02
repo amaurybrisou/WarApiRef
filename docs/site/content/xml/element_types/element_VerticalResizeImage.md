@@ -69,13 +69,13 @@ Observed XML element type instantiated by 3 addons.
 - reversefill
 - sticky
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - BuffHeadLayoutVerticalResizeImage
+
+## Common Parent Elements
+
+- [Window](element_Window.md)
 
 ## Common Structural Child Elements
 
@@ -84,6 +84,61 @@ Observed XML element type instantiated by 3 addons.
 - [Bottom](element_Bottom.md)
 - [Top](element_Top.md)
 
+## Typical XML Structure
+
+```xml
+<VerticalResizeImage name="..." inherits="BuffHeadLayoutVerticalResizeI...">
+  <TintColor r="200" g="200" b="0"/>
+</VerticalResizeImage>
+```
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `texture` | optional | 50% | EA_HUD_01, ui_main, EA_TintableImage |
+| `inherits` | optional | 37% | BuffHeadLayoutVerticalResizeImage |
+| `handleinput` | optional | 25% | false |
+| `reverseFill` | optional | 12% | true |
+| `reversefill` | optional | 12% | true |
+| `sticky` | optional | 12% | false |
+## Structural Sub-Elements
+
+### [Middle](element_Middle.md)
+
+Observed 4 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+| `id` | optional |  |
+### [TintColor](element_TintColor.md)
+
+Observed 3 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `b` | **required** |  |
+| `g` | **required** |  |
+| `r` | **required** |  |
+| `a` | optional |  |
+### [Bottom](element_Bottom.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+### [Top](element_Top.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
 ## Seen In
 
 - BuffHead

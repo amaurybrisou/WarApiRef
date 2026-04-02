@@ -73,19 +73,75 @@ Observed XML element type instantiated by 10 addons.
 - savesettings
 - texturescale
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - EA_MoraleButtonAnimation
 - LoadingScreenWarSymbolAnimation
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+
 ## Common Structural Child Elements
 
 - [AnimFrame](element_AnimFrame.md)
 - [AnimFrames](element_AnimFrames.md)
+
+## Typical XML Structure
+
+```xml
+<AnimatedImage name="..." texture="MM_AniArrows_Tintable" fps="8" sticky="false" handleinput="false" alpha="1" popable="true" savesettings="false">
+  <AnimFrames>
+    <AnimFrame id="1" x="0" y="0"/>
+    <AnimFrame id="2" x="64" y="0"/>
+    <AnimFrame id="3" x="128" y="0"/>
+    <AnimFrame id="4" x="192" y="0"/>
+    <AnimFrame id="5" x="256" y="0"/>
+    <AnimFrame id="6" x="0" y="64"/>
+    <AnimFrame id="7" x="64" y="64"/>
+    <AnimFrame id="8" x="128" y="64"/>
+    <AnimFrame id="9" x="192" y="64"/>
+    <AnimFrame id="10" x="256" y="64"/>
+  </AnimFrames>
+</AnimatedImage>
+```
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `layer` | optional | 54% | secondary, overlay, default, background |
+| `handleinput` | optional | 48% | false |
+| `texture` | optional | 48% | anim_morale_glow, MM_AniArrows_Tintable, anim_morale_flash, anim_fury_round_1, ... |
+| `fps` | optional | 45% | 8, 13, 20, 10, ... |
+| `inherits` | optional | 42% | EA_MoraleButtonAnimation, LoadingScreenWarSymbolAnimation |
+| `textureScale` | optional | 42% | 0.74, 1.2, 0.73, 0.6, ... |
+| `alpha` | optional | 24% | 1, 0.9 |
+| `sticky` | optional | 15% | false |
+| `popable` | optional | 3% | true |
+| `savesettings` | optional | 3% | false |
+| `texturescale` | optional | 3% | 1 |
+## Structural Sub-Elements
+
+### [AnimFrame](element_AnimFrame.md)
+
+Observed 5 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `id` | **required** |  |
+| `x` | **required** |  |
+| `y` | **required** |  |
+### [AnimFrames](element_AnimFrames.md)
+
+Observed 5 times as an unnamed child.
+
+## Lua Functions Manipulating This Type
+
+- Enemy.Enemy.AssistUI_Target_Show
+- MapMonster.MapMonster.InitializeMapPins
+- GuardLine.GuardLine.update
 
 ## Seen In
 

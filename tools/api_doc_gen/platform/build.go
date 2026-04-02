@@ -543,6 +543,12 @@ func Build(source SourceModel) Corpus {
 	corpus.Constants = finalizeConstantSymbols(constants, ctx, collector)
 	corpus.ElementTypes = finalizeElementSymbols(elements, ctx, collector)
 	corpus.XMLHandlers = finalizeXMLHandlerSymbols(xmlHandlers, ctx, collector)
+
+	// Run the new phased XML↔Lua semantic pipeline (Phases 1-4).
+	// This enriches ElementTypes with structured attribute profiles,
+	// structural child profiles, Lua API call aggregations, and handler
+	// argument patterns from a real tree-based XML parse.
+	corpus.ElementTypes = runPhasedPipeline(corpus.ElementTypes, source)
 	corpus.GameEvents = finalizeEventSymbols(gameEvents, "Game Event", ctx, collector)
 	corpus.WindowEvents = finalizeEventSymbols(windowEvents, "Window Event", ctx, collector)
 	corpus.SystemDataFields = finalizeFieldSymbols(systemFields, "SystemData", ctx, collector)

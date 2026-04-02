@@ -62,14 +62,21 @@ Observed XML element type instantiated by 3 addons.
 - x
 - y
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [AnimatedImage](element_AnimatedImage.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `id` | **required** | 100% |  |
+| `x` | **required** | 100% |  |
+| `y` | **required** | 100% |  |
 ## Seen In
 
 - CMap

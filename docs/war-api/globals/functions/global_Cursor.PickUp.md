@@ -72,7 +72,7 @@ Observed as a global function across 3 addons.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | arg1 | Observed as a function or method reference. | Observed values: Cursor.SOURCE_BANK, Cursor.SOURCE_MACRO, slotType |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, macro_id, p.macroId |
+| arg2 | Observed as a numeric value. | Observed values: 0, macro_id, p.macroId |
 | arg3 | Observed as a runtime window or control identifier. | Observed values: itemData.uniqueID, macro_id, p.macroId |
 | arg4 | Observed as a function or method reference. | Observed values: itemData.iconNum, macros[macro_id].iconNum, p.macroIconNum |
 | arg5 | Observed as a boolean toggle. | Observed values: Cursor.AUTO_PICKUP_ON_LBUTTON_UP, false, true |

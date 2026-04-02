@@ -63,14 +63,22 @@ Observed XML element type instantiated by 15 addons.
 - x
 - y
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Button](element_Button.md)
+- [EditBox](element_EditBox.md)
+- [ComboBox](element_ComboBox.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `x` | **required** | 100% |  |
+| `y` | **required** | 92% |  |
 ## Seen In
 
 - AdvancedPetAssist

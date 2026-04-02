@@ -66,14 +66,23 @@ Observed XML element type instantiated by 8 addons.
 - g
 - r
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Button](element_Button.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `id` | optional | 71% |  |
+| `a` | optional | 28% |  |
+| `b` | optional | 28% |  |
+| `g` | optional | 28% |  |
+| `r` | optional | 28% |  |
 ## Seen In
 
 - AggroMeter

@@ -73,17 +73,54 @@ Observed XML element type instantiated by 11 addons.
 - filtering
 - movable
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+- [Button](element_Button.md)
+
+## Common Named Child Elements
+
+- [Label](element_Label.md)
+
 ## Common Structural Child Elements
 
 - [TintColor](element_TintColor.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `layer` | optional | 57% | overlay, default, background, secondary, ... |
+| `handleinput` | optional | 51% | false |
+| `numsegments` | optional | 51% | 32, 64, 16 |
+| `textureScale` | optional | 46% | 0.8, 0.48, 0.38, 0.12, ... |
+| `popable` | optional | 42% | false |
+| `texture` | optional | 42% | EA_HUD_01, EA_TintableImage, Circle, EA_Cultivating01_d5, ... |
+| `sticky` | optional | 38% | true, false |
+| `alpha` | optional | 10% | 0.9, 0.85, 0 |
+| `texturescale` | optional | 6% | 1.11, 0.18 |
+| `filtering` | optional | 2% | true |
+| `movable` | optional | 2% | false |
+## Structural Sub-Elements
+
+### [TintColor](element_TintColor.md)
+
+Observed 8 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `b` | **required** |  |
+| `g` | **required** |  |
+| `r` | **required** |  |
+| `a` | optional |  |
+## Lua Functions Manipulating This Type
+
+- TurretRange.TurretRange.OnUpdate
+- Enemy.EnemyEffectsIndicator:Update
 
 ## Seen In
 

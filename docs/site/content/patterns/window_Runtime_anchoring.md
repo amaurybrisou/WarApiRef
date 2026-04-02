@@ -9,8 +9,8 @@ Observed layouts being finalized in Lua by clearing and re-adding anchors after 
 
 ## Involved APIs
 
-- [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [Window](../globals/tables/table_Window.md) (HIGH 100/100) - Global Table
+- [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowAddAnchor](../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 
 ## Flow Diagram

@@ -63,13 +63,13 @@ Structural XML container inside ListBox that groups one or more ListColumn decla
 
 - none
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+## Common Parent Elements
+
+- [ListBox](element_ListBox.md)
 
 ## Seen In
 

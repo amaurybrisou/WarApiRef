@@ -69,14 +69,26 @@ Observed XML element type instantiated by 17 addons.
 - x
 - y
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Button](element_Button.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `id` | optional | 47% |  |
+| `b` | optional | 43% |  |
+| `g` | optional | 43% |  |
+| `r` | optional | 43% |  |
+| `a` | optional | 41% |  |
+| `def` | optional | 28% |  |
+| `x` | optional | 28% |  |
+| `y` | optional | 28% |  |
 ## Seen In
 
 - AdvancedPetAssist

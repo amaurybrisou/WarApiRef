@@ -62,13 +62,14 @@ Observed XML element type instantiated by 4 addons.
 
 - none
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
+
+## Common Parent Elements
+
+- [Button](element_Button.md)
+- [Window](element_Window.md)
 
 ## Seen In
 

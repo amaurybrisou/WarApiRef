@@ -73,12 +73,30 @@ Observed XML element type instantiated by 12 addons.
 
 ## Common Handlers
 
-- OnScrollPosChanged
+- [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md)
+
+## Common Handler Functions
+
+- MacroIcons.ScrollPos
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md) | MacroIcons.ScrollPos | `function(...)` | LOW |
 
 ## Common Inherits
 
 - EA_ScrollBar_DefaultVerticalChain
 - EA_ScrollBar_ChatVertical
+
+## Common Parent Elements
+
+- [ScrollWindow](element_ScrollWindow.md)
+- [EditBox](element_EditBox.md)
+- [LogDisplay](element_LogDisplay.md)
+- [Window](element_Window.md)
 
 ## Common Structural Child Elements
 
@@ -87,6 +105,72 @@ Observed XML element type instantiated by 12 addons.
 - [ThumbOffset](element_ThumbOffset.md)
 - [UpOffset](element_UpOffset.md)
 
+## Typical XML Structure
+
+```xml
+<VerticalScrollbar name="..." up="EA_ScrollBar_ChatUpArrowButton" down="EA_ScrollBar_ChatDownArrowButton" thumb="EA_ScrollBar_ChatThumb">
+  <ThumbOffset x="3" y="0"/>
+  <UpOffset x="0" y="0"/>
+  <DownOffset x="0" y="0"/>
+  <ActiveZoneOffset x="100" y="0"/>
+</VerticalScrollbar>
+```
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `inherits` | optional | 49% | EA_ScrollBar_DefaultVerticalChain, EA_ScrollBar_ChatVertical |
+| `layer` | optional | 46% | popup |
+| `alpha` | optional | 1% | 0.97 |
+| `down` | optional | 1% | EA_ScrollBar_ChatDownArrowButton |
+| `thumb` | optional | 1% | EA_ScrollBar_ChatThumb |
+| `up` | optional | 1% | EA_ScrollBar_ChatUpArrowButton |
+## Structural Sub-Elements
+
+### [ActiveZoneOffset](element_ActiveZoneOffset.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+### [DownOffset](element_DownOffset.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+### [ThumbOffset](element_ThumbOffset.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+### [UpOffset](element_UpOffset.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnScrollPosChanged
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `scrollPos` | number | scroll_position |
 ## Seen In
 
 - DAoCBuff

@@ -71,15 +71,85 @@ Observed XML element type instantiated by 3 addons.
 
 ## Common Handlers
 
-- OnActionButtonLButtonDown
-- OnActionButtonLButtonUp
-- OnActionButtonMouseOver
-- OnActionButtonRButtonDown
+- [OnActionButtonLButtonDown](../handlers/handler_OnActionButtonLButtonDown.md)
+- [OnActionButtonLButtonUp](../handlers/handler_OnActionButtonLButtonUp.md)
+- [OnActionButtonMouseOver](../handlers/handler_OnActionButtonMouseOver.md)
+- [OnActionButtonRButtonDown](../handlers/handler_OnActionButtonRButtonDown.md)
+
+## Common Handler Functions
+
+- BankWindow.EquipmentLButtonDown
+- BankWindow.EquipmentLButtonUp
+- BankWindow.EquipmentMouseOver
+- BankWindow.EquipmentRButtonDown
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnActionButtonLButtonDown](../handlers/handler_OnActionButtonLButtonDown.md) | BankWindow.EquipmentLButtonDown | `function(...)` | LOW |
+| [OnActionButtonLButtonUp](../handlers/handler_OnActionButtonLButtonUp.md) | BankWindow.EquipmentLButtonUp | `function(...)` | LOW |
+| [OnActionButtonMouseOver](../handlers/handler_OnActionButtonMouseOver.md) | BankWindow.EquipmentMouseOver | `function(...)` | LOW |
+| [OnActionButtonRButtonDown](../handlers/handler_OnActionButtonRButtonDown.md) | BankWindow.EquipmentRButtonDown | `function(...)` | LOW |
 
 ## Common Inherits
 
 - EA_ActionButtonGroup_CareerIconsWithTooltip
 - EA_ActionButtonGroup_DefaultSmall
+
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `inherits` | optional | 60% | EA_ActionButtonGroup_CareerIconsWithTooltip, EA_ActionButtonGroup_DefaultSmall |
+| `hideButtonWhenIconBlank` | optional | 40% | true |
+| `draganddrop` | optional | 20% | true |
+| `gameactionbutton` | optional | 20% | right |
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Call Count | From Events |
+| --- | --- | --- |
+| `WindowGetId` | 2 | OnActionButtonLButtonUp, OnActionButtonMouseOver |
+| `Cursor.Clear` | 1 | OnActionButtonLButtonDown |
+| `Cursor.IconOnCursor` | 1 | OnActionButtonLButtonDown |
+| `Cursor.PickUp` | 1 | OnActionButtonLButtonDown |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnActionButtonLButtonDown
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `buttonIndex` | number | number |
+| 1 | `flags` | boolean | modifier_flags |
+### OnActionButtonLButtonUp
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | boolean | modifier_flags |
+### OnActionButtonMouseOver
+
+Confidence: LOW
+
+### OnActionButtonRButtonDown
+
+Confidence: LOW
+
+## Lua Functions Manipulating This Type
+
+- BankWindowFix.BankWindowFix.Initialize
 
 ## Seen In
 

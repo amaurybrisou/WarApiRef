@@ -79,12 +79,39 @@ Observed XML element type instantiated by 24 addons.
 
 ## Common Handlers
 
-- OnTextChanged
-- OnKeyEnter
-- OnKeyEscape
-- OnMouseOver
-- OnKeyTab
-- OnShown
+- [OnTextChanged](../handlers/handler_OnTextChanged.md)
+- [OnKeyEnter](../handlers/handler_OnKeyEnter.md)
+- [OnKeyEscape](../handlers/handler_OnKeyEscape.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnKeyTab](../handlers/handler_OnKeyTab.md)
+- [OnShown](../handlers/handler_OnShown.md)
+
+## Common Handler Functions
+
+- Enemy.ConfigurationWindow_OnChange
+- Enemy.ConfigurationWindow_ShowTooltip
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- Killer.OnSettingsEditChanged
+- MiracleGrow2.LayoutBarCChanged
+- MiracleGrow2.LayoutProgDimChanged
+- BuffHead.Setup.SelectColor.OnTintChanged
+- MapMonster.PinTypeEditor.MouseOverDescription
+- MapPin.TimeChanged
+- MiracleGrow2.ConfigThrobCChanged
+- ShiniesAutoUI.OnPriceChange
+- ShiniesPostUI.OnPriceChange
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnKeyEnter](../handlers/handler_OnKeyEnter.md) | MapPin.SendCommand, MapPin.SendText, ObjectInspector.InspectObject, DebugWindow.TextSend, DevPadWindow.ConfirmRename, DevPadWindow.CreateNewFile | `function(...)` | LOW |
+| [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | DebugWindow.TextClear, DevPadWindow.OnKeyEscape | `function(...)` | LOW |
+| [OnKeyTab](../handlers/handler_OnKeyTab.md) | DebugWindow.OnKeyTab, DevPadWindow.OnKeyTab | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | Enemy.ConfigurationWindow_ShowTooltip, MapMonster.PinTypeEditor.MouseOverDescription, Enemy.GroupsUI_EffectFilterDialog_OnAbilityIdsMouseOver, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig2CommandMouseOver, LPET.OnMouseOver, WbLeadHelperMessage.OnMouseOverLabelEditBox | `function()` | MEDIUM |
+| [OnShown](../handlers/handler_OnShown.md) | DebugWindow.OnShowFocus, DevPadWindow.OnShown | `function()` | MEDIUM |
+| [OnTextChanged](../handlers/handler_OnTextChanged.md) | Enemy.ConfigurationWindow_OnChange, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsEditChanged, MiracleGrow2.LayoutBarCChanged, MiracleGrow2.LayoutProgDimChanged, BuffHead.Setup.SelectColor.OnTintChanged | `function()` | MEDIUM |
 
 ## Common Inherits
 
@@ -101,9 +128,155 @@ Observed XML element type instantiated by 24 addons.
 - Shinies_SilverCoin_EditBox_DefaultFrame
 - EA_EditBox_NoFrame
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Common Named Child Elements
+
+- [VerticalScrollbar](element_VerticalScrollbar.md)
+- [Label](element_Label.md)
+
 ## Common Structural Child Elements
 
 - [TextOffset](element_TextOffset.md)
+
+## Typical XML Structure
+
+```xml
+<EditBox name="..." font="font_chat_text" background="EA_FullResizeImage_TanBorder">
+  <TextOffset x="4" y="2"/>
+</EditBox>
+```
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `inherits` | optional | 67% | EA_EditBox_DefaultFrame, EA_EditBox_DefaultFrame_Multiline, MapMonsterEditorWindowEditBoxCoord, Shinies_GoldCoin_EditBox_DefaultFrame, ... |
+| `maxchars` | optional | 44% | 5, 2, 3, 10, ... |
+| `input` | optional | 23% | numbers, nospaces |
+| `layer` | optional | 18% | secondary, default |
+| `warnOnTextCropped` | optional | 12% | false |
+| `font` | optional | 11% | font_clear_small, font_clear_small_bold, font_chat_text, font_clear_medium, ... |
+| `taborder` | optional | 10% | 3, 2, 1, 6, ... |
+| `handleinput` | optional | 5% | true |
+| `scrolling` | optional | 5% | none, vert |
+| `maxChars` | optional | 4% | 300, 3, 2, 5, ... |
+| `background` | optional | 3% | EA_FullResizeImage_TanBorder |
+| `id` | optional | 3% | 3, 1, 2, 4, ... |
+| `align` | optional | 2% | rightcenter, center |
+| `scrollbar` | optional | 2% | $parentDevPadCodeScrollBar, CopyScrollBar, EA_ScrollBar_DefaultVerticalChain, $parentObjectScrollbar |
+| `alpha` | optional | 2% | 0.97 |
+| `history` | optional | 2% | 30, 10 |
+| `textalign` | optional | 1% | leftcenter |
+| `autoHideScrollBar` | optional | 0% | true |
+| `maxchar` | optional | 0% | 79000 |
+| `wordwrap` | optional | 0% | false |
+| `linecount` | optional | 0% | 9 |
+## Structural Sub-Elements
+
+### [TextOffset](element_TextOffset.md)
+
+Observed 20 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** |  |
+| `y` | **required** |  |
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Call Count | From Events |
+| --- | --- | --- |
+| `TextEditBoxGetText` | 182 | OnKeyEnter, OnKeyEscape, OnTextChanged |
+| `ComboBoxGetSelectedMenuItem` | 53 | OnKeyEnter, OnTextChanged |
+| `SliderBarSetCurrentPosition` | 46 | OnTextChanged |
+| `WindowSetAlpha` | 36 | OnTextChanged |
+| `SliderBarGetCurrentPosition` | 28 | OnTextChanged |
+| `ButtonGetPressedFlag` | 21 | OnTextChanged |
+| `WindowGetId` | 16 | OnMouseOver, OnTextChanged |
+| `WindowSetTintColor` | 9 | OnTextChanged |
+| `WindowGetParent` | 7 | OnMouseOver, OnTextChanged |
+| `WindowSetShowing` | 7 | OnKeyEnter, OnKeyEscape |
+| `LabelSetText` | 5 | OnTextChanged |
+| `WindowAssignFocus` | 5 | OnKeyEnter, OnKeyEscape, OnShown |
+| `TextEditBoxSetTextColor` | 4 | OnTextChanged |
+| `LabelSetTextColor` | 3 | OnTextChanged |
+| `TextEditBoxInsertText` | 3 | OnKeyTab |
+| `TextEditBoxSetText` | 3 | OnKeyEnter, OnTextChanged |
+| `WindowSetDimensions` | 3 | OnTextChanged |
+| `ButtonSetDisabledFlag` | 2 | OnTextChanged |
+| `ComboBoxAddMenuItem` | 2 | OnKeyEnter |
+| `ComboBoxSetSelectedMenuItem` | 2 | OnKeyEnter |
+| `WindowGetShowing` | 2 | OnKeyEscape, OnShown |
+| `WindowStartAlphaAnimation` | 2 | OnKeyEnter |
+| `WindowStartScaleAnimation` | 2 | OnKeyEnter |
+| `ComboBoxGetSelectedText` | 1 | OnKeyEnter |
+| `LabelGetText` | 1 | OnKeyEnter |
+| `RegisterEventHandler` | 1 | OnTextChanged |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnKeyEnter
+
+Confidence: LOW
+
+### OnKeyEscape
+
+Confidence: LOW
+
+### OnKeyTab
+
+Confidence: LOW
+
+### OnMouseOver
+
+Confidence: HIGH
+
+### OnShown
+
+Confidence: HIGH
+
+### OnTextChanged
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `text` | wstring | current_text |
+## Lua Functions Manipulating This Type
+
+- MapPin.MapPin.RButtonUp
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Ok
+- MapPin.MapPin.SendText
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- wbLeadHelper.WbLeadHelperMessage.OnOk
+- EA_UiDebugTools.BustedGUI.UpdateErrorView
+- Busted.BustedGUI.UpdateErrorView
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- LibSlash.LibSlash.Initialize
+- MapPin.MapPin.OnUpdate
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
+- Pocket Palette.PP.UpdateDyeFilter
+- LoyalPet.LPET.AddProfileOnButtonUp
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- MapPin.EditMarker
+- MapPin.MapPin.SetupAccept
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- RandomMount.RandomMountUI.Refresh
+- RandomMount.RandomMountUI.OnMinLevelChanged
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- LoyalPet.LPET.RenameProfileOnButtonUp
+- LoyalPet.LPET.SaveProfileOnButtonUp
+- MapPin.MapPin.local.EditMarker
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
 
 ## Seen In
 

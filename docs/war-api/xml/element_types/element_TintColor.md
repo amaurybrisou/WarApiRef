@@ -65,14 +65,27 @@ Observed XML element type instantiated by 21 addons.
 - r
 - a
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [FullResizeImage](element_FullResizeImage.md)
+- [DynamicImage](element_DynamicImage.md)
+- [Label](element_Label.md)
+- [HorizontalResizeImage](element_HorizontalResizeImage.md)
+- [CircleImage](element_CircleImage.md)
+- [VerticalResizeImage](element_VerticalResizeImage.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `b` | **required** | 100% |  |
+| `g` | **required** | 100% |  |
+| `r` | **required** | 100% |  |
+| `a` | optional | 37% |  |
 ## Seen In
 
 - AdvancedPetAssist

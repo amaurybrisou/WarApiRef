@@ -77,21 +77,148 @@ Observed XML element type instantiated by 3 addons.
 
 ## Common Handlers
 
-- OnLButtonUp
-- OnPointMouseOver
-- OnMouseWheel
-- OnHidden
-- OnMButtonUp
-- OnMouseOver
-- OnMouseOverEnd
-- OnRButtonUp
-- OnShown
-- OnUpdate
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+- [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md)
+- [OnMouseWheel](../handlers/handler_OnMouseWheel.md)
+- [OnHidden](../handlers/handler_OnHidden.md)
+- [OnMButtonUp](../handlers/handler_OnMButtonUp.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
+- [OnShown](../handlers/handler_OnShown.md)
+- [OnUpdate](../handlers/handler_OnUpdate.md)
+
+## Common Handler Functions
+
+- CMapWindow.MWheel
+- CMapWindow.OnClickMap
+- CMapWindow.OnMouseOverPoint
+- CMapWindow.UpdateCoordinatesWMap
+- CMapWindow.WmapOnClickMap
+- CMapWindow.WmapOnMouseOverPoint
+- CMapWindow.WmapOver
+- CMapWindow.WmapOverEnd
+- Map.OnClickMap
+- Map.OnMButtonUp
+- Map.OnMouseOverPoint
+- Map.OnRClickMap
+
+
+## XML Event Bindings
+
+| Event | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|---------------------|-------------------|-----------------|
+| [OnHidden](../handlers/handler_OnHidden.md) | WindowUtils.OnHidden | `function()` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | CMapWindow.OnClickMap, CMapWindow.WmapOnClickMap, Map.OnClickMap | `function(...)` | LOW |
+| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | Map.OnMButtonUp | `function(...)` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | CMapWindow.WmapOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | CMapWindow.WmapOverEnd | `function(...)` | LOW |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | CMapWindow.MWheel | `function(delta)` | MEDIUM |
+| [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) | CMapWindow.OnMouseOverPoint, CMapWindow.WmapOnMouseOverPoint, Map.OnMouseOverPoint | `function(...)` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | Map.OnRClickMap | `function(...)` | LOW |
+| [OnShown](../handlers/handler_OnShown.md) | WindowUtils.OnShown | `function()` | MEDIUM |
+| [OnUpdate](../handlers/handler_OnUpdate.md) | CMapWindow.UpdateCoordinatesWMap | `function(elapsed)` | MEDIUM |
 
 ## Common Inherits
 
 - none
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `pinTexture` | optional | 57% | map_markers01 |
+| `layer` | optional | 42% | Overlay, secondary, default |
+| `movable` | optional | 42% | false |
+| `shape` | optional | 42% | circle, square |
+| `iconScale` | optional | 28% | 0.45, 0.70 |
+| `loadingAnim` | optional | 28% | MapLoadingAnim |
+| `sticky` | optional | 28% | true, false |
+| `gutterIcon` | optional | 14% | 39 |
+| `popable` | optional | 14% | false |
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Call Count | From Events |
+| --- | --- | --- |
+| `TextEditBoxSetText` | 15 | OnShown |
+| `LabelSetText` | 13 | OnShown |
+| `ButtonSetText` | 6 | OnShown |
+| `WindowSetDimensions` | 3 | OnShown |
+| `DoesWindowExist` | 2 | OnShown |
+| `WindowSetShowing` | 1 | OnShown |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnHidden
+
+Confidence: HIGH
+
+### OnLButtonUp
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnMButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnMouseOver
+
+Confidence: LOW
+
+### OnMouseOverEnd
+
+Confidence: LOW
+
+### OnMouseWheel
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `x` | number | mouse_x |
+| 1 | `y` | number | mouse_y |
+| 2 | `delta` | number | wheel_delta |
+### OnPointMouseOver
+
+Confidence: LOW
+
+### OnRButtonUp
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnShown
+
+Confidence: HIGH
+
+### OnUpdate
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `elapsed` | number | time_delta |
 ## Seen In
 
 - CMap

@@ -70,14 +70,25 @@ Observed XML element type instantiated by 2 addons.
 - interpolate
 - layer
 
-## Common Handlers
-
-- none
-
 ## Common Inherits
 
 - UnitFrameFriendlyHealthStatusSmallBar
 
+## Common Parent Elements
+
+- [Window](element_Window.md)
+
+## Attribute Reference
+
+| Attribute | Required | Usage % | Sample Values |
+| --- | --- | --- | --- |
+| `popable` | optional | 50% | false |
+| `foreground` | optional | 40% | T1_DefaultTintableBar, FORT_DefaultTintableBar |
+| `handleinput` | optional | 40% | false |
+| `reverseFill` | optional | 20% | true |
+| `inherits` | optional | 10% | UnitFrameFriendlyHealthStatusSmallBar |
+| `interpolate` | optional | 10% | true |
+| `layer` | optional | 10% | background |
 ## Seen In
 
 - RoR_SoR
