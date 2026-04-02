@@ -21,6 +21,64 @@ type Manifest struct {
 	Metadata        map[string]string
 }
 
+// ModSectionKind classifies a top-level section of a .mod manifest.
+// Non-empty values identify sections that are structurally recognised;
+// empty string (ModSectionUnknown) means the section was preserved but
+// not matched against any known shape.
+type ModSectionKind string
+
+const (
+	ModSectionFiles        ModSectionKind = "Files"
+	ModSectionSavedVars    ModSectionKind = "SavedVariables"
+	ModSectionOnInitialize ModSectionKind = "OnInitialize"
+	ModSectionOnUpdate     ModSectionKind = "OnUpdate"
+	ModSectionOnShutdown   ModSectionKind = "OnShutdown"
+	ModSectionAuthor       ModSectionKind = "Author"
+	ModSectionDescription  ModSectionKind = "Description"
+	ModSectionUnknown      ModSectionKind = ""
+)
+
+// ModNode is a single node in the fully-preserved .mod manifest tree.
+// Every XML element is captured regardless of whether it belongs to a
+// known section.  Attributes are stored generically so that novel keys
+// are never silently dropped.
+type ModNode struct {
+	// Tag is the XML element name (e.g. "UiMod", "Files", "File",
+	// "OnInitialize", "CallFunction").
+	Tag string
+
+	// Attrs holds every attribute on this element, keyed by attribute name.
+	Attrs map[string]string
+
+	// Children lists all child elements in document order.
+	Children []*ModNode
+
+	// Section is set to a non-empty ModSectionKind when this node is
+	// identified as a structurally known top-level section.  It is empty
+	// for the root node and for any node that does not match a known section
+	// name.
+	Section ModSectionKind
+}
+
+// ModuleTree is the discovery-oriented model of a .mod manifest file.
+//
+// It preserves the full XML hierarchy so that every construct — including
+// sections that were not anticipated when the parser was written — can be
+// inspected and analysed by later pipeline stages.
+//
+// The Manifest field is derived from the known classified sections and is
+// kept for backwards compatibility with downstream consumers that rely on
+// the flat Manifest shape.
+type ModuleTree struct {
+	// Root is the outermost element of the .mod file (typically <UiMod>).
+	Root *ModNode
+
+	// Manifest is the structured summary extracted from the tree, populated
+	// only for sections that match known shapes.  It does NOT replace the
+	// tree; the tree is always the authoritative, lossless representation.
+	Manifest Manifest
+}
+
 type AddonSpec struct {
 	Name     string
 	Path     string

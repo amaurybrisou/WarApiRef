@@ -33,6 +33,12 @@ type AddonSource struct {
 
 	// Manifest is the parsed addon manifest.
 	Manifest graph.Manifest
+
+	// ModuleTree is the full discovery-oriented tree of the .mod manifest.
+	// It is non-nil only when the addon uses a .mod manifest (not a .toc
+	// file).  The tree preserves every XML node and attribute in the manifest,
+	// including sections that are not recognised by the current parser.
+	ModuleTree *graph.ModuleTree
 }
 
 // DiscoverAddonSources enumerates all addon source files under sourceRoot.
@@ -61,11 +67,21 @@ func DiscoverAddonSources(sourceRoot string) ([]AddonSource, error) {
 // resolveAddonSource builds an AddonSource from a discovered AddonSpec by
 // resolving each manifest file entry to an absolute path and filtering by
 // extension. Files that do not exist on disk are silently skipped.
+//
+// When the manifest is a .mod file, the full discovery-oriented ModuleTree is
+// also parsed and attached to the returned AddonSource so that downstream
+// pipeline stages can inspect any section of the manifest without loss.
 func resolveAddonSource(spec graph.AddonSpec) AddonSource {
 	src := AddonSource{
 		AddonName: spec.Name,
 		AddonPath: spec.Path,
 		Manifest:  spec.Manifest,
+	}
+
+	if spec.Manifest.Type == "mod" {
+		if tree, err := graph.ParseModManifestTree(spec.Manifest.Path); err == nil {
+			src.ModuleTree = &tree
+		}
 	}
 
 	for _, manifestFile := range spec.Manifest.Files {
