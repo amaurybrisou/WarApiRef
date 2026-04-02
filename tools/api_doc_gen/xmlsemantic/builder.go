@@ -5,6 +5,11 @@ import (
 	"strings"
 )
 
+// maxLuaAPICallsPerEvent is the maximum number of Lua API call records kept per
+// XML event binding. Keeping this focused prevents low-signal calls from
+// overwhelming the per-event detail.
+const maxLuaAPICallsPerEvent = 10
+
 // Build constructs ElementTypeSchema records for all element types observed in
 // the provided frames and handlers. It uses Lua function call data to populate
 // HandlerEventBinding.LuaAPICalls with real call-graph-derived API usage — not
@@ -222,8 +227,8 @@ func Build(
 			}
 			return luaAPICalls[i].FunctionName < luaAPICalls[j].FunctionName
 		})
-		if len(luaAPICalls) > 10 {
-			luaAPICalls = luaAPICalls[:10]
+		if len(luaAPICalls) > maxLuaAPICallsPerEvent {
+			luaAPICalls = luaAPICalls[:maxLuaAPICallsPerEvent]
 		}
 
 		s.HandlerBindings = append(s.HandlerBindings, HandlerEventBinding{
@@ -264,8 +269,11 @@ func isExcludedCall(name string) bool {
 	case "tonumber", "tostring", "pairs", "ipairs", "next", "type",
 		"print", "error", "assert", "pcall", "xpcall", "rawequal",
 		"select", "unpack", "rawget", "rawset", "setmetatable", "getmetatable",
-		"require", "dofile", "load", "loadstring", "loadfile",
-		"towstring", "wstring", "L":
+		"require", "dofile", "load", "loadstring", "loadfile":
+		return true
+	// WAR UI framework string utilities — excluded because they appear in
+	// almost every addon and add noise without meaningful semantic signal.
+	case "towstring", "wstring", "L":
 		return true
 	}
 	return false

@@ -1106,20 +1106,37 @@ func enrichElementTypesWithXMLSemantic(symbols []ElementTypeSymbol, source Sourc
 
 		// Build LuaAPICallsFromHandlers: aggregate all LuaAPICall entries across
 		// all events, so there is a single cross-event "what APIs does this element
-		// type use" list.
-		apiCallTotals := make(map[string]LuaAPICallFromHandler)
+		// type use" list. ViaEvent is set to the comma-joined list of all distinct
+		// events from which a given function is called; when only one event
+		// contributes it reads naturally (e.g. "OnLButtonUp").
+		type apiAggregate struct {
+			count  int
+			events map[string]bool
+		}
+		apiCallAgg := make(map[string]*apiAggregate)
 		for _, hb := range schema.HandlerBindings {
 			for _, lc := range hb.LuaAPICalls {
-				existing := apiCallTotals[lc.FunctionName]
-				existing.FunctionName = lc.FunctionName
-				existing.ViaEvent = lc.ViaEvent // last event seen (arbitrary but stable)
-				existing.Count += lc.Count
-				apiCallTotals[lc.FunctionName] = existing
+				agg := apiCallAgg[lc.FunctionName]
+				if agg == nil {
+					agg = &apiAggregate{events: make(map[string]bool)}
+					apiCallAgg[lc.FunctionName] = agg
+				}
+				agg.count += lc.Count
+				agg.events[lc.ViaEvent] = true
 			}
 		}
-		luaAPICalls := make([]LuaAPICallFromHandler, 0, len(apiCallTotals))
-		for _, lc := range apiCallTotals {
-			luaAPICalls = append(luaAPICalls, lc)
+		luaAPICalls := make([]LuaAPICallFromHandler, 0, len(apiCallAgg))
+		for fn, agg := range apiCallAgg {
+			evts := make([]string, 0, len(agg.events))
+			for e := range agg.events {
+				evts = append(evts, e)
+			}
+			sort.Strings(evts)
+			luaAPICalls = append(luaAPICalls, LuaAPICallFromHandler{
+				FunctionName: fn,
+				ViaEvent:     strings.Join(evts, ", "),
+				Count:        agg.count,
+			})
 		}
 		sort.Slice(luaAPICalls, func(a, b int) bool {
 			if luaAPICalls[a].Count != luaAPICalls[b].Count {
@@ -1127,8 +1144,9 @@ func enrichElementTypesWithXMLSemantic(symbols []ElementTypeSymbol, source Sourc
 			}
 			return luaAPICalls[a].FunctionName < luaAPICalls[b].FunctionName
 		})
-		if len(luaAPICalls) > 12 {
-			luaAPICalls = luaAPICalls[:12]
+		const maxLuaAPICallsFromHandlers = 12
+		if len(luaAPICalls) > maxLuaAPICallsFromHandlers {
+			luaAPICalls = luaAPICalls[:maxLuaAPICallsFromHandlers]
 		}
 		sym.LuaAPICallsFromHandlers = luaAPICalls
 
