@@ -111,17 +111,17 @@ Observed XML element type instantiated by 10 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `layer` | **required** | 94% | overlay, background, default, secondary |
-| `handleinput` | **required** | 84% | false |
-| `texture` | **required** | 84% | anim_morale_glow, GuardEffect, anim_morale_flash, EA_ActionBarAnim_Casting, ... |
-| `fps` | optional | 78% | 13, 20, 10, 8, ... |
-| `inherits` | optional | 73% | EA_MoraleButtonAnimation, LoadingScreenWarSymbolAnimation |
-| `textureScale` | optional | 73% | 1.2, 1, 0.6, 0.9444, ... |
-| `alpha` | optional | 42% | 1, 0.9 |
-| `sticky` | optional | 26% | false |
-| `popable` | optional | 5% | true |
-| `savesettings` | optional | 5% | false |
-| `texturescale` | optional | 5% | 1 |
+| `layer` | optional | 54% | secondary, overlay, default, background |
+| `handleinput` | optional | 48% | false |
+| `texture` | optional | 48% | anim_morale_glow, MM_AniArrows_Tintable, anim_morale_flash, anim_fury_round_1, ... |
+| `fps` | optional | 45% | 8, 13, 20, 10, ... |
+| `inherits` | optional | 42% | EA_MoraleButtonAnimation, LoadingScreenWarSymbolAnimation |
+| `textureScale` | optional | 42% | 0.74, 1.2, 0.73, 0.6, ... |
+| `alpha` | optional | 24% | 1, 0.9 |
+| `sticky` | optional | 15% | false |
+| `popable` | optional | 3% | true |
+| `savesettings` | optional | 3% | false |
+| `texturescale` | optional | 3% | 1 |
 ## Structural Sub-Elements
 
 ### [AnimFrame](element_AnimFrame.md)

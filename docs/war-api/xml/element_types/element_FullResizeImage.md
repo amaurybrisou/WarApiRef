@@ -140,15 +140,15 @@ Observed XML element type instantiated by 41 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | **required** | 93% | EA_FullResizeImage_TintableSolidBackground, EA_FullResizeImage_WhiteTransparent, AuraWindowBackground, EA_FullResizeImage_MetalFill, ... |
-| `handleinput` | optional | 50% | false, true |
-| `layer` | optional | 32% | background, default, overlay, popup, ... |
-| `alpha` | optional | 25% | 0.4, 0.1, 0.25, 0.7, ... |
-| `texture` | optional | 5% | enemy_bar_rect, Shinies3pxBorder, shared_01, Frame_1, ... |
-| `skipinput` | optional | 5% | true |
-| `frameonly` | optional | 2% | true |
-| `showing` | optional | 2% | false |
-| `hanldeinput` | optional | 1% | false |
+| `inherits` | optional | 52% | EA_FullResizeImage_TintableSolidBackground, AuraWindowBackground, DefaultWindowBackground, EA_FullResizeImage_DefaultBubbleBackground, ... |
+| `handleinput` | optional | 28% | true, false |
+| `layer` | optional | 17% | default, overlay, background, popup, ... |
+| `alpha` | optional | 14% | 1, 0.9, 0.5, 1.0, ... |
+| `texture` | optional | 3% | Shinies3pxBorder, enemy_bar_rect, Frame_1, shared_01, ... |
+| `skipinput` | optional | 2% | true |
+| `frameonly` | optional | 1% | true |
+| `showing` | optional | 1% | false |
+| `hanldeinput` | optional | 0% | false |
 | `drawchildrenfirst` | optional | 0% | true |
 | `font` | optional | 0% | font_clear_small_bold |
 | `sticky` | optional | 0% | false |
@@ -187,6 +187,7 @@ API functions commonly called from event handler Lua functions on this element t
 | `WindowSetTintColor` | 10 | OnLButtonUp, OnMouseOver, OnMouseOverEnd |
 | `LabelSetText` | 7 | OnLButtonUp, OnMouseOverEnd |
 | `LabelSetTextColor` | 2 | OnMouseOver, OnMouseOverEnd |
+| `WindowGetScreenPosition` | 2 | OnLButtonUp, OnMouseOverEnd |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -200,37 +201,46 @@ Confidence: MEDIUM
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
-### OnLButtonUp
+### OnMouseOver
 
-Confidence: MEDIUM
+Confidence: HIGH
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
+### OnMouseOverEnd
 
-Confidence: MEDIUM
+Confidence: HIGH
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
-- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
-- Moth.Moth.HealthBar
-- Killer.Killer.ShowRowTooltip
-- Killer.Killer.ShowPersonalStatsTooltip
-- Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
-- Moth.Moth.UpdateHealthBar
-- Moth.Moth.Clear
+- RandomMount.RandomMountUI.OnInitialize
 - Moth.Moth.HideBorders
-- Killer.Killer.ShowTopKillersTooltip
+- MoraleCircle.MoraleCircle.OnSetCustomColorFull
+- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
+- Enemy.Enemy.CombatLogUI_IDS_Initialize
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- WSCT.WSCT.OnSetCustomColor
+- MoraleCircle.MoraleCircle.OnSetCustomColor
+- Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
+- Moth.Moth.Clear
 - Killer.Killer.Initialize
+- Killer.Killer.ShowTopKillersTooltip
+- WSCT.WSCT.OnLButtonUpColorPicker
+- MoraleCircle.MoraleCircle.ColorChanger1
+- Moth.Moth.UpdateHealthBar
+- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
+- Killer.Killer.ShowRowTooltip
+- WhoHealedMe.WHMCore.ApplyBackgroundFillColor
+- MoraleCircle.MoraleCircle.ColorChanger4
+- Enemy.Enemy._Initialize
+- MoraleCircle.MoraleCircle.ColorChanger2
+- Moth.Moth.HealthBar
+- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
+- WhoHealedMe.WHMGui.RefreshConfigurationWindow
+- Killer.Killer.ShowPersonalStatsTooltip
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- MoraleCircle.MoraleCircle.ColorChanger3
+- Enemy.Enemy.MarksInitialize
+- MoraleCircle.MoraleCircle.OnSetCustomColorFill
+- WSCT.WSCT.ColorOnButtonUp
 
 ## Seen In
 

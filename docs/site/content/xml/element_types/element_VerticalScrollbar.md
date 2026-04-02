@@ -120,12 +120,12 @@ Observed XML element type instantiated by 12 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | **required** | 96% | EA_ScrollBar_DefaultVerticalChain, EA_ScrollBar_ChatVertical |
-| `layer` | **required** | 90% | popup |
-| `alpha` | optional | 3% | 0.97 |
-| `down` | optional | 3% | EA_ScrollBar_ChatDownArrowButton |
-| `thumb` | optional | 3% | EA_ScrollBar_ChatThumb |
-| `up` | optional | 3% | EA_ScrollBar_ChatUpArrowButton |
+| `inherits` | optional | 49% | EA_ScrollBar_DefaultVerticalChain, EA_ScrollBar_ChatVertical |
+| `layer` | optional | 46% | popup |
+| `alpha` | optional | 1% | 0.97 |
+| `down` | optional | 1% | EA_ScrollBar_ChatDownArrowButton |
+| `thumb` | optional | 1% | EA_ScrollBar_ChatThumb |
+| `up` | optional | 1% | EA_ScrollBar_ChatUpArrowButton |
 ## Structural Sub-Elements
 
 ### [ActiveZoneOffset](element_ActiveZoneOffset.md)
@@ -160,6 +160,17 @@ Observed 1 times as an unnamed child.
 | --- | --- | --- |
 | `x` | **required** |  |
 | `y` | **required** |  |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnScrollPosChanged
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `scrollPos` | number | scroll_position |
 ## Seen In
 
 - DAoCBuff

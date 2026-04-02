@@ -96,12 +96,12 @@ Observed XML element type instantiated by 3 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `texture` | optional | 57% | EA_HUD_01, ui_main, EA_TintableImage |
-| `inherits` | optional | 42% | BuffHeadLayoutVerticalResizeImage |
-| `handleinput` | optional | 28% | false |
-| `reverseFill` | optional | 14% | true |
-| `reversefill` | optional | 14% | true |
-| `sticky` | optional | 14% | false |
+| `texture` | optional | 50% | EA_HUD_01, ui_main, EA_TintableImage |
+| `inherits` | optional | 37% | BuffHeadLayoutVerticalResizeImage |
+| `handleinput` | optional | 25% | false |
+| `reverseFill` | optional | 12% | true |
+| `reversefill` | optional | 12% | true |
+| `sticky` | optional | 12% | false |
 ## Structural Sub-Elements
 
 ### [Middle](element_Middle.md)

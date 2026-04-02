@@ -78,13 +78,13 @@ Observed XML element type instantiated by 1 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `cooldownshape` | **required** | 100% | circle |
-| `handleinput` | **required** | 100% | false |
-| `layer` | **required** | 100% | overlay |
-| `movable` | **required** | 100% | true |
-| `popable` | **required** | 100% | false |
-| `segments` | **required** | 100% | 32 |
-| `sticky` | **required** | 100% | true |
+| `cooldownshape` | optional | 50% | circle |
+| `handleinput` | optional | 50% | false |
+| `layer` | optional | 50% | overlay |
+| `movable` | optional | 50% | true |
+| `popable` | optional | 50% | false |
+| `segments` | optional | 50% | 32 |
+| `sticky` | optional | 50% | true |
 ## Seen In
 
 - MoraleCircle

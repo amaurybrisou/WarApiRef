@@ -100,8 +100,8 @@ Observed XML element type instantiated by 1 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `columnsPerRow` | **required** | 100% | 4 |
-| `texture` | **required** | 100% | EA_HUD_01 |
+| `columnsPerRow` | optional | 50% | 4 |
+| `texture` | optional | 50% | EA_HUD_01 |
 ## Structural Sub-Elements
 
 ### [ColorSize](element_ColorSize.md)
@@ -142,7 +142,10 @@ API functions commonly called from event handler Lua functions on this element t
 
 | API Function | Call Count | From Events |
 | --- | --- | --- |
+| `SliderBarSetCurrentPosition` | 3 | OnLButtonUp |
 | `LabelSetTextColor` | 2 | OnLButtonUp |
+| `WindowAddAnchor` | 1 | OnLButtonUp |
+| `WindowClearAnchors` | 1 | OnLButtonUp |
 | `WindowSetShowing` | 1 | OnLButtonUp |
 | `WindowSetTintColor` | 1 | OnLButtonUp |
 ## Handler Callback Signatures
@@ -158,6 +161,10 @@ Confidence: MEDIUM
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
+## Lua Functions Manipulating This Type
+
+- WSCT.WSCT.OnLButtonUpColorPicker
+
 ## Seen In
 
 - WSCT

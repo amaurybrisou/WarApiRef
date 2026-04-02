@@ -94,17 +94,17 @@ Observed XML element type instantiated by 11 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `layer` | **required** | 93% | default, overlay, background, secondary, ... |
-| `handleinput` | **required** | 82% | false |
-| `numsegments` | **required** | 82% | 16, 32, 64 |
-| `textureScale` | optional | 75% | 0.48, 0.62, 0.12, 0.38, ... |
-| `popable` | optional | 68% | false |
-| `texture` | optional | 68% | EA_TintableImage, StopwatchButton, Circle, EA_Cultivating01_d5, ... |
-| `sticky` | optional | 62% | true, false |
-| `alpha` | optional | 17% | 0.9, 0, 0.85 |
-| `texturescale` | optional | 10% | 0.18, 1.11 |
-| `filtering` | optional | 3% | true |
-| `movable` | optional | 3% | false |
+| `layer` | optional | 57% | overlay, default, background, secondary, ... |
+| `handleinput` | optional | 51% | false |
+| `numsegments` | optional | 51% | 32, 64, 16 |
+| `textureScale` | optional | 46% | 0.8, 0.48, 0.38, 0.12, ... |
+| `popable` | optional | 42% | false |
+| `texture` | optional | 42% | EA_HUD_01, EA_TintableImage, Circle, EA_Cultivating01_d5, ... |
+| `sticky` | optional | 38% | true, false |
+| `alpha` | optional | 10% | 0.9, 0.85, 0 |
+| `texturescale` | optional | 6% | 1.11, 0.18 |
+| `filtering` | optional | 2% | true |
+| `movable` | optional | 2% | false |
 ## Structural Sub-Elements
 
 ### [TintColor](element_TintColor.md)
@@ -119,6 +119,7 @@ Observed 8 times as an unnamed child.
 | `a` | optional |  |
 ## Lua Functions Manipulating This Type
 
+- TurretRange.TurretRange.OnUpdate
 - Enemy.EnemyEffectsIndicator:Update
 
 ## Seen In

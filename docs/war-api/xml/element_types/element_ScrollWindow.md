@@ -91,17 +91,46 @@ Observed XML element type instantiated by 11 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `childscrollwindow` | **required** | 83% | $parentScrollChild, MiracleGrow2Layout, RVMOD_ManagerWindowContentListBoxScrollChild, MiracleGrow2Config, ... |
-| `lineheight` | **required** | 83% | 18, 20, 90, 19, ... |
-| `scrollbar` | **required** | 83% | $parentScrollbar, $parentScroll, RVMOD_ManagerWindowContentListBoxScrollbar, IconsScrollbar, ... |
-| `autoHideScrollBar` | optional | 48% | true, false |
-| `inherits` | optional | 16% | EA_ScrollWindow_ModInfoTemplate, DAoCBuffGeneralSettingsTab, DAoCBuffListManagerTab, DAoCBuffFrameSettingsTab, ... |
-| `autohidescrollbar` | optional | 6% | true |
-| `layer` | optional | 3% | secondary |
+| `childscrollwindow` | optional | 46% | MiracleGrow2Preset, MiracleGrow2Config, $parentScrollChild, MiracleGrow2Layout, ... |
+| `lineheight` | optional | 46% | 20, 18, 19, 90, ... |
+| `scrollbar` | optional | 46% | $parentScroll, $parentScrollbar, RVMOD_ManagerWindowContentListBoxScrollbar, $parentBar, ... |
+| `autoHideScrollBar` | optional | 26% | true, false |
+| `inherits` | optional | 8% | RVMOD_ManagerModInfoTemplate, DAoCBuffGeneralSettingsTab, DAoCBuffFrameSettingsTab, DAoCBuffListManagerTab, ... |
+| `autohidescrollbar` | optional | 3% | true |
+| `layer` | optional | 1% | secondary |
 ## Lua Functions Manipulating This Type
 
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.Enemy.local._OnArchetypeChanged
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- wbLeadHelper.wbLeadHelperConfigTab.OnLoad
+- Killer.Killer.Initialize
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy._OnKeyModifierChanged
+- wbLeadHelper.WbLeadHelperMessage.OnOk
+- MapMonster.FilterButtonState
+- wbLeadHelper.wbLeadHelperConfigTab.OnReset
 - DAoCBuff.DAoCBuffSettings.PopulateSettings
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
+- Enemy.Enemy.local._OnKeyModifierChanged
+- MapMonster.MapMonster.local.FilterButtonState
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- DAoCBuff.DAoCBuff.ShowMessageWindow
+- wbLeadHelper.wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
 - Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- Enemy._OnArchetypeChanged
+- wbLeadHelper.wbLeadHelperConfigTab.Initialize
+- Enemy.EnemyGroupIcon:ApplySettings
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
 
 ## Seen In
 

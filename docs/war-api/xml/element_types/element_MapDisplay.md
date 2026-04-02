@@ -131,15 +131,15 @@ Observed XML element type instantiated by 3 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `pinTexture` | **required** | 100% | map_markers01 |
-| `layer` | optional | 75% | secondary, default, Overlay |
-| `movable` | optional | 75% | false |
-| `shape` | optional | 75% | square, circle |
-| `iconScale` | optional | 50% | 0.70, 0.45 |
-| `loadingAnim` | optional | 50% | MapLoadingAnim |
-| `sticky` | optional | 50% | false, true |
-| `gutterIcon` | optional | 25% | 39 |
-| `popable` | optional | 25% | false |
+| `pinTexture` | optional | 57% | map_markers01 |
+| `layer` | optional | 42% | Overlay, secondary, default |
+| `movable` | optional | 42% | false |
+| `shape` | optional | 42% | circle, square |
+| `iconScale` | optional | 28% | 0.45, 0.70 |
+| `loadingAnim` | optional | 28% | MapLoadingAnim |
+| `sticky` | optional | 28% | true, false |
+| `gutterIcon` | optional | 14% | 39 |
+| `popable` | optional | 14% | false |
 ## Lua API Usage (from Handlers)
 
 API functions commonly called from event handler Lua functions on this element type:
@@ -150,7 +150,75 @@ API functions commonly called from event handler Lua functions on this element t
 | `LabelSetText` | 13 | OnShown |
 | `ButtonSetText` | 6 | OnShown |
 | `WindowSetDimensions` | 3 | OnShown |
+| `DoesWindowExist` | 2 | OnShown |
 | `WindowSetShowing` | 1 | OnShown |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnHidden
+
+Confidence: HIGH
+
+### OnLButtonUp
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnMButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnMouseOver
+
+Confidence: LOW
+
+### OnMouseOverEnd
+
+Confidence: LOW
+
+### OnMouseWheel
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `x` | number | mouse_x |
+| 1 | `y` | number | mouse_y |
+| 2 | `delta` | number | wheel_delta |
+### OnPointMouseOver
+
+Confidence: LOW
+
+### OnRButtonUp
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnShown
+
+Confidence: HIGH
+
+### OnUpdate
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `elapsed` | number | time_delta |
 ## Seen In
 
 - CMap

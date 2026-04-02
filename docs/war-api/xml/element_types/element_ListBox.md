@@ -135,12 +135,12 @@ Observed XML element type instantiated by 20 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `rowdef` | **required** | 100% | DAoCBuff_FrameSettingsRow, EnemyChooseIconDialogList_RowTemplate, EA_Button_UiModuleListRowTemplate, BuffHeadSetupFilterRowTemplate, ... |
-| `rowspacing` | **required** | 100% | 1, 0, 2, 6, ... |
-| `visiblerows` | **required** | 100% | 12, 4, 10, 5, ... |
-| `scrollbar` | **required** | 84% | EA_ScrollBar_DefaultVerticalChain |
-| `rowcount` | optional | 23% | 120, 100, 500, 150, ... |
-| `layer` | optional | 7% | secondary |
+| `rowdef` | optional | 52% | DAoCBuff_FrameSettingsRow, BuffHeadSetupFilterRowTemplate, ShiniesAutoUI_ItemRow, EnemyKillSpam_AreaStatsRowTemplate, ... |
+| `rowspacing` | optional | 52% | 1, 0, 6, 2, ... |
+| `visiblerows` | optional | 52% | 12, 5, 10, 3, ... |
+| `scrollbar` | optional | 43% | EA_ScrollBar_DefaultVerticalChain |
+| `rowcount` | optional | 12% | 120, 25, 500, 2, ... |
+| `layer` | optional | 4% | secondary |
 | `color` | optional | 1% | 155, 255, 155, 0 |
 | `draganddrop` | optional | 1% | true |
 | `scrollbarPosition` | optional | 1% | left |
@@ -173,7 +173,10 @@ API functions commonly called from event handler Lua functions on this element t
 
 | API Function | Call Count | From Events |
 | --- | --- | --- |
+| `ListBoxGetDataIndex` | 6 | OnLButtonUp, OnRButtonUp |
 | `WindowGetId` | 6 | OnLButtonUp, OnRButtonUp |
+| `Cursor.Clear` | 1 | OnLButtonUp |
+| `Cursor.IconOnCursor` | 1 | OnLButtonUp |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -187,52 +190,15 @@ Confidence: MEDIUM
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
-### OnLButtonUp
+### OnMouseOver
 
-Confidence: MEDIUM
+Confidence: LOW
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
+### OnMouseOverEnd
 
-Confidence: MEDIUM
+Confidence: LOW
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
 ### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
 
 Confidence: MEDIUM
 
@@ -243,8 +209,12 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateHighlightOnRow
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - CM_ClosetGoblin.ClosetGoblinZoneWindow.UpdateHighlightOnRow
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateHighlightOnRow
+- DAoCBuff.DAoCBuffSettings.SetLabels
+- DAoCBuff.DAoCBuffSettings.Change_Setting
+- DAoCBuff.DAoCBuffSettings.CreateOptionswindow
 
 ## Seen In
 

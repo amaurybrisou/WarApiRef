@@ -124,29 +124,67 @@ Observed XML element type instantiated by 17 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | **required** | 98% | EA_Default_SliderBar, RVAPI_ColorDialogSliderTemplate, Aura_Default_SliderBar, RVMOD_ManagerSliderTemplate |
-| `numticks` | optional | 9% | 360, 9, 250, 200, ... |
-| `handleinput` | optional | 7% | true |
-| `scale` | optional | 4% | 0.4 |
-| `locktoticks` | optional | 3% | false |
-| `autoresize` | optional | 2% | true |
-| `handlinput` | optional | 2% | true |
-| `numTicks` | optional | 2% | 11 |
-| `background` | optional | 1% | EA_BrownHorizontalRule |
-| `sliderbutton` | optional | 1% | Aura_Default_SliderButton |
-| `tickmark` | optional | 1% | Aura_Default_SliderTick |
+| `inherits` | optional | 68% | EA_Default_SliderBar, RVAPI_ColorDialogSliderTemplate, Aura_Default_SliderBar, RVMOD_ManagerSliderTemplate |
+| `numticks` | optional | 6% | 360, 11, 250, 5, ... |
+| `handleinput` | optional | 5% | true |
+| `scale` | optional | 3% | 0.4 |
+| `locktoticks` | optional | 2% | false |
+| `autoresize` | optional | 1% | true |
+| `handlinput` | optional | 1% | true |
+| `numTicks` | optional | 1% | 11 |
+| `background` | optional | 0% | EA_BrownHorizontalRule |
+| `sliderbutton` | optional | 0% | Aura_Default_SliderButton |
+| `tickmark` | optional | 0% | Aura_Default_SliderTick |
 ## Lua API Usage (from Handlers)
 
 API functions commonly called from event handler Lua functions on this element type:
 
 | API Function | Call Count | From Events |
 | --- | --- | --- |
+| `SliderBarGetCurrentPosition` | 150 | OnSlide |
 | `LabelSetText` | 66 | OnSlide |
 | `TextEditBoxSetText` | 46 | OnSlide |
 | `TextEditBoxGetText` | 36 | OnSlide |
+| `ComboBoxGetSelectedMenuItem` | 28 | OnSlide |
 | `WindowSetTintColor` | 18 | OnSlide |
+| `ButtonGetPressedFlag` | 12 | OnSlide |
+| `SliderBarSetCurrentPosition` | 9 | OnSlide |
 | `LabelSetTextColor` | 6 | OnSlide |
 | `WindowSetAlpha` | 6 | OnSlide |
+| `WindowGetParent` | 4 | OnMouseOver, OnSlide |
+| `WindowSetScale` | 2 | OnSlide |
+| `WindowGetScale` | 1 | OnSlide |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnMouseOver
+
+Confidence: HIGH
+
+### OnSlide
+
+Confidence: LOW
+
+## Lua Functions Manipulating This Type
+
+- WSCT.WSCT.OnLButtonUpColorPicker
+- MoraleCircle.MoraleCircle.ColorChanger4
+- MoraleCircle.MoraleCircle.ColorChanger3
+- MoraleCircle.MoraleCircle.ColorChanger1
+- MoraleCircle.MoraleCircle.OnSetCustomColor
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetOffset
+- MoraleCircle.MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.MoraleCircle.ColorChanger2
+- WSCT.WSCT.OnSetCustomColor
+- WSCT.WSCT.ColorOnButtonUp
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetScale
+- MoraleCircle.MoraleCircle.OnSetCustomColorFull
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetOpacity
+
 ## Seen In
 
 - Aura

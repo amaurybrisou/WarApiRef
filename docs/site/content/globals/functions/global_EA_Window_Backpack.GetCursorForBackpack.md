@@ -73,7 +73,7 @@ Observed as a global function across 2 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: EA_Window_Backpack.currentMode, nBackpackType |
+| arg1 | Observed as a function or method reference. | Observed values: EA_Window_Backpack.currentMode, nBackpackType |
 
 ## Returns
 

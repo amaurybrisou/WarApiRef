@@ -153,20 +153,20 @@ Observed XML element type instantiated by 24 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | **required** | 94% | IraConfigNumSpin, EA_EditBox_DefaultFrame, IraConfigNumEdit, EA_EditBox_DefaultFrame_Multiline, ... |
-| `maxchars` | optional | 62% | 4096, 10, 3, 5, ... |
-| `input` | optional | 33% | numbers, nospaces |
-| `layer` | optional | 25% | default, secondary |
-| `warnOnTextCropped` | optional | 17% | false |
-| `font` | optional | 16% | font_clear_small_bold, font_chat_text, font_clear_small, font_clear_medium, ... |
-| `taborder` | optional | 15% | 3, 2, 1, 6, ... |
-| `handleinput` | optional | 7% | true |
-| `scrolling` | optional | 7% | none, vert |
-| `maxChars` | optional | 6% | 3, 2, 5, 64, ... |
-| `background` | optional | 5% | EA_FullResizeImage_TanBorder |
-| `id` | optional | 5% | 2, 1, 4, 3, ... |
-| `align` | optional | 3% | rightcenter, center |
-| `scrollbar` | optional | 3% | $parentDevPadCodeScrollBar, EA_ScrollBar_DefaultVerticalChain, CopyScrollBar, $parentObjectScrollbar |
+| `inherits` | optional | 67% | EA_EditBox_DefaultFrame, EA_EditBox_DefaultFrame_Multiline, MapMonsterEditorWindowEditBoxCoord, Shinies_GoldCoin_EditBox_DefaultFrame, ... |
+| `maxchars` | optional | 44% | 5, 2, 3, 10, ... |
+| `input` | optional | 23% | numbers, nospaces |
+| `layer` | optional | 18% | secondary, default |
+| `warnOnTextCropped` | optional | 12% | false |
+| `font` | optional | 11% | font_clear_small, font_clear_small_bold, font_chat_text, font_clear_medium, ... |
+| `taborder` | optional | 10% | 3, 2, 1, 6, ... |
+| `handleinput` | optional | 5% | true |
+| `scrolling` | optional | 5% | none, vert |
+| `maxChars` | optional | 4% | 300, 3, 2, 5, ... |
+| `background` | optional | 3% | EA_FullResizeImage_TanBorder |
+| `id` | optional | 3% | 3, 1, 2, 4, ... |
+| `align` | optional | 2% | rightcenter, center |
+| `scrollbar` | optional | 2% | $parentDevPadCodeScrollBar, CopyScrollBar, EA_ScrollBar_DefaultVerticalChain, $parentObjectScrollbar |
 | `alpha` | optional | 2% | 0.97 |
 | `history` | optional | 2% | 30, 10 |
 | `textalign` | optional | 1% | leftcenter |
@@ -191,749 +191,55 @@ API functions commonly called from event handler Lua functions on this element t
 | API Function | Call Count | From Events |
 | --- | --- | --- |
 | `TextEditBoxGetText` | 182 | OnKeyEnter, OnKeyEscape, OnTextChanged |
+| `ComboBoxGetSelectedMenuItem` | 53 | OnKeyEnter, OnTextChanged |
+| `SliderBarSetCurrentPosition` | 46 | OnTextChanged |
 | `WindowSetAlpha` | 36 | OnTextChanged |
+| `SliderBarGetCurrentPosition` | 28 | OnTextChanged |
+| `ButtonGetPressedFlag` | 21 | OnTextChanged |
 | `WindowGetId` | 16 | OnMouseOver, OnTextChanged |
 | `WindowSetTintColor` | 9 | OnTextChanged |
+| `WindowGetParent` | 7 | OnMouseOver, OnTextChanged |
 | `WindowSetShowing` | 7 | OnKeyEnter, OnKeyEscape |
 | `LabelSetText` | 5 | OnTextChanged |
+| `WindowAssignFocus` | 5 | OnKeyEnter, OnKeyEscape, OnShown |
+| `TextEditBoxSetTextColor` | 4 | OnTextChanged |
 | `LabelSetTextColor` | 3 | OnTextChanged |
+| `TextEditBoxInsertText` | 3 | OnKeyTab |
 | `TextEditBoxSetText` | 3 | OnKeyEnter, OnTextChanged |
 | `WindowSetDimensions` | 3 | OnTextChanged |
+| `ButtonSetDisabledFlag` | 2 | OnTextChanged |
+| `ComboBoxAddMenuItem` | 2 | OnKeyEnter |
+| `ComboBoxSetSelectedMenuItem` | 2 | OnKeyEnter |
 | `WindowGetShowing` | 2 | OnKeyEscape, OnShown |
+| `WindowStartAlphaAnimation` | 2 | OnKeyEnter |
+| `WindowStartScaleAnimation` | 2 | OnKeyEnter |
+| `ComboBoxGetSelectedText` | 1 | OnKeyEnter |
 | `LabelGetText` | 1 | OnKeyEnter |
 | `RegisterEventHandler` | 1 | OnTextChanged |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
 
-### OnTextChanged
+### OnKeyEnter
 
-Confidence: MEDIUM
+Confidence: LOW
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
+### OnKeyEscape
 
-Confidence: MEDIUM
+Confidence: LOW
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
+### OnKeyTab
 
-Confidence: MEDIUM
+Confidence: LOW
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
+### OnMouseOver
 
-Confidence: MEDIUM
+Confidence: HIGH
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
+### OnShown
 
-Confidence: MEDIUM
+Confidence: HIGH
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
-### OnTextChanged
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `text` | wstring | current_text |
 ### OnTextChanged
 
 Confidence: MEDIUM
@@ -943,8 +249,34 @@ Confidence: MEDIUM
 | 0 | `text` | wstring | current_text |
 ## Lua Functions Manipulating This Type
 
+- MapPin.MapPin.RButtonUp
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Ok
+- MapPin.MapPin.SendText
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- wbLeadHelper.WbLeadHelperMessage.OnOk
+- EA_UiDebugTools.BustedGUI.UpdateErrorView
+- Busted.BustedGUI.UpdateErrorView
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
 - LibSlash.LibSlash.Initialize
+- MapPin.MapPin.OnUpdate
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
+- Pocket Palette.PP.UpdateDyeFilter
+- LoyalPet.LPET.AddProfileOnButtonUp
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- MapPin.EditMarker
+- MapPin.MapPin.SetupAccept
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- RandomMount.RandomMountUI.Refresh
+- RandomMount.RandomMountUI.OnMinLevelChanged
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- LoyalPet.LPET.RenameProfileOnButtonUp
+- LoyalPet.LPET.SaveProfileOnButtonUp
+- MapPin.MapPin.local.EditMarker
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
 
 ## Seen In
 

@@ -106,10 +106,10 @@ Observed XML element type instantiated by 3 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | **required** | 100% | EA_ActionButtonGroup_CareerIconsWithTooltip, EA_ActionButtonGroup_DefaultSmall |
-| `hideButtonWhenIconBlank` | optional | 66% | true |
-| `draganddrop` | optional | 33% | true |
-| `gameactionbutton` | optional | 33% | right |
+| `inherits` | optional | 60% | EA_ActionButtonGroup_CareerIconsWithTooltip, EA_ActionButtonGroup_DefaultSmall |
+| `hideButtonWhenIconBlank` | optional | 40% | true |
+| `draganddrop` | optional | 20% | true |
+| `gameactionbutton` | optional | 20% | right |
 ## Lua API Usage (from Handlers)
 
 API functions commonly called from event handler Lua functions on this element type:
@@ -117,6 +117,36 @@ API functions commonly called from event handler Lua functions on this element t
 | API Function | Call Count | From Events |
 | --- | --- | --- |
 | `WindowGetId` | 2 | OnActionButtonLButtonUp, OnActionButtonMouseOver |
+| `Cursor.Clear` | 1 | OnActionButtonLButtonDown |
+| `Cursor.IconOnCursor` | 1 | OnActionButtonLButtonDown |
+| `Cursor.PickUp` | 1 | OnActionButtonLButtonDown |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnActionButtonLButtonDown
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `buttonIndex` | number | number |
+| 1 | `flags` | boolean | modifier_flags |
+### OnActionButtonLButtonUp
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | boolean | modifier_flags |
+### OnActionButtonMouseOver
+
+Confidence: LOW
+
+### OnActionButtonRButtonDown
+
+Confidence: LOW
+
 ## Lua Functions Manipulating This Type
 
 - BankWindowFix.BankWindowFix.Initialize

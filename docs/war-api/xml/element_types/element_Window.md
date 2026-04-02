@@ -185,23 +185,23 @@ Observed XML element type instantiated by 60 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 60% | MapPinCallTemplateWindow, Aura_LabelCheckButton, EA_Window_Default, EA_Window_DefaultButtonBottomFrame, ... |
-| `layer` | optional | 31% | default, secondary, background, overlay, ... |
-| `handleinput` | optional | 22% | true, false |
-| `movable` | optional | 20% | false, true |
-| `savesettings` | optional | 13% | false, true |
-| `popable` | optional | 6% | false, true |
-| `sticky` | optional | 5% | false, true |
+| `inherits` | optional | 49% | MiracleGrow2Check, MapMonster_TooltipInfoTemplate, EA_Window_Default, Aggro_Timer_Template, ... |
+| `layer` | optional | 25% | default, background, secondary, overlay, ... |
+| `handleinput` | optional | 18% | true, false |
+| `movable` | optional | 16% | false, true |
+| `savesettings` | optional | 10% | false, true |
+| `popable` | optional | 5% | false, true |
+| `sticky` | optional | 4% | false, true |
 | `scale` | optional | 2% | 1.0, 0.7 |
-| `id` | optional | 2% | 4, 2, 9, 1, ... |
-| `skipinput` | optional | 1% | true, false |
-| `alpha` | optional | 1% | 0.6, 0.97, 0.0, 0.85, ... |
-| `font` | optional | 1% | font_chat_text, font_clear_small_bold |
+| `id` | optional | 1% | 1, 6, 2, 10, ... |
+| `skipinput` | optional | 1% | false, true |
+| `alpha` | optional | 1% | 50, 0.85, 0.97, 1, ... |
+| `font` | optional | 0% | font_clear_small_bold, font_chat_text |
 | `Scale` | optional | 0% | 0.7 |
 | `drawchildrenfirst` | optional | 0% | true |
 | `textalign` | optional | 0% | center |
 | `draganddrop` | optional | 0% | true |
-| `parent` | optional | 0% | Root, root |
+| `parent` | optional | 0% | root, Root |
 | `show` | optional | 0% | false |
 | `autoresize` | optional | 0% | true |
 | `layout` | optional | 0% | background |
@@ -243,29 +243,67 @@ API functions commonly called from event handler Lua functions on this element t
 | `LabelSetText` | 354 | OnInitialize, OnShown |
 | `ButtonSetText` | 167 | OnHidden, OnInitialize, OnShown |
 | `WindowSetShowing` | 134 | OnHidden, OnInitialize, OnKeyEscape, OnLButtonUp, OnMouseOver, OnMouseOverEnd, OnRButtonUp, OnShown |
+| `ButtonSetPressedFlag` | 84 | OnLButtonUp, OnRButtonUp, OnShown |
+| `DoesWindowExist` | 75 | OnHidden, OnInitialize, OnKeyEscape, OnMouseOver, OnMouseOverEnd, OnShown |
 | `WindowSetDimensions` | 73 | OnLButtonDown, OnShown |
+| `ButtonGetPressedFlag` | 62 | OnLButtonUp |
 | `WindowGetId` | 46 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnRButtonDown, OnRButtonUp |
 | `WindowSetTintColor` | 39 | OnInitialize, OnLButtonDown, OnMouseOver, OnMouseOverEnd, OnRButtonDown |
+| `WindowUtils.OnHidden` | 19 | OnHidden |
+| `WindowUtils.OnShown` | 19 | OnShown |
+| `WindowGetParent` | 17 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnRButtonUp |
+| `ComboBoxSetSelectedMenuItem` | 16 | OnRButtonUp |
+| `AnimatedImageStartAnimation` | 12 | OnLButtonUp |
+| `WindowStartAlphaAnimation` | 11 | OnMouseOver, OnMouseOverEnd |
 | `RegisterEventHandler` | 9 | OnInitialize |
 | `WindowSetAlpha` | 9 | OnInitialize, OnMouseOver, OnMouseOverEnd, OnRButtonUp |
+| `SliderBarSetCurrentPosition` | 8 | OnRButtonUp |
 | `WindowGetShowing` | 8 | OnKeyEscape, OnLButtonUp, OnSetMoving, OnShown |
+| `WindowSetGameActionData` | 8 | OnInitialize, OnLButtonDown, OnLButtonUp |
+| `ButtonGetDisabledFlag` | 6 | OnLButtonUp |
+| `ButtonSetDisabledFlag` | 6 | OnHidden, OnInitialize, OnLButtonUp |
 | `BroadcastEvent` | 5 | OnHidden, OnLButtonDown, OnShown |
 | `LabelSetTextColor` | 5 | OnInitialize, OnMouseOver, OnMouseOverEnd, OnRButtonUp |
+| `WindowSetMovable` | 5 | OnLButtonUp, OnRButtonUp |
 | `CreateWindow` | 3 | OnInitialize |
 | `DestroyWindow` | 3 | OnKeyEscape |
+| `WindowGetScale` | 3 | OnLButtonUp |
+| `WindowUtils.AddToOpenList` | 3 | OnShown |
+| `WindowUtils.RemoveFromOpenList` | 3 | OnHidden |
+| `ComboBoxSetDisabledFlag` | 2 | OnHidden, OnShown |
 | `SystemData.MouseOverWindow.name:find` | 2 | OnLButtonDown, OnRButtonDown |
 | `SystemData.MouseOverWindow.name:sub` | 2 | OnLButtonDown, OnRButtonDown |
+| `WindowAddAnchor` | 2 | OnLButtonDown, OnShown |
+| `WindowAssignFocus` | 2 | OnKeyEscape, OnShown |
+| `WindowClearAnchors` | 2 | OnLButtonDown, OnShown |
 | `WindowGetAlpha` | 2 | OnMouseOver |
+| `WindowGetScreenPosition` | 2 | OnLButtonDown, OnMouseOver |
 | `WindowRegisterEventHandler` | 2 | OnInitialize |
+| `WindowStopAlphaAnimation` | 2 | OnRButtonUp |
 | `LabelGetText` | 1 | OnLButtonDown |
+| `ListBoxSetDisplayOrder` | 1 | OnUpdate |
 | `TextEditBoxGetText` | 1 | OnKeyEscape |
 | `UnregisterEventHandler` | 1 | OnHidden |
 | `WindowGetDimensions` | 1 | OnMouseOver |
+| `WindowGetMovable` | 1 | OnRButtonUp |
+| `WindowUtils.ToggleShowing` | 1 | OnLButtonUp |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
 
-### OnLButtonUp
+### OnHidden
+
+Confidence: HIGH
+
+### OnInitialize
+
+Confidence: HIGH
+
+### OnKeyEscape
+
+Confidence: LOW
+
+### OnLButtonDown
 
 Confidence: MEDIUM
 
@@ -283,7 +321,7 @@ Confidence: MEDIUM
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
-### OnRButtonUp
+### OnMButtonDown
 
 Confidence: MEDIUM
 
@@ -292,7 +330,7 @@ Confidence: MEDIUM
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
-### OnLButtonUp
+### OnMButtonUp
 
 Confidence: MEDIUM
 
@@ -301,60 +339,27 @@ Confidence: MEDIUM
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
-### OnRButtonUp
+### OnMouseOut
+
+Confidence: HIGH
+
+### OnMouseOver
+
+Confidence: HIGH
+
+### OnMouseOverEnd
+
+Confidence: HIGH
+
+### OnMouseWheel
 
 Confidence: MEDIUM
 
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
+| 0 | `x` | number | mouse_x |
+| 1 | `y` | number | mouse_y |
+| 2 | `delta` | number | wheel_delta |
 ### OnRButtonDown
 
 Confidence: MEDIUM
@@ -373,1131 +378,34 @@ Confidence: MEDIUM
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
-### OnLButtonUp
+### OnRawDeviceInput
 
-Confidence: MEDIUM
+Confidence: LOW
 
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
+| 0 | `deviceId` | string | identifier |
+| 1 | `itemId` | string | identifier |
+| 2 | `itemDown` | unknown | unknown |
+### OnSetMoving
 
-Confidence: MEDIUM
+Confidence: LOW
 
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
+| 0 | `bMoving` | unknown | unknown |
+### OnShown
 
-Confidence: MEDIUM
+Confidence: HIGH
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
+### OnShutdown
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
+Confidence: HIGH
 
-Confidence: MEDIUM
+### OnSizeUpdated
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
+Confidence: LOW
 
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
 ### OnUpdate
 
 Confidence: MEDIUM
@@ -1505,1287 +413,478 @@ Confidence: MEDIUM
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
 | 0 | `elapsed` | number | time_delta |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnUpdate
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `elapsed` | number | time_delta |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnUpdate
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `elapsed` | number | time_delta |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonDown
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnLButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
-### OnRButtonUp
-
-Confidence: MEDIUM
-
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `flags` | number | modifier_flags |
-| 1 | `x` | number | mouse_x |
-| 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.Enemy.UI_ConfigDialog_Hide
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelm
-- Enemy.Enemy.MarksUI_EnemyMarksWindow_Hide
-- LoyalPet.LPET.OpenMenu
-- QuickWarReport.QuickWarReport.local.ShowConfirmWindow
-- DAoCBuff.DAoCBuffSettings.CloseOptionswindow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.Hide
-- Enemy.Enemy.MarksUI_MarkConfigDialog_Hide
-- Enemy.Enemy.MarksUI_MarkConfigDialog_Open
-- Enemy.Enemy.CombatLogUI_EpsWindow_Initialize
-- WSCT.WSCT.HideMenu
-- DaemonAssist.DaemonAssist.ToggleWindow
-- BankArkel.BankArkel.CreatePackWin
-- QuickWarReport.QuickWarReport.local.EnsureConfirmWindow
-- AdvancedPetAssist.APAGui.HidePetTargetHUD
-- Swift Assist.SwiftAssist.Initialize
-- Swift Assist.SetTexLabel
-- Swift Assist.SwiftAssist.OnMacroUpdated
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_Hide
-- Enemy.Enemy.MarksInitialize
-- PotionBar.PotionBar.Hide
-- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Hide
-- DAoCBuff.DAoCTooltips.Init
-- wbLeadHelper.wbLeadHelper.drawWindows
-- RoR_SoR.RoR_SoR.OnCombat
-- Enemy.SetStatsRow
-- MapPin.MapPin.ShowIcons
-- BankArkel.BankArkel.PackImg
-- RoR_SoR.RoR_SoR.SET_KEEP
-- Swift Assist.SetSmartLabel
-- TidyRoll.TidyRollOptions.Initialize
-- BuffHead.RegisterLayoutEditor
-- Busted.BustedGUI.ClearAlertFlash
-- Enemy.Enemy.UI_ConfigDialog_OnSectionSelChanged
-- WSCT.WSCT.OnLButtonUpColorPicker
-- RoR_SoR.RoR_SoR.SET_CAMPAIGN
-- Enemy.EnemyMarkTemplate:ToggleMark
-- wbLeadHelper.wbLeadHelperConfigTab.Hide
-- Effigy.EffigyBar:setup
-- GuardLine.GuardLine.Libguard_Toggle
-- QuickWarReport.ShowConfirmWindow
-- AggroMeter.AggroMeter.Initialize
-- Moth.Moth.UpdateHealthBar
-- AdvancedRenownTrainer.AdvancedRenownTraining.OnShown
-- DAoCBuff.DAoCBuffSettings.PopulateSettings
-- Effigy.EffigyBar.Init
-- Enemy.Enemy.UI_TextEntryDialog_Open
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.Show
-- Enemy.Enemy.IntercomUI_IntercomDialog_Hide
-- MiracleGrow.MiracleGrow.Initialize
-- LibSlash.LibSlash.Initialize
-- GuardLine.GuardLine.OnLayoutEditorFinished
-- MapPin.MapPin.SetupAccept
-- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Open
-- QuickWarReport.QuickWarReport.TestConfirmWindow
-- JunkDump.JunkDumpOptions.CreateOptionsWindow
-- Enemy.Enemy.GroupsInitialize
-- RoR_SoR.RoR_SoR.CloseSetOffsetWindow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakOnly
-- WSCT.WSCT:OpenMenu
-- GuardLine.GuardLine.GetIDs
-- Enemy.Enemy._Initialize
-- PotionBar.PotionBar.Shutdown
-- BankArkel.BankArkel.BackPackShow
-- MapPin.MapPin.UI_ChooseIconDialog_Hide
-- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Initialize
-- PotionBar.PotionBarFloating.ShowSettings
-- WhoHealedMe.WHMGui.HideOptionsWindow
-- Enemy.Enemy.TimerInitialize
-- BankArkel.BankArkel.BackPackHide
-- BuffHead.BuffHead.local.RegisterLayoutEditor
-- Enemy.Enemy.UI_ChooseIconDialog_Hide
-- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelmOnly
-- Enemy.Enemy.StopwatchEnabledChanged
-- PotionBar.PotionBarFloating.Alpha
-- PotionBar.PotionBarSettings.OnHidden
-- EA_UiDebugTools.BustedGUI.ToggleMainWindow
-- Enemy.Enemy.CombatLogUI_StatsWindow_Open
-- Enemy.Enemy.AssistUI_Target_Show
-- GuardLine.GuardLine.init
-- DAoCBuff.DAoCBuff.ShowMessageWindow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSlotIcons
-- Enemy.EnemyGroupIcon:Attach
-- TidyChat.TidyChat.LootRoll.OnRollLinkLButtonUp
-- Enemy.Enemy.IntercomUI_IntercomJoinDialog_Open
-- Enemy.Enemy.IntercomUI_IntercomDialog_Open
-- JunkDump.JunkDumpOptions.DynamicBagOptions
-- MapPin.EditMarker
-- BankArkel.BankArkel.PackShow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideCloakOptions
-- wbLeadHelper.wbLeadHelperConfigTab.Show
-- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Open
-- Enemy.Enemy.local.SetStatsRow
-- AdvancedPetAssist.APAGui.ToggleInstantOnlyHUD
-- GuardLine.GuardLine.update2
-- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Aura.AuraTexture.OnClose
-- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Hide
-- Moth.Moth.Initialize
-- AdvancedRenownTrainer.AdvancedRenownTraining.ChangeTab
-- FastInteract.FastInteract.OptionsShow
-- DAoCBuff.DAoCTooltips.UpdateCondenseTooltip
-- Miracle Grow Remix.MiracleGrow2.ConfigTabChange
-- WSCT.WSCT.ColorOnInitialize
-- RandomMount.RandomMountUI.Show
-- Aura.AuraAddon.OnLoad
-- AdvancedPetAssist.APAGui.OnShown
-- RoR_SoR.RoR_SoR.OnWindowOptionsSetOpacity
-- AutoMark.CreateMarker
-- EA_UiDebugTools.BustedGUI.ClearAlertFlash
-- WhoHealedMe.WHMGui.ShowOptionsWindow
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize
-- RandomMount.RandomMountUI.OnInitialize
-- PotionBar.PotionBar.local.UpdateButton
-- PotionBar.PotionBarSettings.OnAboutClose
-- GuardLine.GuardLine.update
-- Enemy.EnemyUnitFrame:ApplySettings
-- Enemy.Enemy.CombatLogUI_EpsWindow_UpdateLayout
-- MapPin.MapPin.UI_ChooseIconDialog_Open
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateHighlightOnRow
-- Effigy.Effigy.RegisterStateInfoForCastbar
-- LoyalPet.LPET.HideMenu
-- PotionBar.UpdateButton
-- AdvancedPetAssist.ApplyHUDVisibilityFromSettings
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.Hide
-- Killer.Killer.ShowPersonalStatsTooltip
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideShowHelm
-- EA_UiDebugTools.ObjectInspector.CloseWindow
-- WSCT.WSCT.ColorOnButtonUp
-- MapPin.MapPin.RButtonUp
-- AdvancedRenownTrainer.AdvancedRenownTrainer.local.CreateAbilityWindow
-- Enemy.Enemy.CombatLogUI_IDS_OnSettingsChanged
-- wbLeadHelper.wbLeadHelperConfigWindow.Hide
-- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- Enemy.Enemy.CombatLogUI_IDS_Initialize
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Hide
-- AdvancedRenownTrainer.AdvancedRenownTrainer.local.CreateTab
-- BankArkel.BankArkel.Init
-- Killer.Killer.Initialize
-- QuickWarReport.QuickWarReport.Initialize
-- EA_UiDebugTools.BustedGUI.Initialize
-- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Open
-- WhoHealedMe.WHMCore.RunSettingEffects
-- QuickWarReport.EnsureConfirmWindow
-- PotionBar.PotionBarFloating.ReflowButtons
-- Busted.BustedGUI.Initialize
-- DaemonAssist.DaemonAssist.ShowWindow
-- RoR_SoR.RoR_SoR.OnInitialize
-- MapPin.MapPin.local.EditMarker
-- Moth.Moth.HideBorders
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- Effigy.Effigy.RegisterStateInfoForPlayer
-- AggroMeter.AggroMeter.Close
-- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Hide
-- Enemy.Enemy.IntercomUI_ChooseChannelDialog_ChannelListChanged
-- JunkDump.JunkDumpOptions.Done
-- Aura.AuraAddon.Slash
-- wbLeadHelper.wbLeadHelperMessagesTab.Hide
-- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateList
-- AdvancedRenownTrainer.CreateAbilityWindow
-- AdvancedPetAssist.AdvancedPetAssist.local.ApplyHUDVisibilityFromSettings
-- Swift Assist.Swift Assist.local.SetTexLabel
-- Aura.Aura:CreateRuntimeWindows
-- Enemy.Enemy.CombatLogUI_EpsWindow_Open
-- EA_UiDebugTools.ObjectInspector.WindowInit
-- Enemy.Enemy.UI_ConfigDialog_Open
-- PotionBar.PotionBarSettings.OnResetButton
-- AdvancedRenownTrainer.CreateTab
-- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Hide
-- AggroMeter.AggroMeter.SplitText
-- RoR_SoR.RoR_SoR.ShowPopper
-- RoR_SoR.RoR_SoR.SetWindowShow
-- GetStats.GetStats.CloseWindow
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSortButtonIcon
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakOptions
-- AdvancedRenownTrainer.AdvancedRenownTraining.OnHidden
-- Enemy.Enemy.CombatLogUI_StatsWindow_Hide
-- Killer.Killer.ShowRowTooltip
-- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Open
-- PotionBar.PotionBar.LibSlashHandler
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.UpdateHighlightOnRow
-- DAoCBuff.DAoCBuffSettings.CreateOptionswindow
-- PotionBar.PotionBarSettings.OnShown
-- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Hide
-- TurretRange.TurretRange.OnLoadComplete
-- MoraleCircle.MoraleCircle.init
-- MapPin.OnHyperLinkLButtonUp2
-- GetStats.GetStats.OnInitialize
-- wbLeadHelper.WbLeadHelperMessage.MessageDialogHide
-- RoR_SoR.RoR_SoR.CloseSetOpacityWindow
-- GuardLine.GuardLine.OnLayoutEditorStart
-- wbLeadHelper.wbLeadHelper.createWbLeadHelperWindow
-- DAoCBuff.DAoCBuffFrame.MouseOverUpdate
-- Swift Assist.Swift Assist.local.SetSmartLabel
-- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Hide
-- WarBoard.WarBoard.SlashCommand
-- PotionBar.PotionBarSettings.OnCancelButton
-- DaemonAssist.DaemonAssist.HideWindow
-- Moth.Moth.Clear
-- RoR_SoR.RoR_SoR.CloseSetScaleWindow
-- WarBoard.WarBoard.LoadGeneralSettings
-- Busted.Busted.Initialize
+- MapPin.MapPin.OnMoving
+- wbLeadHelper.wbLeadHelperMessagesTab.OnSaveMessages
 - WSCT.WSCT.ColorHideMenu
-- AdvancedPetAssist.APAGui.ToggleKitingHUD
-- RoR_SoR.RoR_SoR.OnScenario
-- AdvancedRenownTrainer.AdvancedRenownTraining.Initialize
-- DAoCBuff.DAoCBuffSettings.OpenOptionswindow
-- RoR_SoR.RoR_SoR.SET_CITY
-- AutoMark.AutoMark.local.CreateMarker
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
-- Enemy.Enemy.IntercomInitialize
-- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
-- Miracle Grow Remix.MiracleGrow2.InitConfig
-- DAoCBuff.DAoCBuff.CloseMessageWindow
-- Effigy.Effigy.RegisterStateInfoForTargets
-- Moth.Moth.UpdateTarget
-- Moth.Moth.HealthBar
-- MiracleGrowLight.MiracleGrowLight.switchBackground
-- AdvancedPetAssist.APAGui.Show
-- WarBoard.WarBoard.Options.EnableBoard
-- DAoCBuff.DAoCBuffHeadTracker:Create
-- RandomMount.RandomMountUI.Hide
-- Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
-- AdvancedPetAssist.APAGui.Hide
-- PotionBar.PotionBarSettings.OnAboutButton
-- PotionBar.PotionBar.Show
-- GetStats.GetStats.OnChatLogUpdated
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- EA_UiDebugTools.ObjectInspector.ShowWindow
-- RoR_SoR.RoR_SoR.Text_Stream_Fetch
-- Enemy.Enemy.MarksUI_EnemyMarksWindow_Open
-- MapPin.MapPin.test
-- BankArkel.BankArkel.SetCharInfo
-- QuickWarReport.HideConfirmWindow
-- Enemy.Enemy.CombatLogUI_EpsWindow_Hide
-- DAoCBuff.DAoCBuffSettings.UC
-- JunkDump.JunkDumpOptions.DestroyOptionsWindow
-- BankArkel.BankArkel.PackHide
-- WSCT.WSCT.ColorAcceptButtonOnButtonUp
-- Enemy.Enemy.CombatLogUI_IDS_Update
-- Enemy.Enemy.AssistInitialize
-- MapPin.MapPin.SetupCancel
-- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- CM_ClosetGoblin.ClosetGoblinZoneWindow.Show
-- GuardLine.GuardLine.OffTarget
-- Aura.Aura:CreateEditWindows
-- wbLeadHelper.wbLeadHelperMessagesTab.Show
+- Swift Assist.WriteLabels
+- GetStats.GetStats.OnInitialize
+- EA_UiDebugTools.ObjectInspector.DisplayObject
+- PotionBar.PotionBarFloating.ReflowButtons
+- WhoHealedMe.IsMainWindowVisible
+- wbLeadHelper.wbLeadHelperMessagesTab.ListUp
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakOnly
+- LoyalPet.LPET.HideMenu
+- RandomMount.RandomMountUI.Toggle
+- WSCT.WSCT.OnSetCustomColor
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled4
+- MapPin.MapPin.UI_ChooseIconDialog_Hide
 - wbLeadHelper.wbLeadHelperConfigWindow.Show
-- Enemy.Enemy.UI_ChooseIconDialog_Open
-- Killer.Killer.ShowTopKillersTooltip
-- RoR_SoR.RoR_SoR.OnWindowOptionsSetOffset
-- PotionBar.PotionBarSettings.QuickActionsSelChanged
-- Enemy.Enemy.IntercomUI_IntercomJoinDialog_Hide
-- WSCT.WSCT.UpdateAnimationOptions
+- WSCT.WSCT:OpenMenu
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled1
+- WSCT.WSCT.HideMenu
+- AggroMeter.AggroMeter.Initialize
+- Enemy._OnArchetypeChanged
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.Show
+- PotionBar.PotionBarSettings.OnUseCheck
+- GuardLine.GuardLine.OnLayoutEditorFinished
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSlotIcons
+- MoraleCircle.MoraleCircle.ColorChanger3
+- PotionBar.PotionBarSettings.OnShown
+- DaemonAssist.DaemonAssist.NormalizeWindowLayout
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSlotIcon
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
+- Enemy.Enemy.IntercomUI_IntercomJoinDialog_AddGroup
+- JunkDump.JunkDumpOptions.DynamicBagOptions
+- PotionBar.PotionBarSettings.RefreshSingleRightLine
+- Swift Assist.SetSmartLabel
+- WarBoard.WarBoard.Options.OnSlide
+- WarBoard.WarBoard.Options.EnableBoard
+- Moth.Moth.HideBorders
+- RandomMount.RandomMountUI.Show
+- EA_UiDebugTools.BustedGUI.UpdateErrorView
+- EA_UiDebugTools.BustedGUI.ClearAlertFlash
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Update
+- RandomMount.RandomMountUI.OnMinLevelChanged
+- EA_UiDebugTools.BustedGUI.NewErrorRecorded
+- Effigy.Effigy.RegisterStateInfoForCastbar
+- GetStats.GetStats.CloseWindow
+- wbLeadHelper.wbLeadHelperMessagesTab.ListEnable
+- AdvancedPetAssist.APAGui.ToggleInstantOnlyHUD
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Hide
+- RoR_SoR.RoR_SoR.Restack
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarPageUpProxy
+- DAoCBuff.DAoCTooltips.Init
+- Enemy.Enemy.MarksUI_MarkConfigDialog_Hide
+- PotionBar.PotionBar.LibSlashHandler
+- DAoCBuff.DAoCBuffHeadTracker:Create
+- MapPin.MapPin.OnUpdate
+- DAoCBuff.DAoCTooltips.CreateCondenseTooltip
+- PotionBar.UpdateButton
+- PotionBar.PotionBarSettings.OnResetButton
+- PotionBar.PotionBarSettings.OnAlphaSliderChanged
+- GuardLine.GuardLine.update
+- wbLeadHelper.WbLeadHelperMessage.OnOk
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakOptions
+- DaemonAssist.DaemonAssist.PopulateBindingCombos
+- Aura.Aura:CreateEditWindows
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Hide
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelm
+- TurretRange.TurretRange.OnUpdate
+- RoR_SoR.RoR_SoR.SET_BO
+- wbLeadHelper.wbLeadHelperMessagesTab.ListSelChanged
+- Busted.Busted.Initialize
+- AnywhereTrainerAdditions.AnywhereTrainerAdditions.OnLeftClickAuction
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_IsOpen
+- DAoCBuff.DAoCTooltips.UpdateCondenseTooltip
+- PotionBar.PotionBarFloating.ShowSettings
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloak
+- wbLeadHelper.wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
+- Enemy.Enemy.UI_ConfigDialog_Hide
+- DAoCBuff.DAoCBuffSettings.CreateOptionswindow
+- EA_UiDebugTools.ObjectInspector.ShowWindow
+- EA_UiDebugTools.BustedGUI.ToggleMainWindow
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetOpacity
+- LoyalPet.LPET.SaveProfileOnButtonUp
+- RoR_SoR.RoR_SoR.CloseSetOffsetWindow
+- MapPin.MapPin.SetupCancel
+- MoraleCircle.MoraleCircle.OnSetCustomColor
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowShowHelmOnly
+- EA_UiDebugTools.BustedGUI.Initialize
+- Aura.Aura:CreateRuntimeWindows
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogHide
+- wbLeadHelper.wbLeadHelperConfigTab.OnReset
+- DAoCBuff.DAoCBuffSettings.Disable
+- MoraleCircle.MoraleCircle.ColorChanger2
+- WhoHealedMe.WhoHealedMe.Initialize
+- Enemy.Enemy.TimerInitialize
+- RandomMount.RandomMountUI.OnDropSlotLButtonUp
+- PotionBar.PotionBarSettings.OnAboutShown
+- AggroMeter.AggroMeter.SplitText
+- JunkDump.JunkDumpOptions.Done
+- WSCT.WSCT.OnHidden
+- wbLeadHelper.wbLeadHelper.drawWindows
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Open
 - JunkDump.JunkDumpOptions.Show
-- Shinies.Searches_UpdateWindowDisplay
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogIsOpen
+- Swift Assist.SwiftAssist.OnMacroUpdated
+- Enemy.Enemy.GroupsInitialize
+- PotionBar.PotionBarSettings.OnAboutButton
+- MoraleCircle.MoraleCircle.init
+- DAoCBuff.DAoCBuffSettings.OpenOptionswindow
+- AdvancedPetAssist.APAGui.Show
+- RoR_SoR.RoR_SoR.SET_CITY
+- DAoCBuff.DAoCBuffSettings.PopulateSettings
+- Aura.AuraAddon.Slash
+- GuardLine.GuardLine.Libguard_Toggle
+- Killer.Killer.ShowRowTooltip
+- EA_UiDebugTools.ObjectInspector.DepthMinus
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Hide
+- PotionBar.PotionBarSettings.OnUseCheckUpdateHighlighting
+- TurretRange.TurretRange.local.UpdateDisplay
+- Enemy.Enemy.CombatLogUI_IDS_Initialize
+- WSCT.WSCT.ColorAcceptButtonOnButtonUp
+- Swift Assist.Swift Assist.local.SetSmartLabel
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Hide
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.Hide
+- Enemy.Enemy.IntercomUI_IntercomJoinDialog_Hide
+- WSCT.WSCT.ColorOnButtonUp
+- AdvancedRenownTrainer.AdvancedRenownTrainer.local.CreateAbilityWindow
+- Enemy.Enemy.MarksUI_MarkConfigDialog_Open
+- Enemy.Enemy.CombatLogUI_EpsWindow_Hide
+- RandomMount.RandomMountUI.Hide
+- Enemy.Enemy._CombatLogUI_IDS_UpdateWindow
+- Moth.Moth.Initialize
+- BankArkel.BankArkel.CreatePackWin
 - MapPin.MapPin.local.OnHyperLinkLButtonUp2
-- QuickWarReport.QuickWarReport.Shutdown
-- QuickWarReport.QuickWarReport.local.HideConfirmWindow
-- AdvancedPetAssist.APAGui.UpdatePetTargetHUD
+- Swift Assist.SetTexLabel
+- wbLeadHelper.wbLeadHelperMessagesTab.ListDown
+- Enemy.Enemy.UI_TextEntryDialog_Open
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_IsOpen
+- DAoCBuff.DAoCBuffSettings.SetLabels
+- QuickWarReport.QuickWarReport.Initialize
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSetRow
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_Open
+- AdvancedPetAssist.APAGui.UpdateInstantOnlyHUD
+- Aura.AuraTexture.OnLoad
+- FastInteract.FastInteract.OptionsShow
+- WarBoard.WarBoard.Options.OpenUiModWindow
+- Killer.Killer.ShowTopKillersTooltip
+- RoR_SoR.RoR_SoR.SET_KEEP
+- wbLeadHelper.wbLeadHelper.OnInitialize
+- MapPin.MapPin.local.EditMarker
+- RoR_SoR.RoR_SoR.Text_Stream_Fetch
+- wbLeadHelper.wbLeadHelperConfigTab.OnSave
+- AnywhereTrainer.AnywhereTrainer.OnLeftClickRenown
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- WSCT.WSCT:DisplayText
+- Effigy.Effigy.RegisterStateInfoForPlayer
+- Enemy.Enemy.UI_ChooseIconDialog_Open
+- WhoHealedMe.WHMGui.OnOptionsInitialize
+- Enemy.Enemy.Timer_Update
+- Shinies.Searches_UpdateWindowDisplay
+- WhoHealedMe.WhoHealedMe.local.IsMainWindowVisible
+- Enemy.Enemy.local.SetStatsRow
+- wbLeadHelper.wbLeadHelperMessagesTab.OnResetMessages
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled5
+- Enemy.Enemy.MarksUI_EnemyMarksWindow_Update
 - FastInteract.FastInteract.OptionsClose
-- RoR_SoR.RoR_SoR.OnWindowOptionsSetScale
+- MapMonster.InitializeFilters
+- AggroMeter.AggroMeter.OnTabLBU
+- GuardLine.GuardLine.OnLayoutEditorStart
+- wbLeadHelper.wbLeadHelperConfigTab.Initialize
+- PotionBar.PotionBarSettings.OnDontSplitNameCheck
+- PotionBar.PotionBarSettings.OnScaleSliderChanged
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateActionBarSettings
+- MapPin.MapPin.UI_ChooseIconDialog_IsOpen
+- EA_UiDebugTools.DevPadWindow.CancelRename
+- Swift Assist.Swift Assist.local.WriteLabels
+- AdvancedRenownTrainer.CreateAbilityWindow
+- MapPin.MapPin.SetupAccept
+- PotionBar.PotionBarSettings.OnAboutClose
+- Enemy.Enemy.UI_ChooseIconDialog_IsOpen
+- RoR_SoR.RoR_SoR.DefaultSettings
+- Enemy.Enemy._Initialize
+- AdvancedPetAssist.APAGui.UpdateKitingHUD
+- RoR_SoR.RoR_SoR.ShowPopper
+- AdvancedPetAssist.APAGui.OnShown
+- AdvancedRenownTrainer.CreateTab
+- AdvancedRenownTrainer.AdvancedRenownTrainer.local.CreateTab
+- Swift Assist.Swift Assist.local.SetTexLabel
 - WarBoard.WarBoard.OnOptionsButton
+- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_IsOpen
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetOffset
+- DAoCBuff.DAoCBuffSettings.Change_Setting
+- Moth.Moth.UpdateHealthBar
+- TidyRoll.TidyRollOptions.Initialize
+- WhoHealedMe.WhoHealedMe.Shutdown
+- wbLeadHelper.wbLeadHelperMessagesTab.MessageAdd
+- wbLeadHelper.wbLeadHelperMessagesTab.MessageClone
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideCloakOptions
+- RoR_SoR.RoR_SoR.CloseSetOpacityWindow
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.OnInitialize
+- DaemonAssist.DaemonAssist.HideWindow
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Pocket Palette.PP.UpdateDyeFilter
+- RoR_SoR.RoR_SoR.OnInitialize
+- Miracle Grow Remix.MiracleGrow2.InitConfig
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- BankArkel.BankArkel.PackShow
+- BankArkel.BankArkel.PackImg
+- MapPin.MapPin.RButtonUp
+- GetStats.GetStats.OnChatLogUpdated
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnInitialize
+- MapPin.MapPin.SendText
+- MoraleCircle.MoraleCircle.ColorChanger1
+- AnywhereTrainer.AnywhereTrainer.OnLeftClickAuction
+- DaemonAssist.DaemonAssist.ToggleWindow
+- Killer.Killer.RefreshPersonalCounter
+- LoyalPet.LPET.RenameProfileOnButtonUp
+- wbLeadHelper.wbLeadHelper.createWbLeadHelperWindow
+- EA_UiDebugTools.DevPadWindow.Hide
 - PotionBar.PotionBar.Initialize
+- FastInteract.FastInteract.OptionsSetup
+- Enemy.Enemy.CombatLogUI_EpsWindow_IsOpen
+- WhoHealedMe.WHMCommands.CmdConfig
+- LoyalPet.LPET.AddProfileOnButtonUp
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_IsOpen
+- GuardLine.GuardLine.OffTarget
+- EA_UiDebugTools.ObjectInspector.AddInputHistory
+- LibSlash.LibSlash.Initialize
+- Busted.BustedGUI.NewErrorRecorded
+- Enemy.Enemy.IntercomInitialize
+- wbLeadHelper.wbLeadHelperMessagesTab.Hide
+- LoyalPet.LPET.OpenMenu
+- MapPin.MapPin.UI_ChooseIconDialog_Open
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UseItemRackToggled
+- Enemy.Enemy.local._OnKeyModifierChanged
+- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Open
+- JunkDump.JunkDumpOptions.InitSettings
+- PotionBar.PotionBar.local.UpdateButton
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowCloakHeraldry
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HideShowHelm
+- Enemy.Enemy.UI_ChooseIconDialog_Hide
+- QuickWarReport.QuickWarReport.local.PrepareConfirmWindowChrome
+- DAoCBuff.DAoCBuffSettings.UC
+- MapPin.MapPin.TestTooltip
+- EA_UiDebugTools.ObjectInspector.DepthPlus
+- Effigy.Effigy.RegisterStateInfoForTargets
+- RoR_SoR.RoR_SoR.SetWindowShow
+- WhoHealedMe.WHMGui.RefreshConfigurationWindow
+- BuffHead.BuffHead.local.RegisterLayoutEditor
+- WhoHealedMe.WHMGui.ShowOptionsWindow
+- RoR_SoR.RoR_SoR.OnSlideWindowOptionsOpacity
+- GuardLine.GuardLine.update2
+- Effigy.EffigyBar.Init
+- RandomMount.RandomMountUI.Refresh
+- Enemy.Enemy.MarksUI_EnemyMarksWindow_Open
+- QuickWarReport.PrepareConfirmWindowChrome
+- RoR_SoR.RoR_SoR.OnWindowOptionsSetScale
+- MapMonster.MapMonster.local.InitializeFilters
+- MoraleCircle.MoraleCircle.OnSetCustomColorFill
+- GuardLine.GuardLine.GetIDs
+- Busted.BustedGUI.ClearAlertFlash
+- Moth.Moth.Clear
+- AdvancedPetAssist.APAGui.UpdateFollowTargetHUD
+- BankArkel.BankArkel.BackPackShow
+- wbLeadHelper.wbLeadHelper.chat
+- MoraleCircle.MoraleCircle.OnSetCustomColorFull
+- Enemy.Enemy.StopwatchEnabledChanged
+- WSCT.WSCT.OnLButtonUpColorPicker
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Initialize
+- AdvancedPetAssist.ApplyHUDVisibilityFromSettings
+- Enemy.Enemy.local._OnArchetypeChanged
+- QuickWarReport.QuickWarReport.local.ShowConfirmWindow
+- DaemonAssist.DaemonAssist.UpdateWindow
+- BankArkel.BankArkel.Init
+- Enemy.Enemy.Assist_OnIntercomMessage
+- GuardLine.GuardLine.init
+- DAoCBuff.DAoCBuffFrame.MouseOverUpdate
+- AdvancedRenownTrainer.AdvancedRenownTraining.OnShown
+- QuickWarReport.QuickWarReport.local.HideConfirmWindow
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateHighlightOnRow
+- PotionBar.PotionBarFloating.Alpha
+- PotionBar.PotionBarSettings.Show1Check
+- AdvancedRenownTrainer.AdvancedRenownTraining.OnHidden
+- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateList
+- WhoHealedMe.WHMCore.ApplyBackgroundFillColor
+- WSCT.WSCT.UpdateAnimationOptions
+- Enemy.Enemy.CombatLogUI_EpsWindow_Open
+- Enemy.Enemy.Stopwatch_Update
+- Enemy.Enemy.IntercomUI_IntercomDialog_Open
+- JunkDump.JunkDumpOptions.DestroyOptionsWindow
+- PotionBar.PotionBar.Hide
+- TurretRange.TurretRange.OnLoadComplete
+- AdvancedPetAssist.APAGui.ToggleKitingHUD
+- wbLeadHelper.wbLeadHelperConfigTab.Hide
+- AdvancedRenownTrainer.AdvancedRenownTraining.Initialize
+- Enemy.Enemy.CombatLogUI_StatsWindow_Open
+- Enemy.Enemy.CombatLogUI_StatsWindow_Hide
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Hide
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_IsOpen
+- Enemy._OnKeyModifierChanged
+- Enemy.Enemy.MarksUI_MarkConfigDialog_IsOpen
+- PotionBar.PotionBarSettings.OnCancelButton
+- Killer.Killer.Initialize
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- AdvancedPetAssist.APAGui.ApplyPetTargetHUDLayout
+- Enemy.Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- AdvancedPetAssist.APAGui.UpdatePetTargetHUD
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Ok
+- MapPin.MapPin.ShowIcons
+- MoraleCircle.MoraleCircle.OnSetCustomColorEmpty
+- QuickWarReport.ShowConfirmWindow
+- AggroMeter.AggroMeter.Close
+- PotionBar.PotionBarFloating.Scale
+- wbLeadHelper.wbLeadHelperConfigTab.OnChanged
+- wbLeadHelper.wbLeadHelperMessagesTab.ListDelete
+- EA_UiDebugTools.DevPadWindow.HideSaveWindow
+- Enemy.Enemy.MarksInitialize
+- Enemy.Enemy.UI_ConfigDialog_OnSectionSelChanged
+- DAoCBuff.DAoCBuff.CloseMessageWindow
+- wbLeadHelper.wbLeadHelper.onZoneMouseOver
+- DaemonAssist.DaemonAssist.ShowWindow
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled3
+- Enemy.Enemy.CombatLogUI_IDS_OnSettingsChanged
+- EA_UiDebugTools.ObjectInspector.Toggle
+- JunkDump.JunkDumpOptions.CreateOptionsWindow
+- PotionBar.PotionBarSettings.UpdateLastCheckBasedOnInfoText
+- Busted.BustedGUI.UpdateNextPrevButtonStatus
+- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
+- AutoMark.AutoMark.local.CreateMarker
+- Swift Assist.SwiftAssist.aaLabelColorSet
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.OnShow
+- RandomMount.RandomMountUI.OnAddCustomMount
+- MiracleGrowLight.MiracleGrowLight.switchBackground
+- Enemy.Enemy.IntercomUI_IntercomDialog_Hide
+- JunkDump.CheckAndSetButton
+- QuickWarReport.QuickWarReport.local.EnsureConfirmWindow
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- WhoHealedMe.WHMGui.ToggleOptionsWindow
+- BankArkel.BankArkel.SetupCombos
+- PotionBar.PotionBar.Shutdown
+- MoraleCircle.MoraleCircle.ColorChanger4
+- wbLeadHelper.wbLeadHelper.showNormalTitle
+- AdvancedPetAssist.AnchorInContent
+- Enemy.Enemy.MarksUI_EnemyMarksWindow_IsOpen
+- JunkDump.JunkDump.local.CheckAndSetButton
+- RoR_SoR.RoR_SoR.OnChatLogUpdated
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_IsOpen
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_IsOpen
+- RoR_SoR.RoR_SoR.OnCombat
+- RoR_SoR.RoR_SoR.SET_CAMPAIGN
+- BankArkel.BankArkel.BackPackHide
+- DAoCBuff.DAoCBuffSettings.Reactivate
+- Enemy.Enemy.CombatLogUI_EpsWindow_Update
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarChangeToggled2
+- Enemy.Enemy.CombatLogUI_TargetDefenseTotalWindow_Hide
+- wbLeadHelper.wbLeadHelperConfigTab.ChooseIconMessageStart
+- PotionBar.PotionBar.Show
+- MiracleGrow.MiracleGrow.Initialize
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.Show
+- EA_UiDebugTools.ObjectInspector.InspectObject
+- Moth.Moth.Anchor
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_ChannelListChanged
+- Enemy.Enemy.AssistInitialize
+- Enemy.SetStatsRow
+- AutoMark.CreateMarker
+- RandomMount.RandomMountUI.OnInitialize
+- QuickWarReport.QuickWarReport.TestConfirmWindow
+- EA_UiDebugTools.ObjectInspector.ClearObjects
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Hide
+- WSCT.WSCT.ColorOnInitialize
+- Swift Assist.SwiftAssist.Initialize
+- RoR_SoR.RoR_SoR.OnSlideWindowOptionsScale
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.RefreshOption
+- wbLeadHelper.wbLeadHelperConfigTab.locallyStoreFormData
+- PotionBar.PotionBarSettings.OnHidden
+- BankArkel.BankArkel.PackHide
+- MapPin.MapPin.test
+- DAoCBuff.DAoCBuffSettings.CloseOptionswindow
+- Miracle Grow Remix.MiracleGrow2.ConfigTabChange
+- WarBoard.WarBoard.LoadGeneralSettings
+- AdvancedPetAssist.AdvancedPetAssist.local.ApplyHUDVisibilityFromSettings
+- EA_UiDebugTools.DevPadWindow.HideLoadProject
+- QuickWarReport.EnsureConfirmWindow
+- QuickWarReport.QuickWarReport.Shutdown
+- Aura.AuraAddon.OnLoad
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.Enemy.CombatLogUI_EpsWindow_UpdateLayout
+- WhoHealedMe.WHMCore.RunSettingEffects
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.HotbarPageDownProxy
+- TidyChat.TidyChat.LootRoll.OnRollLinkLButtonUp
+- MapPin.OnHyperLinkLButtonUp2
+- EA_UiDebugTools.BustedGUI.UpdateNextPrevButtonStatus
+- RoR_SoR.RoR_SoR.CloseSetScaleWindow
+- LibWBToggler.LibWBTogglerManager.Initialize
+- wbLeadHelper.wbLeadHelperConfigTab.ChooseIconMessageEnd
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy.Enemy.CombatLogUI_TargetDefenseWindow_Open
+- AdvancedPetAssist.AdvancedPetAssist.local.AnchorInContent
+- Killer.Killer.ShowPersonalStatsTooltip
+- wbLeadHelper.wbLeadHelperConfigWindow.Initialize
+- PotionBar.PotionBarSettings.AutohideCheck
+- CM_ClosetGoblin.ClosetGoblinCharacterWindow.ShowHelm
+- Enemy.Enemy.IntercomUI_IntercomJoinDialog_Open
+- EA_UiDebugTools.DevPadWindow.HideNewWindow
+- Busted.BustedGUI.Initialize
+- EA_UiDebugTools.ObjectInspector.WindowInit
+- Enemy.Enemy.ScenarioInfoUI_ScenarioInfoDialog_Open
+- Enemy.Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Enemy.EnemyMarkTemplate:ToggleMark
+- wbLeadHelper.wbLeadHelperConfigWindow.Hide
+- Enemy.Enemy.UI_ConfigDialog_Open
+- Enemy.Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
+- RoR_SoR.RoR_SoR.OnScenario
+- EA_UiDebugTools.ObjectInspector.CloseWindow
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- Busted.BustedGUI.UpdateErrorView
+- Enemy.Enemy.CombatLogUI_IDS_Update
+- Enemy.Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- Enemy.Enemy.GroupsUI_EffectFilterDialog_Hide
+- wbLeadHelper.wbLeadHelperMessagesTab.Initialize
+- EA_UiDebugTools.DevPadWindow.OnKeyEscape
+- EA_UiDebugTools.DevPadWindow.HideDeleteWindow
+- BankArkel.BankArkel.SetCharInfo
+- Enemy.Enemy.CombatLogUI_StatsWindow_IsOpen
+- Effigy.EffigyBar:setup
+- MapPin.EditMarker
+- Enemy.EnemyGroupIcon:Attach
+- BuffHead.RegisterLayoutEditor
+- Enemy.Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
+- Killer.Killer.ApplyFeedLayout
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.Hide
+- wbLeadHelper.wbLeadHelperMessagesTab.Show
+- wbLeadHelper.wbLeadHelperMessagesTab.MessageEdit
+- wbLeadHelper.wbLeadHelperConfigTab.Show
+- wbLeadHelper.wbLeadHelperConfigTab.OnLoad
+- RoR_SoR.RoR_SoR.HidePopper
+- WSCT.WSCT:ObjectIDAnimation
+- WhoHealedMe.WHMGui.HideOptionsWindow
+- PotionBar.PotionBarSettings.QuickActionsSelChanged
+- AdvancedRenownTrainer.GeneratePresetByLinkData
+- TurretRange.UpdateDisplay
+- WarBoard.WarBoard.SlashCommand
+- wbLeadHelper.WbLeadHelperMessage.MessageDialogOpen
+- MapPin.MapPin.LButtonUp
+- Enemy.EnemyUnitFrame:ApplySettings
+- DAoCBuff.DAoCBuff.ShowMessageWindow
+- Aura.AuraTexture.OnClose
+- CM_ClosetGoblin.ClosetGoblinZoneWindow.UpdateHighlightOnRow
+- Enemy.Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
+- Moth.Moth.UpdateTarget
+- Enemy.Enemy.AssistUI_Target_Show
+- JunkDump.JunkDumpOptions.UpdateBagModeOnOff
+- EA_UiDebugTools.DevPadWindow.HideConfirmLoadWindow
+- Enemy.Enemy.MarksUI_EnemyMarksWindow_Hide
+- AdvancedPetAssist.APAGui.Hide
+- QuickWarReport.HideConfirmWindow
+- Moth.Moth.HealthBar
+- AdvancedPetAssist.APAGui.HidePetTargetHUD
+- Pocket Palette.PP.UpdateListRow
+- Enemy.Enemy.UnitFramesUI_ConfigDialog_Import
+- AdvancedRenownTrainer.AdvancedRenownTraining.ChangeTab
+- Moth.Moth.UpdateLevel
+- Enemy.Enemy.CombatLogUI_EpsWindow_Initialize
 
 ## Seen In
 

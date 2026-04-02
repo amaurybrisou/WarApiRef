@@ -82,13 +82,13 @@ Observed XML element type instantiated by 2 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `popable` | **required** | 100% | false |
-| `foreground` | optional | 80% | FORT_DefaultTintableBar, T1_DefaultTintableBar |
-| `handleinput` | optional | 80% | false |
-| `reverseFill` | optional | 40% | true |
-| `inherits` | optional | 20% | UnitFrameFriendlyHealthStatusSmallBar |
-| `interpolate` | optional | 20% | true |
-| `layer` | optional | 20% | background |
+| `popable` | optional | 50% | false |
+| `foreground` | optional | 40% | T1_DefaultTintableBar, FORT_DefaultTintableBar |
+| `handleinput` | optional | 40% | false |
+| `reverseFill` | optional | 20% | true |
+| `inherits` | optional | 10% | UnitFrameFriendlyHealthStatusSmallBar |
+| `interpolate` | optional | 10% | true |
+| `layer` | optional | 10% | background |
 ## Seen In
 
 - RoR_SoR

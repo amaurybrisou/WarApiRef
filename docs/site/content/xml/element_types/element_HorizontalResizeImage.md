@@ -108,12 +108,12 @@ Observed XML element type instantiated by 12 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 51% | EA_HorizontalResizeImage_TabSeparatorMiddle, RewardPoolFilledBarLoser, RewardPoolFilledBarVictor, EA_BrownHorizontalRule, ... |
-| `texture` | optional | 48% | EA_TintableImage, EA_HUD_01, EA_VictoryPoints01_32b, shared_01 |
-| `handleinput` | optional | 38% | false |
-| `layer` | optional | 16% | background |
-| `savesettings` | optional | 16% | false |
-| `alpha` | optional | 3% | 1 |
+| `inherits` | optional | 37% | EA_HorizontalResizeImage_TabSeparatorMiddle, VictoryPointsFilledBarOrder, EA_BrownHorizontalRule, RewardPoolFilledBarLoser, ... |
+| `texture` | optional | 34% | EA_VictoryPoints01_32b, EA_HUD_01, EA_TintableImage, shared_01 |
+| `handleinput` | optional | 27% | false |
+| `layer` | optional | 11% | background |
+| `savesettings` | optional | 11% | false |
+| `alpha` | optional | 2% | 1 |
 ## Structural Sub-Elements
 
 ### [Middle](element_Middle.md)
@@ -159,7 +159,11 @@ Observed 5 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
+- AdvancedPetAssist.APAGui.UpdateInstantOnlyHUD
+- AdvancedPetAssist.APAGui.UpdateFollowTargetHUD
+- AdvancedPetAssist.APAGui.UpdateKitingHUD
 - PotionBar.PotionBarSettings.OnShown
+- AdvancedPetAssist.APAGui.UpdatePetTargetHUD
 
 ## Seen In
 
