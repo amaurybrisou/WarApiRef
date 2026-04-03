@@ -27,7 +27,8 @@ let graphData      = null;
 let cyInstance     = null;   // Cytoscape instance
 
 // --- Analysis toggle ---------------------------------------------------------
-const ANALYSIS_STORAGE_KEY = "war-api-show-analysis";
+const ADVANCED_STORAGE_KEY = "war-api-show-advanced";
+const LEGACY_ANALYSIS_STORAGE_KEY = "war-api-show-analysis";
 
 // Exact H2 heading text (lower-cased) that belong to the internal analysis surface.
 // Any section whose title matches is hidden by default and revealed via the toggle.
@@ -39,12 +40,13 @@ const ANALYSIS_HEADINGS = new Set([
 ]);
 
 function applyAnalysisToggle(show) {
+	document.body.classList.toggle("show-advanced", show);
   document.body.classList.toggle("show-analysis", show);
   if (analysisToggle) {
     analysisToggle.classList.toggle("secondary", show);
     analysisToggle.setAttribute("aria-pressed", show ? "true" : "false");
   }
-  try { localStorage.setItem(ANALYSIS_STORAGE_KEY, show ? "1" : "0"); } catch {}
+  try { localStorage.setItem(ADVANCED_STORAGE_KEY, show ? "1" : "0"); } catch {}
 }
 
 // --- Routing helpers ----------------------------------------------------------
@@ -852,9 +854,17 @@ async function handleRoute() {
 
 // --- Init ---------------------------------------------------------------------
 (async function init() {
-  // Restore analysis toggle preference (default: hidden).
+  // Restore advanced-details toggle preference (default: hidden).
   let showAnalysis = false;
-  try { showAnalysis = localStorage.getItem(ANALYSIS_STORAGE_KEY) === "1"; } catch {}
+  try {
+    const current = localStorage.getItem(ADVANCED_STORAGE_KEY);
+    if (current === "1" || current === "0") {
+      showAnalysis = current === "1";
+    } else {
+      // One-time migration from old key.
+      showAnalysis = localStorage.getItem(LEGACY_ANALYSIS_STORAGE_KEY) === "1";
+    }
+  } catch {}
   applyAnalysisToggle(showAnalysis);
 
   await Promise.all([loadSearchIndex(), loadGraph(), loadNavigation()]);

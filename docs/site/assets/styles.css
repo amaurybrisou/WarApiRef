@@ -467,11 +467,26 @@ main {
 /* ── 12. Utilities ───────────────────────────────────────────────────────── */
 .hidden { display: none !important; }
 
-/* ── 12.5. Analysis toggle ──────────────────────────────────────────────── */
-/* Analysis sections (Confidence Assessment, Evidence Signals, Evidence Summary,
-   Binding Resolution) are hidden by default. The "Analysis" topbar button adds
-   .show-analysis to <body> to reveal them. State is persisted in localStorage. */
-body:not(.show-analysis) .doc-section.analysis-section {
+/* ── 12.5. Advanced toggle ─────────────────────────────────────────────── */
+/* Advanced/internal sections are hidden by default. The topbar Advanced button
+   adds .show-advanced to <body> to reveal them. */
+body:not(.show-advanced) .doc-section.analysis-section {
+  display: none;
+}
+
+/* Reduce navigation noise by default; reveal structural-only groups in advanced mode. */
+body:not(.show-advanced) .nav-tree .nav-structural {
+  display: none;
+}
+
+/* Hide group "Overview" links by default; they are internal navigation helpers. */
+body:not(.show-advanced) .nav-tree .nav-group-link {
+  display: none;
+}
+
+/* Keep graph simple by default; advanced mode reveals filters and legend. */
+body:not(.show-advanced) .graph-legend,
+body:not(.show-advanced) .graph-controls {
   display: none;
 }
 

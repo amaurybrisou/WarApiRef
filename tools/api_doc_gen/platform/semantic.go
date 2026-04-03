@@ -632,12 +632,6 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog, input contractSema
 			}
 			recordCombination(contextIDs, evidence)
 		}
-		if strings.Contains(strings.ToLower(symbol.Description), "window") || symbol.Category == "Window Function" {
-			windowElement, matched := catalog.lookup("Window", "ui_element")
-			if matched {
-				addEdge(entry.ID, windowElement.ID, "updates_ui", symbol.Name+": description and category indicate window-facing behavior")
-			}
-		}
 	}
 
 	// Emit commonly_used_with edges directly into edgeAccumulators so that the
