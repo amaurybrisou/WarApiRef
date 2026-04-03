@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 14 addons
+- Seen in: 65 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BankArkel, BuffHead, DAoCBuff, Enemy, Killer, LibWBToggler, PartyCast |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1068`, `/workspace/data/raw/BankArkel/BankArkel.lua:513`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:70`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.lua:342`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:431`, `/workspace/data/raw/BuffHead/Setup/SetupContainer.lua:187` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, BankArkel, BuffHead, Busted, CCTV, CDown |
+| Files seen in | BankArkel.lua, Busted.lua, CCTV.lua, CDownSettings.lua, ChattyCathy.lua, Code/Core/Groups/EnemyEffectFilter.lua, Code/Intercom/Intercom.lua, Code/UnitFrames/ClickCasting.lua |
 | Namespaces detected | ComboBoxAddMenuItem |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Combobox:Add, BankArkel: BankArkel.SetupCombos, BuffHead: BuffHead.Setup.AdvancedCompressionItemEffect.Initialize, BuffHead: BuffHead.Setup.AdvancedContainersItem.Initialize, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Initialize, BuffHead: BuffHead.Setup.Container.Initialize |
+| Example locations | Ace: Add, ActionBarHide: Add, Amethyst: Add, BankArkel: SetupCombos, BuffHead: Initialize, BuffHead: LoadEffectsSettings |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 295 |
-| Global usage count | 295 |
+| Lua usage count | 554 |
+| Global usage count | 554 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,52 +65,104 @@ ComboBoxAddMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 14 addons.
+Observed as a window function across 65 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", "EnemyChooseChannelDialogChannelList", "EnemyClickCastingDialogContentScrollChildAction" |
-| arg2 | Observed as a function or method reference. | Observed values: BankArkel.db.Entry[i].Name, L "---", L "0.#" |
+| arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", "BustedGUIAddonSelect", "CCTVSettingsCombobox4" |
+| arg2 | Observed as a function or method reference. | Observed values: BankArkel.db.Entry[i].Name, CraftValueTip.GetPhrase("config","langdefault"), GetString(StringTables.Default.LABEL_GREED) |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
 - BankArkel
 - BuffHead
+- Busted
+- CCTV
+- CDown
+- CaVES
+- CastSequence
+- ChattyCathy
+- Crafting Info Tooltip
+- Crusher
 - DAoCBuff
+- DPSMeter
+- EA_UiDebugTools
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDsaver
+- GroupRange
+- GuildWarden
+- Hopper
+- InfoScroller
+- KeysetMonsterPlay
 - Killer
+- LibAddonButton
 - LibWBToggler
+- Map
+- MarkBuff
+- Miracle Grow Remix
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
+- OverheadFonts
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- RealmStatus
+- SOR
+- ScenarioStats
 - Shinies
+- Statdoll Remix
+- TalismanGenie
+- TargetRing
+- TastyButtons
 - TexturedButtons
+- ThinkOutLoud
 - TidyRoll
+- TokenMachine
+- Tokens
 - TurretRange
+- TwisterSet
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- ZonePOP
+- alertMod
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Combobox:Add -> ComboBoxAddMenuItem(self.name, itemText)
-- BankArkel: BankArkel.SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", StringToWString(tbNone))
-- BankArkel: BankArkel.SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", StringToWString(tbSelf))
-- BankArkel: BankArkel.SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", BankArkel.db.Entry[i].Name)
-- BuffHead: BuffHead.Setup.AdvancedCompressionItemEffect.Initialize -> ComboBoxAddMenuItem(windowName.."CastByComboBox", localization["Setup.AdvancedCompressionItemEffect.CastBy.Self"])
-- BuffHead: BuffHead.Setup.AdvancedCompressionItemEffect.Initialize -> ComboBoxAddMenuItem(windowName.."CastByComboBox", localization["Setup.AdvancedCompressionItemEffect.CastBy.Others"])
+- Ace: Add -> ComboBoxAddMenuItem(self.name, itemText)
+- ActionBarHide: Add -> ComboBoxAddMenuItem(self.name, itemText)
+- Amethyst: Add -> ComboBoxAddMenuItem(self.name, itemText)
+- BankArkel: SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", StringToWString(tbNone))
+- BankArkel: SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", StringToWString(tbSelf))
+- BankArkel: SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", BankArkel.db.Entry[i].Name)
 
 ## Related APIs
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
@@ -118,15 +170,10 @@ Observed as a window function across 14 addons.
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [DefaultColor.SetWindowTint](../../globals/functions/global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function
+- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

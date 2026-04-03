@@ -2,45 +2,47 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 70/100
-- Seen in: 1 addons
+- Confidence score: 88/100
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 70/100
+- Score: 88/100
 
-- Rationale: Promoted as HIGH confidence because matches a known engine namespace, referenced by generated docs or reference files, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches a known engine namespace, called globally with no local definition, seen in 2 to 3 addons.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:47` |
+| Addons seen in | BuffHead, Tome Titan |
+| Files seen in | Setup/LayoutFrame.lua, TTitan_UI.lua |
 | Namespaces detected | DefaultColor |
-| Source kinds | globals, lua_calls |
-| Example locations | BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor |
+| Source kinds | lua_calls |
+| Example locations | BuffHead: UpdateFrameColor, Tome Titan: MouseOverRow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | no |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
-| Consistent arguments | no |
+| Consistent role | yes |
+| Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -60,18 +62,18 @@ DefaultColor.SetLabelColor(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 1 addons.
+Observed as a global function across 2 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: self:GetName().."Name" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: nameColor |
+| arg1 | Observed as a function or method reference. | Observed values: self:GetName().."Name", targetRowWindow.."Name" |
+| arg2 | Observed as a function or method reference. | Observed values: DefaultColor.MAGENTA, nameColor |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -80,28 +82,18 @@ Observed as a global function across 1 addons.
 ## Seen In
 
 - BuffHead
+- Tome Titan
 
 ## Examples
 
-- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetLabelColor(self:GetName().."Name", nameColor)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
+- BuffHead: UpdateFrameColor -> DefaultColor.SetLabelColor(self:GetName().."Name", nameColor)
+- Tome Titan: MouseOverRow -> DefaultColor.SetLabelColor(targetRowWindow.."Name", DefaultColor.MAGENTA)
 
 ## Affects
 
-- none
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

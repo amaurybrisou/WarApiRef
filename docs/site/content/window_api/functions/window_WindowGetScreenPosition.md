@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 37 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoMark, BuffHead, Enemy, GuardLine, MiracleGrowLight, Pocket Palette, Shinies, TexturedButtons |
-| Files seen in | `/workspace/data/raw/AutoMark/Source/AutoMark.lua:124`, `/workspace/data/raw/BuffHead/Container.lua:1129`, `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:8`, `/workspace/data/raw/BuffHead/Setup/Setup.lua:141`, `/workspace/data/raw/BuffHead/Setup/Setup.lua:171`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:375`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:520`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutProperties.lua:332` |
+| Addons seen in | AdjustTheTip, Amethyst, Atlas, AuctionStats, AutoMark, BuffHead, Calling, CastSequence |
+| Files seen in | AdjustTheTip.lua, Amethyst.lua, AuctionStats.lua, Button.lua, CallingTargetMarker.lua, ChattyCathy.lua, Code/Core/ObjectWindows.lua, Container.lua |
 | Namespaces detected | WindowGetScreenPosition |
 | Source kinds | lua_calls |
-| Example locations | AutoMark: AutoMark.OnUpdate, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show, BuffHead: BuffHead.Setup.Layout.Properties.Show, BuffHead: BuffHead.Setup.SetActiveWindow, BuffHead: BuffHead.Setup.Show, BuffHead: BuffHead.local.GetRelativeScreenPosition |
+| Example locations | AdjustTheTip: UpdateCallback, Amethyst: SavePosition, Atlas: ShowCoordinatesOnMouseOver, AuctionStats: AddExtraWindow, AutoMark: OnUpdate, BuffHead: GetRelativeScreenPosition |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 37 |
-| Global usage count | 37 |
+| Lua usage count | 111 |
+| Global usage count | 111 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,59 +71,86 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "GuardLineOffGuardSelfWindow", "GuardLineOffGuardTargetWindow", "GuardLineScaleWindow" |
+| windowName | Observed as a target window name. | Observed values: "AbilityTooltip", "AbilityTooltipBackground", "AtlasFrameMapContainerMapDisplay" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- AdjustTheTip
+- Amethyst
+- Atlas
+- AuctionStats
 - AutoMark
 - BuffHead
+- Calling
+- CastSequence
+- ChattyCathy
+- CraftingWillard
+- Effigy
 - Enemy
+- Group Icons
+- GroupRange
 - GuardLine
+- KeyBar
+- LibAddonButton
+- MapMonster
+- MapPin
+- Miracle Grow Remix
 - MiracleGrowLight
+- Obsidian
 - Pocket Palette
+- RVAPI_ColorDialog
+- ResHelp
+- RvRContribution
+- SNT_PANEL
 - Shinies
+- TastyButtons
 - TexturedButtons
+- Tokens
 - TurretRange
+- Vectors
+- WARCommander
+- WARRatingBuster
 - WSCT
+- scenarioInfo
 
 ## Examples
 
-- AutoMark: AutoMark.OnUpdate -> WindowGetScreenPosition(WINDOW_NAME_TEST)
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -> WindowGetScreenPosition(BuffHead.Setup.AdvancedContainersItem.WindowName)
-- BuffHead: BuffHead.Setup.Layout.Properties.Show -> WindowGetScreenPosition(BuffHead.Setup.Layout.WindowName)
-- BuffHead: BuffHead.Setup.SetActiveWindow -> WindowGetScreenPosition(windowName)
-- BuffHead: BuffHead.Setup.Show -> WindowGetScreenPosition(windowName)
-- BuffHead: BuffHead.local.GetRelativeScreenPosition -> WindowGetScreenPosition(containerWindow)
+- AdjustTheTip: UpdateCallback -> WindowGetScreenPosition("AbilityTooltipBackground")
+- AdjustTheTip: UpdateCallback -> WindowGetScreenPosition("AbilityTooltip")
+- Amethyst: SavePosition -> WindowGetScreenPosition(C.name)
+- Atlas: ShowCoordinatesOnMouseOver -> WindowGetScreenPosition("AtlasFrameMapContainerMapDisplay")
+- AuctionStats: AddExtraWindow -> WindowGetScreenPosition(Tooltips.curTooltipWindow)
+- AuctionStats: AddExtraWindow -> WindowGetScreenPosition(Tooltips.curMouseOverWindow)
 
 ## Related APIs
 
-- none
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [OnMouseOverEnd](../../xml/handlers/handler_OnMouseOverEnd.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
+- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
 - [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [SystemData.MousePosition.x](../../systemdata/fields/systemdata_SystemData.MousePosition.x.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MousePosition.y](../../systemdata/fields/systemdata_SystemData.MousePosition.y.md) (HIGH 100/100) - SystemData Field
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowGetScale](window_WindowGetScale.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

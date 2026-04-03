@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, Enemy, TidyChat, bigger_MacroWindow |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/SetupEffectCacheTable.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutManager.xml:0`, `/workspace/data/raw/Enemy/Code/Core/Common.xml:0`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:0`, `/workspace/data/raw/bigger_macrowindow/Source/MacroWindow.xml:0` |
+| Addons seen in | AutoBand, BuffHead, Busted, EA_UiDebugTools, Enemy, LibAddonButton, MapMonster, MapPin |
+| Files seen in | AutoBandWindow.xml, Busted.xml, Code/Core/Common.xml, Manager/CustomItem.xml, ObjectInspector.xml, Setup/SetupEffectCacheTable.xml, Setup/SetupLayoutManager.xml, Source/DebugWindow.xml |
 | Namespaces detected | EA_EditBox_DefaultFrame_Multiline |
 | Source kinds | xml_attributes |
-| Example locations | BuffHeadSetupEffectCacheTableWindowTableEditBox, BuffHeadSetupLayoutManagerWindowElementExportEditBox, BuffHeadSetupLayoutManagerWindowElementImportEditBox, EA_Window_MacroDetailsText, EnemyTextEntryDialogValue, TidyChatCopyLog |
-| XML usage count | 6 |
-| XML attribute usage count | 6 |
+| Example locations | AutoBandCopyLinkWindowUrlInput, BuffHeadSetupEffectCacheTableWindowTableEditBox, BuffHeadSetupLayoutManagerWindowElementExportEditBox, BuffHeadSetupLayoutManagerWindowElementImportEditBox, BustedGUIErrorMessage, DevPadWindowDevPadCode |
+| XML usage count | 19 |
+| XML attribute usage count | 19 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,39 +57,50 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 4 addons.
+Engine-supplied XML constant or template class referenced by 14 addons.
 
 ## Seen In
 
+- AutoBand
 - BuffHead
+- Busted
+- EA_UiDebugTools
 - Enemy
+- LibAddonButton
+- MapMonster
+- MapPin
+- ObjectInspector
+- Squared
+- TastyButtons
 - TidyChat
 - bigger_MacroWindow
+- zMailMod
 
 ## Used By
 
+- AutoBandCopyLinkWindowUrlInput
 - BuffHeadSetupEffectCacheTableWindowTableEditBox
 - BuffHeadSetupLayoutManagerWindowElementExportEditBox
 - BuffHeadSetupLayoutManagerWindowElementImportEditBox
+- BustedGUIErrorMessage
+- DevPadWindowDevPadCode
 - EA_Window_MacroDetailsText
 - EnemyTextEntryDialogValue
+- LibAddonButtonManagerCustomItemWindowMacroEditBox
+- LibAddonButtonManagerCustomItemWindowMacroTooltipEditBox
+- MapMonster_EditorWindowNoteEditBox
+- MapPin_SetupDescBox
+- MapPin_SetupTextBox
+- ObjectInspectorObjectEditBox
+- SquaredImportExportFrameData
+- TastyButtonsButtonSelectWindowButtonRangeViewEditComplex
 - TidyChatCopyLog
+- zMailModMassMailMessageBodyEditBox
+- zMailModSendMessageEditBoxDefault
 
 ## Related APIs
 
 - [EditBox](../../xml/element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

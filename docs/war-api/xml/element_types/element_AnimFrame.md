@@ -1,14 +1,14 @@
 # AnimFrame
 
 - Category: XML Element Type
-- Confidence level: LOW
-- Confidence score: 20/100
+- Confidence level: MEDIUM
+- Confidence score: 45/100
 
 ## Confidence Assessment
 
-- Level: LOW
+- Level: MEDIUM
 
-- Score: 20/100
+- Score: 45/100
 
 - Rationale: unknown
 
@@ -62,17 +62,24 @@ AnimFrame is a XML UI element. It commonly appears under AnimFrames.
 
 ## Common Parent Elements
 
-- [AnimFrames](element_AnimFrames.md) — 14× (HIGH)
+- [AnimFrames](element_AnimFrames.md) — 222× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `id` | **required** | 100% | 1, 2, 3, 4, ... |
-| `x` | **required** | 100% | 0, 72, 144, 216, ... |
-| `y` | **required** | 100% | 0, 85, 170 |
+| `x` | **required** | 100% | 64, 101, 138, 175, ... |
+| `y` | **required** | 100% | 796, 0, 128, 256, ... |
 ## Seen In
 
+- CMap
+- CoolDownLine
+- EA_LoadingScreen
+- MapMonster
+- RVMOD_SquaredDistances
+- TastyButtons
+- TheSeeker
 - TidyRoll
 
 ## Examples
@@ -81,16 +88,4 @@ AnimFrame is a XML UI element. It commonly appears under AnimFrames.
 
 ## Related APIs
 
-- [AnimFrames](element_AnimFrames.md) (MEDIUM 45/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [AnimFrames](element_AnimFrames.md) (HIGH 100/100) - XML Element Type

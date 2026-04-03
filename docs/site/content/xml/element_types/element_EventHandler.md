@@ -48,7 +48,7 @@
 
 ## Description
 
-EventHandler is a XML UI element. It commonly appears under EventHandlers.
+EventHandler is a XML UI element. It commonly appears under Button and EventHandlers.
 
 ## Common Attributes
 
@@ -61,7 +61,9 @@ EventHandler is a XML UI element. It commonly appears under EventHandlers.
 
 ## Common Parent Elements
 
-- [EventHandlers](element_EventHandlers.md) — 1707× (HIGH)
+- [EventHandlers](element_EventHandlers.md) — 5515× (HIGH)
+- [Eventhandlers](element_Eventhandlers.md) — 2× (LOW)
+- [Button](element_Button.md) — 1× (LOW)
 
 ## Attribute Reference
 
@@ -76,32 +78,211 @@ EventHandler is a XML UI element. It commonly appears under EventHandlers.
 - AggroMeter
 - AnywhereTrainer
 - AnywhereTrainerAdditions
+- ArmorGraphicToggle
+- Atlas
+- AuctionStats
 - Aura
+- AutoBand
+- AutoSalvage
 - BagOMatic
 - BankArkel
+- BankWindowFix
+- BarText (Influence)
+- BlackBook
+- Bloody Mess
+- Brizio's Crappy Computer Medic
+- BuddyBind
 - BuffHead
+- Busted
+- CCTV
+- CDown
 - CM_ClosetGoblin
+- CMap
+- CaVES
+- Calling
+- CastSequence
+- ChattyCathy
+- Cheeseboard
+- CleanUnitFrames
+- CraftingWillard
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DaemonAssist
+- DammazKron
+- Dascore
+- Deathblow
+- Deathblow2
+- DeepSleep
+- DetauntHelper
+- Duel
+- DuffTimer
+- Dye Preview
+- EA_LoadingScreen
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_ThreePartBar
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraft
+- EZCraftX
+- Effigy
+- Emojii
 - Enemy
+- EveryBodyGuard
+- FastFriends
+- FastInteract
+- FozAuction
+- GDes
+- Ges
+- GetStats
+- Group Icons
+- Group Icons SG
+- GroupRange
+- GroupSpotter
 - GuardLine
+- GuardList
+- GuardRange
+- GuildWarden
+- HealGrid
+- Hopper
+- I HATE YOU THIS MUCH
+- InfoScroller
+- ItemRack
+- JunkDump
+- KeyBar
+- Keyset
+- KeysetMonsterPlay
+- KillTracker
 - Killer
+- Kwestor
+- LibAddonButton
 - LibGroup
+- LootAlert
+- LoyalPet
+- MacroIcons
+- ManualScenarioRefresh
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- Mass Refine
+- MegaphonePlusPlus
+- MiniMapMonster
+- Minmap
+- Miracle Grow Remix
+- MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
+- MoraleSet
+- Motion
+- NaturalLog
+- NerfedButtons
+- NoOverheal
+- ObjectInspector
+- Obsidian
+- PartyAd
 - PartyCast
+- PeaceOut
+- Phantom
+- PieTracker
+- PlayEffectsOn
 - Pocket Palette
 - PotionBar
+- Pure
+- Pure Careerbar
+- Queue Queuer
+- QuickTacticSwitch
+- QuickWarReport
+- RPs
+- RVAPI_ColorDialog
+- RVAPI_Range
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- RaidMeter
+- RandomMount
+- RealmStatus
+- Refer
+- ReliquaryHunter
+- RememberIt
+- Res
+- ResHelp
 - RoR_SoR
+- RoR_debolster
+- Rolodex
+- Rotation
+- RvRContribution
+- RvRStats
+- RvRStatsTab
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SNT_INFO
+- SNT_PANEL
+- SOR
+- ScenarioStats
+- Sequencer
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- Soloq
+- SpamBayes
+- Squared
+- SquaredClick
+- Statdoll
+- Statdoll Light
+- Statdoll Remix
+- TacticSetNames
+- TalismanGenie
+- Targets
+- TastyButtons
+- TaxPayer
 - TexturedButtons
+- ThankTheTank
+- ThinkOutLoud
 - TidyChat
+- TidyQueue
 - TidyRoll
+- TokenMachine
+- Tome Titan
+- TomeTracker
+- Tortall_DPS
+- Trakario
 - TurretRange
+- Twister
+- TwisterSet
+- Vectors
+- VerticalMorale
+- WARCommander
+- WBStutterLess
 - WSCT
+- WTes
 - WarBoard
+- WarBoard_AAOTracker
+- WarBoard_FPS
+- WarBoard_Loc
+- WarBoard_Session
+- WarBoard_TDPS
+- WarBoard_TaliMon
+- Warbuilder
+- Wargames
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- XpStatus+G
+- ZonePOP
+- alertMod
 - bigger_MacroWindow
+- emotes
 - followTheLeader
+- fpsbox
+- minesweep
+- nLootLink
+- talisman-monitor
+- wbLeadHelper
+- zMailMod
 
 ## Examples
 
@@ -109,16 +290,6 @@ EventHandler is a XML UI element. It commonly appears under EventHandlers.
 
 ## Related APIs
 
-- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (HIGH 100/100) - XML Element Type
+- [Eventhandlers](element_Eventhandlers.md) (MEDIUM 45/100) - XML Element Type

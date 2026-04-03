@@ -2,36 +2,41 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 80/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 13 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 80/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Raw weighted score: 135
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:2881` |
+| Addons seen in | BBars - Mechanic Only, CoolDownLine, DammazKron, FlagCap, GetStats, Group Icons SG, KeyBar, MapPin |
+| Files seen in | BBarsPetHP.lua, BBarsPlayerMechanic.lua, CoolDownLine.lua, Core/Tome/DK_Tome.lua, FlagCap.lua, GetStats.lua, GroupIconsSG.lua, KeyBar.lua |
 | Namespaces detected | WindowSetOffsetFromParent |
 | Source kinds | lua_calls |
-| Example locations | RoR_SoR: RoR_SoR.DefaultSettings |
+| Example locations | BBars - Mechanic Only: MechDraw, BBars - Mechanic Only: PetHPDraw, CoolDownLine: OnUpdate, DammazKron: InitializeBookmark, FlagCap: OnUpdate, GetStats: OnChatLogUpdated |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 43 |
+| Global usage count | 43 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -39,8 +44,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
-| Consistent arguments | no |
+| Consistent role | yes |
+| Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -66,13 +71,13 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "RoR_SoR_Main_Window" |
-| arg2 | Observed as a numeric value. | Observed values: 350 |
-| arg3 | Observed as a numeric value. | Observed values: 100 |
+| windowName | Observed as a target window name. | Observed values: "10secBG2", "30secBG2", "60secBG2" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: ((-10)+(width*(controlFill/100))), ((GetHotbarCooldown(i)/10)*(MaxLength*(2-(GetHotbarCooldown(i)/15))))*0.1875, (MaxLength*0.125)+((GetHotbarCooldown(i)/20)*(MaxLength*0.25)) |
+| arg3 | Observed as a runtime window or control identifier. | Observed values: (PosY/UIScale)-(height/2), (UnitBuffer/2), -3 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -80,28 +85,34 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
+- BBars - Mechanic Only
+- CoolDownLine
+- DammazKron
+- FlagCap
+- GetStats
+- Group Icons SG
+- KeyBar
+- MapPin
+- RO-Style Combat Text
 - RoR_SoR
+- RoR_debolster
+- Twister
+- WarBoard_WarWhisperer
 
 ## Examples
 
-- RoR_SoR: RoR_SoR.DefaultSettings -> WindowSetOffsetFromParent("RoR_SoR_Main_Window", 350, 100)
+- BBars - Mechanic Only: MechDraw -> WindowSetOffsetFromParent("BBarsPlayerMechanic1Grey", (UnitBuffer/2), (UnitBuffer/2))
+- BBars - Mechanic Only: MechDraw -> WindowSetOffsetFromParent("BBarsPlayerMechanic2Grey", (UnitBuffer/2), (UnitBuffer/2))
+- BBars - Mechanic Only: MechDraw -> WindowSetOffsetFromParent("BBarsPlayerMechanic3Grey", (UnitBuffer/2), (UnitBuffer/2))
+- BBars - Mechanic Only: MechDraw -> WindowSetOffsetFromParent("BBarsPlayerMechanic4Grey", (UnitBuffer/2), (UnitBuffer/2))
+- BBars - Mechanic Only: MechDraw -> WindowSetOffsetFromParent("BBarsPlayerMechanic5Grey", (UnitBuffer/2), (UnitBuffer/2))
+- BBars - Mechanic Only: MechDraw -> WindowSetOffsetFromParent("BBarsPlayerMechanic1Frontbar", (UnitBuffer/2), (UnitBuffer/2))
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- Advanced return analysis: No strong return evidence observed

@@ -24,10 +24,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | PartyCast |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.lua:655` |
+| Files seen in | PartyCast.lua |
 | Namespaces detected | StatusBarGetMaximumValue |
 | Source kinds | lua_calls |
-| Example locations | PartyCast: PartyCast.Update |
+| Example locations | PartyCast: Update |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -70,11 +70,11 @@ Observed as a window function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
@@ -82,28 +82,7 @@ Observed as a window function across 1 addons.
 
 ## Examples
 
-- PartyCast: PartyCast.Update -> StatusBarGetMaximumValue("PartyCastWindow"..i.."TimerBar")
-
-## Related APIs
-
-- none
-
-## Used With
-
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
-- [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- PartyCast: Update -> StatusBarGetMaximumValue("PartyCastWindow"..i.."TimerBar")
 
 ## Notes
 

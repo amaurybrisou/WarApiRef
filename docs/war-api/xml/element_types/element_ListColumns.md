@@ -48,7 +48,7 @@
 
 ## Description
 
-ListColumns is a structural XML container used by list controls to define how backing-table fields map to row windows.
+ListColumns is a structural XML container that declares list column mappings. It commonly appears under ListBox and contains ListColumn entries.
 
 ## Common Attributes
 
@@ -60,42 +60,77 @@ ListColumns is a structural XML container used by list controls to define how ba
 
 ## Common Parent Elements
 
-- [ListData](element_ListData.md) — 25× (HIGH)
+- [ListData](element_ListData.md) — 74× (HIGH)
 
 ## Common Structural Child Elements
 
-- [ListColumn](element_ListColumn.md) — 42× (HIGH)
+- [ListColumn](element_ListColumn.md) — 192× (HIGH)
 
 ## Structural Sub-Elements
 
 ### [ListColumn](element_ListColumn.md)
 
-Observed 42 times as an unnamed child.
+Observed 192 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `format` | **required** | wstring, number, icon |
+| `format` | **required** | wstring, number, icon, comma |
 | `variable` | **required** | Name, RankN, Character, Type |
 | `windowname` | **required** | Name, Rank, Character, Type |
+| `style` | optional | comma |
 ## Recursive Hierarchy
 
 - Root: [ListColumns](element_ListColumns.md)
-- [ListColumn](element_ListColumn.md) (structural, 42×, HIGH)
+- [ListColumn](element_ListColumn.md) (structural, 192×, HIGH)
 
 ## Seen In
 
 - AggroMeter
 - Aura
+- BlackBook
 - BuffHead
 - CM_ClosetGoblin
+- CastSequence
+- Crusher
 - DAoCBuff
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiModWindow
 - Enemy
+- HealGrid
+- Hopper
+- Kwestor
+- LibAddonButton
+- LootAlert
+- Motion
+- NerfedButtons
+- Obsidian
+- PieTracker
 - Pocket Palette
+- Pure
+- QuickTacticSwitch
+- RealmStatus
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyChat
 - TidyRoll
+- Tome Titan
+- TomeTracker
+- Tortall_DPS
 - TurretRange
+- WTes
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- nLootLink
+- zMailMod
 
 ## Examples
 
@@ -105,15 +140,3 @@ Observed 42 times as an unnamed child.
 
 - [ListData](element_ListData.md) (HIGH 100/100) - XML Element Type
 - [ListColumn](element_ListColumn.md) (MEDIUM 45/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

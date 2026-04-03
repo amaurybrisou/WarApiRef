@@ -1,0 +1,2239 @@
+{
+  "generated_at": "2026-04-03T13:20:58.7492649Z",
+  "common_api_combinations": [
+    {
+      "id": "combination:data.system.SystemData.ActiveWindow.name_function.window.WindowGetId",
+      "type": "common_combination",
+      "title": "SystemData.ActiveWindow.name + WindowGetId",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "data:system:SystemData.ActiveWindow.name",
+          "label": "SystemData.ActiveWindow.name",
+          "type": "data_structure",
+          "category": "SystemData Field",
+          "path": "systemdata/fields/systemdata_SystemData.ActiveWindow.name.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "SystemData.SystemData.ActiveWindow.name field accessed by 1 addons; commonly found in EquipmentLButtonUp and EquipmentMouseOver, EquipmentRButtonUp, HandleDrag, OnClickSetRow, OnClickZoneRow, OnLButtonUp, OnSetRowContextMenu, OnSetZoneRowContextMenu, lua_call contexts."
+        },
+        {
+          "id": "function:window:WindowGetId",
+          "label": "WindowGetId",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowGetId.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed querying runtime window state or metadata."
+        }
+      ],
+      "flow": [
+        "SystemData.ActiveWindow.name \u003c-\u003e WindowGetId"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: EquipmentLButtonUp -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: EquipmentMouseOver -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: EquipmentRButtonUp -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.Clear()",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.IconOnCursor()",
+        "CM_ClosetGoblin: HandleDrag -\u003e WindowGetId(SystemData.ActiveWindow.name)"
+      ],
+      "weight": 18
+    },
+    {
+      "id": "combination:function.window.ButtonSetText_function.window.LabelSetText",
+      "type": "common_combination",
+      "title": "ButtonSetText + LabelSetText",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:ButtonSetText",
+          "label": "ButtonSetText",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_ButtonSetText.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed mutating button text or pressed state on existing controls."
+        },
+        {
+          "id": "function:window:LabelSetText",
+          "label": "LabelSetText",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_LabelSetText.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed updating label text or label styling on existing controls."
+        }
+      ],
+      "flow": [
+        "ButtonSetText \u003c-\u003e LabelSetText"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsDeleteSet\", cgL[\"Delete_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsNewSet\", cgL[\"New_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortNameButton\", cgL[\"Set_Name\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortTacticsButton\", cgL[\"Tactics\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsZoneConfig\", cgL[\"Zone_Configuration\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinZoneWindowContentsChangeZoneButton\", cgL[\"Change\"])"
+      ],
+      "weight": 12
+    },
+    {
+      "id": "combination:function.window.ButtonSetText_function.window.WindowSetShowing",
+      "type": "common_combination",
+      "title": "ButtonSetText + WindowSetShowing",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:ButtonSetText",
+          "label": "ButtonSetText",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_ButtonSetText.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed mutating button text or pressed state on existing controls."
+        },
+        {
+          "id": "function:window:WindowSetShowing",
+          "label": "WindowSetShowing",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowSetShowing.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed mutating runtime window state or presentation."
+        }
+      ],
+      "flow": [
+        "ButtonSetText \u003c-\u003e WindowSetShowing"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsDeleteSet\", cgL[\"Delete_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsNewSet\", cgL[\"New_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortNameButton\", cgL[\"Set_Name\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortTacticsButton\", cgL[\"Tactics\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsZoneConfig\", cgL[\"Zone_Configuration\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinZoneWindowContentsChangeZoneButton\", cgL[\"Change\"])"
+      ],
+      "weight": 12
+    },
+    {
+      "id": "combination:function.global.EA_Window_ContextMenu.CreateContextMenu_function.global.EA_Window_ContextMenu.Finalize",
+      "type": "common_combination",
+      "title": "EA_Window_ContextMenu.CreateContextMenu + EA_Window_ContextMenu.Finalize",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+          "label": "EA_Window_ContextMenu.CreateContextMenu",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:global:EA_Window_ContextMenu.Finalize",
+          "label": "EA_Window_ContextMenu.Finalize",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.Finalize.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        }
+      ],
+      "flow": [
+        "EA_Window_ContextMenu.CreateContextMenu \u003c-\u003e EA_Window_ContextMenu.Finalize"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)"
+      ],
+      "weight": 12
+    },
+    {
+      "id": "combination:function.window.LabelSetText_function.window.WindowSetShowing",
+      "type": "common_combination",
+      "title": "LabelSetText + WindowSetShowing",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:LabelSetText",
+          "label": "LabelSetText",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_LabelSetText.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed updating label text or label styling on existing controls."
+        },
+        {
+          "id": "function:window:WindowSetShowing",
+          "label": "WindowSetShowing",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowSetShowing.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed mutating runtime window state or presentation."
+        }
+      ],
+      "flow": [
+        "LabelSetText \u003c-\u003e WindowSetShowing"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsDeleteSet\", cgL[\"Delete_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsNewSet\", cgL[\"New_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortNameButton\", cgL[\"Set_Name\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortTacticsButton\", cgL[\"Tactics\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsZoneConfig\", cgL[\"Zone_Configuration\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinZoneWindowContentsChangeZoneButton\", cgL[\"Change\"])"
+      ],
+      "weight": 12
+    },
+    {
+      "id": "combination:data.system.SystemData.ActiveWindow.name_function.global.EA_Window_ContextMenu.CreateContextMenu",
+      "type": "common_combination",
+      "title": "SystemData.ActiveWindow.name + EA_Window_ContextMenu.CreateContextMenu",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "data:system:SystemData.ActiveWindow.name",
+          "label": "SystemData.ActiveWindow.name",
+          "type": "data_structure",
+          "category": "SystemData Field",
+          "path": "systemdata/fields/systemdata_SystemData.ActiveWindow.name.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "SystemData.SystemData.ActiveWindow.name field accessed by 1 addons; commonly found in EquipmentLButtonUp and EquipmentMouseOver, EquipmentRButtonUp, HandleDrag, OnClickSetRow, OnClickZoneRow, OnLButtonUp, OnSetRowContextMenu, OnSetZoneRowContextMenu, lua_call contexts."
+        },
+        {
+          "id": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+          "label": "EA_Window_ContextMenu.CreateContextMenu",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        }
+      ],
+      "flow": [
+        "SystemData.ActiveWindow.name \u003c-\u003e EA_Window_ContextMenu.CreateContextMenu"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)"
+      ],
+      "weight": 12
+    },
+    {
+      "id": "combination:data.system.SystemData.ActiveWindow.name_function.global.EA_Window_ContextMenu.Finalize",
+      "type": "common_combination",
+      "title": "SystemData.ActiveWindow.name + EA_Window_ContextMenu.Finalize",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "data:system:SystemData.ActiveWindow.name",
+          "label": "SystemData.ActiveWindow.name",
+          "type": "data_structure",
+          "category": "SystemData Field",
+          "path": "systemdata/fields/systemdata_SystemData.ActiveWindow.name.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "SystemData.SystemData.ActiveWindow.name field accessed by 1 addons; commonly found in EquipmentLButtonUp and EquipmentMouseOver, EquipmentRButtonUp, HandleDrag, OnClickSetRow, OnClickZoneRow, OnLButtonUp, OnSetRowContextMenu, OnSetZoneRowContextMenu, lua_call contexts."
+        },
+        {
+          "id": "function:global:EA_Window_ContextMenu.Finalize",
+          "label": "EA_Window_ContextMenu.Finalize",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.Finalize.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        }
+      ],
+      "flow": [
+        "SystemData.ActiveWindow.name \u003c-\u003e EA_Window_ContextMenu.Finalize"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)"
+      ],
+      "weight": 12
+    },
+    {
+      "id": "combination:function.global.EA_Window_ContextMenu.AddMenuItem_function.global.EA_Window_ContextMenu.CreateContextMenu",
+      "type": "common_combination",
+      "title": "EA_Window_ContextMenu.AddMenuItem + EA_Window_ContextMenu.CreateContextMenu",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:EA_Window_ContextMenu.AddMenuItem",
+          "label": "EA_Window_ContextMenu.AddMenuItem",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+          "label": "EA_Window_ContextMenu.CreateContextMenu",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        }
+      ],
+      "flow": [
+        "EA_Window_ContextMenu.AddMenuItem \u003c-\u003e EA_Window_ContextMenu.CreateContextMenu"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "weight": 10
+    },
+    {
+      "id": "combination:function.global.EA_Window_ContextMenu.AddMenuItem_function.global.EA_Window_ContextMenu.Finalize",
+      "type": "common_combination",
+      "title": "EA_Window_ContextMenu.AddMenuItem + EA_Window_ContextMenu.Finalize",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:EA_Window_ContextMenu.AddMenuItem",
+          "label": "EA_Window_ContextMenu.AddMenuItem",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:global:EA_Window_ContextMenu.Finalize",
+          "label": "EA_Window_ContextMenu.Finalize",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.Finalize.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        }
+      ],
+      "flow": [
+        "EA_Window_ContextMenu.AddMenuItem \u003c-\u003e EA_Window_ContextMenu.Finalize"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "weight": 10
+    },
+    {
+      "id": "combination:function.global.EA_Window_ContextMenu.AddMenuItem_function.window.WindowGetId",
+      "type": "common_combination",
+      "title": "EA_Window_ContextMenu.AddMenuItem + WindowGetId",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:EA_Window_ContextMenu.AddMenuItem",
+          "label": "EA_Window_ContextMenu.AddMenuItem",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:window:WindowGetId",
+          "label": "WindowGetId",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowGetId.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed querying runtime window state or metadata."
+        }
+      ],
+      "flow": [
+        "EA_Window_ContextMenu.AddMenuItem \u003c-\u003e WindowGetId"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "weight": 10
+    },
+    {
+      "id": "combination:function.global.EA_Window_ContextMenu.CreateContextMenu_function.window.WindowGetId",
+      "type": "common_combination",
+      "title": "EA_Window_ContextMenu.CreateContextMenu + WindowGetId",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+          "label": "EA_Window_ContextMenu.CreateContextMenu",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:window:WindowGetId",
+          "label": "WindowGetId",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowGetId.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed querying runtime window state or metadata."
+        }
+      ],
+      "flow": [
+        "EA_Window_ContextMenu.CreateContextMenu \u003c-\u003e WindowGetId"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "weight": 10
+    },
+    {
+      "id": "combination:function.global.EA_Window_ContextMenu.Finalize_function.window.WindowGetId",
+      "type": "common_combination",
+      "title": "EA_Window_ContextMenu.Finalize + WindowGetId",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:EA_Window_ContextMenu.Finalize",
+          "label": "EA_Window_ContextMenu.Finalize",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.Finalize.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:window:WindowGetId",
+          "label": "WindowGetId",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowGetId.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed querying runtime window state or metadata."
+        }
+      ],
+      "flow": [
+        "EA_Window_ContextMenu.Finalize \u003c-\u003e WindowGetId"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "weight": 10
+    },
+    {
+      "id": "combination:data.system.SystemData.ActiveWindow.name_function.global.EA_Window_ContextMenu.AddMenuItem",
+      "type": "common_combination",
+      "title": "SystemData.ActiveWindow.name + EA_Window_ContextMenu.AddMenuItem",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "data:system:SystemData.ActiveWindow.name",
+          "label": "SystemData.ActiveWindow.name",
+          "type": "data_structure",
+          "category": "SystemData Field",
+          "path": "systemdata/fields/systemdata_SystemData.ActiveWindow.name.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "SystemData.SystemData.ActiveWindow.name field accessed by 1 addons; commonly found in EquipmentLButtonUp and EquipmentMouseOver, EquipmentRButtonUp, HandleDrag, OnClickSetRow, OnClickZoneRow, OnLButtonUp, OnSetRowContextMenu, OnSetZoneRowContextMenu, lua_call contexts."
+        },
+        {
+          "id": "function:global:EA_Window_ContextMenu.AddMenuItem",
+          "label": "EA_Window_ContextMenu.AddMenuItem",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed as a global function across 1 addons."
+        }
+      ],
+      "flow": [
+        "SystemData.ActiveWindow.name \u003c-\u003e EA_Window_ContextMenu.AddMenuItem"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "weight": 10
+    },
+    {
+      "id": "combination:ui.Anchors_ui.Size",
+      "type": "common_combination",
+      "title": "Anchors + Size",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Anchors",
+          "label": "Anchors",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Anchors.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Anchors is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Anchor."
+        },
+        {
+          "id": "ui:Size",
+          "label": "Size",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Size.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Size is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as AbsPoint."
+        }
+      ],
+      "flow": [
+        "Anchors \u003c-\u003e Size"
+      ],
+      "evidence": [
+        "FullResizeImage: XML element relationships",
+        "Label: XML element relationships",
+        "ListBox: XML element relationships",
+        "Window: XML element relationships"
+      ],
+      "weight": 4
+    },
+    {
+      "id": "combination:ui.Button_ui.DynamicImage",
+      "type": "common_combination",
+      "title": "Button + DynamicImage",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Button is an interactive XML control used for click and mouse-driven callbacks. It usually binds input events to Lua handler functions."
+        },
+        {
+          "id": "ui:DynamicImage",
+          "label": "DynamicImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_DynamicImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Anchors, EventHandlers, Size and bind XML events like OnLButtonUp, OnRButtonUp to Lua."
+        }
+      ],
+      "flow": [
+        "Button \u003c-\u003e DynamicImage"
+      ],
+      "evidence": [
+        "Anchors: XML element relationships",
+        "EventHandlers: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 4
+    },
+    {
+      "id": "combination:ui.Button_ui.FullResizeImage",
+      "type": "common_combination",
+      "title": "Button + FullResizeImage",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Button is an interactive XML control used for click and mouse-driven callbacks. It usually binds input events to Lua handler functions."
+        },
+        {
+          "id": "ui:FullResizeImage",
+          "label": "FullResizeImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_FullResizeImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "FullResizeImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors, Size, Sizes."
+        }
+      ],
+      "flow": [
+        "Button \u003c-\u003e FullResizeImage"
+      ],
+      "evidence": [
+        "Anchors: XML element relationships",
+        "Size: XML element relationships",
+        "TexCoords: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 4
+    },
+    {
+      "id": "combination:ui.Button_ui.Label",
+      "type": "common_combination",
+      "title": "Button + Label",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Button is an interactive XML control used for click and mouse-driven callbacks. It usually binds input events to Lua handler functions."
+        },
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window."
+        }
+      ],
+      "flow": [
+        "Button \u003c-\u003e Label"
+      ],
+      "evidence": [
+        "Anchors: XML element relationships",
+        "EventHandlers: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 4
+    },
+    {
+      "id": "combination:ui.DynamicImage_ui.Label",
+      "type": "common_combination",
+      "title": "DynamicImage + Label",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:DynamicImage",
+          "label": "DynamicImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_DynamicImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Anchors, EventHandlers, Size and bind XML events like OnLButtonUp, OnRButtonUp to Lua."
+        },
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window."
+        }
+      ],
+      "flow": [
+        "DynamicImage \u003c-\u003e Label"
+      ],
+      "evidence": [
+        "Anchors: XML element relationships",
+        "EventHandlers: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 4
+    },
+    {
+      "id": "combination:ui.Anchors_ui.EventHandlers",
+      "type": "common_combination",
+      "title": "Anchors + EventHandlers",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Anchors",
+          "label": "Anchors",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Anchors.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Anchors is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Anchor."
+        },
+        {
+          "id": "ui:EventHandlers",
+          "label": "EventHandlers",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_EventHandlers.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "EventHandlers is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as EventHandler."
+        }
+      ],
+      "flow": [
+        "Anchors \u003c-\u003e EventHandlers"
+      ],
+      "evidence": [
+        "DynamicImage: XML element relationships",
+        "Label: XML element relationships",
+        "Window: XML element relationships"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:function.global.Cursor.Clear_function.global.Cursor.IconOnCursor",
+      "type": "common_combination",
+      "title": "Cursor.Clear + Cursor.IconOnCursor",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:Cursor.Clear",
+          "label": "Cursor.Clear",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_Cursor.Clear.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:global:Cursor.IconOnCursor",
+          "label": "Cursor.IconOnCursor",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_Cursor.IconOnCursor.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Observed as a global function across 1 addons."
+        }
+      ],
+      "flow": [
+        "Cursor.Clear \u003c-\u003e Cursor.IconOnCursor"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.Clear()",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.IconOnCursor()",
+        "CM_ClosetGoblin: HandleDrag -\u003e WindowGetId(SystemData.ActiveWindow.name)"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:function.global.Cursor.Clear_function.window.WindowGetId",
+      "type": "common_combination",
+      "title": "Cursor.Clear + WindowGetId",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:Cursor.Clear",
+          "label": "Cursor.Clear",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_Cursor.Clear.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:window:WindowGetId",
+          "label": "WindowGetId",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowGetId.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed querying runtime window state or metadata."
+        }
+      ],
+      "flow": [
+        "Cursor.Clear \u003c-\u003e WindowGetId"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.Clear()",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.IconOnCursor()",
+        "CM_ClosetGoblin: HandleDrag -\u003e WindowGetId(SystemData.ActiveWindow.name)"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:function.global.Cursor.IconOnCursor_function.window.WindowGetId",
+      "type": "common_combination",
+      "title": "Cursor.IconOnCursor + WindowGetId",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:Cursor.IconOnCursor",
+          "label": "Cursor.IconOnCursor",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_Cursor.IconOnCursor.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:window:WindowGetId",
+          "label": "WindowGetId",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowGetId.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed querying runtime window state or metadata."
+        }
+      ],
+      "flow": [
+        "Cursor.IconOnCursor \u003c-\u003e WindowGetId"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.Clear()",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.IconOnCursor()",
+        "CM_ClosetGoblin: HandleDrag -\u003e WindowGetId(SystemData.ActiveWindow.name)"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:ui.DynamicImage_ui.FullResizeImage",
+      "type": "common_combination",
+      "title": "DynamicImage + FullResizeImage",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:DynamicImage",
+          "label": "DynamicImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_DynamicImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Anchors, EventHandlers, Size and bind XML events like OnLButtonUp, OnRButtonUp to Lua."
+        },
+        {
+          "id": "ui:FullResizeImage",
+          "label": "FullResizeImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_FullResizeImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "FullResizeImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors, Size, Sizes."
+        }
+      ],
+      "flow": [
+        "DynamicImage \u003c-\u003e FullResizeImage"
+      ],
+      "evidence": [
+        "Anchors: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:ui.FullResizeImage_ui.Label",
+      "type": "common_combination",
+      "title": "FullResizeImage + Label",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:FullResizeImage",
+          "label": "FullResizeImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_FullResizeImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "FullResizeImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors, Size, Sizes."
+        },
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window."
+        }
+      ],
+      "flow": [
+        "FullResizeImage \u003c-\u003e Label"
+      ],
+      "evidence": [
+        "Anchors: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:function.window.LabelSetText_function.window.LabelSetTextColor",
+      "type": "common_combination",
+      "title": "LabelSetText + LabelSetTextColor",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:LabelSetText",
+          "label": "LabelSetText",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_LabelSetText.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed updating label text or label styling on existing controls."
+        },
+        {
+          "id": "function:window:LabelSetTextColor",
+          "label": "LabelSetTextColor",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_LabelSetTextColor.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed updating label text or label styling on existing controls."
+        }
+      ],
+      "flow": [
+        "LabelSetText \u003c-\u003e LabelSetTextColor"
+      ],
+      "evidence": [
+        "Clock: OnUpdate -\u003e LabelSetTextColor(\"ClockWindowText\", ClockSettings.R, ClockSettings.G, ClockSettings.B)",
+        "Clock: OnUpdate -\u003e wstring.format(fmt, 12, Clock.min, Clock.sec)",
+        "Clock: OnUpdate -\u003e wstring.format(fmt, Clock.hour%ClockSettings.Hours, Clock.min, Clock.sec)"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:ui.Sizes_ui.TexCoords",
+      "type": "common_combination",
+      "title": "Sizes + TexCoords",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Sizes",
+          "label": "Sizes",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Sizes.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Sizes is a structural XML sub-element. It commonly appears under FullResizeImage. It is typically used to organize structural children such as BottomRight, Middle, TopLeft."
+        },
+        {
+          "id": "ui:TexCoords",
+          "label": "TexCoords",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_TexCoords.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "TexCoords is a structural XML sub-element. It commonly appears under Button and FullResizeImage. It is typically used to organize structural children such as BottomCenter, BottomLeft, BottomRight."
+        }
+      ],
+      "flow": [
+        "Sizes \u003c-\u003e TexCoords"
+      ],
+      "evidence": [
+        "BottomRight: XML element relationships",
+        "FullResizeImage: XML element relationships",
+        "TopLeft: XML element relationships"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:data.system.SystemData.ActiveWindow.name_function.global.Cursor.Clear",
+      "type": "common_combination",
+      "title": "SystemData.ActiveWindow.name + Cursor.Clear",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "data:system:SystemData.ActiveWindow.name",
+          "label": "SystemData.ActiveWindow.name",
+          "type": "data_structure",
+          "category": "SystemData Field",
+          "path": "systemdata/fields/systemdata_SystemData.ActiveWindow.name.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "SystemData.SystemData.ActiveWindow.name field accessed by 1 addons; commonly found in EquipmentLButtonUp and EquipmentMouseOver, EquipmentRButtonUp, HandleDrag, OnClickSetRow, OnClickZoneRow, OnLButtonUp, OnSetRowContextMenu, OnSetZoneRowContextMenu, lua_call contexts."
+        },
+        {
+          "id": "function:global:Cursor.Clear",
+          "label": "Cursor.Clear",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_Cursor.Clear.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Observed as a global function across 1 addons."
+        }
+      ],
+      "flow": [
+        "SystemData.ActiveWindow.name \u003c-\u003e Cursor.Clear"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.Clear()",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.IconOnCursor()",
+        "CM_ClosetGoblin: HandleDrag -\u003e WindowGetId(SystemData.ActiveWindow.name)"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:data.system.SystemData.ActiveWindow.name_function.global.Cursor.IconOnCursor",
+      "type": "common_combination",
+      "title": "SystemData.ActiveWindow.name + Cursor.IconOnCursor",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "data:system:SystemData.ActiveWindow.name",
+          "label": "SystemData.ActiveWindow.name",
+          "type": "data_structure",
+          "category": "SystemData Field",
+          "path": "systemdata/fields/systemdata_SystemData.ActiveWindow.name.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "SystemData.SystemData.ActiveWindow.name field accessed by 1 addons; commonly found in EquipmentLButtonUp and EquipmentMouseOver, EquipmentRButtonUp, HandleDrag, OnClickSetRow, OnClickZoneRow, OnLButtonUp, OnSetRowContextMenu, OnSetZoneRowContextMenu, lua_call contexts."
+        },
+        {
+          "id": "function:global:Cursor.IconOnCursor",
+          "label": "Cursor.IconOnCursor",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_Cursor.IconOnCursor.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Observed as a global function across 1 addons."
+        }
+      ],
+      "flow": [
+        "SystemData.ActiveWindow.name \u003c-\u003e Cursor.IconOnCursor"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.Clear()",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.IconOnCursor()",
+        "CM_ClosetGoblin: HandleDrag -\u003e WindowGetId(SystemData.ActiveWindow.name)"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:function.global.wstring.format_function.window.LabelSetText",
+      "type": "common_combination",
+      "title": "wstring.format + LabelSetText",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:wstring.format",
+          "label": "wstring.format",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_wstring.format.md",
+          "confidence": "MEDIUM",
+          "score": 55,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:window:LabelSetText",
+          "label": "LabelSetText",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_LabelSetText.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed updating label text or label styling on existing controls."
+        }
+      ],
+      "flow": [
+        "wstring.format \u003c-\u003e LabelSetText"
+      ],
+      "evidence": [
+        "Clock: OnUpdate -\u003e LabelSetTextColor(\"ClockWindowText\", ClockSettings.R, ClockSettings.G, ClockSettings.B)",
+        "Clock: OnUpdate -\u003e wstring.format(fmt, 12, Clock.min, Clock.sec)",
+        "Clock: OnUpdate -\u003e wstring.format(fmt, Clock.hour%ClockSettings.Hours, Clock.min, Clock.sec)"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:function.global.wstring.format_function.window.LabelSetTextColor",
+      "type": "common_combination",
+      "title": "wstring.format + LabelSetTextColor",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:wstring.format",
+          "label": "wstring.format",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_wstring.format.md",
+          "confidence": "MEDIUM",
+          "score": 55,
+          "summary": "Observed as a global function across 1 addons."
+        },
+        {
+          "id": "function:window:LabelSetTextColor",
+          "label": "LabelSetTextColor",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_LabelSetTextColor.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed updating label text or label styling on existing controls."
+        }
+      ],
+      "flow": [
+        "wstring.format \u003c-\u003e LabelSetTextColor"
+      ],
+      "evidence": [
+        "Clock: OnUpdate -\u003e LabelSetTextColor(\"ClockWindowText\", ClockSettings.R, ClockSettings.G, ClockSettings.B)",
+        "Clock: OnUpdate -\u003e wstring.format(fmt, 12, Clock.min, Clock.sec)",
+        "Clock: OnUpdate -\u003e wstring.format(fmt, Clock.hour%ClockSettings.Hours, Clock.min, Clock.sec)"
+      ],
+      "weight": 3
+    },
+    {
+      "id": "combination:ui.AbsPoint_ui.Anchor",
+      "type": "common_combination",
+      "title": "AbsPoint + Anchor",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:AbsPoint",
+          "label": "AbsPoint",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_AbsPoint.md",
+          "confidence": "MEDIUM",
+          "score": 35,
+          "summary": "AbsPoint is a structural XML sub-element. It commonly appears under Anchor and Size."
+        },
+        {
+          "id": "ui:Anchor",
+          "label": "Anchor",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Anchor.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Anchor is a structural XML sub-element. It commonly appears under Anchors. It is typically used to organize structural children such as AbsPoint."
+        }
+      ],
+      "flow": [
+        "AbsPoint \u003c-\u003e Anchor"
+      ],
+      "evidence": [
+        "AbsPoint: XML element relationships",
+        "Anchor: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Anchor_ui.Anchors",
+      "type": "common_combination",
+      "title": "Anchor + Anchors",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Anchor",
+          "label": "Anchor",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Anchor.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Anchor is a structural XML sub-element. It commonly appears under Anchors. It is typically used to organize structural children such as AbsPoint."
+        },
+        {
+          "id": "ui:Anchors",
+          "label": "Anchors",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Anchors.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Anchors is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Anchor."
+        }
+      ],
+      "flow": [
+        "Anchor \u003c-\u003e Anchors"
+      ],
+      "evidence": [
+        "Anchor: XML element relationships",
+        "Anchors: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Anchors_ui.DynamicImage",
+      "type": "common_combination",
+      "title": "Anchors + DynamicImage",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Anchors",
+          "label": "Anchors",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Anchors.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Anchors is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Anchor."
+        },
+        {
+          "id": "ui:DynamicImage",
+          "label": "DynamicImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_DynamicImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Anchors, EventHandlers, Size and bind XML events like OnLButtonUp, OnRButtonUp to Lua."
+        }
+      ],
+      "flow": [
+        "Anchors \u003c-\u003e DynamicImage"
+      ],
+      "evidence": [
+        "Anchors: XML element relationships",
+        "DynamicImage: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Anchors_ui.FullResizeImage",
+      "type": "common_combination",
+      "title": "Anchors + FullResizeImage",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Anchors",
+          "label": "Anchors",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Anchors.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Anchors is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Anchor."
+        },
+        {
+          "id": "ui:FullResizeImage",
+          "label": "FullResizeImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_FullResizeImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "FullResizeImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors, Size, Sizes."
+        }
+      ],
+      "flow": [
+        "Anchors \u003c-\u003e FullResizeImage"
+      ],
+      "evidence": [
+        "Anchors: XML element relationships",
+        "FullResizeImage: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Anchors_ui.Label",
+      "type": "common_combination",
+      "title": "Anchors + Label",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Anchors",
+          "label": "Anchors",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Anchors.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Anchors is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Anchor."
+        },
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window."
+        }
+      ],
+      "flow": [
+        "Anchors \u003c-\u003e Label"
+      ],
+      "evidence": [
+        "Anchors: XML element relationships",
+        "Label: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Anchors_ui.Windows",
+      "type": "common_combination",
+      "title": "Anchors + Windows",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Anchors",
+          "label": "Anchors",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Anchors.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Anchors is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Anchor."
+        },
+        {
+          "id": "ui:Windows",
+          "label": "Windows",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Windows.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Windows is a container-style XML element. It commonly appears under Button and DynamicImage. It is typically used to host named child elements such as Button, DynamicImage, FullResizeImage."
+        }
+      ],
+      "flow": [
+        "Anchors \u003c-\u003e Windows"
+      ],
+      "evidence": [
+        "Label: XML element relationships",
+        "ListBox: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Assets_ui.Texture",
+      "type": "common_combination",
+      "title": "Assets + Texture",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Assets",
+          "label": "Assets",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Assets.md",
+          "confidence": "LOW",
+          "score": 5,
+          "summary": "Assets is a container-style XML element. It is typically used to host named child elements such as Texture."
+        },
+        {
+          "id": "ui:Texture",
+          "label": "Texture",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Texture.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Texture is a XML UI element. It commonly appears under Assets."
+        }
+      ],
+      "flow": [
+        "Assets \u003c-\u003e Texture"
+      ],
+      "evidence": [
+        "Assets: XML element relationships",
+        "Texture: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.BottomRight_ui.FullResizeImage",
+      "type": "common_combination",
+      "title": "BottomRight + FullResizeImage",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:BottomRight",
+          "label": "BottomRight",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_BottomRight.md",
+          "confidence": "LOW",
+          "score": 5,
+          "summary": "BottomRight is a XML UI element. It commonly appears under Sizes and TexCoords."
+        },
+        {
+          "id": "ui:FullResizeImage",
+          "label": "FullResizeImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_FullResizeImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "FullResizeImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors, Size, Sizes."
+        }
+      ],
+      "flow": [
+        "BottomRight \u003c-\u003e FullResizeImage"
+      ],
+      "evidence": [
+        "Sizes: XML element relationships",
+        "TexCoords: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.BottomRight_ui.Sizes",
+      "type": "common_combination",
+      "title": "BottomRight + Sizes",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:BottomRight",
+          "label": "BottomRight",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_BottomRight.md",
+          "confidence": "LOW",
+          "score": 5,
+          "summary": "BottomRight is a XML UI element. It commonly appears under Sizes and TexCoords."
+        },
+        {
+          "id": "ui:Sizes",
+          "label": "Sizes",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Sizes.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Sizes is a structural XML sub-element. It commonly appears under FullResizeImage. It is typically used to organize structural children such as BottomRight, Middle, TopLeft."
+        }
+      ],
+      "flow": [
+        "BottomRight \u003c-\u003e Sizes"
+      ],
+      "evidence": [
+        "BottomRight: XML element relationships",
+        "Sizes: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Button_ui.ListBox",
+      "type": "common_combination",
+      "title": "Button + ListBox",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Button is an interactive XML control used for click and mouse-driven callbacks. It usually binds input events to Lua handler functions."
+        },
+        {
+          "id": "ui:ListBox",
+          "label": "ListBox",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_ListBox.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "ListBox is a container-style XML element for row-based UI lists. It commonly works with structural children such as ListData and ListColumns and binds events to Lua callbacks."
+        }
+      ],
+      "flow": [
+        "Button \u003c-\u003e ListBox"
+      ],
+      "evidence": [
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Button_ui.Window",
+      "type": "common_combination",
+      "title": "Button + Window",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Button is an interactive XML control used for click and mouse-driven callbacks. It usually binds input events to Lua handler functions."
+        },
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Window is the primary XML container element for addon UI frames. It commonly hosts named child elements and binds lifecycle or input events to Lua handlers."
+        }
+      ],
+      "flow": [
+        "Button \u003c-\u003e Window"
+      ],
+      "evidence": [
+        "EventHandlers: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:function.window.ButtonSetDisabledFlag_function.window.ButtonSetPressedFlag",
+      "type": "common_combination",
+      "title": "ButtonSetDisabledFlag + ButtonSetPressedFlag",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:ButtonSetDisabledFlag",
+          "label": "ButtonSetDisabledFlag",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_ButtonSetDisabledFlag.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed mutating button text or pressed state on existing controls."
+        },
+        {
+          "id": "function:window:ButtonSetPressedFlag",
+          "label": "ButtonSetPressedFlag",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_ButtonSetPressedFlag.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed mutating button text or pressed state on existing controls."
+        }
+      ],
+      "flow": [
+        "ButtonSetDisabledFlag \u003c-\u003e ButtonSetPressedFlag"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: ShowCloak -\u003e ButtonSetDisabledFlag(\"ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry\", false)",
+        "CM_ClosetGoblin: ShowCloak -\u003e ButtonSetDisabledFlag(\"ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry\", true)"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Color_ui.Label",
+      "type": "common_combination",
+      "title": "Color + Label",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Color",
+          "label": "Color",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Color.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Color is a XML UI element. It commonly appears under Label."
+        },
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window."
+        }
+      ],
+      "flow": [
+        "Color \u003c-\u003e Label"
+      ],
+      "evidence": [
+        "Color: XML element relationships",
+        "Label: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.DynamicImage_ui.EventHandlers",
+      "type": "common_combination",
+      "title": "DynamicImage + EventHandlers",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:DynamicImage",
+          "label": "DynamicImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_DynamicImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Anchors, EventHandlers, Size and bind XML events like OnLButtonUp, OnRButtonUp to Lua."
+        },
+        {
+          "id": "ui:EventHandlers",
+          "label": "EventHandlers",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_EventHandlers.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "EventHandlers is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as EventHandler."
+        }
+      ],
+      "flow": [
+        "DynamicImage \u003c-\u003e EventHandlers"
+      ],
+      "evidence": [
+        "DynamicImage: XML element relationships",
+        "EventHandlers: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.DynamicImage_ui.ListBox",
+      "type": "common_combination",
+      "title": "DynamicImage + ListBox",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:DynamicImage",
+          "label": "DynamicImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_DynamicImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Anchors, EventHandlers, Size and bind XML events like OnLButtonUp, OnRButtonUp to Lua."
+        },
+        {
+          "id": "ui:ListBox",
+          "label": "ListBox",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_ListBox.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "ListBox is a container-style XML element for row-based UI lists. It commonly works with structural children such as ListData and ListColumns and binds events to Lua callbacks."
+        }
+      ],
+      "flow": [
+        "DynamicImage \u003c-\u003e ListBox"
+      ],
+      "evidence": [
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.DynamicImage_ui.Window",
+      "type": "common_combination",
+      "title": "DynamicImage + Window",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:DynamicImage",
+          "label": "DynamicImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_DynamicImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Anchors, EventHandlers, Size and bind XML events like OnLButtonUp, OnRButtonUp to Lua."
+        },
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Window is the primary XML container element for addon UI frames. It commonly hosts named child elements and binds lifecycle or input events to Lua handlers."
+        }
+      ],
+      "flow": [
+        "DynamicImage \u003c-\u003e Window"
+      ],
+      "evidence": [
+        "EventHandlers: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:function.window.DynamicImageSetTexture_function.window.LabelSetText",
+      "type": "common_combination",
+      "title": "DynamicImageSetTexture + LabelSetText",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:DynamicImageSetTexture",
+          "label": "DynamicImageSetTexture",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_DynamicImageSetTexture.md",
+          "confidence": "HIGH",
+          "score": 80,
+          "summary": "Observed mutating runtime image resources on existing controls."
+        },
+        {
+          "id": "function:window:LabelSetText",
+          "label": "LabelSetText",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_LabelSetText.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed updating label text or label styling on existing controls."
+        }
+      ],
+      "flow": [
+        "DynamicImageSetTexture \u003c-\u003e LabelSetText"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: UpdateSlotIcon -\u003e DynamicImageSetTexture(\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..slot..\"IconBase\", texture, x, y)",
+        "CM_ClosetGoblin: UpdateSlotIcon -\u003e WindowSetTintColor(\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..slot, tint.r, tint.g, tint.b)"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:function.window.DynamicImageSetTexture_function.window.WindowSetTintColor",
+      "type": "common_combination",
+      "title": "DynamicImageSetTexture + WindowSetTintColor",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:DynamicImageSetTexture",
+          "label": "DynamicImageSetTexture",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_DynamicImageSetTexture.md",
+          "confidence": "HIGH",
+          "score": 80,
+          "summary": "Observed mutating runtime image resources on existing controls."
+        },
+        {
+          "id": "function:window:WindowSetTintColor",
+          "label": "WindowSetTintColor",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowSetTintColor.md",
+          "confidence": "HIGH",
+          "score": 80,
+          "summary": "Observed mutating runtime window state or presentation."
+        }
+      ],
+      "flow": [
+        "DynamicImageSetTexture \u003c-\u003e WindowSetTintColor"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: UpdateSlotIcon -\u003e DynamicImageSetTexture(\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..slot..\"IconBase\", texture, x, y)",
+        "CM_ClosetGoblin: UpdateSlotIcon -\u003e WindowSetTintColor(\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..slot, tint.r, tint.g, tint.b)"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.EventHandler_ui.EventHandlers",
+      "type": "common_combination",
+      "title": "EventHandler + EventHandlers",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:EventHandler",
+          "label": "EventHandler",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_EventHandler.md",
+          "confidence": "LOW",
+          "score": 20,
+          "summary": "EventHandler is a XML UI element. It commonly appears under EventHandlers."
+        },
+        {
+          "id": "ui:EventHandlers",
+          "label": "EventHandlers",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_EventHandlers.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "EventHandlers is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as EventHandler."
+        }
+      ],
+      "flow": [
+        "EventHandler \u003c-\u003e EventHandlers"
+      ],
+      "evidence": [
+        "EventHandler: XML element relationships",
+        "EventHandlers: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.EventHandlers_ui.Label",
+      "type": "common_combination",
+      "title": "EventHandlers + Label",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:EventHandlers",
+          "label": "EventHandlers",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_EventHandlers.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "EventHandlers is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as EventHandler."
+        },
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window."
+        }
+      ],
+      "flow": [
+        "EventHandlers \u003c-\u003e Label"
+      ],
+      "evidence": [
+        "EventHandlers: XML element relationships",
+        "Label: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.EventHandlers_ui.Size",
+      "type": "common_combination",
+      "title": "EventHandlers + Size",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:EventHandlers",
+          "label": "EventHandlers",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_EventHandlers.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "EventHandlers is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as EventHandler."
+        },
+        {
+          "id": "ui:Size",
+          "label": "Size",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Size.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Size is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as AbsPoint."
+        }
+      ],
+      "flow": [
+        "EventHandlers \u003c-\u003e Size"
+      ],
+      "evidence": [
+        "Label: XML element relationships",
+        "Window: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.FullResizeImage_ui.ListBox",
+      "type": "common_combination",
+      "title": "FullResizeImage + ListBox",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:FullResizeImage",
+          "label": "FullResizeImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_FullResizeImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "FullResizeImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors, Size, Sizes."
+        },
+        {
+          "id": "ui:ListBox",
+          "label": "ListBox",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_ListBox.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "ListBox is a container-style XML element for row-based UI lists. It commonly works with structural children such as ListData and ListColumns and binds events to Lua callbacks."
+        }
+      ],
+      "flow": [
+        "FullResizeImage \u003c-\u003e ListBox"
+      ],
+      "evidence": [
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.FullResizeImage_ui.Sizes",
+      "type": "common_combination",
+      "title": "FullResizeImage + Sizes",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:FullResizeImage",
+          "label": "FullResizeImage",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_FullResizeImage.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "FullResizeImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors, Size, Sizes."
+        },
+        {
+          "id": "ui:Sizes",
+          "label": "Sizes",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Sizes.md",
+          "confidence": "MEDIUM",
+          "score": 45,
+          "summary": "Sizes is a structural XML sub-element. It commonly appears under FullResizeImage. It is typically used to organize structural children such as BottomRight, Middle, TopLeft."
+        }
+      ],
+      "flow": [
+        "FullResizeImage \u003c-\u003e Sizes"
+      ],
+      "evidence": [
+        "FullResizeImage: XML element relationships",
+        "Sizes: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Label_ui.ListBox",
+      "type": "common_combination",
+      "title": "Label + ListBox",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window."
+        },
+        {
+          "id": "ui:ListBox",
+          "label": "ListBox",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_ListBox.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "ListBox is a container-style XML element for row-based UI lists. It commonly works with structural children such as ListData and ListColumns and binds events to Lua callbacks."
+        }
+      ],
+      "flow": [
+        "Label \u003c-\u003e ListBox"
+      ],
+      "evidence": [
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.Label_ui.Window",
+      "type": "common_combination",
+      "title": "Label + Window",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Label",
+          "label": "Label",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Label.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window."
+        },
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Window is the primary XML container element for addon UI frames. It commonly hosts named child elements and binds lifecycle or input events to Lua handlers."
+        }
+      ],
+      "flow": [
+        "Label \u003c-\u003e Window"
+      ],
+      "evidence": [
+        "EventHandlers: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:function.window.LabelSetText_function.window.WindowSetTintColor",
+      "type": "common_combination",
+      "title": "LabelSetText + WindowSetTintColor",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:LabelSetText",
+          "label": "LabelSetText",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_LabelSetText.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed updating label text or label styling on existing controls."
+        },
+        {
+          "id": "function:window:WindowSetTintColor",
+          "label": "WindowSetTintColor",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowSetTintColor.md",
+          "confidence": "HIGH",
+          "score": 80,
+          "summary": "Observed mutating runtime window state or presentation."
+        }
+      ],
+      "flow": [
+        "LabelSetText \u003c-\u003e WindowSetTintColor"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: UpdateSlotIcon -\u003e DynamicImageSetTexture(\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..slot..\"IconBase\", texture, x, y)",
+        "CM_ClosetGoblin: UpdateSlotIcon -\u003e WindowSetTintColor(\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..slot, tint.r, tint.g, tint.b)"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:function.window.LabelSetTextColor_function.window.WindowSetShowing",
+      "type": "common_combination",
+      "title": "LabelSetTextColor + WindowSetShowing",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:LabelSetTextColor",
+          "label": "LabelSetTextColor",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_LabelSetTextColor.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed updating label text or label styling on existing controls."
+        },
+        {
+          "id": "function:window:WindowSetShowing",
+          "label": "WindowSetShowing",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowSetShowing.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed mutating runtime window state or presentation."
+        }
+      ],
+      "flow": [
+        "LabelSetTextColor \u003c-\u003e WindowSetShowing"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: UpdateHighlightOnRow -\u003e LabelSetTextColor(\"ClosetGoblinCharacterWindowContentsSetListRow\"..rowIndex..\"Name\", color.r, color.g, color.b)",
+        "CM_ClosetGoblin: UpdateHighlightOnRow -\u003e LabelSetTextColor(\"ClosetGoblinZoneWindowContentsSetListRow\"..rowIndex..\"Zone\", color.r, color.g, color.b)"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:function.global.LibSlash.RegisterSlashCmd_function.window.WindowSetParent",
+      "type": "common_combination",
+      "title": "LibSlash.RegisterSlashCmd + WindowSetParent",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:global:LibSlash.RegisterSlashCmd",
+          "label": "LibSlash.RegisterSlashCmd",
+          "type": "function",
+          "category": "Global Function",
+          "path": "globals/functions/global_LibSlash.RegisterSlashCmd.md",
+          "confidence": "MEDIUM",
+          "score": 55,
+          "summary": "Observed wiring slash commands through a shared command-registration table."
+        },
+        {
+          "id": "function:window:WindowSetParent",
+          "label": "WindowSetParent",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowSetParent.md",
+          "confidence": "HIGH",
+          "score": 80,
+          "summary": "Observed mutating runtime window state or presentation."
+        }
+      ],
+      "flow": [
+        "LibSlash.RegisterSlashCmd \u003c-\u003e WindowSetParent"
+      ],
+      "evidence": [
+        "CM_ClosetGoblin: Initialize -\u003e LibSlash.RegisterSlashCmd(\"cg\", ClosetGoblin.OnSlashCommand)",
+        "CM_ClosetGoblin: Initialize -\u003e WindowSetParent(\"yClosetGoblinButton\", \"CharacterWindow\")"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.ListBox_ui.ListData",
+      "type": "common_combination",
+      "title": "ListBox + ListData",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:ListBox",
+          "label": "ListBox",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_ListBox.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "ListBox is a container-style XML element for row-based UI lists. It commonly works with structural children such as ListData and ListColumns and binds events to Lua callbacks."
+        },
+        {
+          "id": "ui:ListData",
+          "label": "ListData",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_ListData.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "ListData is a structural XML sub-element that binds list controls to Lua-backed row data. It commonly appears under ListBox as list data wiring."
+        }
+      ],
+      "flow": [
+        "ListBox \u003c-\u003e ListData"
+      ],
+      "evidence": [
+        "ListBox: XML element relationships",
+        "ListData: XML element relationships"
+      ],
+      "weight": 2
+    },
+    {
+      "id": "combination:ui.ListColumn_ui.ListColumns",
+      "type": "common_combination",
+      "title": "ListColumn + ListColumns",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:ListColumn",
+          "label": "ListColumn",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_ListColumn.md",
+          "confidence": "LOW",
+          "score": 15,
+          "summary": "ListColumn is a structural XML sub-element that maps one list field to a target row child element. It commonly appears under ListColumns."
+        },
+        {
+          "id": "ui:ListColumns",
+          "label": "ListColumns",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_ListColumns.md",
+          "confidence": "LOW",
+          "score": 15,
+          "summary": "ListColumns is a structural XML container that declares list column mappings. It commonly appears under ListBox and contains ListColumn entries."
+        }
+      ],
+      "flow": [
+        "ListColumn \u003c-\u003e ListColumns"
+      ],
+      "evidence": [
+        "ListColumn: XML element relationships",
+        "ListColumns: XML element relationships"
+      ],
+      "weight": 2
+    }
+  ]
+}

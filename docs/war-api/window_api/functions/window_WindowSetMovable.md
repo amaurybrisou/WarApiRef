@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 46 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Enemy, LibWBToggler, PartyCast, PotionBar, Shinies, TexturedButtons, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:104`, `/workspace/data/raw/Ace/LibGUI.lua:110`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:41`, `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:323`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:104`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:110`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:104`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:110` |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, Amethyst, Atlas, CMap, CharacterScreenTabFix, Crusher |
+| Files seen in | CharacterScreenTabFix.lua, Code/Core/Main.lua, Code/Guard/Guard.lua, JunkDumpOptions.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua |
 | Namespaces detected | WindowSetMovable |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:MakeFixed, Ace: LIBGUI_ELEMENT:MakeMovable, Enemy: Enemy.Guard_GuardIndicator_Update, Enemy: Enemy._Initialize, LibWBToggler: LIBGUI_ELEMENT:MakeFixed, LibWBToggler: LIBGUI_ELEMENT:MakeMovable |
+| Example locations | Ace: MakeFixed, Ace: MakeMovable, ActionBarHide: MakeFixed, ActionBarHide: MakeMovable, ActionFraction: OnLock, ActionFraction: OnUnlock |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 15 |
-| Global usage count | 15 |
+| Lua usage count | 90 |
+| Global usage count | 90 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "DeathWindow", "EA_Window_CityCaptureJoinPromptWindow", "EnemyGuardDistanceIndicator" |
-| arg2 | Observed as a boolean toggle. | Observed values: false, g.settings.guardDistanceIndicatorMovable, isChecked |
+| windowName | Observed as a target window name. | Observed values: "AbilitiesWindow", "ApothecaryWindow", "AtlasFrame" |
+| arg2 | Observed as a boolean toggle. | Observed values: (...), (settings.Movable==true), WarWhisperer.Settings.moveable |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,39 +85,60 @@ Observed mutating runtime window state or presentation.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- ActionFraction
+- Amethyst
+- Atlas
+- CMap
+- CharacterScreenTabFix
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDsaver
+- GroupRange
+- Hopper
+- InfoScroller
+- JunkDump
 - LibWBToggler
+- Map
+- MapPin
+- Motion
+- NaturalLog
+- NoOverheal
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- Statdoll Remix
+- TargetRing
+- TastyButtons
 - TexturedButtons
+- Tokens
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- WindowMovers
 - WoH-Reticle
+- XpStatus+G
+- emotes
+- nLootLink
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:MakeFixed -> WindowSetMovable(self.name, false)
-- Ace: LIBGUI_ELEMENT:MakeMovable -> WindowSetMovable(self.name, true)
-- Enemy: Enemy.Guard_GuardIndicator_Update -> WindowSetMovable("EnemyGuardDistanceIndicator", g.settings.guardDistanceIndicatorMovable)
-- Enemy: Enemy._Initialize -> WindowSetMovable("DeathWindow", true)
-- Enemy: Enemy._Initialize -> WindowSetMovable("EA_Window_CityCaptureJoinPromptWindow", true)
-- LibWBToggler: LIBGUI_ELEMENT:MakeFixed -> WindowSetMovable(self.name, false)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- [SystemData.Events.INTERFACE_RELOADED](../../events/game_events/game_event_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - Game Event
-
-## Affects
-
-- [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- Ace: MakeFixed -> WindowSetMovable(self.name, false)
+- Ace: MakeMovable -> WindowSetMovable(self.name, true)
+- ActionBarHide: MakeFixed -> WindowSetMovable(self.name, false)
+- ActionBarHide: MakeMovable -> WindowSetMovable(self.name, true)
+- ActionFraction: OnLock -> WindowSetMovable(windowName, false)
+- ActionFraction: OnUnlock -> WindowSetMovable(windowName, true)
 
 ## Notes
 

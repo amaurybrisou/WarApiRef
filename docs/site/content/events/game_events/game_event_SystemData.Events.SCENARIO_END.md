@@ -10,43 +10,39 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, LibGuard, RoR_SoR, followTheLeader |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:47`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:178`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:87` |
+| Addons seen in | Squared |
+| Files seen in | Squared.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, flows, lua_event_registration |
-| Example locations | Enemy: Enemy.GroupsInitialize, LibGuard: LibGuard.Init, RoR_SoR: RoR_SoR:RegisterSelfEvents, followTheLeader: followTheLeader.Initialize |
+| Source kinds | event_page, lua_event_registration |
+| Example locations | Squared: RegisterEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
-| Documentation references | 2 |
-| Initialization flow references | 1 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -61,7 +57,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 4 addons.
+Runtime event with 1 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -69,49 +65,27 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
+- Payload shape is not inferable from contract artifacts alone; treat this as an engine event identifier.
 
 ## Seen In
 
-- Enemy
-- LibGuard
-- RoR_SoR
-- followTheLeader
+- Squared
 
 ## Registrars And Handlers
 
-- Enemy.GroupsUpdateType
-- LibGuard.GROUP_UPDATED
 - RegisterEventHandler
-- RoR_SoR.OnScenario
-- followTheLeader.OnScenarioEnd
+- Squared.ChangeMode
 - global
 
 ## Examples
 
-- Enemy: Enemy.GroupsInitialize -> SystemData.Events.SCENARIO_END -> Enemy.GroupsUpdateType
-- LibGuard: LibGuard.Init -> SystemData.Events.SCENARIO_END -> LibGuard.GROUP_UPDATED
-- RoR_SoR: RoR_SoR:RegisterSelfEvents -> SystemData.Events.SCENARIO_END -> RoR_SoR.OnScenario
-- followTheLeader: followTheLeader.Initialize -> SystemData.Events.SCENARIO_END -> followTheLeader.OnScenarioEnd
-- Enemy: Enemy.GroupsUpdateType -> RegisterEventHandler(SystemData.Events.SCENARIO_END, Enemy.GroupsUpdateType)
-- LibGuard: LibGuard.GROUP_UPDATED -> RegisterEventHandler(SystemData.Events.SCENARIO_END, LibGuard.GROUP_UPDATED)
+- Squared: RegisterEventHandler -> SystemData.Events.SCENARIO_END -> Squared.ChangeMode
+- Squared: Squared.ChangeMode -> RegisterEventHandler(SystemData.Events.SCENARIO_END, Squared.ChangeMode)
 
 ## Related APIs
 
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 
-- none
+- Only one addon surfaced this event in the current addon-api corpus.

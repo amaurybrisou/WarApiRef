@@ -1,43 +1,47 @@
 # Icon
 
 - Category: XML Element Type
-- Confidence level: LOW
-- Confidence score: 20/100
+- Confidence level: MEDIUM
+- Confidence score: 45/100
 
 ## Confidence Assessment
 
-- Level: LOW
+- Level: MEDIUM
 
-- Score: 20/100
+- Score: 45/100
 
-- Rationale: unknown
+- Rationale: Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- none
+- +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
+- -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | none |
-| Source kinds | none |
-| XML usage count | 0 |
-| XML attribute usage count | 0 |
+| Addons seen in | NerfedButtons |
+| Namespaces detected | Icon |
+| Source kinds | xml_frames |
+| Example locations | NerfedButtons: Cycle through friendlies in party or warband, NerfedButtons: Cycle through hurt friendlies in party or warband, NerfedButtons: Set the Bunny Hop Target, NerfedButtons: Target most hurt friendly in your party or warband, NerfedButtons: Target the highest priority Detaunt Helper target |
+| XML usage count | 5 |
+| XML attribute usage count | 5 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | no |
-| Default UI presence | no |
+| Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
 | Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
-| Weak usage only | no |
+| Weak usage only | yes |
 | Project-specific name | no |
 | Placeholder or computed name | no |
 | Conflicting signatures | no |
@@ -53,6 +57,7 @@ Icon is a XML UI element. It commonly appears under Assets.
 ## Common Attributes
 
 - id
+- name
 - texture
 
 ## Common Inherits
@@ -61,34 +66,26 @@ Icon is a XML UI element. It commonly appears under Assets.
 
 ## Common Parent Elements
 
-- [Assets](element_Assets.md) — 25× (HIGH)
+- [Assets](element_Assets.md) — 114× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `id` | **required** | 100% | 29960, 29961, 29962, 29963, ... |
-| `texture` | **required** | 100% | original/attack.dds, original/defend.dds, original/broadcast.dds, original/relocating.dds, ... |
+| `id` | **required** | 100% | 31001, 31004, 31006, 31007, ... |
+| `texture` | **required** | 100% | emojis/001.tga, emojis/004.tga, emojis/006.tga, emojis/007.tga, ... |
 ## Seen In
 
-- RoR_SoR
+- NerfedButtons
 
 ## Examples
 
-- none
+- NerfedButtons: Cycle through friendlies in party or warband -> Icon Cycle through friendlies in party or warband
+- NerfedButtons: Cycle through hurt friendlies in party or warband -> Icon Cycle through hurt friendlies in party or warband
+- NerfedButtons: Set the Bunny Hop Target -> Icon Set the Bunny Hop Target
+- NerfedButtons: Target most hurt friendly in your party or warband -> Icon Target most hurt friendly in your party or warband
+- NerfedButtons: Target the highest priority Detaunt Helper target -> Icon Target the highest priority Detaunt Helper target
 
 ## Related APIs
 
 - [Assets](element_Assets.md) (MEDIUM 45/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

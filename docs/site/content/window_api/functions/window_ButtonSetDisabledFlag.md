@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 13 addons
+- Seen in: 59 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, LibWBToggler, PartyCast |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:553`, `/workspace/data/raw/Ace/LibGUI.lua:778`, `/workspace/data/raw/Ace/LibGUI.lua:844`, `/workspace/data/raw/BuffHead/Setup/SetupTrackers.lua:17`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:465`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:671`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1056`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1224` |
+| Addons seen in | Ace, ActionBarHide, AdvancedRenownTrainer, Amethyst, AutoBand, BuffHead, Busted, CDown |
+| Files seen in | AdvancedRenownTraining.lua, AutoBand.lua, Busted.lua, CDownSettings.lua, ClosetGoblinCharacterWindow.lua, Code/Core/Main.lua, Code/Intercom/Intercom.lua, Code/UnitFrames/EffectsIndicator.lua |
 | Namespaces detected | ButtonSetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Button:SetEnabled, Ace: LIBGUI_Checkbox:SetEnabled, Ace: LIBGUI_Optionbutton:SetEnabled, AdvancedRenownTrainer: AdvancedRenownTraining.AnywhereShow, AdvancedRenownTrainer: AdvancedRenownTraining.OnHidden, BuffHead: BuffHead.local.SetTracker |
+| Example locations | Ace: SetEnabled, ActionBarHide: SetEnabled, AdvancedRenownTrainer: AnywhereShow, AdvancedRenownTrainer: OnHidden, Amethyst: SetEnabled, AutoBand: mark_template_settings_modified |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 80 |
-| Global usage count | 80 |
+| Lua usage count | 332 |
+| Global usage count | 332 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "ClosetGoblinCharacterWindowContentsDeleteSet", "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry", "EnemyConfigDialogResetButton" |
-| arg2 | Observed as a boolean toggle. | Observed values: (onTargetChangeEnabled==false), config_dlg.clickCastingsListSelectedIndex==nil, config_dlg.clickCastingsListSelectedIndex==nil or config_dlg.clickCastingsListSelectedIndex==#config_dlg.clickCastings |
+| arg1 | Observed as a function or method reference. | Observed values: "BustedGUINextError", "BustedGUIPrevError", "ClosetGoblinCharacterWindowContentsDeleteSet" |
+| arg2 | Observed as a boolean toggle. | Observed values: (firstVisible==1), (onTargetChangeEnabled==false), (sequence.Count<firstVisible+#buttons-1) |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,45 +85,85 @@ Observed mutating button text or pressed state on existing controls.
 ## Seen In
 
 - Ace
+- ActionBarHide
 - AdvancedRenownTrainer
+- Amethyst
+- AutoBand
 - BuffHead
+- Busted
+- CDown
 - CM_ClosetGoblin
+- CaVES
+- CastSequence
+- Crusher
 - DAoCBuff
+- DammazKron
+- DetauntHelper
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- FastFriends
+- FixGit
+- GCDsaver
+- HealGrid
+- Hopper
+- InfoScroller
+- JunkDump
+- Kwestor
 - LibWBToggler
+- Map
+- MapMonster
+- Miracle Grow Remix
+- Motion
+- NaturalLog
+- NerfedButtons
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- RVMOD_Manager
+- RVMOD_Targets
+- RealmStatus
+- Sequencer
 - Shinies
+- TargetRing
 - TidyRoll
+- Tokens
+- Vectors
 - WSCT
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Button:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- Ace: LIBGUI_Checkbox:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- Ace: LIBGUI_Optionbutton:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- AdvancedRenownTrainer: AdvancedRenownTraining.AnywhereShow -> ButtonSetDisabledFlag(WindowName.."PurchaseButton", true)
-- AdvancedRenownTrainer: AdvancedRenownTraining.OnHidden -> ButtonSetDisabledFlag(WindowName.."PurchaseButton", false)
-- BuffHead: BuffHead.local.SetTracker -> ButtonSetDisabledFlag(windowName.."OnTargetChangeClearAlwaysShow".."Button", (onTargetChangeEnabled==false))
+- Ace: SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- ActionBarHide: SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- AdvancedRenownTrainer: AnywhereShow -> ButtonSetDisabledFlag(WindowName.."PurchaseButton", true)
+- AdvancedRenownTrainer: OnHidden -> ButtonSetDisabledFlag(WindowName.."PurchaseButton", false)
+- Amethyst: SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- AutoBand: mark_template_settings_modified -> ButtonSetDisabledFlag(AutoBandWindowTemplate.savebutton_name, false)
 
 ## Related APIs
 
-- none
+- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
-- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [ComboBoxSetDisabledFlag](window_ComboBoxSetDisabledFlag.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

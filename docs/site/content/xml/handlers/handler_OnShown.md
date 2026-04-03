@@ -2,24 +2,20 @@
 
 - Type: XML Handler
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 88/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 88/100
 
-- Raw weighted score: 138
-
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, referenced by generated docs or reference files, used in event registration or dispatch.
 
 ## Evidence Signals
 
 - +30 Seen in 4 or more addons: Cross-addon spread is strong.
-- +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
@@ -27,14 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, CM_ClosetGoblin, Enemy, Pocket Palette, PotionBar, RoR_SoR |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/Aura/Source/AuraTexture.xml:0`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.xml:0`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogSnapshotWindow.xml:0`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:0`, `/workspace/data/raw/Enemy/Code/Core/ChooseIconDialog.xml:0`, `/workspace/data/raw/Enemy/Code/Core/Common.xml:0`, `/workspace/data/raw/Enemy/Code/Core/ConfigDialog.xml:0` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BlackBook, CCTV, CM_ClosetGoblin, CaVES, Calling |
 | Namespaces detected | OnShown |
 | Source kinds | bindings, xml_handlers |
-| Example locations | AdvancedPetAssist: APAFollowTargetHUD.OnShown, AdvancedPetAssist: APAInstantOnlyHUD.OnShown, AdvancedPetAssist: APAKitingHUD.OnShown, AdvancedPetAssist: APAOptions.OnShown, AdvancedPetAssist: APAPetTargetHUD.OnShown, AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow.OnShown |
-| XML usage count | 47 |
-| XML attribute usage count | 47 |
-| Lua usage count | 47 |
+| Example locations | AdvancedPetAssist: .OnShown, AdvancedRenownTrainer: .OnShown, Aura: .OnShown, BlackBook: .OnShown, CCTV: .OnShown, CM_ClosetGoblin: .OnShown |
+| XML usage count | 0 |
+| XML attribute usage count | 0 |
+| Lua usage count | 55 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -42,7 +37,7 @@
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
-| Observed in XML and Lua | yes |
+| Observed in XML and Lua | no |
 | Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
@@ -58,7 +53,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 15 addons through frame event handlers.
+XML handler event observed across 33 addons.
 
 ## Expected Lua Binding
 
@@ -68,54 +63,88 @@ function()
 
 ## Element Types
 
-- Window
+- none
 
 ## Seen In
 
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - Aura
+- BlackBook
+- CCTV
 - CM_ClosetGoblin
+- CaVES
+- Calling
+- Crusher
+- DPSMeter
+- EA_UiDebugTools
 - Enemy
+- LoyalPet
+- MapMonster
+- Motion
+- Phantom
 - Pocket Palette
 - PotionBar
-- RoR_SoR
+- RandomMount
+- ReliquaryHunter
+- Sequencer
 - Shinies
 - TidyChat
 - TidyRoll
+- Tome Titan
+- TomeTracker
+- WARCommander
 - WSCT
 - WarBoard
+- WarBoard_FPS
 - WhoHealedMe
-- bigger_MacroWindow
+- alertMod
+- nLootLink
 
 ## Examples
 
-- AdvancedPetAssist: APAFollowTargetHUD -> APAFollowTargetHUD.OnShown -> APAGui.OnFollowTargetHUDShown
-- AdvancedPetAssist: APAInstantOnlyHUD -> APAInstantOnlyHUD.OnShown -> APAGui.OnInstantOnlyHUDShown
-- AdvancedPetAssist: APAKitingHUD -> APAKitingHUD.OnShown -> APAGui.OnKitingHUDShown
-- AdvancedPetAssist: APAOptions -> APAOptions.OnShown -> APAGui.OnShown
-- AdvancedPetAssist: APAPetTargetHUD -> APAPetTargetHUD.OnShown -> APAGui.OnPetTargetHUDShown
-- AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow -> AdvancedRenownTrainingExportWindow.OnShown -> AdvancedRenownTraining.OnExportShown
+- AdvancedPetAssist: .OnShown -> APAGui.OnShown
+- AdvancedPetAssist: .OnShown -> APAGui.OnFollowTargetHUDShown
+- AdvancedPetAssist: .OnShown -> APAGui.OnKitingHUDShown
+- AdvancedPetAssist: .OnShown -> APAGui.OnInstantOnlyHUDShown
+- AdvancedPetAssist: .OnShown -> APAGui.OnPetTargetHUDShown
+- AdvancedRenownTrainer: .OnShown -> AdvancedRenownTraining.OnExportShown
 
 ## Related APIs
 
+- [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxSetDisabledFlag](../../window_api/functions/window_ComboBoxSetDisabledFlag.md) (HIGH 100/100) - Window Function
+- [ComboBoxAddMenuItem](../../window_api/functions/window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
+- [ComboBoxClearMenuItems](../../window_api/functions/window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
+- [ComboBoxSetSelectedMenuItem](../../window_api/functions/window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [EditBox](../element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
+- [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowAssignFocus](../../window_api/functions/window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](../../window_api/functions/window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [EA_Window_InteractionRenownTraining.GetPointsAvailable](../../globals/functions/global_EA_Window_InteractionRenownTraining.GetPointsAvailable.md) (HIGH 98/100) - Global Function
+- [EA_Window_InteractionRenownTraining.GetPointsSpent](../../globals/functions/global_EA_Window_InteractionRenownTraining.GetPointsSpent.md) (HIGH 98/100) - Global Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
+- [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Used With
 
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Triggered By
-
-- none
+- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
-- none
+- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

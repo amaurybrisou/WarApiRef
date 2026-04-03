@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APACommands.lua:165` |
+| Files seen in | APACommands.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | lua_call, pet |
@@ -57,27 +57,11 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.Player.Pet field accessed by 1 addons; commonly found in lua_call and pet contexts.
 
 ## Seen In
 
 - AdvancedPetAssist
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

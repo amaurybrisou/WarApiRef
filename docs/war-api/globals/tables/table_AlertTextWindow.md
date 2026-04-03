@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 113
+- Raw weighted score: 125
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, PlanB, WSCT |
-| Files seen in | `/workspace/data/raw/Aura/Source/Aura.lua:186`, `/workspace/data/raw/Aura/Source/Aura.lua:282`, `/workspace/data/raw/PlanB/PlanB.lua:28`, `/workspace/data/raw/wsct/wsct.lua:590` |
+| Addons seen in | Aura, BlackBook, DammazKron, DetauntHelper, EmoteAlert, LootAlert, MapMonster, MapPin |
+| Files seen in | Core/DK_Core.lua, Source/Aura.lua, Source/Common.lua, Source/MapMonster.lua, Source/MapMonster_EditorWindow.lua, Source/MapMonster_PinTypeEditorWindow.lua, Source/SquaredClick.lua, Source/TomeTracker_Pins.lua |
 | Namespaces detected | AlertTextWindow |
 | Source kinds | lua_calls |
-| Example locations | Aura: Aura:Activate, Aura: Aura:Deactivate, PlanB: PlanB.local.display_alert, PlanB: display_alert, WSCT: WSCT:DisplayMessage |
+| Example locations | Aura: Activate, Aura: Deactivate, BlackBook: CheckOdds, BlackBook: PlayerRenownUpdated, DammazKron: AlertRegister, DetauntHelper: Print |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 2 |
+| Lua usage count | 36 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,12 +57,13 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 3 addons.
+Shared function table with 3 member functions; the primary API surface for 22 addons.
 
 ## Functions
 
 - AlertTextWindow.AddAlert
 - AlertTextWindow.AddLine
+- AlertTextWindow.SetAlertData
 
 ## Observed Members
 
@@ -71,32 +72,36 @@ Observed shared global table or namespace surfaced in 3 addons.
 ## Seen In
 
 - Aura
+- BlackBook
+- DammazKron
+- DetauntHelper
+- EmoteAlert
+- LootAlert
+- MapMonster
+- MapPin
+- MegaphonePlus
+- MegaphonePlusPlus
+- Minmap
 - PlanB
+- SNT_BUTTONS
+- SNT_INFO
+- Sequencer
+- SessionRPs
+- SquaredClick
+- Targets
+- TheSeeker
+- TomeTracker
 - WSCT
+- WarBoard_AAOTracker
 
 ## Examples
 
-- Aura: Aura:Activate -> AlertTextWindow.AddLine(AuraConstants.AlertText[self:Get("activation-alerttexttype")].type, self:Get("activation-alerttext"))
-- Aura: Aura:Deactivate -> AlertTextWindow.AddLine(AuraConstants.AlertText[self:Get("deactivation-alerttexttype")].type, self:Get("deactivation-alerttext"))
-- PlanB: PlanB.local.display_alert -> AlertTextWindow.AddAlert()
-- PlanB: display_alert -> AlertTextWindow.AddAlert()
-- WSCT: WSCT:DisplayMessage -> AlertTextWindow.AddLine(SystemData.AlertText.Types.DEFAULT, msg)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Aura: Activate -> AlertTextWindow.AddLine(AuraConstants.AlertText[self:Get("activation-alerttexttype")].type, self:Get("activation-alerttext"))
+- Aura: Deactivate -> AlertTextWindow.AddLine(AuraConstants.AlertText[self:Get("deactivation-alerttexttype")].type, self:Get("deactivation-alerttext"))
+- BlackBook: CheckOdds -> AlertTextWindow.AddAlert()
+- BlackBook: PlayerRenownUpdated -> AlertTextWindow.AddAlert()
+- DammazKron: AlertRegister -> AlertTextWindow.AddAlert()
+- DetauntHelper: Print -> AlertTextWindow.AddLine(SystemData.AlertText.Types.DEFAULT, msg)
 
 ## Notes
 

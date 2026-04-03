@@ -68,39 +68,83 @@ Disabled is a XML UI element. It commonly appears under OverlayTexCoords and Res
 
 ## Common Parent Elements
 
-- [TextColors](element_TextColors.md) — 16× (HIGH)
-- [TexSlices](element_TexSlices.md) — 11× (HIGH)
-- [ResizeImages](element_ResizeImages.md) — 8× (MEDIUM)
-- [OverlayTexCoords](element_OverlayTexCoords.md) — 7× (MEDIUM)
-- [TexCoords](element_TexCoords.md) — 7× (MEDIUM)
+- [TextColors](element_TextColors.md) — 76× (HIGH)
+- [TexSlices](element_TexSlices.md) — 53× (HIGH)
+- [TexCoords](element_TexCoords.md) — 43× (HIGH)
+- [ResizeImages](element_ResizeImages.md) — 23× (HIGH)
+- [OverlayTexCoords](element_OverlayTexCoords.md) — 20× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `b` | optional | 32% | 92, 36, 102 |
-| `g` | optional | 32% | 92, 57, 204 |
-| `r` | optional | 32% | 92, 95, 255 |
-| `a` | optional | 30% | 255 |
-| `x` | optional | 28% | 27, 92, 0 |
-| `y` | optional | 28% | 56, 44, 0 |
-| `id` | optional | 22% | morale-white, RightTabFrame, ability-white, tactic-black, ... |
-| `def` | optional | 16% | EA_HorizontalResizeImage_DefaultComboBox, EA_Button_ListSortNormal |
-| `texture` | optional | 12% | EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
+| `b` | optional | 35% | 92, 36, 128, 102, ... |
+| `g` | optional | 35% | 92, 57, 128, 204, ... |
+| `r` | optional | 35% | 92, 95, 128, 255, ... |
+| `a` | optional | 33% | 255, 0.5 |
+| `x` | optional | 29% | 27, 92, 0, 230, ... |
+| `y` | optional | 29% | 56, 44, 0, 341, ... |
+| `id` | optional | 24% | morale-white, RightTabFrame, Tactics-Button-Disabled, Map-Plus-Button-Disabled, ... |
+| `def` | optional | 10% | EA_HorizontalResizeImage_DefaultComboBox, Crusher_HorizontalResizeImage_DefaultComboBox, EA_Button_TabDisabled, EA_HorizontalResizeImage_DefaultComboBox2, ... |
+| `texture` | optional | 10% | EA_SquareFrame, CrusherIconBorderNormal, EA_RoundFrame, PinBG, ... |
 ## Seen In
 
 - AdvancedPetAssist
 - AggroMeter
 - AnywhereTrainer
+- Assist
 - Aura
 - CM_ClosetGoblin
+- CMap
+- CastSequence
+- Crusher
+- DaemonAssist
+- DammazKron
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- DuffTimer
+- EA_UiDebugTools
+- EZCraftX
+- FozAuction
+- GDes
+- Ges
+- GuardList
+- GuardRange
+- Hopper
+- ItemRack
+- KeyBar
+- LoyalPet
+- MapPin
+- Miracle Grow Remix
+- MoraleSet
+- Motion
+- NerfedButtons
 - PartyCast
 - Pocket Palette
 - PotionBar
+- Pure
+- RVMOD_SquaredDistances
+- RaidMeter
 - RoR_SoR
+- SNT_PANEL
+- Sequencer
 - Shinies
+- SocialWindow 2.0
+- SpamBayes
+- TastyButtons
 - TidyRoll
+- Tome Titan
+- TwisterSet
 - WSCT
+- WTes
+- Warbuilder
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- ZonePOP
+- nRarity
+- zMailMod
 
 ## Examples
 
@@ -117,11 +161,3 @@ Disabled is a XML UI element. It commonly appears under OverlayTexCoords and Res
 ## Used With
 
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

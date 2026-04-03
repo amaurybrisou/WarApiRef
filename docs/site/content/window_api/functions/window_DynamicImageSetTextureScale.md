@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 37 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, TexturedButtons, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1326`, `/workspace/data/raw/LibWarBoardToggler/LibWBToggler.lua:16`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:1323`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1323`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:1323`, `/workspace/data/raw/TexturedButtons/CooldownPulse.lua:51`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:1323` |
+| Addons seen in | Ace, Amethyst, CastSequence, Crusher, DammazKron, DetauntHelper, EZCraftX, EZGuard |
+| Files seen in | CooldownPulse.lua, Core/ToolTip/DK_Tooltip.lua, Elements/EffigyBar.lua, Gui.lua, InfoScroller.lua, LibGUI.lua, LibWBToggler.lua, Libraries/LibGUI.lua |
 | Namespaces detected | DynamicImageSetTextureScale |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Image:TexScale, LibWBToggler: LIBGUI_Image:TexScale, LibWBToggler: LibWBToggler.CreateToggler, PartyCast: LIBGUI_Image:TexScale, Shinies: LIBGUI_Image:TexScale, TexturedButtons: CooldownPulse:SetIcon |
+| Example locations | Ace: TexScale, Amethyst: TexScale, CastSequence: UpdateButton, Crusher: TexScale, DammazKron: SetData, DetauntHelper: InitUI |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 63 |
+| Global usage count | 63 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: modName.."Icon", self.name, self:GetName().."Icon" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 1, scale, texScale |
+| arg1 | Observed as a function or method reference. | Observed values: MBuffGui.Elements.Images.SpellIcon, WICON, WindowName.."Image" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: .125, 0.5, 1 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,36 +85,58 @@ Observed mutating runtime image resources on existing controls.
 ## Seen In
 
 - Ace
+- Amethyst
+- CastSequence
+- Crusher
+- DammazKron
+- DetauntHelper
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- MapMonster
+- MarkBuff
+- MiniMapMonster
+- Miracle Grow Remix
+- Moth
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
+- SNT_CASTBAR
 - Shinies
+- TargetRing
 - TexturedButtons
+- Tokens
+- WarBoard_Menu
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
 
 ## Examples
 
-- Ace: LIBGUI_Image:TexScale -> DynamicImageSetTextureScale(self.name, scale)
-- LibWBToggler: LIBGUI_Image:TexScale -> DynamicImageSetTextureScale(self.name, scale)
-- LibWBToggler: LibWBToggler.CreateToggler -> DynamicImageSetTextureScale(modName.."Icon", texScale)
-- PartyCast: LIBGUI_Image:TexScale -> DynamicImageSetTextureScale(self.name, scale)
-- Shinies: LIBGUI_Image:TexScale -> DynamicImageSetTextureScale(self.name, scale)
-- TexturedButtons: CooldownPulse:SetIcon -> DynamicImageSetTextureScale(self:GetName().."Icon", 1)
-
-## Related APIs
-
-- none
+- Ace: TexScale -> DynamicImageSetTextureScale(self.name, scale)
+- Amethyst: TexScale -> DynamicImageSetTextureScale(self.name, scale)
+- CastSequence: UpdateButton -> DynamicImageSetTextureScale(button.WarningIcon, 1)
+- Crusher: TexScale -> DynamicImageSetTextureScale(self.name, scale)
+- DammazKron: SetData -> DynamicImageSetTextureScale(windowName.."Icon", iconScale)
+- DetauntHelper: InitUI -> DynamicImageSetTextureScale(barname.."ClassIcon", 1)
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
+- [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 100/100) - Window Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -11,38 +11,36 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 186
+- Raw weighted score: 168
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, BuffHead, TurretRange, TurretRange |
-| Files seen in | `/workspace/data/raw/BuffHead/Core.lua:152`, `/workspace/data/raw/TurrentRange/Core.lua:74`, `/workspace/data/raw/TurrentRange/Core.lua:95` |
+| Addons seen in | Atlas, BuffHead, CCTV, Compass3D, Ding, LibSurveyor, MapMonster, MiniMapMonster |
+| Files seen in | CCTV.lua, Core.lua, CurseProfilerCompiled.lua, Ding.lua, LibSurveyor.lua, Map/Main.lua, MiniMapMonster.lua, NerfedButtons.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | BuffHead.Initialize, BuffHead.OnPlayerPositionUpdated, SystemData.Events.PLAYER_POSITION_UPDATED, TurretRange.Initialize, TurretRange.OnPlayerPositionUpdated, TurretRange.Unload |
+| Source kinds | lua_call |
+| Example locations | Init, Initialize, InitializePlayer, OnInitialize, OnShutdown, RegisterEventHandlers |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 13 |
+| Global usage count | 13 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 2 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,30 +60,34 @@
 
 ## Description
 
-Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.PLAYER_POSITION_UPDATED field accessed by 17 addons; commonly found in Init and Initialize, InitializePlayer, OnInitialize, OnShutdown, RegisterEventHandlers, Shutdown, ShutdownPlayer, Unload, UnregisterEventHandlers, load, lua_call, unload contexts.
 
 ## Seen In
 
+- Atlas
 - BuffHead
-- BuffHead, TurretRange
+- CCTV
+- Compass3D
+- Ding
+- LibSurveyor
+- MapMonster
+- MiniMapMonster
+- NerfedButtons
+- RVAPI_Range
+- Rangechecker
+- SimpleXY
+- TomeTracker
 - TurretRange
+- WarBoard_Loc
+- ZCurse_Profiler
+- compass
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: BuffHead.Initialize, BuffHead.OnPlayerPositionUpdated, SystemData.Events.PLAYER_POSITION_UPDATED, TurretRange.Initialize, TurretRange.OnPlayerPositionUpdated, TurretRange.Unload
+- Observed in contexts: Init, Initialize, InitializePlayer, OnInitialize, OnShutdown, RegisterEventHandlers

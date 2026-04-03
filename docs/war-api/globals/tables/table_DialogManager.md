@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, BankArkel, CM_ClosetGoblin, Enemy, RoR_SoR, Shinies, TidyChat |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraShares.lua:419`, `/workspace/data/raw/BankArkel/BankArkel.lua:85`, `/workspace/data/raw/BankArkel/BankArkel.lua:95`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:147`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:154`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:212`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:216`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:234` |
+| Addons seen in | ActionFraction, AdvancedRenownTrainer, Aura, BankArkel, BankWindowFix, CM_ClosetGoblin, Crusher, EA_UiModWindow |
+| Files seen in | Code/CombatLog/CombatLog.lua, Code/CombatLog/CombatLogStatsWindow.lua, Code/Core/Groups/EnemyEffectFilter.lua, Code/Core/Main.lua, Code/Marks/Marks.lua, Code/UnitFrames/ClickCasting.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFramePart.lua |
 | Namespaces detected | DialogManager |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize, Aura: AuraShares.OnImportExportOkButton, BankArkel: BankArkel.ConvertDB, BankArkel: BankArkel.Init, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickDeleteSetButton, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickNewSetButton |
+| Example locations | ActionFraction: SetLocationActionPointBar, AdvancedRenownTrainer: Respecialize, Aura: OnImportExportOkButton, BankArkel: ConvertDB, BankArkel: Init, BankWindowFix: BagEquipmentRButtonUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 41 |
-| Global usage count | 3 |
+| Lua usage count | 98 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,12 +57,13 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 8 addons.
+Shared function table with 4 member functions; the primary API surface for 27 addons.
 
 ## Functions
 
 - DialogManager.MakeOneButtonDialog
 - DialogManager.MakeTextEntryDialog
+- DialogManager.MakeThreeButtonDialog
 - DialogManager.MakeTwoButtonDialog
 
 ## Observed Members
@@ -71,39 +72,42 @@ Observed shared global table or namespace surfaced in 8 addons.
 
 ## Seen In
 
+- ActionFraction
 - AdvancedRenownTrainer
 - Aura
 - BankArkel
+- BankWindowFix
 - CM_ClosetGoblin
+- Crusher
+- EA_UiModWindow
 - Enemy
+- FozAuction
+- Hopper
+- Lib RuString
+- MapMonster
+- MapPin
+- Minmap
+- Miracle Grow Remix
+- Motion
+- Pure
 - RoR_SoR
 - Shinies
+- Squared
+- TastyButtons
 - TidyChat
+- Vectors
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- wbLeadHelper
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize -> DialogManager.MakeOneButtonDialog(GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_NOT_ENOUGH_MONEY,{MoneyFrame.FormatMoneyString(respecCost)}), GetString(StringTables.Default.LABEL_OKAY), nil)
-- AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize -> DialogManager.MakeTwoButtonDialog(GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_CONFIRMATION,{MoneyFrame.FormatMoneyString(respecCost)}), GetString(StringTables.Default.LABEL_YES), AdvancedRenownTraining.RefundRenownPoints, GetString(StringTables.Default.LABEL_NO))
-- Aura: AuraShares.OnImportExportOkButton -> DialogManager.MakeOneButtonDialog(T["An error occurred attempting to load the Aura.  Verify you have entered the correct data."], L "Ok", nil)
-- BankArkel: BankArkel.ConvertDB -> DialogManager.MakeOneButtonDialog(StringToWString(convTxt.."v.1 >>> v.2"), StringToWString(errBtn1), nil)
-- BankArkel: BankArkel.Init -> DialogManager.MakeOneButtonDialog(StringToWString(errTxt1), StringToWString(errBtn1), BankArkel.ResetDB)
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickDeleteSetButton -> DialogManager.MakeTwoButtonDialog(cgL["confirm_delete_set"]:gsub(L "#1#",set.name), confirmYes, ClosetGoblinCharacterWindow.OnConfirmDeleteSet, confirmNo, nil)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- ActionFraction: SetLocationActionPointBar -> DialogManager.MakeOneButtonDialog(LOC_TEXT.PLAYERWINDOW_UNAVAILABLE, GetPregameString(StringTables.Pregame.LABEL_CONTINUE))
+- AdvancedRenownTrainer: Respecialize -> DialogManager.MakeOneButtonDialog(GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_NOT_ENOUGH_MONEY,{MoneyFrame.FormatMoneyString(respecCost)}), GetString(StringTables.Default.LABEL_OKAY), nil)
+- AdvancedRenownTrainer: Respecialize -> DialogManager.MakeTwoButtonDialog(GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_CONFIRMATION,{MoneyFrame.FormatMoneyString(respecCost)}), GetString(StringTables.Default.LABEL_YES), AdvancedRenownTraining.RefundRenownPoints, GetString(StringTables.Default.LABEL_NO))
+- Aura: OnImportExportOkButton -> DialogManager.MakeOneButtonDialog(T["An error occurred attempting to load the Aura.  Verify you have entered the correct data."], L "Ok", nil)
+- BankArkel: ConvertDB -> DialogManager.MakeOneButtonDialog(StringToWString(convTxt.."v.1 >>> v.2"), StringToWString(errBtn1), nil)
+- BankArkel: Init -> DialogManager.MakeOneButtonDialog(StringToWString(errTxt1), StringToWString(errBtn1), BankArkel.ResetDB)
 
 ## Notes
 

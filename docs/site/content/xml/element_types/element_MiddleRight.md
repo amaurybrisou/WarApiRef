@@ -62,23 +62,36 @@ MiddleRight is a XML UI element. It commonly appears under TexCoords and TexSlic
 
 ## Common Parent Elements
 
-- [TexCoords](element_TexCoords.md) — 9× (HIGH)
-- [TexSlices](element_TexSlices.md) — 5× (HIGH)
+- [TexCoords](element_TexCoords.md) — 19× (HIGH)
+- [TexSlices](element_TexSlices.md) — 11× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | optional | 64% | 350, 135, 346, 39, ... |
-| `y` | optional | 64% | 172, 18, 680, 25, ... |
-| `id` | optional | 35% | Border-Middle-Right |
+| `x` | optional | 63% | 137, 350, 346, 54, ... |
+| `y` | optional | 63% | 581, 172, 680, 10, ... |
+| `id` | optional | 36% | Action-Bar-Frame-Middle-Right, Border-Middle-Right |
 ## Seen In
 
+- CCTV
 - CM_ClosetGoblin
+- CleanCastbar
+- Dascore
 - Enemy
+- FlagCap
+- Hopper
+- Map
+- MoraleSet
 - PartyCast
+- Pure
+- Pure Careerbar
+- ResHelp
 - RoR_SoR
+- Sequencer
 - Shinies
+- TwisterSet
+- WTes
 
 ## Examples
 
@@ -88,15 +101,3 @@ MiddleRight is a XML UI element. It commonly appears under TexCoords and TexSlic
 
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
 - [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

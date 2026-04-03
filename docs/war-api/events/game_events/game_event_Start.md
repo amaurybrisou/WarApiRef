@@ -24,10 +24,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Timer/Timer.lua:7` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | Start |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy.TimerInitialize |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -54,7 +54,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 1 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -70,30 +70,39 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
+- AddEventHandler
 - Enemy.StopwatchStart
 - addon
 
 ## Examples
 
-- Enemy: Enemy.TimerInitialize -> Start -> Enemy.StopwatchStart
-- Enemy: Enemy.StopwatchStart -> Enemy.AddEventHandler(Start, Enemy.StopwatchStart)
+- Enemy: AddEventHandler -> Start -> Enemy.StopwatchStart
+- Enemy: Enemy.StopwatchStart -> AddEventHandler(Start, Enemy.StopwatchStart)
 
 ## Related APIs
 
-- none
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [WindowStartPositionAnimation](../../window_api/functions/window_WindowStartPositionAnimation.md) (HIGH 90/100) - Window Function
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Affects
 
-- none
+- [SystemData.Events.BATTLEGROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_BEGIN](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_BEGIN.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_END](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_GROUP_JOIN](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_GROUP_JOIN.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_GROUP_LEAVE](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_GROUP_LEAVE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

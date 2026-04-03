@@ -1,0 +1,9 @@
+# Mixin ClosetGoblinActionBarPageSelector
+
+## Used By
+
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB1
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB2
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB3
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB4
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB5

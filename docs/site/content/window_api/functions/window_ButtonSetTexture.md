@@ -2,37 +2,41 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 90/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
+
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TexturedButtons |
-| Files seen in | `/workspace/data/raw/TexturedButtons/TexturedButtons.lua:214` |
+| Addons seen in | NAMBLA, TexturedButtons |
+| Files seen in | NAMBLA.lua, TexturedButtons.lua |
 | Namespaces detected | ButtonSetTexture |
 | Source kinds | lua_calls |
-| Example locations | TexturedButtons: SetButtonTexture, TexturedButtons: TexturedButtons.local.SetButtonTexture |
+| Example locations | NAMBLA: HideButtonTextures, TexturedButtons: SetButtonTexture |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -40,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -67,15 +71,15 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: buttonName |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: buttonState |
-| arg3 | Observed as a runtime window or control identifier. | Observed values: buttonTexture or "" |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: btn, buttonName |
+| arg2 | Observed as a function or method reference. | Observed values: Button.ButtonState.HIGHLIGHTED, Button.ButtonState.NORMAL, Button.ButtonState.PRESSED |
+| arg3 | Observed as a text or wstring payload. | Observed values: "", buttonTexture or "" |
 | arg4 | Observed as a numeric value. | Observed values: 0 |
 | arg5 | Observed as a numeric value. | Observed values: 0 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -83,29 +87,17 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
+- NAMBLA
 - TexturedButtons
 
 ## Examples
 
+- NAMBLA: HideButtonTextures -> ButtonSetTexture(btn, Button.ButtonState.NORMAL, "", 0, 0)
+- NAMBLA: HideButtonTextures -> ButtonSetTexture(btn, Button.ButtonState.HIGHLIGHTED, "", 0, 0)
+- NAMBLA: HideButtonTextures -> ButtonSetTexture(btn, Button.ButtonState.PRESSED, "", 0, 0)
+- NAMBLA: HideButtonTextures -> ButtonSetTexture(btn, Button.ButtonState.PRESSED_HIGHLIGHTED, "", 0, 0)
 - TexturedButtons: SetButtonTexture -> ButtonSetTexture(buttonName, buttonState, buttonTexture or "", 0, 0)
-- TexturedButtons: TexturedButtons.local.SetButtonTexture -> ButtonSetTexture(buttonName, buttonState, buttonTexture or "", 0, 0)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- [ButtonSetTextureSlice](window_ButtonSetTextureSlice.md) (HIGH 90/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- none

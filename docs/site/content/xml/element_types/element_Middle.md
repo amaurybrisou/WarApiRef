@@ -52,6 +52,7 @@ Middle is a XML UI element. It commonly appears under Sizes and TexCoords.
 
 ## Common Attributes
 
+- id
 - x
 - y
 
@@ -61,24 +62,55 @@ Middle is a XML UI element. It commonly appears under Sizes and TexCoords.
 
 ## Common Parent Elements
 
-- [Sizes](element_Sizes.md) — 14× (HIGH)
-- [TexCoords](element_TexCoords.md) — 9× (HIGH)
+- [TexCoords](element_TexCoords.md) — 41× (HIGH)
+- [Sizes](element_Sizes.md) — 30× (HIGH)
+- [TexSlices](element_TexSlices.md) — 10× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | **required** | 100% | 0, 424, 78, 2, ... |
-| `y` | **required** | 100% | 0, 762, 25, 2, ... |
+| `x` | **required** | 87% | 0, 424, 50, 78, ... |
+| `y` | **required** | 87% | 0, 762, 23, 25, ... |
+| `id` | optional | 12% | Order-VP-Bar-horiz, Dest-VP-Bar-horiz, Victor-Bar-horiz, Loser-Bar-horiz, ... |
 ## Seen In
 
 - AdvancedPetAssist
 - BuffHead
+- CCTV
 - CM_ClosetGoblin
+- CMap
+- CleanCastbar
+- Crusher
+- Dascore
+- EA_ThreePartBar
+- EA_UiDebugTools
 - Enemy
+- FlagCap
+- Hopper
+- Map
+- MapMonster
+- MoraleSet
+- Motion
 - PartyCast
+- Pure
+- Pure Careerbar
+- RVAPI_ColorDialog
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- ResHelp
 - RoR_SoR
+- SNT_CASTBAR
+- SNT_INFO
+- Sequencer
 - Shinies
+- SpamBayes
+- TwisterSet
+- VerticalMorale
+- WTes
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- zMailMod
 
 ## Examples
 
@@ -88,15 +120,4 @@ Middle is a XML UI element. It commonly appears under Sizes and TexCoords.
 
 - [Sizes](element_Sizes.md) (HIGH 100/100) - XML Element Type
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type

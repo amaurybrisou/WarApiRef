@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 11 addons
 
 ## Confidence Assessment
 
@@ -11,32 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 110
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
+- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | MoraleCircle, RoR_SoR |
-| Files seen in | `/workspace/data/raw/MoraleCircle/MoraleCircle.lua:374`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:2400`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:2425` |
+| Addons seen in | ActionFraction, AdjustTheTip, AutoBand, LibAddonButton, MapPin, MarkBuff, MoraleCircle, QuickNameActions+ |
+| Files seen in | AdjustTheTip.lua, AutoBand.lua, Gui.lua, Manager/Manager.lua, MoraleCircle.lua, QuickNameActionsRessurected.lua, RoR_SoR.lua, showmethebubbles.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | MoraleCircle: MoraleCircle.ColorChanger, RoR_SoR: RoR_SoR.BroadCastOption, RoR_SoR: RoR_SoR.POPOption |
+| Example locations | ActionFraction: RightClick, AdjustTheTip: CreateContextMenu, AutoBand: AutoBand_L_AddContextMenuCascade, LibAddonButton: CreateRemoveContextMenu, LibAddonButton: ShowOptions, MapPin: CreateMainContextMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 34 |
+| Global usage count | 34 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -45,13 +45,13 @@
 | Event binding presence | no |
 | Observed in XML and Lua | no |
 | Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | no |
+| Conflicting signatures | yes |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -65,57 +65,57 @@ EA_Window_ContextMenu.AddCascadingMenuItem(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 11 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: L "<icon29960>Declare Attack", L "<icon29961>Declare Defence", L "<icon29962>BroadCast Population" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: MakeCallBack2(LineWord1,LineWord2,LineWord3,LineWord4,LineWord5,1), MakeCallBack2(LineWord1,LineWord2,LineWord3,LineWord4,LineWord5,2), MakeCallBack2(LineWord1,LineWord2,LineWord3,LineWord4,LineWord5,3) |
+| arg1 | Observed as a function or method reference. | Observed values: L "<icon00075>Party (1)..", L "<icon00075>Party (2)..", L "<icon00075>Party (3).." |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: ActionFractionWindow.SetFontSelectionMenu, ActionFractionWindow.SetPresetLocation, AdjustTheTip.SpawnAnchorContextMenu |
 | arg3 | Observed as a boolean toggle. | Observed values: false |
-| arg4 | Observed as a numeric value. | Observed values: 1, 2 |
+| arg4 | Observed as a numeric value. | Observed values: 1, 2, EA_Window_ContextMenu.CONTEXT_MENU_1 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- ActionFraction
+- AdjustTheTip
+- AutoBand
+- LibAddonButton
+- MapPin
+- MarkBuff
 - MoraleCircle
+- QuickNameActions+
 - RoR_SoR
+- ShowMeTheBubbles
+- XpStatus+G
 
 ## Examples
 
-- MoraleCircle: MoraleCircle.ColorChanger -> EA_Window_ContextMenu.AddCascadingMenuItem(L "Glow Color", MoraleCircle.ColorChanger1, false, 2)
-- MoraleCircle: MoraleCircle.ColorChanger -> EA_Window_ContextMenu.AddCascadingMenuItem(L "Fill Color", MoraleCircle.ColorChanger2, false, 2)
-- MoraleCircle: MoraleCircle.ColorChanger -> EA_Window_ContextMenu.AddCascadingMenuItem(L "Full Color", MoraleCircle.ColorChanger3, false, 2)
-- MoraleCircle: MoraleCircle.ColorChanger -> EA_Window_ContextMenu.AddCascadingMenuItem(L "Empty Color", MoraleCircle.ColorChanger4, false, 2)
-- RoR_SoR: RoR_SoR.BroadCastOption -> EA_Window_ContextMenu.AddCascadingMenuItem(L "<icon29962>BroadCast Status", MakeCallBack2(LineWord1,LineWord2,LineWord3,LineWord4,LineWord5,1), false, 1)
-- RoR_SoR: RoR_SoR.BroadCastOption -> EA_Window_ContextMenu.AddCascadingMenuItem(L "<icon29960>Declare Attack", MakeCallBack2(LineWord1,LineWord2,LineWord3,LineWord4,LineWord5,2), false, 1)
-
-## Related APIs
-
-- none
+- ActionFraction: RightClick -> EA_Window_ContextMenu.AddCascadingMenuItem(LOC_TEXT.PRESET_LOCATIONS, ActionFractionWindow.SetPresetLocation, false, EA_Window_ContextMenu.CONTEXT_MENU_1)
+- ActionFraction: RightClick -> EA_Window_ContextMenu.AddCascadingMenuItem(LOC_TEXT.SET_FONT_SIZE, ActionFractionWindow.SetFontSelectionMenu, false, EA_Window_ContextMenu.CONTEXT_MENU_1)
+- AdjustTheTip: CreateContextMenu -> EA_Window_ContextMenu.AddCascadingMenuItem(L "Delayed Fading", AdjustTheTip.SpawnDelayedFadingContextMenu, false)
+- AdjustTheTip: CreateContextMenu -> EA_Window_ContextMenu.AddCascadingMenuItem(L "Ability Tooltip Anchor", AdjustTheTip.SpawnAnchorContextMenu, false)
+- AutoBand: AutoBand_L_AddContextMenuCascade -> EA_Window_ContextMenu.AddCascadingMenuItem(label_w, callback, false, menuId)
+- LibAddonButton: CreateRemoveContextMenu -> EA_Window_ContextMenu.AddCascadingMenuItem(localization["Manager.Context.MoveTo"], function()ShowMoveTo(moveTo)end, false)
 
 ## Used With
 
+- [EA_Window_ContextMenu.AddMenuDivider](global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuItem](global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddUserDefinedMenuItem](global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.CreateContextMenu](global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.Finalize](global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
-
-## Triggered By
-
-- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

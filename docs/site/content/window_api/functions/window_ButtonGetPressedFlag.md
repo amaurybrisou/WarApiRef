@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 16 addons
+- Seen in: 80 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, DAoCBuff, Enemy, Killer, LibGroup, LibWBToggler, PartyCast |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:756`, `/workspace/data/raw/Ace/LibGUI.lua:826`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:701`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:711`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:835`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:845`, `/workspace/data/raw/BuffHead/Setup/SetupDisplay.lua:102`, `/workspace/data/raw/BuffHead/Setup/SetupEffectCache.lua:419` |
+| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, Atlas, AuctionStats, Bloody Mess, BuffHead |
+| Files seen in | AdjustTheTip.lua, AuctionAssist.lua, Bloody Mess.lua, CDownSettings.lua, CallingSetup.lua, Code/Core/ConfigurationWindow.lua, Code/UnitFrames/ClickCasting.lua, Code/UnitFrames/EffectsIndicator.lua |
 | Namespaces detected | ButtonGetPressedFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Checkbox:GetValue, Ace: LIBGUI_Optionbutton:GetValue, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp |
+| Example locations | Ace: GetValue, ActionBarHide: GetValue, AdjustTheTip: OnDelayedFadingEnabled, Amethyst: GetValue, Atlas: OnCheckboxLBU, AuctionStats: AutoUndercutClicked |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 118 |
-| Global usage count | 118 |
+| Lua usage count | 348 |
+| Global usage count | 348 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,68 +65,126 @@ ButtonGetPressedFlag(arg1)
 
 ## Description
 
-Observed as a window function across 16 addons.
+Observed as a window function across 80 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "EnemyClickCastingDialogContentScrollChildArchetype1", "EnemyClickCastingDialogContentScrollChildArchetype2", "EnemyClickCastingDialogContentScrollChildArchetype3" |
+| arg1 | Observed as a function or method reference. | Observed values: "AuctionHouseCreateAuctionAutoUndercutCheckboxButton", "AuctionHouseCreateAuctionSetBuyOutCheckboxButton", "BloodyMessOptionsEnableCheckBoxButton" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- AdjustTheTip
+- Amethyst
+- Atlas
+- AuctionStats
+- Bloody Mess
 - BuffHead
+- CDown
+- CaVES
+- Calling
+- CastSequence
+- Crafting Info Tooltip
+- Crusher
 - DAoCBuff
+- DammazKron
+- DetauntHelper
+- EA_ScenarioGroupWindow
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- EveryBodyGuard
+- FastFriends
+- GCDsaver
+- Group Icons SG
+- GroupRange
+- GroupSpotter
+- HealGrid
+- Hopper
+- InfoScroller
+- KeyBar
+- Keyset
+- KeysetMonsterPlay
 - Killer
+- LibAddonButton
 - LibGroup
 - LibWBToggler
+- Map
+- MapMonster
+- MarkBuff
+- MegaphonePlusPlus
+- Minmap
+- Miracle Grow Remix
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
 - PartyCast
+- Phantom
 - PotionBar
+- Pure
+- Pure Careerbar
+- RealmStatus
+- ReliquaryHunter
 - Shinies
+- Statdoll Remix
+- TalismanGenie
+- TargetRing
+- TastyButtons
 - TexturedButtons
 - TidyChat
+- TidyQueue
 - TidyRoll
+- Tokens
 - TurretRange
+- Vectors
+- WARCommander
 - WSCT
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- nLootLink
+- nRarity
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Checkbox:GetValue -> ButtonGetPressedFlag(self.name)
-- Ace: LIBGUI_Optionbutton:GetValue -> ButtonGetPressedFlag(self.name)
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp -> ButtonGetPressedFlag(windowName.."ElementEffectsAlwaysShowEnable".."Button")
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp -> ButtonGetPressedFlag(windowName.."ElementEffectsPermanent".."Button")
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp -> ButtonGetPressedFlag(windowName.."ElementHandleInputEnableRemovable".."Button")
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp -> ButtonGetPressedFlag(windowName.."ElementHandleInputShowTooltips".."Button")
-
-## Related APIs
-
-- none
+- Ace: GetValue -> ButtonGetPressedFlag(self.name)
+- ActionBarHide: GetValue -> ButtonGetPressedFlag(self.name)
+- AdjustTheTip: OnDelayedFadingEnabled -> ButtonGetPressedFlag(item.Data.Name.."CheckBox")
+- Amethyst: GetValue -> ButtonGetPressedFlag(self.name)
+- Atlas: OnCheckboxLBU -> ButtonGetPressedFlag(checkboxName)
+- AuctionStats: AutoUndercutClicked -> ButtonGetPressedFlag("AuctionHouseCreateAuctionAutoUndercutCheckboxButton")
 
 ## Used With
 
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [EA_LabelCheckButton.Toggle](../../globals/functions/global_EA_LabelCheckButton.Toggle.md) (HIGH 100/100) - Global Function
+- [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
+- [LayoutEditor.Hide](window_LayoutEditor.Hide.md) (HIGH 90/100) - Window Function
+- [LayoutEditor.Show](window_LayoutEditor.Show.md) (HIGH 90/100) - Window Function
 
 ## Affects
 
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.MouseOverWindow.id](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.id.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

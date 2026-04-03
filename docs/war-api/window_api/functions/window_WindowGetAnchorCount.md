@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 11 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AnywhereTrainer, Pocket Palette, Shinies |
-| Files seen in | `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:160`, `/workspace/data/raw/PocketPalette/PocketPalette.lua:338`, `/workspace/data/raw/Shinies/Modules/Aggregator/Shinies-Aggregator-Tooltip.lua:452` |
+| Addons seen in | AnywhereTrainer, CaVES, Countdown, DammazKron, KillTracker, Pocket Palette, Shinies, SimpleXY |
+| Files seen in | Core.lua, Core/DK_Core.lua, Modules/Aggregator/Shinies-Aggregator-Tooltip.lua, PocketPalette.lua, SimpleXY.lua, Source/KillTracker.lua, Vis.lua, WTes.lua |
 | Namespaces detected | WindowGetAnchorCount |
 | Source kinds | lua_calls |
-| Example locations | AnywhereTrainer: AnywhereTrainer.ReadjustWindowAnchors, Pocket Palette: PP.ToggleWindow, Shinies: Tooltips.AddExtraWindow |
+| Example locations | AnywhereTrainer: ReadjustWindowAnchors, CaVES: ReadjustWindowAnchors, Countdown: OnInitialize, DammazKron: AnchorHTS, KillTracker: CreateTrackerWindow, Pocket Palette: ToggleWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 15 |
+| Global usage count | 15 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,46 +71,44 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: b, windowName, windowToAnchorTo |
+| windowName | Observed as a target window name. | Observed values: "DammazKronHTS", "EA_Window_WorldMapZoneViewCoordinates", WTes.GlyphPos.TrackerWindow |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - AnywhereTrainer
+- CaVES
+- Countdown
+- DammazKron
+- KillTracker
 - Pocket Palette
 - Shinies
+- SimpleXY
+- Vectors
+- WTes
+- emotes
 
 ## Examples
 
-- AnywhereTrainer: AnywhereTrainer.ReadjustWindowAnchors -> WindowGetAnchorCount(windowName)
-- Pocket Palette: PP.ToggleWindow -> WindowGetAnchorCount(b)
-- Shinies: Tooltips.AddExtraWindow -> WindowGetAnchorCount(windowToAnchorTo)
+- AnywhereTrainer: ReadjustWindowAnchors -> WindowGetAnchorCount(windowName)
+- CaVES: ReadjustWindowAnchors -> WindowGetAnchorCount(wndName)
+- Countdown: OnInitialize -> WindowGetAnchorCount(window)
+- DammazKron: AnchorHTS -> WindowGetAnchorCount("DammazKronHTS")
+- KillTracker: CreateTrackerWindow -> WindowGetAnchorCount(windowName)
+- Pocket Palette: ToggleWindow -> WindowGetAnchorCount(b)
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

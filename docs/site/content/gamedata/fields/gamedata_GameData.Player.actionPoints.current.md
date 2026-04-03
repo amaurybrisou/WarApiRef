@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, Enemy |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraEngine.lua:896`, `/workspace/data/raw/Enemy/Code/Core/Groups/EnemyPlayer.lua:198` |
+| Addons seen in | ActionPointWatch, Aura, Effigy, Enemy, HealGrid, Pure, RVMOD_PlayerStatus, Squared |
+| Files seen in | ActionPointWatch.lua, Bars/HealGridActionPointBar.lua, Code/Core/Groups/EnemyPlayer.lua, RVMOD_PlayerStatus.lua, Source/AuraEngine.lua, Source/PureGroup.lua, Source/PurePlayer.lua, SquaredGroup.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | AuraEngine.HandleTriggerType_ActionPoints, EnemyPlayer:LoadFromCurrentPlayer, lua_call |
+| Example locations | ActionPointsPercent, HandleTriggerType_ActionPoints, LoadFromCurrentPlayer, OnLoad, OnPlayerActionPointsUpdated, UpdateAP |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,29 +59,20 @@
 
 ## Description
 
-Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.Player.actionPoints.current field accessed by 9 addons; commonly found in ActionPointsPercent and HandleTriggerType_ActionPoints, LoadFromCurrentPlayer, OnLoad, OnPlayerActionPointsUpdated, UpdateAP, UpdateCurrentActionPoints, UpdateGroup, UpdatePlayerAP, lua_call contexts.
 
 ## Seen In
 
+- ActionPointWatch
 - Aura
+- Effigy
 - Enemy
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- HealGrid
+- Pure
+- RVMOD_PlayerStatus
+- Squared
+- xHUD
 
 ## Notes
 
-- Observed in contexts: AuraEngine.HandleTriggerType_ActionPoints, EnemyPlayer:LoadFromCurrentPlayer, lua_call
+- Observed in contexts: ActionPointsPercent, HandleTriggerType_ActionPoints, LoadFromCurrentPlayer, OnLoad, OnPlayerActionPointsUpdated, UpdateAP

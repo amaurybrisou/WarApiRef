@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 21 addons
+- Seen in: 105 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, Aura, BagOMatic, BankArkel, BuffHead, CM_ClosetGoblin |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:269`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:378`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:426`, `/workspace/data/raw/Aura/Source/AuraShares.lua:257`, `/workspace/data/raw/Aura/Source/AuraShares.lua:297`, `/workspace/data/raw/Aura/Source/AuraTexture.lua:195`, `/workspace/data/raw/Aura/Source/AuraTexture.lua:65`, `/workspace/data/raw/BankArkel/BankArkel.lua:153` |
+| Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, Assist, Atlas, Aura, BagOMatic, BankArkel |
+| Files seen in | AdvancedRenownTraining.lua, AggroMeter.lua, BagOMatic.lua, BankArkel.lua, BlackBookWindow.lua, CCTV.lua, CDownSettings.lua, CMap.lua |
 | Namespaces detected | WindowGetId |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:GetId, AdvancedRenownTrainer: AdvancedRenownTraining.AbilityTooltip, AdvancedRenownTrainer: AdvancedRenownTraining.OnLButtonUpTab, AdvancedRenownTrainer: AdvancedRenownTraining.Select, AggroMeter: AggroMeter.OnTabLBU, AggroMeter: AggroMeter.PickedListMenu |
+| Example locations | Ace: GetId, AdvancedRenownTrainer: AbilityTooltip, AdvancedRenownTrainer: OnLButtonUpTab, AdvancedRenownTrainer: Select, AggroMeter: OnTabLBU, AggroMeter: PickedListMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 100 |
-| Global usage count | 100 |
+| Lua usage count | 475 |
+| Global usage count | 475 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,75 +71,159 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: EA_Window_ContextMenu.activeWindow, SystemData.ActiveWindow.name, SystemData.MouseOverWindow.name |
+| windowName | Observed as a target window name. | Observed values: "SocialWindowAddMemberWindow", ButtonName, EA_Window_ContextMenu.activeWindow |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
 - AdvancedRenownTrainer
 - AggroMeter
+- Assist
+- Atlas
 - Aura
 - BagOMatic
 - BankArkel
+- BlackBook
 - BuffHead
+- CCTV
+- CDown
 - CM_ClosetGoblin
+- CMap
+- CastSequence
+- Cheeseboard
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DammazKron
+- DetauntHelper
+- DuffTimer
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_ThreePartBar
+- EA_UiModWindow
+- EZCraft
+- EZCraftX
+- EZGuard
+- Effigy
+- Emojii
 - Enemy
+- FozAuction
+- GCDsaver
+- HealGrid
+- HideHiddenFrames
+- Hopper
+- InfoScroller
+- JunkDump
+- KillTracker
 - Killer
+- Kwestor
+- LibAddonButton
 - LibWBToggler
+- LootAlert
+- MacroIcons
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- Minmap
+- Miracle Grow Remix
+- MoraleSet
+- Motion
+- NerfedButtons
+- Obsidian
 - PartyCast
+- PieTracker
 - Pocket Palette
+- Pure
+- Pure Careerbar
+- QuickTacticSwitch
+- RVMOD_Manager
+- RVMOD_Targets
+- RaidMeter
+- RealmStatus
+- Refer
+- ResHelp
 - RoR_SoR
+- Rolodex
+- Sequencer
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- Statdoll
+- TacticSetNames
+- TargetRing
+- TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyChat
+- TidyQueue
 - TidyRoll
+- TokenMachine
+- Tokens
+- Tome Titan
+- TomeTracker
+- Tortall_DPS
 - TurretRange
+- Vectors
+- WTes
+- WarBoard_Menu
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- XpStatus+G
+- bigger_MacroWindow
+- minesweep
+- nLootLink
+- nRarity
+- scenarioInfo
+- wbLeadHelper
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:GetId -> WindowGetId(self.name)
-- AdvancedRenownTrainer: AdvancedRenownTraining.AbilityTooltip -> WindowGetId(SystemData.MouseOverWindow.name)
-- AdvancedRenownTrainer: AdvancedRenownTraining.OnLButtonUpTab -> WindowGetId(SystemData.ActiveWindow.name)
-- AdvancedRenownTrainer: AdvancedRenownTraining.Select -> WindowGetId(activeWindow)
-- AggroMeter: AggroMeter.OnTabLBU -> WindowGetId(SystemData.ActiveWindow.name)
-- AggroMeter: AggroMeter.PickedListMenu -> WindowGetId(SystemData.MouseOverWindow.name)
+- Ace: GetId -> WindowGetId(self.name)
+- AdvancedRenownTrainer: AbilityTooltip -> WindowGetId(SystemData.MouseOverWindow.name)
+- AdvancedRenownTrainer: OnLButtonUpTab -> WindowGetId(SystemData.ActiveWindow.name)
+- AdvancedRenownTrainer: Select -> WindowGetId(activeWindow)
+- AggroMeter: OnTabLBU -> WindowGetId(SystemData.ActiveWindow.name)
+- AggroMeter: PickedListMenu -> WindowGetId(SystemData.MouseOverWindow.name)
 
 ## Related APIs
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
+- [OnSlide](../../xml/handlers/handler_OnSlide.md) (HIGH 88/100) - XML Event
+- [OnTextChanged](../../xml/handlers/handler_OnTextChanged.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [IconLButtonUp](../../events/game_events/game_event_IconLButtonUp.md) (MEDIUM 43/100) - Game Event
 
 ## Used With
 
+- [EA_Window_ContextMenu.HideAll](../../globals/functions/global_EA_Window_ContextMenu.HideAll.md) (HIGH 100/100) - Global Function
+- [PartyUtils.GetWarbandMember](../../globals/functions/global_PartyUtils.GetWarbandMember.md) (HIGH 100/100) - Global Function
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-
-## Triggered By
-
-- [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
-- [OnLButtonDown](../../events/window_events/window_event_OnLButtonDown.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
-- [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
-- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowGetParent](window_WindowGetParent.md) (HIGH 100/100) - Window Function
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [PartyUtils.MoveWarbandMember](../../globals/functions/global_PartyUtils.MoveWarbandMember.md) (HIGH 88/100) - Global Function
+- [PartyUtils.SwapWarbandMembers](../../globals/functions/global_PartyUtils.SwapWarbandMembers.md) (MEDIUM 45/100) - Global Function
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ListBox](../../xml/element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

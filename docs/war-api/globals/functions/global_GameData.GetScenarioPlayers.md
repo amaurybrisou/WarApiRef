@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -11,40 +11,43 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 143
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
+- +8 Return usage is consistent: Observed as a stable query-style API.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:391` |
+| Addons seen in | Arsenal Rank, Assist, DetauntHelper, Enemy, Trakario, WarBoard_WarWhisperer |
+| Files seen in | ArsenalRank.lua, Code/ScenarioInfo/ScenarioInfo.lua, Source/TargetInfo.lua, assist.lua, trakario.lua, warwhisperer.lua |
 | Namespaces detected | GameData |
-| Source kinds | globals, lua_calls |
-| Example locations | Enemy: Enemy.ScenarioInfoUpdateData |
+| Source kinds | lua_calls |
+| Example locations | Arsenal Rank: update, Assist: CheckSCPlayers, DetauntHelper: _UpdateScenarioInfo, Enemy: ScenarioInfoUpdateData, Trakario: GetCareerIDByName, Trakario: GetDeathCountByName |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
-| Consistent arguments | no |
-| Consistent returns | no |
+| Consistent role | yes |
+| Consistent arguments | yes |
+| Consistent returns | yes |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
@@ -63,7 +66,7 @@ GameData.GetScenarioPlayers()
 
 ## Description
 
-Observed as a global function across 1 addons.
+Observed as a global function across 6 addons.
 
 ## Parameters
 
@@ -72,37 +75,50 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- Arsenal Rank
+- Assist
+- DetauntHelper
 - Enemy
+- Trakario
+- WarBoard_WarWhisperer
 
 ## Examples
 
-- Enemy: Enemy.ScenarioInfoUpdateData -> GameData.GetScenarioPlayers()
+- Arsenal Rank: update -> GameData.GetScenarioPlayers()
+- Assist: CheckSCPlayers -> GameData.GetScenarioPlayers()
+- DetauntHelper: _UpdateScenarioInfo -> GameData.GetScenarioPlayers()
+- Enemy: ScenarioInfoUpdateData -> GameData.GetScenarioPlayers()
+- Trakario: GetCareerIDByName -> GameData.GetScenarioPlayers()
+- Trakario: GetDeathCountByName -> GameData.GetScenarioPlayers()
 
 ## Related APIs
 
-- none
+- [BroadcastEvent](global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
+- [SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
+- [BroadcastEvent](global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 
 ## Affects
 
+- [GameData.Account.ServerName](../../gamedata/fields/gamedata_GameData.Account.ServerName.md) (HIGH 100/100) - GameData Field
+- [GameData.Player.name](../../gamedata/fields/gamedata_GameData.Player.name.md) (HIGH 100/100) - GameData Field
 - [GameData.ScenarioData](../../gamedata/fields/gamedata_GameData.ScenarioData.md) (HIGH 100/100) - GameData Field
+- [GameData.ScenarioData.id](../../gamedata/fields/gamedata_GameData.ScenarioData.id.md) (HIGH 100/100) - GameData Field
+- [SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

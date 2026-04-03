@@ -1,0 +1,2635 @@
+{
+  "generated_at": "2026-04-03T13:20:58.7492649Z",
+  "nodes": [
+    {
+      "id": "data:table:Cursor",
+      "label": "Cursor",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_Cursor.md",
+      "confidence": "HIGH",
+      "score": 80,
+      "summary": "Shared function table with 2 member functions; the primary API surface for 1 addons."
+    },
+    {
+      "id": "data:table:DialogManager",
+      "label": "DialogManager",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_DialogManager.md",
+      "confidence": "HIGH",
+      "score": 80,
+      "summary": "Shared function table with 2 member functions; the primary API surface for 1 addons."
+    },
+    {
+      "id": "data:constant:EA_Button_Default",
+      "label": "EA_Button_Default",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Button_Default.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_Button_DefaultCheckBox",
+      "label": "EA_Button_DefaultCheckBox",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Button_DefaultCheckBox.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_Button_DefaultDown",
+      "label": "EA_Button_DefaultDown",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Button_DefaultDown.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_Button_DefaultResizeable",
+      "label": "EA_Button_DefaultResizeable",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Button_DefaultResizeable.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_Button_DefaultUp",
+      "label": "EA_Button_DefaultUp",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Button_DefaultUp.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_Button_DefaultWindowClose",
+      "label": "EA_Button_DefaultWindowClose",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Button_DefaultWindowClose.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_Button_ListSort",
+      "label": "EA_Button_ListSort",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Button_ListSort.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_Default_CharacterImage",
+      "label": "EA_Default_CharacterImage",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Default_CharacterImage.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_FullResizeImage_TintableSolidBackground",
+      "label": "EA_FullResizeImage_TintableSolidBackground",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_FullResizeImage_TintableSolidBackground.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_ListSortDownArrow",
+      "label": "EA_ListSortDownArrow",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_ListSortDownArrow.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_ListSortUpArrow",
+      "label": "EA_ListSortUpArrow",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_ListSortUpArrow.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_TitleBar_Default",
+      "label": "EA_TitleBar_Default",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_TitleBar_Default.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:table:EA_Window_ContextMenu",
+      "label": "EA_Window_ContextMenu",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_EA_Window_ContextMenu.md",
+      "confidence": "HIGH",
+      "score": 80,
+      "summary": "Shared function table with 3 member functions; the primary API surface for 1 addons."
+    },
+    {
+      "id": "data:constant:EA_Window_Default",
+      "label": "EA_Window_Default",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Window_Default.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:constant:EA_Window_DefaultFrame",
+      "label": "EA_Window_DefaultFrame",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Window_DefaultFrame.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:game:GameData.EquipSlots.BACK",
+      "label": "GameData.EquipSlots.BACK",
+      "type": "data_structure",
+      "category": "GameData Field",
+      "path": "gamedata/fields/gamedata_GameData.EquipSlots.BACK.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "GameData.GameData.EquipSlots.BACK field accessed by 1 addons; commonly found in FinalizeSetActivation and lua_call contexts."
+    },
+    {
+      "id": "data:game:GameData.EquipSlots.HELM",
+      "label": "GameData.EquipSlots.HELM",
+      "type": "data_structure",
+      "category": "GameData Field",
+      "path": "gamedata/fields/gamedata_GameData.EquipSlots.HELM.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "GameData.GameData.EquipSlots.HELM field accessed by 1 addons; commonly found in FinalizeSetActivation and lua_call contexts."
+    },
+    {
+      "id": "data:table:LibSlash",
+      "label": "LibSlash",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_LibSlash.md",
+      "confidence": "MEDIUM",
+      "score": 55,
+      "summary": "Shared function table with 1 member functions; the primary API surface for 1 addons."
+    },
+    {
+      "id": "data:system:SystemData.ActiveWindow.name",
+      "label": "SystemData.ActiveWindow.name",
+      "type": "data_structure",
+      "category": "SystemData Field",
+      "path": "systemdata/fields/systemdata_SystemData.ActiveWindow.name.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "SystemData.SystemData.ActiveWindow.name field accessed by 1 addons; commonly found in EquipmentLButtonUp and EquipmentMouseOver, EquipmentRButtonUp, HandleDrag, OnClickSetRow, OnClickZoneRow, OnLButtonUp, OnSetRowContextMenu, OnSetZoneRowContextMenu, lua_call contexts."
+    },
+    {
+      "id": "data:system:SystemData.Events.ALL_MODULES_INITIALIZED",
+      "label": "SystemData.Events.ALL_MODULES_INITIALIZED",
+      "type": "data_structure",
+      "category": "SystemData Field",
+      "path": "systemdata/fields/systemdata_SystemData.Events.ALL_MODULES_INITIALIZED.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "SystemData.SystemData.Events.ALL_MODULES_INITIALIZED field accessed by 1 addons; commonly found in OnInitialize and lua_call contexts."
+    },
+    {
+      "id": "data:system:SystemData.Events.LOADING_BEGIN",
+      "label": "SystemData.Events.LOADING_BEGIN",
+      "type": "data_structure",
+      "category": "SystemData Field",
+      "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_BEGIN.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "SystemData.SystemData.Events.LOADING_BEGIN field accessed by 1 addons; commonly found in ZoneChangeInit and ZoneChangeShutdown, lua_call contexts."
+    },
+    {
+      "id": "data:system:SystemData.Events.LOADING_END",
+      "label": "SystemData.Events.LOADING_END",
+      "type": "data_structure",
+      "category": "SystemData Field",
+      "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_END.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "SystemData.SystemData.Events.LOADING_END field accessed by 1 addons; commonly found in Initialize and OnInitialize, ZoneChangeInit, ZoneChangeShutdown, lua_call contexts."
+    },
+    {
+      "id": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "label": "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "type": "data_structure",
+      "category": "SystemData Field",
+      "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "SystemData.SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED field accessed by 1 addons; commonly found in OnInitialize and OnShutdown, lua_call contexts."
+    },
+    {
+      "id": "data:system:SystemData.Events.PLAYER_ZONE_CHANGED",
+      "label": "SystemData.Events.PLAYER_ZONE_CHANGED",
+      "type": "data_structure",
+      "category": "SystemData Field",
+      "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "SystemData.SystemData.Events.PLAYER_ZONE_CHANGED field accessed by 1 addons; commonly found in ZoneChangeInit and ZoneChangeShutdown, lua_call contexts."
+    },
+    {
+      "id": "data:system:SystemData.Events.RELOAD_INTERFACE",
+      "label": "SystemData.Events.RELOAD_INTERFACE",
+      "type": "data_structure",
+      "category": "SystemData Field",
+      "path": "systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "SystemData.SystemData.Events.RELOAD_INTERFACE field accessed by 1 addons; commonly found in OnInitialize and lua_call contexts."
+    },
+    {
+      "id": "data:system:SystemData.Events.UPDATE_PROCESSED",
+      "label": "SystemData.Events.UPDATE_PROCESSED",
+      "type": "data_structure",
+      "category": "SystemData Field",
+      "path": "systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "SystemData.SystemData.Events.UPDATE_PROCESSED field accessed by 1 addons; commonly found in OnInitialize and OnShutdown, lua_call contexts."
+    },
+    {
+      "id": "data:system:SystemData.Events.VISIBLE_EQUIPMENT_UPDATED",
+      "label": "SystemData.Events.VISIBLE_EQUIPMENT_UPDATED",
+      "type": "data_structure",
+      "category": "SystemData Field",
+      "path": "systemdata/fields/systemdata_SystemData.Events.VISIBLE_EQUIPMENT_UPDATED.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "SystemData.SystemData.Events.VISIBLE_EQUIPMENT_UPDATED field accessed by 1 addons; commonly found in OnInitialize and lua_call contexts."
+    },
+    {
+      "id": "data:system:SystemData.MouseOverWindow.name",
+      "label": "SystemData.MouseOverWindow.name",
+      "type": "data_structure",
+      "category": "SystemData Field",
+      "path": "systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "SystemData.SystemData.MouseOverWindow.name field accessed by 1 addons; commonly found in HotbarPageDownProxy and HotbarPageUpProxy, OnRowMenuActivateSet, OnRowMenuAssoiacteClick, OnRowMenuLinkTactics, lua_call contexts."
+    },
+    {
+      "id": "data:table:wstring",
+      "label": "wstring",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_wstring.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Shared function table with 1 member functions; the primary API surface for 1 addons."
+    },
+    {
+      "id": "function:window:ButtonSetDisabledFlag",
+      "label": "ButtonSetDisabledFlag",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_ButtonSetDisabledFlag.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Observed mutating button text or pressed state on existing controls."
+    },
+    {
+      "id": "function:window:ButtonSetPressedFlag",
+      "label": "ButtonSetPressedFlag",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_ButtonSetPressedFlag.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Observed mutating button text or pressed state on existing controls."
+    },
+    {
+      "id": "function:window:ButtonSetText",
+      "label": "ButtonSetText",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_ButtonSetText.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Observed mutating button text or pressed state on existing controls."
+    },
+    {
+      "id": "function:global:Cursor.Clear",
+      "label": "Cursor.Clear",
+      "type": "function",
+      "category": "Global Function",
+      "path": "globals/functions/global_Cursor.Clear.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed as a global function across 1 addons."
+    },
+    {
+      "id": "function:global:Cursor.IconOnCursor",
+      "label": "Cursor.IconOnCursor",
+      "type": "function",
+      "category": "Global Function",
+      "path": "globals/functions/global_Cursor.IconOnCursor.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed as a global function across 1 addons."
+    },
+    {
+      "id": "function:global:DialogManager.MakeTextEntryDialog",
+      "label": "DialogManager.MakeTextEntryDialog",
+      "type": "function",
+      "category": "Global Function",
+      "path": "globals/functions/global_DialogManager.MakeTextEntryDialog.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Observed as a global function across 1 addons."
+    },
+    {
+      "id": "function:global:DialogManager.MakeTwoButtonDialog",
+      "label": "DialogManager.MakeTwoButtonDialog",
+      "type": "function",
+      "category": "Global Function",
+      "path": "globals/functions/global_DialogManager.MakeTwoButtonDialog.md",
+      "confidence": "HIGH",
+      "score": 80,
+      "summary": "Observed as a global function across 1 addons."
+    },
+    {
+      "id": "function:window:DynamicImageSetTexture",
+      "label": "DynamicImageSetTexture",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_DynamicImageSetTexture.md",
+      "confidence": "HIGH",
+      "score": 80,
+      "summary": "Observed mutating runtime image resources on existing controls."
+    },
+    {
+      "id": "function:global:EA_Window_ContextMenu.AddMenuItem",
+      "label": "EA_Window_ContextMenu.AddMenuItem",
+      "type": "function",
+      "category": "Global Function",
+      "path": "globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Observed as a global function across 1 addons."
+    },
+    {
+      "id": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+      "label": "EA_Window_ContextMenu.CreateContextMenu",
+      "type": "function",
+      "category": "Global Function",
+      "path": "globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Observed as a global function across 1 addons."
+    },
+    {
+      "id": "function:global:EA_Window_ContextMenu.Finalize",
+      "label": "EA_Window_ContextMenu.Finalize",
+      "type": "function",
+      "category": "Global Function",
+      "path": "globals/functions/global_EA_Window_ContextMenu.Finalize.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Observed as a global function across 1 addons."
+    },
+    {
+      "id": "function:window:LabelSetText",
+      "label": "LabelSetText",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_LabelSetText.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed updating label text or label styling on existing controls."
+    },
+    {
+      "id": "function:window:LabelSetTextColor",
+      "label": "LabelSetTextColor",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_LabelSetTextColor.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed updating label text or label styling on existing controls."
+    },
+    {
+      "id": "function:window:LayoutEditor.RegisterWindow",
+      "label": "LayoutEditor.RegisterWindow",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_LayoutEditor.RegisterWindow.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed as a window function across 2 addons."
+    },
+    {
+      "id": "function:global:LibSlash.RegisterSlashCmd",
+      "label": "LibSlash.RegisterSlashCmd",
+      "type": "function",
+      "category": "Global Function",
+      "path": "globals/functions/global_LibSlash.RegisterSlashCmd.md",
+      "confidence": "MEDIUM",
+      "score": 55,
+      "summary": "Observed wiring slash commands through a shared command-registration table."
+    },
+    {
+      "id": "function:window:WindowGetId",
+      "label": "WindowGetId",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_WindowGetId.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Observed querying runtime window state or metadata."
+    },
+    {
+      "id": "function:window:WindowSetParent",
+      "label": "WindowSetParent",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_WindowSetParent.md",
+      "confidence": "HIGH",
+      "score": 80,
+      "summary": "Observed mutating runtime window state or presentation."
+    },
+    {
+      "id": "function:window:WindowSetShowing",
+      "label": "WindowSetShowing",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_WindowSetShowing.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Observed mutating runtime window state or presentation."
+    },
+    {
+      "id": "function:window:WindowSetTintColor",
+      "label": "WindowSetTintColor",
+      "type": "function",
+      "category": "Window Function",
+      "path": "window_api/functions/window_WindowSetTintColor.md",
+      "confidence": "HIGH",
+      "score": 80,
+      "summary": "Observed mutating runtime window state or presentation."
+    },
+    {
+      "id": "function:global:wstring.format",
+      "label": "wstring.format",
+      "type": "function",
+      "category": "Global Function",
+      "path": "globals/functions/global_wstring.format.md",
+      "confidence": "MEDIUM",
+      "score": 55,
+      "summary": "Observed as a global function across 1 addons."
+    },
+    {
+      "id": "ui:AbsPoint",
+      "label": "AbsPoint",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_AbsPoint.md",
+      "confidence": "MEDIUM",
+      "score": 35,
+      "summary": "AbsPoint is a structural XML sub-element. It commonly appears under Anchor and Size."
+    },
+    {
+      "id": "ui:Anchor",
+      "label": "Anchor",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Anchor.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Anchor is a structural XML sub-element. It commonly appears under Anchors. It is typically used to organize structural children such as AbsPoint."
+    },
+    {
+      "id": "ui:Anchors",
+      "label": "Anchors",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Anchors.md",
+      "confidence": "HIGH",
+      "score": 98,
+      "summary": "Anchors is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Anchor."
+    },
+    {
+      "id": "ui:Assets",
+      "label": "Assets",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Assets.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "Assets is a container-style XML element. It is typically used to host named child elements such as Texture."
+    },
+    {
+      "id": "ui:BottomCenter",
+      "label": "BottomCenter",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_BottomCenter.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "BottomCenter is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:BottomLeft",
+      "label": "BottomLeft",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_BottomLeft.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "BottomLeft is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:BottomRight",
+      "label": "BottomRight",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_BottomRight.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "BottomRight is a XML UI element. It commonly appears under Sizes and TexCoords."
+    },
+    {
+      "id": "ui:Button",
+      "label": "Button",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Button.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Button is an interactive XML control used for click and mouse-driven callbacks. It usually binds input events to Lua handler functions."
+    },
+    {
+      "id": "ui:Color",
+      "label": "Color",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Color.md",
+      "confidence": "HIGH",
+      "score": 98,
+      "summary": "Color is a XML UI element. It commonly appears under Label."
+    },
+    {
+      "id": "ui:Disabled",
+      "label": "Disabled",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Disabled.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "Disabled is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:DynamicImage",
+      "label": "DynamicImage",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_DynamicImage.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Anchors, EventHandlers, Size and bind XML events like OnLButtonUp, OnRButtonUp to Lua."
+    },
+    {
+      "id": "ui:EventHandler",
+      "label": "EventHandler",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_EventHandler.md",
+      "confidence": "LOW",
+      "score": 20,
+      "summary": "EventHandler is a XML UI element. It commonly appears under EventHandlers."
+    },
+    {
+      "id": "ui:EventHandlers",
+      "label": "EventHandlers",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_EventHandlers.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "EventHandlers is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as EventHandler."
+    },
+    {
+      "id": "ui:FullResizeImage",
+      "label": "FullResizeImage",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_FullResizeImage.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "FullResizeImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors, Size, Sizes."
+    },
+    {
+      "id": "ui:Label",
+      "label": "Label",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Label.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window."
+    },
+    {
+      "id": "ui:ListBox",
+      "label": "ListBox",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ListBox.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "ListBox is a container-style XML element for row-based UI lists. It commonly works with structural children such as ListData and ListColumns and binds events to Lua callbacks."
+    },
+    {
+      "id": "ui:ListColumn",
+      "label": "ListColumn",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ListColumn.md",
+      "confidence": "LOW",
+      "score": 15,
+      "summary": "ListColumn is a structural XML sub-element that maps one list field to a target row child element. It commonly appears under ListColumns."
+    },
+    {
+      "id": "ui:ListColumns",
+      "label": "ListColumns",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ListColumns.md",
+      "confidence": "LOW",
+      "score": 15,
+      "summary": "ListColumns is a structural XML container that declares list column mappings. It commonly appears under ListBox and contains ListColumn entries."
+    },
+    {
+      "id": "ui:ListData",
+      "label": "ListData",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ListData.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "ListData is a structural XML sub-element that binds list controls to Lua-backed row data. It commonly appears under ListBox as list data wiring."
+    },
+    {
+      "id": "ui:Middle",
+      "label": "Middle",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Middle.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "Middle is a XML UI element. It commonly appears under Sizes."
+    },
+    {
+      "id": "ui:MiddleCenter",
+      "label": "MiddleCenter",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_MiddleCenter.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "MiddleCenter is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:MiddleLeft",
+      "label": "MiddleLeft",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_MiddleLeft.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "MiddleLeft is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:MiddleRight",
+      "label": "MiddleRight",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_MiddleRight.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "MiddleRight is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:Normal",
+      "label": "Normal",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Normal.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "Normal is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:NormalHighlit",
+      "label": "NormalHighlit",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_NormalHighlit.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "NormalHighlit is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:Pressed",
+      "label": "Pressed",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Pressed.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "Pressed is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:Script",
+      "label": "Script",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Script.md",
+      "confidence": "LOW",
+      "score": 20,
+      "summary": "Script is a XML UI element. It commonly appears under Scripts."
+    },
+    {
+      "id": "ui:Scripts",
+      "label": "Scripts",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Scripts.md",
+      "confidence": "LOW",
+      "score": 15,
+      "summary": "Scripts is an XML element type observed in contract artifacts, but structured evidence is currently sparse."
+    },
+    {
+      "id": "ui:Size",
+      "label": "Size",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Size.md",
+      "confidence": "HIGH",
+      "score": 98,
+      "summary": "Size is a structural XML sub-element. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as AbsPoint."
+    },
+    {
+      "id": "ui:Sizes",
+      "label": "Sizes",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Sizes.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Sizes is a structural XML sub-element. It commonly appears under FullResizeImage. It is typically used to organize structural children such as BottomRight, Middle, TopLeft."
+    },
+    {
+      "id": "ui:TexCoords",
+      "label": "TexCoords",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TexCoords.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "TexCoords is a structural XML sub-element. It commonly appears under Button and FullResizeImage. It is typically used to organize structural children such as BottomCenter, BottomLeft, BottomRight."
+    },
+    {
+      "id": "ui:TextOffset",
+      "label": "TextOffset",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TextOffset.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "TextOffset is a XML UI element. It commonly appears under Button."
+    },
+    {
+      "id": "ui:Texture",
+      "label": "Texture",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Texture.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Texture is a XML UI element. It commonly appears under Assets."
+    },
+    {
+      "id": "ui:TopCenter",
+      "label": "TopCenter",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TopCenter.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "TopCenter is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:TopLeft",
+      "label": "TopLeft",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TopLeft.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "TopLeft is a XML UI element. It commonly appears under Sizes and TexCoords."
+    },
+    {
+      "id": "ui:TopRight",
+      "label": "TopRight",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TopRight.md",
+      "confidence": "LOW",
+      "score": 5,
+      "summary": "TopRight is a XML UI element. It commonly appears under TexCoords."
+    },
+    {
+      "id": "ui:Window",
+      "label": "Window",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Window.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Window is the primary XML container element for addon UI frames. It commonly hosts named child elements and binds lifecycle or input events to Lua handlers."
+    },
+    {
+      "id": "ui:Windows",
+      "label": "Windows",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Windows.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Windows is a container-style XML element. It commonly appears under Button and DynamicImage. It is typically used to host named child elements such as Button, DynamicImage, FullResizeImage."
+    }
+  ],
+  "edges": [
+    {
+      "from": "data:system:SystemData.ActiveWindow.name",
+      "to": "function:global:EA_Window_ContextMenu.AddMenuItem",
+      "type": "commonly_used_with",
+      "confidence_score": 74,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "rationale": "data:system:SystemData.ActiveWindow.name and function:global:EA_Window_ContextMenu.AddMenuItem are commonly used together",
+      "weight": 10,
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.ActiveWindow.name",
+      "to": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+      "type": "commonly_used_with",
+      "confidence_score": 76,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)"
+      ],
+      "rationale": "data:system:SystemData.ActiveWindow.name and function:global:EA_Window_ContextMenu.CreateContextMenu are commonly used together",
+      "weight": 12,
+      "evidence": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.ActiveWindow.name",
+      "to": "function:global:EA_Window_ContextMenu.Finalize",
+      "type": "commonly_used_with",
+      "confidence_score": 76,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)"
+      ],
+      "rationale": "data:system:SystemData.ActiveWindow.name and function:global:EA_Window_ContextMenu.Finalize are commonly used together",
+      "weight": 12,
+      "evidence": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.ActiveWindow.name",
+      "to": "function:window:WindowGetId",
+      "type": "commonly_used_with",
+      "confidence_score": 82,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: EquipmentLButtonUp -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: EquipmentMouseOver -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: EquipmentRButtonUp -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.Clear()",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.IconOnCursor()",
+        "CM_ClosetGoblin: HandleDrag -\u003e WindowGetId(SystemData.ActiveWindow.name)"
+      ],
+      "rationale": "data:system:SystemData.ActiveWindow.name and function:window:WindowGetId are commonly used together",
+      "weight": 18,
+      "evidence": [
+        "CM_ClosetGoblin: EquipmentLButtonUp -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: EquipmentMouseOver -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: EquipmentRButtonUp -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.Clear()",
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.IconOnCursor()",
+        "CM_ClosetGoblin: HandleDrag -\u003e WindowGetId(SystemData.ActiveWindow.name)"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_ContextMenu.AddMenuItem",
+      "to": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+      "type": "commonly_used_with",
+      "confidence_score": 74,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "rationale": "function:global:EA_Window_ContextMenu.AddMenuItem and function:global:EA_Window_ContextMenu.CreateContextMenu are commonly used together",
+      "weight": 10,
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_ContextMenu.AddMenuItem",
+      "to": "function:global:EA_Window_ContextMenu.Finalize",
+      "type": "commonly_used_with",
+      "confidence_score": 74,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "rationale": "function:global:EA_Window_ContextMenu.AddMenuItem and function:global:EA_Window_ContextMenu.Finalize are commonly used together",
+      "weight": 10,
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_ContextMenu.AddMenuItem",
+      "to": "function:window:WindowGetId",
+      "type": "commonly_used_with",
+      "confidence_score": 74,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "rationale": "function:global:EA_Window_ContextMenu.AddMenuItem and function:window:WindowGetId are commonly used together",
+      "weight": 10,
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+      "to": "function:global:EA_Window_ContextMenu.Finalize",
+      "type": "commonly_used_with",
+      "confidence_score": 76,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)"
+      ],
+      "rationale": "function:global:EA_Window_ContextMenu.CreateContextMenu and function:global:EA_Window_ContextMenu.Finalize are commonly used together",
+      "weight": 12,
+      "evidence": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+      "to": "function:window:WindowGetId",
+      "type": "commonly_used_with",
+      "confidence_score": 74,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "rationale": "function:global:EA_Window_ContextMenu.CreateContextMenu and function:window:WindowGetId are commonly used together",
+      "weight": 10,
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_ContextMenu.Finalize",
+      "to": "function:window:WindowGetId",
+      "type": "commonly_used_with",
+      "confidence_score": 74,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "rationale": "function:global:EA_Window_ContextMenu.Finalize and function:window:WindowGetId are commonly used together",
+      "weight": 10,
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetText",
+      "to": "function:window:LabelSetText",
+      "type": "commonly_used_with",
+      "confidence_score": 76,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsDeleteSet\", cgL[\"Delete_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsNewSet\", cgL[\"New_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortNameButton\", cgL[\"Set_Name\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortTacticsButton\", cgL[\"Tactics\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsZoneConfig\", cgL[\"Zone_Configuration\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinZoneWindowContentsChangeZoneButton\", cgL[\"Change\"])"
+      ],
+      "rationale": "function:window:ButtonSetText and function:window:LabelSetText are commonly used together",
+      "weight": 12,
+      "evidence": [
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsDeleteSet\", cgL[\"Delete_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsNewSet\", cgL[\"New_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortNameButton\", cgL[\"Set_Name\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortTacticsButton\", cgL[\"Tactics\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsZoneConfig\", cgL[\"Zone_Configuration\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinZoneWindowContentsChangeZoneButton\", cgL[\"Change\"])"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetText",
+      "to": "function:window:WindowSetShowing",
+      "type": "commonly_used_with",
+      "confidence_score": 76,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsDeleteSet\", cgL[\"Delete_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsNewSet\", cgL[\"New_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortNameButton\", cgL[\"Set_Name\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortTacticsButton\", cgL[\"Tactics\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsZoneConfig\", cgL[\"Zone_Configuration\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinZoneWindowContentsChangeZoneButton\", cgL[\"Change\"])"
+      ],
+      "rationale": "function:window:ButtonSetText and function:window:WindowSetShowing are commonly used together",
+      "weight": 12,
+      "evidence": [
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsDeleteSet\", cgL[\"Delete_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsNewSet\", cgL[\"New_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortNameButton\", cgL[\"Set_Name\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortTacticsButton\", cgL[\"Tactics\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsZoneConfig\", cgL[\"Zone_Configuration\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinZoneWindowContentsChangeZoneButton\", cgL[\"Change\"])"
+      ]
+    },
+    {
+      "from": "function:window:LabelSetText",
+      "to": "function:window:WindowSetShowing",
+      "type": "commonly_used_with",
+      "confidence_score": 76,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsDeleteSet\", cgL[\"Delete_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsNewSet\", cgL[\"New_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortNameButton\", cgL[\"Set_Name\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortTacticsButton\", cgL[\"Tactics\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsZoneConfig\", cgL[\"Zone_Configuration\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinZoneWindowContentsChangeZoneButton\", cgL[\"Change\"])"
+      ],
+      "rationale": "function:window:LabelSetText and function:window:WindowSetShowing are commonly used together",
+      "weight": 12,
+      "evidence": [
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsDeleteSet\", cgL[\"Delete_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsNewSet\", cgL[\"New_Set\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortNameButton\", cgL[\"Set_Name\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsSortTacticsButton\", cgL[\"Tactics\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinCharacterWindowContentsZoneConfig\", cgL[\"Zone_Configuration\"])",
+        "CM_ClosetGoblin: OnInitialize -\u003e ButtonSetText(\"ClosetGoblinZoneWindowContentsChangeZoneButton\", cgL[\"Change\"])"
+      ]
+    },
+    {
+      "from": "ui:Anchors",
+      "to": "ui:Size",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "FullResizeImage: XML element relationships",
+        "Label: XML element relationships",
+        "ListBox: XML element relationships",
+        "Window: XML element relationships"
+      ],
+      "rationale": "ui:Anchors and ui:Size are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "FullResizeImage: XML element relationships",
+        "Label: XML element relationships",
+        "ListBox: XML element relationships",
+        "Window: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:DynamicImage",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Anchors: XML element relationships",
+        "EventHandlers: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "rationale": "ui:Button and ui:DynamicImage are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "Anchors: XML element relationships",
+        "EventHandlers: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:FullResizeImage",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Anchors: XML element relationships",
+        "Size: XML element relationships",
+        "TexCoords: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "rationale": "ui:Button and ui:FullResizeImage are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "Anchors: XML element relationships",
+        "Size: XML element relationships",
+        "TexCoords: XML element relationships",
+        "Windows: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:Label",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Anchors: XML element relationships",
+        "EventHandlers: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "rationale": "ui:Button and ui:Label are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "Anchors: XML element relationships",
+        "EventHandlers: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "ui:Label",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Anchors: XML element relationships",
+        "EventHandlers: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ],
+      "rationale": "ui:DynamicImage and ui:Label are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "Anchors: XML element relationships",
+        "EventHandlers: XML element relationships",
+        "Size: XML element relationships",
+        "Windows: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Anchor",
+      "to": "ui:AbsPoint",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Anchor contains AbsPoint (166 observations)",
+        "Anchor contains structural child AbsPoint (166 observations)"
+      ],
+      "rationale": "ui:Anchor contains ui:AbsPoint",
+      "weight": 2,
+      "evidence": [
+        "Anchor contains AbsPoint (166 observations)",
+        "Anchor contains structural child AbsPoint (166 observations)"
+      ]
+    },
+    {
+      "from": "ui:Anchors",
+      "to": "ui:Anchor",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Anchors contains Anchor (167 observations)",
+        "Anchors contains structural child Anchor (167 observations)"
+      ],
+      "rationale": "ui:Anchors contains ui:Anchor",
+      "weight": 2,
+      "evidence": [
+        "Anchors contains Anchor (167 observations)",
+        "Anchors contains structural child Anchor (167 observations)"
+      ]
+    },
+    {
+      "from": "ui:Assets",
+      "to": "ui:Texture",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Assets contains Texture (2 observations)",
+        "Assets contains named child Texture (2 observations)"
+      ],
+      "rationale": "ui:Assets contains ui:Texture",
+      "weight": 2,
+      "evidence": [
+        "Assets contains Texture (2 observations)",
+        "Assets contains named child Texture (2 observations)"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Button contains Anchors (53 observations)",
+        "Button contains structural child Anchors (53 observations)"
+      ],
+      "rationale": "ui:Button contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "Button contains Anchors (53 observations)",
+        "Button contains structural child Anchors (53 observations)"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Button contains EventHandlers (25 observations)",
+        "Button contains structural child EventHandlers (25 observations)"
+      ],
+      "rationale": "ui:Button contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "Button contains EventHandlers (25 observations)",
+        "Button contains structural child EventHandlers (25 observations)"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:Size",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Button contains Size (5 observations)",
+        "Button contains structural child Size (5 observations)"
+      ],
+      "rationale": "ui:Button contains ui:Size",
+      "weight": 2,
+      "evidence": [
+        "Button contains Size (5 observations)",
+        "Button contains structural child Size (5 observations)"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:TexCoords",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Button contains TexCoords (1 observations)",
+        "Button contains structural child TexCoords (1 observations)"
+      ],
+      "rationale": "ui:Button contains ui:TexCoords",
+      "weight": 2,
+      "evidence": [
+        "Button contains TexCoords (1 observations)",
+        "Button contains structural child TexCoords (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:TextOffset",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Button contains TextOffset (1 observations)",
+        "Button contains structural child TextOffset (1 observations)"
+      ],
+      "rationale": "ui:Button contains ui:TextOffset",
+      "weight": 2,
+      "evidence": [
+        "Button contains TextOffset (1 observations)",
+        "Button contains structural child TextOffset (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:Windows",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Button contains Windows (1 observations)",
+        "Button contains structural child Windows (1 observations)"
+      ],
+      "rationale": "ui:Button contains ui:Windows",
+      "weight": 2,
+      "evidence": [
+        "Button contains Windows (1 observations)",
+        "Button contains structural child Windows (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "DynamicImage contains Anchors (12 observations)",
+        "DynamicImage contains structural child Anchors (12 observations)"
+      ],
+      "rationale": "ui:DynamicImage contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "DynamicImage contains Anchors (12 observations)",
+        "DynamicImage contains structural child Anchors (12 observations)"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "DynamicImage contains EventHandlers (2 observations)",
+        "DynamicImage contains structural child EventHandlers (2 observations)"
+      ],
+      "rationale": "ui:DynamicImage contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "DynamicImage contains EventHandlers (2 observations)",
+        "DynamicImage contains structural child EventHandlers (2 observations)"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "ui:Size",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "DynamicImage contains Size (3 observations)",
+        "DynamicImage contains structural child Size (3 observations)"
+      ],
+      "rationale": "ui:DynamicImage contains ui:Size",
+      "weight": 2,
+      "evidence": [
+        "DynamicImage contains Size (3 observations)",
+        "DynamicImage contains structural child Size (3 observations)"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "ui:Windows",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "DynamicImage contains Windows (1 observations)",
+        "DynamicImage contains structural child Windows (1 observations)"
+      ],
+      "rationale": "ui:DynamicImage contains ui:Windows",
+      "weight": 2,
+      "evidence": [
+        "DynamicImage contains Windows (1 observations)",
+        "DynamicImage contains structural child Windows (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:EventHandlers",
+      "to": "ui:EventHandler",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "EventHandlers contains EventHandler (65 observations)",
+        "EventHandlers contains structural child EventHandler (65 observations)"
+      ],
+      "rationale": "ui:EventHandlers contains ui:EventHandler",
+      "weight": 2,
+      "evidence": [
+        "EventHandlers contains EventHandler (65 observations)",
+        "EventHandlers contains structural child EventHandler (65 observations)"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "FullResizeImage contains Anchors (6 observations)",
+        "FullResizeImage contains structural child Anchors (6 observations)"
+      ],
+      "rationale": "ui:FullResizeImage contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "FullResizeImage contains Anchors (6 observations)",
+        "FullResizeImage contains structural child Anchors (6 observations)"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "ui:Size",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "FullResizeImage contains Size (2 observations)",
+        "FullResizeImage contains structural child Size (2 observations)"
+      ],
+      "rationale": "ui:FullResizeImage contains ui:Size",
+      "weight": 2,
+      "evidence": [
+        "FullResizeImage contains Size (2 observations)",
+        "FullResizeImage contains structural child Size (2 observations)"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "ui:Sizes",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "FullResizeImage contains Sizes (1 observations)",
+        "FullResizeImage contains structural child Sizes (1 observations)"
+      ],
+      "rationale": "ui:FullResizeImage contains ui:Sizes",
+      "weight": 2,
+      "evidence": [
+        "FullResizeImage contains Sizes (1 observations)",
+        "FullResizeImage contains structural child Sizes (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "ui:TexCoords",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "FullResizeImage contains TexCoords (1 observations)",
+        "FullResizeImage contains structural child TexCoords (1 observations)"
+      ],
+      "rationale": "ui:FullResizeImage contains ui:TexCoords",
+      "weight": 2,
+      "evidence": [
+        "FullResizeImage contains TexCoords (1 observations)",
+        "FullResizeImage contains structural child TexCoords (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Label contains Anchors (60 observations)",
+        "Label contains structural child Anchors (60 observations)"
+      ],
+      "rationale": "ui:Label contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "Label contains Anchors (60 observations)",
+        "Label contains structural child Anchors (60 observations)"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "ui:Color",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Label contains Color (4 observations)",
+        "Label contains structural child Color (4 observations)"
+      ],
+      "rationale": "ui:Label contains ui:Color",
+      "weight": 2,
+      "evidence": [
+        "Label contains Color (4 observations)",
+        "Label contains structural child Color (4 observations)"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Label contains EventHandlers (4 observations)",
+        "Label contains structural child EventHandlers (4 observations)"
+      ],
+      "rationale": "ui:Label contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "Label contains EventHandlers (4 observations)",
+        "Label contains structural child EventHandlers (4 observations)"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "ui:Size",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Label contains Size (15 observations)",
+        "Label contains structural child Size (15 observations)"
+      ],
+      "rationale": "ui:Label contains ui:Size",
+      "weight": 2,
+      "evidence": [
+        "Label contains Size (15 observations)",
+        "Label contains structural child Size (15 observations)"
+      ]
+    },
+    {
+      "from": "ui:ListBox",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ListBox contains Anchors (2 observations)",
+        "ListBox contains structural child Anchors (2 observations)"
+      ],
+      "rationale": "ui:ListBox contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "ListBox contains Anchors (2 observations)",
+        "ListBox contains structural child Anchors (2 observations)"
+      ]
+    },
+    {
+      "from": "ui:ListBox",
+      "to": "ui:ListData",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ListBox contains ListData (2 observations)",
+        "ListBox contains structural child ListData (2 observations)"
+      ],
+      "rationale": "ui:ListBox contains ui:ListData",
+      "weight": 2,
+      "evidence": [
+        "ListBox contains ListData (2 observations)",
+        "ListBox contains structural child ListData (2 observations)"
+      ]
+    },
+    {
+      "from": "ui:ListBox",
+      "to": "ui:Size",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ListBox contains Size (1 observations)",
+        "ListBox contains structural child Size (1 observations)"
+      ],
+      "rationale": "ui:ListBox contains ui:Size",
+      "weight": 2,
+      "evidence": [
+        "ListBox contains Size (1 observations)",
+        "ListBox contains structural child Size (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:ListColumns",
+      "to": "ui:ListColumn",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ListColumns contains ListColumn (4 observations)",
+        "ListColumns contains structural child ListColumn (4 observations)"
+      ],
+      "rationale": "ui:ListColumns contains ui:ListColumn",
+      "weight": 2,
+      "evidence": [
+        "ListColumns contains ListColumn (4 observations)",
+        "ListColumns contains structural child ListColumn (4 observations)"
+      ]
+    },
+    {
+      "from": "ui:ListData",
+      "to": "ui:ListColumns",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ListData contains ListColumns (2 observations)",
+        "ListData contains structural child ListColumns (2 observations)"
+      ],
+      "rationale": "ui:ListData contains ui:ListColumns",
+      "weight": 2,
+      "evidence": [
+        "ListData contains ListColumns (2 observations)",
+        "ListData contains structural child ListColumns (2 observations)"
+      ]
+    },
+    {
+      "from": "ui:Scripts",
+      "to": "ui:Script",
+      "type": "contains",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Scripts contains Script (2 observations)"
+      ],
+      "rationale": "ui:Scripts contains ui:Script",
+      "weight": 1,
+      "evidence": [
+        "Scripts contains Script (2 observations)"
+      ]
+    },
+    {
+      "from": "ui:Size",
+      "to": "ui:AbsPoint",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Size contains AbsPoint (39 observations)",
+        "Size contains structural child AbsPoint (39 observations)"
+      ],
+      "rationale": "ui:Size contains ui:AbsPoint",
+      "weight": 2,
+      "evidence": [
+        "Size contains AbsPoint (39 observations)",
+        "Size contains structural child AbsPoint (39 observations)"
+      ]
+    },
+    {
+      "from": "ui:Sizes",
+      "to": "ui:BottomRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Sizes contains BottomRight (1 observations)",
+        "Sizes contains structural child BottomRight (1 observations)"
+      ],
+      "rationale": "ui:Sizes contains ui:BottomRight",
+      "weight": 2,
+      "evidence": [
+        "Sizes contains BottomRight (1 observations)",
+        "Sizes contains structural child BottomRight (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:Sizes",
+      "to": "ui:Middle",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Sizes contains Middle (1 observations)",
+        "Sizes contains structural child Middle (1 observations)"
+      ],
+      "rationale": "ui:Sizes contains ui:Middle",
+      "weight": 2,
+      "evidence": [
+        "Sizes contains Middle (1 observations)",
+        "Sizes contains structural child Middle (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:Sizes",
+      "to": "ui:TopLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Sizes contains TopLeft (1 observations)",
+        "Sizes contains structural child TopLeft (1 observations)"
+      ],
+      "rationale": "ui:Sizes contains ui:TopLeft",
+      "weight": 2,
+      "evidence": [
+        "Sizes contains TopLeft (1 observations)",
+        "Sizes contains structural child TopLeft (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:BottomCenter",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains BottomCenter (1 observations)",
+        "TexCoords contains structural child BottomCenter (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:BottomCenter",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains BottomCenter (1 observations)",
+        "TexCoords contains structural child BottomCenter (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:BottomLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains BottomLeft (1 observations)",
+        "TexCoords contains structural child BottomLeft (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:BottomLeft",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains BottomLeft (1 observations)",
+        "TexCoords contains structural child BottomLeft (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:BottomRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains BottomRight (1 observations)",
+        "TexCoords contains structural child BottomRight (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:BottomRight",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains BottomRight (1 observations)",
+        "TexCoords contains structural child BottomRight (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:Disabled",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains Disabled (1 observations)",
+        "TexCoords contains structural child Disabled (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:Disabled",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains Disabled (1 observations)",
+        "TexCoords contains structural child Disabled (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:MiddleCenter",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains MiddleCenter (1 observations)",
+        "TexCoords contains structural child MiddleCenter (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:MiddleCenter",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains MiddleCenter (1 observations)",
+        "TexCoords contains structural child MiddleCenter (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:MiddleLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains MiddleLeft (1 observations)",
+        "TexCoords contains structural child MiddleLeft (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:MiddleLeft",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains MiddleLeft (1 observations)",
+        "TexCoords contains structural child MiddleLeft (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:MiddleRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains MiddleRight (1 observations)",
+        "TexCoords contains structural child MiddleRight (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:MiddleRight",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains MiddleRight (1 observations)",
+        "TexCoords contains structural child MiddleRight (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:Normal",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains Normal (1 observations)",
+        "TexCoords contains structural child Normal (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:Normal",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains Normal (1 observations)",
+        "TexCoords contains structural child Normal (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:NormalHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains NormalHighlit (1 observations)",
+        "TexCoords contains structural child NormalHighlit (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:NormalHighlit",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains NormalHighlit (1 observations)",
+        "TexCoords contains structural child NormalHighlit (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:Pressed",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains Pressed (1 observations)",
+        "TexCoords contains structural child Pressed (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:Pressed",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains Pressed (1 observations)",
+        "TexCoords contains structural child Pressed (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:TopCenter",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains TopCenter (1 observations)",
+        "TexCoords contains structural child TopCenter (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:TopCenter",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains TopCenter (1 observations)",
+        "TexCoords contains structural child TopCenter (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:TopLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains TopLeft (1 observations)",
+        "TexCoords contains structural child TopLeft (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:TopLeft",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains TopLeft (1 observations)",
+        "TexCoords contains structural child TopLeft (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:TopRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains TopRight (1 observations)",
+        "TexCoords contains structural child TopRight (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:TopRight",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains TopRight (1 observations)",
+        "TexCoords contains structural child TopRight (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Window contains Anchors (20 observations)",
+        "Window contains structural child Anchors (20 observations)"
+      ],
+      "rationale": "ui:Window contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "Window contains Anchors (20 observations)",
+        "Window contains structural child Anchors (20 observations)"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Window contains EventHandlers (3 observations)",
+        "Window contains structural child EventHandlers (3 observations)"
+      ],
+      "rationale": "ui:Window contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "Window contains EventHandlers (3 observations)",
+        "Window contains structural child EventHandlers (3 observations)"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "ui:Size",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Window contains Size (13 observations)",
+        "Window contains structural child Size (13 observations)"
+      ],
+      "rationale": "ui:Window contains ui:Size",
+      "weight": 2,
+      "evidence": [
+        "Window contains Size (13 observations)",
+        "Window contains structural child Size (13 observations)"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "ui:Windows",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Window contains Windows (13 observations)",
+        "Window contains structural child Windows (13 observations)"
+      ],
+      "rationale": "ui:Window contains ui:Windows",
+      "weight": 2,
+      "evidence": [
+        "Window contains Windows (13 observations)",
+        "Window contains structural child Windows (13 observations)"
+      ]
+    },
+    {
+      "from": "ui:Windows",
+      "to": "ui:Button",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Windows contains Button (57 observations)",
+        "Windows contains named child Button (57 observations)"
+      ],
+      "rationale": "ui:Windows contains ui:Button",
+      "weight": 2,
+      "evidence": [
+        "Windows contains Button (57 observations)",
+        "Windows contains named child Button (57 observations)"
+      ]
+    },
+    {
+      "from": "ui:Windows",
+      "to": "ui:DynamicImage",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Windows contains DynamicImage (13 observations)",
+        "Windows contains named child DynamicImage (13 observations)"
+      ],
+      "rationale": "ui:Windows contains ui:DynamicImage",
+      "weight": 2,
+      "evidence": [
+        "Windows contains DynamicImage (13 observations)",
+        "Windows contains named child DynamicImage (13 observations)"
+      ]
+    },
+    {
+      "from": "ui:Windows",
+      "to": "ui:FullResizeImage",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Windows contains FullResizeImage (7 observations)",
+        "Windows contains named child FullResizeImage (7 observations)"
+      ],
+      "rationale": "ui:Windows contains ui:FullResizeImage",
+      "weight": 2,
+      "evidence": [
+        "Windows contains FullResizeImage (7 observations)",
+        "Windows contains named child FullResizeImage (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:Windows",
+      "to": "ui:Label",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Windows contains Label (61 observations)",
+        "Windows contains named child Label (61 observations)"
+      ],
+      "rationale": "ui:Windows contains ui:Label",
+      "weight": 2,
+      "evidence": [
+        "Windows contains Label (61 observations)",
+        "Windows contains named child Label (61 observations)"
+      ]
+    },
+    {
+      "from": "ui:Windows",
+      "to": "ui:ListBox",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Windows contains ListBox (2 observations)",
+        "Windows contains named child ListBox (2 observations)"
+      ],
+      "rationale": "ui:Windows contains ui:ListBox",
+      "weight": 2,
+      "evidence": [
+        "Windows contains ListBox (2 observations)",
+        "Windows contains named child ListBox (2 observations)"
+      ]
+    },
+    {
+      "from": "ui:Windows",
+      "to": "ui:Window",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Windows contains Window (25 observations)",
+        "Windows contains named child Window (25 observations)"
+      ],
+      "rationale": "ui:Windows contains ui:Window",
+      "weight": 2,
+      "evidence": [
+        "Windows contains Window (25 observations)",
+        "Windows contains named child Window (25 observations)"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_Default",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_Default"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_Default",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_Default"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultCheckBox",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultCheckBox"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultCheckBox",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultCheckBox"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultDown",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultDown"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultDown",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultDown"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultResizeable",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultResizeable"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultResizeable",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultResizeable"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultUp",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultUp"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultUp",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultUp"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultWindowClose",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultWindowClose"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultWindowClose",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultWindowClose"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_ListSort",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_ListSort"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_ListSort",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_ListSort"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Default_CharacterImage",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Default_CharacterImage"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Default_CharacterImage",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Default_CharacterImage"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_ListSortDownArrow",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_ListSortDownArrow"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_ListSortDownArrow",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_ListSortDownArrow"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_ListSortUpArrow",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_ListSortUpArrow"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_ListSortUpArrow",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_ListSortUpArrow"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_TintableSolidBackground",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_TintableSolidBackground"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_TintableSolidBackground",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_TintableSolidBackground"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_TitleBar_Default",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_TitleBar_Default"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_TitleBar_Default",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_TitleBar_Default"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_Default",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_Default"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_Default",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_Default"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultFrame"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultFrame",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultFrame"
+      ]
+    },
+    {
+      "from": "function:global:Cursor.Clear",
+      "to": "data:system:SystemData.ActiveWindow.name",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.Clear()"
+      ],
+      "rationale": "function:global:Cursor.Clear reads data from data:system:SystemData.ActiveWindow.name",
+      "weight": 1,
+      "evidence": [
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.Clear()"
+      ]
+    },
+    {
+      "from": "function:global:Cursor.IconOnCursor",
+      "to": "data:system:SystemData.ActiveWindow.name",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.IconOnCursor()"
+      ],
+      "rationale": "function:global:Cursor.IconOnCursor reads data from data:system:SystemData.ActiveWindow.name",
+      "weight": 1,
+      "evidence": [
+        "CM_ClosetGoblin: HandleDrag -\u003e Cursor.IconOnCursor()"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_ContextMenu.AddMenuItem",
+      "to": "data:system:SystemData.ActiveWindow.name",
+      "type": "reads_data",
+      "confidence_score": 90,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ],
+      "rationale": "function:global:EA_Window_ContextMenu.AddMenuItem reads data from data:system:SystemData.ActiveWindow.name",
+      "weight": 6,
+      "evidence": [
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Associate_with_Zone\"], ClosetGoblinZoneWindow.Show, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Copy\"], ClosetGoblinCharacterWindow.OnRowMenuCopyClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Import_Current\"], ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick, false, true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\"), ClosetGoblinCharacterWindow.OnRowMenuLinkTactics, set.tactics==L \"1\", true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Paste\"], ClosetGoblinCharacterWindow.OnRowMenuPasteClick, not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex), true)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.AddMenuItem(cgL[\"Rename_Set\"], ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, false, true)"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+      "to": "data:system:SystemData.ActiveWindow.name",
+      "type": "reads_data",
+      "confidence_score": 74,
+      "evidence_count": 3,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnSetZoneRowContextMenu -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)"
+      ],
+      "rationale": "function:global:EA_Window_ContextMenu.CreateContextMenu reads data from data:system:SystemData.ActiveWindow.name",
+      "weight": 3,
+      "evidence": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnSetZoneRowContextMenu -\u003e EA_Window_ContextMenu.CreateContextMenu(SystemData.ActiveWindow.name)"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_ContextMenu.Finalize",
+      "to": "data:system:SystemData.ActiveWindow.name",
+      "type": "reads_data",
+      "confidence_score": 74,
+      "evidence_count": 3,
+      "evidence_sources": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetZoneRowContextMenu -\u003e EA_Window_ContextMenu.Finalize()"
+      ],
+      "rationale": "function:global:EA_Window_ContextMenu.Finalize reads data from data:system:SystemData.ActiveWindow.name",
+      "weight": 3,
+      "evidence": [
+        "CM_ClosetGoblin: OnLButtonUp -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetRowContextMenu -\u003e EA_Window_ContextMenu.Finalize()",
+        "CM_ClosetGoblin: OnSetZoneRowContextMenu -\u003e EA_Window_ContextMenu.Finalize()"
+      ]
+    },
+    {
+      "from": "function:global:LibSlash.RegisterSlashCmd",
+      "to": "data:system:SystemData.Events.LOADING_END",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "CM_ClosetGoblin: Initialize -\u003e LibSlash.RegisterSlashCmd(\"cg\", ClosetGoblin.OnSlashCommand)"
+      ],
+      "rationale": "function:global:LibSlash.RegisterSlashCmd reads data from data:system:SystemData.Events.LOADING_END",
+      "weight": 1,
+      "evidence": [
+        "CM_ClosetGoblin: Initialize -\u003e LibSlash.RegisterSlashCmd(\"cg\", ClosetGoblin.OnSlashCommand)"
+      ]
+    },
+    {
+      "from": "function:window:LabelSetText",
+      "to": "data:system:SystemData.MouseOverWindow.name",
+      "type": "reads_data",
+      "confidence_score": 72,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "CM_ClosetGoblin: HotbarPageDownProxy -\u003e LabelSetText(\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB\"..actionBarNumber..\"CurrentPageText\", L \"\"..setting)",
+        "CM_ClosetGoblin: HotbarPageUpProxy -\u003e LabelSetText(\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB\"..actionBarNumber..\"CurrentPageText\", L \"\"..setting)"
+      ],
+      "rationale": "function:window:LabelSetText reads data from data:system:SystemData.MouseOverWindow.name",
+      "weight": 2,
+      "evidence": [
+        "CM_ClosetGoblin: HotbarPageDownProxy -\u003e LabelSetText(\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB\"..actionBarNumber..\"CurrentPageText\", L \"\"..setting)",
+        "CM_ClosetGoblin: HotbarPageUpProxy -\u003e LabelSetText(\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB\"..actionBarNumber..\"CurrentPageText\", L \"\"..setting)"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetId",
+      "to": "data:system:SystemData.ActiveWindow.name",
+      "type": "reads_data",
+      "confidence_score": 90,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: EquipmentLButtonUp -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: EquipmentMouseOver -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: EquipmentRButtonUp -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: HandleDrag -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnClickSetRow -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnClickZoneRow -\u003e WindowGetId(SystemData.ActiveWindow.name)"
+      ],
+      "rationale": "function:window:WindowGetId reads data from data:system:SystemData.ActiveWindow.name",
+      "weight": 6,
+      "evidence": [
+        "CM_ClosetGoblin: EquipmentLButtonUp -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: EquipmentMouseOver -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: EquipmentRButtonUp -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: HandleDrag -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnClickSetRow -\u003e WindowGetId(SystemData.ActiveWindow.name)",
+        "CM_ClosetGoblin: OnClickZoneRow -\u003e WindowGetId(SystemData.ActiveWindow.name)"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetParent",
+      "to": "data:system:SystemData.Events.LOADING_END",
+      "type": "reads_data",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "CM_ClosetGoblin: Initialize -\u003e WindowSetParent(\"yClosetGoblinButton\", \"CharacterWindow\")"
+      ],
+      "rationale": "function:window:WindowSetParent reads data from data:system:SystemData.Events.LOADING_END",
+      "weight": 1,
+      "evidence": [
+        "CM_ClosetGoblin: Initialize -\u003e WindowSetParent(\"yClosetGoblinButton\", \"CharacterWindow\")"
+      ]
+    }
+  ]
+}

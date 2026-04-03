@@ -1,39 +1,47 @@
 # Texture
 
 - Category: XML Element Type
-- Confidence level: MEDIUM
-- Confidence score: 55/100
+- Confidence level: HIGH
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
-- Level: MEDIUM
+- Level: HIGH
 
-- Score: 55/100
+- Final score: 100/100
 
-- Rationale: unknown
+- Raw weighted score: 110
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- none
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
+- +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | none |
-| Source kinds | none |
-| XML usage count | 0 |
-| XML attribute usage count | 0 |
+| Addons seen in | Ace, AggroMeter, AutoBand, AutoMark, BBars - Mechanic Only, BagOMatic, BankArkel, Big'uns |
+| Files seen in | Assets/Assets.xml, Assets/WCDBAssets.xml, Code/Core/Icon.xml, Code/GroupIcons/GroupIcons.xml, Code/Guard/GuardDistanceIndicator.xml, Code/Marks/MarkTemplate.xml, Code/Marks/Marks.xml, Code/ScenarioInfo/ScenarioInfo.xml |
+| Namespaces detected | Texture |
+| Source kinds | xml_frames |
+| Example locations | Ace: AceBarFrame, Ace: PureDebuffHighlight, Ace: PureGraphite, Ace: amethystSharedMediaFlat, Ace: amethystSharedMediaMinimalist, Ace: amethystSharedMediaSmoothv2 |
+| XML usage count | 968 |
+| XML attribute usage count | 968 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | no |
-| Default UI presence | no |
+| Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -48,11 +56,12 @@
 
 ## Description
 
-Texture is a container-style XML element. It commonly appears under Assets. It is typically used to organize structural children such as Slice and be manipulated from Lua by functions such as Aura.Aura:UpdateWindow, BuffHead.BuffHeadEffectFrame:SetLayout.
+Texture is a container-style XML element. It commonly appears under Assets. It is typically used to organize structural children such as Slice and be manipulated from Lua by functions such as AAOTracker.Options.WindowInit, Ace.LIBGUI_Closebutton:New.
 
 ## Common Attributes
 
 - file
+- name
 
 ## Common Inherits
 
@@ -60,11 +69,11 @@ Texture is a container-style XML element. It commonly appears under Assets. It i
 
 ## Common Parent Elements
 
-- [Assets](element_Assets.md) — 374× (HIGH)
+- [Assets](element_Assets.md) — 970× (HIGH)
 
 ## Common Structural Child Elements
 
-- [Slice](element_Slice.md) — 73× (HIGH)
+- [Slice](element_Slice.md) — 287× (HIGH)
 
 ## Attribute Reference
 
@@ -75,95 +84,1168 @@ Texture is a container-style XML element. It commonly appears under Assets. It i
 
 ### [Slice](element_Slice.md)
 
-Observed 73 times as an unnamed child.
+Observed 287 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `height` | **required** | 3, 58, 64 |
-| `id` | **required** | Border-Top-Center, Border-Top-Left, Border-Top-Right, Border-Middle-Center |
-| `left` | **required** | 3, 0, 64, 61 |
-| `top` | **required** | 0, 3, 61, 64 |
-| `width` | **required** | 58, 3, 64 |
+| `height` | **required** | 46, 10, 42, 19 |
+| `id` | **required** | banner-base, banner-hover, banner-press, scenario-base |
+| `left` | **required** | 0, 46, 92, 10 |
+| `top` | **required** | 46, 0, 10, 42 |
+| `width` | **required** | 46, 10, 256, 11 |
 ## Recursive Hierarchy
 
 - Root: [Texture](element_Texture.md)
-- [Slice](element_Slice.md) (structural, 73×, HIGH)
+- [Slice](element_Slice.md) (structural, 287×, HIGH)
 
 ## Lua Functions Manipulating This Type
 
-- DAoCBuff.DAoCBuffFrame:SetBuff
-- Enemy.EnemyGroupIcon:Attach
-- MoraleCircle.ColorChanger2
-- MoraleCircle.OnSetCustomColorFull
-- TurretRange.Display.UpdateLayout
-- MoraleCircle.ColorChanger3
-- RoR_SoR.T1_UPDATE
-- TurretRange.ShowElement
-- TurretRange.OnUpdate
-- TurretRange.Setup.Display.LoadSettings
-- GuardLine.update
-- WoHReticle.CreateRing
 - BuffHead.BuffHeadEffectFrame:Update
-- FilterSettings.DisableCondenseSettings
-- TurretRange.UpdateDisplay
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- TurretRange.local.UpdateDisplay
-- MoraleCircle.OnSetCustomColorFill
-- MoraleCircle.OnSetCustomColorEmpty
-- WoHReticle.UpdateTargets
+- AuctionWindowSellControls.Initialize
+- TastyButtonsOptions.PreviewButtonMouseUp
+- EA_Window_OpenPartyManage.UpdateSettings
+- mmo.Initialize
+- Cheeseboard.Show
+- LibAddonButton.Manager.CustomItem.Initialize
+- TastyButtonsOptions.Hide
+- mmw.QueueDisableScrollUpButton
+- TidyChatCore.SetWindowTextLog
+- Cheeseboard.ManageTab
+- FixGit.BypassIsBeingThrown
+- mmv.SetNewLayout
+- Enemy.ScenarioInfoInitialize
+- TastyButtonsOptions.Fill_StanceBox
+- AdvancedRenownTrainer.SaveCurrentSpecAsPreset
+- HealGrid.HealGridUnit:ApplySkinBar
+- CallingSetup.StartBinding
+- JunkDumpOptions.UpdateGoldReportOnOff
+- HealGridGuiColorSelect.ColorButtonInit
+- scenarioInfo.LIBGUI_Closebutton:New
+- TwisterSet.OnSetMenuSelectionChanged
+- mmw.QueueEnableScrollUpButton
+- HealGridGuiTabSpellTrack.TabGeneralLookupSpellName
+- AuraShares.OnFilterSameNameToggle
+- Enemy.UnitFramesParts_DistanceTextInitialize
+- FozAuction.local.sortButtonShowArrows
+- GroupSpotter.Initialize
+- MapPin.Map.UpdatePinCoordinates
+- SOROptions.Initialize
+- TexturedButtons.LoadAdvancedTexture
+- TastyButtons.UnLoad
+- BuffHead.Setup.PriorityEffects.LoadSettings
+- RVMOD_PlayerStatus.OnSizeUpdatedHealthBar
+- PotionBar.Show
+- CastSequence.Builder.Initialize
+- GroupRangeSetup.Style.PointerReverse.OnHideInRangeLUp
+- BuffHead.Setup.Performance.OnEnablePriorityLUp
+- TexturedButtons.Setup.Fonts.OnHideKeybindLUp
+- DAoCBuffSettings.PopulateRemoveLists
+- ScenarioRefresh.Initialize
+- TastyButtonsOptions.OnComboStateChanged
+- MapMonster.PopulateSubTypeCombo
+- MoraleCircle.OnSetCustomColorFull
+- AuctionAssist.AutoUndercutClicked
+- Enemy.IntercomUI_ChooseChannelDialog_Open
+- TastyButtonsOptions.GroupManagingFunction
+- BuffHead.Setup.Trackers.OnTrackerEnableLUp
+- BuffHead.LoadHandleInputSettings
+- TidyQueueHooks.CmapLButton
+- Obsidian.Setup.Castbar.OnTextureButtonMouseOver
+- LibGroup.Setup.LoadSettings
+- TastyButtonsOptions.AddSelectedButton_All
+- LibAddonButton.local.ShowButtons
+- BuffHead.local.ShowProperty
+- BuffHead.LoadStatusBarOrientationSettings
+- BuffHead.local.ShowButtons
+- MapMonster.FilterButtonState
+- TargetInfoRing.CreateRing
+- CallingSetup.SetAutoAssist
+- AdvancedRenownTrainer.local.SetLabels
+- DetauntTarget.InitUI
+- Sequencer.OnInitialize
+- CDown.CCDownFrame:Create
+- Enemy.EnemyGroupIcon:Attach
+- GroupSpotter.HealCircles:Create
+- UiModWindow.UpdateEnableDisableAllButtons
+- Amethyst.LIBGUI_Optionbutton:New
+- Obsidian.Setup.Castbar.OnGeneralAccurateLUp
+- BuffHead.Setup.PriorityEffects.OnSortFirstLUp
+- BuffHead.ShowButtons
+- BuffHead.Setup.Layout.Properties.OnStatusBarOrientationReverseLUp
+- Wikki's Cooldown Bar.WCDBConfig_Filters_ClearAbility
+- CDown.PopulateComboBoxes
+- Obsidian.Setup.Castbar.OnLatencyEnableLUp
+- NBSBRegister.SetValueForParameter
+- Enemy.IntercomUI_ConfigDialog_OnPrivateChanged
+- Enemy.local.UpdateList
+- RVMOD_PlayerStatus.OnSaveBarsWindowPosition
+- TexturedButtons.Setup.Fonts.OnHideCooldownLUp
+- TexturedButtons.Setup.Cooldown.OnEnableButtonTintingLUp
+- RoR_SoR.OnScenario
+- EA_Window_OpenPartyManage.UpdateLeaderMarks
+- EA_Window_OpenPartyNearby.OnLButtonUpSortButton
+- LibAddonButton.ShowButtons
+- MapMonster.Editor.Initialize
+- TastyButtonsOptions.OnComboButtonSelectionChanged
+- Minmap.UpdateScenarioButtons
+- GroupRangeSetup.Style.GroupBox.Initialize
+- TexturedButtons.LoadTextures
+- mmo.UpdateExpire
+- TurretRange.local.ShowButtons
+- TidyChatFrames.InitializeChannelMenuTidyChannelButtons
+- Enemy.UnitFramesParts_HpPercentTextInitialize
+- Enemy.IntercomInitialize
+- Sequencer.HelpSlot
+- RoR_SoR.OnInitialize
+- TidyRollOptions.Reset
+- BuffHead.LoadLayoutSettings
+- alertMod.SaveChanges
+- CastSequence.Builder.OnSettingsOnMouseOver
+- BloodyMess.OnInitialize
+- KillTracker.RefreshButton
+- DetauntBarSettings.ShowUI
+- LibAddonButton.Manager.Advanced.Show
+- KwestorGuiTabArea.Initialize
+- TalismanGenie.EssenceCheckToggle
+- HealGridGuiTabGroup.Initialize
+- GroupRangeSetup.Style.GroupBox.OnMovableLUp
+- Obsidian.Setup.EffectTracker.OnTextureButtonMouseOut
+- HealGridUnitTooltip.SetAnchor
+- HealGridGui.MenuItemSelected
+- CDown.CCDownFrame:UpdateI1
+- Map.LIBGUI_Closebutton:New
+- JunkDumpOptions.UpdateSellCultivationOnOff
+- BuffHead.local.UpdateSortButtons
+- PotionBarSettings.OnDontSplitNameCheck
+- PlayEffectsOn.local.UpdateUI
+- TwisterSet.Initialize
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- GroupRangeSetup.Style.PointerReverse.Initialize
+- WarBoard_Menu.BuildElement
+- LibAddonButton.Menu.AddMenuItem
+- CMap.TidyQueueLButton
+- Enemy.UI_TextEntryDialog_Open
+- TexturedButtons.Setup.Misc.OnHideActiveLUp
+- GroupRangeSetup.Style.GroupBox.LoadSettings
+- Settings.OpenImport
+- WoH-Reticle.LIBGUI_Closebutton:New
+- nLootLinkGUI.applySort
+- ActionBarHide.LIBGUI_Button:New
+- EA_Window_OpenPartyManage.ToggleNeedOnUse
+- CMapWindow.UpdateScenarioButtons
+- Phantom.PopulateWindow
+- RealmStatus.LIBGUI_Closebutton:New
+- TTitan.TTButton.Initialize
+- BuddyBind.OnLButtonRawDeviceInput
+- RoR_SoR.OnCombat
+- ThankTheResser.ThankThem
+- HealGridGuiColorSelect.CloseWindow
+- BlackBookWindow.UpdateSortButtons
+- wbLeadHelperMessagesTab.ListEnable
+- xHUD.LIBGUI_Closebutton:New
+- wbLeadHelperConfigTab.OnChanged
+- SocialWindow.ShowIgnoreListContextWindow
+- FilterSettings.EnableClasstableChanged
+- MapMonster.local.CleanEditorWindow
+- TastyButtonsOptions.Fill_StateComboBox
+- ScenarioRefresh.OnShown
+- Wikki's Cooldown Pulse.WCDPConfig_Filters_OnLButtonUp_Ability
+- BuffHead.Setup.General.Initialize
+- mmo.UpdateInput
+- TexturedButtons.Setup.AdvancedTextures.OnUsePresetLUp
+- AuctionWindow.UpdateBuyButton
+- TacticSetNames.local.SetLabels
+- TalismanGenie.CurioCheckToggle
+- CDown.CCDownFrameB:UpdateDurI2H
+- AdvancedRenownTrainer.local.SaveCurrentSpecAsPreset
+- FastFriends.local.ff_toggle_from_label
+- NBSBActionBar.Initialize
+- Obsidian.Setup.Initialize
+- TomeTracker.Journal.MapButtonToggle
+- BuffHead.UpdateSortButtons
+- FilterSettings.AddClassTable
+- RVMOD_PlayerStatus.SetEnable
+- Dye.Initialize
+- CastSequence.SequenceBuilder.OnShowAttachedLUp
+- MapMonster.local.PopulateSubTypeCombo
+- CastSequence.Setup.Initialize
+- BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertiesChanged
+- TexturedButtons.Setup.Misc.OnMovableQuicklockLUp
+- GroupSpotter.local.SetLabels
+- BBars.BOSMMechanicUpdate
+- ActionBarHide.LIBGUI_Optionbutton:New
+- wbLeadHelperMessagesTab.MessageAdd
+- AuctionWindow.Initialize
+- TurretRange.Setup.General.LoadSettings
+- SocialWindowTabOptions.OnOptionsUpdated
+- Keyset.Setup.Save.OnSaveAllLUp
+- MapMonster.Editor.OpenViewWindow
+- LibAddonButton.Manager.Load
+- JunkDumpOptions.InitSettings
+- EA_Window_OpenPartyWorld.OnHideFullParties
+- xHUD.LIBGUI_Optionbutton:New
+- PartyCast.Update
+- RVMOD_Manager.InitializeSettingsWindow
+- Obsidian.Setup.Castbar.OnGlobalCooldownReverseLUp
+- GroupSpotter.local.UpdateColorLabels
+- yAssist.SetAssist
+- Enemy.UnitFramesUI_ConfigDialog_OnClickCastingsListSelChanged
+- JunkDump.CheckAndSetButton
+- Effigy.EffigyBar:setup
+- HealGrid.HealGridHUDMain:Initialize
+- ThinkOutLoud.SetupSkillEditWindow
+- ClosetGoblinZoneWindow.OnInitialize
+- BuffHead.Setup.Layout.Properties.Initialize
+- Amethyst.LIBGUI_Closebutton:New
+- TastyButtons.Load
+- DAoCBuff.DAoCBuffFrame:Create
+- HealGridGuiTabMouseClick.EditCommit
+- GroupSpotter.toggle
+- EffigyBar.hideBar
+- Crusher.initializeUI
+- BuffHead.Setup.PriorityEffectsItem.Initialize
+- BuffHead.local.LoadStatusBarOrientationSettings
+- MapMonster.local.OpenTypeViewerWindow
+- HealGridUnitTooltip.StopTooltip
+- Enemy.UI_ConfigDialog_Open
+- CastSequence.local.ShowButtons
+- mmo.UpdateQueue
+- SocialWindow.ShowFriendsListContextWindow
+- nLootLinkGUI.onBindAny
+- DuffTimer.Options.Initialize
+- Killer.Initialize
+- Shinies.Searches_ClearSortButton
+- BuffHead.Setup.Layout.Properties.OnStatusBarForegroundStretchLUp
+- FilterSettings.ClassTableChanged
+- Cheeseboard.OnUpdate
+- xPanels.LIBGUI_Optionbutton:New
+- CastSequence.ShowButtons
+- Obsidian.Setup.Castbar.OnIconEnableLUp
+- TexturedButtons.Setup.Tint.LoadSettings
+- LibWBTogglerManager.Initialize
+- BuffHead.local.SetTracker
+- BuffHead.Setup.PriorityEffects.Initialize
+- NBSBRegister.SetupParameter
+- TTitan.UI.ToggleButton
+- MiracleGrow2.LayoutMainWindow
+- GCDTracker.slash
+- EA_Window_OpenPartyWorld.OnSettingsUpdated
+- CMapWindow.Initialize
+- MiracleGrowLight.OnUpdate
+- DAoCBuffSettings.SetLabels
+- mmo.UpdateRecipient
 - TurretRange.Setup.Display.Initialize
-- TurretRange.local.ShowElement
+- TexturedButtons.Setup.AdvancedTextures.OnDisabledLUp
+- BuffHead.Setup.AdvancedContainers.Initialize
+- XpStatus.InitializeQuotaWindow
+- BuffHead.Setup.Layout.Properties.OnPropertyTitleLClick
+- MouseHint.OnInitialize
+- Phantom.UpdateScenarioButtons
+- MapMonster.local.PopulateSubTypeComboBox
+- TurretRange.local.UpdateDisplay
+- RoR_SoR.T1_UPDATE
+- DetauntTarget.OnReset
+- AuctionWindow.SwitchTabs
+- EZCraftX.UpdateResult
+- TexturedButtons.Setup.Actionbar.OnEnableLUp
+- Keyset.local.LoadProfiles
+- TidyChat.Options.Reset
+- TexturedButtons.Setup.Cooldown.Initialize
+- BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp
+- BuffHead.SetTextureButton
+- RVMOD_PlayerStatus.OnSizeUpdatedActionBar
+- Motion.LIBGUI_Closebutton:New
+- LibAddonButton.Manager.OnAutoSortLUp
+- GroupSpotter.Settings.UpdateModeCheckBoxes
+- ReliquaryHunter.ToggleMarkersShowing
+- Obsidian.Setup.EffectTracker.OnTextureButtonMouseOver
+- BankArkel.SetupCombos
+- Obsidian.Setup.Castbar.Initialize
+- JunkDumpOptions.UpdateSellTalismanOnOff
+- BuffHead.Setup.Layout.Manager.Initialize
+- Shinies.SetActiveItemData
 - TurretRange.Display.SetAlpha
-- MoraleCircle.OnSetCustomColor
+- BBars.PetHPUpdate
+- KwestorTracker.WipeTracker
+- mmw.QueueDisableScrollDownButton
+- NoUselessMods-Assist.Initialize
+- MoraleCircle.init
+- TurretRange.Display.UpdateLayout
+- HealGridGuiUtility.CheckButtonDisable
+- CDown.local.PopulateComboBoxes
+- EA_Window_OpenPartyNearby.HideAllSortButtonArrows
+- TastyButtonsOptions.ToggleAddon
+- Enemy.UnitFramesParts_MoraleTextInitialize
+- HealGridUnitTooltip.PopulateUnitData
+- TastyButtons.Initialize
+- DPSMeter.ChangeTab
+- CaVESWindow.Initialize
+- Wikki's Cooldown Bar.WCDBConfig_Filters_OnLButtonUp_Ability
+- TastyButtons.Button_State_TypeToggle
+- GroupRangeSetup.Style.SimpleText.LoadSettings
+- HealGridGuiTabMouseClick.Initialize
+- BuffHead.LoadAnchors
+- TastyButtonsOptions.EditBox_Clear
+- FilterSettings.PopulateG4Settings
+- SORPager.SetTable
+- NaturalLog.LIBGUI_Button:New
+- BuffHead.Setup.Layout.Properties.OnTextureButtonMouseOut
+- CastSequence.ResizeActionBar
+- MapMonster.CleanEditorWindow
+- TexturedButtons.Setup.Actionbar.Initialize
+- ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- BBars.MechDraw
+- LibAddonButton.Manager.Initialize
+- TexturedButtons.LoadButtonState
+- SocialWindowTabIgnore.Initialize
+- alertMod.SetLabels
+- NBSBCore.IconOnMouseOver
+- Crusher.setActiveItemData
+- MapMonster.ResizeTooltip
+- TexturedButtons.Setup.AdvancedTextures.Initialize
+- LibAddonButton.Manager.Advanced.OnTextureAnimationLUp
+- GroupRangeSetup.Style.SimpleText.OnAutoPositionLUp
+- ReliquaryHunter.OnShown
+- LibAddonButton.Manager.OnShowButtonLUp
+- NaturalLog.LIBGUI_Checkbox:New
+- ScenarioRefresh.OnHidden
+- TurretRange.UpdateDisplay
+- TastyButtonsOptions.ButtonLoadProfile
+- BuffHead.Setup.Filter.OnEnableFilter
+- BuffHead.Setup.Layout.Initialize
+- RoR_SoR.SET_CITY
+- RVMOD_PlayerStatus.UpdateBar
+- NBSBCore.IconOnMouseOverEnd
+- WbLeadHelperMessage.MessageDialogOpen
+- SessionRPs.WarningWindow
+- MiracleGrow2.onHoverRepeat
+- QuickTacticSwitch.ClearSortArrows
+- TexturedButtons.Setup.Cooldown.OnRemoveCooldownSLUp
+- AdvancedRenownTraining.ToggleSaveSettings
+- xPanels.LIBGUI_Combobox:New
+- RVMOD_Manager.UpdateSortByControls
+- TastyButtonsOptions.StateManagingFunction
+- TastyButtonsOptions.OnButtonSelected
+- TastyButtonsOptions.Show
+- mmo.UpdatePause
+- FixGit.FixGlobalItemData
+- HealGridGuiTabGroup.UnitFrameScaleChanged
+- KwestorTracker.RedrawNub
+- Motion.initializeUI
+- HealGridGuiTabMouseClick.ListSelectRow
+- xHUD.LIBGUI_Checkbox:New
+- MapMonster.local.CreateFilterMenuEntry
+- AdvancedRenownTrainer.local.CreateAbilityWindow
+- TexturedButtons.LoadSlices
+- BuffHead.local.ShowExport
+- MoraleCircle.OnSetCustomColorEmpty
+- XpStatusWindowNub.Refresh
+- TexturedButtons.Setup.Textures.LoadSettings
+- Obsidian.Setup.Castbar.LoadSettings
+- TexturedButtons.Setup.Cooldown.OnEnableLUp
+- AuctionWindowSearchControls.BuildComboBox
+- Obsidian.SetTextureButton
+- MapPin.LButtonUp
+- mmo.UpdateInbox
+- HealGridGui.OpenGui
+- HealGrid.UpdateScenarioButtons
+- CMapWindow.PopulateFilterCell
+- GuildWarden.Init_Warden
+- BuffHead.LoadStatusBarSettings
+- MiracleGrow2.LayoutShowDemoTex
+- mmo.UpdateSend
+- LibAddonButton.local.ShowNavigation
+- EA_Window_OpenPartyWorld.OnGroupUpdated
+- Effigy.RegisterStateInfoForPlayer
+- Enemy.AssistUI_ConfigDialog_OnInitialize
+- DAoCBuffSettings.PopulateSettings
+- FastFriends.ff_toggle_from_label
+- TexturedButtons.Setup.Fonts.LoadSettings
+- AdvancedRenownTraining.Respecialize
+- warwhisperer.CreateGui
+- CDown.CCDownFrameB:UpdateDurI2V
+- LibGroup.Setup.OnEnableGroupDistanceLUp
+- Enemy.UnitFramesUI_ConfigDialog_OnUnitFramePartsListSelChanged
+- WCDPConfig.OnLoad
+- GroupRangeSetup.Style.GroupBox.OnAutoSizeLUp
+- GroupRangeSetup.Style.Pointer.Initialize
+- UiModVersionMismatchWindow.UpdateModSortButtons
+- DAoCBuffSettings.Change_Setting
+- ClosetGoblin.Initialize
+- TexturedButtons.local.LoadSlices
+- BuddyBind.OnExitBindingMode
+- HealGridGuiSpellList.Initialize
+- WarTriage.LIBGUI_Closebutton:New
+- CastSequence.SequenceBuilder.OnHidden
+- WSCT.ColorOnInitialize
+- Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListSelChanged
+- EA_Window_OpenPartyNearby.OnOpenPartySettingUpdated
+- warwhisperer.UpdateSpecialIcons
+- CMapWindow.ToggleScenarioButtons
+- PotionBarSettings.OnUseCheck
+- ZonePOP.UpdateZoneList
+- HealGrid.HealGridMoraleBar:ApplySkin
+- mmo.UpdateMessage
+- RVMOD_Manager.UpdateFilterControls
+- AdvancedRenownTrainer.SetLabels
+- MoraleSet.OnRButtonUpSetMenu
+- DAoCBuffSettings.PopulateListComboBoxes
+- GroupSpotter.Settings.colorslidersingleB
+- SORPager.Known
+- Phantom.Initialize
+- SORPager.Locked
+- TurretRange.ShowButtons
+- FilterSettings.CondenseChanged
+- DaemonAssist.UpdateWindow
+- TidyRollOptions.RadioSetId
+- Crusher.updateTotalItemCountDisplay
+- Minmap.PopulateGutter
+- SORPager.Switch
+- nLootLinkGUI.changeSorting
+- EA_ChatWindow.UpdateSocialWindowButton
+- OpenPartyWindow.ShowOpenPartyButton
+- TastyButtonsOptions.Fill_ProfileBox
+- SOROptions.settimer
+- Wikki's Cooldown Bar.LIBGUI_Closebutton:New
+- BuffHead.local.LoadItem
+- GroupRangeSetup.Style.Initialize
+- BuffHead.LoadEffectsSettings
+- HealGridGuiTabSpellTrack.TabColorInitialize
+- HealGridGuiTabBattlegroup.Initialize
+- HealGridGuiTabRangeScan.SetResurrectSpell
+- GroupRangeSetup.Initialize
+- WARCommander.Init
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- GCDTracker.OnInitialize
 - Aura.Aura:UpdateWindow
-- TurretRange.Setup.Display.OnCircleInvertLUp
-- MoraleCircle.ColorChanger1
-- Enemy.UI_Icon_Switch
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- TurretRange.Setup.Display.OnCircleModeChanged
+- BBars.PetHPDraw
+- PotionBarSettings.OnAboutShown
+- TexturedButtons.Setup.Actionbar.LoadSettings
+- MoraleCircle.ColorChanger2
+- EA_Window_OpenPartyNearby.Initialize
+- BuffHead.Setup.Trackers.OnTargetChangeClearBuffsLUp
+- TokenMachine.Initialize
+- Enemy.CombatLogUI_StatsWindow_Open
+- HealGridGuiTabRangeScan.Initialize
+- SocialWindowTabOptions.Initialize
+- CastSequence.SequenceBuilder.ShowNew
+- MapMonster.PopulateSubTypeComboBox
+- HealGridGuiTabRangeScan.SetFriendlySpell
+- Obsidian.Setup.Castbar.OnGlobalCooldownEnableLUp
+- TexturedButtons.Setup.Textures.OnDisabledLUp
+- Keyset.LoadProfiles
+- HealGridGuiTabSpellTrack.TabGeneralUnselectRow
+- Effigy.LIBGUI_Closebutton:New
+- MiracleGrow2.LayoutPlotArrChanged
+- NBSetup_Save.Initialize
+- UiModWindow.ToggleShowMainUiInModsList
+- MBuffGui.OnManualSelectLClick
+- BuffHead.Setup.Layout.OnLayersChanged
+- AdvancedRenownTraining.OnHidden
+- WBStutterLess.UserSettingsUI
+- TidyChat.LootRoll.OnRollLinkLButtonUp
+- BuffHead.local.SetTextureButton
+- FilterSettings.PopulateCondition
+- WARCommander.local.PopulateChannelList
+- GroupSpotter.Settings.colorslidergrpR
+- StatdollWnd.setLabels
+- DAoCBuffSettings.PopulateGlobalChangeComboBoxes
+- EA_Window_OpenPartyWorld.PopulateComboBoxes
+- HealGrid.HealGridUnit:UpdateLabel
+- FlagCap.OnPointUpdate
+- MapMonster.CreateFilterMenuEntry
+- TastyButtons.CheckInitialSetting
+- WCDBConfig.OnLoad
+- Obsidian.Setup.Castbar.OnRangeEnableLUp
+- Crusher.LIBGUI_Closebutton:New
+- KeysetMonsterPlay.Setup.Profile.LoadSettings
+- TastyButtonsOptions.ClearSelectedButton
+- ReliquaryHunter.SetOptionButtonIcon
+- mmo.UpdateMassMail
+- NoUselessMods.ScenarioGroup.Initialize
+- RVMOD_Manager.UpdateReloadUIButton
+- MoraleCircle.ColorChanger3
+- TargetRing.CreateRing
+- ThinkOutLoud.SetupPhraseEditWindow
+- Phantom.UpdateSocialWindowButton
+- DPSMeter.InitializeWindow
+- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- _G.Shinies:NewModule.OnLButtonUp_Searches_SortButton
+- Shinies.Criteria_UpdateComboBoxTextDisplay
+- DetauntTarget.OnBarPropertyButton
+- KillTracker.local.RefreshButton
+- BuffHead.LoadItem
+- TurretRange.ShowElement
+- TacticSetNames.SettingsWindow.CreateWindow
+- JunkDumpOptions.CreateOptionsWindow
+- PureConfig.OnLoad
+- mmo.UpdateBackpack
+- mmv.SetDefaultLayout
+- TurretRange.Setup.Display.LoadSettings
+- BagOMatic.init
+- TurretRange.local.LoadDistance
+- HealGridGuiTabRangeScan.Activate
+- KeyBarSettings.OpenHelpWindow
+- LibAddonButton.local.ShowType
+- BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp
+- GroupSpotter.UpdateColorLabels
+- Amethyst.LIBGUI_Checkbox:New
+- TexturedButtons.Setup.Misc.LoadSettings
+- Obsidian.local.SetTextureButton
+- FlagCap.OnUpdate
+- HealGridGuiColorSelect.SelectColorGroup
+- SocialWindowTabSearch.OnPressSetSearchButton
+- HopperConfig.OnLoad
+- HealGridGuiTabSpellTrack.ToggleTabContent
+- DetauntHelperMonitor.UpdateWindow
+- TurretRange.LoadDistance
+- TurretRange.OnUpdate
+- TexturedButtons.Setup.Misc.OnHideQuicklockLUp
+- GroupRangeSetup.Style.PointerReverse.OnAutoScaleLUp
+- StatdollWndLight.setCloseButtonVisible
+- EA_Window_OpenPartyManage.UpdateMasterLooterList
+- DPSMeter.local.UpdateAbilityTab
+- BBars.WEWHMechanicUpdate
+- TexturedButtons.Setup.Misc.OnHideGlowLUp
+- TastyButtonsOptions.Fill_ResourceComboBox
+- Settings.WindowHiderShow
+- LibAddonButton.Manager.Advanced.Initialize
+- HealGridGuiColorSelect.Initialize
+- Effigy.RegisterStateInfoForCastbar
+- BuffHead.Setup.Trackers.OnTargetChangeClearDebuffsLUp
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- SiegeChatSettings.WindowInit
+- Shinies.Searches_UpdateWindowDisplay
+- UiModWindow.UpdateModSortButtons
+- DetauntHelperConfig.OnScenarioBegin
+- wbLeadHelperConfigTab.OnReset
+- HealGridGuiUtility.CheckButtonToggle
+- Tokens.LIBGUI_Closebutton:New
+- xHUD.LIBGUI_Button:New
+- ChattyCathy.CC_ModelWindow
+- EA_Window_OpenPartyWorld.OnLButtonUpSortButton
+- TTitan.UI.Initialize
+- MapPin.local.EditMarker
+- mmw.QueueEnableScrollDownButton
+- GroupSpotter.SetLabels
+- ImExport.PopulateImEx
+- MiracleGrow2.ConfigCallbackLayout
+- snt_buttons.do_pulse
+- WoHReticle.UpdateTargets
+- HealGridGuiUtility.CheckButtonActivate
+- RVAPI_ColorDialog.InitializeWindowColorDialog
+- KeyBar.RButtonUp
+- SocialWindow.ToggleOfflineMembersShowing
+- PotionBar.Hide
+- FilterSettings.PopulateClassTable
+- AuctionAssist.Init
+- CDown.CCDownFrameB:Create
+- RVMOD_PlayerStatus.EnableBars
+- HealGridGui.CloseGui
+- CDown.local.SetLabels
+- JunkDumpOptions.UpdateSellApothOnOff
+- TOLSettingsUI.Initialize
+- xPanels.LIBGUI_Button:New
+- CDownSettings.Create
+- SOROptions.GetSettings
+- xPanels.LIBGUI_Checkbox:New
+- wbLeadHelperMessagesTab.ListDelete
+- CastSequence.local.ResizeActionBar
+- HealGridGuiTabMouseClick.ListUnselectRow
+- HealGridGuiTabMouseClick.ModifierKeyClicked
+- nLootLinkGUI.onBindOnPickup
+- nLootLinkGUI.initButtons
+- Obsidian.Setup.EffectTracker.OnTrackerEnableLUp
+- MoraleBG.Remove
+- HealGridGuiTabScenariogroup.Initialize
+- HealGridGuiTabSpellTrack.TabGeneralCommit
+- GroupSpotter.Settings.colorslidersingleG
+- TexturedButtons.Setup.Tint.OnEnableLUp
+- TidyChatFrames.Initialize
+- ObjectInspector.WindowInit
+- wbLeadHelperConfigTab.OnSave
+- TastyButtons.Button_State_Add
+- GCDsaver.LIBGUI_Closebutton:New
+- TexturedButtons.Setup.Cooldown.LoadSettings
+- Statdoll.Options.settingsToGUI
+- BuffHead.Setup.Trackers.Initialize
+- ThankTheResser.ResserName
+- TastyButtons.Button_Create_fromOptions
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- TastyButtonsOptions.Setup
+- TwisterSet.OnRClick
+- GroupRangeSetup.Style.Pointer.OnAutoScaleLUp
+- LibAddonButton.local.ShowTooltip
+- DaemonAssist.PopulateBindingCombos
+- HealGrid.HealGridUnit:UpdateBar
+- MiracleGrow2.ConfigCallbackPresets
+- BuffHead.local.LoadEffectsSettings
+- BuffHead.Setup.Trackers.OnTrackerPermanentLUp
+- TastyButtons.Button_State_TypeSwap
+- TaxPayer.WindowInit
+- BuffHead.Setup.EffectCache.Initialize
+- ReliquaryHunter.OnSetMap
 - BuffHead.BuffHeadEffectFrame:SetLayout
-- Enemy.EnemyEffectsIndicator:Update
+- DAoCBuffSettings.CreateOptionswindow
+- TastyButtonsOptions.Shutdown
+- Obsidian.LoadTrackerSettings
+- wbLeadHelperMessagesTab.ListSelChanged
+- GroupRangeSetup.Style.OnUseStyleLUp
+- BuffHead.ShowProperty
+- CDown.SetLabels
+- StatdollWnd.setCloseButtonVisible
 - MoraleCircle.ColorChanger4
+- TexturedButtons.Setup.Misc.OnEnableCooldownPulseLUp
+- AuctionWindowSellControls.UpdateCreateButton
+- RVMOD_Targets.RelistComboboxConditions
+- JunkDumpOptions.UpdateIgnoreProfessionRarityOnOff
+- AdvancedRenownTrainer.CreateAbilityWindow
+- nLootLinkGUIIntegration.initButtons
+- HealGridGuiTabSpellTrack.Initialize
+- SOR.MinimapButton
+- CastSequence.Builder.OnSettingsOnMouseOverEnd
+- GuildWardenWin.WinSetup
+- MoraleCircle.OnSetCustomColor
+- PotionBarFloating.ReflowButtons
+- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- KwestorTracker.DrawTracker
+- CastSequence.SequenceBuilder.DisplaySequence
+- HealGridGuiTabBattlegroup.UnitFrameScaleChanged
+- _G.Shinies:NewModule.OnLButtonUp_Results_SortButton
+- PartyCast.LIBGUI_Closebutton:New
+- WSCT.UpdateAnimationOptions
+- PotionBar.UpdateButton
+- FastFriends.UI.CreateWindows
+- DAoCBuffSettings.CloseOptionswindow
+- HealGrid.HealGridColoredLabel:New
+- GroupSpotter.OnMouseOverEnd
+- ReliquaryHunterOptionsWindow.Initialize
+- CDown.local.PopulateRefreshComboBoxText
+- MapPin.OnUpdate
+- RandomMountUI.OnInitialize
+- KillTracker.local.CreateTrackerWindow
+- BuffHead.Setup.AdvancedContainersItem.Initialize
+- QuickTacticSwitch.local.ShowSortArrow
+- ReferWindow.Initialize
+- TexturedButtons.Setup.Actionbar.OnHideEmptyLUp
+- BuffHead.Setup.Layout.Properties.OnPropertiesChanged
+- RVMOD_PlayerStatus.DisableBars
+- ClosetGoblinCharacterWindow.OnInitialize
+- CDown.local.ShowTab
+- PotionBarSettings.RefreshSingleRightLine
+- MapMonster.local.FilterButtonState
+- BuffHead.local.ShowLayouts
+- NBSBCore.Initialize
+- CastSequence.SequenceBuilder.OnResetOnTargetChangedLUp
+- wbLeadHelperMessagesTab.OnResetMessages
+- RVMOD_PlayerStatus.UpdateCurrentActionPoints
+- CastSequence.SequenceBuilder.OnSlotHelpLUp
+- Phantom.ShowOpenPartyButton
+- Sequencer.Load
+- FilterSettings.SetLabels
+- Shinies.Results_ClearSortButton
+- Enemy.UpdateList
+- AutoSalvage.OptionsWindow.OnInitialize
+- ActionBarHide.LIBGUI_Closebutton:New
+- TexturedButtons.Setup.Misc.Initialize
+- JunkDump.Initialize
+- CDownSettings.GrowHorizontalChanged
+- MiracleGrowLight.Initialize
+- TalismanGenie.Reset
+- UiModWindow.UpdateCategoryComboBox
+- SNT_BUTTONS.update_gui
+- JunkDump.local.CheckAndSetButton
+- RVMOD_Targets.OnDeleteRow
+- BuffHead.Setup.Filter.Initialize
+- UiModWindow.UpdateAdvancedSettings
+- DAoCBuffSettings.ActivateType
+- PotionBarSettings.OnUseCheckUpdateHighlighting
+- EA_Window_OpenPartyWorld.HideAllSortButtonArrows
+- TexturedButtons.Setup.Cooldown.OnShowGlobalCooldownTextLUp
+- GroupRangeSetup.Style.SimpleText.Initialize
+- HealGridGuiTabSpellTrack.EditCommit
+- CCM.UpdateUI
+- NBSBRegister.GetValueForParameter
+- BuffHead.Setup.Display.OnEnableSortLUp
+- CastSequence.LoadSequence
+- CastSequence.SequenceBuilder.ShowEdit
+- mmo.UpdateAutocomplete
+- nLootLinkOptions.init
+- TalismanGenie.Initialise
+- EA_Window_OpenPartyManage.ToggleAutoLootRvR
+- ChattyCathy.CC_Set
+- KwestorTracker.DrawQuest
+- mmw.CreateMassMailWin
+- Shinies.ClearSortButton
+- RVMOD_PlayerStatus.OnColorDialogCallbackAPBar
+- GroupRangeSetup.Style.Pointer.OnAutoPositionLUp
+- NaturalLog.LIBGUI_Optionbutton:New
+- TexturedButtons.LoadBar
+- GuardLine.update
+- BuffHead.Setup.Performance.OnEnableFadingLUp
+- TomeTracker.Journal.MapButtonShow
+- NaturalLog.lnBar:SetScrollType
+- BuffHead.Setup.AdvancedCompression.Initialize
+- NoUselessMods.SocialButton.Initialize
+- NaturalLog.LIBGUI_Closebutton:New
+- BlackBookWindow.Initialize
+- CastSequence.CastSequenceLabelButton:Update
+- TargetRing.UpdateTargets
+- MapMonster.ShutdownPins
+- EA_Window_OpenPartyNearby.ToggleOpenPartyInterestFlag
+- LibAddonButton.ShowType
+- LibAddonButton.Manager.Advanced.OnTextureSimpleLUp
+- TexturedButtons.local.LoadButtonState
+- nLootLinkGUI.resetSearchFields
+- FilterSettings.Open
+- FilterSettings.PopulateTextureComboBox
+- BuffHead.Setup.Performance.LoadSettings
+- CastSequence.local.UpdateSortButtons
+- AdvancedRenownTrainer.local.SetImportExportLabels
+- Hopper.LIBGUI_Closebutton:New
+- DPSMeter.UpdateAbilityTab
+- AuraShares.ChangeSorting
+- LibAddonButton.Manager.CustomItem.Show
+- TastyButtonsOptions.UpdateButtonInfo
+- Wikki's Cooldown Pulse.WCDPConfig_Filters_ClearAbility
+- CaVESWindowOptions.UpdateOptions
+- TurretRange.Setup.Initialize
+- HealGrid.SettingsInitialize
+- MiracleGrow2.HRSetLang
+- BBars.OnShutdown
+- CCTV.Initialize
+- Obsidian.Setup.EffectTracker.OnTrackerIconEnableLUp
+- InfoScroller.LIBGUI_Closebutton:New
+- HealGridGui.ToggleGui
+- alertMod.SetSliders
+- BuffHead.SetTracker
+- Sequencer.Clear
+- WARCommander.PopulateChannelList
+- KwestorTracker.Initialize
+- CastSequence.local.LoadSequence
+- MapPin.EditMarker
+- Obsidian.Setup.Castbar.OnTextureButtonMouseOut
+- UiModVersionMismatchWindow.Initialize
+- nLootLinkGUI.onBindOnEquip
+- PartyCast.FetchedText
+- PotionBarSettings.OnShown
+- FilterSettings.DisableCondenseSettings
+- RVMOD_PlayerStatus.SetActionBarDisplayedValue
+- BuffHead.Setup.EffectCache.OnEnableCachingLUp
+- EA_Window_OverheadMap.UpdateScenarioButtons
+- MiracleGrow2.UpdatePlot
+- wbLeadHelperConfigTab.Initialize
+- TalismanGenie.GoldDustCheckToggle
+- BBars.CHSLMechanicUpdate
+- TexturedButtons.Setup.Fonts.OnEnableLUp
+- Pure Careerbar.LIBGUI_Closebutton:New
+- wbLeadHelperMessagesTab.ListUp
+- mmw.CreateCraftingList
+- BuffHead.Setup.Layout.Properties.OnStatusBarEnableLUp
+- MapMonster.PinTypeEditor.Initialize
+- TargetRing.LIBGUI_Closebutton:New
+- nLootLinkUtil.setMultiComboBoxName
+- TexturedButtons.Setup.Tint.Initialize
+- BuffHead.local.LoadAnchors
+- FozAuction.sortButtonShowArrows
+- BuffHead.Setup.Layout.Properties.OnTextureButtonMouseOver
+- TidyQueue.ResetWindow
+- TexturedButtons.Setup.AdvancedTextures.OnCustomTextureChanged
+- GroupSpotter.Settings.colorslidersingleR
+- FixGit.UpdateCreateButton
+- GroupRangeSetup.Style.OnStyleChanged
+- EZGuard.LIBGUI_Closebutton:New
+- BuffHead.local.LoadStatusBarSettings
+- GroupSpotter.Settings.colorslidergrpB
+- GroupRangeSetup.Style.PointerReverse.LoadSettings
+- wbLeadHelperMessagesTab.OnSaveMessages
+- TexturedButtons.Setup.Cooldown.OnHideFlashLUp
+- ImExport.PopulateExportTypeSettings
+- DetauntBarSettings.OnBarPropertyButton
+- Pure.LIBGUI_Closebutton:New
+- ThinkOutLoud.local.SetupSkillEditWindow
+- PP.CreateWindow
+- TexturedButtons.local.LoadPresets
+- PotionBarSettings.QuickActionsSelChanged
+- nLootLinkGUIIntegration.initMenu
+- MapMonster.InitializeMapPins
+- TastyButtonsOptions.CreateOptionsWindow
+- BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp
+- PhantomLib.InstallEA_Window_OverheadMapHooks
+- HealGridGuiUtility.CheckButtonInit
+- HealGridGui.Initialize
+- ChattyCathy.CC_SetWindow
+- MapMonster.Editor.BuildPinTypeComboBox
+- HealGridGuiTabGeneral.Initialize
+- CDown.ShowTab
+- ScenarioGroupWindow.HideJoinGroupElements
+- SOR.Initialize
+- Wikki's Cooldown Pulse.LIBGUI_Closebutton:New
+- SocialWindowTabFriends.Initialize
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- UiModWindow.Initialize
+- HealGridGuiColorSelect.Activate
+- RVMOD_PlayerStatus.UpdateFade
+- KeyBar.MoveWindow
+- CastSequence.SequenceBuilder.OnEnabledLUp
+- nLootLinkUtil.enableCheck
+- FilterSettings.PopulateFilter
+- JunkDumpOptions.UpdateBagModeBag
+- CallingSetup.UpdateBindingTexts
+- BuffHead.ShowLayouts
+- AdvancedRenownTraining.DeletePreset
+- HealGridUnitTooltip.Initialize
+- BuffHead.Setup.AdvancedCompressionItem.Initialize
+- mmw.ToggleMassAddButtons
+- ImExport.SetLabels
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- MapMonster.local.ClearTooltip
+- RVMOD_Targets.OnToggleRowSettings
+- ScenarioGroupWindow.Initialize
+- mms.SetNewLayout
+- FilterSettings.PopulateHistoryBrowser
+- PlayEffectsOn.UpdateUI
+- TexturedButtons.Setup.Textures.OnUsePresetLUp
+- ThinkOutLoud.local.SetupPhraseEditWindow
+- CaVESWindowOptions.OnToolTipOption1Changed
+- BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp
+- Enemy.UI_Icon_Switch
+- CastSequence.SequenceBuilder.Initialize
+- ScenarioGroup.Initialize
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- BuffHead.local.LoadHandleInputSettings
+- TexturedButtons.Setup.Textures.OnCustomTextureChanged
+- TexturedButtons.Setup.Textures.OnUseCustomLUp
+- PhantomLib.InstallEA_ChatWindowHooks
+- TomeWindow.OnDammazKronUpdateNavButtons
+- DetauntHelperConfig.OnScenarioEnd
+- NBSBActionBar.ResetButtons
+- ReliquaryHunterOptionsWindow.UpdateOptions
+- TidyChat.Options.OnCheckboxLBU
+- MapPin.QuickWP
+- TidyChatCore.SetTextEntry
+- TexturedButtons.Setup.Misc.OnSaveQuicklockLUp
+- xPanels.LIBGUI_Closebutton:New
+- BuffHead.local.LoadLayoutSettings
+- SOROptions.Slide
+- RoR_SoR.SET_KEEP
+- AuraShares.ClearSortButton
+- TacticSetNames.SetLabels
+- wbLeadHelperMessagesTab.Initialize
+- AutoBand.OnCopyLinkInitialize
+- EA_Window_OpenPartyManage.Initialize
+- Cheeseboard.Close
+- Squared.InitImportExport
+- SocialWindowTabSearch.UpdateZoneList
+- ActionBarHide.LIBGUI_Combobox:New
+- TastyButtonsOptions.ToggleActionBarsButton
+- Obsidian.Setup.Castbar.OnLatencyEnableTextLUp
+- TomeTracker.Journal.Initialize
+- HealGrid.UpdateSocialWindowButton
+- AuraShares.OnFilterCharactersAurasToggle
+- HealGridGuiTabSpellTrack.ListSelectRow
+- MoraleCircle.ColorChanger1
+- Enemy.EnemyEffectsIndicator:Update
+- RoR_SoR.Restack
+- EZCraftX.LIBGUI_Closebutton:New
+- BuddyBind.OnRawDeviceInput
+- GroupSpotter.local.UpdateSettings
+- BuffHead.Setup.PriorityEffectsItem.OnTargetTypeLUp
+- CDown.PopulateRefreshComboBoxText
+- JunkDumpOptions.UpdateRarity
+- TastyButtonsOptions.ToggleButtonInfo
+- CMap.LIBGUI_Closebutton:New
+- RVMOD_Manager.UpdateWindowSettings
+- GroupSpotter.OnMouseOverStart
+- AuctionWindowSearchControls.OnLButtonUpAdditonalFilters
+- Enemy.IntercomUI_ConfigDialog_OnLoad
+- AggroMeter.Initialize
+- HealGridGuiTabSpellTrack.TabFilterInitialize
+- BBars.PetCheck
+- RVMOD_PlayerStatus.UpdateCurrentHitPoints
+- TastyButtonsOptions.Update_Button_List
+- KillTracker.CreateTrackerWindow
+- RealmStatus.Loading
+- BuffHead.ShowExport
+- GCDTracker.OnUpdate
+- TTitan.UI.ToggleHideCompleted
+- Statdoll.Options.onInitialize
+- MapPin.RButtonUp
+- AuctionAssist.SetBuyOutClicked
+- MBuffGui.Initialize
+- HealGridGuiTabScenariogroup.UnitFrameScaleChanged
+- _G.Shinies:NewModule.OnLButtonUp_SortButton
+- Obsidian.local.LoadTrackerSettings
+- HealGridGuiTabSpellTrack.TabGeneralInitialize
+- CastSequence.SequenceBuilder.SetSlotFromHelp
+- TexturedButtons.local.LoadTextures
+- HealGridGuiTabSpellTrack.ListUnselectRow
+- HealGridGui.AddContentPane
+- Shinies.LIBGUI_Closebutton:New
+- LibAddonButton.Manager.LoadMenu
+- RVMOD_Manager.InitializeManagerWindow
+- TastyButtonsOptions.ButtonDelProfile
+- Enemy.UnitFramesParts_LevelTextInitialize
+- SNT_BUTTONS.local.update_gui
+- TexturedButtons.Setup.AdvancedTextures.OnUseCustomLUp
+- wbLeadHelper.createWbLeadHelperWindow
+- WarBoard_WarWhisperer.LIBGUI_Closebutton:New
+- SORPager.Contested
+- BBars.MechanicSort
+- GroupRangeSetup.Style.Pointer.LoadSettings
+- CallingSetup.OnRawDeviceInput
+- ScenarioStats.CreateDropdownList
+- BuffHead.Setup.Display.LoadSettings
+- LibWBToggler.LIBGUI_Closebutton:New
+- KeysetMonsterPlay.Setup.Profile.OnEnableLUp
+- ActionBarHide.LIBGUI_Checkbox:New
+- TurretRange.Setup.Distance.Initialize
+- SOROptions.ShowTier
+- Obsidian.Setup.EffectTracker.Initialize
+- AAOTracker.Options.WindowInit
+- TexturedButtons.local.LoadBar
+- TurretRange.Setup.Display.OnCircleInvertLUp
+- JunkDumpOptions.UpdateSellSalvagingOnOff
+- BuffHead.Setup.AdvancedCompressionItemEffect.Initialize
+- JunkDumpOptions.UpdateItemReportOnOff
+- DK_Config.ToggleMenu
+- PieTracker.WindowInit
+- DAoCBuffSettings.ManagerModeChanged
+- HealGridGuiTabSpellTrack.TabGeneralSelectRow
+- HealGridUnitTooltip.StartTooltip
+- TurretRange.Setup.Display.OnCircleModeChanged
+- QuickTacticSwitch.ShowSortArrow
+- AuctionWindowSearchControls.UpdateAdditonalFiltersButton
+- BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp
+- EA_SummoningAcceptPrompt.UpdateButtons
+- TurretRange.Setup.Distances.Initialize
+- Enemy.IntercomUI_IntercomDialog_Open
+- TidyRoll.UpdateFrames
+- CastSequence.SequenceBuilder.OnResetTimeoutLUp
+- WTes.WindowInit
+- LibAddonButton.LoadTexture
+- AdvancedRenownTraining.SavePreset
+- MapMonster.ClearTooltip
+- TomeWindow.DK_SetSortArrow
+- Shinies.InitializeItemUI
+- TexturedButtons.local.LoadAdvancedTexture
+- LibAddonButton.ShowTooltip
+- LibAddonButton.Manager.MacroHelp.Show
+- TexturedButtons.LoadPresets
+- MoraleCircle.OnSetCustomColorFill
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- RVMOD_PlayerStatus.SetHealthBarDisplayedValue
+- wbLeadHelperMessagesTab.ListDown
+- LibAddonButton.ShowNavigation
+- Amethyst.LIBGUI_Button:New
+- wbLeadHelperMessagesTab.MessageClone
+- KeyBar.OnLButtonUp
+- ScenarioGroupWindow.HideLeaveGroupElements
+- ChattyCathy.UpdateEntrySetup
+- CastSequence.SequenceBuilder.OnResetInCombatChangedLUp
+- UiModWindow.InitAdvancedWindow
+- CraftValueTip.ConfigCallback
+- Ace.LIBGUI_Closebutton:New
+- PhantomLib.InstallOpenPartyWindowHooks
+- TexturedButtons.Setup.Actionbar.OnHideBackgroundLUp
+- CoolDownLine.OnUpdate
+- RVMOD_PlayerStatus.UpdateWindowSettings
+- CrusherConfig.OnLoad
+- DammazKron.local.UpdateSpecial
+- AdvancedRenownTraining.AnywhereShow
+- KeyBarSettings.OpenSettingsWindow
+- WoHReticle.CreateRing
+- CMapWindow.UpdateZoomButtons
+- Atlas.Configuration.OnCheckboxLBU
+- EA_Window_OpenPartyWorld.Initialize
+- JunkDumpOptions.UpdateBagModeOnOff
+- CaVESWindow.UpdateLabel
+- UiModWindow.SetLoadCustomUI
+- HealGridGuiTabHUD.UnitFrameScaleChanged
+- nLootLinkOptions.initLabels
+- Keyset.Setup.Save.Initialize
+- HealGridGuiTabMouseClick.ActionChanged
+- mmw.CreateRarityList
+- MiracleGrow.updatePlant
+- BuffHead.Setup.Container.Initialize
+- GroupSpotter.Settings.colorslidergrpG
+- CastSequence.SequenceBuilder.ShowHelp
+- GroupRangeSetup.Style.Pointer.OnHideInRangeLUp
+- Megaphone.CreateWindows
+- TomeTracker.Journal.MapButtonHide
+- CastSequence.UpdateSortButtons
+- EA_Window_ScenarioLobby.UpdateLaunchingJoinButtons
+- ScenarioStats.Warning03
+- Keyset.Setup.Load.Initialize
+- TexturedButtons.Setup.Textures.Initialize
+- QuickTacticSwitch.local.ClearSortArrows
+- RVMOD_PlayerStatus.OnColorDialogCallbackHPBar
+- wbLeadHelperMessagesTab.MessageEdit
+- AdvancedRenownTrainer.GeneratePresetByLinkData
+- HealGrid.HealGridCareerBar:ApplySkin
+- EA_OpenPartyWindow.local.UpdateFormWarbandButtonState
+- SocialWindowTabSearch.Initialize
+- BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleLClick
+- GroupSpotter.InitializeSettingsWindow
+- TurretRange.Setup.General.OnEnableLUp
+- ChattyCathy.CC_FreeTextBox
+- DammazKron.UpdateSpecial
+- AuctionWindowSearchControls.Initialize
+- wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
+- Enemy.MarksUI_MarkConfigDialog_Open
+- BuffHead.Setup.AdvancedContainersItem.Properties.Initialize
+- MapMonster.OpenTypeViewerWindow
+- GroupSpotter.UpdateSettings
+- nRarity.Border:new
+- PotionBar.local.UpdateButton
+- AdvancedRenownTrainer.SetImportExportLabels
+- TastyButtonsOptions.ClearGroupView
+- Cheeseboard.OnInitialize
+- TidyRollOptions.Initialize
+- EA_OpenPartyWindow.UpdateFormWarbandButtonState
+- MiracleGrow2.ConfigCallback
+- ImExport.PopulateFilter
+- HealGridGuiTabRangeScan.SetHostileSpell
+- HealGridIcon.Initialize
+- DAoCBuff.DAoCBuffFrame:SetBuff
+- TidyRollOptions.OnCheckboxLBU
+- HealGridUnitTooltip.PopulateMouseClick
+- HealGrid.HealGridProgressBar:UpdateLabel
+- MotionConfig.OnLoad
+- BuffHead.Setup.Performance.OnEnableSyncLUp
+- HealGrid.ShowOpenPartyButton
+- HealGridGuiTabHUD.Initialize
+- TurretRange.local.ShowElement
+- KeyBar.Update
+- PhantomLib.EnforceWindowStates
+- AuraShares.OnLoad
 
 ## Seen In
 
 - Ace
 - AggroMeter
+- AutoBand
 - AutoMark
+- BBars - Mechanic Only
 - BagOMatic
 - BankArkel
+- Big'uns
+- Bloody Mess
+- Brizio's Crappy Computer Medic
 - BuffHead
+- CCTV
+- CDown
 - CM_ClosetGoblin
+- CMap
+- Calling
+- CastSequence
+- CoolDownLine
+- Crusher
 - DAoCBuff
+- DetauntHelper
+- DuffTimer
+- Dye Preview
+- EA_LoadingScreen
+- EA_ThreePartBar
+- Effigy
 - Enemy
+- EveryBodyGuard
+- FlagCap
+- GDes
+- Ges
+- GroupRange
+- GroupSpotter
 - GuardLine
+- GuildWarden
+- HealGrid
+- InfoScroller
+- KeyBar
+- KillStreak
+- LibAddonButton
 - LibSlash
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- Minmap
 - MoraleCircle
+- Motion
+- MouseHint
+- NaturalLog
+- NerfedButtons
+- Obsidian
+- Paint the leader
+- PlayEffectsOn
+- Pure
+- Pure Careerbar
+- RVAPI_ColorDialog
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- Refer
+- ReliquaryHunter
+- Res
+- ResHelp
+- RetAlert
 - RoR_SoR
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SNT_INFO
+- SNT_PANEL
+- SOR
+- Sequencer
 - Shinies
+- Soloq
+- SpamBayes
+- Squared
 - Swift Assist
+- Swinger
+- TacticSetNames
+- TalismanGenie
+- TargetInfoRing
+- TargetRing
+- TastyButtons
 - TexturedButtons
 - TidyRoll
+- TokenMachine
 - TurretRange
+- TurretScrap
+- Twister
+- Vectors
+- WarBoard_TogglerRankedLeaderboard
+- WarBoard_TogglerTidyChat
+- WarBoard_TogglerTidyRoll
+- WarBoard_TogglerVPBreakdown
+- WarBoard_TogglerWSCT
+- WarBoard_TogglerWlh
+- Warbuilder
+- Wikki's Cooldown Bar
 - WoH-Reticle
+- compass
+- nLootLink
+- nRarity
+- warboard_TogglerWarBuilder
+- xHUD
+- yAssistHelper
+- zMailMod
 
 ## Examples
 
-- none
+- Ace: AceBarFrame -> Texture AceBarFrame
+- Ace: PureDebuffHighlight -> Texture PureDebuffHighlight
+- Ace: PureGraphite -> Texture PureGraphite
+- Ace: amethystSharedMediaFlat -> Texture amethystSharedMediaFlat
+- Ace: amethystSharedMediaMinimalist -> Texture amethystSharedMediaMinimalist
+- Ace: amethystSharedMediaSmoothv2 -> Texture amethystSharedMediaSmoothv2
 
 ## Related APIs
 
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [Slice](element_Slice.md) (HIGH 100/100) - XML Element Type
+- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
 - [Assets](element_Assets.md) (MEDIUM 45/100) - XML Element Type
-- [Slice](element_Slice.md) (MEDIUM 35/100) - XML Element Type
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function

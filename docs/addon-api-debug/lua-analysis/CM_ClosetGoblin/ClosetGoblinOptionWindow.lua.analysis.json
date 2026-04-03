@@ -1,0 +1,175 @@
+{
+  "schema_version": "phase2-lua/v1",
+  "addon": "CM_ClosetGoblin",
+  "source_file": "ClosetGoblinOptionWindow.lua",
+  "functions": [
+    {
+      "function_id": "f1",
+      "declared_name": "ClosetGoblinOptionWindow.OnInitialize",
+      "qualified_name": "ClosetGoblinOptionWindow.OnInitialize",
+      "short_name": "OnInitialize",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinOptionWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinOptionWindow",
+      "source": {
+        "line_start": 28,
+        "line_end": 30
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "LayoutEditor.RegisterWindow",
+          "callee_resolved": "LayoutEditor.RegisterWindow",
+          "source": {
+            "line": 29
+          },
+          "arguments": [
+            "\"ClosetGoblinOptionWindow\"",
+            "L \"Closet Goblin\"",
+            "L \"Option Button\"",
+            "true",
+            "true",
+            "true",
+            "nil"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f2",
+      "declared_name": "ClosetGoblinOptionWindow.OnLButtonUp",
+      "qualified_name": "ClosetGoblinOptionWindow.OnLButtonUp",
+      "short_name": "OnLButtonUp",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinOptionWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinOptionWindow",
+      "source": {
+        "line_start": 32,
+        "line_end": 42
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "EA_Window_ContextMenu.CreateContextMenu",
+          "callee_resolved": "EA_Window_ContextMenu.CreateContextMenu",
+          "source": {
+            "line": 34
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "EA_Window_ContextMenu.Finalize",
+          "callee_resolved": "EA_Window_ContextMenu.Finalize",
+          "source": {
+            "line": 38
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinCharacterWindow.ShowOrHide",
+          "callee_resolved": "ClosetGoblinCharacterWindow.ShowOrHide",
+          "source": {
+            "line": 40
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f3",
+      "declared_name": "ClosetGoblinOptionWindow.OnRButtonUp",
+      "qualified_name": "ClosetGoblinOptionWindow.OnRButtonUp",
+      "short_name": "OnRButtonUp",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinOptionWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinOptionWindow",
+      "source": {
+        "line_start": 44,
+        "line_end": 46
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.ShowOrHide",
+          "callee_resolved": "ClosetGoblinCharacterWindow.ShowOrHide",
+          "source": {
+            "line": 45
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f4",
+      "declared_name": "ClosetGoblinOptionWindow.OnRowMenuActivateSet",
+      "qualified_name": "ClosetGoblinOptionWindow.OnRowMenuActivateSet",
+      "short_name": "OnRowMenuActivateSet",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinOptionWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinOptionWindow",
+      "source": {
+        "line_start": 49,
+        "line_end": 52
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 50
+          },
+          "arguments": [
+            "SystemData.MouseOverWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblin.ActivateSet",
+          "callee_resolved": "ClosetGoblin.ActivateSet",
+          "source": {
+            "line": 51
+          },
+          "arguments": [
+            "ClosetGoblin.sortedSetsList[idContextMenu]"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    }
+  ],
+  "namespaces": [
+    "CM_ClosetGoblin",
+    "ClosetGoblinOptionWindow"
+  ],
+  "registrations": []
+}

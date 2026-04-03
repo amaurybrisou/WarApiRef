@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, Enemy, PotionBar, TidyChat |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Enemy/Code/Core/Common.xml:0`, `/workspace/data/raw/Enemy/Code/Core/ConfigDialog.xml:0`, `/workspace/data/raw/Enemy/Code/Core/Groups/EffectFilterDialog.xml:0`, `/workspace/data/raw/Enemy/Code/Intercom/ChooseChannelDialog.xml:0`, `/workspace/data/raw/Enemy/Code/Intercom/IntercomDialog.xml:0`, `/workspace/data/raw/Enemy/Code/Intercom/IntercomJoinDialog.xml:0` |
+| Addons seen in | Aura, AutoBand, CaVES, Crusher, Dascore, Deathblow, Deathblow2, DetauntHelper |
+| Files seen in | AutoBandWindowConfig.xml, AutoBandWindowTemplate.xml, AutoBandWindowTools.xml, Code/Core/Common.xml, Code/Core/ConfigDialog.xml, Code/Core/Groups/EffectFilterDialog.xml, Code/Intercom/ChooseChannelDialog.xml, Code/Intercom/IntercomDialog.xml |
 | Namespaces detected | EA_Window_DefaultButtonBottomFrame |
 | Source kinds | xml_attributes |
-| Example locations | AuraSettingsButtonBackground, AuraSharesButtonBackground, AuraSharesImportExportButtonBackground, EnemyChooseChannelDialogButtonBackground, EnemyClickCastingDialogButtonBackground, EnemyConfigDialogButtonBackground |
-| XML usage count | 16 |
-| XML attribute usage count | 16 |
+| Example locations | AuctionWindowButtonBackground, AuraSettingsButtonBackground, AuraSharesButtonBackground, AuraSharesImportExportButtonBackground, AutoBandWindowConfigButtonBar, AutoBandWindowTemplateButtonBar |
+| XML usage count | 57 |
+| XML attribute usage count | 57 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,20 +57,64 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 4 addons.
+Engine-supplied XML constant or template class referenced by 33 addons.
 
 ## Seen In
 
 - Aura
+- AutoBand
+- CaVES
+- Crusher
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- DuffTimer
+- EA_OpenPartyWindow
+- EA_UiDebugTools
+- EA_UiModWindow
 - Enemy
+- FastFriends
+- FozAuction
+- Hopper
+- MegaphonePlusPlus
+- Motion
+- NerfedButtons
 - PotionBar
+- Pure
+- Queue Queuer
+- ReliquaryHunter
+- SOR
+- Sequencer
 - TidyChat
+- Tome Titan
+- WTes
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- alertMod
+- wbLeadHelper
+- zMailMod
 
 ## Used By
 
+- AuctionWindowButtonBackground
 - AuraSettingsButtonBackground
 - AuraSharesButtonBackground
 - AuraSharesImportExportButtonBackground
+- AutoBandWindowConfigButtonBar
+- AutoBandWindowTemplateButtonBar
+- AutoBandWindowTemplateDeleteConfirmButtonBar
+- AutoBandWindowTemplateSaveButtonBar
+- AutoBandWindowToolsButtonBar
+- CaVESWindowOptionsWindowButtonBackground
+- CrusherConfigButtonBackground
+- DTC_TARGETS_TemplateButtonBackground
+- DascoreWin1WindowBarBackground
+- DeathblowWin1WindowBarBackground
+- DebugWindowButtonBackground
+- DuffTimerOptions_ButtonBackground
+- EA_Window_OpenPartyNearbySocketDefButtonBackground
+- EA_Window_OpenPartyWorldSocketDefButtonBackground
 - EnemyChooseChannelDialogButtonBackground
 - EnemyClickCastingDialogButtonBackground
 - EnemyConfigDialogButtonBackground
@@ -81,25 +125,39 @@ Observed engine XML template or inherited constant referenced by 4 addons.
 - EnemyMarkConfigDialogButtonBackground
 - EnemyTextEntryDialogButtonBackground
 - EnemyUnitFramePartDialogButtonBackground
+- FastFriendsConfigMainButtonBackground
+- HopperConfigButtonBackground
+- MegaphoneMainButtonBackground
+- MotionConfigButtonBackground
+- NBSBCoreWindowCriteriaSpecialBackground
+- NBSBCoreWindowListsSpecialBackground
+- NBSetup_SaveButtonBackground
 - PotionBarAboutButtonBackground
 - PotionBarTypeTemplateButtonBackground
+- PureConfigButtonBackground
+- QueueQueuer_GUI_ButtonBackground
+- ReliquaryHunterOptionsWindowButtonBackground
+- SOR.Options.ButtonBackground
+- SOR.Version.ButtonBackground
+- Sequencer_WindowSpecialBackground
+- SiegeChatFiltersButtonBackground
+- TTitanUIButtonBackground
 - TidyChatCopyButtonBackground
+- UiModAdvancedWindowButtonBackground
+- UiModVersionMismatchWindowButtonBackground
+- UiModWindowButtonBackground
+- WCDBConfigButtonBackground
+- WCDPConfigButtonBackground
+- WbLeadHelperMessageButtonBackground
+- alertModButtonBackground
+- wbLeadHelperConfigTabButtonBar
+- wbLeadHelperMessagesTabButtonBar
+- zMailModMassMailBarBackground
+- zMailModOptionsBarBackground
 
 ## Related APIs
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 33 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, TidyRoll, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1031`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:1028`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1028`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:1028`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:105`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:1028` |
+| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, CMap, Crusher, EZCraftX, EZGuard |
+| Files seen in | AdjustTheTip.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, PartyCast.lua, TidyRollFrame.lua, libs/LibGUI.lua |
 | Namespaces detected | StatusBarSetBackgroundTint |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Statusbar:BackColor, LibWBToggler: LIBGUI_Statusbar:BackColor, PartyCast: LIBGUI_Statusbar:BackColor, PartyCast: PartyCast.FetchedText, Shinies: LIBGUI_Statusbar:BackColor, TidyRoll: TidyRollFrame:InitializeTimerBar |
+| Example locations | Ace: BackColor, ActionBarHide: BackColor, AdjustTheTip: AddTargetHealthToMouseOver, Amethyst: BackColor, CMap: BackColor, Crusher: BackColor |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 38 |
+| Global usage count | 38 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,20 +65,20 @@ StatusBarSetBackgroundTint(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a window function across 6 addons.
+Observed as a window function across 33 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", self.name, timerBarName |
-| arg2 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.r, red |
-| arg3 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.g, green |
-| arg4 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.b, blue |
+| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", c_HEALTH_BAR_CONTAINER.."HealthPercentBarBar", info.."StatusBar" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, 128, DefaultColor.BLACK.r |
+| arg3 | Observed as a runtime window or control identifier. | Observed values: 0, 128, DefaultColor.BLACK.g |
+| arg4 | Observed as a runtime window or control identifier. | Observed values: 0, 128, DefaultColor.BLACK.b |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -87,37 +87,54 @@ Observed as a window function across 6 addons.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- AdjustTheTip
+- Amethyst
+- CMap
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetInfoRing
+- TargetRing
 - TidyRoll
+- Tokens
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
-- LibWBToggler: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
-- PartyCast: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
-- PartyCast: PartyCast.FetchedText -> StatusBarSetBackgroundTint("PartyCastWindow"..PlayerNumber.."TimerBar", DefaultColor.BLACK.r, DefaultColor.BLACK.g, DefaultColor.BLACK.b)
-- Shinies: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
-- TidyRoll: TidyRollFrame:InitializeTimerBar -> StatusBarSetBackgroundTint(timerBarName, DefaultColor.BLACK.r, DefaultColor.BLACK.g, DefaultColor.BLACK.b)
-
-## Related APIs
-
-- none
+- Ace: BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
+- ActionBarHide: BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
+- AdjustTheTip: AddTargetHealthToMouseOver -> StatusBarSetBackgroundTint(c_HEALTH_BAR_CONTAINER.."HealthPercentBarBar", 128, 128, 128)
+- Amethyst: BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
+- CMap: BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
+- Crusher: BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [StatusBarSetForegroundTint](window_StatusBarSetForegroundTint.md) (HIGH 100/100) - Window Function
+- [StatusBarSetMaximumValue](window_StatusBarSetMaximumValue.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

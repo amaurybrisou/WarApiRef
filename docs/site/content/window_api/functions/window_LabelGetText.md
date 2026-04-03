@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 43 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, DAoCBuff, LibWBToggler, PartyCast, RoR_SoR, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:434`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:215`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:434`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:434`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:1055`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:434`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:434` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, Countdown, Crusher, DAoCBuff, Dascore, EA_UiDebugTools |
+| Files seen in | DascoreResu.lua, Fixes.lua, GuildWardenWin.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, QueueQueuer.lua |
 | Namespaces detected | LabelGetText |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Label:GetText, DAoCBuff: DAoCBuffSettings.FilterRowOnLButtonUp, LibWBToggler: LIBGUI_Label:GetText, PartyCast: LIBGUI_Label:GetText, RoR_SoR: RoR_SoR.SET_KEEP, Shinies: LIBGUI_Label:GetText |
+| Example locations | Ace: GetText, ActionBarHide: GetText, Amethyst: GetText, Countdown: displayCountdown, Crusher: GetText, DAoCBuff: FilterRowOnLButtonUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 67 |
+| Global usage count | 67 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,60 +65,88 @@ LabelGetText(arg1)
 
 ## Description
 
-Observed as a window function across 7 addons.
+Observed as a window function across 43 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "SoR_"..Window_Name.."KEEP1HEALTH", "SoR_"..Window_Name.."KEEP1SAFETIMER", "SoR_"..Window_Name.."KEEP2HEALTH" |
+| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_ScenarioJoinPromptBoxName", "GuildWarden.DBWindow.TextN5", "ScenarioSummaryWindowDestructionPoints" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- Countdown
+- Crusher
 - DAoCBuff
+- Dascore
+- EA_UiDebugTools
+- EZCraftX
+- EZGuard
+- Effigy
+- FixGit
+- GCDsaver
+- GuildWarden
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- Queue Queuer
+- RealmStatus
 - RoR_SoR
+- SOR
 - Shinies
+- Soloq
+- TargetRing
+- Targets
+- ThankTheResser
+- Tokens
+- Trakario
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- nLootLink
+- scenarioInfo
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Label:GetText -> LabelGetText(self.name)
-- DAoCBuff: DAoCBuffSettings.FilterRowOnLButtonUp -> LabelGetText(SystemData.ActiveWindow.name.."Name")
-- LibWBToggler: LIBGUI_Label:GetText -> LabelGetText(self.name)
-- PartyCast: LIBGUI_Label:GetText -> LabelGetText(self.name)
-- RoR_SoR: RoR_SoR.SET_KEEP -> LabelGetText("SoR_"..Window_Name.."KEEP1SAFETIMER")
-- RoR_SoR: RoR_SoR.SET_KEEP -> LabelGetText("SoR_"..Window_Name.."KEEP2SAFETIMER")
+- Ace: GetText -> LabelGetText(self.name)
+- ActionBarHide: GetText -> LabelGetText(self.name)
+- Amethyst: GetText -> LabelGetText(self.name)
+- Countdown: displayCountdown -> LabelGetText(label)
+- Crusher: GetText -> LabelGetText(self.name)
+- DAoCBuff: FilterRowOnLButtonUp -> LabelGetText(SystemData.ActiveWindow.name.."Name")
 
 ## Related APIs
 
-- none
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
-- [GameData.Guild.m_GuildName](../../gamedata/fields/gamedata_GameData.Guild.m_GuildName.md) (HIGH 100/100) - GameData Field
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [SystemData.GuildPermissons.CLAIM_KEEP](../../systemdata/fields/systemdata_SystemData.GuildPermissons.CLAIM_KEEP.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

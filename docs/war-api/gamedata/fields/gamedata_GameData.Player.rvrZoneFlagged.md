@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:2468` |
+| Addons seen in | CMap, Effigy, HealGrid, Pure, RoR_SoR |
+| Files seen in | CMap.lua, Effigy.lua, RoR_SoR.lua, Source/PureGroup.lua, Source/PurePlayer.lua, States/EffigyStatePlayer.lua, Units/HealGridUnitPlayer.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | RoR_SoR.ContextMenu1, lua_call |
+| Example locations | ContextMenu1, OnPlayerRvRFlagUpdated, OnRButtonUp, OnRvRFlagUpdated, PlayerRightClickMenu, ShowDropdownMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +59,20 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.Player.rvrZoneFlagged field accessed by 5 addons; commonly found in ContextMenu1 and OnPlayerRvRFlagUpdated, OnRButtonUp, OnRvRFlagUpdated, PlayerRightClickMenu, ShowDropdownMenu, UpdatePlayerHP, lua_call contexts.
 
 ## Seen In
 
+- CMap
+- Effigy
+- HealGrid
+- Pure
 - RoR_SoR
 
 ## Related APIs
 
-- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: RoR_SoR.ContextMenu1, lua_call
+- Observed in contexts: ContextMenu1, OnPlayerRvRFlagUpdated, OnRButtonUp, OnRvRFlagUpdated, PlayerRightClickMenu, ShowDropdownMenu

@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, DAoCBuff, Enemy, Killer, Shinies |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraTooltip.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCTooltips.xml:0`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:0`, `/workspace/data/raw/Killer/Killer.xml:0`, `/workspace/data/raw/Shinies/Source/ShiniesUITemplates.xml:0` |
+| Addons seen in | AuctionStats, Aura, BuddyBind, CCTV, CoolDownLine, Crusher, DAoCBuff, DammazKron |
+| Files seen in | BuddyBind.xml, CCTV.xml, Code/CombatLog/CombatLogStatsWindow.xml, CoolDownLine.xml, Core/ToolTip/DK_Tooltip.xml, DascoreWin2.xml, Deathblow.xml, Deathblow2.xml |
 | Namespaces detected | EA_Window_DefaultTooltipBackground |
 | Source kinds | xml_attributes |
-| Example locations | AuraShareTooltipBackground, AuraTooltipBackground, DAoCBuffCondenseTooltipBackground, EnemyCombatLogStatsWindowTooltipBackground, KillerTooltipBackground, ShiniesTooltipWindowBackground |
-| XML usage count | 6 |
-| XML attribute usage count | 6 |
+| Example locations | AbilityLinkTemplateWindowBackground, AuctionToolTipBackground, AuraShareTooltipBackground, AuraTooltipBackground, BuddyBindWindowBackground, CCTVSettingsBackground |
+| XML usage count | 56 |
+| XML attribute usage count | 56 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,40 +57,109 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 5 addons.
+Engine-supplied XML constant or template class referenced by 36 addons.
 
 ## Seen In
 
+- AuctionStats
 - Aura
+- BuddyBind
+- CCTV
+- CoolDownLine
+- Crusher
 - DAoCBuff
+- DammazKron
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- Duel
+- EA_OpenPartyWindow
 - Enemy
+- GetStats
 - Killer
+- LootAlert
+- MapMonster
+- MapPin
+- Miracle Grow Remix
+- MoraleSet
+- Motion
+- NerfedButtons
+- ReliquaryHunter
+- RoR_debolster
 - Shinies
+- SocialWindow 2.0
+- Statdoll
+- Statdoll Light
+- Statdoll Remix
+- TomeTracker
+- VPBreakdown
+- WARRatingBuster
+- Warbuilder
+- zMailMod
 
 ## Used By
 
+- AbilityLinkTemplateWindowBackground
+- AuctionToolTipBackground
 - AuraShareTooltipBackground
 - AuraTooltipBackground
+- BuddyBindWindowBackground
+- CCTVSettingsBackground
+- CCTV_BG_TEMPLATE
+- CoolDownLineWndBackground
+- CrusherConfigBase
 - DAoCBuffCondenseTooltipBackground
+- DascoreWin2WindowBackground
+- EA_Tooltip_OpenPartyBackground
+- EA_Tooltip_OpenPartyWorldBackground
+- EA_Window_OpenPartyFlyOutBackground
 - EnemyCombatLogStatsWindowTooltipBackground
+- GetStatsCompareWindowBackground
+- GetStatsWindowBackground
 - KillerTooltipBackground
+- LootAlertWindowBackground
+- MapMonsterTooltipBackground
+- MapPinCallTemplateWindowBackground
+- MapPinTooltipsBackground
+- MiracleGrow2RepeatTipBackground
+- MonitorBodyBackground
+- MoraleSetTooltipBackground
+- MotionConfigBase
+- Motion_Tooltip_TwoLineBackground
+- NBSBCheckTooltipBackground
+- NemesisTemplateWindowBackground
+- ProfilTooltipBackground
+- RatingToolTip1Background
+- RatingToolTip2Background
+- RatingToolTip3Background
+- RatingToolTip4Background
+- RatingToolTip5Background
+- ReliquaryHunterMarkerToolTipWindowBackground
+- RoR_debolsterWindowBackground
+- SettingsWindowBackground
 - ShiniesTooltipWindowBackground
+- SocialWindowPlayerInformationTooltipWindowBackground
+- StatdollMagicWndBackground
+- StatdollMeleeWndBackground
+- StatdollOptionsBackground
+- StatdollRangeWndBackground
+- StatdollWnd2Background
+- StatdollWnd3Background
+- StatdollWnd4Background
+- StatdollWndBackground
+- StatdollWndLightBackground
+- TomeTracker_TooltipBackground
+- VPBreakdownWindow.Background
+- duelwindowBackground
+- zMailModMassMailCraftingList
+- zMailModMassMailCraftingListBackground
+- zMailModMassMailRarityList
+- zMailModMassMailRarityListBackground
 
 ## Related APIs
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

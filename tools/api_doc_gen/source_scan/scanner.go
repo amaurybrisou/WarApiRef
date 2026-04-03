@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"roraddons/tools/api_doc_gen/graph"
@@ -28,7 +29,9 @@ type AddonSource struct {
 	XMLFiles []string
 
 	// LuaFiles contains the absolute paths to all Lua source files listed in
-	// the manifest and confirmed to exist on disk.
+	// the manifest and confirmed to exist on disk. If no manifest Lua files are
+	// resolved, discovery falls back to .lua files found on disk in the addon
+	// directory.
 	LuaFiles []string
 
 	// Manifest is the parsed addon manifest.
@@ -68,6 +71,11 @@ func DiscoverAddonSources(sourceRoot string) ([]AddonSource, error) {
 // resolving each manifest file entry to an absolute path and filtering by
 // extension. Files that do not exist on disk are silently skipped.
 //
+// If no Lua files are resolved from manifest entries, discovery falls back to
+// scanning the addon directory for .lua files on disk. This mirrors runtime
+// behavior where addons may load Lua scripts even when they are omitted from
+// manifest file lists.
+//
 // When the manifest is a .mod file, the full discovery-oriented ModuleTree is
 // also parsed and attached to the returned AddonSource so that downstream
 // pipeline stages can inspect any section of the manifest without loss.
@@ -100,5 +108,32 @@ func resolveAddonSource(spec graph.AddonSpec) AddonSource {
 			src.LuaFiles = append(src.LuaFiles, absPath)
 		}
 	}
+
+	if len(src.LuaFiles) == 0 {
+		src.LuaFiles = discoverLuaFilesOnDisk(spec.Path)
+	}
+
+	sort.Strings(src.XMLFiles)
+	sort.Strings(src.LuaFiles)
 	return src
+}
+
+func discoverLuaFilesOnDisk(addonPath string) []string {
+	paths := make([]string, 0)
+	_ = filepath.WalkDir(addonPath, func(path string, d os.DirEntry, err error) error {
+		if err != nil {
+			return nil
+		}
+		if d.IsDir() {
+			if strings.HasPrefix(d.Name(), ".") {
+				return filepath.SkipDir
+			}
+			return nil
+		}
+		if strings.EqualFold(filepath.Ext(path), ".lua") {
+			paths = append(paths, path)
+		}
+		return nil
+	})
+	return paths
 }

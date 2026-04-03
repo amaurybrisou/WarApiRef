@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 29 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:989`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:986`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:986`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:986`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:986` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, PartyCast.lua, VerticalMorale.lua, libs/LibGUI.lua |
 | Namespaces detected | StatusBarGetCurrentValue |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Statusbar:GetValue, LibWBToggler: LIBGUI_Statusbar:GetValue, PartyCast: LIBGUI_Statusbar:GetValue, PartyCast: PartyCast.Update, Shinies: LIBGUI_Statusbar:GetValue, WoH-Reticle: LIBGUI_Statusbar:GetValue |
+| Example locations | Ace: GetValue, ActionBarHide: GetValue, Amethyst: GetValue, Crusher: GetValue, EZCraftX: GetValue, EZGuard: GetValue |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 32 |
+| Global usage count | 32 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,59 +65,66 @@ StatusBarGetCurrentValue(arg1)
 
 ## Description
 
-Observed as a window function across 5 addons.
+Observed as a window function across 29 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..i.."TimerBar", self.name |
+| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..i.."TimerBar", self.m_StatusBar:GetName(), self.name |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
+- VerticalMorale
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Statusbar:GetValue -> StatusBarGetCurrentValue(self.name)
-- LibWBToggler: LIBGUI_Statusbar:GetValue -> StatusBarGetCurrentValue(self.name)
-- PartyCast: LIBGUI_Statusbar:GetValue -> StatusBarGetCurrentValue(self.name)
-- PartyCast: PartyCast.Update -> StatusBarGetCurrentValue("PartyCastWindow"..i.."TimerBar")
-- Shinies: LIBGUI_Statusbar:GetValue -> StatusBarGetCurrentValue(self.name)
-- WoH-Reticle: LIBGUI_Statusbar:GetValue -> StatusBarGetCurrentValue(self.name)
-
-## Related APIs
-
-- none
+- Ace: GetValue -> StatusBarGetCurrentValue(self.name)
+- ActionBarHide: GetValue -> StatusBarGetCurrentValue(self.name)
+- Amethyst: GetValue -> StatusBarGetCurrentValue(self.name)
+- Crusher: GetValue -> StatusBarGetCurrentValue(self.name)
+- EZCraftX: GetValue -> StatusBarGetCurrentValue(self.name)
+- EZGuard: GetValue -> StatusBarGetCurrentValue(self.name)
 
 ## Used With
 
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [StatusBarGetMaximumValue](window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

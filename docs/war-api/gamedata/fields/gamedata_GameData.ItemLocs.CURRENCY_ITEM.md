@@ -27,10 +27,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/data/raw/Shinies/Modules/Data/Shinies-Data-Inventory.lua:195` |
+| Files seen in | Modules/Data/Shinies-Data-Inventory.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | ShiniesDataInventory.OnPlayerCurrencySlotUpdated, lua_call |
+| Example locations | OnPlayerCurrencySlotUpdated, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -57,28 +57,12 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.ItemLocs.CURRENCY_ITEM field accessed by 1 addons; commonly found in OnPlayerCurrencySlotUpdated and lua_call contexts.
 
 ## Seen In
 
 - Shinies
 
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: ShiniesDataInventory.OnPlayerCurrencySlotUpdated, lua_call
+- Observed in contexts: OnPlayerCurrencySlotUpdated, lua_call

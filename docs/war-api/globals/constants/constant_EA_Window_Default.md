@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, LibGroup, LibWBToggler |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraColorPicker.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainers.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupContainer.xml:0` |
+| Addons seen in | AdvancedRenownTrainer, Aura, AutoBand, BlackBook, BuffHead, CDown, CM_ClosetGoblin, CMap |
+| Files seen in | AAOTWarBoard.xml, AdvancedRenownTrainingImportDialog.xml, AdvancedRenownTrainingPresets.xml, AdvancedRenownTrainingWindow.xml, AutoBandWindow.xml, AutoBandWindowTemplate.xml, BlackBook.xml, CDownSettings.xml |
 | Namespaces detected | EA_Window_Default |
 | Source kinds | xml_attributes |
-| Example locations | AdvancedRenownTrainingExportWindow, AdvancedRenownTrainingImportNameInputWindow, AdvancedRenownTrainingImportWindow, AdvancedRenownTrainingLinkWindow, AdvancedRenownTrainingPresetsWindow, AdvancedRenownTrainingWindow |
-| XML usage count | 95 |
-| XML attribute usage count | 95 |
+| Example locations | AAOTrackerWarBoard, AdvancedRenownTrainingExportWindow, AdvancedRenownTrainingImportNameInputWindow, AdvancedRenownTrainingImportWindow, AdvancedRenownTrainingLinkWindow, AdvancedRenownTrainingPresetsWindow |
+| XML usage count | 206 |
+| XML attribute usage count | 206 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,26 +57,95 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 13 addons.
+Engine-supplied XML constant or template class referenced by 81 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - Aura
+- AutoBand
+- BlackBook
 - BuffHead
+- CDown
 - CM_ClosetGoblin
+- CMap
+- Calling
+- CastSequence
+- Cheeseboard
+- CraftingWillard
+- Crusher
 - DAoCBuff
+- DPSMeter
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraftX
+- Effigy
+- Emojii
 - Enemy
+- GDes
+- Ges
+- GroupRange
+- GroupSpotter
+- ItemRack
+- JunkDump
+- Keyset
+- KeysetMonsterPlay
+- LibAddonButton
 - LibGroup
 - LibWBToggler
+- MapMonster
+- MapPin
+- MarkBuff
+- Minmap
+- Motion
+- ObjectInspector
+- Obsidian
+- PartyAd
+- PieTracker
+- Pure
+- RPs
+- Res
+- SNT_BUTTONS
+- SNT_PANEL
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- SpamBayes
+- TalismanGenie
+- TaxPayer
 - TexturedButtons
+- TokenMachine
+- Tome Titan
+- TomeTracker
 - TurretRange
+- WARCommander
+- WTes
+- WaaaghBar
 - WarBoard
+- WarBoard_AAOTracker
+- WarBoard_FPS
+- WarBoard_Loc
+- WarBoard_Menu
+- WarBoard_Session
+- WarBoard_TDPS
+- WarBoard_TaliMon
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- alertMod
 - bigger_MacroWindow
+- emotes
+- nLootLink
+- wbLeadHelper
+- zMailMod
 
 ## Used By
 
+- AAOTrackerWarBoard
 - AdvancedRenownTrainingExportWindow
 - AdvancedRenownTrainingImportNameInputWindow
 - AdvancedRenownTrainingImportWindow
@@ -84,6 +153,12 @@ Observed engine XML template or inherited constant referenced by 13 addons.
 - AdvancedRenownTrainingPresetsWindow
 - AdvancedRenownTrainingWindow
 - AuraColorPicker
+- AutoBandCopyLinkWindow
+- AutoBandWindow
+- AutoBandWindowTemplateDeleteConfirm
+- AutoBandWindowTemplateMask
+- AutoBandWindowTemplateSave
+- BlackBookWindow
 - BuffHeadSetupAdvancedCompressionItemEffectWindow
 - BuffHeadSetupAdvancedCompressionItemWindow
 - BuffHeadSetupAdvancedCompressionWindow
@@ -104,13 +179,33 @@ Observed engine XML template or inherited constant referenced by 13 addons.
 - BuffHeadSetupPriorityEffectsItemWindow
 - BuffHeadSetupPriorityEffectsWindow
 - BuffHeadSetupTrackersWindow
+- CDown_Settings
 - CG_ItemRackEQShow1
+- CMapWindowPinFilterMenu
+- CMapWindowResize
+- CallingSetup
+- CastSequenceBuilderWindow
+- CastSequenceFindAbilityWindow
+- CastSequenceSequenceBuilderWindow
+- CastSequenceSetupWindow
+- CheeseboardWindow
 - ClosetGoblinCharacterWindow
 - ClosetGoblinOptionWindow
 - ClosetGoblinZoneWindow
+- CraftingWillardMain
+- CrusherWindowDefault
 - DAoCBuff_Settings
 - DAoCBuff_Settings_Filter
+- DPSMeterWindow
+- DTHConfigWindow
+- DascoreWin1Window
+- DascoreWin2Window
+- DeathblowWin1Window
 - EA_Window_Macro
+- EZCraftXWindow
+- EZCraftXWindow.CraftingResult
+- EZCraftX_Templates.PowerPreview
+- EmojiiChooseIconDialog
 - EnemyChooseChannelDialog
 - EnemyChooseIconDialog
 - EnemyClickCastingDialog
@@ -138,14 +233,69 @@ Observed engine XML template or inherited constant referenced by 13 addons.
 - EnemyUnitFramePartDialog
 - EnemyUnitFramesAnchor1
 - EnemyUnitFramesAnchor2
+- FrameBubble
+- FrameBubble2
+- FrameDefault
+- FrameIcon
+- FrameMetal
+- FrameTan
+- GDesOptions
+- GesOptions
+- GroupRangeSetupGeneralWindow
+- GroupRangeSetupMenuWindow
+- GroupRangeSetupStyleGroupBoxWindow
+- GroupRangeSetupStylePointerReverseWindow
+- GroupRangeSetupStylePointerWindow
+- GroupRangeSetupStyleSimpleTextWindow
+- GroupRangeSetupStyleWindow
+- GroupSpotterSettingsWindow
+- ItemRackEQShow1
+- JunkDumpOptionsWin
+- KeysetLoadWindow
+- KeysetMonsterPlayProfileWindow
+- KeysetSaveWindow
 - LayoutTemplate
+- LibAddonButtonManagerAdvancedWindow
+- LibAddonButtonManagerCustomItemWindow
+- LibAddonButtonManagerMacroHelpWindow
+- LibAddonButtonManagerWindow
 - LibGroupSetupWindow
+- MapMonster_CalibrateWindow
+- MapMonster_EditorWindow
+- MapMonster_IconChooserWindow
+- MapMonster_PinTypeEditorWindow
+- MapPinChooseIconDialog
+- MarkBuffSetupSmartBuffWindow
+- MarkBuffSetupWindow
+- MinmapPinMenu
+- MinmapScenarioMenu
+- MotionWindowDefault
+- NewHighScore
+- ObjectInspector
+- ObsidianSetupCastbarWindow
+- ObsidianSetupEffectTrackerWindow
+- ObsidianSetupMenuWindow
+- PartyAdWindow
+- PieTracker
+- PureWindowDefault
+- RPs
+- ResOptions
+- SNT_BUTTONS_FLASH
+- SNT_BUTTONS_FLASH_ANCHOR
+- ScenarioGroupWindow
+- SessionRPs
 - ShiniesAuctionsUI
 - ShiniesAutoUI
 - ShiniesBrowseUI_Searches
 - ShiniesConfigUI
 - ShiniesPostUI
 - ShiniesWindow
+- SocialWindowBuddyListFilterMenu
+- SocialWindowTabFriendsFilterMenu
+- TTitanUI
+- TalismanGenie
+- TalismanGenieIcon
+- TaxPayer
 - TexturedButtonsSetupActionbarWindow
 - TexturedButtonsSetupAdvancedTexturesWindow
 - TexturedButtonsSetupCooldownWindow
@@ -154,12 +304,23 @@ Observed engine XML template or inherited constant referenced by 13 addons.
 - TexturedButtonsSetupMiscWindow
 - TexturedButtonsSetupTexturesWindow
 - TexturedButtonsSetupTintWindow
+- TokenMachineSettings
+- TomeTracker_JournalWindow
 - TurretRangeSetupDisplayWindow
 - TurretRangeSetupDistanceWindow
 - TurretRangeSetupDistancesWindow
 - TurretRangeSetupGeneralWindow
 - TurretRangeSetupMenuWindow
+- UiModVersionMismatchWindow
+- UiModWindow
+- UngroupedPlayersWindow
+- WARCommander_ConfigWindow
 - WBTogglerTemplate
+- WCDBWindowDefault
+- WCDPWindowDefault
+- WTes
+- WaaaghBarOne
+- WaaaghBarTwo
 - WarBoard
 - WarBoardAlignOptions
 - WarBoardAlignOptionsWindow
@@ -172,22 +333,28 @@ Observed engine XML template or inherited constant referenced by 13 addons.
 - WarBoardOptionsButtonWindow
 - WarBoardPadOptionsWindow
 - WarBoardVerticalPadding
+- WarBoard_FPS
+- WarBoard_Loc
+- WarBoard_Menu
+- WarBoard_Session
+- WarBoard_SpamBayes
+- WarBoard_TDPS
+- WarBoard_TaliMon
+- WbLeadHelperMessage
+- alertMod
+- emotesDisplayWindow
+- emotesFilterWindow
+- nLootLinkGUI
+- nLootLinkOptions
+- snt_panel_template
+- wbLeadHelperChooseIconDialog
+- wbLeadHelperConfigWindow
+- zMailModLog
+- zMailModOptions
 
 ## Related APIs
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

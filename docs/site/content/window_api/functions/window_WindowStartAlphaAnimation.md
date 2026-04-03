@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 32 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Aura, DAoCBuff, Enemy, RoR_SoR, TurretRange |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:68`, `/workspace/data/raw/Aura/Source/Aura.lua:186`, `/workspace/data/raw/Aura/Source/Aura.lua:282`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:150`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:161`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:169`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:91` |
+| Addons seen in | AbilityAlert, ActionBarHide, ActionFraction, AdjustTheTip, AggroMeter, Amethyst, Aura, Busted |
+| Files seen in | AbilityAlert.lua, ActionBarHide.lua, AdjustTheTip.lua, AggroMeter.lua, Amethyst.lua, Busted.lua, CCTV.lua, CDownFrames.lua |
 | Namespaces detected | WindowStartAlphaAnimation |
 | Source kinds | lua_calls |
-| Example locations | AggroMeter: AggroMeter.SplitText, Aura: Aura:Activate, Aura: Aura:Deactivate, DAoCBuff: DAoCBuffFrame:StartFading, DAoCBuff: DAoCBuffSettings.Disable, DAoCBuff: DAoCBuffSettings.OpenOptionswindow |
+| Example locations | AbilityAlert: Display, ActionBarHide: ChangeAlpha, ActionFraction: OnUpdate, ActionFraction: UpdateActionFractionVisibility, AdjustTheTip: UpdateUnit, AggroMeter: SplitText |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 54 |
-| Global usage count | 54 |
+| Lua usage count | 109 |
+| Global usage count | 109 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,63 +65,83 @@ WindowStartAlphaAnimation(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
 
 ## Description
 
-Observed as a window function across 6 addons.
+Observed as a window function across 32 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "AggroMeterWindow"..MobID, "DAoCBuff_Settings", "EnemyCombatLogIDSAnchor" |
-| arg2 | Observed as a function or method reference. | Observed values: 1, Window.AnimationType.EASE_OUT, Window.AnimationType.LOOP |
-| arg3 | Observed as a function or method reference. | Observed values: 0, 0.5, 0.7 |
+| arg1 | Observed as a text or wstring payload. | Observed values: "AAWindow", "AggroMeterWindow"..MobID, "BustedMiniGUIText" |
+| arg2 | Observed as a function or method reference. | Observed values: 1, 2, SINGLE_NO_RESET |
+| arg3 | Observed as a function or method reference. | Observed values: 0, 0.0, 0.1 |
 | arg4 | Observed as a function or method reference. | Observed values: 0, 0.0, 0.2 |
-| arg5 | Observed as a function or method reference. | Observed values: 0.2, 0.3, 0.4 |
-| arg6 | Observed as a boolean toggle. | Observed values: anim.setStartBeforeDelay, false, true |
-| arg7 | Observed as a function or method reference. | Observed values: 0, 0.0, 1.5 |
+| arg5 | Observed as a function or method reference. | Observed values: (CCTV.SETTINGS.FADEOUT)+0.1, .02, .2 |
+| arg6 | Observed as a boolean toggle. | Observed values: anim.setStartBeforeDelay, false, hidden~=nil |
+| arg7 | Observed as a numeric value. | Observed values: 0, 0.0, 0.5 |
 | arg8 | Observed as a numeric value. | Observed values: 0, 1, anim.loopCount |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- AbilityAlert
+- ActionBarHide
+- ActionFraction
+- AdjustTheTip
 - AggroMeter
+- Amethyst
 - Aura
+- Busted
+- CCTV
+- CDown
+- ChattyCathy
+- Countdown
 - DAoCBuff
+- EA_UiDebugTools
+- Emojii
 - Enemy
+- EveryBodyGuard
+- FlagCap
+- GCDTracker
+- KeyBar
+- LibAddonButton
+- MapPin
+- Minmap
+- Pure
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RealmStatus
 - RoR_SoR
+- SNT_CASTBAR
 - TurretRange
+- Vectors
+- Wikki's Cooldown Pulse
 
 ## Examples
 
-- AggroMeter: AggroMeter.SplitText -> WindowStartAlphaAnimation("AggroMeterWindow"..MobID, Window.AnimationType.SINGLE_NO_RESET, 0, 1, 0.5, false, 0, 0)
-- Aura: Aura:Activate -> WindowStartAlphaAnimation(self:Get("internal-runtimeflashwindowid"), anim.type, anim.startAlpha, self:Get("texture-alpha"), anim.duration, anim.setStartBeforeDelay, anim.delay, anim.loopCount)
-- Aura: Aura:Activate -> WindowStartAlphaAnimation(self:Get("internal-runtimewindowid"), anim.type, anim.startAlpha, anim.endAlpha, anim.duration, anim.setStartBeforeDelay, anim.delay, anim.loopCount)
-- Aura: Aura:Deactivate -> WindowStartAlphaAnimation(self:Get("internal-runtimewindowid"), anim.type, anim.startAlpha, anim.endAlpha, anim.duration, anim.setStartBeforeDelay, anim.delay, anim.loopCount)
-- Aura: Aura:Deactivate -> WindowStartAlphaAnimation(self:Get("internal-runtimetimerwindowid"), anim.type, anim.startAlpha, anim.endAlpha, anim.duration, anim.setStartBeforeDelay, anim.delay, anim.loopCount)
-- Aura: Aura:Deactivate -> WindowStartAlphaAnimation(self:Get("internal-runtimeflashwindowid"), anim.type, anim.startAlpha, anim.endAlpha, anim.duration, anim.setStartBeforeDelay, anim.delay, anim.loopCount)
+- AbilityAlert: Display -> WindowStartAlphaAnimation("AAWindow", Window.AnimationType.EASE_OUT, 1.0, 0.0, 2, false, 0, 0)
+- ActionBarHide: ChangeAlpha -> WindowStartAlphaAnimation("EA_ActionBar"..k, Window.AnimationType.SINGLE_NO_RESET, alphastart, targetalpha, ActionBarHide.Settings.FadeInTime, false, ActionBarHide.Settings.FadeInDelay, 0)
+- ActionBarHide: ChangeAlpha -> WindowStartAlphaAnimation("EA_ActionBar"..k, Window.AnimationType.SINGLE_NO_RESET, alphastart, targetalpha, ActionBarHide.Settings.FadeOutTime, false, ActionBarHide.Settings.FadeOutDelay, 0)
+- ActionFraction: OnUpdate -> WindowStartAlphaAnimation(windowName.."LabelCurrentAP", Window.AnimationType.SINGLE_NO_RESET_HIDE, 1.0, 0.0, 2.0, false, 0, 0)
+- ActionFraction: OnUpdate -> WindowStartAlphaAnimation(windowName.."LabelMaximumAP", Window.AnimationType.SINGLE_NO_RESET_HIDE, 1.0, 0.0, 2.0, false, 0, 0)
+- ActionFraction: UpdateActionFractionVisibility -> WindowStartAlphaAnimation(windowName.."LabelCurrentAP", Window.AnimationType.SINGLE_NO_RESET, currentAlpha, 1.0, 0.5, false, 0, 0)
 
 ## Related APIs
 
-- none
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
+- [WindowGetAlpha](window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [WindowStopAlphaAnimation](window_WindowStopAlphaAnimation.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [AlertTextWindow.AddLine](../../globals/functions/global_AlertTextWindow.AddLine.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

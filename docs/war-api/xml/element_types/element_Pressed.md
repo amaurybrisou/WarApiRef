@@ -48,7 +48,7 @@
 
 ## Description
 
-Pressed is a XML UI element. It commonly appears under OverlayTexCoords and ResizeImages.
+Pressed is a XML UI element. It commonly appears under OverlayTexCoords and OverlayTexSlices.
 
 ## Common Attributes
 
@@ -68,40 +68,102 @@ Pressed is a XML UI element. It commonly appears under OverlayTexCoords and Resi
 
 ## Common Parent Elements
 
-- [TexSlices](element_TexSlices.md) — 16× (HIGH)
-- [TextColors](element_TextColors.md) — 16× (HIGH)
-- [ResizeImages](element_ResizeImages.md) — 10× (HIGH)
-- [OverlayTexCoords](element_OverlayTexCoords.md) — 7× (MEDIUM)
-- [TexCoords](element_TexCoords.md) — 7× (MEDIUM)
+- [TexSlices](element_TexSlices.md) — 117× (HIGH)
+- [TextColors](element_TextColors.md) — 76× (HIGH)
+- [TexCoords](element_TexCoords.md) — 46× (HIGH)
+- [ResizeImages](element_ResizeImages.md) — 26× (HIGH)
+- [OverlayTexCoords](element_OverlayTexCoords.md) — 24× (HIGH)
+- [OverlayTexSlices](element_OverlayTexSlices.md) — 2× (LOW)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `b` | optional | 28% | 63, 36, 0 |
-| `g` | optional | 28% | 213, 57, 85 |
-| `id` | optional | 28% | morale-white, RightTabFrame-Rollover, LayoutCorner-TopLeft-ROLLOVER, LayoutCorner-TopRight-ROLLOVER, ... |
-| `r` | optional | 28% | 250, 95, 255 |
-| `a` | optional | 26% | 255 |
-| `x` | optional | 25% | 0, 120 |
-| `y` | optional | 25% | 56, 44, 0 |
-| `def` | optional | 17% | EA_HorizontalResizeImage_DefaultComboBox, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed, EA_Button_ListSortPressed |
-| `texture` | optional | 10% | EA_SquareFrame_Pressed, ShiniesIconBorderHighlight, TidyRoll_SquareFrame |
+| `id` | optional | 40% | morale-white, RightTabFrame-Rollover, Tactics-Button-Depressed, SquareButton-Depressed, ... |
+| `b` | optional | 26% | 63, 36, 102, 235, ... |
+| `g` | optional | 26% | 213, 57, 204, 235, ... |
+| `r` | optional | 26% | 250, 95, 255, 235, ... |
+| `a` | optional | 25% | 255, 1 |
+| `x` | optional | 24% | 0, 120, 172, 494, ... |
+| `y` | optional | 24% | 56, 44, 0, 370, ... |
+| `def` | optional | 8% | EA_HorizontalResizeImage_DefaultComboBox, EA_Button_GuildRosterRowPressed, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed, ... |
+| `texture` | optional | 7% | EA_SquareFrame_Pressed, CrusherIconBorderHighlight, EA_RoundFrame_Highlight, PinBG, ... |
 ## Seen In
 
 - AdvancedPetAssist
 - AggroMeter
 - AnywhereTrainer
+- Assist
 - Aura
+- AutoBand
+- BlackBook
 - BuffHead
+- CCTV
 - CM_ClosetGoblin
+- CMap
+- CaVES
+- CastSequence
+- Crusher
+- DaemonAssist
+- DammazKron
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- DuffTimer
+- EA_UiDebugTools
+- EZCraftX
+- FozAuction
+- GDes
+- Ges
+- GuardList
+- GuardRange
+- GuildWarden
+- Hopper
+- ItemRack
+- KeyBar
+- KillTracker
+- LoyalPet
+- MapPin
+- Minmap
+- Miracle Grow Remix
+- MoraleSet
+- Motion
+- NerfedButtons
 - PartyCast
 - Pocket Palette
 - PotionBar
+- Pure
+- Queue Queuer
+- RVMOD_Manager
+- RVMOD_SquaredDistances
+- RaidMeter
 - RoR_SoR
+- SNT_PANEL
+- SOR
+- Sequencer
 - Shinies
+- SocialWindow 2.0
+- SpamBayes
+- Statdoll
+- Statdoll Remix
+- TalismanGenie
+- TastyButtons
 - TidyRoll
+- TwisterSet
+- Vectors
+- WARCommander
 - WSCT
+- WTes
+- WaaaghBar
+- Warbuilder
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- ZonePOP
+- emotes
+- nLootLink
+- nRarity
+- zMailMod
 
 ## Examples
 
@@ -114,15 +176,9 @@ Pressed is a XML UI element. It commonly appears under OverlayTexCoords and Resi
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
 - [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
 - [TextColors](element_TextColors.md) (HIGH 100/100) - XML Element Type
+- [OverlayTexSlices](element_OverlayTexSlices.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [Normal](element_Normal.md) (MEDIUM 45/100) - XML Element Type
+- [NormalHighlit](element_NormalHighlit.md) (MEDIUM 45/100) - XML Element Type

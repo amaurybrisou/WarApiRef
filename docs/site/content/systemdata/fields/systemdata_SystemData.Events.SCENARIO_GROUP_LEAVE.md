@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 188
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -22,7 +22,6 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 - +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
@@ -31,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, Enemy, LibGuard, LibGroup, LibGuard |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/LibGroup/LibGroup.lua:343`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:47`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:91` |
+| Addons seen in | EA_ScenarioGroupWindow, Enemy, Hopper, Info_DeathBlow, LibGroup, LibGuard, Pure, Squared |
+| Files seen in | Code/Core/Groups/Groups.lua, Info_DeathBlow.lua, LibGroup.lua, Source/Hopper.lua, Source/LibGuard.lua, Source/PureGroup.lua, Source/PureGroupPet.lua, Source/ScenarioGroupWindow.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | Enemy.GroupsInitialize, Enemy.GroupsUpdateType, LibGroup.Initialize, LibGuard.GROUP_UPDATED, LibGuard.Init, LibGuard.OnShutdown |
+| Source kinds | event_page, event_registration, lua_call |
+| Example locations | GroupsInitialize, Init, Initialize, LoadUnitFrame, OnInitialize, OnShutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 14 |
+| Global usage count | 14 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 1 |
+| Documentation references | 3 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,31 +61,28 @@
 
 ## Description
 
-Observed SystemData field used by 4 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.SCENARIO_GROUP_LEAVE field accessed by 8 addons; commonly found in GroupsInitialize and Init, Initialize, LoadUnitFrame, OnInitialize, OnShutdown, Squared.ChangeMode, Start, Stop, SystemData.Events.SCENARIO_GROUP_LEAVE, UnloadUnitFrame, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
+- EA_ScenarioGroupWindow
 - Enemy
-- Enemy, LibGuard
+- Hopper
+- Info_DeathBlow
 - LibGroup
 - LibGuard
+- Pure
+- Squared
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [WindowSetDrawWhenInterfaceHidden](../../window_api/functions/window_WindowSetDrawWhenInterfaceHidden.md) (HIGH 100/100) - Window Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- [Start](../../events/game_events/game_event_Start.md) (MEDIUM 43/100) - Game Event
+- [Stop](../../events/game_events/game_event_Stop.md) (MEDIUM 43/100) - Game Event
 
 ## Notes
 
-- Observed in contexts: Enemy.GroupsInitialize, Enemy.GroupsUpdateType, LibGroup.Initialize, LibGuard.GROUP_UPDATED, LibGuard.Init, LibGuard.OnShutdown
+- Observed in contexts: GroupsInitialize, Init, Initialize, LoadUnitFrame, OnInitialize, OnShutdown

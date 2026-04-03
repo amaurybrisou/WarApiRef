@@ -420,6 +420,7 @@ type LifecycleExclusion struct {
 type LifecycleDiscoveryDiagnostics struct {
 	SourceRoot                 string
 	SourceDirectoryCount       int
+	SourceDirectories          []string
 	ManifestDiscoveredCount    int // Addons discovered by manifest scan (.mod/.toc)
 	SourceScannedAddonCount    int // Addons with at least one manifest-listed XML/Lua file on disk
 	ModSemanticAddonCount      int // Source-scanned addons with .mod manifest semantics

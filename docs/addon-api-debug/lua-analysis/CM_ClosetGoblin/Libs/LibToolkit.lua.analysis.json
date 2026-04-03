@@ -1,0 +1,82 @@
+{
+  "schema_version": "phase2-lua/v1",
+  "addon": "CM_ClosetGoblin",
+  "source_file": "Libs/LibToolkit.lua",
+  "functions": [
+    {
+      "function_id": "f1",
+      "declared_name": "LibToolkit.NewChatFilter",
+      "qualified_name": "LibToolkit.NewChatFilter",
+      "short_name": "NewChatFilter",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "LibToolkit",
+      "receiver_separator": ".",
+      "namespace": "LibToolkit",
+      "source": {
+        "line_start": 38,
+        "line_end": 51
+      },
+      "params": [
+        "filterId",
+        "textColor"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "TextLogAddFilterType",
+          "callee_resolved": "TextLogAddFilterType",
+          "source": {
+            "line": 39
+          },
+          "arguments": [
+            "\"Chat\"",
+            "filterId",
+            "L \"\""
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "LogDisplaySetFilterColor",
+          "callee_resolved": "LogDisplaySetFilterColor",
+          "source": {
+            "line": 40
+          },
+          "arguments": [
+            "\"EA_ChatTab1TextLog\"",
+            "\"Chat\"",
+            "filterId",
+            "textColor.r",
+            "textColor.g",
+            "textColor.b"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "LogDisplaySetFilterState",
+          "callee_resolved": "LogDisplaySetFilterState",
+          "source": {
+            "line": 50
+          },
+          "arguments": [
+            "\"EA_ChatTab1TextLog\"",
+            "\"Chat\"",
+            "filterId",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    }
+  ],
+  "namespaces": [
+    "CM_ClosetGoblin",
+    "LibToolkit"
+  ],
+  "registrations": []
+}

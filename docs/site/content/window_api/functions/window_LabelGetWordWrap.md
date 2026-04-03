@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 28 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:451`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:451`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:451`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:451`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:451` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, libs/LibGUI.lua |
 | Namespaces detected | LabelGetWordWrap |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Label:WordWrap, LibWBToggler: LIBGUI_Label:WordWrap, PartyCast: LIBGUI_Label:WordWrap, Shinies: LIBGUI_Label:WordWrap, WoH-Reticle: LIBGUI_Label:WordWrap |
+| Example locations | Ace: WordWrap, ActionBarHide: WordWrap, Amethyst: WordWrap, Crusher: WordWrap, EZCraftX: WordWrap, EZGuard: WordWrap |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 28 |
+| Global usage count | 28 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ LabelGetWordWrap(arg1)
 
 ## Description
 
-Observed as a window function across 5 addons.
+Observed as a window function across 28 addons.
 
 ## Parameters
 
@@ -75,43 +75,55 @@ Observed as a window function across 5 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Label:WordWrap -> LabelGetWordWrap(self.name)
-- LibWBToggler: LIBGUI_Label:WordWrap -> LabelGetWordWrap(self.name)
-- PartyCast: LIBGUI_Label:WordWrap -> LabelGetWordWrap(self.name)
-- Shinies: LIBGUI_Label:WordWrap -> LabelGetWordWrap(self.name)
-- WoH-Reticle: LIBGUI_Label:WordWrap -> LabelGetWordWrap(self.name)
-
-## Related APIs
-
-- none
+- Ace: WordWrap -> LabelGetWordWrap(self.name)
+- ActionBarHide: WordWrap -> LabelGetWordWrap(self.name)
+- Amethyst: WordWrap -> LabelGetWordWrap(self.name)
+- Crusher: WordWrap -> LabelGetWordWrap(self.name)
+- EZCraftX: WordWrap -> LabelGetWordWrap(self.name)
+- EZGuard: WordWrap -> LabelGetWordWrap(self.name)
 
 ## Used With
 
 - [LabelSetWordWrap](window_LabelSetWordWrap.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

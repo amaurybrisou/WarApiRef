@@ -27,14 +27,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, BagOMatic, BankArkel |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.xml:0`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/AuraTexture.xml:0` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, Atlas, AuctionStats, Aura, AutoBand |
+| Files seen in | Source/DebugWindow.xml |
 | Namespaces detected | OnLButtonUp |
 | Source kinds | bindings, xml_handlers |
-| Example locations | AdvancedPetAssist: APAFollowTargetHUD.OnLButtonUp, AdvancedPetAssist: APAInstantOnlyHUD.OnLButtonUp, AdvancedPetAssist: APAKitingHUD.OnLButtonUp, AdvancedPetAssist: APAOptionsClose.OnLButtonUp, AdvancedPetAssist: APAOptionsTabsAutoRecall.OnLButtonUp, AdvancedPetAssist: APAOptionsTabsControls.OnLButtonUp |
-| XML usage count | 633 |
-| XML attribute usage count | 633 |
-| Lua usage count | 630 |
+| Example locations | AdvancedPetAssist: .OnLButtonUp, AdvancedRenownTrainer: .OnLButtonUp, AggroMeter: .OnLButtonUp, AnywhereTrainer: .OnLButtonUp, Atlas: .OnLButtonUp, AuctionStats: .OnLButtonUp |
+| XML usage count | 1 |
+| XML attribute usage count | 1 |
+| Lua usage count | 1653 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 29 addons through frame event handlers.
+XML handler event commonly bound to Button elements in 165 addons.
 
 ## Expected Lua Binding
 
@@ -69,12 +69,6 @@ function(...)
 ## Element Types
 
 - Button
-- ColorPicker
-- DynamicImage
-- Label
-- ListBox
-- MapDisplay
-- Window
 
 ## Seen In
 
@@ -82,108 +76,235 @@ function(...)
 - AdvancedRenownTrainer
 - AggroMeter
 - AnywhereTrainer
-- AnywhereTrainerAdditions
+- Atlas
+- AuctionStats
 - Aura
+- AutoBand
+- AutoSalvage
 - BagOMatic
 - BankArkel
+- BlackBook
+- Bloody Mess
+- Brizio's Crappy Computer Medic
+- BuddyBind
 - BuffHead
+- Busted
+- CCTV
+- CDown
 - CM_ClosetGoblin
+- CMap
+- CaVES
+- Calling
+- CastSequence
+- ChattyCathy
+- Cheeseboard
+- CleanUnitFrames
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DammazKron
+- DetauntHelper
+- DuffTimer
+- Dye Preview
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraft
+- EZCraftX
+- Effigy
+- Emojii
 - Enemy
+- FastFriends
+- FastInteract
+- FozAuction
+- GetStats
+- Group Icons SG
+- GroupRange
+- GroupSpotter
+- GuildWarden
+- HealGrid
+- Hopper
+- JunkDump
+- KeyBar
+- Keyset
+- KeysetMonsterPlay
+- KillTracker
 - Killer
+- Kwestor
+- LibAddonButton
 - LibGroup
+- LootAlert
+- LoyalPet
+- ManualScenarioRefresh
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- Mass Refine
+- MegaphonePlusPlus
+- MiniMapMonster
+- Minmap
+- Miracle Grow Remix
+- MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
+- MoraleSet
+- Motion
+- NerfedButtons
+- NoOverheal
+- ObjectInspector
+- Obsidian
+- Phantom
+- PieTracker
 - Pocket Palette
 - PotionBar
+- Pure
+- QuickTacticSwitch
+- QuickWarReport
+- RVAPI_ColorDialog
+- RVAPI_Range
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- RaidMeter
+- RandomMount
+- RealmStatus
+- Refer
+- ReliquaryHunter
 - RoR_SoR
+- RoR_debolster
+- Rolodex
+- Rotation
+- RvRStats
+- RvRStatsTab
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SNT_INFO
+- SNT_PANEL
+- SOR
+- ScenarioStats
+- Sequencer
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- Soloq
+- Squared
+- SquaredClick
+- Statdoll
+- Statdoll Remix
+- TacticSetNames
+- TalismanGenie
+- TastyButtons
+- TaxPayer
 - TexturedButtons
+- ThankTheTank
+- ThinkOutLoud
 - TidyChat
+- TidyQueue
 - TidyRoll
+- TokenMachine
+- Tome Titan
+- TomeTracker
+- Tortall_DPS
+- Trakario
 - TurretRange
+- Twister
+- TwisterSet
+- WARCommander
+- WBStutterLess
 - WSCT
+- WTes
 - WarBoard
+- WarBoard_AAOTracker
+- WarBoard_FPS
+- WarBoard_Loc
+- WarBoard_Session
+- WarBoard_TDPS
+- WarBoard_TaliMon
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- XpStatus+G
+- ZonePOP
+- alertMod
 - bigger_MacroWindow
+- emotes
 - followTheLeader
+- minesweep
+- nLootLink
+- talisman-monitor
+- wbLeadHelper
 
 ## Examples
 
-- AdvancedPetAssist: APAFollowTargetHUD -> APAFollowTargetHUD.OnLButtonUp -> APAGui.OnFollowTargetHUDClicked
-- AdvancedPetAssist: APAInstantOnlyHUD -> APAInstantOnlyHUD.OnLButtonUp -> APAGui.OnInstantOnlyHUDClicked
-- AdvancedPetAssist: APAKitingHUD -> APAKitingHUD.OnLButtonUp -> APAGui.OnKitingHUDClicked
-- AdvancedPetAssist: APAOptionsClose -> APAOptionsClose.OnLButtonUp -> APAGui.Hide
-- AdvancedPetAssist: APAOptionsTabsAutoRecall -> APAOptionsTabsAutoRecall.OnLButtonUp -> APAGui.OnTabButtonUp
-- AdvancedPetAssist: APAOptionsTabsControls -> APAOptionsTabsControls.OnLButtonUp -> APAGui.OnTabButtonUp
+- EA_UiDebugTools: DevPadNewWindowCancel -> DevPadNewWindowCancel.OnLButtonUp -> DevPadWindow.HideNewWindow
+- AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+- AdvancedPetAssist: .OnLButtonUp -> APAGui.Hide
+- AdvancedPetAssist: .OnLButtonUp -> APAGui.OnFollowTargetHUDClicked
+- AdvancedPetAssist: .OnLButtonUp -> APAGui.OnKitingHUDClicked
+- AdvancedPetAssist: .OnLButtonUp -> APAGui.OnInstantOnlyHUDClicked
 
 ## Related APIs
 
+- [AuctionWindow.Hide](../../globals/functions/global_AuctionWindow.Hide.md) (HIGH 100/100) - Global Function
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ButtonGetDisabledFlag](../../window_api/functions/window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
-- [ButtonGetPressedFlag](../../window_api/functions/window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ColorPicker](../element_types/element_ColorPicker.md) (HIGH 100/100) - XML Element Type
-- [ComboBoxClearMenuItems](../../window_api/functions/window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
-- [ComboBoxSetSelectedMenuItem](../../window_api/functions/window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
 - [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
-- [DialogManager.MakeOneButtonDialog](../../globals/functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
+- [DialogManager.MakeTextEntryDialog](../../globals/functions/global_DialogManager.MakeTextEntryDialog.md) (HIGH 100/100) - Global Function
 - [DialogManager.MakeTwoButtonDialog](../../globals/functions/global_DialogManager.MakeTwoButtonDialog.md) (HIGH 100/100) - Global Function
 - [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
-- [EA_BackpackUtilsMediator.GetCurrentBackpackType](../../globals/functions/global_EA_BackpackUtilsMediator.GetCurrentBackpackType.md) (HIGH 100/100) - Global Function
-- [EA_BackpackUtilsMediator.GetCursorForBackpack](../../globals/functions/global_EA_BackpackUtilsMediator.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
-- [EA_BackpackUtilsMediator.GetItemsFromBackpack](../../globals/functions/global_EA_BackpackUtilsMediator.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.InsertText](../../globals/functions/global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
-- [GameData.Player.GetRenownRefundCost](../../globals/functions/global_GameData.Player.GetRenownRefundCost.md) (HIGH 100/100) - Global Function
+- [EA_ChatWindow.Print](../../globals/functions/global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.HideAll](../../globals/functions/global_EA_Window_ContextMenu.HideAll.md) (HIGH 100/100) - Global Function
+- [EA_Window_OpenParty.ToggleFullWindow](../../globals/functions/global_EA_Window_OpenParty.ToggleFullWindow.md) (HIGH 100/100) - Global Function
+- [EditBox](../element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
+- [FullResizeImage](../element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [LabelGetText](../../window_api/functions/window_LabelGetText.md) (HIGH 100/100) - Window Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
 - [ListBox](../element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
 - [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
-- [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
-- [TextEditBoxSelectAll](../../window_api/functions/window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
+- [ScenarioGroupWindow.LeaveGroup](../../globals/functions/global_ScenarioGroupWindow.LeaveGroup.md) (HIGH 100/100) - Global Function
+- [SliderBar](../element_types/element_SliderBar.md) (HIGH 100/100) - XML Element Type
+- [VerticalScrollbar](../element_types/element_VerticalScrollbar.md) (HIGH 100/100) - XML Element Type
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [WindowAssignFocus](../../window_api/functions/window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
-- [WindowGetAnchorCount](../../window_api/functions/window_WindowGetAnchorCount.md) (HIGH 100/100) - Window Function
-- [WindowGetHandleInput](../../window_api/functions/window_WindowGetHandleInput.md) (HIGH 100/100) - Window Function
+- [WindowGetAnchor](../../window_api/functions/window_WindowGetAnchor.md) (HIGH 100/100) - Window Function
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
+- [WindowGetMovable](../../window_api/functions/window_WindowGetMovable.md) (HIGH 100/100) - Window Function
 - [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
+- [WindowGetTintColor](../../window_api/functions/window_WindowGetTintColor.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](../../window_api/functions/window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
-- [DialogManager.MakeTextEntryDialog](../../globals/functions/global_DialogManager.MakeTextEntryDialog.md) (HIGH 98/100) - Global Function
-- [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 80/100) - Window Function
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [OnUpdate](handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
+- [SendUseItem](../../globals/functions/global_SendUseItem.md) (HIGH 75/100) - Global Function
+- [ColorPicker](../element_types/element_ColorPicker.md) (MEDIUM 45/100) - XML Element Type
+- [NifDisplay](../element_types/element_NifDisplay.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
-- [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ButtonGetDisabledFlag](../../window_api/functions/window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
-- [ButtonGetPressedFlag](../../window_api/functions/window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
-- [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
-- [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [ListBox](../element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
-
-## Triggered By
-
-- none
+- [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
+- [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
+- [DialogManager.MakeTwoButtonDialog](../../globals/functions/global_DialogManager.MakeTwoButtonDialog.md) (HIGH 100/100) - Global Function
+- [EA_ChatWindow.Print](../../globals/functions/global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
+- [WindowGetTintColor](../../window_api/functions/window_WindowGetTintColor.md) (HIGH 100/100) - Window Function
+- [OnUpdate](handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
 
 ## Affects
 
-- none
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because contract artifacts capture symbol linkage, not full handler signatures.

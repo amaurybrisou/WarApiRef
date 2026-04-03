@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, GuardLine, LibGuard |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/EnemyPlayer.lua:220`, `/workspace/data/raw/GuardLine/GuardLine.lua:151`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:362`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:75` |
+| Addons seen in | Effigy, Enemy, FixGit, GuardLine, LibGuard, Pure |
+| Files seen in | Code/Core/Groups/EnemyPlayer.lua, FixPet.lua, GuardLine.lua, Source/LibGuard.lua, Source/PurePlayerPet.lua, States/EffigyStatePets.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | EnemyPlayer:LoadPetFromCurrentPlayer, GuardLine.GetIDs, LibGuard.UpdatePetHealthProxy, LibGuard.UpdateStateMachine, lua_call |
+| Example locations | GetIDs, Initialize, LoadPetFromCurrentPlayer, UpdateInformation, UpdatePet, UpdatePetHealthProxy |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 9 |
+| Global usage count | 9 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,30 +59,21 @@
 
 ## Description
 
-Observed GameData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.Player.Pet.name field accessed by 6 addons; commonly found in GetIDs and Initialize, LoadPetFromCurrentPlayer, UpdateInformation, UpdatePet, UpdatePetHealthProxy, UpdatePlayerPet, UpdateStateMachine, lua_call contexts.
 
 ## Seen In
 
+- Effigy
 - Enemy
+- FixGit
 - GuardLine
 - LibGuard
+- Pure
 
 ## Related APIs
 
 - [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: EnemyPlayer:LoadPetFromCurrentPlayer, GuardLine.GetIDs, LibGuard.UpdatePetHealthProxy, LibGuard.UpdateStateMachine, lua_call
+- Observed in contexts: GetIDs, Initialize, LoadPetFromCurrentPlayer, UpdateInformation, UpdatePet, UpdatePetHealthProxy

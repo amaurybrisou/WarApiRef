@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Pocket Palette, WSCT |
-| Files seen in | `/workspace/data/raw/PocketPalette/PocketPalette.xml:0`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Addons seen in | AutoBand, EA_OpenPartyWindow, FastFriends, LoyalPet, MegaphonePlusPlus, Pocket Palette, WSCT, nLootLink |
+| Files seen in | AutoBandWindowConfig.xml, FastFriends_ConfigUI.xml, MegaphonePlusPlus.xml, PocketPalette.xml, Source/OpenPartyWindow.xml, Source/OpenPartyWindowCommon.xml, Source/OpenPartyWindowTabNearby.xml, Source/OpenPartyWindowTabWorld.xml |
 | Namespaces detected | EA_Label_DefaultText_Small |
 | Source kinds | xml_attributes |
-| Example locations | DyeListBoxRowTemplateCount, DyeListBoxRowTemplateName, DyeWindowSelectedDyeCount, DyeWindowSelectedDyeName, ItemWindowGuide, PPMainIntroText |
-| XML usage count | 13 |
-| XML attribute usage count | 13 |
+| Example locations | AutoBandWindowConfigBackfillExperimentalLabel, AutoBandWindowConfigCommonRaceNamesLabel, AutoBandWindowConfigVersionLabel, DyeListBoxRowTemplateCount, DyeListBoxRowTemplateName, DyeWindowSelectedDyeCount |
+| XML usage count | 60 |
+| XML attribute usage count | 60 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,20 +57,65 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Engine-supplied XML constant or template class referenced by 8 addons.
 
 ## Seen In
 
+- AutoBand
+- EA_OpenPartyWindow
+- FastFriends
+- LoyalPet
+- MegaphonePlusPlus
 - Pocket Palette
 - WSCT
+- nLootLink
 
 ## Used By
 
+- AutoBandWindowConfigBackfillExperimentalLabel
+- AutoBandWindowConfigCommonRaceNamesLabel
+- AutoBandWindowConfigVersionLabel
 - DyeListBoxRowTemplateCount
 - DyeListBoxRowTemplateName
 - DyeWindowSelectedDyeCount
 - DyeWindowSelectedDyeName
+- EA_Template_OpenPartyGroupLineLeaderNameText
+- EA_Template_OpenPartyWorldGroupLineLeaderNameText
+- EA_Template_OpenParty_Label_Small
+- EA_Tooltip_OpenPartyLocationText
+- EA_Tooltip_OpenPartyLocationTypeText
+- EA_Tooltip_OpenPartyNoteText
+- EA_Tooltip_OpenPartyObjectiveText
+- EA_Tooltip_OpenPartyWbText
+- EA_Tooltip_OpenPartyWorldLocationText
+- EA_Tooltip_OpenPartyWorldLocationTypeText
+- EA_Tooltip_OpenPartyWorldNoteText
+- EA_Tooltip_OpenPartyWorldSpecificInterest1
+- EA_Tooltip_OpenPartyWorldSpecificInterest2
+- EA_Tooltip_OpenPartyWorldSpecificInterest3
+- EA_Tooltip_OpenPartyWorldSpecificInterest4
+- EA_Tooltip_OpenPartyWorldWbText
+- EA_Window_OpenPartyFlyOutLeader1RatioText
+- EA_Window_OpenPartyFlyOutLeader1Text
+- EA_Window_OpenPartyFlyOutLeader2RatioText
+- EA_Window_OpenPartyFlyOutLeader2Text
+- EA_Window_OpenPartyFlyOutLeader3RatioText
+- EA_Window_OpenPartyFlyOutLeader3Text
+- FastFriendsConfigMainCharOverrideDefaultLabel
+- FastFriendsConfigMainCharOverrideOffLabel
+- FastFriendsConfigMainCharOverrideOnLabel
+- FastFriendsConfigMainListFriendsLabel
+- FastFriendsConfigMainListIgnoreLabel
+- FastFriendsConfigMainModeAllLabel
+- FastFriendsConfigMainModeLevelLabel
+- FastFriendsConfigMainModeOptInLabel
 - ItemWindowGuide
+- LPETComboBoxTemplateLabel
+- MegaphoneMainFontTitleLabel
+- MegaphoneMainHighlightLeaderLabel
+- MegaphoneMainMaxLengthLabel
+- MegaphoneMainSFXTitleLabel
+- MegaphoneMainShowLeaderLabel
 - PPMainIntroText
 - PPMainSaveSettingsLabel
 - WSCTComboBoxTemplateLabel
@@ -79,22 +124,18 @@ Observed engine XML template or inherited constant referenced by 2 addons.
 - WSCTOptionsColorPickerWindowCustomColorRedText
 - WSCTSliderTemplateLabel
 - WSCTSliderTemplateValue
+- nLootLinkGUICount
+- nLootLinkGUIVersion
+- nLootLinkOptionsLabelVersion
+- nLootLinkRowTemplateItemName
+- nLootLinkRowTemplateItemRank
+- nLootLinkRowTemplateItemRenown
+- nLootLinkRowTemplateItemSubType
+- nLootLinkRowTemplateItemType
 
 ## Related APIs
 
 - [Label](../../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

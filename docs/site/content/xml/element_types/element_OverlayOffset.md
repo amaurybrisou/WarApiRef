@@ -25,13 +25,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, Shinies, WSCT |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/Aura/Source/Templates.xml:0`, `/workspace/data/raw/Shinies/Source/ShiniesUITemplates.xml:0`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Addons seen in | AdvancedPetAssist, Aura, AutoBand, Crusher, DaemonAssist, EA_UiDebugTools, GDes, Ges |
+| Files seen in | Configuration/Config.xml, Configuration/HopperConfig.xml, Configuration/WCDBConfig.xml, Configuration/WCDPConfig.xml, Source/DebugWindowVerticalScroll.xml, Source/PureUIElementTemplates.xml, Source/ShiniesUITemplates.xml, Source/SocialWindow.xml |
 | Namespaces detected | OverlayOffset |
 | Source kinds | xml_frames |
-| Example locations | AdvancedPetAssist: APA_ComboBoxButton, AdvancedPetAssist: APA_ComboBoxButtonWide, Aura: Aura_Button_DefaultResizableTinyComboBoxSelected, Aura: Aura_ComboBox_DefaultResizableComboBoxSelected, Aura: Aura_ComboBox_DefaultResizableComboBoxSelectedLarge, Shinies: Shinies_ComboBox_DefaultResizableComboBoxSelectedLarge |
-| XML usage count | 7 |
-| XML attribute usage count | 7 |
+| Example locations | AdvancedPetAssist: APA_ComboBoxButton, AdvancedPetAssist: APA_ComboBoxButtonWide, Aura: Aura_Button_DefaultResizableTinyComboBoxSelected, Aura: Aura_ComboBox_DefaultResizableComboBoxSelected, Aura: Aura_ComboBox_DefaultResizableComboBoxSelectedLarge, AutoBand: AutoBandWindowToolsNoMicCheckBox |
+| XML usage count | 35 |
+| XML attribute usage count | 35 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -56,7 +56,7 @@
 
 ## Description
 
-OverlayOffset is a XML UI element. It commonly appears under Button.
+OverlayOffset is a XML UI element. It commonly appears under Button and ComboBox.
 
 ## Common Attributes
 
@@ -69,20 +69,39 @@ OverlayOffset is a XML UI element. It commonly appears under Button.
 
 ## Common Parent Elements
 
-- [Button](element_Button.md) — 7× (HIGH)
+- [Button](element_Button.md) — 31× (HIGH)
+- [ComboBox](element_ComboBox.md) — 4× (MEDIUM)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `x` | **required** | 100% | 93, 193, 148, 223, ... |
-| `y` | **required** | 100% | 0 |
+| `y` | **required** | 100% | 0, 1, 7, 9, ... |
 ## Seen In
 
 - AdvancedPetAssist
 - Aura
+- AutoBand
+- Crusher
+- DaemonAssist
+- EA_UiDebugTools
+- GDes
+- Ges
+- Hopper
+- LoyalPet
+- Motion
+- PartyAd
+- Pure
+- RaidMeter
 - Shinies
+- SocialWindow 2.0
+- SpamBayes
+- TalismanGenie
 - WSCT
+- Warbuilder
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 
 ## Examples
 
@@ -91,20 +110,9 @@ OverlayOffset is a XML UI element. It commonly appears under Button.
 - Aura: Aura_Button_DefaultResizableTinyComboBoxSelected -> OverlayOffset in Button Aura_Button_DefaultResizableTinyComboBoxSelected
 - Aura: Aura_ComboBox_DefaultResizableComboBoxSelected -> OverlayOffset in Button Aura_ComboBox_DefaultResizableComboBoxSelected
 - Aura: Aura_ComboBox_DefaultResizableComboBoxSelectedLarge -> OverlayOffset in Button Aura_ComboBox_DefaultResizableComboBoxSelectedLarge
-- Shinies: Shinies_ComboBox_DefaultResizableComboBoxSelectedLarge -> OverlayOffset in Button Shinies_ComboBox_DefaultResizableComboBoxSelectedLarge
+- AutoBand: AutoBandWindowToolsNoMicCheckBox -> OverlayOffset in Button AutoBandWindowToolsNoMicCheckBox
 
 ## Related APIs
 
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [ComboBox](element_ComboBox.md) (HIGH 100/100) - XML Element Type

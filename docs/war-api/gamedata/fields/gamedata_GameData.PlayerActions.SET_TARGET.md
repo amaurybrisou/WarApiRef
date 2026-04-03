@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Enemy, followTheLeader |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:242`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcon.lua:115`, `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:104`, `/workspace/data/raw/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrame.lua:344`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:335` |
+| Addons seen in | AggroMeter, BuddyBind, CleanUnitFrames, DuelInvite, EA_ScenarioGroupWindow, Effigy, Enemy, HealGrid |
+| Files seen in | AggroMeter.lua, BuddyBind.lua, CleanGroupMemberUnitFrame.lua, Code/GroupIcons/GroupIcon.lua, Code/Guard/Guard.lua, Code/Marks/MarkTemplate.lua, Code/UnitFrames/UnitFrame.lua, Core.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | AggroMeter.SelectChar, Enemy.Guard_SetGuardPlayerName, Enemy.UnitFramesUI_UnitFrame_OnLButtonDown, EnemyGroupIcon:Attach, EnemyMarkTemplate:Apply, followTheLeader.SetLeaderName |
+| Example locations | AddInteractionMenuItems, Apply, Attach, ClearAction, GrabName, Guard_SetGuardPlayerName |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 22 |
+| Global usage count | 22 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,33 +59,44 @@
 
 ## Description
 
-Observed GameData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.PlayerActions.SET_TARGET field accessed by 17 addons; commonly found in AddInteractionMenuItems and Apply, Attach, ClearAction, GrabName, Guard_SetGuardPlayerName, LButtonUp, OnClickName, PotentialClickAssist, ProcessTargetUnit, SelectChar, SetLeaderName, SetMacroTarget, SetName, UnitFramesUI_UnitFrame_OnLButtonDown, UpdateFullMember, UpdateSingleMemberWindow, UpdateTarget, addInteractive, init, lua_call, update contexts.
 
 ## Seen In
 
 - AggroMeter
+- BuddyBind
+- CleanUnitFrames
+- DuelInvite
+- EA_ScenarioGroupWindow
+- Effigy
 - Enemy
+- HealGrid
+- HealHoverAssist
+- MarkBuff
+- Pure
+- Refer
+- ResHelp
+- Squared
+- Targets
+- WarTriage
 - followTheLeader
 
 ## Related APIs
 
 - [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
-- [LabelGetTextDimensions](../../window_api/functions/window_LabelGetTextDimensions.md) (HIGH 100/100) - Window Function
+- [Icons.GetCareerIconIDFromCareerNamesID](../../globals/functions/global_Icons.GetCareerIconIDFromCareerNamesID.md) (HIGH 100/100) - Global Function
 - [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
 - [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
+- [WindowSetGameActionTrigger](../../window_api/functions/window_WindowSetGameActionTrigger.md) (HIGH 100/100) - Window Function
+- [EA_Window_ContextMenu.GameActionData](../../globals/functions/global_EA_Window_ContextMenu.GameActionData.md) (HIGH 80/100) - Global Function
+- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
 
 ## Notes
 
-- Observed in contexts: AggroMeter.SelectChar, Enemy.Guard_SetGuardPlayerName, Enemy.UnitFramesUI_UnitFrame_OnLButtonDown, EnemyGroupIcon:Attach, EnemyMarkTemplate:Apply, followTheLeader.SetLeaderName
+- Observed in contexts: AddInteractionMenuItems, Apply, Attach, ClearAction, GrabName, Guard_SetGuardPlayerName

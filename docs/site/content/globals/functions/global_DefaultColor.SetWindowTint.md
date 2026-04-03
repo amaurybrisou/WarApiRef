@@ -3,42 +3,39 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 100/100
 
-- Raw weighted score: 113
-
-- Rationale: Promoted as HIGH confidence because matches a known engine namespace, referenced by generated docs or reference files, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, TidyRoll |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:55`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:47`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145` |
+| Addons seen in | BuffHead, EA_ScenarioGroupWindow, TidyRoll, alertMod |
+| Files seen in | CustomAutoRoll.lua, Setup/LayoutControlFrame.lua, Setup/LayoutFrame.lua, Source/ScenarioGroupWindow.lua, alertMod.lua |
 | Namespaces detected | DefaultColor |
-| Source kinds | globals, lua_calls |
-| Example locations | BuffHead: BuffHead.Setup.LayoutControlFrame:Create, BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor, TidyRoll: TidyRoll.CustomAutoRoll.Initialize |
+| Source kinds | lua_calls |
+| Example locations | BuffHead: Create, BuffHead: UpdateFrameColor, EA_ScenarioGroupWindow: SetListRowTints, TidyRoll: Initialize, alertMod: SetLabels |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 12 |
+| Global usage count | 12 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | no |
@@ -65,18 +62,18 @@ DefaultColor.SetWindowTint(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 4 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: rowName.."Background", self:GetName().."Background", self:GetName().."Frame" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: DefaultColor.YELLOW, backgroundColor, color |
+| arg1 | Observed as a text or wstring payload. | Observed values: "alertModDisplayTimeRowBackgroundName", "alertModFadeInRowBackgroundName", "alertModFadeOutRowBackgroundName" |
+| arg2 | Observed as a function or method reference. | Observed values: DefaultColor.GetRowColor(1), DefaultColor.GetRowColor(2), DefaultColor.GetRowColor(row) |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,30 +82,24 @@ Observed as a global function across 2 addons.
 ## Seen In
 
 - BuffHead
+- EA_ScenarioGroupWindow
 - TidyRoll
+- alertMod
 
 ## Examples
 
-- BuffHead: BuffHead.Setup.LayoutControlFrame:Create -> DefaultColor.SetWindowTint(windowName, DefaultColor.YELLOW)
-- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Frame", frameColor)
-- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Background", backgroundColor)
-- TidyRoll: TidyRoll.CustomAutoRoll.Initialize -> DefaultColor.SetWindowTint(rowName.."Background", color)
-
-## Related APIs
-
-- none
+- BuffHead: Create -> DefaultColor.SetWindowTint(windowName, DefaultColor.YELLOW)
+- BuffHead: UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Frame", frameColor)
+- BuffHead: UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Background", backgroundColor)
+- EA_ScenarioGroupWindow: SetListRowTints -> DefaultColor.SetWindowTint(targetRowWindow, DefaultColor.GetRowColor(row))
+- TidyRoll: Initialize -> DefaultColor.SetWindowTint(rowName.."Background", color)
+- alertMod: SetLabels -> DefaultColor.SetWindowTint("alertModHeightShiftRowBackgroundName", DefaultColor.GetRowColor(2))
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [ComboBoxAddMenuItem](../../window_api/functions/window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
+- [DefaultColor.GetRowColor](global_DefaultColor.GetRowColor.md) (HIGH 96/100) - Global Function
 
 ## Notes
 

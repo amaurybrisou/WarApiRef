@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, Enemy |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraTexture.xml:0`, `/workspace/data/raw/Enemy/Code/Core/ChooseIconDialog.xml:0` |
+| Addons seen in | Aura, Emojii, Enemy, MapPin, wbLeadHelper |
+| Files seen in | Code/Core/ChooseIconDialog.xml, Emojii.xml, Source/AuraConfig.xml, Source/AuraTexture.xml, config/wbLeadHelperChooseIcon.xml, source/MapPin.xml |
 | Namespaces detected | EA_Button_DefaultIconFrame_Large |
 | Source kinds | xml_attributes |
-| Example locations | AuraConfigGeneralIconButton, AuraIconButton, EnemyChooseIconDialogList_IconButton |
-| XML usage count | 3 |
-| XML attribute usage count | 3 |
+| Example locations | AuraConfigGeneralIconButton, AuraIconButton, EmojiiChooseIconDialogList_IconButton, EmojiiEmojiiIcon, EnemyChooseIconDialogList_IconButton, MapPinChooseIconDialogList_IconButton |
+| XML usage count | 7 |
+| XML attribute usage count | 7 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,34 +57,29 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Engine-supplied XML constant or template class referenced by 5 addons.
 
 ## Seen In
 
 - Aura
+- Emojii
 - Enemy
+- MapPin
+- wbLeadHelper
 
 ## Used By
 
 - AuraConfigGeneralIconButton
 - AuraIconButton
+- EmojiiChooseIconDialogList_IconButton
+- EmojiiEmojiiIcon
 - EnemyChooseIconDialogList_IconButton
+- MapPinChooseIconDialogList_IconButton
+- wbLeadHelperChooseIconDialogList_IconButton
 
 ## Related APIs
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

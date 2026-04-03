@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Pocket Palette |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/PocketPalette/PocketPalette.xml:0` |
+| Addons seen in | AggroMeter, Dascore, Deathblow, Deathblow2, EA_OpenPartyWindow, FozAuction, HealGrid, Kwestor |
+| Files seen in | AggroMeter.xml, DascoreWin1.xml, Deathblow.xml, Deathblow2.xml, Gui/HealGridGui.xml, Gui/HealGridGuiSpellList.xml, Gui/HealGridGuiTabMouseClick.xml, Gui/HealGridGuiTabSpellTrack.xml |
 | Namespaces detected | EA_Button_ResizeIconFrame_NoNormalImage |
 | Source kinds | xml_attributes |
-| Example locations | AggroMeterGrayTemplateListboxRow, DyeListBoxRowTemplate |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
+| Example locations | AggroMeterGrayTemplateListboxRow, AuctionWindowResultsRow, DascoreWin1WindowTemplateListboxRow, DeathblowWin1WindowTemplateListboxRow, DyeListBoxRowTemplate, EA_Button_FriendsBuddyListRowTemplate |
+| XML usage count | 15 |
+| XML attribute usage count | 15 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,33 +57,43 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Engine-supplied XML constant or template class referenced by 11 addons.
 
 ## Seen In
 
 - AggroMeter
+- Dascore
+- Deathblow
+- Deathblow2
+- EA_OpenPartyWindow
+- FozAuction
+- HealGrid
+- Kwestor
+- LootAlert
 - Pocket Palette
+- SocialWindow 2.0
 
 ## Used By
 
 - AggroMeterGrayTemplateListboxRow
+- AuctionWindowResultsRow
+- DascoreWin1WindowTemplateListboxRow
+- DeathblowWin1WindowTemplateListboxRow
 - DyeListBoxRowTemplate
+- EA_Button_FriendsBuddyListRowTemplate
+- EA_Button_SocialWindowRowTemplate
+- EA_Template_OpenPartyGroupLine
+- EA_Template_OpenPartyWorldGroupLine
+- HGG_HealGridMenuItemTemplate
+- HGG_SpellListRowTemplate
+- HGG_TabMouseClickListRowTemplate
+- HGG_TabSpellTrackListRowTemplate
+- KwestorGui_TabAreaListRowTemplate
+- LootAlertTemplateListboxRow
 
 ## Related APIs
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

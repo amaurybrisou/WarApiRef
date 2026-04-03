@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 32 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, LibWBToggler, PartyCast, Shinies, TexturedButtons, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:178`, `/workspace/data/raw/BuffHead/Setup/SelectColor.lua:27`, `/workspace/data/raw/BuffHead/Setup/SelectTexture.lua:59`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:178`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:178`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:178`, `/workspace/data/raw/TexturedButtons/Setup/SelectColor.lua:27`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:178` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, BuffHead, Crusher, EZCraftX, EZGuard, Effigy |
+| Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Setup/SelectColor.lua, Setup/SelectTexture.lua, libs/LibGUI.lua, source/Border.lua |
 | Namespaces detected | WindowGetLayer |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Layer, BuffHead: BuffHead.Setup.SelectColor.Show, BuffHead: BuffHead.Setup.SelectTexture.Show, LibWBToggler: LIBGUI_ELEMENT:Layer, PartyCast: LIBGUI_ELEMENT:Layer, Shinies: LIBGUI_ELEMENT:Layer |
+| Example locations | Ace: Layer, ActionBarHide: Layer, Amethyst: Layer, BuffHead: Show, Crusher: Layer, EZCraftX: Layer |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 34 |
+| Global usage count | 34 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,52 +71,63 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: self.name, window |
+| windowName | Observed as a target window name. | Observed values: anchorName, self.name, window |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
 - BuffHead
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
+- Obsidian
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
 - TexturedButtons
+- Tokens
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- nRarity
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Layer -> WindowGetLayer(self.name)
-- BuffHead: BuffHead.Setup.SelectColor.Show -> WindowGetLayer(window)
-- BuffHead: BuffHead.Setup.SelectTexture.Show -> WindowGetLayer(window)
-- LibWBToggler: LIBGUI_ELEMENT:Layer -> WindowGetLayer(self.name)
-- PartyCast: LIBGUI_ELEMENT:Layer -> WindowGetLayer(self.name)
-- Shinies: LIBGUI_ELEMENT:Layer -> WindowGetLayer(self.name)
-
-## Related APIs
-
-- none
+- Ace: Layer -> WindowGetLayer(self.name)
+- ActionBarHide: Layer -> WindowGetLayer(self.name)
+- Amethyst: Layer -> WindowGetLayer(self.name)
+- BuffHead: Show -> WindowGetLayer(window)
+- Crusher: Layer -> WindowGetLayer(self.name)
+- EZCraftX: Layer -> WindowGetLayer(self.name)
 
 ## Used With
 
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

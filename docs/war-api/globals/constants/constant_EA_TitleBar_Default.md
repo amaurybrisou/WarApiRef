@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BankArkel, CM_ClosetGoblin, DAoCBuff, Enemy, Pocket Palette |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/AuraTexture.xml:0`, `/workspace/data/raw/BankArkel/BankArkel.xml:0`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffMsgWindow.xml:0` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, ArmorGraphicToggle, Atlas, AuctionStats, Aura, AutoBand, AutoSalvage |
+| Files seen in | AGTSettingsWindow.xml, APAGui.xml, AdvancedRenownTrainingImportDialog.xml, AdvancedRenownTrainingWindow.xml, AutoBandWindow.xml, AutoBandWindowTemplate.xml, BankArkel.xml, BlackBook.xml |
 | Namespaces detected | EA_TitleBar_Default |
 | Source kinds | xml_attributes |
-| Example locations | APAOptionsTitle, AdvancedRenownTrainingExportWindowTitleBar, AdvancedRenownTrainingImportNameInputWindowTitleBar, AdvancedRenownTrainingImportWindowTitleBar, AdvancedRenownTrainingLinkWindowTitleBar, AdvancedRenownTrainingWindowTitleBar |
-| XML usage count | 46 |
-| XML attribute usage count | 46 |
+| Example locations | AGTSettingsWindowTitleBar, APAOptionsTitle, AdvancedRenownTrainingExportWindowTitleBar, AdvancedRenownTrainingImportNameInputWindowTitleBar, AdvancedRenownTrainingImportWindowTitleBar, AdvancedRenownTrainingLinkWindowTitleBar |
+| XML usage count | 165 |
+| XML attribute usage count | 165 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,45 +57,165 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 14 addons.
+Engine-supplied XML constant or template class referenced by 104 addons.
 
 ## Seen In
 
 - AdvancedPetAssist
 - AdvancedRenownTrainer
+- ArmorGraphicToggle
+- Atlas
+- AuctionStats
 - Aura
+- AutoBand
+- AutoSalvage
 - BankArkel
+- BlackBook
+- Bloody Mess
+- CDown
 - CM_ClosetGoblin
+- CaVES
+- Calling
+- ChattyCathy
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DaemonAssist
+- DammazKron
+- Dascore
+- Deathblow
+- Deathblow2
+- DeepSleep
+- DetauntHelper
+- DuffTimer
+- Dye Preview
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiModWindow
+- EZCraftX
+- Emojii
 - Enemy
+- EveryBodyGuard
+- FastFriends
+- FastInteract
+- FozAuction
+- GDes
+- Ges
+- GroupSpotter
+- GuildWarden
+- HealGrid
+- Hopper
+- JunkDump
+- Kwestor
+- LoyalPet
+- MapMonster
+- MapPin
+- Mass Refine
+- MegaphonePlusPlus
+- Motion
+- NerfedButtons
+- ObjectInspector
+- PartyAd
+- PeaceOut
+- Phantom
+- PieTracker
 - Pocket Palette
 - PotionBar
+- Pure
+- Queue Queuer
+- QuickTacticSwitch
+- QuickWarReport
+- RVMOD_Manager
+- RandomMount
+- ReliquaryHunter
+- RememberIt
+- Res
 - RoR_SoR
+- SOR
+- ScenarioStats
+- Sequencer
+- SessionRPs
+- SocialWindow 2.0
+- Squared
+- TacticSetNames
+- TalismanGenie
+- TastyButtons
+- TaxPayer
+- ThinkOutLoud
 - TidyChat
+- TokenMachine
+- Tome Titan
+- TomeTracker
+- Twister
+- Vectors
+- WARCommander
 - WSCT
+- WTes
 - WarBoard
+- WarBoard_FPS
+- WarBoard_Loc
+- Warbuilder
+- Wargames
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- XpStatus+G
+- alertMod
 - bigger_MacroWindow
+- minesweep
+- nLootLink
+- wbLeadHelper
+- zMailMod
 
 ## Used By
 
+- AGTSettingsWindowTitleBar
 - APAOptionsTitle
 - AdvancedRenownTrainingExportWindowTitleBar
 - AdvancedRenownTrainingImportNameInputWindowTitleBar
 - AdvancedRenownTrainingImportWindowTitleBar
 - AdvancedRenownTrainingLinkWindowTitleBar
 - AdvancedRenownTrainingWindowTitleBar
+- AtlasConfigurationFrameTitleBar
+- AtlasFrameTitleBar
+- AuStatsOptionsTitle
+- AuctionWindowTitleBar
 - AuraConfigTitleBar
 - AuraSettingsTitleBar
 - AuraSharesImportExportTitleBar
 - AuraSharesTitleBar
 - AuraTextureTitleBar
+- AutoBandCopyLinkWindowTitleBar
+- AutoBandWindowTemplateDeleteConfirmTitleBar
+- AutoBandWindowTemplateSaveTitleBar
+- AutoBandWindowTitleBar
+- AutoSalvageOptionsTitle
+- BlackBookWindowTitleBar
+- BloodyMessOptionsTitleBar
+- CDown_SettingsTitleBar
+- CaVESWindowOptionsWindowTitleBar
+- CallingSetupTitleBar
+- ChattyCathyOptTitleBar
 - ClosetGoblinCharacterWindowTitleBar
 - ClosetGoblinZoneWindowTitleBar
+- CrusherConfigTitleBar
 - DAoCBuffMessageWindowTitleBar
 - DAoCBuff_SettingsTitleBar
 - DAoCBuff_Settings_FilterTitleBar
+- DKconfigWindowTitleBar
+- DPSMeterWindowTitleBar
+- DTHConfigWindowBaseTitleBar
+- DaemonAssistWindowTitleBar
+- DascoreWin1WindowTitleBar
+- DascoreWin2WindowTitleBar
+- DeathblowWin1WindowTitleBar
+- DeepSleep_SettingsTitleBar
+- DuffTimerOptionsTitleBar
+- DyeTitleBar
 - DyeWindowTitleBar
 - EA_Window_MacroTitleBar
+- EA_Window_OpenPartyTitleBar
+- EZCraftXWindow.Title
+- EmojiiChooseIconDialogTitleBar
 - EnemyChooseChannelDialogTitleBar
 - EnemyChooseIconDialogTitleBar
 - EnemyClickCastingDialogTitleBar
@@ -110,36 +230,113 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 - EnemyMarkConfigDialogTitleBar
 - EnemyTextEntryDialogTitleBar
 - EnemyUnitFramePartDialogTitleBar
+- EveryBodyGuard_SettingsTitleBar
+- FastFriendsConfigMainTitleBar
+- FastInteractWindowTitleBar
+- GDesOptionsTitleBar
+- GesOptionsTitleBar
+- GroupSpotterSettingsWindowTitleBar
+- GuildWarden.DBWindowTitleBar
+- HGG_HealGridGuiColorSelectTitleBar
+- HGG_HealGridTitleBar
+- HopperConfigTitleBar
 - ItemWindowTitleBar
+- JunkDumpOptionsWinTitleBar
+- KwestorGui_KwestorTitleBar
+- LPETOptionsTitle
 - MacroIconSelectionWindowTitleBar
+- MapMonster_CalibrateWindowTitleBar
+- MapMonster_EditorWindowTitleBar
+- MapMonster_IconChooserWindowTitleBar
+- MapMonster_PinTypeEditorWindowTitleBar
+- MapPinChooseIconDialogTitleBar
+- MapPin_SetupTitleBar
+- MassRefineTitleBar
+- MegaphoneMainTitleBar
+- MineSweepWindowTitleBar
+- MotionConfigTitleBar
+- NBSBCoreWindowTitleBar
+- NBSetup_SaveTitleBar
+- NewHighScoreTitleBar
+- ObjectInspectorTitleBar
 - PPMainTitleBar
 - PackWinTitleBar
+- PartyAdWindowTitleBar
+- PeaceOutTitleBar
+- PhantomSettingsTitleBar
+- PieTrackerTitleBar
 - PotionBarAboutTitleBar
 - PotionBarTypeTemplateTitleBar
+- PureConfigTitleBar
+- QueueQueuer_GUI_TitleBar
+- QuickTacticSwitchWindowTitleBar
+- QuickWarReportConfirmTitleBar
+- RVMOD_ManagerWindowTitleBar
+- RandomMountWindowTitleBar
+- ReliquaryHunterOptionsWindowTitleBar
+- RememberItSettingsTitleBar
+- ResOptionsTitleBar
 - RoR_SoR_OffsetTitleBar
 - RoR_SoR_OpacityTitleBar
 - RoR_SoR_ScaleTitleBar
+- SOR.Options.TitleBar
+- SOR.Version.TitleBar
+- ScenarioGroupSetOpacityWindowTitleBar
+- ScenarioGroupWindowTitleBar
+- ScenarioStatsWarningTemplateTitleBar
+- Sequencer_WindowTitleBar
+- SessionRPsWarningTemplateTitleBar
+- SiegeChatFiltersTitleBar
+- SocialWindowAddMemberWindowTitleBar
+- SocialWindowTitleBar
+- SquaredImportExportTitle
+- TOLSettingsMainWindowTitleBar
+- TTitanUITitleBar
+- TacticSetNamesSettingsWindowTitleBar
+- TalismanGenieTitleBar
+- TastyButtonsGeneralOptionsWindowTitleBar
+- TastyButtonsOptionsButtonInfoWindowTitleBar
+- TastyButtonsOptionsWindowTitleBar
+- TaxPayerTitleBar
 - TidyChatCopyTitleBar
 - TidyChatLootRollTitleBar
+- TokenMachineSettingsTitle
+- TomeTracker_JournalWindowTitleBar
+- TwisterSettingsTitleBar
+- UiModAdvancedWindowTitleBar
+- UiModVersionMismatchWindowTitleBar
+- UiModWindowTitleBar
+- UngroupedPlayersWindowTitleBar
+- Vectors_ImportTitleBar
+- Vectors_SettingsTitleBar
+- WARCommander_ConfigWindowTitleBar
+- WCDBConfigTitleBar
+- WCDPConfigTitleBar
 - WSCTOptionsColorPickerWindowTitle
 - WSCTOptionsTitle
+- WTesTitleBar
 - WarBoardOptionsTitleBar
+- WarBoard_FPSOptionsTitleBar
+- WarBoard_Loc_SetWidthWindowTitleBar
+- WarbuilderHotBarWindowTitleBar
+- WarbuilderMainWindowTitleBar
+- WarbuilderPresetWindowTitleBar
+- WargamesGemsTitleBar
+- WargamesPairsTitleBar
+- WargamesTTTTitleBar
+- WbLeadHelperMessageTitleBar
+- XpStatusSetOpacityWindowTitleBar
+- alertModTitleBar
+- nLootLinkGUITitleBar
+- nLootLinkOptionsTitleBar
+- wbLeadHelperChooseIconDialogTitleBar
+- wbLeadHelperConfigWindowTitleBar
+- zMailModLogTitleBar
+- zMailModOptionsTitleBar
 
 ## Related APIs
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

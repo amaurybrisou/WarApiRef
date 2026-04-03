@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, BuffHead, CM_ClosetGoblin, Enemy, Killer, MoraleCircle, PotionBar, RoR_SoR |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:251`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:378`, `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:72`, `/workspace/data/raw/BuffHead/Setup/SelectFont.lua:62`, `/workspace/data/raw/BuffHead/Setup/SelectFont.lua:76`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.lua:130`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.lua:217`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.lua:439` |
+| Addons seen in | ActionFraction, AdjustTheTip, AggroMeter, AutoBand, BuffHead, CM_ClosetGoblin, CastSequence, Crusher |
+| Files seen in | Code/CombatLog/CombatLogEpsWindow.lua, Code/CombatLog/CombatLogStatsWindow.lua, Code/CombatLog/CombatLogTargetDefenseWindow.lua, Code/Core/Main.lua, Code/Marks/Marks.lua, Code/ScenarioInfo/ScenarioInfo.lua, Manager/Advanced.lua, Manager/Manager.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | AggroMeter: AggroMeter.OnTabRBU, AggroMeter: AggroMeter.PickedListMenu, BuffHead: BuffHead.Setup.AdvancedContainersItem.OnContainerRClick, BuffHead: BuffHead.Setup.EffectCache.CreateContextMenu, BuffHead: BuffHead.Setup.Filter.CreateContextMenu, BuffHead: BuffHead.Setup.LayoutControlFrame:CreateContextMenu |
+| Example locations | ActionFraction: AutoHideOnMouseOver, ActionFraction: RightClick, ActionFraction: SetFontSelectionMenu, ActionFraction: SetPresetLocation, AdjustTheTip: ContextMenu_Finalize, AdjustTheTip: CreateContextMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 217 |
-| Global usage count | 7 |
+| Lua usage count | 685 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 13 addons.
+Shared function table with 11 member functions; the primary API surface for 54 addons.
 
 ## Functions
 
@@ -66,8 +66,12 @@ Observed shared global table or namespace surfaced in 13 addons.
 - EA_Window_ContextMenu.AddMenuItem
 - EA_Window_ContextMenu.AddUserDefinedMenuItem
 - EA_Window_ContextMenu.CreateContextMenu
+- EA_Window_ContextMenu.CreateDefaultContextMenu
 - EA_Window_ContextMenu.Finalize
+- EA_Window_ContextMenu.GameActionData
 - EA_Window_ContextMenu.Hide
+- EA_Window_ContextMenu.HideAll
+- EA_Window_ContextMenu.OnMouseOverDefaultMenuItem
 
 ## Observed Members
 
@@ -75,44 +79,69 @@ Observed shared global table or namespace surfaced in 13 addons.
 
 ## Seen In
 
+- ActionFraction
+- AdjustTheTip
 - AggroMeter
+- AutoBand
 - BuffHead
 - CM_ClosetGoblin
+- CastSequence
+- Crusher
+- Dascore
+- DuelInvite
+- DuffTimer
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EZCraftX
+- Effigy
 - Enemy
+- HealGrid
 - Killer
+- LibAddonButton
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- Miracle Grow Remix
+- MiracleGrow
 - MoraleCircle
+- Motion
+- NerfedButtons
+- Obsidian
+- PeaceOut
+- PlayEffectsOn
 - PotionBar
+- Pure
+- QuickNameActions+
+- RandomMount
+- Refer
 - RoR_SoR
+- SOR
 - Shinies
+- ShowMeTheBubbles
+- TacticSetNames
+- TastyButtons
 - TexturedButtons
 - TidyChat
+- TidyQueue
 - TurretRange
+- Vectors
+- WARCommander
 - WarBoard
+- WarBoard_Loc
+- WarBoard_Menu
+- XpStatus+G
+- nLootLink
+- scenarioInfo
 
 ## Examples
 
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.CreateContextMenu(SystemData.MouseOverWindow.name, EA_Window_ContextMenu.CONTEXT_MENU_1, L "Options")
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuItem(L "<icon00057> Enabled", AggroMeter.ToggeEnable, false, true)
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuItem(L "<icon00058> Disabled", AggroMeter.ToggeEnable, false, true)
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuItem(L "   <icon00057> Champions", MakeCallBack(1), not AggroMeter.Enabled, true)
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuItem(L "   <icon00058> Champions", MakeCallBack(1), not AggroMeter.Enabled, true)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- ActionFraction: AutoHideOnMouseOver -> EA_Window_ContextMenu.Hide(EA_Window_ContextMenu.CONTEXT_MENU_3)
+- ActionFraction: RightClick -> EA_Window_ContextMenu.CreateContextMenu(windowName, EA_Window_ContextMenu.CONTEXT_MENU_1)
+- ActionFraction: RightClick -> EA_Window_ContextMenu.AddMenuItem(GetString(StringTables.Default.LABEL_TO_LOCK), ActionFractionWindow.OnLock, not movable, true, EA_Window_ContextMenu.CONTEXT_MENU_1)
+- ActionFraction: RightClick -> EA_Window_ContextMenu.AddMenuItem(GetString(StringTables.Default.LABEL_TO_UNLOCK), ActionFractionWindow.OnUnlock, movable, true, EA_Window_ContextMenu.CONTEXT_MENU_1)
+- ActionFraction: RightClick -> EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)
+- ActionFraction: RightClick -> EA_Window_ContextMenu.AddCascadingMenuItem(LOC_TEXT.PRESET_LOCATIONS, ActionFractionWindow.SetPresetLocation, false, EA_Window_ContextMenu.CONTEXT_MENU_1)
 
 ## Notes
 

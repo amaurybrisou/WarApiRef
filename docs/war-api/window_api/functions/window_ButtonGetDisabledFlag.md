@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 13 addons
+- Seen in: 62 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, Enemy, LibWBToggler, PartyCast |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:558`, `/workspace/data/raw/Ace/LibGUI.lua:783`, `/workspace/data/raw/Ace/LibGUI.lua:849`, `/workspace/data/raw/Aura/Source/AuraTexture.lua:147`, `/workspace/data/raw/BuffHead/Setup/SetupTrackers.lua:239`, `/workspace/data/raw/BuffHead/Setup/SetupTrackers.lua:253`, `/workspace/data/raw/BuffHead/Setup/SetupTrackers.lua:267`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:1350` |
+| Addons seen in | Ace, ActionBarHide, AdvancedRenownTrainer, Amethyst, Aura, BuffHead, CDown, CMap |
+| Files seen in | AdvancedRenownTraining.lua, CDownSettings.lua, Code/Core/ConfigurationWindow.lua, Code/Core/Main.lua, Code/Intercom/Intercom.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFramePart.lua, Code/UnitFrames/UnitFrames.lua |
 | Namespaces detected | ButtonGetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Button:Enabled, Ace: LIBGUI_Checkbox:Enabled, Ace: LIBGUI_Optionbutton:Enabled, AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances, Aura: AuraTexture.OnIconLButtonUp, BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp |
+| Example locations | Ace: Enabled, ActionBarHide: Enabled, AdvancedRenownTrainer: PurchaseAdvances, Amethyst: Enabled, Aura: OnIconLButtonUp, BuffHead: OnTargetChangeClearAlwaysShowLUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 64 |
-| Global usage count | 64 |
+| Lua usage count | 196 |
+| Global usage count | 196 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,68 +65,109 @@ ButtonGetDisabledFlag(arg1)
 
 ## Description
 
-Observed as a window function across 13 addons.
+Observed as a window function across 62 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "EnemyConfigDialogResetAllButton", "EnemyConfigDialogResetButton", "EnemyEffectsIndicatorDialogContentScrollChildChooseIconButton" |
+| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_ScenarioJoinPromptBoxJoinWaitButton", "EnemyConfigDialogResetAllButton", "EnemyConfigDialogResetButton" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
 - AdvancedRenownTrainer
+- Amethyst
 - Aura
 - BuffHead
+- CDown
+- CMap
+- Crusher
 - DAoCBuff
+- DammazKron
+- DetauntHelper
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiModWindow
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- EveryBodyGuard
+- FastFriends
+- FozAuction
+- GCDsaver
+- Hopper
+- InfoScroller
+- JunkDump
 - LibWBToggler
+- Map
+- Minmap
+- Motion
+- NaturalLog
+- NerfedButtons
+- NoUselessMods-Assist
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- Queue Queuer
+- RVMOD_Manager
+- RealmStatus
+- Refer
+- Sequencer
 - Shinies
+- Squared
+- TargetRing
 - TidyChat
+- TidyQueue
 - TidyRoll
+- Tokens
+- Vectors
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- XpStatus+G
+- nRarity
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Button:Enabled -> ButtonGetDisabledFlag(self.name)
-- Ace: LIBGUI_Checkbox:Enabled -> ButtonGetDisabledFlag(self.name)
-- Ace: LIBGUI_Optionbutton:Enabled -> ButtonGetDisabledFlag(self.name)
-- AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances -> ButtonGetDisabledFlag(WindowName.."PurchaseButton")
-- Aura: AuraTexture.OnIconLButtonUp -> ButtonGetDisabledFlag(SystemData.ActiveWindow.name)
-- BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -> ButtonGetDisabledFlag(windowName.."OnTargetChangeClearAlwaysShow".."Button")
+- Ace: Enabled -> ButtonGetDisabledFlag(self.name)
+- ActionBarHide: Enabled -> ButtonGetDisabledFlag(self.name)
+- AdvancedRenownTrainer: PurchaseAdvances -> ButtonGetDisabledFlag(WindowName.."PurchaseButton")
+- Amethyst: Enabled -> ButtonGetDisabledFlag(self.name)
+- Aura: OnIconLButtonUp -> ButtonGetDisabledFlag(SystemData.ActiveWindow.name)
+- BuffHead: OnTargetChangeClearAlwaysShowLUp -> ButtonGetDisabledFlag(windowName.."OnTargetChangeClearAlwaysShow".."Button")
 
 ## Related APIs
 
-- none
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [ComboBoxGetDisabledFlag](window_ComboBoxGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [WindowGetParent](window_WindowGetParent.md) (HIGH 100/100) - Window Function
 
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

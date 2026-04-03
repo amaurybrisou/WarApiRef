@@ -2,24 +2,20 @@
 
 - Type: XML Handler
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 88/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 88/100
 
-- Raw weighted score: 138
-
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, referenced by generated docs or reference files, used in event registration or dispatch.
 
 ## Evidence Signals
 
 - +30 Seen in 4 or more addons: Cross-addon spread is strong.
-- +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
@@ -27,14 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, MiracleGrowLight, Shinies, TexturedButtons, TurretRange |
-| Files seen in | `/workspace/data/raw/BuffHead/Display.xml:0`, `/workspace/data/raw/BuffHead/Setup/General.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainers.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupEffectCache.xml:0` |
+| Addons seen in | Atlas, BuffHead, CM_ClosetGoblin, CMap, CastSequence, CleanUnitFrames, DAoCBuff, EA_OpenPartyWindow |
 | Namespaces detected | OnMouseOverEnd |
 | Source kinds | bindings, xml_handlers |
-| Example locations | BuffHead: BuffHeadBuffTemplate.OnMouseOverEnd, BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate.OnMouseOverEnd, BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate.OnMouseOverEnd, BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnMouseOverEnd, BuffHead: BuffHeadSetupAdvancedContainersItemRowTemplate.OnMouseOverEnd, BuffHead: BuffHeadSetupAdvancedContainersRowTemplate.OnMouseOverEnd |
-| XML usage count | 50 |
-| XML attribute usage count | 50 |
-| Lua usage count | 50 |
+| Example locations | Atlas: .OnMouseOverEnd, BuffHead: .OnMouseOverEnd, CM_ClosetGoblin: .OnMouseOverEnd, CMap: .OnMouseOverEnd, CastSequence: .OnMouseOverEnd, CleanUnitFrames: .OnMouseOverEnd |
+| XML usage count | 0 |
+| XML attribute usage count | 0 |
+| Lua usage count | 134 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -42,7 +37,7 @@
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
-| Observed in XML and Lua | yes |
+| Observed in XML and Lua | no |
 | Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
@@ -58,7 +53,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 9 addons through frame event handlers.
+XML handler event observed across 41 addons.
 
 ## Expected Lua Binding
 
@@ -68,55 +63,84 @@ function(...)
 
 ## Element Types
 
-- Button
-- DynamicImage
-- Label
-- ListBox
-- Window
+- none
 
 ## Seen In
 
+- Atlas
 - BuffHead
 - CM_ClosetGoblin
+- CMap
+- CastSequence
+- CleanUnitFrames
 - DAoCBuff
+- EA_OpenPartyWindow
 - Enemy
+- GroupSpotter
+- HealGrid
+- Kwestor
+- LibAddonButton
+- MapMonster
+- MarkBuff
+- Miracle Grow Remix
+- MiracleGrow
 - MiracleGrowLight
+- Motion
+- NaturalLog
+- NerfedButtons
+- NoOverheal
+- Obsidian
+- Pure
+- QuickWarReport
+- RVMOD_SquaredDistances
+- RandomMount
+- ReliquaryHunter
+- SOR
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- Squared
+- TalismanGenie
 - TexturedButtons
+- TomeTracker
 - TurretRange
+- WARCommander
 - WarBoard
+- ZonePOP
+- wbLeadHelper
 
 ## Examples
 
-- BuffHead: BuffHeadBuffTemplate -> BuffHeadBuffTemplate.OnMouseOverEnd -> FrameManager.OnMouseOverEnd
-- BuffHead: BuffHeadSetupAdvancedCompressionItemRowTemplate -> BuffHeadSetupAdvancedCompressionItemRowTemplate.OnMouseOverEnd -> BuffHead.Setup.AdvancedCompressionItem.OnRowMouseOut
-- BuffHead: BuffHeadSetupAdvancedCompressionRowTemplate -> BuffHeadSetupAdvancedCompressionRowTemplate.OnMouseOverEnd -> BuffHead.Setup.AdvancedCompression.OnRowMouseOut
-- BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel -> BuffHeadSetupAdvancedContainersItemPropertiesWindowTitleLabel.OnMouseOverEnd -> BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOut
-- BuffHead: BuffHeadSetupAdvancedContainersItemRowTemplate -> BuffHeadSetupAdvancedContainersItemRowTemplate.OnMouseOverEnd -> BuffHead.Setup.AdvancedContainersItem.OnRowMouseOut
-- BuffHead: BuffHeadSetupAdvancedContainersRowTemplate -> BuffHeadSetupAdvancedContainersRowTemplate.OnMouseOverEnd -> BuffHead.Setup.AdvancedContainers.OnRowMouseOut
+- Atlas: .OnMouseOverEnd -> AtlasMap.OnMouseOverEnd
+- BuffHead: .OnMouseOverEnd -> BuffHead.Setup.SelectTexture.OnTextureRowMouseOut
+- BuffHead: .OnMouseOverEnd -> BuffHead.Setup.AdvancedCompression.OnRowMouseOut
+- BuffHead: .OnMouseOverEnd -> BuffHead.Setup.AdvancedCompressionItem.OnRowMouseOut
+- BuffHead: .OnMouseOverEnd -> BuffHead.Setup.AdvancedContainers.OnRowMouseOut
+- BuffHead: .OnMouseOverEnd -> BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOut
 
 ## Related APIs
 
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [FullResizeImage](../element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
+- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
 - [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
 - [ListBox](../element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
+- [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Triggered By
-
-- none
+- [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
-- none
+- [SystemData.MousePosition.x](../../systemdata/fields/systemdata_SystemData.MousePosition.x.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MousePosition.y](../../systemdata/fields/systemdata_SystemData.MousePosition.y.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because contract artifacts capture symbol linkage, not full handler signatures.

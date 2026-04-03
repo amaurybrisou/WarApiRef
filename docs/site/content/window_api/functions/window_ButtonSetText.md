@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 24 addons
+- Seen in: 114 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, CM_ClosetGoblin |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:533`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:983`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:5`, `/workspace/data/raw/Aura/Source/AuraShares.lua:68`, `/workspace/data/raw/BankArkel/BankArkel.lua:242`, `/workspace/data/raw/BankArkel/BankArkel.lua:350`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.lua:82`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.lua:142` |
+| Addons seen in | Ace, ActionBarHide, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Amethyst, AuctionStats, Aura |
+| Files seen in | APAGui.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, AggroMeter.lua, AutoBand.lua, BankArkel.lua, BlackBookWindow.lua, Bloody Mess.lua |
 | Namespaces detected | ButtonSetText |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Button:SetText, AdvancedPetAssist: APAGui.OnShown, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SetImportExportLabels, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SetLabels, AdvancedRenownTrainer: AdvancedRenownTraining.AnywhereShow, AdvancedRenownTrainer: AdvancedRenownTraining.OnHidden |
+| Example locations | Ace: SetText, ActionBarHide: SetText, AdvancedPetAssist: OnShown, AdvancedRenownTrainer: AnywhereShow, AdvancedRenownTrainer: OnHidden, AdvancedRenownTrainer: SetImportExportLabels |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 252 |
-| Global usage count | 252 |
+| Lua usage count | 673 |
+| Global usage count | 673 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -72,11 +72,11 @@ Observed mutating button text or pressed state on existing controls.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | windowName | Observed as a target control name. | Observed values: "APAOptionsTabsAutoRecall", "APAOptionsTabsFollowTarget", "APAOptionsTabsGeneral" |
-| text | Observed as a text or wstring payload. | Observed values: GetChatString(StringTables.Chat.LABEL_CHAT_SETTINGS_ACCEPT), GetString(StringTables.Default.LABEL_CLOSE), GetString(StringTables.Default.LABEL_LEAVE_NOW) |
+| text | Observed as a text or wstring payload. | Observed values: Calling.GetLocalized("selectSlot"), DA.enabled and L "Disable" or L "Enable", DHLang.GetString(DHStrings.ABILITY) |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,65 +85,149 @@ Observed mutating button text or pressed state on existing controls.
 ## Seen In
 
 - Ace
+- ActionBarHide
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - AggroMeter
+- Amethyst
+- AuctionStats
 - Aura
+- AutoBand
+- AutoSalvage
 - BankArkel
+- BlackBook
+- Bloody Mess
 - BuffHead
+- CDown
 - CM_ClosetGoblin
+- CaVES
+- Calling
+- CastSequence
+- ChattyCathy
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DaemonAssist
+- DammazKron
+- DetauntHelper
+- DuffTimer
+- Dye Preview
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EZCraftX
+- EZGuard
+- Effigy
+- Emojii
 - Enemy
+- FastFriends
+- GCDsaver
+- GroupRange
+- GuildWarden
+- HealGrid
+- Hopper
+- InfoScroller
+- JunkDump
+- KeyBar
+- Keyset
 - Killer
+- Kwestor
+- LibAddonButton
 - LibWBToggler
+- ManualScenarioRefresh
+- Map
+- MapMonster
+- Mass Refine
+- MegaphonePlusPlus
+- Miracle Grow Remix
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
 - PartyCast
 - Pocket Palette
 - PotionBar
+- Pure
+- Pure Careerbar
+- QuickTacticSwitch
+- QuickWarReport
+- RVAPI_ColorDialog
+- RVMOD_Manager
+- RVMOD_Targets
+- RandomMount
+- RealmStatus
+- Refer
+- ReliquaryHunter
 - RoR_SoR
+- RvRStats
+- RvRStatsTab
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SNT_INFO
+- SOR
+- ScenarioStats
+- Sequencer
+- SessionRPs
 - Shinies
+- Squared
+- Statdoll Remix
+- TacticSetNames
+- TalismanGenie
+- TargetRing
+- TastyButtons
+- ThinkOutLoud
 - TidyChat
+- TidyQueue
 - TidyRoll
+- Tokens
+- Tome Titan
 - TurretRange
+- TwisterSet
+- Vectors
 - WSCT
+- WarTriage
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- XpStatus+G
+- alertMod
 - followTheLeader
+- nLootLink
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Button:SetText -> ButtonSetText(self.name, text and L "true" or L "false")
-- Ace: LIBGUI_Button:SetText -> ButtonSetText(self.name, towstring(text))
-- AdvancedPetAssist: APAGui.OnShown -> ButtonSetText("APAOptionsTabsGeneral", L "General")
-- AdvancedPetAssist: APAGui.OnShown -> ButtonSetText("APAOptionsTabsFollowTarget", L "Follow Target")
-- AdvancedPetAssist: APAGui.OnShown -> ButtonSetText("APAOptionsTabsAutoRecall", L "Auto Recall")
-- AdvancedPetAssist: APAGui.OnShown -> ButtonSetText("APAOptionsTabsLos", L "LOS")
+- Ace: SetText -> ButtonSetText(self.name, text and L "true" or L "false")
+- Ace: SetText -> ButtonSetText(self.name, towstring(text))
+- ActionBarHide: SetText -> ButtonSetText(self.name, text and L "true" or L "false")
+- ActionBarHide: SetText -> ButtonSetText(self.name, towstring(text))
+- AdvancedPetAssist: OnShown -> ButtonSetText("APAOptionsTabsGeneral", L "General")
+- AdvancedPetAssist: OnShown -> ButtonSetText("APAOptionsTabsFollowTarget", L "Follow Target")
 
 ## Related APIs
 
-- none
+- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
+- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [DefaultColor.SetWindowTint](../../globals/functions/global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
 - [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 56 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BagOMatic, CM_ClosetGoblin, LibWBToggler, PartyCast, Shinies, TidyChat, TurretRange |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:132`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.lua:87`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:132`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:132`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:132`, `/workspace/data/raw/Shinies/Source/Shinies.lua:417`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TurrentRange/Core.lua:335` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, BBars - Mechanic Only, BagOMatic, BetterCC, CM_ClosetGoblin, CMap |
+| Files seen in | BBarsPetHP.lua, BBarsPlayerMechanic.lua, BagOMatic.lua, BetterCC.lua, ClosetGoblin.lua, CoolDownLine.lua, Core.lua, Dye.lua |
 | Namespaces detected | WindowSetParent |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Parent, BagOMatic: BagOMatic.init, CM_ClosetGoblin: ClosetGoblin.Initialize, LibWBToggler: LIBGUI_ELEMENT:Parent, PartyCast: LIBGUI_ELEMENT:Parent, Shinies: CreateUI |
+| Example locations | Ace: Parent, ActionBarHide: Parent, Amethyst: Parent, BBars - Mechanic Only: MechDraw, BBars - Mechanic Only: PetHPDraw, BagOMatic: init |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 92 |
+| Global usage count | 92 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "BagOMaticButton", "Map"..MapNumber, "TurretPortrait" |
-| arg2 | Observed as a text or wstring payload. | Observed values: "CharacterWindow", "EA_Window_Backpack", "Root" |
+| windowName | Observed as a target window name. | Observed values: "BBarsPetHPBack", "BBarsPetHPFront", "BBarsPlayerMechanic1Frontbar" |
+| arg2 | Observed as a text or wstring payload. | Observed values: "BBarsPetHPBG", "BBarsPlayerMechanic1BG", "BBarsPlayerMechanic2BG" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,43 +85,75 @@ Observed mutating runtime window state or presentation.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- BBars - Mechanic Only
 - BagOMatic
+- BetterCC
 - CM_ClosetGoblin
+- CMap
+- CoolDownLine
+- Crusher
+- Dye Preview
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- GetStats
+- Hopper
+- InfoScroller
+- JunkDump
 - LibWBToggler
+- MacroIcons
+- Map
+- MapMonster
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RVAPI_Range
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- RealmStatus
+- RoR_debolster
+- RvRStats
+- RvRStatsTab
 - Shinies
+- TargetRing
 - TidyChat
+- TokenMachine
+- Tokens
 - TurretRange
+- WarBoard_Menu
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- bigger_MacroWindow
+- nRarity
+- scenarioInfo
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Parent -> WindowSetParent(self.name, self.parent)
-- BagOMatic: BagOMatic.init -> WindowSetParent("BagOMaticButton", "EA_Window_Backpack")
-- CM_ClosetGoblin: ClosetGoblin.Initialize -> WindowSetParent("yClosetGoblinButton", "CharacterWindow")
-- LibWBToggler: LIBGUI_ELEMENT:Parent -> WindowSetParent(self.name, self.parent)
-- PartyCast: LIBGUI_ELEMENT:Parent -> WindowSetParent(self.name, self.parent)
-- Shinies: CreateUI -> WindowSetParent(config.windowId, windowId)
+- Ace: Parent -> WindowSetParent(self.name, self.parent)
+- ActionBarHide: Parent -> WindowSetParent(self.name, self.parent)
+- Amethyst: Parent -> WindowSetParent(self.name, self.parent)
+- BBars - Mechanic Only: MechDraw -> WindowSetParent("BBarsPlayerMechanic1Grey", "BBarsPlayerMechanic1BG")
+- BBars - Mechanic Only: MechDraw -> WindowSetParent("BBarsPlayerMechanic2Grey", "BBarsPlayerMechanic2BG")
+- BBars - Mechanic Only: MechDraw -> WindowSetParent("BBarsPlayerMechanic3Grey", "BBarsPlayerMechanic3BG")
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
-
-## Affects
-
-- [EA_Window_Backpack](../../globals/tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Notes
 

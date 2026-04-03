@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 168
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -22,27 +22,25 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, Enemy, LibGuard, followTheLeader, LibGuard, followTheLeader |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:47`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:91`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:87` |
+| Addons seen in | Enemy, LibGuard, MegaphonePlus, Pure, followTheLeader |
+| Files seen in | Code/Core/Groups/Groups.lua, MegaphonePlus.lua, Source/LibGuard.lua, Source/PureGroup.lua, Source/PureGroupPet.lua, followTheLeader.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | Enemy.GroupsInitialize, Enemy.GroupsUpdate, LibGuard.GROUP_UPDATED, LibGuard.Init, LibGuard.OnShutdown, SystemData.Events.GROUP_PLAYER_ADDED |
+| Source kinds | lua_call |
+| Example locations | GroupsInitialize, Init, Initialize, LoadUnitFrame, OnShutdown, UnloadUnitFrame |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 2 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,31 +60,29 @@
 
 ## Description
 
-Observed SystemData field used by 4 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.GROUP_PLAYER_ADDED field accessed by 5 addons; commonly found in GroupsInitialize and Init, Initialize, LoadUnitFrame, OnShutdown, UnloadUnitFrame, lua_call contexts.
 
 ## Seen In
 
 - Enemy
-- Enemy, LibGuard, followTheLeader
 - LibGuard
+- MegaphonePlus
+- Pure
 - followTheLeader
 
 ## Related APIs
 
-- none
+- [WindowSetDrawWhenInterfaceHidden](../../window_api/functions/window_WindowSetDrawWhenInterfaceHidden.md) (HIGH 100/100) - Window Function
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [SystemData.Events.BATTLEGROUP_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.GROUP_STATUS_UPDATED](systemdata_SystemData.Events.GROUP_STATUS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.GROUP_UPDATED](systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_PET_HEALTH_UPDATED](systemdata_SystemData.Events.PLAYER_PET_HEALTH_UPDATED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Observed in contexts: Enemy.GroupsInitialize, Enemy.GroupsUpdate, LibGuard.GROUP_UPDATED, LibGuard.Init, LibGuard.OnShutdown, SystemData.Events.GROUP_PLAYER_ADDED
+- Observed in contexts: GroupsInitialize, Init, Initialize, LoadUnitFrame, OnShutdown, UnloadUnitFrame

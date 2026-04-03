@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 25 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:115`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:115`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:115`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:115`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:115` |
+| Addons seen in | Ace, Crusher, DuffTimer, EZCraftX, EZGuard, Effigy, GCDsaver, Hopper |
+| Files seen in | DuffTimer.lua, LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Vis.lua, libs/LibGUI.lua |
 | Namespaces detected | WindowForceProcessAnchors |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:ProcessAnchors, LibWBToggler: LIBGUI_ELEMENT:ProcessAnchors, PartyCast: LIBGUI_ELEMENT:ProcessAnchors, Shinies: LIBGUI_ELEMENT:ProcessAnchors, WoH-Reticle: LIBGUI_ELEMENT:ProcessAnchors |
+| Example locations | Ace: ProcessAnchors, Crusher: ProcessAnchors, DuffTimer: CreateBar, EZCraftX: ProcessAnchors, EZGuard: ProcessAnchors, Effigy: ProcessAnchors |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 25 |
+| Global usage count | 25 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,53 +65,58 @@ WindowForceProcessAnchors(arg1)
 
 ## Description
 
-Observed as a window function across 5 addons.
+Observed as a window function across 25 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: self.name |
+| arg1 | Observed as a function or method reference. | Observed values: "Vectors_Invis", buff.windowName, self.name |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- Crusher
+- DuffTimer
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
+- Vectors
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:ProcessAnchors -> WindowForceProcessAnchors(self.name)
-- LibWBToggler: LIBGUI_ELEMENT:ProcessAnchors -> WindowForceProcessAnchors(self.name)
-- PartyCast: LIBGUI_ELEMENT:ProcessAnchors -> WindowForceProcessAnchors(self.name)
-- Shinies: LIBGUI_ELEMENT:ProcessAnchors -> WindowForceProcessAnchors(self.name)
-- WoH-Reticle: LIBGUI_ELEMENT:ProcessAnchors -> WindowForceProcessAnchors(self.name)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- Ace: ProcessAnchors -> WindowForceProcessAnchors(self.name)
+- Crusher: ProcessAnchors -> WindowForceProcessAnchors(self.name)
+- DuffTimer: CreateBar -> WindowForceProcessAnchors(buff.windowName)
+- EZCraftX: ProcessAnchors -> WindowForceProcessAnchors(self.name)
+- EZGuard: ProcessAnchors -> WindowForceProcessAnchors(self.name)
+- Effigy: ProcessAnchors -> WindowForceProcessAnchors(self.name)
 
 ## Notes
 

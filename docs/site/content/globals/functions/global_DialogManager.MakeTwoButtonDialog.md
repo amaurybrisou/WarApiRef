@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 16 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, CM_ClosetGoblin, Enemy, RoR_SoR |
-| Files seen in | `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:216`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:63`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:623`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:422`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:432`, `/workspace/data/raw/Enemy/Code/Marks/Marks.lua:505`, `/workspace/data/raw/Enemy/Code/UnitFrames/EffectsIndicator.lua:918`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrames.lua:1468` |
+| Addons seen in | AdvancedRenownTrainer, BankWindowFix, CM_ClosetGoblin, Crusher, Enemy, Hopper, Lib RuString, MapMonster |
+| Files seen in | AdvancedRenownTraining.lua, ClosetGoblinCharacterWindow.lua, Code/CombatLog/CombatLog.lua, Code/CombatLog/CombatLogStatsWindow.lua, Code/Core/Main.lua, Code/Marks/Marks.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFrames.lua |
 | Namespaces detected | DialogManager |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickDeleteSetButton, Enemy: Enemy.CombatLogInitialize, Enemy: Enemy.CombatLogUI_StatsWindow_SessionDelete, Enemy: Enemy.MarksUI_EnemyMarkIcon_Delete, Enemy: Enemy.UI_ConfigDialog_Reset |
+| Example locations | AdvancedRenownTrainer: Respecialize, BankWindowFix: BagEquipmentRButtonUp, CM_ClosetGoblin: OnClickDeleteSetButton, Crusher: InitializeWindow, Crusher: OnLButtonUp, Enemy: CombatLogInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 21 |
-| Global usage count | 21 |
+| Lua usage count | 55 |
+| Global usage count | 55 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,64 +65,77 @@ DialogManager.MakeTwoButtonDialog(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a global function across 4 addons.
+Observed as a global function across 16 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_CONFIRMATION,{MoneyFrame.FormatMoneyString(respecCost)}), L "Are you sure you want to reset SoR settings?", L "Claim Keep?" |
-| arg2 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_YES), L "Yes", confirmYes |
-| arg3 | Observed as a function or method reference. | Observed values: AdvancedRenownTraining.RefundRenownPoints, ClosetGoblinCharacterWindow.OnConfirmDeleteSet, Enemy.CombatLogResetSettings |
-| arg4 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_NO), L "No", confirmNo |
+| arg1 | Observed as a function or method reference. | Observed values: GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_CONFIRMATION,{MoneyFrame.FormatMoneyString(respecCost)}), GetStringFromTable("CustomizeUiStrings",StringTables.CustomizeUi.TEXT_UI_MOD_SETTINGS_CHANGED_DIALOG), L "Answer Rally Call or Open WAR Report ?" |
+| arg2 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_YES), L "Aye", L "Hell Yeah!" |
+| arg3 | Observed as a function or method reference. | Observed values: ARC, AdvancedRenownTraining.RefundRenownPoints, ClosetGoblinCharacterWindow.OnConfirmDeleteSet |
+| arg4 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_NO), L "Nah", L "No" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - AdvancedRenownTrainer
+- BankWindowFix
 - CM_ClosetGoblin
+- Crusher
 - Enemy
+- Hopper
+- Lib RuString
+- MapMonster
+- Minmap
+- Motion
+- Pure
 - RoR_SoR
+- TastyButtons
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- wbLeadHelper
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize -> DialogManager.MakeTwoButtonDialog(GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_CONFIRMATION,{MoneyFrame.FormatMoneyString(respecCost)}), GetString(StringTables.Default.LABEL_YES), AdvancedRenownTraining.RefundRenownPoints, GetString(StringTables.Default.LABEL_NO))
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickDeleteSetButton -> DialogManager.MakeTwoButtonDialog(cgL["confirm_delete_set"]:gsub(L "#1#",set.name), confirmYes, ClosetGoblinCharacterWindow.OnConfirmDeleteSet, confirmNo, nil)
-- Enemy: Enemy.CombatLogInitialize -> DialogManager.MakeTwoButtonDialog(L "Enemy addon\n\nCause of considerable changes in combat log statistics code it's recommended to reset combat log settings to default values. Only combat log settings will be affected.\n\nDo you want to reset it now (you will have to wait for game interface to reload)?\n\nRecommended - yes", L "Yes", Enemy.CombatLogResetSettings, L "No")
-- Enemy: Enemy.CombatLogUI_StatsWindow_SessionDelete -> DialogManager.MakeTwoButtonDialog(L "Reset session '"..session.name..L "' ?", L "Yes", function()Enemy.CombatLog_ResetStatsCurrentSession()end, L "No")
-- Enemy: Enemy.CombatLogUI_StatsWindow_SessionDelete -> DialogManager.MakeTwoButtonDialog(L "Delete session '"..session.name..L "' ?", L "Yes", function()Enemy.CombatLog_StatsSessionDelete(session.stats)end, L "No")
-- Enemy: Enemy.MarksUI_EnemyMarkIcon_Delete -> DialogManager.MakeTwoButtonDialog(L "Delete mark template '"..g.templates[g.contextMenuTemplateIndex].name..L "' ?", L "Yes", Enemy.MarksUI_EnemyMarkIcon_DeleteConfirmed, L "No")
+- AdvancedRenownTrainer: Respecialize -> DialogManager.MakeTwoButtonDialog(GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_CONFIRMATION,{MoneyFrame.FormatMoneyString(respecCost)}), GetString(StringTables.Default.LABEL_YES), AdvancedRenownTraining.RefundRenownPoints, GetString(StringTables.Default.LABEL_NO))
+- BankWindowFix: BagEquipmentRButtonUp -> DialogManager.MakeTwoButtonDialog(text, GetString(StringTables.Default.LABEL_YES), function()DestroyItem(cursorType,slot)end, GetString(StringTables.Default.LABEL_NO), nil, nil, nil, nil, nil, nil, DIALOGID_DESTROY_ITEM)
+- CM_ClosetGoblin: OnClickDeleteSetButton -> DialogManager.MakeTwoButtonDialog(cgL["confirm_delete_set"]:gsub(L "#1#",set.name), confirmYes, ClosetGoblinCharacterWindow.OnConfirmDeleteSet, confirmNo, nil)
+- Crusher: InitializeWindow -> DialogManager.MakeTwoButtonDialog(T["Are you sure?"], GetString(StringTables.Default.LABEL_YES), CrusherConfig_Profiles_OnResetProfile, GetString(StringTables.Default.LABEL_NO), nil, nil, nil, nil, nil, DialogManager.TYPE_MODAL)
+- Crusher: OnLButtonUp -> DialogManager.MakeTwoButtonDialog(T["Are you sure?"], GetString(StringTables.Default.LABEL_YES), CrusherConfig_Profiles_OnResetProfile, GetString(StringTables.Default.LABEL_NO), nil, nil, nil, nil, nil, DialogManager.TYPE_MODAL)
+- Enemy: CombatLogInitialize -> DialogManager.MakeTwoButtonDialog(L "Enemy addon\n\nCause of considerable changes in combat log statistics code it's recommended to reset combat log settings to default values. Only combat log settings will be affected.\n\nDo you want to reset it now (you will have to wait for game interface to reload)?\n\nRecommended - yes", L "Yes", Enemy.CombatLogResetSettings, L "No")
 
 ## Related APIs
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 
 ## Used With
 
+- [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 100/100) - Window Function
 - [DialogManager.MakeOneButtonDialog](global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
-- [EA_Window_InteractionRenownTraining](../tables/table_EA_Window_InteractionRenownTraining.md) (HIGH 100/100) - Global Table
-- [GameData.Player.GetRenownRefundCost](global_GameData.Player.GetRenownRefundCost.md) (HIGH 100/100) - Global Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 80/100) - Window Function
-
-## Triggered By
-
+- [EA_Window_Backpack.GetCursorForBackpack](global_EA_Window_Backpack.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
+- [GameData.ItemLocs.INVENTORY](../../gamedata/fields/gamedata_GameData.ItemLocs.INVENTORY.md) (HIGH 100/100) - GameData Field
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [EA_Window_InteractionRenownTraining.GetPointsAlreadyPurchased](global_EA_Window_InteractionRenownTraining.GetPointsAlreadyPurchased.md) (HIGH 98/100) - Global Function
+- [EA_Window_Backpack.AutoAddCraftingItemIfPossible](global_EA_Window_Backpack.AutoAddCraftingItemIfPossible.md) (HIGH 90/100) - Global Function
+- [EA_Window_Backpack.ConfirmThenRefine](global_EA_Window_Backpack.ConfirmThenRefine.md) (HIGH 80/100) - Global Function
+- [GameData.Player.GetRenownRefundCost](global_GameData.Player.GetRenownRefundCost.md) (HIGH 80/100) - Global Function
+- [BankWindow.IsShowing](global_BankWindow.IsShowing.md) (HIGH 71/100) - Global Function
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [EA_Window_InteractionRenownTraining](../tables/table_EA_Window_InteractionRenownTraining.md) (HIGH 100/100) - Global Table
-- [GameData.Player.GetRenownRefundCost](global_GameData.Player.GetRenownRefundCost.md) (HIGH 100/100) - Global Function
+- [GameData.ItemLocs.INVENTORY](../../gamedata/fields/gamedata_GameData.ItemLocs.INVENTORY.md) (HIGH 100/100) - GameData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [GameData.Player.GetRenownRefundCost](global_GameData.Player.GetRenownRefundCost.md) (HIGH 80/100) - Global Function
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,39 +11,41 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 168
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/AdvancedPetAssist.lua:60` |
+| Addons seen in | FastInteract, HealGrid, LoyalPet, WARCommander |
+| Files seen in | FastInteract.lua, LoyalPet.lua, UnitTooltips/HealGridUnitTooltip.lua, WARCommander.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration |
-| Example locations | AdvancedPetAssist.OnRButtonDown, SystemData.Events.R_BUTTON_DOWN_PROCESSED, event_page, event_registration |
+| Source kinds | lua_call |
+| Example locations | Init, Initialize, OnShutdown, Shutdown, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
-| Documentation references | 2 |
+| Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -58,28 +60,19 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.R_BUTTON_DOWN_PROCESSED field accessed by 4 addons; commonly found in Init and Initialize, OnShutdown, Shutdown, lua_call contexts.
 
 ## Seen In
 
-- AdvancedPetAssist
+- FastInteract
+- HealGrid
+- LoyalPet
+- WARCommander
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: AdvancedPetAssist.OnRButtonDown, SystemData.Events.R_BUTTON_DOWN_PROCESSED, event_page, event_registration
+- Observed in contexts: Init, Initialize, OnShutdown, Shutdown, lua_call

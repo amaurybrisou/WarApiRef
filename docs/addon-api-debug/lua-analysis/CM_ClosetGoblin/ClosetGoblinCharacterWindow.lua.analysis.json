@@ -1,0 +1,4120 @@
+{
+  "schema_version": "phase2-lua/v1",
+  "addon": "CM_ClosetGoblin",
+  "source_file": "ClosetGoblinCharacterWindow.lua",
+  "functions": [
+    {
+      "function_id": "f1",
+      "declared_name": "ClosetGoblinCharacterWindow.OnInitialize",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnInitialize",
+      "short_name": "OnInitialize",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 38,
+        "line_end": 67
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 39
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindow\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ButtonSetText",
+          "callee_resolved": "ButtonSetText",
+          "source": {
+            "line": 42
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsSortNameButton\"",
+            "cgL[\"Set_Name\"]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ButtonSetText",
+          "callee_resolved": "ButtonSetText",
+          "source": {
+            "line": 43
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsSortTacticsButton\"",
+            "cgL[\"Tactics\"]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ButtonSetText",
+          "callee_resolved": "ButtonSetText",
+          "source": {
+            "line": 44
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsNewSet\"",
+            "cgL[\"New_Set\"]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "ButtonSetText",
+          "callee_resolved": "ButtonSetText",
+          "source": {
+            "line": 45
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsDeleteSet\"",
+            "cgL[\"Delete_Set\"]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "ButtonSetText",
+          "callee_resolved": "ButtonSetText",
+          "source": {
+            "line": 46
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsZoneConfig\"",
+            "cgL[\"Zone_Configuration\"]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c7",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 47
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsLabelUseItemRack\"",
+            "L \"ItemRack:\""
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c8",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 49
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowTitleBarText\"",
+            "L \"ClosetGoblin \"..towstring(ClosetGoblin.version)"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c9",
+          "callee_raw": "towstring",
+          "callee_resolved": "towstring",
+          "source": {
+            "line": 49
+          },
+          "arguments": [
+            "ClosetGoblin.version"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c10",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 54
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsLabel\"",
+            "L \"Change ActionBar\""
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c11",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 55
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB1\"",
+            "L \"1\""
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c12",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 56
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB2\"",
+            "L \"2\""
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c13",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 57
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB3\"",
+            "L \"3\""
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c14",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 58
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB4\"",
+            "L \"4\""
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c15",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 59
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB5\"",
+            "L \"5\""
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c16",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 61
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsSortTacticsUpArrow\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c17",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 62
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsSortTacticsDownArrow\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c18",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 64
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowHelm\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c19",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 65
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloak\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c20",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 66
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f2",
+      "declared_name": "ClosetGoblinCharacterWindow.OnShow",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnShow",
+      "short_name": "OnShow",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 69,
+        "line_end": 79
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowUtils.OnShown",
+          "callee_resolved": "WindowUtils.OnShown",
+          "source": {
+            "line": 72
+          },
+          "arguments": [
+            "ClosetGoblinCharacterWindow.OnHide",
+            "WindowUtils.Cascade.MODE_AUTOMATIC"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblin.HasSets",
+          "callee_resolved": "ClosetGoblin.HasSets",
+          "source": {
+            "line": 74
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 77
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsCheckboxUseItemRack\"",
+            "ClosetGoblin.settings.useItemRackOnCharacterWindow"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblinCharacterWindow.RefreshList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.RefreshList",
+          "source": {
+            "line": 78
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f3",
+      "declared_name": "ClosetGoblinCharacterWindow.OnHide",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnHide",
+      "short_name": "OnHide",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 81,
+        "line_end": 84
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowUtils.OnHidden",
+          "callee_resolved": "WindowUtils.OnHidden",
+          "source": {
+            "line": 83
+          },
+          "arguments": [],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f4",
+      "declared_name": "ClosetGoblinCharacterWindow.OnShutdown",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnShutdown",
+      "short_name": "OnShutdown",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 86,
+        "line_end": 87
+      },
+      "params": [],
+      "calls": []
+    },
+    {
+      "function_id": "f5",
+      "declared_name": "ClosetGoblinCharacterWindow.OnClickSortNameButton",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnClickSortNameButton",
+      "short_name": "OnClickSortNameButton",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 89,
+        "line_end": 99
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.SortSetList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.SortSetList",
+          "source": {
+            "line": 96
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSetList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSetList",
+          "source": {
+            "line": 97
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSortButtonIcon",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSortButtonIcon",
+          "source": {
+            "line": 98
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f6",
+      "declared_name": "ClosetGoblinCharacterWindow.OnClickSortTacticsButton",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnClickSortTacticsButton",
+      "short_name": "OnClickSortTacticsButton",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 101,
+        "line_end": 111
+      },
+      "params": [],
+      "calls": []
+    },
+    {
+      "function_id": "f7",
+      "declared_name": "ClosetGoblinCharacterWindow.OnClickSetRow",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnClickSetRow",
+      "short_name": "OnClickSetRow",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 113,
+        "line_end": 121
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 114
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSetList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSetList",
+          "source": {
+            "line": 118
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "source": {
+            "line": 119
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateActionBarSettings",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateActionBarSettings",
+          "source": {
+            "line": 120
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f8",
+      "declared_name": "ClosetGoblinCharacterWindow.OnSetRowContextMenu",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnSetRowContextMenu",
+      "short_name": "OnSetRowContextMenu",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 123,
+        "line_end": 145
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 124
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 127
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSetList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSetList",
+          "source": {
+            "line": 129
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "source": {
+            "line": 130
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "EA_Window_ContextMenu.CreateContextMenu",
+          "callee_resolved": "EA_Window_ContextMenu.CreateContextMenu",
+          "source": {
+            "line": 132
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 133
+          },
+          "arguments": [
+            "cgL[\"Rename_Set\"]",
+            "ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick",
+            "false",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c7",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 134
+          },
+          "arguments": [
+            "cgL[\"Import_Current\"]",
+            "ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick",
+            "false",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c8",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 135
+          },
+          "arguments": [
+            "cgL[\"Copy\"]",
+            "ClosetGoblinCharacterWindow.OnRowMenuCopyClick",
+            "false",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c9",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 136
+          },
+          "arguments": [
+            "cgL[\"Paste\"]",
+            "ClosetGoblinCharacterWindow.OnRowMenuPasteClick",
+            "not ClosetGoblinCharacterWindow.IsValidPasteTarget(dataIndex)",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c10",
+          "callee_raw": "ClosetGoblinCharacterWindow.IsValidPasteTarget",
+          "callee_resolved": "ClosetGoblinCharacterWindow.IsValidPasteTarget",
+          "source": {
+            "line": 136
+          },
+          "arguments": [
+            "dataIndex"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c11",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 137
+          },
+          "arguments": [
+            "cgL[\"Associate_with_Zone\"]",
+            "ClosetGoblinZoneWindow.Show",
+            "false",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c12",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 138
+          },
+          "arguments": [
+            "cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"1\")",
+            "ClosetGoblinCharacterWindow.OnRowMenuLinkTactics",
+            "set.tactics==L \"1\"",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c13",
+          "callee_raw": "cgL.Link_with_tactics_set:gsub",
+          "callee_resolved": "cgL.Link_with_tactics_set:gsub",
+          "source": {
+            "line": 138
+          },
+          "arguments": [
+            "L \"#1#\"",
+            "L \"1\""
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c14",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 139
+          },
+          "arguments": [
+            "cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"2\")",
+            "ClosetGoblinCharacterWindow.OnRowMenuLinkTactics",
+            "set.tactics==L \"2\"",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c15",
+          "callee_raw": "cgL.Link_with_tactics_set:gsub",
+          "callee_resolved": "cgL.Link_with_tactics_set:gsub",
+          "source": {
+            "line": 139
+          },
+          "arguments": [
+            "L \"#1#\"",
+            "L \"2\""
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c16",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 140
+          },
+          "arguments": [
+            "cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"3\")",
+            "ClosetGoblinCharacterWindow.OnRowMenuLinkTactics",
+            "set.tactics==L \"3\"",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c17",
+          "callee_raw": "cgL.Link_with_tactics_set:gsub",
+          "callee_resolved": "cgL.Link_with_tactics_set:gsub",
+          "source": {
+            "line": 140
+          },
+          "arguments": [
+            "L \"#1#\"",
+            "L \"3\""
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c18",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 141
+          },
+          "arguments": [
+            "cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"4\")",
+            "ClosetGoblinCharacterWindow.OnRowMenuLinkTactics",
+            "set.tactics==L \"4\"",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c19",
+          "callee_raw": "cgL.Link_with_tactics_set:gsub",
+          "callee_resolved": "cgL.Link_with_tactics_set:gsub",
+          "source": {
+            "line": 141
+          },
+          "arguments": [
+            "L \"#1#\"",
+            "L \"4\""
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c20",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 142
+          },
+          "arguments": [
+            "cgL[\"Link_with_tactics_set\"]:gsub(L \"#1#\",L \"5\")",
+            "ClosetGoblinCharacterWindow.OnRowMenuLinkTactics",
+            "set.tactics==L \"5\"",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c21",
+          "callee_raw": "cgL.Link_with_tactics_set:gsub",
+          "callee_resolved": "cgL.Link_with_tactics_set:gsub",
+          "source": {
+            "line": 142
+          },
+          "arguments": [
+            "L \"#1#\"",
+            "L \"5\""
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c22",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 143
+          },
+          "arguments": [
+            "cgL[\"Unlink_with_tactics_set\"]",
+            "ClosetGoblinCharacterWindow.OnRowMenuLinkTactics",
+            "set.tactics==L \"x\"",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c23",
+          "callee_raw": "EA_Window_ContextMenu.Finalize",
+          "callee_resolved": "EA_Window_ContextMenu.Finalize",
+          "source": {
+            "line": 144
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f9",
+      "declared_name": "ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick",
+      "short_name": "OnRowMenuRenameSetClick",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 147,
+        "line_end": 152
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblin.GetSet",
+          "callee_resolved": "ClosetGoblin.GetSet",
+          "source": {
+            "line": 150
+          },
+          "arguments": [
+            "dataIndex"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "DialogManager.MakeTextEntryDialog",
+          "callee_resolved": "DialogManager.MakeTextEntryDialog",
+          "source": {
+            "line": 151
+          },
+          "arguments": [
+            "cgL[\"New_set_name\"]",
+            "cgL[\"Enter_set_name\"]",
+            "set.name",
+            "ClosetGoblinCharacterWindow.OnSubmitSetRename",
+            "nil"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f10",
+      "declared_name": "ClosetGoblinCharacterWindow.OnSubmitSetRename",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnSubmitSetRename",
+      "short_name": "OnSubmitSetRename",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 154,
+        "line_end": 170
+      },
+      "params": [
+        "name"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblin.RenameSet",
+          "callee_resolved": "ClosetGoblin.RenameSet",
+          "source": {
+            "line": 157
+          },
+          "arguments": [
+            "ClosetGoblin.GetSet(dataIndex)",
+            "name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblin.GetSet",
+          "callee_resolved": "ClosetGoblin.GetSet",
+          "source": {
+            "line": 157
+          },
+          "arguments": [
+            "dataIndex"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblin.Alert",
+          "callee_resolved": "ClosetGoblin.Alert",
+          "source": {
+            "line": 160
+          },
+          "arguments": [
+            "cgL[\"Set_name_empty\"]"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblin.Alert",
+          "callee_resolved": "ClosetGoblin.Alert",
+          "source": {
+            "line": 162
+          },
+          "arguments": [
+            "cgL[\"Set_name_unique\"]"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "DialogManager.MakeTextEntryDialog",
+          "callee_resolved": "DialogManager.MakeTextEntryDialog",
+          "source": {
+            "line": 164
+          },
+          "arguments": [
+            "cgL[\"New_set_name\"]",
+            "cgL[\"Enter_set_name\"]",
+            "name",
+            "ClosetGoblinCharacterWindow.OnSubmitSetRename",
+            "nil"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "ClosetGoblin.UpdateListSets",
+          "callee_resolved": "ClosetGoblin.UpdateListSets",
+          "source": {
+            "line": 166
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c7",
+          "callee_raw": "ClosetGoblinCharacterWindow.RefreshList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.RefreshList",
+          "source": {
+            "line": 167
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f11",
+      "declared_name": "ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick",
+      "short_name": "OnRowMenuImportCurrentClick",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 172,
+        "line_end": 177
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 173
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblin.ImportCurrentSet",
+          "callee_resolved": "ClosetGoblin.ImportCurrentSet",
+          "source": {
+            "line": 174
+          },
+          "arguments": [
+            "set"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "source": {
+            "line": 175
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f12",
+      "declared_name": "ClosetGoblinCharacterWindow.OnRowMenuCopyClick",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnRowMenuCopyClick",
+      "short_name": "OnRowMenuCopyClick",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 179,
+        "line_end": 183
+      },
+      "params": [],
+      "calls": []
+    },
+    {
+      "function_id": "f13",
+      "declared_name": "ClosetGoblinCharacterWindow.OnRowMenuPasteClick",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnRowMenuPasteClick",
+      "short_name": "OnRowMenuPasteClick",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 185,
+        "line_end": 198
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblin.GetSet",
+          "callee_resolved": "ClosetGoblin.GetSet",
+          "source": {
+            "line": 189
+          },
+          "arguments": [
+            "ClosetGoblinCharacterWindow.copySetIndex"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblin.GetSet",
+          "callee_resolved": "ClosetGoblin.GetSet",
+          "source": {
+            "line": 190
+          },
+          "arguments": [
+            "dataIndex"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblin.CopySet",
+          "callee_resolved": "ClosetGoblin.CopySet",
+          "source": {
+            "line": 193
+          },
+          "arguments": [
+            "srcSet",
+            "targetSet"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "source": {
+            "line": 194
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f14",
+      "declared_name": "ClosetGoblinCharacterWindow.OnRowMenuLinkTactics",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnRowMenuLinkTactics",
+      "short_name": "OnRowMenuLinkTactics",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 200,
+        "line_end": 210
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 201
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "towstring",
+          "callee_resolved": "towstring",
+          "source": {
+            "line": 202
+          },
+          "arguments": [
+            "WindowGetId(SystemData.MouseOverWindow.name)-5"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 202
+          },
+          "arguments": [
+            "SystemData.MouseOverWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblin.LinkTactics",
+          "callee_resolved": "ClosetGoblin.LinkTactics",
+          "source": {
+            "line": 208
+          },
+          "arguments": [
+            "idContextMenu",
+            "set.name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "ClosetGoblinCharacterWindow.RefreshList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.RefreshList",
+          "source": {
+            "line": 209
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f15",
+      "declared_name": "ClosetGoblinCharacterWindow.OnClickNewSetButton",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnClickNewSetButton",
+      "short_name": "OnClickNewSetButton",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 212,
+        "line_end": 214
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "DialogManager.MakeTextEntryDialog",
+          "callee_resolved": "DialogManager.MakeTextEntryDialog",
+          "source": {
+            "line": 213
+          },
+          "arguments": [
+            "cgL[\"Set_Name\"]",
+            "cgL[\"Enter_set_name\"]",
+            "L \"\"",
+            "ClosetGoblinCharacterWindow.OnSubmitNewSetName",
+            "nil"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f16",
+      "declared_name": "ClosetGoblinCharacterWindow.OnClickDeleteSetButton",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnClickDeleteSetButton",
+      "short_name": "OnClickDeleteSetButton",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 216,
+        "line_end": 228
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 217
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "GetGuildString",
+          "callee_resolved": "GetGuildString",
+          "source": {
+            "line": 219
+          },
+          "arguments": [
+            "StringTables.Guild.BUTTON_CONFIRM_YES"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "GetGuildString",
+          "callee_resolved": "GetGuildString",
+          "source": {
+            "line": 220
+          },
+          "arguments": [
+            "StringTables.Guild.BUTTON_CONFIRM_NO"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "DialogManager.MakeTwoButtonDialog",
+          "callee_resolved": "DialogManager.MakeTwoButtonDialog",
+          "source": {
+            "line": 222
+          },
+          "arguments": [
+            "cgL[\"confirm_delete_set\"]:gsub(L \"#1#\",set.name)",
+            "confirmYes",
+            "ClosetGoblinCharacterWindow.OnConfirmDeleteSet",
+            "confirmNo",
+            "nil"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "cgL.confirm_delete_set:gsub",
+          "callee_resolved": "cgL.confirm_delete_set:gsub",
+          "source": {
+            "line": 223
+          },
+          "arguments": [
+            "L \"#1#\"",
+            "set.name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f17",
+      "declared_name": "ClosetGoblinCharacterWindow.OnClickZoneConfigButton",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnClickZoneConfigButton",
+      "short_name": "OnClickZoneConfigButton",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 230,
+        "line_end": 232
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinZoneWindow.Show",
+          "callee_resolved": "ClosetGoblinZoneWindow.Show",
+          "source": {
+            "line": 231
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f18",
+      "declared_name": "ClosetGoblinCharacterWindow.OnSubmitNewSetName",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnSubmitNewSetName",
+      "short_name": "OnSubmitNewSetName",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 234,
+        "line_end": 250
+      },
+      "params": [
+        "name"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblin.AddNewSet",
+          "callee_resolved": "ClosetGoblin.AddNewSet",
+          "source": {
+            "line": 236
+          },
+          "arguments": [
+            "name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblin.Alert",
+          "callee_resolved": "ClosetGoblin.Alert",
+          "source": {
+            "line": 239
+          },
+          "arguments": [
+            "cgL[\"Set_name_empty\"]"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblin.Alert",
+          "callee_resolved": "ClosetGoblin.Alert",
+          "source": {
+            "line": 241
+          },
+          "arguments": [
+            "cgL[\"Set_name_unique\"]"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "DialogManager.MakeTextEntryDialog",
+          "callee_resolved": "DialogManager.MakeTextEntryDialog",
+          "source": {
+            "line": 243
+          },
+          "arguments": [
+            "cgL[\"Set name\"]",
+            "L \"Enter set name :\"",
+            "name",
+            "ClosetGoblinCharacterWindow.OnSubmitNewSetName",
+            "nil"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "ClosetGoblin.UpdateListSets",
+          "callee_resolved": "ClosetGoblin.UpdateListSets",
+          "source": {
+            "line": 245
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "table.getn",
+          "callee_resolved": "table.getn",
+          "source": {
+            "line": 246
+          },
+          "arguments": [
+            "ClosetGoblin.GetProfileSets()"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c7",
+          "callee_raw": "ClosetGoblin.GetProfileSets",
+          "callee_resolved": "ClosetGoblin.GetProfileSets",
+          "source": {
+            "line": 246
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c8",
+          "callee_raw": "ClosetGoblinCharacterWindow.RefreshList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.RefreshList",
+          "source": {
+            "line": 247
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f19",
+      "declared_name": "ClosetGoblinCharacterWindow.OnConfirmDeleteSet",
+      "qualified_name": "ClosetGoblinCharacterWindow.OnConfirmDeleteSet",
+      "short_name": "OnConfirmDeleteSet",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 252,
+        "line_end": 265
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblin.DeleteSet",
+          "callee_resolved": "ClosetGoblin.DeleteSet",
+          "source": {
+            "line": 254
+          },
+          "arguments": [
+            "ClosetGoblinCharacterWindow.pendingDeleteSet"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblin.HasSets",
+          "callee_resolved": "ClosetGoblin.HasSets",
+          "source": {
+            "line": 257
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblin.UpdateListSets",
+          "callee_resolved": "ClosetGoblin.UpdateListSets",
+          "source": {
+            "line": 262
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblinCharacterWindow.RefreshList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.RefreshList",
+          "source": {
+            "line": 263
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f20",
+      "declared_name": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+      "qualified_name": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+      "short_name": "EquipmentLButtonUp",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 267,
+        "line_end": 277
+      },
+      "params": [
+        "flags"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 268
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinCharacterWindow.HandleDrag",
+          "callee_resolved": "ClosetGoblinCharacterWindow.HandleDrag",
+          "source": {
+            "line": 269
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 271
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblin.ToggleSlot",
+          "callee_resolved": "ClosetGoblin.ToggleSlot",
+          "source": {
+            "line": 273
+          },
+          "arguments": [
+            "set",
+            "slot"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "source": {
+            "line": 274
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f21",
+      "declared_name": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+      "qualified_name": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+      "short_name": "EquipmentLButtonDown",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 279,
+        "line_end": 281
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.HandleDrag",
+          "callee_resolved": "ClosetGoblinCharacterWindow.HandleDrag",
+          "source": {
+            "line": 280
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f22",
+      "declared_name": "ClosetGoblinCharacterWindow.EquipmentRButtonUp",
+      "qualified_name": "ClosetGoblinCharacterWindow.EquipmentRButtonUp",
+      "short_name": "EquipmentRButtonUp",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 283,
+        "line_end": 291
+      },
+      "params": [
+        "flags"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 284
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 286
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblin.ClearSlot",
+          "callee_resolved": "ClosetGoblin.ClearSlot",
+          "source": {
+            "line": 288
+          },
+          "arguments": [
+            "set",
+            "slot"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "source": {
+            "line": 289
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f23",
+      "declared_name": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+      "qualified_name": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+      "short_name": "EquipmentMouseOver",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 297,
+        "line_end": 327
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 298
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 299
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblin.FindItem",
+          "callee_resolved": "ClosetGoblin.FindItem",
+          "source": {
+            "line": 303
+          },
+          "arguments": [
+            "set.slots[slot].id"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblinCharacterWindow.CreateTextOnlyTooltip",
+          "callee_resolved": "ClosetGoblinCharacterWindow.CreateTextOnlyTooltip",
+          "source": {
+            "line": 307
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..slot",
+            "CharacterWindow.EquipmentSlotInfo[slot].name",
+            "nil",
+            "{r=123,g=172,b=220}"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "Tooltips.CreateItemTooltip",
+          "callee_resolved": "Tooltips.CreateItemTooltip",
+          "source": {
+            "line": 309
+          },
+          "arguments": [
+            "item",
+            "\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..slot",
+            "Tooltips.ANCHOR_WINDOW_RIGHT",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "DataUtils.ItemHasEnhancementTimer",
+          "callee_resolved": "DataUtils.ItemHasEnhancementTimer",
+          "source": {
+            "line": 310
+          },
+          "arguments": [
+            "item"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c7",
+          "callee_raw": "Tooltips.SetUpdateCallback",
+          "callee_resolved": "Tooltips.SetUpdateCallback",
+          "source": {
+            "line": 311
+          },
+          "arguments": [
+            "Tooltips.TemporaryItemEnhancementCallback"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f24",
+      "declared_name": "ClosetGoblinCharacterWindow.EquipmentMouseOverEnd",
+      "qualified_name": "ClosetGoblinCharacterWindow.EquipmentMouseOverEnd",
+      "short_name": "EquipmentMouseOverEnd",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 329,
+        "line_end": 331
+      },
+      "params": [],
+      "calls": []
+    },
+    {
+      "function_id": "f25",
+      "declared_name": "ClosetGoblinCharacterWindow.Show",
+      "qualified_name": "ClosetGoblinCharacterWindow.Show",
+      "short_name": "Show",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 337,
+        "line_end": 339
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 338
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindow\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f26",
+      "declared_name": "ClosetGoblinCharacterWindow.Hide",
+      "qualified_name": "ClosetGoblinCharacterWindow.Hide",
+      "short_name": "Hide",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 341,
+        "line_end": 343
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 342
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindow\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f27",
+      "declared_name": "ClosetGoblinCharacterWindow.ShowOrHide",
+      "qualified_name": "ClosetGoblinCharacterWindow.ShowOrHide",
+      "short_name": "ShowOrHide",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 345,
+        "line_end": 351
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.Show",
+          "callee_resolved": "ClosetGoblinCharacterWindow.Show",
+          "source": {
+            "line": 347
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinCharacterWindow.Hide",
+          "callee_resolved": "ClosetGoblinCharacterWindow.Hide",
+          "source": {
+            "line": 349
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f28",
+      "declared_name": "ClosetGoblinCharacterWindow.BuildDisplayOrder",
+      "qualified_name": "ClosetGoblinCharacterWindow.BuildDisplayOrder",
+      "short_name": "BuildDisplayOrder",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 353,
+        "line_end": 360
+      },
+      "params": [],
+      "calls": []
+    },
+    {
+      "function_id": "f29",
+      "declared_name": "ClosetGoblinCharacterWindow.RefreshList",
+      "qualified_name": "ClosetGoblinCharacterWindow.RefreshList",
+      "short_name": "RefreshList",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 362,
+        "line_end": 369
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "source": {
+            "line": 363
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinCharacterWindow.BuildDisplayOrder",
+          "callee_resolved": "ClosetGoblinCharacterWindow.BuildDisplayOrder",
+          "source": {
+            "line": 364
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinCharacterWindow.SortSetList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.SortSetList",
+          "source": {
+            "line": 365
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSetList",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSetList",
+          "source": {
+            "line": 366
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSortButtonIcon",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSortButtonIcon",
+          "source": {
+            "line": 367
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateActionBarSettings",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateActionBarSettings",
+          "source": {
+            "line": 368
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f30",
+      "declared_name": "ClosetGoblinCharacterWindow.SortSetList",
+      "qualified_name": "ClosetGoblinCharacterWindow.SortSetList",
+      "short_name": "SortSetList",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 371,
+        "line_end": 373
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "table.sort",
+          "callee_resolved": "table.sort",
+          "source": {
+            "line": 372
+          },
+          "arguments": [
+            "ClosetGoblin.setDisplayOrder",
+            "ClosetGoblin.CompareSets"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f31",
+      "declared_name": "ClosetGoblinCharacterWindow.UpdateSetList",
+      "qualified_name": "ClosetGoblinCharacterWindow.UpdateSetList",
+      "short_name": "UpdateSetList",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 375,
+        "line_end": 377
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ListBoxSetDisplayOrder",
+          "callee_resolved": "ListBoxSetDisplayOrder",
+          "source": {
+            "line": 376
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsSetList\"",
+            "ClosetGoblin.setDisplayOrder"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f32",
+      "declared_name": "ClosetGoblinCharacterWindow.UpdateSortButtonIcon",
+      "qualified_name": "ClosetGoblinCharacterWindow.UpdateSortButtonIcon",
+      "short_name": "UpdateSortButtonIcon",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 379,
+        "line_end": 382
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 380
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsSortUpArrow\"",
+            "ClosetGoblin.sortOrder==ClosetGoblin.SORT_ORDER_UP"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 381
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsSortDownArrow\"",
+            "ClosetGoblin.sortOrder==ClosetGoblin.SORT_ORDER_DOWN"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f33",
+      "declared_name": "ClosetGoblinCharacterWindow.UpdateSlotIcon",
+      "qualified_name": "ClosetGoblinCharacterWindow.UpdateSlotIcon",
+      "short_name": "UpdateSlotIcon",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 384,
+        "line_end": 431
+      },
+      "params": [
+        "set",
+        "slot",
+        "defaultIcon"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblin.FindItem",
+          "callee_resolved": "ClosetGoblin.FindItem",
+          "source": {
+            "line": 390
+          },
+          "arguments": [
+            "set.slots[slot].id"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "GetIconData",
+          "callee_resolved": "GetIconData",
+          "source": {
+            "line": 400
+          },
+          "arguments": [
+            "iconNum"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "type",
+          "callee_resolved": "type",
+          "source": {
+            "line": 411
+          },
+          "arguments": [
+            "defaultIcon"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "GetIconData",
+          "callee_resolved": "GetIconData",
+          "source": {
+            "line": 412
+          },
+          "arguments": [
+            "defaultIcon"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "DynamicImageSetTexture",
+          "callee_resolved": "DynamicImageSetTexture",
+          "source": {
+            "line": 419
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..slot..\"IconBase\"",
+            "texture",
+            "x",
+            "y"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "WindowSetTintColor",
+          "callee_resolved": "WindowSetTintColor",
+          "source": {
+            "line": 422
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..slot",
+            "tint.r",
+            "tint.g",
+            "tint.b"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c7",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 424
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..tostring(slot)..\"Talisman1\"",
+            "L \"\""
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c8",
+          "callee_raw": "tostring",
+          "callee_resolved": "tostring",
+          "source": {
+            "line": 424
+          },
+          "arguments": [
+            "slot"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c9",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 425
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentSlot\"..tostring(slot)..\"Talisman2\"",
+            "L \"\""
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c10",
+          "callee_raw": "tostring",
+          "callee_resolved": "tostring",
+          "source": {
+            "line": 425
+          },
+          "arguments": [
+            "slot"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f34",
+      "declared_name": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+      "qualified_name": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+      "short_name": "UpdateSlotIcons",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 433,
+        "line_end": 463
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 434
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 437
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipment\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 439
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipment\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f35",
+      "declared_name": "ClosetGoblinCharacterWindow.UpdateSetRow",
+      "qualified_name": "ClosetGoblinCharacterWindow.UpdateSetRow",
+      "short_name": "UpdateSetRow",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 465,
+        "line_end": 484
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ButtonSetDisabledFlag",
+          "callee_resolved": "ButtonSetDisabledFlag",
+          "source": {
+            "line": 480
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsDeleteSet\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ButtonSetDisabledFlag",
+          "callee_resolved": "ButtonSetDisabledFlag",
+          "source": {
+            "line": 482
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsDeleteSet\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f36",
+      "declared_name": "ClosetGoblinCharacterWindow.UpdateHighlightOnRow",
+      "qualified_name": "ClosetGoblinCharacterWindow.UpdateHighlightOnRow",
+      "short_name": "UpdateHighlightOnRow",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 486,
+        "line_end": 494
+      },
+      "params": [
+        "rowIndex",
+        "highlight"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "LabelSetTextColor",
+          "callee_resolved": "LabelSetTextColor",
+          "source": {
+            "line": 492
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsSetListRow\"..rowIndex..\"Name\"",
+            "color.r",
+            "color.g",
+            "color.b"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 493
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsSetListRow\"..rowIndex..\"SelectionBorder\"",
+            "highlight"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f37",
+      "declared_name": "ClosetGoblinCharacterWindow.FindCursorItem",
+      "qualified_name": "ClosetGoblinCharacterWindow.FindCursorItem",
+      "short_name": "FindCursorItem",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 496,
+        "line_end": 510
+      },
+      "params": [
+        "data"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblin.FindItemInList",
+          "callee_resolved": "ClosetGoblin.FindItemInList",
+          "source": {
+            "line": 498
+          },
+          "arguments": [
+            "data.ObjectId",
+            "DataUtils.GetItems()"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "DataUtils.GetItems",
+          "callee_resolved": "DataUtils.GetItems",
+          "source": {
+            "line": 498
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblin.FindItemInList",
+          "callee_resolved": "ClosetGoblin.FindItemInList",
+          "source": {
+            "line": 500
+          },
+          "arguments": [
+            "data.ObjectId",
+            "DataUtils.GetEquipmentData()"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "DataUtils.GetEquipmentData",
+          "callee_resolved": "DataUtils.GetEquipmentData",
+          "source": {
+            "line": 500
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "ClosetGoblin.FindItemInList",
+          "callee_resolved": "ClosetGoblin.FindItemInList",
+          "source": {
+            "line": 502
+          },
+          "arguments": [
+            "data.ObjectId",
+            "DataUtils.GetTrophyData()"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "DataUtils.GetTrophyData",
+          "callee_resolved": "DataUtils.GetTrophyData",
+          "source": {
+            "line": 502
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c7",
+          "callee_raw": "ClosetGoblin.Alert",
+          "callee_resolved": "ClosetGoblin.Alert",
+          "source": {
+            "line": 507
+          },
+          "arguments": [
+            "cgL[\"Item_dragged\"]"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f38",
+      "declared_name": "ClosetGoblinCharacterWindow.HandleDrag",
+      "qualified_name": "ClosetGoblinCharacterWindow.HandleDrag",
+      "short_name": "HandleDrag",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 512,
+        "line_end": 533
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 513
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "Cursor.IconOnCursor",
+          "callee_resolved": "Cursor.IconOnCursor",
+          "source": {
+            "line": 514
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinCharacterWindow.FindCursorItem",
+          "callee_resolved": "ClosetGoblinCharacterWindow.FindCursorItem",
+          "source": {
+            "line": 515
+          },
+          "arguments": [
+            "Cursor.Data"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblin.CanEquip",
+          "callee_resolved": "ClosetGoblin.CanEquip",
+          "source": {
+            "line": 520
+          },
+          "arguments": [
+            "item",
+            "slot"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "ClosetGoblin.SetSlot",
+          "callee_resolved": "ClosetGoblin.SetSlot",
+          "source": {
+            "line": 522
+          },
+          "arguments": [
+            "ClosetGoblin.GetSet(ClosetGoblinCharacterWindow.selectedSetDataIndex)",
+            "slot",
+            "Cursor.Data.Source",
+            "Cursor.Data.SourceSlot"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "ClosetGoblin.GetSet",
+          "callee_resolved": "ClosetGoblin.GetSet",
+          "source": {
+            "line": 522
+          },
+          "arguments": [
+            "ClosetGoblinCharacterWindow.selectedSetDataIndex"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c7",
+          "callee_raw": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "callee_resolved": "ClosetGoblinCharacterWindow.UpdateSlotIcons",
+          "source": {
+            "line": 523
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c8",
+          "callee_raw": "Tooltips.ClearTooltip",
+          "callee_resolved": "Tooltips.ClearTooltip",
+          "source": {
+            "line": 524
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c9",
+          "callee_raw": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+          "callee_resolved": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+          "source": {
+            "line": 525
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c10",
+          "callee_raw": "Cursor.Clear",
+          "callee_resolved": "Cursor.Clear",
+          "source": {
+            "line": 528
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f39",
+      "declared_name": "ClosetGoblinCharacterWindow.CreateTextOnlyTooltip",
+      "qualified_name": "ClosetGoblinCharacterWindow.CreateTextOnlyTooltip",
+      "short_name": "CreateTextOnlyTooltip",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 536,
+        "line_end": 555
+      },
+      "params": [
+        "window",
+        "line1",
+        "line2",
+        "color"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "Tooltips.CreateTextOnlyTooltip",
+          "callee_resolved": "Tooltips.CreateTextOnlyTooltip",
+          "source": {
+            "line": 545
+          },
+          "arguments": [
+            "window"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "Tooltips.SetTooltipText",
+          "callee_resolved": "Tooltips.SetTooltipText",
+          "source": {
+            "line": 546
+          },
+          "arguments": [
+            "1",
+            "1",
+            "line1"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "Tooltips.SetTooltipColorDef",
+          "callee_resolved": "Tooltips.SetTooltipColorDef",
+          "source": {
+            "line": 547
+          },
+          "arguments": [
+            "1",
+            "1",
+            "color"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "Tooltips.SetTooltipText",
+          "callee_resolved": "Tooltips.SetTooltipText",
+          "source": {
+            "line": 550
+          },
+          "arguments": [
+            "2",
+            "1",
+            "line2"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "Tooltips.Finalize",
+          "callee_resolved": "Tooltips.Finalize",
+          "source": {
+            "line": 553
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "Tooltips.AnchorTooltip",
+          "callee_resolved": "Tooltips.AnchorTooltip",
+          "source": {
+            "line": 554
+          },
+          "arguments": [
+            "Tooltips.ANCHOR_WINDOW_RIGHT"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f40",
+      "declared_name": "ClosetGoblinCharacterWindow.IsValidPasteTarget",
+      "qualified_name": "ClosetGoblinCharacterWindow.IsValidPasteTarget",
+      "short_name": "IsValidPasteTarget",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 557,
+        "line_end": 563
+      },
+      "params": [
+        "dataIndex"
+      ],
+      "calls": []
+    },
+    {
+      "function_id": "f41",
+      "declared_name": "ClosetGoblinCharacterWindow.GetCurrentSet",
+      "qualified_name": "ClosetGoblinCharacterWindow.GetCurrentSet",
+      "short_name": "GetCurrentSet",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 565,
+        "line_end": 567
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblin.GetSet",
+          "callee_resolved": "ClosetGoblin.GetSet",
+          "source": {
+            "line": 566
+          },
+          "arguments": [
+            "ClosetGoblinCharacterWindow.selectedSetDataIndex"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f42",
+      "declared_name": "ClosetGoblinCharacterWindow.UpdateActionBarSettings",
+      "qualified_name": "ClosetGoblinCharacterWindow.UpdateActionBarSettings",
+      "short_name": "UpdateActionBarSettings",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 572,
+        "line_end": 586
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 573
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 575
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB1CurrentPageText\"",
+            "L \"\"..set.AbSettings[1]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 576
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB2CurrentPageText\"",
+            "L \"\"..set.AbSettings[2]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 577
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB3CurrentPageText\"",
+            "L \"\"..set.AbSettings[3]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 578
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB4CurrentPageText\"",
+            "L \"\"..set.AbSettings[4]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 579
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB5CurrentPageText\"",
+            "L \"\"..set.AbSettings[5]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c7",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 581
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1\"",
+            "set.AbEnabled[1]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c8",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 582
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2\"",
+            "set.AbEnabled[2]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c9",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 583
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB3\"",
+            "set.AbEnabled[3]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c10",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 584
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB4\"",
+            "set.AbEnabled[4]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c11",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 585
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB5\"",
+            "set.AbEnabled[5]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f43",
+      "declared_name": "GetActionBarNumberFromWindowName",
+      "qualified_name": "CM_ClosetGoblin.local.GetActionBarNumberFromWindowName",
+      "short_name": "GetActionBarNumberFromWindowName",
+      "scope_kind": "local",
+      "declaration_kind": "local_function_decl",
+      "receiver_name": "",
+      "receiver_separator": "",
+      "namespace": "CM_ClosetGoblin.local",
+      "source": {
+        "line_start": 588,
+        "line_end": 605
+      },
+      "params": [
+        "windowName"
+      ],
+      "calls": []
+    },
+    {
+      "function_id": "f44",
+      "declared_name": "GetActionBarNumberFromWindowName",
+      "qualified_name": "GetActionBarNumberFromWindowName",
+      "short_name": "GetActionBarNumberFromWindowName",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "",
+      "receiver_separator": "",
+      "namespace": "",
+      "source": {
+        "line_start": 588,
+        "line_end": 605
+      },
+      "params": [
+        "windowName"
+      ],
+      "calls": []
+    },
+    {
+      "function_id": "f45",
+      "declared_name": "ClosetGoblinCharacterWindow.HotbarPageUpProxy",
+      "qualified_name": "ClosetGoblinCharacterWindow.HotbarPageUpProxy",
+      "short_name": "HotbarPageUpProxy",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 607,
+        "line_end": 618
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 608
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "GetActionBarNumberFromWindowName",
+          "callee_resolved": "CM_ClosetGoblin.local.GetActionBarNumberFromWindowName",
+          "source": {
+            "line": 609
+          },
+          "arguments": [
+            "SystemData.MouseOverWindow.name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 616
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB\"..actionBarNumber..\"CurrentPageText\"",
+            "L \"\"..setting"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f46",
+      "declared_name": "ClosetGoblinCharacterWindow.HotbarPageDownProxy",
+      "qualified_name": "ClosetGoblinCharacterWindow.HotbarPageDownProxy",
+      "short_name": "HotbarPageDownProxy",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 620,
+        "line_end": 631
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 621
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "GetActionBarNumberFromWindowName",
+          "callee_resolved": "CM_ClosetGoblin.local.GetActionBarNumberFromWindowName",
+          "source": {
+            "line": 622
+          },
+          "arguments": [
+            "SystemData.MouseOverWindow.name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 629
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB\"..actionBarNumber..\"CurrentPageText\"",
+            "L \"\"..setting"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f47",
+      "declared_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled1",
+      "qualified_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled1",
+      "short_name": "HotbarChangeToggled1",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 633,
+        "line_end": 638
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 634
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 636
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1\"",
+            "setting"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f48",
+      "declared_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled2",
+      "qualified_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled2",
+      "short_name": "HotbarChangeToggled2",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 640,
+        "line_end": 645
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 641
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 643
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2\"",
+            "setting"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f49",
+      "declared_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled3",
+      "qualified_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled3",
+      "short_name": "HotbarChangeToggled3",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 647,
+        "line_end": 652
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 648
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 650
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB3\"",
+            "setting"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f50",
+      "declared_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled4",
+      "qualified_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled4",
+      "short_name": "HotbarChangeToggled4",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 654,
+        "line_end": 659
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 655
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 657
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB4\"",
+            "setting"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f51",
+      "declared_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled5",
+      "qualified_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled5",
+      "short_name": "HotbarChangeToggled5",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 661,
+        "line_end": 666
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 662
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 664
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB5\"",
+            "setting"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f52",
+      "declared_name": "ClosetGoblinCharacterWindow.ShowCloak",
+      "qualified_name": "ClosetGoblinCharacterWindow.ShowCloak",
+      "short_name": "ShowCloak",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 671,
+        "line_end": 685
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 674
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 676
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloak\"",
+            "setting"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ButtonSetDisabledFlag",
+          "callee_resolved": "ButtonSetDisabledFlag",
+          "source": {
+            "line": 679
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ButtonSetDisabledFlag",
+          "callee_resolved": "ButtonSetDisabledFlag",
+          "source": {
+            "line": 681
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "d",
+          "callee_resolved": "d",
+          "source": {
+            "line": 684
+          },
+          "arguments": [
+            "L \"Toggled Show Cloak setting for \"..towstring(set.name)..L \" to:\"",
+            "setting"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "towstring",
+          "callee_resolved": "towstring",
+          "source": {
+            "line": 684
+          },
+          "arguments": [
+            "set.name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f53",
+      "declared_name": "ClosetGoblinCharacterWindow.ShowCloakHeraldry",
+      "qualified_name": "ClosetGoblinCharacterWindow.ShowCloakHeraldry",
+      "short_name": "ShowCloakHeraldry",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 687,
+        "line_end": 693
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 688
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 690
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry\"",
+            "setting"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "d",
+          "callee_resolved": "d",
+          "source": {
+            "line": 692
+          },
+          "arguments": [
+            "L \"Toggled Show Cloak Heraldry setting for \"..towstring(set.name)..L \" to:\"",
+            "setting"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "towstring",
+          "callee_resolved": "towstring",
+          "source": {
+            "line": 692
+          },
+          "arguments": [
+            "set.name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f54",
+      "declared_name": "ClosetGoblinCharacterWindow.ShowShowCloakOnly",
+      "qualified_name": "ClosetGoblinCharacterWindow.ShowShowCloakOnly",
+      "short_name": "ShowShowCloakOnly",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 695,
+        "line_end": 698
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 696
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloak\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "CharacterWindow.CreateTooltip",
+          "callee_resolved": "CharacterWindow.CreateTooltip",
+          "source": {
+            "line": 697
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloak\"",
+            "GetString(StringTables.Default.TOOLTIP_SHOW_ITEM)"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "GetString",
+          "callee_resolved": "GetString",
+          "source": {
+            "line": 697
+          },
+          "arguments": [
+            "StringTables.Default.TOOLTIP_SHOW_ITEM"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f55",
+      "declared_name": "ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly",
+      "qualified_name": "ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly",
+      "short_name": "ShowShowCloakHeraldryOnly",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 700,
+        "line_end": 703
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 701
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "CharacterWindow.CreateTooltip",
+          "callee_resolved": "CharacterWindow.CreateTooltip",
+          "source": {
+            "line": 702
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry\"",
+            "GetString(StringTables.Default.TOOLTIP_SHOW_HERALDRY)"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "GetString",
+          "callee_resolved": "GetString",
+          "source": {
+            "line": 702
+          },
+          "arguments": [
+            "StringTables.Default.TOOLTIP_SHOW_HERALDRY"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f56",
+      "declared_name": "ClosetGoblinCharacterWindow.ShowCloakOptions",
+      "qualified_name": "ClosetGoblinCharacterWindow.ShowCloakOptions",
+      "short_name": "ShowCloakOptions",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 705,
+        "line_end": 709
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 706
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloak\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 707
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+          "callee_resolved": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+          "source": {
+            "line": 708
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f57",
+      "declared_name": "ClosetGoblinCharacterWindow.HideCloakOptions",
+      "qualified_name": "ClosetGoblinCharacterWindow.HideCloakOptions",
+      "short_name": "HideCloakOptions",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 711,
+        "line_end": 715
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 712
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloak\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 713
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinCharacterWindow.EquipmentMouseOverEnd",
+          "callee_resolved": "ClosetGoblinCharacterWindow.EquipmentMouseOverEnd",
+          "source": {
+            "line": 714
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f58",
+      "declared_name": "ClosetGoblinCharacterWindow.ShowHelm",
+      "qualified_name": "ClosetGoblinCharacterWindow.ShowHelm",
+      "short_name": "ShowHelm",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 717,
+        "line_end": 723
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "callee_resolved": "ClosetGoblinCharacterWindow.GetCurrentSet",
+          "source": {
+            "line": 718
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 720
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowHelm\"",
+            "setting"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f59",
+      "declared_name": "ClosetGoblinCharacterWindow.ShowShowHelmOnly",
+      "qualified_name": "ClosetGoblinCharacterWindow.ShowShowHelmOnly",
+      "short_name": "ShowShowHelmOnly",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 725,
+        "line_end": 728
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 726
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowHelm\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "CharacterWindow.CreateTooltip",
+          "callee_resolved": "CharacterWindow.CreateTooltip",
+          "source": {
+            "line": 727
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowHelm\"",
+            "GetString(StringTables.Default.TOOLTIP_SHOW_ITEM)"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "GetString",
+          "callee_resolved": "GetString",
+          "source": {
+            "line": 727
+          },
+          "arguments": [
+            "StringTables.Default.TOOLTIP_SHOW_ITEM"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f60",
+      "declared_name": "ClosetGoblinCharacterWindow.ShowShowHelm",
+      "qualified_name": "ClosetGoblinCharacterWindow.ShowShowHelm",
+      "short_name": "ShowShowHelm",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 730,
+        "line_end": 733
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 731
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowHelm\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+          "callee_resolved": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+          "source": {
+            "line": 732
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f61",
+      "declared_name": "ClosetGoblinCharacterWindow.HideShowHelm",
+      "qualified_name": "ClosetGoblinCharacterWindow.HideShowHelm",
+      "short_name": "HideShowHelm",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 735,
+        "line_end": 738
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 736
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsEquipmentShowHelm\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinCharacterWindow.EquipmentMouseOverEnd",
+          "callee_resolved": "ClosetGoblinCharacterWindow.EquipmentMouseOverEnd",
+          "source": {
+            "line": 737
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f62",
+      "declared_name": "ClosetGoblinCharacterWindow.UseItemRackToggled",
+      "qualified_name": "ClosetGoblinCharacterWindow.UseItemRackToggled",
+      "short_name": "UseItemRackToggled",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinCharacterWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinCharacterWindow",
+      "source": {
+        "line_start": 743,
+        "line_end": 746
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ButtonSetPressedFlag",
+          "callee_resolved": "ButtonSetPressedFlag",
+          "source": {
+            "line": 745
+          },
+          "arguments": [
+            "\"ClosetGoblinCharacterWindowContentsCheckboxUseItemRack\"",
+            "ClosetGoblin.settings.useItemRackOnCharacterWindow"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    }
+  ],
+  "namespaces": [
+    "CM_ClosetGoblin",
+    "CM_ClosetGoblin.local",
+    "ClosetGoblin",
+    "ClosetGoblin.setDisplayOrder",
+    "ClosetGoblin.settings",
+    "ClosetGoblinCharacterWindow",
+    "ClosetGoblinCharacterWindow.GetCurrentSet",
+    "ClosetGoblinCharacterWindowContentsSetList",
+    "DefaultColor"
+  ],
+  "registrations": []
+}

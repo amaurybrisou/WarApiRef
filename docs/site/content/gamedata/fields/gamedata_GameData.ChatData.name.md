@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Communication.lua:46` |
+| Addons seen in | Calling, Cram The Spam, Emojii, Enemy, I HATE YOU THIS MUCH, MapPin, MegaphonePlus, MegaphonePlusPlus |
+| Files seen in | CallingChat.lua, Code/Core/Communication.lua, CramTheSpam.lua, Emojii.lua, IHYTM.lua, MegaphonePlus.lua, MegaphonePlusPlus.lua, ResHelp.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | Enemy.OnChatTextArrived, lua_call |
+| Example locations | ChatHandler, ExamineChatMessage, Filter, FilterChat, OnChat, OnChatText |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +59,28 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.ChatData.name field accessed by 10 addons; commonly found in ChatHandler and ExamineChatMessage, Filter, FilterChat, OnChat, OnChatText, OnChatTextArrived, OnMessageReceived, lua_call, test contexts.
 
 ## Seen In
 
+- Calling
+- Cram The Spam
+- Emojii
 - Enemy
+- I HATE YOU THIS MUCH
+- MapPin
+- MegaphonePlus
+- MegaphonePlusPlus
+- ResHelp
+- rorAutoInviter
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
+- [AlertTextWindow.AddAlert](../../globals/functions/global_AlertTextWindow.AddAlert.md) (HIGH 75/100) - Global Function
+- [wstring.find](../../globals/functions/global_wstring.find.md) (HIGH 75/100) - Global Function
+- [PartyUtils.IsWarbandFull](../../globals/functions/global_PartyUtils.IsWarbandFull.md) (MEDIUM 45/100) - Global Function
 
 ## Notes
 
-- Observed in contexts: Enemy.OnChatTextArrived, lua_call
+- Observed in contexts: ChatHandler, ExamineChatMessage, Filter, FilterChat, OnChat, OnChatText

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 12 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, BankArkel, Enemy, Shinies, TidyChat |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraShares.lua:419`, `/workspace/data/raw/BankArkel/BankArkel.lua:85`, `/workspace/data/raw/BankArkel/BankArkel.lua:95`, `/workspace/data/raw/Enemy/Code/Core/Groups/EnemyEffectFilter.lua:673`, `/workspace/data/raw/Enemy/Code/UnitFrames/ClickCasting.lua:441`, `/workspace/data/raw/Enemy/Code/UnitFrames/EffectsIndicator.lua:1111`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFramePart.lua:1006`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Auctions.lua:162` |
+| Addons seen in | ActionFraction, AdvancedRenownTrainer, Aura, BankArkel, Crusher, Enemy, Miracle Grow Remix, Shinies |
+| Files seen in | AdvancedRenownTraining.lua, BankArkel.lua, Code/Core/Groups/EnemyEffectFilter.lua, Code/UnitFrames/ClickCasting.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFramePart.lua, MGRemix.lua, Modules/UI/Shinies-UI-Auctions.lua |
 | Namespaces detected | DialogManager |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize, Aura: AuraShares.OnImportExportOkButton, BankArkel: BankArkel.ConvertDB, BankArkel: BankArkel.Init, Enemy: Enemy.GroupsUI_EffectFilterDialog_Ok, Enemy: Enemy.UnitFramesUI_EffectsIndicatorDialog_Ok |
+| Example locations | ActionFraction: SetLocationActionPointBar, AdvancedRenownTrainer: Respecialize, Aura: OnImportExportOkButton, BankArkel: ConvertDB, BankArkel: Init, Crusher: performCrush |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 25 |
+| Global usage count | 25 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -60,76 +60,72 @@
 ## Signature (inferred)
 
 ```lua
-DialogManager.MakeOneButtonDialog(arg1, arg2)
+DialogManager.MakeOneButtonDialog(arg1, arg2, arg3)
 ```
 
 ## Description
 
-Observed as a global function across 6 addons.
+Observed as a global function across 12 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_NOT_ENOUGH_MONEY,{MoneyFrame.FormatMoneyString(respecCost)}), L "Invalid name specified. Name should not contain any spaces and can not be 'and', 'or', 'not' keyword.", L "Log is empty\n" |
-| arg2 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_OKAY), L "Ok", StringToWString(errBtn1) |
+| arg1 | Observed as a function or method reference. | Observed values: GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_NOT_ENOUGH_MONEY,{MoneyFrame.FormatMoneyString(respecCost)}), L "Did you know that you can use the mod 'Busted' to help submit more useful bug reports? You can find it on Curse.", L "In Squared 2.4+ you should no longer need to set rangefading-ability." |
+| arg2 | Observed as a text or wstring payload. | Observed values: GetPregameString(StringTables.Pregame.LABEL_CONTINUE), GetString(StringTables.Default.LABEL_OKAY), L "OK" |
+| arg3 | Observed as a runtime window or control identifier. | Observed values: BankArkel.ResetDB, nil |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- ActionFraction
 - AdvancedRenownTrainer
 - Aura
 - BankArkel
+- Crusher
 - Enemy
+- Miracle Grow Remix
 - Shinies
+- Squared
 - TidyChat
+- Vectors
+- wbLeadHelper
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize -> DialogManager.MakeOneButtonDialog(GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_NOT_ENOUGH_MONEY,{MoneyFrame.FormatMoneyString(respecCost)}), GetString(StringTables.Default.LABEL_OKAY), nil)
-- Aura: AuraShares.OnImportExportOkButton -> DialogManager.MakeOneButtonDialog(T["An error occurred attempting to load the Aura.  Verify you have entered the correct data."], L "Ok", nil)
-- BankArkel: BankArkel.ConvertDB -> DialogManager.MakeOneButtonDialog(StringToWString(convTxt.."v.1 >>> v.2"), StringToWString(errBtn1), nil)
-- BankArkel: BankArkel.Init -> DialogManager.MakeOneButtonDialog(StringToWString(errTxt1), StringToWString(errBtn1), BankArkel.ResetDB)
-- Enemy: Enemy.GroupsUI_EffectFilterDialog_Ok -> DialogManager.MakeOneButtonDialog(L "Invalid name specified. Name should not contain any spaces and can not be 'and', 'or', 'not' keyword.", L "Ok")
-- Enemy: Enemy.UnitFramesUI_EffectsIndicatorDialog_Ok -> DialogManager.MakeOneButtonDialog(L "You should add at least one effect filter", L "Ok")
-
-## Related APIs
-
-- none
+- ActionFraction: SetLocationActionPointBar -> DialogManager.MakeOneButtonDialog(LOC_TEXT.PLAYERWINDOW_UNAVAILABLE, GetPregameString(StringTables.Pregame.LABEL_CONTINUE))
+- AdvancedRenownTrainer: Respecialize -> DialogManager.MakeOneButtonDialog(GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_NOT_ENOUGH_MONEY,{MoneyFrame.FormatMoneyString(respecCost)}), GetString(StringTables.Default.LABEL_OKAY), nil)
+- Aura: OnImportExportOkButton -> DialogManager.MakeOneButtonDialog(T["An error occurred attempting to load the Aura.  Verify you have entered the correct data."], L "Ok", nil)
+- BankArkel: ConvertDB -> DialogManager.MakeOneButtonDialog(StringToWString(convTxt.."v.1 >>> v.2"), StringToWString(errBtn1), nil)
+- BankArkel: Init -> DialogManager.MakeOneButtonDialog(StringToWString(errTxt1), StringToWString(errBtn1), BankArkel.ResetDB)
+- Crusher: performCrush -> DialogManager.MakeOneButtonDialog(T["Unable to salvage item.  You broke it, you bought it!"], T["Ok"], nil)
 
 ## Used With
 
+- [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 100/100) - Window Function
 - [DialogManager.MakeTwoButtonDialog](global_DialogManager.MakeTwoButtonDialog.md) (HIGH 100/100) - Global Function
-- [EA_Window_InteractionRenownTraining](../tables/table_EA_Window_InteractionRenownTraining.md) (HIGH 100/100) - Global Table
-- [GameData.Player.GetRenownRefundCost](global_GameData.Player.GetRenownRefundCost.md) (HIGH 100/100) - Global Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 80/100) - Window Function
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
+- [EA_Window_InteractionRenownTraining.GetPointsAlreadyPurchased](global_EA_Window_InteractionRenownTraining.GetPointsAlreadyPurchased.md) (HIGH 98/100) - Global Function
+- [GameData.Player.GetRenownRefundCost](global_GameData.Player.GetRenownRefundCost.md) (HIGH 80/100) - Global Function
 
 ## Affects
 
-- [BankWindow](../tables/table_BankWindow.md) (HIGH 100/100) - Global Table
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [EA_ChatWindow.OnKeyEnter](global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
-- [EA_Window_InteractionRenownTraining](../tables/table_EA_Window_InteractionRenownTraining.md) (HIGH 100/100) - Global Table
-- [GameData.Player.GetRenownRefundCost](global_GameData.Player.GetRenownRefundCost.md) (HIGH 100/100) - Global Function
+- [GameData.SalvagingTypes.MAGICAL](../../gamedata/fields/gamedata_GameData.SalvagingTypes.MAGICAL.md) (HIGH 100/100) - GameData Field
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
-- [BankWindow.Hide](global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
+- [GameData.Player.GetRenownRefundCost](global_GameData.Player.GetRenownRefundCost.md) (HIGH 80/100) - Global Function
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

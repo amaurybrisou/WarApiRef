@@ -23,10 +23,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:57`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | GroupsPlayerUpdated |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy._GroupIconsEnabledChanged, Enemy: Enemy._GuardEnabledChanged, Enemy: Enemy._UnitFramesEnabledChanged |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 3 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 3 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -69,7 +69,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
+- AddEventHandler
 - Enemy.GroupIcons_OnGroupsPlayerUpdated
 - Enemy.Guard_OnGroupsPlayerUpdated
 - Enemy.UnitFrames_OnGroupsPlayerUpdated
@@ -77,30 +77,13 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Examples
 
-- Enemy: Enemy._GroupIconsEnabledChanged -> GroupsPlayerUpdated -> Enemy.GroupIcons_OnGroupsPlayerUpdated
-- Enemy: Enemy._GuardEnabledChanged -> GroupsPlayerUpdated -> Enemy.Guard_OnGroupsPlayerUpdated
-- Enemy: Enemy._UnitFramesEnabledChanged -> GroupsPlayerUpdated -> Enemy.UnitFrames_OnGroupsPlayerUpdated
-- Enemy: Enemy.GroupIcons_OnGroupsPlayerUpdated -> Enemy.AddEventHandler(GroupsPlayerUpdated, Enemy.GroupIcons_OnGroupsPlayerUpdated)
-- Enemy: Enemy.Guard_OnGroupsPlayerUpdated -> Enemy.AddEventHandler(GroupsPlayerUpdated, Enemy.Guard_OnGroupsPlayerUpdated)
-- Enemy: Enemy.UnitFrames_OnGroupsPlayerUpdated -> Enemy.AddEventHandler(GroupsPlayerUpdated, Enemy.UnitFrames_OnGroupsPlayerUpdated)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Enemy: AddEventHandler -> GroupsPlayerUpdated -> Enemy.GroupIcons_OnGroupsPlayerUpdated
+- Enemy: AddEventHandler -> GroupsPlayerUpdated -> Enemy.Guard_OnGroupsPlayerUpdated
+- Enemy: AddEventHandler -> GroupsPlayerUpdated -> Enemy.UnitFrames_OnGroupsPlayerUpdated
+- Enemy: Enemy.GroupIcons_OnGroupsPlayerUpdated -> AddEventHandler(GroupsPlayerUpdated, Enemy.GroupIcons_OnGroupsPlayerUpdated)
+- Enemy: Enemy.Guard_OnGroupsPlayerUpdated -> AddEventHandler(GroupsPlayerUpdated, Enemy.Guard_OnGroupsPlayerUpdated)
+- Enemy: Enemy.UnitFrames_OnGroupsPlayerUpdated -> AddEventHandler(GroupsPlayerUpdated, Enemy.UnitFrames_OnGroupsPlayerUpdated)
 
 ## Notes
 
-- Triggered-by evidence: Enemy:Enemy.Groups_OnBattlegroupMemberUpdated, Enemy:Enemy.Groups_OnCurrentPlayerUpdated, Enemy:Enemy.Groups_OnGroupStatusUpdated, Enemy:Enemy.Groups_OnPlayerTargetUpdated, Enemy:Enemy.Groups_OnScenarioPlayerHitsUpdated, Enemy:EnemyPlayer:SetDistant, Enemy:EnemyPlayer:SetLOS
 - Only one addon surfaced this event in the current addon-api corpus.

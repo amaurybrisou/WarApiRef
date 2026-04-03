@@ -27,10 +27,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:1055` |
+| Files seen in | RoR_SoR.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | RoR_SoR.SET_KEEP, lua_call |
+| Example locations | SET_KEEP, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -57,28 +57,12 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.GuildPermissons.CLAIM_KEEP field accessed by 1 addons; commonly found in SET_KEEP and lua_call contexts.
 
 ## Seen In
 
 - RoR_SoR
 
-## Related APIs
-
-- [LabelGetText](../../window_api/functions/window_LabelGetText.md) (HIGH 100/100) - Window Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: RoR_SoR.SET_KEEP, lua_call
+- Observed in contexts: SET_KEEP, lua_call

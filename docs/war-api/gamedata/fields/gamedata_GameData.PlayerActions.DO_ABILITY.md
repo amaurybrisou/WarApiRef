@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, HotbarMorale |
-| Files seen in | `/workspace/data/raw/Enemy/Code/UnitFrames/ClickCasting.lua:147`, `/workspace/data/raw/HotbarMorale/HotbarMorale.lua:10`, `/workspace/data/raw/HotbarMorale/HotbarMorale.lua:5` |
+| Addons seen in | Enemy, HealGrid, HotbarMorale, MarkBuff, NerfedButtons, Pure, ResHelp, Twister |
+| Files seen in | Code/UnitFrames/ClickCasting.lua, Core.lua, HotbarMorale.lua, Modules/HealGridMouseClick.lua, NerfedEngine.lua, ResHelp.lua, Source/PurePlayerPet.lua, Twister.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | ActionButton.CursorSwap, CursorSwap, EnemyClickCasting:Proceed, HotbarMorale.Initialize, lua_call |
+| Example locations | CursorSwap, GetAbilityCooldown, Initialize, LoadUnitFrame, OnLoad, OnPlayerSingleAbilityUpdated |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 12 |
+| Global usage count | 12 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,34 +59,25 @@
 
 ## Description
 
-Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.PlayerActions.DO_ABILITY field accessed by 8 addons; commonly found in CursorSwap and GetAbilityCooldown, Initialize, LoadUnitFrame, OnLoad, OnPlayerSingleAbilityUpdated, OnUpdate, Proceed, ProcessAbility, SetActiveAura, changeHotbar, lua_call contexts.
 
 ## Seen In
 
 - Enemy
+- HealGrid
 - HotbarMorale
+- MarkBuff
+- NerfedButtons
+- Pure
+- ResHelp
+- Twister
 
 ## Related APIs
 
-- [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
 - [Cursor.PickUp](../../globals/functions/global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
-- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-
-## Used With
-
-- [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
-- [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
-- [Cursor.PickUp](../../globals/functions/global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
-- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [WindowGetGameActionData](../../window_api/functions/window_WindowGetGameActionData.md) (HIGH 100/100) - Window Function
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: ActionButton.CursorSwap, CursorSwap, EnemyClickCasting:Proceed, HotbarMorale.Initialize, lua_call
+- Observed in contexts: CursorSwap, GetAbilityCooldown, Initialize, LoadUnitFrame, OnLoad, OnPlayerSingleAbilityUpdated

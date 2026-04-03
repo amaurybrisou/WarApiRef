@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, Enemy, Killer, Pocket Palette, Shinies |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/BuffHead/Setup/General.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupDisplay.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupEffectCache.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupFilter.xml:0` |
+| Addons seen in | AdvancedRenownTrainer, Aura, AutoBand, BuffHead, CastSequence, CraftingWillard, DAoCBuff, DetauntHelper |
+| Files seen in | AdvancedRenownTrainingImportDialog.xml, AdvancedRenownTrainingPresets.xml, AutoBandWindowTemplate.xml, Code/Core/ConfigurationWindow.xml, Code/Core/Groups/EffectFilterDialog.xml, Code/Intercom/ChooseChannelDialog.xml, Code/UnitFrames/ClickCastingDialog.xml, Code/UnitFrames/EffectsIndicatorDialog.xml |
 | Namespaces detected | EA_EditBox_DefaultFrame |
 | Source kinds | xml_attributes |
-| Example locations | AdvancedRenownTrainingImportNameInputWindowNameInputBox, AdvancedRenownTrainingImportWindowLinkInputBox, AdvancedRenownTrainingImportWindowNameInputBox, AdvancedRenownTrainingLinkWindowLinkBox, AdvancedRenownTrainingPresetsWindowSaveNameInput, AuraSharesImportExportAuraText |
-| XML usage count | 110 |
-| XML attribute usage count | 110 |
+| Example locations | AddFriendDescriptionText, AdvancedRenownTrainingImportNameInputWindowNameInputBox, AdvancedRenownTrainingImportWindowLinkInputBox, AdvancedRenownTrainingImportWindowNameInputBox, AdvancedRenownTrainingLinkWindowLinkBox, AdvancedRenownTrainingPresetsWindowSaveNameInput |
+| XML usage count | 313 |
+| XML attribute usage count | 313 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,31 +57,84 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 12 addons.
+Engine-supplied XML constant or template class referenced by 62 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - Aura
+- AutoBand
 - BuffHead
+- CastSequence
+- CraftingWillard
 - DAoCBuff
+- DetauntHelper
+- DuffTimer
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraftX
 - Enemy
+- FastFriends
+- FozAuction
+- GDes
+- Ges
+- GroupRange
+- GuildWarden
+- HealGrid
+- ItemRack
+- KeyBar
+- Keyset
 - Killer
+- LibAddonButton
+- LoyalPet
+- MapMonster
+- MapPin
+- Mass Refine
+- MegaphonePlusPlus
+- NerfedButtons
+- ObjectInspector
+- Obsidian
+- PartyAd
+- PieTracker
 - Pocket Palette
+- RVAPI_ColorDialog
+- RVMOD_Manager
+- RandomMount
+- RememberIt
+- Res
+- SOR
+- Sequencer
 - Shinies
+- SocialWindow 2.0
+- TacticSetNames
+- TastyButtons
 - TexturedButtons
+- ThinkOutLoud
 - TidyRoll
 - TurretRange
+- Twister
+- Vectors
+- WARCommander
+- WarBoard_FPS
+- WarBoard_Loc
+- Warbuilder
+- XpStatus+G
 - bigger_MacroWindow
+- nLootLink
+- wbLeadHelper
+- zMailMod
 
 ## Used By
 
+- AddFriendDescriptionText
 - AdvancedRenownTrainingImportNameInputWindowNameInputBox
 - AdvancedRenownTrainingImportWindowLinkInputBox
 - AdvancedRenownTrainingImportWindowNameInputBox
 - AdvancedRenownTrainingLinkWindowLinkBox
 - AdvancedRenownTrainingPresetsWindowSaveNameInput
+- AuctionSearchControlsSearchBox
 - AuraSharesImportExportAuraText
+- AutoBandWindowTemplateSaveNameEditBox
 - BuffHeadSetupAdvancedCompressionItemEffectWindowAbilityEditBox
 - BuffHeadSetupAdvancedCompressionItemWindowNameEditBox
 - BuffHeadSetupAdvancedCompressionItemWindowOverrideIconEditBox
@@ -114,13 +167,37 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - BuffHeadSetupSelectColorWindowTintBlueEditBox
 - BuffHeadSetupSelectColorWindowTintGreenEditBox
 - BuffHeadSetupSelectColorWindowTintRedEditBox
+- CastSequenceFindAbilityWindowAbilityIdEditBox
+- CastSequenceSequenceBuilderWindowNameEditBox
+- CastSequenceSequenceBuilderWindowPageEditBox
+- CastSequenceSequenceBuilderWindowResetTimeoutEditBox
+- CastSequenceSequenceBuilderWindowSlotEditBox
+- CastSequenceSetupWindowCastModifierEditBox
+- CraftingWillardEditbox
 - DAoCBuffFrameSettingsTab_ScrollChild_FilterNameEditBox
 - DAoCBuffFrameSettingsTab_ScrollChild_FrameNameEditBox
 - DAoCBuffListManagerTab_ScrollChild_AddListEditBox
 - DAoCBuffListManagerTab_ScrollChild_IDEditBox
 - DAoCBuffListManagerTab_ScrollChild_NameEditBox
+- DTC_BarSettingsTemplateMiscellaneousBQEditBox
+- DTC_BarSettingsTemplateMiscellaneousDelayEditBox
+- DTC_BarSettingsTemplateMiscellaneousMREditBox
+- DTC_TARGETS_TemplateClassValue
+- DTC_TARGETS_TemplateDPSRangeFrom
+- DTC_TARGETS_TemplateDPSRangeTo
+- DTC_TARGETS_TemplateLevelRangeFrom
+- DTC_TARGETS_TemplateLevelRangeTo
+- DTC_TARGETS_TemplateNameValue
+- DTC_TARGETS_TemplateSeenRangeFrom
+- DTC_TARGETS_TemplateSeenRangeTo
+- DebugWindowTextBox
+- DevPadNewWindowTextBox
+- DevPadRenameWindowTextBox
+- DevPadSaveWindowTextBox
+- DuffTimerOptions_EditBox_ebx
 - DyeWindowFilterEditBox
 - EA_Window_MacroDetailsName
+- EZCraftXWindow.Text3Chars.Text
 - EnemyChooseChannelDialogTellDetailsName
 - EnemyClickCastingDialogContentScrollChildActionConfig2Command
 - EnemyClickCastingDialogContentScrollChildName
@@ -150,6 +227,51 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - EnemyEffectsIndicatorDialogContentScrollChildSizeX
 - EnemyEffectsIndicatorDialogContentScrollChildSizeY
 - EnemyUnitFramePartDialogContentScrollChildName
+- FastFriendsConfigMainMinLevelEditBox
+- GDesOptionsColourHighHealthEditBox
+- GDesOptionsColourMedHealthEditBox
+- GDesOptionsColourMinHealthEditBox
+- GDesOptionsExtrasFeatureOffsetXEditBox
+- GDesOptionsExtrasFeatureOffsetYEditBox
+- GDesOptionsExtrasIconsOffsetXEditBox
+- GDesOptionsExtrasIconsOffsetYEditBox
+- GesOptionsColourHighHealthEditBox
+- GesOptionsColourMedHealthEditBox
+- GesOptionsColourMinHealthEditBox
+- GesOptionsExtrasFeatureOffsetXEditBox
+- GesOptionsExtrasFeatureOffsetYEditBox
+- GesOptionsExtrasTrackerOffsetXEditBox
+- GesOptionsExtrasTrackerOffsetYEditBox
+- GesOptionsGeneralMessageEditBox
+- GesOptionsSoundsThresholdEditBox1
+- GesOptionsSoundsThresholdEditBox2
+- GesOptionsSoundsThresholdEditBox3
+- GesOptionsSoundsThresholdEditBox4
+- GroupRangeSetupGeneralWindowOffsetXEditBox
+- GroupRangeSetupGeneralWindowOffsetYEditBox
+- GroupRangeSetupStylePointerReverseWindowOffsetXEditBox
+- GroupRangeSetupStylePointerReverseWindowOffsetYEditBox
+- GroupRangeSetupStylePointerWindowOffsetXEditBox
+- GroupRangeSetupStylePointerWindowOffsetYEditBox
+- GroupRangeSetupStyleSimpleTextWindowOffsetXEditBox
+- GroupRangeSetupStyleSimpleTextWindowOffsetYEditBox
+- GuildWarden.DBWindowLvlRefL
+- GuildWarden.DBWindowLvlRefU
+- GuildWarden.DBWindowNameRef
+- GuildWarden.DBWindowRrRefL
+- GuildWarden.DBWindowRrRefU
+- GuildWarden.DBWindowWardNo
+- HGG_TabMouseClickWindowTemplateActionDetailEdit
+- HGG_TabSpellTrackWindowTemplateTabGeneralDuration
+- HGG_TabSpellTrackWindowTemplateTabGeneralName
+- HGG_TabSpellTrackWindowTemplateTabGeneralSign
+- HGG_TabSpellTrackWindowTemplateTabGeneralWarnExpire
+- HGG_TabSpellTrackWindowTemplateTabGeneralWarnExpireSign
+- ItemRackSetsName
+- KeyBarSettingsWindowColorB
+- KeyBarSettingsWindowColorG
+- KeyBarSettingsWindowColorR
+- KeysetSaveWindowNameEditBox
 - KillerSettingsWindowContentFeedHistoryLimit
 - KillerSettingsWindowContentHistoryMaxZones
 - KillerSettingsWindowContentMainHeight
@@ -157,6 +279,71 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - KillerSettingsWindowContentPersonalDeaths
 - KillerSettingsWindowContentPersonalKills
 - KillerSettingsWindowContentWindowMinutes
+- LPETOptionsProfilesEdit
+- LibAddonButtonManagerAdvancedWindowItemSizeHeightEditBox
+- LibAddonButtonManagerAdvancedWindowItemSizeWidthEditBox
+- LibAddonButtonManagerAdvancedWindowItemTextureItemAnimationFpsEditBox
+- LibAddonButtonManagerAdvancedWindowItemTextureItemAnimationTextureEditBox
+- LibAddonButtonManagerAdvancedWindowItemTextureItemSimpleTextureEditBox
+- LibAddonButtonManagerCustomItemWindowMacroTextEditBox
+- LibAddonButtonManagerCustomItemWindowMenuTextEditBox
+- MapMonsterEditorWindowEditBoxCoord
+- MapMonsterEditorWindowEditBoxDefault
+- MapMonsterPinTypeEditorWindowEditBoxDefault
+- MapMonster_PinTypeEditorWindowRadiusEditBox
+- MapPin_SetupIDBox
+- MapPin_SetupTimersHour
+- MapPin_SetupTimersMin
+- MapPin_SetupTimersSec
+- MapPin_SetupTitleBox
+- MapPin_SetupXBox
+- MapPin_SetupYBox
+- MassRefineTextInput
+- MegaphoneMainMaxLengthEditBox
+- NBSB_ParamRowTemplateabilityedit
+- NBSB_ParamRowTemplateother
+- NBSetup_SaveEditBox
+- ObjectInspectorCommandEditBox
+- ObjectInspectorDepthEditBox
+- ObsidianSetupCastbarWindowElementBackgroundBorderSizeEditBox
+- ObsidianSetupCastbarWindowElementGeneralSizeHeightEditBox
+- ObsidianSetupCastbarWindowElementGeneralSizeWidthEditBox
+- ObsidianSetupCastbarWindowElementGlobalCooldownOffsetXEditBox
+- ObsidianSetupCastbarWindowElementGlobalCooldownOffsetYEditBox
+- ObsidianSetupCastbarWindowElementGlobalCooldownSizeHeightEditBox
+- ObsidianSetupCastbarWindowElementGlobalCooldownSizeWidthEditBox
+- ObsidianSetupCastbarWindowElementIconOffsetXEditBox
+- ObsidianSetupCastbarWindowElementIconOffsetYEditBox
+- ObsidianSetupCastbarWindowElementNameOffsetXEditBox
+- ObsidianSetupCastbarWindowElementNameOffsetYEditBox
+- ObsidianSetupCastbarWindowElementTimerOffsetXEditBox
+- ObsidianSetupCastbarWindowElementTimerOffsetYEditBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementGeneralFixedDurationEditBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementGeneralMaximumDurationEditBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementGeneralSizeHeightEditBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementGeneralSizeWidthEditBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementGeneralSpacingEditBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementNameOffsetXEditBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementNameOffsetYEditBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementTimerOffsetXEditBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementTimerOffsetYEditBox
+- ObsidianSetupEffectTrackerWindowElementTrackerElementGeneralOffsetXEditBox
+- ObsidianSetupEffectTrackerWindowElementTrackerElementGeneralOffsetYEditBox
+- ObsidianSetupEffectTrackerWindowElementTrackerElementIconOffsetXEditBox
+- ObsidianSetupEffectTrackerWindowElementTrackerElementIconOffsetYEditBox
+- ObsidianSetupSelectColorWindowTintBlueEditBox
+- ObsidianSetupSelectColorWindowTintGreenEditBox
+- ObsidianSetupSelectColorWindowTintRedEditBox
+- PartyAdWindowPurposeEditBox
+- PieTrackerOptionsTargetEditBox
+- RVAPI_ColorDialogEditBoxTemplate
+- RVMOD_ManagerModInfoTemplateScrollChildProjectURLText
+- RandomMountWindowSettingsContentMinLevelEdit
+- RememberItSettingsDeathList
+- RememberItSettingsKillList
+- ResOptionsChooseMessageEditBox
+- SOROptions.TextBox.box
+- Sequencer_WindowTimerBox
 - Shinies_Default_Editbox_ClearLargeBold
 - Shinies_Default_Editbox_ClearMedium
 - Shinies_Default_Editbox_ClearMediumBold
@@ -164,8 +351,34 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - Shinies_Default_Editbox_DefaultGiant
 - Shinies_Default_Editbox_DefaultHuge
 - Shinies_Default_Editbox_DefaultLarge
+- SocialWindowAddMemberWindowText
+- SocialWindowTabFriendsSocketPlayerSearchEditBox
+- SocialWindowTabIgnoreSocketPlayerSearchEditBox
+- SocialWindowTabOptionsSocketAFKNoteEditBox
+- SocialWindowTabSearchSocketEditBoxCareerName
+- SocialWindowTabSearchSocketEditBoxGuildName
+- SocialWindowTabSearchSocketEditBoxMaxRank
+- SocialWindowTabSearchSocketEditBoxMinRank
+- SocialWindowTabSearchSocketEditBoxPlayerName
+- TOLSettingsWindowPhraseEditWindowPhraseTextEdit
+- TOLSettingsWindowSkillEditWindowSkillNameEdit
 - TRollAutoRollAddByIdIdEditBox
 - TRollAutoRollAddByIdNameEditBox
+- TSN_SettingRowTemplateEditBox
+- TastyButtonsButtonSelectWindowButtonRangeViewEditFirst
+- TastyButtonsButtonSelectWindowButtonRangeViewEditLast
+- TastyButtonsGeneralOptionsProfileWindowEditProfileName
+- TastyButtonsOptionsWindowCreateViewEditCreateFirst
+- TastyButtonsOptionsWindowCreateViewEditCreateLast
+- TastyButtonsOptionsWindowCreateViewEditScale
+- TastyButtonsOptionsWindowEditViewEditScale
+- TastyButtonsOptionsWindowEditViewEditSetPosX
+- TastyButtonsOptionsWindowEditViewEditSetPosY
+- TastyButtonsOptionsWindowGroupViewEditBlockColumns
+- TastyButtonsOptionsWindowGroupViewEditBlockRows
+- TastyButtonsOptionsWindowGroupViewEditGroupToButton
+- TastyButtonsOptionsWindowGroupViewEditGroupXGap
+- TastyButtonsOptionsWindowGroupViewEditGroupYGap
 - TexturedButtonsSetupActionbarWindowPaddingXEditBox
 - TexturedButtonsSetupActionbarWindowPaddingYEditBox
 - TexturedButtonsSetupActionbarWindowSpacingXEditBox
@@ -186,22 +399,50 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - TurretRangeSetupDistanceWindowColorTintGreenEditBox
 - TurretRangeSetupDistanceWindowColorTintRedEditBox
 - TurretRangeSetupDistanceWindowDistanceEditBox
+- TwisterSettingsActionEdit
+- UiModAdvancedWindowAddOnsDirectory
+- UiModAdvancedWindowCustomUiDirectory
+- Vectors_Templates_DoubleFloatEditPanel_X_FloatEditBox
+- Vectors_Templates_DoubleFloatEditPanel_Y_FloatEditBox
+- Vectors_Templates_SingleFloatEditPanel_X_FloatEditBox
+- WARCommanderConfigWindowEditBoxDefault
+- WarBoard_FPSOptions_edtAvgCounterLow
+- WarBoard_FPSOptions_edtAvgCounterMed
+- WarBoard_FPSOptions_edtFPSCounterLow
+- WarBoard_FPSOptions_edtFPSCounterMed
+- WarBoard_FPSOptions_edtRefreshRate
+- WarBoard_Loc_SetWidthWindow_edtStringFormat
+- WarbuilderHotBarWindowEditBox
+- WarbuilderPresetWindowEditBox
+- WbLeadHelperMessageContentScrollChildLabelText
+- WbLeadHelperMessageContentScrollChildMessageText
+- XpStatusQuotaWindowText
+- nLootLinkGUIFilterCraftingLevelMax
+- nLootLinkGUIFilterCraftingLevelMin
+- nLootLinkGUIFilterName
+- nLootLinkGUIFilterRankMax
+- nLootLinkGUIFilterRankMin
+- nLootLinkGUIFilterRenownMax
+- nLootLinkGUIFilterRenownMin
+- wbLeadHelperConfigTabMessageEndText
+- wbLeadHelperConfigTabMessageStartText
+- zMailModMassMailSubjectEditBox
+- zMailModMassMailToAutoComplete
+- zMailModMassMailToEditBox
+- zMailModOptionsEditbox
+- zMailModSendEditBoxBrass
+- zMailModSendEditBoxBrassDefault
+- zMailModSendEditBoxGold
+- zMailModSendEditBoxGoldDefault
+- zMailModSendEditBoxSilver
+- zMailModSendEditBoxSilverDefault
+- zMailModSendSubjectEditBoxDefault
+- zMailModSendToAutoCompleteDefault
+- zMailModSendToEditBoxDefault
 
 ## Related APIs
 
 - [EditBox](../../xml/element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

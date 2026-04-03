@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, Enemy, Killer, PotionBar, Shinies, WhoHealedMe, bigger_MacroWindow |
-| Files seen in | `/workspace/data/raw/DAoCBuff/Source/DAoCBuffMsgWindow.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:2134`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:2464`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:5`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:988`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogConfiguration.xml:0`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIconsConfiguration.xml:0`, `/workspace/data/raw/Enemy/Code/Guard/GuardConfiguration.xml:0` |
+| Addons seen in | CDown, Crusher, DAoCBuff, DPSMeter, DeepSleep, DuffTimer, EA_ScenarioGroupWindow, EA_UiModWindow |
+| Files seen in | CDownSettingsTabs.xml, Code/CombatLog/CombatLogConfiguration.xml, Code/GroupIcons/GroupIconsConfiguration.xml, Code/Guard/GuardConfiguration.xml, Code/KillSpam/KillSpamConfiguration.xml, Code/TalismanAlerter/TalismanAlerterConfiguration.xml, Code/Timer/TimerConfiguration.xml, Code/UnitFrames/ClickCastingDialog.xml |
 | Namespaces detected | EA_ScrollBar_DefaultVerticalChain |
 | Source kinds | xml_attributes |
-| Example locations | $parentScrollBar, DAoCBuffFrameSettingsTab_Scrollbar, DAoCBuffGeneralSettingsTab_Scrollbar, DAoCBuffListManagerTab_Scrollbar, DAoCBuffMessageWindowScrollWindowScrollbar, DAoCBuff_Settings_FilterFrame_Scrollbar |
-| XML usage count | 24 |
-| XML attribute usage count | 24 |
+| Example locations | $parentScrollBar, AuctionWindowVertScroll, CDownColorSettingsTab_Scrollbar, CDownGeneralSettingsTab_Scrollbar, CDownNLayoutSettingsTab_Scrollbar, CDownSLayoutSettingsTab_Scrollbar |
+| XML usage count | 53 |
+| XML attribute usage count | 53 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,26 +57,58 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 7 addons.
+Engine-supplied XML constant or template class referenced by 28 addons.
 
 ## Seen In
 
+- CDown
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DeepSleep
+- DuffTimer
+- EA_ScenarioGroupWindow
+- EA_UiModWindow
 - Enemy
+- EveryBodyGuard
+- FozAuction
+- Hopper
 - Killer
+- Miracle Grow Remix
+- Motion
 - PotionBar
+- Pure
+- RVMOD_Manager
+- RVMOD_Targets
 - Shinies
+- SocialWindow 2.0
+- Tome Titan
+- Vectors
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - bigger_MacroWindow
+- wbLeadHelper
 
 ## Used By
 
 - $parentScrollBar
+- AuctionWindowVertScroll
+- CDownColorSettingsTab_Scrollbar
+- CDownGeneralSettingsTab_Scrollbar
+- CDownNLayoutSettingsTab_Scrollbar
+- CDownSLayoutSettingsTab_Scrollbar
+- CrusherConfigScrollBar
 - DAoCBuffFrameSettingsTab_Scrollbar
 - DAoCBuffGeneralSettingsTab_Scrollbar
 - DAoCBuffListManagerTab_Scrollbar
 - DAoCBuffMessageWindowScrollWindowScrollbar
 - DAoCBuff_Settings_FilterFrame_Scrollbar
+- DPSMeterVerticalScrollbar
+- DeepSleep_Settings_ScrollWindow_Scrollbar
+- DuffTimerOptions_GeneralTab_Template_Scrollbar
+- DuffTimerOptions_WinTab_Scrollbar
+- EA_ScrollWindow_ModInfoTemplateScrollbar
 - EA_Window_MacroMacrosScrollbar
 - EnemyClickCastingDialogContentScrollbar
 - EnemyCombatLogConfigurationContentScrollbar
@@ -88,29 +120,35 @@ Observed engine XML template or inherited constant referenced by 7 addons.
 - EnemyTimerConfigurationContentScrollbar
 - EnemyUnitFramePartDialogContentScrollbar
 - EnemyUnitFramesConfigurationContentScrollbar
+- EveryBodyGuard_Settings_ScrollWindow_Scrollbar
+- HopperConfigScrollBar
 - IconsScrollbar
 - KillerScoreDetailsWindowListScrollbar
 - KillerWindowFeedScrollbar
+- MiracleGrow2SettingsConfigScrollScroll
+- MiracleGrow2SettingsLayoutScrollScroll
+- MiracleGrow2SettingsPresetScrollScroll
+- MotionConfigScrollBar
+- PureConfigScrollBar
+- RVMOD_ManagerModInfoTemplateScrollbar
+- RVMOD_ManagerWindowContentListBoxScrollbar
+- RVMOD_TargetsSettingsWindowFramesScrollbar
 - ShiniesAutoUI_AutoSummaryScrollbar
 - ShiniesConfigUI_DisplayBar
+- SocialWindowListWindowScrollWindowScrollbar
+- TTitanUIMainScrollbar
+- TTitanUIVertScroll
+- UngroupedPlayerVertScroll
+- Vectors_Settings_ScrollWindow_Scrollbar
+- WCDBConfigScrollBar
+- WCDPConfigScrollBar
+- WbLeadHelperMessageContentScrollbar
 - WhoHealedMeDetailsContentSpellListScrollbar
 - WhoHealedMeWindowContentHealerListScrollbar
 
 ## Related APIs
 
 - [VerticalScrollbar](../../xml/element_types/element_VerticalScrollbar.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

@@ -10,35 +10,34 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 128
+- Raw weighted score: 125
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AnywhereTrainer, CM_ClosetGoblin |
-| Files seen in | `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:695`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:700`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:725` |
+| Addons seen in | AnywhereTrainer, BankWindowFix, CM_ClosetGoblin, CaVES, Effigy, RvRStats, RvRStatsTab, nRarity |
+| Files seen in | Source/BankWindowFix.lua, Source/RvRStatsRvRTab.lua, States/EffigyStatePlayer.lua, source/AnywhereTrainer.lua, source/CaVES.lua, source/containers/Character.lua |
 | Namespaces detected | CharacterWindow |
-| Source kinds | globals, lua_calls |
-| Example locations | CM_ClosetGoblin: ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly, CM_ClosetGoblin: ClosetGoblinCharacterWindow.ShowShowCloakOnly, CM_ClosetGoblin: ClosetGoblinCharacterWindow.ShowShowHelmOnly |
+| Source kinds | lua_calls |
+| Example locations | AnywhereTrainer: CharacterWindow_UpdateMode, BankWindowFix: BagEquipmentRButtonUp, CM_ClosetGoblin: ShowShowCloakHeraldryOnly, CM_ClosetGoblin: ShowShowCloakOnly, CM_ClosetGoblin: ShowShowHelmOnly, CaVES: GetTotalBonusPower |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 1 |
-| Local definition count | 1 |
-| Documentation references | 1 |
-| Initialization flow references | 2 |
+| Lua usage count | 39 |
+| Global usage count | 10 |
+| Local definition count | 0 |
+| Documentation references | 0 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | no |
@@ -58,11 +57,20 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 2 addons.
+Shared function table with 10 member functions; the primary API surface for 8 addons.
 
 ## Functions
 
+- CharacterWindow.AutoEquipItem
+- CharacterWindow.CalcArmorPenetration
+- CharacterWindow.CalculateValueWithBonus
 - CharacterWindow.CreateTooltip
+- CharacterWindow.GetItem
+- CharacterWindow.IsResistDiminished
+- CharacterWindow.IsStatDiminished
+- CharacterWindow.UpdateDefenseLabels
+- CharacterWindow.UpdateMode
+- CharacterWindow.UpdateStatsNew
 
 ## Observed Members
 
@@ -71,29 +79,22 @@ Observed shared global table or namespace surfaced in 2 addons.
 ## Seen In
 
 - AnywhereTrainer
+- BankWindowFix
 - CM_ClosetGoblin
+- CaVES
+- Effigy
+- RvRStats
+- RvRStatsTab
+- nRarity
 
 ## Examples
 
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly -> CharacterWindow.CreateTooltip("ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry", GetString(StringTables.Default.TOOLTIP_SHOW_HERALDRY))
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.ShowShowCloakOnly -> CharacterWindow.CreateTooltip("ClosetGoblinCharacterWindowContentsEquipmentShowCloak", GetString(StringTables.Default.TOOLTIP_SHOW_ITEM))
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.ShowShowHelmOnly -> CharacterWindow.CreateTooltip("ClosetGoblinCharacterWindowContentsEquipmentShowHelm", GetString(StringTables.Default.TOOLTIP_SHOW_ITEM))
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AnywhereTrainer: CharacterWindow_UpdateMode -> CharacterWindow.UpdateMode(mode)
+- BankWindowFix: BagEquipmentRButtonUp -> CharacterWindow.AutoEquipItem(slot)
+- CM_ClosetGoblin: ShowShowCloakHeraldryOnly -> CharacterWindow.CreateTooltip("ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry", GetString(StringTables.Default.TOOLTIP_SHOW_HERALDRY))
+- CM_ClosetGoblin: ShowShowCloakOnly -> CharacterWindow.CreateTooltip("ClosetGoblinCharacterWindowContentsEquipmentShowCloak", GetString(StringTables.Default.TOOLTIP_SHOW_ITEM))
+- CM_ClosetGoblin: ShowShowHelmOnly -> CharacterWindow.CreateTooltip("ClosetGoblinCharacterWindowContentsEquipmentShowHelm", GetString(StringTables.Default.TOOLTIP_SHOW_ITEM))
+- CaVES: GetTotalBonusPower -> CharacterWindow.CalculateValueWithBonus(bonusType, 0)
 
 ## Notes
 

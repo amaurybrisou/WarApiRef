@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 113
+- Raw weighted score: 125
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions |
-| Files seen in | `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:305`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:167` |
+| Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions, EZCraftX, JunkDump, Motion, nLootLink |
+| Files seen in | Source/EZCraftX.lua, Source/Motion.lua, source/AnywhereTrainer.lua, source/nLootLinkData.lua, source/nLootLinkGUI.lua |
 | Namespaces detected | CraftingSystem |
 | Source kinds | lua_calls |
-| Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickCraft, AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickCraft |
+| Example locations | AnywhereTrainer: OnLeftClickCraft, AnywhereTrainerAdditions: OnLeftClickCraft, EZCraftX: item_allowed_in_slot, JunkDump: professionChecks, JunkDump: professionChecks2, Motion: determineCraftSubKey |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 1 |
+| Lua usage count | 14 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,10 +57,15 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 2 addons.
+Shared function table with 6 member functions; the primary API surface for 6 addons.
 
 ## Functions
 
+- CraftingSystem.Clear
+- CraftingSystem.GetCraftingData
+- CraftingSystem.GetCraftingDataStrings
+- CraftingSystem.GetResourceTypeName
+- CraftingSystem.IsCraftingItem
 - CraftingSystem.ToggleShowing
 
 ## Observed Members
@@ -71,29 +76,19 @@ Observed shared global table or namespace surfaced in 2 addons.
 
 - AnywhereTrainer
 - AnywhereTrainerAdditions
+- EZCraftX
+- JunkDump
+- Motion
+- nLootLink
 
 ## Examples
 
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.APOTHECARY)
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.TALISMAN)
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.APOTHECARY)
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.TALISMAN)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AnywhereTrainer: OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.APOTHECARY)
+- AnywhereTrainer: OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.TALISMAN)
+- AnywhereTrainerAdditions: OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.APOTHECARY)
+- AnywhereTrainerAdditions: OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.TALISMAN)
+- EZCraftX: item_allowed_in_slot -> CraftingSystem.GetCraftingData(itemData)
+- JunkDump: professionChecks -> CraftingSystem.GetCraftingData(itemData)
 
 ## Notes
 

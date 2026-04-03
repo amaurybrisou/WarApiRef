@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions |
-| Files seen in | `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:305`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:167` |
+| Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions, EZCraft, EZCraftX |
+| Files seen in | AnywhereTrainerAdditions.lua, EZCraft.lua, Source/EZCraftX.lua, source/AnywhereTrainer.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | AnywhereTrainer.OnLeftClickCraft, AnywhereTrainerAdditions.OnLeftClickCraft, lua_call |
+| Example locations | AddItem, OnLeftClickCraft, contextMenuOnClick, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,29 +59,15 @@
 
 ## Description
 
-Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.TradeSkills.TALISMAN field accessed by 4 addons; commonly found in AddItem and OnLeftClickCraft, contextMenuOnClick, lua_call contexts.
 
 ## Seen In
 
 - AnywhereTrainer
 - AnywhereTrainerAdditions
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- EZCraft
+- EZCraftX
 
 ## Notes
 
-- Observed in contexts: AnywhereTrainer.OnLeftClickCraft, AnywhereTrainerAdditions.OnLeftClickCraft, lua_call
+- Observed in contexts: AddItem, OnLeftClickCraft, contextMenuOnClick, lua_call

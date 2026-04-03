@@ -25,10 +25,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:137`, `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:180` |
+| Files seen in | Setup/LayoutControlFrame.lua |
 | Namespaces detected | WindowSetResizing |
 | Source kinds | lua_calls |
-| Example locations | BuffHead: BuffHead.Setup.LayoutControlFrame:BeginResize, BuffHead: BuffHead.Setup.LayoutControlFrame:EndResize |
+| Example locations | BuffHead: BeginResize, BuffHead: EndResize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -69,12 +69,12 @@ Observed mutating runtime window state or presentation.
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: self:GetName() |
 | arg2 | Observed as a boolean toggle. | Observed values: false, true |
-| arg3 | Observed as a text or wstring payload. | Observed values: "", resizeData.sizePoint |
+| arg3 | Observed as a function or method reference. | Observed values: "", resizeData.sizePoint |
 | arg4 | Observed as a function or method reference. | Observed values: false, resizeData.lockAspect |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -86,24 +86,12 @@ Observed mutating runtime window state or presentation.
 
 ## Examples
 
-- BuffHead: BuffHead.Setup.LayoutControlFrame:BeginResize -> WindowSetResizing(self:GetName(), true, resizeData.sizePoint, resizeData.lockAspect)
-- BuffHead: BuffHead.Setup.LayoutControlFrame:EndResize -> WindowSetResizing(self:GetName(), false, "", false)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
+- BuffHead: BeginResize -> WindowSetResizing(self:GetName(), true, resizeData.sizePoint, resizeData.lockAspect)
+- BuffHead: EndResize -> WindowSetResizing(self:GetName(), false, "", false)
 
 ## Affects
 
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 143
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
@@ -22,23 +22,22 @@
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff |
-| Files seen in | `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:25` |
+| Files seen in | Source/DAoCBuff.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, lua_call |
-| Example locations | DAoCBuff.Initialize, DAoCBuff.Shutdown, DAoCBuff.TargetsCleared, SystemData.Events.RELEASE_CORPSE, event_page, event_registration |
+| Source kinds | lua_call |
+| Example locations | Initialize, Shutdown, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
-| Documentation references | 3 |
+| Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -59,7 +58,7 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.RELEASE_CORPSE field accessed by 1 addons; commonly found in Initialize and Shutdown, lua_call contexts.
 
 ## Seen In
 
@@ -68,20 +67,7 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 ## Related APIs
 
 - [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
-- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 
-- Observed in contexts: DAoCBuff.Initialize, DAoCBuff.Shutdown, DAoCBuff.TargetsCleared, SystemData.Events.RELEASE_CORPSE, event_page, event_registration
+- Observed in contexts: Initialize, Shutdown, lua_call

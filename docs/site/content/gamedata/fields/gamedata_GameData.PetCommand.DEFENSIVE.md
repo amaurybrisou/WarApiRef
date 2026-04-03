@@ -27,10 +27,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAAbilityQueue.lua:418`, `/workspace/data/raw/AdvancedPetAssist/APAAbilityQueue.lua:462`, `/workspace/data/raw/AdvancedPetAssist/APACore.lua:269` |
+| Files seen in | APAAbilityQueue.lua, APACore.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | AdvancedPetAssist.ApplyDefaultStance, AdvancedPetAssist.SendAttackCommands, AdvancedPetAssist.TickAbilityQueue, lua_call |
+| Example locations | ApplyDefaultStance, SendAttackCommands, TickAbilityQueue, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 4 |
@@ -57,28 +57,12 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.PetCommand.DEFENSIVE field accessed by 1 addons; commonly found in ApplyDefaultStance and SendAttackCommands, TickAbilityQueue, lua_call contexts.
 
 ## Seen In
 
 - AdvancedPetAssist
 
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: AdvancedPetAssist.ApplyDefaultStance, AdvancedPetAssist.SendAttackCommands, AdvancedPetAssist.TickAbilityQueue, lua_call
+- Observed in contexts: ApplyDefaultStance, SendAttackCommands, TickAbilityQueue, lua_call

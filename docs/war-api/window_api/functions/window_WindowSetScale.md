@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 14 addons
+- Seen in: 90 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, BuffHead, DAoCBuff, Enemy, GuardLine, LibWBToggler, PartyCast |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:236`, `/workspace/data/raw/Aura/Source/Aura.lua:505`, `/workspace/data/raw/Aura/Source/Aura.lua:534`, `/workspace/data/raw/BuffHead/AdvancedContainers.lua:36`, `/workspace/data/raw/BuffHead/Container.lua:758`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:480`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:346` |
+| Addons seen in | Ace, ActionFraction, Amethyst, Atlas, Aura, BBars - Mechanic Only, BetterCC, BuffHead |
+| Files seen in | AdvancedContainers.lua, Amethyst.lua, BBarsPetHP.lua, BBarsPlayerMechanic.lua, Bars/HealGridProgressBar.lua, BetterCC.lua, CCTV.lua, CDownFrames.lua |
 | Namespaces detected | WindowSetScale |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Scale, Aura: Aura:UpdateTimerWindow, Aura: Aura:UpdateWindow, BuffHead: BuffHead.local.RegisterLayoutEditor, BuffHead: BuffHeadContainer:AnchorContainers, BuffHead: BuffHeadEffectFrame:SetLayout |
+| Example locations | Ace: Scale, ActionFraction: ResetWindow, Amethyst: Recreate, Amethyst: Scale, Atlas: PopulateInterface, Atlas: UpdateLegend |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 90 |
-| Global usage count | 90 |
+| Lua usage count | 317 |
+| Global usage count | 317 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "DeathWindow", "EA_Window_CityCaptureJoinPromptWindow", "EnemyGuardDistanceIndicator" |
-| arg2 | Observed as a function or method reference. | Observed values: .8*adat.uiscale*(critsize/WSCT_TEXTSIZE_BASE), .8*adat.uiscale*WSCT_CRIT_SIZE_PERCENT*(adat.textsize/WSCT_TEXTSIZE_BASE), 0.000001 |
+| windowName | Observed as a target window name. | Observed values: "AtlasConfigurationFrame", "AtlasFrameLegend", "BBarsPetHPBG" |
+| arg2 | Observed as a function or method reference. | Observed values: (0.80+(GetBattlegroupMemberData()[i].players[j].healthPercent/100*0.20))*InterfaceCore.GetScale()*GroupIcons.PREF_SCALE, (0.80+(GetGroupData()[i].healthPercent/100*0.20))*InterfaceCore.GetScale()*GroupIcons.PREF_SCALE, (1-cd)*1.5 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,50 +85,128 @@ Observed mutating runtime window state or presentation.
 ## Seen In
 
 - Ace
+- ActionFraction
+- Amethyst
+- Atlas
 - Aura
+- BBars - Mechanic Only
+- BetterCC
 - BuffHead
+- CCTV
+- CDown
+- CMap
+- Calling
+- CastSequence
+- CleanCastbar
+- CleanUnitFrames
+- Countdown
+- Crusher
 - DAoCBuff
+- DetauntHelper
+- DuffTimer
+- EA_LoadingScreen
+- EA_ThreePartBar
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDsaver
+- Group Icons
+- Group Icons SG
+- GroupRange
+- GroupSpotter
+- GuardBot
 - GuardLine
+- HealGrid
+- Hopper
+- InfoScroller
+- Kwestor
 - LibWBToggler
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- MiniMapMonster
+- Motion
+- MouseHint
+- Obsidian
+- Paint the leader
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- RO-Style Combat Text
+- RVMOD_Manager
+- RVMOD_SquaredDistances
+- RealmStatus
 - RoR_SoR
+- SNT_BUTTONS
+- SNT_INFO
+- SOR
+- ScenarioStats
 - Shinies
+- ShowHealthPercent
+- Squared
+- Statdoll
+- Statdoll Remix
+- TacticSetNames
+- TargetInfoRing
+- TargetRing
+- TidyQueue
+- Tokens
+- Tortall_DPS
 - TurretRange
+- Vectors
+- VerticalTactics
 - WSCT
+- WTes
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- WindowMovers
 - WoH-Reticle
+- XpStatus+G
+- fpsbox
+- nLootLink
+- nRarity
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Scale -> WindowSetScale(self.name, scale)
-- Aura: Aura:UpdateTimerWindow -> WindowSetScale(windowId, self:Get("timer-scale"))
-- Aura: Aura:UpdateWindow -> WindowSetScale(windowId, self:Get("texture-scale"))
-- BuffHead: BuffHead.local.RegisterLayoutEditor -> WindowSetScale(layoutWindow, WindowGetScale(container:GetName()))
-- BuffHead: BuffHeadContainer:AnchorContainers -> WindowSetScale(self:GetName(), self.Settings.Scale*InterfaceCore.GetScale())
-- BuffHead: BuffHeadEffectFrame:SetLayout -> WindowSetScale(frameName.."Icon", scale*layoutSettings.Icon.Scale)
+- Ace: Scale -> WindowSetScale(self.name, scale)
+- ActionFraction: ResetWindow -> WindowSetScale(windowName, InterfaceCore.GetScale())
+- Amethyst: Recreate -> WindowSetScale(C.name, s.scale)
+- Amethyst: Recreate -> WindowSetScale(C.Fill.name, s.scale)
+- Amethyst: Recreate -> WindowSetScale(C.Name.name, s.scale)
+- Amethyst: Recreate -> WindowSetScale(C.Timer.name, s.scale)
 
 ## Related APIs
 
-- none
+- [Size](../../xml/element_types/element_Size.md) (HIGH 100/100) - XML Element Type
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [LayoutEditor.UnregisterWindow](window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetScale](window_WindowGetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

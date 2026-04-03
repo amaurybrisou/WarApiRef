@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 170
+- Raw weighted score: 135
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
@@ -20,26 +20,24 @@
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, BuffHead, DAoCBuff, Enemy, Pocket Palette, PotionBar, TexturedButtons, TidyChat |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupContainer.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupDisplay.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupGeneral.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutManager.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutProperties.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupPerformance.xml:0` |
+| Addons seen in | AdvancedRenownTrainer, AutoBand, BuffHead, Busted, CDown, Calling, CastSequence, Cheeseboard |
+| Files seen in | AdvancedRenownTrainingPresets.xml, AutoBandWindowConfig.xml, AutoBandWindowTemplate.xml, Busted.xml, CDownSettingsTabs.xml, Calling.xml, CalljoinGUI.xml, Cheeseboard.xml |
 | Namespaces detected | EA_ComboBox_DefaultResizable |
-| Source kinds | flows, xml_attributes |
-| Example locations | AdvancedRenownTrainingPresetsWindowLoadComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsBuffsComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsDebuffsComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementLayerLayerComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementLayoutLayoutComboBox |
-| XML usage count | 94 |
-| XML attribute usage count | 94 |
+| Source kinds | xml_attributes |
+| Example locations | AdvancedRenownTrainingPresetsWindowLoadComboBox, AuctionSellControlsRestrictionComboBox, AutoBandWindowConfigComboBox, AutoBandWindowTemplateComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsBuffsComboBox |
+| XML usage count | 259 |
+| XML attribute usage count | 259 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 1 |
-| Initialization flow references | 1 |
+| Documentation references | 0 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | no |
@@ -59,23 +57,66 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 9 addons.
+Engine-supplied XML constant or template class referenced by 49 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
+- AutoBand
 - BuffHead
+- Busted
+- CDown
+- Calling
+- CastSequence
+- Cheeseboard
 - DAoCBuff
+- DPSMeter
+- DammazKron
+- DetauntHelper
+- DuffTimer
+- Dye Preview
+- EA_OpenPartyWindow
+- EZCraftX
 - Enemy
+- FozAuction
+- GDes
+- Ges
+- GroupRange
+- GuildWarden
+- HealGrid
+- Hopper
+- Keyset
+- KeysetMonsterPlay
+- LibAddonButton
+- Map
+- MapMonster
+- NerfedButtons
+- Obsidian
 - Pocket Palette
 - PotionBar
+- Pure
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- Res
+- TastyButtons
+- TaxPayer
 - TexturedButtons
+- ThinkOutLoud
 - TidyChat
 - TurretRange
+- WARCommander
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- alertMod
+- nLootLink
+- wbLeadHelper
 
 ## Used By
 
 - AdvancedRenownTrainingPresetsWindowLoadComboBox
+- AuctionSellControlsRestrictionComboBox
+- AutoBandWindowConfigComboBox
+- AutoBandWindowTemplateComboBox
 - BuffHeadSetupAdvancedContainersItemPropertiesWindowElementComboBox
 - BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsBuffsComboBox
 - BuffHeadSetupAdvancedContainersItemPropertiesWindowElementEffectsDebuffsComboBox
@@ -110,6 +151,16 @@ Observed engine XML template or inherited constant referenced by 9 addons.
 - BuffHeadSetupPriorityEffectsWindowAnimationComboBox
 - BuffHeadSetupTrackersWindowTrackerBuffsList
 - BuffHeadSetupTrackersWindowTrackerDebuffsList
+- BustedGUIAddonSelect
+- CDownColorSettingsTab_ScrollChild_CSettingComboBox
+- CallingSetupPrios_Prio1_Selection
+- CallingSetupPrios_Prio1_Type
+- CallingSetupShow_Language
+- CalljoinGUIWindowChannelCombo
+- CastSequenceSequenceBuilderWindowResetOnTargetChangedComboBox
+- CastSequenceSetupWindowAdvancementTypeComboBox
+- CheeseboardWindowClassComboBox
+- CheeseboardWindowTotalsComboBox
 - DAoCBuffFrameSettings_G1Filter_G1ComboBox
 - DAoCBuffFrameSettings_G2Filter_G2ComboBox
 - DAoCBuffFrameSettings_G5Filter_G5ComboBox
@@ -128,8 +179,29 @@ Observed engine XML template or inherited constant referenced by 9 addons.
 - DAoCBuff_Settings_FilterFrame_ScrollChild_ConditionTypeComboBox
 - DAoCBuff_Settings_FilterFrame_ScrollChild_G4HistoryBrowserComboBox
 - DAoCBuff_Settings_FilterFrame_ScrollChild_TextureComboBox
+- DKconfigWindowDeathBlowsSoundCombo
+- DKconfigWindowDeathsSoundCombo
+- DKconfigWindowKillsSoundCombo
+- DPSMeterWindowAbilityTabComboBox
+- DPSMeterWindowDamageOverviewTabComboBox
+- DTC_BarSettingsTemplateBarFontsFontColorCombo
+- DTC_BarSettingsTemplateBarFontsFontStyleCombo
+- DTC_BarSettingsTemplateMouseClearOnClickCombo
+- DTC_BarSettingsTemplateMouseMonitorOnClickCombo
+- DTC_BarSettingsTemplateMouseTargetOnClickCombo
+- DTC_BarSettingsTemplateSoundNotificationsOnDetauntCombo
+- DTC_BarSettingsTemplateSoundNotificationsOnDetauntReadyCombo
+- DuffTimerOptions_LargeComboBox_cmb
+- DyeCombo
+- DyeCombo2
+- DyeCombo3
 - DyeWindowDyeOrderCombo
 - DyeWindowDyeTypeCombo
+- EA_Window_OpenPartyManageSocketDefLegendLeaderMarkCombo
+- EA_Window_OpenPartyManageSocketDefLootModeCombo
+- EA_Window_OpenPartyManageSocketDefLootThresholdCombo
+- EA_Window_OpenPartyManageSocketDefMasterLooterCombo
+- EZCraftXWindow.DropDown.DD
 - EnemyChooseChannelDialogChannelList
 - EnemyClickCastingDialogContentScrollChildAction
 - EnemyClickCastingDialogContentScrollChildMouseButton
@@ -141,15 +213,126 @@ Observed engine XML template or inherited constant referenced by 9 addons.
 - EnemyEffectsIndicatorDialogContentScrollChildPlayerType
 - EnemyIntercomJoinDialogGroupList
 - EnemyUnitFramePartDialogContentScrollChildPlayerType
+- GDesOptionsExtrasFeaturePositionComboBox
+- GDesOptionsExtrasFeatureSelectionComboBox
+- GDesOptionsGeneralAlertsComboBox
+- GDesOptionsGeneralSoundAppliedComboBox
+- GDesOptionsGeneralSoundRemovedComboBox
+- GDesOptionsGeneralToggleColourComboBox
+- GesOptionsColourIconSelectionComboBox
+- GesOptionsExtrasFeaturePositionComboBox
+- GesOptionsExtrasFeatureSelectionComboBox
+- GesOptionsExtrasIconSelectionComboBox
+- GesOptionsGeneralChannelsComboBox
+- GesOptionsGeneralToggleColourComboBox
+- GroupRangeSetupStyleGroupBoxWindowColorStyleCombo
+- GroupRangeSetupStyleGroupBoxWindowLayerCombo
+- GroupRangeSetupStylePointerReverseWindowColorStyleCombo
+- GroupRangeSetupStylePointerReverseWindowLayerCombo
+- GroupRangeSetupStylePointerWindowColorStyleCombo
+- GroupRangeSetupStylePointerWindowLayerCombo
+- GroupRangeSetupStyleSimpleTextWindowColorStyleCombo
+- GroupRangeSetupStyleSimpleTextWindowLayerCombo
+- GroupRangeSetupStyleWindowStyleCombo
+- GuildWarden.DBWindowCombo
+- GuildWarden.DBWindowCombo2
+- HGG_TabBattlegroupWindowTemplateGridGrouping
+- HGG_TabBattlegroupWindowTemplateGridGrowth
+- HGG_TabBattlegroupWindowTemplateGridOrientation
+- HGG_TabBattlegroupWindowTemplateShowActionPointsBar
+- HGG_TabBattlegroupWindowTemplateShowCareerLineIcon
+- HGG_TabBattlegroupWindowTemplateShowDebuffFlags
+- HGG_TabBattlegroupWindowTemplateShowHealthPointsBar
+- HGG_TabBattlegroupWindowTemplateShowMoraleLevelBar
+- HGG_TabBattlegroupWindowTemplateSkin
+- HGG_TabGroupWindowTemplateGridGrouping
+- HGG_TabGroupWindowTemplateGridGrowth
+- HGG_TabGroupWindowTemplateGridOrientation
+- HGG_TabGroupWindowTemplateShowActionPointsBar
+- HGG_TabGroupWindowTemplateShowCareerLineIcon
+- HGG_TabGroupWindowTemplateShowDebuffFlags
+- HGG_TabGroupWindowTemplateShowHealthPointsBar
+- HGG_TabGroupWindowTemplateShowMoraleLevelBar
+- HGG_TabGroupWindowTemplateSkin
+- HGG_TabHUDBuffsWindowTemplateFriendlyTargetBuffsFilter
+- HGG_TabHUDBuffsWindowTemplateFriendlyTargetDebuffsFilter
+- HGG_TabHUDBuffsWindowTemplateHostileTargetBuffsFilter
+- HGG_TabHUDBuffsWindowTemplateHostileTargetDebuffsFilter
+- HGG_TabHUDBuffsWindowTemplatePlayerBuffsFilter
+- HGG_TabHUDBuffsWindowTemplatePlayerDebuffsFilter
+- HGG_TabHUDWindowTemplateShowActionPointsBar
+- HGG_TabHUDWindowTemplateShowCareerLineIcon
+- HGG_TabHUDWindowTemplateShowFriendlyTargetDebuffFlags
+- HGG_TabHUDWindowTemplateShowHealthPointsBar
+- HGG_TabHUDWindowTemplateShowHostileTargetDebuffFlags
+- HGG_TabHUDWindowTemplateShowMoraleLevelBar
+- HGG_TabHUDWindowTemplateShowPlayerDebuffFlags
+- HGG_TabHUDWindowTemplateSkin
+- HGG_TabMouseClickWindowTemplateActionDetailComboBox
+- HGG_TabMouseClickWindowTemplateComboBoxAction
+- HGG_TabMouseClickWindowTemplateComboBoxFrameType
+- HGG_TabMouseClickWindowTemplateComboBoxMouseButton
+- HGG_TabMouseClickWindowTemplateComboBoxTargetType
+- HGG_TabScenariogroupWindowTemplateGridGrouping
+- HGG_TabScenariogroupWindowTemplateGridGrowth
+- HGG_TabScenariogroupWindowTemplateGridOrientation
+- HGG_TabScenariogroupWindowTemplateShowActionPointsBar
+- HGG_TabScenariogroupWindowTemplateShowCareerLineIcon
+- HGG_TabScenariogroupWindowTemplateShowDebuffFlags
+- HGG_TabScenariogroupWindowTemplateShowHealthPointsBar
+- HGG_TabScenariogroupWindowTemplateShowMoraleLevelBar
+- HGG_TabScenariogroupWindowTemplateSkin
+- HGG_TabSpellTrackWindowTemplateTabColorOtherCastAggregateCount
+- HGG_TabSpellTrackWindowTemplateTabColorSelfCastStackCount
+- HGG_TabSpellTrackWindowTemplateTabGeneralLabelIndex
+- HopperComboBox
+- KeysetLoadWindowProfilesComboBox
+- KeysetMonsterPlayProfileWindowDefaultProfileComboBox
+- KeysetMonsterPlayProfileWindowMonsterProfileComboBox
+- LibAddonButtonManagerAdvancedWindowItemComboBox
+- MapMonster_EditorWindowPinTypeComboBox
+- MapMonster_EditorWindowSubTypeComboBox
+- MapMonster_EditorWindowZoneNameComboBox
+- MapSettings_ComboBox_DefaultResizable_Template
+- NBSBCoreWindowCriteriaAddon1List
+- NBSBCoreWindowCriteriaSequenceList
+- NBSB_ChecksRowTemplateSelection
+- NBSB_ParamRowTemplatelist
+- NBSetup_SaveAddonList
+- ObsidianSetupCastbarWindowElementComboBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementComboBox
+- ObsidianSetupEffectTrackerWindowElementComboBox
+- ObsidianSetupEffectTrackerWindowElementTrackerElementComboBox
+- ObsidianSetupEffectTrackerWindowElementTrackerElementGeneralFillColorComboBox
+- ObsidianSetupEffectTrackerWindowElementTrackerElementGeneralPositionComboBox
 - PotionBarTypeTemplateActivatorCombo
 - PotionBarTypeTemplateBuildCombo
 - PotionBarTypeTemplateCombo
 - PotionBarTypeTemplateInfoTextBRCombo
 - PotionBarTypeTemplateInfoTextTRCombo
+- PureComboBox
+- RVMOD_SquaredDistancesSettingsWindowComboBoxLayers
+- RVMOD_TargetsFrameRowTemplateTypes
+- ResOptionsChooseChannelsComboBox
+- ResOptionsSelectorsComboBoxBackground
+- ResOptionsSelectorsComboBoxForeground
+- ResOptionsSelectorsComboBoxHighlight
 - TChatTabTextEntryTemplateAnchorPointCombo
 - TChatTabTextEntryTemplateRelativeToCombo
 - TChatTabWindowsGroupTemplateScrollbarPositionCombo
 - TChatTabWindowsTemplateSelectWindowCombo
+- TOLSettingsWindowEventComboBox
+- TOLSettingsWindowPhraseComboBox
+- TOLSettingsWindowPhraseEditWindowPhraseChannelComboBox
+- TOLSettingsWindowPhraseEditWindowPhraseSayselfComboBox
+- TOLSettingsWindowSkillComboBox
+- TOLSettingsWindowSkillEditWindowSkillIsUrgentComboBox
+- TOLSettingsWindowSkillEditWindowSkillSpeakChanceComboBox
+- TastyButtonsOptionsWindowEditViewComboFont
+- TastyButtonsOptionsWindowStateViewComboResource
+- TastyButtonsOptionsWindowStateViewComboStanceAdd
+- TastyButtonsOptionsWindowStateViewComboStateAdd
+- TaxPayerOptionsTypeComboBox
 - TexturedButtonsSetupActionbarWindowBarComboBox
 - TexturedButtonsSetupAdvancedTexturesWindowCustomButtonComboBox
 - TexturedButtonsSetupAdvancedTexturesWindowCustomTextureComboBox
@@ -169,22 +352,30 @@ Observed engine XML template or inherited constant referenced by 9 addons.
 - TurretRangeSetupDisplayWindowDistanceTypeComboBox
 - TurretRangeSetupDisplayWindowElementComboBox
 - TurretRangeSetupDisplayWindowGraphicTypeComboBox
+- WARCommander_ConfigWindowRVRAlertsComboBox
+- WARCommander_ConfigWindowRVRCommandsComboBox
+- WARCommander_ConfigWindowScenAlertsComboBox
+- WARCommander_ConfigWindowScenCommandsComboBox
+- WCDBComboBox
+- WCDPComboBox
+- WbLeadHelperMessageContentScrollChildLabelColorCombobox
+- WbLeadHelperMessageContentScrollChildMessageColorCombobox
+- WbLeadHelperMessageContentScrollChildSubmenuCombobox
+- WbLeadHelperMessageContentScrollChildTypeCombobox
+- alertModFontScaleRowCombo
+- nLootLinkGUIFilterCareer
+- nLootLinkGUIFilterCategory
+- nLootLinkGUIFilterCrafting
+- nLootLinkGUIFilterRarity
+- nLootLinkGUIFilterSlot
+- nLootLinkGUIFilterStat
+- nLootLinkGUIFilterType
+- nLootLinkOptionsComboRarity
+- wbLeadHelperConfigTabMessageTextColorCombobox
 
 ## Related APIs
 
 - [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

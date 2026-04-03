@@ -2,37 +2,41 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 90/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
+
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:203`, `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:210` |
+| Addons seen in | BuffHead, FixGit |
+| Files seen in | Fixes.lua, Setup/LayoutControlFrame.lua |
 | Namespaces detected | WindowSetMoving |
 | Source kinds | lua_calls |
-| Example locations | BuffHead: BuffHead.Setup.LayoutControlFrame:BeginMoving, BuffHead: BuffHead.Setup.LayoutControlFrame:EndMoving |
+| Example locations | BuffHead: BeginMoving, BuffHead: EndMoving, FixGit: BeginMoving, FixGit: FixLELockingIssue |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -40,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -72,7 +76,7 @@ Observed mutating runtime window state or presentation.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -81,28 +85,15 @@ Observed mutating runtime window state or presentation.
 ## Seen In
 
 - BuffHead
+- FixGit
 
 ## Examples
 
-- BuffHead: BuffHead.Setup.LayoutControlFrame:BeginMoving -> WindowSetMoving(self:GetName(), true)
-- BuffHead: BuffHead.Setup.LayoutControlFrame:EndMoving -> WindowSetMoving(self:GetName(), false)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- BuffHead: BeginMoving -> WindowSetMoving(self:GetName(), true)
+- BuffHead: EndMoving -> WindowSetMoving(self:GetName(), false)
+- FixGit: BeginMoving -> WindowSetMoving(self:GetName(), true)
+- FixGit: FixLELockingIssue -> WindowSetMoving(self:GetName(), true)
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- none

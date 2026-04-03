@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -11,36 +11,35 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 156
+- Raw weighted score: 143
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +8 Return usage is consistent: Observed as a stable query-style API.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BankArkel, Killer, Shinies |
-| Files seen in | `/workspace/data/raw/BankArkel/BankArkel.lua:371`, `/workspace/data/raw/Killer/KillerRenown.lua:108`, `/workspace/data/raw/Killer/KillerRenown.lua:127`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Browse.lua:298` |
+| Addons seen in | AuctionStats, AutoSalvage, BankArkel, BankWindowFix, EZCraftX, Killer, Shinies, zMailMod |
+| Files seen in | AuctionAssist.lua, AutoSalvage.lua, BankArkel.lua, KillerRenown.lua, Modules/UI/Shinies-UI-Browse.lua, Source/BankWindowFix.lua, Source/EZCraftX.lua, zMailModMassMail.lua |
 | Namespaces detected | EA_Window_Backpack |
-| Source kinds | globals, lua_calls |
-| Example locations | BankArkel: BankArkel.UpdateData, Killer: Killer.CaptureInitialWarCrests, Killer: Killer.OnCurrencyUpdated, Shinies: _G.Shinies:NewModule.EA_Window_Backpack_EquipmentLButtonDown |
+| Source kinds | lua_calls |
+| Example locations | AuctionStats: EA_Window_Backpack_EquipmentLButtonDown_Override, AutoSalvage: OnUpdate, BankArkel: UpdateData, BankWindowFix: BagEquipmentRButtonUp, EZCraftX: TalismanMakingWindow_OnSlotMouseOver, Killer: CaptureInitialWarCrests |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -67,51 +66,52 @@ EA_Window_Backpack.GetItemsFromBackpack(arg1)
 
 ## Description
 
-Observed as a global function across 3 addons.
+Observed as a global function across 8 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: EA_Window_Backpack.TYPE_CURRENCY, EA_Window_Backpack.currentMode, Read[i] |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: EA_Window_Backpack.TYPE_CURRENCY, EA_Window_Backpack.currentMode, Read[i] |
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- AuctionStats
+- AutoSalvage
 - BankArkel
+- BankWindowFix
+- EZCraftX
 - Killer
 - Shinies
+- zMailMod
 
 ## Examples
 
-- BankArkel: BankArkel.UpdateData -> EA_Window_Backpack.GetItemsFromBackpack(Read[i])
-- Killer: Killer.CaptureInitialWarCrests -> EA_Window_Backpack.GetItemsFromBackpack(EA_Window_Backpack.TYPE_CURRENCY)
-- Killer: Killer.OnCurrencyUpdated -> EA_Window_Backpack.GetItemsFromBackpack(EA_Window_Backpack.TYPE_CURRENCY)
-- Shinies: _G.Shinies:NewModule.EA_Window_Backpack_EquipmentLButtonDown -> EA_Window_Backpack.GetItemsFromBackpack(EA_Window_Backpack.currentMode)
+- AuctionStats: EA_Window_Backpack_EquipmentLButtonDown_Override -> EA_Window_Backpack.GetItemsFromBackpack(EA_Window_Backpack.currentMode)
+- AutoSalvage: OnUpdate -> EA_Window_Backpack.GetItemsFromBackpack(selectedBackpack)
+- BankArkel: UpdateData -> EA_Window_Backpack.GetItemsFromBackpack(Read[i])
+- BankWindowFix: BagEquipmentRButtonUp -> EA_Window_Backpack.GetItemsFromBackpack(EA_Window_Backpack.currentMode)
+- EZCraftX: TalismanMakingWindow_OnSlotMouseOver -> EA_Window_Backpack.GetItemsFromBackpack(backpackType)
+- Killer: CaptureInitialWarCrests -> EA_Window_Backpack.GetItemsFromBackpack(EA_Window_Backpack.TYPE_CURRENCY)
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- [SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED](../../events/game_events/game_event_SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED.md) (HIGH 100/100) - Game Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Affects
 
+- [GameData.ItemLocs.INVENTORY](../../gamedata/fields/gamedata_GameData.ItemLocs.INVENTORY.md) (HIGH 100/100) - GameData Field
 - [GameData.Player](../../gamedata/fields/gamedata_GameData.Player.md) (HIGH 100/100) - GameData Field
 - [GameData.Player.zone](../../gamedata/fields/gamedata_GameData.Player.zone.md) (HIGH 100/100) - GameData Field
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

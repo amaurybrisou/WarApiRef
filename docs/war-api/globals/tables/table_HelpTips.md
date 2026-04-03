@@ -2,34 +2,38 @@
 
 - Category: Global Table
 - Confidence level: HIGH
-- Confidence score: 80/100
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 80/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Raw weighted score: 125
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Pocket Palette |
-| Files seen in | `/workspace/data/raw/PocketPalette/PocketPalette.lua:91` |
+| Addons seen in | Calling, DuffTimer, EA_UiDebugTools, Pocket Palette |
+| Files seen in | Source/Debug.lua |
 | Namespaces detected | HelpTips |
 | Source kinds | lua_calls |
-| Example locations | Pocket Palette: HighlightWindow |
+| Example locations | Calling: HighlightWindow, DuffTimer: HighlightWindow, EA_UiDebugTools: hw, Pocket Palette: HighlightWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
+| Lua usage count | 4 |
 | Global usage count | 1 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -53,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 1 addons.
+Shared function table with 1 member functions; the primary API surface for 4 addons.
 
 ## Functions
 
@@ -65,27 +69,17 @@ Observed shared global table or namespace surfaced in 1 addons.
 
 ## Seen In
 
+- Calling
+- DuffTimer
+- EA_UiDebugTools
 - Pocket Palette
 
 ## Examples
 
+- Calling: HighlightWindow -> HelpTips.SetFocusOnWindow(window)
+- DuffTimer: HighlightWindow -> HelpTips.SetFocusOnWindow(window)
+- EA_UiDebugTools: hw -> HelpTips.SetFocusOnWindow((text))
 - Pocket Palette: HighlightWindow -> HelpTips.SetFocusOnWindow(window_name)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

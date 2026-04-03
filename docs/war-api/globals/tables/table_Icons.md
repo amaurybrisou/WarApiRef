@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 140
+- Raw weighted score: 125
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -18,27 +18,26 @@
 
 - +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoMark, Enemy, PartyCast, Swift Assist |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Assist/Assist.lua:195`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogIDS.lua:211`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcon.lua:115`, `/workspace/data/raw/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/data/raw/Enemy/Code/UnitFrames/Parts/CareerIcon.lua:13`, `/workspace/data/raw/PartyCast/PartyCast.lua:284`, `/workspace/data/raw/swift-assist/SwiftAssist.lua:232`, `/workspace/data/raw/swift-assist/SwiftAssist.lua:99` |
+| Addons seen in | AutoMark, BuddyBind, Calling, CleanUnitFrames, DammazKron, DetauntHelper, Ding, EA_OpenPartyWindow |
+| Files seen in | Code/Assist/Assist.lua, Code/CombatLog/CombatLogIDS.lua, Code/GroupIcons/GroupIcon.lua, Code/Marks/MarkTemplate.lua, Code/UnitFrames/Parts/CareerIcon.lua, Core/Tome/DK_Tome.lua, Core/ToolTip/DK_Tooltip.lua, Elements/EffigyIcons.lua |
 | Namespaces detected | Icons |
-| Source kinds | globals, lua_calls |
-| Example locations | Enemy: Enemy.AssistUI_Target_Show, Enemy: Enemy.CombatLogUI_IDS_Update, Enemy: Enemy.UnitFramesParts_CareerIconInitialize, Enemy: EnemyGroupIcon:Attach, Enemy: EnemyMarkTemplate:Apply, PartyCast: PartyCast.Target |
+| Source kinds | lua_calls |
+| Example locations | AutoMark: CreateMarker, BuddyBind: GrabName, Calling: SetListLine, Calling: ShowCallerIcon, Calling: ShowTargetIcon, CleanUnitFrames: SetCareerIcon |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 1 |
-| Local definition count | 1 |
-| Documentation references | 1 |
-| Initialization flow references | 1 |
+| Lua usage count | 84 |
+| Global usage count | 2 |
+| Local definition count | 0 |
+| Documentation references | 0 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | no |
@@ -58,11 +57,12 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 4 addons.
+Shared function table with 2 member functions; the primary API surface for 33 addons.
 
 ## Functions
 
 - Icons.GetCareerIconIDFromCareerLine
+- Icons.GetCareerIconIDFromCareerNamesID
 
 ## Observed Members
 
@@ -71,34 +71,47 @@ Observed shared global table or namespace surfaced in 4 addons.
 ## Seen In
 
 - AutoMark
+- BuddyBind
+- Calling
+- CleanUnitFrames
+- DammazKron
+- DetauntHelper
+- Ding
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- Effigy
 - Enemy
+- EveryBodyGuard
+- Group Icons
+- Group Icons SG
+- GuildWarden
+- HealGrid
+- MapPin
+- MarkBuff
+- Moth
 - PartyCast
+- Pure
+- QuickNameActions+
+- ResHelp
+- SessionRPs
+- SocialWindow 2.0
+- Squared
 - Swift Assist
+- TargetInfoRing
+- Targets
+- ThinkOutLoud
+- Trakario
+- xHUD
+- yAssistHelper
 
 ## Examples
 
-- Enemy: Enemy.AssistUI_Target_Show -> Icons.GetCareerIconIDFromCareerLine(careerId)
-- Enemy: Enemy.CombatLogUI_IDS_Update -> Icons.GetCareerIconIDFromCareerLine(career)
-- Enemy: Enemy.UnitFramesParts_CareerIconInitialize -> Icons.GetCareerIconIDFromCareerLine(cache.career)
-- Enemy: EnemyGroupIcon:Attach -> Icons.GetCareerIconIDFromCareerLine(self.playerCareer)
-- Enemy: EnemyMarkTemplate:Apply -> Icons.GetCareerIconIDFromCareerLine(careerId)
-- PartyCast: PartyCast.Target -> Icons.GetCareerIconIDFromCareerLine(PlayerCareer)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AutoMark: CreateMarker -> Icons.GetCareerIconIDFromCareerLine(career_id)
+- BuddyBind: GrabName -> Icons.GetCareerIconIDFromCareerLine(TargetInfo:UnitCareer("selffriendlytarget"))
+- Calling: SetListLine -> Icons.GetCareerIconIDFromCareerLine(call.CallerCareerID)
+- Calling: SetListLine -> Icons.GetCareerIconIDFromCareerLine(call.TargetCareerID)
+- Calling: ShowCallerIcon -> Icons.GetCareerIconIDFromCareerLine(careerId)
+- Calling: ShowTargetIcon -> Icons.GetCareerIconIDFromCareerLine(careerId)
 
 ## Notes
 

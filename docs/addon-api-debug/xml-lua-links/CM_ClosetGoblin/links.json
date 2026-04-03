@@ -1,0 +1,3405 @@
+{
+  "schema_version": "phase3-xml-lua-link/v1",
+  "addon": "CM_ClosetGoblin",
+  "sources": {
+    "xml_tree_files": [
+      "ClosetGoblin.xml.tree.json",
+      "ClosetGoblinItemRack.xml.tree.json"
+    ],
+    "lua_analysis_files": [
+      "ClosetGoblin.lua.analysis.json",
+      "ClosetGoblinCharacterWindow.lua.analysis.json",
+      "ClosetGoblinOptionWindow.lua.analysis.json",
+      "ClosetGoblinZoneWindow.lua.analysis.json",
+      "Libs/LibToolkit.lua.analysis.json",
+      "languages/english.lua.analysis.json",
+      "languages/french.lua.analysis.json",
+      "languages/german.lua.analysis.json",
+      "languages/italian.lua.analysis.json",
+      "languages/japanese.lua.analysis.json",
+      "languages/korean.lua.analysis.json",
+      "languages/s_chinese.lua.analysis.json",
+      "languages/spanish.lua.analysis.json"
+    ]
+  },
+  "handler_links": [
+    {
+      "link_id": "h1",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n102",
+        "parent_node_id": "n101",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinZoneWindow.OnClickZoneRow",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f15",
+        "qualified_name": "ClosetGoblinZoneWindow.OnClickZoneRow",
+        "declared_name": "ClosetGoblinZoneWindow.OnClickZoneRow",
+        "short_name": "OnClickZoneRow",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinZoneWindow",
+        "receiver_separator": ".",
+        "line_start": 136,
+        "line_end": 143
+      }
+    },
+    {
+      "link_id": "h2",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n103",
+        "parent_node_id": "n101",
+        "event": "OnRButtonUp",
+        "function_raw": "ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f17",
+        "qualified_name": "ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
+        "declared_name": "ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
+        "short_name": "OnSetZoneRowContextMenu",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinZoneWindow",
+        "receiver_separator": ".",
+        "line_start": 155,
+        "line_end": 169
+      }
+    },
+    {
+      "link_id": "h3",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n111",
+        "parent_node_id": "n110",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinZoneWindow.OnClickZoneRow",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f15",
+        "qualified_name": "ClosetGoblinZoneWindow.OnClickZoneRow",
+        "declared_name": "ClosetGoblinZoneWindow.OnClickZoneRow",
+        "short_name": "OnClickZoneRow",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinZoneWindow",
+        "receiver_separator": ".",
+        "line_start": 136,
+        "line_end": 143
+      }
+    },
+    {
+      "link_id": "h4",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n112",
+        "parent_node_id": "n110",
+        "event": "OnRButtonUp",
+        "function_raw": "ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f17",
+        "qualified_name": "ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
+        "declared_name": "ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
+        "short_name": "OnSetZoneRowContextMenu",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinZoneWindow",
+        "receiver_separator": ".",
+        "line_start": 155,
+        "line_end": 169
+      }
+    },
+    {
+      "link_id": "h5",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n121",
+        "parent_node_id": "n120",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.HotbarPageUpProxy",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f45",
+        "qualified_name": "ClosetGoblinCharacterWindow.HotbarPageUpProxy",
+        "declared_name": "ClosetGoblinCharacterWindow.HotbarPageUpProxy",
+        "short_name": "HotbarPageUpProxy",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 607,
+        "line_end": 618
+      }
+    },
+    {
+      "link_id": "h6",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n128",
+        "parent_node_id": "n127",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.HotbarPageDownProxy",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f46",
+        "qualified_name": "ClosetGoblinCharacterWindow.HotbarPageDownProxy",
+        "declared_name": "ClosetGoblinCharacterWindow.HotbarPageDownProxy",
+        "short_name": "HotbarPageDownProxy",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 620,
+        "line_end": 631
+      }
+    },
+    {
+      "link_id": "h7",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n151",
+        "parent_node_id": "n150",
+        "event": "OnShown",
+        "function_raw": "ClosetGoblinCharacterWindow.OnShow",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f2",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnShow",
+        "declared_name": "ClosetGoblinCharacterWindow.OnShow",
+        "short_name": "OnShow",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 69,
+        "line_end": 79
+      }
+    },
+    {
+      "link_id": "h8",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n152",
+        "parent_node_id": "n150",
+        "event": "OnHidden",
+        "function_raw": "ClosetGoblinCharacterWindow.OnHide",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f3",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnHide",
+        "declared_name": "ClosetGoblinCharacterWindow.OnHide",
+        "short_name": "OnHide",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 81,
+        "line_end": 84
+      }
+    },
+    {
+      "link_id": "h9",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n153",
+        "parent_node_id": "n150",
+        "event": "OnShutdown",
+        "function_raw": "ClosetGoblinCharacterWindow.OnShutdown",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f4",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnShutdown",
+        "declared_name": "ClosetGoblinCharacterWindow.OnShutdown",
+        "short_name": "OnShutdown",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 86,
+        "line_end": 87
+      }
+    },
+    {
+      "link_id": "h10",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n176",
+        "parent_node_id": "n175",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.Hide",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f26",
+        "qualified_name": "ClosetGoblinCharacterWindow.Hide",
+        "declared_name": "ClosetGoblinCharacterWindow.Hide",
+        "short_name": "Hide",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 341,
+        "line_end": 343
+      }
+    },
+    {
+      "link_id": "h11",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n195",
+        "parent_node_id": "n194",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.OnClickNewSetButton",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f15",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnClickNewSetButton",
+        "declared_name": "ClosetGoblinCharacterWindow.OnClickNewSetButton",
+        "short_name": "OnClickNewSetButton",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 212,
+        "line_end": 214
+      }
+    },
+    {
+      "link_id": "h12",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n201",
+        "parent_node_id": "n200",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.OnClickDeleteSetButton",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f16",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnClickDeleteSetButton",
+        "declared_name": "ClosetGoblinCharacterWindow.OnClickDeleteSetButton",
+        "short_name": "OnClickDeleteSetButton",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 216,
+        "line_end": 228
+      }
+    },
+    {
+      "link_id": "h13",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n207",
+        "parent_node_id": "n206",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.OnClickZoneConfigButton",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f17",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnClickZoneConfigButton",
+        "declared_name": "ClosetGoblinCharacterWindow.OnClickZoneConfigButton",
+        "short_name": "OnClickZoneConfigButton",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 230,
+        "line_end": 232
+      }
+    },
+    {
+      "link_id": "h14",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n21",
+        "parent_node_id": "n20",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f20",
+        "qualified_name": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+        "declared_name": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+        "short_name": "EquipmentLButtonUp",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 267,
+        "line_end": 277
+      }
+    },
+    {
+      "link_id": "h15",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n219",
+        "parent_node_id": "n218",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.UseItemRackToggled",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f62",
+        "qualified_name": "ClosetGoblinCharacterWindow.UseItemRackToggled",
+        "declared_name": "ClosetGoblinCharacterWindow.UseItemRackToggled",
+        "short_name": "UseItemRackToggled",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 743,
+        "line_end": 746
+      }
+    },
+    {
+      "link_id": "h16",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n22",
+        "parent_node_id": "n16",
+        "event": "OnLButtonDown",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f21",
+        "qualified_name": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "declared_name": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "short_name": "EquipmentLButtonDown",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 279,
+        "line_end": 281
+      }
+    },
+    {
+      "link_id": "h17",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n23",
+        "parent_node_id": "n22",
+        "event": "OnRButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentRButtonUp",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f22",
+        "qualified_name": "ClosetGoblinCharacterWindow.EquipmentRButtonUp",
+        "declared_name": "ClosetGoblinCharacterWindow.EquipmentRButtonUp",
+        "short_name": "EquipmentRButtonUp",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 283,
+        "line_end": 291
+      }
+    },
+    {
+      "link_id": "h18",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n233",
+        "parent_node_id": "n232",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.OnClickSortNameButton",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f5",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnClickSortNameButton",
+        "declared_name": "ClosetGoblinCharacterWindow.OnClickSortNameButton",
+        "short_name": "OnClickSortNameButton",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 89,
+        "line_end": 99
+      }
+    },
+    {
+      "link_id": "h19",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n24",
+        "parent_node_id": "n23",
+        "event": "OnMouseOver",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f23",
+        "qualified_name": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+        "declared_name": "ClosetGoblinCharacterWindow.EquipmentMouseOver",
+        "short_name": "EquipmentMouseOver",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 297,
+        "line_end": 327
+      }
+    },
+    {
+      "link_id": "h20",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n249",
+        "parent_node_id": "n248",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.OnClickSortTacticsButton",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f6",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnClickSortTacticsButton",
+        "declared_name": "ClosetGoblinCharacterWindow.OnClickSortTacticsButton",
+        "short_name": "OnClickSortTacticsButton",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 101,
+        "line_end": 111
+      }
+    },
+    {
+      "link_id": "h21",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n25",
+        "parent_node_id": "n24",
+        "event": "OnMouseOverEnd",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentMouseOverEnd",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f24",
+        "qualified_name": "ClosetGoblinCharacterWindow.EquipmentMouseOverEnd",
+        "declared_name": "ClosetGoblinCharacterWindow.EquipmentMouseOverEnd",
+        "short_name": "EquipmentMouseOverEnd",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 329,
+        "line_end": 331
+      }
+    },
+    {
+      "link_id": "h22",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n298",
+        "parent_node_id": "n297",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.HotbarChangeToggled1",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f47",
+        "qualified_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled1",
+        "declared_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled1",
+        "short_name": "HotbarChangeToggled1",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 633,
+        "line_end": 638
+      }
+    },
+    {
+      "link_id": "h23",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n314",
+        "parent_node_id": "n313",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.HotbarChangeToggled2",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f48",
+        "qualified_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled2",
+        "declared_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled2",
+        "short_name": "HotbarChangeToggled2",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 640,
+        "line_end": 645
+      }
+    },
+    {
+      "link_id": "h24",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n330",
+        "parent_node_id": "n329",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.HotbarChangeToggled3",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f49",
+        "qualified_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled3",
+        "declared_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled3",
+        "short_name": "HotbarChangeToggled3",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 647,
+        "line_end": 652
+      }
+    },
+    {
+      "link_id": "h25",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n346",
+        "parent_node_id": "n345",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.HotbarChangeToggled4",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f50",
+        "qualified_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled4",
+        "declared_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled4",
+        "short_name": "HotbarChangeToggled4",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 654,
+        "line_end": 659
+      }
+    },
+    {
+      "link_id": "h26",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n362",
+        "parent_node_id": "n361",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.HotbarChangeToggled5",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f51",
+        "qualified_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled5",
+        "declared_name": "ClosetGoblinCharacterWindow.HotbarChangeToggled5",
+        "short_name": "HotbarChangeToggled5",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 661,
+        "line_end": 666
+      }
+    },
+    {
+      "link_id": "h27",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n453",
+        "parent_node_id": "n452",
+        "event": "OnLButtonDown",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f21",
+        "qualified_name": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "declared_name": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "short_name": "EquipmentLButtonDown",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 279,
+        "line_end": 281
+      }
+    },
+    {
+      "link_id": "h28",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n454",
+        "parent_node_id": "n452",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f20",
+        "qualified_name": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+        "declared_name": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+        "short_name": "EquipmentLButtonUp",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 267,
+        "line_end": 277
+      }
+    },
+    {
+      "link_id": "h29",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n456",
+        "parent_node_id": "n452",
+        "event": "OnMouseOver",
+        "function_raw": "ClosetGoblinCharacterWindow.ShowShowHelm",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f60",
+        "qualified_name": "ClosetGoblinCharacterWindow.ShowShowHelm",
+        "declared_name": "ClosetGoblinCharacterWindow.ShowShowHelm",
+        "short_name": "ShowShowHelm",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 730,
+        "line_end": 733
+      }
+    },
+    {
+      "link_id": "h30",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n457",
+        "parent_node_id": "n452",
+        "event": "OnMouseOverEnd",
+        "function_raw": "ClosetGoblinCharacterWindow.HideShowHelm",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f61",
+        "qualified_name": "ClosetGoblinCharacterWindow.HideShowHelm",
+        "declared_name": "ClosetGoblinCharacterWindow.HideShowHelm",
+        "short_name": "HideShowHelm",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 735,
+        "line_end": 738
+      }
+    },
+    {
+      "link_id": "h31",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n471",
+        "parent_node_id": "n470",
+        "event": "OnMouseOver",
+        "function_raw": "ClosetGoblinCharacterWindow.ShowShowHelmOnly",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f59",
+        "qualified_name": "ClosetGoblinCharacterWindow.ShowShowHelmOnly",
+        "declared_name": "ClosetGoblinCharacterWindow.ShowShowHelmOnly",
+        "short_name": "ShowShowHelmOnly",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 725,
+        "line_end": 728
+      }
+    },
+    {
+      "link_id": "h32",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n472",
+        "parent_node_id": "n470",
+        "event": "OnMouseOverEnd",
+        "function_raw": "ClosetGoblinCharacterWindow.HideShowHelm",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f61",
+        "qualified_name": "ClosetGoblinCharacterWindow.HideShowHelm",
+        "declared_name": "ClosetGoblinCharacterWindow.HideShowHelm",
+        "short_name": "HideShowHelm",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 735,
+        "line_end": 738
+      }
+    },
+    {
+      "link_id": "h33",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n473",
+        "parent_node_id": "n470",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.ShowHelm",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f58",
+        "qualified_name": "ClosetGoblinCharacterWindow.ShowHelm",
+        "declared_name": "ClosetGoblinCharacterWindow.ShowHelm",
+        "short_name": "ShowHelm",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 717,
+        "line_end": 723
+      }
+    },
+    {
+      "link_id": "h34",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n491",
+        "parent_node_id": "n490",
+        "event": "OnLButtonDown",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f21",
+        "qualified_name": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "declared_name": "ClosetGoblinCharacterWindow.EquipmentLButtonDown",
+        "short_name": "EquipmentLButtonDown",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 279,
+        "line_end": 281
+      }
+    },
+    {
+      "link_id": "h35",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n492",
+        "parent_node_id": "n490",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f20",
+        "qualified_name": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+        "declared_name": "ClosetGoblinCharacterWindow.EquipmentLButtonUp",
+        "short_name": "EquipmentLButtonUp",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 267,
+        "line_end": 277
+      }
+    },
+    {
+      "link_id": "h36",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n494",
+        "parent_node_id": "n490",
+        "event": "OnMouseOver",
+        "function_raw": "ClosetGoblinCharacterWindow.ShowCloakOptions",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f56",
+        "qualified_name": "ClosetGoblinCharacterWindow.ShowCloakOptions",
+        "declared_name": "ClosetGoblinCharacterWindow.ShowCloakOptions",
+        "short_name": "ShowCloakOptions",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 705,
+        "line_end": 709
+      }
+    },
+    {
+      "link_id": "h37",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n495",
+        "parent_node_id": "n490",
+        "event": "OnMouseOverEnd",
+        "function_raw": "ClosetGoblinCharacterWindow.HideCloakOptions",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f57",
+        "qualified_name": "ClosetGoblinCharacterWindow.HideCloakOptions",
+        "declared_name": "ClosetGoblinCharacterWindow.HideCloakOptions",
+        "short_name": "HideCloakOptions",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 711,
+        "line_end": 715
+      }
+    },
+    {
+      "link_id": "h38",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n509",
+        "parent_node_id": "n508",
+        "event": "OnMouseOver",
+        "function_raw": "ClosetGoblinCharacterWindow.ShowShowCloakOnly",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f54",
+        "qualified_name": "ClosetGoblinCharacterWindow.ShowShowCloakOnly",
+        "declared_name": "ClosetGoblinCharacterWindow.ShowShowCloakOnly",
+        "short_name": "ShowShowCloakOnly",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 695,
+        "line_end": 698
+      }
+    },
+    {
+      "link_id": "h39",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n510",
+        "parent_node_id": "n508",
+        "event": "OnMouseOverEnd",
+        "function_raw": "ClosetGoblinCharacterWindow.HideCloakOptions",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f57",
+        "qualified_name": "ClosetGoblinCharacterWindow.HideCloakOptions",
+        "declared_name": "ClosetGoblinCharacterWindow.HideCloakOptions",
+        "short_name": "HideCloakOptions",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 711,
+        "line_end": 715
+      }
+    },
+    {
+      "link_id": "h40",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n511",
+        "parent_node_id": "n508",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.ShowCloak",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f52",
+        "qualified_name": "ClosetGoblinCharacterWindow.ShowCloak",
+        "declared_name": "ClosetGoblinCharacterWindow.ShowCloak",
+        "short_name": "ShowCloak",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 671,
+        "line_end": 685
+      }
+    },
+    {
+      "link_id": "h41",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n517",
+        "parent_node_id": "n516",
+        "event": "OnMouseOver",
+        "function_raw": "ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f55",
+        "qualified_name": "ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly",
+        "declared_name": "ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly",
+        "short_name": "ShowShowCloakHeraldryOnly",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 700,
+        "line_end": 703
+      }
+    },
+    {
+      "link_id": "h42",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n518",
+        "parent_node_id": "n516",
+        "event": "OnMouseOverEnd",
+        "function_raw": "ClosetGoblinCharacterWindow.HideCloakOptions",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f57",
+        "qualified_name": "ClosetGoblinCharacterWindow.HideCloakOptions",
+        "declared_name": "ClosetGoblinCharacterWindow.HideCloakOptions",
+        "short_name": "HideCloakOptions",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 711,
+        "line_end": 715
+      }
+    },
+    {
+      "link_id": "h43",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n519",
+        "parent_node_id": "n516",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.ShowCloakHeraldry",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f53",
+        "qualified_name": "ClosetGoblinCharacterWindow.ShowCloakHeraldry",
+        "declared_name": "ClosetGoblinCharacterWindow.ShowCloakHeraldry",
+        "short_name": "ShowCloakHeraldry",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 687,
+        "line_end": 693
+      }
+    },
+    {
+      "link_id": "h44",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n68",
+        "parent_node_id": "n67",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.OnClickSetRow",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f7",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnClickSetRow",
+        "declared_name": "ClosetGoblinCharacterWindow.OnClickSetRow",
+        "short_name": "OnClickSetRow",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 113,
+        "line_end": 121
+      }
+    },
+    {
+      "link_id": "h45",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n69",
+        "parent_node_id": "n67",
+        "event": "OnRButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.OnSetRowContextMenu",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f8",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnSetRowContextMenu",
+        "declared_name": "ClosetGoblinCharacterWindow.OnSetRowContextMenu",
+        "short_name": "OnSetRowContextMenu",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 123,
+        "line_end": 145
+      }
+    },
+    {
+      "link_id": "h46",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n695",
+        "parent_node_id": "n694",
+        "event": "OnShown",
+        "function_raw": "ClosetGoblinZoneWindow.OnShow",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f2",
+        "qualified_name": "ClosetGoblinZoneWindow.OnShow",
+        "declared_name": "ClosetGoblinZoneWindow.OnShow",
+        "short_name": "OnShow",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinZoneWindow",
+        "receiver_separator": ".",
+        "line_start": 49,
+        "line_end": 60
+      }
+    },
+    {
+      "link_id": "h47",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n696",
+        "parent_node_id": "n694",
+        "event": "OnHidden",
+        "function_raw": "ClosetGoblinZoneWindow.OnHide",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f3",
+        "qualified_name": "ClosetGoblinZoneWindow.OnHide",
+        "declared_name": "ClosetGoblinZoneWindow.OnHide",
+        "short_name": "OnHide",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinZoneWindow",
+        "receiver_separator": ".",
+        "line_start": 62,
+        "line_end": 64
+      }
+    },
+    {
+      "link_id": "h48",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n697",
+        "parent_node_id": "n694",
+        "event": "OnShutdown",
+        "function_raw": "ClosetGoblinZoneWindow.OnShutdown",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f4",
+        "qualified_name": "ClosetGoblinZoneWindow.OnShutdown",
+        "declared_name": "ClosetGoblinZoneWindow.OnShutdown",
+        "short_name": "OnShutdown",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinZoneWindow",
+        "receiver_separator": ".",
+        "line_start": 66,
+        "line_end": 67
+      }
+    },
+    {
+      "link_id": "h49",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n716",
+        "parent_node_id": "n715",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinZoneWindow.Hide",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f6",
+        "qualified_name": "ClosetGoblinZoneWindow.Hide",
+        "declared_name": "ClosetGoblinZoneWindow.Hide",
+        "short_name": "Hide",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinZoneWindow",
+        "receiver_separator": ".",
+        "line_start": 73,
+        "line_end": 75
+      }
+    },
+    {
+      "link_id": "h50",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n742",
+        "parent_node_id": "n741",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinZoneWindow.OnClickChangeZoneOptionButton",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f8",
+        "qualified_name": "ClosetGoblinZoneWindow.OnClickChangeZoneOptionButton",
+        "declared_name": "ClosetGoblinZoneWindow.OnClickChangeZoneOptionButton",
+        "short_name": "OnClickChangeZoneOptionButton",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinZoneWindow",
+        "receiver_separator": ".",
+        "line_start": 81,
+        "line_end": 84
+      }
+    },
+    {
+      "link_id": "h51",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n77",
+        "parent_node_id": "n76",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.OnClickSetRow",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f7",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnClickSetRow",
+        "declared_name": "ClosetGoblinCharacterWindow.OnClickSetRow",
+        "short_name": "OnClickSetRow",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 113,
+        "line_end": 121
+      }
+    },
+    {
+      "link_id": "h52",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n78",
+        "parent_node_id": "n76",
+        "event": "OnRButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.OnSetRowContextMenu",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f8",
+        "qualified_name": "ClosetGoblinCharacterWindow.OnSetRowContextMenu",
+        "declared_name": "ClosetGoblinCharacterWindow.OnSetRowContextMenu",
+        "short_name": "OnSetRowContextMenu",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinCharacterWindow",
+        "receiver_separator": ".",
+        "line_start": 123,
+        "line_end": 145
+      }
+    },
+    {
+      "link_id": "h53",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n798",
+        "parent_node_id": "n797",
+        "event": "OnInitialize",
+        "function_raw": "ClosetGoblinOptionWindow.OnInitialize",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinOptionWindow.lua",
+        "function_id": "f1",
+        "qualified_name": "ClosetGoblinOptionWindow.OnInitialize",
+        "declared_name": "ClosetGoblinOptionWindow.OnInitialize",
+        "short_name": "OnInitialize",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinOptionWindow",
+        "receiver_separator": ".",
+        "line_start": 28,
+        "line_end": 30
+      }
+    },
+    {
+      "link_id": "h54",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n802",
+        "parent_node_id": "n801",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinOptionWindow.OnLButtonUp",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinOptionWindow.lua",
+        "function_id": "f2",
+        "qualified_name": "ClosetGoblinOptionWindow.OnLButtonUp",
+        "declared_name": "ClosetGoblinOptionWindow.OnLButtonUp",
+        "short_name": "OnLButtonUp",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinOptionWindow",
+        "receiver_separator": ".",
+        "line_start": 32,
+        "line_end": 42
+      }
+    },
+    {
+      "link_id": "h55",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n803",
+        "parent_node_id": "n801",
+        "event": "OnRButtonUp",
+        "function_raw": "ClosetGoblinOptionWindow.OnRButtonUp",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinOptionWindow.lua",
+        "function_id": "f3",
+        "qualified_name": "ClosetGoblinOptionWindow.OnRButtonUp",
+        "declared_name": "ClosetGoblinOptionWindow.OnRButtonUp",
+        "short_name": "OnRButtonUp",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinOptionWindow",
+        "receiver_separator": ".",
+        "line_start": 44,
+        "line_end": 46
+      }
+    },
+    {
+      "link_id": "h56",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n816",
+        "parent_node_id": "n815",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinOptionWindow.OnLButtonUp",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinOptionWindow.lua",
+        "function_id": "f2",
+        "qualified_name": "ClosetGoblinOptionWindow.OnLButtonUp",
+        "declared_name": "ClosetGoblinOptionWindow.OnLButtonUp",
+        "short_name": "OnLButtonUp",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinOptionWindow",
+        "receiver_separator": ".",
+        "line_start": 32,
+        "line_end": 42
+      }
+    },
+    {
+      "link_id": "h57",
+      "match_type": "exact",
+      "match_field": "qualified_name",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n817",
+        "parent_node_id": "n815",
+        "event": "OnRButtonUp",
+        "function_raw": "ClosetGoblinOptionWindow.OnRButtonUp",
+        "tag": "EventHandler",
+        "resolved_name": "",
+        "raw_name": ""
+      },
+      "lua": {
+        "source_file": "ClosetGoblinOptionWindow.lua",
+        "function_id": "f3",
+        "qualified_name": "ClosetGoblinOptionWindow.OnRButtonUp",
+        "declared_name": "ClosetGoblinOptionWindow.OnRButtonUp",
+        "short_name": "OnRButtonUp",
+        "scope_kind": "global",
+        "declaration_kind": "function_decl",
+        "receiver_name": "ClosetGoblinOptionWindow",
+        "receiver_separator": ".",
+        "line_start": 44,
+        "line_end": 46
+      }
+    }
+  ],
+  "ui_usage_links": [
+    {
+      "link_id": "u1",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n809",
+        "tag": "DynamicImage",
+        "resolved_name": "yClosetGoblinButton",
+        "raw_name": "yClosetGoblinButton"
+      },
+      "lua": {
+        "source_file": "ClosetGoblin.lua",
+        "function_id": "f2",
+        "call_id": "c4",
+        "callee_resolved": "DoesWindowExist",
+        "line": 92,
+        "matched_argument": "yClosetGoblinButton"
+      }
+    },
+    {
+      "link_id": "u2",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n809",
+        "tag": "DynamicImage",
+        "resolved_name": "yClosetGoblinButton",
+        "raw_name": "yClosetGoblinButton"
+      },
+      "lua": {
+        "source_file": "ClosetGoblin.lua",
+        "function_id": "f2",
+        "call_id": "c5",
+        "callee_resolved": "CreateWindow",
+        "line": 93,
+        "matched_argument": "yClosetGoblinButton"
+      }
+    },
+    {
+      "link_id": "u3",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n809",
+        "tag": "DynamicImage",
+        "resolved_name": "yClosetGoblinButton",
+        "raw_name": "yClosetGoblinButton"
+      },
+      "lua": {
+        "source_file": "ClosetGoblin.lua",
+        "function_id": "f2",
+        "call_id": "c6",
+        "callee_resolved": "WindowSetParent",
+        "line": 94,
+        "matched_argument": "yClosetGoblinButton"
+      }
+    },
+    {
+      "link_id": "u4",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n144",
+        "tag": "Window",
+        "resolved_name": "ClosetGoblinCharacterWindow",
+        "raw_name": "ClosetGoblinCharacterWindow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 39,
+        "matched_argument": "ClosetGoblinCharacterWindow"
+      }
+    },
+    {
+      "link_id": "u5",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n281",
+        "tag": "Label",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabel",
+        "raw_name": "$parentLabel"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c10",
+        "callee_resolved": "LabelSetText",
+        "line": 54,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabel"
+      }
+    },
+    {
+      "link_id": "u6",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n287",
+        "tag": "Label",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB1",
+        "raw_name": "$parentLabelAB1"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c11",
+        "callee_resolved": "LabelSetText",
+        "line": 55,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB1"
+      }
+    },
+    {
+      "link_id": "u7",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n303",
+        "tag": "Label",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB2",
+        "raw_name": "$parentLabelAB2"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c12",
+        "callee_resolved": "LabelSetText",
+        "line": 56,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB2"
+      }
+    },
+    {
+      "link_id": "u8",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n319",
+        "tag": "Label",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB3",
+        "raw_name": "$parentLabelAB3"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c13",
+        "callee_resolved": "LabelSetText",
+        "line": 57,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB3"
+      }
+    },
+    {
+      "link_id": "u9",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n335",
+        "tag": "Label",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB4",
+        "raw_name": "$parentLabelAB4"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c14",
+        "callee_resolved": "LabelSetText",
+        "line": 58,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB4"
+      }
+    },
+    {
+      "link_id": "u10",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n351",
+        "tag": "Label",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB5",
+        "raw_name": "$parentLabelAB5"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c15",
+        "callee_resolved": "LabelSetText",
+        "line": 59,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsLabelAB5"
+      }
+    },
+    {
+      "link_id": "u11",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n250",
+        "tag": "DynamicImage",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsSortTacticsUpArrow",
+        "raw_name": "$parentSortTacticsUpArrow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c16",
+        "callee_resolved": "WindowSetShowing",
+        "line": 61,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsSortTacticsUpArrow"
+      }
+    },
+    {
+      "link_id": "u12",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n254",
+        "tag": "DynamicImage",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsSortTacticsDownArrow",
+        "raw_name": "$parentSortTacticsDownArrow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c17",
+        "callee_resolved": "WindowSetShowing",
+        "line": 62,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsSortTacticsDownArrow"
+      }
+    },
+    {
+      "link_id": "u13",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n466",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowHelm",
+        "raw_name": "$parentShowHelm"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c18",
+        "callee_resolved": "WindowSetShowing",
+        "line": 64,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowHelm"
+      }
+    },
+    {
+      "link_id": "u14",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n504",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloak",
+        "raw_name": "$parentShowCloak"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c19",
+        "callee_resolved": "WindowSetShowing",
+        "line": 65,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloak"
+      }
+    },
+    {
+      "link_id": "u15",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n226",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsSortNameButton",
+        "raw_name": "$parentSortNameButton"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetText",
+        "line": 42,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsSortNameButton"
+      }
+    },
+    {
+      "link_id": "u16",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n512",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry",
+        "raw_name": "$parentShowCloakHeraldry"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c20",
+        "callee_resolved": "WindowSetShowing",
+        "line": 66,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry"
+      }
+    },
+    {
+      "link_id": "u17",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n242",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsSortTacticsButton",
+        "raw_name": "$parentSortTacticsButton"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c3",
+        "callee_resolved": "ButtonSetText",
+        "line": 43,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsSortTacticsButton"
+      }
+    },
+    {
+      "link_id": "u18",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n190",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsNewSet",
+        "raw_name": "$parentNewSet"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c4",
+        "callee_resolved": "ButtonSetText",
+        "line": 44,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsNewSet"
+      }
+    },
+    {
+      "link_id": "u19",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n196",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsDeleteSet",
+        "raw_name": "$parentDeleteSet"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c5",
+        "callee_resolved": "ButtonSetText",
+        "line": 45,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsDeleteSet"
+      }
+    },
+    {
+      "link_id": "u20",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n202",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsZoneConfig",
+        "raw_name": "$parentZoneConfig"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c6",
+        "callee_resolved": "ButtonSetText",
+        "line": 46,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsZoneConfig"
+      }
+    },
+    {
+      "link_id": "u21",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n208",
+        "tag": "Label",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsLabelUseItemRack",
+        "raw_name": "$parentLabelUseItemRack"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c7",
+        "callee_resolved": "LabelSetText",
+        "line": 47,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsLabelUseItemRack"
+      }
+    },
+    {
+      "link_id": "u22",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n214",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsCheckboxUseItemRack",
+        "raw_name": "$parentCheckboxUseItemRack"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f2",
+        "call_id": "c3",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 77,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsCheckboxUseItemRack"
+      }
+    },
+    {
+      "link_id": "u23",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n144",
+        "tag": "Window",
+        "resolved_name": "ClosetGoblinCharacterWindow",
+        "raw_name": "ClosetGoblinCharacterWindow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f25",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 338,
+        "matched_argument": "ClosetGoblinCharacterWindow"
+      }
+    },
+    {
+      "link_id": "u24",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n144",
+        "tag": "Window",
+        "resolved_name": "ClosetGoblinCharacterWindow",
+        "raw_name": "ClosetGoblinCharacterWindow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f26",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 342,
+        "matched_argument": "ClosetGoblinCharacterWindow"
+      }
+    },
+    {
+      "link_id": "u25",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n258",
+        "tag": "ListBox",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsSetList",
+        "raw_name": "$parentSetList"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f31",
+        "call_id": "c1",
+        "callee_resolved": "ListBoxSetDisplayOrder",
+        "line": 376,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsSetList"
+      }
+    },
+    {
+      "link_id": "u26",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n234",
+        "tag": "DynamicImage",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsSortUpArrow",
+        "raw_name": "$parentSortUpArrow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f32",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 380,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsSortUpArrow"
+      }
+    },
+    {
+      "link_id": "u27",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n238",
+        "tag": "DynamicImage",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsSortDownArrow",
+        "raw_name": "$parentSortDownArrow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f32",
+        "call_id": "c2",
+        "callee_resolved": "WindowSetShowing",
+        "line": 381,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsSortDownArrow"
+      }
+    },
+    {
+      "link_id": "u28",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n367",
+        "tag": "Window",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipment",
+        "raw_name": "$parentEquipment"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f34",
+        "call_id": "c2",
+        "callee_resolved": "WindowSetShowing",
+        "line": 437,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipment"
+      }
+    },
+    {
+      "link_id": "u29",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n367",
+        "tag": "Window",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipment",
+        "raw_name": "$parentEquipment"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f34",
+        "call_id": "c3",
+        "callee_resolved": "WindowSetShowing",
+        "line": 439,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipment"
+      }
+    },
+    {
+      "link_id": "u30",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n196",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsDeleteSet",
+        "raw_name": "$parentDeleteSet"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f35",
+        "call_id": "c1",
+        "callee_resolved": "ButtonSetDisabledFlag",
+        "line": 480,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsDeleteSet"
+      }
+    },
+    {
+      "link_id": "u31",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n196",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsDeleteSet",
+        "raw_name": "$parentDeleteSet"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f35",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetDisabledFlag",
+        "line": 482,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsDeleteSet"
+      }
+    },
+    {
+      "link_id": "u32",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n341",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB4",
+        "raw_name": "$parentCheckboxAB4"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f42",
+        "call_id": "c10",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 584,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB4"
+      }
+    },
+    {
+      "link_id": "u33",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n357",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB5",
+        "raw_name": "$parentCheckboxAB5"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f42",
+        "call_id": "c11",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 585,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB5"
+      }
+    },
+    {
+      "link_id": "u34",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n293",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1",
+        "raw_name": "$parentCheckboxAB1"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f42",
+        "call_id": "c7",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 581,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1"
+      }
+    },
+    {
+      "link_id": "u35",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n309",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2",
+        "raw_name": "$parentCheckboxAB2"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f42",
+        "call_id": "c8",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 582,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2"
+      }
+    },
+    {
+      "link_id": "u36",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n325",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB3",
+        "raw_name": "$parentCheckboxAB3"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f42",
+        "call_id": "c9",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 583,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB3"
+      }
+    },
+    {
+      "link_id": "u37",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n293",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1",
+        "raw_name": "$parentCheckboxAB1"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f47",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 636,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1"
+      }
+    },
+    {
+      "link_id": "u38",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n309",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2",
+        "raw_name": "$parentCheckboxAB2"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f48",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 643,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2"
+      }
+    },
+    {
+      "link_id": "u39",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n325",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB3",
+        "raw_name": "$parentCheckboxAB3"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f49",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 650,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB3"
+      }
+    },
+    {
+      "link_id": "u40",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n341",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB4",
+        "raw_name": "$parentCheckboxAB4"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f50",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 657,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB4"
+      }
+    },
+    {
+      "link_id": "u41",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n357",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB5",
+        "raw_name": "$parentCheckboxAB5"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f51",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 664,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB5"
+      }
+    },
+    {
+      "link_id": "u42",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n504",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloak",
+        "raw_name": "$parentShowCloak"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f52",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 676,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloak"
+      }
+    },
+    {
+      "link_id": "u43",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n512",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry",
+        "raw_name": "$parentShowCloakHeraldry"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f52",
+        "call_id": "c3",
+        "callee_resolved": "ButtonSetDisabledFlag",
+        "line": 679,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry"
+      }
+    },
+    {
+      "link_id": "u44",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n512",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry",
+        "raw_name": "$parentShowCloakHeraldry"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f52",
+        "call_id": "c4",
+        "callee_resolved": "ButtonSetDisabledFlag",
+        "line": 681,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry"
+      }
+    },
+    {
+      "link_id": "u45",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n512",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry",
+        "raw_name": "$parentShowCloakHeraldry"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f53",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 690,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry"
+      }
+    },
+    {
+      "link_id": "u46",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n504",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloak",
+        "raw_name": "$parentShowCloak"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f54",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 696,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloak"
+      }
+    },
+    {
+      "link_id": "u47",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n512",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry",
+        "raw_name": "$parentShowCloakHeraldry"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f55",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 701,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry"
+      }
+    },
+    {
+      "link_id": "u48",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n504",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloak",
+        "raw_name": "$parentShowCloak"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f56",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 706,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloak"
+      }
+    },
+    {
+      "link_id": "u49",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n512",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry",
+        "raw_name": "$parentShowCloakHeraldry"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f56",
+        "call_id": "c2",
+        "callee_resolved": "WindowSetShowing",
+        "line": 707,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry"
+      }
+    },
+    {
+      "link_id": "u50",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n504",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloak",
+        "raw_name": "$parentShowCloak"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f57",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 712,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloak"
+      }
+    },
+    {
+      "link_id": "u51",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n512",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry",
+        "raw_name": "$parentShowCloakHeraldry"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f57",
+        "call_id": "c2",
+        "callee_resolved": "WindowSetShowing",
+        "line": 713,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry"
+      }
+    },
+    {
+      "link_id": "u52",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n466",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowHelm",
+        "raw_name": "$parentShowHelm"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f58",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 720,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowHelm"
+      }
+    },
+    {
+      "link_id": "u53",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n466",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowHelm",
+        "raw_name": "$parentShowHelm"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f59",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 726,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowHelm"
+      }
+    },
+    {
+      "link_id": "u54",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n466",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowHelm",
+        "raw_name": "$parentShowHelm"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f60",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 731,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowHelm"
+      }
+    },
+    {
+      "link_id": "u55",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n466",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsEquipmentShowHelm",
+        "raw_name": "$parentShowHelm"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f61",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 736,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsEquipmentShowHelm"
+      }
+    },
+    {
+      "link_id": "u56",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n214",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinCharacterWindowContentsCheckboxUseItemRack",
+        "raw_name": "$parentCheckboxUseItemRack"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f62",
+        "call_id": "c1",
+        "callee_resolved": "ButtonSetPressedFlag",
+        "line": 745,
+        "matched_argument": "ClosetGoblinCharacterWindowContentsCheckboxUseItemRack"
+      }
+    },
+    {
+      "link_id": "u57",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n688",
+        "tag": "Window",
+        "resolved_name": "ClosetGoblinZoneWindow",
+        "raw_name": "ClosetGoblinZoneWindow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 31,
+        "matched_argument": "ClosetGoblinZoneWindow"
+      }
+    },
+    {
+      "link_id": "u58",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n737",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinZoneWindowContentsChangeZoneButton",
+        "raw_name": "$parentChangeZoneButton"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c3",
+        "callee_resolved": "ButtonSetText",
+        "line": 36,
+        "matched_argument": "ClosetGoblinZoneWindowContentsChangeZoneButton"
+      }
+    },
+    {
+      "link_id": "u59",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n749",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinZoneWindowContentsSortZoneButton",
+        "raw_name": "$parentSortZoneButton"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c4",
+        "callee_resolved": "ButtonSetText",
+        "line": 37,
+        "matched_argument": "ClosetGoblinZoneWindowContentsSortZoneButton"
+      }
+    },
+    {
+      "link_id": "u60",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n765",
+        "tag": "Button",
+        "resolved_name": "ClosetGoblinZoneWindowContentsSortSetButton",
+        "raw_name": "$parentSortSetButton"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c5",
+        "callee_resolved": "ButtonSetText",
+        "line": 38,
+        "matched_argument": "ClosetGoblinZoneWindowContentsSortSetButton"
+      }
+    },
+    {
+      "link_id": "u61",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n757",
+        "tag": "DynamicImage",
+        "resolved_name": "ClosetGoblinZoneWindowContentsSortUpArrow",
+        "raw_name": "$parentSortUpArrow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c6",
+        "callee_resolved": "WindowSetShowing",
+        "line": 40,
+        "matched_argument": "ClosetGoblinZoneWindowContentsSortUpArrow"
+      }
+    },
+    {
+      "link_id": "u62",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n761",
+        "tag": "DynamicImage",
+        "resolved_name": "ClosetGoblinZoneWindowContentsSortDownArrow",
+        "raw_name": "$parentSortDownArrow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c7",
+        "callee_resolved": "WindowSetShowing",
+        "line": 41,
+        "matched_argument": "ClosetGoblinZoneWindowContentsSortDownArrow"
+      }
+    },
+    {
+      "link_id": "u63",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n773",
+        "tag": "DynamicImage",
+        "resolved_name": "ClosetGoblinZoneWindowContentsSortSetUpArrow",
+        "raw_name": "$parentSortSetUpArrow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c8",
+        "callee_resolved": "WindowSetShowing",
+        "line": 42,
+        "matched_argument": "ClosetGoblinZoneWindowContentsSortSetUpArrow"
+      }
+    },
+    {
+      "link_id": "u64",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n777",
+        "tag": "DynamicImage",
+        "resolved_name": "ClosetGoblinZoneWindowContentsSortSetDownArrow",
+        "raw_name": "$parentSortSetDownArrow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c9",
+        "callee_resolved": "WindowSetShowing",
+        "line": 43,
+        "matched_argument": "ClosetGoblinZoneWindowContentsSortSetDownArrow"
+      }
+    },
+    {
+      "link_id": "u65",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n781",
+        "tag": "ListBox",
+        "resolved_name": "ClosetGoblinZoneWindowContentsSetList",
+        "raw_name": "$parentSetList"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f14",
+        "call_id": "c1",
+        "callee_resolved": "ListBoxSetDisplayOrder",
+        "line": 133,
+        "matched_argument": "ClosetGoblinZoneWindowContentsSetList"
+      }
+    },
+    {
+      "link_id": "u66",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n688",
+        "tag": "Window",
+        "resolved_name": "ClosetGoblinZoneWindow",
+        "raw_name": "ClosetGoblinZoneWindow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f5",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 70,
+        "matched_argument": "ClosetGoblinZoneWindow"
+      }
+    },
+    {
+      "link_id": "u67",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n688",
+        "tag": "Window",
+        "resolved_name": "ClosetGoblinZoneWindow",
+        "raw_name": "ClosetGoblinZoneWindow"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f6",
+        "call_id": "c1",
+        "callee_resolved": "WindowSetShowing",
+        "line": 74,
+        "matched_argument": "ClosetGoblinZoneWindow"
+      }
+    },
+    {
+      "link_id": "u68",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n730",
+        "tag": "Label",
+        "resolved_name": "ClosetGoblinZoneWindowContentsZoneOption",
+        "raw_name": "$parentZoneOption"
+      },
+      "lua": {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f7",
+        "call_id": "c1",
+        "callee_resolved": "LabelSetText",
+        "line": 78,
+        "matched_argument": "ClosetGoblinZoneWindowContentsZoneOption"
+      }
+    }
+  ],
+  "registration_links": [],
+  "unresolved": {
+    "handler_bindings": [
+      {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n122",
+        "event": "OnMouseOver",
+        "function_raw": "ActionBars.OnMouseoverHotbarPageUp",
+        "reason": "no_lua_function_match"
+      },
+      {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n129",
+        "event": "OnMouseOver",
+        "function_raw": "ActionBars.OnMouseoverHotbarPageDown",
+        "reason": "no_lua_function_match"
+      },
+      {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n455",
+        "event": "OnRButtonDown",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentRButtonDown",
+        "reason": "no_lua_function_match"
+      },
+      {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n493",
+        "event": "OnRButtonDown",
+        "function_raw": "ClosetGoblinCharacterWindow.EquipmentRButtonDown",
+        "reason": "no_lua_function_match"
+      },
+      {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n756",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinZoneWindow.OnClickSortZoneButton",
+        "reason": "no_lua_function_match"
+      },
+      {
+        "source_file": "ClosetGoblin.xml",
+        "node_id": "n772",
+        "event": "OnLButtonUp",
+        "function_raw": "ClosetGoblinCharacterWindow.OnClickSortSetButton",
+        "reason": "no_lua_function_match"
+      },
+      {
+        "source_file": "ClosetGoblinItemRack.xml",
+        "node_id": "n7",
+        "event": "OnRButtonDown",
+        "function_raw": "CG_ItemRack.EquipmentRButtonDown",
+        "reason": "no_lua_function_match"
+      },
+      {
+        "source_file": "ClosetGoblinItemRack.xml",
+        "node_id": "n8",
+        "event": "OnMouseOver",
+        "function_raw": "CG_ItemRack.EquipmentMouseOver",
+        "reason": "no_lua_function_match"
+      }
+    ],
+    "ui_usages": [
+      {
+        "source_file": "ClosetGoblin.lua",
+        "function_id": "f2",
+        "call_id": "c6",
+        "callee_resolved": "WindowSetParent",
+        "literal": "CharacterWindow",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c10",
+        "callee_resolved": "LabelSetText",
+        "literal": "Change ActionBar",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c11",
+        "callee_resolved": "LabelSetText",
+        "literal": "1",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c12",
+        "callee_resolved": "LabelSetText",
+        "literal": "2",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c13",
+        "callee_resolved": "LabelSetText",
+        "literal": "3",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c14",
+        "callee_resolved": "LabelSetText",
+        "literal": "4",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c15",
+        "callee_resolved": "LabelSetText",
+        "literal": "5",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c2",
+        "callee_resolved": "ButtonSetText",
+        "literal": "Set_Name",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c3",
+        "callee_resolved": "ButtonSetText",
+        "literal": "Tactics",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c4",
+        "callee_resolved": "ButtonSetText",
+        "literal": "New_Set",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c5",
+        "callee_resolved": "ButtonSetText",
+        "literal": "Delete_Set",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c6",
+        "callee_resolved": "ButtonSetText",
+        "literal": "Zone_Configuration",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c7",
+        "callee_resolved": "LabelSetText",
+        "literal": "ItemRack:",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c8",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinCharacterWindowTitleBarText",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f1",
+        "call_id": "c8",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblin",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f33",
+        "call_id": "c5",
+        "callee_resolved": "DynamicImageSetTexture",
+        "literal": "ClosetGoblinCharacterWindowContentsEquipmentSlot",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f33",
+        "call_id": "c5",
+        "callee_resolved": "DynamicImageSetTexture",
+        "literal": "IconBase",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f33",
+        "call_id": "c6",
+        "callee_resolved": "WindowSetTintColor",
+        "literal": "ClosetGoblinCharacterWindowContentsEquipmentSlot",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f33",
+        "call_id": "c7",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinCharacterWindowContentsEquipmentSlot",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f33",
+        "call_id": "c7",
+        "callee_resolved": "LabelSetText",
+        "literal": "Talisman1",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f33",
+        "call_id": "c9",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinCharacterWindowContentsEquipmentSlot",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f33",
+        "call_id": "c9",
+        "callee_resolved": "LabelSetText",
+        "literal": "Talisman2",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f36",
+        "call_id": "c1",
+        "callee_resolved": "LabelSetTextColor",
+        "literal": "ClosetGoblinCharacterWindowContentsSetListRow",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f36",
+        "call_id": "c1",
+        "callee_resolved": "LabelSetTextColor",
+        "literal": "Name",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f36",
+        "call_id": "c2",
+        "callee_resolved": "WindowSetShowing",
+        "literal": "ClosetGoblinCharacterWindowContentsSetListRow",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f36",
+        "call_id": "c2",
+        "callee_resolved": "WindowSetShowing",
+        "literal": "SelectionBorder",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f42",
+        "call_id": "c2",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB1CurrentPageText",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f42",
+        "call_id": "c3",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB2CurrentPageText",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f42",
+        "call_id": "c4",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB3CurrentPageText",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f42",
+        "call_id": "c5",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB4CurrentPageText",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f42",
+        "call_id": "c6",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB5CurrentPageText",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f45",
+        "call_id": "c3",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f45",
+        "call_id": "c3",
+        "callee_resolved": "LabelSetText",
+        "literal": "CurrentPageText",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f46",
+        "call_id": "c3",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinCharacterWindowContentsActionBarSettingsPSAB",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinCharacterWindow.lua",
+        "function_id": "f46",
+        "call_id": "c3",
+        "callee_resolved": "LabelSetText",
+        "literal": "CurrentPageText",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c2",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblinZoneWindowTitleBarText",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c2",
+        "callee_resolved": "LabelSetText",
+        "literal": "ClosetGoblin_Zone_Configuration",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c3",
+        "callee_resolved": "ButtonSetText",
+        "literal": "Change",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c4",
+        "callee_resolved": "ButtonSetText",
+        "literal": "Zone",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f1",
+        "call_id": "c5",
+        "callee_resolved": "ButtonSetText",
+        "literal": "Set_Name",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f10",
+        "call_id": "c1",
+        "callee_resolved": "LabelSetTextColor",
+        "literal": "ClosetGoblinZoneWindowContentsSetListRow",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f10",
+        "call_id": "c1",
+        "callee_resolved": "LabelSetTextColor",
+        "literal": "Zone",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f10",
+        "call_id": "c2",
+        "callee_resolved": "WindowSetShowing",
+        "literal": "ClosetGoblinZoneWindowContentsSetListRow",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f10",
+        "call_id": "c2",
+        "callee_resolved": "WindowSetShowing",
+        "literal": "SelectionBorder",
+        "reason": "no_xml_resolved_name_match"
+      },
+      {
+        "source_file": "ClosetGoblinZoneWindow.lua",
+        "function_id": "f7",
+        "call_id": "c1",
+        "callee_resolved": "LabelSetText",
+        "literal": "Setting_zones_to_sets",
+        "reason": "no_xml_resolved_name_match"
+      }
+    ],
+    "registrations": [
+      {
+        "source_file": "ClosetGoblin.lua",
+        "registration_id": "r1",
+        "reason": "empty_window_resolved",
+        "window_resolved": "",
+        "handler_resolved": "ClosetGoblin.Initialize"
+      },
+      {
+        "source_file": "ClosetGoblin.lua",
+        "registration_id": "r2",
+        "reason": "empty_window_resolved",
+        "window_resolved": "",
+        "handler_resolved": "ClosetGoblin.Initialize"
+      },
+      {
+        "source_file": "ClosetGoblin.lua",
+        "registration_id": "r3",
+        "reason": "empty_window_resolved",
+        "window_resolved": "",
+        "handler_resolved": "ClosetGoblin.OnAllModulesInitialized"
+      },
+      {
+        "source_file": "ClosetGoblin.lua",
+        "registration_id": "r4",
+        "reason": "empty_window_resolved",
+        "window_resolved": "",
+        "handler_resolved": "ClosetGoblin.OnVisibleEquipmentUpdated"
+      },
+      {
+        "source_file": "ClosetGoblin.lua",
+        "registration_id": "r5",
+        "reason": "empty_window_resolved",
+        "window_resolved": "",
+        "handler_resolved": "ClosetGoblin.OnInventorySlotUpdated"
+      },
+      {
+        "source_file": "ClosetGoblin.lua",
+        "registration_id": "r6",
+        "reason": "empty_window_resolved",
+        "window_resolved": "",
+        "handler_resolved": "ClosetGoblin.OnActivationWatchdog"
+      },
+      {
+        "source_file": "ClosetGoblin.lua",
+        "registration_id": "r7",
+        "reason": "empty_window_resolved",
+        "window_resolved": "",
+        "handler_resolved": "ClosetGoblin.PlayerZoneChanged"
+      },
+      {
+        "source_file": "ClosetGoblin.lua",
+        "registration_id": "r8",
+        "reason": "empty_window_resolved",
+        "window_resolved": "",
+        "handler_resolved": "ClosetGoblin.LoadingBegin"
+      },
+      {
+        "source_file": "ClosetGoblin.lua",
+        "registration_id": "r9",
+        "reason": "empty_window_resolved",
+        "window_resolved": "",
+        "handler_resolved": "ClosetGoblin.LoadingEnd"
+      }
+    ]
+  }
+}

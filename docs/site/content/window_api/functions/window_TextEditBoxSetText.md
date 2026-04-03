@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 17 addons
+- Seen in: 82 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, Enemy, Killer |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:656`, `/workspace/data/raw/Ace/LibGUI.lua:669`, `/workspace/data/raw/Ace/LibGUI.lua:711`, `/workspace/data/raw/Ace/LibGUI.lua:724`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:983`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:147`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:163`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:220` |
+| Addons seen in | Ace, ActionBarHide, AdvancedPetAssist, AdvancedRenownTrainer, Amethyst, AuctionStats, AuctionTweaker, Aura |
+| Files seen in | APAGui.lua, APAGuiHUD.lua, AdvancedRenownTrainingImportExport.lua, AuctionAssist.lua, AuctionTweaker.lua, AutoBand.lua, Busted.lua, Code/Core/Groups/EnemyEffectFilter.lua |
 | Namespaces detected | TextEditBoxSetText |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_MultiTextbox:Clear, Ace: LIBGUI_MultiTextbox:SetText, Ace: LIBGUI_Textbox:Clear, Ace: LIBGUI_Textbox:SetText, AdvancedPetAssist: APAGui.ApplyHUDColorOff, AdvancedPetAssist: APAGui.ApplyHUDColorOn |
+| Example locations | Ace: Clear, Ace: SetText, ActionBarHide: Clear, ActionBarHide: SetText, AdvancedPetAssist: ApplyHUDColorOff, AdvancedPetAssist: ApplyHUDColorOn |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 203 |
-| Global usage count | 203 |
+| Lua usage count | 683 |
+| Global usage count | 683 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -72,11 +72,11 @@ Observed reading from or writing to edit-box controls.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | windowName | Observed as a target control name. | Observed values: "APAEditHUDOffB", "APAEditHUDOffG", "APAEditHUDOffR" |
-| text | Observed as a text or wstring payload. | Observed values: DAoCBuffSettings.TmpFilter[activefilter.index].name, DAoCBuffVar.Frames[activewindow.index].name, ERASE |
+| text | Observed as a text or wstring payload. | Observed values: AddonToShow.RVProjectURL, AuctionSearchWindow.rankNotSetText, DAoCBuffSettings.TmpFilter[activefilter.index].name |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,54 +85,111 @@ Observed reading from or writing to edit-box controls.
 ## Seen In
 
 - Ace
+- ActionBarHide
 - AdvancedPetAssist
 - AdvancedRenownTrainer
+- Amethyst
+- AuctionStats
+- AuctionTweaker
 - Aura
+- AutoBand
 - BuffHead
+- Busted
+- CastSequence
+- Crusher
 - DAoCBuff
+- DetauntHelper
+- DuffTimer
+- EA_UiDebugTools
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- FastFriends
+- FixGit
+- GCDsaver
+- GroupRange
+- GuildWarden
+- HealGrid
+- Hopper
+- InfoScroller
+- JunkDump
+- KeyBar
+- Keyset
 - Killer
+- LibAddonButton
 - LibWBToggler
+- LoyalPet
+- Map
+- MapMonster
+- MapPin
+- Mass Refine
+- MegaphonePlusPlus
+- Miracle Grow Remix
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
 - PartyCast
+- Pure
+- Pure Careerbar
+- RVAPI_ColorDialog
+- RVMOD_Manager
+- RandomMount
+- RealmStatus
+- SNT_BUTTONS
+- SNT_PANEL
+- SOR
+- Sequencer
 - Shinies
+- Squared
+- TacticSetNames
+- TargetRing
+- TastyButtons
 - TexturedButtons
+- ThinkOutLoud
 - TidyChat
 - TidyRoll
+- Tokens
 - TurretRange
+- Twister
+- Vectors
+- WarTriage
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- XpStatus+G
+- nLootLink
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_MultiTextbox:Clear -> TextEditBoxSetText(self.name, L "")
-- Ace: LIBGUI_MultiTextbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
-- Ace: LIBGUI_Textbox:Clear -> TextEditBoxSetText(self.name, L "")
-- Ace: LIBGUI_Textbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
-- AdvancedPetAssist: APAGui.ApplyHUDColorOff -> TextEditBoxSetText("APAEditHUDOffR", towstring(APA.hudColorOffR))
-- AdvancedPetAssist: APAGui.ApplyHUDColorOff -> TextEditBoxSetText("APAEditHUDOffG", towstring(APA.hudColorOffG))
+- Ace: Clear -> TextEditBoxSetText(self.name, L "")
+- Ace: SetText -> TextEditBoxSetText(self.name, towstring(text))
+- ActionBarHide: Clear -> TextEditBoxSetText(self.name, L "")
+- ActionBarHide: SetText -> TextEditBoxSetText(self.name, towstring(text))
+- AdvancedPetAssist: ApplyHUDColorOff -> TextEditBoxSetText("APAEditHUDOffR", towstring(APA.hudColorOffR))
+- AdvancedPetAssist: ApplyHUDColorOff -> TextEditBoxSetText("APAEditHUDOffG", towstring(APA.hudColorOffG))
 
 ## Related APIs
 
-- none
+- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
 - [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
+- [TextEditBoxSetMaxChars](window_TextEditBoxSetMaxChars.md) (HIGH 100/100) - Window Function
 - [WindowAssignFocus](window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

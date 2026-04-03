@@ -25,13 +25,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, Shinies, WSCT |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/Aura/Source/Templates.xml:0`, `/workspace/data/raw/Shinies/Source/ShiniesUITemplates.xml:0`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Addons seen in | AdvancedPetAssist, Aura, Crusher, DaemonAssist, EA_OpenPartyWindow, EA_UiDebugTools, Hopper, ItemRack |
+| Files seen in | Configuration/Config.xml, Configuration/HopperConfig.xml, Configuration/WCDBConfig.xml, Configuration/WCDPConfig.xml, Source/DebugWindow.xml, Source/DebugWindowVerticalScroll.xml, Source/MapMonster_PinTypeEditorWindow.xml, Source/MoraleSet.xml |
 | Namespaces detected | MenuButtonOffset |
 | Source kinds | xml_frames |
-| Example locations | AdvancedPetAssist: APA_ComboBox, AdvancedPetAssist: APA_ComboBoxWide, Aura: Aura_ComboBox_DefaultResizable, Aura: Aura_ComboBox_DefaultResizableLarge, Aura: Aura_ComboBox_DefaultResizableTiny, Shinies: Shinies_ComboBox_DefaultResizableLarge |
-| XML usage count | 7 |
-| XML attribute usage count | 7 |
+| Example locations | AdvancedPetAssist: APA_ComboBox, AdvancedPetAssist: APA_ComboBoxWide, Aura: Aura_ComboBox_DefaultResizable, Aura: Aura_ComboBox_DefaultResizableLarge, Aura: Aura_ComboBox_DefaultResizableTiny, Crusher: Crusher_ComboBox_DefaultResizable |
+| XML usage count | 33 |
+| XML attribute usage count | 33 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -69,20 +69,40 @@ MenuButtonOffset is a XML UI element. It commonly appears under ComboBox.
 
 ## Common Parent Elements
 
-- [ComboBox](element_ComboBox.md) — 7× (HIGH)
+- [ComboBox](element_ComboBox.md) — 33× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | **required** | 100% | 5 |
-| `y` | **required** | 100% | 5 |
+| `x` | **required** | 100% | 5, 12, 0 |
+| `y` | **required** | 100% | 5, 0 |
 ## Seen In
 
 - AdvancedPetAssist
 - Aura
+- Crusher
+- DaemonAssist
+- EA_OpenPartyWindow
+- EA_UiDebugTools
+- Hopper
+- ItemRack
+- LoyalPet
+- MapMonster
+- MoraleSet
+- Motion
+- PartyAd
+- Pure
+- RaidMeter
+- ScenarioStats
 - Shinies
+- TalismanGenie
+- TwisterSet
 - WSCT
+- Warbuilder
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- ZonePOP
 
 ## Examples
 
@@ -91,20 +111,8 @@ MenuButtonOffset is a XML UI element. It commonly appears under ComboBox.
 - Aura: Aura_ComboBox_DefaultResizable -> MenuButtonOffset in ComboBox Aura_ComboBox_DefaultResizable
 - Aura: Aura_ComboBox_DefaultResizableLarge -> MenuButtonOffset in ComboBox Aura_ComboBox_DefaultResizableLarge
 - Aura: Aura_ComboBox_DefaultResizableTiny -> MenuButtonOffset in ComboBox Aura_ComboBox_DefaultResizableTiny
-- Shinies: Shinies_ComboBox_DefaultResizableLarge -> MenuButtonOffset in ComboBox Shinies_ComboBox_DefaultResizableLarge
+- Crusher: Crusher_ComboBox_DefaultResizable -> MenuButtonOffset in ComboBox Crusher_ComboBox_DefaultResizable
 
 ## Related APIs
 
 - [ComboBox](element_ComboBox.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

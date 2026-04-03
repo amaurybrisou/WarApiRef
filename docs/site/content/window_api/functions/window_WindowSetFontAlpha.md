@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 32 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, DAoCBuff, LibWBToggler, PartyCast, Shinies, TurretRange, WSCT, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:213`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:40`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:213`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:213`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:213`, `/workspace/data/raw/TurrentRange/Display.lua:338` |
+| Addons seen in | Ace, Atlas, Crusher, DAoCBuff, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Files seen in | Castbar.lua, Configuration/WCDBConfig_Actions.lua, Configuration/WCDBConfig_Morale.lua, Configuration/WCDBConfig_PetActions.lua, Display.lua, EffectTracker/EffectBar.lua, GroupIconsSG.lua, LibGUI.lua |
 | Namespaces detected | WindowSetFontAlpha |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:FontAlpha, DAoCBuff: DAoCBuffFrame:Create, LibWBToggler: LIBGUI_ELEMENT:FontAlpha, PartyCast: LIBGUI_ELEMENT:FontAlpha, PartyCast: PartyCast.FetchedText, PartyCast: PartyCast.Update |
+| Example locations | Ace: FontAlpha, Atlas: SetMapTransparency, Crusher: FontAlpha, DAoCBuff: Create, EZCraftX: FontAlpha, EZGuard: FontAlpha |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 25 |
-| Global usage count | 25 |
+| Lua usage count | 96 |
+| Global usage count | 96 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "PartyCastWindow"..PlayerNumber, "PartyCastWindow"..i, "PartyCastWindow0" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, 1, 1.0 |
+| windowName | Observed as a target window name. | Observed values: "AtlasFrameTitleBar", "AtlasFrameZoneNameLabel", "NoOverheal_Window" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, 0.5, 1 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,39 +85,55 @@ Observed mutating runtime window state or presentation.
 ## Seen In
 
 - Ace
+- Atlas
+- Crusher
 - DAoCBuff
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Group Icons SG
+- Hopper
+- InfoScroller
+- Kwestor
 - LibWBToggler
+- Map
+- Motion
+- NoOverheal
+- Obsidian
 - PartyCast
+- Pure
+- Pure Careerbar
+- RVMOD_SquaredDistances
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
 - TurretRange
 - WSCT
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:FontAlpha -> WindowSetFontAlpha(self.name, alpha)
-- DAoCBuff: DAoCBuffFrame:Create -> WindowSetFontAlpha(windowName, 1.0)
-- LibWBToggler: LIBGUI_ELEMENT:FontAlpha -> WindowSetFontAlpha(self.name, alpha)
-- PartyCast: LIBGUI_ELEMENT:FontAlpha -> WindowSetFontAlpha(self.name, alpha)
-- PartyCast: PartyCast.FetchedText -> WindowSetFontAlpha("PartyCastWindow"..PlayerNumber, 1)
-- PartyCast: PartyCast.Update -> WindowSetFontAlpha("PartyCastWindow"..i, 0)
+- Ace: FontAlpha -> WindowSetFontAlpha(self.name, alpha)
+- Atlas: SetMapTransparency -> WindowSetFontAlpha("AtlasFrameTitleBar", alpha)
+- Atlas: SetMapTransparency -> WindowSetFontAlpha("AtlasFrameZoneNameLabel", alpha)
+- Crusher: FontAlpha -> WindowSetFontAlpha(self.name, alpha)
+- DAoCBuff: Create -> WindowSetFontAlpha(windowName, 1.0)
+- EZCraftX: FontAlpha -> WindowSetFontAlpha(self.name, alpha)
 
 ## Related APIs
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
 - [WindowGetFontAlpha](window_WindowGetFontAlpha.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

@@ -23,10 +23,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:57`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | GroupsUpdated |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy._GroupIconsEnabledChanged, Enemy: Enemy._GuardEnabledChanged, Enemy: Enemy._UnitFramesEnabledChanged |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 3 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 3 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -69,7 +69,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
+- AddEventHandler
 - Enemy.GroupIcons_OnGroupsUpdated
 - Enemy.Guard_OnGroupsUpdated
 - Enemy.UnitFrames_OnGroupsUpdated
@@ -77,30 +77,13 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Examples
 
-- Enemy: Enemy._GroupIconsEnabledChanged -> GroupsUpdated -> Enemy.GroupIcons_OnGroupsUpdated
-- Enemy: Enemy._GuardEnabledChanged -> GroupsUpdated -> Enemy.Guard_OnGroupsUpdated
-- Enemy: Enemy._UnitFramesEnabledChanged -> GroupsUpdated -> Enemy.UnitFrames_OnGroupsUpdated
-- Enemy: Enemy.GroupIcons_OnGroupsUpdated -> Enemy.AddEventHandler(GroupsUpdated, Enemy.GroupIcons_OnGroupsUpdated)
-- Enemy: Enemy.Guard_OnGroupsUpdated -> Enemy.AddEventHandler(GroupsUpdated, Enemy.Guard_OnGroupsUpdated)
-- Enemy: Enemy.UnitFrames_OnGroupsUpdated -> Enemy.AddEventHandler(GroupsUpdated, Enemy.UnitFrames_OnGroupsUpdated)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Enemy: AddEventHandler -> GroupsUpdated -> Enemy.GroupIcons_OnGroupsUpdated
+- Enemy: AddEventHandler -> GroupsUpdated -> Enemy.Guard_OnGroupsUpdated
+- Enemy: AddEventHandler -> GroupsUpdated -> Enemy.UnitFrames_OnGroupsUpdated
+- Enemy: Enemy.GroupIcons_OnGroupsUpdated -> AddEventHandler(GroupsUpdated, Enemy.GroupIcons_OnGroupsUpdated)
+- Enemy: Enemy.Guard_OnGroupsUpdated -> AddEventHandler(GroupsUpdated, Enemy.Guard_OnGroupsUpdated)
+- Enemy: Enemy.UnitFrames_OnGroupsUpdated -> AddEventHandler(GroupsUpdated, Enemy.UnitFrames_OnGroupsUpdated)
 
 ## Notes
 
-- Triggered-by evidence: Enemy:Enemy._GroupsUpdate
 - Only one addon surfaced this event in the current addon-api corpus.

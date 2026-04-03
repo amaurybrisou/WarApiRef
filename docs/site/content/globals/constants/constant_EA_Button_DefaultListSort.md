@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, Enemy |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/Templates.xml:0`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:0`, `/workspace/data/raw/Enemy/Code/ScenarioInfo/ScenarioInfo.xml:0` |
+| Addons seen in | Aura, EA_OpenPartyWindow, Enemy, FozAuction, PieTracker, QuickTacticSwitch, TaxPayer, nLootLink |
+| Files seen in | Code/CombatLog/CombatLogStatsWindow.xml, Code/ScenarioInfo/ScenarioInfo.xml, PieTracker.xml, Source/AuraSettings.xml, Source/AuraShares.xml, Source/OpenPartyWindowTabNearby.xml, Source/OpenPartyWindowTabWorld.xml, Source/Templates.xml |
 | Namespaces detected | EA_Button_DefaultListSort |
 | Source kinds | xml_attributes |
-| Example locations | AuraSharesSortButton, AuraSortingHeaderTemplate, AuraWindowSortButton, EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn1, EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn2, EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn3 |
-| XML usage count | 14 |
-| XML attribute usage count | 14 |
+| Example locations | AuctionWindowSortButton, AuraSharesSortButton, AuraSortingHeaderTemplate, AuraWindowSortButton, EA_Template_OpenPartyNearbySortButton, EA_Window_OpenPartyWorldSocketDefInterestSortButton |
+| XML usage count | 24 |
+| XML attribute usage count | 24 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,18 +57,30 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Engine-supplied XML constant or template class referenced by 8 addons.
 
 ## Seen In
 
 - Aura
+- EA_OpenPartyWindow
 - Enemy
+- FozAuction
+- PieTracker
+- QuickTacticSwitch
+- TaxPayer
+- nLootLink
 
 ## Used By
 
+- AuctionWindowSortButton
 - AuraSharesSortButton
 - AuraSortingHeaderTemplate
 - AuraWindowSortButton
+- EA_Template_OpenPartyNearbySortButton
+- EA_Window_OpenPartyWorldSocketDefInterestSortButton
+- EA_Window_OpenPartyWorldSocketDefLocationSortButton
+- EA_Window_OpenPartyWorldSocketDefNumPlayersSortButton
+- EA_Window_OpenPartyWorldSocketDefPartyLeaderSortButton
 - EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn1
 - EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn2
 - EnemyCombatLogStatsWindow_ListHeaderTemplateSortColumn3
@@ -80,22 +92,14 @@ Observed engine XML template or inherited constant referenced by 2 addons.
 - EnemyScenarioInfoDialog_PlayerStatsHeaderTemplateSortName
 - EnemyScenarioInfoDialog_PlayerStatsHeaderTemplateSortValue1
 - EnemyScenarioInfoDialog_PlayerStatsHeaderTemplateSortValue2
+- PieTrackerSortButtonTemplate
+- QuickTacticSwitchWindowSortButton
+- TaxPayerSortButtonTemplate
+- nLootLinkSortingHeaderTemplate
 
 ## Related APIs
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

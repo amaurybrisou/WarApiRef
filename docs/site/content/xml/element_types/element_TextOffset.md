@@ -25,13 +25,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, CM_ClosetGoblin, Pocket Palette, PotionBar, Shinies, WSCT, WarBoard |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/Aura/Source/Templates.xml:0`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.xml:0`, `/workspace/data/raw/PocketPalette/PocketPalette.xml:0`, `/workspace/data/raw/PotionBar/source/Floating.xml:0`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Auctions.xml:0`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Auto.xml:0`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Post.xml:0` |
+| Addons seen in | AdvancedPetAssist, Assist, Aura, AutoBand, CM_ClosetGoblin, Crusher, DaemonAssist, DetauntHelper |
+| Files seen in | Configuration/Config.xml, Configuration/HopperConfig.xml, Configuration/WCDBConfig.xml, Configuration/WCDPConfig.xml, CustomTextures/TastyButtonsButtonTemplate.xml, Modules/UI/Shinies-UI-Auctions.xml, Modules/UI/Shinies-UI-Auto.xml, Modules/UI/Shinies-UI-Post.xml |
 | Namespaces detected | TextOffset |
 | Source kinds | xml_frames |
-| Example locations | AdvancedPetAssist: APA_ComboBoxButton, AdvancedPetAssist: APA_ComboBoxButtonWide, Aura: Aura_Button_DefaultMenuButton, Aura: Aura_Button_DefaultMenuButtonLarge, Aura: Aura_Button_DefaultMenuButtonTiny, Aura: Aura_Button_DefaultResizableTinyComboBoxSelected |
-| XML usage count | 33 |
-| XML attribute usage count | 33 |
+| Example locations | AdvancedPetAssist: APA_ComboBoxButton, AdvancedPetAssist: APA_ComboBoxButtonWide, Assist: AssistWindowBTN, Aura: Aura_Button_DefaultMenuButton, Aura: Aura_Button_DefaultMenuButtonLarge, Aura: Aura_Button_DefaultMenuButtonTiny |
+| XML usage count | 138 |
+| XML attribute usage count | 138 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -56,7 +56,7 @@
 
 ## Description
 
-TextOffset is a XML UI element. It commonly appears under Button and EditBox.
+TextOffset is a XML UI element. It commonly appears under Button and ComboBox.
 
 ## Common Attributes
 
@@ -69,48 +69,74 @@ TextOffset is a XML UI element. It commonly appears under Button and EditBox.
 
 ## Common Parent Elements
 
-- [Button](element_Button.md) — 18× (HIGH)
-- [EditBox](element_EditBox.md) — 15× (HIGH)
+- [Button](element_Button.md) — 75× (HIGH)
+- [EditBox](element_EditBox.md) — 63× (HIGH)
+- [ComboBox](element_ComboBox.md) — 1× (LOW)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | **required** | 100% | 5, 4, 10, 0 |
-| `y` | **required** | 87% | 5, 2, 3, 0 |
+| `x` | **required** | 100% | 5, 6, 4, 0, ... |
+| `y` | **required** | 94% | 5, 12, 2, 3, ... |
 ## Seen In
 
 - AdvancedPetAssist
+- Assist
 - Aura
+- AutoBand
 - CM_ClosetGoblin
+- Crusher
+- DaemonAssist
+- DetauntHelper
+- EA_OpenPartyWindow
+- EA_UiDebugTools
+- EZCraftX
+- FozAuction
+- GDes
+- Ges
+- Hopper
+- ItemRack
+- LoyalPet
+- Miracle Grow Remix
+- MoraleSet
+- Motion
+- NaturalLog
+- ObjectInspector
+- PartyAd
+- PieTracker
 - Pocket Palette
 - PotionBar
+- Pure
+- Queue Queuer
+- RVMOD_Manager
+- RaidMeter
+- Res
+- SNT_PANEL
 - Shinies
+- TastyButtons
+- TomeTracker
+- TwisterSet
+- Vectors
 - WSCT
 - WarBoard
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- ZonePOP
+- wbLeadHelper
+- zMailMod
 
 ## Examples
 
 - AdvancedPetAssist: APA_ComboBoxButton -> TextOffset in Button APA_ComboBoxButton
 - AdvancedPetAssist: APA_ComboBoxButtonWide -> TextOffset in Button APA_ComboBoxButtonWide
+- Assist: AssistWindowBTN -> TextOffset in Button AssistWindowBTN
 - Aura: Aura_Button_DefaultMenuButton -> TextOffset in Button Aura_Button_DefaultMenuButton
 - Aura: Aura_Button_DefaultMenuButtonLarge -> TextOffset in Button Aura_Button_DefaultMenuButtonLarge
 - Aura: Aura_Button_DefaultMenuButtonTiny -> TextOffset in Button Aura_Button_DefaultMenuButtonTiny
-- Aura: Aura_Button_DefaultResizableTinyComboBoxSelected -> TextOffset in Button Aura_Button_DefaultResizableTinyComboBoxSelected
 
 ## Related APIs
 
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
+- [ComboBox](element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [EditBox](element_EditBox.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

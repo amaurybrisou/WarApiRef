@@ -27,10 +27,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:1869`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:209`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:85` |
+| Files seen in | RoR_SoR.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | RoR_SoR.CheckCampaign, RoR_SoR.OnInitialize, RoR_SoR.TIMER_UPDATE, lua_call |
+| Example locations | CheckCampaign, OnInitialize, TIMER_UPDATE, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 4 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.CityId.EMPIRE field accessed by 1 addons; commonly found in CheckCampaign and OnInitialize, TIMER_UPDATE, lua_call contexts.
 
 ## Seen In
 
@@ -65,20 +65,8 @@ Observed GameData field used by 1 addons through generated function calls, event
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: RoR_SoR.CheckCampaign, RoR_SoR.OnInitialize, RoR_SoR.TIMER_UPDATE, lua_call
+- Observed in contexts: CheckCampaign, OnInitialize, TIMER_UPDATE, lua_call

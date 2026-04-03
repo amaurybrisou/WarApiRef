@@ -8,9 +8,7 @@
 
 - Evidence:
 
-- initialize: AdvancedPetAssist: APAFollowTargetHUD, AdvancedPetAssist: APAInstantOnlyHUD
-  - runtime: Ace: SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, Ace: SystemData.Events.UPDATE_PROCESSED
-  - xml: AdvancedPetAssist: APAComboAttackBind, AdvancedPetAssist: APAComboAutoReattack
+- none
 
 ## Event registration pattern
 
@@ -20,14 +18,14 @@
 
 - Evidence:
 
-- RegisterEventHandler: AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
-  - RegisterEventHandler: AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
-  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.LOADING_END, "AdvancedRenownTraining.OnReload")
-  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
-  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "AdvancedRenownTraining.OnReload")
-  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
+- RegisterEventHandler: AbilityAlert: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, "AbilityAlert.CombatEvent")
+  - RegisterEventHandler: AbilityNotifier: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, "AbHelp.CombatEvent")
+  - RegisterEventHandler: AbilityNotifier: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, "AbHelp.CombatUpdated")
+  - RegisterEventHandler: ActionBarHide: RegisterEventHandler(SystemData.Events.LOADING_END, "ActionBarHide.OnLoad")
+  - RegisterEventHandler: ActionBarHide: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "ActionBarHide.OnLoad")
+  - RegisterEventHandler: ActionBarHide: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, "ActionBarHide.Combat")
   - UnregisterEventHandler: Ace: UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "AceAddon_OnUpdate_DONOTTOUCH")
-  - UnregisterEventHandler: AdvancedPetAssist: UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+  - UnregisterEventHandler: ActionFraction: UnregisterEventHandler(SystemData.Events.ENTER_WORLD, "ActionFraction.Initialize")
 
 ## UI creation pattern
 
@@ -37,14 +35,14 @@
 
 - Evidence:
 
-- Window creation: AdvancedPetAssist: CreateWindow("APAOptions", true)
+- Window creation: AbilityAlert: CreateWindow("AAWindow", true)
+  - Window creation: AbilityNotifier: CreateWindow("AbHelpWindow", true)
+  - Window creation: ActionFraction: CreateWindow(windowName, true)
+  - Window creation: ActionPoints: CreateWindow("ActionPointsWindow", true)
+  - Window creation: AdvancedPetAssist: CreateWindow("APAOptions", true)
   - Window creation: AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
-  - Window creation: AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
-  - Window creation: AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
-  - Window creation: AdvancedRenownTrainer: CreateWindow(ExportWindowName, false)
-  - Window creation: AdvancedRenownTrainer: CreateWindow(LinkWindowName, false)
   - Template instantiation: Ace: CreateWindowFromTemplate(w.name, base, w.parent)
-  - Template instantiation: Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+  - Template instantiation: Ace: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
 
 ## XML to Lua binding pattern
 
@@ -54,14 +52,14 @@
 
 - Evidence:
 
-- AdvancedPetAssist: APAComboAttackBind.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboAutoReattack.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboAutoReattackDelay.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCastDelay.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboDebug.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboEnabled.OnSelChanged -> APAGui.OnComboChanged
+- AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: .OnSelChanged -> APAGui.OnComboChanged
 
 ## XML runtime caveats
 
@@ -89,20 +87,3 @@
   - QuickTacticSwitch: `ListColumns` binds `Name` and `Enemy`, while `QTS.PopulateDisplay` uses `QuickTacticSwitchWindowList.PopulatorIndices` to populate row icons.
   - QuickTacticSwitch: `ListBoxSetDisplayOrder` and `ListBoxGetDataIndex` are used to manage visible ordering and row-to-data mapping.
   - AggroMeter: `ListData table="AggroMeter.Listdata" populationfunction=""` suggests column-only text binding works without a custom population callback.
-
-## State management pattern
-
-- Confidence: MEDIUM
-
-- Description: Persistent state is typically rooted in addon-owned globals and saved variables, then initialized before runtime hooks are attached.
-
-- Evidence:
-
-- AdvancedPetAssist: APA_Settings
-  - AdvancedRenownTrainer: AdvancedRenownTraining.Presets
-  - AggroMeter: AggroMeter.Settings
-  - BagOMatic: BagOMatic.saved
-  - BankArkel: BankArkel.db
-  - BuffHead: BuffHead.Settings
-  - CM_ClosetGoblin: ClosetGoblin.setData
-  - CM_ClosetGoblin: ClosetGoblin.settings

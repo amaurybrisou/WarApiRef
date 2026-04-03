@@ -24,10 +24,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TexturedButtons |
-| Files seen in | `/workspace/data/raw/TexturedButtons/TexturedButtons.lua:851` |
+| Files seen in | TexturedButtons.lua |
 | Namespaces detected | {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},} |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | TexturedButtons: TexturedButtons.Register |
+| Example locations | TexturedButtons: Register |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -54,7 +54,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 1 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -70,30 +70,14 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- TexturedButtons.local.Register
+- Register
 - library
 - {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},}
 
 ## Examples
 
-- TexturedButtons: TexturedButtons.Register -> {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},} -> {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},}
-- TexturedButtons: {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},} -> TexturedButtons.local.Register({Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},}, {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},})
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- TexturedButtons: Register -> {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},} -> {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},}
+- TexturedButtons: {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},} -> Register({Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},}, {Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},})
 
 ## Notes
 

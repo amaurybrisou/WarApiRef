@@ -48,11 +48,12 @@
 
 ## Description
 
-ListColumn is a structural XML sub-element used by list controls to map one backing-table field to a target row child window.
+ListColumn is a structural XML sub-element that maps one list field to a target row child element. It commonly appears under ListColumns.
 
 ## Common Attributes
 
 - format
+- style
 - variable
 - windowname
 
@@ -62,28 +63,63 @@ ListColumn is a structural XML sub-element used by list controls to map one back
 
 ## Common Parent Elements
 
-- [ListColumns](element_ListColumns.md) — 42× (HIGH)
+- [ListColumns](element_ListColumns.md) — 192× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `format` | **required** | 100% | wstring, number, icon |
+| `format` | **required** | 100% | wstring, number, icon, comma, ... |
 | `variable` | **required** | 100% | Name, RankN, Character, Type, ... |
 | `windowname` | **required** | 100% | Name, Rank, Character, Type, ... |
+| `style` | optional | 6% | comma |
 ## Seen In
 
 - AggroMeter
 - Aura
+- BlackBook
 - BuffHead
 - CM_ClosetGoblin
+- CastSequence
+- Crusher
 - DAoCBuff
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiModWindow
 - Enemy
+- HealGrid
+- Hopper
+- Kwestor
+- LibAddonButton
+- LootAlert
+- Motion
+- NerfedButtons
+- Obsidian
+- PieTracker
+- Pure
+- QuickTacticSwitch
+- RealmStatus
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyChat
 - TidyRoll
+- Tome Titan
+- TomeTracker
+- Tortall_DPS
 - TurretRange
+- WTes
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- nLootLink
+- zMailMod
 
 ## Examples
 
@@ -92,15 +128,3 @@ ListColumn is a structural XML sub-element used by list controls to map one back
 ## Related APIs
 
 - [ListColumns](element_ListColumns.md) (MEDIUM 55/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

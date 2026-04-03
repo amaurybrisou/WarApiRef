@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -11,9 +11,9 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 133
+- Raw weighted score: 108
 
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
@@ -23,23 +23,22 @@
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +8 Return usage is consistent: Observed as a stable query-style API.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, LibGroup, LibGuard, PartyCast, WhoHealedMe, followTheLeader |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:281`, `/workspace/data/raw/LibGroup/LibGroup.lua:538`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:186`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/WhoHealedMe/WHMCore.lua:201`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:209`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:262` |
+| Addons seen in | Arsenal Rank, AutoBand, DeepSleep, EZGuard, Enemy, EveryBodyGuard, Info_DeathBlow, LibGroup |
+| Files seen in | ArsenalRank.lua, AutoBand.lua, Code/Core/Groups/Groups.lua, EZGuard.lua, EveryBodyGuard.lua, Info_DeathBlow.lua, LibGroup.lua, Modules.lua |
 | Namespaces detected | PartyUtils |
-| Source kinds | globals, lua_calls |
-| Example locations | Enemy: Enemy._GroupsUpdate, LibGroup: GetPartyData, LibGroup: LibGroup.local.GetPartyData, LibGuard: LibGuard.GetIdFromName, PartyCast: PartyCast.FetchedText, PartyCast: PartyCast.Update |
+| Source kinds | lua_calls |
+| Example locations | Arsenal Rank: isInGroup, AutoBand: cmd_dump_party_data, DeepSleep: AddGroupMenuItems, EZGuard: UpdateGroup, Enemy: _GroupsUpdate, EveryBodyGuard: ActivateGuard_Hard |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 30 |
+| Global usage count | 30 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | no |
@@ -66,7 +65,7 @@ PartyUtils.GetPartyData()
 
 ## Description
 
-Observed as a global function across 6 addons.
+Observed as a global function across 17 addons.
 
 ## Parameters
 
@@ -75,65 +74,44 @@ Observed as a global function across 6 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- Arsenal Rank
+- AutoBand
+- DeepSleep
+- EZGuard
 - Enemy
+- EveryBodyGuard
+- Info_DeathBlow
 - LibGroup
 - LibGuard
+- NoUselessMods-Assist
 - PartyCast
+- Pure
+- Squared
+- WarTriage
 - WhoHealedMe
 - followTheLeader
+- wbLeadHelper
 
 ## Examples
 
-- Enemy: Enemy._GroupsUpdate -> PartyUtils.GetPartyData()
-- LibGroup: GetPartyData -> PartyUtils.GetPartyData()
-- LibGroup: LibGroup.local.GetPartyData -> PartyUtils.GetPartyData()
-- LibGuard: LibGuard.GetIdFromName -> PartyUtils.GetPartyData()
-- PartyCast: PartyCast.FetchedText -> PartyUtils.GetPartyData()
-- PartyCast: PartyCast.Update -> PartyUtils.GetPartyData()
-
-## Related APIs
-
-- [GameData.GetScenarioPlayerGroups](global_GameData.GetScenarioPlayerGroups.md) (HIGH 100/100) - Global Function
-- [PartyUtils.GetWarbandData](global_PartyUtils.GetWarbandData.md) (HIGH 100/100) - Global Function
-- [PartyUtils.IsPartyActive](global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
-- [StatusBarGetCurrentValue](../../window_api/functions/window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
-- [StatusBarSetBackgroundTint](../../window_api/functions/window_StatusBarSetBackgroundTint.md) (HIGH 100/100) - Window Function
-- [StatusBarSetCurrentValue](../../window_api/functions/window_StatusBarSetCurrentValue.md) (HIGH 100/100) - Window Function
-- [StatusBarSetForegroundTint](../../window_api/functions/window_StatusBarSetForegroundTint.md) (HIGH 100/100) - Window Function
-- [StatusBarSetMaximumValue](../../window_api/functions/window_StatusBarSetMaximumValue.md) (HIGH 100/100) - Window Function
-- [WindowGetTintColor](../../window_api/functions/window_WindowGetTintColor.md) (HIGH 100/100) - Window Function
-- [WindowSetFontAlpha](../../window_api/functions/window_WindowSetFontAlpha.md) (HIGH 100/100) - Window Function
-- [StatusBarGetMaximumValue](../../window_api/functions/window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
-- [PartyUtils.GetWarbandLeader](global_PartyUtils.GetWarbandLeader.md) (HIGH 70/100) - Global Function
-
-## Used With
-
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureDimensions](../../window_api/functions/window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
-- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [PartyUtils.GetWarbandData](global_PartyUtils.GetWarbandData.md) (HIGH 100/100) - Global Function
-- [PartyUtils.IsPartyActive](global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
-- [StatusBarGetCurrentValue](../../window_api/functions/window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
-- [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
-- [StatusBarGetMaximumValue](../../window_api/functions/window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- none
+- Arsenal Rank: isInGroup -> PartyUtils.GetPartyData()
+- AutoBand: cmd_dump_party_data -> PartyUtils.GetPartyData()
+- DeepSleep: AddGroupMenuItems -> PartyUtils.GetPartyData()
+- EZGuard: UpdateGroup -> PartyUtils.GetPartyData()
+- Enemy: _GroupsUpdate -> PartyUtils.GetPartyData()
+- EveryBodyGuard: ActivateGuard_Hard -> PartyUtils.GetPartyData()
 
 ## Affects
 
 - [GameData.GetScenarioPlayerGroups](global_GameData.GetScenarioPlayerGroups.md) (HIGH 100/100) - Global Function
-- [PartyUtils.GetWarbandData](global_PartyUtils.GetWarbandData.md) (HIGH 100/100) - Global Function
 
 ## Notes
 

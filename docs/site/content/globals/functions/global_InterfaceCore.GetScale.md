@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 13 addons
+- Seen in: 60 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 168
+- Raw weighted score: 143
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -24,23 +24,22 @@
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +8 Return usage is consistent: Observed as a stable query-style API.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, DAoCBuff, Enemy, GuardLine, LibWBToggler, PartyCast, PotionBar |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:236`, `/workspace/data/raw/BuffHead/AdvancedContainers.lua:275`, `/workspace/data/raw/BuffHead/Container.lua:758`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52`, `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:8`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:3`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:71` |
+| Addons seen in | Ace, ActionFraction, AdjustTheTip, Amethyst, BuffHead, CleanUnitFrames, Crusher, DAoCBuff |
+| Files seen in | AdjustTheTip.lua, AdvancedContainers.lua, Amethyst.lua, Button.lua, CleanTargetWindow.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFrame.lua, Code/UnitFrames/UnitFramePart.lua |
 | Namespaces detected | InterfaceCore |
-| Source kinds | globals, lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Scale, BuffHead: AutoSize, BuffHead: BuffHead.AdvancedContainers.OnLayoutEditorFinished, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show, BuffHead: BuffHead.Setup.Layout.Properties.Show, BuffHead: BuffHead.Setup.LayoutFrame:Create |
+| Source kinds | lua_calls |
+| Example locations | Ace: Scale, ActionFraction: ResetWindow, AdjustTheTip: UpdateCallback, Amethyst: Recreate, Amethyst: Scale, BuffHead: AnchorContainers |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 40 |
-| Global usage count | 40 |
+| Lua usage count | 174 |
+| Global usage count | 174 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -67,7 +66,7 @@ InterfaceCore.GetScale()
 
 ## Description
 
-Observed as a global function across 13 addons.
+Observed as a global function across 60 addons.
 
 ## Parameters
 
@@ -76,65 +75,105 @@ Observed as a global function across 13 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionFraction
+- AdjustTheTip
+- Amethyst
 - BuffHead
+- CleanUnitFrames
+- Crusher
 - DAoCBuff
+- EA_UiDebugTools
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDsaver
+- Group Icons
+- GroupRange
 - GuardLine
+- Hopper
+- InfoScroller
+- KeyBar
+- LibAddonButton
 - LibWBToggler
+- Map
+- MapPin
+- Mass Refine
+- Miracle Grow Remix
+- Motion
+- Obsidian
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- RO-Style Combat Text
+- RVAPI_ColorDialog
+- RVMOD_Manager
+- RVMOD_SquaredDistances
+- RealmStatus
 - RoR_SoR
+- SNT_PANEL
 - Shinies
+- Squared
+- SquaredHDIndicator
+- SquaredHotIndicators
+- TargetRing
+- TastyButtons
 - TexturedButtons
+- TidyQueue
+- Tokens
 - TurretRange
+- Vectors
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- XpStatus+G
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Scale -> InterfaceCore.GetScale()
-- BuffHead: AutoSize -> InterfaceCore.GetScale()
-- BuffHead: BuffHead.AdvancedContainers.OnLayoutEditorFinished -> InterfaceCore.GetScale()
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -> InterfaceCore.GetScale()
-- BuffHead: BuffHead.Setup.Layout.Properties.Show -> InterfaceCore.GetScale()
-- BuffHead: BuffHead.Setup.LayoutFrame:Create -> InterfaceCore.GetScale()
+- Ace: Scale -> InterfaceCore.GetScale()
+- ActionFraction: ResetWindow -> InterfaceCore.GetScale()
+- AdjustTheTip: UpdateCallback -> InterfaceCore.GetScale()
+- Amethyst: Recreate -> InterfaceCore.GetScale()
+- Amethyst: Scale -> InterfaceCore.GetScale()
+- BuffHead: AnchorContainers -> InterfaceCore.GetScale()
 
 ## Related APIs
 
-- [InterfaceCore.GetResolutionScale](global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
-- [LabelSetTextAlign](../../window_api/functions/window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
-- [LabelSetWordWrap](../../window_api/functions/window_LabelSetWordWrap.md) (HIGH 100/100) - Window Function
-- [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
-- [WindowGetAnchor](../../window_api/functions/window_WindowGetAnchor.md) (HIGH 100/100) - Window Function
-- [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [LabelSetFont](../../window_api/functions/window_LabelSetFont.md) (HIGH 100/100) - Window Function
-- [LabelSetTextAlign](../../window_api/functions/window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowGetScale](../../window_api/functions/window_WindowGetScale.md) (HIGH 100/100) - Window Function
 - [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [WindowSetScale](../../window_api/functions/window_WindowSetScale.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

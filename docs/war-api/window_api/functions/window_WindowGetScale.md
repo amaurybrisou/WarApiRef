@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 13 addons
+- Seen in: 71 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, DAoCBuff, Enemy, GuardLine, LibWBToggler, PartyCast, PotionBar |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:236`, `/workspace/data/raw/BuffHead/AdvancedContainers.lua:36`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:480`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:653`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:72`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffHeadFrames.lua:212`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffHeadFrames.lua:796`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffHeadFrames.lua:850` |
+| Addons seen in | Ace, Amethyst, Atlas, BetterCC, BuffHead, CDown, CMap, Calling |
+| Files seen in | AdvancedContainers.lua, Amethyst.lua, Bars/HealGridProgressBar.lua, BetterCC.lua, CDownFrames.lua, CMap.lua, CallingNotification.lua, CleanCastbar.lua |
 | Namespaces detected | WindowGetScale |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Scale, BuffHead: BuffHead.local.RegisterLayoutEditor, BuffHead: RegisterLayoutEditor, DAoCBuff: DAoCBuff.SetSize, DAoCBuff: DAoCBuffFrame:SetScale, DAoCBuff: DAoCBuffHeadTracker:OnBuffsChanged |
+| Example locations | Ace: Scale, Amethyst: SavePosition, Amethyst: Scale, Atlas: ShowCoordinatesOnMouseOver, Atlas: UpdateDirectionalButtons, Atlas: UpdateLegend |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 46 |
-| Global usage count | 46 |
+| Lua usage count | 198 |
+| Global usage count | 198 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,61 +71,113 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "GuardLineSelfWindowCircle", "PartyCastStaticWindow"..PlayerNumber, "PartyCastStaticWindow0" |
+| windowName | Observed as a target window name. | Observed values: "AtlasFrame", "CMapWindow", "CMapWindowMapDisplay" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- Amethyst
+- Atlas
+- BetterCC
 - BuffHead
+- CDown
+- CMap
+- Calling
+- CastSequence
+- CleanCastbar
+- CleanUnitFrames
+- Countdown
+- Crusher
 - DAoCBuff
+- DetauntHelper
+- DuffTimer
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- FixGit
+- GCDsaver
+- GroupRange
+- GroupSpotter
 - GuardLine
+- HealGrid
+- Hopper
+- InfoScroller
+- Kwestor
 - LibWBToggler
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- MiniMapMonster
+- Motion
+- Obsidian
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- RVMOD_Manager
+- RealmStatus
 - RoR_SoR
+- SOR
 - Shinies
+- ShowHealthPercent
+- Squared
+- Statdoll
+- Statdoll Remix
+- TacticSetNames
+- TargetRing
+- TastyButtons
 - TexturedButtons
+- Tokens
 - TurretRange
+- Vectors
+- VerticalTactics
+- WARCommander
+- WTes
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- WindowMovers
 - WoH-Reticle
+- fpsbox
+- nLootLink
+- nRarity
+- scenarioInfo
+- xHUD
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Scale -> WindowGetScale(self.name)
-- BuffHead: BuffHead.local.RegisterLayoutEditor -> WindowGetScale(container:GetName())
-- BuffHead: RegisterLayoutEditor -> WindowGetScale(container:GetName())
-- DAoCBuff: DAoCBuff.SetSize -> WindowGetScale(sourceWnd)
-- DAoCBuff: DAoCBuffFrame:SetScale -> WindowGetScale(self.m_name)
-- DAoCBuff: DAoCBuffFrame:SetScale -> WindowGetScale(self.m_parentname)
+- Ace: Scale -> WindowGetScale(self.name)
+- Amethyst: SavePosition -> WindowGetScale(C.name)
+- Amethyst: Scale -> WindowGetScale(self.name)
+- Atlas: ShowCoordinatesOnMouseOver -> WindowGetScale("AtlasFrame")
+- Atlas: UpdateDirectionalButtons -> WindowGetScale("AtlasFrame")
+- Atlas: UpdateLegend -> WindowGetScale("AtlasFrame")
 
 ## Related APIs
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

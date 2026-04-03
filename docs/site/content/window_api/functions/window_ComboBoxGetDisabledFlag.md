@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 31 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1099`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:1096`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1096`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:1096`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:1096` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, DeepSleep, EZCraftX, EZGuard, Effigy |
+| Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Settings.lua, libs/LibGUI.lua |
 | Namespaces detected | ComboBoxGetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Combobox:Enabled, LibWBToggler: LIBGUI_Combobox:Enabled, PartyCast: LIBGUI_Combobox:Enabled, Shinies: LIBGUI_Combobox:Enabled, WoH-Reticle: LIBGUI_Combobox:Enabled |
+| Example locations | Ace: Enabled, ActionBarHide: Enabled, Amethyst: Enabled, Crusher: Enabled, DeepSleep: ComboBoxChanged, EZCraftX: Enabled |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 31 |
+| Global usage count | 31 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,53 +65,68 @@ ComboBoxGetDisabledFlag(arg1)
 
 ## Description
 
-Observed as a window function across 5 addons.
+Observed as a window function across 31 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: self.name |
+| arg1 | Observed as a function or method reference. | Observed values: box, self.name |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- Crusher
+- DeepSleep
+- EZCraftX
+- EZGuard
+- Effigy
+- EveryBodyGuard
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
+- Vectors
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
-- LibWBToggler: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
-- PartyCast: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
-- Shinies: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
-- WoH-Reticle: LIBGUI_Combobox:Enabled -> ComboBoxGetDisabledFlag(self.name)
-
-## Related APIs
-
-- none
+- Ace: Enabled -> ComboBoxGetDisabledFlag(self.name)
+- ActionBarHide: Enabled -> ComboBoxGetDisabledFlag(self.name)
+- Amethyst: Enabled -> ComboBoxGetDisabledFlag(self.name)
+- Crusher: Enabled -> ComboBoxGetDisabledFlag(self.name)
+- DeepSleep: ComboBoxChanged -> ComboBoxGetDisabledFlag(box)
+- EZCraftX: Enabled -> ComboBoxGetDisabledFlag(self.name)
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [ButtonGetDisabledFlag](window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

@@ -24,10 +24,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:57` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | IntercomMessageGuard |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy._GuardEnabledChanged |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -54,7 +54,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 1 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -70,30 +70,14 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
+- AddEventHandler
 - Enemy.Guard_OnIntercomMessageGuard
 - addon
 
 ## Examples
 
-- Enemy: Enemy._GuardEnabledChanged -> IntercomMessageGuard -> Enemy.Guard_OnIntercomMessageGuard
-- Enemy: Enemy.Guard_OnIntercomMessageGuard -> Enemy.AddEventHandler(IntercomMessageGuard, Enemy.Guard_OnIntercomMessageGuard)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Enemy: AddEventHandler -> IntercomMessageGuard -> Enemy.Guard_OnIntercomMessageGuard
+- Enemy: Enemy.Guard_OnIntercomMessageGuard -> AddEventHandler(IntercomMessageGuard, Enemy.Guard_OnIntercomMessageGuard)
 
 ## Notes
 

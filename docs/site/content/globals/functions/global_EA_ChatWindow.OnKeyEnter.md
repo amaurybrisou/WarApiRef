@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -11,9 +11,9 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 148
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
@@ -23,23 +23,22 @@
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Swift Assist, WSCT |
-| Files seen in | `/workspace/data/raw/swift-assist/SwiftAssist.lua:435`, `/workspace/data/raw/wsct/wsct.lua:196` |
+| Addons seen in | Effigy, Swift Assist, WSCT |
+| Files seen in | EffigySlashCommands.lua, SwiftAssist.lua, wsct.lua |
 | Namespaces detected | EA_ChatWindow |
-| Source kinds | globals, lua_calls |
-| Example locations | Swift Assist: SwiftAssist.Initialize, WSCT: WSCT:HookChatWindow |
+| Source kinds | lua_calls |
+| Example locations | Effigy: RegisterManually, Swift Assist: Initialize, WSCT: HookChatWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -66,7 +65,7 @@ EA_ChatWindow.OnKeyEnter(arg1)
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 3 addons.
 
 ## Parameters
 
@@ -76,39 +75,26 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- Effigy
 - Swift Assist
 - WSCT
 
 ## Examples
 
-- Swift Assist: SwiftAssist.Initialize -> EA_ChatWindow.OnKeyEnter(...)
-- WSCT: WSCT:HookChatWindow -> EA_ChatWindow.OnKeyEnter(...)
-
-## Related APIs
-
-- [DialogManager.MakeOneButtonDialog](global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
-- [EA_ChatWindow.Print](global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
-- [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
-
-## Used With
-
-- [EA_TextEntryGroupEntryBoxTextInput](../tables/table_EA_TextEntryGroupEntryBoxTextInput.md) (HIGH 100/100) - Global Table
-
-## Triggered By
-
-- none
+- Effigy: RegisterManually -> EA_ChatWindow.OnKeyEnter(...)
+- Swift Assist: Initialize -> EA_ChatWindow.OnKeyEnter(...)
+- WSCT: HookChatWindow -> EA_ChatWindow.OnKeyEnter(...)
 
 ## Affects
 
-- [EA_TextEntryGroupEntryBoxTextInput](../tables/table_EA_TextEntryGroupEntryBoxTextInput.md) (HIGH 100/100) - Global Table
 - [SystemData.Events.MACROS_LOADED](../../systemdata/fields/systemdata_SystemData.Events.MACROS_LOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.MACRO_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.MACRO_UPDATED.md) (HIGH 100/100) - SystemData Field
 

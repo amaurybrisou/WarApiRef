@@ -23,15 +23,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AggroMeter, Aura, CombatTextNames, DAoCBuff, Enemy, GuardLine, Killer |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:205`, `/workspace/data/raw/Aura/Libraries/LibPickle.lua:428`, `/workspace/data/raw/Aura/Libraries/LibPickle.lua:65`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:129`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:121`, `/workspace/data/raw/DAoCBuff/Source/Transcode.lua:289`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:700`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:709` |
+| Addons seen in | ActionFraction, AdjustTheTip, AdvancedRenownTrainer, AggroMeter, Aura, BuddyBind, CCTV, CaVES |
+| Files seen in | Bars/HealGridCastBar.lua, Code/CombatLog/CombatLog.lua, Code/Core/Utils.lua, Configuration/Config.lua, Configuration/HopperConfig.lua, Configuration/HopperConfig_General.lua, Configuration/PureConfig.lua, Configuration/PureConfig_Group.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.OnHyperLinkLButtonUp, AggroMeter: AggroMeter.OnMouseOverStart, Aura: Aura.local.wgsub, Aura: AuraHelpers.cleanWString, Aura: DePickler:unpickle |
+| Example locations | ActionFraction: Initialize, AdjustTheTip: GetAbilityCastTimeText, AdjustTheTip: UpdateInfluenceTooltip, AdvancedRenownTrainer: ImportOkButtonPressed, AdvancedRenownTrainer: OnHyperLinkLButtonUp, AggroMeter: OnMouseOverStart |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 95 |
-| Global usage count | 7 |
+| Lua usage count | 666 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -54,17 +54,21 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 16 addons.
+Shared function table with 11 member functions; the primary API surface for 87 addons.
 
 ## Functions
 
+- wstring.byte
 - wstring.char
 - wstring.find
 - wstring.format
 - wstring.gsub
 - wstring.len
+- wstring.lower
 - wstring.match
+- wstring.reverse
 - wstring.sub
+- wstring.upper
 
 ## Observed Members
 
@@ -72,47 +76,102 @@ Observed shared global table or namespace surfaced in 16 addons.
 
 ## Seen In
 
+- ActionFraction
+- AdjustTheTip
 - AdvancedRenownTrainer
 - AggroMeter
 - Aura
+- BuddyBind
+- CCTV
+- CaVES
+- Calling
+- CastSequence
+- CleanUnitFrames
 - CombatTextNames
+- CoolDownLine
+- Crafting Info Tooltip
+- Cram The Spam
+- Crusher
 - DAoCBuff
+- DammazKron
+- DuffTimer
+- EA_UiDebugTools
+- Effigy
+- Emojii
 - Enemy
+- GetStats
+- Group Icons SG
+- GroupSpotter
 - GuardLine
+- HealGrid
+- Hopper
+- I HATE YOU THIS MUCH
+- Info_DeathBlow
+- Info_Loot
+- Info_Points
+- KeyBar
+- KillTracker
 - Killer
+- Kwestor
+- LibDateTime
 - LibGuard
+- LibJson
+- LibPickle
+- MapMonster
+- MapPin
+- MegaphonePlusPlus
+- Miracle Grow Remix
+- Moth
+- Motion
+- NAMBLA
+- NaturalLog
+- Obsidian
 - PartyCast
 - PotionBar
+- Pure
+- Queue Queuer
+- QueuePopTimer
+- QuickNameActions+
+- RVAPI_Range
+- RVMOD_SquaredDistances
+- RealmStatus
+- Refer
+- ReliquaryHunter
+- ResHelp
 - RoR_SoR
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SOR
+- Sequencer
+- SessionRPs
 - Shinies
+- Squared
+- Statdoll
+- Statdoll Light
+- Statdoll Remix
+- Swinger
 - TexturedButtons
 - TidyChat
+- Tokens
+- TomeTracker
+- Trakario
+- UnrealDBAnnouncer
+- VPBreakdown
+- Vectors
 - WSCT
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- XpStatus+G
+- whatsPugSc
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, arsenalUrl..BuildPattern)
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, BuildPattern)
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, wardrobeUrl..BuildPattern)
-- AdvancedRenownTrainer: AdvancedRenownTraining.OnHyperLinkLButtonUp -> wstring.gsub(linkData, hyperlinkPrefix, ERASE)
-- AggroMeter: AggroMeter.OnMouseOverStart -> wstring.format(L "%.01f", (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100)
-- Aura: Aura.local.wgsub -> wstring.gsub(s, pattern, replace)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- ActionFraction: Initialize -> wstring.format(L "%.01f", ActionFraction.Version)
+- AdjustTheTip: GetAbilityCastTimeText -> wstring.format(L "%.1f", castTime)
+- AdjustTheTip: GetAbilityCastTimeText -> wstring.format(L "%d", castTime)
+- AdjustTheTip: UpdateInfluenceTooltip -> wstring.format(L "/%d (", influenceData.rewardLevel[3].amountNeeded)
+- AdjustTheTip: UpdateInfluenceTooltip -> wstring.format(L "%d%%,", percent)
+- AdjustTheTip: UpdateInfluenceTooltip -> wstring.format(L "%d%%)", percent)
 
 ## Notes
 

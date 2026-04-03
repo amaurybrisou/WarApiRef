@@ -68,42 +68,104 @@ NormalHighlit is a XML UI element. It commonly appears under AnimatedImages and 
 
 ## Common Parent Elements
 
-- [TexSlices](element_TexSlices.md) — 16× (HIGH)
-- [TextColors](element_TextColors.md) — 16× (HIGH)
-- [ResizeImages](element_ResizeImages.md) — 14× (HIGH)
-- [OverlayTexCoords](element_OverlayTexCoords.md) — 7× (MEDIUM)
-- [TexCoords](element_TexCoords.md) — 7× (MEDIUM)
+- [TexSlices](element_TexSlices.md) — 104× (HIGH)
+- [TextColors](element_TextColors.md) — 83× (HIGH)
+- [TexCoords](element_TexCoords.md) — 43× (HIGH)
+- [ResizeImages](element_ResizeImages.md) — 41× (HIGH)
+- [OverlayTexCoords](element_OverlayTexCoords.md) — 24× (HIGH)
+- [OverlayTexSlices](element_OverlayTexSlices.md) — 2× (LOW)
 - [AnimatedImages](element_AnimatedImages.md) — 1× (LOW)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `b` | optional | 26% | 63, 0 |
-| `g` | optional | 26% | 213, 85 |
-| `id` | optional | 26% | morale-white, RightTabFrame-Rollover, LayoutCorner-TopLeft-ROLLOVER, LayoutCorner-TopRight-ROLLOVER, ... |
-| `r` | optional | 26% | 250, 255 |
-| `a` | optional | 24% | 255 |
-| `def` | optional | 24% | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, EA_FullResizeImage_RedTransparent, BuffHeadLayoutVerticalButtonHighlight, ... |
-| `x` | optional | 22% | 27, 105, 0 |
-| `y` | optional | 22% | 28, 44, 0 |
-| `texture` | optional | 9% | EA_SquareFrame_Highlight, ShiniesIconBorderHighlight, TidyRoll_SquareFrame_Highlight |
+| `id` | optional | 35% | morale-white, RightTabFrame-Rollover, Tactics-Button-Rollover, SquareButton-Rollover, ... |
+| `b` | optional | 27% | 63, 36, 0, 50, ... |
+| `g` | optional | 27% | 213, 57, 85, 192, ... |
+| `r` | optional | 27% | 250, 95, 255, 222, ... |
+| `a` | optional | 26% | 255, 1 |
+| `x` | optional | 22% | 27, 105, 0, 201, ... |
+| `y` | optional | 22% | 28, 44, 0, 341, ... |
+| `def` | optional | 14% | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, EA_FullResizeImage_RedTransparent, EA_Button_GuildRosterRowHighlight, ... |
+| `texture` | optional | 7% | EA_SquareFrame_Highlight, CrusherIconBorderHighlight, EA_RoundFrame_Pressed, PinBG, ... |
 ## Seen In
 
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - AggroMeter
 - AnywhereTrainer
+- Assist
 - Aura
+- AutoBand
+- BlackBook
 - BuffHead
 - CM_ClosetGoblin
+- CMap
+- CaVES
+- CastSequence
+- Crusher
+- DaemonAssist
+- DammazKron
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- DuffTimer
+- EA_UiDebugTools
+- EZCraftX
+- FozAuction
+- GDes
+- Ges
+- GuardList
+- GuardRange
+- GuildWarden
+- Hopper
+- ItemRack
+- KeyBar
+- KillTracker
+- LoyalPet
+- MapPin
+- Minmap
+- Miracle Grow Remix
+- MoraleSet
+- Motion
+- NerfedButtons
 - PartyCast
 - Pocket Palette
 - PotionBar
+- Pure
+- Queue Queuer
+- RVMOD_Manager
+- RVMOD_SquaredDistances
+- RaidMeter
 - RoR_SoR
+- SNT_PANEL
+- SOR
+- Sequencer
 - Shinies
+- SocialWindow 2.0
+- SpamBayes
+- Statdoll
+- Statdoll Remix
+- TalismanGenie
+- TastyButtons
 - TidyRoll
+- Tome Titan
+- TwisterSet
+- Vectors
+- WARCommander
 - WSCT
+- WTes
+- WaaaghBar
+- Warbuilder
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- ZonePOP
+- emotes
+- nLootLink
+- nRarity
+- zMailMod
 
 ## Examples
 
@@ -117,15 +179,10 @@ NormalHighlit is a XML UI element. It commonly appears under AnimatedImages and 
 - [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
 - [TextColors](element_TextColors.md) (HIGH 100/100) - XML Element Type
 - [AnimatedImages](element_AnimatedImages.md) (MEDIUM 45/100) - XML Element Type
+- [OverlayTexSlices](element_OverlayTexSlices.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [Normal](element_Normal.md) (MEDIUM 45/100) - XML Element Type
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [Pressed](element_Pressed.md) (MEDIUM 45/100) - XML Element Type

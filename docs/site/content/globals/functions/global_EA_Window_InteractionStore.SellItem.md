@@ -24,10 +24,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic |
-| Files seen in | `/workspace/data/raw/bagomatic/BagOMatic.lua:771` |
+| Files seen in | BagOMatic.lua |
 | Namespaces detected | EA_Window_InteractionStore |
 | Source kinds | lua_calls |
-| Example locations | BagOMatic: BagOMatic.sellItemAt |
+| Example locations | BagOMatic: sellItemAt |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -71,11 +71,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
@@ -83,25 +83,10 @@ Observed as a global function across 1 addons.
 
 ## Examples
 
-- BagOMatic: BagOMatic.sellItemAt -> EA_Window_InteractionStore.SellItem(slot_id, 1)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- BagOMatic: sellItemAt -> EA_Window_InteractionStore.SellItem(slot_id, 1)
 
 ## Notes
 
 - Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

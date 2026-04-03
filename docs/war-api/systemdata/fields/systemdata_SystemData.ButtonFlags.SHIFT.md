@@ -27,14 +27,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Auto.lua:1353`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Post.lua:1216` |
+| Files seen in | Modules/UI/Shinies-UI-Auctions.lua, Modules/UI/Shinies-UI-Auto.lua, Modules/UI/Shinies-UI-Browse.lua, Modules/UI/Shinies-UI-Post.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | ShowItemTooltip, ShowRowTooltip, lua_call |
+| Example locations | OnMouseOver_Results_ListItem, ShowItemTooltip, ShowRowTooltip, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -57,28 +57,12 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.ButtonFlags.SHIFT field accessed by 1 addons; commonly found in OnMouseOver_Results_ListItem and ShowItemTooltip, ShowRowTooltip, lua_call contexts.
 
 ## Seen In
 
 - Shinies
 
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: ShowItemTooltip, ShowRowTooltip, lua_call
+- Observed in contexts: OnMouseOver_Results_ListItem, ShowItemTooltip, ShowRowTooltip, lua_call

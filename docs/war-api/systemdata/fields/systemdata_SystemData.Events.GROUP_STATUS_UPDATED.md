@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 176
+- Raw weighted score: 188
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -30,15 +30,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, LibGroup |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/LibGroup/LibGroup.lua:119` |
+| Addons seen in | EZGuard, Enemy, EveryBodyGuard, Info_DeathBlow, LibGroup, Pure, Squared, WBStutterLess |
+| Files seen in | Code/Core/Groups/Groups.lua, EZGuard.lua, EveryBodyGuard.lua, Info_DeathBlow.lua, LibGroup.lua, Source/PureGroup.lua, Source/PureGroupPet.lua, Squared.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
-| Example locations | Enemy.GroupsInitialize, Enemy.Groups_OnGroupStatusUpdated, LibGroup.local.SetMode, SetMode, SystemData.Events.GROUP_STATUS_UPDATED, event_page |
+| Example locations | GroupWindowHook, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoad |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 3 |
 | Initialization flow references | 0 |
@@ -61,29 +61,25 @@
 
 ## Description
 
-Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.GROUP_STATUS_UPDATED field accessed by 8 addons; commonly found in GroupWindowHook and GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoad, OnShutdown, OnUnload, SetMode, Shutdown, SquaredGroup.UpdateGroupStatus, SystemData.Events.GROUP_STATUS_UPDATED, UnloadUnitFrame, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
+- EZGuard
 - Enemy
+- EveryBodyGuard
+- Info_DeathBlow
 - LibGroup
+- Pure
+- Squared
+- WBStutterLess
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 
-- Observed in contexts: Enemy.GroupsInitialize, Enemy.Groups_OnGroupStatusUpdated, LibGroup.local.SetMode, SetMode, SystemData.Events.GROUP_STATUS_UPDATED, event_page
+- Observed in contexts: GroupWindowHook, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoad

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,35 +11,34 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 121
+- Raw weighted score: 108
 
-- Rationale: Promoted as HIGH confidence because matches a known engine namespace, referenced by generated docs or reference files, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +8 Return usage is consistent: Observed as a stable query-style API.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, LibGroup |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:558`, `/workspace/data/raw/LibGroup/LibGroup.lua:802` |
+| Addons seen in | Enemy, LibGroup, Pure, Squared |
+| Files seen in | Code/Core/Groups/Groups.lua, LibGroup.lua, Source/PureGroup.lua, Source/PureGroupPet.lua, SquaredGroup.lua |
 | Namespaces detected | PartyUtils |
-| Source kinds | globals, lua_calls |
-| Example locations | Enemy: Enemy.Groups_OnGroupStatusUpdated, LibGroup: LibGroup.OnGroupStatusUpdated |
+| Source kinds | lua_calls |
+| Example locations | Enemy: Groups_OnGroupStatusUpdated, LibGroup: OnGroupStatusUpdated, Pure: OnGroupStatusUpdated, Squared: UpdateGroupStatus |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | no |
@@ -66,47 +65,35 @@ PartyUtils.GetPartyMember(arg1)
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 4 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: indexInGroup, memberIndex |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: groupMemberIndex, indexInGroup, memberIndex |
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Enemy
 - LibGroup
+- Pure
+- Squared
 
 ## Examples
 
-- Enemy: Enemy.Groups_OnGroupStatusUpdated -> PartyUtils.GetPartyMember(memberIndex)
-- LibGroup: LibGroup.OnGroupStatusUpdated -> PartyUtils.GetPartyMember(indexInGroup)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- [SystemData.Events.GROUP_STATUS_UPDATED](../../events/game_events/game_event_SystemData.Events.GROUP_STATUS_UPDATED.md) (HIGH 100/100) - Game Event
-
-## Affects
-
-- [PartyUtils](../tables/table_PartyUtils.md) (HIGH 100/100) - Global Table
+- Enemy: Groups_OnGroupStatusUpdated -> PartyUtils.GetPartyMember(memberIndex)
+- LibGroup: OnGroupStatusUpdated -> PartyUtils.GetPartyMember(indexInGroup)
+- Pure: OnGroupStatusUpdated -> PartyUtils.GetPartyMember(groupMemberIndex)
+- Squared: UpdateGroupStatus -> PartyUtils.GetPartyMember(memberIndex)
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 33 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Aura, Enemy, RoR_SoR, WSCT |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:205`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:242`, `/workspace/data/raw/Aura/Source/AuraTexture.lua:147`, `/workspace/data/raw/Enemy/Code/Marks/MarkTemplate.lua:264`, `/workspace/data/raw/Enemy/Code/Marks/MarkTemplate.lua:281`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:1737`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:1869`, `/workspace/data/raw/wsct/wsct_options/wsct_options.lua:280` |
+| Addons seen in | AggroMeter, Aura, DammazKron, EA_OpenPartyWindow, EA_ScenarioGroupWindow, EA_UiModWindow, Emojii, Enemy |
+| Files seen in | AggroMeter.lua, Classes/Display.lua, Code/Marks/MarkTemplate.lua, Core/Tome/DK_Tome.lua, Core/ToolTip/DK_Tooltip.lua, Emojii.lua, Gui/HealGridGuiColorSelect.lua, Gui/HealGridGuiTabSpellTrack.lua |
 | Namespaces detected | WindowGetParent |
 | Source kinds | lua_calls |
-| Example locations | AggroMeter: AggroMeter.OnMouseOverStart, AggroMeter: AggroMeter.SelectChar, Aura: AuraTexture.OnIconLButtonUp, Enemy: Enemy.MarkUI_EnemyMark_OnLButtonDown, Enemy: Enemy.MarkUI_EnemyMark_OnRButtonUp, RoR_SoR: RoR_SoR.OnMouseOverStart |
+| Example locations | AggroMeter: OnMouseOverStart, AggroMeter: SelectChar, Aura: OnIconLButtonUp, DammazKron: DK_OnSelectProfil, DammazKron: DK_OnSelectProfilMini, DammazKron: DestroyWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 18 |
-| Global usage count | 18 |
+| Lua usage count | 103 |
+| Global usage count | 103 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,65 +71,82 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: SystemData.ActiveWindow.name, SystemData.MouseOverWindow.name, WindowGetParent(SystemData.ActiveWindow.name) |
+| windowName | Observed as a target window name. | Observed values: ButtonName, SystemData.ActiveWindow.name, SystemData.MouseOverWindow.name |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - AggroMeter
 - Aura
+- DammazKron
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiModWindow
+- Emojii
 - Enemy
+- HealGrid
+- HideHiddenFrames
+- KillTracker
+- LibAddonButton
+- LibSurveyor
+- LoyalPet
+- Map
+- MapMonster
+- Miracle Grow Remix
+- Motion
+- NAMBLA
+- Pure
+- RVMOD_Manager
+- RVMOD_Targets
+- RandomMount
+- Refer
 - RoR_SoR
+- SocialWindow 2.0
+- TastyButtons
+- TokenMachine
+- TomeTracker
+- Vectors
 - WSCT
+- WTes
+- zMailMod
 
 ## Examples
 
-- AggroMeter: AggroMeter.OnMouseOverStart -> WindowGetParent(SystemData.MouseOverWindow.name)
-- AggroMeter: AggroMeter.SelectChar -> WindowGetParent(SystemData.MouseOverWindow.name)
-- Aura: AuraTexture.OnIconLButtonUp -> WindowGetParent(WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name)))
-- Aura: AuraTexture.OnIconLButtonUp -> WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name))
-- Aura: AuraTexture.OnIconLButtonUp -> WindowGetParent(SystemData.ActiveWindow.name)
-- Enemy: Enemy.MarkUI_EnemyMark_OnLButtonDown -> WindowGetParent(SystemData.MouseOverWindow.name)
+- AggroMeter: OnMouseOverStart -> WindowGetParent(SystemData.MouseOverWindow.name)
+- AggroMeter: SelectChar -> WindowGetParent(SystemData.MouseOverWindow.name)
+- Aura: OnIconLButtonUp -> WindowGetParent(WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name)))
+- Aura: OnIconLButtonUp -> WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name))
+- Aura: OnIconLButtonUp -> WindowGetParent(SystemData.ActiveWindow.name)
+- DammazKron: DK_OnSelectProfil -> WindowGetParent(SystemData.ActiveWindow.name)
 
 ## Related APIs
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [OnSelChanged](../../xml/handlers/handler_OnSelChanged.md) (HIGH 88/100) - XML Event
+- [OnTextChanged](../../xml/handlers/handler_OnTextChanged.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [ButtonGetDisabledFlag](window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-
-## Triggered By
-
-- [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
-- [OnLButtonDown](../../events/window_events/window_event_OnLButtonDown.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
-- [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
+- [WindowGetId](window_WindowGetId.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [DynamicImage](../../xml/element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
-- [Label](../../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

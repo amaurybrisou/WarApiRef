@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 7 addons
+- Seen in: 44 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, DAoCBuff, Enemy, PotionBar, Shinies, TexturedButtons, WSCT |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:205`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:121`, `/workspace/data/raw/Enemy/Code/Core/Utils.lua:727`, `/workspace/data/raw/Enemy/Code/Core/Utils.lua:820`, `/workspace/data/raw/PotionBar/source/Main.lua:189`, `/workspace/data/raw/Shinies/Modules/Config/Shinies-Config-General.lua:106`, `/workspace/data/raw/Shinies/Modules/Config/Shinies-Config-General.lua:89`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Auctions.lua:571` |
+| Addons seen in | ActionFraction, AdjustTheTip, AggroMeter, BarText (Influence), CCTV, CaVES, Calling, CastSequence |
+| Files seen in | AdjustTheTip.lua, AggroMeter.lua, BarText_Influence.lua, Bars/HealGridCastBar.lua, CCTV.lua, CallingList.lua, Castbar.lua, Clock.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | AggroMeter: AggroMeter.OnMouseOverStart, DAoCBuff: DAoCBuffFrame:UpdateI_hpte, Enemy: Enemy.DateTimeToString, Enemy: Enemy.FormatNumberShort, PotionBar: PotionBar.Initialize, Shinies: UpdateSummaryDisplay |
+| Example locations | ActionFraction: Initialize, AdjustTheTip: GetAbilityCastTimeText, AdjustTheTip: UpdateInfluenceTooltip, AggroMeter: OnMouseOverStart, BarText (Influence): PlayerInfluenceUpdated, CCTV: Update |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 19 |
-| Global usage count | 19 |
+| Lua usage count | 461 |
+| Global usage count | 461 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,65 +62,99 @@ wstring.format(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 7 addons.
+Observed as a global function across 44 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: L "%.01f", L "%.2f K", L "%.2f M" |
-| arg2 | Observed as a function or method reference. | Observed values: (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100, (duration*10)/10, PotionBar.Settings.Version |
+| arg1 | Observed as a function or method reference. | Observed values: HealGridSettings[HealGrid.settingsIndex].trackedBuffs[idx].duration, HealGridSettings[HealGrid.settingsIndex].trackedBuffs[idx].warnExpire, L "%.01f" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: #activeReults, ((GameData.Player.Stats[GameData.Stats.WEAPONSKILL].baseValue/(GameData.Player.battleLevel*7.5+50)*.25)*100.0), (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- ActionFraction
+- AdjustTheTip
 - AggroMeter
+- BarText (Influence)
+- CCTV
+- CaVES
+- Calling
+- CastSequence
+- Clock
+- CoolDownLine
+- Crusher
 - DAoCBuff
+- DuffTimer
+- Effigy
 - Enemy
+- GroupSpotter
+- HealGrid
+- Hopper
+- MapPin
+- Motion
+- NAMBLA
+- Obsidian
 - PotionBar
+- Pure
+- QueuePopTimer
+- RealmStatus
+- ReliquaryHunter
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SOR
 - Shinies
+- Squared
+- Statdoll
+- Statdoll Light
+- Statdoll Remix
+- Swinger
 - TexturedButtons
+- Tokens
+- VPBreakdown
+- Vectors
 - WSCT
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- XpStatus+G
 
 ## Examples
 
-- AggroMeter: AggroMeter.OnMouseOverStart -> wstring.format(L "%.01f", (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100)
-- DAoCBuff: DAoCBuffFrame:UpdateI_hpte -> wstring.format(s, (duration*10)/10)
-- Enemy: Enemy.DateTimeToString -> wstring.format(L "%02d.%02d.%04d %02d:%02d:%02d", dt.day, dt.month, dt.year, dt.hours, dt.minutes, dt.seconds)
-- Enemy: Enemy.FormatNumberShort -> wstring.format(L "%.2f M", number/1000000)
-- Enemy: Enemy.FormatNumberShort -> wstring.format(L "%.2f K", number/1000)
-- PotionBar: PotionBar.Initialize -> wstring.format(L "%.01f", PotionBar.Settings.Version)
+- ActionFraction: Initialize -> wstring.format(L "%.01f", ActionFraction.Version)
+- AdjustTheTip: GetAbilityCastTimeText -> wstring.format(L "%.1f", castTime)
+- AdjustTheTip: GetAbilityCastTimeText -> wstring.format(L "%d", castTime)
+- AdjustTheTip: UpdateInfluenceTooltip -> wstring.format(L "/%d (", influenceData.rewardLevel[3].amountNeeded)
+- AdjustTheTip: UpdateInfluenceTooltip -> wstring.format(L "%d%%,", percent)
+- AdjustTheTip: UpdateInfluenceTooltip -> wstring.format(L "%d%%)", percent)
 
 ## Related APIs
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
-- [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
+- [EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID](global_EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID.md) (HIGH 100/100) - Global Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [wstring.gsub](global_wstring.gsub.md) (HIGH 100/100) - Global Function
 
 ## Affects
 
-- [DynamicImage](../../xml/element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_RENOWN_RANK_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_RANK_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

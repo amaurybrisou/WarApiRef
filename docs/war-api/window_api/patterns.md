@@ -8,12 +8,12 @@
 
 - Evidence:
 
-- AdvancedPetAssist: CreateWindow("APAOptions", true)
+- AbilityAlert: CreateWindow("AAWindow", true)
+  - AbilityNotifier: CreateWindow("AbHelpWindow", true)
+  - ActionFraction: CreateWindow(windowName, true)
+  - ActionPoints: CreateWindow("ActionPointsWindow", true)
+  - AdvancedPetAssist: CreateWindow("APAOptions", true)
   - AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
-  - AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
-  - AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
-  - AdvancedRenownTrainer: CreateWindow(ExportWindowName, false)
-  - AdvancedRenownTrainer: CreateWindow(LinkWindowName, false)
 
 ## Template instantiation
 
@@ -24,11 +24,11 @@
 - Evidence:
 
 - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
-  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
   - Ace: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
-  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
-  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
-  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_ComboBox_DefaultResizable", w.parent)
+  - ActionBarHide: CreateWindowFromTemplate(w.name, base, w.parent)
+  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_EditBox_DefaultFrame", w.parent)
+  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_EditBox_DefaultFrame_Multiline", w.parent)
 
 ## Runtime anchoring
 
@@ -39,11 +39,11 @@
 - Evidence:
 
 - Ace: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
-  - AdvancedPetAssist: WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
-  - AdvancedPetAssist: WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
-  - AdvancedRenownTrainer: WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
-  - AdvancedRenownTrainer: WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
-  - AnywhereTrainerAdditions: WindowAddAnchor(tab.Name, tab.Anchor.Point, tab.Anchor.RelativeTo, tab.Anchor.RelativePoint, tab.Anchor.X, tab.Anchor.Y)
+  - ActionBarHide: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
+  - ActionFraction: WindowAddAnchor(windowName, "center", "Root", "center", 0, 0)
+  - ActionFraction: WindowAddAnchor(windowName, "center", "PlayerWindowStatusContainerAPPercentBar", "center", 2, 6)
+  - ActionFraction: WindowAddAnchor(windowName, "center", "Root", "center", 0, 0)
+  - AdjustTheTip: WindowAddAnchor(c_HEALTH_BAR_CONTAINER, "bottomright", "MouseOverTargetUnitWindow", "bottomright", -10, -10)
 
 ## XML to Lua binding
 
@@ -53,9 +53,9 @@
 
 - Evidence:
 
-- AdvancedPetAssist: APAComboAttackBind.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboAutoReattack.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboAutoReattackDelay.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCastDelay.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged -> APAGui.OnComboChanged
-  - AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged -> APAGui.OnComboChanged
+- AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp
+  - AdvancedPetAssist: .OnLButtonUp -> APAGui.OnTabButtonUp

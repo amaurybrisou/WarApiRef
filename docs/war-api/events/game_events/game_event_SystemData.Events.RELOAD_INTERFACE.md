@@ -10,43 +10,39 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 123
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
-- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, LibWBToggler, PlanB, TexturedButtons |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraAddon.lua:70`, `/workspace/data/raw/BuffHead/Core.lua:152`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.lua:73`, `/workspace/data/raw/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace/data/raw/PlanB/PlanB.lua:35`, `/workspace/data/raw/TexturedButtons/TexturedButtons.lua:492`, `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227` |
+| Addons seen in | Squared |
+| Files seen in | Squared.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, flows, lua_event_registration |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, Aura: AuraAddon.OnInitialize, BagOMatic: BagOMatic.init, BuffHead: BuffHead.Initialize, CM_ClosetGoblin: ClosetGoblin.OnInitialize, LibWBToggler: LibWBTogglerManager.Initialize |
+| Source kinds | event_page, lua_event_registration |
+| Example locations | Squared: RegisterEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 1 |
+| Global usage count | 1 |
 | Local definition count | 0 |
-| Documentation references | 2 |
-| Initialization flow references | 12 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | yes |
+| Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -61,7 +57,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 13 addons.
+Runtime event with 1 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -69,74 +65,27 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
+- Payload shape is not inferable from contract artifacts alone; treat this as an engine event identifier.
 
 ## Seen In
 
-- AdvancedRenownTrainer
-- Aura
-- BagOMatic
-- BuffHead
-- CM_ClosetGoblin
-- LibWBToggler
-- PlanB
-- TexturedButtons
-- TidyChat
-- TidyRoll
-- TurretRange
-- WarBoard
-- WhoHealedMe
+- Squared
 
 ## Registrars And Handlers
 
-- AdvancedRenownTraining.OnReload
-- AuraAddon.OnLoad
-- BagOMatic.restore_filters
-- BuffHead.OnLoadingEnd
-- ClosetGoblin.Initialize
-- LibWBTogglerManager.CheckMods
-- PlanB.HandleLoading
 - RegisterEventHandler
-- TexturedButtons.OnLoadComplete
-- TidyChat.OnLoad
-- TidyRoll.OnLoad
-- TurretRange.OnLoadComplete
-- WHMEvents.OnLoadingEnd
-- WarBoard.SortMods
+- Squared.OnLoad
 - global
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -> SystemData.Events.RELOAD_INTERFACE -> AdvancedRenownTraining.OnReload
-- Aura: AuraAddon.OnInitialize -> SystemData.Events.RELOAD_INTERFACE -> AuraAddon.OnLoad
-- BagOMatic: BagOMatic.init -> SystemData.Events.RELOAD_INTERFACE -> BagOMatic.restore_filters
-- BuffHead: BuffHead.Initialize -> SystemData.Events.RELOAD_INTERFACE -> BuffHead.OnLoadingEnd
-- CM_ClosetGoblin: ClosetGoblin.OnInitialize -> SystemData.Events.RELOAD_INTERFACE -> ClosetGoblin.Initialize
-- LibWBToggler: LibWBTogglerManager.Initialize -> SystemData.Events.RELOAD_INTERFACE -> LibWBTogglerManager.CheckMods
+- Squared: RegisterEventHandler -> SystemData.Events.RELOAD_INTERFACE -> Squared.OnLoad
+- Squared: Squared.OnLoad -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, Squared.OnLoad)
 
 ## Related APIs
 
-- [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
-- [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
-- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
-- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (HIGH 93/100) - Global Function
-
-## Used With
-
-- [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
-- [SystemData.Events.LOADING_END](game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 
-- none
+- Only one addon surfaced this event in the current addon-api corpus.

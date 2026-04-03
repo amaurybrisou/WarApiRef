@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 19 addons
+- Seen in: 103 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, Aura, AutoMark, BankArkel, BuffHead, CM_ClosetGoblin, CombatTextNames |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1270`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:33`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:7`, `/workspace/data/raw/BankArkel/BankArkel.lua:242`, `/workspace/data/raw/BankArkel/BankArkel.lua:350`, `/workspace/data/raw/BuffHead/EffectFrame.lua:359`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutProperties.lua:117` |
+| Addons seen in | Ace, AdvancedRenownTrainer, Amethyst, AuctionStats, Aura, AutoMark, BBars - Mechanic Only, BankArkel |
+| Files seen in | AdvancedRenownTraining.lua, BBarsPetHP.lua, BBarsPlayerMechanic.lua, BankArkel.lua, Bar.lua, Bloody Mess.lua, BuddyBind.lua, Button.lua |
 | Namespaces detected | DynamicImageSetTexture |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Image:Texture, AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow, AdvancedRenownTrainer: CreateAbilityWindow, Aura: AuraHelpers.SetDynamicImageTexture, AutoMark: AutoMark.local.CreateMarker, AutoMark: CreateMarker |
+| Example locations | Ace: Texture, AdvancedRenownTrainer: CreateAbilityWindow, Amethyst: Texture, AuctionStats: OnRButtonUpItem, AuctionStats: UpdateItemOptions, Aura: SetDynamicImageTexture |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 77 |
-| Global usage count | 77 |
+| Lua usage count | 504 |
+| Global usage count | 504 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,14 +71,14 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target image control name. | Observed values: "ClosetGoblinCharacterWindowContentsEquipmentSlot"..slot.."IconBase", "EnemyClickCastingDialogContentScrollChildActionConfig1Ability", "EnemyIcon" |
-| texture | Observed as a texture resource name. | Observed values: "", "BuffHead_Effect_Border_Frame"..frame, "BuffHead_Effect_Border_Frame1" |
-| textureX | Observed as a numeric texture coordinate or atlas offset. | Observed values: 0, 115, 185 |
+| windowName | Observed as a target image control name. | Observed values: "BBarsPetHPBG", "BBarsPetHPBack", "BBarsPetHPFront" |
+| texture | Observed as a texture resource name. | Observed values: "", "BlipDes", "BlipOrd" |
+| textureX | Observed as a numeric texture coordinate or atlas offset. | Observed values: 0, 115, 17 |
 | textureY | Observed as a numeric texture coordinate or atlas offset. | Observed values: 0, 105, 128 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -88,65 +88,144 @@ Observed mutating runtime image resources on existing controls.
 
 - Ace
 - AdvancedRenownTrainer
+- Amethyst
+- AuctionStats
 - Aura
 - AutoMark
+- BBars - Mechanic Only
 - BankArkel
+- Bloody Mess
+- Brizio's Crappy Computer Medic
+- BuddyBind
 - BuffHead
+- CDown
 - CM_ClosetGoblin
+- CMap
+- CaVES
+- Calling
+- CastSequence
+- CleanUnitFrames
+- CleansingBuddy
 - CombatTextNames
+- CoolDownLine
+- Crusher
 - DAoCBuff
+- DammazKron
+- DetauntHelper
+- DuffTimer
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EZCraftX
+- EZGuard
+- Effigy
+- Emojii
 - Enemy
+- EveryBodyGuard
+- FozAuction
+- GCDTracker
+- GCDsaver
+- GetStats
+- Group Icons
+- GroupRange
+- GroupSpotter
+- GuildWarden
+- Hopper
+- InfoScroller
+- LibAddonButton
 - LibWBToggler
+- MacroIcons
+- Map
+- MapMonster
+- MarkBuff
+- MiniMapMonster
+- Miracle Grow Remix
+- Moth
+- Motion
+- MouseHint
+- NaturalLog
+- NerfedButtons
+- Obsidian
 - PartyCast
+- PlayEffectsOn
 - PotionBar
+- Pure
+- Pure Careerbar
+- RVMOD_Manager
+- RandomMount
+- RealmStatus
+- ReliquaryHunter
 - RoR_SoR
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SNT_PANEL
+- SOR
+- Sequencer
 - Shinies
+- SocialWindow 2.0
+- Squared
+- SquaredClick
 - Swift Assist
+- TargetInfoRing
+- TargetRing
+- Targets
+- TastyButtons
 - TexturedButtons
+- TokenMachine
+- Tokens
+- Tome Titan
+- Trakario
+- Twister
 - WSCT
+- WarBoard_Menu
+- WarBoard_TaliMon
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- bigger_MacroWindow
+- scenarioInfo
+- talisman-monitor
+- xHUD
+- yAssistHelper
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Image:Texture -> DynamicImageSetTexture(self.name, texture, x, y)
-- AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow -> DynamicImageSetTexture(t.windowName.."Square", GetIconData(t.icon), 0, 0)
+- Ace: Texture -> DynamicImageSetTexture(self.name, texture, x, y)
 - AdvancedRenownTrainer: CreateAbilityWindow -> DynamicImageSetTexture(t.windowName.."Square", GetIconData(t.icon), 0, 0)
-- Aura: AuraHelpers.SetDynamicImageTexture -> DynamicImageSetTexture(window, texture, dx, dy)
-- AutoMark: AutoMark.local.CreateMarker -> DynamicImageSetTexture(window_name.."_Icon", texture_name, texture_x, texture_y)
-- AutoMark: CreateMarker -> DynamicImageSetTexture(window_name.."_Icon", texture_name, texture_x, texture_y)
+- Amethyst: Texture -> DynamicImageSetTexture(self.name, texture, x, y)
+- AuctionStats: OnRButtonUpItem -> DynamicImageSetTexture(parentControls.."ItemImageIcon", "", 0, 0)
+- AuctionStats: UpdateItemOptions -> DynamicImageSetTexture(parentControls.."ItemImageIcon", texture, x, y)
+- Aura: SetDynamicImageTexture -> DynamicImageSetTexture(window, texture, dx, dy)
 
 ## Related APIs
 
-- none
+- [DynamicImageSetTextureDimensions](window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
+- [Texture](../../xml/element_types/element_Texture.md) (HIGH 100/100) - XML Element Type
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnMouseOverEnd](../../xml/handlers/handler_OnMouseOverEnd.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
 - [DynamicImageSetRotation](window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureDimensions](window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureScale](window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
+- [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
 - [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
+- [Icons.GetCareerIconIDFromCareerNamesID](../../globals/functions/global_Icons.GetCareerIconIDFromCareerNamesID.md) (HIGH 100/100) - Global Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [LabelSetTextAlign](window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
+- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [Texture](../../xml/element_types/element_Texture.md) (HIGH 100/100) - XML Element Type
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowSetId](window_WindowSetId.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

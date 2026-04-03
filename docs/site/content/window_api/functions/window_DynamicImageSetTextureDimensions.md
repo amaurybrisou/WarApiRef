@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 48 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 110
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -22,21 +22,21 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
+- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, Enemy, LibWBToggler, PartyCast, PotionBar, Shinies, TexturedButtons |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1304`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutProperties.lua:117`, `/workspace/data/raw/Enemy/Code/UnitFrames/Parts/CareerIcon.lua:13`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFramePart.lua:393`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFramePart.lua:407`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:1301`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1301` |
+| Addons seen in | Ace, Amethyst, BBars - Mechanic Only, BuffHead, CastSequence, Crusher, DetauntHelper, DuffTimer |
+| Files seen in | BBarsPetHP.lua, BBarsPlayerMechanic.lua, Bar.lua, Castbar.lua, Code/UnitFrames/Parts/CareerIcon.lua, Code/UnitFrames/UnitFramePart.lua, CooldownPulse.lua, DuffTimer.lua |
 | Namespaces detected | DynamicImageSetTextureDimensions |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Image:TexDims, BuffHead: BuffHead.local.SetTextureButton, BuffHead: SetTextureButton, Enemy: Enemy.UnitFramePart_ApplyTexture, Enemy: Enemy.UnitFramePart_ApplyTexturePercentResize, Enemy: Enemy.UnitFramesParts_CareerIconInitialize |
+| Example locations | Ace: TexDims, Amethyst: TexDims, BBars - Mechanic Only: MechDraw, BBars - Mechanic Only: PetHPDraw, BuffHead: SetTextureButton, CastSequence: UpdateButton |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 18 |
-| Global usage count | 18 |
+| Lua usage count | 166 |
+| Global usage count | 166 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -45,13 +45,13 @@
 | Event binding presence | no |
 | Observed in XML and Lua | no |
 | Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | no |
+| Conflicting signatures | yes |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -71,13 +71,13 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..PlayerNumber.."TargetWindowIcon", adat.iconname, iconWindowName |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, 256, 32 |
-| arg3 | Observed as a runtime window or control identifier. | Observed values: 0, 256, 32 |
+| arg1 | Observed as a function or method reference. | Observed values: "BBarsPetHPBG", "BBarsPetHPBack", "BBarsPetHPFront" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: (tw or 64), -32, 0 |
+| arg3 | Observed as a numeric value. | Observed values: (th or 64), -32, 0 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -86,44 +86,77 @@ Observed mutating runtime image resources on existing controls.
 ## Seen In
 
 - Ace
+- Amethyst
+- BBars - Mechanic Only
 - BuffHead
+- CastSequence
+- Crusher
+- DetauntHelper
+- DuffTimer
+- EA_ScenarioGroupWindow
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDsaver
+- GroupSpotter
+- HealGrid
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- MarkBuff
+- Miracle Grow Remix
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- RealmStatus
+- SNT_BUTTONS
+- SNT_PANEL
 - Shinies
+- Squared
+- TargetInfoRing
+- TargetRing
 - TexturedButtons
+- Tokens
 - WSCT
+- WarBoard_TogglerRankedLeaderboard
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Image:TexDims -> DynamicImageSetTextureDimensions(self.name, width, height)
-- BuffHead: BuffHead.local.SetTextureButton -> DynamicImageSetTextureDimensions(textureButton.."Texture", dimensions.Width, dimensions.Height)
-- BuffHead: SetTextureButton -> DynamicImageSetTextureDimensions(textureButton.."Texture", dimensions.Width, dimensions.Height)
-- Enemy: Enemy.UnitFramePart_ApplyTexture -> DynamicImageSetTextureDimensions(windowName, texture.dx, texture.dy)
-- Enemy: Enemy.UnitFramePart_ApplyTexturePercentResize -> DynamicImageSetTextureDimensions(t.windowName, value*texture.dx, texture.dy)
-- Enemy: Enemy.UnitFramePart_ApplyTexturePercentResize -> DynamicImageSetTextureDimensions(t.windowName, texture.dx, value*texture.dy)
+- Ace: TexDims -> DynamicImageSetTextureDimensions(self.name, width, height)
+- Amethyst: TexDims -> DynamicImageSetTextureDimensions(self.name, width, height)
+- BBars - Mechanic Only: MechDraw -> DynamicImageSetTextureDimensions("BBarsPlayerMechanic3BG", UnitWidth, UnitHeight)
+- BBars - Mechanic Only: MechDraw -> DynamicImageSetTextureDimensions("BBarsPlayerMechanic2BG", UnitWidth, UnitHeight)
+- BBars - Mechanic Only: MechDraw -> DynamicImageSetTextureDimensions("BBarsPlayerMechanic1BG", UnitWidth, UnitHeight)
+- BBars - Mechanic Only: MechDraw -> DynamicImageSetTextureDimensions("BBarsPlayerMechanic4BG", UnitWidth, UnitHeight)
 
 ## Related APIs
 
-- none
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [TexDims](../../xml/element_types/element_TexDims.md) (HIGH 100/100) - XML Element Type
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
 - [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [TexDims](../../xml/element_types/element_TexDims.md) (HIGH 100/100) - XML Element Type
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

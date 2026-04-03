@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AggroMeter, Aura, WSCT, WarBoard |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/WarBoard/WarBoardOptions.xml:0`, `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTrainingWindow.xml:0`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Addons seen in | AdvancedRenownTrainer, AggroMeter, Aura, AutoBand, DPSMeter, Deathblow, Deathblow2, EA_OpenPartyWindow |
+| Files seen in | AdvancedRenownTrainingWindow.xml, AggroMeter.xml, AutoBandWindow.xml, DPSMeterWindow.xml, Deathblow.xml, Deathblow2.xml, GDesOptions.xml, GesOptions.xml |
 | Namespaces detected | EA_Window_TabSeparatorLeftSide |
 | Source kinds | xml_attributes |
-| Example locations | AdvancedRenownTrainingWindowTabsTabSeparatorLeft, AggroMeterGrayWindowTabSeparatorLeft, AuraConfigTabsSeparatorLeft, WSCTOptionsTabTabSeparatorLeft, WarBoardOptionsTabsSeparatorLeft |
-| XML usage count | 5 |
-| XML attribute usage count | 5 |
+| Example locations | $parentTabsTabSeparatorLeft, AdvancedRenownTrainingWindowTabsTabSeparatorLeft, AggroMeterGrayWindowTabSeparatorLeft, AuctionWindowTabsSeparatorLeft, AuraConfigTabsSeparatorLeft, AutoBandWindowTabsSeparatorLeft |
+| XML usage count | 26 |
+| XML attribute usage count | 26 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,39 +57,68 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 5 addons.
+Engine-supplied XML constant or template class referenced by 25 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - AggroMeter
 - Aura
+- AutoBand
+- DPSMeter
+- Deathblow
+- Deathblow2
+- EA_OpenPartyWindow
+- FozAuction
+- GDes
+- Ges
+- HealGrid
+- Kwestor
+- LoyalPet
+- Queue Queuer
+- RVMOD_Manager
+- RaidMeter
+- SocialWindow 2.0
+- TastyButtons
+- TomeTracker
 - WSCT
 - WarBoard
+- Warbuilder
+- XpStatus+G
+- wbLeadHelper
 
 ## Used By
 
+- $parentTabsTabSeparatorLeft
 - AdvancedRenownTrainingWindowTabsTabSeparatorLeft
 - AggroMeterGrayWindowTabSeparatorLeft
+- AuctionWindowTabsSeparatorLeft
 - AuraConfigTabsSeparatorLeft
+- AutoBandWindowTabsSeparatorLeft
+- DPSMeterWindowTabsTabSeperatorLeft
+- DeathblowWin1WindowTabSeparatorLeft
+- EA_Window_OpenPartyTabSeparatorLeft
+- GDesOptionsTabsSeparatorLeft
+- GesOptionsTabsSeparatorLeft
+- HGG_TabSpellTrackWindowTemplateTabSeparatorLeft
+- KwestorGui_KwestorTabSeparatorLeft
+- LPETOptionsTabTabSeparatorLeft
+- QueueQueuer_GUI_TabsSeparatorLeft
+- RVMOD_ManagerWindowTabSeparatorLeft
+- RaidMeterWindowTabSeparatorLeft
+- SocialWindowBuddyListTabSeparatorLeft
+- SocialWindowTabSeparatorLeft
+- TastyButtonsButtonSelectWindowTabsSeparatorLeft
+- TastyButtonsOptionsWindowTabsSeparatorLeft
+- TomeTracker_JournalWindowTabTabSeparatorLeft
 - WSCTOptionsTabTabSeparatorLeft
 - WarBoardOptionsTabsSeparatorLeft
+- WarbuilderMainWindowTabSeparatorLeft
+- wbLeadHelperConfigWindowTabsSeparatorLeft
 
 ## Related APIs
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

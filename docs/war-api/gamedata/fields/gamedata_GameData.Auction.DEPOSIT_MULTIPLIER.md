@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 138
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Shinies |
-| Files seen in | `/workspace/data/raw/Shinies/Modules/API/Shinies-API-Item.lua:22` |
+| Addons seen in | FozAuction, Shinies |
+| Files seen in | Modules/API/Shinies-API-Item.lua, Source/auctionwindowsellcontrols.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | _G.Shinies:GetModule:Item_GetAuctionDeposit, lua_call |
+| Example locations | Item_GetAuctionDeposit, UpdatePrices, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +59,13 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.Auction.DEPOSIT_MULTIPLIER field accessed by 2 addons; commonly found in Item_GetAuctionDeposit and UpdatePrices, lua_call contexts.
 
 ## Seen In
 
+- FozAuction
 - Shinies
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 
-- Observed in contexts: _G.Shinies:GetModule:Item_GetAuctionDeposit, lua_call
+- Observed in contexts: Item_GetAuctionDeposit, UpdatePrices, lua_call

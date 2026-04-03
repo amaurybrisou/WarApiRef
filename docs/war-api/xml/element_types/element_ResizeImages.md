@@ -25,13 +25,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, BuffHead, Shinies, WSCT |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/Aura/Source/Templates.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupLayout.xml:0`, `/workspace/data/raw/Shinies/Source/ShiniesUITemplates.xml:0`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Addons seen in | AdvancedPetAssist, Aura, BlackBook, BuffHead, Crusher, DaemonAssist, DuffTimer, EA_UiDebugTools |
+| Files seen in | Configuration/Config.xml, Configuration/HopperConfig.xml, Configuration/WCDBConfig.xml, Configuration/WCDPConfig.xml, Setup/SetupLayout.xml, Source/DebugWindowVerticalScroll.xml, Source/EZCraftX.xml, Source/Motion.xml |
 | Namespaces detected | ResizeImages |
 | Source kinds | xml_frames |
 | Example locations | AdvancedPetAssist: APA_ComboBoxButton, AdvancedPetAssist: APA_ComboBoxButtonWide, Aura: Aura_Button_DefaultMenuButton, Aura: Aura_Button_DefaultMenuButtonLarge, Aura: Aura_Button_DefaultMenuButtonTiny, Aura: Aura_Button_DefaultResizableTinyComboBoxSelected |
-| XML usage count | 14 |
-| XML attribute usage count | 14 |
+| XML usage count | 40 |
+| XML attribute usage count | 40 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -68,108 +68,124 @@ ResizeImages is a structural XML sub-element. It commonly appears under Button. 
 
 ## Common Parent Elements
 
-- [Button](element_Button.md) — 14× (HIGH)
+- [Button](element_Button.md) — 41× (HIGH)
 
 ## Common Structural Child Elements
 
-- [NormalHighlit](element_NormalHighlit.md) — 14× (HIGH)
-- [Normal](element_Normal.md) — 10× (HIGH)
-- [Pressed](element_Pressed.md) — 10× (HIGH)
-- [PressedHighlit](element_PressedHighlit.md) — 9× (HIGH)
-- [Disabled](element_Disabled.md) — 8× (HIGH)
+- [NormalHighlit](element_NormalHighlit.md) — 41× (HIGH)
+- [PressedHighlit](element_PressedHighlit.md) — 27× (HIGH)
+- [Pressed](element_Pressed.md) — 26× (HIGH)
+- [Normal](element_Normal.md) — 25× (HIGH)
+- [Disabled](element_Disabled.md) — 23× (HIGH)
 
 ## Structural Sub-Elements
 
 ### [NormalHighlit](element_NormalHighlit.md)
 
-Observed 14 times as an unnamed child.
+Observed 41 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `b` | optional | 63, 0 |
-| `g` | optional | 213, 85 |
-| `id` | optional | morale-white, RightTabFrame-Rollover, LayoutCorner-TopLeft-ROLLOVER, LayoutCorner-TopRight-ROLLOVER |
-| `r` | optional | 250, 255 |
-| `a` | optional | 255 |
-| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, EA_FullResizeImage_RedTransparent, BuffHeadLayoutVerticalButtonHighlight |
-| `x` | optional | 27, 105, 0 |
-| `y` | optional | 28, 44, 0 |
-| `texture` | optional | EA_SquareFrame_Highlight, ShiniesIconBorderHighlight, TidyRoll_SquareFrame_Highlight |
-### [Normal](element_Normal.md)
-
-Observed 10 times as an unnamed child.
-
-| Attribute | Required | Sample Values |
-| --- | --- | --- |
-| `x` | optional | 0, 92 |
-| `y` | optional | 28, 44, 0 |
-| `b` | optional | 255, 73, 102 |
-| `g` | optional | 255, 175, 204 |
-| `id` | optional | morale-yellow, RightTabFrame, LayoutCorner-TopLeft, LayoutCorner-TopRight |
-| `r` | optional | 255 |
-| `a` | optional | 255 |
-| `texture` | optional | bpKtxt, EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
-| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, BuffHeadLayoutVerticalButtonNormal, BuffHeadLayoutHorizontalButtonNormal |
-### [Pressed](element_Pressed.md)
-
-Observed 10 times as an unnamed child.
-
-| Attribute | Required | Sample Values |
-| --- | --- | --- |
-| `b` | optional | 63, 36, 0 |
-| `g` | optional | 213, 57, 85 |
-| `id` | optional | morale-white, RightTabFrame-Rollover, LayoutCorner-TopLeft-ROLLOVER, LayoutCorner-TopRight-ROLLOVER |
-| `r` | optional | 250, 95, 255 |
-| `a` | optional | 255 |
-| `x` | optional | 0, 120 |
-| `y` | optional | 56, 44, 0 |
-| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed, EA_Button_ListSortPressed |
-| `texture` | optional | EA_SquareFrame_Pressed, ShiniesIconBorderHighlight, TidyRoll_SquareFrame |
+| `id` | optional | morale-white, RightTabFrame-Rollover, Tactics-Button-Rollover, SquareButton-Rollover |
+| `b` | optional | 63, 0, 36, 50 |
+| `g` | optional | 213, 85, 57, 192 |
+| `r` | optional | 250, 255, 95, 222 |
+| `a` | optional | 255, 1 |
+| `x` | optional | 27, 105, 0, 201 |
+| `y` | optional | 28, 44, 0, 341 |
+| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, EA_FullResizeImage_RedTransparent, EA_Button_GuildRosterRowHighlight |
+| `texture` | optional | EA_SquareFrame_Highlight, CrusherIconBorderHighlight, EA_RoundFrame_Pressed, PinBG |
 ### [PressedHighlit](element_PressedHighlit.md)
 
-Observed 9 times as an unnamed child.
+Observed 27 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `b` | optional | 63, 36, 0 |
-| `g` | optional | 213, 57, 85 |
-| `id` | optional | morale-white, RightTabFrame-Rollover, LayoutCorner-TopLeft-ROLLOVER, LayoutCorner-TopRight-ROLLOVER |
-| `r` | optional | 250, 95, 255 |
-| `a` | optional | 255 |
-| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed |
-| `x` | optional | 0, 120 |
-| `y` | optional | 56, 44 |
+| `id` | optional | morale-white, RightTabFrame-Rollover, Tactics-Button-Depressed, SquareButton-Depressed |
+| `b` | optional | 63, 36, 0, 45 |
+| `g` | optional | 213, 57, 85, 255 |
+| `r` | optional | 250, 95, 255, 226 |
+| `a` | optional | 255, 1 |
+| `x` | optional | 0, 120, 172, 475 |
+| `y` | optional | 56, 44, 370, 420 |
+| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_Button_GuildRosterRowPressed, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed |
+### [Pressed](element_Pressed.md)
+
+Observed 26 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `id` | optional | morale-white, RightTabFrame-Rollover, Tactics-Button-Depressed, SquareButton-Depressed |
+| `b` | optional | 63, 36, 102, 235 |
+| `g` | optional | 213, 57, 204, 235 |
+| `r` | optional | 250, 95, 255, 235 |
+| `a` | optional | 255, 1 |
+| `x` | optional | 0, 120, 172, 494 |
+| `y` | optional | 56, 44, 0, 370 |
+| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_Button_GuildRosterRowPressed, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed |
+| `texture` | optional | EA_SquareFrame_Pressed, CrusherIconBorderHighlight, EA_RoundFrame_Highlight, PinBG |
+### [Normal](element_Normal.md)
+
+Observed 25 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `id` | optional | morale-yellow, RightTabFrame, Tactics-Button, SquareButton |
+| `b` | optional | 255, 0, 102, 73 |
+| `g` | optional | 255, 0, 204, 175 |
+| `r` | optional | 255, 155, 222, 226 |
+| `x` | optional | 0, 92, 172, 494 |
+| `y` | optional | 28, 44, 0, 341 |
+| `a` | optional | 255, 1 |
+| `texture` | optional | bpKtxt, EA_SquareFrame, CrusherIconBorderNormal, EA_RoundFrame |
+| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, BuffHeadLayoutVerticalButtonNormal, BuffHeadLayoutHorizontalButtonNormal |
 ### [Disabled](element_Disabled.md)
 
-Observed 8 times as an unnamed child.
+Observed 23 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `b` | optional | 92, 36, 102 |
-| `g` | optional | 92, 57, 204 |
-| `r` | optional | 92, 95, 255 |
-| `a` | optional | 255 |
-| `x` | optional | 27, 92, 0 |
-| `y` | optional | 56, 44, 0 |
-| `id` | optional | morale-white, RightTabFrame, ability-white, tactic-black |
-| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_Button_ListSortNormal |
-| `texture` | optional | EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
+| `b` | optional | 92, 36, 128, 102 |
+| `g` | optional | 92, 57, 128, 204 |
+| `r` | optional | 92, 95, 128, 255 |
+| `a` | optional | 255, 0.5 |
+| `x` | optional | 27, 92, 0, 230 |
+| `y` | optional | 56, 44, 0, 341 |
+| `id` | optional | morale-white, RightTabFrame, Tactics-Button-Disabled, Map-Plus-Button-Disabled |
+| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, Crusher_HorizontalResizeImage_DefaultComboBox, EA_Button_TabDisabled, EA_HorizontalResizeImage_DefaultComboBox2 |
+| `texture` | optional | EA_SquareFrame, CrusherIconBorderNormal, EA_RoundFrame, PinBG |
 ## Recursive Hierarchy
 
 - Root: [ResizeImages](element_ResizeImages.md)
-- [Disabled](element_Disabled.md) (structural, 8×, HIGH)
-- [Normal](element_Normal.md) (structural, 10×, HIGH)
-- [NormalHighlit](element_NormalHighlit.md) (structural, 14×, HIGH)
-- [Pressed](element_Pressed.md) (structural, 10×, HIGH)
-- [PressedHighlit](element_PressedHighlit.md) (structural, 9×, HIGH)
+- [Disabled](element_Disabled.md) (structural, 23×, HIGH)
+- [Normal](element_Normal.md) (structural, 25×, HIGH)
+- [NormalHighlit](element_NormalHighlit.md) (structural, 41×, HIGH)
+- [Pressed](element_Pressed.md) (structural, 26×, HIGH)
+- [PressedHighlit](element_PressedHighlit.md) (structural, 27×, HIGH)
 
 ## Seen In
 
 - AdvancedPetAssist
 - Aura
+- BlackBook
 - BuffHead
+- Crusher
+- DaemonAssist
+- DuffTimer
+- EA_UiDebugTools
+- EZCraftX
+- Hopper
+- LoyalPet
+- Miracle Grow Remix
+- Motion
+- Pure
+- RaidMeter
 - Shinies
 - WSCT
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- ZonePOP
+- zMailMod
 
 ## Examples
 
@@ -193,12 +209,3 @@ Observed 8 times as an unnamed child.
 
 - [OverlayTexCoords](element_OverlayTexCoords.md) (HIGH 100/100) - XML Element Type
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
-- [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

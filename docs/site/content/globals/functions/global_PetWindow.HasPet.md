@@ -2,16 +2,16 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 96/100
-- Seen in: 2 addons
+- Confidence score: 71/100
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 96/100
+- Score: 71/100
 
-- Rationale: Promoted as HIGH confidence because referenced by generated docs or reference files, called globally with no local definition, seen in 2 to 3 addons.
+- Rationale: Promoted as HIGH confidence because called globally with no local definition, seen in 2 to 3 addons, role is consistent across addons.
 
 ## Evidence Signals
 
@@ -20,23 +20,22 @@
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +8 Return usage is consistent: Observed as a stable query-style API.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APACore.lua:214`, `/workspace/data/raw/Aura/Source/AuraEngine.lua:1142` |
+| Addons seen in | AdvancedPetAssist, Aura, DaemonAssist |
+| Files seen in | APACore.lua, DACore.lua, Source/AuraEngine.lua |
 | Namespaces detected | PetWindow |
-| Source kinds | globals, lua_calls |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.HasPet, Aura: AuraEngine.HandleTriggerType_PetStatus |
+| Source kinds | lua_calls |
+| Example locations | AdvancedPetAssist: HasPet, Aura: HandleTriggerType_PetStatus, DaemonAssist: HasPet |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | no |
 | Default UI presence | no |
@@ -63,7 +62,7 @@ PetWindow.HasPet()
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 3 addons.
 
 ## Parameters
 
@@ -72,37 +71,23 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - AdvancedPetAssist
 - Aura
+- DaemonAssist
 
 ## Examples
 
-- AdvancedPetAssist: AdvancedPetAssist.HasPet -> PetWindow.HasPet()
-- Aura: AuraEngine.HandleTriggerType_PetStatus -> PetWindow.HasPet()
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AdvancedPetAssist: HasPet -> PetWindow.HasPet()
+- Aura: HandleTriggerType_PetStatus -> PetWindow.HasPet()
+- DaemonAssist: HasPet -> PetWindow.HasPet()
 
 ## Notes
 

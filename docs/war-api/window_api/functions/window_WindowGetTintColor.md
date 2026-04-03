@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | LibWBToggler, PartyCast, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/LibWarBoardToggler/libs/LibConfig.lua:415`, `/workspace/data/raw/LibWarBoardToggler/libs/LibConfig.lua:503`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibConfig.lua:409`, `/workspace/data/raw/PartyCast/libs/LibConfig.lua:500`, `/workspace/data/raw/WoH-Reticle/libs/LibConfig.lua:409`, `/workspace/data/raw/WoH-Reticle/libs/LibConfig.lua:500` |
+| Addons seen in | Amethyst, CMap, EZGuard, GCDsaver, InfoScroller, LibWBToggler, PartyCast, TargetRing |
+| Files seen in | Amethyst.lua, LibConfig.lua, PartyCast.lua, libs/LibConfig.lua |
 | Namespaces detected | WindowGetTintColor |
 | Source kinds | lua_calls |
-| Example locations | LibWBToggler: LibConfigMenu:Add, LibWBToggler: element.button.OnLButtonUp, PartyCast: LibConfigMenu:Add, PartyCast: PartyCast.Update, PartyCast: element.button.OnLButtonUp, WoH-Reticle: LibConfigMenu:Add |
+| Example locations | Amethyst: ApplySettings, Amethyst: CreateGUI, Amethyst: OnLButtonUp, CMap: Add, CMap: OnLButtonUp, EZGuard: Add |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 39 |
+| Global usage count | 39 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,47 +71,46 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "PartyCastWindow"..i.."TimerBar", LibConfig.colorizer.object.name |
+| windowName | Observed as a target window name. | Observed values: "PartyCastWindow"..i.."TimerBar", GUI.Colorizer.Object.name, I.BarColor.Overlay.name |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- Amethyst
+- CMap
+- EZGuard
+- GCDsaver
+- InfoScroller
 - LibWBToggler
 - PartyCast
+- TargetRing
+- WarTriage
 - WoH-Reticle
 
 ## Examples
 
-- LibWBToggler: LibConfigMenu:Add -> WindowGetTintColor(LibConfig.colorizer.object.name)
-- LibWBToggler: element.button.OnLButtonUp -> WindowGetTintColor(LibConfig.colorizer.object.name)
-- PartyCast: LibConfigMenu:Add -> WindowGetTintColor(LibConfig.colorizer.object.name)
-- PartyCast: PartyCast.Update -> WindowGetTintColor("PartyCastWindow"..i.."TimerBar")
-- PartyCast: element.button.OnLButtonUp -> WindowGetTintColor(LibConfig.colorizer.object.name)
-- WoH-Reticle: LibConfigMenu:Add -> WindowGetTintColor(LibConfig.colorizer.object.name)
+- Amethyst: ApplySettings -> WindowGetTintColor(I.BgColor.Overlay.name)
+- Amethyst: ApplySettings -> WindowGetTintColor(I.BarColor.Overlay.name)
+- Amethyst: ApplySettings -> WindowGetTintColor(I.SuccessColor.Overlay.name)
+- Amethyst: ApplySettings -> WindowGetTintColor(I.CancelColor.Overlay.name)
+- Amethyst: CreateGUI -> WindowGetTintColor(GUI.Colorizer.Object.name)
+- Amethyst: OnLButtonUp -> WindowGetTintColor(GUI.Colorizer.Object.name)
 
 ## Related APIs
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [EA_ChatWindow.Print](../../globals/functions/global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 
 ## Notes
 

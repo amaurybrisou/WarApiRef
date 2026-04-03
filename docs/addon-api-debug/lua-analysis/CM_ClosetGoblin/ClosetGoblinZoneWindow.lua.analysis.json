@@ -1,0 +1,895 @@
+{
+  "schema_version": "phase2-lua/v1",
+  "addon": "CM_ClosetGoblin",
+  "source_file": "ClosetGoblinZoneWindow.lua",
+  "functions": [
+    {
+      "function_id": "f1",
+      "declared_name": "ClosetGoblinZoneWindow.OnInitialize",
+      "qualified_name": "ClosetGoblinZoneWindow.OnInitialize",
+      "short_name": "OnInitialize",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 30,
+        "line_end": 47
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 31
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindow\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 34
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowTitleBarText\"",
+            "cgL[\"ClosetGoblin_Zone_Configuration\"]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ButtonSetText",
+          "callee_resolved": "ButtonSetText",
+          "source": {
+            "line": 36
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsChangeZoneButton\"",
+            "cgL[\"Change\"]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ButtonSetText",
+          "callee_resolved": "ButtonSetText",
+          "source": {
+            "line": 37
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsSortZoneButton\"",
+            "cgL[\"Zone\"]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "ButtonSetText",
+          "callee_resolved": "ButtonSetText",
+          "source": {
+            "line": 38
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsSortSetButton\"",
+            "cgL[\"Set_Name\"]"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 40
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsSortUpArrow\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c7",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 41
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsSortDownArrow\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c8",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 42
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsSortSetUpArrow\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c9",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 43
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsSortSetDownArrow\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c10",
+          "callee_raw": "ClosetGoblinZoneWindow.RefreshOption",
+          "callee_resolved": "ClosetGoblinZoneWindow.RefreshOption",
+          "source": {
+            "line": 45
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c11",
+          "callee_raw": "ClosetGoblinZoneWindow.UpdateAssociationTable",
+          "callee_resolved": "ClosetGoblinZoneWindow.UpdateAssociationTable",
+          "source": {
+            "line": 46
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f2",
+      "declared_name": "ClosetGoblinZoneWindow.OnShow",
+      "qualified_name": "ClosetGoblinZoneWindow.OnShow",
+      "short_name": "OnShow",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 49,
+        "line_end": 60
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinZoneWindow.UpdateAssociationTable",
+          "callee_resolved": "ClosetGoblinZoneWindow.UpdateAssociationTable",
+          "source": {
+            "line": 50
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "WindowUtils.OnShown",
+          "callee_resolved": "WindowUtils.OnShown",
+          "source": {
+            "line": 51
+          },
+          "arguments": [],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinZoneWindow.RefreshOption",
+          "callee_resolved": "ClosetGoblinZoneWindow.RefreshOption",
+          "source": {
+            "line": 57
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblinZoneWindow.RefreshList",
+          "callee_resolved": "ClosetGoblinZoneWindow.RefreshList",
+          "source": {
+            "line": 59
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f3",
+      "declared_name": "ClosetGoblinZoneWindow.OnHide",
+      "qualified_name": "ClosetGoblinZoneWindow.OnHide",
+      "short_name": "OnHide",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 62,
+        "line_end": 64
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowUtils.OnHidden",
+          "callee_resolved": "WindowUtils.OnHidden",
+          "source": {
+            "line": 63
+          },
+          "arguments": [],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f4",
+      "declared_name": "ClosetGoblinZoneWindow.OnShutdown",
+      "qualified_name": "ClosetGoblinZoneWindow.OnShutdown",
+      "short_name": "OnShutdown",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 66,
+        "line_end": 67
+      },
+      "params": [],
+      "calls": []
+    },
+    {
+      "function_id": "f5",
+      "declared_name": "ClosetGoblinZoneWindow.Show",
+      "qualified_name": "ClosetGoblinZoneWindow.Show",
+      "short_name": "Show",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 69,
+        "line_end": 71
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 70
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindow\"",
+            "true"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f6",
+      "declared_name": "ClosetGoblinZoneWindow.Hide",
+      "qualified_name": "ClosetGoblinZoneWindow.Hide",
+      "short_name": "Hide",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 73,
+        "line_end": 75
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 74
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindow\"",
+            "false"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f7",
+      "declared_name": "ClosetGoblinZoneWindow.RefreshOption",
+      "qualified_name": "ClosetGoblinZoneWindow.RefreshOption",
+      "short_name": "RefreshOption",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 77,
+        "line_end": 79
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 78
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsZoneOption\"",
+            "cgL[\"Setting_zones_to_sets\"]..ClosetGoblin.ToEnabled(ClosetGoblin.settings.zoneChange)"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblin.ToEnabled",
+          "callee_resolved": "ClosetGoblin.ToEnabled",
+          "source": {
+            "line": 78
+          },
+          "arguments": [
+            "ClosetGoblin.settings.zoneChange"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f8",
+      "declared_name": "ClosetGoblinZoneWindow.OnClickChangeZoneOptionButton",
+      "qualified_name": "ClosetGoblinZoneWindow.OnClickChangeZoneOptionButton",
+      "short_name": "OnClickChangeZoneOptionButton",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 81,
+        "line_end": 84
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblin.ZoneChangeChange",
+          "callee_resolved": "ClosetGoblin.ZoneChangeChange",
+          "source": {
+            "line": 82
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinZoneWindow.RefreshOption",
+          "callee_resolved": "ClosetGoblinZoneWindow.RefreshOption",
+          "source": {
+            "line": 83
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f9",
+      "declared_name": "ClosetGoblinZoneWindow.UpdateSetRow",
+      "qualified_name": "ClosetGoblinZoneWindow.UpdateSetRow",
+      "short_name": "UpdateSetRow",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 86,
+        "line_end": 99
+      },
+      "params": [],
+      "calls": []
+    },
+    {
+      "function_id": "f10",
+      "declared_name": "ClosetGoblinZoneWindow.UpdateHighlightOnRow",
+      "qualified_name": "ClosetGoblinZoneWindow.UpdateHighlightOnRow",
+      "short_name": "UpdateHighlightOnRow",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 101,
+        "line_end": 109
+      },
+      "params": [
+        "rowIndex",
+        "highlight"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "LabelSetTextColor",
+          "callee_resolved": "LabelSetTextColor",
+          "source": {
+            "line": 107
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsSetListRow\"..rowIndex..\"Zone\"",
+            "color.r",
+            "color.g",
+            "color.b"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "WindowSetShowing",
+          "callee_resolved": "WindowSetShowing",
+          "source": {
+            "line": 108
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsSetListRow\"..rowIndex..\"SelectionBorder\"",
+            "highlight"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f11",
+      "declared_name": "ClosetGoblinZoneWindow.RefreshList",
+      "qualified_name": "ClosetGoblinZoneWindow.RefreshList",
+      "short_name": "RefreshList",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 111,
+        "line_end": 117
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ClosetGoblinZoneWindow.UpdateAssociationTable",
+          "callee_resolved": "ClosetGoblinZoneWindow.UpdateAssociationTable",
+          "source": {
+            "line": 112
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinZoneWindow.BuildDisplayOrder",
+          "callee_resolved": "ClosetGoblinZoneWindow.BuildDisplayOrder",
+          "source": {
+            "line": 113
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblinZoneWindow.SortSetList",
+          "callee_resolved": "ClosetGoblinZoneWindow.SortSetList",
+          "source": {
+            "line": 114
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "ClosetGoblinZoneWindow.UpdateSetList",
+          "callee_resolved": "ClosetGoblinZoneWindow.UpdateSetList",
+          "source": {
+            "line": 115
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f12",
+      "declared_name": "ClosetGoblinZoneWindow.BuildDisplayOrder",
+      "qualified_name": "ClosetGoblinZoneWindow.BuildDisplayOrder",
+      "short_name": "BuildDisplayOrder",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 119,
+        "line_end": 126
+      },
+      "params": [],
+      "calls": []
+    },
+    {
+      "function_id": "f13",
+      "declared_name": "ClosetGoblinZoneWindow.SortSetList",
+      "qualified_name": "ClosetGoblinZoneWindow.SortSetList",
+      "short_name": "SortSetList",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 128,
+        "line_end": 130
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "table.sort",
+          "callee_resolved": "table.sort",
+          "source": {
+            "line": 129
+          },
+          "arguments": [
+            "ClosetGoblin.setDisplayZoneOrder",
+            "ClosetGoblin.CompareZones"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f14",
+      "declared_name": "ClosetGoblinZoneWindow.UpdateSetList",
+      "qualified_name": "ClosetGoblinZoneWindow.UpdateSetList",
+      "short_name": "UpdateSetList",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 132,
+        "line_end": 134
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "ListBoxSetDisplayOrder",
+          "callee_resolved": "ListBoxSetDisplayOrder",
+          "source": {
+            "line": 133
+          },
+          "arguments": [
+            "\"ClosetGoblinZoneWindowContentsSetList\"",
+            "ClosetGoblin.setDisplayZoneOrder"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f15",
+      "declared_name": "ClosetGoblinZoneWindow.OnClickZoneRow",
+      "qualified_name": "ClosetGoblinZoneWindow.OnClickZoneRow",
+      "short_name": "OnClickZoneRow",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 136,
+        "line_end": 143
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 137
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinZoneWindow.UpdateSetList",
+          "callee_resolved": "ClosetGoblinZoneWindow.UpdateSetList",
+          "source": {
+            "line": 141
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f16",
+      "declared_name": "ClosetGoblinZoneWindow.UpdateAssociationTable",
+      "qualified_name": "ClosetGoblinZoneWindow.UpdateAssociationTable",
+      "short_name": "UpdateAssociationTable",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 145,
+        "line_end": 153
+      },
+      "params": [],
+      "calls": []
+    },
+    {
+      "function_id": "f17",
+      "declared_name": "ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
+      "qualified_name": "ClosetGoblinZoneWindow.OnSetZoneRowContextMenu",
+      "short_name": "OnSetZoneRowContextMenu",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 155,
+        "line_end": 169
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 156
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblinZoneWindow.UpdateSetList",
+          "callee_resolved": "ClosetGoblinZoneWindow.UpdateSetList",
+          "source": {
+            "line": 160
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "EA_Window_ContextMenu.CreateContextMenu",
+          "callee_resolved": "EA_Window_ContextMenu.CreateContextMenu",
+          "source": {
+            "line": 163
+          },
+          "arguments": [
+            "SystemData.ActiveWindow.name"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "EA_Window_ContextMenu.AddMenuItem",
+          "callee_resolved": "EA_Window_ContextMenu.AddMenuItem",
+          "source": {
+            "line": 167
+          },
+          "arguments": [
+            "cgL[\"Unassociate_with_set\"]",
+            "ClosetGoblinZoneWindow.OnRowMenuUnassoiacteClick",
+            "false",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "EA_Window_ContextMenu.Finalize",
+          "callee_resolved": "EA_Window_ContextMenu.Finalize",
+          "source": {
+            "line": 168
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f18",
+      "declared_name": "ClosetGoblinZoneWindow.OnRowMenuAssoiacteClick",
+      "qualified_name": "ClosetGoblinZoneWindow.OnRowMenuAssoiacteClick",
+      "short_name": "OnRowMenuAssoiacteClick",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 171,
+        "line_end": 175
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "tostring",
+          "callee_resolved": "tostring",
+          "source": {
+            "line": 172
+          },
+          "arguments": [
+            "ClosetGoblinZoneWindow.associationTable[ClosetGoblinZoneWindow.selectedSetDataIndex].zone"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "WindowGetId",
+          "callee_resolved": "WindowGetId",
+          "source": {
+            "line": 173
+          },
+          "arguments": [
+            "SystemData.MouseOverWindow.name"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "ClosetGoblin.AssociateZoneToSet",
+          "callee_resolved": "ClosetGoblin.AssociateZoneToSet",
+          "source": {
+            "line": 174
+          },
+          "arguments": [
+            "zone",
+            "ClosetGoblin.sortedSetsList[idContextMenu]"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f19",
+      "declared_name": "ClosetGoblinZoneWindow.OnRowMenuUnassoiacteClick",
+      "qualified_name": "ClosetGoblinZoneWindow.OnRowMenuUnassoiacteClick",
+      "short_name": "OnRowMenuUnassoiacteClick",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "ClosetGoblinZoneWindow",
+      "receiver_separator": ".",
+      "namespace": "ClosetGoblinZoneWindow",
+      "source": {
+        "line_start": 177,
+        "line_end": 180
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "tostring",
+          "callee_resolved": "tostring",
+          "source": {
+            "line": 178
+          },
+          "arguments": [
+            "ClosetGoblinZoneWindow.associationTable[ClosetGoblinZoneWindow.selectedSetDataIndex].zone"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "ClosetGoblin.AssociateZoneToSet",
+          "callee_resolved": "ClosetGoblin.AssociateZoneToSet",
+          "source": {
+            "line": 179
+          },
+          "arguments": [
+            "zone",
+            "L \"\""
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    }
+  ],
+  "namespaces": [
+    "CM_ClosetGoblin",
+    "ClosetGoblin",
+    "ClosetGoblin.setDisplayZoneOrder",
+    "ClosetGoblinZoneWindow",
+    "ClosetGoblinZoneWindow.associationTable",
+    "ClosetGoblinZoneWindowContentsSetList",
+    "DefaultColor"
+  ],
+  "registrations": []
+}

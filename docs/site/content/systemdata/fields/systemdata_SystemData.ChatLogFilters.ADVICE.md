@@ -27,10 +27,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyChat |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:980` |
+| Files seen in | TidyChat.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | TidyChatFrames.InitializeChannelMenuTidyChannelButtons, lua_call |
+| Example locations | InitializeChannelMenuTidyChannelButtons, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -57,28 +57,12 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.ChatLogFilters.ADVICE field accessed by 1 addons; commonly found in InitializeChannelMenuTidyChannelButtons and lua_call contexts.
 
 ## Seen In
 
 - TidyChat
 
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: TidyChatFrames.InitializeChannelMenuTidyChannelButtons, lua_call
+- Observed in contexts: InitializeChannelMenuTidyChannelButtons, lua_call

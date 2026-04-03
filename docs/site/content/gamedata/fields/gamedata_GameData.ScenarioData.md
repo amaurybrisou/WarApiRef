@@ -27,10 +27,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:391` |
+| Files seen in | Code/ScenarioInfo/ScenarioInfo.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | Enemy.ScenarioInfoUpdateData, lua_call |
+| Example locations | ScenarioInfoUpdateData, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.ScenarioData field accessed by 1 addons; commonly found in ScenarioInfoUpdateData and lua_call contexts.
 
 ## Seen In
 
@@ -67,18 +67,6 @@ Observed GameData field used by 1 addons through generated function calls, event
 
 - [GameData.GetScenarioPlayers](../../globals/functions/global_GameData.GetScenarioPlayers.md) (HIGH 100/100) - Global Function
 
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: Enemy.ScenarioInfoUpdateData, lua_call
+- Observed in contexts: ScenarioInfoUpdateData, lua_call

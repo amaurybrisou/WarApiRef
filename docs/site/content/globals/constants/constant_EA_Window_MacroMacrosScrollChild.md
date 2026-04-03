@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | bigger_MacroWindow |
-| Files seen in | `/workspace/data/raw/bigger_macrowindow/Source/MacroWindow.xml:0` |
+| Files seen in | Source/MacroWindow.xml |
 | Namespaces detected | EA_Window_MacroMacrosScrollChild |
 | Source kinds | xml_attributes |
 | Example locations | EA_Window_MacroIconSlot1, EA_Window_MacroIconSlot10, EA_Window_MacroIconSlot11, EA_Window_MacroIconSlot12, EA_Window_MacroIconSlot13, EA_Window_MacroIconSlot14 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 1 addons.
+Engine-supplied XML constant or template class referenced by 1 addons.
 
 ## Seen In
 
@@ -109,22 +109,6 @@ Observed engine XML template or inherited constant referenced by 1 addons.
 - EA_Window_MacroIconSlot7
 - EA_Window_MacroIconSlot8
 - EA_Window_MacroIconSlot9
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

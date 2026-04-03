@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 14 addons
+- Seen in: 91 addons
 
 ## Confidence Assessment
 
@@ -24,15 +24,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, LibWBToggler, PartyCast |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:120`, `/workspace/data/raw/Aura/Source/Aura.lua:359`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:27`, `/workspace/data/raw/BuffHead/Container.lua:886`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:767`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffHeadFrames.lua:212`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:827`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcon.lua:115` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, Aura, AutoMark, BBars - Mechanic Only, BankWindowFix, BuffHead |
+| Files seen in | AAOTracker.lua, BBars.lua, ChattyCathy.lua, CleanCastbar.lua, CleansingBuddy.lua, Code/Core/Main.lua, Code/GroupIcons/GroupIcon.lua, Code/Marks/MarkTemplate.lua |
 | Namespaces detected | DestroyWindow |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Destroy, Aura: Aura:DeleteWindow, AutoMark: AutoMark.local.DestroyMarker, AutoMark: DestroyMarker, BuffHead: BuffHeadContainer:Destroy, DAoCBuff: DAoCBuff.CloseMessageWindow |
+| Example locations | Ace: Destroy, ActionBarHide: Destroy, Amethyst: Destroy, Aura: DeleteWindow, AutoMark: DestroyMarker, BBars - Mechanic Only: OnShutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 37 |
-| Global usage count | 37 |
+| Lua usage count | 213 |
+| Global usage count | 213 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -67,11 +67,11 @@ Observed tearing down runtime-created windows.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "DAoCBuffMessageWindow", "PotionBar", "PotionBarFloatingActivator" |
+| windowName | Observed as a target window name. | Observed values: "BBarsPetHPBG", "BBarsPlayerMechanic3BG", "BBarsPlayerMechanic3Frontbar" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -80,47 +80,133 @@ Observed tearing down runtime-created windows.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
 - Aura
 - AutoMark
+- BBars - Mechanic Only
+- BankWindowFix
 - BuffHead
+- CMap
+- CastSequence
+- ChattyCathy
+- CleanCastbar
+- CleansingBuddy
+- CoolDownLine
+- CraftingWillard
+- Crusher
 - DAoCBuff
+- DuffTimer
+- EA_ThreePartBar
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- FastInteract
+- GCDsaver
+- GetStats
+- Group Icons
+- Group Icons SG
+- GroupRange
+- HealGrid
+- Hopper
+- InfoScroller
+- JunkDump
+- KillTracker
+- Kwestor
 - LibWBToggler
+- Map
+- MapMonster
+- MiniMapMonster
+- Miracle Grow Remix
+- Motion
+- NaturalLog
+- NerfedButtons
+- NoUselessMods-Assist
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- QuickWarReport
+- RO-Style Combat Text
+- RVAPI_ColorDialog
+- RVAPI_Range
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- RandomMount
+- RealmStatus
 - RoR_SoR
+- Rotation
+- RvRContribution
+- SNT_BUTTONS
+- SNT_CASTBAR
+- ScenarioStats
+- SessionRPs
 - Shinies
+- ShowHealthPercent
+- Statdoll Remix
+- TargetInfoRing
+- TargetRing
+- TastyButtons
+- ThankTheTank
 - TidyRoll
+- Tokens
+- VerticalMorale
 - WSCT
+- WarBoard_AAOTracker
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- emotes
+- minesweep
+- nRarity
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Destroy -> DestroyWindow(self.name)
-- Aura: Aura:DeleteWindow -> DestroyWindow(windowId)
-- AutoMark: AutoMark.local.DestroyMarker -> DestroyWindow(marker.window_name)
+- Ace: Destroy -> DestroyWindow(self.name)
+- ActionBarHide: Destroy -> DestroyWindow(self.name)
+- Amethyst: Destroy -> DestroyWindow(self.name)
+- Aura: DeleteWindow -> DestroyWindow(windowId)
 - AutoMark: DestroyMarker -> DestroyWindow(marker.window_name)
-- BuffHead: BuffHeadContainer:Destroy -> DestroyWindow(self:GetName())
-- DAoCBuff: DAoCBuff.CloseMessageWindow -> DestroyWindow("DAoCBuffMessageWindow")
+- BBars - Mechanic Only: OnShutdown -> DestroyWindow("BBarsPlayerMechanic3BG")
 
 ## Related APIs
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [UnregisterEventHandler](global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Used With
 
-- none
-
-## Triggered By
-
+- [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 100/100) - Window Function
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [UnregisterEventHandler](global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 22 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, Enemy, LibGuard, WSCT |
-| Files seen in | `/workspace/data/raw/BuffHead/Core.lua:178`, `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:503`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:153`, `/workspace/data/raw/wsct/wsct.lua:393` |
+| Addons seen in | BBars - Mechanic Only, BuffHead, CCTV, DuffTimer, EZGuard, Enemy, GuardBot, HealGrid |
+| Files seen in | BBarsPlayerMechanic.lua, CCTV.lua, Code/Core/Groups/Groups.lua, Core.lua, DuffTimer.lua, EZGuard.lua, GuardBot.lua, IHYTM.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | BuffHead.RefreshPlayerBuffs, Enemy.UpdateEffects, LibGuard.UpdateEffect, WSCT.PLAYER_EFFECTS_UPDATED, lua_call |
+| Example locations | BOSMMechanicUpdate, BuffUpdate, Button_EffectsUpdated, CHSLMechanicUpdate, CheckBuffs, CheckCast |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 30 |
+| Global usage count | 30 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,31 +59,37 @@
 
 ## Description
 
-Observed GameData field used by 4 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.BuffTargetType.SELF field accessed by 22 addons; commonly found in BOSMMechanicUpdate and BuffUpdate, Button_EffectsUpdated, CHSLMechanicUpdate, CheckBuffs, CheckCast, CheckSquigArmor, EnforceWindowStates, GetGuardBuffStatus, GetHurtPlayer, InitializeEffectTracker, OnLoad, OnPlayerEffectsUpdated, PLAYER_EFFECTS_UPDATED, RefreshEffects, RefreshInformation, RefreshMemberEffects, RefreshPlayerBuffs, UpdateAggroTable, UpdateEffect, UpdateEffects, UpdateGuardTarget, UpdateHealDebuffs, WEWHMechanicUpdate, buildEffectsAndConditions, forceupdate, handler, hasMechanic, init, lua_call contexts.
 
 ## Seen In
 
+- BBars - Mechanic Only
 - BuffHead
+- CCTV
+- DuffTimer
+- EZGuard
 - Enemy
+- GuardBot
+- HealGrid
+- I HATE YOU THIS MUCH
 - LibGuard
+- Mech
+- NerfedButtons
+- Phantom
+- Pure
+- RandomMount
+- SquaredHDIndicator
+- TastyButtons
+- TurretScrap
+- Twister
 - WSCT
+- WarTriage
+- WhatsCooking
 
 ## Related APIs
 
 - [GetBuffs](../../globals/functions/global_GetBuffs.md) (HIGH 83/100) - Global Function
 
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: BuffHead.RefreshPlayerBuffs, Enemy.UpdateEffects, LibGuard.UpdateEffect, WSCT.PLAYER_EFFECTS_UPDATED, lua_call
+- Observed in contexts: BOSMMechanicUpdate, BuffUpdate, Button_EffectsUpdated, CHSLMechanicUpdate, CheckBuffs, CheckCast

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -11,9 +11,9 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 156
+- Raw weighted score: 131
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
@@ -24,23 +24,22 @@
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +8 Return usage is consistent: Observed as a stable query-style API.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BagOMatic, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:400`, `/workspace/data/raw/bagomatic/BagOMatic.lua:888` |
+| Addons seen in | BagOMatic, TidyRoll, zMailMod |
+| Files seen in | BagOMatic.lua, CustomAutoRoll.lua, zMailMod.lua, zMailModMassMail.lua |
 | Namespaces detected | EA_BackpackUtilsMediator |
-| Source kinds | globals, lua_calls |
-| Example locations | BagOMatic: BagOMatic.findItemInBagPack, TidyRoll: TidyRoll.CustomAutoRoll.OnListLbuttonUp |
+| Source kinds | lua_calls |
+| Example locations | BagOMatic: findItemInBagPack, TidyRoll: OnListLbuttonUp, zMailMod: InventoryLButtonDown, zMailMod: InventoryLButtonUp, zMailMod: InventoryRButtonUp, zMailMod: OnSlotLButtonUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -67,7 +66,7 @@ EA_BackpackUtilsMediator.GetCurrentBackpackType()
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 3 addons.
 
 ## Parameters
 
@@ -76,42 +75,38 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - BagOMatic
 - TidyRoll
+- zMailMod
 
 ## Examples
 
-- BagOMatic: BagOMatic.findItemInBagPack -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
-- TidyRoll: TidyRoll.CustomAutoRoll.OnListLbuttonUp -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
-
-## Related APIs
-
-- [EA_BackpackUtilsMediator.GetCursorForBackpack](global_EA_BackpackUtilsMediator.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
-- [EA_BackpackUtilsMediator.GetItemsFromBackpack](global_EA_BackpackUtilsMediator.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
+- BagOMatic: findItemInBagPack -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
+- TidyRoll: OnListLbuttonUp -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
+- zMailMod: InventoryLButtonDown -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
+- zMailMod: InventoryLButtonUp -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
+- zMailMod: InventoryRButtonUp -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
+- zMailMod: OnSlotLButtonUp -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [Cursor.Clear](global_Cursor.Clear.md) (HIGH 100/100) - Global Function
+- [Cursor.IconOnCursor](global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
+- [EA_BackpackUtilsMediator.GetItemsFromBackpack](global_EA_BackpackUtilsMediator.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
+- [EA_Window_Backpack.GetSlotFromActionButtonGroup](global_EA_Window_Backpack.GetSlotFromActionButtonGroup.md) (HIGH 100/100) - Global Function
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Affects
 
-- [Cursor](../tables/table_Cursor.md) (HIGH 100/100) - Global Table
-- [EA_BackpackUtilsMediator.GetCursorForBackpack](global_EA_BackpackUtilsMediator.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
-- [EA_BackpackUtilsMediator.GetItemsFromBackpack](global_EA_BackpackUtilsMediator.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
-- [ListBox](../../xml/element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

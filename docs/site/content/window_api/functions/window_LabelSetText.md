@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 184 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, CM_ClosetGoblin |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:426`, `/workspace/data/raw/Ace/LibGUI.lua:439`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:983`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:5` |
+| Addons seen in | AbilityAlert, Ace, ActionBarHide, ActionFraction, AdjustTheTip, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter |
+| Files seen in | APAGui.lua, APAGuiHUD.lua, AbilityAlert.lua, AdjustTheTip.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, AggroMeter.lua, AuctionAssist.lua |
 | Namespaces detected | LabelSetText |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Label:Clear, Ace: LIBGUI_Label:SetText, AdvancedPetAssist: APAGui.OnShown, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD |
+| Example locations | AbilityAlert: Display, Ace: Clear, Ace: SetText, ActionBarHide: Clear, ActionBarHide: SetText, ActionFraction: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1055 |
-| Global usage count | 1055 |
+| Lua usage count | 3778 |
+| Global usage count | 3778 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed updating label text or label styling on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target control name. | Observed values: "APAFollowTargetHUDLabel", "APAInstantOnlyHUDLabel", "APAKitingHUDLabel" |
-| text | Observed as a text or wstring payload. | Observed values: APA.PetTarget.cachedName, Enemy.isNil(data.name,L ""), Enemy.toWString(eps.value) |
+| windowName | Observed as a target control name. | Observed values: "10minTimeValue", "10secTimeValue", "1minTimeValue" |
+| text | Observed as a text or wstring payload. | Observed values: #MailWindowTabAuction.listData..L " "..zL["MESSAGE"], #MailWindowTabAuction.listData..L " "..zL["MESSAGES"], #MailWindowTabInbox.listData..L " "..zL["MESSAGE"] |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -84,48 +84,211 @@ Observed updating label text or label styling on existing controls.
 
 ## Seen In
 
+- AbilityAlert
 - Ace
+- ActionBarHide
+- ActionFraction
+- AdjustTheTip
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - AggroMeter
+- Amethyst
+- Atlas
+- AuctionStats
 - Aura
+- AutoBand
+- AutoSalvage
 - BankArkel
+- BlackBook
+- BlackBox
+- Bloody Mess
+- Brizio's Crappy Computer Medic
+- BuddyBind
 - BuffHead
+- Busted
+- CDown
 - CM_ClosetGoblin
+- CaVES
+- Calling
+- CastSequence
+- ChattyCathy
+- CleanUnitFrames
 - CombatTextNames
+- CoolDownLine
+- Countdown
+- Crafting Info Tooltip
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DaemonAssist
+- DammazKron
+- Dascore
+- DeepSleep
+- DetauntHelper
+- DuffTimer
+- Dye Preview
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EZCraftX
+- EZGuard
+- Effigy
+- Emojii
 - Enemy
+- EveryBodyGuard
+- FastFriends
+- FastInteract
+- FlagCap
+- GCDTracker
+- GCDsaver
+- GetStats
+- Group Icons SG
+- GroupRange
+- GroupSpotter
+- GuildWarden
+- HealGrid
+- Hopper
+- InfoScroller
+- JunkDump
+- KeyBar
+- Keyset
+- KeysetMonsterPlay
 - Killer
+- Kwestor
+- LibAddonButton
 - LibGroup
 - LibWBToggler
+- LootAlert
+- Map
+- MapMonster
+- MarkBuff
+- Mass Refine
+- Mech
+- MegaphonePlusPlus
+- Minmap
+- Miracle Grow Remix
+- MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
+- Moth
+- Motion
+- NaturalLog
+- NerfedButtons
+- NoOverheal
+- Obsidian
+- OverheadFonts
 - PartyCast
+- PeaceOut
+- Phantom
 - Pocket Palette
 - PotionBar
+- Pure
+- Pure Careerbar
+- QuickTacticSwitch
+- QuickWarReport
+- RO-Style Combat Text
+- RVAPI_ColorDialog
+- RVAPI_Range
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- RandomMount
+- Rangechecker
+- RealmStatus
+- Refer
+- ReliquaryHunter
+- ResHelp
 - RoR_SoR
+- RoR_debolster
+- RvRContribution
+- RvRStats
+- RvRStatsTab
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SNT_PANEL
+- SOR
+- ScenarioStats
+- Sequencer
+- SessionRPs
 - Shinies
+- ShowHealthPercent
+- Soloq
+- Squared
+- SquaredClick
+- Statdoll
+- Statdoll Light
+- Statdoll Remix
 - Swift Assist
+- Swinger
+- TacticSetNames
+- TalismanGenie
+- TargetInfoRing
+- TargetRing
+- Targets
+- TastyButtons
 - TexturedButtons
+- ThankTheTank
+- ThinkOutLoud
 - TidyChat
+- TidyQueue
 - TidyRoll
+- TokenMachine
+- Tokens
+- Tome Titan
+- TomeTracker
+- Trakario
 - TurretRange
+- Twister
+- VPBreakdown
+- Vectors
+- WARCommander
+- WARRatingBuster
 - WSCT
+- WarBoard_Loc
+- WarBoard_Session
+- WarBoard_TDPS
+- WarTriage
+- WhatsCooking
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- XpStatus+G
+- ZonePOP
+- alertMod
+- emotes
+- minesweep
+- nLootLink
+- scenarioInfo
+- talisman-monitor
+- warboard_TogglerWarBuilder
+- wbLeadHelper
+- xHUD
+- xPanels
+- yAssistHelper
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Label:Clear -> LabelSetText(self.name, L "")
-- Ace: LIBGUI_Label:SetText -> LabelSetText(self.name, towstring(text))
-- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APAOptionsTitleText", L "AdvancedPetAssist")
-- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APALabelSectionAutoRecall", L "--- Auto Recall ---")
-- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APALabelSectionMouseControls", L "--- Mouse Controls ---")
-- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APALabelSectionLos", L "--- LOS Detection ---")
+- AbilityAlert: Display -> LabelSetText("AAText", msg)
+- Ace: Clear -> LabelSetText(self.name, L "")
+- Ace: SetText -> LabelSetText(self.name, towstring(text))
+- ActionBarHide: Clear -> LabelSetText(self.name, L "")
+- ActionBarHide: SetText -> LabelSetText(self.name, towstring(text))
+- ActionFraction: Initialize -> LabelSetText("ActionFractionWindowContextColorCodeCurrentAPCheckBoxLabel", LOC_TEXT.CURRENTAP_COLOR_CODING)
 
 ## Related APIs
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [OnMouseOverEnd](../../xml/handlers/handler_OnMouseOverEnd.md) (HIGH 88/100) - XML Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
+- [OnSlide](../../xml/handlers/handler_OnSlide.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
@@ -134,30 +297,36 @@ Observed updating label text or label styling on existing controls.
 - [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureDimensions](window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
-- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
+- [DynamicImageSetTextureScale](window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
+- [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
+- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
+- [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 100/100) - Window Function
 - [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
 - [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
-- [EA_Window_ContextMenu.AddUserDefinedMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 90/100) - Global Function
+- [EA_Window_InteractionRenownTraining.GetPointsAvailable](../../globals/functions/global_EA_Window_InteractionRenownTraining.GetPointsAvailable.md) (HIGH 98/100) - Global Function
+- [EA_Window_InteractionRenownTraining.GetPointsSpent](../../globals/functions/global_EA_Window_InteractionRenownTraining.GetPointsSpent.md) (HIGH 98/100) - Global Function
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
+- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Affects
 
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

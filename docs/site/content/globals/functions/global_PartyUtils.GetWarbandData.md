@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -11,9 +11,9 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 133
+- Raw weighted score: 108
 
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
@@ -23,23 +23,22 @@
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +8 Return usage is consistent: Observed as a stable query-style API.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, LibGroup, LibGuard, WhoHealedMe |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:281`, `/workspace/data/raw/LibGroup/LibGroup.lua:660`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:186`, `/workspace/data/raw/WhoHealedMe/WHMCore.lua:201` |
+| Addons seen in | Enemy, Hopper, LibGroup, LibGuard, MegaphonePlusPlus, Squared, WarTriage, WhoHealedMe |
+| Files seen in | Code/Core/Groups/Groups.lua, LibGroup.lua, MegaphonePlusPlus.lua, Source/Hopper.lua, Source/LibGuard.lua, SquaredWarband.lua, WHMCore.lua, WarTriage.lua |
 | Namespaces detected | PartyUtils |
-| Source kinds | globals, lua_calls |
-| Example locations | Enemy: Enemy._GroupsUpdate, LibGroup: GetWarbandData, LibGroup: LibGroup.local.GetWarbandData, LibGuard: LibGuard.GetIdFromName, WhoHealedMe: WHMCore.IsHealerInPartyOrWarband |
+| Source kinds | lua_calls |
+| Example locations | Enemy: _GroupsUpdate, Hopper: UpdateWarbandOpenSlots, LibGroup: GetWarbandData, LibGuard: GetIdFromName, MegaphonePlusPlus: FindLeader, Squared: UpdateGroup |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 9 |
+| Global usage count | 9 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | no |
@@ -66,7 +65,7 @@ PartyUtils.GetWarbandData()
 
 ## Description
 
-Observed as a global function across 4 addons.
+Observed as a global function across 8 addons.
 
 ## Parameters
 
@@ -75,44 +74,39 @@ Observed as a global function across 4 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Enemy
+- Hopper
 - LibGroup
 - LibGuard
+- MegaphonePlusPlus
+- Squared
+- WarTriage
 - WhoHealedMe
 
 ## Examples
 
-- Enemy: Enemy._GroupsUpdate -> PartyUtils.GetWarbandData()
+- Enemy: _GroupsUpdate -> PartyUtils.GetWarbandData()
+- Hopper: UpdateWarbandOpenSlots -> PartyUtils.GetWarbandData()
 - LibGroup: GetWarbandData -> PartyUtils.GetWarbandData()
-- LibGroup: LibGroup.local.GetWarbandData -> PartyUtils.GetWarbandData()
-- LibGuard: LibGuard.GetIdFromName -> PartyUtils.GetWarbandData()
-- WhoHealedMe: WHMCore.IsHealerInPartyOrWarband -> PartyUtils.GetWarbandData()
-
-## Related APIs
-
-- [PartyUtils.GetPartyData](global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [PartyUtils.IsPartyActive](global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
+- LibGuard: GetIdFromName -> PartyUtils.GetWarbandData()
+- MegaphonePlusPlus: FindLeader -> PartyUtils.GetWarbandData()
+- Squared: UpdateGroup -> PartyUtils.GetWarbandData()
 
 ## Used With
 
 - [PartyUtils.GetPartyData](global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
 
-## Triggered By
-
-- none
-
 ## Affects
 
 - [GameData.GetScenarioPlayerGroups](global_GameData.GetScenarioPlayerGroups.md) (HIGH 100/100) - Global Function
-- [PartyUtils.GetPartyData](global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
 
 ## Notes
 

@@ -24,10 +24,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | GroupsTargetChanged |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy._UnitFramesEnabledChanged |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -54,7 +54,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 1 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -70,32 +70,15 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
+- AddEventHandler
 - Enemy.UnitFrames_OnGroupsTargetChanged
 - addon
 
 ## Examples
 
-- Enemy: Enemy._UnitFramesEnabledChanged -> GroupsTargetChanged -> Enemy.UnitFrames_OnGroupsTargetChanged
-- Enemy: Enemy.UnitFrames_OnGroupsTargetChanged -> Enemy.AddEventHandler(GroupsTargetChanged, Enemy.UnitFrames_OnGroupsTargetChanged)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Enemy: AddEventHandler -> GroupsTargetChanged -> Enemy.UnitFrames_OnGroupsTargetChanged
+- Enemy: Enemy.UnitFrames_OnGroupsTargetChanged -> AddEventHandler(GroupsTargetChanged, Enemy.UnitFrames_OnGroupsTargetChanged)
 
 ## Notes
 
-- Triggered-by evidence: Enemy:Enemy.Groups_OnPlayerTargetUpdated, Enemy:Enemy._GroupsClearTarget
 - Only one addon surfaced this event in the current addon-api corpus.

@@ -1,0 +1,13 @@
+# Mixin EA_Button_DefaultCheckBox
+
+## Used By
+
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB3
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB4
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB5
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsCheckboxUseItemRack
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsEquipmentShowCloak
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsEquipmentShowHelm

@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 130
+- Raw weighted score: 125
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -18,25 +18,25 @@
 
 - +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AnywhereTrainerAdditions, CM_ClosetGoblin, Enemy, HotbarMorale, Shinies, TidyRoll |
-| Files seen in | `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:512`, `/workspace/data/raw/Enemy/Code/Assist/Assist.lua:363`, `/workspace/data/raw/Enemy/Code/Core/ConfigurationWindow.lua:65`, `/workspace/data/raw/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:1447`, `/workspace/data/raw/Enemy/Code/UnitFrames/ClickCasting.lua:379`, `/workspace/data/raw/HotbarMorale/HotbarMorale.lua:10`, `/workspace/data/raw/HotbarMorale/HotbarMorale.lua:5` |
+| Addons seen in | AnywhereTrainerAdditions, AuctionStats, BankWindowFix, CM_ClosetGoblin, CastSequence, Crusher, DetauntHelper, Enemy |
+| Files seen in | Code/Core/ConfigurationWindow.lua, Code/ScenarioInfo/ScenarioInfo.lua, Code/UnitFrames/ClickCasting.lua, Configuration/WCDBConfig_Filters.lua, Configuration/WCDPConfig_Filters.lua, Modules/UI/Shinies-UI-Auto.lua, Modules/UI/Shinies-UI-Browse.lua, Modules/UI/Shinies-UI-Post.lua |
 | Namespaces detected | Cursor |
-| Source kinds | globals, lua_calls |
-| Example locations | AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown, CM_ClosetGoblin: ClosetGoblinCharacterWindow.HandleDrag, Enemy: Enemy.ConfigurationWindow_OnMacroMouseDrag, Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionLButtonUp, Enemy: Enemy.local.OnMacroMouseDrag, Enemy: OnMacroMouseDrag |
+| Source kinds | lua_calls |
+| Example locations | AnywhereTrainerAdditions: EquipmentLButtonDown, AuctionStats: AuctionHouseWindowCreateSearchItemName_LButtonDown, AuctionStats: EA_Window_Backpack_EquipmentLButtonDown_Override, AuctionStats: OnLButtonUpItem, BankWindowFix: BankEquipmentRButtonDown, CM_ClosetGoblin: HandleDrag |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 30 |
+| Lua usage count | 82 |
 | Global usage count | 3 |
-| Local definition count | 1 |
-| Documentation references | 1 |
+| Local definition count | 0 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 6 addons.
+Shared function table with 3 member functions; the primary API surface for 22 addons.
 
 ## Functions
 
@@ -72,38 +72,36 @@ Observed shared global table or namespace surfaced in 6 addons.
 ## Seen In
 
 - AnywhereTrainerAdditions
+- AuctionStats
+- BankWindowFix
 - CM_ClosetGoblin
+- CastSequence
+- Crusher
+- DetauntHelper
 - Enemy
+- FixGit
 - HotbarMorale
+- KeyBar
+- NerfedButtons
+- RandomMount
+- Sequencer
 - Shinies
+- SquaredClick
+- TastyButtons
 - TidyRoll
+- Twister
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- zMailMod
 
 ## Examples
 
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown -> Cursor.IconOnCursor()
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown -> Cursor.Clear()
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown -> Cursor.PickUp(Cursor.SOURCE_BANK, slot, itemData.uniqueID, itemData.iconNum, true)
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.HandleDrag -> Cursor.IconOnCursor()
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.HandleDrag -> Cursor.Clear()
-- Enemy: Enemy.ConfigurationWindow_OnMacroMouseDrag -> Cursor.IconOnCursor()
-
-## Related APIs
-
-- [EA_BackpackUtilsMediator.GetCurrentBackpackType](../functions/global_EA_BackpackUtilsMediator.GetCurrentBackpackType.md) (HIGH 100/100) - Global Function
-- [EA_BackpackUtilsMediator.GetCursorForBackpack](../functions/global_EA_BackpackUtilsMediator.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
-- [EA_BackpackUtilsMediator.GetItemsFromBackpack](../functions/global_EA_BackpackUtilsMediator.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AnywhereTrainerAdditions: EquipmentLButtonDown -> Cursor.IconOnCursor()
+- AnywhereTrainerAdditions: EquipmentLButtonDown -> Cursor.Clear()
+- AnywhereTrainerAdditions: EquipmentLButtonDown -> Cursor.PickUp(Cursor.SOURCE_BANK, slot, itemData.uniqueID, itemData.iconNum, true)
+- AuctionStats: AuctionHouseWindowCreateSearchItemName_LButtonDown -> Cursor.IconOnCursor()
+- AuctionStats: AuctionHouseWindowCreateSearchItemName_LButtonDown -> Cursor.Clear()
+- AuctionStats: EA_Window_Backpack_EquipmentLButtonDown_Override -> Cursor.IconOnCursor()
 
 ## Notes
 

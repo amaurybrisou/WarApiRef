@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, GuardLine, MoraleCircle |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Assist/Assist.xml:0`, `/workspace/data/raw/GuardLine/GuardLine.xml:0`, `/workspace/data/raw/MoraleCircle/MoraleCircle.xml:0` |
+| Addons seen in | Deathblow2, Emojii, Enemy, GuardLine, GuardList, GuardRange, MapPin, MoraleCircle |
+| Files seen in | Code/Assist/Assist.xml, Deathblow2.xml, Emojii.xml, GuardLine.xml, GuardList.xml, GuardRange.xml, MoraleCircle.xml, source/MapPin.xml |
 | Namespaces detected | EA_MoraleButtonAnimation |
 | Source kinds | xml_attributes |
-| Example locations | EnemyTargetFlash, EnemyTargetGlow, EnemyTargetSpark, GuardLineSelfWindowGlow, GuardLineTargetWindowGlow, MoraleTemplateFlash |
-| XML usage count | 7 |
-| XML attribute usage count | 7 |
+| Example locations | EmojiiWindowTemplateFlash, EnemyTargetFlash, EnemyTargetGlow, EnemyTargetSpark, Flash, GuardLineSelfWindowGlow |
+| XML usage count | 13 |
+| XML attribute usage count | 13 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,39 +57,38 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 3 addons.
+Engine-supplied XML constant or template class referenced by 8 addons.
 
 ## Seen In
 
+- Deathblow2
+- Emojii
 - Enemy
 - GuardLine
+- GuardList
+- GuardRange
+- MapPin
 - MoraleCircle
 
 ## Used By
 
+- EmojiiWindowTemplateFlash
 - EnemyTargetFlash
 - EnemyTargetGlow
 - EnemyTargetSpark
+- Flash
 - GuardLineSelfWindowGlow
 - GuardLineTargetWindowGlow
+- GuardList_Window0Glow
+- GuardRange_Window0Glow
+- MapPinWBMarkerGlow
+- MapPinWBMarker_NoBGGlow
 - MoraleTemplateFlash
 - MoraleTemplateGlow
 
 ## Related APIs
 
 - [AnimatedImage](../../xml/element_types/element_AnimatedImage.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

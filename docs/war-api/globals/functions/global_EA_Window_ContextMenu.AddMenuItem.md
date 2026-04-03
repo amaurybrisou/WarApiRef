@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 11 addons
+- Seen in: 44 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, BuffHead, CM_ClosetGoblin, Enemy, Killer, PotionBar, RoR_SoR, Shinies |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:251`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:378`, `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:72`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.lua:130`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.lua:217`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.lua:439`, `/workspace/data/raw/BuffHead/Setup/SetupEffectCache.lua:195`, `/workspace/data/raw/BuffHead/Setup/SetupFilter.lua:154` |
+| Addons seen in | ActionFraction, AggroMeter, AutoBand, BuffHead, CM_ClosetGoblin, CastSequence, Dascore, DuelInvite |
+| Files seen in | AggroMeter.lua, AutoBand.lua, Button.lua, ClosetGoblinCharacterWindow.lua, ClosetGoblinZoneWindow.lua, Code/CombatLog/CombatLogEpsWindow.lua, Code/CombatLog/CombatLogTargetDefenseWindow.lua, Code/Marks/Marks.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | AggroMeter: AggroMeter.OnTabRBU, AggroMeter: AggroMeter.PickedListMenu, BuffHead: BuffHead.Setup.AdvancedContainersItem.OnContainerRClick, BuffHead: BuffHead.Setup.EffectCache.CreateContextMenu, BuffHead: BuffHead.Setup.Filter.CreateContextMenu, BuffHead: BuffHead.Setup.LayoutControlFrame:CreateContextMenu |
+| Example locations | ActionFraction: RightClick, ActionFraction: SetFontSelectionMenu, ActionFraction: SetPresetLocation, AggroMeter: OnTabRBU, AggroMeter: PickedListMenu, AutoBand: AutoBand_L_AddContextMenuItem |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 107 |
-| Global usage count | 107 |
+| Lua usage count | 409 |
+| Global usage count | 409 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,70 +65,97 @@ EA_Window_ContextMenu.AddMenuItem(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a global function across 11 addons.
+Observed as a global function across 44 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_TO_LOCK), GetString(StringTables.Default.LABEL_TO_UNLOCK), L "   <icon00057> Champions" |
-| arg2 | Observed as a function or method reference. | Observed values: AggroMeter.Close, AggroMeter.ToggeBar, AggroMeter.ToggeEnable |
-| arg3 | Observed as a boolean toggle. | Observed values: (not GameData.Player.rvrZoneFlagged), (not IsWarBandActive()), (not PartyUtils.IsPartyActive()) |
-| arg4 | Observed as a boolean toggle. | Observed values: true |
+| arg1 | Observed as a function or method reference. | Observed values: Checkbox(mode,MODE_ALL)..GetStringFromTable("UserSettingsStrings",StringTables.UserSettings.PERFORMANCE_ABILITY_EFFECTS_ALL)..L " (*)", Checkbox(mode,MODE_NONE)..GetStringFromTable("UserSettingsStrings",StringTables.UserSettings.PERFORMANCE_ABILITY_EFFECTS_NONE)..L " (0)", Checkbox(mode,MODE_PARTY)..GetStringFromTable("UserSettingsStrings",StringTables.UserSettings.PERFORMANCE_ABILITY_EFFECTS_PARTY)..L " (6)" |
+| arg2 | Observed as a function or method reference. | Observed values: AbilitiesWindow.ToggleShowing, ActionFractionWindow.OnLock, ActionFractionWindow.OnUnlock |
+| arg3 | Observed as a boolean toggle. | Observed values: (activeItem.Entry.Index==#activeMenu.Subitems), (activeItem.Entry.Index==1), (activeRowItem.Index==#textureSettings.Animation.Frames) |
+| arg4 | Observed as a boolean toggle. | Observed values: EA_Window_ContextMenu.CONTEXT_MENU_1, false, true |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- ActionFraction
 - AggroMeter
+- AutoBand
 - BuffHead
 - CM_ClosetGoblin
+- CastSequence
+- Dascore
+- DuelInvite
+- DuffTimer
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EZCraftX
+- Effigy
 - Enemy
+- HealGrid
 - Killer
+- LibAddonButton
+- MapMonster
+- MapPin
+- MarkBuff
+- Miracle Grow Remix
+- Motion
+- NerfedButtons
+- PeaceOut
+- PlayEffectsOn
 - PotionBar
+- Pure
+- QuickNameActions+
+- RandomMount
+- Refer
 - RoR_SoR
+- SOR
 - Shinies
+- ShowMeTheBubbles
+- SocialWindow 2.0
+- TaxPayer
 - TidyChat
+- TidyQueue
+- Tortall_DPS
 - TurretRange
 - WarBoard
+- WarBoard_Loc
+- WarBoard_WarWhisperer
+- XpStatus+G
 
 ## Examples
 
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuItem(L "<icon00057> Enabled", AggroMeter.ToggeEnable, false, true)
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuItem(L "<icon00058> Disabled", AggroMeter.ToggeEnable, false, true)
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuItem(L "   <icon00057> Champions", MakeCallBack(1), not AggroMeter.Enabled, true)
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuItem(L "   <icon00058> Champions", MakeCallBack(1), not AggroMeter.Enabled, true)
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuItem(L "   <icon00057> Heroes", MakeCallBack(2), not AggroMeter.Enabled, true)
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuItem(L "   <icon00058> Heroes", MakeCallBack(2), not AggroMeter.Enabled, true)
+- ActionFraction: RightClick -> EA_Window_ContextMenu.AddMenuItem(GetString(StringTables.Default.LABEL_TO_LOCK), ActionFractionWindow.OnLock, not movable, true, EA_Window_ContextMenu.CONTEXT_MENU_1)
+- ActionFraction: RightClick -> EA_Window_ContextMenu.AddMenuItem(GetString(StringTables.Default.LABEL_TO_UNLOCK), ActionFractionWindow.OnUnlock, movable, true, EA_Window_ContextMenu.CONTEXT_MENU_1)
+- ActionFraction: RightClick -> EA_Window_ContextMenu.AddMenuItem(GetString(StringTables.Default.LABEL_CHAT_OPTIONS_RESET), ActionFractionWindow.ResetWindow, false, EA_Window_ContextMenu.CONTEXT_MENU_1)
+- ActionFraction: SetFontSelectionMenu -> EA_Window_ContextMenu.AddMenuItem(LOC_TEXT.FONT_SIZE_SMALL, ActionFractionWindow.SetFontSmall, false, true, EA_Window_ContextMenu.CONTEXT_MENU_3)
+- ActionFraction: SetFontSelectionMenu -> EA_Window_ContextMenu.AddMenuItem(LOC_TEXT.FONT_SIZE_MEDIUM, ActionFractionWindow.SetFontMedium, false, true, EA_Window_ContextMenu.CONTEXT_MENU_3)
+- ActionFraction: SetFontSelectionMenu -> EA_Window_ContextMenu.AddMenuItem(LOC_TEXT.FONT_SIZE_LARGE, ActionFractionWindow.SetFontLarge, false, true, EA_Window_ContextMenu.CONTEXT_MENU_3)
 
 ## Related APIs
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
+- [EA_Window_ContextMenu.AddCascadingMenuItem](global_EA_Window_ContextMenu.AddCascadingMenuItem.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.AddMenuDivider](global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddUserDefinedMenuItem](global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.CreateContextMenu](global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.Finalize](global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
+- [EA_Window_ContextMenu.Hide](global_EA_Window_ContextMenu.Hide.md) (HIGH 100/100) - Global Function
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-
-## Triggered By
-
-- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

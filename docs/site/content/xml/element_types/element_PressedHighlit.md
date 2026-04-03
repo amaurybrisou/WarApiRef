@@ -67,36 +67,90 @@ PressedHighlit is a XML UI element. It commonly appears under OverlayTexCoords a
 
 ## Common Parent Elements
 
-- [TexSlices](element_TexSlices.md) — 16× (HIGH)
-- [TextColors](element_TextColors.md) — 16× (HIGH)
-- [ResizeImages](element_ResizeImages.md) — 9× (MEDIUM)
-- [OverlayTexCoords](element_OverlayTexCoords.md) — 7× (MEDIUM)
-- [TexCoords](element_TexCoords.md) — 1× (LOW)
+- [TexSlices](element_TexSlices.md) — 95× (HIGH)
+- [TextColors](element_TextColors.md) — 83× (HIGH)
+- [ResizeImages](element_ResizeImages.md) — 27× (HIGH)
+- [OverlayTexCoords](element_OverlayTexCoords.md) — 24× (HIGH)
+- [TexCoords](element_TexCoords.md) — 10× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `b` | optional | 32% | 63, 36, 0 |
-| `g` | optional | 32% | 213, 57, 85 |
-| `id` | optional | 32% | morale-white, RightTabFrame-Rollover, LayoutCorner-TopLeft-ROLLOVER, LayoutCorner-TopRight-ROLLOVER, ... |
-| `r` | optional | 32% | 250, 95, 255 |
-| `a` | optional | 30% | 255 |
-| `def` | optional | 18% | EA_HorizontalResizeImage_DefaultComboBox, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed |
-| `x` | optional | 16% | 0, 120 |
-| `y` | optional | 16% | 56, 44 |
+| `id` | optional | 39% | morale-white, RightTabFrame-Rollover, Tactics-Button-Depressed, SquareButton-Depressed, ... |
+| `b` | optional | 34% | 63, 0, 36, 45, ... |
+| `g` | optional | 34% | 213, 85, 57, 255, ... |
+| `r` | optional | 34% | 250, 255, 95, 226, ... |
+| `a` | optional | 33% | 255, 1 |
+| `x` | optional | 14% | 0, 120, 172, 475, ... |
+| `y` | optional | 14% | 56, 44, 370, 420, ... |
+| `def` | optional | 11% | EA_HorizontalResizeImage_DefaultComboBox, EA_Button_GuildRosterRowPressed, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed, ... |
 ## Seen In
 
 - AdvancedPetAssist
 - AggroMeter
 - AnywhereTrainer
+- Assist
 - Aura
+- AutoBand
+- BlackBook
 - BuffHead
+- CMap
+- CaVES
+- CastSequence
+- Crusher
+- DaemonAssist
+- DammazKron
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- DuffTimer
+- EA_UiDebugTools
+- EZCraftX
+- FozAuction
+- GDes
+- Ges
+- GuardList
+- GuardRange
+- GuildWarden
+- Hopper
+- ItemRack
+- KillTracker
+- LoyalPet
+- Minmap
+- Miracle Grow Remix
+- MoraleSet
+- Motion
+- NerfedButtons
 - PartyCast
 - PotionBar
+- Pure
+- Queue Queuer
+- RVMOD_Manager
+- RaidMeter
 - RoR_SoR
+- SOR
+- Sequencer
 - Shinies
+- SocialWindow 2.0
+- SpamBayes
+- TalismanGenie
+- TastyButtons
+- Tome Titan
+- TwisterSet
+- Vectors
+- WARCommander
 - WSCT
+- WTes
+- WaaaghBar
+- Warbuilder
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- ZonePOP
+- emotes
+- nLootLink
+- zMailMod
 
 ## Examples
 
@@ -109,15 +163,3 @@ PressedHighlit is a XML UI element. It commonly appears under OverlayTexCoords a
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
 - [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
 - [TextColors](element_TextColors.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, Pocket Palette, Shinies |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/AuraTexture.xml:0`, `/workspace/data/raw/BuffHead/Setup/General.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainers.xml:0` |
+| Addons seen in | AggroMeter, Aura, BlackBook, BuffHead, CDown, CM_ClosetGoblin, CMap, CastSequence |
+| Files seen in | Code/CombatLog/CombatLogSnapshotWindow.xml, Code/CombatLog/CombatLogStatsWindow.xml, Code/Core/ChooseIconDialog.xml, Code/Core/Debug.xml, Code/KillSpam/KillSpam.xml, Code/ScenarioInfo/ScenarioInfo.xml, Code/UnitFrames/EffectsIndicatorDialog.xml, Code/UnitFrames/UnitFramesConfiguration.xml |
 | Namespaces detected | ListData |
 | Source kinds | xml_frames |
-| Example locations | AggroMeter: AggroMeterGrayListBox, Aura: AuraSettingsAuraList, Aura: AuraSharesAuraList, Aura: AuraTextureIconsIcons, BuffHead: BuffHeadSetupAdvancedCompressionItemWindowList, BuffHead: BuffHeadSetupAdvancedCompressionWindowList |
-| XML usage count | 42 |
-| XML attribute usage count | 42 |
+| Example locations | AggroMeter: AggroMeterGrayListBox, Aura: AuraSettingsAuraList, Aura: AuraSharesAuraList, Aura: AuraTextureIconsIcons, BlackBook: BlackBookWindowList, BuffHead: BuffHeadSetupAdvancedCompressionItemWindowList |
+| XML usage count | 110 |
+| XML attribute usage count | 110 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-ListData is a structural list-binding sub-element used inside list controls to connect XML definitions to Lua-backed row data.
+ListData is a structural XML sub-element that binds list controls to Lua-backed row data. It commonly appears under ListBox as list data wiring.
 
 ## Common Attributes
 
@@ -70,44 +70,88 @@ ListData is a structural list-binding sub-element used inside list controls to c
 
 ## Common Parent Elements
 
-- [ListBox](element_ListBox.md) — 42× (HIGH)
+- [ListBox](element_ListBox.md) — 110× (HIGH)
 
 ## Common Structural Child Elements
 
-- [ListColumns](element_ListColumns.md) — 25× (HIGH)
+- [ListColumns](element_ListColumns.md) — 74× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `table` | **required** | 100% | AggroMeter.Listdata, AuraShares.listDisplayData, AuraTexture.listIconDisplayData, AuraSettings.listDisplayData, ... |
-| `populationfunction` | **required** | 97% | AuraShares.PopulateDisplay, AuraTexture.PopulateIconsListDisplay, AuraSettings.PopulateDisplay, BuffHead.Setup.OnPopulate, ... |
+| `populationfunction` | **required** | 98% | AuraShares.PopulateDisplay, AuraTexture.PopulateIconsListDisplay, AuraSettings.PopulateDisplay, BlackBookWindow.Populate, ... |
 ## Structural Sub-Elements
 
 ### [ListColumns](element_ListColumns.md)
 
-Observed 25 times as an unnamed child.
+Observed 74 times as an unnamed child.
 
 ## Recursive Hierarchy
 
 - Root: [ListData](element_ListData.md)
-- [ListColumns](element_ListColumns.md) (structural, 25×, HIGH)
-  - [ListColumn](element_ListColumn.md) (structural, 42×, HIGH)
+- [ListColumns](element_ListColumns.md) (structural, 74×, HIGH)
+  - [ListColumn](element_ListColumn.md) (structural, 192×, HIGH)
 
 ## Seen In
 
 - AggroMeter
 - Aura
+- BlackBook
 - BuffHead
+- CDown
 - CM_ClosetGoblin
+- CMap
+- CastSequence
+- Cheeseboard
+- Crusher
 - DAoCBuff
+- DPSMeter
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiModWindow
+- Emojii
 - Enemy
+- FozAuction
+- HealGrid
+- Hopper
+- Kwestor
+- LibAddonButton
+- LootAlert
+- MapMonster
+- MapPin
+- Minmap
+- Motion
+- NerfedButtons
+- Obsidian
+- PieTracker
 - Pocket Palette
+- Pure
+- QuickTacticSwitch
+- RealmStatus
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyChat
 - TidyRoll
+- Tome Titan
+- TomeTracker
+- Tortall_DPS
 - TurretRange
+- WTes
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- nLootLink
+- wbLeadHelper
+- zMailMod
 
 ## Examples
 
@@ -115,22 +159,10 @@ Observed 25 times as an unnamed child.
 - Aura: AuraSettingsAuraList -> ListData in ListBox AuraSettingsAuraList
 - Aura: AuraSharesAuraList -> ListData in ListBox AuraSharesAuraList
 - Aura: AuraTextureIconsIcons -> ListData in ListBox AuraTextureIconsIcons
+- BlackBook: BlackBookWindowList -> ListData in ListBox BlackBookWindowList
 - BuffHead: BuffHeadSetupAdvancedCompressionItemWindowList -> ListData in ListBox BuffHeadSetupAdvancedCompressionItemWindowList
-- BuffHead: BuffHeadSetupAdvancedCompressionWindowList -> ListData in ListBox BuffHeadSetupAdvancedCompressionWindowList
 
 ## Related APIs
 
 - [ListBox](element_ListBox.md) (HIGH 100/100) - XML Element Type
 - [ListColumns](element_ListColumns.md) (MEDIUM 55/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

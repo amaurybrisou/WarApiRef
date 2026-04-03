@@ -2,37 +2,41 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 90/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Raw weighted score: 110
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Shinies |
-| Files seen in | `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Browse.lua:290`, `/workspace/data/raw/Shinies/Source/Shinies.lua:169` |
+| Addons seen in | ActionFraction, Atlas, BuddyBind, CaVES, Calling, FozAuction, HealGrid, ManualScenarioRefresh |
+| Files seen in | BuddyBind.lua, CallingKeybinding.lua, ManualScenarioRefresh.lua, Map.lua, Map/Main.lua, MiracleGrow.lua, Modules/UI/Shinies-UI-Browse.lua, PhantomLib/PhantomLib.lua |
 | Namespaces detected | WindowUnregisterEventHandler |
 | Source kinds | lua_calls |
-| Example locations | Shinies: LibStub:UpdateDefaultAuctionHouseDisable, Shinies: _G.Shinies:NewModule.Criteria_ReopenComboBox |
+| Example locations | ActionFraction: Shutdown, Atlas: Shutdown, BuddyBind: OnExitBindingMode, BuddyBind: OnRawDeviceInput, CaVES: Shutdown, Calling: OnRawDeviceInput |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 44 |
+| Global usage count | 44 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -40,14 +44,14 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
-| Consistent arguments | yes |
+| Consistent role | yes |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | no |
+| Conflicting signatures | yes |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -61,18 +65,18 @@ WindowUnregisterEventHandler(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 1 addons.
+Observed as a window function across 17 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "AuctionWindow", lastComboSelected |
+| arg1 | Observed as a text or wstring payload. | Observed values: "AtlasFrame", "AuctionWindow", "CaVESWindow" |
 | arg2 | Observed as an event identifier. | Observed values: SystemData.Events.AUCTION_BID_RESULT_RECEIVED, SystemData.Events.AUCTION_INIT_RECEIVED, SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -80,37 +84,55 @@ Observed as a window function across 1 addons.
 
 ## Seen In
 
+- ActionFraction
+- Atlas
+- BuddyBind
+- CaVES
+- Calling
+- FozAuction
+- HealGrid
+- ManualScenarioRefresh
+- Map
+- MiracleGrow
+- MoraleSet
+- Phantom
+- RVMOD_PlayerStatus
+- RVMOD_Targets
+- ResHelp
 - Shinies
+- WarBoard_WarWhisperer
 
 ## Examples
 
-- Shinies: LibStub:UpdateDefaultAuctionHouseDisable -> WindowUnregisterEventHandler("AuctionWindow", SystemData.Events.AUCTION_INIT_RECEIVED)
-- Shinies: LibStub:UpdateDefaultAuctionHouseDisable -> WindowUnregisterEventHandler("AuctionWindow", SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED)
-- Shinies: LibStub:UpdateDefaultAuctionHouseDisable -> WindowUnregisterEventHandler("AuctionWindow", SystemData.Events.AUCTION_BID_RESULT_RECEIVED)
-- Shinies: LibStub:UpdateDefaultAuctionHouseDisable -> WindowUnregisterEventHandler("AuctionWindow", SystemData.Events.INTERACT_DONE)
-- Shinies: _G.Shinies:NewModule.Criteria_ReopenComboBox -> WindowUnregisterEventHandler(lastComboSelected, SystemData.Events.L_BUTTON_UP_PROCESSED)
+- ActionFraction: Shutdown -> WindowUnregisterEventHandler(windowName, SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED, "ActionFraction.UpdateActionPoints")
+- ActionFraction: Shutdown -> WindowUnregisterEventHandler(windowName, SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED, "ActionFraction.UpdateActionPoints")
+- Atlas: Shutdown -> WindowUnregisterEventHandler("AtlasFrame", SystemData.Events.UPDATE_PROCESSED)
+- BuddyBind: OnExitBindingMode -> WindowUnregisterEventHandler(BuddyBind.bindingButtonName, SystemData.Events.L_BUTTON_UP_PROCESSED)
+- BuddyBind: OnExitBindingMode -> WindowUnregisterEventHandler(BuddyBind.bindingButtonName, SystemData.Events.M_BUTTON_UP_PROCESSED)
+- BuddyBind: OnExitBindingMode -> WindowUnregisterEventHandler(BuddyBind.bindingButtonName, SystemData.Events.R_BUTTON_UP_PROCESSED)
 
 ## Related APIs
 
-- none
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
+- [ComboBoxExternalOpenMenu](window_ComboBoxExternalOpenMenu.md) (HIGH 100/100) - Window Function
+- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Affects
 
-- [SystemData.Events.AUCTION_BID_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_INIT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_INIT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.Events.M_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.M_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.R_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.R_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- Advanced return analysis: No strong return evidence observed

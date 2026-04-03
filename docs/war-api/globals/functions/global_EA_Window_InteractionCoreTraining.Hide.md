@@ -24,10 +24,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer |
-| Files seen in | `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:227` |
+| Files seen in | source/AnywhereTrainer.lua |
 | Namespaces detected | EA_Window_InteractionCoreTraining |
 | Source kinds | lua_calls |
-| Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickCareer |
+| Example locations | AnywhereTrainer: OnLeftClickCareer |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -69,11 +69,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
@@ -81,23 +81,7 @@ Observed as a global function across 1 addons.
 
 ## Examples
 
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickCareer -> EA_Window_InteractionCoreTraining.Hide()
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AnywhereTrainer: OnLeftClickCareer -> EA_Window_InteractionCoreTraining.Hide()
 
 ## Notes
 

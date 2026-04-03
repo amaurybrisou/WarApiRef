@@ -23,14 +23,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:134`, `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:57`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | GroupsPlayerEffectsUpdated |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy._CombatLogEnabledChanged, Enemy: Enemy._GuardEnabledChanged, Enemy: Enemy._UnitFramesEnabledChanged |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 2 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -69,38 +69,18 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
-- Enemy.CombatLog_OnGroupsPlayerEffectsUpdated
+- AddEventHandler
 - Enemy.Guard_OnGroupsPlayerEffectsUpdated
 - Enemy.UnitFrames_OnGroupsPlayerEffectsUpdated
 - addon
 
 ## Examples
 
-- Enemy: Enemy._CombatLogEnabledChanged -> GroupsPlayerEffectsUpdated -> Enemy.CombatLog_OnGroupsPlayerEffectsUpdated
-- Enemy: Enemy._GuardEnabledChanged -> GroupsPlayerEffectsUpdated -> Enemy.Guard_OnGroupsPlayerEffectsUpdated
-- Enemy: Enemy._UnitFramesEnabledChanged -> GroupsPlayerEffectsUpdated -> Enemy.UnitFrames_OnGroupsPlayerEffectsUpdated
-- Enemy: Enemy.CombatLog_OnGroupsPlayerEffectsUpdated -> Enemy.AddEventHandler(GroupsPlayerEffectsUpdated, Enemy.CombatLog_OnGroupsPlayerEffectsUpdated)
-- Enemy: Enemy.Guard_OnGroupsPlayerEffectsUpdated -> Enemy.AddEventHandler(GroupsPlayerEffectsUpdated, Enemy.Guard_OnGroupsPlayerEffectsUpdated)
-- Enemy: Enemy.UnitFrames_OnGroupsPlayerEffectsUpdated -> Enemy.AddEventHandler(GroupsPlayerEffectsUpdated, Enemy.UnitFrames_OnGroupsPlayerEffectsUpdated)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Enemy: AddEventHandler -> GroupsPlayerEffectsUpdated -> Enemy.Guard_OnGroupsPlayerEffectsUpdated
+- Enemy: AddEventHandler -> GroupsPlayerEffectsUpdated -> Enemy.UnitFrames_OnGroupsPlayerEffectsUpdated
+- Enemy: Enemy.Guard_OnGroupsPlayerEffectsUpdated -> AddEventHandler(GroupsPlayerEffectsUpdated, Enemy.Guard_OnGroupsPlayerEffectsUpdated)
+- Enemy: Enemy.UnitFrames_OnGroupsPlayerEffectsUpdated -> AddEventHandler(GroupsPlayerEffectsUpdated, Enemy.UnitFrames_OnGroupsPlayerEffectsUpdated)
 
 ## Notes
 
-- Triggered-by evidence: Enemy:Enemy.Groups_OnCurrentPlayerEffectsUpdated, Enemy:Enemy.Groups_OnGroupEffectUpdated, Enemy:Enemy.Groups_OnPlayerTargetEffectsUpdated, Enemy:EnemyPlayer:LoadEffects
 - Only one addon surfaced this event in the current addon-api corpus.

@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Aura, BankArkel, BuffHead, LibGroup, Pocket Palette, Shinies, TexturedButtons |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/AuraColorPicker.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/AuraTexture.xml:0`, `/workspace/data/raw/BankArkel/BankArkel.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0` |
+| Addons seen in | AggroMeter, Atlas, Aura, AutoBand, BankArkel, BlackBook, Bloody Mess, BuffHead |
+| Files seen in | AggroMeter.xml, AutoBandWindow.xml, AutoBandWindowTemplate.xml, BankArkel.xml, BlackBook.xml, Bloody Mess.xml, Calling.xml, CalljoinGUI.xml |
 | Namespaces detected | EA_Window_DefaultBackgroundFrame |
 | Source kinds | xml_attributes |
-| Example locations | AggroMeterGrayWindowBackground, AuraColorPickerBackground, AuraConfigBackground, AuraSettingsBackground, AuraSharesBackground, AuraSharesImportExportBackground |
-| XML usage count | 53 |
-| XML attribute usage count | 53 |
+| Example locations | $parentBackground, AggroMeterGrayWindowBackground, AtlasConfigurationFrameBackground, AtlasFrameBackground, AuctionWindowBackground, AuraColorPickerBackground |
+| XML usage count | 160 |
+| XML attribute usage count | 160 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,33 +57,110 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 12 addons.
+Engine-supplied XML constant or template class referenced by 79 addons.
 
 ## Seen In
 
 - AggroMeter
+- Atlas
 - Aura
+- AutoBand
 - BankArkel
+- BlackBook
+- Bloody Mess
 - BuffHead
+- Calling
+- CastSequence
+- Crusher
+- DaemonAssist
+- Dascore
+- Deathblow
+- Deathblow2
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraftX
+- FastFriends
+- FastInteract
+- FozAuction
+- GDes
+- Ges
+- Group Icons SG
+- GroupRange
+- Hopper
+- KeyBar
+- Keyset
+- KeysetMonsterPlay
+- LibAddonButton
 - LibGroup
+- MapMonster
+- MapPin
+- MarkBuff
+- Mass Refine
+- MegaphonePlusPlus
+- Motion
+- NerfedButtons
+- ObjectInspector
+- Obsidian
+- PartyAd
+- PieTracker
 - Pocket Palette
+- Pure
+- Queue Queuer
+- QuickTacticSwitch
+- RPs
+- RVMOD_Manager
+- RealmStatus
+- Res
+- SOR
+- Sequencer
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- Squared
+- TalismanGenie
+- TastyButtons
+- TaxPayer
 - TexturedButtons
+- ThinkOutLoud
 - TidyChat
+- Tome Titan
+- TomeTracker
 - TurretRange
+- WARCommander
+- WTes
 - WarBoard
+- Warbuilder
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- XpStatus+G
+- ZonePOP
+- alertMod
 - bigger_MacroWindow
+- emotes
+- wbLeadHelper
+- zMailMod
 
 ## Used By
 
+- $parentBackground
 - AggroMeterGrayWindowBackground
+- AtlasConfigurationFrameBackground
+- AtlasFrameBackground
+- AuctionWindowBackground
 - AuraColorPickerBackground
 - AuraConfigBackground
 - AuraSettingsBackground
 - AuraSharesBackground
 - AuraSharesImportExportBackground
 - AuraTextureBackground
+- AutoBandCopyLinkWindowBackground
+- AutoBandWindowBackground
+- AutoBandWindowTemplateDeleteConfirmBackground
+- AutoBandWindowTemplateSaveBackground
 - BankArkelBackpackComboFrame
+- BlackBookWindowBackground
+- BloodyMessOptions_Background
 - BuffHeadSetupAdvancedCompressionItemEffectWindowBackground
 - BuffHeadSetupAdvancedCompressionItemWindowBackground
 - BuffHeadSetupAdvancedCompressionWindowBackground
@@ -104,14 +181,91 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - BuffHeadSetupPriorityEffectsItemWindowBackground
 - BuffHeadSetupPriorityEffectsWindowBackground
 - BuffHeadSetupTrackersWindowBackground
+- CallingSetupBackground
+- CalljoinGUIWindowBackground
+- CastSequenceBuilderWindowBackground
+- CastSequenceFindAbilityWindowBackground
+- CastSequenceSequenceBuilderWindowBackground
+- CastSequenceSetupWindowBackground
+- CrusherConfigBackground
+- DaemonAssistWindowBackground
+- DascoreWin1WindowBackground
+- DeathblowWin1WindowBackground
 - DyeWindowBackground
 - EA_Window_MacroBackground
+- EZCraftXWindow.CraftingResultBackground
+- EZCraftXWindowBackground
+- FastFriendsConfigMainBackground
+- FastInteractWindowBackground
+- GDesOptionsBackground
+- GesOptionsBackground
+- GroupIconsSGOptionsBackground
+- GroupRangeGroupBoxTemplateBackground
+- GroupRangeSetupGeneralWindowBackground
+- GroupRangeSetupMenuWindowBackground
+- GroupRangeSetupStyleWindowBackground
+- HopperConfigBackground
 - ItemWindowBackground
+- KeyBarHelpWindowBackground
+- KeyBarSettingsWindowBackground
+- KeysetLoadWindowBackground
+- KeysetMonsterPlayProfileWindowBackground
+- KeysetSaveWindowBackground
+- LibAddonButtonManagerAdvancedWindowBackground
+- LibAddonButtonManagerCustomItemWindowBackground
+- LibAddonButtonManagerMacroHelpWindowBackground
+- LibAddonButtonManagerWindowBackground
 - LibGroupSetupWindowBackground
 - MacroIconSelectionWindowBackground
+- MapMonster_CalibrateWindowMain
+- MapMonster_EditorWindowBackground
+- MapMonster_IconChooserWindowBackground
+- MapMonster_PinTypeEditorWindowBackground
+- MapPin_SetupBackground
+- MarkBuffBarBackground
+- MarkBuffBarTargetBackground
+- MarkBuffSetupSmartBuffWindowBackground
+- MarkBuffSetupWindowBackground
+- MassRefineWindowBackground
+- MegaphoneMainBackground
+- MotionConfigBackground
+- NBSetup_SaveBackground
+- ObjectInspectorBackground
+- ObsidianSetupCastbarWindowBackground
+- ObsidianSetupEffectTrackerWindowBackground
+- ObsidianSetupMenuWindowBackground
 - PackWinBackground
+- PartyAdWindowBackground
+- PieTrackerBackground
+- ProfileWindow
+- PureConfigBackground
+- QueueQueuer_GUI_Background
+- QuickTacticSwitchWindowBackground
+- RPsBackground
+- RVMOD_ManagerWindowBackground
+- RealmStatusHistoryWindowBackground
+- ResOptionsBackground
+- SOR.Options.Background
+- SOR.Version.Background
+- ScenarioGroupWindowBackground
+- Sequencer_WindowBackground
+- SessionRPsBackground
 - ShiniesBrowseUI_SearchesBackground
 - ShiniesWindowBackground
+- SocialWindowAddMemberWindowBackground
+- SocialWindowBackground
+- SocialWindowBuddyListBackground
+- SquaredImportExportBackground
+- SummaryWindow
+- TOLSettingsMainWindowBackground
+- TTitanUIBackground
+- TalismanGenieBackground
+- TastyButtonsButtonSelectWindowBackground
+- TastyButtonsGeneralOptionsProfileWindowBackground
+- TastyButtonsGeneralOptionsWindowBackground
+- TastyButtonsOptionsButtonInfoWindowBackground
+- TastyButtonsOptionsWindowBackground
+- TaxPayerBackground
 - TexturedButtonsSetupActionbarWindowBackground
 - TexturedButtonsSetupAdvancedTexturesWindowBackground
 - TexturedButtonsSetupCooldownWindowBackground
@@ -121,30 +275,38 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - TexturedButtonsSetupTexturesWindowBackground
 - TexturedButtonsSetupTintWindowBackground
 - TidyChatLootRollBackground
+- TomeTracker_JournalWindowBackground
 - TurretRangeBoxBackground
 - TurretRangeSetupDisplayWindowBackground
 - TurretRangeSetupDistanceWindowBackground
 - TurretRangeSetupDistancesWindowBackground
 - TurretRangeSetupGeneralWindowBackground
 - TurretRangeSetupMenuWindowBackground
+- UiModAdvancedWindowBackground
+- UiModVersionMismatchWindowBackground
+- UiModWindowBackground
+- UngroupedPlayersWindowBackground
+- WARCommander_ConfigWindowBackground
+- WCDBConfigBackground
+- WCDPConfigBackground
+- WTesBackground
 - WarBoardAlignOptionsWindowBackground
 - WarBoardOptionsBackground
+- WarbuilderHotBarWindowBackground
+- WarbuilderMainWindowBackground
+- WarbuilderPresetWindowBackground
+- ZonePOPEXTRABackground
+- ZonePOPWndBackground
+- alertModBackground
+- emotesDisplayWindowBackground
+- emotesFilterWindowBackground
+- wbLeadHelperConfigWindowBackground
+- zMailModLogBackground
+- zMailModOptionsBackground
 
 ## Related APIs
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

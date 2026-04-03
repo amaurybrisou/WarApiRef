@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, BankArkel, PotionBar, TidyRoll |
-| Files seen in | `/workspace/data/raw/BankArkel/BankArkel.lua:482`, `/workspace/data/raw/PotionBar/settings/Settings.lua:151`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:782`, `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTraining.lua:920`, `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTraining.lua:964`, `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTraining.lua:978`, `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTrainingImportExport.lua:192`, `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTrainingImportExport.lua:225` |
+| Addons seen in | AdvancedRenownTrainer, BankArkel, Busted, ChattyCathy, DPSMeter, EA_UiDebugTools, PotionBar, TidyRoll |
+| Files seen in | AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, BankArkel.lua, Busted.lua, ChattyCathy.lua, DPSMeterWindow.lua, Source/bust/Busted.lua, Source/devpad/DebugWindowCodePad.lua |
 | Namespaces detected | ComboBoxGetSelectedText |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.DeletePreset, AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink, AdvancedRenownTrainer: AdvancedRenownTraining.OnExportButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.OnLoadPressed, AdvancedRenownTrainer: AdvancedRenownTraining.SelectedItemChanged, BankArkel: BankArkel.PackCombo |
+| Example locations | AdvancedRenownTrainer: DeletePreset, AdvancedRenownTrainer: ExportToLink, AdvancedRenownTrainer: OnExportButtonPressed, AdvancedRenownTrainer: OnLoadPressed, AdvancedRenownTrainer: SelectedItemChanged, BankArkel: PackCombo |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 17 |
+| Global usage count | 17 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,61 +65,45 @@ ComboBoxGetSelectedText(arg1)
 
 ## Description
 
-Observed as a window function across 4 addons.
+Observed as a window function across 8 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", PresetWindowName.."LoadComboBox", c_TROLL_DIRECTION_COMBO |
+| arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", "BustedGUIAddonSelect", "ChattyCathyOptToCombo" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - BankArkel
+- Busted
+- ChattyCathy
+- DPSMeter
+- EA_UiDebugTools
 - PotionBar
 - TidyRoll
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.DeletePreset -> ComboBoxGetSelectedText(PresetWindowName.."LoadComboBox")
-- AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink -> ComboBoxGetSelectedText(PresetWindowName.."LoadComboBox")
-- AdvancedRenownTrainer: AdvancedRenownTraining.OnExportButtonPressed -> ComboBoxGetSelectedText(PresetWindowName.."LoadComboBox")
-- AdvancedRenownTrainer: AdvancedRenownTraining.OnLoadPressed -> ComboBoxGetSelectedText(PresetWindowName.."LoadComboBox")
-- AdvancedRenownTrainer: AdvancedRenownTraining.SelectedItemChanged -> ComboBoxGetSelectedText(PresetWindowName.."LoadComboBox")
-- BankArkel: BankArkel.PackCombo -> ComboBoxGetSelectedText("BankArkelBackpackCombo")
-
-## Related APIs
-
-- none
+- AdvancedRenownTrainer: DeletePreset -> ComboBoxGetSelectedText(PresetWindowName.."LoadComboBox")
+- AdvancedRenownTrainer: ExportToLink -> ComboBoxGetSelectedText(PresetWindowName.."LoadComboBox")
+- AdvancedRenownTrainer: OnExportButtonPressed -> ComboBoxGetSelectedText(PresetWindowName.."LoadComboBox")
+- AdvancedRenownTrainer: OnLoadPressed -> ComboBoxGetSelectedText(PresetWindowName.."LoadComboBox")
+- AdvancedRenownTrainer: SelectedItemChanged -> ComboBoxGetSelectedText(PresetWindowName.."LoadComboBox")
+- BankArkel: PackCombo -> ComboBoxGetSelectedText("BankArkelBackpackCombo")
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnSelChanged](../../xml/handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Event
-- [OnSelChanged](../../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

@@ -2,33 +2,37 @@
 
 - Category: Constant
 - Confidence level: HIGH
-- Confidence score: 90/100
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
+
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | bigger_MacroWindow |
-| Files seen in | `/workspace/data/raw/bigger_macrowindow/Source/MacroIcons.xml:0` |
+| Addons seen in | EA_UiDebugTools, MacroIcons, bigger_MacroWindow |
+| Files seen in | MacroIcons.xml, Source/DebugWindow.xml, Source/MacroIcons.xml, Source/objectinsp/ObjectInspector.xml |
 | Namespaces detected | EA_ScrollBar_ChatVertical |
 | Source kinds | xml_attributes |
-| Example locations | MacroIconsScrollBar |
-| XML usage count | 1 |
-| XML attribute usage count | 1 |
+| Example locations | CopyScrollBar, DebugWindowTextScrollbar, DevPadWindowDevPadCodeDevPadCodeScrollBar, MacroIconsScrollBar, ObjectInspectorObjectScrollbar |
+| XML usage count | 5 |
+| XML attribute usage count | 5 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -53,31 +57,25 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 1 addons.
+Engine-supplied XML constant or template class referenced by 3 addons.
 
 ## Seen In
 
+- EA_UiDebugTools
+- MacroIcons
 - bigger_MacroWindow
 
 ## Used By
 
+- CopyScrollBar
+- DebugWindowTextScrollbar
+- DevPadWindowDevPadCodeDevPadCodeScrollBar
 - MacroIconsScrollBar
+- ObjectInspectorObjectScrollbar
 
 ## Related APIs
 
 - [VerticalScrollbar](../../xml/element_types/element_VerticalScrollbar.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

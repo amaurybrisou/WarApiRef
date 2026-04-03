@@ -62,24 +62,37 @@ TopLeft is a XML UI element. It commonly appears under Sizes and TexCoords.
 
 ## Common Parent Elements
 
-- [Sizes](element_Sizes.md) — 14× (HIGH)
-- [TexCoords](element_TexCoords.md) — 9× (HIGH)
-- [TexSlices](element_TexSlices.md) — 5× (MEDIUM)
+- [Sizes](element_Sizes.md) — 30× (HIGH)
+- [TexCoords](element_TexCoords.md) — 19× (HIGH)
+- [TexSlices](element_TexSlices.md) — 11× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | **required** | 82% | 16, 256, 2, 0, ... |
-| `y` | **required** | 82% | 15, 157, 2, 0, ... |
-| `id` | optional | 17% | Border-Top-Left |
+| `x` | **required** | 81% | 10, 36, 16, 256, ... |
+| `y` | **required** | 81% | 10, 571, 15, 157, ... |
+| `id` | optional | 18% | Action-Bar-Frame-Top-Left, Border-Top-Left |
 ## Seen In
 
+- CCTV
 - CM_ClosetGoblin
+- CleanCastbar
+- Dascore
 - Enemy
+- FlagCap
+- Hopper
+- Map
+- MoraleSet
 - PartyCast
+- Pure
+- Pure Careerbar
+- ResHelp
 - RoR_SoR
+- Sequencer
 - Shinies
+- TwisterSet
+- WTes
 
 ## Examples
 
@@ -90,15 +103,3 @@ TopLeft is a XML UI element. It commonly appears under Sizes and TexCoords.
 - [Sizes](element_Sizes.md) (HIGH 100/100) - XML Element Type
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
 - [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

@@ -23,10 +23,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace/data/raw/Enemy/Code/Timer/Timer.lua:97` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | GroupsPlayerInitialized |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy._TalismanAlerterEnabledChanged, Enemy: Enemy._TimerEnabledChanged |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 2 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -69,35 +69,18 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
+- AddEventHandler
 - Enemy.TalismanAlerter_Update
 - Enemy.Timer_OnPlayerCombatFlagUpdated
 - addon
 
 ## Examples
 
-- Enemy: Enemy._TalismanAlerterEnabledChanged -> GroupsPlayerInitialized -> Enemy.TalismanAlerter_Update
-- Enemy: Enemy._TimerEnabledChanged -> GroupsPlayerInitialized -> Enemy.Timer_OnPlayerCombatFlagUpdated
-- Enemy: Enemy.TalismanAlerter_Update -> Enemy.AddEventHandler(GroupsPlayerInitialized, Enemy.TalismanAlerter_Update)
-- Enemy: Enemy.Timer_OnPlayerCombatFlagUpdated -> Enemy.AddEventHandler(GroupsPlayerInitialized, Enemy.Timer_OnPlayerCombatFlagUpdated)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Enemy: AddEventHandler -> GroupsPlayerInitialized -> Enemy.TalismanAlerter_Update
+- Enemy: AddEventHandler -> GroupsPlayerInitialized -> Enemy.Timer_OnPlayerCombatFlagUpdated
+- Enemy: Enemy.TalismanAlerter_Update -> AddEventHandler(GroupsPlayerInitialized, Enemy.TalismanAlerter_Update)
+- Enemy: Enemy.Timer_OnPlayerCombatFlagUpdated -> AddEventHandler(GroupsPlayerInitialized, Enemy.Timer_OnPlayerCombatFlagUpdated)
 
 ## Notes
 
-- Triggered-by evidence: Enemy:Enemy._GroupsUpdate
 - Only one addon surfaced this event in the current addon-api corpus.

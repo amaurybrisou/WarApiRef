@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 24 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 168
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -22,27 +22,25 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CM_ClosetGoblin, CM_ClosetGoblin, Enemy, Killer, LibWBToggler, Shinies, Enemy, Killer, LibWBToggler |
-| Files seen in | `/workspace/data/raw/ClosetGoblin/ClosetGoblin.lua:1300`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.lua:1409`, `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace/data/raw/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace/data/raw/Killer/KillerLifecycle.lua:100`, `/workspace/data/raw/Killer/KillerLifecycle.lua:4`, `/workspace/data/raw/LibWarBoardToggler/LibWBTogglerManager.lua:12` |
+| Addons seen in | Atlas, Auto Cape/Helm Show, CM_ClosetGoblin, Ding, Enemy, GCDsaver, Killer, Kwestor |
+| Files seen in | ClosetGoblin.lua, Code/Core/Groups/Groups.lua, Code/GroupIcons/GroupIcons.lua, Code/TalismanAlerter/TalismanAlerter.lua, Core.lua, CurseProfilerCompiled.lua, Ding.lua, GCDsaver.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | ClosetGoblin.PlayerZoneChanged, ClosetGoblin.ZoneChangeInit, ClosetGoblin.ZoneChangeShutdown, Enemy.GroupIcons_OnPlayerZoneChanged, Enemy.GroupsCheckTarget, Enemy.GroupsInitialize |
+| Source kinds | lua_call |
+| Example locations | GroupsInitialize, Init, Initialize, InitializePlayer, OnDisable, OnEnable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 20 |
-| Global usage count | 20 |
+| Lua usage count | 19 |
+| Global usage count | 19 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 3 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,33 +60,40 @@
 
 ## Description
 
-Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.PLAYER_ZONE_CHANGED field accessed by 24 addons; commonly found in GroupsInitialize and Init, Initialize, InitializePlayer, OnDisable, OnEnable, OnShutdown, RegisterEventHandlers, RegisterEvents, Shutdown, ShutdownPlayer, UnregisterEventHandlers, UnregisterEvents, ZoneChangeInit, ZoneChangeShutdown, _GroupIconsEnabledChanged, _TalismanAlerterEnabledChanged, init, lua_call contexts.
 
 ## Seen In
 
+- Atlas
+- Auto Cape/Helm Show
 - CM_ClosetGoblin
-- CM_ClosetGoblin, Enemy, Killer, LibWBToggler, Shinies
+- Ding
 - Enemy
+- GCDsaver
 - Killer
+- Kwestor
 - LibWBToggler
+- Map
+- MapMonster
+- MarkBuff
+- MegaphonePlusPlus
+- MiniMapMonster
+- Minmap
+- RVAPI_Range
+- RoR_debolster
+- Shinies
+- VPBreakdown
+- WarBoard_TaliMon
+- ZCurse_Profiler
+- ZonePOP
+- hideInf
+- talisman-monitor
 
 ## Related APIs
 
-- [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
-- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: ClosetGoblin.PlayerZoneChanged, ClosetGoblin.ZoneChangeInit, ClosetGoblin.ZoneChangeShutdown, Enemy.GroupIcons_OnPlayerZoneChanged, Enemy.GroupsCheckTarget, Enemy.GroupsInitialize
+- Observed in contexts: GroupsInitialize, Init, Initialize, InitializePlayer, OnDisable, OnEnable

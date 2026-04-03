@@ -2,19 +2,21 @@
 
 - Category: XML Element Type
 - Confidence level: HIGH
-- Confidence score: 98/100
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 98/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, seen in 2 to 3 addons.
+- Raw weighted score: 110
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
@@ -23,13 +25,12 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Killer, WhoHealedMe |
-| Files seen in | `/workspace/data/raw/Killer/Killer.xml:0`, `/workspace/data/raw/WhoHealedMe/WHMGui.xml:0` |
+| Addons seen in | DaemonAssist, Killer, QuickWarReport, WhoHealedMe |
 | Namespaces detected | Text |
 | Source kinds | xml_frames |
-| Example locations | Killer: KillerScoreDetailsWindowTitle, Killer: KillerSettingsWindowContentDisplaySection, Killer: KillerSettingsWindowContentFeedFontLabel, Killer: KillerSettingsWindowContentFeedHistoryLimitLabel, Killer: KillerSettingsWindowContentHistoryMaxZonesLabel, Killer: KillerSettingsWindowContentIntro |
-| XML usage count | 60 |
-| XML attribute usage count | 60 |
+| Example locations | DaemonAssist: DaemonAssistWindowAttackLabel, DaemonAssist: DaemonAssistWindowHeader, DaemonAssist: DaemonAssistWindowHeelLabel, DaemonAssist: DaemonAssistWindowStatusLabel, DaemonAssist: DaemonAssistWindowStatusValue, DaemonAssist: DaemonAssistWindowToggleButton |
+| XML usage count | 72 |
+| XML attribute usage count | 72 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -54,7 +55,7 @@
 
 ## Description
 
-Text is a structural XML sub-element used inside label and button-like controls to define displayed text.
+Text is a structural XML sub-element used to define display text inside parent controls. It commonly appears as a child element in label or button-style definitions.
 
 ## Common Attributes
 
@@ -67,40 +68,32 @@ Text is a structural XML sub-element used inside label and button-like controls 
 
 ## Common Parent Elements
 
-- [Label](element_Label.md) — 60× (HIGH)
+- [Label](element_Label.md) — 69× (HIGH)
+- [Button](element_Button.md) — 3× (MEDIUM)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `text` | **required** | 88% | Killer Settings, Changes apply immediately. Zone K/D history uses 0 for unlimited saved zone leaderboards., Display, Personal, ... |
-| `alignment` | optional | 35% | left |
+| `text` | optional | 73% | Killer Settings, Changes apply immediately. Zone K/D history uses 0 for unlimited saved zone leaderboards., Display, Personal, ... |
+| `alignment` | optional | 29% | left |
 ## Seen In
 
+- DaemonAssist
 - Killer
+- QuickWarReport
 - WhoHealedMe
 
 ## Examples
 
-- Killer: KillerScoreDetailsWindowTitle -> Text in Label KillerScoreDetailsWindowTitle
-- Killer: KillerSettingsWindowContentDisplaySection -> Text in Label KillerSettingsWindowContentDisplaySection
-- Killer: KillerSettingsWindowContentFeedFontLabel -> Text in Label KillerSettingsWindowContentFeedFontLabel
-- Killer: KillerSettingsWindowContentFeedHistoryLimitLabel -> Text in Label KillerSettingsWindowContentFeedHistoryLimitLabel
-- Killer: KillerSettingsWindowContentHistoryMaxZonesLabel -> Text in Label KillerSettingsWindowContentHistoryMaxZonesLabel
-- Killer: KillerSettingsWindowContentIntro -> Text in Label KillerSettingsWindowContentIntro
+- DaemonAssist: DaemonAssistWindowAttackLabel -> Text in Label DaemonAssistWindowAttackLabel
+- DaemonAssist: DaemonAssistWindowHeader -> Text in Label DaemonAssistWindowHeader
+- DaemonAssist: DaemonAssistWindowHeelLabel -> Text in Label DaemonAssistWindowHeelLabel
+- DaemonAssist: DaemonAssistWindowStatusLabel -> Text in Label DaemonAssistWindowStatusLabel
+- DaemonAssist: DaemonAssistWindowStatusValue -> Text in Label DaemonAssistWindowStatusValue
+- DaemonAssist: DaemonAssistWindowToggleButton -> Text in Button DaemonAssistWindowToggleButton
 
 ## Related APIs
 
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [Label](element_Label.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

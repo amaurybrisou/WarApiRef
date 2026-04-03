@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 138
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Shinies |
-| Files seen in | `/workspace/data/raw/Shinies/Modules/API/Shinies-API-Inventory.lua:114`, `/workspace/data/raw/Shinies/Modules/API/Shinies-API-Inventory.lua:135`, `/workspace/data/raw/Shinies/Modules/API/Shinies-API-Inventory.lua:167`, `/workspace/data/raw/Shinies/Modules/API/Shinies-API-Inventory.lua:215`, `/workspace/data/raw/Shinies/Modules/Data/Shinies-Data-Inventory.lua:186` |
+| Addons seen in | Crusher, Shinies |
+| Files seen in | Modules/API/Shinies-API-Inventory.lua, Modules/Data/Shinies-Data-Inventory.lua, Source/Crusher.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | ShiniesDataInventory.OnPlayerCraftingSlotUpdated, _G.Shinies:GetModule:Inventory_GetAvailableSlot, _G.Shinies:GetModule:Inventory_GetItemSlotByStackCount, _G.Shinies:GetModule:Inventory_GetItemSlots, _G.Shinies:GetModule:Inventory_TotalItemCount, lua_call |
+| Example locations | Inventory_GetAvailableSlot, Inventory_GetItemSlotByStackCount, Inventory_GetItemSlots, Inventory_TotalItemCount, OnPlayerCraftingSlotUpdated, getAllAvailableSlotsForItem |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +59,13 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.ItemLocs.CRAFTING_ITEM field accessed by 2 addons; commonly found in Inventory_GetAvailableSlot and Inventory_GetItemSlotByStackCount, Inventory_GetItemSlots, Inventory_TotalItemCount, OnPlayerCraftingSlotUpdated, getAllAvailableSlotsForItem, getTotalItemCount, lua_call contexts.
 
 ## Seen In
 
+- Crusher
 - Shinies
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 
-- Observed in contexts: ShiniesDataInventory.OnPlayerCraftingSlotUpdated, _G.Shinies:GetModule:Inventory_GetAvailableSlot, _G.Shinies:GetModule:Inventory_GetItemSlotByStackCount, _G.Shinies:GetModule:Inventory_GetItemSlots, _G.Shinies:GetModule:Inventory_TotalItemCount, lua_call
+- Observed in contexts: Inventory_GetAvailableSlot, Inventory_GetItemSlotByStackCount, Inventory_GetItemSlots, Inventory_TotalItemCount, OnPlayerCraftingSlotUpdated, getAllAvailableSlotsForItem

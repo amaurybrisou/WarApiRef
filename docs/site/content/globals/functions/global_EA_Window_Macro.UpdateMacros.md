@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -11,35 +11,34 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 148
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Swift Assist |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APACommands.lua:61`, `/workspace/data/raw/swift-assist/SwiftAssist.lua:247` |
+| Addons seen in | AdvancedPetAssist, Atlas, BuddyBind, Calling, RandomMount, Squared, Swift Assist, yAssistHelper |
+| Files seen in | APACommands.lua, BuddyBind.lua, MacroUtilites.lua, RandomMount.lua, Shared/Utilities.lua, SquaredClickAssist.lua, SwiftAssist.lua, yAssist.lua |
 | Namespaces detected | EA_Window_Macro |
-| Source kinds | globals, lua_calls |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.CreateOrUpdateMacros, Swift Assist: CreateMacro, Swift Assist: Swift Assist.local.CreateMacro |
+| Source kinds | lua_calls |
+| Example locations | AdvancedPetAssist: CreateOrUpdateMacros, Atlas: CreateMacro, BuddyBind: CreateMacro, Calling: CreateMacro, RandomMount: CreateMacro, Squared: CreateMacro |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -66,7 +65,7 @@ EA_Window_Macro.UpdateMacros()
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 8 addons.
 
 ## Parameters
 
@@ -75,39 +74,33 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - AdvancedPetAssist
+- Atlas
+- BuddyBind
+- Calling
+- RandomMount
+- Squared
 - Swift Assist
+- yAssistHelper
 
 ## Examples
 
-- AdvancedPetAssist: AdvancedPetAssist.CreateOrUpdateMacros -> EA_Window_Macro.UpdateMacros()
-- Swift Assist: CreateMacro -> EA_Window_Macro.UpdateMacros()
-- Swift Assist: Swift Assist.local.CreateMacro -> EA_Window_Macro.UpdateMacros()
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AdvancedPetAssist: CreateOrUpdateMacros -> EA_Window_Macro.UpdateMacros()
+- Atlas: CreateMacro -> EA_Window_Macro.UpdateMacros()
+- BuddyBind: CreateMacro -> EA_Window_Macro.UpdateMacros()
+- Calling: CreateMacro -> EA_Window_Macro.UpdateMacros()
+- RandomMount: CreateMacro -> EA_Window_Macro.UpdateMacros()
+- Squared: CreateMacro -> EA_Window_Macro.UpdateMacros()
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, TidyRoll |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:0` |
+| Addons seen in | AdjustTheTip, AggroMeter, CCTV, I HATE YOU THIS MUCH, ResHelp, TargetInfoRing, TidyRoll, Wargames |
+| Files seen in | AdjustTheTip.xml, AggroMeter.xml, CCTV.xml, IHYTM_GUI.xml, ResHelp.xml, TidyRoll.xml, games/gems.xml, targetinforing.xml |
 | Namespaces detected | EA_Window_DefaultFrameStatusBar |
 | Source kinds | xml_attributes |
-| Example locations | Aggro_Timer_Template, TidyRollFrameTimer |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
+| Example locations | AggroBarStatus, Aggro_Timer_Template, CCTVRootWindowTimerBar, CCTVSnareWindowTimerBar, CCTVStaggerWindowTimerBar, MouseOverTargetHealthContainerTemplateHealthPercentBar |
+| XML usage count | 10 |
+| XML attribute usage count | 10 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,33 +57,35 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Engine-supplied XML constant or template class referenced by 8 addons.
 
 ## Seen In
 
+- AdjustTheTip
 - AggroMeter
+- CCTV
+- I HATE YOU THIS MUCH
+- ResHelp
+- TargetInfoRing
 - TidyRoll
+- Wargames
 
 ## Used By
 
+- AggroBarStatus
 - Aggro_Timer_Template
+- CCTVRootWindowTimerBar
+- CCTVSnareWindowTimerBar
+- CCTVStaggerWindowTimerBar
+- MouseOverTargetHealthContainerTemplateHealthPercentBar
+- ResHelp_Timer_Template
+- TargetInfoRingWindowStatus
 - TidyRollFrameTimer
+- WargamesGemsTimeStatus
 
 ## Related APIs
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

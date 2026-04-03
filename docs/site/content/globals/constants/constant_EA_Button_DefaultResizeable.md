@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, Pocket Palette, Shinies |
-| Files seen in | `/workspace/data/raw/Aura/Source/Templates.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainers.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupEffectCache.xml:0` |
+| Addons seen in | AdvancedRenownTrainer, Atlas, AuctionStats, Aura, AutoBand, AutoSalvage, Bloody Mess, BuffHead |
+| Files seen in | AdvancedRenownTrainingImportDialog.xml, AdvancedRenownTrainingPresets.xml, AdvancedRenownTrainingWindow.xml, AutoBandWindow.xml, AutoBandWindowConfig.xml, AutoBandWindowTemplate.xml, AutoBandWindowTools.xml, Bloody Mess.xml |
 | Namespaces detected | EA_Button_DefaultResizeable |
 | Source kinds | xml_attributes |
-| Example locations | AdvancedRenownTrainingExportWindowCancelButton, AdvancedRenownTrainingExportWindowHyperLinkButton, AdvancedRenownTrainingExportWindowWardrobeButton, AdvancedRenownTrainingImportNameInputWindowCancelButton, AdvancedRenownTrainingImportNameInputWindowOkButton, AdvancedRenownTrainingImportWindowCancelButton |
-| XML usage count | 135 |
-| XML attribute usage count | 135 |
+| Example locations | AcceptButton, AddFriendDescriptionCancelButton, AddFriendDescriptionOKButton, AdvancedRenownTrainingExportWindowCancelButton, AdvancedRenownTrainingExportWindowHyperLinkButton, AdvancedRenownTrainingExportWindowWardrobeButton |
+| XML usage count | 450 |
+| XML attribute usage count | 450 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,29 +57,117 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 16 addons.
+Engine-supplied XML constant or template class referenced by 101 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
+- Atlas
+- AuctionStats
 - Aura
+- AutoBand
+- AutoSalvage
+- Bloody Mess
 - BuffHead
+- CDown
 - CM_ClosetGoblin
+- CaVES
+- Calling
+- CastSequence
+- ChattyCathy
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DaemonAssist
+- DetauntHelper
+- Duel
+- DuffTimer
+- Dye Preview
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiModWindow
+- EZCraftX
 - Enemy
+- FastFriends
+- FozAuction
+- GDes
+- Ges
+- GroupRange
+- GuildWarden
+- HealGrid
+- Hopper
+- ItemRack
+- JunkDump
+- KeyBar
+- Keyset
+- Kwestor
+- LibAddonButton
+- LoyalPet
+- ManualScenarioRefresh
+- MapMonster
+- MapPin
+- Mass Refine
+- MegaphonePlusPlus
+- Minmap
+- Miracle Grow Remix
+- Motion
+- NerfedButtons
+- ObjectInspector
+- Obsidian
+- PartyAd
+- PieTracker
 - Pocket Palette
+- Pure
+- Queue Queuer
+- QuickWarReport
+- RVAPI_ColorDialog
+- RVMOD_Manager
+- RVMOD_Targets
+- RandomMount
+- Refer
+- ReliquaryHunter
+- Res
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SNT_INFO
+- SOR
+- ScenarioStats
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- Squared
+- Statdoll Remix
+- TacticSetNames
+- TalismanGenie
+- TastyButtons
+- TaxPayer
+- ThinkOutLoud
 - TidyChat
+- TidyQueue
 - TidyRoll
+- Tome Titan
 - TurretRange
+- Vectors
+- WARCommander
 - WSCT
+- WTes
 - WarBoard
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- XpStatus+G
+- alertMod
 - bigger_MacroWindow
 - followTheLeader
+- nLootLink
+- wbLeadHelper
+- zMailMod
 
 ## Used By
 
+- AcceptButton
+- AddFriendDescriptionCancelButton
+- AddFriendDescriptionOKButton
 - AdvancedRenownTrainingExportWindowCancelButton
 - AdvancedRenownTrainingExportWindowHyperLinkButton
 - AdvancedRenownTrainingExportWindowWardrobeButton
@@ -98,7 +186,40 @@ Observed engine XML template or inherited constant referenced by 16 addons.
 - AdvancedRenownTrainingWindowPurchaseButton
 - AdvancedRenownTrainingWindowRespecializeButton
 - ApplyRowAlignButton
+- AuStatsOptionsBodyStartUpdate
+- AuStatsOptionsBodyStopUpdate
+- AuctionSearchControlsClearButton
+- AuctionSearchControlsSearchButton
+- AuctionSellControlsClearButton
+- AuctionSellControlsCreateButton
+- AuctionWindowBuyButton
+- AuctionWindowCancelButton
+- AuctionWindowRefreshButton
 - AuraWindowButton
+- AutoBandCopyLinkWindowCloseButton
+- AutoBandWindowConfigClearTemplateButton
+- AutoBandWindowConfigResetButton
+- AutoBandWindowTemplateApplyButton
+- AutoBandWindowTemplateDeleteButton
+- AutoBandWindowTemplateDeleteConfirmCancelButton
+- AutoBandWindowTemplateDeleteConfirmOKButton
+- AutoBandWindowTemplateOrgButton
+- AutoBandWindowTemplateOrgSelectedButton
+- AutoBandWindowTemplateSaveButton
+- AutoBandWindowTemplateSaveCancelButton
+- AutoBandWindowTemplateSaveOKButton
+- AutoBandWindowToolsFormWarbandButton
+- AutoBandWindowToolsKickButton
+- AutoBandWindowToolsOrganizeButton
+- AutoBandWindowToolsOrganizeRangeButton
+- AutoBandWindowToolsPrintButton
+- AutoBandWindowToolsResetButton
+- AutoBandWindowToolsSearchRoleButton
+- AutoBandWindowToolsStatsBreakdownButton
+- AutoBandWindowToolsStatsButton
+- AutoSalvageOptionsBodyToggleButton
+- AutoSalvageOptionsBodyTurboButton
+- BloodyMessOptionsApplyButton
 - BuffHeadSetupAdvancedCompressionItemEffectWindowApplyButton
 - BuffHeadSetupAdvancedCompressionItemEffectWindowCreateButton
 - BuffHeadSetupAdvancedCompressionItemWindowAddButton
@@ -127,10 +248,36 @@ Observed engine XML template or inherited constant referenced by 16 addons.
 - BuffHeadSetupPriorityEffectsWindowNewButton
 - BuffHeadSetupTrackersWindowAlwaysIgnoreButton
 - BuffHeadSetupTrackersWindowAlwaysShowButton
+- CDown_SettingsRestartTracker
+- CDown_SettingsToggleTestmode
+- CaVESWindowOptionsWindowCancelButton
+- CaVESWindowOptionsWindowSaveButton
+- CallingSetupBindBtn1
+- CallingSetupCategoriesBind
+- CallingSetupCategoriesGroup
+- CallingSetupCategoriesMacro
+- CallingSetupCategoriesPrios
+- CallingSetupCategoriesShow
+- CallingSetupCategoriesTargeting
+- CallingSetupCategoriesTutorial
+- CallingSetupTutorialTutNext
+- CallingSetupTutorialTutPrev
+- CalljoinGUIWindowCancelBtn
+- CalljoinGUIWindowExecuteBtn
+- CancelButton
+- CastSequenceBuilderWindowNewButton
+- CastSequenceSequenceBuilderWindowApplyButton
+- CastSequenceSequenceBuilderWindowCreateButton
+- ChattyCathyOptApply
+- ChattyCathyOptCancel
+- ChattyCathyOptSave
 - ClosetGoblinCharacterWindowContentsDeleteSet
 - ClosetGoblinCharacterWindowContentsNewSet
 - ClosetGoblinCharacterWindowContentsZoneConfig
 - ClosetGoblinZoneWindowContentsChangeZoneButton
+- CrusherConfigApplyButton
+- CrusherConfigCloseButton
+- CrusherConfigRevertButton
 - DAoCBuffFrameSettingsTab_ScrollChild_AddFilterButton
 - DAoCBuffFrameSettingsTab_ScrollChild_FilterEditButton
 - DAoCBuffFrameSettingsTab_ScrollChild_FilterNameEditBoxButton
@@ -161,7 +308,27 @@ Observed engine XML template or inherited constant referenced by 16 addons.
 - DAoCBuff_Settings_FilterFrame_ScrollChild_AddClassTableButton
 - DAoCBuff_Settings_FilterFrame_ScrollChild_AddConditionButton
 - DAoCBuff_Settings_FilterFrame_ScrollChild_RemoveConditionButton
+- DPSMeterWindowAbilityTabToggleButton
+- DPSMeterWindowDamageOverviewTabToggleButton
+- DPSMeterWindowOverallTabResetButton
+- DTC_TARGETS_TemplateApply
+- DTC_TARGETS_TemplatePack
+- DTC_TARGETS_TemplateReset
+- DaemonAssistWindowToggleButton
+- DeclineButton
+- DuffTimerOptions_ApplyButton
+- DuffTimerOptions_RevertButton
+- DuffTimerOptions_SaveButton
+- DuffTimerOptions_TestButton
+- DyeBtn1
 - EA_Window_MacroDetailsSave
+- EA_Window_OpenPartyManageSocketDefConvertToWarbandButton
+- EA_Window_OpenPartyNearbySocketDefDoneButton
+- EA_Window_OpenPartyNearbySocketDefRefreshButton
+- EA_Window_OpenPartyWorldSocketDefDoneButton
+- EZCraftXWindow.Apply
+- EZCraftXWindow.Cancel
+- EZCraftXWindow.Defaults
 - EnemyChooseChannelDialogOkButton
 - EnemyClickCastingDialogCancelButton
 - EnemyClickCastingDialogOkButton
@@ -189,17 +356,194 @@ Observed engine XML template or inherited constant referenced by 16 addons.
 - EnemyTextEntryDialogOkButton
 - EnemyUnitFramePartDialogCancelButton
 - EnemyUnitFramePartDialogOkButton
+- FastFriendsConfigMainCloseButton
+- FastFriendsConfigMainDefaultsButton
+- FriendsCommandButtonTemplate
+- GDesOptionsCloseButton
+- GDesOptionsSaveButton
+- GesOptionsCloseButton
+- GesOptionsSaveButton
+- GroupRangeSetupMenuWindowGeneralSetupButton
+- GroupRangeSetupMenuWindowStyleSetupButton
+- GuildWarden.DBWindowBtn1
+- GuildWarden.DBWindowDec
+- GuildWarden.DBWindowInc
+- HGG_TabMouseClickWindowTemplateEditCommit
+- HGG_TabMouseClickWindowTemplateListAdd
+- HGG_TabMouseClickWindowTemplateListRemove
+- HGG_TabRangeScanWindowTemplateFriendlySpellButton
+- HGG_TabRangeScanWindowTemplateHostileSpellButton
+- HGG_TabRangeScanWindowTemplateResurrectSpellButton
+- HGG_TabSpellTrackWindowTemplateEditCommit
+- HGG_TabSpellTrackWindowTemplateListAdd
+- HGG_TabSpellTrackWindowTemplateListRemove
+- HGG_TabSpellTrackWindowTemplateTabGeneralNameButtonLookup
+- HopperConfigApplyButton
+- HopperConfigCloseButton
+- HopperConfigRevertButton
+- ItemRackSetsDelete
+- ItemRackSetsNew
+- ItemRackSetsSave
+- JunkDumpButtonWin
+- KeyBarHelpWindowOkButton
+- KeyBarSettingsWindowHelpButton
+- KeyBarSettingsWindowSaveButton
+- KeysetLoadWindowDeleteButton
+- KeysetLoadWindowLoadButton
+- KeysetSaveWindowSaveButton
+- KwestorGui_TabAreaWindowTemplateListAddArea
+- KwestorGui_TabAreaWindowTemplateListRemoveArea
+- KwestorGui_TabAreaWindowTemplateListToggleRvR
+- LPETOptionsAddProfileButton
+- LPETOptionsLoadProfileButton
+- LPETOptionsRemoveProfileButton
+- LPETOptionsRenameProfileButton
+- LPETOptionsSaveProfileButton
+- LibAddonButtonManagerAdvancedWindowApplyButton
+- LibAddonButtonManagerAdvancedWindowItemTextureItemAnimationAddButton
+- LibAddonButtonManagerCustomItemWindowApplyButton
+- LibAddonButtonManagerCustomItemWindowCreateButton
+- LibAddonButtonManagerCustomItemWindowMenuManageButton
+- LibAddonButtonManagerWindowCreateButton
+- LibAddonButtonManagerWindowNewButton
+- LibAddonButtonManagerWindowOptionButton
+- MapMonsterEditorWindowButtonDefault
+- MapMonsterPinTypeEditorWindowButtonDefault
+- MapMonster_FilterButton
+- MapPin_SetupAcceptButton
+- MapPin_SetupCancelButton
+- MassRefineCancel
+- MassRefineOkay
+- MegaphoneMainCloseButton
+- MegaphoneMainTestButton
+- MinmapScenarioMenuMassQueueButton
+- MinmapScenarioMenuQueueButton
+- MiracleGrow2PresetTemplateLayoutButton
+- MiracleGrow2PresetTemplateSettingsButton
+- MotionConfigApplyButton
+- MotionConfigCloseButton
+- MotionConfigRevertButton
+- NBSBCoreWindowCriteriaDelete
+- NBSBCoreWindowCriteriaLoad
+- NBSBCoreWindowCriteriaReset
+- NBSBCoreWindowCriteriaSave
+- NBSetup_SaveCancelButton
+- NBSetup_SaveOkayButton
+- NLootLinkButtonTemplate
+- ObjectInspectorClearButton
+- ObjectInspectorCloseButton
+- ObjectInspectorInspectButton
+- ObsidianSetupMenuWindowCastbarSetupButton
+- ObsidianSetupMenuWindowEffectTrackerSetupButton
 - OpenUiModWindowButton
 - PPMainCharacterWindowBtn
 - PPMainTogglePickerBtn
+- PartyAdWindowAdvertiseButton
+- PartyAdWindowClearNoteButton
+- PartyAdWindowUpdateNoteButton
+- PieTrackerCloseButton
+- PieTrackerResetButton
+- PieTrackerSaveButton
+- PureConfigApplyButton
+- PureConfigCloseButton
+- PureConfigRevertButton
+- QueueQueuer_GUI_BlacklistAllButton
+- QueueQueuer_GUI_BlacklistNoneButton
+- QueueQueuer_GUI_JoinButton
+- QueueQueuer_GUI_LeaveButton
+- QueueQueuer_GUI_QueuerCheckButton
+- QuickWarReportConfirmAccept
+- QuickWarReportConfirmDecline
+- RVAPI_ColorDialogWindowButtonCancel
+- RVAPI_ColorDialogWindowButtonOK
+- RVMOD_ManagerWindowContentButtonReloadUI
+- RVMOD_TargetsFrameRowTemplateDelete
+- RVMOD_TargetsFrameRowTemplateEdit
+- RVMOD_TargetsTCAddToList
+- RandomMountWindowSettingsContentAddButton
+- ReferPlayerBox_TemplateNoBtn
+- ReferPlayerBox_TemplateYesBtn
+- ReliquaryHunterOptionsWindowCancelButton
+- ReliquaryHunterOptionsWindowSaveButton
+- ResOptionsCloseButton
+- ResOptionsSaveButton
+- SNT_BUTTONS_SETUP_reload
+- SNT_CASTBAR_SETUP_WINDOW_close
+- SNT_CASTBAR_SETUP_WINDOW_reload_ui
+- SNT_INFO_SETUP_WINDOW_close
+- SNT_INFO_SETUP_WINDOW_reload_ui
+- SOR.Options.Reset
+- SOR.Options.Save
+- ScenarioConfigWindowSave
+- ScenarioGroupBottomBarBigClose
+- ScenarioGroupBottomBarClaimMainAssist
+- ScenarioGroupBottomBarUngroupedLauncher
+- ScenarioRefreshButton
+- ScenarioStatsButtonTemplate
+- ScenarioStatsWindowConfigButton
+- SessionRPsButtonTemplate
 - Shinies_Default_Button_ClearLargeBoldFont
 - Shinies_Default_Button_ClearMediumBoldFont
 - Shinies_Default_Button_ClearMediumFont
 - Shinies_Default_Button_ClearSmallFont
+- SiegeChatFiltersAcceptButton
+- SocialWindowAddMemberWindowAcceptButton
+- SocialWindowAddMemberWindowCancelButton
+- SocialWindowListWindowAddFriendButton
+- SocialWindowTabIgnoreSocketCommandAddIgnoreButton
+- SocialWindowTabIgnoreSocketCommandRemoveIgnoreButton
+- SocialWindowTabOptionsSocketAFKButton
+- SocialWindowTabSearchSocketFindButton
+- SquaredImportExportFrameExportButton
+- SquaredImportExportFrameImportButton
+- StatdollOptionsButtonGroupApply
+- StatdollOptionsButtonGroupCancel
+- TAtlasButton
 - TChatButton
+- TOLSettingsWindowPhraseEditWindowDeleteButton
+- TOLSettingsWindowPhraseEditWindowSaveButton
+- TOLSettingsWindowSkillEditWindowDeleteButton
+- TOLSettingsWindowSkillEditWindowEditPhrasesButton
+- TOLSettingsWindowSkillEditWindowSaveButton
 - TRollButton
+- TTitanTTButton
+- TacticSetNamesSettingsWindowSelectButton
+- TalismanGenieNextButton
+- TalismanGeniePrevButton
+- TalismanGenieResetButton
+- TalismanGenieSearchButton
+- TastyButtonsGeneralOptionsProfileWindowButtonDelProfiles
+- TastyButtonsGeneralOptionsProfileWindowButtonLoadProfiles
+- TastyButtonsGeneralOptionsProfileWindowButtonSaveProfiles
+- TastyButtonsGeneralOptionsWindowButtonAddonEnabled
+- TastyButtonsGeneralOptionsWindowButtonCopyBars
+- TastyButtonsGeneralOptionsWindowButtonProfiles
+- TastyButtonsGeneralOptionsWindowButtonToggleBars
+- TastyButtonsOptionsWindowCreateViewButtonCreate
+- TastyButtonsOptionsWindowCreateViewButtonDelete
+- TastyButtonsOptionsWindowEditViewButtonSaveColorABCTint
+- TastyButtonsOptionsWindowEditViewButtonSaveColorOORTint
+- TastyButtonsOptionsWindowEditViewButtonSaveFontHotKey
+- TastyButtonsOptionsWindowEditViewButtonSaveFontTimer
+- TastyButtonsOptionsWindowEditViewButtonSetPos
+- TastyButtonsOptionsWindowEditViewButtonSetScale
+- TastyButtonsOptionsWindowEditViewButtonSetTextures
+- TastyButtonsOptionsWindowGroupViewButtonBlock
+- TastyButtonsOptionsWindowGroupViewButtonGroup
+- TastyButtonsOptionsWindowGroupViewButtonUnGroup
+- TastyButtonsOptionsWindowMiscViewButtonSaveOpt
+- TastyButtonsOptionsWindowStateViewButtonStateAdd
+- TastyButtonsOptionsWindowStateViewButtonStateClear
+- TastyButtonsOptionsWindowStateViewButtonStateDelete
+- TastyButtonsOptionsWindowStateViewButtonStateModify
+- TaxPayerCloseButton
+- TaxPayerResetButton
+- TaxPayerSaveButton
 - TidyChatCopyNext
 - TidyChatCopyPrev
+- TidyQueueJoinSelected
+- TidyQueueSelectAll
+- TidyQueueSelectNone
 - ToggleLayoutButton
 - TurretRangeSetupDistanceWindowApplyButton
 - TurretRangeSetupDistanceWindowCreateButton
@@ -207,30 +551,74 @@ Observed engine XML template or inherited constant referenced by 16 addons.
 - TurretRangeSetupMenuWindowDisplaySetupButton
 - TurretRangeSetupMenuWindowDistancesSetupButton
 - TurretRangeSetupMenuWindowGeneralSetupButton
+- UiModAdvancedWindowCancelButton
+- UiModAdvancedWindowDebugWindowButton
+- UiModAdvancedWindowOkayButton
+- UiModVersionMismatchWindowCancelButton
+- UiModVersionMismatchWindowReEnableButton
+- UiModWindowAdvancedButton
+- UiModWindowCancelButton
+- UiModWindowDisableAllButton
+- UiModWindowEnableAllButton
+- UiModWindowOkayButton
+- UiModWindowReEnableAllAutoDisabledButton
+- Vectors_Import_CancelImport
+- Vectors_Import_Import
+- Vectors_Settings_ScrollWindow_ScrollChild_Anchor_Content_AddAnchor
+- Vectors_Settings_ScrollWindow_ScrollChild_Anchor_Content_DeleteAnchor
+- Vectors_Settings_ScrollWindow_ScrollChild_Profile_Content_AddProfile
+- Vectors_Settings_ScrollWindow_ScrollChild_Profile_Content_DeleteProfile
+- Vectors_Settings_ScrollWindow_ScrollChild_Profile_Content_OpenImport
+- Vectors_Settings_ScrollWindow_ScrollChild_ReadoutData
+- Vectors_Settings_ScrollWindow_ScrollChild_ResetWindow
+- Vectors_Settings_ScrollWindow_ScrollChild_SwitchData
+- WARCommanderConfigWindowButtonDefault
 - WBTogglerManagerButton
+- WCDBConfigApplyButton
+- WCDBConfigCloseButton
+- WCDBConfigRevertButton
+- WCDPConfigApplyButton
+- WCDPConfigCloseButton
+- WCDPConfigRevertButton
 - WSCTButtonTemplate
 - WSCTEventColor
 - WSCTOptionsColorPickerWindowAcceptButton
+- WTesCloseButton
+- WTesGlyphPosButton
+- WTesSaveButton
+- WTesScenStartPosButton
+- WTesSiegeChatButton
+- WbLeadHelperMessageCancelButton
+- WbLeadHelperMessageOkButton
 - WhoHealedMeOptionsContentCloseButton
 - WhoHealedMeOptionsContentResetButton
 - WhoHealedMeWindowOptionsButton
+- XpStatusQuotaWindowCancelButton
+- XpStatusQuotaWindowSetButton
+- alertModCancelButton
+- alertModDefaultsButton
+- alertModOkayButton
 - followTheLeaderWindow
+- nLootLinkGUIFilterOptionsButton
+- nLootLinkGUIFilterResetButton
+- nLootLinkGUIFilterSearchButton
+- wbLeadHelperConfigTabApplyButton
+- wbLeadHelperConfigTabResetButton
+- wbLeadHelperConfigTabSaveButton
+- wbLeadHelperMessagesTabApplyButton
+- wbLeadHelperMessagesTabResetButton
+- wbLeadHelperMessagesTabSaveButton
+- zMailModAuctionOpenSelectedButton
+- zMailModAuctionSelectAllButton
+- zMailModAuctionSelectMoneyButton
+- zMailModInboxOpenSelectedButton
+- zMailModInboxSelectAllButton
+- zMailModMassMailCommandSendButton
+- zMailModOptionsSaveButton
 
 ## Related APIs
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

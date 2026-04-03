@@ -2,33 +2,37 @@
 
 - Category: Constant
 - Confidence level: HIGH
-- Confidence score: 90/100
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Raw weighted score: 135
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BankArkel |
-| Files seen in | `/workspace/data/raw/BankArkel/BankArkel.xml:0` |
+| Addons seen in | BankArkel, CCTV, DeepSleep, RVMOD_SquaredDistances, Statdoll Remix, Warbuilder |
+| Files seen in | BankArkel.xml, CCTV.xml, RVMOD_SquaredDistances.xml, Settings.xml, Source/Warbuilder.xml, StatdollOptions.xml |
 | Namespaces detected | EA_ComboBox_DefaultResizableMedium |
 | Source kinds | xml_attributes |
-| Example locations | BankArkelBackpackCombo |
-| XML usage count | 1 |
-| XML attribute usage count | 1 |
+| Example locations | BankArkelBackpackCombo, CCTVSettingsCombobox, CCTVSettingsCombobox2, CCTVSettingsCombobox3, CCTVSettingsCombobox4, DeepSleep_Templates_CheckBoxComboBox |
+| XML usage count | 9 |
+| XML attribute usage count | 9 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -53,31 +57,32 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 1 addons.
+Engine-supplied XML constant or template class referenced by 6 addons.
 
 ## Seen In
 
 - BankArkel
+- CCTV
+- DeepSleep
+- RVMOD_SquaredDistances
+- Statdoll Remix
+- Warbuilder
 
 ## Used By
 
 - BankArkelBackpackCombo
+- CCTVSettingsCombobox
+- CCTVSettingsCombobox2
+- CCTVSettingsCombobox3
+- CCTVSettingsCombobox4
+- DeepSleep_Templates_CheckBoxComboBox
+- RVMOD_SquaredDistancesSettingsWindowComboBoxAnchorPoints
+- StatdollOptionsComboboxTemplateCombobox
+- WarbuilderMainWindowCombo
 
 ## Related APIs
 
 - [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

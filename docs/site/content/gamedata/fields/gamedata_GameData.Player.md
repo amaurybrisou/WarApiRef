@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Killer, Swift Assist |
-| Files seen in | `/workspace/data/raw/Killer/KillerRenown.lua:108`, `/workspace/data/raw/Killer/KillerRenown.lua:127`, `/workspace/data/raw/Killer/KillerRenown.lua:61`, `/workspace/data/raw/Killer/KillerZoneHistory.lua:329`, `/workspace/data/raw/Killer/KillerZoneHistory.lua:370`, `/workspace/data/raw/Killer/KillerZoneHistory.lua:446`, `/workspace/data/raw/Killer/KillerZoneHistory.lua:5`, `/workspace/data/raw/swift-assist/SwiftAssist.lua:271` |
+| Addons seen in | AutoBand, Killer, PartyAd, QuickWarReport, Swift Assist, wbLeadHelper |
+| Files seen in | AutoBand.lua, KillerRenown.lua, KillerZoneHistory.lua, PartyAdCore.lua, QWRComms.lua, SwiftAssist.lua, wbLeadHelperConstants.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | Killer.CaptureInitialWarCrests, Killer.GetCurrentZoneHistoryEntry, Killer.LoadCurrentZoneFromHistory, Killer.OnCurrencyUpdated, Killer.OnRenownUpdated, Killer.UpsertZoneHistory |
+| Example locations | CaptureInitialWarCrests, GetCurrentZoneHistoryEntry, GetCurrentZoneId, LoadCurrentZoneFromHistory, OnCurrencyUpdated, OnRenownUpdated |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 15 |
+| Global usage count | 15 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,30 +59,21 @@
 
 ## Description
 
-Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.Player field accessed by 6 addons; commonly found in CaptureInitialWarCrests and GetCurrentZoneHistoryEntry, GetCurrentZoneId, LoadCurrentZoneFromHistory, OnCurrencyUpdated, OnRenownUpdated, ProcessInboundChatMessage, ResolveZoneIdFromName, SlashHandler, UpsertZoneHistory, cmd_dump_player_data, lua_call, pa_collect_group_leader_name_keys, pa_get_live_partynote_from_members, pa_get_live_partynote_from_player contexts.
 
 ## Seen In
 
+- AutoBand
 - Killer
+- PartyAd
+- QuickWarReport
 - Swift Assist
+- wbLeadHelper
 
 ## Related APIs
 
 - [EA_Window_Backpack.GetItemsFromBackpack](../../globals/functions/global_EA_Window_Backpack.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
-- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 100/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 
-- Observed in contexts: Killer.CaptureInitialWarCrests, Killer.GetCurrentZoneHistoryEntry, Killer.LoadCurrentZoneFromHistory, Killer.OnCurrencyUpdated, Killer.OnRenownUpdated, Killer.UpsertZoneHistory
+- Observed in contexts: CaptureInitialWarCrests, GetCurrentZoneHistoryEntry, GetCurrentZoneId, LoadCurrentZoneFromHistory, OnCurrencyUpdated, OnRenownUpdated

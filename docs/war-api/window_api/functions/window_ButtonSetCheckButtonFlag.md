@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 46 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Killer, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:735`, `/workspace/data/raw/Ace/LibGUI.lua:805`, `/workspace/data/raw/Killer/KillerConfigWindow.lua:306`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:734`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:803`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:734`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:803`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:734` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, AuctionStats, AutoSalvage, BuddyBind, CMap, Calling |
+| Files seen in | BuddyBind.lua, CMap.lua, CallingKeybinding.lua, KillerConfigWindow.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua |
 | Namespaces detected | ButtonSetCheckButtonFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Checkbox:New, Ace: LIBGUI_Optionbutton:New, Killer: EnsureSettingsControlsInitialized, Killer: Killer.local.EnsureSettingsControlsInitialized, LibWBToggler: LIBGUI_Checkbox:New, LibWBToggler: LIBGUI_Optionbutton:New |
+| Example locations | Ace: New, ActionBarHide: New, Amethyst: New, AuctionStats: ExitOnComplete, AuctionStats: SetCheckBox, AuctionStats: ToggleCheckBox |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 118 |
+| Global usage count | 118 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: SETTINGS_PERSONAL_CHECKBOX, w.name |
-| arg2 | Observed as a boolean toggle. | Observed values: true |
+| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_MacroIconSlot"..slot, "PhantomSettingsHideBarLock", "PhantomSettingsHideGroupBuffs" |
+| arg2 | Observed as a boolean toggle. | Observed values: Status, false, status |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,37 +85,74 @@ Observed mutating button text or pressed state on existing controls.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- AuctionStats
+- AutoSalvage
+- BuddyBind
+- CMap
+- Calling
+- Crusher
+- EA_ScenarioGroupWindow
+- EA_UiModWindow
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - Killer
 - LibWBToggler
+- Map
+- MapMonster
+- Motion
+- NaturalLog
 - PartyCast
+- Phantom
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- SocialWindow 2.0
+- TalismanGenie
+- TargetRing
+- TastyButtons
+- Tokens
+- WARCommander
+- WBStutterLess
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- bigger_MacroWindow
+- nLootLink
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Checkbox:New -> ButtonSetCheckButtonFlag(w.name, true)
-- Ace: LIBGUI_Optionbutton:New -> ButtonSetCheckButtonFlag(w.name, true)
-- Killer: EnsureSettingsControlsInitialized -> ButtonSetCheckButtonFlag(SETTINGS_PERSONAL_CHECKBOX, true)
-- Killer: Killer.local.EnsureSettingsControlsInitialized -> ButtonSetCheckButtonFlag(SETTINGS_PERSONAL_CHECKBOX, true)
-- LibWBToggler: LIBGUI_Checkbox:New -> ButtonSetCheckButtonFlag(w.name, true)
-- LibWBToggler: LIBGUI_Optionbutton:New -> ButtonSetCheckButtonFlag(w.name, true)
+- Ace: New -> ButtonSetCheckButtonFlag(w.name, true)
+- ActionBarHide: New -> ButtonSetCheckButtonFlag(w.name, true)
+- Amethyst: New -> ButtonSetCheckButtonFlag(w.name, true)
+- AuctionStats: ExitOnComplete -> ButtonSetCheckButtonFlag(checkBoxName, Status)
+- AuctionStats: SetCheckBox -> ButtonSetCheckButtonFlag(parentControls..name, status)
+- AuctionStats: ToggleCheckBox -> ButtonSetCheckButtonFlag(checkBoxName, Status)
 
 ## Related APIs
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [ButtonGetCheckButtonFlag](window_ButtonGetCheckButtonFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetStayDownFlag](window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.M_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.M_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.R_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.R_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

@@ -1,0 +1,26 @@
+# XML Mixins
+
+## Mixins
+
+- [CG_ItemRackEquipmentButton](mixin_CG_ItemRackEquipmentButton.md)
+- [CharacterWindowDefaultButton](mixin_CharacterWindowDefaultButton.md)
+- [ClosetGoblinActionBarPageSelector](mixin_ClosetGoblinActionBarPageSelector.md)
+- [ClosetGoblinDefaultBG](mixin_ClosetGoblinDefaultBG.md)
+- [ClosetGoblinDefaultButton](mixin_ClosetGoblinDefaultButton.md)
+- [ClosetGoblinEquipmentButton](mixin_ClosetGoblinEquipmentButton.md)
+- [ClosetGoblinTalismanLabel](mixin_ClosetGoblinTalismanLabel.md)
+- [DefaultWindowBackground](mixin_DefaultWindowBackground.md)
+- [EA_Button_Default](mixin_EA_Button_Default.md)
+- [EA_Button_DefaultCheckBox](mixin_EA_Button_DefaultCheckBox.md)
+- [EA_Button_DefaultDown](mixin_EA_Button_DefaultDown.md)
+- [EA_Button_DefaultResizeable](mixin_EA_Button_DefaultResizeable.md)
+- [EA_Button_DefaultUp](mixin_EA_Button_DefaultUp.md)
+- [EA_Button_DefaultWindowClose](mixin_EA_Button_DefaultWindowClose.md)
+- [EA_Button_ListSort](mixin_EA_Button_ListSort.md)
+- [EA_Default_CharacterImage](mixin_EA_Default_CharacterImage.md)
+- [EA_FullResizeImage_TintableSolidBackground](mixin_EA_FullResizeImage_TintableSolidBackground.md)
+- [EA_ListSortDownArrow](mixin_EA_ListSortDownArrow.md)
+- [EA_ListSortUpArrow](mixin_EA_ListSortUpArrow.md)
+- [EA_TitleBar_Default](mixin_EA_TitleBar_Default.md)
+- [EA_Window_Default](mixin_EA_Window_Default.md)
+- [EA_Window_DefaultFrame](mixin_EA_Window_DefaultFrame.md)

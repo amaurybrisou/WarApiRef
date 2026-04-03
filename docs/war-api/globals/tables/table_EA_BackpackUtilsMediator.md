@@ -10,33 +10,33 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 118
+- Raw weighted score: 125
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BagOMatic, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:400`, `/workspace/data/raw/bagomatic/BagOMatic.lua:818`, `/workspace/data/raw/bagomatic/BagOMatic.lua:888` |
+| Addons seen in | AuctionStats, BagOMatic, Crusher, FozAuction, Motion, TidyRoll, zMailMod |
+| Files seen in | Source/Crusher.lua, Source/Motion.lua, Source/auctionwindowsellcontrols.lua |
 | Namespaces detected | EA_BackpackUtilsMediator |
-| Source kinds | globals, lua_calls |
-| Example locations | BagOMatic: BagOMatic.SalvageHook, BagOMatic: BagOMatic.findItemInBagPack, TidyRoll: TidyRoll.CustomAutoRoll.OnListLbuttonUp |
+| Source kinds | lua_calls |
+| Example locations | AuctionStats: OnSearchResultsReceived, AuctionStats: PutUpForAuction, BagOMatic: SalvageHook, BagOMatic: findItemInBagPack, Crusher: StopCrushing, Crusher: continueCrushing |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 4 |
-| Local definition count | 2 |
-| Documentation references | 1 |
+| Lua usage count | 32 |
+| Global usage count | 7 |
+| Local definition count | 0 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 2 addons.
+Shared function table with 7 member functions; the primary API surface for 7 addons.
 
 ## Functions
 
@@ -65,6 +65,9 @@ Observed shared global table or namespace surfaced in 2 addons.
 - EA_BackpackUtilsMediator.GetCurrentBackpackType
 - EA_BackpackUtilsMediator.GetCursorForBackpack
 - EA_BackpackUtilsMediator.GetItemsFromBackpack
+- EA_BackpackUtilsMediator.ReleaseAllLocksForWindow
+- EA_BackpackUtilsMediator.ReleaseLockForSlot
+- EA_BackpackUtilsMediator.RequestLockForSlot
 
 ## Observed Members
 
@@ -72,33 +75,22 @@ Observed shared global table or namespace surfaced in 2 addons.
 
 ## Seen In
 
+- AuctionStats
 - BagOMatic
+- Crusher
+- FozAuction
+- Motion
 - TidyRoll
+- zMailMod
 
 ## Examples
 
-- BagOMatic: BagOMatic.SalvageHook -> EA_BackpackUtilsMediator.GetBackpack()
-- BagOMatic: BagOMatic.SalvageHook -> EA_BackpackUtilsMediator.GetItemsFromBackpack(backpackType)
-- BagOMatic: BagOMatic.findItemInBagPack -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
-- BagOMatic: BagOMatic.findItemInBagPack -> EA_BackpackUtilsMediator.GetItemsFromBackpack(backpackType)
-- TidyRoll: TidyRoll.CustomAutoRoll.OnListLbuttonUp -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
-- TidyRoll: TidyRoll.CustomAutoRoll.OnListLbuttonUp -> EA_BackpackUtilsMediator.GetCursorForBackpack(backpackType)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AuctionStats: OnSearchResultsReceived -> EA_BackpackUtilsMediator.GetItemsFromBackpack(CreateAuctionWindow.itemInventorySlot.backpack)
+- AuctionStats: PutUpForAuction -> EA_BackpackUtilsMediator.GetItemsFromBackpack(CreateAuctionWindow.itemInventorySlot.backpack)
+- BagOMatic: SalvageHook -> EA_BackpackUtilsMediator.GetBackpack()
+- BagOMatic: SalvageHook -> EA_BackpackUtilsMediator.GetItemsFromBackpack(backpackType)
+- BagOMatic: findItemInBagPack -> EA_BackpackUtilsMediator.GetCurrentBackpackType()
+- BagOMatic: findItemInBagPack -> EA_BackpackUtilsMediator.GetItemsFromBackpack(backpackType)
 
 ## Notes
 

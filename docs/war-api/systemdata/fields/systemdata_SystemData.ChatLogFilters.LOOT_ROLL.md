@@ -27,14 +27,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.lua:213` |
+| Files seen in | TidyRoll.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | TidyRoll.local.print_autoroll, lua_call, print_autoroll |
+| Example locations | lua_call, print_autoroll |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -57,28 +57,12 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.ChatLogFilters.LOOT_ROLL field accessed by 1 addons; commonly found in lua_call and print_autoroll contexts.
 
 ## Seen In
 
 - TidyRoll
 
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: TidyRoll.local.print_autoroll, lua_call, print_autoroll
+- Observed in contexts: lua_call, print_autoroll

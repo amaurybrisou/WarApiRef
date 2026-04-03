@@ -23,10 +23,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/ObjectWindows.lua:237`, `/workspace/data/raw/Enemy/Code/Marks/Marks.lua:8` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | GroupsPlayerWorldObjectIdUpdated |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy.MarksInitialize, Enemy: Enemy.ObjectWindowsInitialize |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 2 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -69,35 +69,18 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
+- AddEventHandler
 - addon
 - function(player)Enemy._MarksCheckPlayerNewId(player.name,player.worldObjectId,true,player.career)end
 - function(player)Enemy._ObjectWindowsCheckPlayerNewId(player.name,player.worldObjectId)end
 
 ## Examples
 
-- Enemy: Enemy.MarksInitialize -> GroupsPlayerWorldObjectIdUpdated -> function(player)Enemy._MarksCheckPlayerNewId(player.name,player.worldObjectId,true,player.career)end
-- Enemy: Enemy.ObjectWindowsInitialize -> GroupsPlayerWorldObjectIdUpdated -> function(player)Enemy._ObjectWindowsCheckPlayerNewId(player.name,player.worldObjectId)end
-- Enemy: function(player)Enemy._MarksCheckPlayerNewId(player.name,player.worldObjectId,true,player.career)end -> Enemy.AddEventHandler(GroupsPlayerWorldObjectIdUpdated, function(player)Enemy._MarksCheckPlayerNewId(player.name,player.worldObjectId,true,player.career)end)
-- Enemy: function(player)Enemy._ObjectWindowsCheckPlayerNewId(player.name,player.worldObjectId)end -> Enemy.AddEventHandler(GroupsPlayerWorldObjectIdUpdated, function(player)Enemy._ObjectWindowsCheckPlayerNewId(player.name,player.worldObjectId)end)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Enemy: AddEventHandler -> GroupsPlayerWorldObjectIdUpdated -> function(player)Enemy._ObjectWindowsCheckPlayerNewId(player.name,player.worldObjectId)end
+- Enemy: AddEventHandler -> GroupsPlayerWorldObjectIdUpdated -> function(player)Enemy._MarksCheckPlayerNewId(player.name,player.worldObjectId,true,player.career)end
+- Enemy: function(player)Enemy._ObjectWindowsCheckPlayerNewId(player.name,player.worldObjectId)end -> AddEventHandler(GroupsPlayerWorldObjectIdUpdated, function(player)Enemy._ObjectWindowsCheckPlayerNewId(player.name,player.worldObjectId)end)
+- Enemy: function(player)Enemy._MarksCheckPlayerNewId(player.name,player.worldObjectId,true,player.career)end -> AddEventHandler(GroupsPlayerWorldObjectIdUpdated, function(player)Enemy._MarksCheckPlayerNewId(player.name,player.worldObjectId,true,player.career)end)
 
 ## Notes
 
-- Triggered-by evidence: Enemy:EnemyPlayer:SetObjectWorldId
 - Only one addon surfaced this event in the current addon-api corpus.

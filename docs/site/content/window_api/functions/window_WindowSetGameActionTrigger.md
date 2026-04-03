@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 35 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:579`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:578`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:578`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:578`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:578` |
+| Addons seen in | Ace, Amethyst, BuddyBind, CastSequence, Crusher, DetauntHelper, EZCraftX, EZGuard |
+| Files seen in | BuddyBind.lua, Core.lua, EveryBodyGuard.lua, GroupSpotter.lua, LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Modules/HealGridMouseClick.lua |
 | Namespaces detected | WindowSetGameActionTrigger |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Button:Trigger, LibWBToggler: LIBGUI_Button:Trigger, PartyCast: LIBGUI_Button:Trigger, Shinies: LIBGUI_Button:Trigger, WoH-Reticle: LIBGUI_Button:Trigger |
+| Example locations | Ace: Trigger, Amethyst: Trigger, BuddyBind: init, CastSequence: SetTrigger, Crusher: Trigger, DetauntHelper: OnLButtonDown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 43 |
+| Global usage count | 43 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: self.name |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: action |
+| windowName | Observed as a target window name. | Observed values: "BuddyBindWindowExecute", "EffigyTLMOAction", "GroupSpotter" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, GetActionIdFromName("ACTION_BAR_"..BuddyBind.Button), GetActionIdFromName("ACTION_BAR_"..Twister.Settings.button) |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,34 +85,61 @@ Observed mutating runtime window state or presentation.
 ## Seen In
 
 - Ace
+- Amethyst
+- BuddyBind
+- CastSequence
+- Crusher
+- DetauntHelper
+- EZCraftX
+- EZGuard
+- Effigy
+- EveryBodyGuard
+- GCDsaver
+- GroupSpotter
+- HealGrid
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- MarkBuff
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- SquaredClick
+- TargetRing
+- Tokens
+- Twister
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
 
 ## Examples
 
-- Ace: LIBGUI_Button:Trigger -> WindowSetGameActionTrigger(self.name, action)
-- LibWBToggler: LIBGUI_Button:Trigger -> WindowSetGameActionTrigger(self.name, action)
-- PartyCast: LIBGUI_Button:Trigger -> WindowSetGameActionTrigger(self.name, action)
-- Shinies: LIBGUI_Button:Trigger -> WindowSetGameActionTrigger(self.name, action)
-- WoH-Reticle: LIBGUI_Button:Trigger -> WindowSetGameActionTrigger(self.name, action)
+- Ace: Trigger -> WindowSetGameActionTrigger(self.name, action)
+- Amethyst: Trigger -> WindowSetGameActionTrigger(self.name, action)
+- BuddyBind: init -> WindowSetGameActionTrigger("BuddyBindWindowExecute", GetActionIdFromName("ACTION_BAR_"..BuddyBind.Button))
+- CastSequence: SetTrigger -> WindowSetGameActionTrigger(self:GetName().."Bar"..index, actionId)
+- Crusher: Trigger -> WindowSetGameActionTrigger(self.name, action)
+- DetauntHelper: OnLButtonDown -> WindowSetGameActionTrigger(self.m_BarName, actionId)
 
 ## Related APIs
 
-- none
+- [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
+- [WindowSetGameActionData](window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
 
 ## Notes
 

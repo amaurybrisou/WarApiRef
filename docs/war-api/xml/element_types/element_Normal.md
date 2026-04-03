@@ -68,43 +68,106 @@ Normal is a XML UI element. It commonly appears under AnimatedImages and Overlay
 
 ## Common Parent Elements
 
-- [TexSlices](element_TexSlices.md) — 22× (HIGH)
-- [TextColors](element_TextColors.md) — 16× (HIGH)
-- [ResizeImages](element_ResizeImages.md) — 10× (HIGH)
-- [OverlayTexCoords](element_OverlayTexCoords.md) — 7× (MEDIUM)
-- [TexCoords](element_TexCoords.md) — 7× (MEDIUM)
+- [TexSlices](element_TexSlices.md) — 120× (HIGH)
+- [TextColors](element_TextColors.md) — 79× (HIGH)
+- [TexCoords](element_TexCoords.md) — 47× (HIGH)
+- [ResizeImages](element_ResizeImages.md) — 25× (HIGH)
+- [OverlayTexCoords](element_OverlayTexCoords.md) — 24× (HIGH)
+- [OverlayTexSlices](element_OverlayTexSlices.md) — 2× (LOW)
 - [AnimatedImages](element_AnimatedImages.md) — 1× (LOW)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | optional | 31% | 0, 92 |
-| `y` | optional | 31% | 28, 44, 0 |
-| `b` | optional | 25% | 255, 73, 102 |
-| `g` | optional | 25% | 255, 175, 204 |
-| `id` | optional | 25% | morale-yellow, RightTabFrame, LayoutCorner-TopLeft, LayoutCorner-TopRight, ... |
-| `r` | optional | 25% | 255 |
-| `a` | optional | 23% | 255 |
-| `texture` | optional | 19% | bpKtxt, EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
-| `def` | optional | 17% | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, BuffHeadLayoutVerticalButtonNormal, BuffHeadLayoutHorizontalButtonNormal, ... |
+| `id` | optional | 38% | morale-yellow, RightTabFrame, Tactics-Button, SquareButton, ... |
+| `b` | optional | 26% | 255, 0, 102, 73, ... |
+| `g` | optional | 26% | 255, 0, 204, 175, ... |
+| `r` | optional | 26% | 255, 155, 222, 226, ... |
+| `x` | optional | 25% | 0, 92, 172, 494, ... |
+| `y` | optional | 25% | 28, 44, 0, 341, ... |
+| `a` | optional | 25% | 255, 1 |
+| `texture` | optional | 10% | bpKtxt, EA_SquareFrame, CrusherIconBorderNormal, EA_RoundFrame, ... |
+| `def` | optional | 8% | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, BuffHeadLayoutVerticalButtonNormal, BuffHeadLayoutHorizontalButtonNormal, ... |
 ## Seen In
 
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - AggroMeter
 - AnywhereTrainer
+- Assist
 - Aura
+- AutoBand
 - BankArkel
+- BlackBook
 - BuffHead
+- CCTV
 - CM_ClosetGoblin
+- CMap
+- CaVES
+- CastSequence
+- Crusher
+- DaemonAssist
+- DammazKron
+- Dascore
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- DuffTimer
+- EA_UiDebugTools
+- EZCraftX
+- FozAuction
+- GDes
+- Ges
+- GuardList
+- GuardRange
+- GuildWarden
+- Hopper
+- ItemRack
+- KeyBar
+- KillTracker
+- LoyalPet
+- MapPin
+- Minmap
+- Miracle Grow Remix
+- MoraleSet
+- Motion
+- NerfedButtons
 - PartyCast
 - Pocket Palette
 - PotionBar
+- Pure
+- Queue Queuer
+- RVMOD_Manager
+- RVMOD_SquaredDistances
+- RaidMeter
 - RoR_SoR
+- Rotation
+- SNT_PANEL
+- SOR
+- Sequencer
 - Shinies
+- SocialWindow 2.0
+- SpamBayes
+- Statdoll
+- Statdoll Remix
+- TalismanGenie
+- TastyButtons
 - TidyRoll
+- Tome Titan
+- TwisterSet
+- Vectors
+- WARCommander
 - WSCT
+- WTes
+- WaaaghBar
+- Warbuilder
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- ZonePOP
+- emotes
+- nRarity
+- zMailMod
 
 ## Examples
 
@@ -118,15 +181,10 @@ Normal is a XML UI element. It commonly appears under AnimatedImages and Overlay
 - [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
 - [TextColors](element_TextColors.md) (HIGH 100/100) - XML Element Type
 - [AnimatedImages](element_AnimatedImages.md) (MEDIUM 45/100) - XML Element Type
+- [OverlayTexSlices](element_OverlayTexSlices.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [NormalHighlit](element_NormalHighlit.md) (MEDIUM 45/100) - XML Element Type
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [Pressed](element_Pressed.md) (MEDIUM 45/100) - XML Element Type

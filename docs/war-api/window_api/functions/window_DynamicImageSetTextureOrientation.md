@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 33 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, LibWBToggler, PartyCast, RoR_SoR, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1316`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:33`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:1313`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1313`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:592`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:1313`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:1313` |
+| Addons seen in | Ace, Amethyst, Aura, CDown, CMap, Crusher, EZCraftX, EZGuard |
+| Files seen in | CDownFrames.lua, FlagCap.lua, InfoScroller.lua, LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, RoR_SoR.lua, Source/AuraHelpers.lua |
 | Namespaces detected | DynamicImageSetTextureOrientation |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Image:TexFlip, Aura: AuraHelpers.SetDynamicImageTexture, LibWBToggler: LIBGUI_Image:TexFlip, PartyCast: LIBGUI_Image:TexFlip, RoR_SoR: RoR_SoR.SET_CITY, Shinies: LIBGUI_Image:TexFlip |
+| Example locations | Ace: TexFlip, Amethyst: TexFlip, Aura: SetDynamicImageTexture, CDown: Create, CMap: TexFlip, Crusher: TexFlip |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 39 |
+| Global usage count | 39 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "SoR_"..Window_Name.."Flames", self.name, window |
+| arg1 | Observed as a function or method reference. | Observed values: "SoR_"..Window_Name.."Flames", TimeBarEnd, WindowName.."Image" |
 | arg2 | Observed as a runtime window or control identifier. | Observed values: Window_Name=="162", flipped, mirror |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,39 +85,53 @@ Observed mutating runtime image resources on existing controls.
 ## Seen In
 
 - Ace
+- Amethyst
 - Aura
+- CDown
+- CMap
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- FlagCap
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - RoR_SoR
 - Shinies
+- TargetRing
+- Tokens
+- VerticalMorale
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
 
 ## Examples
 
-- Ace: LIBGUI_Image:TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
-- Aura: AuraHelpers.SetDynamicImageTexture -> DynamicImageSetTextureOrientation(window, mirror)
-- LibWBToggler: LIBGUI_Image:TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
-- PartyCast: LIBGUI_Image:TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
-- RoR_SoR: RoR_SoR.SET_CITY -> DynamicImageSetTextureOrientation("SoR_"..Window_Name.."Flames", Window_Name=="162")
-- Shinies: LIBGUI_Image:TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
-
-## Related APIs
-
-- none
+- Ace: TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
+- Amethyst: TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
+- Aura: SetDynamicImageTexture -> DynamicImageSetTextureOrientation(window, mirror)
+- CDown: Create -> DynamicImageSetTextureOrientation(TimeBarEnd, true)
+- CMap: TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
+- Crusher: TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
 
 ## Used With
 
 - [DynamicImageSetRotation](window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

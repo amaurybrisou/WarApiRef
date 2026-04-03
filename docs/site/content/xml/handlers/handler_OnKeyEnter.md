@@ -2,38 +2,37 @@
 
 - Type: XML Handler
 - Confidence level: HIGH
-- Confidence score: 93/100
+- Confidence score: 88/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 93/100
+- Score: 88/100
 
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, used in event registration or dispatch.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, referenced by generated docs or reference files, used in event registration or dispatch.
 
 ## Evidence Signals
 
 - +30 Seen in 4 or more addons: Cross-addon spread is strong.
-- +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, Pocket Palette, Shinies, bigger_MacroWindow |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/PocketPalette/PocketPalette.xml:0`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Auctions.xml:0`, `/workspace/data/raw/bigger_macrowindow/Source/MacroWindow.xml:0` |
+| Addons seen in | DuffTimer, EA_UiDebugTools, MapMonster, MapPin, Mass Refine, RandomMount, SNT_PANEL, Twister |
 | Namespaces detected | OnKeyEnter |
-| Source kinds | xml_handlers |
-| Example locations | Aura: AuraConfigActivationAlertTextText.OnKeyEnter, Aura: AuraConfigDeactivationAlertTextText.OnKeyEnter, Aura: AuraConfigGeneralName.OnKeyEnter, Aura: AuraConfigGeneralOffsetX.OnKeyEnter, Aura: AuraConfigGeneralOffsetY.OnKeyEnter, Aura: AuraConfigTimerOffsetX.OnKeyEnter |
-| XML usage count | 22 |
-| XML attribute usage count | 22 |
-| Lua usage count | 0 |
+| Source kinds | bindings, xml_handlers |
+| Example locations | DuffTimer: .OnKeyEnter, EA_UiDebugTools: .OnKeyEnter, MapMonster: .OnKeyEnter, MapPin: .OnKeyEnter, Mass Refine: .OnKeyEnter, RandomMount: .OnKeyEnter |
+| XML usage count | 0 |
+| XML attribute usage count | 0 |
+| Lua usage count | 30 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 0 |
+| Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | no |
 | Default UI presence | no |
@@ -54,7 +53,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 4 addons through frame event handlers.
+XML handler event observed across 11 addons.
 
 ## Expected Lua Binding
 
@@ -64,40 +63,36 @@ function(...)
 
 ## Element Types
 
-- EditBox
+- none
 
 ## Seen In
 
-- Aura
-- Pocket Palette
-- Shinies
-- bigger_MacroWindow
+- DuffTimer
+- EA_UiDebugTools
+- MapMonster
+- MapPin
+- Mass Refine
+- RandomMount
+- SNT_PANEL
+- Twister
+- WarBoard_FPS
+- XpStatus+G
+- nLootLink
 
 ## Examples
 
-- Aura: AuraConfigActivationAlertTextText -> AuraConfigActivationAlertTextText.OnKeyEnter -> none
-- Aura: AuraConfigDeactivationAlertTextText -> AuraConfigDeactivationAlertTextText.OnKeyEnter -> none
-- Aura: AuraConfigGeneralName -> AuraConfigGeneralName.OnKeyEnter -> none
-- Aura: AuraConfigGeneralOffsetX -> AuraConfigGeneralOffsetX.OnKeyEnter -> none
-- Aura: AuraConfigGeneralOffsetY -> AuraConfigGeneralOffsetY.OnKeyEnter -> none
-- Aura: AuraConfigTimerOffsetX -> AuraConfigTimerOffsetX.OnKeyEnter -> none
+- DuffTimer: .OnKeyEnter -> DuffTimer.Options.OnEditBoxChanged
+- EA_UiDebugTools: .OnKeyEnter -> DevPadWindow.SaveFile
+- EA_UiDebugTools: .OnKeyEnter -> DevPadWindow.CreateNewFile
+- EA_UiDebugTools: .OnKeyEnter -> DevPadWindow.ConfirmRename
+- EA_UiDebugTools: .OnKeyEnter -> ObjectInspector.InspectObject
+- MapMonster: .OnKeyEnter -> MapMonster.Editor.OnPosEnterKey
 
 ## Related APIs
 
 - [EditBox](../element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- [EditBox](../element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because contract artifacts capture symbol linkage, not full handler signatures.

@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 143
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
@@ -22,23 +22,22 @@
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303` |
+| Files seen in | Code/ScenarioInfo/ScenarioInfo.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, lua_call |
-| Example locations | Enemy.ScenarioInfoUpdate, Enemy._ScenarioInfoEnabledChanged, SystemData.Events.CITY_SCENARIO_UPDATE_POINTS, event_page, event_registration, lua_call |
+| Source kinds | lua_call |
+| Example locations | _ScenarioInfoEnabledChanged, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
-| Documentation references | 3 |
+| Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -59,28 +58,12 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.CITY_SCENARIO_UPDATE_POINTS field accessed by 1 addons; commonly found in _ScenarioInfoEnabledChanged and lua_call contexts.
 
 ## Seen In
 
 - Enemy
 
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: Enemy.ScenarioInfoUpdate, Enemy._ScenarioInfoEnabledChanged, SystemData.Events.CITY_SCENARIO_UPDATE_POINTS, event_page, event_registration, lua_call
+- Observed in contexts: _ScenarioInfoEnabledChanged, lua_call

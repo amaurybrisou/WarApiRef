@@ -3,17 +3,15 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 21 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 100/100
 
-- Raw weighted score: 125
-
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
@@ -22,23 +20,22 @@
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AnywhereTrainerAdditions, CM_ClosetGoblin, Enemy, HotbarMorale, Shinies |
-| Files seen in | `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:512`, `/workspace/data/raw/Enemy/Code/UnitFrames/ClickCasting.lua:379`, `/workspace/data/raw/HotbarMorale/HotbarMorale.lua:10`, `/workspace/data/raw/HotbarMorale/HotbarMorale.lua:5`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Browse.lua:1105`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Browse.lua:1141`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Post.lua:125` |
+| Addons seen in | AnywhereTrainerAdditions, AuctionStats, CM_ClosetGoblin, CastSequence, Crusher, DetauntHelper, Enemy, FixGit |
+| Files seen in | AnywhereTrainerAdditions.lua, AuctionAssist.lua, ClosetGoblinCharacterWindow.lua, Code/UnitFrames/ClickCasting.lua, Configuration/WCDBConfig_Filters.lua, Configuration/WCDPConfig_Filters.lua, CustomAutoRoll.lua, Fixes.lua |
 | Namespaces detected | Cursor |
-| Source kinds | globals, lua_calls |
-| Example locations | AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown, CM_ClosetGoblin: ClosetGoblinCharacterWindow.HandleDrag, Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionLButtonUp, HotbarMorale: ActionButton.CursorSwap, HotbarMorale: CursorSwap, HotbarMorale: HotbarMorale.Initialize |
+| Source kinds | lua_calls |
+| Example locations | AnywhereTrainerAdditions: EquipmentLButtonDown, AuctionStats: AuctionHouseWindowCreateSearchItemName_LButtonDown, AuctionStats: OnLButtonUpItem, CM_ClosetGoblin: HandleDrag, CastSequence: OnLButtonUp, Crusher: OnLButtonUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 46 |
+| Global usage count | 46 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | no |
@@ -65,7 +62,7 @@ Cursor.Clear()
 
 ## Description
 
-Observed as a global function across 5 addons.
+Observed as a global function across 21 addons.
 
 ## Parameters
 
@@ -74,53 +71,66 @@ Observed as a global function across 5 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - AnywhereTrainerAdditions
+- AuctionStats
 - CM_ClosetGoblin
+- CastSequence
+- Crusher
+- DetauntHelper
 - Enemy
+- FixGit
 - HotbarMorale
+- KeyBar
+- NerfedButtons
+- RandomMount
+- Sequencer
 - Shinies
+- SquaredClick
+- TastyButtons
+- TidyRoll
+- Twister
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- zMailMod
 
 ## Examples
 
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown -> Cursor.Clear()
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.HandleDrag -> Cursor.Clear()
-- Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionLButtonUp -> Cursor.Clear()
-- HotbarMorale: ActionButton.CursorSwap -> Cursor.Clear()
-- HotbarMorale: CursorSwap -> Cursor.Clear()
-- HotbarMorale: HotbarMorale.Initialize -> Cursor.Clear()
+- AnywhereTrainerAdditions: EquipmentLButtonDown -> Cursor.Clear()
+- AuctionStats: AuctionHouseWindowCreateSearchItemName_LButtonDown -> Cursor.Clear()
+- AuctionStats: OnLButtonUpItem -> Cursor.Clear()
+- CM_ClosetGoblin: HandleDrag -> Cursor.Clear()
+- CastSequence: OnLButtonUp -> Cursor.Clear()
+- Crusher: OnLButtonUp -> Cursor.Clear()
 
 ## Related APIs
 
-- [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- [BankWindow](../tables/table_BankWindow.md) (HIGH 100/100) - Global Table
 - [Cursor.IconOnCursor](global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
 - [Cursor.PickUp](global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
+- [EA_BackpackUtilsMediator.GetCurrentBackpackType](global_EA_BackpackUtilsMediator.GetCurrentBackpackType.md) (HIGH 100/100) - Global Function
 - [EA_ChatWindow.InsertItemLink](global_EA_ChatWindow.InsertItemLink.md) (HIGH 100/100) - Global Function
-- [GameData.PlayerActions.DO_ABILITY](../../gamedata/fields/gamedata_GameData.PlayerActions.DO_ABILITY.md) (HIGH 100/100) - GameData Field
-- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
-
-## Triggered By
-
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [BankWindow.GetItem](global_BankWindow.GetItem.md) (HIGH 71/100) - Global Function
+- [BankWindow.GetSlotNumberForButtonIndex](global_BankWindow.GetSlotNumberForButtonIndex.md) (HIGH 71/100) - Global Function
 
 ## Affects
 
-- [BankWindow](../tables/table_BankWindow.md) (HIGH 100/100) - Global Table
-- [DynamicImage](../../xml/element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
-- [GameData.PlayerActions.DO_ABILITY](../../gamedata/fields/gamedata_GameData.PlayerActions.DO_ABILITY.md) (HIGH 100/100) - GameData Field
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

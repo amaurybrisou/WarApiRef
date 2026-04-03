@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 23 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:213`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:213`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:213`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:213`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:213` |
+| Addons seen in | Ace, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver, Hopper, InfoScroller |
+| Files seen in | LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, libs/LibGUI.lua |
 | Namespaces detected | WindowGetFontAlpha |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:FontAlpha, LibWBToggler: LIBGUI_ELEMENT:FontAlpha, PartyCast: LIBGUI_ELEMENT:FontAlpha, Shinies: LIBGUI_ELEMENT:FontAlpha, WoH-Reticle: LIBGUI_ELEMENT:FontAlpha |
+| Example locations | Ace: FontAlpha, Crusher: FontAlpha, EZCraftX: FontAlpha, EZGuard: FontAlpha, Effigy: FontAlpha, GCDsaver: FontAlpha |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 23 |
+| Global usage count | 23 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -75,43 +75,50 @@ Observed querying runtime window state or metadata.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:FontAlpha -> WindowGetFontAlpha(self.name)
-- LibWBToggler: LIBGUI_ELEMENT:FontAlpha -> WindowGetFontAlpha(self.name)
-- PartyCast: LIBGUI_ELEMENT:FontAlpha -> WindowGetFontAlpha(self.name)
-- Shinies: LIBGUI_ELEMENT:FontAlpha -> WindowGetFontAlpha(self.name)
-- WoH-Reticle: LIBGUI_ELEMENT:FontAlpha -> WindowGetFontAlpha(self.name)
-
-## Related APIs
-
-- none
+- Ace: FontAlpha -> WindowGetFontAlpha(self.name)
+- Crusher: FontAlpha -> WindowGetFontAlpha(self.name)
+- EZCraftX: FontAlpha -> WindowGetFontAlpha(self.name)
+- EZGuard: FontAlpha -> WindowGetFontAlpha(self.name)
+- Effigy: FontAlpha -> WindowGetFontAlpha(self.name)
+- GCDsaver: FontAlpha -> WindowGetFontAlpha(self.name)
 
 ## Used With
 
 - [WindowSetFontAlpha](window_WindowSetFontAlpha.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

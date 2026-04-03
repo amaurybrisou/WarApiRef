@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 21 addons
+- Seen in: 108 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, Aura, BuffHead, CM_ClosetGoblin, CombatTextNames, DAoCBuff, Enemy |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:463`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace/data/raw/Aura/Source/Aura.lua:505`, `/workspace/data/raw/Aura/Source/AuraTooltip.lua:32`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52` |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, AdvancedPetAssist, Amethyst, AuctionStats, Aura, BuddyBind |
+| Files seen in | APAGuiHUD.lua, AuctionStats.lua, BuddyBind.lua, Busted.lua, CDownSettings.lua, CallingList.lua, CallingNotification.lua, Castbar.lua |
 | Namespaces detected | LabelSetTextColor |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Label:Color, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD, AdvancedPetAssist: APAGui.UpdatePetTargetHUD, Aura: Aura:UpdateTimerWindow |
+| Example locations | Ace: Color, ActionBarHide: Color, ActionFraction: SetPercentageBasedColors, ActionFraction: UpdateActionPoints, AdvancedPetAssist: UpdateFollowTargetHUD, AdvancedPetAssist: UpdateInstantOnlyHUD |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 139 |
-| Global usage count | 139 |
+| Lua usage count | 639 |
+| Global usage count | 639 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,14 +71,14 @@ Observed updating label text or label styling on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "APAFollowTargetHUDLabel", "APAInstantOnlyHUDLabel", "APAKitingHUDLabel" |
-| arg2 | Observed as a function or method reference. | Observed values: 100, 192, 225 |
-| arg3 | Observed as a function or method reference. | Observed values: 100, 110, 180 |
-| arg4 | Observed as a function or method reference. | Observed values: 10, 100, 102 |
+| arg1 | Observed as a function or method reference. | Observed values: "APAFollowTargetHUDLabel", "APAInstantOnlyHUDLabel", "APAKitingHUDLabel" |
+| arg2 | Observed as a numeric value. | Observed values: 0, 100, 107 |
+| arg3 | Observed as a numeric value. | Observed values: 0, 10, 100 |
+| arg4 | Observed as a numeric value. | Observed values: 0, 10, 100 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -87,62 +87,139 @@ Observed updating label text or label styling on existing controls.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- ActionFraction
 - AdvancedPetAssist
+- Amethyst
+- AuctionStats
 - Aura
+- BuddyBind
 - BuffHead
+- Busted
+- CDown
 - CM_ClosetGoblin
+- CaVES
+- Calling
+- CastSequence
+- CleanUnitFrames
 - CombatTextNames
+- Countdown
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DammazKron
+- DeepSleep
+- DetauntHelper
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDTracker
+- GCDsaver
+- Group Icons SG
+- GroupRange
+- Hopper
+- InfoScroller
 - Killer
+- LibAddonButton
 - LibWBToggler
+- Map
+- MapMonster
+- MarkBuff
+- Mech
+- Miracle Grow Remix
+- MiracleGrow
 - MiracleGrowLight
+- Moth
+- Motion
+- NaturalLog
+- NoOverheal
+- Obsidian
 - PartyCast
+- PeaceOut
 - PotionBar
+- Pure
+- Pure Careerbar
+- RO-Style Combat Text
+- RVAPI_ColorDialog
+- RVAPI_Range
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- Rangechecker
+- RealmStatus
+- ReliquaryHunter
 - RoR_SoR
+- RoR_debolster
+- RvRContribution
+- SOR
+- SessionRPs
 - Shinies
+- SimpleCombatText
+- Squared
+- Statdoll
+- Statdoll Light
+- Statdoll Remix
 - Swift Assist
+- TacticSetNames
+- TalismanGenie
+- TargetInfoRing
+- TargetRing
+- Targets
+- TastyButtons
 - TexturedButtons
+- Tokens
+- Trakario
 - TurretRange
+- WARCommander
 - WSCT
+- WarBoard_Loc
+- WarBoard_Session
+- WarBoard_TogglerSquared
+- WarBoard_TogglerWARCommander
+- WarTriage
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- ZonePOP
+- emotes
+- minesweep
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Label:Color -> LabelSetTextColor(self.name, red, green, blue)
-- AdvancedPetAssist: APAGui.UpdateFollowTargetHUD -> LabelSetTextColor("APAFollowTargetHUDLabel", 255, 255, 255)
-- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> LabelSetTextColor("APAInstantOnlyHUDLabel", 192, 192, 192)
-- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> LabelSetTextColor("APAInstantOnlyHUDLabel", 255, 255, 255)
-- AdvancedPetAssist: APAGui.UpdateKitingHUD -> LabelSetTextColor("APAKitingHUDLabel", 192, 192, 192)
-- AdvancedPetAssist: APAGui.UpdateKitingHUD -> LabelSetTextColor("APAKitingHUDLabel", 255, 255, 255)
+- Ace: Color -> LabelSetTextColor(self.name, red, green, blue)
+- ActionBarHide: Color -> LabelSetTextColor(self.name, red, green, blue)
+- ActionFraction: SetPercentageBasedColors -> LabelSetTextColor(label, 150, 255, 65)
+- ActionFraction: SetPercentageBasedColors -> LabelSetTextColor(label, 255, 255, 70)
+- ActionFraction: SetPercentageBasedColors -> LabelSetTextColor(label, 255, 170, 70)
+- ActionFraction: SetPercentageBasedColors -> LabelSetTextColor(label, 255, 70, 70)
 
 ## Related APIs
 
-- none
+- [Color](../../xml/element_types/element_Color.md) (HIGH 100/100) - XML Element Type
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [OnMouseOverEnd](../../xml/handlers/handler_OnMouseOverEnd.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [Color](../../xml/element_types/element_Color.md) (HIGH 100/100) - XML Element Type
 - [LabelGetTextColor](window_LabelGetTextColor.md) (HIGH 100/100) - Window Function
-- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [LabelSetTextAlign](window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

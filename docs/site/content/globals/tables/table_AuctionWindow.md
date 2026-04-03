@@ -27,10 +27,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions |
-| Files seen in | `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:280`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:297`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:142`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:159` |
+| Files seen in | source/AnywhereTrainer.lua |
 | Namespaces detected | AuctionWindow |
 | Source kinds | lua_calls |
-| Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction, AnywhereTrainer: AnywhereTrainer.OnRightClickAuction, AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickAuction, AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnRightClickAuction |
+| Example locations | AnywhereTrainer: OnLeftClickAuction, AnywhereTrainer: OnRightClickAuction, AnywhereTrainerAdditions: OnLeftClickAuction, AnywhereTrainerAdditions: OnRightClickAuction |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 8 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 2 addons.
+Shared function table with 2 member functions; the primary API surface for 2 addons.
 
 ## Functions
 
@@ -75,28 +75,12 @@ Observed shared global table or namespace surfaced in 2 addons.
 
 ## Examples
 
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction -> AuctionWindow.Show()
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction -> AuctionWindow.Hide()
-- AnywhereTrainer: AnywhereTrainer.OnRightClickAuction -> AuctionWindow.Show()
-- AnywhereTrainer: AnywhereTrainer.OnRightClickAuction -> AuctionWindow.Hide()
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickAuction -> AuctionWindow.Show()
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickAuction -> AuctionWindow.Hide()
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AnywhereTrainer: OnLeftClickAuction -> AuctionWindow.Show()
+- AnywhereTrainer: OnLeftClickAuction -> AuctionWindow.Hide()
+- AnywhereTrainer: OnRightClickAuction -> AuctionWindow.Show()
+- AnywhereTrainer: OnRightClickAuction -> AuctionWindow.Hide()
+- AnywhereTrainerAdditions: OnLeftClickAuction -> AuctionWindow.Show()
+- AnywhereTrainerAdditions: OnLeftClickAuction -> AuctionWindow.Hide()
 
 ## Notes
 

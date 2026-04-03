@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 24 addons
+- Seen in: 114 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:249`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace/data/raw/Aura/Source/Aura.lua:417`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:33`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:55` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Amethyst, Atlas, Aura, BBars - Mechanic Only, BuffHead |
+| Files seen in | APAGuiHUD.lua, AdvancedRenownTraining.lua, Amethyst.lua, BBarsPetHP.lua, BBarsPlayerMechanic.lua, Bar.lua, Bars/HealGridProgressBar.lua, CCTV.lua |
 | Namespaces detected | WindowSetTintColor |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Tint, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD, AdvancedPetAssist: APAGui.UpdatePetTargetHUD, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SelectAdvantage |
+| Example locations | Ace: Tint, AdvancedPetAssist: UpdateFollowTargetHUD, AdvancedPetAssist: UpdateInstantOnlyHUD, AdvancedPetAssist: UpdateKitingHUD, AdvancedPetAssist: UpdatePetTargetHUD, AdvancedRenownTrainer: SelectAdvantage |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 210 |
-| Global usage count | 210 |
+| Lua usage count | 748 |
+| Global usage count | 748 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -72,13 +72,13 @@ Observed mutating runtime window state or presentation.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: "APAFollowTargetHUDFill", "APAInstantOnlyHUDFill", "APAKitingHUDFill" |
-| arg2 | Observed as a function or method reference. | Observed values: 0, 100, 12 |
-| arg3 | Observed as a function or method reference. | Observed values: 0, 100, 110 |
-| arg4 | Observed as a function or method reference. | Observed values: 0, 10, 100 |
+| arg2 | Observed as a numeric value. | Observed values: 0, 100, 12 |
+| arg3 | Observed as a numeric value. | Observed values: 0, 10, 100 |
+| arg4 | Observed as a numeric value. | Observed values: 0, 10, 100 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -89,58 +89,154 @@ Observed mutating runtime window state or presentation.
 - Ace
 - AdvancedPetAssist
 - AdvancedRenownTrainer
+- Amethyst
+- Atlas
 - Aura
+- BBars - Mechanic Only
 - BuffHead
+- CCTV
+- CDown
 - CM_ClosetGoblin
+- CMap
+- Calling
+- CastSequence
+- ChattyCathy
+- Cheeseboard
+- CleanUnitFrames
+- CraftingWillard
+- Crusher
 - DAoCBuff
+- DetauntHelper
+- DuffTimer
+- EA_LoadingScreen
+- EA_UiModWindow
+- EZCraftX
+- EZGuard
+- Effigy
+- Emojii
 - Enemy
+- EveryBodyGuard
+- FlagCap
+- FozAuction
+- GCDsaver
+- Group Icons
+- Group Icons SG
+- GroupRange
+- GroupSpotter
+- GuardBot
 - GuardLine
+- GuardList
+- GuardRange
+- GuildWarden
+- HealGrid
+- Hopper
+- InfoScroller
+- KeyBar
 - Killer
+- LibAddonButton
 - LibWBToggler
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- MiniMapMonster
+- Minmap
+- Miracle Grow Remix
+- MiracleGrow
 - MoraleCircle
+- Moth
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
 - PartyCast
+- PeaceOut
 - Pocket Palette
 - PotionBar
+- Pure
+- Pure Careerbar
+- QuickWarReport
+- RVAPI_ColorDialog
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RandomMount
+- RealmStatus
+- ResHelp
 - RoR_SoR
+- SNT_INFO
+- SOR
+- Sequencer
 - Shinies
+- SocialWindow 2.0
+- Squared
+- Swinger
+- TacticSetNames
+- TargetInfoRing
+- TargetRing
+- TastyButtons
 - TexturedButtons
 - TidyChat
 - TidyRoll
+- TokenMachine
+- Tokens
+- TomeTracker
+- Tortall_DPS
 - TurretRange
+- Twister
+- Vectors
+- WARCommander
 - WSCT
+- WarBoard_WarWhisperer
+- WarTriage
+- WhatsCooking
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- XpStatus+G
+- minesweep
+- nRarity
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Tint -> WindowSetTintColor(self.name, r, g, b)
-- AdvancedPetAssist: APAGui.UpdateFollowTargetHUD -> WindowSetTintColor("APAFollowTargetHUDFill", APA.hudColorOnR, APA.hudColorOnG, APA.hudColorOnB)
-- AdvancedPetAssist: APAGui.UpdateFollowTargetHUD -> WindowSetTintColor("APAFollowTargetHUDFill", APA.hudColorOffR, APA.hudColorOffG, APA.hudColorOffB)
-- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 128, 128, 128)
-- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 0, 200, 0)
-- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 200, 100, 0)
+- Ace: Tint -> WindowSetTintColor(self.name, r, g, b)
+- AdvancedPetAssist: UpdateFollowTargetHUD -> WindowSetTintColor("APAFollowTargetHUDFill", APA.hudColorOnR, APA.hudColorOnG, APA.hudColorOnB)
+- AdvancedPetAssist: UpdateFollowTargetHUD -> WindowSetTintColor("APAFollowTargetHUDFill", APA.hudColorOffR, APA.hudColorOffG, APA.hudColorOffB)
+- AdvancedPetAssist: UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 128, 128, 128)
+- AdvancedPetAssist: UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 0, 200, 0)
+- AdvancedPetAssist: UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 200, 100, 0)
 
 ## Related APIs
 
-- none
+- [Color](../../xml/element_types/element_Color.md) (HIGH 100/100) - XML Element Type
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [OnMouseOverEnd](../../xml/handlers/handler_OnMouseOverEnd.md) (HIGH 88/100) - XML Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [Start](../../events/game_events/game_event_Start.md) (MEDIUM 43/100) - Game Event
 
 ## Used With
 
-- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
+- [DefaultColor.SetWindowTint](../../globals/functions/global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [EA_Window_ContextMenu.AddUserDefinedMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 90/100) - Global Function
+- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [LayoutEditor.UnregisterWindow](window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [DefaultColor.GetRowColor](../../globals/functions/global_DefaultColor.GetRowColor.md) (HIGH 96/100) - Global Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

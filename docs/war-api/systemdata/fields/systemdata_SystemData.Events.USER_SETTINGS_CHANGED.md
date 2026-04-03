@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 12 addons
 
 ## Confidence Assessment
 
@@ -11,41 +11,41 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 153
+- Raw weighted score: 168
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TexturedButtons |
-| Files seen in | `/workspace/data/raw/TexturedButtons/TexturedButtons.lua:546`, `/workspace/data/raw/TexturedButtons/TexturedButtons.lua:600` |
+| Addons seen in | Brizio's Crappy Computer Medic, CNC, Calling, EA_UiModWindow, IdentityFound, Keyset, PlayEffectsOn, Quick Performance Toggle |
+| Files seen in | CCM.lua, CNC.lua, CallingKeybinding.lua, Core.lua, IdentityFound.lua, RVMOD_Manager.lua, RVMOD_SquaredDistances.lua, Source/PlayEffectsOn.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | SystemData.Events.USER_SETTINGS_CHANGED, TexturedButtons.OnLoadComplete, TexturedButtons.OnSettingsChanged, TexturedButtons.Unload, event_page, event_registration |
+| Source kinds | lua_call |
+| Example locations | CombatCheck, Initialize, LoadProfile, OnInitialize, OnLButtonUpB1, OnLButtonUpB2 |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 24 |
+| Global usage count | 24 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 1 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -60,28 +60,29 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.USER_SETTINGS_CHANGED field accessed by 12 addons; commonly found in CombatCheck and Initialize, LoadProfile, OnInitialize, OnLButtonUpB1, OnLButtonUpB2, OnLoadComplete, OnRawDeviceInput, OnShutdown, RegisterEventHandlers, SaveAndReloadAdvanced, SetMode, Shutdown, Switch, Unload, handler, lua_call, perf1, perf2, perfC, perfH, perfL, perfM, perfU contexts.
 
 ## Seen In
 
+- Brizio's Crappy Computer Medic
+- CNC
+- Calling
+- EA_UiModWindow
+- IdentityFound
+- Keyset
+- PlayEffectsOn
+- Quick Performance Toggle
+- RVMOD_Manager
+- RVMOD_SquaredDistances
+- TastyButtons
 - TexturedButtons
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [BroadcastEvent](../../globals/functions/global_BroadcastEvent.md) (HIGH 93/100) - Global Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: SystemData.Events.USER_SETTINGS_CHANGED, TexturedButtons.OnLoadComplete, TexturedButtons.OnSettingsChanged, TexturedButtons.Unload, event_page, event_registration
+- Observed in contexts: CombatCheck, Initialize, LoadProfile, OnInitialize, OnLButtonUpB1, OnLButtonUpB2

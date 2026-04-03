@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 36 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, TidyChat, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:543`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:543`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:543`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:543`, `/workspace/data/raw/TidyChat/TidyChat.lua:1013`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:543` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, CMap, Crusher, EZCraftX, EZGuard, Effigy |
+| Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, TTitan_TTButton.lua, TTitan_UI.lua, TastyButtons.lua, TidyChat.lua |
 | Namespaces detected | ButtonSetTextColor |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Button:TextColor, LibWBToggler: LIBGUI_Button:TextColor, PartyCast: LIBGUI_Button:TextColor, Shinies: LIBGUI_Button:TextColor, TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors, WoH-Reticle: LIBGUI_Button:TextColor |
+| Example locations | Ace: TextColor, ActionBarHide: TextColor, Amethyst: TextColor, CMap: TextColor, Crusher: TextColor, EZCraftX: TextColor |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 17 |
-| Global usage count | 17 |
+| Lua usage count | 58 |
+| Global usage count | 58 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -60,7 +60,7 @@
 ## Signature (inferred)
 
 ```lua
-ButtonSetTextColor(arg1, arg2, arg3, arg4, arg5)
+ButtonSetTextColor(arg1, arg2, arg3, arg4)
 ```
 
 ## Description
@@ -71,15 +71,14 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: channelButton, self.name |
-| arg2 | Observed as a function or method reference. | Observed values: Button.ButtonState.HIGHLIGHTED, Button.ButtonState.NORMAL, Button.ButtonState.PRESSED |
-| arg3 | Observed as a function or method reference. | Observed values: channelColor.r, green |
-| arg4 | Observed as a function or method reference. | Observed values: blue, channelColor.g |
-| arg5 | Observed as a function or method reference. | Observed values: channelColor.b |
+| arg1 | Observed as a function or method reference. | Observed values: "TTitanSplashTextBestiaryClick", "TTitanSplashTextHistoryClick", "TTitanSplashTextNoteworthyClick" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, Button.ButtonState.HIGHLIGHTED, Button.ButtonState.NORMAL |
+| arg3 | Observed as a runtime window or control identifier. | Observed values: 0, 255, 84 |
+| arg4 | Observed as a runtime window or control identifier. | Observed values: 0, 137, 255 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -88,36 +87,54 @@ Observed mutating button text or pressed state on existing controls.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- CMap
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TacticSetNames
+- TargetRing
+- TastyButtons
 - TidyChat
+- Tokens
+- Tome Titan
+- TwisterSet
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
-- LibWBToggler: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
-- PartyCast: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
-- Shinies: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
-- TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors -> ButtonSetTextColor(channelButton, Button.ButtonState.NORMAL, channelColor.r, channelColor.g, channelColor.b)
-- TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors -> ButtonSetTextColor(channelButton, Button.ButtonState.HIGHLIGHTED, channelColor.r, channelColor.g, channelColor.b)
-
-## Related APIs
-
-- none
+- Ace: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
+- ActionBarHide: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
+- Amethyst: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
+- CMap: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
+- Crusher: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
+- EZCraftX: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
 
 ## Used With
 
 - [ButtonGetTextColor](window_ButtonGetTextColor.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

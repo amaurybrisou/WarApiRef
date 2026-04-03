@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 168
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -21,27 +21,25 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, WoH-Reticle, followTheLeader |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:33`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:78`, `/workspace/data/raw/BuffHead/Core.lua:152`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:41`, `/workspace/data/raw/WoH-Reticle/WoHReticle.lua:70` |
+| Addons seen in | Calling, DammazKron, LibRange, Squared |
+| Files seen in | CallingEvents.lua, Core/ToolTip/DK_Tooltip.lua, LibRange.lua, Squared.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, flows, lua_event_registration |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.local.RegisterCoreEvents, AdvancedPetAssist: RegisterCoreEvents, AutoMark: AutoMark.OnInitialize, AutoMark: AutoMark.OnSlashCommand, BuffHead: BuffHead.Initialize, DAoCBuff: DAoCBuff.Initialize |
+| Source kinds | event_page, lua_event_registration |
+| Example locations | Calling: RegisterEventHandler, DammazKron: RegisterEventHandler, LibRange: RegisterEventHandler, Squared: RegisterEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
-| Documentation references | 2 |
-| Initialization flow references | 5 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +59,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 8 addons.
+Runtime event with 5 handler registrations observed across 4 addons.
 
 ## Handler Pattern
 
@@ -69,58 +67,37 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
+- Payload shape is not inferable from contract artifacts alone; treat this as an engine event identifier.
 
 ## Seen In
 
-- AdvancedPetAssist
-- Aura
-- AutoMark
-- BuffHead
-- DAoCBuff
-- Enemy
-- WoH-Reticle
-- followTheLeader
+- Calling
+- DammazKron
+- LibRange
+- Squared
 
 ## Registrars And Handlers
 
-- AdvancedPetAssist.OnTargetUpdated
-- AutoMark.OnPlayerTargetUpdated
-- BuffHead.OnTargetUpdated
-- DAoCBuff.OnEventHC
-- Enemy.Groups_OnPlayerTargetUpdated
-- Enemy.OnPlayerTargetUpdated
+- Calling.OnTargetChanged
+- LibRange.OnPlayerTargetUpdated
 - RegisterEventHandler
+- Squared.TargetUpdate
+- SquaredRangeFading.TargetUpdated
 - TargetInfoFix.SET_TARGETINFO_FIX_UPDATE_FLAG_DONOTTOUCH
-- WoHReticle.UpdateTargets
-- followTheLeader.OnTargetUpdated
 - global
 
 ## Examples
 
-- AdvancedPetAssist: AdvancedPetAssist.local.RegisterCoreEvents -> SystemData.Events.PLAYER_TARGET_UPDATED -> AdvancedPetAssist.OnTargetUpdated
-- AdvancedPetAssist: RegisterCoreEvents -> SystemData.Events.PLAYER_TARGET_UPDATED -> AdvancedPetAssist.OnTargetUpdated
-- AutoMark: AutoMark.OnInitialize -> SystemData.Events.PLAYER_TARGET_UPDATED -> AutoMark.OnPlayerTargetUpdated
-- AutoMark: AutoMark.OnSlashCommand -> SystemData.Events.PLAYER_TARGET_UPDATED -> AutoMark.OnPlayerTargetUpdated
-- BuffHead: BuffHead.Initialize -> SystemData.Events.PLAYER_TARGET_UPDATED -> BuffHead.OnTargetUpdated
-- DAoCBuff: DAoCBuff.Initialize -> SystemData.Events.PLAYER_TARGET_UPDATED -> DAoCBuff.OnEventHC
+- Calling: RegisterEventHandler -> SystemData.Events.PLAYER_TARGET_UPDATED -> Calling.OnTargetChanged
+- DammazKron: RegisterEventHandler -> SystemData.Events.PLAYER_TARGET_UPDATED -> TargetInfoFix.SET_TARGETINFO_FIX_UPDATE_FLAG_DONOTTOUCH
+- LibRange: RegisterEventHandler -> SystemData.Events.PLAYER_TARGET_UPDATED -> LibRange.OnPlayerTargetUpdated
+- Squared: RegisterEventHandler -> SystemData.Events.PLAYER_TARGET_UPDATED -> Squared.TargetUpdate
+- Squared: RegisterEventHandler -> SystemData.Events.PLAYER_TARGET_UPDATED -> SquaredRangeFading.TargetUpdated
+- Calling: Calling.OnTargetChanged -> RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, Calling.OnTargetChanged)
 
 ## Related APIs
 
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
-- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (HIGH 93/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 

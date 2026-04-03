@@ -1,34 +1,37 @@
 # AnimFrames
 
 - Category: XML Element Type
-- Confidence level: MEDIUM
-- Confidence score: 45/100
+- Confidence level: HIGH
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
-- Level: MEDIUM
+- Level: HIGH
 
-- Score: 45/100
+- Final score: 100/100
 
-- Rationale: Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes.
+- Raw weighted score: 110
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
-- -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.xml:0` |
+| Addons seen in | CMap, CoolDownLine, EA_LoadingScreen, MapMonster, RVMOD_SquaredDistances, TastyButtons, TheSeeker, TidyRoll |
+| Files seen in | CustomTextures/TastyButtonsButtonTemplate.xml, Source/GeneralLoadingScreenTemplates.xml, Source/MapMonster_Templates.xml |
 | Namespaces detected | AnimFrames |
 | Source kinds | xml_frames |
-| Example locations | TidyRoll: TRollOverlayFlash, TidyRoll: TRollOverlayGlow |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
+| Example locations | CMap: CMapWindowMapRallyCallGlowAnim, CMap: CMapWindowMapScenarioQueueGlowAnim, CoolDownLine: CoolDownLineICONTemplateAFlash, CoolDownLine: CoolDownLineWndFlash, EA_LoadingScreen: LoadingScreenWarSymbolAnimation, MapMonster: AnimatedHighlight |
+| XML usage count | 19 |
+| XML attribute usage count | 19 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -38,11 +41,11 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
-| Weak usage only | yes |
+| Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
 | Conflicting signatures | no |
@@ -65,50 +68,49 @@ AnimFrames is a structural XML sub-element. It commonly appears under AnimatedIm
 
 ## Common Parent Elements
 
-- [AnimatedImage](element_AnimatedImage.md) — 2× (HIGH)
+- [AnimatedImage](element_AnimatedImage.md) — 19× (HIGH)
 
 ## Common Structural Child Elements
 
-- [AnimFrame](element_AnimFrame.md) — 14× (HIGH)
+- [AnimFrame](element_AnimFrame.md) — 222× (HIGH)
 
 ## Structural Sub-Elements
 
 ### [AnimFrame](element_AnimFrame.md)
 
-Observed 14 times as an unnamed child.
+Observed 222 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
 | `id` | **required** | 1, 2, 3, 4 |
-| `x` | **required** | 0, 72, 144, 216 |
-| `y` | **required** | 0, 85, 170 |
+| `x` | **required** | 64, 101, 138, 175 |
+| `y` | **required** | 796, 0, 128, 256 |
 ## Recursive Hierarchy
 
 - Root: [AnimFrames](element_AnimFrames.md)
-- [AnimFrame](element_AnimFrame.md) (structural, 14×, HIGH)
+- [AnimFrame](element_AnimFrame.md) (structural, 222×, HIGH)
 
 ## Seen In
 
+- CMap
+- CoolDownLine
+- EA_LoadingScreen
+- MapMonster
+- RVMOD_SquaredDistances
+- TastyButtons
+- TheSeeker
 - TidyRoll
 
 ## Examples
 
-- TidyRoll: TRollOverlayFlash -> AnimFrames in AnimatedImage TRollOverlayFlash
-- TidyRoll: TRollOverlayGlow -> AnimFrames in AnimatedImage TRollOverlayGlow
+- CMap: CMapWindowMapRallyCallGlowAnim -> AnimFrames in AnimatedImage CMapWindowMapRallyCallGlowAnim
+- CMap: CMapWindowMapScenarioQueueGlowAnim -> AnimFrames in AnimatedImage CMapWindowMapScenarioQueueGlowAnim
+- CoolDownLine: CoolDownLineICONTemplateAFlash -> AnimFrames in AnimatedImage CoolDownLineICONTemplateAFlash
+- CoolDownLine: CoolDownLineWndFlash -> AnimFrames in AnimatedImage CoolDownLineWndFlash
+- EA_LoadingScreen: LoadingScreenWarSymbolAnimation -> AnimFrames in AnimatedImage LoadingScreenWarSymbolAnimation
+- MapMonster: AnimatedHighlight -> AnimFrames in AnimatedImage AnimatedHighlight
 
 ## Related APIs
 
 - [AnimatedImage](element_AnimatedImage.md) (HIGH 100/100) - XML Element Type
-- [AnimFrame](element_AnimFrame.md) (LOW 20/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [AnimFrame](element_AnimFrame.md) (MEDIUM 45/100) - XML Element Type

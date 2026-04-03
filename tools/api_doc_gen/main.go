@@ -204,11 +204,22 @@ func parseAddon(spec graph.AddonSpec) (graph.AddonModel, error) {
 		Manifest: spec.Manifest,
 	}
 
+	luaFiles := resolveAddonLuaFiles(spec)
+	luaSeen := make(map[string]bool, len(luaFiles))
+	for _, luaFile := range luaFiles {
+		luaSeen[strings.ToLower(graph.NormalizePath(luaFile))] = true
+	}
+
 	for _, manifestFile := range spec.Manifest.Files {
 		absolutePath := filepath.Join(spec.Path, filepath.FromSlash(strings.ReplaceAll(manifestFile, "\\", "/")))
+		normalizedAbsolute := strings.ToLower(graph.NormalizePath(absolutePath))
 		extension := strings.ToLower(filepath.Ext(absolutePath))
 		switch extension {
 		case ".lua":
+			if !luaSeen[normalizedAbsolute] {
+				continue
+			}
+			delete(luaSeen, normalizedAbsolute)
 			parsed, err := lua_parser.ParseFile(spec.Name, absolutePath, spec.Manifest)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "warning: skipping lua file %s: %v\n", graph.NormalizePath(absolutePath), err)
@@ -233,6 +244,23 @@ func parseAddon(spec graph.AddonSpec) (graph.AddonModel, error) {
 		}
 	}
 
+	for _, luaFile := range luaFiles {
+		normalizedAbsolute := strings.ToLower(graph.NormalizePath(luaFile))
+		if _, remaining := luaSeen[normalizedAbsolute]; !remaining {
+			continue
+		}
+		delete(luaSeen, normalizedAbsolute)
+		parsed, err := lua_parser.ParseFile(spec.Name, luaFile, spec.Manifest)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "warning: skipping lua file %s: %v\n", graph.NormalizePath(luaFile), err)
+			continue
+		}
+		addon.Functions = append(addon.Functions, parsed.Functions...)
+		addon.Modules = append(addon.Modules, parsed.Modules...)
+		addon.Events = append(addon.Events, parsed.Events...)
+		addon.State = append(addon.State, parsed.State...)
+	}
+
 	addon.Functions = graph.UniqueSortedFunctions(addon.Functions)
 	addon.Modules = graph.UniqueSortedModules(addon.Modules)
 	addon.Events = graph.UniqueSortedEvents(addon.Events)
@@ -240,6 +268,62 @@ func parseAddon(spec graph.AddonSpec) (graph.AddonModel, error) {
 	addon.Frames = graph.UniqueSortedFrames(addon.Frames)
 	addon.Handlers = graph.UniqueSortedHandlers(addon.Handlers)
 	return addon, nil
+}
+
+func resolveAddonLuaFiles(spec graph.AddonSpec) []string {
+	manifestLua := make([]string, 0)
+	for _, manifestFile := range spec.Manifest.Files {
+		if !strings.EqualFold(filepath.Ext(manifestFile), ".lua") {
+			continue
+		}
+		absolutePath := filepath.Join(spec.Path, filepath.FromSlash(strings.ReplaceAll(manifestFile, "\\", "/")))
+		if _, err := os.Stat(absolutePath); err != nil {
+			continue
+		}
+		manifestLua = append(manifestLua, graph.NormalizePath(absolutePath))
+	}
+	manifestLua = uniqueSortedNormalizedPaths(manifestLua)
+	if len(manifestLua) > 0 {
+		return manifestLua
+	}
+
+	fallback := make([]string, 0)
+	_ = filepath.WalkDir(spec.Path, func(path string, d os.DirEntry, err error) error {
+		if err != nil {
+			return nil
+		}
+		if d.IsDir() {
+			if strings.HasPrefix(d.Name(), ".") {
+				return filepath.SkipDir
+			}
+			return nil
+		}
+		if strings.EqualFold(filepath.Ext(path), ".lua") {
+			fallback = append(fallback, graph.NormalizePath(path))
+		}
+		return nil
+	})
+	return uniqueSortedNormalizedPaths(fallback)
+}
+
+func uniqueSortedNormalizedPaths(values []string) []string {
+	if len(values) == 0 {
+		return []string{}
+	}
+	set := make(map[string]bool, len(values))
+	for _, value := range values {
+		trimmed := strings.TrimSpace(value)
+		if trimmed == "" {
+			continue
+		}
+		set[graph.NormalizePath(trimmed)] = true
+	}
+	result := make([]string, 0, len(set))
+	for value := range set {
+		result = append(result, value)
+	}
+	sort.Strings(result)
+	return result
 }
 
 func parseXMLFile(addonName string, filePath string) (graph.XMLFileResult, error) {

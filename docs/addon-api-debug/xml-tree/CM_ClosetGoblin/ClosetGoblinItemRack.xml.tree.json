@@ -1,0 +1,1364 @@
+{
+  "schema_version": "phase1-tree/v1",
+  "addon": "CM_ClosetGoblin",
+  "source_file": "ClosetGoblinItemRack.xml",
+  "roots": [
+    "n1"
+  ],
+  "nodes": [
+    {
+      "node_id": "n1",
+      "parent_id": null,
+      "child_index": 0,
+      "tag": "Interface",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "noNamespaceSchemaLocation": "../../Interface.xsd",
+        "xsi": "http://www.w3.org/2501/XMLSchema-instance"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": false,
+        "is_ignored": true,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n2",
+      "parent_id": "n1",
+      "child_index": 0,
+      "tag": "Scripts",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n3",
+      "parent_id": "n2",
+      "child_index": 0,
+      "tag": "Script",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "file": "ClosetGoblinItemRack.lua"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n4",
+      "parent_id": "n1",
+      "child_index": 1,
+      "tag": "Windows",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n5",
+      "parent_id": "n4",
+      "child_index": 0,
+      "tag": "Button",
+      "raw_name": "CG_ItemRackEquipmentButton",
+      "resolved_name": "CG_ItemRackEquipmentButton",
+      "attributes": {
+        "draganddrop": "true",
+        "gameactionbutton": "right",
+        "inherits": "CharacterWindowDefaultButton",
+        "name": "CG_ItemRackEquipmentButton"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n6",
+      "parent_id": "n5",
+      "child_index": 0,
+      "tag": "EventHandlers",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEquipmentButton",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n7",
+      "parent_id": "n6",
+      "child_index": 0,
+      "tag": "EventHandler",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "event": "OnRButtonDown",
+        "function": "CG_ItemRack.EquipmentRButtonDown"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEquipmentButton",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n8",
+      "parent_id": "n6",
+      "child_index": 1,
+      "tag": "EventHandler",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "event": "OnMouseOver",
+        "function": "CG_ItemRack.EquipmentMouseOver"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEquipmentButton",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n9",
+      "parent_id": "n4",
+      "child_index": 1,
+      "tag": "Window",
+      "raw_name": "CG_ItemRackEQShow1",
+      "resolved_name": "CG_ItemRackEQShow1",
+      "attributes": {
+        "inherits": "EA_Window_Default",
+        "layer": "popup",
+        "movable": "false",
+        "name": "CG_ItemRackEQShow1",
+        "savesettings": "false"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n10",
+      "parent_id": "n9",
+      "child_index": 0,
+      "tag": "Size",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n11",
+      "parent_id": "n10",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "750",
+        "y": "75"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n12",
+      "parent_id": "n9",
+      "child_index": 1,
+      "tag": "Windows",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n13",
+      "parent_id": "n12",
+      "child_index": 0,
+      "tag": "Window",
+      "raw_name": "$parentEquipment",
+      "resolved_name": "CG_ItemRackEQShow1Equipment",
+      "attributes": {
+        "draganddrop": "true",
+        "layer": "background",
+        "name": "$parentEquipment"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n14",
+      "parent_id": "n13",
+      "child_index": 0,
+      "tag": "Size",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n15",
+      "parent_id": "n14",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "750",
+        "y": "75"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n16",
+      "parent_id": "n13",
+      "child_index": 1,
+      "tag": "Windows",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n17",
+      "parent_id": "n16",
+      "child_index": 0,
+      "tag": "Button",
+      "raw_name": "$parentSlot1",
+      "resolved_name": "CG_ItemRackEQShow1EquipmentSlot1",
+      "attributes": {
+        "id": "1",
+        "inherits": "CG_ItemRackEquipmentButton",
+        "name": "$parentSlot1"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n18",
+      "parent_id": "n16",
+      "child_index": 1,
+      "tag": "Button",
+      "raw_name": "$parentSlot2",
+      "resolved_name": "CG_ItemRackEQShow1EquipmentSlot2",
+      "attributes": {
+        "id": "2",
+        "inherits": "CG_ItemRackEquipmentButton",
+        "name": "$parentSlot2"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n19",
+      "parent_id": "n18",
+      "child_index": 0,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot2",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n20",
+      "parent_id": "n19",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "right",
+        "relativePoint": "left",
+        "relativeTo": "$parentSlot1"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot2",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n21",
+      "parent_id": "n20",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "0"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot2",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n22",
+      "parent_id": "n16",
+      "child_index": 2,
+      "tag": "Button",
+      "raw_name": "$parentSlot3",
+      "resolved_name": "CG_ItemRackEQShow1EquipmentSlot3",
+      "attributes": {
+        "id": "3",
+        "inherits": "CG_ItemRackEquipmentButton",
+        "name": "$parentSlot3"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n23",
+      "parent_id": "n22",
+      "child_index": 0,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot3",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n24",
+      "parent_id": "n23",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "right",
+        "relativePoint": "left",
+        "relativeTo": "$parentSlot2"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot3",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n25",
+      "parent_id": "n24",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "0"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot3",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n26",
+      "parent_id": "n16",
+      "child_index": 3,
+      "tag": "Button",
+      "raw_name": "$parentSlot4",
+      "resolved_name": "CG_ItemRackEQShow1EquipmentSlot4",
+      "attributes": {
+        "id": "4",
+        "inherits": "CG_ItemRackEquipmentButton",
+        "name": "$parentSlot4"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n27",
+      "parent_id": "n26",
+      "child_index": 0,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot4",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n28",
+      "parent_id": "n27",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "right",
+        "relativePoint": "left",
+        "relativeTo": "$parentSlot3"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot4",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n29",
+      "parent_id": "n28",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "0"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot4",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n30",
+      "parent_id": "n16",
+      "child_index": 4,
+      "tag": "Button",
+      "raw_name": "$parentSlot5",
+      "resolved_name": "CG_ItemRackEQShow1EquipmentSlot5",
+      "attributes": {
+        "id": "5",
+        "inherits": "CG_ItemRackEquipmentButton",
+        "name": "$parentSlot5"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n31",
+      "parent_id": "n30",
+      "child_index": 0,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot5",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n32",
+      "parent_id": "n31",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "right",
+        "relativePoint": "left",
+        "relativeTo": "$parentSlot4"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot5",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n33",
+      "parent_id": "n32",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "0"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot5",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n34",
+      "parent_id": "n16",
+      "child_index": 5,
+      "tag": "Button",
+      "raw_name": "$parentSlot6",
+      "resolved_name": "CG_ItemRackEQShow1EquipmentSlot6",
+      "attributes": {
+        "id": "6",
+        "inherits": "CG_ItemRackEquipmentButton",
+        "name": "$parentSlot6"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n35",
+      "parent_id": "n34",
+      "child_index": 0,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot6",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n36",
+      "parent_id": "n35",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "right",
+        "relativePoint": "left",
+        "relativeTo": "$parentSlot5"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot6",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n37",
+      "parent_id": "n36",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "0"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot6",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n38",
+      "parent_id": "n16",
+      "child_index": 6,
+      "tag": "Button",
+      "raw_name": "$parentSlot7",
+      "resolved_name": "CG_ItemRackEQShow1EquipmentSlot7",
+      "attributes": {
+        "id": "7",
+        "inherits": "CG_ItemRackEquipmentButton",
+        "name": "$parentSlot7"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n39",
+      "parent_id": "n38",
+      "child_index": 0,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot7",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n40",
+      "parent_id": "n39",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "right",
+        "relativePoint": "left",
+        "relativeTo": "$parentSlot6"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot7",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n41",
+      "parent_id": "n40",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "0"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot7",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n42",
+      "parent_id": "n16",
+      "child_index": 7,
+      "tag": "Button",
+      "raw_name": "$parentSlot8",
+      "resolved_name": "CG_ItemRackEQShow1EquipmentSlot8",
+      "attributes": {
+        "id": "8",
+        "inherits": "CG_ItemRackEquipmentButton",
+        "name": "$parentSlot8"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n43",
+      "parent_id": "n42",
+      "child_index": 0,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot8",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n44",
+      "parent_id": "n43",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "right",
+        "relativePoint": "left",
+        "relativeTo": "$parentSlot7"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot8",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n45",
+      "parent_id": "n44",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "0"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot8",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n46",
+      "parent_id": "n16",
+      "child_index": 8,
+      "tag": "Button",
+      "raw_name": "$parentSlot9",
+      "resolved_name": "CG_ItemRackEQShow1EquipmentSlot9",
+      "attributes": {
+        "id": "9",
+        "inherits": "CG_ItemRackEquipmentButton",
+        "name": "$parentSlot9"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n47",
+      "parent_id": "n46",
+      "child_index": 0,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot9",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n48",
+      "parent_id": "n47",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "right",
+        "relativePoint": "left",
+        "relativeTo": "$parentSlot8"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot9",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n49",
+      "parent_id": "n48",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "0"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot9",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n50",
+      "parent_id": "n16",
+      "child_index": 9,
+      "tag": "Button",
+      "raw_name": "$parentSlot10",
+      "resolved_name": "CG_ItemRackEQShow1EquipmentSlot10",
+      "attributes": {
+        "id": "10",
+        "inherits": "CG_ItemRackEquipmentButton",
+        "name": "$parentSlot10"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1Equipment",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n51",
+      "parent_id": "n50",
+      "child_index": 0,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot10",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n52",
+      "parent_id": "n51",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "right",
+        "relativePoint": "left",
+        "relativeTo": "$parentSlot9"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot10",
+        "nearest_named_tag": "Button"
+      }
+    },
+    {
+      "node_id": "n53",
+      "parent_id": "n52",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "0"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "ClosetGoblinItemRack.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "CG_ItemRackEQShow1EquipmentSlot10",
+        "nearest_named_tag": "Button"
+      }
+    }
+  ]
+}

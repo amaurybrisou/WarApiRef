@@ -23,14 +23,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogIDS.lua:55`, `/workspace/data/raw/Enemy/Code/Core/ObjectWindows.lua:237`, `/workspace/data/raw/Enemy/Code/Marks/Marks.lua:8` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | PlayerTargetUpdated |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy.CombatLogUI_IDS_OnSettingsChanged, Enemy: Enemy.MarksInitialize, Enemy: Enemy.ObjectWindowsInitialize |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 2 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -69,38 +69,18 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
-- Enemy.CombatLog_IDS_OnPlayerTargetUpdated
+- AddEventHandler
 - addon
 - function(target)if(not target.isNpc and target.id>0)then Enemy._MarksCheckPlayerNewId(target.name,target.id,target.isFriendly,target.career)end end
 - function(target)if(not target.isNpc)then Enemy._ObjectWindowsCheckPlayerNewId(target.name,target.id)end end
 
 ## Examples
 
-- Enemy: Enemy.CombatLogUI_IDS_OnSettingsChanged -> PlayerTargetUpdated -> Enemy.CombatLog_IDS_OnPlayerTargetUpdated
-- Enemy: Enemy.MarksInitialize -> PlayerTargetUpdated -> function(target)if(not target.isNpc and target.id>0)then Enemy._MarksCheckPlayerNewId(target.name,target.id,target.isFriendly,target.career)end end
-- Enemy: Enemy.ObjectWindowsInitialize -> PlayerTargetUpdated -> function(target)if(not target.isNpc)then Enemy._ObjectWindowsCheckPlayerNewId(target.name,target.id)end end
-- Enemy: Enemy.CombatLog_IDS_OnPlayerTargetUpdated -> Enemy.AddEventHandler(PlayerTargetUpdated, Enemy.CombatLog_IDS_OnPlayerTargetUpdated)
-- Enemy: function(target)if(not target.isNpc and target.id>0)then Enemy._MarksCheckPlayerNewId(target.name,target.id,target.isFriendly,target.career)end end -> Enemy.AddEventHandler(PlayerTargetUpdated, function(target)if(not target.isNpc and target.id>0)then Enemy._MarksCheckPlayerNewId(target.name,target.id,target.isFriendly,target.career)end end)
-- Enemy: function(target)if(not target.isNpc)then Enemy._ObjectWindowsCheckPlayerNewId(target.name,target.id)end end -> Enemy.AddEventHandler(PlayerTargetUpdated, function(target)if(not target.isNpc)then Enemy._ObjectWindowsCheckPlayerNewId(target.name,target.id)end end)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Enemy: AddEventHandler -> PlayerTargetUpdated -> function(target)if(not target.isNpc)then Enemy._ObjectWindowsCheckPlayerNewId(target.name,target.id)end end
+- Enemy: AddEventHandler -> PlayerTargetUpdated -> function(target)if(not target.isNpc and target.id>0)then Enemy._MarksCheckPlayerNewId(target.name,target.id,target.isFriendly,target.career)end end
+- Enemy: function(target)if(not target.isNpc)then Enemy._ObjectWindowsCheckPlayerNewId(target.name,target.id)end end -> AddEventHandler(PlayerTargetUpdated, function(target)if(not target.isNpc)then Enemy._ObjectWindowsCheckPlayerNewId(target.name,target.id)end end)
+- Enemy: function(target)if(not target.isNpc and target.id>0)then Enemy._MarksCheckPlayerNewId(target.name,target.id,target.isFriendly,target.career)end end -> AddEventHandler(PlayerTargetUpdated, function(target)if(not target.isNpc and target.id>0)then Enemy._MarksCheckPlayerNewId(target.name,target.id,target.isFriendly,target.career)end end)
 
 ## Notes
 
-- Triggered-by evidence: Enemy:Enemy.OnPlayerTargetUpdated
 - Only one addon surfaced this event in the current addon-api corpus.

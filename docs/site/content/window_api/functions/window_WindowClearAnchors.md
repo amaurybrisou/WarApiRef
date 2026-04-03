@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 22 addons
+- Seen in: 114 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AnywhereTrainerAdditions, Aura, AutoMark, BankArkel, BuffHead, CombatTextNames |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:152`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:552`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:18`, `/workspace/data/raw/Aura/Source/Aura.lua:505`, `/workspace/data/raw/Aura/Source/Aura.lua:534`, `/workspace/data/raw/Aura/Source/AuraTexture.lua:41`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:124`, `/workspace/data/raw/BankArkel/BankArkel.lua:172` |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, AdvancedPetAssist, Amethyst, AnywhereTrainerAdditions, AuctionStats |
+| Files seen in | APAGui.lua, AdjustTheTip.lua, AnywhereTrainerAdditions.lua, AuctionStats.lua, BBarsPetHP.lua, BankArkel.lua, Bar.lua, Bars/HealGridCareerBar.lua |
 | Namespaces detected | WindowClearAnchors |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:ClearAnchors, AdvancedPetAssist: AdvancedPetAssist.local.AnchorInContent, AdvancedPetAssist: AnchorInContent, AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize, Aura: Aura:UpdateTimerWindow, Aura: Aura:UpdateWindow |
+| Example locations | Ace: ClearAnchors, ActionBarHide: ClearAnchors, ActionFraction: ResetWindow, ActionFraction: SetLocationActionPointBar, ActionFraction: SetLocationCenterScreen, AdjustTheTip: UpdateCallback |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 151 |
-| Global usage count | 151 |
+| Lua usage count | 612 |
+| Global usage count | 612 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,11 +71,11 @@ Observed resetting a window layout before applying new runtime anchors.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "AnywhereTrainerBottomBookend", "AnywhereTrainerTopBookend", "BankArkelBackpack" |
+| windowName | Observed as a target window name. | Observed values: "AnywhereTrainerBottomBookend", "AnywhereTrainerTopBookend", "BBarsPetHPBack" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -84,65 +84,154 @@ Observed resetting a window layout before applying new runtime anchors.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- ActionFraction
+- AdjustTheTip
 - AdvancedPetAssist
+- Amethyst
 - AnywhereTrainerAdditions
+- AuctionStats
 - Aura
 - AutoMark
+- BBars - Mechanic Only
 - BankArkel
+- BetterCC
+- BlackBook
 - BuffHead
+- CDown
+- CastSequence
+- ChattyCathy
 - CombatTextNames
+- CraftingWillard
+- Crusher
 - DAoCBuff
+- DammazKron
+- Dascore
+- DetauntHelper
+- DuffTimer
+- EA_ScenarioGroupWindow
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDTracker
+- GCDsaver
+- Group Icons
+- GroupRange
+- GroupSpotter
+- GuardBot
+- HealGrid
+- Hopper
+- InfoScroller
+- JunkDump
+- KillTracker
 - Killer
+- Kwestor
+- LibAddonButton
 - LibWBToggler
+- MacroIcons
+- Map
+- MapMonster
+- Mass Refine
+- MiniMapMonster
+- Miracle Grow Remix
+- MoraleBG
+- Moth
+- Motion
+- MouseHint
+- NaturalLog
+- NerfedButtons
+- Obsidian
+- OverheadFonts
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- QuickWarReport
+- RO-Style Combat Text
+- RVAPI_ColorDialog
+- RVAPI_Range
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- RealmStatus
+- ReliquaryHunter
+- ResHelp
 - RoR_SoR
+- RvRStats
+- RvRStatsTab
+- SOR
+- ScenarioStats
+- SessionRPs
 - Shinies
+- SimpleCombatText
+- Squared
+- SquaredHotIndicators
+- TacticSetNames
+- TargetInfoRing
+- TargetRing
+- TastyButtons
 - TexturedButtons
 - TidyChat
+- Tokens
+- TomeTracker
 - TurretRange
+- Vectors
+- VerticalMorale
+- VerticalTactics
+- WARRatingBuster
 - WSCT
+- WarBoard_Loc
+- WarTriage
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- WindowMovers
 - WoH-Reticle
+- XpStatus+G
+- emotes
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:ClearAnchors -> WindowClearAnchors(self.name)
-- AdvancedPetAssist: AdvancedPetAssist.local.AnchorInContent -> WindowClearAnchors(name)
-- AdvancedPetAssist: AnchorInContent -> WindowClearAnchors(name)
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -> WindowClearAnchors("AnywhereTrainerTopBookend")
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -> WindowClearAnchors("AnywhereTrainerBottomBookend")
-- Aura: Aura:UpdateTimerWindow -> WindowClearAnchors(windowId)
+- Ace: ClearAnchors -> WindowClearAnchors(self.name)
+- ActionBarHide: ClearAnchors -> WindowClearAnchors(self.name)
+- ActionFraction: ResetWindow -> WindowClearAnchors(windowName)
+- ActionFraction: SetLocationActionPointBar -> WindowClearAnchors(windowName)
+- ActionFraction: SetLocationCenterScreen -> WindowClearAnchors(windowName)
+- AdjustTheTip: UpdateCallback -> WindowClearAnchors(Tooltips.curTooltipWindow)
 
 ## Related APIs
 
-- none
+- [Anchor](../../xml/element_types/element_Anchor.md) (HIGH 100/100) - XML Element Type
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
+- [DialogManager.MakeOneButtonDialog](../../globals/functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
 - [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
-- [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowGetLayer](window_WindowGetLayer.md) (HIGH 100/100) - Window Function
 - [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
 - [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [StatusBarGetMaximumValue](window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [Anchor](../../xml/element_types/element_Anchor.md) (MEDIUM 55/100) - XML Element Type
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

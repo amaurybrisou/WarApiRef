@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, CombatTextNames, Enemy, RoR_SoR, TidyChat, WSCT |
-| Files seen in | `/workspace/data/raw/Aura/Libraries/LibPickle.lua:428`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:129`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:700`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:709`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:773`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:816`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:863`, `/workspace/data/raw/Enemy/Code/Core/Utils.lua:370` |
+| Addons seen in | AdvancedRenownTrainer, Aura, CCTV, CombatTextNames, Cram The Spam, EA_UiDebugTools, Enemy, LibDateTime |
+| Files seen in | AdvancedRenownTrainingImportExport.lua, CCTV.lua, Code/CombatLog/CombatLog.lua, Code/Core/Utils.lua, CramTheSpam.lua, LibDateTime.lua, LibPickle.lua, Libraries/LibPickle.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed, Aura: AuraHelpers.cleanWString, Aura: DePickler:unpickle, CombatTextNames: CombatTextNames.TruncateAbilityName, Enemy: Enemy.CombatLog_ParseHeal, Enemy: Enemy.CombatLog_ParseIncommingDamage |
+| Example locations | AdvancedRenownTrainer: ImportOkButtonPressed, Aura: cleanWString, Aura: unpickle, CCTV: Update, CombatTextNames: TruncateAbilityName, Cram The Spam: GetCleanName |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 35 |
-| Global usage count | 35 |
+| Lua usage count | 96 |
+| Global usage count | 96 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,64 +62,58 @@ wstring.match(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 7 addons.
+Observed as a global function across 17 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: Enemy.toWString(str), link, mit |
-| arg2 | Observed as a function or method reference. | Observed values: BuildPattern, L "([^\^]+).*", L "([^^]+)^?.*" |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: CText, DevPad_Settings.Code, Enemy.toWString(str) |
+| arg2 | Observed as a function or method reference. | Observed values: BuildPattern, L "%]%[.+%]:(.+)", L "(%d+)." |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - Aura
+- CCTV
 - CombatTextNames
+- Cram The Spam
+- EA_UiDebugTools
 - Enemy
+- LibDateTime
+- LibPickle
+- MapPin
+- QuickNameActions+
 - RoR_SoR
+- SessionRPs
 - TidyChat
+- Trakario
 - WSCT
+- WarBoard_WarWhisperer
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, arsenalUrl..BuildPattern)
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, BuildPattern)
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, wardrobeUrl..BuildPattern)
-- Aura: AuraHelpers.cleanWString -> wstring.match(wstr, L "([^\^]+).*")
-- Aura: DePickler:unpickle -> wstring.match(s, L "P1$")
-- CombatTextNames: CombatTextNames.TruncateAbilityName -> wstring.match(wstring.gsub(text,L "%l*",L ""), L "([^^]+)^?.*")
-
-## Related APIs
-
-- none
+- AdvancedRenownTrainer: ImportOkButtonPressed -> wstring.match(link, arsenalUrl..BuildPattern)
+- AdvancedRenownTrainer: ImportOkButtonPressed -> wstring.match(link, BuildPattern)
+- AdvancedRenownTrainer: ImportOkButtonPressed -> wstring.match(link, wardrobeUrl..BuildPattern)
+- Aura: cleanWString -> wstring.match(wstr, L "([^\^]+).*")
+- Aura: unpickle -> wstring.match(s, L "P1$")
+- CCTV: Update -> wstring.match(towstring(Snare_Timer), L "(%d+).")
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [wstring.gsub](global_wstring.gsub.md) (HIGH 100/100) - Global Function
-- [wstring.sub](global_wstring.sub.md) (HIGH 100/100) - Global Function
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 35 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, Enemy, LibWBToggler, PartyCast, Shinies, TidyChat, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:226`, `/workspace/data/raw/Ace/LibGUI.lua:231`, `/workspace/data/raw/Aura/Source/AuraShares.lua:379`, `/workspace/data/raw/Aura/Source/AuraShares.lua:397`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:842`, `/workspace/data/raw/Enemy/Code/Intercom/Intercom.lua:234`, `/workspace/data/raw/Enemy/Code/Intercom/Intercom.lua:338`, `/workspace/data/raw/Enemy/Code/Intercom/Intercom.lua:422` |
+| Addons seen in | Ace, Aura, AutoBand, Busted, Crusher, EA_UiDebugTools, EZCraftX, EZGuard |
+| Files seen in | AutoBand.lua, Busted.lua, Code/Core/Main.lua, Code/Intercom/Intercom.lua, LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, MassRefine.lua |
 | Namespaces detected | WindowAssignFocus |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Defocus, Ace: LIBGUI_ELEMENT:Focus, Aura: AuraShares.OnExportAura, Aura: AuraShares.OnImportAura, Enemy: Enemy.IntercomUI_ChooseChannelDialog_Open, Enemy: Enemy.IntercomUI_IntercomDialog_Open |
+| Example locations | Ace: Defocus, Ace: Focus, Aura: OnExportAura, Aura: OnImportAura, AutoBand: ShowCopyLink, Busted: UpdateErrorView |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 19 |
-| Global usage count | 19 |
+| Lua usage count | 90 |
+| Global usage count | 90 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,63 +65,80 @@ WindowAssignFocus(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 8 addons.
+Observed as a window function across 35 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "EnemyChooseChannelDialog", "EnemyIntercomDialog", "EnemyIntercomJoinDialog" |
+| arg1 | Observed as a function or method reference. | Observed values: "BustedGUIErrorMessage", "DebugWindowTextBox", "EnemyChooseChannelDialog" |
 | arg2 | Observed as a boolean toggle. | Observed values: false, true |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
 - Aura
+- AutoBand
+- Busted
+- Crusher
+- EA_UiDebugTools
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDsaver
+- Hopper
+- InfoScroller
+- Keyset
 - LibWBToggler
+- Map
+- MapMonster
+- Mass Refine
+- Motion
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- Squared
+- TargetRing
 - TidyChat
+- Tokens
+- Twister
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Defocus -> WindowAssignFocus(self.name, false)
-- Ace: LIBGUI_ELEMENT:Focus -> WindowAssignFocus(self.name, true)
-- Aura: AuraShares.OnExportAura -> WindowAssignFocus(exportWindow.."AuraText", true)
-- Aura: AuraShares.OnImportAura -> WindowAssignFocus(importWindow.."AuraText", true)
-- Enemy: Enemy.IntercomUI_ChooseChannelDialog_Open -> WindowAssignFocus("EnemyChooseChannelDialog", true)
-- Enemy: Enemy.IntercomUI_IntercomDialog_Open -> WindowAssignFocus("EnemyIntercomDialog", true)
+- Ace: Defocus -> WindowAssignFocus(self.name, false)
+- Ace: Focus -> WindowAssignFocus(self.name, true)
+- Aura: OnExportAura -> WindowAssignFocus(exportWindow.."AuraText", true)
+- Aura: OnImportAura -> WindowAssignFocus(importWindow.."AuraText", true)
+- AutoBand: ShowCopyLink -> WindowAssignFocus(COPY_LINK_WINDOW_NAME.."UrlInput", true)
+- Busted: UpdateErrorView -> WindowAssignFocus("BustedGUIErrorMessage", true)
 
 ## Related APIs
 
-- none
+- [OnKeyEscape](../../xml/handlers/handler_OnKeyEscape.md) (HIGH 88/100) - XML Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
 - [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [IconLButtonUp](../../events/game_events/game_event_IconLButtonUp.md) (MEDIUM 43/100) - Game Event
-
-## Affects
-
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

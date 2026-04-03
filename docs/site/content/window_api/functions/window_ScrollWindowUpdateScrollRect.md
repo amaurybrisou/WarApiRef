@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, Enemy, Killer, Shinies |
-| Files seen in | `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:752`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:1422`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcons.lua:522`, `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:562`, `/workspace/data/raw/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:182`, `/workspace/data/raw/Enemy/Code/Timer/Timer.lua:275`, `/workspace/data/raw/Enemy/Code/UnitFrames/ClickCasting.lua:202`, `/workspace/data/raw/Enemy/Code/UnitFrames/EffectsIndicator.lua:613` |
+| Addons seen in | Crusher, DAoCBuff, DuffTimer, Enemy, Hopper, Killer, Miracle Grow Remix, Motion |
+| Files seen in | Code/CombatLog/CombatLog.lua, Code/GroupIcons/GroupIcons.lua, Code/Guard/Guard.lua, Code/TalismanAlerter/TalismanAlerter.lua, Code/Timer/Timer.lua, Code/UnitFrames/ClickCasting.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFramePart.lua |
 | Namespaces detected | ScrollWindowUpdateScrollRect |
 | Source kinds | lua_calls |
-| Example locations | DAoCBuff: DAoCBuff.ShowMessageWindow, Enemy: Enemy.CombatLogUI_ConfigDialog_OnInitialize, Enemy: Enemy.GroupIconsUI_ConfigDialog_OnInitialize, Enemy: Enemy.GuardUI_ConfigDialog_OnInitialize, Enemy: Enemy.TalismanAlerterUI_ConfigDialog_OnInitialize, Enemy: Enemy.TimerUI_ConfigDialog_OnInitialize |
+| Example locations | Crusher: UpdateDisplayedConfig, DAoCBuff: ShowMessageWindow, DuffTimer: SetAdvWindow, Enemy: CombatLogUI_ConfigDialog_OnInitialize, Enemy: GroupIconsUI_ConfigDialog_OnInitialize, Enemy: GuardUI_ConfigDialog_OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 31 |
+| Global usage count | 31 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ScrollWindowUpdateScrollRect(arg1)
 
 ## Description
 
-Observed as a window function across 4 addons.
+Observed as a window function across 17 addons.
 
 ## Parameters
 
@@ -75,43 +75,40 @@ Observed as a window function across 4 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- Crusher
 - DAoCBuff
+- DuffTimer
 - Enemy
+- Hopper
 - Killer
+- Miracle Grow Remix
+- Motion
+- Pure
+- RVMOD_Manager
+- RVMOD_Targets
 - Shinies
+- Tome Titan
+- Vectors
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- wbLeadHelper
 
 ## Examples
 
-- DAoCBuff: DAoCBuff.ShowMessageWindow -> ScrollWindowUpdateScrollRect("DAoCBuffMessageWindowScrollWindow")
-- Enemy: Enemy.CombatLogUI_ConfigDialog_OnInitialize -> ScrollWindowUpdateScrollRect(config_dlg.section.windowName.."Content")
-- Enemy: Enemy.GroupIconsUI_ConfigDialog_OnInitialize -> ScrollWindowUpdateScrollRect(dlg.section.windowName.."Content")
-- Enemy: Enemy.GuardUI_ConfigDialog_OnInitialize -> ScrollWindowUpdateScrollRect(config_dlg.section.windowName.."Content")
-- Enemy: Enemy.TalismanAlerterUI_ConfigDialog_OnInitialize -> ScrollWindowUpdateScrollRect(config_dlg.section.windowName.."Content")
-- Enemy: Enemy.TimerUI_ConfigDialog_OnInitialize -> ScrollWindowUpdateScrollRect(config_dlg.section.windowName.."Content")
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- Crusher: UpdateDisplayedConfig -> ScrollWindowUpdateScrollRect(configWindowScroll)
+- DAoCBuff: ShowMessageWindow -> ScrollWindowUpdateScrollRect("DAoCBuffMessageWindowScrollWindow")
+- DuffTimer: SetAdvWindow -> ScrollWindowUpdateScrollRect(VPWindowName.."_"..DuffTimer.tabs[tabId].window)
+- Enemy: CombatLogUI_ConfigDialog_OnInitialize -> ScrollWindowUpdateScrollRect(config_dlg.section.windowName.."Content")
+- Enemy: GroupIconsUI_ConfigDialog_OnInitialize -> ScrollWindowUpdateScrollRect(dlg.section.windowName.."Content")
+- Enemy: GuardUI_ConfigDialog_OnInitialize -> ScrollWindowUpdateScrollRect(config_dlg.section.windowName.."Content")
 
 ## Notes
 

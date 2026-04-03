@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 29 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:463`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:463`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:463`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:463`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:463` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, WARCommander.lua, libs/LibGUI.lua |
 | Namespaces detected | LabelGetTextColor |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Label:Color, LibWBToggler: LIBGUI_Label:Color, PartyCast: LIBGUI_Label:Color, Shinies: LIBGUI_Label:Color, WoH-Reticle: LIBGUI_Label:Color |
+| Example locations | Ace: Color, ActionBarHide: Color, Amethyst: Color, Crusher: Color, EZCraftX: Color, EZGuard: Color |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 29 |
+| Global usage count | 29 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,53 +65,71 @@ LabelGetTextColor(arg1)
 
 ## Description
 
-Observed as a window function across 5 addons.
+Observed as a window function across 29 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: self.name |
+| arg1 | Observed as a function or method reference. | Observed values: SystemData.MouseOverWindow.name, self.name |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
+- WARCommander
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Label:Color -> LabelGetTextColor(self.name)
-- LibWBToggler: LIBGUI_Label:Color -> LabelGetTextColor(self.name)
-- PartyCast: LIBGUI_Label:Color -> LabelGetTextColor(self.name)
-- Shinies: LIBGUI_Label:Color -> LabelGetTextColor(self.name)
-- WoH-Reticle: LIBGUI_Label:Color -> LabelGetTextColor(self.name)
+- Ace: Color -> LabelGetTextColor(self.name)
+- ActionBarHide: Color -> LabelGetTextColor(self.name)
+- Amethyst: Color -> LabelGetTextColor(self.name)
+- Crusher: Color -> LabelGetTextColor(self.name)
+- EZCraftX: Color -> LabelGetTextColor(self.name)
+- EZGuard: Color -> LabelGetTextColor(self.name)
 
 ## Related APIs
 
-- none
+- [Color](../../xml/element_types/element_Color.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 
+- [Color](../../xml/element_types/element_Color.md) (HIGH 100/100) - XML Element Type
 - [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

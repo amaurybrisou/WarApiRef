@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 12 addons
+- Seen in: 53 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, BankArkel, Enemy, Killer, LibWBToggler, PartyCast, RoR_SoR |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:262`, `/workspace/data/raw/BankArkel/BankArkel.lua:172`, `/workspace/data/raw/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:561`, `/workspace/data/raw/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:702`, `/workspace/data/raw/Killer/KillerUiCache.lua:102`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:262`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:262`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:1055` |
+| Addons seen in | Ace, AdvancedRenownTrainer, BankArkel, CMap, Calling, Crafting Info Tooltip, Crusher, DammazKron |
+| Files seen in | AdvancedRenownTraining.lua, BankArkel.lua, CMap.lua, CallingSetup.lua, Code/ScenarioInfo/ScenarioInfo.lua, Core/Tome/DK_Tome.lua, CraftValueTip.lua, DuffTimer.lua |
 | Namespaces detected | WindowSetId |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:SetId, AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow, AdvancedRenownTrainer: CreateAbilityWindow, BankArkel: BankArkel.CreatePackWin, Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update, Enemy: Enemy.local.SetStatsRow |
+| Example locations | Ace: SetId, AdvancedRenownTrainer: CreateAbilityWindow, BankArkel: CreatePackWin, CMap: PopulateFilterCell, CMap: SetId, Calling: UpdateMacros |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 29 |
-| Global usage count | 29 |
+| Lua usage count | 90 |
+| Global usage count | 90 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "EnemyScenarioInfoDialog"..data.windowName.."NameLabel", "EnemyScenarioInfoDialogScoreDestrLabel", "EnemyScenarioInfoDialogScoreOrderLabel" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 1, 2, ChatSettings.Channels[SystemData.ChatLogFilters.ADVICE].id |
+| windowName | Observed as a target window name. | Observed values: "CallingSetupMacroIconSlotC", "CallingSetupMacroIconSlotT", "DuffTimer_Bar_"..windowsKey.."_"..buffData.effectIndex |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, 1, 15 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -87,43 +87,71 @@ Observed mutating runtime window state or presentation.
 - Ace
 - AdvancedRenownTrainer
 - BankArkel
+- CMap
+- Calling
+- Crafting Info Tooltip
+- Crusher
+- DammazKron
+- DuffTimer
+- EA_ThreePartBar
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDsaver
+- HealGrid
+- Hopper
+- InfoScroller
 - Killer
+- Kwestor
 - LibWBToggler
+- Map
+- MapMonster
+- MiniMapMonster
+- Miracle Grow Remix
+- MoraleSet
+- Motion
+- NerfedButtons
+- NoUselessMods-Assist
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
+- Refer
+- ResHelp
 - RoR_SoR
+- Sequencer
 - Shinies
+- SocialWindow 2.0
+- TacticSetNames
+- TargetRing
 - TidyChat
+- TidyQueue
 - TidyRoll
+- Tokens
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- nRarity
+- scenarioInfo
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:SetId -> WindowSetId(self.name, id)
-- AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow -> WindowSetId(t.windowName, t.id)
+- Ace: SetId -> WindowSetId(self.name, id)
 - AdvancedRenownTrainer: CreateAbilityWindow -> WindowSetId(t.windowName, t.id)
-- BankArkel: BankArkel.CreatePackWin -> WindowSetId("PackIcon"..i, i)
-- Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update -> WindowSetId("EnemyScenarioInfoDialogScoreDestrLabel", NewTooltip(L "Destruction points"))
-- Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update -> WindowSetId("EnemyScenarioInfoDialogScoreOrderLabel", NewTooltip(L "Order points"))
+- BankArkel: CreatePackWin -> WindowSetId("PackIcon"..i, i)
+- CMap: PopulateFilterCell -> WindowSetId(buttonFrame, pinTypeIndex)
+- CMap: SetId -> WindowSetId(self.name, id)
+- Calling: UpdateMacros -> WindowSetId("CallingSetupMacroIconSlotC", callMacroId)
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

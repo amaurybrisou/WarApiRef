@@ -48,7 +48,7 @@
 
 ## Description
 
-Assets is a container-style XML element. It is typically used to host named child elements such as Texture.
+Assets is a container-style XML element. It is typically used to host named child elements such as Icon, Texture.
 
 ## Common Attributes
 
@@ -60,36 +60,128 @@ Assets is a container-style XML element. It is typically used to host named chil
 
 ## Common Named Child Elements
 
-- [Texture](element_Texture.md) — 374× (HIGH)
+- [Texture](element_Texture.md) — 970× (HIGH)
+- [Icon](element_Icon.md) — 5× (MEDIUM)
 
 ## Recursive Hierarchy
 
 - Root: [Assets](element_Assets.md)
-- [Texture](element_Texture.md) (named, 374×, HIGH)
-  - [Slice](element_Slice.md) (structural, 73×, HIGH)
+- [Icon](element_Icon.md) (named, 5×, MEDIUM)
+- [Texture](element_Texture.md) (named, 970×, HIGH)
+  - [Slice](element_Slice.md) (structural, 287×, HIGH)
 
 ## Seen In
 
 - Ace
 - AggroMeter
 - Aura
+- AutoBand
 - AutoMark
+- BBars - Mechanic Only
 - BagOMatic
 - BankArkel
+- Big'uns
+- Bloody Mess
+- Brizio's Crappy Computer Medic
 - BuffHead
+- CCTV
+- CDown
 - CM_ClosetGoblin
+- CMap
+- Calling
+- CastSequence
+- CoolDownLine
+- Crusher
 - DAoCBuff
+- DetauntHelper
+- DuffTimer
+- Dye Preview
+- EA_LoadingScreen
+- EA_ThreePartBar
+- Effigy
+- Emojii
 - Enemy
+- EveryBodyGuard
+- FlagCap
+- GDes
+- Ges
+- GroupRange
+- GroupSpotter
 - GuardLine
+- GuildWarden
+- HealGrid
+- InfoScroller
+- KeyBar
+- KillStreak
+- LibAddonButton
 - LibSlash
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- Minmap
 - MoraleCircle
+- Motion
+- MouseHint
+- NaturalLog
+- NerfedButtons
+- Obsidian
+- Paint the leader
+- PlayEffectsOn
+- Pure
+- Pure Careerbar
+- RVAPI_ColorDialog
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- Refer
+- ReliquaryHunter
+- Res
+- ResHelp
+- RetAlert
 - RoR_SoR
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SNT_INFO
+- SNT_PANEL
+- SOR
+- Sequencer
 - Shinies
+- Soloq
+- SpamBayes
+- Squared
 - Swift Assist
+- Swinger
+- TacticSetNames
+- TalismanGenie
+- TargetInfoRing
+- TargetRing
+- TastyButtons
 - TexturedButtons
 - TidyRoll
+- TokenMachine
 - TurretRange
+- TurretScrap
+- Twister
+- Vectors
+- WarBoard_TogglerRankedLeaderboard
+- WarBoard_TogglerTidyChat
+- WarBoard_TogglerTidyRoll
+- WarBoard_TogglerVPBreakdown
+- WarBoard_TogglerWSCT
+- WarBoard_TogglerWlh
+- Warbuilder
+- Wikki's Cooldown Bar
 - WoH-Reticle
+- compass
+- nLootLink
+- nRarity
+- warboard_TogglerWarBuilder
+- wbLeadHelper
+- xHUD
+- yAssistHelper
+- zMailMod
 
 ## Examples
 
@@ -97,17 +189,5 @@ Assets is a container-style XML element. It is typically used to host named chil
 
 ## Related APIs
 
-- [Texture](element_Texture.md) (MEDIUM 55/100) - XML Element Type
-- [Icon](element_Icon.md) (LOW 20/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [Texture](element_Texture.md) (HIGH 100/100) - XML Element Type
+- [Icon](element_Icon.md) (MEDIUM 45/100) - XML Element Type

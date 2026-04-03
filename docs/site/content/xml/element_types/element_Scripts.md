@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 12 addons.
+Scripts is an XML element type observed in contract artifacts, but structured evidence is currently sparse.
 
 ## Common Attributes
 
@@ -60,18 +60,131 @@ Observed XML element type instantiated by 12 addons.
 
 ## Seen In
 
+- AbilityAlert
+- AbilityNotifier
+- ActionFraction
+- ActionPoints
 - AdvancedRenownTrainer
 - AggroMeter
+- ArmorGraphicToggle
+- Asshat
+- Assist
 - Aura
+- AutoBand
+- BBars - Mechanic Only
 - BankArkel
+- BarText (Influence)
+- BlackBook
+- BuddyBind
+- CCTV
 - CM_ClosetGoblin
+- CMap
+- CaVES
+- Calling
+- ChattyCathy
+- Cheeseboard
+- CleanUnitFrames
+- CleansingBuddy
+- Clock
+- CoolDownLine
+- CraftingWillard
+- Cram The Spam
+- Crusher
+- DPSMeter
+- Dascore
+- Deathblow
+- Deathblow2
+- Duel
+- EA_LoadingScreen
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_ThreePartBar
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraft
+- FlagCap
+- FozAuction
+- GDes
+- Ges
+- GetStats
 - GuardLine
+- GuardList
+- GuardRange
+- Hopper
+- I HATE YOU THIS MUCH
+- InfoScroller
+- ItemRack
+- JunkDump
+- KeyBar
+- KillStreak
+- LootAlert
+- MegaphonePlusPlus
 - MoraleCircle
+- MoraleSet
+- Moth
+- Motion
+- MyReasons
+- NoOverheal
+- ObjectInspector
+- Paint the leader
+- PartyAd
 - PartyCast
+- PeaceOut
+- PieTracker
 - Pocket Palette
+- Preciousss
+- Pure
+- Queue Queuer
+- QuickTacticSwitch
+- RPs
+- RaidMeter
+- Rangechecker
+- RealmStatus
+- Refer
+- ReliquaryHunter
+- Res
+- ResHelp
 - RoR_SoR
+- RoR_debolster
+- Rolodex
+- RvRStats
+- RvRStatsTab
+- SessionRPs
+- SimpleXY
+- SocialWindow 2.0
+- SpamBayes
+- SquaredClick
+- Statdoll
+- Statdoll Light
+- Statdoll Remix
+- Swinger
+- TalismanGenie
+- Targets
+- TastyButtons
+- TaxPayer
+- Tome Titan
+- Tortall_DPS
+- TurretScrap
+- TwisterSet
+- VPBreakdown
+- WBStutterLess
+- WTes
+- WaaaghBar
 - WarBoard
+- WarBoard_AAOTracker
+- Warbuilder
+- Wargames
+- WhatsCooking
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- XpStatus+G
+- ZonePOP
+- alertMod
 - bigger_MacroWindow
+- fpsbox
+- minesweep
+- talisman-monitor
+- zMailMod
 
 ## Examples
 
@@ -80,15 +193,3 @@ Observed XML element type instantiated by 12 addons.
 ## Related APIs
 
 - [Script](element_Script.md) (MEDIUM 45/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

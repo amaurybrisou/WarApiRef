@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WSCT |
-| Files seen in | `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Files seen in | wsct_options/wsct_options.xml |
 | Namespaces detected | ColorSpacing |
 | Source kinds | xml_frames |
 | Example locations | WSCT: WSCTOptionsColorPickerWindowColorPicker |
@@ -84,16 +84,4 @@ ColorSpacing is a XML UI element. It commonly appears under ColorPicker.
 
 ## Related APIs
 
-- [ColorPicker](element_ColorPicker.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [ColorPicker](element_ColorPicker.md) (MEDIUM 45/100) - XML Element Type

@@ -1,0 +1,170 @@
+{
+  "schema_version": "phase2-lua/v1",
+  "addon": "Clock",
+  "source_file": "Clock.lua",
+  "functions": [
+    {
+      "function_id": "f1",
+      "declared_name": "Clock.Initialize",
+      "qualified_name": "Clock.Initialize",
+      "short_name": "Initialize",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "Clock",
+      "receiver_separator": ".",
+      "namespace": "Clock",
+      "source": {
+        "line_start": 8,
+        "line_end": 29
+      },
+      "params": [],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "CreateWindow",
+          "callee_resolved": "CreateWindow",
+          "source": {
+            "line": 10
+          },
+          "arguments": [
+            "\"ClockWindow\"",
+            "true"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "LayoutEditor.RegisterWindow",
+          "callee_resolved": "LayoutEditor.RegisterWindow",
+          "source": {
+            "line": 12
+          },
+          "arguments": [
+            "\"ClockWindow\"",
+            "L \"Clock\"",
+            "L \"Displays the current local time.\"",
+            "false",
+            "false",
+            "true",
+            "nil"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        }
+      ]
+    },
+    {
+      "function_id": "f2",
+      "declared_name": "Clock.OnUpdate",
+      "qualified_name": "Clock.OnUpdate",
+      "short_name": "OnUpdate",
+      "scope_kind": "global",
+      "declaration_kind": "function_decl",
+      "receiver_name": "Clock",
+      "receiver_separator": ".",
+      "namespace": "Clock",
+      "source": {
+        "line_start": 31,
+        "line_end": 56
+      },
+      "params": [
+        "elapsedTime"
+      ],
+      "calls": [
+        {
+          "call_id": "c1",
+          "callee_raw": "GetComputerTime",
+          "callee_resolved": "GetComputerTime",
+          "source": {
+            "line": 33
+          },
+          "arguments": [],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c2",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 51
+          },
+          "arguments": [
+            "\"ClockWindowText\"",
+            "wstring.format(fmt,12,Clock.min,Clock.sec)"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c3",
+          "callee_raw": "wstring.format",
+          "callee_resolved": "wstring.format",
+          "source": {
+            "line": 51
+          },
+          "arguments": [
+            "fmt",
+            "12",
+            "Clock.min",
+            "Clock.sec"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c4",
+          "callee_raw": "LabelSetText",
+          "callee_resolved": "LabelSetText",
+          "source": {
+            "line": 53
+          },
+          "arguments": [
+            "\"ClockWindowText\"",
+            "wstring.format(fmt,Clock.hour%ClockSettings.Hours,Clock.min,Clock.sec)"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c5",
+          "callee_raw": "wstring.format",
+          "callee_resolved": "wstring.format",
+          "source": {
+            "line": 53
+          },
+          "arguments": [
+            "fmt",
+            "Clock.hour%ClockSettings.Hours",
+            "Clock.min",
+            "Clock.sec"
+          ],
+          "is_ui_api": false,
+          "is_event_api": false
+        },
+        {
+          "call_id": "c6",
+          "callee_raw": "LabelSetTextColor",
+          "callee_resolved": "LabelSetTextColor",
+          "source": {
+            "line": 55
+          },
+          "arguments": [
+            "\"ClockWindowText\"",
+            "ClockSettings.R",
+            "ClockSettings.G",
+            "ClockSettings.B"
+          ],
+          "is_ui_api": true,
+          "is_event_api": false
+        }
+      ]
+    }
+  ],
+  "namespaces": [
+    "Clock",
+    "ClockSettings"
+  ],
+  "registrations": []
+}

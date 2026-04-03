@@ -24,10 +24,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Intercom/Intercom.lua:4` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | IconCreateTooltip |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy.IntercomInitialize |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -54,7 +54,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 1 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -70,32 +70,15 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
+- AddEventHandler
 - addon
 - function(data)if(Enemy.CanSendIntercomMessage())then table.insert(data,L "You're currently in '"..g.name..L "' intercom channel.")else table.insert(data,L "You're currently not in any intercom channel.")end table.insert(data,L "Left-click to open intercom channel dialog.")end
 
 ## Examples
 
-- Enemy: Enemy.IntercomInitialize -> IconCreateTooltip -> function(data)if(Enemy.CanSendIntercomMessage())then table.insert(data,L "You're currently in '"..g.name..L "' intercom channel.")else table.insert(data,L "You're currently not in any intercom channel.")end table.insert(data,L "Left-click to open intercom channel dialog.")end
-- Enemy: function(data)if(Enemy.CanSendIntercomMessage())then table.insert(data,L "You're currently in '"..g.name..L "' intercom channel.")else table.insert(data,L "You're currently not in any intercom channel.")end table.insert(data,L "Left-click to open intercom channel dialog.")end -> Enemy.AddEventHandler(IconCreateTooltip, function(data)if(Enemy.CanSendIntercomMessage())then table.insert(data,L "You're currently in '"..g.name..L "' intercom channel.")else table.insert(data,L "You're currently not in any intercom channel.")end table.insert(data,L "Left-click to open intercom channel dialog.")end)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Enemy: AddEventHandler -> IconCreateTooltip -> function(data)if(Enemy.CanSendIntercomMessage())then table.insert(data,L "You're currently in '"..g.name..L "' intercom channel.")else table.insert(data,L "You're currently not in any intercom channel.")end table.insert(data,L "Left-click to open intercom channel dialog.")end
+- Enemy: function(data)if(Enemy.CanSendIntercomMessage())then table.insert(data,L "You're currently in '"..g.name..L "' intercom channel.")else table.insert(data,L "You're currently not in any intercom channel.")end table.insert(data,L "Left-click to open intercom channel dialog.")end -> AddEventHandler(IconCreateTooltip, function(data)if(Enemy.CanSendIntercomMessage())then table.insert(data,L "You're currently in '"..g.name..L "' intercom channel.")else table.insert(data,L "You're currently not in any intercom channel.")end table.insert(data,L "Left-click to open intercom channel dialog.")end)
 
 ## Notes
 
-- Triggered-by evidence: Enemy:Enemy.UI_Icon_OnMouseOver
 - Only one addon surfaced this event in the current addon-api corpus.

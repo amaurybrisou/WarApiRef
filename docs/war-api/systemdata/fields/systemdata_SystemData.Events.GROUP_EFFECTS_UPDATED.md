@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 168
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -22,27 +22,25 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, BuffHead, DAoCBuff, Enemy, DAoCBuff, Enemy |
-| Files seen in | `/workspace/data/raw/BuffHead/Core.lua:229`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22` |
+| Addons seen in | BuffHead, DAoCBuff, Enemy, EveryBodyGuard, HealGrid, MarkBuff, Phantom, Pure |
+| Files seen in | Code/Core/Groups/Groups.lua, Core.lua, EveryBodyGuard.lua, PhantomLib/PhantomLib.lua, Source/DAoCBuff.lua, Source/PureGroup.lua, SquaredHotIndicators.lua, WBStutterLess.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | BuffHead.OnGroupEffectsUpdated, BuffHead.SetGroupTracking, DAoCBuff.Initialize, DAoCBuff.OnEventG, DAoCBuff.Shutdown, Enemy.GroupsInitialize |
+| Source kinds | lua_call |
+| Example locations | EnforceEventStates, GroupWindowHook, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 2 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,32 +60,26 @@
 
 ## Description
 
-Observed SystemData field used by 4 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.GROUP_EFFECTS_UPDATED field accessed by 10 addons; commonly found in EnforceEventStates and GroupWindowHook, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, SetGroupTracking, Shutdown, UnloadUnitFrame, lua_call contexts.
 
 ## Seen In
 
 - BuffHead
-- BuffHead, DAoCBuff, Enemy
 - DAoCBuff
 - Enemy
+- EveryBodyGuard
+- HealGrid
+- MarkBuff
+- Phantom
+- Pure
+- SquaredHotIndicators
+- WBStutterLess
 
 ## Related APIs
 
 - [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
-- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: BuffHead.OnGroupEffectsUpdated, BuffHead.SetGroupTracking, DAoCBuff.Initialize, DAoCBuff.OnEventG, DAoCBuff.Shutdown, Enemy.GroupsInitialize
+- Observed in contexts: EnforceEventStates, GroupWindowHook, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize

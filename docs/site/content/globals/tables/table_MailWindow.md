@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions |
-| Files seen in | `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:315`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:177` |
+| Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions, zMailMod |
+| Files seen in | source/AnywhereTrainer.lua |
 | Namespaces detected | MailWindow |
 | Source kinds | lua_calls |
-| Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickMail, AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickMail |
+| Example locations | AnywhereTrainer: OnLeftClickMail, AnywhereTrainerAdditions: OnLeftClickMail, zMailMod: MouseOverCoins, zMailMod: ShowMassMailWinElements |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 2 |
+| Lua usage count | 6 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,12 +57,14 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 2 addons.
+Shared function table with 4 member functions; the primary API surface for 3 addons.
 
 ## Functions
 
 - MailWindow.OnClose
+- MailWindow.OnMouseOverAttachmentItem
 - MailWindow.OnOpen
+- MailWindow.SetHighlightedTabText
 
 ## Observed Members
 
@@ -72,29 +74,16 @@ Observed shared global table or namespace surfaced in 2 addons.
 
 - AnywhereTrainer
 - AnywhereTrainerAdditions
+- zMailMod
 
 ## Examples
 
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickMail -> MailWindow.OnOpen()
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickMail -> MailWindow.OnClose()
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickMail -> MailWindow.OnOpen()
-- AnywhereTrainerAdditions: AnywhereTrainerAdditions.OnLeftClickMail -> MailWindow.OnClose()
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AnywhereTrainer: OnLeftClickMail -> MailWindow.OnOpen()
+- AnywhereTrainer: OnLeftClickMail -> MailWindow.OnClose()
+- AnywhereTrainerAdditions: OnLeftClickMail -> MailWindow.OnOpen()
+- AnywhereTrainerAdditions: OnLeftClickMail -> MailWindow.OnClose()
+- zMailMod: MouseOverCoins -> MailWindow.OnMouseOverAttachmentItem()
+- zMailMod: ShowMassMailWinElements -> MailWindow.SetHighlightedTabText(MailWindow.SelectedTab)
 
 ## Notes
 

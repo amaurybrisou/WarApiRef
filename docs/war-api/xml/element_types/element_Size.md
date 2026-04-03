@@ -25,13 +25,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, Aura, AutoMark, BagOMatic, BankArkel |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.xml:0`, `/workspace/data/raw/Aura/Source/AuraColorPicker.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/AuraTexture.xml:0` |
+| Addons seen in | AbilityAlert, AbilityNotifier, ActionPoints, AdjustTheTip, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer |
+| Files seen in | Bars/HealGridActionPointBar.xml, Bars/HealGridCareerBar.xml, Bars/HealGridCastBar.xml, Bars/HealGridMoraleBar.xml, Bars/HealGridProgressBar.xml, Code/Assist/Assist.xml, Code/Assist/AssistConfiguration.xml, Code/CombatLog/CombatLogConfiguration.xml |
 | Namespaces detected | Size |
 | Source kinds | xml_frames |
-| Example locations | AdvancedPetAssist: APAFollowTargetHUD, AdvancedPetAssist: APAFollowTargetHUDLabel, AdvancedPetAssist: APAInstantOnlyHUD, AdvancedPetAssist: APAInstantOnlyHUDLabel, AdvancedPetAssist: APAKitingHUD, AdvancedPetAssist: APAKitingHUDLabel |
-| XML usage count | 2635 |
-| XML attribute usage count | 2635 |
+| Example locations | AbilityAlert: AAText, AbilityAlert: AAWindow, AbilityNotifier: AbHelpText, AbilityNotifier: AbHelpWindow, ActionPoints: ActionPointsWindow, ActionPoints: ActionPointsWindowText |
+| XML usage count | 9065 |
+| XML attribute usage count | 9065 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -68,95 +68,319 @@ Size is a structural XML sub-element. It commonly appears under AnimatedImage an
 
 ## Common Parent Elements
 
-- [Label](element_Label.md) — 1168× (HIGH)
-- [Window](element_Window.md) — 624× (HIGH)
-- [Button](element_Button.md) — 259× (HIGH)
-- [DynamicImage](element_DynamicImage.md) — 190× (HIGH)
-- [EditBox](element_EditBox.md) — 127× (HIGH)
-- [SliderBar](element_SliderBar.md) — 76× (HIGH)
-- [ComboBox](element_ComboBox.md) — 52× (HIGH)
-- [FullResizeImage](element_FullResizeImage.md) — 35× (HIGH)
-- [ListBox](element_ListBox.md) — 31× (HIGH)
-- [VerticalScrollbar](element_VerticalScrollbar.md) — 23× (HIGH)
-- [CircleImage](element_CircleImage.md) — 22× (HIGH)
-- [ScrollWindow](element_ScrollWindow.md) — 12× (HIGH)
-- [AnimatedImage](element_AnimatedImage.md) — 9× (MEDIUM)
-- [HorizontalResizeImage](element_HorizontalResizeImage.md) — 4× (MEDIUM)
+- [Label](element_Label.md) — 4173× (HIGH)
+- [Window](element_Window.md) — 1752× (HIGH)
+- [Button](element_Button.md) — 1023× (HIGH)
+- [DynamicImage](element_DynamicImage.md) — 965× (HIGH)
+- [EditBox](element_EditBox.md) — 355× (HIGH)
+- [ComboBox](element_ComboBox.md) — 186× (HIGH)
+- [SliderBar](element_SliderBar.md) — 186× (HIGH)
+- [FullResizeImage](element_FullResizeImage.md) — 113× (HIGH)
+- [ListBox](element_ListBox.md) — 76× (HIGH)
+- [CircleImage](element_CircleImage.md) — 51× (HIGH)
+- [HorizontalResizeImage](element_HorizontalResizeImage.md) — 49× (HIGH)
+- [VerticalScrollbar](element_VerticalScrollbar.md) — 47× (HIGH)
+- [AnimatedImage](element_AnimatedImage.md) — 32× (HIGH)
+- [ScrollWindow](element_ScrollWindow.md) — 21× (HIGH)
+- [StatusBar](element_StatusBar.md) — 19× (HIGH)
+- [CooldownDisplay](element_CooldownDisplay.md) — 10× (HIGH)
+- [VerticalResizeImage](element_VerticalResizeImage.md) — 10× (HIGH)
+- [MapDisplay](element_MapDisplay.md) — 3× (MEDIUM)
 - [ColorPicker](element_ColorPicker.md) — 1× (LOW)
-- [CooldownDisplay](element_CooldownDisplay.md) — 1× (LOW)
-- [MapDisplay](element_MapDisplay.md) — 1× (LOW)
+- [LogDisplay](element_LogDisplay.md) — 1× (LOW)
+- [NifDisplay](element_NifDisplay.md) — 1× (LOW)
+- [PageWindow](element_PageWindow.md) — 1× (LOW)
 
 ## Common Structural Child Elements
 
-- [AbsPoint](element_AbsPoint.md) — 2634× (HIGH)
+- [AbsPoint](element_AbsPoint.md) — 9073× (HIGH)
 
 ## Structural Sub-Elements
 
 ### [AbsPoint](element_AbsPoint.md)
 
-Observed 2634 times as an unnamed child.
+Observed 9073 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `x` | **required** | 120, 220, 550, 0 |
-| `y` | **required** | 28, 850, 0, 32 |
+| `x` | **required** | 800, 200, 0, 100 |
+| `y` | **required** | 50, -50, 100, -200 |
 ## Recursive Hierarchy
 
 - Root: [Size](element_Size.md)
-- [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
+- [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
 
 ## Seen In
 
+- AbilityAlert
+- AbilityNotifier
+- ActionPoints
+- AdjustTheTip
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - AggroMeter
 - AnywhereTrainer
+- ArmorGraphicToggle
+- Asshat
+- Assist
+- Atlas
+- AuctionStats
 - Aura
+- AutoBand
 - AutoMark
+- AutoSalvage
+- BBars - Mechanic Only
 - BagOMatic
 - BankArkel
+- BlackBook
+- BlackBox
+- Bloody Mess
+- Brizio's Crappy Computer Medic
+- BuddyBind
 - BuffHead
+- Busted
+- CCTV
+- CDown
 - CM_ClosetGoblin
+- CMap
+- CaVES
+- Calling
+- CastSequence
+- ChattyCathy
+- Cheeseboard
+- CleanCastbar
+- CleanUnitFrames
+- CleansingBuddy
+- Clock
 - CombatTextNames
+- Compass3D
+- CoolDownLine
+- Countdown
+- Crafting Info Tooltip
+- CraftingWillard
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DaemonAssist
+- DammazKron
+- Dascore
+- Deathblow
+- Deathblow2
+- DeepSleep
+- DetauntHelper
+- Duel
+- DuffTimer
+- Dye Preview
+- EA_LoadingScreen
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_ThreePartBar
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraftX
+- Effigy
+- Emojii
 - Enemy
+- EveryBodyGuard
+- FastFriends
+- FastInteract
+- FlagCap
+- FozAuction
+- GCDTracker
+- GDes
+- Ges
+- GetStats
+- Group Icons
+- Group Icons SG
+- GroupRange
+- GroupSpotter
+- GuardBot
 - GuardLine
+- GuardList
+- GuardRange
+- GuildWarden
+- HealGrid
+- Hopper
+- I HATE YOU THIS MUCH
+- InfoScroller
+- ItemRack
+- JunkDump
+- KeyBar
+- Keyset
+- KeysetMonsterPlay
+- KillStreak
+- KillTracker
 - Killer
+- Kwestor
+- LibAddonButton
 - LibGroup
+- LibSurveyor
 - LibWBToggler
+- LootAlert
+- LoyalPet
+- MacroIcons
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- Mass Refine
+- Mech
+- MegaphonePlusPlus
+- MiniMapMonster
+- Minmap
+- Miracle Grow Remix
+- MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
+- MoraleSet
+- Moth
+- Motion
+- MouseHint
+- MyReasons
+- NaturalLog
+- NerfedButtons
+- NoOverheal
+- ObjectInspector
+- Obsidian
+- OverheadFonts
+- Paint the leader
+- PartyAd
 - PartyCast
+- PeaceOut
+- Phantom
+- PieTracker
+- PlayEffectsOn
 - Pocket Palette
 - PotionBar
+- Pure
+- Pure Careerbar
+- Queue Queuer
+- QuickTacticSwitch
+- QuickWarReport
+- RO-Style Combat Text
+- RPs
+- RVAPI_ColorDialog
+- RVAPI_Range
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- RaidMeter
+- RandomMount
+- Rangechecker
+- RealmStatus
+- Refer
+- ReliquaryHunter
+- RememberIt
+- Res
+- ResHelp
+- RetAlert
 - RoR_SoR
+- RoR_debolster
+- Rolodex
+- Rotation
+- RvRContribution
+- RvRStats
+- RvRStatsTab
+- SNT_BUTTONS
+- SNT_CASTBAR
+- SNT_INFO
+- SNT_PANEL
+- SOR
+- ScenarioStats
+- Sequencer
+- SessionRPs
 - Shinies
+- ShowHealthPercent
+- SimpleCombatText
+- SimpleXY
+- SocialWindow 2.0
+- Soloq
+- SpamBayes
+- Squared
+- SquaredClick
+- Statdoll
+- Statdoll Light
+- Statdoll Remix
 - Swift Assist
+- Swinger
+- TacticSetNames
+- TalismanGenie
+- TargetInfoRing
+- Targets
+- TastyButtons
+- TaxPayer
 - TexturedButtons
+- ThankTheTank
+- TheSeeker
+- ThinkOutLoud
 - TidyChat
+- TidyQueue
 - TidyRoll
+- TokenMachine
+- Tome Titan
+- TomeTracker
+- Tortall_DPS
+- Trakario
 - TurretRange
+- TurretScrap
+- Twister
+- TwisterSet
+- VPBreakdown
+- Vectors
+- VerticalMorale
+- WARCommander
+- WARRatingBuster
+- WBStutterLess
 - WSCT
+- WTes
+- WaaaghBar
 - WarBoard
+- WarBoard_AAOTracker
+- WarBoard_FPS
+- WarBoard_Loc
+- WarBoard_Menu
+- WarBoard_Session
+- WarBoard_TDPS
+- WarBoard_TaliMon
+- Warbuilder
+- Wargames
+- WhatsCooking
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- XpStatus+G
+- ZonePOP
+- alertMod
 - bigger_MacroWindow
+- compass
+- emotes
+- fpsbox
+- minesweep
+- nLootLink
+- nRarity
+- talisman-monitor
+- wbLeadHelper
+- yAssistHelper
+- zMailMod
 
 ## Examples
 
-- AdvancedPetAssist: APAFollowTargetHUD -> Size in Window APAFollowTargetHUD
-- AdvancedPetAssist: APAFollowTargetHUDLabel -> Size in Label APAFollowTargetHUDLabel
-- AdvancedPetAssist: APAInstantOnlyHUD -> Size in Window APAInstantOnlyHUD
-- AdvancedPetAssist: APAInstantOnlyHUDLabel -> Size in Label APAInstantOnlyHUDLabel
-- AdvancedPetAssist: APAKitingHUD -> Size in Window APAKitingHUD
-- AdvancedPetAssist: APAKitingHUDLabel -> Size in Label APAKitingHUDLabel
+- AbilityAlert: AAText -> Size in Label AAText
+- AbilityAlert: AAWindow -> Size in Window AAWindow
+- AbilityNotifier: AbHelpText -> Size in Label AbHelpText
+- AbilityNotifier: AbHelpWindow -> Size in Window AbHelpWindow
+- ActionPoints: ActionPointsWindow -> Size in Window ActionPointsWindow
+- ActionPoints: ActionPointsWindowText -> Size in Label ActionPointsWindowText
 
 ## Related APIs
 
 - [AnimatedImage](element_AnimatedImage.md) (HIGH 100/100) - XML Element Type
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [CircleImage](element_CircleImage.md) (HIGH 100/100) - XML Element Type
-- [ColorPicker](element_ColorPicker.md) (HIGH 100/100) - XML Element Type
 - [ComboBox](element_ComboBox.md) (HIGH 100/100) - XML Element Type
+- [CooldownDisplay](element_CooldownDisplay.md) (HIGH 100/100) - XML Element Type
 - [DynamicImage](element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [EditBox](element_EditBox.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
@@ -166,21 +390,21 @@ Observed 2634 times as an unnamed child.
 - [MapDisplay](element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [ScrollWindow](element_ScrollWindow.md) (HIGH 100/100) - XML Element Type
 - [SliderBar](element_SliderBar.md) (HIGH 100/100) - XML Element Type
+- [StatusBar](element_StatusBar.md) (HIGH 100/100) - XML Element Type
+- [VerticalResizeImage](element_VerticalResizeImage.md) (HIGH 100/100) - XML Element Type
 - [VerticalScrollbar](element_VerticalScrollbar.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetScale](../../window_api/functions/window_WindowSetScale.md) (HIGH 100/100) - Window Function
+- [LogDisplay](element_LogDisplay.md) (HIGH 98/100) - XML Element Type
+- [OnUpdate](../handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [AbsPoint](element_AbsPoint.md) (MEDIUM 45/100) - XML Element Type
-- [CooldownDisplay](element_CooldownDisplay.md) (MEDIUM 45/100) - XML Element Type
+- [ColorPicker](element_ColorPicker.md) (MEDIUM 45/100) - XML Element Type
+- [NifDisplay](element_NifDisplay.md) (MEDIUM 45/100) - XML Element Type
+- [PageWindow](element_PageWindow.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
+- [Anchors](element_Anchors.md) (HIGH 100/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
-- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
-- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

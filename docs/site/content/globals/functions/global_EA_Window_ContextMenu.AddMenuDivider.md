@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 14 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, BuffHead, Enemy, RoR_SoR |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:251`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:378`, `/workspace/data/raw/BuffHead/Setup/SetupEffectCache.lua:195`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogEpsWindow.lua:216`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogTargetDefenseWindow.lua:318`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogTargetDefenseWindow.lua:446`, `/workspace/data/raw/Enemy/Code/Marks/Marks.lua:357`, `/workspace/data/raw/Enemy/Code/Marks/Marks.lua:442` |
+| Addons seen in | ActionFraction, AggroMeter, AutoBand, BuffHead, EA_UiDebugTools, Enemy, LibAddonButton, MapMonster |
+| Files seen in | AggroMeter.lua, AutoBand.lua, Code/CombatLog/CombatLogEpsWindow.lua, Code/CombatLog/CombatLogTargetDefenseWindow.lua, Code/Marks/Marks.lua, Gui.lua, Manager/Advanced.lua, Manager/Manager.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | AggroMeter: AggroMeter.OnTabRBU, AggroMeter: AggroMeter.PickedListMenu, BuffHead: BuffHead.Setup.EffectCache.CreateContextMenu, Enemy: Enemy.CombatLogUI_EpsWindow_OnRButtonUp, Enemy: Enemy.CombatLogUI_TargetDefenseTotalWindow_OnRButtonUp, Enemy: Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp |
+| Example locations | ActionFraction: RightClick, AggroMeter: OnTabRBU, AggroMeter: PickedListMenu, AutoBand: AutoBand_L_ShowTemplateOrganizeSubmenu, AutoBand: ModifiedAddGroupMenuItems, AutoBand: ShowIconOrganizeMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 15 |
-| Global usage count | 15 |
+| Lua usage count | 62 |
+| Global usage count | 62 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,62 +65,62 @@ EA_Window_ContextMenu.AddMenuDivider(arg1)
 
 ## Description
 
-Observed as a global function across 4 addons.
+Observed as a global function across 14 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: EA_Window_ContextMenu.CONTEXT_MENU_1, EA_Window_ContextMenu.CONTEXT_MENU_2 |
+| arg1 | Observed as a function or method reference. | Observed values: 1, 2, 3 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- ActionFraction
 - AggroMeter
+- AutoBand
 - BuffHead
+- EA_UiDebugTools
 - Enemy
+- LibAddonButton
+- MapMonster
+- MapPin
+- MarkBuff
+- QuickNameActions+
+- Refer
 - RoR_SoR
+- XpStatus+G
 
 ## Examples
 
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)
-- AggroMeter: AggroMeter.PickedListMenu -> EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)
-- BuffHead: BuffHead.Setup.EffectCache.CreateContextMenu -> EA_Window_ContextMenu.AddMenuDivider()
-- Enemy: Enemy.CombatLogUI_EpsWindow_OnRButtonUp -> EA_Window_ContextMenu.AddMenuDivider()
-- Enemy: Enemy.CombatLogUI_TargetDefenseTotalWindow_OnRButtonUp -> EA_Window_ContextMenu.AddMenuDivider()
-- Enemy: Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp -> EA_Window_ContextMenu.AddMenuDivider()
-
-## Related APIs
-
-- none
+- ActionFraction: RightClick -> EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)
+- AggroMeter: OnTabRBU -> EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)
+- AggroMeter: PickedListMenu -> EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)
+- AutoBand: AutoBand_L_ShowTemplateOrganizeSubmenu -> EA_Window_ContextMenu.AddMenuDivider(menuId)
+- AutoBand: ModifiedAddGroupMenuItems -> EA_Window_ContextMenu.AddMenuDivider(EA_Window_ContextMenu.CONTEXT_MENU_1)
+- AutoBand: ShowIconOrganizeMenu -> EA_Window_ContextMenu.AddMenuDivider(menuId)
 
 ## Used With
 
+- [EA_Window_ContextMenu.AddCascadingMenuItem](global_EA_Window_ContextMenu.AddCascadingMenuItem.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.AddMenuItem](global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddUserDefinedMenuItem](global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.CreateContextMenu](global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.Finalize](global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-
-## Triggered By
-
-- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
+- [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
 
 ## Affects
 
-- [Label](../../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [ListBox](../../xml/element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

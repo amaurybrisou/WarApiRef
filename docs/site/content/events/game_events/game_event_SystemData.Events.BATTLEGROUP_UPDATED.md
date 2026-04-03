@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22` |
+| Addons seen in | Squared |
+| Files seen in | Squared.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy.GroupsInitialize |
+| Example locations | Squared: RegisterEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 1 addons.
+Runtime event with 2 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -65,38 +65,29 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
+- Payload shape is not inferable from contract artifacts alone; treat this as an engine event identifier.
 
 ## Seen In
 
-- Enemy
+- Squared
 
 ## Registrars And Handlers
 
-- Enemy.GroupsUpdateType
 - RegisterEventHandler
+- Squared.ChangeMode
+- SquaredWarband.UpdateGroupProxy
 - global
 
 ## Examples
 
-- Enemy: Enemy.GroupsInitialize -> SystemData.Events.BATTLEGROUP_UPDATED -> Enemy.GroupsUpdateType
-- Enemy: Enemy.GroupsUpdateType -> RegisterEventHandler(SystemData.Events.BATTLEGROUP_UPDATED, Enemy.GroupsUpdateType)
+- Squared: RegisterEventHandler -> SystemData.Events.BATTLEGROUP_UPDATED -> Squared.ChangeMode
+- Squared: RegisterEventHandler -> SystemData.Events.BATTLEGROUP_UPDATED -> SquaredWarband.UpdateGroupProxy
+- Squared: Squared.ChangeMode -> RegisterEventHandler(SystemData.Events.BATTLEGROUP_UPDATED, Squared.ChangeMode)
+- Squared: SquaredWarband.UpdateGroupProxy -> RegisterEventHandler(SystemData.Events.BATTLEGROUP_UPDATED, SquaredWarband.UpdateGroupProxy)
 
 ## Related APIs
 
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 

@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 130
+- Raw weighted score: 125
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -18,25 +18,25 @@
 
 - +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, CM_ClosetGoblin, DAoCBuff, TidyRoll |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:55`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:47`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145` |
+| Addons seen in | BuffHead, EA_OpenPartyWindow, EA_ScenarioGroupWindow, EA_UiModWindow, TidyRoll, Tome Titan, alertMod |
+| Files seen in | Setup/LayoutControlFrame.lua, Setup/LayoutFrame.lua, Source/ScenarioGroupWindow.lua, source/openpartywindowtablootrolloptions.lua, source/uimodwindow.lua, source/versionmismatchwindow.lua |
 | Namespaces detected | DefaultColor |
-| Source kinds | globals, lua_calls |
-| Example locations | BuffHead: BuffHead.Setup.LayoutControlFrame:Create, BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor, TidyRoll: TidyRoll.CustomAutoRoll.Initialize |
+| Source kinds | lua_calls |
+| Example locations | BuffHead: Create, BuffHead: UpdateFrameColor, EA_OpenPartyWindow: Initialize, EA_ScenarioGroupWindow: SetListRowTints, EA_UiModWindow: InitModDetails, EA_UiModWindow: UpdateModDetailsData |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 2 |
-| Local definition count | 3 |
-| Documentation references | 1 |
+| Lua usage count | 30 |
+| Global usage count | 5 |
+| Local definition count | 0 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -57,11 +57,14 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 4 addons.
+Shared function table with 5 member functions; the primary API surface for 7 addons.
 
 ## Functions
 
+- DefaultColor.GetRowColor
+- DefaultColor.LabelSetTextColor
 - DefaultColor.SetLabelColor
+- DefaultColor.SetListRowTint
 - DefaultColor.SetWindowTint
 
 ## Observed Members
@@ -71,33 +74,21 @@ Observed shared global table or namespace surfaced in 4 addons.
 ## Seen In
 
 - BuffHead
-- CM_ClosetGoblin
-- DAoCBuff
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiModWindow
 - TidyRoll
+- Tome Titan
+- alertMod
 
 ## Examples
 
-- BuffHead: BuffHead.Setup.LayoutControlFrame:Create -> DefaultColor.SetWindowTint(windowName, DefaultColor.YELLOW)
-- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Frame", frameColor)
-- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Background", backgroundColor)
-- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetLabelColor(self:GetName().."Name", nameColor)
-- TidyRoll: TidyRoll.CustomAutoRoll.Initialize -> DefaultColor.SetWindowTint(rowName.."Background", color)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- BuffHead: Create -> DefaultColor.SetWindowTint(windowName, DefaultColor.YELLOW)
+- BuffHead: UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Frame", frameColor)
+- BuffHead: UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Background", backgroundColor)
+- BuffHead: UpdateFrameColor -> DefaultColor.SetLabelColor(self:GetName().."Name", nameColor)
+- EA_OpenPartyWindow: Initialize -> DefaultColor.LabelSetTextColor(PARENT_WINDOW.."RarityLabelCommon", GameDefs.ItemRarity[SystemData.ItemRarity.COMMON].color)
+- EA_OpenPartyWindow: Initialize -> DefaultColor.LabelSetTextColor(PARENT_WINDOW.."RarityLabelUncommon", GameDefs.ItemRarity[SystemData.ItemRarity.UNCOMMON].color)
 
 ## Notes
 

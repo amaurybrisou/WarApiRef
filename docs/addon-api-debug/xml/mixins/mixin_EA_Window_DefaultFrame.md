@@ -1,0 +1,9 @@
+# Mixin EA_Window_DefaultFrame
+
+## Used By
+
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowBackground
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsActionBarSettingsBG
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsSetListBackground
+- CM_ClosetGoblin: ClosetGoblinZoneWindowBackground
+- CM_ClosetGoblin: ClosetGoblinZoneWindowContentsSetListBackground

@@ -52,6 +52,19 @@ Rules:
 - Run preview site:
   - `make preview`
 
+## Fast Debug Workflow (Subset)
+
+For fast iteration on parser/generator issues, run a targeted addon subset and write output to debug folders:
+
+- `powershell -ExecutionPolicy Bypass -File .\scripts\debug_pipeline_subset.ps1 -Addons Clock`
+- `powershell -ExecutionPolicy Bypass -File .\scripts\debug_pipeline_subset.ps1 -Addons Clock,ClosetGoblin -RunAudit`
+
+This avoids full-source regeneration and keeps canonical outputs under `docs/addon-api` and `docs/war-api` untouched by default.
+
+The script stages selected addons under `.debug/source-subset` and uses that as `--source-root`, so platform generation does not scan all addons.
+
+Detailed runbook: `agent-docs/PIPELINE_DEBUG_FAST_PATH.md`
+
 ## MCP Server
 
 The MCP server reads `docs/war-api` as its source of truth and exposes tools/resources for symbol lookup, graph navigation, confidence reasoning, and snippet scaffolding.

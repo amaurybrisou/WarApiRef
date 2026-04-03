@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 41 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, TidyRoll, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:294`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:294`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:294`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:294`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:265`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:294` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, BetterCC, BuddyBind, Calling, Crusher, EA_ScenarioGroupWindow |
+| Files seen in | BetterCC.lua, BuddyBind.lua, CallingKeybinding.lua, Core.lua, LibGUI.lua, LibGui.lua, LibRange.lua, Libraries/LibGUI.lua |
 | Namespaces detected | WindowUnregisterCoreEventHandler |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:UnregisterEvent, LibWBToggler: LIBGUI_ELEMENT:UnregisterEvent, PartyCast: LIBGUI_ELEMENT:UnregisterEvent, Shinies: LIBGUI_ELEMENT:UnregisterEvent, TidyRoll: TidyRoll.OnLoad, WoH-Reticle: LIBGUI_ELEMENT:UnregisterEvent |
+| Example locations | Ace: UnregisterEvent, ActionBarHide: UnregisterEvent, Amethyst: UnregisterEvent, BetterCC: UpdatePulse, BuddyBind: OnExitBindingMode, BuddyBind: OnRawDeviceInput |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 55 |
+| Global usage count | 55 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,18 +65,18 @@ WindowUnregisterCoreEventHandler(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 6 addons.
+Observed as a window function across 41 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_LootRoll", self.name |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: "OnHidden", "OnShown", e |
+| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_LootRoll", "EA_Window_ScenarioLobby", "KeyMappingWindowActionsList" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: "OnHidden", "OnLButtonDown", "OnLButtonUp" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,37 +85,65 @@ Observed as a window function across 6 addons.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- BetterCC
+- BuddyBind
+- Calling
+- Crusher
+- EA_ScenarioGroupWindow
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
+- LibRange
 - LibWBToggler
+- Map
+- Minmap
+- Motion
+- NaturalLog
+- Obsidian
 - PartyCast
+- Pure
+- Pure Careerbar
+- RVMOD_3DPortrait
+- RVMOD_PlayerStatus
+- RealmStatus
 - Shinies
+- TargetRing
+- TidyQueue
 - TidyRoll
+- Tokens
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- nRarity
+- scenarioInfo
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
-- LibWBToggler: LIBGUI_ELEMENT:UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
-- PartyCast: LIBGUI_ELEMENT:UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
-- Shinies: LIBGUI_ELEMENT:UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
-- TidyRoll: TidyRoll.OnLoad -> WindowUnregisterCoreEventHandler("EA_Window_LootRoll", "OnShown")
-- TidyRoll: TidyRoll.OnLoad -> WindowUnregisterCoreEventHandler("EA_Window_LootRoll", "OnHidden")
+- Ace: UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
+- ActionBarHide: UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
+- Amethyst: UnregisterEvent -> WindowUnregisterCoreEventHandler(self.name, e)
+- BetterCC: UpdatePulse -> WindowUnregisterCoreEventHandler(self, "OnUpdate")
+- BuddyBind: OnExitBindingMode -> WindowUnregisterCoreEventHandler(BuddyBind.bindingButtonName, "OnRawDeviceInput")
+- BuddyBind: OnRawDeviceInput -> WindowUnregisterCoreEventHandler(BuddyBind.bindingButtonName, "OnRawDeviceInput")
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
+- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Affects
 
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.M_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.M_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.R_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.R_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

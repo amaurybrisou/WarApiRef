@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 34 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Enemy, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:451`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFramePart.lua:210`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:451`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:451`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:451`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:451` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, CDown, CMap, Crusher, EZCraftX, EZGuard |
+| Files seen in | CDownFrames.lua, Code/UnitFrames/UnitFramePart.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Phantom.lua, libs/LibGUI.lua |
 | Namespaces detected | LabelSetWordWrap |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Label:WordWrap, Enemy: Enemy.UnitFramePart_OnUpdate_ProceedTextWindowInitialization, LibWBToggler: LIBGUI_Label:WordWrap, PartyCast: LIBGUI_Label:WordWrap, Shinies: LIBGUI_Label:WordWrap, WoH-Reticle: LIBGUI_Label:WordWrap |
+| Example locations | Ace: WordWrap, ActionBarHide: WordWrap, Amethyst: WordWrap, CDown: Create, CMap: WordWrap, Crusher: WordWrap |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 65 |
+| Global usage count | 65 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed updating label text or label styling on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: self.name, t.windowName |
+| arg1 | Observed as a function or method reference. | Observed values: "PhantomSettingsInstructions2Label", "PhantomSettingsInstructionsLabel", modName.."Label" |
 | arg2 | Observed as a boolean toggle. | Observed values: data.wrap==true, false, true |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,37 +85,52 @@ Observed updating label text or label styling on existing controls.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- CDown
+- CMap
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Phantom
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- warboard_TogglerWarBuilder
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Label:WordWrap -> LabelSetWordWrap(self.name, true)
-- Ace: LIBGUI_Label:WordWrap -> LabelSetWordWrap(self.name, false)
-- Enemy: Enemy.UnitFramePart_OnUpdate_ProceedTextWindowInitialization -> LabelSetWordWrap(t.windowName, data.wrap==true)
-- LibWBToggler: LIBGUI_Label:WordWrap -> LabelSetWordWrap(self.name, true)
-- LibWBToggler: LIBGUI_Label:WordWrap -> LabelSetWordWrap(self.name, false)
-- PartyCast: LIBGUI_Label:WordWrap -> LabelSetWordWrap(self.name, true)
-
-## Related APIs
-
-- none
+- Ace: WordWrap -> LabelSetWordWrap(self.name, true)
+- Ace: WordWrap -> LabelSetWordWrap(self.name, false)
+- ActionBarHide: WordWrap -> LabelSetWordWrap(self.name, true)
+- ActionBarHide: WordWrap -> LabelSetWordWrap(self.name, false)
+- Amethyst: WordWrap -> LabelSetWordWrap(self.name, true)
+- Amethyst: WordWrap -> LabelSetWordWrap(self.name, false)
 
 ## Used With
 
 - [LabelGetWordWrap](window_LabelGetWordWrap.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

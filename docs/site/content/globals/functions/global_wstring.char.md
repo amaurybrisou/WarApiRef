@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff |
-| Files seen in | `/workspace/data/raw/DAoCBuff/Source/Transcode.lua:289` |
+| Files seen in | Source/Transcode.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
 | Example locations | DAoCBuff: wstringdec |
@@ -69,11 +69,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
@@ -82,22 +82,6 @@ Observed as a global function across 1 addons.
 ## Examples
 
 - DAoCBuff: wstringdec -> wstring.char(unpack(strc))
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

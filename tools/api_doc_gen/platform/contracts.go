@@ -614,10 +614,11 @@ func validateContractModelConsistency(model ContractModel) error {
 
 	for _, links := range model.Links {
 		addon := strings.TrimSpace(links.Addon)
-		if !xmlAddons[addon] {
+		hasHandlerLinks := len(links.HandlerLinks) > 0
+		if hasHandlerLinks && !xmlAddons[addon] {
 			return fmt.Errorf("contract consistency: xml-lua-links addon %q has no matching xml-tree artifacts", addon)
 		}
-		if !luaAddons[addon] {
+		if hasHandlerLinks && !luaAddons[addon] {
 			return fmt.Errorf("contract consistency: xml-lua-links addon %q has no matching lua-analysis artifacts", addon)
 		}
 

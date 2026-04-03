@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/data/raw/Shinies/Source/ShiniesUITemplates.xml:0` |
+| Files seen in | Source/ShiniesUITemplates.xml |
 | Namespaces detected | EA_Templates_SilverCoin |
 | Source kinds | xml_attributes |
 | Example locations | Shinies_SilverCoinImage |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 1 addons.
+Engine-supplied XML constant or template class referenced by 1 addons.
 
 ## Seen In
 
@@ -66,18 +66,6 @@ Observed engine XML template or inherited constant referenced by 1 addons.
 ## Related APIs
 
 - [DynamicImage](../../xml/element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

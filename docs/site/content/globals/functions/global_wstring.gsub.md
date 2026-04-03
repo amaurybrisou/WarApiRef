@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 28 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, CombatTextNames, GuardLine, Killer, LibGuard, RoR_SoR, Shinies |
-| Files seen in | `/workspace/data/raw/Aura/Libraries/LibPickle.lua:428`, `/workspace/data/raw/Aura/Libraries/LibPickle.lua:65`, `/workspace/data/raw/GuardLine/GuardLine.lua:151`, `/workspace/data/raw/Killer/KillerUtils.lua:14`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:362`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:75`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:1055`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Auto.lua:605` |
+| Addons seen in | AdvancedRenownTrainer, Aura, CombatTextNames, Crafting Info Tooltip, Cram The Spam, DammazKron, EA_UiDebugTools, Group Icons SG |
+| Files seen in | AdvancedRenownTrainingImportExport.lua, Core/DK_Core.lua, Core/DK_Utils.lua, CraftValueTip.lua, CramTheSpam.lua, GroupIconsSG.lua, GuardLine.lua, IHYTM.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.OnHyperLinkLButtonUp, Aura: Aura.local.wgsub, Aura: DePickler:unpickle, Aura: wgsub, CombatTextNames: CombatTextNames.TruncateAbilityName, GuardLine: GuardLine.GetIDs |
+| Example locations | AdvancedRenownTrainer: OnHyperLinkLButtonUp, Aura: unpickle, Aura: wgsub, CombatTextNames: TruncateAbilityName, Crafting Info Tooltip: GetPhrase, Cram The Spam: FuzzyFilterTest |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 35 |
-| Global usage count | 35 |
+| Lua usage count | 151 |
+| Global usage count | 151 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,62 +62,69 @@ wstring.gsub(arg1, arg2, arg3)
 
 ## Description
 
-Observed as a global function across 10 addons.
+Observed as a global function across 28 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: GetString(StringTables.Default.TEXT_CUR_DAMAGE_WAAAGH), GetString(StringTables.Default.TEXT_CUR_HEALING_WAAAGH), GetString(StringTables.Default.TEXT_DAMAGE_ARCHMAGE_POINTS) |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: (QuickNameActionsRessurected.chatMessage1), (QuickNameActionsRessurected.chatMessage2), (QuickNameActionsRessurected.tellMessage1) |
 | arg2 | Observed as a text or wstring payload. | Observed values: GuardLine.FixString(GameData.Player.name)..L "'s", L " .+", L " of " |
 | arg3 | Observed as a text or wstring payload. | Observed values: "", ERASE, L "" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - Aura
 - CombatTextNames
+- Crafting Info Tooltip
+- Cram The Spam
+- DammazKron
+- EA_UiDebugTools
+- Group Icons SG
 - GuardLine
+- I HATE YOU THIS MUCH
+- KillTracker
 - Killer
 - LibGuard
+- LibPickle
+- MapMonster
+- MapPin
+- MegaphonePlusPlus
+- Miracle Grow Remix
+- QuickNameActions+
+- RVAPI_Range
+- RVMOD_SquaredDistances
+- Refer
 - RoR_SoR
 - Shinies
 - TidyChat
+- TomeTracker
+- Trakario
 - WSCT
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.OnHyperLinkLButtonUp -> wstring.gsub(linkData, hyperlinkPrefix, ERASE)
-- Aura: Aura.local.wgsub -> wstring.gsub(s, pattern, replace)
-- Aura: DePickler:unpickle -> wstring.gsub(s, L "P1$", L "")
+- AdvancedRenownTrainer: OnHyperLinkLButtonUp -> wstring.gsub(linkData, hyperlinkPrefix, ERASE)
+- Aura: unpickle -> wstring.gsub(s, L "P1$", L "")
 - Aura: wgsub -> wstring.gsub(s, pattern, replace)
-- CombatTextNames: CombatTextNames.TruncateAbilityName -> wstring.gsub(wstring.gsub(text,L " of ",L "O"), L "%s", L "")
-- CombatTextNames: CombatTextNames.TruncateAbilityName -> wstring.gsub(text, L " of ", L "O")
-
-## Related APIs
-
-- none
+- CombatTextNames: TruncateAbilityName -> wstring.gsub(wstring.gsub(text,L " of ",L "O"), L "%s", L "")
+- CombatTextNames: TruncateAbilityName -> wstring.gsub(text, L " of ", L "O")
+- CombatTextNames: TruncateAbilityName -> wstring.gsub(text, L "%l*", L "")
 
 ## Used With
 
+- [wstring.lower](global_wstring.lower.md) (HIGH 100/100) - Global Function
 - [wstring.match](global_wstring.match.md) (HIGH 100/100) - Global Function
-- [wstring.sub](global_wstring.sub.md) (HIGH 100/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

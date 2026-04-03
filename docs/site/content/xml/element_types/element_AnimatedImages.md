@@ -23,7 +23,6 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedRenownTrainer |
-| Files seen in | `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTrainingWindow.xml:0` |
 | Namespaces detected | AnimatedImages |
 | Source kinds | xml_frames |
 | Example locations | AdvancedRenownTrainer: AdvancedRenownTrainingWindowPurchaseButton |
@@ -80,14 +79,14 @@ Observed 1 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `x` | optional | 0, 92 |
-| `y` | optional | 28, 44, 0 |
-| `b` | optional | 255, 73, 102 |
-| `g` | optional | 255, 175, 204 |
-| `id` | optional | morale-yellow, RightTabFrame, LayoutCorner-TopLeft, LayoutCorner-TopRight |
-| `r` | optional | 255 |
-| `a` | optional | 255 |
-| `texture` | optional | bpKtxt, EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
+| `id` | optional | morale-yellow, RightTabFrame, Tactics-Button, SquareButton |
+| `b` | optional | 255, 0, 102, 73 |
+| `g` | optional | 255, 0, 204, 175 |
+| `r` | optional | 255, 155, 222, 226 |
+| `x` | optional | 0, 92, 172, 494 |
+| `y` | optional | 28, 44, 0, 341 |
+| `a` | optional | 255, 1 |
+| `texture` | optional | bpKtxt, EA_SquareFrame, CrusherIconBorderNormal, EA_RoundFrame |
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, BuffHeadLayoutVerticalButtonNormal, BuffHeadLayoutHorizontalButtonNormal |
 ### [NormalHighlit](element_NormalHighlit.md)
 
@@ -95,15 +94,15 @@ Observed 1 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `b` | optional | 63, 0 |
-| `g` | optional | 213, 85 |
-| `id` | optional | morale-white, RightTabFrame-Rollover, LayoutCorner-TopLeft-ROLLOVER, LayoutCorner-TopRight-ROLLOVER |
-| `r` | optional | 250, 255 |
-| `a` | optional | 255 |
-| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, EA_FullResizeImage_RedTransparent, BuffHeadLayoutVerticalButtonHighlight |
-| `x` | optional | 27, 105, 0 |
-| `y` | optional | 28, 44, 0 |
-| `texture` | optional | EA_SquareFrame_Highlight, ShiniesIconBorderHighlight, TidyRoll_SquareFrame_Highlight |
+| `id` | optional | morale-white, RightTabFrame-Rollover, Tactics-Button-Rollover, SquareButton-Rollover |
+| `b` | optional | 63, 36, 0, 50 |
+| `g` | optional | 213, 57, 85, 192 |
+| `r` | optional | 250, 95, 255, 222 |
+| `a` | optional | 255, 1 |
+| `x` | optional | 27, 105, 0, 201 |
+| `y` | optional | 28, 44, 0, 341 |
+| `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, EA_FullResizeImage_RedTransparent, EA_Button_GuildRosterRowHighlight |
+| `texture` | optional | EA_SquareFrame_Highlight, CrusherIconBorderHighlight, EA_RoundFrame_Pressed, PinBG |
 ## Recursive Hierarchy
 
 - Root: [AnimatedImages](element_AnimatedImages.md)
@@ -123,15 +122,3 @@ Observed 1 times as an unnamed child.
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [Normal](element_Normal.md) (MEDIUM 45/100) - XML Element Type
 - [NormalHighlit](element_NormalHighlit.md) (MEDIUM 45/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

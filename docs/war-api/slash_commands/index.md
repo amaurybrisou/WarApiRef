@@ -8,12 +8,12 @@
 
 - Evidence:
 
-- AdvancedPetAssist: LibSlash.RegisterSlashCmd("apa", function(input)APA.SlashHandler(input)end)
-  - Aura: LibSlash.RegisterSlashCmd("aura", AuraAddon.Slash)
-  - Aura: LibSlash.RegisterSlashCmd("auraconfig", AuraAddon.Slash)
-  - Aura: LibSlash.RegisterSlashCmd("showaura", AuraAddon.Slash)
-  - AutoMark: LibSlash.RegisterSlashCmd("automark", AutoMark.OnSlashCommand)
-  - BagOMatic: LibSlash.RegisterSlashCmd("bagomatic", function(msg)BagOMatic.parse_cmd(msg)end)
+- AbilityNotifier: LibSlash.RegisterSlashCmd("an", slashhandler)
+  - AbilityNotifier: LibSlash.RegisterSlashCmd("anot", slashhandler)
+  - ActionBarCD: LibSlash.RegisterSlashCmd("abcd", function(args)ActionBarCD.SlashHandler(args)end)
+  - ActionBarHide: LibSlash.RegisterSlashCmd("abh", function()ActionBarHide.OptionsWindow()end)
+  - AdvancedPetAssist: LibSlash.RegisterSlashCmd("apa", function(input)APA.SlashHandler(input)end)
+  - Amethyst: LibSlash.RegisterSlashCmd("amt", function(msg)Amethyst.Slash(msg)end)
 
 ## LibSlash cleanup
 
@@ -23,9 +23,9 @@
 
 - Evidence:
 
-- DAoCBuff: LibSlash.UnregisterSlashCmd("daocbuff")
-  - DAoCBuff: LibSlash.UnregisterSlashCmd("resetdaocbuff")
-  - Killer: LibSlash.UnregisterSlashCmd("killer")
-  - PotionBar: LibSlash.UnregisterSlashCmd(PotionBar.LibSlashCommand)
-  - Shinies: LibSlash.UnregisterSlashCmd("shinies")
-  - WhoHealedMe: LibSlash.UnregisterSlashCmd("whm")
+- ActionFraction: LibSlash.UnregisterSlashCmd("af")
+  - ActionFraction: LibSlash.UnregisterSlashCmd("ActionFraction")
+  - AuctionStats: LibSlash.UnregisterSlashCmd("au")
+  - AuctionStats: LibSlash.UnregisterSlashCmd("uc")
+  - AuctionStats: LibSlash.UnregisterSlashCmd("undercut")
+  - CDown: LibSlash.UnregisterSlashCmd("CDown")

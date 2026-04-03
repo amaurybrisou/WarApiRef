@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 38 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, DAoCBuff, LibWBToggler, PartyCast, PotionBar, Shinies, TidyChat |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1084`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:491`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:804`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:834`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:898`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1056`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1224`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:401` |
+| Addons seen in | Ace, ActionBarHide, AdvancedRenownTrainer, Amethyst, Crusher, DAoCBuff, DammazKron, EZCraftX |
+| Files seen in | AdvancedRenownTrainingImportExport.lua, Conf/DK_Config.lua, Gui/HealGridGuiUtility.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Settings.lua |
 | Namespaces detected | ComboBoxSetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Combobox:SetEnabled, AdvancedRenownTrainer: AdvancedRenownTraining.OnExportHidden, AdvancedRenownTrainer: AdvancedRenownTraining.OnExportShown, DAoCBuff: DAoCBuffSettings.ActivateStickCombos, DAoCBuff: DAoCBuffSettings.ActivateType, DAoCBuff: DAoCBuffSettings.PopulateTarget |
+| Example locations | Ace: SetEnabled, ActionBarHide: SetEnabled, AdvancedRenownTrainer: OnExportHidden, AdvancedRenownTrainer: OnExportShown, Amethyst: SetEnabled, Crusher: SetEnabled |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 28 |
-| Global usage count | 28 |
+| Lua usage count | 63 |
+| Global usage count | 63 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,18 +65,18 @@ ComboBoxSetDisabledFlag(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 9 addons.
+Observed as a window function across 38 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "AdvancedRenownTrainingPresetsWindowLoadComboBox", FilterWindow.."ClassTableComboBox", FilterWindow.."FilterPropertyComboBox" |
+| arg1 | Observed as a function or method reference. | Observed values: "AdvancedRenownTrainingPresetsWindowLoadComboBox", "ZonePOPWndComboBoxZoneNames", FilterWindow.."ClassTableComboBox" |
 | arg2 | Observed as a runtime window or control identifier. | Observed values: active, disable, false |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,42 +85,56 @@ Observed as a window function across 9 addons.
 ## Seen In
 
 - Ace
+- ActionBarHide
 - AdvancedRenownTrainer
+- Amethyst
+- Crusher
 - DAoCBuff
+- DammazKron
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- HealGrid
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- TastyButtons
 - TidyChat
+- Tokens
+- Vectors
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- ZonePOP
+- nLootLink
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Combobox:SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
-- AdvancedRenownTrainer: AdvancedRenownTraining.OnExportHidden -> ComboBoxSetDisabledFlag("AdvancedRenownTrainingPresetsWindowLoadComboBox", false)
-- AdvancedRenownTrainer: AdvancedRenownTraining.OnExportShown -> ComboBoxSetDisabledFlag("AdvancedRenownTrainingPresetsWindowLoadComboBox", true)
-- DAoCBuff: DAoCBuffSettings.ActivateStickCombos -> ComboBoxSetDisabledFlag(FrameTab.."GrowLeftComboBox", active)
-- DAoCBuff: DAoCBuffSettings.ActivateStickCombos -> ComboBoxSetDisabledFlag(FrameTab.."GrowUpComboBox", active)
-- DAoCBuff: DAoCBuffSettings.ActivateStickCombos -> ComboBoxSetDisabledFlag(FrameTab.."GrowHorizontalComboBox", active)
-
-## Related APIs
-
-- none
+- Ace: SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
+- ActionBarHide: SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
+- AdvancedRenownTrainer: OnExportHidden -> ComboBoxSetDisabledFlag("AdvancedRenownTrainingPresetsWindowLoadComboBox", false)
+- AdvancedRenownTrainer: OnExportShown -> ComboBoxSetDisabledFlag("AdvancedRenownTrainingPresetsWindowLoadComboBox", true)
+- Amethyst: SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
+- Crusher: SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
-- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
-- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

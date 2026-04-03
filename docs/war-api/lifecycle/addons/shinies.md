@@ -16,7 +16,7 @@
 
 | Kind | Name | Resolution | Confidence | Matched |
 | --- | --- | --- | --- | --- |
-| CallFunction | AceDBLogoutHandler | ambiguous | MEDIUM | Ace.AceDBLogoutHandler, Shinies.AceDBLogoutHandler |
+| CallFunction | AceDBLogoutHandler | ambiguous | MEDIUM | Ace.AceDBLogoutHandler, Crusher.AceDBLogoutHandler, Hopper.AceDBLogoutHandler, Pure.AceDBLogoutHandler, Pure Careerbar.AceDBLogoutHandler, Shinies.AceDBLogoutHandler |
 ## Unknown / Custom Hook Actions
 
 | Kind | Name | Resolution | Confidence | Matched |

@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 113
+- Raw weighted score: 125
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, BankArkel |
-| Files seen in | `/workspace/data/raw/BankArkel/BankArkel.lua:242`, `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTraining.lua:763` |
+| Addons seen in | AdvancedRenownTrainer, AuctionStats, BankArkel, FozAuction, HealAll, JunkDump, zMailMod |
+| Files seen in | Source/auctionwindow.lua, Source/auctionwindowsellcontrols.lua |
 | Namespaces detected | MoneyFrame |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize, BankArkel: BankArkel.PackShow |
+| Example locations | AdvancedRenownTrainer: Respecialize, AuctionStats: AddExtraWindow, AuctionStats: OnRButtonUpItem, AuctionStats: UpdateItemOptions, BankArkel: PackShow, FozAuction: Clear |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 25 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,10 +57,12 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 2 addons.
+Shared function table with 4 member functions; the primary API surface for 7 addons.
 
 ## Functions
 
+- MoneyFrame.ConvertBrassToCurrency
+- MoneyFrame.ConvertCurrencyToBrass
 - MoneyFrame.FormatMoney
 - MoneyFrame.FormatMoneyString
 
@@ -71,28 +73,21 @@ Observed shared global table or namespace surfaced in 2 addons.
 ## Seen In
 
 - AdvancedRenownTrainer
+- AuctionStats
 - BankArkel
+- FozAuction
+- HealAll
+- JunkDump
+- zMailMod
 
 ## Examples
 
-- AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize -> MoneyFrame.FormatMoneyString(respecCost)
-- BankArkel: BankArkel.PackShow -> MoneyFrame.FormatMoney("PackWinMoney", BankArkel.db.Entry[index].Money, MoneyFrame.SHOW_EMPTY_WINDOWS)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AdvancedRenownTrainer: Respecialize -> MoneyFrame.FormatMoneyString(respecCost)
+- AuctionStats: AddExtraWindow -> MoneyFrame.ConvertBrassToCurrency(AuctionDB.Data[id].minBuyOutPrice*stackCount)
+- AuctionStats: AddExtraWindow -> MoneyFrame.ConvertBrassToCurrency(AuctionDB.Data[id].maxBuyOutPrice*stackCount)
+- AuctionStats: AddExtraWindow -> MoneyFrame.ConvertBrassToCurrency(AuctionDB.Data[id].minBidPrice*stackCount)
+- AuctionStats: AddExtraWindow -> MoneyFrame.ConvertBrassToCurrency(AuctionDB.Data[id].maxBidPrice*stackCount)
+- AuctionStats: AddExtraWindow -> MoneyFrame.ConvertBrassToCurrency(median)
 
 ## Notes
 

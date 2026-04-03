@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 138
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | followTheLeader |
-| Files seen in | `/workspace/data/raw/followTheLeader/followTheLeader.lua:143`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:262`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:463`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:87` |
+| Addons seen in | TaxPayer, followTheLeader |
+| Files seen in | TaxPayer.lua, followTheLeader.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | followTheLeader.Initialize, followTheLeader.UnsetFixedLeader, followTheLeader.Update, followTheLeader.slash, lua_call |
+| Example locations | AnnounceInWarband, Initialize, UnsetFixedLeader, Update, lua_call, slash |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +59,13 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.ChatLogFilters.BATTLEGROUP field accessed by 2 addons; commonly found in AnnounceInWarband and Initialize, UnsetFixedLeader, Update, lua_call, slash contexts.
 
 ## Seen In
 
+- TaxPayer
 - followTheLeader
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 
-- Observed in contexts: followTheLeader.Initialize, followTheLeader.UnsetFixedLeader, followTheLeader.Update, followTheLeader.slash, lua_call
+- Observed in contexts: AnnounceInWarband, Initialize, UnsetFixedLeader, Update, lua_call, slash

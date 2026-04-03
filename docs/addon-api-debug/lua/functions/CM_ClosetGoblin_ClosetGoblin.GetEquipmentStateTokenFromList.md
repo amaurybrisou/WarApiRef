@@ -1,0 +1,29 @@
+# Function ClosetGoblin.GetEquipmentStateTokenFromList
+
+- Addon: CM_ClosetGoblin
+- Kind: function
+- Module: ClosetGoblin
+- Local: no
+- Source: `C:/Return of Reckoning/Interface/AddOns/WAR_API_Ref/.debug/source-subset/ClosetGoblin/ClosetGoblin.lua:576`
+
+## Parameters
+
+- list
+
+## Aliases
+
+- none
+
+## Calls
+
+| Call | Line | Arguments |
+| --- | --- | --- |
+
+## Event Registrations
+
+| Event | Scope | Handler |
+| --- | --- | --- |
+
+## State Writes
+
+- none

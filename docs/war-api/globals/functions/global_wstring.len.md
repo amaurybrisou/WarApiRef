@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 14 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CombatTextNames, Enemy, Shinies, WSCT |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Utils.lua:684`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Browse.lua:656`, `/workspace/data/raw/combattextnames/combattextnames.lua:150`, `/workspace/data/raw/wsct/wsct.lua:596` |
+| Addons seen in | CleanUnitFrames, CombatTextNames, Effigy, Enemy, HealGrid, I HATE YOU THIS MUCH, Kwestor, LibJson |
+| Files seen in | CleanTargetUnitFrame.lua, Code/Core/Utils.lua, Elements/EffigyLabel.lua, Gui/HealGridGuiTabSpellTrack.lua, HealGrid.lua, HealGridTags.lua, IHYTM.lua, Json.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | CombatTextNames: CombatTextNames.SetupText, Enemy: Enemy.FormatNumber, Shinies: Criteria_BuildQuery, WSCT: WSCT.ShortenString |
+| Example locations | CleanUnitFrames: UpdateUnit, CombatTextNames: SetupText, Effigy: wstringStartsWith, Enemy: FormatNumber, HealGrid: ExtractArg, HealGrid: FindLabel |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 25 |
+| Global usage count | 25 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,52 +62,55 @@ wstring.len(arg1)
 
 ## Description
 
-Observed as a global function across 4 addons.
+Observed as a global function across 14 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: hitData.name, maxItemLevel, minItemLevel |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: GameData.Player.name, Start, TargetInfo:UnitName("selffriendlytarget") |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- CleanUnitFrames
 - CombatTextNames
+- Effigy
 - Enemy
+- HealGrid
+- I HATE YOU THIS MUCH
+- Kwestor
+- LibJson
+- MyReasons
+- NaturalLog
+- Queue Queuer
 - Shinies
 - WSCT
+- WarBoard_WarWhisperer
 
 ## Examples
 
-- CombatTextNames: CombatTextNames.SetupText -> wstring.len(hitData.name)
-- Enemy: Enemy.FormatNumber -> wstring.len(number_string)
-- Shinies: Criteria_BuildQuery -> wstring.len(minItemLevel)
-- Shinies: Criteria_BuildQuery -> wstring.len(maxItemLevel)
-- WSCT: WSCT.ShortenString -> wstring.len(strString)
+- CleanUnitFrames: UpdateUnit -> wstring.len(nameText)
+- CombatTextNames: SetupText -> wstring.len(hitData.name)
+- Effigy: wstringStartsWith -> wstring.len(Start)
+- Enemy: FormatNumber -> wstring.len(number_string)
+- HealGrid: ExtractArg -> wstring.len(s)
+- HealGrid: FindLabel -> wstring.len(s)
 
 ## Related APIs
 
-- none
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- [wstring.sub](global_wstring.sub.md) (HIGH 100/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

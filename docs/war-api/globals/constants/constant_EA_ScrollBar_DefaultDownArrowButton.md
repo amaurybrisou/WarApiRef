@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | DAoCBuff |
-| Files seen in | `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:825` |
+| Files seen in | Source/DAoCBuffSettingsTabs.xml |
 | Namespaces detected | EA_ScrollBar_DefaultDownArrowButton |
 | Source kinds | xml_attributes |
 | Example locations | DAoCBuffFrameSettingsTab_ScrollChild_FilterDownButton |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 1 addons.
+Engine-supplied XML constant or template class referenced by 1 addons.
 
 ## Seen In
 
@@ -66,18 +66,6 @@ Observed engine XML template or inherited constant referenced by 1 addons.
 ## Related APIs
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

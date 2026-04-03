@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Killer, WarBoard |
-| Files seen in | `/workspace/data/raw/Killer/Killer.xml:0`, `/workspace/data/raw/WarBoard/WarBoard.xml:0` |
+| Addons seen in | Killer, TastyButtons, WarBoard |
+| Files seen in | Killer.xml, TastyButtonsOptions.xml, WarBoard.xml |
 | Namespaces detected | EA_Button_DefaultSmallSquare |
 | Source kinds | xml_attributes |
-| Example locations | BottomBoardLayoutModeButton, BottomBoardOptionsButton, KillerWindowSettingsButton, WarBoardLayoutModeButton, WarBoardOptionsButton |
-| XML usage count | 5 |
-| XML attribute usage count | 5 |
+| Example locations | BottomBoardLayoutModeButton, BottomBoardOptionsButton, KillerWindowSettingsButton, TastyButtonsButtonSelectWindowButtonRangeViewButtonSetModeManual, TastyButtonsButtonSelectWindowButtonRangeViewButtonSetModeSelect, WarBoardLayoutModeButton |
+| XML usage count | 7 |
+| XML attribute usage count | 7 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,11 +57,12 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Engine-supplied XML constant or template class referenced by 3 addons.
 
 ## Seen In
 
 - Killer
+- TastyButtons
 - WarBoard
 
 ## Used By
@@ -69,24 +70,14 @@ Observed engine XML template or inherited constant referenced by 2 addons.
 - BottomBoardLayoutModeButton
 - BottomBoardOptionsButton
 - KillerWindowSettingsButton
+- TastyButtonsButtonSelectWindowButtonRangeViewButtonSetModeManual
+- TastyButtonsButtonSelectWindowButtonRangeViewButtonSetModeSelect
 - WarBoardLayoutModeButton
 - WarBoardOptionsButton
 
 ## Related APIs
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

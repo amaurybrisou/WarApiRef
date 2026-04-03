@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 50 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AggroMeter, Enemy, LibWBToggler, MiracleGrowLight, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:574`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:242`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcon.lua:115`, `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:104`, `/workspace/data/raw/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/data/raw/Enemy/Code/UnitFrames/ClickCasting.lua:147`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrame.lua:314`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrame.lua:344` |
+| Addons seen in | Ace, AggroMeter, Amethyst, BuddyBind, CastSequence, CleanUnitFrames, Crusher, DetauntHelper |
+| Files seen in | AggroMeter.lua, BuddyBind.lua, CleanGroupMemberUnitFrame.lua, Code/GroupIcons/GroupIcon.lua, Code/Guard/Guard.lua, Code/Marks/MarkTemplate.lua, Code/UnitFrames/ClickCasting.lua, Code/UnitFrames/UnitFrame.lua |
 | Namespaces detected | WindowSetGameActionData |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Button:Action, AggroMeter: AggroMeter.SelectChar, Enemy: Enemy.Guard_SetGuardPlayerName, Enemy: Enemy.UnitFramesUI_UnitFrame_OnLButtonDown, Enemy: EnemyClickCasting:Proceed, Enemy: EnemyGroupIcon:Attach |
+| Example locations | Ace: Action, AggroMeter: SelectChar, Amethyst: Action, BuddyBind: GrabName, BuddyBind: init, BuddyBind: update |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 17 |
-| Global usage count | 17 |
+| Lua usage count | 104 |
+| Global usage count | 104 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,14 +71,14 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "EnemyGuardDistanceIndicator", WINDOW_NAME, frame.windowName |
-| arg2 | Observed as a function or method reference. | Observed values: 0, GameData.PlayerActions.ASSIST_PLAYER, GameData.PlayerActions.DO_ABILITY |
-| arg3 | Observed as a numeric value. | Observed values: 0, GameData.TradeSkills.CULTIVATION, numArg |
-| arg4 | Observed as a runtime window or control identifier. | Observed values: Enemy.isNil(g.guardPlayerName,L ""), L "", frame.playerName |
+| windowName | Observed as a target window name. | Observed values: "BuddyBindWindow", "BuddyBindWindowExecute", "EffigyTLMOAction" |
+| arg2 | Observed as a function or method reference. | Observed values: 0, GameData.PlayerActions.ASSIST_PLAYER, GameData.PlayerActions.COMMAND_PET |
+| arg3 | Observed as a runtime window or control identifier. | Observed values: 0, GameData.AssistType.MAIN_ASSIST, GameData.TradeSkills.CULTIVATION |
+| arg4 | Observed as a text or wstring payload. | Observed values: EffigyState:GetState(bar.state):GetTitle(), Enemy.isNil(g.guardPlayerName,L ""), GameData.Player.name |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -88,48 +88,81 @@ Observed mutating runtime window state or presentation.
 
 - Ace
 - AggroMeter
+- Amethyst
+- BuddyBind
+- CastSequence
+- CleanUnitFrames
+- Crusher
+- DetauntHelper
+- EA_ScenarioGroupWindow
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- EveryBodyGuard
+- GCDsaver
+- GroupSpotter
+- HealGrid
+- HealHoverAssist
+- Hopper
+- InfoScroller
+- KeyBar
 - LibWBToggler
+- Map
+- MarkBuff
+- Miracle Grow Remix
+- MiracleGrow
 - MiracleGrowLight
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
+- Refer
+- ResHelp
 - Shinies
+- Squared
+- SquaredClick
+- TargetRing
+- Targets
+- TastyButtons
+- Tokens
+- Twister
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
 - followTheLeader
+- scenarioInfo
+- xHUD
 
 ## Examples
 
-- Ace: LIBGUI_Button:Action -> WindowSetGameActionData(self.name, actionType, numArg, wstringArg)
-- AggroMeter: AggroMeter.SelectChar -> WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))
-- Enemy: Enemy.Guard_SetGuardPlayerName -> WindowSetGameActionData("EnemyGuardDistanceIndicator", GameData.PlayerActions.SET_TARGET, 0, Enemy.isNil(g.guardPlayerName,L ""))
-- Enemy: Enemy.UnitFramesUI_UnitFrame_OnLButtonDown -> WindowSetGameActionData(frame.windowName, GameData.PlayerActions.SET_TARGET, 0, frame.playerName)
-- Enemy: EnemyClickCasting:Proceed -> WindowSetGameActionData(self.frame.windowName, GameData.PlayerActions.DO_ABILITY, self.abilityId, self.frame.playerName)
-- Enemy: EnemyClickCasting:Proceed -> WindowSetGameActionData(self.frame.windowName, 0, 0, L "")
+- Ace: Action -> WindowSetGameActionData(self.name, actionType, numArg, wstringArg)
+- AggroMeter: SelectChar -> WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))
+- Amethyst: Action -> WindowSetGameActionData(self.name, actionType, numArg, wstringArg)
+- BuddyBind: GrabName -> WindowSetGameActionData("BuddyBindWindow", GameData.PlayerActions.SET_TARGET, 0, towstring(BuddyBind.Name))
+- BuddyBind: GrabName -> WindowSetGameActionData("BuddyBindWindowExecute", GameData.PlayerActions.SET_TARGET, 0, towstring(BuddyBind.Name))
+- BuddyBind: init -> WindowSetGameActionData("BuddyBindWindowExecute", GameData.PlayerActions.SET_TARGET, 0, towstring(BuddyBind.Name))
 
 ## Related APIs
 
-- none
+- [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
-- [OnLButtonDown](../../events/window_events/window_event_OnLButtonDown.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
-- [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
+- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
+- [WindowSetGameActionTrigger](window_WindowSetGameActionTrigger.md) (HIGH 100/100) - Window Function
+- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Affects
 
-- [GameData.PlayerActions.ASSIST_PLAYER](../../gamedata/fields/gamedata_GameData.PlayerActions.ASSIST_PLAYER.md) (HIGH 100/100) - GameData Field
-- [GameData.PlayerActions.DO_ABILITY](../../gamedata/fields/gamedata_GameData.PlayerActions.DO_ABILITY.md) (HIGH 100/100) - GameData Field
 - [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
-- [Label](../../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

@@ -24,10 +24,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer |
-| Files seen in | `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:261` |
+| Files seen in | source/AnywhereTrainer.lua |
 | Namespaces detected | EA_Window_InteractionTomeTraining |
 | Source kinds | lua_calls |
-| Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickTome |
+| Example locations | AnywhereTrainer: OnLeftClickTome |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -69,11 +69,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
@@ -81,23 +81,7 @@ Observed as a global function across 1 addons.
 
 ## Examples
 
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickTome -> EA_Window_InteractionTomeTraining.Hide()
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AnywhereTrainer: OnLeftClickTome -> EA_Window_InteractionTomeTraining.Hide()
 
 ## Notes
 

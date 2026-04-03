@@ -139,6 +139,7 @@ func buildLifecycleDiscoveryDiagnostics(sourceRoot string, addonSources []source
 				continue
 			}
 			diagnostics.SourceDirectoryCount++
+			diagnostics.SourceDirectories = append(diagnostics.SourceDirectories, name)
 			addonPath := filepath.Join(sourceRoot, name)
 			modMatches, _ := filepath.Glob(filepath.Join(addonPath, "*.mod"))
 			tocMatches, _ := filepath.Glob(filepath.Join(addonPath, "*.toc"))
@@ -188,6 +189,7 @@ func buildLifecycleDiscoveryDiagnostics(sourceRoot string, addonSources []source
 	}
 
 	sort.Strings(diagnostics.NoManifestDirectories)
+	sort.Strings(diagnostics.SourceDirectories)
 	sort.Slice(diagnostics.Exclusions, func(i, j int) bool {
 		if diagnostics.Exclusions[i].ReasonCode == diagnostics.Exclusions[j].ReasonCode {
 			return diagnostics.Exclusions[i].AddonName < diagnostics.Exclusions[j].AddonName

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 28 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:191`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:191`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:191`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:191`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:191` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, libs/LibGUI.lua |
 | Namespaces detected | WindowGetPopable |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Popable, LibWBToggler: LIBGUI_ELEMENT:Popable, PartyCast: LIBGUI_ELEMENT:Popable, Shinies: LIBGUI_ELEMENT:Popable, WoH-Reticle: LIBGUI_ELEMENT:Popable |
+| Example locations | Ace: Popable, ActionBarHide: Popable, Amethyst: Popable, Crusher: Popable, EZCraftX: Popable, EZGuard: Popable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 28 |
+| Global usage count | 28 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -75,43 +75,55 @@ Observed querying runtime window state or metadata.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Popable -> WindowGetPopable(self.name)
-- LibWBToggler: LIBGUI_ELEMENT:Popable -> WindowGetPopable(self.name)
-- PartyCast: LIBGUI_ELEMENT:Popable -> WindowGetPopable(self.name)
-- Shinies: LIBGUI_ELEMENT:Popable -> WindowGetPopable(self.name)
-- WoH-Reticle: LIBGUI_ELEMENT:Popable -> WindowGetPopable(self.name)
-
-## Related APIs
-
-- none
+- Ace: Popable -> WindowGetPopable(self.name)
+- ActionBarHide: Popable -> WindowGetPopable(self.name)
+- Amethyst: Popable -> WindowGetPopable(self.name)
+- Crusher: Popable -> WindowGetPopable(self.name)
+- EZCraftX: Popable -> WindowGetPopable(self.name)
+- EZGuard: Popable -> WindowGetPopable(self.name)
 
 ## Used With
 
 - [WindowSetPopable](window_WindowSetPopable.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

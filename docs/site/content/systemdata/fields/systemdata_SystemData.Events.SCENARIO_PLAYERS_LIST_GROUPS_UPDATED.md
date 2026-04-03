@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -30,15 +30,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, Enemy, LibGuard, LibGroup, LibGuard |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/LibGroup/LibGroup.lua:343`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:47`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:91` |
+| Addons seen in | EA_ScenarioGroupWindow, Enemy, Hopper, Info_DeathBlow, LibGroup, LibGuard, Squared |
+| Files seen in | Code/Core/Groups/Groups.lua, Info_DeathBlow.lua, LibGroup.lua, Source/Hopper.lua, Source/LibGuard.lua, Source/ScenarioGroupWindow.lua, Squared.lua, SquaredScenario.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
-| Example locations | Enemy.GroupsInitialize, Enemy.GroupsUpdate, LibGroup.Initialize, LibGuard.GROUP_UPDATED, LibGuard.Init, LibGuard.OnShutdown |
+| Example locations | GroupsInitialize, Init, Initialize, OnInitialize, OnLoad, OnShutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 14 |
+| Global usage count | 14 |
 | Local definition count | 0 |
 | Documentation references | 3 |
 | Initialization flow references | 0 |
@@ -61,31 +61,26 @@
 
 ## Description
 
-Observed SystemData field used by 4 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED field accessed by 7 addons; commonly found in GroupsInitialize and Init, Initialize, OnInitialize, OnLoad, OnShutdown, OnUnload, SquaredScenario.FlagUpdate, Start, Stop, SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
+- EA_ScenarioGroupWindow
 - Enemy
-- Enemy, LibGuard
+- Hopper
+- Info_DeathBlow
 - LibGroup
 - LibGuard
+- Squared
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- [Start](../../events/game_events/game_event_Start.md) (MEDIUM 43/100) - Game Event
+- [Stop](../../events/game_events/game_event_Stop.md) (MEDIUM 43/100) - Game Event
 
 ## Notes
 
-- Observed in contexts: Enemy.GroupsInitialize, Enemy.GroupsUpdate, LibGroup.Initialize, LibGuard.GROUP_UPDATED, LibGuard.Init, LibGuard.OnShutdown
+- Observed in contexts: GroupsInitialize, Init, Initialize, OnInitialize, OnLoad, OnShutdown

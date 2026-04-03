@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 57 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, Enemy, GuardLine, LibGuard, PartyCast, Shinies, followTheLeader |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraProfile.lua:171`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:4`, `/workspace/data/raw/GuardLine/GuardLine.lua:151`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:362`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:75`, `/workspace/data/raw/PartyCast/PartyCast.lua:370`, `/workspace/data/raw/PartyCast/PartyCast.lua:377`, `/workspace/data/raw/Shinies/Modules/Price/Shinies-Price-Flat.lua:40` |
+| Addons seen in | Arsenal Rank, Aura, AutoBand, CDown, Calling, DammazKron, Dascore, DetauntHelper |
+| Files seen in | ArsenalRank.lua, AutoBand.lua, CDown.lua, CDownSettings.lua, Calling.lua, Code/Core/Main.lua, Core/DK_Core.lua, DascorePars.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | AuraProfile.GetCurrentCharacter, Enemy.Initialize, GuardLine.GetIDs, LibGuard.UpdatePetHealthProxy, LibGuard.UpdateStateMachine, PartyCast.GROUP_UPDATED |
+| Example locations | AllModulesInit, Check, CheckSettings, CheckSettingsInit, Convert03To04, FetchStats |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 82 |
+| Global usage count | 82 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,36 +59,82 @@
 
 ## Description
 
-Observed GameData field used by 7 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.Player.name field accessed by 57 addons; commonly found in AllModulesInit and Check, CheckSettings, CheckSettingsInit, Convert03To04, FetchStats, FollowCurrentTarget, GROUP_UPDATED, GetCurProfileNum, GetCurrentCharacter, GetCurrentLeaderName, GetDynamicLeaderName, GetIDs, GetItemPrice, GetLeaderEffectiveRoleCategory, GetMainAssist, GetPlayerName, GetRealPlayerName, GetSetting, GotRX, IncreaseAmountPaid, InitProfile, InitUI, Initialize, InitializeLocal, InitializeSettings, IsUnitInRange, LevelUp, ON_DEATH, OnBattleGroupDataChanged, OnChat, OnGroupChange, OnInitialize, OnLButtonUpBuy, OnLoad, OnMButtonUp, OnMessageReceived, OnMouseOver, OnRButtonUp, OnRButtonUp_Results_ListItem, OnUpdate, ParsePlayer, ParserCreateExport, ProcessInboundChatMessage, ProcessSlashCmd, SetPlayerDefaults, SetSetting, SettingsInitialize, ShowDropdownMenu, ShowMenu, ShowTab, ShowWarbandMemberMenu, ShowWindowByName, StartTracker, SwitchProfile, UnitRRelease, UpdateBySpellsRange, UpdateGroup, UpdateGuildMemberNote, UpdateHealthArray, UpdateInformation, UpdateMasterLooterList, UpdatePetHealthProxy, UpdateQueuerList, UpdateStateMachine, UpdateWindow, addInteractive, auto_kick, build_arrival_seed_from_open_party, cmd_custom_role, filter, getSelfName, get_party_counts, is_wb_leader, lua_call, pa_collect_group_leader_name_keys, pa_get_live_partynote_from_members, setStaticLabels, slash, update, updateRvRTab, update_wb_arrival_tracking contexts.
 
 ## Seen In
 
+- Arsenal Rank
 - Aura
+- AutoBand
+- CDown
+- Calling
+- DammazKron
+- Dascore
+- DetauntHelper
+- Ding
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- Effigy
+- EmoteAlert
 - Enemy
+- FastFriends
+- FozAuction
 - GuardLine
+- GuildWarden
+- HealGrid
+- HealHoverAssist
+- I HATE YOU THIS MUCH
+- Info_DeathBlow
+- Info_Points
+- KeyBar
+- Kwestor
 - LibGuard
+- MegaphonePlusPlus
+- MoraleSet
+- NerfedButtons
+- NoOverheal
+- PartyAd
 - PartyCast
+- PieTracker
+- Pure
+- Queue Queuer
+- QuickWarReport
+- RVAPI_Range
+- Rotation
+- RvRStats
+- RvRStatsTab
+- ScenarioStats
+- SelfTarget
+- Sequencer
+- SessionRPs
 - Shinies
+- Soloq
+- Squared
+- SquaredClick
+- TacticSetNames
+- TaxPayer
+- ThinkOutLoud
+- TortallDPSCore
+- WarBoard_WarWhisperer
+- War_RU
 - followTheLeader
+- rorAutoInviter
+- zMailMod
 
 ## Related APIs
 
-- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
-- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 100/100) - Global Function
-- [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 70/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [GameData.GetScenarioPlayers](../../globals/functions/global_GameData.GetScenarioPlayers.md) (HIGH 100/100) - Global Function
+- [Icons.GetCareerIconIDFromCareerNamesID](../../globals/functions/global_Icons.GetCareerIconIDFromCareerNamesID.md) (HIGH 100/100) - Global Function
+- [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
+- [PartyUtils.IsPlayerInWarband](../../globals/functions/global_PartyUtils.IsPlayerInWarband.md) (HIGH 100/100) - Global Function
+- [PartyUtils.GetWarbandMainAssist](../../globals/functions/global_PartyUtils.GetWarbandMainAssist.md) (HIGH 96/100) - Global Function
+- [PartyUtils.IsWarbandFull](../../globals/functions/global_PartyUtils.IsWarbandFull.md) (HIGH 96/100) - Global Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnMButtonUp](../../xml/handlers/handler_OnMButtonUp.md) (HIGH 88/100) - XML Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: AuraProfile.GetCurrentCharacter, Enemy.Initialize, GuardLine.GetIDs, LibGuard.UpdatePetHealthProxy, LibGuard.UpdateStateMachine, PartyCast.GROUP_UPDATED
+- Observed in contexts: AllModulesInit, Check, CheckSettings, CheckSettingsInit, Convert03To04, FetchStats

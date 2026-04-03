@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraConfig.xml:0` |
+| Files seen in | Source/AuraConfig.xml |
 | Namespaces detected | EA_Templates_Color_Picker_Button |
 | Source kinds | xml_attributes |
 | Example locations | AuraConfigGeneralTintColor, AuraConfigTimerTintColorColor |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 1 addons.
+Engine XML color constant for standard UI styling; inherited by 1 addons.
 
 ## Seen In
 
@@ -67,18 +67,6 @@ Observed engine XML template or inherited constant referenced by 1 addons.
 ## Related APIs
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

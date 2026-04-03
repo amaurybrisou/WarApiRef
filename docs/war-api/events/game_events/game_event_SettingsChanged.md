@@ -1,41 +1,39 @@
 # SettingsChanged
 
 - Category: Game Event
-- Confidence level: HIGH
-- Confidence score: 93/100
+- Confidence level: MEDIUM
+- Confidence score: 63/100
 
 ## Confidence Assessment
 
-- Level: HIGH
+- Level: MEDIUM
 
-- Score: 93/100
+- Score: 63/100
 
-- Rationale: Promoted as HIGH confidence because referenced by generated docs or reference files, called globally with no local definition, reinforced across multiple generated source types.
+- Rationale: Promoted as MEDIUM confidence because referenced by generated docs or reference files, called globally with no local definition, used in event registration or dispatch.
 
 ## Evidence Signals
 
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Assist/Assist.lua:7`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:63`, `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:6`, `/workspace/data/raw/Enemy/Code/ScenarioAlerter/ScenarioAlerter.lua:4`, `/workspace/data/raw/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:21`, `/workspace/data/raw/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:7`, `/workspace/data/raw/Enemy/Code/Timer/Timer.lua:7` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | SettingsChanged |
-| Source kinds | event_page, flows, lua_event_registration |
-| Example locations | Enemy: Enemy.AssistInitialize, Enemy: Enemy.CombatLogInitialize, Enemy: Enemy.GuardInitialize, Enemy: Enemy.ScenarioAlerterInitialize, Enemy: Enemy.ScenarioInfoInitialize, Enemy: Enemy.TalismanAlerterInitialize |
+| Source kinds | event_page, lua_event_registration |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
-| Documentation references | 2 |
-| Initialization flow references | 1 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
@@ -55,7 +53,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 5 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -71,9 +69,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
-- Enemy.Assist_OnSettingsChanged
-- Enemy.CombatLog_OnSettingsChanged
+- AddEventHandler
 - Enemy.Guard_OnSettingsChanged
 - Enemy.ScenarioAlerter_OnSettingsChanged
 - Enemy.ScenarioInfo_OnSettingsChanged
@@ -83,30 +79,17 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Examples
 
-- Enemy: Enemy.AssistInitialize -> SettingsChanged -> Enemy.Assist_OnSettingsChanged
-- Enemy: Enemy.CombatLogInitialize -> SettingsChanged -> Enemy.CombatLog_OnSettingsChanged
-- Enemy: Enemy.GuardInitialize -> SettingsChanged -> Enemy.Guard_OnSettingsChanged
-- Enemy: Enemy.ScenarioAlerterInitialize -> SettingsChanged -> Enemy.ScenarioAlerter_OnSettingsChanged
-- Enemy: Enemy.ScenarioInfoInitialize -> SettingsChanged -> Enemy.ScenarioInfo_OnSettingsChanged
-- Enemy: Enemy.TalismanAlerterInitialize -> SettingsChanged -> Enemy.TalismanAlerter_OnSettingsChanged
+- Enemy: AddEventHandler -> SettingsChanged -> Enemy.Guard_OnSettingsChanged
+- Enemy: AddEventHandler -> SettingsChanged -> Enemy.ScenarioAlerter_OnSettingsChanged
+- Enemy: AddEventHandler -> SettingsChanged -> Enemy.ScenarioInfo_OnSettingsChanged
+- Enemy: AddEventHandler -> SettingsChanged -> Enemy.TalismanAlerter_OnSettingsChanged
+- Enemy: AddEventHandler -> SettingsChanged -> Enemy.Timer_OnSettingsChanged
+- Enemy: Enemy.Guard_OnSettingsChanged -> AddEventHandler(SettingsChanged, Enemy.Guard_OnSettingsChanged)
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Triggered-by evidence: Enemy:Enemy.UI_ConfigDialog_Hide, Enemy:Enemy._Initialize
 - Only one addon surfaced this event in the current addon-api corpus.

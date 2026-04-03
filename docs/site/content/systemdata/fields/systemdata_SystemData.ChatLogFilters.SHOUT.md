@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | PotionBar |
-| Files seen in | `/workspace/data/raw/PotionBar/source/Main.lua:189` |
+| Addons seen in | ActionFraction, AutoBand, Cram The Spam, PotionBar, XpStatus+G, zMailMod |
+| Files seen in | AB_util.lua, CramTheSpam.lua, CramTheSpam_Stabilizer.lua, source/ActionFraction.lua, source/Main.lua, source/XpStatus.lua, zMailMod.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | PotionBar.Initialize, lua_call |
+| Example locations | DebugPrint, Initialize, OnInitialize, OnUpdateProxy, Print, PrintInitMessage |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +59,21 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.ChatLogFilters.SHOUT field accessed by 6 addons; commonly found in DebugPrint and Initialize, OnInitialize, OnUpdateProxy, Print, PrintInitMessage, lua_call, shout contexts.
 
 ## Seen In
 
+- ActionFraction
+- AutoBand
+- Cram The Spam
 - PotionBar
+- XpStatus+G
+- zMailMod
 
 ## Related APIs
 
-- [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: PotionBar.Initialize, lua_call
+- Observed in contexts: DebugPrint, Initialize, OnInitialize, OnUpdateProxy, Print, PrintInitMessage

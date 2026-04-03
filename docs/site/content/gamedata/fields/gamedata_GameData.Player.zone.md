@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 19 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Killer, RoR_SoR, TurretRange |
-| Files seen in | `/workspace/data/raw/Killer/KillerRenown.lua:108`, `/workspace/data/raw/Killer/KillerRenown.lua:127`, `/workspace/data/raw/Killer/KillerRenown.lua:61`, `/workspace/data/raw/Killer/KillerUtils.lua:125`, `/workspace/data/raw/Killer/KillerZoneHistory.lua:329`, `/workspace/data/raw/Killer/KillerZoneHistory.lua:370`, `/workspace/data/raw/Killer/KillerZoneHistory.lua:446`, `/workspace/data/raw/Killer/KillerZoneHistory.lua:5` |
+| Addons seen in | Killer, Map, MapMonster, MapPin, Minmap, Queue Queuer, RealmStatus, RoR_SoR |
+| Files seen in | Core.lua, CurseProfilerCompiled.lua, KillerRenown.lua, KillerUtils.lua, KillerZoneHistory.lua, Map.lua, QueueQueuer.lua, RealmStatus.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | Killer.CaptureInitialWarCrests, Killer.GetActiveRvrZoneId, Killer.GetCurrentZoneHistoryEntry, Killer.LoadCurrentZoneFromHistory, Killer.OnCurrencyUpdated, Killer.OnRenownUpdated |
+| Example locations | AllowedToShowDetailWindow, Broadcast1, Broadcast2, BroadcastA, BroadcastG, BroadcastP |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 41 |
+| Global usage count | 41 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,30 +59,38 @@
 
 ## Description
 
-Observed GameData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.Player.zone field accessed by 19 addons; commonly found in AllowedToShowDetailWindow and Broadcast1, Broadcast2, BroadcastA, BroadcastG, BroadcastP, BroadcastW, CaptureInitialWarCrests, ChatHandler, GetActiveRvrZoneId, GetCurrentZoneHistoryEntry, GetCurrentZoneId, HandleSlashCmd, InitialEpicEntry, IsTier, LoadCurrentZoneFromHistory, OnCurrencyUpdated, OnLoadComplete, OnNameChange, OnPetUpdated, OnPlayerPositionUpdated, OnRenownUpdated, OnUpdate, QueuerCheckMessage, ResolveZoneIdFromName, ScanLore, ScanPerson, SendMessage, ShowWorldMapHooked, SlashCmd, TIMER_UPDATE, UpdateDetailLabels, UpdateGroup, UpdateMap, UpdateVP, UpsertZoneHistory, check, isInAllowedZone, lua_call, untilfunction, zonelistprint contexts.
 
 ## Seen In
 
 - Killer
+- Map
+- MapMonster
+- MapPin
+- Minmap
+- Queue Queuer
+- RealmStatus
 - RoR_SoR
+- RoR_debolster
+- RvRContribution
+- SOR
+- Squared
+- Tome Titan
+- TomeTracker
 - TurretRange
+- VPBreakdown
+- WarBoard_Loc
+- ZCurse_Profiler
+- wbLeadHelper
 
 ## Related APIs
 
 - [EA_Window_Backpack.GetItemsFromBackpack](../../globals/functions/global_EA_Window_Backpack.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [EA_Window_ScenarioLobby.OnJoinInstanceWait](../../globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md) (HIGH 100/100) - Global Function
+- [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
+- [wstring.upper](../../globals/functions/global_wstring.upper.md) (HIGH 100/100) - Global Function
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- Observed in contexts: Killer.CaptureInitialWarCrests, Killer.GetActiveRvrZoneId, Killer.GetCurrentZoneHistoryEntry, Killer.LoadCurrentZoneFromHistory, Killer.OnCurrencyUpdated, Killer.OnRenownUpdated
+- Observed in contexts: AllowedToShowDetailWindow, Broadcast1, Broadcast2, BroadcastA, BroadcastG, BroadcastP

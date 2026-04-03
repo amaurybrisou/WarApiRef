@@ -27,14 +27,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.lua:373` |
+| Files seen in | TidyRoll.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | AutoRoll, TidyRoll.local.AutoRoll, lua_call |
+| Example locations | AutoRoll, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -57,28 +57,12 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.ItemTypes.ENHANCEMENT field accessed by 1 addons; commonly found in AutoRoll and lua_call contexts.
 
 ## Seen In
 
 - TidyRoll
 
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: AutoRoll, TidyRoll.local.AutoRoll, lua_call
+- Observed in contexts: AutoRoll, lua_call

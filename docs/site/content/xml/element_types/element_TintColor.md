@@ -25,13 +25,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AggroMeter, Aura, AutoMark, BuffHead, GuardLine, Killer, LibGroup |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/AuraTooltip.xml:0`, `/workspace/data/raw/AutoMark/Source/AutoMark.xml:0`, `/workspace/data/raw/BuffHead/Setup/General.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupContainer.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupLayout.xml:0` |
+| Addons seen in | AdvancedPetAssist, AggroMeter, Aura, AutoMark, BlackBox, BuffHead, CCTV, CMap |
+| Files seen in | Core/ToolTip/DK_Tooltip.xml, Gui/HealGridGui.xml, Gui/HealGridGuiSpellList.xml, Gui/HealGridGuiTabMouseClick.xml, Gui/HealGridGuiTabSpellTrack.xml, Gui/HealGridGuiTemplates.xml, Gui/KwestorGuiTabArea.xml, Modules/UI/Shinies-UI-Auctions.xml |
 | Namespaces detected | TintColor |
 | Source kinds | xml_frames |
 | Example locations | AdvancedPetAssist: APAFollowTargetHUDFill, AdvancedPetAssist: APAInstantOnlyHUDFill, AdvancedPetAssist: APAKitingHUDFill, AdvancedPetAssist: APAPetTargetHUDBg, AggroMeter: AggroMeterWindow_AggroWindow1BorderCheck, AggroMeter: AggroMeterWindow_AggroWindow1Seperator1 |
-| XML usage count | 83 |
-| XML attribute usage count | 83 |
+| XML usage count | 573 |
+| XML attribute usage count | 573 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -56,7 +56,7 @@
 
 ## Description
 
-TintColor is a XML UI element. It commonly appears under CircleImage and DynamicImage.
+TintColor is a XML UI element. It commonly appears under Button and CircleImage.
 
 ## Common Attributes
 
@@ -71,12 +71,13 @@ TintColor is a XML UI element. It commonly appears under CircleImage and Dynamic
 
 ## Common Parent Elements
 
-- [FullResizeImage](element_FullResizeImage.md) — 28× (HIGH)
-- [DynamicImage](element_DynamicImage.md) — 25× (HIGH)
-- [Label](element_Label.md) — 14× (HIGH)
-- [HorizontalResizeImage](element_HorizontalResizeImage.md) — 7× (MEDIUM)
-- [CircleImage](element_CircleImage.md) — 6× (MEDIUM)
-- [VerticalResizeImage](element_VerticalResizeImage.md) — 3× (MEDIUM)
+- [DynamicImage](element_DynamicImage.md) — 374× (HIGH)
+- [FullResizeImage](element_FullResizeImage.md) — 118× (HIGH)
+- [Label](element_Label.md) — 30× (HIGH)
+- [HorizontalResizeImage](element_HorizontalResizeImage.md) — 20× (HIGH)
+- [CircleImage](element_CircleImage.md) — 15× (HIGH)
+- [Button](element_Button.md) — 12× (HIGH)
+- [VerticalResizeImage](element_VerticalResizeImage.md) — 4× (MEDIUM)
 
 ## Attribute Reference
 
@@ -85,23 +86,83 @@ TintColor is a XML UI element. It commonly appears under CircleImage and Dynamic
 | `b` | **required** | 100% | 0, 110, 130, 50, ... |
 | `g` | **required** | 100% | 0, 200, 185, 130, ... |
 | `r` | **required** | 100% | 255, 0, 180, 200, ... |
-| `a` | optional | 40% | 30, 255, 0.5, 200, ... |
+| `a` | optional | 18% | 30, 255, 0.8, 175, ... |
 ## Seen In
 
 - AdvancedPetAssist
 - AggroMeter
 - Aura
 - AutoMark
+- BlackBox
 - BuffHead
+- CCTV
+- CMap
+- CleanCastbar
+- CoolDownLine
+- DammazKron
+- Deathblow
+- Deathblow2
+- DetauntHelper
+- EA_LoadingScreen
+- EA_OpenPartyWindow
+- EA_UiDebugTools
+- EZCraftX
+- EveryBodyGuard
+- FlagCap
+- Group Icons SG
+- GroupRange
 - GuardLine
+- GuildWarden
+- HealGrid
+- Hopper
+- InfoScroller
+- KeyBar
+- KillStreak
 - Killer
+- Kwestor
+- LibAddonButton
 - LibGroup
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- MoraleSet
+- Moth
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
 - PartyCast
+- PieTracker
 - Pocket Palette
+- Pure
+- Pure Careerbar
+- RVAPI_ColorDialog
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RaidMeter
+- ResHelp
 - RoR_SoR
+- SessionRPs
 - Shinies
+- Soloq
+- SpamBayes
+- Squared
+- Statdoll
+- Statdoll Light
+- Statdoll Remix
+- Swinger
+- Targets
+- TaxPayer
 - TexturedButtons
+- Tortall_DPS
 - TurretRange
+- Twister
+- Warbuilder
+- Wikki's Cooldown Bar
+- ZonePOP
+- minesweep
+- zMailMod
 
 ## Examples
 
@@ -114,21 +175,10 @@ TintColor is a XML UI element. It commonly appears under CircleImage and Dynamic
 
 ## Related APIs
 
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [CircleImage](element_CircleImage.md) (HIGH 100/100) - XML Element Type
 - [DynamicImage](element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [HorizontalResizeImage](element_HorizontalResizeImage.md) (HIGH 100/100) - XML Element Type
 - [Label](element_Label.md) (HIGH 100/100) - XML Element Type
-- [VerticalResizeImage](element_VerticalResizeImage.md) (HIGH 90/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [VerticalResizeImage](element_VerticalResizeImage.md) (HIGH 100/100) - XML Element Type

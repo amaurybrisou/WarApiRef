@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | PartyCast |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.xml:0` |
+| Files seen in | PartyCast.xml |
 | Namespaces detected | EA_StatusBar_DefaultTintable |
 | Source kinds | xml_attributes |
 | Example locations | PartyCastWindow_Template_LargeTimerBar, PartyCastWindow_Template_SmallTimerBar, PartyFrameStatusBarBar |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 1 addons.
+Engine-supplied XML constant or template class referenced by 1 addons.
 
 ## Seen In
 
@@ -68,18 +68,6 @@ Observed engine XML template or inherited constant referenced by 1 addons.
 ## Related APIs
 
 - [StatusBar](../../xml/element_types/element_StatusBar.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

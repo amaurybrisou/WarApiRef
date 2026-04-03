@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:2820` |
+| Addons seen in | Group Icons, MapMonster, MapPin, Miracle Grow Remix, MouseHint, RVMOD_SquaredDistances, RoR_SoR |
+| Files seen in | GroupIcons.lua, RVMOD_SquaredDistances.lua, RoR_SoR.lua, Source/MapMonster_Calibrate.lua, layout.lua, mouse-hint.lua, source/MapPin.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | RoR_SoR.OnWindowOptionsSetScale, lua_call |
+| Example locations | GetMapPos, LayoutEndDrag, LayoutStartDrag, LayoutUpdate, OnLMouseButton, OnMouseOverEnd |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +59,30 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.MousePosition.x field accessed by 7 addons; commonly found in GetMapPos and LayoutEndDrag, LayoutStartDrag, LayoutUpdate, OnLMouseButton, OnMouseOverEnd, OnUpdate, OnWindowOptionsSetScale, SetWindowAlphaByMousePosition, UpdateMapCoordinates, lua_call contexts.
 
 ## Seen In
 
+- Group Icons
+- MapMonster
+- MapPin
+- Miracle Grow Remix
+- MouseHint
+- RVMOD_SquaredDistances
 - RoR_SoR
 
 ## Related APIs
 
-- none
+- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
+- [OnMouseOverEnd](../../xml/handlers/handler_OnMouseOverEnd.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
+- [SystemData.MousePosition.y](systemdata_SystemData.MousePosition.y.md) (HIGH 100/100) - SystemData Field
+- [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
 
 ## Notes
 
-- Observed in contexts: RoR_SoR.OnWindowOptionsSetScale, lua_call
+- Observed in contexts: GetMapPos, LayoutEndDrag, LayoutStartDrag, LayoutUpdate, OnLMouseButton, OnMouseOverEnd

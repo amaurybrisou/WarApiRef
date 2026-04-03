@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 37 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, RoR_SoR, Shinies, TidyRoll, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:957`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:954`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:954`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:990`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:954`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:105`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:954` |
+| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, BlackBox, CleanUnitFrames, Crusher, EZCraftX |
+| Files seen in | AdjustTheTip.lua, BlackBox.lua, CleanGroupMemberUnitFrame.lua, CleanTargetUnitFrame.lua, FlagCap.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua |
 | Namespaces detected | StatusBarSetMaximumValue |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Statusbar:New, LibWBToggler: LIBGUI_Statusbar:New, PartyCast: LIBGUI_Statusbar:New, PartyCast: PartyCast.FetchedText, RoR_SoR: RoR_SoR.T1_UPDATE, Shinies: LIBGUI_Statusbar:New |
+| Example locations | Ace: New, ActionBarHide: New, AdjustTheTip: AddTargetHealthToMouseOver, Amethyst: New, BlackBox: OnApplicationTwoButtonDialogHook, CleanUnitFrames: Create |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 46 |
+| Global usage count | 46 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,18 +65,18 @@ StatusBarSetMaximumValue(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 7 addons.
+Observed as a window function across 37 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", "SoR_"..Window_Name.."VPDESTROBAR", "SoR_"..Window_Name.."VPORDERBAR" |
+| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", "RespawnTimerWindowBar", "SoR_"..Window_Name.."VPDESTROBAR" |
 | arg2 | Observed as a numeric value. | Observed values: -1, 1, 100 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,38 +85,67 @@ Observed as a window function across 7 addons.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- AdjustTheTip
+- Amethyst
+- BlackBox
+- CleanUnitFrames
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- FlagCap
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - RoR_SoR
+- SNT_CASTBAR
 - Shinies
+- TargetInfoRing
+- TargetRing
+- Targets
 - TidyRoll
+- Tokens
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Statusbar:New -> StatusBarSetMaximumValue(w.name, 1)
-- LibWBToggler: LIBGUI_Statusbar:New -> StatusBarSetMaximumValue(w.name, 1)
-- PartyCast: LIBGUI_Statusbar:New -> StatusBarSetMaximumValue(w.name, 1)
-- PartyCast: PartyCast.FetchedText -> StatusBarSetMaximumValue("PartyCastWindow"..PlayerNumber.."TimerBar", tonumber(SPLIT_TEXT[6]))
-- PartyCast: PartyCast.FetchedText -> StatusBarSetMaximumValue("PartyCastWindow"..PlayerNumber.."TimerBar", -1)
-- PartyCast: PartyCast.FetchedText -> StatusBarSetMaximumValue("PartyCastWindow"..PlayerNumber.."TimerBar", 1)
+- Ace: New -> StatusBarSetMaximumValue(w.name, 1)
+- ActionBarHide: New -> StatusBarSetMaximumValue(w.name, 1)
+- AdjustTheTip: AddTargetHealthToMouseOver -> StatusBarSetMaximumValue(c_HEALTH_BAR_CONTAINER.."HealthPercentBarBar", 100)
+- Amethyst: New -> StatusBarSetMaximumValue(w.name, 1)
+- BlackBox: OnApplicationTwoButtonDialogHook -> StatusBarSetMaximumValue("RespawnTimerWindowBar", respawnTimeLeft)
+- CleanUnitFrames: Create -> StatusBarSetMaximumValue(newUnitFrame:GetName().."StatusContainerHealthPercentBar", 100)
 
 ## Related APIs
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
+- [StatusBarSetBackgroundTint](window_StatusBarSetBackgroundTint.md) (HIGH 100/100) - Window Function
+- [StatusBarSetForegroundTint](window_StatusBarSetForegroundTint.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 
 ## Affects
 
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [GameData.BuffTargetType.GROUP_MEMBER_START](../../gamedata/fields/gamedata_GameData.BuffTargetType.GROUP_MEMBER_START.md) (HIGH 100/100) - GameData Field
 
 ## Notes
 

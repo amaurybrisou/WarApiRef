@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 24 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Pocket Palette, PotionBar, Shinies |
-| Files seen in | `/workspace/data/raw/PocketPalette/PocketPalette.lua:105`, `/workspace/data/raw/PotionBar/source/Main.lua:112`, `/workspace/data/raw/PotionBar/source/Main.lua:580`, `/workspace/data/raw/Shinies/Source/Shinies.lua:294` |
+| Addons seen in | BarText (Influence), CastSequence, Crusher, DetauntHelper, EmoteAlert, GCDTracker, GroupRange, Hopper |
+| Files seen in | BarText_Influence.lua, Core.lua, CurseProfilerCompiled.lua, EmoteAlert.lua, Gui.lua, NerfedTalks.lua, PocketPalette.lua, RezEmote.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | LibStub:Print, PP.Initialize, PotionBar.LibSlashHandler, PotionBar.ListUnknowns, lua_call |
+| Example locations | HandleNerfListCommand, Initialize, LibSlashHandler, ListUnknowns, Log, OnPlayerDeath |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 17 |
+| Global usage count | 17 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,30 +59,35 @@
 
 ## Description
 
-Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.ChatLogFilters.SAY field accessed by 24 addons; commonly found in HandleNerfListCommand and Initialize, LibSlashHandler, ListUnknowns, Log, OnPlayerDeath, Print, Say, errorhandler, log, lua_call, print, printChat, printHelp, repeatnil, slash, truefalse contexts.
 
 ## Seen In
 
+- BarText (Influence)
+- CastSequence
+- Crusher
+- DetauntHelper
+- EmoteAlert
+- GCDTracker
+- GroupRange
+- Hopper
+- MarkBuff
+- Motion
+- NerfedButtons
 - Pocket Palette
 - PotionBar
+- Pure
+- RezEmote
+- Rotation
+- RvRContribution
 - Shinies
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- SimpleCombatText
+- Squared
+- Trakario
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- ZCurse_Profiler
 
 ## Notes
 
-- Observed in contexts: LibStub:Print, PP.Initialize, PotionBar.LibSlashHandler, PotionBar.ListUnknowns, lua_call
+- Observed in contexts: HandleNerfListCommand, Initialize, LibSlashHandler, ListUnknowns, Log, OnPlayerDeath

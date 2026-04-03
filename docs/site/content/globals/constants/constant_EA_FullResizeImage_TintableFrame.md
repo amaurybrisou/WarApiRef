@@ -2,33 +2,37 @@
 
 - Category: Constant
 - Confidence level: HIGH
-- Confidence score: 90/100
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Raw weighted score: 135
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/SetupLayout.xml:0` |
+| Addons seen in | BuffHead, EA_OpenPartyWindow, Effigy, Miracle Grow Remix |
+| Files seen in | Effigy.xml, Setup/SetupLayout.xml, Source/OpenPartyWindowTabManage.xml, layout.xml |
 | Namespaces detected | EA_FullResizeImage_TintableFrame |
 | Source kinds | xml_attributes |
-| Example locations | BuffHeadLayoutControlFrameWindowFrame, BuffHeadLayoutControlFrameWindowResizeFrame, BuffHeadLayoutFrameWindowFrame |
-| XML usage count | 3 |
-| XML attribute usage count | 3 |
+| Example locations | BuffHeadLayoutControlFrameWindowFrame, BuffHeadLayoutControlFrameWindowResizeFrame, BuffHeadLayoutFrameWindowFrame, EA_Window_OpenPartyManageSocketDefWarbandHoverFrame, FrameDefaultBack, MiracleGrow2LayoutTemplateHover |
+| XML usage count | 6 |
+| XML attribute usage count | 6 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -53,33 +57,27 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 1 addons.
+Engine-supplied XML constant or template class referenced by 4 addons.
 
 ## Seen In
 
 - BuffHead
+- EA_OpenPartyWindow
+- Effigy
+- Miracle Grow Remix
 
 ## Used By
 
 - BuffHeadLayoutControlFrameWindowFrame
 - BuffHeadLayoutControlFrameWindowResizeFrame
 - BuffHeadLayoutFrameWindowFrame
+- EA_Window_OpenPartyManageSocketDefWarbandHoverFrame
+- FrameDefaultBack
+- MiracleGrow2LayoutTemplateHover
 
 ## Related APIs
 
 - [FullResizeImage](../../xml/element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

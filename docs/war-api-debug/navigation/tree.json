@@ -1,0 +1,876 @@
+{
+  "id": "war_api_ref",
+  "label": "WAR API Reference",
+  "type": "root",
+  "path": "index.md",
+  "children": [
+    {
+      "id": "globals",
+      "label": "Globals",
+      "type": "category",
+      "children": [
+        {
+          "id": "globals_functions",
+          "label": "Functions",
+          "type": "section",
+          "path": "globals/functions/index.md",
+          "children": [
+            {
+              "id": "function:global:DialogManager.MakeTextEntryDialog",
+              "label": "DialogManager.MakeTextEntryDialog",
+              "type": "function",
+              "path": "globals/functions/global_DialogManager.MakeTextEntryDialog.md",
+              "importance": 90
+            },
+            {
+              "id": "function:global:EA_Window_ContextMenu.AddMenuItem",
+              "label": "EA_Window_ContextMenu.AddMenuItem",
+              "type": "function",
+              "path": "globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md",
+              "importance": 90
+            },
+            {
+              "id": "function:global:EA_Window_ContextMenu.CreateContextMenu",
+              "label": "EA_Window_ContextMenu.CreateContextMenu",
+              "type": "function",
+              "path": "globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md",
+              "importance": 90
+            },
+            {
+              "id": "function:global:EA_Window_ContextMenu.Finalize",
+              "label": "EA_Window_ContextMenu.Finalize",
+              "type": "function",
+              "path": "globals/functions/global_EA_Window_ContextMenu.Finalize.md",
+              "importance": 90
+            },
+            {
+              "id": "function:global:DialogManager.MakeTwoButtonDialog",
+              "label": "DialogManager.MakeTwoButtonDialog",
+              "type": "function",
+              "path": "globals/functions/global_DialogManager.MakeTwoButtonDialog.md",
+              "importance": 80
+            },
+            {
+              "id": "function:global:LibSlash.RegisterSlashCmd",
+              "label": "LibSlash.RegisterSlashCmd",
+              "type": "function",
+              "path": "globals/functions/global_LibSlash.RegisterSlashCmd.md",
+              "importance": 55
+            },
+            {
+              "id": "function:global:wstring.format",
+              "label": "wstring.format",
+              "type": "function",
+              "path": "globals/functions/global_wstring.format.md",
+              "importance": 55
+            },
+            {
+              "id": "function:global:Cursor.Clear",
+              "label": "Cursor.Clear",
+              "type": "function",
+              "path": "globals/functions/global_Cursor.Clear.md",
+              "importance": 45
+            },
+            {
+              "id": "function:global:Cursor.IconOnCursor",
+              "label": "Cursor.IconOnCursor",
+              "type": "function",
+              "path": "globals/functions/global_Cursor.IconOnCursor.md",
+              "importance": 45
+            }
+          ]
+        },
+        {
+          "id": "globals_tables",
+          "label": "Tables",
+          "type": "section",
+          "path": "globals/tables/index.md",
+          "children": [
+            {
+              "id": "data:table:Cursor",
+              "label": "Cursor",
+              "type": "data_structure",
+              "path": "globals/tables/table_Cursor.md",
+              "importance": 80
+            },
+            {
+              "id": "data:table:DialogManager",
+              "label": "DialogManager",
+              "type": "data_structure",
+              "path": "globals/tables/table_DialogManager.md",
+              "importance": 80
+            },
+            {
+              "id": "data:table:EA_Window_ContextMenu",
+              "label": "EA_Window_ContextMenu",
+              "type": "data_structure",
+              "path": "globals/tables/table_EA_Window_ContextMenu.md",
+              "importance": 80
+            },
+            {
+              "id": "data:table:LibSlash",
+              "label": "LibSlash",
+              "type": "data_structure",
+              "path": "globals/tables/table_LibSlash.md",
+              "importance": 55
+            },
+            {
+              "id": "data:table:wstring",
+              "label": "wstring",
+              "type": "data_structure",
+              "path": "globals/tables/table_wstring.md",
+              "importance": 45
+            }
+          ]
+        },
+        {
+          "id": "globals_constants",
+          "label": "Constants",
+          "type": "section",
+          "path": "globals/constants/index.md",
+          "children": [
+            {
+              "id": "data:constant:EA_Button_Default",
+              "label": "EA_Button_Default",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Button_Default.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_Button_DefaultCheckBox",
+              "label": "EA_Button_DefaultCheckBox",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Button_DefaultCheckBox.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_Button_DefaultDown",
+              "label": "EA_Button_DefaultDown",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Button_DefaultDown.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_Button_DefaultResizeable",
+              "label": "EA_Button_DefaultResizeable",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Button_DefaultResizeable.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_Button_DefaultUp",
+              "label": "EA_Button_DefaultUp",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Button_DefaultUp.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_Button_DefaultWindowClose",
+              "label": "EA_Button_DefaultWindowClose",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Button_DefaultWindowClose.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_Button_ListSort",
+              "label": "EA_Button_ListSort",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Button_ListSort.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_Default_CharacterImage",
+              "label": "EA_Default_CharacterImage",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Default_CharacterImage.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_FullResizeImage_TintableSolidBackground",
+              "label": "EA_FullResizeImage_TintableSolidBackground",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_FullResizeImage_TintableSolidBackground.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_ListSortDownArrow",
+              "label": "EA_ListSortDownArrow",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_ListSortDownArrow.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_ListSortUpArrow",
+              "label": "EA_ListSortUpArrow",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_ListSortUpArrow.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_TitleBar_Default",
+              "label": "EA_TitleBar_Default",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_TitleBar_Default.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_Window_Default",
+              "label": "EA_Window_Default",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Window_Default.md",
+              "importance": 90
+            },
+            {
+              "id": "data:constant:EA_Window_DefaultFrame",
+              "label": "EA_Window_DefaultFrame",
+              "type": "data_structure",
+              "path": "globals/constants/constant_EA_Window_DefaultFrame.md",
+              "importance": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "window_api",
+      "label": "Window API",
+      "type": "category",
+      "children": [
+        {
+          "id": "window_api_functions",
+          "label": "Functions",
+          "type": "section",
+          "path": "window_api/functions/index.md",
+          "children": [
+            {
+              "id": "function:window:LabelSetText",
+              "label": "LabelSetText",
+              "type": "function",
+              "path": "window_api/functions/window_LabelSetText.md",
+              "importance": 100
+            },
+            {
+              "id": "function:window:LabelSetTextColor",
+              "label": "LabelSetTextColor",
+              "type": "function",
+              "path": "window_api/functions/window_LabelSetTextColor.md",
+              "importance": 100
+            },
+            {
+              "id": "function:window:LayoutEditor.RegisterWindow",
+              "label": "LayoutEditor.RegisterWindow",
+              "type": "function",
+              "path": "window_api/functions/window_LayoutEditor.RegisterWindow.md",
+              "importance": 100
+            },
+            {
+              "id": "function:window:ButtonSetDisabledFlag",
+              "label": "ButtonSetDisabledFlag",
+              "type": "function",
+              "path": "window_api/functions/window_ButtonSetDisabledFlag.md",
+              "importance": 90
+            },
+            {
+              "id": "function:window:ButtonSetPressedFlag",
+              "label": "ButtonSetPressedFlag",
+              "type": "function",
+              "path": "window_api/functions/window_ButtonSetPressedFlag.md",
+              "importance": 90
+            },
+            {
+              "id": "function:window:ButtonSetText",
+              "label": "ButtonSetText",
+              "type": "function",
+              "path": "window_api/functions/window_ButtonSetText.md",
+              "importance": 90
+            },
+            {
+              "id": "function:window:WindowGetId",
+              "label": "WindowGetId",
+              "type": "function",
+              "path": "window_api/functions/window_WindowGetId.md",
+              "importance": 90
+            },
+            {
+              "id": "function:window:WindowSetShowing",
+              "label": "WindowSetShowing",
+              "type": "function",
+              "path": "window_api/functions/window_WindowSetShowing.md",
+              "importance": 90
+            },
+            {
+              "id": "function:window:DynamicImageSetTexture",
+              "label": "DynamicImageSetTexture",
+              "type": "function",
+              "path": "window_api/functions/window_DynamicImageSetTexture.md",
+              "importance": 80
+            },
+            {
+              "id": "function:window:WindowSetParent",
+              "label": "WindowSetParent",
+              "type": "function",
+              "path": "window_api/functions/window_WindowSetParent.md",
+              "importance": 80
+            },
+            {
+              "id": "function:window:WindowSetTintColor",
+              "label": "WindowSetTintColor",
+              "type": "function",
+              "path": "window_api/functions/window_WindowSetTintColor.md",
+              "importance": 80
+            }
+          ]
+        },
+        {
+          "id": "window_api_lifecycle",
+          "label": "Lifecycle",
+          "type": "section",
+          "path": "window_api/lifecycle.md"
+        },
+        {
+          "id": "window_api_patterns",
+          "label": "Patterns",
+          "type": "section",
+          "path": "window_api/patterns.md"
+        }
+      ]
+    },
+    {
+      "id": "xml",
+      "label": "XML",
+      "type": "category",
+      "children": [
+        {
+          "id": "xml_element_types",
+          "label": "Element Types",
+          "type": "section",
+          "path": "xml/element_types/index.md",
+          "children": [
+            {
+              "id": "ui:Label",
+              "label": "Label",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Label.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:Window",
+              "label": "Window",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Window.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:Windows",
+              "label": "Windows",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Windows.md",
+              "importance": 100
+            },
+            {
+              "id": "ui:Anchors",
+              "label": "Anchors",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Anchors.md",
+              "importance": 98
+            },
+            {
+              "id": "ui:Color",
+              "label": "Color",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Color.md",
+              "importance": 98
+            },
+            {
+              "id": "ui:Size",
+              "label": "Size",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Size.md",
+              "importance": 98
+            },
+            {
+              "id": "ui:Button",
+              "label": "Button",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Button.md",
+              "importance": 90
+            },
+            {
+              "id": "ui:DynamicImage",
+              "label": "DynamicImage",
+              "type": "ui_element",
+              "path": "xml/element_types/element_DynamicImage.md",
+              "importance": 90
+            },
+            {
+              "id": "ui:FullResizeImage",
+              "label": "FullResizeImage",
+              "type": "ui_element",
+              "path": "xml/element_types/element_FullResizeImage.md",
+              "importance": 90
+            },
+            {
+              "id": "ui:ListBox",
+              "label": "ListBox",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ListBox.md",
+              "importance": 90
+            },
+            {
+              "id": "ui:ListData",
+              "label": "ListData",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ListData.md",
+              "importance": 90
+            },
+            {
+              "id": "ui:Anchor",
+              "label": "Anchor",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Anchor.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:EventHandlers",
+              "label": "EventHandlers",
+              "type": "ui_element",
+              "path": "xml/element_types/element_EventHandlers.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:Sizes",
+              "label": "Sizes",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Sizes.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:TexCoords",
+              "label": "TexCoords",
+              "type": "ui_element",
+              "path": "xml/element_types/element_TexCoords.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:TextOffset",
+              "label": "TextOffset",
+              "type": "ui_element",
+              "path": "xml/element_types/element_TextOffset.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:Texture",
+              "label": "Texture",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Texture.md",
+              "importance": 45
+            },
+            {
+              "id": "ui:AbsPoint",
+              "label": "AbsPoint",
+              "type": "ui_element",
+              "path": "xml/element_types/element_AbsPoint.md",
+              "importance": 35
+            },
+            {
+              "id": "ui:EventHandler",
+              "label": "EventHandler",
+              "type": "ui_element",
+              "path": "xml/element_types/element_EventHandler.md",
+              "importance": 20
+            },
+            {
+              "id": "ui:Script",
+              "label": "Script",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Script.md",
+              "importance": 20
+            },
+            {
+              "id": "ui:ListColumn",
+              "label": "ListColumn",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ListColumn.md",
+              "importance": 15
+            },
+            {
+              "id": "ui:ListColumns",
+              "label": "ListColumns",
+              "type": "ui_element",
+              "path": "xml/element_types/element_ListColumns.md",
+              "importance": 15
+            },
+            {
+              "id": "ui:Scripts",
+              "label": "Scripts",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Scripts.md",
+              "importance": 15
+            },
+            {
+              "id": "ui:Assets",
+              "label": "Assets",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Assets.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:BottomCenter",
+              "label": "BottomCenter",
+              "type": "ui_element",
+              "path": "xml/element_types/element_BottomCenter.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:BottomLeft",
+              "label": "BottomLeft",
+              "type": "ui_element",
+              "path": "xml/element_types/element_BottomLeft.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:BottomRight",
+              "label": "BottomRight",
+              "type": "ui_element",
+              "path": "xml/element_types/element_BottomRight.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:Disabled",
+              "label": "Disabled",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Disabled.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:Middle",
+              "label": "Middle",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Middle.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:MiddleCenter",
+              "label": "MiddleCenter",
+              "type": "ui_element",
+              "path": "xml/element_types/element_MiddleCenter.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:MiddleLeft",
+              "label": "MiddleLeft",
+              "type": "ui_element",
+              "path": "xml/element_types/element_MiddleLeft.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:MiddleRight",
+              "label": "MiddleRight",
+              "type": "ui_element",
+              "path": "xml/element_types/element_MiddleRight.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:Normal",
+              "label": "Normal",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Normal.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:NormalHighlit",
+              "label": "NormalHighlit",
+              "type": "ui_element",
+              "path": "xml/element_types/element_NormalHighlit.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:Pressed",
+              "label": "Pressed",
+              "type": "ui_element",
+              "path": "xml/element_types/element_Pressed.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:TopCenter",
+              "label": "TopCenter",
+              "type": "ui_element",
+              "path": "xml/element_types/element_TopCenter.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:TopLeft",
+              "label": "TopLeft",
+              "type": "ui_element",
+              "path": "xml/element_types/element_TopLeft.md",
+              "importance": 5
+            },
+            {
+              "id": "ui:TopRight",
+              "label": "TopRight",
+              "type": "ui_element",
+              "path": "xml/element_types/element_TopRight.md",
+              "importance": 5
+            }
+          ]
+        },
+        {
+          "id": "xml_handlers",
+          "label": "Handlers",
+          "type": "section",
+          "path": "xml/handlers/index.md"
+        },
+        {
+          "id": "xml_schema",
+          "label": "Schema",
+          "type": "section",
+          "path": "xml/schema.md"
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "label": "Events",
+      "type": "category",
+      "children": [
+        {
+          "id": "events_game",
+          "label": "Game Events",
+          "type": "section",
+          "path": "events/game_events/index.md"
+        },
+        {
+          "id": "events_window",
+          "label": "Window Events",
+          "type": "section",
+          "path": "events/window_events/index.md"
+        },
+        {
+          "id": "events_patterns",
+          "label": "Patterns",
+          "type": "section",
+          "path": "events/patterns.md"
+        }
+      ]
+    },
+    {
+      "id": "systemdata",
+      "label": "SystemData",
+      "type": "category",
+      "children": [
+        {
+          "id": "systemdata_index",
+          "label": "Fields",
+          "type": "section",
+          "path": "systemdata/index.md",
+          "children": [
+            {
+              "id": "data:system:SystemData.ActiveWindow.name",
+              "label": "SystemData.ActiveWindow.name",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.ActiveWindow.name.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.ALL_MODULES_INITIALIZED",
+              "label": "SystemData.Events.ALL_MODULES_INITIALIZED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.ALL_MODULES_INITIALIZED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.LOADING_BEGIN",
+              "label": "SystemData.Events.LOADING_BEGIN",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_BEGIN.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.LOADING_END",
+              "label": "SystemData.Events.LOADING_END",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_END.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+              "label": "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.PLAYER_ZONE_CHANGED",
+              "label": "SystemData.Events.PLAYER_ZONE_CHANGED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.RELOAD_INTERFACE",
+              "label": "SystemData.Events.RELOAD_INTERFACE",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.UPDATE_PROCESSED",
+              "label": "SystemData.Events.UPDATE_PROCESSED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.VISIBLE_EQUIPMENT_UPDATED",
+              "label": "SystemData.Events.VISIBLE_EQUIPMENT_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.VISIBLE_EQUIPMENT_UPDATED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.MouseOverWindow.name",
+              "label": "SystemData.MouseOverWindow.name",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md",
+              "importance": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gamedata",
+      "label": "GameData",
+      "type": "category",
+      "children": [
+        {
+          "id": "gamedata_index",
+          "label": "Fields",
+          "type": "section",
+          "path": "gamedata/index.md",
+          "children": [
+            {
+              "id": "data:game:GameData.EquipSlots.BACK",
+              "label": "GameData.EquipSlots.BACK",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.EquipSlots.BACK.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.EquipSlots.HELM",
+              "label": "GameData.EquipSlots.HELM",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.EquipSlots.HELM.md",
+              "importance": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifecycle",
+      "label": "Lifecycle",
+      "type": "category",
+      "children": [
+        {
+          "id": "addon_lifecycle",
+          "label": "Addon Lifecycle",
+          "type": "section",
+          "path": "lifecycle/addon_lifecycle.md"
+        }
+      ]
+    },
+    {
+      "id": "patterns",
+      "label": "Patterns",
+      "type": "category",
+      "children": [
+        {
+          "id": "patterns_index",
+          "label": "Overview",
+          "type": "section",
+          "path": "patterns/index.md",
+          "children": [
+            {
+              "id": "pattern:conventions_Event_registration_pattern",
+              "label": "Event registration pattern",
+              "type": "pattern",
+              "path": "patterns/conventions_Event_registration_pattern.md",
+              "importance": 100
+            },
+            {
+              "id": "pattern:conventions_Initialization_pattern",
+              "label": "Initialization pattern",
+              "type": "pattern",
+              "path": "patterns/conventions_Initialization_pattern.md",
+              "importance": 100
+            },
+            {
+              "id": "pattern:conventions_UI_creation_pattern",
+              "label": "UI creation pattern",
+              "type": "pattern",
+              "path": "patterns/conventions_UI_creation_pattern.md",
+              "importance": 100
+            },
+            {
+              "id": "pattern:conventions_XML_list_binding_pattern",
+              "label": "XML list binding pattern",
+              "type": "pattern",
+              "path": "patterns/conventions_XML_list_binding_pattern.md",
+              "importance": 60
+            },
+            {
+              "id": "pattern:conventions_XML_runtime_caveats",
+              "label": "XML runtime caveats",
+              "type": "pattern",
+              "path": "patterns/conventions_XML_runtime_caveats.md",
+              "importance": 60
+            },
+            {
+              "id": "pattern:conventions_XML_to_Lua_binding_pattern",
+              "label": "XML to Lua binding pattern",
+              "type": "pattern",
+              "path": "patterns/conventions_XML_to_Lua_binding_pattern.md",
+              "importance": 100
+            },
+            {
+              "id": "pattern:events_RegisterEventHandler",
+              "label": "RegisterEventHandler",
+              "type": "pattern",
+              "path": "patterns/events_RegisterEventHandler.md",
+              "importance": 60
+            },
+            {
+              "id": "pattern:events_UnregisterEventHandler",
+              "label": "UnregisterEventHandler",
+              "type": "pattern",
+              "path": "patterns/events_UnregisterEventHandler.md",
+              "importance": 60
+            },
+            {
+              "id": "pattern:slash_commands_LibSlash_registration",
+              "label": "LibSlash registration",
+              "type": "pattern",
+              "path": "patterns/slash_commands_LibSlash_registration.md",
+              "importance": 60
+            },
+            {
+              "id": "pattern:window_Window_creation",
+              "label": "Window creation",
+              "type": "pattern",
+              "path": "patterns/window_Window_creation.md",
+              "importance": 60
+            },
+            {
+              "id": "pattern:window_XML_to_Lua_binding",
+              "label": "XML to Lua binding",
+              "type": "pattern",
+              "path": "patterns/window_XML_to_Lua_binding.md",
+              "importance": 100
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

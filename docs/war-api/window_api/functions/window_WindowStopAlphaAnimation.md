@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 24 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, DAoCBuff, Enemy, Pocket Palette, RoR_SoR, TidyChat, TurretRange |
-| Files seen in | `/workspace/data/raw/Aura/Source/Aura.lua:282`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:141`, `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:323`, `/workspace/data/raw/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:77`, `/workspace/data/raw/PocketPalette/PocketPalette.lua:91`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:1055`, `/workspace/data/raw/TidyChat/TidyChat.lua:344`, `/workspace/data/raw/TurrentRange/Display.lua:338` |
+| Addons seen in | AdjustTheTip, Amethyst, Aura, Busted, CCTV, CDown, CMap, Calling |
+| Files seen in | AdjustTheTip.lua, Amethyst.lua, Busted.lua, CCTV.lua, CDownFrames.lua, CMap.lua, CallingNotification.lua, Code/Guard/Guard.lua |
 | Namespaces detected | WindowStopAlphaAnimation |
 | Source kinds | lua_calls |
-| Example locations | Aura: Aura:Deactivate, DAoCBuff: DAoCBuffFrame:StopFading, Enemy: Enemy.Guard_GuardIndicator_Update, Enemy: Enemy.TalismanAlerter_Update, Pocket Palette: HighlightWindow, RoR_SoR: RoR_SoR.SET_KEEP |
+| Example locations | AdjustTheTip: UpdateUnit, Amethyst: ShowCastBar, Amethyst: ShowDummyCastBar, Amethyst: StartInteractTimer, Aura: Deactivate, Busted: ClearAlertFlash |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 22 |
-| Global usage count | 22 |
+| Lua usage count | 57 |
+| Global usage count | 57 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,57 +65,62 @@ WindowStopAlphaAnimation(arg1)
 
 ## Description
 
-Observed as a window function across 7 addons.
+Observed as a window function across 24 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "EnemyGuardDistanceIndicator", "EnemyTalismanAlerterIndicator", "SoR_"..Window_Name.."KEEP1KEEPDOOR1" |
+| arg1 | Observed as a text or wstring payload. | Observed values: "BustedMiniGUIText", "CCTVRootWindow", "CCTVRootWindowBackground2" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- AdjustTheTip
+- Amethyst
 - Aura
+- Busted
+- CCTV
+- CDown
+- CMap
+- Calling
 - DAoCBuff
+- DuffTimer
+- EA_LoadingScreen
+- EA_UiDebugTools
 - Enemy
+- LibAddonButton
+- Minmap
 - Pocket Palette
+- Pure
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
 - RoR_SoR
+- SNT_CASTBAR
 - TidyChat
 - TurretRange
+- Vectors
 
 ## Examples
 
-- Aura: Aura:Deactivate -> WindowStopAlphaAnimation(self:Get("internal-runtimewindowid"))
-- Aura: Aura:Deactivate -> WindowStopAlphaAnimation(self:Get("internal-runtimetimerwindowid"))
-- Aura: Aura:Deactivate -> WindowStopAlphaAnimation(self:Get("internal-runtimeflashwindowid"))
-- DAoCBuff: DAoCBuffFrame:StopFading -> WindowStopAlphaAnimation(self.icon)
-- DAoCBuff: DAoCBuffFrame:StopFading -> WindowStopAlphaAnimation(self.frame)
-- Enemy: Enemy.Guard_GuardIndicator_Update -> WindowStopAlphaAnimation("EnemyGuardDistanceIndicator")
-
-## Related APIs
-
-- none
+- AdjustTheTip: UpdateUnit -> WindowStopAlphaAnimation(self:GetName())
+- Amethyst: ShowCastBar -> WindowStopAlphaAnimation(C.name)
+- Amethyst: ShowDummyCastBar -> WindowStopAlphaAnimation(C.name)
+- Amethyst: StartInteractTimer -> WindowStopAlphaAnimation(C.name)
+- Aura: Deactivate -> WindowStopAlphaAnimation(self:Get("internal-runtimewindowid"))
+- Aura: Deactivate -> WindowStopAlphaAnimation(self:Get("internal-runtimetimerwindowid"))
 
 ## Used With
 
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [WindowStartAlphaAnimation](window_WindowStartAlphaAnimation.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

@@ -2,24 +2,20 @@
 
 - Type: XML Handler
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 88/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 88/100
 
-- Raw weighted score: 126
-
-- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, observed in both xml and lua paths.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, referenced by generated docs or reference files, used in event registration or dispatch.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
-- +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
@@ -27,14 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, MoraleCircle |
-| Files seen in | `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrame.xml:0`, `/workspace/data/raw/MoraleCircle/MoraleCircle.xml:0` |
+| Addons seen in | Enemy, HealGrid, MoraleCircle, SessionRPs |
 | Namespaces detected | OnMButtonDown |
 | Source kinds | bindings, xml_handlers |
-| Example locations | Enemy: EnemyUnitFrame.OnMButtonDown, MoraleCircle: MoraleTemplate.OnMButtonDown |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
-| Lua usage count | 2 |
+| Example locations | Enemy: .OnMButtonDown, HealGrid: .OnMButtonDown, MoraleCircle: .OnMButtonDown, SessionRPs: .OnMButtonDown |
+| XML usage count | 0 |
+| XML attribute usage count | 0 |
+| Lua usage count | 5 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -42,7 +37,7 @@
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
-| Observed in XML and Lua | yes |
+| Observed in XML and Lua | no |
 | Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
@@ -58,7 +53,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 2 addons through frame event handlers.
+XML handler event observed across 4 addons.
 
 ## Expected Lua Binding
 
@@ -68,34 +63,26 @@ function(...)
 
 ## Element Types
 
-- Window
+- none
 
 ## Seen In
 
 - Enemy
+- HealGrid
 - MoraleCircle
+- SessionRPs
 
 ## Examples
 
-- Enemy: EnemyUnitFrame -> EnemyUnitFrame.OnMButtonDown -> Enemy.UnitFramesUI_UnitFrame_OnMButtonDown
-- MoraleCircle: MoraleTemplate -> MoraleTemplate.OnMButtonDown -> MoraleCircle.Reset
+- Enemy: .OnMButtonDown -> Enemy.UnitFramesUI_UnitFrame_OnMButtonDown
+- HealGrid: .OnMButtonDown -> HealGridMouseClick.UnitMButtonDown
+- MoraleCircle: .OnMButtonDown -> MoraleCircle.Reset
+- SessionRPs: .OnMButtonDown -> SessionRPs.CloseWindow
 
 ## Related APIs
 
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because contract artifacts capture symbol linkage, not full handler signatures.

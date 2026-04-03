@@ -25,10 +25,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BagOMatic |
-| Files seen in | `/workspace/data/raw/bagomatic/BagOMatic.lua:776`, `/workspace/data/raw/bagomatic/BagOMatic.lua:782` |
+| Files seen in | BagOMatic.lua |
 | Namespaces detected | EA_Window_InteractionStore |
 | Source kinds | lua_calls |
-| Example locations | BagOMatic: BagOMatic.buyItem, BagOMatic: BagOMatic.buyLastItem |
+| Example locations | BagOMatic: buyItem, BagOMatic: buyLastItem |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -72,11 +72,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
@@ -84,24 +84,8 @@ Observed as a global function across 1 addons.
 
 ## Examples
 
-- BagOMatic: BagOMatic.buyItem -> EA_Window_InteractionStore.ConfirmThenBuyItem(item_slot_num, 1)
-- BagOMatic: BagOMatic.buyLastItem -> EA_Window_InteractionStore.ConfirmThenBuyItem(13, 1)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- BagOMatic: buyItem -> EA_Window_InteractionStore.ConfirmThenBuyItem(item_slot_num, 1)
+- BagOMatic: buyLastItem -> EA_Window_InteractionStore.ConfirmThenBuyItem(13, 1)
 
 ## Notes
 

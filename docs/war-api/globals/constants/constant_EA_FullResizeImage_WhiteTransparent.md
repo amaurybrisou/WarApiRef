@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, MoraleCircle, WSCT |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/MoraleCircle/MoraleCircle.xml:0`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Addons seen in | AggroMeter, MoraleCircle, SocialWindow 2.0, WSCT |
+| Files seen in | AggroMeter.xml, MoraleCircle.xml, Source/SocialWindow.xml, wsct_options/wsct_options.xml |
 | Namespaces detected | EA_FullResizeImage_WhiteTransparent |
 | Source kinds | xml_attributes |
 | Example locations | AggroMeterWindow_AggroWindow2BorderCheck, AggroMeterWindow_AggroWindow4BorderCheck, AggroMeterWindow_AggroWindow6BorderCheck, MoraleSlidersCustomColorSwatch, MoraleSlidersEmptyCustomColorSwatch, MoraleSlidersFillCustomColorSwatch |
-| XML usage count | 9 |
-| XML attribute usage count | 9 |
+| XML usage count | 10 |
+| XML attribute usage count | 10 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,12 +57,13 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 3 addons.
+Engine-supplied XML constant or template class referenced by 4 addons.
 
 ## Seen In
 
 - AggroMeter
 - MoraleCircle
+- SocialWindow 2.0
 - WSCT
 
 ## Used By
@@ -74,24 +75,13 @@ Observed engine XML template or inherited constant referenced by 3 addons.
 - MoraleSlidersEmptyCustomColorSwatch
 - MoraleSlidersFillCustomColorSwatch
 - MoraleSlidersFullCustomColorSwatch
+- SocialWindowListWindowSelection
 - WSCTOptionsColorPickerWindowChannelSelection
 - WSCTOptionsColorPickerWindowCustomColorSwatch
 
 ## Related APIs
 
 - [FullResizeImage](../../xml/element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

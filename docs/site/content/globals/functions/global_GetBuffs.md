@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 83/100
-- Seen in: 6 addons
+- Seen in: 23 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, BuffHead, DAoCBuff, Enemy, LibGuard, WSCT |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraEffectTracker.lua:62`, `/workspace/data/raw/BuffHead/Core.lua:1138`, `/workspace/data/raw/BuffHead/Core.lua:178`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:1099`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:1245`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffHeadFrames.lua:780`, `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:503`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:153` |
+| Addons seen in | Aura, BuffHead, CCTV, DAoCBuff, EZGuard, Enemy, GCDsaver, GuardBot |
+| Files seen in | CCTV.lua, Code/Core/Groups/Groups.lua, Core.lua, EZGuard.lua, GCDsaver.lua, GuardBot.lua, IHYTM.lua, NerfedEngine.lua |
 | Namespaces detected | GetBuffs |
 | Source kinds | lua_calls |
-| Example locations | Aura: AuraEffectTracker:RefreshEffects, BuffHead: BuffHead.RefreshPlayerBuffs, BuffHead: BuffHead.local.ResyncTarget, BuffHead: ResyncTarget, DAoCBuff: DAoCBuffHeadTracker:Refresh, DAoCBuff: DAoCBuffTracker:Refresh |
+| Example locations | Aura: RefreshEffects, BuffHead: RefreshPlayerBuffs, BuffHead: ResyncTarget, CCTV: BuffUpdate, DAoCBuff: Refresh, DAoCBuff: Update |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 44 |
+| Global usage count | 44 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,51 +62,56 @@ GetBuffs(arg1)
 
 ## Description
 
-Observed as a shared query API across 6 addons.
+Observed as a shared query API across 23 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: GameData.BuffTargetType.SELF, buffTargetType, self.m_effectTargetType |
+| arg1 | Observed as a function or method reference. | Observed values: GameData.BuffTargetType.SELF, GameData.BuffTargetType.TARGET_FRIENDLY, GameData.BuffTargetType.TARGET_HOSTILE |
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Aura
 - BuffHead
+- CCTV
 - DAoCBuff
+- EZGuard
 - Enemy
+- GCDsaver
+- GuardBot
+- HealGrid
+- I HATE YOU THIS MUCH
 - LibGuard
+- NerfedButtons
+- Phantom
+- Pure
+- RandomMount
+- ResHelp
+- SquaredHDIndicator
+- TastyButtons
+- TurretScrap
+- Twister
 - WSCT
+- WarTriage
+- WhatsCooking
 
 ## Examples
 
-- Aura: AuraEffectTracker:RefreshEffects -> GetBuffs(self.m_effectTargetType)
-- BuffHead: BuffHead.RefreshPlayerBuffs -> GetBuffs(GameData.BuffTargetType.SELF)
-- BuffHead: BuffHead.local.ResyncTarget -> GetBuffs(buffTargetType)
+- Aura: RefreshEffects -> GetBuffs(self.m_effectTargetType)
+- BuffHead: RefreshPlayerBuffs -> GetBuffs(GameData.BuffTargetType.SELF)
 - BuffHead: ResyncTarget -> GetBuffs(buffTargetType)
-- DAoCBuff: DAoCBuffHeadTracker:Refresh -> GetBuffs(self.m_targetType)
-- DAoCBuff: DAoCBuffTracker:Refresh -> GetBuffs(self.m_targetType)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
+- CCTV: BuffUpdate -> GetBuffs(GameData.BuffTargetType.SELF)
+- DAoCBuff: Refresh -> GetBuffs(self.m_targetType)
+- DAoCBuff: Update -> GetBuffs(self.m_targetType)
 
 ## Affects
 

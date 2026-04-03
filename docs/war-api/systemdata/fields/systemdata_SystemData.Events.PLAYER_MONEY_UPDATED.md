@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,33 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 168
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Shinies |
+| Addons seen in | Shinies, XpStatus+G, ZCurse_Profiler, zMailMod |
+| Files seen in | CurseProfilerCompiled.lua, Modules/UI/Shinies-UI-Post.lua, source/XpStatus.lua, zMailMod.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page |
-| Example locations | SystemData.Events.PLAYER_MONEY_UPDATED, event_page |
+| Source kinds | lua_call |
+| Example locations | Initialize, OnDisable, OnEnable, OnInitialize, RegisterEventsHandlers, Shutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +45,7 @@
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +60,27 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.PLAYER_MONEY_UPDATED field accessed by 4 addons; commonly found in Initialize and OnDisable, OnEnable, OnInitialize, RegisterEventsHandlers, Shutdown, lua_call contexts.
 
 ## Seen In
 
 - Shinies
+- XpStatus+G
+- ZCurse_Profiler
+- zMailMod
 
 ## Related APIs
 
-- none
+- [WindowUnRegisterEventHandler](../../window_api/functions/window_WindowUnRegisterEventHandler.md) (HIGH 98/100) - Window Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [SystemData.Events.GUILD_EXP_UPDATED](systemdata_SystemData.Events.GUILD_EXP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_EXP_UPDATED](systemdata_SystemData.Events.PLAYER_EXP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_RENOWN_UPDATED](systemdata_SystemData.Events.PLAYER_RENOWN_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.WORLD_OBJ_RENOWN_GAINED](systemdata_SystemData.Events.WORLD_OBJ_RENOWN_GAINED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Observed in contexts: SystemData.Events.PLAYER_MONEY_UPDATED, event_page
+- Observed in contexts: Initialize, OnDisable, OnEnable, OnInitialize, RegisterEventsHandlers, Shutdown

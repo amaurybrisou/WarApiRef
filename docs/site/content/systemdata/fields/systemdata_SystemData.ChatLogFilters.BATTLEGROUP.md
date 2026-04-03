@@ -27,10 +27,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | followTheLeader |
-| Files seen in | `/workspace/data/raw/followTheLeader/followTheLeader.lua:143`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:262`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:463`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:87` |
+| Files seen in | followTheLeader.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | followTheLeader.Initialize, followTheLeader.UnsetFixedLeader, followTheLeader.Update, followTheLeader.slash, lua_call |
+| Example locations | Initialize, UnsetFixedLeader, Update, lua_call, slash |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 5 |
@@ -57,28 +57,12 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.ChatLogFilters.BATTLEGROUP field accessed by 1 addons; commonly found in Initialize and UnsetFixedLeader, Update, lua_call, slash contexts.
 
 ## Seen In
 
 - followTheLeader
 
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: followTheLeader.Initialize, followTheLeader.UnsetFixedLeader, followTheLeader.Update, followTheLeader.slash, lua_call
+- Observed in contexts: Initialize, UnsetFixedLeader, Update, lua_call, slash

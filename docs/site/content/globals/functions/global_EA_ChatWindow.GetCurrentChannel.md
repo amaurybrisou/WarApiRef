@@ -2,18 +2,16 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 98/100
 - Seen in: 1 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 98/100
 
-- Raw weighted score: 123
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
@@ -22,23 +20,22 @@
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +8 Return usage is consistent: Observed as a stable query-style API.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WhoHealedMe |
-| Files seen in | `/workspace/data/raw/WhoHealedMe/WHMCommands.lua:405` |
+| Files seen in | WHMCommands.lua |
 | Namespaces detected | EA_ChatWindow |
-| Source kinds | globals, lua_calls |
-| Example locations | WhoHealedMe: GetCurrentChannelCmd, WhoHealedMe: WhoHealedMe.local.GetCurrentChannelCmd |
+| Source kinds | lua_calls |
+| Example locations | WhoHealedMe: GetCurrentChannelCmd |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
 | Global usage count | 2 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -74,11 +71,11 @@ Observed as a global function across 1 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
@@ -87,23 +84,6 @@ Observed as a global function across 1 addons.
 ## Examples
 
 - WhoHealedMe: GetCurrentChannelCmd -> EA_ChatWindow.GetCurrentChannel()
-- WhoHealedMe: WhoHealedMe.local.GetCurrentChannelCmd -> EA_ChatWindow.GetCurrentChannel()
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

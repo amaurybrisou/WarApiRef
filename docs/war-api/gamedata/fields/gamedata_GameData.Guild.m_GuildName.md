@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | RoR_SoR |
-| Files seen in | `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:1055` |
+| Addons seen in | AutoBand, Effigy, RoR_SoR, TaxPayer |
+| Files seen in | AutoBand.lua, RoR_SoR.lua, States/EffigyStateGuild.lua, TaxPayer.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | RoR_SoR.SET_KEEP, lua_call |
+| Example locations | CommsReceived, GetCurrentGuildInfo, SET_KEEP, UpdateGuildMemberNote, UpdateGuildXP, cmd_print_guild |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +59,15 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.Guild.m_GuildName field accessed by 4 addons; commonly found in CommsReceived and GetCurrentGuildInfo, SET_KEEP, UpdateGuildMemberNote, UpdateGuildXP, cmd_print_guild, is_starter_guild, lua_call contexts.
 
 ## Seen In
 
+- AutoBand
+- Effigy
 - RoR_SoR
-
-## Related APIs
-
-- [LabelGetText](../../window_api/functions/window_LabelGetText.md) (HIGH 100/100) - Window Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- TaxPayer
 
 ## Notes
 
-- Observed in contexts: RoR_SoR.SET_KEEP, lua_call
+- Observed in contexts: CommsReceived, GetCurrentGuildInfo, SET_KEEP, UpdateGuildMemberNote, UpdateGuildXP, cmd_print_guild

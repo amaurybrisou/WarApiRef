@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -11,36 +11,35 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 156
+- Raw weighted score: 143
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +8 Return usage is consistent: Observed as a stable query-style API.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | GuardLine, RoR_SoR |
-| Files seen in | `/workspace/data/raw/GuardLine/GuardLine.lua:63`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:877` |
+| Addons seen in | EA_LoadingScreen, Effigy, GuardLine, MapMonster, MapPin, RoR_SoR, Squared |
+| Files seen in | Effigy.lua, GuardLine.lua, RoR_SoR.lua, Source/MapMonster_Calibrate.lua, Squared.lua, source/MapPin.lua, source/scenarioenterloadingscreen.lua, source/standardloadingscreen.lua |
 | Namespaces detected | InterfaceCore |
-| Source kinds | globals, lua_calls |
-| Example locations | GuardLine: GuardLine.init, RoR_SoR: RoR_SoR.Restack |
+| Source kinds | lua_calls |
+| Example locations | EA_LoadingScreen: BeginScenarioEnterLoadScreen, EA_LoadingScreen: BeginStandardLoadScreen, Effigy: LoadLayout, GuardLine: init, MapMonster: OnLMouseButton, MapMonster: OnMouseOverEnd |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -67,7 +66,7 @@ InterfaceCore.GetResolutionScale()
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 7 addons.
 
 ## Parameters
 
@@ -76,38 +75,50 @@ Observed as a global function across 2 addons.
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- EA_LoadingScreen
+- Effigy
 - GuardLine
+- MapMonster
+- MapPin
 - RoR_SoR
+- Squared
 
 ## Examples
 
-- GuardLine: GuardLine.init -> InterfaceCore.GetResolutionScale()
-- RoR_SoR: RoR_SoR.Restack -> InterfaceCore.GetResolutionScale()
+- EA_LoadingScreen: BeginScenarioEnterLoadScreen -> InterfaceCore.GetResolutionScale()
+- EA_LoadingScreen: BeginStandardLoadScreen -> InterfaceCore.GetResolutionScale()
+- Effigy: LoadLayout -> InterfaceCore.GetResolutionScale()
+- GuardLine: init -> InterfaceCore.GetResolutionScale()
+- MapMonster: OnLMouseButton -> InterfaceCore.GetResolutionScale()
+- MapMonster: OnMouseOverEnd -> InterfaceCore.GetResolutionScale()
 
 ## Related APIs
 
-- [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
+- [OnMouseOverEnd](../../xml/handlers/handler_OnMouseOverEnd.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
+- [InterfaceCore.GetScale](global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [wstring.upper](global_wstring.upper.md) (HIGH 100/100) - Global Function
 
 ## Affects
 
-- [InterfaceCore.GetScale](global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [SystemData.MousePosition.x](../../systemdata/fields/systemdata_SystemData.MousePosition.x.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MousePosition.y](../../systemdata/fields/systemdata_SystemData.MousePosition.y.md) (HIGH 100/100) - SystemData Field
+- [SystemData.screenResolution.x](../../systemdata/fields/systemdata_SystemData.screenResolution.x.md) (HIGH 100/100) - SystemData Field
+- [SystemData.screenResolution.y](../../systemdata/fields/systemdata_SystemData.screenResolution.y.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

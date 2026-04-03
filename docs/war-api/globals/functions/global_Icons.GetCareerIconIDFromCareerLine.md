@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 30 addons
 
 ## Confidence Assessment
 
@@ -11,35 +11,34 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 121
+- Raw weighted score: 108
 
-- Rationale: Promoted as HIGH confidence because matches a known engine namespace, referenced by generated docs or reference files, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +8 Return usage is consistent: Observed as a stable query-style API.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, PartyCast, Swift Assist |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Assist/Assist.lua:195`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogIDS.lua:211`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcon.lua:115`, `/workspace/data/raw/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/data/raw/Enemy/Code/UnitFrames/Parts/CareerIcon.lua:13`, `/workspace/data/raw/PartyCast/PartyCast.lua:284`, `/workspace/data/raw/swift-assist/SwiftAssist.lua:232`, `/workspace/data/raw/swift-assist/SwiftAssist.lua:99` |
+| Addons seen in | AutoMark, BuddyBind, Calling, CleanUnitFrames, DammazKron, DetauntHelper, Ding, EA_OpenPartyWindow |
+| Files seen in | BuddyBind.lua, CallingList.lua, CallingNotification.lua, CleanGroupMemberUnitFrame.lua, Code/Assist/Assist.lua, Code/CombatLog/CombatLogIDS.lua, Code/GroupIcons/GroupIcon.lua, Code/Marks/MarkTemplate.lua |
 | Namespaces detected | Icons |
-| Source kinds | globals, lua_calls |
-| Example locations | Enemy: Enemy.AssistUI_Target_Show, Enemy: Enemy.CombatLogUI_IDS_Update, Enemy: Enemy.UnitFramesParts_CareerIconInitialize, Enemy: EnemyGroupIcon:Attach, Enemy: EnemyMarkTemplate:Apply, PartyCast: PartyCast.Target |
+| Source kinds | lua_calls |
+| Example locations | AutoMark: CreateMarker, BuddyBind: GrabName, Calling: SetListLine, Calling: ShowCallerIcon, Calling: ShowTargetIcon, CleanUnitFrames: SetCareerIcon |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 89 |
+| Global usage count | 89 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | no |
@@ -66,52 +65,80 @@ Icons.GetCareerIconIDFromCareerLine(arg1)
 
 ## Description
 
-Observed as a global function across 3 addons.
+Observed as a global function across 30 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: Addon.career, PlayerCareer, cache.career |
+| arg1 | Observed as a function or method reference. | Observed values: Addon.career, GameData.CareerLine.ARCHMAGE, GameData.CareerLine.ASSASSIN |
 
 ## Returns
 
-- Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone.
+- Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- AutoMark
+- BuddyBind
+- Calling
+- CleanUnitFrames
+- DammazKron
+- DetauntHelper
+- Ding
+- EA_OpenPartyWindow
+- Effigy
 - Enemy
+- EveryBodyGuard
+- Group Icons
+- Group Icons SG
+- GuildWarden
+- HealGrid
+- MapPin
+- MarkBuff
+- Moth
 - PartyCast
+- Pure
+- QuickNameActions+
+- ResHelp
+- SessionRPs
+- Squared
 - Swift Assist
+- TargetInfoRing
+- Targets
+- ThinkOutLoud
+- xHUD
+- yAssistHelper
 
 ## Examples
 
-- Enemy: Enemy.AssistUI_Target_Show -> Icons.GetCareerIconIDFromCareerLine(careerId)
-- Enemy: Enemy.CombatLogUI_IDS_Update -> Icons.GetCareerIconIDFromCareerLine(career)
-- Enemy: Enemy.UnitFramesParts_CareerIconInitialize -> Icons.GetCareerIconIDFromCareerLine(cache.career)
-- Enemy: EnemyGroupIcon:Attach -> Icons.GetCareerIconIDFromCareerLine(self.playerCareer)
-- Enemy: EnemyMarkTemplate:Apply -> Icons.GetCareerIconIDFromCareerLine(careerId)
-- PartyCast: PartyCast.Target -> Icons.GetCareerIconIDFromCareerLine(PlayerCareer)
+- AutoMark: CreateMarker -> Icons.GetCareerIconIDFromCareerLine(career_id)
+- BuddyBind: GrabName -> Icons.GetCareerIconIDFromCareerLine(TargetInfo:UnitCareer("selffriendlytarget"))
+- Calling: SetListLine -> Icons.GetCareerIconIDFromCareerLine(call.CallerCareerID)
+- Calling: SetListLine -> Icons.GetCareerIconIDFromCareerLine(call.TargetCareerID)
+- Calling: ShowCallerIcon -> Icons.GetCareerIconIDFromCareerLine(careerId)
+- Calling: ShowTargetIcon -> Icons.GetCareerIconIDFromCareerLine(careerId)
 
 ## Related APIs
 
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
+- [Color](../../xml/element_types/element_Color.md) (HIGH 100/100) - XML Element Type
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
+- [DialogManager.MakeTextEntryDialog](global_DialogManager.MakeTextEntryDialog.md) (HIGH 100/100) - Global Function
 - [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureScale](../../window_api/functions/window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
+- [EA_ChatWindow.InsertText](global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
+- [LabelGetTextDimensions](../../window_api/functions/window_LabelGetTextDimensions.md) (HIGH 100/100) - Window Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [EA_Window_WorldMap.ShowZone](global_EA_Window_WorldMap.ShowZone.md) (HIGH 90/100) - Global Function
 - [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
-- [CreateWindowFromTemplate](global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-
-## Triggered By
-
-- none
 
 ## Affects
 

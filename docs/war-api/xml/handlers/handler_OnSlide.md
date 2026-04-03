@@ -2,24 +2,20 @@
 
 - Type: XML Handler
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 88/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 88/100
 
-- Raw weighted score: 138
-
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, referenced by generated docs or reference files, used in event registration or dispatch.
 
 ## Evidence Signals
 
 - +30 Seen in 4 or more addons: Cross-addon spread is strong.
-- +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
@@ -27,14 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, BuffHead, DAoCBuff, Enemy, LibGroup, MoraleCircle, PotionBar, RoR_SoR |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraColorPicker.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/BuffHead/Setup/General.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupContainer.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupDisplay.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupGeneral.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutProperties.xml:0` |
+| Addons seen in | Atlas, BuffHead, CDown, ChattyCathy, DetauntHelper, DuffTimer, EA_ScenarioGroupWindow, Enemy |
 | Namespaces detected | OnSlide |
 | Source kinds | bindings, xml_handlers |
-| Example locations | Aura: AuraColorPickerAlpha.OnSlide, Aura: AuraColorPickerBlue.OnSlide, Aura: AuraColorPickerGreen.OnSlide, Aura: AuraColorPickerRed.OnSlide, Aura: AuraConfigGeneralTextureRotationSlider.OnSlide, Aura: AuraConfigGeneralTextureScaleSlider.OnSlide |
-| XML usage count | 80 |
-| XML attribute usage count | 80 |
-| Lua usage count | 80 |
+| Example locations | Atlas: .OnSlide, BuffHead: .OnSlide, CDown: .OnSlide, ChattyCathy: .OnSlide, DetauntHelper: .OnSlide, DuffTimer: .OnSlide |
+| XML usage count | 0 |
+| XML attribute usage count | 0 |
+| Lua usage count | 191 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -42,7 +37,7 @@
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
-| Observed in XML and Lua | yes |
+| Observed in XML and Lua | no |
 | Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
@@ -58,7 +53,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 13 addons through frame event handlers.
+XML handler event observed across 37 addons.
 
 ## Expected Lua Binding
 
@@ -68,49 +63,68 @@ function(...)
 
 ## Element Types
 
-- SliderBar
+- none
 
 ## Seen In
 
-- Aura
+- Atlas
 - BuffHead
-- DAoCBuff
+- CDown
+- ChattyCathy
+- DetauntHelper
+- DuffTimer
+- EA_ScenarioGroupWindow
 - Enemy
+- Group Icons SG
+- GroupRange
+- GroupSpotter
+- HealGrid
 - LibGroup
+- MapMonster
+- MapPin
 - MoraleCircle
+- Obsidian
 - PotionBar
+- RVAPI_ColorDialog
+- RVAPI_Range
+- RVMOD_Manager
+- RVMOD_SquaredDistances
+- ReliquaryHunter
 - RoR_SoR
+- SNT_INFO
+- SNT_PANEL
+- SOR
 - Shinies
+- Statdoll Remix
+- TacticSetNames
+- TastyButtons
 - TexturedButtons
 - TurretRange
 - WSCT
 - WarBoard
+- WarBoard_FPS
+- XpStatus+G
 
 ## Examples
 
-- Aura: AuraColorPickerAlpha -> AuraColorPickerAlpha.OnSlide -> AuraColorPicker.OnSlide
-- Aura: AuraColorPickerBlue -> AuraColorPickerBlue.OnSlide -> AuraColorPicker.OnSlide
-- Aura: AuraColorPickerGreen -> AuraColorPickerGreen.OnSlide -> AuraColorPicker.OnSlide
-- Aura: AuraColorPickerRed -> AuraColorPickerRed.OnSlide -> AuraColorPicker.OnSlide
-- Aura: AuraConfigGeneralTextureRotationSlider -> AuraConfigGeneralTextureRotationSlider.OnSlide -> AuraConfig.OnTextureRotationSlide
-- Aura: AuraConfigGeneralTextureScaleSlider -> AuraConfigGeneralTextureScaleSlider.OnSlide -> AuraConfig.OnTextureScaleSlide
+- Atlas: .OnSlide -> Atlas.Configuration.OnSlide
+- BuffHead: .OnSlide -> BuffHead.Setup.SelectColor.OnSlideTint
+- BuffHead: .OnSlide -> BuffHead.Setup.AdvancedContainersItem.Properties.OnSlideScale
+- BuffHead: .OnSlide -> BuffHead.Setup.Container.OnSlidePaddingHorizontal
+- BuffHead: .OnSlide -> BuffHead.Setup.Container.OnSlidePaddingVertical
+- BuffHead: .OnSlide -> BuffHead.Setup.Container.OnSlideColumns
 
 ## Related APIs
 
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [SliderBar](../element_types/element_SliderBar.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- [SliderBar](../element_types/element_SliderBar.md) (HIGH 100/100) - XML Element Type
-
-## Triggered By
-
-- none
+- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](../../window_api/functions/window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
-- none
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.
+- Expected binding arguments remain uncertain because contract artifacts capture symbol linkage, not full handler signatures.

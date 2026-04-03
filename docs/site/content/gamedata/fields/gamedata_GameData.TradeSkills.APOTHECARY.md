@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -28,11 +28,11 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions |
-| Files seen in | `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:305`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:167` |
+| Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions, EZCraftX |
+| Files seen in | AnywhereTrainerAdditions.lua, Source/EZCraftX.lua, source/AnywhereTrainer.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | AnywhereTrainer.OnLeftClickCraft, AnywhereTrainerAdditions.OnLeftClickCraft, lua_call |
+| Example locations | AddItem, OnLeftClickCraft, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 3 |
@@ -59,29 +59,14 @@
 
 ## Description
 
-Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.TradeSkills.APOTHECARY field accessed by 3 addons; commonly found in AddItem and OnLeftClickCraft, lua_call contexts.
 
 ## Seen In
 
 - AnywhereTrainer
 - AnywhereTrainerAdditions
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- EZCraftX
 
 ## Notes
 
-- Observed in contexts: AnywhereTrainer.OnLeftClickCraft, AnywhereTrainerAdditions.OnLeftClickCraft, lua_call
+- Observed in contexts: AddItem, OnLeftClickCraft, lua_call

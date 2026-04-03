@@ -64,26 +64,40 @@ DisabledPressed is a XML UI element. It commonly appears under TexSlices and Tex
 
 ## Common Parent Elements
 
-- [TexSlices](element_TexSlices.md) — 11× (HIGH)
-- [TextColors](element_TextColors.md) — 4× (MEDIUM)
+- [TexSlices](element_TexSlices.md) — 36× (HIGH)
+- [TextColors](element_TextColors.md) — 26× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `id` | optional | 73% | morale-white, RightTabFrame, ability-white, tactic-black, ... |
-| `a` | optional | 26% | 255 |
-| `b` | optional | 26% | 36 |
-| `g` | optional | 26% | 57 |
-| `r` | optional | 26% | 95 |
+| `id` | optional | 58% | morale-white, RightTabFrame, Map-Plus-Button-Disabled, Map-Minus-Button-Disabled, ... |
+| `a` | optional | 41% | 255, 0.5 |
+| `b` | optional | 41% | 36 |
+| `g` | optional | 41% | 57 |
+| `r` | optional | 41% | 95 |
 ## Seen In
 
 - AggroMeter
 - AnywhereTrainer
+- CMap
+- CastSequence
+- Crusher
+- DammazKron
+- Deathblow
+- Deathblow2
+- GuardList
+- GuardRange
+- Motion
+- NerfedButtons
 - PartyCast
 - PotionBar
+- RaidMeter
 - RoR_SoR
+- Sequencer
 - Shinies
+- Warbuilder
+- zMailMod
 
 ## Examples
 
@@ -93,15 +107,3 @@ DisabledPressed is a XML UI element. It commonly appears under TexSlices and Tex
 
 - [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
 - [TextColors](element_TextColors.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

@@ -62,23 +62,36 @@ BottomLeft is a XML UI element. It commonly appears under TexCoords and TexSlice
 
 ## Common Parent Elements
 
-- [TexCoords](element_TexCoords.md) — 9× (HIGH)
-- [TexSlices](element_TexSlices.md) — 5× (HIGH)
+- [TexCoords](element_TexCoords.md) — 19× (HIGH)
+- [TexSlices](element_TexSlices.md) — 11× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | optional | 64% | 256, 0, 346 |
-| `y` | optional | 64% | 197, 35, 684, 38 |
-| `id` | optional | 35% | Border-Bottom-Left |
+| `x` | optional | 63% | 36, 256, 346, 0, ... |
+| `y` | optional | 63% | 609, 197, 684, 54, ... |
+| `id` | optional | 36% | Action-Bar-Frame-Bottom-Left, Border-Bottom-Left |
 ## Seen In
 
+- CCTV
 - CM_ClosetGoblin
+- CleanCastbar
+- Dascore
 - Enemy
+- FlagCap
+- Hopper
+- Map
+- MoraleSet
 - PartyCast
+- Pure
+- Pure Careerbar
+- ResHelp
 - RoR_SoR
+- Sequencer
 - Shinies
+- TwisterSet
+- WTes
 
 ## Examples
 
@@ -88,15 +101,3 @@ BottomLeft is a XML UI element. It commonly appears under TexCoords and TexSlice
 
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
 - [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

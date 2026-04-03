@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | PotionBar, WSCT |
-| Files seen in | `/workspace/data/raw/PotionBar/settings/Settings.xml:14`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Addons seen in | DuffTimer, PotionBar, WSCT |
+| Files seen in | DuffTimerOptions.xml, settings/Settings.xml, wsct_options/wsct_options.xml |
 | Namespaces detected | EA_BrownHorizontalRule |
 | Source kinds | xml_attributes |
-| Example locations | PotionBarConfigHorizontalSeparator, WSCTEventSeperator, WSCTOptionsProfileWindowSeperator |
-| XML usage count | 3 |
-| XML attribute usage count | 3 |
+| Example locations | DuffTimerOptions_GeneralTab_TemplateScroll_AdvBottomRule, DuffTimerOptions_GeneralTab_TemplateScroll_AdvTopRule, DuffTimerOptions_WinTabScroll_AdvBottomRule, DuffTimerOptions_WinTabScroll_AdvTopRule, PotionBarConfigHorizontalSeparator, WSCTEventSeperator |
+| XML usage count | 7 |
+| XML attribute usage count | 7 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,15 +57,20 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Engine-supplied XML constant or template class referenced by 3 addons.
 
 ## Seen In
 
+- DuffTimer
 - PotionBar
 - WSCT
 
 ## Used By
 
+- DuffTimerOptions_GeneralTab_TemplateScroll_AdvBottomRule
+- DuffTimerOptions_GeneralTab_TemplateScroll_AdvTopRule
+- DuffTimerOptions_WinTabScroll_AdvBottomRule
+- DuffTimerOptions_WinTabScroll_AdvTopRule
 - PotionBarConfigHorizontalSeparator
 - WSCTEventSeperator
 - WSCTOptionsProfileWindowSeperator
@@ -73,18 +78,6 @@ Observed engine XML template or inherited constant referenced by 2 addons.
 ## Related APIs
 
 - [HorizontalResizeImage](../../xml/element_types/element_HorizontalResizeImage.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

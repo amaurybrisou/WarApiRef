@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 12 addons
+- Seen in: 56 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BankArkel, BuffHead, Enemy, LibWBToggler, PartyCast, PotionBar, Shinies |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:178`, `/workspace/data/raw/BankArkel/BankArkel.lua:95`, `/workspace/data/raw/BuffHead/Container.lua:417`, `/workspace/data/raw/BuffHead/EffectFrame.lua:36`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52`, `/workspace/data/raw/BuffHead/Setup/SelectColor.lua:27`, `/workspace/data/raw/BuffHead/Setup/SelectTexture.lua:59`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:991` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, Asshat, BankArkel, BetterCC, BuffHead, CMap |
+| Files seen in | Asshat.lua, BankArkel.lua, BetterCC.lua, Castbar.lua, Code/CombatLog/CombatLogStatsWindow.lua, Code/GroupIcons/GroupIcon.lua, Code/Marks/MarkTemplate.lua, Code/ScenarioInfo/ScenarioInfo.lua |
 | Namespaces detected | WindowSetLayer |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Layer, BankArkel: BankArkel.Init, BuffHead: BuffHead.Setup.SelectColor.Show, BuffHead: BuffHead.Setup.SelectTexture.Show, BuffHead: BuffHead.local.SetLayer, BuffHead: BuffHead.local.SetupCoreFrame |
+| Example locations | Ace: Layer, ActionBarHide: Layer, Amethyst: Layer, Asshat: Init, BankArkel: Init, BetterCC: UpdatePulse |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 40 |
-| Global usage count | 40 |
+| Lua usage count | 123 |
+| Global usage count | 123 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "BankArkelBackpack", "EA_Window_ContextMenu1", "PotionBar" |
-| arg2 | Observed as a function or method reference. | Observed values: 0, 2, 3 |
+| windowName | Observed as a target window name. | Observed values: "BankArkelBackpack", "EA_Window_ContextMenu1", "Map" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, 1, 2 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,49 +85,88 @@ Observed mutating runtime window state or presentation.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
+- Asshat
 - BankArkel
+- BetterCC
 - BuffHead
+- CMap
+- CastSequence
+- CraftingWillard
+- Crusher
+- EA_ScenarioGroupWindow
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDsaver
+- GroupRange
+- HealGrid
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- MyReasons
+- NaturalLog
+- Obsidian
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- RVAPI_ColorDialog
+- RVMOD_SquaredDistances
+- RealmStatus
+- ResHelp
+- RetAlert
 - Shinies
+- SquaredHotIndicators
+- TargetRing
+- TastyButtons
 - TexturedButtons
 - TidyChat
 - TidyRoll
+- Tokens
+- Twister
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- compass
+- nRarity
+- scenarioInfo
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Layer -> WindowSetLayer(self.name, layer)
-- BankArkel: BankArkel.Init -> WindowSetLayer("BankArkelBackpack", 4)
-- BuffHead: BuffHead.Setup.SelectColor.Show -> WindowSetLayer(windowName, WindowGetLayer(window)+1)
-- BuffHead: BuffHead.Setup.SelectTexture.Show -> WindowSetLayer(windowName, WindowGetLayer(window)+1)
-- BuffHead: BuffHead.local.SetLayer -> WindowSetLayer(frame:GetName(), frame.Settings.Layer)
-- BuffHead: BuffHead.local.SetupCoreFrame -> WindowSetLayer(windowName, layoutSettings.Layer)
+- Ace: Layer -> WindowSetLayer(self.name, layer)
+- ActionBarHide: Layer -> WindowSetLayer(self.name, layer)
+- Amethyst: Layer -> WindowSetLayer(self.name, layer)
+- Asshat: Init -> WindowSetLayer(hostileWindow, 3)
+- Asshat: Init -> WindowSetLayer(friendlyWindow, 3)
+- BankArkel: Init -> WindowSetLayer("BankArkelBackpack", 4)
 
 ## Related APIs
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
 - [WindowGetLayer](window_WindowGetLayer.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
 
 ## Affects
 
-- [BankWindow](../../globals/tables/table_BankWindow.md) (HIGH 100/100) - Global Table
-- [EA_ChatWindow.OnKeyEnter](../../globals/functions/global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
-- [EA_Window_Backpack](../../globals/tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
+- [GameData.Account.ServerName](../../gamedata/fields/gamedata_GameData.Account.ServerName.md) (HIGH 100/100) - GameData Field
 - [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-- [BankWindow.Hide](../../globals/functions/global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
 
 ## Notes
 

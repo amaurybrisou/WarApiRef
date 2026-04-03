@@ -2,20 +2,22 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 98/100
-- Seen in: 3 addons
+- Confidence score: 100/100
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 98/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Raw weighted score: 110
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CM_ClosetGoblin, Enemy, Shinies |
-| Files seen in | `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:147`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:154`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:212`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:234`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:612`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:645`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Browse.lua:1105` |
+| Addons seen in | CM_ClosetGoblin, Enemy, MapPin, Motion, Shinies, Vectors |
+| Files seen in | ClosetGoblinCharacterWindow.lua, Code/CombatLog/CombatLogStatsWindow.lua, Modules/UI/Shinies-UI-Browse.lua, Settings.lua, Source/Motion.lua, source/MapPin.lua |
 | Namespaces detected | DialogManager |
 | Source kinds | lua_calls |
-| Example locations | CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickNewSetButton, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnSubmitNewSetName, CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnSubmitSetRename, Enemy: Enemy.CombatLogUI_StatsWindow_SessionAdd, Enemy: Enemy.CombatLogUI_StatsWindow_SessionRename |
+| Example locations | CM_ClosetGoblin: OnClickNewSetButton, CM_ClosetGoblin: OnRowMenuRenameSetClick, CM_ClosetGoblin: OnSubmitNewSetName, CM_ClosetGoblin: OnSubmitSetRename, Enemy: CombatLogUI_StatsWindow_SessionAdd, Enemy: CombatLogUI_StatsWindow_SessionRename |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 20 |
+| Global usage count | 20 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -58,62 +60,61 @@
 ## Signature (inferred)
 
 ```lua
-DialogManager.MakeTextEntryDialog(arg1, arg2, arg3, arg4, arg5)
+DialogManager.MakeTextEntryDialog(arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 ```
 
 ## Description
 
-Observed as a global function across 3 addons.
+Observed as a global function across 6 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: L "New combat log session", L "Rename combat log session", T["Shinies - Save Search"] |
-| arg2 | Observed as a text or wstring payload. | Observed values: L "Enter new session name", L "Enter session name", L "Enter set name :" |
-| arg3 | Observed as a runtime window or control identifier. | Observed values: L "", L "Default", T["New Search"] |
-| arg4 | Observed as a function or method reference. | Observed values: ClosetGoblinCharacterWindow.OnSubmitNewSetName, ClosetGoblinCharacterWindow.OnSubmitSetRename, ShiniesBrowseUI.Searches_OnAddSuccess |
-| arg5 | Observed as a runtime window or control identifier. | Observed values: ShiniesBrowseUI.Searches_OnAddCancel, nil |
+| arg1 | Observed as a text or wstring payload. | Observed values: L "MapPin Export", L "MapPin Filter", L "MapPin" |
+| arg2 | Observed as a text or wstring payload. | Observed values: L "Current MapPin Data: ", L "Enter new Profile Name", L "Enter new session name" |
+| arg3 | Observed as a runtime window or control identifier. | Observed values: AddLink, DataText, L "" |
+| arg4 | Observed as a function or method reference. | Observed values: ClosetGoblinCharacterWindow.OnSubmitNewSetName, ClosetGoblinCharacterWindow.OnSubmitSetRename, InputSubmit |
+| arg5 | Observed as a runtime window or control identifier. | Observed values: Motion.OnRecipeAddCancel, ShiniesBrowseUI.Searches_OnAddCancel, nil |
+| arg6 | Observed as a numeric value. | Observed values: 1000, 20, 250 |
+| arg7 | Observed as a boolean toggle. | Observed values: false, true |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - CM_ClosetGoblin
 - Enemy
+- MapPin
+- Motion
 - Shinies
+- Vectors
 
 ## Examples
 
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickNewSetButton -> DialogManager.MakeTextEntryDialog(cgL["Set_Name"], cgL["Enter_set_name"], L "", ClosetGoblinCharacterWindow.OnSubmitNewSetName, nil)
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick -> DialogManager.MakeTextEntryDialog(cgL["New_set_name"], cgL["Enter_set_name"], set.name, ClosetGoblinCharacterWindow.OnSubmitSetRename, nil)
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnSubmitNewSetName -> DialogManager.MakeTextEntryDialog(cgL["Set name"], L "Enter set name :", name, ClosetGoblinCharacterWindow.OnSubmitNewSetName, nil)
-- CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnSubmitSetRename -> DialogManager.MakeTextEntryDialog(cgL["New_set_name"], cgL["Enter_set_name"], name, ClosetGoblinCharacterWindow.OnSubmitSetRename, nil)
-- Enemy: Enemy.CombatLogUI_StatsWindow_SessionAdd -> DialogManager.MakeTextEntryDialog(L "New combat log session", L "Enter session name", L "Default", function(text)Enemy.CombatLog_StatsSessionAdd(Enemy.trim(text))end, nil, 250, false)
-- Enemy: Enemy.CombatLogUI_StatsWindow_SessionRename -> DialogManager.MakeTextEntryDialog(L "Rename combat log session", L "Enter new session name", session.stats.name, function(text)local index=ComboBoxGetSelectedMenuItem("EnemyCombatLogStatsWindowSession")session.stats.name=Enemy.trim(text)Enemy.CombatLogUI_StatsWindow_UpdateSessionsList()ComboBoxSetSelectedMenuItem("EnemyCombatLogStatsWindowSession",index)Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged()end, nil, 250, false)
+- CM_ClosetGoblin: OnClickNewSetButton -> DialogManager.MakeTextEntryDialog(cgL["Set_Name"], cgL["Enter_set_name"], L "", ClosetGoblinCharacterWindow.OnSubmitNewSetName, nil)
+- CM_ClosetGoblin: OnRowMenuRenameSetClick -> DialogManager.MakeTextEntryDialog(cgL["New_set_name"], cgL["Enter_set_name"], set.name, ClosetGoblinCharacterWindow.OnSubmitSetRename, nil)
+- CM_ClosetGoblin: OnSubmitNewSetName -> DialogManager.MakeTextEntryDialog(cgL["Set name"], L "Enter set name :", name, ClosetGoblinCharacterWindow.OnSubmitNewSetName, nil)
+- CM_ClosetGoblin: OnSubmitSetRename -> DialogManager.MakeTextEntryDialog(cgL["New_set_name"], cgL["Enter_set_name"], name, ClosetGoblinCharacterWindow.OnSubmitSetRename, nil)
+- Enemy: CombatLogUI_StatsWindow_SessionAdd -> DialogManager.MakeTextEntryDialog(L "New combat log session", L "Enter session name", L "Default", function(text)Enemy.CombatLog_StatsSessionAdd(Enemy.trim(text))end, nil, 250, false)
+- Enemy: CombatLogUI_StatsWindow_SessionRename -> DialogManager.MakeTextEntryDialog(L "Rename combat log session", L "Enter new session name", session.stats.name, function(text)local index=ComboBoxGetSelectedMenuItem("EnemyCombatLogStatsWindowSession")session.stats.name=Enemy.trim(text)Enemy.CombatLogUI_StatsWindow_UpdateSessionsList()ComboBoxSetSelectedMenuItem("EnemyCombatLogStatsWindowSession",index)Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged()end, nil, 250, false)
 
 ## Related APIs
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [EA_ChatWindow.InsertText](global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
+- [Icons.GetCareerIconIDFromCareerLine](global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
+- [EA_Window_WorldMap.ShowZone](global_EA_Window_WorldMap.ShowZone.md) (HIGH 90/100) - Global Function
+- [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
 
 ## Notes
 

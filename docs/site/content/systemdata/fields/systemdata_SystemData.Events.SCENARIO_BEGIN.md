@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 19 addons
 
 ## Confidence Assessment
 
@@ -30,15 +30,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, Enemy, RoR_SoR, followTheLeader, LibGroup, RoR_SoR, followTheLeader |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/Enemy/Code/ScenarioInfo/ScenarioInfo.lua:303`, `/workspace/data/raw/LibGroup/LibGroup.lua:343`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:178`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:278`, `/workspace/data/raw/followTheLeader/followTheLeader.lua:87` |
+| Addons seen in | BlackBook, Calling, Dascore, DetauntHelper, EA_ScenarioGroupWindow, Enemy, EveryBodyGuard, Hopper |
+| Files seen in | BlackBook.lua, Calling.lua, Code/Core/Groups/Groups.lua, Code/ScenarioInfo/ScenarioInfo.lua, Dascore.lua, EveryBodyGuard.lua, Info_DeathBlow.lua, LibGroup.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
-| Example locations | Enemy.GroupsInitialize, Enemy.GroupsUpdateType, Enemy.ScenarioInfoUpdate, Enemy._ScenarioInfoEnabledChanged, LibGroup.Initialize, RoR_SoR.OnScenario |
+| Example locations | CheckSettingsInit, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnShutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 19 |
+| Global usage count | 19 |
 | Local definition count | 0 |
 | Documentation references | 3 |
 | Initialization flow references | 0 |
@@ -61,32 +61,39 @@
 
 ## Description
 
-Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.SCENARIO_BEGIN field accessed by 19 addons; commonly found in CheckSettingsInit and GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnShutdown, RegisterSelfEvents, Shutdown, Squared.ChangeMode, Start, Stop, SystemData.Events.SCENARIO_BEGIN, UnloadUnitFrame, UnregisterSelfEvents, WarningWindowButton, _ScenarioInfoEnabledChanged, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
+- BlackBook
+- Calling
+- Dascore
+- DetauntHelper
+- EA_ScenarioGroupWindow
 - Enemy
-- Enemy, RoR_SoR, followTheLeader
+- EveryBodyGuard
+- Hopper
+- Info_DeathBlow
+- Kwestor
 - LibGroup
+- Minmap
+- Pure
 - RoR_SoR
+- ScenarioStats
+- Squared
+- TheSeeker
+- Trakario
 - followTheLeader
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [WindowSetDrawWhenInterfaceHidden](../../window_api/functions/window_WindowSetDrawWhenInterfaceHidden.md) (HIGH 100/100) - Window Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- [Start](../../events/game_events/game_event_Start.md) (MEDIUM 43/100) - Game Event
+- [Stop](../../events/game_events/game_event_Stop.md) (MEDIUM 43/100) - Game Event
 
 ## Notes
 
-- Observed in contexts: Enemy.GroupsInitialize, Enemy.GroupsUpdateType, Enemy.ScenarioInfoUpdate, Enemy._ScenarioInfoEnabledChanged, LibGroup.Initialize, RoR_SoR.OnScenario
+- Observed in contexts: CheckSettingsInit, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnShutdown

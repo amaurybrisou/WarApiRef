@@ -1,0 +1,97 @@
+{
+  "schema_version": "phase3-xml-lua-link/v1",
+  "addon": "Clock",
+  "sources": {
+    "xml_tree_files": [
+      "Clock.xml.tree.json"
+    ],
+    "lua_analysis_files": [
+      "Clock.lua.analysis.json"
+    ]
+  },
+  "handler_links": [],
+  "ui_usage_links": [
+    {
+      "link_id": "u1",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "Clock.xml",
+        "node_id": "n5",
+        "tag": "Window",
+        "resolved_name": "ClockWindow",
+        "raw_name": "ClockWindow"
+      },
+      "lua": {
+        "source_file": "Clock.lua",
+        "function_id": "f1",
+        "call_id": "c1",
+        "callee_resolved": "CreateWindow",
+        "line": 10,
+        "matched_argument": "ClockWindow"
+      }
+    },
+    {
+      "link_id": "u2",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "Clock.xml",
+        "node_id": "n12",
+        "tag": "Label",
+        "resolved_name": "ClockWindowText",
+        "raw_name": "$parentText"
+      },
+      "lua": {
+        "source_file": "Clock.lua",
+        "function_id": "f2",
+        "call_id": "c2",
+        "callee_resolved": "LabelSetText",
+        "line": 51,
+        "matched_argument": "ClockWindowText"
+      }
+    },
+    {
+      "link_id": "u3",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "Clock.xml",
+        "node_id": "n12",
+        "tag": "Label",
+        "resolved_name": "ClockWindowText",
+        "raw_name": "$parentText"
+      },
+      "lua": {
+        "source_file": "Clock.lua",
+        "function_id": "f2",
+        "call_id": "c4",
+        "callee_resolved": "LabelSetText",
+        "line": 53,
+        "matched_argument": "ClockWindowText"
+      }
+    },
+    {
+      "link_id": "u4",
+      "match_type": "exact",
+      "xml": {
+        "source_file": "Clock.xml",
+        "node_id": "n12",
+        "tag": "Label",
+        "resolved_name": "ClockWindowText",
+        "raw_name": "$parentText"
+      },
+      "lua": {
+        "source_file": "Clock.lua",
+        "function_id": "f2",
+        "call_id": "c6",
+        "callee_resolved": "LabelSetTextColor",
+        "line": 55,
+        "matched_argument": "ClockWindowText"
+      }
+    }
+  ],
+  "registration_links": [],
+  "unresolved": {
+    "handler_bindings": [],
+    "ui_usages": [],
+    "registrations": []
+  }
+}

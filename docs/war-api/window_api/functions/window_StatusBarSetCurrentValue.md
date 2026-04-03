@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 40 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, LibWBToggler, PartyCast, RoR_SoR, Shinies, TidyRoll, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:996`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:993`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:993`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:990`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:993`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:115`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:993` |
+| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, BlackBox, CMap, CleanUnitFrames, Crusher |
+| Files seen in | AdjustTheTip.lua, BlackBox.lua, CleanGroupMemberUnitFrame.lua, CleanTargetUnitFrame.lua, FlagCap.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua |
 | Namespaces detected | StatusBarSetCurrentValue |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Statusbar:SetValue, LibWBToggler: LIBGUI_Statusbar:SetValue, PartyCast: LIBGUI_Statusbar:SetValue, PartyCast: PartyCast.FetchedText, RoR_SoR: RoR_SoR.T1_UPDATE, Shinies: LIBGUI_Statusbar:SetValue |
+| Example locations | Ace: SetValue, ActionBarHide: SetValue, AdjustTheTip: SetMouseOverTargetHealth, Amethyst: SetValue, BlackBox: UpdateTimer, CMap: SetValue |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 53 |
+| Global usage count | 53 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,18 +65,18 @@ StatusBarSetCurrentValue(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 7 addons.
+Observed as a window function across 40 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", "SoR_"..Window_Name.."VPDESTROBAR", "SoR_"..Window_Name.."VPORDERBAR" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 1, timer, tonumber(ZoneVP.controlPoints[1]) |
+| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", "RespawnTimerWindowBar", "SoR_"..Window_Name.."VPDESTROBAR" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, 1, controlFill |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,38 +85,54 @@ Observed as a window function across 7 addons.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- AdjustTheTip
+- Amethyst
+- BlackBox
+- CMap
+- CleanUnitFrames
+- Crusher
+- EA_ScenarioGroupWindow
+- EZCraftX
+- EZGuard
+- Effigy
+- FlagCap
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - RoR_SoR
+- SNT_CASTBAR
 - Shinies
+- TargetInfoRing
+- TargetRing
+- Targets
 - TidyRoll
+- Tokens
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Statusbar:SetValue -> StatusBarSetCurrentValue(self.name, value)
-- LibWBToggler: LIBGUI_Statusbar:SetValue -> StatusBarSetCurrentValue(self.name, value)
-- PartyCast: LIBGUI_Statusbar:SetValue -> StatusBarSetCurrentValue(self.name, value)
-- PartyCast: PartyCast.FetchedText -> StatusBarSetCurrentValue("PartyCastWindow"..PlayerNumber.."TimerBar", 1)
-- RoR_SoR: RoR_SoR.T1_UPDATE -> StatusBarSetCurrentValue("SoR_"..Window_Name.."VPORDERBAR", tonumber(ZoneVP.controlPoints[1]))
-- RoR_SoR: RoR_SoR.T1_UPDATE -> StatusBarSetCurrentValue("SoR_"..Window_Name.."VPDESTROBAR", tonumber(ZoneVP.controlPoints[2]))
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- Ace: SetValue -> StatusBarSetCurrentValue(self.name, value)
+- ActionBarHide: SetValue -> StatusBarSetCurrentValue(self.name, value)
+- AdjustTheTip: SetMouseOverTargetHealth -> StatusBarSetCurrentValue(c_HEALTH_BAR_CONTAINER.."HealthPercentBarBar", val)
+- Amethyst: SetValue -> StatusBarSetCurrentValue(self.name, value)
+- BlackBox: UpdateTimer -> StatusBarSetCurrentValue("RespawnTimerWindowBar", respawnTimeLeft)
+- CMap: SetValue -> StatusBarSetCurrentValue(self.name, value)
 
 ## Notes
 

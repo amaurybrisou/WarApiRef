@@ -10,33 +10,33 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 118
+- Raw weighted score: 113
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
 - +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Aura, TexturedButtons |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APACore.lua:214`, `/workspace/data/raw/AdvancedPetAssist/APACore.lua:269`, `/workspace/data/raw/AdvancedPetAssist/APACore.lua:283`, `/workspace/data/raw/Aura/Source/AuraEngine.lua:1142` |
+| Addons seen in | AdvancedPetAssist, Aura, DaemonAssist |
+| Files seen in | Source/AuraEngine.lua |
 | Namespaces detected | PetWindow |
-| Source kinds | globals, lua_calls |
-| Example locations | AdvancedPetAssist: AdvancedPetAssist.ApplyDefaultStance, AdvancedPetAssist: AdvancedPetAssist.HasPet, AdvancedPetAssist: AdvancedPetAssist.SetPassiveFollow, Aura: AuraEngine.HandleTriggerType_PetStatus |
+| Source kinds | lua_calls |
+| Example locations | AdvancedPetAssist: ApplyDefaultStance, AdvancedPetAssist: HasPet, AdvancedPetAssist: SetPassiveFollow, Aura: HandleTriggerType_PetStatus, DaemonAssist: EnsurePassiveFollow, DaemonAssist: HasPet |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
+| Lua usage count | 6 |
 | Global usage count | 2 |
-| Local definition count | 2 |
-| Documentation references | 1 |
+| Local definition count | 0 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 3 addons.
+Shared function table with 2 member functions; the primary API surface for 3 addons.
 
 ## Functions
 
@@ -72,30 +72,16 @@ Observed shared global table or namespace surfaced in 3 addons.
 
 - AdvancedPetAssist
 - Aura
-- TexturedButtons
+- DaemonAssist
 
 ## Examples
 
-- AdvancedPetAssist: AdvancedPetAssist.ApplyDefaultStance -> PetWindow.SwitchToPassiveStance()
-- AdvancedPetAssist: AdvancedPetAssist.HasPet -> PetWindow.HasPet()
-- AdvancedPetAssist: AdvancedPetAssist.SetPassiveFollow -> PetWindow.SwitchToPassiveStance()
-- Aura: AuraEngine.HandleTriggerType_PetStatus -> PetWindow.HasPet()
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AdvancedPetAssist: ApplyDefaultStance -> PetWindow.SwitchToPassiveStance()
+- AdvancedPetAssist: HasPet -> PetWindow.HasPet()
+- AdvancedPetAssist: SetPassiveFollow -> PetWindow.SwitchToPassiveStance()
+- Aura: HandleTriggerType_PetStatus -> PetWindow.HasPet()
+- DaemonAssist: EnsurePassiveFollow -> PetWindow.SwitchToPassiveStance()
+- DaemonAssist: HasPet -> PetWindow.HasPet()
 
 ## Notes
 

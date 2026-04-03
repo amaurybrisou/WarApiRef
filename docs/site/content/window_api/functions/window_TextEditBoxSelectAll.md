@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, Enemy |
-| Files seen in | `/workspace/data/raw/Aura/Source/AuraShares.lua:379`, `/workspace/data/raw/Aura/Source/AuraShares.lua:397`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:842` |
+| Addons seen in | Aura, AutoBand, Enemy, Mass Refine, Squared, zMailMod |
+| Files seen in | AutoBand.lua, Code/Core/Main.lua, MassRefine.lua, Source/AuraShares.lua, Squared.lua, zMailModMassMail.lua, zMailModOptions.lua, zMailModSend.lua |
 | Namespaces detected | TextEditBoxSelectAll |
 | Source kinds | lua_calls |
-| Example locations | Aura: AuraShares.OnExportAura, Aura: AuraShares.OnImportAura, Enemy: Enemy.UI_TextEntryDialog_Open |
+| Example locations | Aura: OnExportAura, Aura: OnImportAura, AutoBand: ShowCopyLink, Enemy: UI_TextEntryDialog_Open, Mass Refine: NewConfirmThenRefine, Squared: ExportSettings |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 9 |
+| Global usage count | 9 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,46 +71,40 @@ Observed reading from or writing to edit-box controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: exportWindow.."AuraText", importWindow.."AuraText", wn.."Value" |
+| arg1 | Observed as a function or method reference. | Observed values: "SquaredImportExportFrameData", "zMailModMassMailSubjectEditBox", COPY_LINK_WINDOW_NAME.."UrlInput" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Aura
+- AutoBand
 - Enemy
+- Mass Refine
+- Squared
+- zMailMod
 
 ## Examples
 
-- Aura: AuraShares.OnExportAura -> TextEditBoxSelectAll(exportWindow.."AuraText")
-- Aura: AuraShares.OnImportAura -> TextEditBoxSelectAll(importWindow.."AuraText")
-- Enemy: Enemy.UI_TextEntryDialog_Open -> TextEditBoxSelectAll(wn.."Value")
-
-## Related APIs
-
-- none
+- Aura: OnExportAura -> TextEditBoxSelectAll(exportWindow.."AuraText")
+- Aura: OnImportAura -> TextEditBoxSelectAll(importWindow.."AuraText")
+- AutoBand: ShowCopyLink -> TextEditBoxSelectAll(COPY_LINK_WINDOW_NAME.."UrlInput")
+- Enemy: UI_TextEntryDialog_Open -> TextEditBoxSelectAll(wn.."Value")
+- Mass Refine: NewConfirmThenRefine -> TextEditBoxSelectAll(MassRefine.sWindowName.."TextInput")
+- Squared: ExportSettings -> TextEditBoxSelectAll("SquaredImportExportFrameData")
 
 ## Used With
 
+- [TextEditBoxSetMaxChars](window_TextEditBoxSetMaxChars.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [WindowAssignFocus](window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

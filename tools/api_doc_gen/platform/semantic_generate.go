@@ -433,11 +433,18 @@ func renderFieldSymbol(symbol FieldSymbol, namespace string, currentPath string,
 
 func renderSemanticSections(currentPath string, links SemanticLinks) string {
 	content := ""
-	content += md.Section("Related APIs", md.BulletList(docLinkLines(currentPath, links.RelatedAPIs)))
-	content += md.Section("Used With", md.BulletList(docLinkLines(currentPath, links.UsedWith)))
-	content += md.Section("Triggered By", md.BulletList(docLinkLines(currentPath, links.TriggeredBy)))
-	content += md.Section("Affects", md.BulletList(docLinkLines(currentPath, links.Affects)))
+	content += renderSemanticLinkSection("Related APIs", currentPath, links.RelatedAPIs)
+	content += renderSemanticLinkSection("Used With", currentPath, links.UsedWith)
+	content += renderSemanticLinkSection("Triggered By", currentPath, links.TriggeredBy)
+	content += renderSemanticLinkSection("Affects", currentPath, links.Affects)
 	return content
+}
+
+func renderSemanticLinkSection(title string, currentPath string, links []DocLink) string {
+	if len(links) == 0 {
+		return ""
+	}
+	return md.Section(title, md.BulletList(docLinkLines(currentPath, links)))
 }
 
 func docLinkLines(currentPath string, links []DocLink) []string {

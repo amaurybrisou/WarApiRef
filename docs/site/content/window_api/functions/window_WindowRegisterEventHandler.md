@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 24 addons
 
 ## Confidence Assessment
 
@@ -11,31 +11,33 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 108
+- Raw weighted score: 153
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Shinies |
-| Files seen in | `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Browse.lua:463`, `/workspace/data/raw/Shinies/Source/Shinies.lua:169` |
+| Addons seen in | ActionFraction, Atlas, BuddyBind, Busted, CaVES, Calling, CleanUnitFrames, EA_ScenarioGroupWindow |
+| Files seen in | BuddyBind.lua, Busted.lua, CallingKeybinding.lua, CleanTargetWindow.lua, MGRemix.lua, Map.lua, Map/Main.lua, MiracleGrow.lua |
 | Namespaces detected | WindowRegisterEventHandler |
 | Source kinds | lua_calls |
-| Example locations | Shinies: LibStub:UpdateDefaultAuctionHouseDisable, Shinies: _G.Shinies:NewModule.OnSelChanged_Criteria_MultiSelCombo |
+| Example locations | ActionFraction: Initialize, Atlas: RegisterEventHandlers, BuddyBind: OnLButtonRawDeviceInput, Busted: Initialize, CaVES: Initialize, Calling: StartBinding |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 80 |
+| Global usage count | 80 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -43,7 +45,7 @@
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -70,13 +72,13 @@ Observed binding SystemData events directly to a named window.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "AuctionWindow", lastComboSelected |
+| windowName | Observed as a target window name. | Observed values: "AtlasFrame", "AuctionWindow", "BustedProxy" |
 | eventId | Observed as a SystemData event identifier. | Observed values: SystemData.Events.AUCTION_BID_RESULT_RECEIVED, SystemData.Events.AUCTION_INIT_RECEIVED, SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED |
-| handlerName | Observed as a Lua handler reference. | Observed values: "AuctionWindow.Hide", "AuctionWindow.OnSearchResultsReceived", "AuctionWindow.ReceivedBidResult" |
+| handlerName | Observed as a Lua handler reference. | Observed values: "ActionFractionWindow.OnAgroModeUpdated", "ActionFractionWindow.UpdateActionPoints", "ActionFractionWindow.UpdateBasedOnUserSettings" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -84,46 +86,59 @@ Observed binding SystemData events directly to a named window.
 
 ## Seen In
 
+- ActionFraction
+- Atlas
+- BuddyBind
+- Busted
+- CaVES
+- Calling
+- CleanUnitFrames
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EZCraftX
+- HealGrid
+- Map
+- Minmap
+- Miracle Grow Remix
+- MiracleGrow
+- Moth
+- Phantom
+- RVMOD_PlayerStatus
+- RVMOD_Targets
+- ResHelp
+- SNT_CASTBAR
 - Shinies
+- WARCommander
+- XpStatus+G
 
 ## Examples
 
-- Shinies: LibStub:UpdateDefaultAuctionHouseDisable -> WindowRegisterEventHandler("AuctionWindow", SystemData.Events.AUCTION_INIT_RECEIVED, "AuctionWindow.Show")
-- Shinies: LibStub:UpdateDefaultAuctionHouseDisable -> WindowRegisterEventHandler("AuctionWindow", SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED, "AuctionWindow.OnSearchResultsReceived")
-- Shinies: LibStub:UpdateDefaultAuctionHouseDisable -> WindowRegisterEventHandler("AuctionWindow", SystemData.Events.AUCTION_BID_RESULT_RECEIVED, "AuctionWindow.ReceivedBidResult")
-- Shinies: LibStub:UpdateDefaultAuctionHouseDisable -> WindowRegisterEventHandler("AuctionWindow", SystemData.Events.INTERACT_DONE, "AuctionWindow.Hide")
-- Shinies: _G.Shinies:NewModule.OnSelChanged_Criteria_MultiSelCombo -> WindowRegisterEventHandler(lastComboSelected, SystemData.Events.L_BUTTON_UP_PROCESSED, "ShiniesBrowseUI.Criteria_ReopenComboBox")
+- ActionFraction: Initialize -> WindowRegisterEventHandler(windowName, SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED, "ActionFractionWindow.UpdateActionPoints")
+- ActionFraction: Initialize -> WindowRegisterEventHandler(windowName, SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED, "ActionFractionWindow.UpdateActionPoints")
+- ActionFraction: Initialize -> WindowRegisterEventHandler(windowName, SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED, "ActionFractionWindow.UpdateCurrentHitPoints")
+- ActionFraction: Initialize -> WindowRegisterEventHandler(windowName, SystemData.Events.PLAYER_AGRO_MODE_UPDATED, "ActionFractionWindow.OnAgroModeUpdated")
+- ActionFraction: Initialize -> WindowRegisterEventHandler(windowName, SystemData.Events.PLAYER_HEALTH_FADE_UPDATED, "ActionFractionWindow.UpdateBasedOnUserSettings")
+- Atlas: RegisterEventHandlers -> WindowRegisterEventHandler("AtlasFrame", SystemData.Events.UPDATE_PROCESSED, "AtlasMap.OnUpdate")
 
 ## Related APIs
 
-- [SystemData.Events.AUCTION_BID_RESULT_RECEIVED](../../events/game_events/game_event_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.AUCTION_INIT_RECEIVED](../../events/game_events/game_event_SystemData.Events.AUCTION_INIT_RECEIVED.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](../../events/game_events/game_event_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.INTERACT_DONE](../../events/game_events/game_event_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../events/game_events/game_event_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - Game Event
-
-## Used With
-
-- [SystemData.Events.AUCTION_BID_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_INIT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_INIT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-
-## Triggered By
-
-- none
 
 ## Affects
 
-- [SystemData.Events.AUCTION_BID_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_INIT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_INIT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_POSITION_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_POSITION_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_ZONE_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- Advanced return analysis: No strong return evidence observed

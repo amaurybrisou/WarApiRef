@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 14 addons
+- Seen in: 57 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, DAoCBuff, Enemy, Killer, LibWBToggler, PartyCast, PotionBar |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:444`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutProperties.lua:223`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutProperties.lua:538`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:40`, `/workspace/data/raw/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFramePart.lua:210`, `/workspace/data/raw/Killer/KillerUiCache.lua:71` |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, Amethyst, AutoBand, BuffHead, CDown, CMap |
+| Files seen in | AutoBand.lua, Bars/HealGridProgressBar.lua, CDownFrames.lua, CDownSettings.lua, Castbar.lua, Code/Marks/MarkTemplate.lua, Code/UnitFrames/UnitFramePart.lua, Display.lua |
 | Namespaces detected | LabelSetFont |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Label:Font, BuffHead: BuffHead.local.LoadFontSettings, BuffHead: BuffHead.local.SelectFont, BuffHead: BuffHeadEffectFrame:SetLayout, BuffHead: LoadFontSettings, BuffHead: SelectFont |
+| Example locations | Ace: Font, ActionBarHide: Font, ActionFraction: Initialize, ActionFraction: SetFontLarge, ActionFraction: SetFontMedium, ActionFraction: SetFontSmall |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 36 |
-| Global usage count | 36 |
+| Lua usage count | 159 |
+| Global usage count | 159 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,13 +71,13 @@ Observed updating label text or label styling on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: adat.textname, buttonLabel:GetName(), c_TROLL_BINDS_LABEL |
-| arg2 | Observed as a function or method reference. | Observed values: "font_clear_large_bold", "font_clear_medium", "font_default_text" |
-| arg3 | Observed as a function or method reference. | Observed values: 10, 20, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING |
+| arg1 | Observed as a function or method reference. | Observed values: "DefaultTooltipRow1Col1Text", "DefaultTooltipRow1Col2Text", "DefaultTooltipRow1Col3Text" |
+| arg2 | Observed as a function or method reference. | Observed values: "font_clear_large_bold", "font_clear_medium", "font_clear_medium_bold" |
+| arg3 | Observed as a function or method reference. | Observed values: 0, 10, 20 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -86,48 +86,85 @@ Observed updating label text or label styling on existing controls.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- ActionFraction
+- Amethyst
+- AutoBand
 - BuffHead
+- CDown
+- CMap
+- Countdown
+- Crusher
 - DAoCBuff
+- DetauntHelper
+- DuffTimer
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- GCDsaver
+- HealGrid
+- Hopper
+- InfoScroller
 - Killer
+- Kwestor
 - LibWBToggler
+- Map
+- Mech
+- Moth
+- Motion
+- NAMBLA
+- NaturalLog
+- Obsidian
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- RVAPI_ColorDialog
+- RVMOD_SquaredDistances
+- RealmStatus
 - Shinies
+- Squared
+- TacticSetNames
+- TargetRing
+- TastyButtons
 - TexturedButtons
 - TidyRoll
+- Tokens
 - TurretRange
 - WSCT
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_Label:Font -> LabelSetFont(self.name, font, linespacing)
-- BuffHead: BuffHead.local.LoadFontSettings -> LabelSetFont(windowName.."FontExampleLabel", settings.Font, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
-- BuffHead: BuffHead.local.SelectFont -> LabelSetFont(label, font.Font, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
-- BuffHead: BuffHeadEffectFrame:SetLayout -> LabelSetFont(frameName.."Time", layoutSettings.Duration.Font, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
-- BuffHead: BuffHeadEffectFrame:SetLayout -> LabelSetFont(frameName.."Stacks", layoutSettings.StackCount.Font, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
-- BuffHead: BuffHeadEffectFrame:SetLayout -> LabelSetFont(frameName.."Name", layoutSettings.Name.Font, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
+- Ace: Font -> LabelSetFont(self.name, font, linespacing)
+- ActionBarHide: Font -> LabelSetFont(self.name, font, linespacing)
+- ActionFraction: Initialize -> LabelSetFont(windowName.."LabelCurrentAP", ActionFraction.Settings.FontSize, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
+- ActionFraction: Initialize -> LabelSetFont(windowName.."LabelMaximumAP", ActionFraction.Settings.FontSize, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
+- ActionFraction: SetFontLarge -> LabelSetFont(windowName.."LabelCurrentAP", ActionFractionWindow.FontSizeLarge, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
+- ActionFraction: SetFontLarge -> LabelSetFont(windowName.."LabelMaximumAP", ActionFractionWindow.FontSizeLarge, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
 
 ## Related APIs
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [LabelSetTextAlign](window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
-
-## Triggered By
-
-- none
 
 ## Affects
 
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

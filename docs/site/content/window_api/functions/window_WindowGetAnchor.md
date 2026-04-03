@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 44 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, LibWBToggler, PartyCast, Pocket Palette, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:172`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:172`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:172`, `/workspace/data/raw/PocketPalette/PocketPalette.lua:152`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:172`, `/workspace/data/raw/Shinies/Modules/Aggregator/Shinies-Aggregator-Tooltip.lua:452`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:172` |
+| Addons seen in | Ace, ActionBarHide, Amethyst, BuffHead, Crusher, DammazKron, DetauntHelper, DuffTimer |
+| Files seen in | Core.lua, Core/DK_Core.lua, DuffTimer.lua, Enhancements.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua |
 | Namespaces detected | WindowGetAnchor |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:GetPosition, BuffHead: BuffHead.Setup.LayoutFrame:UpdatePosition, LibWBToggler: LIBGUI_ELEMENT:GetPosition, PartyCast: LIBGUI_ELEMENT:GetPosition, Pocket Palette: PP.CreateWindow, Shinies: LIBGUI_ELEMENT:GetPosition |
+| Example locations | Ace: GetPosition, ActionBarHide: GetPosition, Amethyst: GetPosition, BuffHead: UpdatePosition, Crusher: GetPosition, Crusher: OnLayoutEditorEvent |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 71 |
+| Global usage count | 71 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,52 +71,82 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: PP.settings.windows["main"].name, self.name, self:GetName() |
-| arg2 | Observed as a numeric value. | Observed values: 1 |
+| windowName | Observed as a target window name. | Observed values: "DammazKronHTS", "MothHealthBar", "PetHealthWindow" |
+| arg2 | Observed as a numeric value. | Observed values: 1, n |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- Amethyst
 - BuffHead
+- Crusher
+- DammazKron
+- DetauntHelper
+- DuffTimer
+- EZCraftX
+- EZGuard
+- Effigy
+- FixGit
+- GCDsaver
+- Hopper
+- InfoScroller
+- KillTracker
 - LibWBToggler
+- Map
+- Moth
+- Motion
+- NaturalLog
 - PartyCast
 - Pocket Palette
+- Pure
+- Pure Careerbar
+- RVMOD_PlayerStatus
+- RealmStatus
+- SOR
 - Shinies
+- Squared
+- TargetRing
+- TastyButtons
+- Tokens
+- Vectors
+- VerticalMorale
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- WindowMovers
 - WoH-Reticle
+- emotes
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
-- BuffHead: BuffHead.Setup.LayoutFrame:UpdatePosition -> WindowGetAnchor(self:GetName(), 1)
-- LibWBToggler: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
-- PartyCast: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
-- Pocket Palette: PP.CreateWindow -> WindowGetAnchor(PP.settings.windows["main"].name, 1)
-- Shinies: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
+- Ace: GetPosition -> WindowGetAnchor(self.name, 1)
+- ActionBarHide: GetPosition -> WindowGetAnchor(self.name, 1)
+- Amethyst: GetPosition -> WindowGetAnchor(self.name, 1)
+- BuffHead: UpdatePosition -> WindowGetAnchor(self:GetName(), 1)
+- Crusher: GetPosition -> WindowGetAnchor(self.name, 1)
+- Crusher: OnLayoutEditorEvent -> WindowGetAnchor(windowId, 1)
 
 ## Related APIs
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowGetScale](window_WindowGetScale.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

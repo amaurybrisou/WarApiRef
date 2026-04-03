@@ -62,23 +62,36 @@ TopCenter is a XML UI element. It commonly appears under TexCoords and TexSlices
 
 ## Common Parent Elements
 
-- [TexCoords](element_TexCoords.md) — 9× (HIGH)
-- [TexSlices](element_TexSlices.md) — 5× (HIGH)
+- [TexCoords](element_TexCoords.md) — 19× (HIGH)
+- [TexSlices](element_TexSlices.md) — 11× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | optional | 64% | 272, 60, 356, 26, ... |
-| `y` | optional | 64% | 157, 0, 669 |
-| `id` | optional | 35% | Border-Top-Center |
+| `x` | optional | 63% | 46, 272, 356, 10, ... |
+| `y` | optional | 63% | 571, 157, 669, 0, ... |
+| `id` | optional | 36% | Action-Bar-Frame-Top-Center, Border-Top-Center |
 ## Seen In
 
+- CCTV
 - CM_ClosetGoblin
+- CleanCastbar
+- Dascore
 - Enemy
+- FlagCap
+- Hopper
+- Map
+- MoraleSet
 - PartyCast
+- Pure
+- Pure Careerbar
+- ResHelp
 - RoR_SoR
+- Sequencer
 - Shinies
+- TwisterSet
+- WTes
 
 ## Examples
 
@@ -88,15 +101,3 @@ TopCenter is a XML UI element. It commonly appears under TexCoords and TexSlices
 
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
 - [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

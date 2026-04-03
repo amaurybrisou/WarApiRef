@@ -1,0 +1,85 @@
+# Module ClosetGoblinCharacterWindow
+
+- Addon: CM_ClosetGoblin
+- Kind: function-owner
+- Source: `C:/Return of Reckoning/Interface/AddOns/WAR_API_Ref/.debug/source-subset/ClosetGoblin/ClosetGoblinCharacterWindow.lua:38`
+
+## Functions
+
+- ClosetGoblinCharacterWindow.BuildDisplayOrder
+- ClosetGoblinCharacterWindow.CreateTextOnlyTooltip
+- ClosetGoblinCharacterWindow.EquipmentLButtonDown
+- ClosetGoblinCharacterWindow.EquipmentLButtonUp
+- ClosetGoblinCharacterWindow.EquipmentMouseOver
+- ClosetGoblinCharacterWindow.EquipmentMouseOverEnd
+- ClosetGoblinCharacterWindow.EquipmentRButtonUp
+- ClosetGoblinCharacterWindow.FindCursorItem
+- ClosetGoblinCharacterWindow.GetCurrentSet
+- ClosetGoblinCharacterWindow.HandleDrag
+- ClosetGoblinCharacterWindow.Hide
+- ClosetGoblinCharacterWindow.HideCloakOptions
+- ClosetGoblinCharacterWindow.HideShowHelm
+- ClosetGoblinCharacterWindow.HotbarChangeToggled1
+- ClosetGoblinCharacterWindow.HotbarChangeToggled2
+- ClosetGoblinCharacterWindow.HotbarChangeToggled3
+- ClosetGoblinCharacterWindow.HotbarChangeToggled4
+- ClosetGoblinCharacterWindow.HotbarChangeToggled5
+- ClosetGoblinCharacterWindow.HotbarPageDownProxy
+- ClosetGoblinCharacterWindow.HotbarPageUpProxy
+- ClosetGoblinCharacterWindow.IsValidPasteTarget
+- ClosetGoblinCharacterWindow.OnClickDeleteSetButton
+- ClosetGoblinCharacterWindow.OnClickNewSetButton
+- ClosetGoblinCharacterWindow.OnClickSetRow
+- ClosetGoblinCharacterWindow.OnClickSortNameButton
+- ClosetGoblinCharacterWindow.OnClickSortTacticsButton
+- ClosetGoblinCharacterWindow.OnClickZoneConfigButton
+- ClosetGoblinCharacterWindow.OnConfirmDeleteSet
+- ClosetGoblinCharacterWindow.OnHide
+- ClosetGoblinCharacterWindow.OnInitialize
+- ClosetGoblinCharacterWindow.OnRowMenuCopyClick
+- ClosetGoblinCharacterWindow.OnRowMenuImportCurrentClick
+- ClosetGoblinCharacterWindow.OnRowMenuLinkTactics
+- ClosetGoblinCharacterWindow.OnRowMenuPasteClick
+- ClosetGoblinCharacterWindow.OnRowMenuRenameSetClick
+- ClosetGoblinCharacterWindow.OnSetRowContextMenu
+- ClosetGoblinCharacterWindow.OnShow
+- ClosetGoblinCharacterWindow.OnShutdown
+- ClosetGoblinCharacterWindow.OnSubmitNewSetName
+- ClosetGoblinCharacterWindow.OnSubmitSetRename
+- ClosetGoblinCharacterWindow.RefreshList
+- ClosetGoblinCharacterWindow.Show
+- ClosetGoblinCharacterWindow.ShowCloak
+- ClosetGoblinCharacterWindow.ShowCloakHeraldry
+- ClosetGoblinCharacterWindow.ShowCloakOptions
+- ClosetGoblinCharacterWindow.ShowHelm
+- ClosetGoblinCharacterWindow.ShowOrHide
+- ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
+- ClosetGoblinCharacterWindow.ShowShowCloakOnly
+- ClosetGoblinCharacterWindow.ShowShowHelm
+- ClosetGoblinCharacterWindow.ShowShowHelmOnly
+- ClosetGoblinCharacterWindow.SortSetList
+- ClosetGoblinCharacterWindow.UpdateActionBarSettings
+- ClosetGoblinCharacterWindow.UpdateHighlightOnRow
+- ClosetGoblinCharacterWindow.UpdateSetList
+- ClosetGoblinCharacterWindow.UpdateSetRow
+- ClosetGoblinCharacterWindow.UpdateSlotIcon
+- ClosetGoblinCharacterWindow.UpdateSlotIcons
+- ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- ClosetGoblinCharacterWindow.UseItemRackToggled
+
+## State
+
+- ClosetGoblinCharacterWindow.COLOR_ACTIVE_SLOT
+- ClosetGoblinCharacterWindow.COLOR_EMPTY_SLOT
+- ClosetGoblinCharacterWindow.COLOR_INACTIVE_SLOT
+- ClosetGoblinCharacterWindow.COLOR_INVALID_SLOT
+- ClosetGoblinCharacterWindow.GetCurrentSet
+- ClosetGoblinCharacterWindow.activeMenuRow
+- ClosetGoblinCharacterWindow.copySetIndex
+- ClosetGoblinCharacterWindow.pendingDeleteSet
+- ClosetGoblinCharacterWindow.selectedSetDataIndex
+- ClosetGoblinCharacterWindow.show
+
+## Aliases
+
+- none

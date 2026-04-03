@@ -1,0 +1,12 @@
+{
+  "schema_version": "phase2-lua/v1",
+  "addon": "CM_ClosetGoblin",
+  "source_file": "languages/french.lua",
+  "functions": [],
+  "namespaces": [
+    "CM_ClosetGoblin",
+    "ClosetGoblin.languageData",
+    "ClosetGoblin.languageData.french"
+  ],
+  "registrations": []
+}

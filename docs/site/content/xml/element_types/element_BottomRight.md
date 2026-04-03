@@ -62,24 +62,37 @@ BottomRight is a XML UI element. It commonly appears under Sizes and TexCoords.
 
 ## Common Parent Elements
 
-- [Sizes](element_Sizes.md) — 14× (HIGH)
-- [TexCoords](element_TexCoords.md) — 9× (HIGH)
-- [TexSlices](element_TexSlices.md) — 5× (MEDIUM)
+- [Sizes](element_Sizes.md) — 30× (HIGH)
+- [TexCoords](element_TexCoords.md) — 19× (HIGH)
+- [TexSlices](element_TexSlices.md) — 11× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | **required** | 82% | 16, 350, 2, 135, ... |
-| `y` | **required** | 82% | 15, 197, 2, 35, ... |
-| `id` | optional | 17% | Border-Bottom-Right |
+| `x` | **required** | 81% | 10, 137, 16, 350, ... |
+| `y` | **required** | 81% | 9, 609, 15, 197, ... |
+| `id` | optional | 18% | Action-Bar-Frame-Bottom-Right, Border-Bottom-Right |
 ## Seen In
 
+- CCTV
 - CM_ClosetGoblin
+- CleanCastbar
+- Dascore
 - Enemy
+- FlagCap
+- Hopper
+- Map
+- MoraleSet
 - PartyCast
+- Pure
+- Pure Careerbar
+- ResHelp
 - RoR_SoR
+- Sequencer
 - Shinies
+- TwisterSet
+- WTes
 
 ## Examples
 
@@ -90,15 +103,3 @@ BottomRight is a XML UI element. It commonly appears under Sizes and TexCoords.
 - [Sizes](element_Sizes.md) (HIGH 100/100) - XML Element Type
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
 - [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

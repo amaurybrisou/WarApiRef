@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 49 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, DAoCBuff, GuardLine, LibWBToggler, PartyCast, RoR_SoR, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:200`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:111`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1260`, `/workspace/data/raw/GuardLine/GuardLine.lua:197`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:200`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:200` |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, Amethyst, CCTV, CMap, ChattyCathy |
+| Files seen in | ActionBarHide.lua, AdjustTheTip.lua, CCTV.lua, ChattyCathy.lua, Core.lua, Fader.lua, GroupIcons.lua, GuardLine.lua |
 | Namespaces detected | WindowGetAlpha |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Alpha, DAoCBuff: DAoCBuffSettings.UC, DAoCBuff: FilterSettings.Cleanup, DAoCBuff: ImExport.Cleanup, GuardLine: GuardLine.update, LibWBToggler: LIBGUI_ELEMENT:Alpha |
+| Example locations | Ace: Alpha, ActionBarHide: Alpha, ActionBarHide: ChangeAlpha, ActionFraction: OnUpdate, ActionFraction: UpdateActionFractionVisibility, AdjustTheTip: OnMouseOverTargetWindowClick |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 16 |
-| Global usage count | 16 |
+| Lua usage count | 91 |
+| Global usage count | 91 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,54 +71,89 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "DAoCBuff_Settings", "GuardLineSelfWindow", "PartyCastWindow"..i |
+| windowName | Observed as a target window name. | Observed values: "CCTVRootWindow", "CCTVSnareWindow", "CCTVStaggerWindow" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- ActionFraction
+- AdjustTheTip
+- Amethyst
+- CCTV
+- CMap
+- ChattyCathy
+- Crusher
 - DAoCBuff
+- EA_ScenarioGroupWindow
+- EZCraftX
+- EZGuard
+- Effigy
+- EveryBodyGuard
+- GCDsaver
+- Group Icons
 - GuardLine
+- Hopper
+- InfoScroller
+- KeyBar
+- LibAddonButton
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RVMOD_SquaredDistances
+- RealmStatus
+- RetAlert
 - RoR_SoR
+- SNT_CASTBAR
 - Shinies
+- Statdoll
+- TargetRing
+- Tokens
+- Tortall_DPS
+- Vectors
+- WTes
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Alpha -> WindowGetAlpha(self.name)
-- DAoCBuff: DAoCBuffSettings.UC -> WindowGetAlpha("DAoCBuff_Settings")
-- DAoCBuff: FilterSettings.Cleanup -> WindowGetAlpha(fwindow)
-- DAoCBuff: ImExport.Cleanup -> WindowGetAlpha(iewindow)
-- GuardLine: GuardLine.update -> WindowGetAlpha("GuardLineSelfWindow")
-- LibWBToggler: LIBGUI_ELEMENT:Alpha -> WindowGetAlpha(self.name)
+- Ace: Alpha -> WindowGetAlpha(self.name)
+- ActionBarHide: Alpha -> WindowGetAlpha(self.name)
+- ActionBarHide: ChangeAlpha -> WindowGetAlpha("EA_ActionBar"..k)
+- ActionFraction: OnUpdate -> WindowGetAlpha(windowName.."LabelCurrentAP")
+- ActionFraction: OnUpdate -> WindowGetAlpha(windowName.."LabelMaximumAP")
+- ActionFraction: UpdateActionFractionVisibility -> WindowGetAlpha(windowName.."LabelCurrentAP")
 
 ## Related APIs
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
-- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
-- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (HIGH 93/100) - Global Function
-
-## Triggered By
-
-- [SystemData.Events.UPDATE_PROCESSED](../../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
-
-## Affects
-
-- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowStartAlphaAnimation](window_WindowStartAlphaAnimation.md) (HIGH 100/100) - Window Function
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

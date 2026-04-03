@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, TidyChat, TidyRoll, WSCT |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/TidyChat/TidyChat.xml:0`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:0`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Addons seen in | AdvancedPetAssist, AuctionStats, AutoBand, AutoSalvage, DetauntHelper, EA_OpenPartyWindow, EA_ScenarioGroupWindow, FastFriends |
+| Files seen in | APAGui.xml, AutoBandWindowConfig.xml, AutoBandWindowTemplate.xml, AutoBandWindowTools.xml, Checkbox.xml, CustomAutoRoll.xml, FastFriends_ConfigUI.xml, JunkDumpOptions.xml |
 | Namespaces detected | EA_Label_DefaultText |
 | Source kinds | xml_attributes |
 | Example locations | APAFollowTargetHUDLabel, APAInstantOnlyHUDLabel, APAKitingHUDLabel, APALabelAttackBind, APALabelAutoReattack, APALabelAutoReattackDelay |
-| XML usage count | 71 |
-| XML attribute usage count | 71 |
+| XML usage count | 338 |
+| XML attribute usage count | 338 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,14 +57,50 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 4 addons.
+Engine-supplied XML constant or template class referenced by 40 addons.
 
 ## Seen In
 
 - AdvancedPetAssist
+- AuctionStats
+- AutoBand
+- AutoSalvage
+- DetauntHelper
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- FastFriends
+- FozAuction
+- JunkDump
+- LoyalPet
+- MapMonster
+- MapPin
+- PartyAd
+- PeaceOut
+- PieTracker
+- RVAPI_ColorDialog
+- RVAPI_Range
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- Rolodex
+- RvRStats
+- RvRStatsTab
+- Statdoll Remix
+- TaxPayer
+- ThinkOutLoud
 - TidyChat
 - TidyRoll
+- TokenMachine
+- Tome Titan
+- TomeTracker
+- WARCommander
 - WSCT
+- Wargames
+- nLootLink
+- wbLeadHelper
+- zMailMod
 
 ## Used By
 
@@ -131,30 +167,285 @@ Observed engine XML template or inherited constant referenced by 4 addons.
 - APALabelStance
 - APAPetTargetHUDHP
 - APAPetTargetHUDName
+- AuStatsOptionsBodyExitOnCompleteLabel
+- AuStatsOptionsBodyItemIndexLabel
+- AuStatsOptionsBodyItemShowToolTipLabel
+- AuStatsOptionsBodyProgressLabel
+- AuctionSellControlsBuyOutPriceHeader
+- AuctionSellControlsDepositHeader
+- AuctionSellControlsItemName
+- AuctionSellControlsVendorPriceHeader
+- AuctionStatsCheckboxTemplateLabel
+- AuctionWindowErrorText
+- AuctionWindowListLabel
+- AutoBandWindowConfigAltCheckLabel
+- AutoBandWindowConfigAutoKickLabel
+- AutoBandWindowConfigAutoKickLowRankLabel
+- AutoBandWindowConfigAutoKickRvRZonesLabel
+- AutoBandWindowConfigAutoKickStealthersLabel
+- AutoBandWindowConfigAutoKickToofarLabel
+- AutoBandWindowConfigBWSorcAsMDPSLabel
+- AutoBandWindowConfigBackfillLabel
+- AutoBandWindowConfigComboBoxLabel
+- AutoBandWindowConfigDefaultLabel
+- AutoBandWindowConfigDpsWeightingLabel
+- AutoBandWindowConfigExcludeRealmHealerAltSpecLabel
+- AutoBandWindowConfigGuildPriorityLabel
+- AutoBandWindowConfigHealerRankReqLabel
+- AutoBandWindowConfigKickIgnoreLabel
+- AutoBandWindowConfigKickTimeLabel
+- AutoBandWindowConfigMaxMdpsLabel
+- AutoBandWindowConfigMaxRdpsLabel
+- AutoBandWindowConfigRankReqLabel
+- AutoBandWindowConfigRestrictRaceLabel
+- AutoBandWindowTemplateComboBoxLabel
+- AutoBandWindowTemplateDeleteConfirmMessageLabel
+- AutoBandWindowTemplateDpsLabel
+- AutoBandWindowTemplateHealersLabel
+- AutoBandWindowTemplateRolesLabel
+- AutoBandWindowTemplateSaveNameLabel
+- AutoBandWindowTemplateTanksLabel
+- AutoBandWindowToolsKickLabel
+- AutoBandWindowToolsNoMicLabel
+- AutoBandWindowToolsSearchRoleLabel
+- AutoSalvage_Stat_TemplateLabel
+- AutoSalvage_Stat_TemplatePosition
+- CharacterWindowRvRStatsClassA
+- CharacterWindowRvRStatsClassA_KillCount
+- CharacterWindowRvRStatsClassA_Name
+- CharacterWindowRvRStatsClassB
+- CharacterWindowRvRStatsClassB_KillCount
+- CharacterWindowRvRStatsClassB_Name
+- CharacterWindowRvRStatsClassC
+- CharacterWindowRvRStatsClassC_KillCount
+- CharacterWindowRvRStatsClassC_Name
+- CharacterWindowRvRStatsClassD
+- CharacterWindowRvRStatsClassD_KillCount
+- CharacterWindowRvRStatsClassD_Name
+- CharacterWindowRvRStatsClassE
+- CharacterWindowRvRStatsClassE_KillCount
+- CharacterWindowRvRStatsClassE_Name
+- CharacterWindowRvRStatsClassF
+- CharacterWindowRvRStatsClassF_KillCount
+- CharacterWindowRvRStatsClassF_Name
+- CharacterWindowRvRStatsClassG
+- CharacterWindowRvRStatsClassG_KillCount
+- CharacterWindowRvRStatsClassG_Name
+- CharacterWindowRvRStatsClassH
+- CharacterWindowRvRStatsClassH_KillCount
+- CharacterWindowRvRStatsClassH_Name
+- CharacterWindowRvRStatsClassI
+- CharacterWindowRvRStatsClassI_KillCount
+- CharacterWindowRvRStatsClassI_Name
+- CharacterWindowRvRStatsClassJ
+- CharacterWindowRvRStatsClassJ_KillCount
+- CharacterWindowRvRStatsClassJ_Name
+- CharacterWindowRvRStatsClassK
+- CharacterWindowRvRStatsClassK_KillCount
+- CharacterWindowRvRStatsClassK_Name
+- CharacterWindowRvRStatsClassKills
+- CharacterWindowRvRStatsClassL
+- CharacterWindowRvRStatsClassL_KillCount
+- CharacterWindowRvRStatsClassL_Name
+- CharacterWindowRvRStatsLifetimeD
+- CharacterWindowRvRStatsLifetimeDB
+- CharacterWindowRvRStatsLifetimeK
+- CharacterWindowRvRStatsLifetimeRatioDBD
+- CharacterWindowRvRStatsLifetimeRatioKD
+- CharacterWindowRvRStatsRenownBonus
+- CharacterWindowRvRStatsSessionK
+- CharacterWindowRvRStatsXPBonus
+- DTC_TARGETS_RowTemplatePlayerClass
+- DTC_TARGETS_RowTemplatePlayerDPS
+- DTC_TARGETS_RowTemplatePlayerLast
+- DTC_TARGETS_RowTemplatePlayerName
+- DTC_TARGETS_RowTemplatePlayerRank
+- EA_Template_AutoRollRarityHeader
+- EA_Template_AutoRollTitle
+- EA_Template_OpenParty_Label
+- EA_Window_OpenPartyManageSocketDefLegendAssistantText
+- EA_Window_OpenPartyManageSocketDefLegendLeaderMarkText
+- EA_Window_OpenPartyManageSocketDefLegendLeaderText
+- EA_Window_OpenPartyManageSocketDefLegendMainAssistText
+- EA_Window_OpenPartyManageSocketDefLegendMasterLooterText
+- EA_Window_OpenPartyManageSocketDefLootModeTitle
+- EA_Window_OpenPartyManageSocketDefLootThresholdTitle
+- EA_Window_OpenPartyManageSocketDefMasterLooterTitle
+- EA_Window_OpenPartyManageSocketDefWarband1Label
+- EA_Window_OpenPartyManageSocketDefWarband2Label
+- EA_Window_OpenPartyManageSocketDefWarband3Label
+- EA_Window_OpenPartyManageSocketDefWarband4Label
+- EA_Window_OpenPartyNearbySocketDefLegendAllianceText
+- EA_Window_OpenPartyNearbySocketDefLegendFriendText
+- EA_Window_OpenPartyNearbySocketDefLegendGuildText
+- EA_Window_OpenPartyNearbySocketDefLegendIgnoredText
+- FastFriendsConfigMainCharOverrideLabel
+- FastFriendsConfigMainSyncMasterLabel
+- FastFriendsConfigMainSyncModeLabel
+- JunkDumpOptionsWinFriendsName
+- LPETOptionsAbilityHealthLabel
+- LPETOptionsAbilityModeLabel
+- LPETOptionsAbilityNameLabel
+- LPETOptionsAbilityPriorityLabel
+- LPETOptionsAttackRangeCheckLabel
+- LPETOptionsAutoAttackLabel
+- LPETOptionsAutoDefendLabel
+- LPETOptionsAutoSwitchLabel
+- LPETOptionsBiteLabel
+- LPETOptionsClawSweepLabel
+- LPETOptionsCoruscatingEnergyLabel
+- LPETOptionsDaemonicConsumptionLabel
+- LPETOptionsDaemonicFireLabel
+- LPETOptionsDeathFromAboveLabel
+- LPETOptionsDefendRangeCheckLabel
+- LPETOptionsFangAndClawLabel
+- LPETOptionsFlameOfTzeentchLabel
+- LPETOptionsFlamesOfChangeLabel
+- LPETOptionsFlamethrowerLabel
+- LPETOptionsGoopShootinLabel
+- LPETOptionsGoreLabel
+- LPETOptionsGutRipperLabel
+- LPETOptionsHeadButtLabel
+- LPETOptionsHighExplosiveGrenadeLabel
+- LPETOptionsLegTearLabel
+- LPETOptionsLionsRoarLabel
+- LPETOptionsMachineGunLabel
+- LPETOptionsMaulLabel
+- LPETOptionsPenetratingRoundLabel
+- LPETOptionsPetAttackLabel
+- LPETOptionsPetFollowLabel
+- LPETOptionsPoisonedSpineLabel
+- LPETOptionsSelfFollowLabel
+- LPETOptionsShockGrenadeLabel
+- LPETOptionsShredLabel
+- LPETOptionsSpineFlingLabel
+- LPETOptionsSporeCloudLabel
+- LPETOptionsSquigSquealLabel
+- LPETOptionsSteamVentLabel
+- LPETOptionsSwitchRangeCheckLabel
+- LPETOptionsTerrifyingRoarLabel
+- LPETOptionsWarpingEnergyLabel
+- MapMonsterEditorWindowHeaderDefault
+- MapMonsterEditorWindowLabelDefault
+- MapMonsterPinTypeEditorWindowHeaderDefault
+- MapMonsterPinTypeEditorWindowLabelDefault
+- MapMonster_EditorWindowDatestampLabel
+- MapMonster_EditorWindowMessageBox
+- MapMonster_PinTypeEditorWindowMessageBox
+- MapPin_SetupRotateFactorLabel
+- MapPin_SetupRotateFactorValue
+- MapPin_SetupScaleFactorLabel
+- MapPin_SetupScaleFactorValue
+- PartyAdWindowAdvertisePreviewLabel
+- PartyAdWindowAdvertisePreviewTextLabel
+- PartyAdWindowCurrentColumnLabel
+- PartyAdWindowDpsCurrentValue
+- PartyAdWindowDpsLabel
+- PartyAdWindowHealerCurrentValue
+- PartyAdWindowHealerLabel
+- PartyAdWindowOptionsLabel
+- PartyAdWindowPreviewLabel
+- PartyAdWindowPreviewNoteStatusLabel
+- PartyAdWindowPreviewNoteTextLabel
+- PartyAdWindowPurposeLabel
+- PartyAdWindowPurposePresetLabel
+- PartyAdWindowSelfRoleLabel
+- PartyAdWindowTankCurrentValue
+- PartyAdWindowTankLabel
+- PartyAdWindowTargetsLabel
+- PartyAdWindowUseDetectedNeedsLabel
+- PartyAdWindowUseSpecCheckLabel
+- PeaceOutDisplay
+- PieTrackerRowTextTemplate
+- RVAPI_ColorDialogEditBoxTemplateLabel
+- RVAPI_ColorDialogEditBoxTemplateMetrics
+- RVAPI_ColorDialogSliderTemplateEdit
+- RVAPI_ColorDialogSliderTemplateLabel
+- RVAPI_ColorDialogWindowColorCurrentLabel
+- RVAPI_ColorDialogWindowColorNewLabel
+- RVAPI_RangeSettingsWindowLabelImportantInformation
+- RVAPI_RangeSettingsWindowLabelMapDistancesEnabled
+- RVMOD_3DPortraitSettingsWindowLabelEnabled
+- RVMOD_ManagerSettingsWindowLabelFadeInOutDelay
+- RVMOD_ManagerSettingsWindowLabelUseGlobalScale
+- RVMOD_ManagerSettingsWindowLabelZoomInOutDelay
+- RVMOD_PlayerStatusSettingsAPBarColorCaption
+- RVMOD_PlayerStatusSettingsHPBarColorCaption
+- RVMOD_PlayerStatusSettingsLabelEnable
+- RVMOD_SquaredDistancesSettingsWindowLabelAnchorPoints
+- RVMOD_SquaredDistancesSettingsWindowLabelColor
+- RVMOD_SquaredDistancesSettingsWindowLabelFonts
+- RVMOD_SquaredDistancesSettingsWindowLabelImportantInformation
+- RVMOD_SquaredDistancesSettingsWindowLabelLayers
+- RVMOD_SquaredDistancesSettingsWindowLabelUseGlobalScale
+- RVMOD_TargetsFrameRowTemplateLabelTemplates
+- RVMOD_TargetsFrameRowTemplateLabelTypes
+- RVMOD_TargetsTCTitle
+- RolodexRowHeader
+- RolodexRowName
+- ScenarioGroupMiddleBarGroupToggleButtonText
+- ScenarioGroupMiddleBarInstructions
+- SingleSGroupTemplateName
+- StatdollOptionsBackgroundAlphaLabel
+- StatdollOptionsBackgroundAlphaValue
+- StatdollOptionsButtonGroupVersion
+- StatdollOptionsCheckboxTemplateLabel
+- StatdollOptionsComboboxTemplateLabel
+- StatdollOptionsScaleFactorLabel
+- StatdollOptionsScaleFactorValue
+- StatdollOptionsTitle
+- TOLSettingsWindowPhraseEditWindowPhraseInstructionLabel
+- TOLSettingsWindowPhraseEditWindowTitleLabel
+- TOLSettingsWindowSkillEditWindowTitleLabel
 - TRollAutoRollTitleLabel
+- TTitanUICheckBoxLabel
+- TaxPayerRowTextTemplate
 - TidyChatOptionsTitleLabel
 - TidyChatOptionsVersionLabel
+- TokenOptionTemplateText
+- TomeTracker_Button_SagaListingRowEntryName
+- WARCommanderConfigWindowHeaderDefault
+- WARCommanderConfigWindowLabelDefault
+- WARCommanderConfig_ListenCheckBoxLabelTemplate
+- WARCommander_ConfigWindowUpdatesCheckBoxLabel
+- WARCommander_ConfigWindowUpdatesTitleCheckBoxLabel
+- WARCommander_ConfigWindowWaypointCheckBoxLabel
 - WSCTOptionsColorPickerWindowCustomColorText
 - WSCTOptionsEventWindowLabel
 - WSCTOptionsFrameWindowLabel
 - WSCTOptionsProfileWindowCustomLabel
 - WSCTOptionsProfileWindowLabel
+- WargamesGemsScoreDisplayText
+- WargamesGemsScoreText
+- WargamesGemsTimeText
+- nLootLinkGUIFilterCraftingLevelHeader
+- nLootLinkGUIFilterCraftingLevelSeparator
+- nLootLinkGUIFilterRankHeader
+- nLootLinkGUIFilterRankSeparator
+- nLootLinkGUIFilterRenownHeader
+- nLootLinkGUIFilterRenownSeparator
+- nLootLinkOptionsLabelRarity
+- wbLeadHelperConfigTabLfgIconsLabel
+- wbLeadHelperConfigTabMessageEndLabel
+- wbLeadHelperConfigTabMessageLabel
+- wbLeadHelperConfigTabMessageStartLabel
+- wbLeadHelperConfigTabMessageTextColorLabel
+- zMM_Default_CraftingLabel
+- zMM_Default_RarityLabel
+- zMailModLogHeaderItem
+- zMailModLogHeaderMoney
+- zMailModLogHeaderSender
+- zMailModLogHeaderSubject
+- zMailModLogHeaderType
+- zMailModLogRowTemplateItemCount
+- zMailModLogRowTemplateItemData
+- zMailModLogRowTemplateSender
+- zMailModLogRowTemplateSubject
+- zMailModLogRowTemplateType
 
 ## Related APIs
 
 - [Label](../../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 138
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAAbilityQueue.lua:334`, `/workspace/data/raw/AdvancedPetAssist/APAAbilityQueue.lua:418`, `/workspace/data/raw/AdvancedPetAssist/APAAbilityQueue.lua:462`, `/workspace/data/raw/AdvancedPetAssist/APAEvents.lua:165`, `/workspace/data/raw/AdvancedPetAssist/APAUpdateKiting.lua:137`, `/workspace/data/raw/AdvancedPetAssist/APAUpdateKiting.lua:209`, `/workspace/data/raw/AdvancedPetAssist/APAUpdateKiting.lua:61`, `/workspace/data/raw/AdvancedPetAssist/APAUpdateKiting.lua:81` |
+| Addons seen in | AdvancedPetAssist, DaemonAssist, LoyalPet |
+| Files seen in | APAAbilityQueue.lua, APAEvents.lua, APAUpdateKiting.lua, DACommands.lua, LoyalPet.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | AdvancedPetAssist.OnPetUpdated, AdvancedPetAssist.QueueCastNext, AdvancedPetAssist.SendAttackCommands, AdvancedPetAssist.TickAbilityQueue, AdvancedPetAssist.local.HandleKitingInterrupt, AdvancedPetAssist.local.InitializeKitingCycle |
+| Example locations | Attack, HandleKitingInterrupt, InitializeKitingCycle, OnPetUpdated, QueueCastNext, SendAttackCommands |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +59,14 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.PetCommand.ATTACK field accessed by 3 addons; commonly found in Attack and HandleKitingInterrupt, InitializeKitingCycle, OnPetUpdated, QueueCastNext, SendAttackCommands, TickAbilityQueue, TickKitingFollow, TickPostCastFollow, lua_call contexts.
 
 ## Seen In
 
 - AdvancedPetAssist
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- DaemonAssist
+- LoyalPet
 
 ## Notes
 
-- Observed in contexts: AdvancedPetAssist.OnPetUpdated, AdvancedPetAssist.QueueCastNext, AdvancedPetAssist.SendAttackCommands, AdvancedPetAssist.TickAbilityQueue, AdvancedPetAssist.local.HandleKitingInterrupt, AdvancedPetAssist.local.InitializeKitingCycle
+- Observed in contexts: Attack, HandleKitingInterrupt, InitializeKitingCycle, OnPetUpdated, QueueCastNext, SendAttackCommands

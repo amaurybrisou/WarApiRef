@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 135
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
@@ -20,31 +20,28 @@
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, CM_ClosetGoblin, CombatTextNames |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/AuraColorPicker.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/AuraTooltip.xml:0`, `/workspace/data/raw/Aura/Source/Templates.xml:0` |
+| Addons seen in | AbilityAlert, AbilityNotifier, ActionPoints, AdjustTheTip, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, ArmorGraphicToggle |
+| Files seen in | Bars/HealGridProgressBar.xml, Code/Assist/Assist.xml, Code/Assist/AssistConfiguration.xml, Code/CombatLog/CombatLogEpsWindow.xml, Code/CombatLog/CombatLogIDS.xml, Code/CombatLog/CombatLogSnapshotWindow.xml, Code/CombatLog/CombatLogStatsWindow.xml, Code/CombatLog/CombatLogTargetDefenseWindow.xml |
 | Namespaces detected | Label |
-| Source kinds | xml_frames, xml_handlers |
-| Example locations | AdvancedPetAssist: APAFollowTargetHUDLabel, AdvancedPetAssist: APAInstantOnlyHUDLabel, AdvancedPetAssist: APAKitingHUDLabel, AdvancedPetAssist: APALabelAttackBind, AdvancedPetAssist: APALabelAutoReattack, AdvancedPetAssist: APALabelAutoReattackDelay |
-| XML usage count | 1259 |
-| XML attribute usage count | 1259 |
-| Lua usage count | 7 |
+| Source kinds | xml_frames |
+| Example locations | AbilityAlert: AAText, AbilityNotifier: AbHelpText, ActionPoints: ActionPointsWindowText, AdjustTheTip: AdjustTheTipMenuItemSliderSliderLabel, AdjustTheTip: AdjustTheTipMenuItemSliderSliderValueLabel, AdjustTheTip: MouseOverTargetHealthContainerTemplateHealthText |
+| XML usage count | 4835 |
+| XML attribute usage count | 4835 |
+| Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
-| Event binding presence | yes |
-| Observed in XML and Lua | yes |
+| Event binding presence | no |
+| Observed in XML and Lua | no |
 | Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
@@ -60,11 +57,12 @@
 
 ## Description
 
-Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua.
+Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window.
 
 ## Common Attributes
 
 - autoresize
+- autoresizewidth
 - font
 - handleinput
 - inherits
@@ -72,810 +70,1369 @@ Label is an interactive XML control. It commonly appears under Button and Circle
 - maxchars
 - name
 - popable
-- skipinput
 - textalign
 - warnOnTextCropped
 - wordwrap
 
 ## Common Handlers
 
-- [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md)
-- [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md)
+- OnHyperLinkLButtonUp
+- OnHyperLinkRButtonUp
 - [OnLButtonDown](../handlers/handler_OnLButtonDown.md)
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
+- [OnMouseLeave](../handlers/handler_OnMouseLeave.md)
 - [OnMouseOver](../handlers/handler_OnMouseOver.md)
 - [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
 - [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
 
 ## Common Handler Functions
 
+- LPET.OnMouseOver
 - Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip
-- EA_ChatWindow.OnHyperLinkLButtonUp
-- EA_ChatWindow.OnHyperLinkRButtonUp
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueLClick
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick
+- Cheeseboard.OnMouseOver
+- AutoBandWindowConfig.OnSettingMouseOver
 - Enemy.CombatLogUI_EpsWindow_OnMouseOver
-- Enemy.CombatLogUI_EpsWindow_OnRButtonUp
 - Enemy.ConfigurationWindow_ShowTooltip
+- AutoBandWindowTemplate.OnRoleLimitsMouseOver
 - Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
 - Enemy.CombatLogUI_TargetDefenseWindow_OnMouseOver
-- Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp
+- DuffTimer.Options.OnMouseOver
 - Enemy.CombatLogUI_StatsWindow_OnEpsMouseOver
+- SORRealms.OnMouseOverVP
+- Enemy.KillSpamUI_KillSpamDialog_OnTotalMouseOver
+- Obsidian.Setup.Castbar.OnFontExampleMouseOver
+- SORPager.LowBOsOn
+- SORRealms.OnMouseOverLowVP
+- WARCommander.LabelTint
+- AutoBandWindowConfig.OnBackfillMouseOver
+- AutoBandWindowConfig.OnHealerRankReqMouseOver
+- AutoBandWindowConfig.OnRankReqMouseOver
+- Obsidian.Setup.EffectTracker.OnFontExampleMouseOver
+- TexturedButtons.Setup.Fonts.OnFontExampleMouseOver
+- Warbuilder.Effecttooltip
+- AggroMeter.SelectChar
+- AtlasMap.OnLegendItemMouseOver
+- AutoBandWindowConfig.OnCommonRaceNamesMouseOver
+- AutoBandWindowConfig.OnExcludeRealmHealerAltSpecMouseOver
+- AutoBandWindowConfig.OnKickLowRankMouseOver
+- AutoBandWindowTools.OnDiscordReqMouseOver
+- AutoBandWindowTools.OnNoMicMouseOver
+- BarText_Influence.OnMouseOver
+- BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOver
+- BuffHead.Setup.Layout.Properties.OnFontExampleMouseOver
+- BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOver
+- CMapWindow.OnMouseOverDigitinf
+- CaVESWindow.OnMouseoverStatHeaderLabelRecent
+- CaVESWindow.OnMouseoverStatHeaderLabelReference
+- CaVESWindow.OnMouseoverStatHeaderLabelStat
+- DeepSleep.Settings.OnMouseOver
+- EA_Window_OpenPartyLootRollOptions.OnMouseOverRowTitle
+- GuildWardenTTips.anni
+- GuildWardenTTips.bl
+- GuildWardenTTips.conq
+- GuildWardenTTips.dp
+- GuildWardenTTips.inv
+- GuildWardenTTips.sent
+- GuildWardenTTips.sigil
+- GuildWardenTTips.tyr
+- GuildWardenTTips.war
+- KeyBarSettings.CheckBoxOnMouseOver
+- LibAddonButton.Manager.CustomItem.OnMacroHelpMouseOver
+- LibAddonButton.Manager.OnNavigateMouseOver
+- MassMailWindow.MouseOverCraftingSkill
+- MassMailWindow.MouseOverRarity
+- MiracleGrowLight.onHover
+- Motion.OnMouseOver_ContextMenu_Recipe_Delete
+- PartyAdWindow.OnMouseOverPreviewNoteStatus
+- RvRContribution.OnHoverLoss
+- RvRContribution.OnHoverWin
+- SORPager.HighBOsOn
+- TalismanGenie.ContainerMouseOver
+- TalismanGenie.CurioOn
+- TalismanGenie.EssenceOn
+- TalismanGenie.FragmentMouseOver
+- TalismanGenie.FragmentOn
+- TalismanGenie.GoldDustOn
+- TalismanGenie.LevelMouseOver
+- TalismanGenie.TypeMouseOver
+- TurretRange.Setup.Display.OnDistanceFontMouseOver
+- UiModWindow.OnMouseOverModType
+- UiModWindow.OnMouseOverStatus
+- WARCommander.AssistLabelTint
+- emotes.OnMouseOverPathRow
+- zMailModInbox.OnMouseOverCOD
+- zMailModOptions.MouseOverListLabel
+- Cheeseboard.SortColumnClick
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueLClick
+- SessionRPs.GetSortType
+- SORRealms.OnLClickTier
+- Enemy.KillSpamUI_KillSpamDialog_OnTotalLButtonUp
+- AutoBandWindowConfig.OnClickBackfillLabel
+- ClosetGoblinCharacterWindow.OnClickSetRow
+- ClosetGoblinZoneWindow.OnClickZoneRow
+- DPSMeter.SortChange
+- Deathblow.LinkDeath
+- Deathblow.LinkKill
+- Enemy.CombatLogUI_EpsWindow_OnInDpsLButtonUp
+- Enemy.CombatLogUI_EpsWindow_OnInHpsLButtonUp
+- Enemy.CombatLogUI_EpsWindow_OnOutDpsAoeLButtonUp
+- Enemy.CombatLogUI_EpsWindow_OnOutDpsLButtonUp
+- Enemy.CombatLogUI_EpsWindow_OnOutHpsAoeLButtonUp
+- Enemy.CombatLogUI_EpsWindow_OnOutHpsLButtonUp
+- SORRealms.OnLClickBZ
+- AutoBandWindowConfig.OnClickAltCheckLabel
+- AutoBandWindowConfig.OnClickAutoKickLabel
+- AutoBandWindowConfig.OnClickBWSorcAsMDPSLabel
+- AutoBandWindowConfig.OnClickCommonRaceNamesLabel
+- AutoBandWindowConfig.OnClickDpsWeightingLabel
+- AutoBandWindowConfig.OnClickExcludeRealmHealerAltSpecLabel
+- AutoBandWindowConfig.OnClickGuildPriorityLabel
+- AutoBandWindowConfig.OnClickKickIgnoreLabel
+- AutoBandWindowConfig.OnClickKickLowRankLabel
+- AutoBandWindowConfig.OnClickKickRvRZonesLabel
+- AutoBandWindowConfig.OnClickKickStealthersLabel
+- AutoBandWindowConfig.OnClickKickToofarLabel
+- AutoBandWindowConfig.OnClickRestrictRaceLabel
+- AutoBandWindowTemplate.OnClickRightClickTemplateMenuLabel
+- AutoBandWindowTools.OnClickAutoFormSearchLabel
+- AutoBandWindowTools.OnClickAutoPartyNoteLabel
+- AutoBandWindowTools.OnClickAutoSearchLabel
+- AutoBandWindowTools.OnClickDiscordReqLabel
+- AutoBandWindowTools.OnClickKickOfflineLabel
+- AutoBandWindowTools.OnClickKickRankLabel
+- AutoBandWindowTools.OnClickKickZoneLabel
+- AutoBandWindowTools.OnClickNoMicLabel
+- AutoBandWindowTools.OnClickNotifyBuffsLabel
+- AutoBandWindowTools.OnClickPrintRoleLabel
+- AutoBandWindowTools.OnClickRightClickOrganizeLabel
+- AutoBandWindowTools.OnClickSearchRoleChan1Label
+- AutoBandWindowTools.OnClickSearchRoleChan5Label
+- AutoBandWindowTools.OnClickSearchRoleChanT4Label
+- BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleLClick
+- BuffHead.Setup.Layout.Manager.OnExportLUp
+- BuffHead.Setup.Layout.Manager.OnImportLUp
+- BuffHead.Setup.Layout.Manager.OnLayoutsLUp
+- BuffHead.Setup.Layout.Properties.OnFontFontLUp
+- BuffHead.Setup.Layout.Properties.OnPropertyTitleLClick
+- CMapWindow.OnClickDigitinf
+- Enemy.CombatLogUI_StatsWindow_OnEpsAoeCurClick
+- Enemy.CombatLogUI_StatsWindow_OnEpsAoeMaxClick
+- Enemy.CombatLogUI_StatsWindow_OnEpsCurClick
+- Enemy.CombatLogUI_StatsWindow_OnEpsMaxClick
+- FastFriends.UI.OnClickCharOverrideDefaultLabel
+- FastFriends.UI.OnClickCharOverrideOffLabel
+- FastFriends.UI.OnClickCharOverrideOnLabel
+- FastFriends.UI.OnClickFriendsLabel
+- FastFriends.UI.OnClickIgnoreLabel
+- FastFriends.UI.OnClickModeAllLabel
+- FastFriends.UI.OnClickModeLevelLabel
+- FastFriends.UI.OnClickModeOptInLabel
+- FastFriends.UI.OnClickSyncMasterLabel
+- LibAddonButton.Manager.CustomItem.OnMacroHelpLUp
+- LibAddonButton.Manager.OnNavigateLUp
+- MassMailWindow.AddCraftingItems
+- MassMailWindow.AddRarityItems
+- Motion.OnLButtonUp_ContextMenu_Recipe_Delete
+- Obsidian.Setup.Castbar.OnLatencyTextFontLUp
+- Obsidian.Setup.Castbar.OnNameFontLUp
+- Obsidian.Setup.Castbar.OnTimerFontLUp
+- Obsidian.Setup.EffectTracker.OnNameFontLUp
+- Obsidian.Setup.EffectTracker.OnTimerFontLUp
+- PartyAdWindow.OnToggleDetectedNeedsLabel
+- PartyAdWindow.OnToggleSpecCheckLabel
+- ReferWindow.OnClickName
+- Rolodex.SetName
+- SOR.OpenNotes
+- TalismanGenie.CurioToggle
+- TalismanGenie.EssenceToggle
+- TalismanGenie.FragmentToggle
+- TalismanGenie.GoldDustToggle
+- TexturedButtons.Setup.Fonts.OnCooldownFontLUp
+- TexturedButtons.Setup.Fonts.OnKeybindFontLUp
+- TurretRange.Setup.Display.OnDistanceFontLUp
+- WARCommander.Assist
+- WARCommander.HighlightLast0
+- WARCommander.HighlightLast1
+- WARCommander.HighlightLast2
+- zMailModOptions.SelectOption
+- zMailModOptions.ShowOptions
+- FrameManager.OnMouseOverEnd
+- AutoBandWindowConfig.OnSettingMouseOverEnd
+- AutoBandWindowTemplate.OnRoleLimitsMouseOverEnd
+- SORPager.BOsOff
+- Obsidian.Setup.Castbar.OnFontExampleMouseOut
+- WARCommander.LabelTintRemove
+- AutoBandWindowConfig.OnBackfillMouseOverEnd
+- AutoBandWindowConfig.OnHealerRankReqMouseOverEnd
+- AutoBandWindowConfig.OnRankReqMouseOverEnd
+- Obsidian.Setup.EffectTracker.OnFontExampleMouseOut
+- TexturedButtons.Setup.Fonts.OnFontExampleMouseOut
+- AutoBandWindowConfig.OnCommonRaceNamesMouseOverEnd
+- AutoBandWindowConfig.OnExcludeRealmHealerAltSpecMouseOverEnd
+- AutoBandWindowConfig.OnKickLowRankMouseOverEnd
+- AutoBandWindowTools.OnDiscordReqMouseOverEnd
+- AutoBandWindowTools.OnNoMicMouseOverEnd
+- BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOut
+- BuffHead.Setup.Layout.Properties.OnFontExampleMouseOut
+- BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOut
+- LibAddonButton.Manager.CustomItem.OnMacroHelpMouseOut
+- LibAddonButton.Manager.OnNavigateMouseOut
+- MassMailWindow.MouseOverEndCraftingSkill
+- MassMailWindow.MouseOverEndRarity
+- Motion.OnMouseOverEnd_ContextMenu_Recipe_Delete
+- PartyAdWindow.OnMouseOverEndPreviewNoteStatus
+- TalismanGenie.CurioOff
+- TalismanGenie.EssenceOff
+- TalismanGenie.FragmentOff
+- TalismanGenie.GoldDustOff
+- TurretRange.Setup.Display.OnDistanceFontMouseOut
+- WARCommander.AssistLabelTintRemove
+- emotes.OnMouseOverPathRowEnd
+- zMailModOptions.MouseOverEndListLabel
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick
+- Enemy.CombatLogUI_EpsWindow_OnRButtonUp
+- Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp
+- SORRealms.ShowVPMenu
+- SORRealms.ShowLowVPMenu
+- ClosetGoblinCharacterWindow.OnSetRowContextMenu
+- ClosetGoblinZoneWindow.OnSetZoneRowContextMenu
+- MiracleGrowLight.switchMode
+- Rotation.Delete
+- SORRealms.ShowCityMenu
+- SORRealms.ShowFortressMenu
+- TortallDPSMeter.OnRButtonUp
+- EA_ChatWindow.OnHyperLinkRButtonUp
+- MapPin.RButtonUp
+- EA_ChatWindow.OnHyperLinkLButtonUp
+- Enemy.CombatLogUI_IDS_OnRowLButtonDown
+- GuildWardenWin.Offline
+- GuildWardenWin.classSort
+- GuildWardenWin.dateSort
+- GuildWardenWin.levelSort
+- GuildWardenWin.nameSort
+- GuildWardenWin.sigilSort
+- AtlasMap.OnLegendItemMouseLeave
 
 
 ## XML Event Bindings
 
 | Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
 |-------|----------|---------------------|-------------------|-----------------|
-| [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md) | custom | EA_ChatWindow.OnHyperLinkLButtonUp | `function(...)` | LOW |
-| [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) | custom | EA_ChatWindow.OnHyperLinkRButtonUp | `function(...)` | LOW |
-| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | input | Enemy.CombatLogUI_IDS_OnRowLButtonDown | `flags, x, y` | MEDIUM |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueLClick, Enemy.KillSpamUI_KillSpamDialog_OnTotalLButtonUp, ClosetGoblinCharacterWindow.OnClickSetRow, ClosetGoblinZoneWindow.OnClickZoneRow, Enemy.CombatLogUI_EpsWindow_OnInDpsLButtonUp, Enemy.CombatLogUI_EpsWindow_OnInHpsLButtonUp | `flags, x, y` | MEDIUM |
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip, Enemy.CombatLogUI_EpsWindow_OnMouseOver, Enemy.ConfigurationWindow_ShowTooltip, Enemy.CombatLogUI_StatsWindow_ListRowMouseOver, Enemy.CombatLogUI_TargetDefenseWindow_OnMouseOver, Enemy.CombatLogUI_StatsWindow_OnEpsMouseOver | `function()` | MEDIUM |
-| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | TexturedButtons.Setup.Fonts.OnFontExampleMouseOut, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOut, BuffHead.Setup.Layout.Properties.OnFontExampleMouseOut, BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOut, TurretRange.Setup.Display.OnDistanceFontMouseOut | `function(...)` | LOW |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick, Enemy.CombatLogUI_EpsWindow_OnRButtonUp, Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp, ClosetGoblinCharacterWindow.OnSetRowContextMenu, ClosetGoblinZoneWindow.OnSetZoneRowContextMenu, MiracleGrowLight.switchMode | `flags, x, y` | MEDIUM |
-| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip, Enemy.CombatLogUI_EpsWindow_OnMouseOver, Enemy.ConfigurationWindow_ShowTooltip, Enemy.CombatLogUI_StatsWindow_ListRowMouseOver, Enemy.CombatLogUI_TargetDefenseWindow_OnMouseOver, Enemy.CombatLogUI_StatsWindow_OnEpsMouseOver, Enemy.KillSpamUI_KillSpamDialog_OnTotalMouseOver, TexturedButtons.Setup.Fonts.OnFontExampleMouseOver, AggroMeter.SelectChar, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOver, BuffHead.Setup.Layout.Properties.OnFontExampleMouseOver, BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOver, MiracleGrowLight.onHover, TurretRange.Setup.Display.OnDistanceFontMouseOver | `` |  |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueLClick, Enemy.KillSpamUI_KillSpamDialog_OnTotalLButtonUp, ClosetGoblinCharacterWindow.OnClickSetRow, ClosetGoblinZoneWindow.OnClickZoneRow, Enemy.CombatLogUI_EpsWindow_OnInDpsLButtonUp, Enemy.CombatLogUI_EpsWindow_OnInHpsLButtonUp, Enemy.CombatLogUI_EpsWindow_OnOutDpsAoeLButtonUp, Enemy.CombatLogUI_EpsWindow_OnOutDpsLButtonUp, Enemy.CombatLogUI_EpsWindow_OnOutHpsAoeLButtonUp, Enemy.CombatLogUI_EpsWindow_OnOutHpsLButtonUp, AggroMeter.SelectChar, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleLClick, BuffHead.Setup.Layout.Manager.OnExportLUp, BuffHead.Setup.Layout.Manager.OnImportLUp, BuffHead.Setup.Layout.Manager.OnLayoutsLUp, BuffHead.Setup.Layout.Properties.OnFontFontLUp, BuffHead.Setup.Layout.Properties.OnPropertyTitleLClick, Enemy.CombatLogUI_StatsWindow_OnEpsAoeCurClick, Enemy.CombatLogUI_StatsWindow_OnEpsAoeMaxClick, Enemy.CombatLogUI_StatsWindow_OnEpsCurClick, Enemy.CombatLogUI_StatsWindow_OnEpsMaxClick, TexturedButtons.Setup.Fonts.OnCooldownFontLUp, TexturedButtons.Setup.Fonts.OnKeybindFontLUp, TurretRange.Setup.Display.OnDistanceFontLUp | `flags, x, y` | MEDIUM |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick, Enemy.CombatLogUI_EpsWindow_OnRButtonUp, Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp, ClosetGoblinCharacterWindow.OnSetRowContextMenu, ClosetGoblinZoneWindow.OnSetZoneRowContextMenu, MiracleGrowLight.switchMode | `flags, x, y` | MEDIUM |
-| [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md) | custom | EA_ChatWindow.OnHyperLinkLButtonUp | `linkData, flags, x, y` | LOW |
-| [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) | custom | EA_ChatWindow.OnHyperLinkRButtonUp | `` |  |
-| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | TexturedButtons.Setup.Fonts.OnFontExampleMouseOut, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOut, BuffHead.Setup.Layout.Properties.OnFontExampleMouseOut, BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOut, TurretRange.Setup.Display.OnDistanceFontMouseOut | `` |  |
-| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | input | Enemy.CombatLogUI_IDS_OnRowLButtonDown | `flags, x, y` | MEDIUM |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | LPET.OnMouseOver, Enemy.ScenarioInfoUI_ScenarioInfoDialog_ShowTooltip, Cheeseboard.OnMouseOver, AutoBandWindowConfig.OnSettingMouseOver, Enemy.CombatLogUI_EpsWindow_OnMouseOver, Enemy.ConfigurationWindow_ShowTooltip, AutoBandWindowTemplate.OnRoleLimitsMouseOver, Enemy.CombatLogUI_StatsWindow_ListRowMouseOver, Enemy.CombatLogUI_TargetDefenseWindow_OnMouseOver, DuffTimer.Options.OnMouseOver, Enemy.CombatLogUI_StatsWindow_OnEpsMouseOver, SORRealms.OnMouseOverVP, Enemy.KillSpamUI_KillSpamDialog_OnTotalMouseOver, Obsidian.Setup.Castbar.OnFontExampleMouseOver, SORPager.LowBOsOn, SORRealms.OnMouseOverLowVP, WARCommander.LabelTint, AutoBandWindowConfig.OnBackfillMouseOver, AutoBandWindowConfig.OnHealerRankReqMouseOver, AutoBandWindowConfig.OnRankReqMouseOver, Obsidian.Setup.EffectTracker.OnFontExampleMouseOver, TexturedButtons.Setup.Fonts.OnFontExampleMouseOver, Warbuilder.Effecttooltip, AggroMeter.SelectChar, AtlasMap.OnLegendItemMouseOver, AutoBandWindowConfig.OnCommonRaceNamesMouseOver, AutoBandWindowConfig.OnExcludeRealmHealerAltSpecMouseOver, AutoBandWindowConfig.OnKickLowRankMouseOver, AutoBandWindowTools.OnDiscordReqMouseOver, AutoBandWindowTools.OnNoMicMouseOver, BarText_Influence.OnMouseOver, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOver, BuffHead.Setup.Layout.Properties.OnFontExampleMouseOver, BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOver, CMapWindow.OnMouseOverDigitinf, CaVESWindow.OnMouseoverStatHeaderLabelRecent, CaVESWindow.OnMouseoverStatHeaderLabelReference, CaVESWindow.OnMouseoverStatHeaderLabelStat, DeepSleep.Settings.OnMouseOver, EA_Window_OpenPartyLootRollOptions.OnMouseOverRowTitle, GuildWardenTTips.anni, GuildWardenTTips.bl, GuildWardenTTips.conq, GuildWardenTTips.dp, GuildWardenTTips.inv, GuildWardenTTips.sent, GuildWardenTTips.sigil, GuildWardenTTips.tyr, GuildWardenTTips.war, KeyBarSettings.CheckBoxOnMouseOver, LibAddonButton.Manager.CustomItem.OnMacroHelpMouseOver, LibAddonButton.Manager.OnNavigateMouseOver, MassMailWindow.MouseOverCraftingSkill, MassMailWindow.MouseOverRarity, MiracleGrowLight.onHover, Motion.OnMouseOver_ContextMenu_Recipe_Delete, PartyAdWindow.OnMouseOverPreviewNoteStatus, RvRContribution.OnHoverLoss, RvRContribution.OnHoverWin, SORPager.HighBOsOn, TalismanGenie.ContainerMouseOver, TalismanGenie.CurioOn, TalismanGenie.EssenceOn, TalismanGenie.FragmentMouseOver, TalismanGenie.FragmentOn, TalismanGenie.GoldDustOn, TalismanGenie.LevelMouseOver, TalismanGenie.TypeMouseOver, TurretRange.Setup.Display.OnDistanceFontMouseOver, UiModWindow.OnMouseOverModType, UiModWindow.OnMouseOverStatus, WARCommander.AssistLabelTint, emotes.OnMouseOverPathRow, zMailModInbox.OnMouseOverCOD, zMailModOptions.MouseOverListLabel | `` |  |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Cheeseboard.SortColumnClick, Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueLClick, SessionRPs.GetSortType, , SORRealms.OnLClickTier, Enemy.KillSpamUI_KillSpamDialog_OnTotalLButtonUp, AutoBandWindowConfig.OnClickBackfillLabel, ClosetGoblinCharacterWindow.OnClickSetRow, ClosetGoblinZoneWindow.OnClickZoneRow, DPSMeter.SortChange, Deathblow.LinkDeath, Deathblow.LinkKill, Enemy.CombatLogUI_EpsWindow_OnInDpsLButtonUp, Enemy.CombatLogUI_EpsWindow_OnInHpsLButtonUp, Enemy.CombatLogUI_EpsWindow_OnOutDpsAoeLButtonUp, Enemy.CombatLogUI_EpsWindow_OnOutDpsLButtonUp, Enemy.CombatLogUI_EpsWindow_OnOutHpsAoeLButtonUp, Enemy.CombatLogUI_EpsWindow_OnOutHpsLButtonUp, SORRealms.OnLClickBZ, AggroMeter.SelectChar, AutoBandWindowConfig.OnClickAltCheckLabel, AutoBandWindowConfig.OnClickAutoKickLabel, AutoBandWindowConfig.OnClickBWSorcAsMDPSLabel, AutoBandWindowConfig.OnClickCommonRaceNamesLabel, AutoBandWindowConfig.OnClickDpsWeightingLabel, AutoBandWindowConfig.OnClickExcludeRealmHealerAltSpecLabel, AutoBandWindowConfig.OnClickGuildPriorityLabel, AutoBandWindowConfig.OnClickKickIgnoreLabel, AutoBandWindowConfig.OnClickKickLowRankLabel, AutoBandWindowConfig.OnClickKickRvRZonesLabel, AutoBandWindowConfig.OnClickKickStealthersLabel, AutoBandWindowConfig.OnClickKickToofarLabel, AutoBandWindowConfig.OnClickRestrictRaceLabel, AutoBandWindowTemplate.OnClickRightClickTemplateMenuLabel, AutoBandWindowTools.OnClickAutoFormSearchLabel, AutoBandWindowTools.OnClickAutoPartyNoteLabel, AutoBandWindowTools.OnClickAutoSearchLabel, AutoBandWindowTools.OnClickDiscordReqLabel, AutoBandWindowTools.OnClickKickOfflineLabel, AutoBandWindowTools.OnClickKickRankLabel, AutoBandWindowTools.OnClickKickZoneLabel, AutoBandWindowTools.OnClickNoMicLabel, AutoBandWindowTools.OnClickNotifyBuffsLabel, AutoBandWindowTools.OnClickPrintRoleLabel, AutoBandWindowTools.OnClickRightClickOrganizeLabel, AutoBandWindowTools.OnClickSearchRoleChan1Label, AutoBandWindowTools.OnClickSearchRoleChan5Label, AutoBandWindowTools.OnClickSearchRoleChanT4Label, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleLClick, BuffHead.Setup.Layout.Manager.OnExportLUp, BuffHead.Setup.Layout.Manager.OnImportLUp, BuffHead.Setup.Layout.Manager.OnLayoutsLUp, BuffHead.Setup.Layout.Properties.OnFontFontLUp, BuffHead.Setup.Layout.Properties.OnPropertyTitleLClick, CMapWindow.OnClickDigitinf, Enemy.CombatLogUI_StatsWindow_OnEpsAoeCurClick, Enemy.CombatLogUI_StatsWindow_OnEpsAoeMaxClick, Enemy.CombatLogUI_StatsWindow_OnEpsCurClick, Enemy.CombatLogUI_StatsWindow_OnEpsMaxClick, FastFriends.UI.OnClickCharOverrideDefaultLabel, FastFriends.UI.OnClickCharOverrideOffLabel, FastFriends.UI.OnClickCharOverrideOnLabel, FastFriends.UI.OnClickFriendsLabel, FastFriends.UI.OnClickIgnoreLabel, FastFriends.UI.OnClickModeAllLabel, FastFriends.UI.OnClickModeLevelLabel, FastFriends.UI.OnClickModeOptInLabel, FastFriends.UI.OnClickSyncMasterLabel, LibAddonButton.Manager.CustomItem.OnMacroHelpLUp, LibAddonButton.Manager.OnNavigateLUp, MassMailWindow.AddCraftingItems, MassMailWindow.AddRarityItems, Motion.OnLButtonUp_ContextMenu_Recipe_Delete, Obsidian.Setup.Castbar.OnLatencyTextFontLUp, Obsidian.Setup.Castbar.OnNameFontLUp, Obsidian.Setup.Castbar.OnTimerFontLUp, Obsidian.Setup.EffectTracker.OnNameFontLUp, Obsidian.Setup.EffectTracker.OnTimerFontLUp, PartyAdWindow.OnToggleDetectedNeedsLabel, PartyAdWindow.OnToggleSpecCheckLabel, ReferWindow.OnClickName, Rolodex.SetName, SOR.OpenNotes, TalismanGenie.CurioToggle, TalismanGenie.EssenceToggle, TalismanGenie.FragmentToggle, TalismanGenie.GoldDustToggle, TexturedButtons.Setup.Fonts.OnCooldownFontLUp, TexturedButtons.Setup.Fonts.OnKeybindFontLUp, TurretRange.Setup.Display.OnDistanceFontLUp, WARCommander.Assist, WARCommander.HighlightLast0, WARCommander.HighlightLast1, WARCommander.HighlightLast2, emotes.OnMouseOverPathRow, zMailModOptions.SelectOption, zMailModOptions.ShowOptions | `flags, x, y` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | FrameManager.OnMouseOverEnd, AutoBandWindowConfig.OnSettingMouseOverEnd, AutoBandWindowTemplate.OnRoleLimitsMouseOverEnd, SORPager.BOsOff, Obsidian.Setup.Castbar.OnFontExampleMouseOut, WARCommander.LabelTintRemove, AutoBandWindowConfig.OnBackfillMouseOverEnd, AutoBandWindowConfig.OnHealerRankReqMouseOverEnd, AutoBandWindowConfig.OnRankReqMouseOverEnd, Obsidian.Setup.EffectTracker.OnFontExampleMouseOut, TexturedButtons.Setup.Fonts.OnFontExampleMouseOut, AutoBandWindowConfig.OnCommonRaceNamesMouseOverEnd, AutoBandWindowConfig.OnExcludeRealmHealerAltSpecMouseOverEnd, AutoBandWindowConfig.OnKickLowRankMouseOverEnd, AutoBandWindowTools.OnDiscordReqMouseOverEnd, AutoBandWindowTools.OnNoMicMouseOverEnd, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertyTitleMouseOut, BuffHead.Setup.Layout.Properties.OnFontExampleMouseOut, BuffHead.Setup.Layout.Properties.OnPropertyTitleMouseOut, LibAddonButton.Manager.CustomItem.OnMacroHelpMouseOut, LibAddonButton.Manager.OnNavigateMouseOut, MassMailWindow.MouseOverEndCraftingSkill, MassMailWindow.MouseOverEndRarity, Motion.OnMouseOverEnd_ContextMenu_Recipe_Delete, PartyAdWindow.OnMouseOverEndPreviewNoteStatus, TalismanGenie.CurioOff, TalismanGenie.EssenceOff, TalismanGenie.FragmentOff, TalismanGenie.GoldDustOff, TurretRange.Setup.Display.OnDistanceFontMouseOut, WARCommander.AssistLabelTintRemove, emotes.OnMouseOverPathRowEnd, zMailModOptions.MouseOverEndListLabel | `` |  |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick, Enemy.CombatLogUI_EpsWindow_OnRButtonUp, Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp, SORRealms.ShowVPMenu, SORRealms.ShowLowVPMenu, ClosetGoblinCharacterWindow.OnSetRowContextMenu, ClosetGoblinZoneWindow.OnSetZoneRowContextMenu, MiracleGrowLight.switchMode, Rotation.Delete, SORRealms.ShowCityMenu, SORRealms.ShowFortressMenu, TortallDPSMeter.OnRButtonUp | `flags, x, y` | MEDIUM |
+| OnHyperLinkRButtonUp | custom | EA_ChatWindow.OnHyperLinkRButtonUp, MapPin.RButtonUp | `linkData, flags, x, y` | LOW |
+| OnHyperLinkLButtonUp | custom | EA_ChatWindow.OnHyperLinkLButtonUp | `linkData, flags, x, y` | LOW |
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | input | Enemy.CombatLogUI_IDS_OnRowLButtonDown, GuildWardenWin.Offline, GuildWardenWin.classSort, GuildWardenWin.dateSort, GuildWardenWin.levelSort, GuildWardenWin.nameSort, GuildWardenWin.sigilSort | `flags, x, y` | MEDIUM |
+| [OnMouseLeave](../handlers/handler_OnMouseLeave.md) | custom | AtlasMap.OnLegendItemMouseLeave | `` |  |
 
 ### Per-Event Lua API Calls
 
-**OnHyperLinkLButtonUp** handlers call: `WindowSetShowing`
+**OnMouseOver** handlers call: `CreateWindow`, `DoesWindowExist`, `LabelGetTextColor`, `LabelSetText`, `LabelSetTextColor`, `ListBoxGetDataIndex`, `SystemData.ActiveWindow.name:match`, `SystemData.ActiveWindow.name:sub`, `WindowGetDimensions`, `WindowGetId`, `WindowGetParent`, `WindowGetScreenPosition`, `WindowSetGameActionData`
 
-**OnLButtonDown** handlers call: `SystemData.ActiveWindow.name:match`
+**OnLButtonUp** handlers call: `BroadcastEvent`, `LabelGetText`, `LabelSetText`, `LabelSetTextColor`, `WindowGetId`, `WindowGetParent`, `WindowGetParent:find`, `WindowSetGameActionData`, `WindowSetShowing`
 
-**OnLButtonUp** handlers call: `WindowGetId`, `WindowGetParent`, `WindowSetGameActionData`, `WindowSetShowing`
-
-**OnMouseOver** handlers call: `CreateWindow`, `LabelSetText`, `LabelSetTextColor`, `ListBoxGetDataIndex`, `SystemData.ActiveWindow.name:match`, `WindowGetDimensions`, `WindowGetId`, `WindowGetParent`, `WindowGetScreenPosition`, `WindowSetGameActionData`
-
-**OnMouseOverEnd** handlers call: `LabelSetTextColor`
+**OnMouseOverEnd** handlers call: `DoesWindowExist`, `LabelGetText`, `LabelSetTextColor`, `WindowGetId`
 
 **OnRButtonUp** handlers call: `SystemData.MouseOverWindow.name:match`, `WindowGetId`
 
-**OnMouseOver** handlers call: `CreateWindow`, `LabelSetText`, `LabelSetTextColor`, `ListBoxGetDataIndex`, `SystemData.ActiveWindow.name:match`, `WindowGetDimensions`, `WindowGetId`, `WindowGetParent`, `WindowGetScreenPosition`, `WindowSetGameActionData`
-
-**OnLButtonUp** handlers call: `WindowGetId`, `WindowGetParent`, `WindowSetGameActionData`, `WindowSetShowing`
-
-**OnRButtonUp** handlers call: `SystemData.MouseOverWindow.name:match`, `WindowGetId`
+**OnHyperLinkRButtonUp** handlers call: `ButtonSetPressedFlag`, `ComboBoxSetSelectedMenuItem`, `SliderBarSetCurrentPosition`, `TextEditBoxSetText`, `WindowGetId`, `WindowSetMovable`, `WindowSetShowing`
 
 **OnHyperLinkLButtonUp** handlers call: `WindowSetShowing`
 
-**OnMouseOverEnd** handlers call: `LabelSetTextColor`
-
-**OnLButtonDown** handlers call: `SystemData.ActiveWindow.name:match`
+**OnLButtonDown** handlers call: `LabelSetText`, `SystemData.ActiveWindow.name:match`
 
 ## Common Inherits
 
-- Aggro_Label_Template
 - Aura_Default_Label_SmallFont
 - ClosetGoblinTalismanLabel
 - DefaultWindowSmallText
 - DefaultWindowText
+- EA_CheckButtonLabel
 - EA_Label_DefaultText
 - EA_Label_DefaultText_Small
 - EA_Settings_ItemTitle
-- EA_Settings_SectionTitle
-- Shinies_Default_Label_ClearSmallFont
-- TChatLabel
-- TRollLabel
+- GesLabelTemplate
+- HGG_ItemLabelTemplate
+- Small_Label
+- TOKText
 
 ## Common Parent Elements
 
-- [Windows](element_Windows.md) — 1243× (HIGH)
+- [Windows](element_Windows.md) — 4814× (HIGH)
 - [Window](element_Window.md) — 15× (HIGH)
 
 ## Common Structural Child Elements
 
-- [Anchors](element_Anchors.md) — 1238× (HIGH)
-- [Size](element_Size.md) — 1168× (HIGH)
-- [Color](element_Color.md) — 375× (HIGH)
-- [EventHandlers](element_EventHandlers.md) — 95× (HIGH)
-- [Text](element_Text.md) — 60× (HIGH)
-- [TintColor](element_TintColor.md) — 14× (HIGH)
-- [Windows](element_Windows.md) — 1× (LOW)
+- [Anchors](element_Anchors.md) — 4631× (HIGH)
+- [Size](element_Size.md) — 4173× (HIGH)
+- [Color](element_Color.md) — 1898× (HIGH)
+- [EventHandlers](element_EventHandlers.md) — 330× (HIGH)
+- [Text](element_Text.md) — 69× (HIGH)
+- [TintColor](element_TintColor.md) — 30× (HIGH)
+- [Windows](element_Windows.md) — 14× (HIGH)
+- [Anchor](element_Anchor.md) — 2× (LOW)
+- [Sounds](element_Sounds.md) — 1× (LOW)
+- [color](element_color.md) — 1× (LOW)
 
 ## Common Template Bases
 
 - Aggro_Label_Template
+- AlertTextLine
+- AuctionWindowControlLabel
+- AuctionWindowListLabel
 - Aura_CheckButtonLabel
 - Aura_Default_Label
 - Aura_Default_Label_SmallFont
+- BlackBookWindow_EntryRowText
 - ClosetGoblinTalismanLabel
+- CraftingWillardLabelC
+- CrusherDefaultLabelSmallFont
 - DefaultWindowSmallText
 - DefaultWindowSubTitle
 - DefaultWindowText
+- Default_Label
+- EA_CheckButtonLabel
+- EA_Label_ChatText
 - EA_Label_DefaultSubHeading
 - EA_Label_DefaultText
 - EA_Label_DefaultText_Small
+- EA_Label_SocialListItem
 - EA_Settings_ItemTitle
 - EA_Settings_SectionTitle
+- EA_Template_AutoRollRarityHeader
+- EA_Template_AutoRollTitle
+- EA_Template_OpenParty_Label
+- EA_Template_OpenParty_Label_Small
+- EA_Window_HelpDescriptionTemplate
+- GDesLabel_Template
+- GesLabelTemplate
+- HGG_ItemLabelTemplate
+- HGG_SubHeadingTemplate
+- HG_HealGridUnitLabelTemplate
+- HopperDefaultLabelSmallFont
+- IraConfigHeading
+- IraConfigLabel
+- LibAddonButtonManagerWindowNavigateButton1
+- MailRowTextTemplate
+- MapMonsterEditorWindowHeaderDefault
+- MapMonsterEditorWindowLabelDefault
+- MapMonsterPinTypeEditorWindowHeaderDefault
+- MapMonsterPinTypeEditorWindowLabelDefault
+- MarkBuffSetupWindowGroupLabel1
+- MiracleGrow2Label
+- ModDetailsLabelDef
+- ModDetailsTextDef
+- MotionDefaultLabelSmallFont
+- PieTrackerLabelTemplate
+- PieTrackerRowTextTemplate
+- PureCheckButtonLabel
+- PureDefaultLabelSmallFont
+- RMet_SubHeadingTemplate
+- Raid_Label_Template
+- Raid_Label_Template2
+- ResHelp_Label_Template
+- ResLabelTemplate
+- SendMailHeaderTemplate
 - Shinies_Default_Label
 - Shinies_Default_Label_ClearLargeFont
 - Shinies_Default_Label_ClearMediumFont
 - Shinies_Default_Label_ClearSmallFont
+- SiegeChatChannelLabelTemplate
+- Small_Label
+- SocialWindowOptionsHeaderTemplate
+- SocialWindowTabFriendsHeaderTemplate
+- SocialWindowTabSearchHeaderTemplate
+- SpamBayesTemplateBText
+- SpamBayesTemplateButtonSeparator
+- SpamBayesTemplateHelpTextC1
+- SpamBayesTemplateHelpTextC2
+- TAtlasLabel
 - TChatLabel
+- TOKHeadingSmall
+- TOKSubHeading
 - TOKText
+- TOKTextHuge
+- TOKTextItalic
+- TOKTextLarge
+- TOKTextSmall
+- TOKTitleLarge
+- TOKTitleMedium
+- TOKTitleSmall
 - TRollLabel
+- TaxPayerLabelTemplate
+- TaxPayerRowTextTemplate
+- TooltipItemTitle
+- UI_KwestorTrackerQuestNameTemplate
+- WARCommanderConfigWindowHeaderDefault
+- WARCommanderConfigWindowLabelDefault
+- WCDBDefaultLabelSmallFont
+- WCDPDefaultLabelSmallFont
+- WTesLabelTemplate
+- zMM_Default_CraftingLabel
+- zMM_Default_RarityLabel
+- zMailModOptionsHeader
+- zMailModOptionsLabel
+- zMailModOptionsListLabel
+- zMailModOptionsLongLabel
+- zMailModOptionsShortLabel
+- zMailModOptionsSubheader
 
 
 > **Note**: This element type commonly acts as a template base.
-
-## Typical XML Structure
-
-```xml
-<Label autoresize="true" font="font_clear_large_bold" handleinput="false" ignoreFormattingTags="true" layer="default" maxchars="32" name="..." sticky="false" textalign="left" wordwrap="true">
-  <Size/>
-  <Windows/>
-</Label>
-```
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `textalign` | optional | 77% | left, center, leftcenter, right, ... |
-| `font` | optional | 73% | font_clear_small_bold, font_default_text, font_clear_medium_bold, font_default_text_large, ... |
-| `inherits` | optional | 29% | EA_Label_DefaultText, DefaultWindowText, TOKText, Aggro_Label_Template, ... |
-| `handleinput` | optional | 29% | false, true |
-| `warnOnTextCropped` | optional | 28% | false |
-| `autoresize` | optional | 25% | true, false |
-| `maxchars` | optional | 22% | 64, 128, 80, 256, ... |
-| `wordwrap` | optional | 19% | false, true |
-| `layer` | optional | 15% | secondary, popup, overlay, default, ... |
-| `popable` | optional | 10% | false |
-| `skipinput` | optional | 5% | true |
-| `textAutoFitMinScale` | optional | 4% | 0.3 |
-| `autoresizewidth` | optional | 3% | true, false |
+| `textalign` | **required** | 82% | center, left, leftcenter, right, ... |
+| `font` | optional | 66% | font_heading_huge, font_default_text, font_clear_small_bold, font_clear_medium_bold, ... |
+| `inherits` | optional | 40% | EA_Label_DefaultText, DefaultWindowText, TOKText, Aggro_Label_Template, ... |
+| `handleinput` | optional | 36% | false, true |
+| `autoresize` | optional | 34% | true, false, center |
+| `layer` | optional | 28% | popup, default, secondary, overlay, ... |
+| `popable` | optional | 19% | false, true |
+| `wordwrap` | optional | 17% | false, true |
+| `maxchars` | optional | 16% | 5, 256, 15, 12, ... |
+| `warnOnTextCropped` | optional | 13% | false |
+| `autoresizewidth` | optional | 4% | true, false |
+| `textAutoFitMinScale` | optional | 3% | 0.3, 0.7, 0.5, .75, ... |
+| `skipinput` | optional | 1% | true, false |
 | `sticky` | optional | 1% | true, false |
-| `alpha` | optional | 1% | 1, 0 |
-| `show` | optional | 1% | false |
-| `ellipsisOnCrop` | optional | 0% | true |
+| `alpha` | optional | 0% | 1, 0.8, 0.75, 0, ... |
+| `id` | optional | 0% | 1, 2, 3, 4, ... |
+| `hanldeinput` | optional | 0% | false |
+| `handlinput` | optional | 0% | false |
+| `show` | optional | 0% | false |
 | `autoresizeheight` | optional | 0% | true |
-| `text` | optional | 0% |  |
+| `ellipsisOnCrop` | optional | 0% | true |
+| `text` | optional | 0% | Tweaks content goes here. |
+| `savesettings` | optional | 0% | true, false |
 | `autosize` | optional | 0% | true |
+| `virtual` | optional | 0% | true |
 | `fontscale` | optional | 0% | 0.5 |
+| `handleInput` | optional | 0% | true |
+| `ignoreFormattingTags` | optional | 0% | true |
+| `linespacing` | optional | 0% | 13, 12 |
 | `scale` | optional | 0% | 0.5 |
 | `showing` | optional | 0% | false |
+| `textautofitminscale` | optional | 0% | 0.5 |
+| `visible` | optional | 0% | true, false |
+| `FontAlpha` | optional | 0% | 0 |
+| `align` | optional | 0% | right |
+| `autoscale` | optional | 0% | true |
 | `background` | optional | 0% | EA_FullResizeImage_TanBorder |
-| `id` | optional | 0% | 1 |
-| `ignoreFormattingTags` | optional | 0% | true |
+| `maxlines` | optional | 0% | 2 |
+| `mouseovertext` | optional | 0% | false |
+| `movable` | optional | 0% | false |
+| `resizewidth` | optional | 0% | true |
+| `textAlign` | optional | 0% | center |
+| `textUsesMarkup` | optional | 0% | true |
 ## Structural Sub-Elements
 
 ### [Anchors](element_Anchors.md)
 
-Observed 1238 times as an unnamed child.
+Observed 4631 times as an unnamed child.
 
 ### [Size](element_Size.md)
 
-Observed 1168 times as an unnamed child.
+Observed 4173 times as an unnamed child.
 
 ### [Color](element_Color.md)
 
-Observed 375 times as an unnamed child.
+Observed 1898 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `b` | **required** | 73, 225, 255, 55 |
-| `g` | **required** | 218, 255, 155, 55 |
-| `r` | **required** | 255, 155, 245, 175 |
-| `a` | optional | 255, 0, 0.5, 0.8 |
+| `b` | **required** | 255, 0, 73, 225 |
+| `g` | **required** | 25, 253, 218, 255 |
+| `r` | **required** | 255, 253, 155, 245 |
+| `a` | optional | 255, 0.8, 0, 128 |
 ### [EventHandlers](element_EventHandlers.md)
 
-Observed 95 times as an unnamed child.
+Observed 330 times as an unnamed child.
 
 ### [Text](element_Text.md)
 
-Observed 60 times as an unnamed child.
+Observed 69 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `text` | **required** | Killer Settings, Changes apply immediately. Zone K/D history uses 0 for unlimited saved zone leaderboards., Display, Personal |
+| `text` | optional | Killer Settings, Changes apply immediately. Zone K/D history uses 0 for unlimited saved zone leaderboards., Display, Personal |
 | `alignment` | optional | left |
 ### [TintColor](element_TintColor.md)
 
-Observed 14 times as an unnamed child.
+Observed 30 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
 | `b` | **required** | 0, 110, 130, 50 |
 | `g` | **required** | 0, 200, 185, 130 |
 | `r` | **required** | 255, 0, 180, 200 |
-| `a` | optional | 30, 255, 0.5, 200 |
+| `a` | optional | 30, 255, 0.8, 175 |
 ### [Windows](element_Windows.md)
+
+Observed 14 times as an unnamed child.
+
+### [Anchor](element_Anchor.md)
+
+Observed 2 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `point` | **required** | center, topleft, topright, bottomright |
+| `relativePoint` | **required** | center, topleft, topright, bottomright |
+| `relativeTo` | **required** | Root, $parent, $parentSliderLabel, $parentSliderValueLabel |
+| `relativeto` | optional | $parentTitle, $parentPrint, $parentAlert, $parentHyperlink |
+| `layer` | optional | secondary, overlay |
+| `parent` | optional | Root, $parent |
+| `relateiveTo` | optional | $parentDevPadCode, $parentObjectEditBox |
+| `textalign` | optional | center |
+| `handleinput` | optional | false |
+| `relative` | optional | $parent |
+| `xOffset` | optional | 0 |
+| `yOffset` | optional | 0 |
+| `input` | optional | numbers |
+| `realtivePoint` | optional | center |
+| `realtiveTo` | optional | $parentBackground |
+### [Sounds](element_Sounds.md)
 
 Observed 1 times as an unnamed child.
 
+### [color](element_color.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `a` | **required** | 255 |
+| `b` | **required** | 240 |
+| `g` | **required** | 240 |
+| `r` | **required** | 240 |
 ## Recursive Hierarchy
 
 - Root: [Label](element_Label.md)
-- [Anchors](element_Anchors.md) (structural, 1238×, HIGH)
-  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+- [Anchor](element_Anchor.md) (structural, 2×, LOW)
+  - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+  - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+    - (cycle)
+- [Anchors](element_Anchors.md) (structural, 4631×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
       - (cycle)
-- [Color](element_Color.md) (structural, 375×, HIGH)
-- [EventHandlers](element_EventHandlers.md) (structural, 95×, HIGH)
-  - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-- [Size](element_Size.md) (structural, 1168×, HIGH)
-  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-- [Text](element_Text.md) (structural, 60×, HIGH)
-- [TintColor](element_TintColor.md) (structural, 14×, HIGH)
-- [Windows](element_Windows.md) (structural, 1×, LOW)
-  - [AnimatedImage](element_AnimatedImage.md) (named, 12×, HIGH)
-    - [Anchors](element_Anchors.md) (structural, 12×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+- [Color](element_Color.md) (structural, 1898×, HIGH)
+- [EventHandlers](element_EventHandlers.md) (structural, 330×, HIGH)
+  - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+- [Size](element_Size.md) (structural, 4173×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+- [Sounds](element_Sounds.md) (structural, 1×, LOW)
+  - [Sound](element_Sound.md) (structural, 20×, HIGH)
+- [Text](element_Text.md) (structural, 69×, HIGH)
+- [TintColor](element_TintColor.md) (structural, 30×, HIGH)
+- [Windows](element_Windows.md) (structural, 14×, HIGH)
+  - [ActionButtonGroup](element_ActionButtonGroup.md) (named, 3×, MEDIUM)
+    - [Anchors](element_Anchors.md) (structural, 3×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
           - (cycle)
-    - [AnimFrames](element_AnimFrames.md) (structural, 2×, MEDIUM)
-      - [AnimFrame](element_AnimFrame.md) (structural, 14×, HIGH)
-    - [Size](element_Size.md) (structural, 9×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
+    - [EventHandlers](element_EventHandlers.md) (structural, 1×, LOW)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+  - [AnimatedImage](element_AnimatedImage.md) (named, 39×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 38×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [AnimFrames](element_AnimFrames.md) (structural, 19×, HIGH)
+      - [AnimFrame](element_AnimFrame.md) (structural, 222×, HIGH)
+    - [Size](element_Size.md) (structural, 32×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [TexDims](element_TexDims.md) (structural, 1×, LOW)
     - [Windows](element_Windows.md) (structural, 2×, MEDIUM)
       - (cycle)
-  - [Button](element_Button.md) (named, 664×, HIGH)
+  - [Button](element_Button.md) (named, 2407×, HIGH)
     - [Anchor](element_Anchor.md) (structural, 2×, LOW)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-      - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+      - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
         - (cycle)
-    - [Anchors](element_Anchors.md) (structural, 556×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 1954×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
           - (cycle)
     - [AnimatedImages](element_AnimatedImages.md) (structural, 1×, LOW)
       - [Normal](element_Normal.md) (structural, 1×, HIGH)
       - [NormalHighlit](element_NormalHighlit.md) (structural, 1×, HIGH)
-    - [EventHandlers](element_EventHandlers.md) (structural, 418×, HIGH)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-    - [OverlayOffset](element_OverlayOffset.md) (structural, 7×, MEDIUM)
-    - [OverlaySize](element_OverlaySize.md) (structural, 7×, MEDIUM)
-    - [OverlayTexCoords](element_OverlayTexCoords.md) (structural, 7×, MEDIUM)
-      - [Disabled](element_Disabled.md) (structural, 7×, HIGH)
-      - [Normal](element_Normal.md) (structural, 7×, HIGH)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, HIGH)
-      - [Pressed](element_Pressed.md) (structural, 7×, HIGH)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 7×, HIGH)
-    - [ResizeImages](element_ResizeImages.md) (structural, 14×, HIGH)
-      - [Disabled](element_Disabled.md) (structural, 8×, HIGH)
-      - [Normal](element_Normal.md) (structural, 10×, HIGH)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 14×, HIGH)
-      - [Pressed](element_Pressed.md) (structural, 10×, HIGH)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 9×, HIGH)
-    - [Size](element_Size.md) (structural, 259×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-    - [TexCoords](element_TexCoords.md) (structural, 7×, MEDIUM)
-      - [BottomCenter](element_BottomCenter.md) (structural, 9×, MEDIUM)
-      - [BottomLeft](element_BottomLeft.md) (structural, 9×, MEDIUM)
-      - [BottomRight](element_BottomRight.md) (structural, 9×, MEDIUM)
-      - [Disabled](element_Disabled.md) (structural, 7×, MEDIUM)
-      - [Left](element_Left.md) (structural, 7×, MEDIUM)
-      - [Middle](element_Middle.md) (structural, 9×, MEDIUM)
-      - [MiddleCenter](element_MiddleCenter.md) (structural, 9×, MEDIUM)
-      - [MiddleLeft](element_MiddleLeft.md) (structural, 9×, MEDIUM)
-      - [MiddleRight](element_MiddleRight.md) (structural, 9×, MEDIUM)
-      - [Normal](element_Normal.md) (structural, 7×, MEDIUM)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, MEDIUM)
-      - [Pressed](element_Pressed.md) (structural, 7×, MEDIUM)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 1×, LOW)
-      - [Right](element_Right.md) (structural, 7×, MEDIUM)
-      - [TopCenter](element_TopCenter.md) (structural, 9×, MEDIUM)
-      - [TopLeft](element_TopLeft.md) (structural, 9×, MEDIUM)
-      - [TopRight](element_TopRight.md) (structural, 9×, MEDIUM)
-    - [TexDims](element_TexDims.md) (structural, 4×, MEDIUM)
-    - [TexSlices](element_TexSlices.md) (structural, 22×, HIGH)
-      - [BottomCenter](element_BottomCenter.md) (structural, 5×, MEDIUM)
-      - [BottomLeft](element_BottomLeft.md) (structural, 5×, MEDIUM)
-      - [BottomRight](element_BottomRight.md) (structural, 5×, MEDIUM)
-      - [Disabled](element_Disabled.md) (structural, 11×, HIGH)
-      - [DisabledPressed](element_DisabledPressed.md) (structural, 11×, HIGH)
-      - [MiddleCenter](element_MiddleCenter.md) (structural, 5×, MEDIUM)
-      - [MiddleLeft](element_MiddleLeft.md) (structural, 5×, MEDIUM)
-      - [MiddleRight](element_MiddleRight.md) (structural, 5×, MEDIUM)
-      - [Normal](element_Normal.md) (structural, 22×, HIGH)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 16×, HIGH)
-      - [Pressed](element_Pressed.md) (structural, 16×, HIGH)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 16×, HIGH)
-      - [TopCenter](element_TopCenter.md) (structural, 5×, MEDIUM)
-      - [TopLeft](element_TopLeft.md) (structural, 5×, MEDIUM)
-      - [TopRight](element_TopRight.md) (structural, 5×, MEDIUM)
-    - [TextColors](element_TextColors.md) (structural, 16×, HIGH)
-      - [Disabled](element_Disabled.md) (structural, 16×, HIGH)
-      - [DisabledPressed](element_DisabledPressed.md) (structural, 4×, MEDIUM)
-      - [Normal](element_Normal.md) (structural, 16×, HIGH)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 16×, HIGH)
-      - [Pressed](element_Pressed.md) (structural, 16×, HIGH)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 16×, HIGH)
-    - [TextOffset](element_TextOffset.md) (structural, 18×, HIGH)
-    - [Windows](element_Windows.md) (structural, 18×, HIGH)
+    - [Color](element_Color.md) (structural, 27×, HIGH)
+    - [EventHandler](element_EventHandler.md) (structural, 1×, LOW)
+    - [EventHandlers](element_EventHandlers.md) (structural, 1540×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Eventhandlers](element_Eventhandlers.md) (structural, 1×, LOW)
+      - [EventHandler](element_EventHandler.md) (structural, 2×, HIGH)
+    - [OverlayOffset](element_OverlayOffset.md) (structural, 31×, HIGH)
+    - [OverlaySize](element_OverlaySize.md) (structural, 27×, HIGH)
+    - [OverlayTexCoords](element_OverlayTexCoords.md) (structural, 24×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 20×, HIGH)
+      - [Normal](element_Normal.md) (structural, 24×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 24×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 24×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 24×, HIGH)
+    - [OverlayTexSlices](element_OverlayTexSlices.md) (structural, 2×, LOW)
+      - [Normal](element_Normal.md) (structural, 2×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 2×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 2×, HIGH)
+    - [ResizeImages](element_ResizeImages.md) (structural, 41×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 23×, HIGH)
+      - [Normal](element_Normal.md) (structural, 25×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 41×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 26×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 27×, HIGH)
+    - [Size](element_Size.md) (structural, 1023×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Sounds](element_Sounds.md) (structural, 9×, MEDIUM)
+      - [Sound](element_Sound.md) (structural, 20×, HIGH)
+    - [TexCoords](element_TexCoords.md) (structural, 47×, HIGH)
+      - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+      - [BottomCenter](element_BottomCenter.md) (structural, 19×, HIGH)
+      - [BottomLeft](element_BottomLeft.md) (structural, 19×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 19×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 43×, HIGH)
+      - [Left](element_Left.md) (structural, 33×, HIGH)
+      - [Middle](element_Middle.md) (structural, 41×, HIGH)
+      - [MiddleCenter](element_MiddleCenter.md) (structural, 19×, HIGH)
+      - [MiddleLeft](element_MiddleLeft.md) (structural, 19×, HIGH)
+      - [MiddleRight](element_MiddleRight.md) (structural, 19×, HIGH)
+      - [Normal](element_Normal.md) (structural, 47×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 43×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 46×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 10×, HIGH)
+      - [Right](element_Right.md) (structural, 33×, HIGH)
+      - [Top](element_Top.md) (structural, 2×, LOW)
+      - [TopCenter](element_TopCenter.md) (structural, 19×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 19×, HIGH)
+      - [TopRight](element_TopRight.md) (structural, 19×, HIGH)
+    - [TexDims](element_TexDims.md) (structural, 18×, HIGH)
+    - [TexSlices](element_TexSlices.md) (structural, 129×, HIGH)
+      - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+      - [BottomCenter](element_BottomCenter.md) (structural, 11×, HIGH)
+      - [BottomLeft](element_BottomLeft.md) (structural, 11×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 11×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 53×, HIGH)
+      - [DisabledPressed](element_DisabledPressed.md) (structural, 36×, HIGH)
+      - [Left](element_Left.md) (structural, 3×, MEDIUM)
+      - [Middle](element_Middle.md) (structural, 10×, HIGH)
+      - [MiddleCenter](element_MiddleCenter.md) (structural, 11×, HIGH)
+      - [MiddleLeft](element_MiddleLeft.md) (structural, 11×, HIGH)
+      - [MiddleRight](element_MiddleRight.md) (structural, 11×, HIGH)
+      - [Normal](element_Normal.md) (structural, 120×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 104×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 117×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 95×, HIGH)
+      - [Right](element_Right.md) (structural, 3×, MEDIUM)
+      - [Top](element_Top.md) (structural, 2×, LOW)
+      - [TopCenter](element_TopCenter.md) (structural, 11×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 11×, HIGH)
+      - [TopRight](element_TopRight.md) (structural, 11×, HIGH)
+    - [Text](element_Text.md) (structural, 3×, MEDIUM)
+    - [TextColors](element_TextColors.md) (structural, 85×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 76×, HIGH)
+      - [DisabledPressed](element_DisabledPressed.md) (structural, 26×, HIGH)
+      - [Normal](element_Normal.md) (structural, 79×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 83×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 76×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 83×, HIGH)
+    - [TextOffset](element_TextOffset.md) (structural, 75×, HIGH)
+    - [TintColor](element_TintColor.md) (structural, 12×, HIGH)
+    - [Windows](element_Windows.md) (structural, 131×, HIGH)
       - (cycle)
-  - [CircleImage](element_CircleImage.md) (named, 23×, HIGH)
-    - [Anchors](element_Anchors.md) (structural, 22×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+  - [CircleImage](element_CircleImage.md) (named, 56×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 54×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
           - (cycle)
-    - [Size](element_Size.md) (structural, 22×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-    - [TexCoords](element_TexCoords.md) (structural, 20×, HIGH)
-      - [BottomCenter](element_BottomCenter.md) (structural, 9×, MEDIUM)
-      - [BottomLeft](element_BottomLeft.md) (structural, 9×, MEDIUM)
-      - [BottomRight](element_BottomRight.md) (structural, 9×, MEDIUM)
-      - [Disabled](element_Disabled.md) (structural, 7×, MEDIUM)
-      - [Left](element_Left.md) (structural, 7×, MEDIUM)
-      - [Middle](element_Middle.md) (structural, 9×, MEDIUM)
-      - [MiddleCenter](element_MiddleCenter.md) (structural, 9×, MEDIUM)
-      - [MiddleLeft](element_MiddleLeft.md) (structural, 9×, MEDIUM)
-      - [MiddleRight](element_MiddleRight.md) (structural, 9×, MEDIUM)
-      - [Normal](element_Normal.md) (structural, 7×, MEDIUM)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, MEDIUM)
-      - [Pressed](element_Pressed.md) (structural, 7×, MEDIUM)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 1×, LOW)
-      - [Right](element_Right.md) (structural, 7×, MEDIUM)
-      - [TopCenter](element_TopCenter.md) (structural, 9×, MEDIUM)
-      - [TopLeft](element_TopLeft.md) (structural, 9×, MEDIUM)
-      - [TopRight](element_TopRight.md) (structural, 9×, MEDIUM)
-    - [TexDims](element_TexDims.md) (structural, 2×, MEDIUM)
-    - [TintColor](element_TintColor.md) (structural, 6×, HIGH)
-    - [Windows](element_Windows.md) (structural, 1×, LOW)
+    - [EventHandlers](element_EventHandlers.md) (structural, 1×, LOW)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Size](element_Size.md) (structural, 51×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [TexCoords](element_TexCoords.md) (structural, 37×, HIGH)
+      - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+      - [BottomCenter](element_BottomCenter.md) (structural, 19×, HIGH)
+      - [BottomLeft](element_BottomLeft.md) (structural, 19×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 19×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 43×, HIGH)
+      - [Left](element_Left.md) (structural, 33×, HIGH)
+      - [Middle](element_Middle.md) (structural, 41×, HIGH)
+      - [MiddleCenter](element_MiddleCenter.md) (structural, 19×, HIGH)
+      - [MiddleLeft](element_MiddleLeft.md) (structural, 19×, HIGH)
+      - [MiddleRight](element_MiddleRight.md) (structural, 19×, HIGH)
+      - [Normal](element_Normal.md) (structural, 47×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 43×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 46×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 10×, HIGH)
+      - [Right](element_Right.md) (structural, 33×, HIGH)
+      - [Top](element_Top.md) (structural, 2×, LOW)
+      - [TopCenter](element_TopCenter.md) (structural, 19×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 19×, HIGH)
+      - [TopRight](element_TopRight.md) (structural, 19×, HIGH)
+    - [TexDims](element_TexDims.md) (structural, 11×, HIGH)
+    - [TintColor](element_TintColor.md) (structural, 15×, HIGH)
+    - [Windows](element_Windows.md) (structural, 2×, LOW)
       - (cycle)
   - [ColorPicker](element_ColorPicker.md) (named, 1×, LOW)
     - [Anchors](element_Anchors.md) (structural, 1×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
           - (cycle)
     - [ColorSize](element_ColorSize.md) (structural, 1×, HIGH)
     - [ColorSpacing](element_ColorSpacing.md) (structural, 1×, HIGH)
     - [ColorTexCoords](element_ColorTexCoords.md) (structural, 1×, HIGH)
     - [ColorTexDims](element_ColorTexDims.md) (structural, 1×, HIGH)
     - [EventHandlers](element_EventHandlers.md) (structural, 1×, HIGH)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
     - [Size](element_Size.md) (structural, 1×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-  - [ComboBox](element_ComboBox.md) (named, 233×, HIGH)
-    - [Anchors](element_Anchors.md) (structural, 228×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+  - [ComboBox](element_ComboBox.md) (named, 689×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 643×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
           - (cycle)
-    - [EventHandlers](element_EventHandlers.md) (structural, 179×, HIGH)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-    - [MenuButtonOffset](element_MenuButtonOffset.md) (structural, 7×, MEDIUM)
-    - [Size](element_Size.md) (structural, 52×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-  - [CooldownDisplay](element_CooldownDisplay.md) (named, 1×, LOW)
-    - [Anchors](element_Anchors.md) (structural, 1×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+    - [EventHandlers](element_EventHandlers.md) (structural, 534×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [MenuButtonOffset](element_MenuButtonOffset.md) (structural, 33×, HIGH)
+    - [OverlayOffset](element_OverlayOffset.md) (structural, 4×, MEDIUM)
+    - [Size](element_Size.md) (structural, 186×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [TextOffset](element_TextOffset.md) (structural, 1×, LOW)
+  - [CooldownDisplay](element_CooldownDisplay.md) (named, 10×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 10×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
           - (cycle)
-    - [Size](element_Size.md) (structural, 1×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-  - [DynamicImage](element_DynamicImage.md) (named, 237×, HIGH)
-    - [Anchor](element_Anchor.md) (structural, 1×, LOW)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-      - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
-        - (cycle)
-    - [Anchors](element_Anchors.md) (structural, 216×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
-          - (cycle)
-    - [Color](element_Color.md) (structural, 1×, LOW)
-    - [EventHandlers](element_EventHandlers.md) (structural, 40×, HIGH)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-    - [Size](element_Size.md) (structural, 190×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-    - [TexCoords](element_TexCoords.md) (structural, 14×, HIGH)
-      - [BottomCenter](element_BottomCenter.md) (structural, 9×, MEDIUM)
-      - [BottomLeft](element_BottomLeft.md) (structural, 9×, MEDIUM)
-      - [BottomRight](element_BottomRight.md) (structural, 9×, MEDIUM)
-      - [Disabled](element_Disabled.md) (structural, 7×, MEDIUM)
-      - [Left](element_Left.md) (structural, 7×, MEDIUM)
-      - [Middle](element_Middle.md) (structural, 9×, MEDIUM)
-      - [MiddleCenter](element_MiddleCenter.md) (structural, 9×, MEDIUM)
-      - [MiddleLeft](element_MiddleLeft.md) (structural, 9×, MEDIUM)
-      - [MiddleRight](element_MiddleRight.md) (structural, 9×, MEDIUM)
-      - [Normal](element_Normal.md) (structural, 7×, MEDIUM)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, MEDIUM)
-      - [Pressed](element_Pressed.md) (structural, 7×, MEDIUM)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 1×, LOW)
-      - [Right](element_Right.md) (structural, 7×, MEDIUM)
-      - [TopCenter](element_TopCenter.md) (structural, 9×, MEDIUM)
-      - [TopLeft](element_TopLeft.md) (structural, 9×, MEDIUM)
-      - [TopRight](element_TopRight.md) (structural, 9×, MEDIUM)
-    - [TexDims](element_TexDims.md) (structural, 65×, HIGH)
-    - [TintColor](element_TintColor.md) (structural, 25×, HIGH)
-    - [Windows](element_Windows.md) (structural, 6×, MEDIUM)
+    - [Size](element_Size.md) (structural, 10×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Windows](element_Windows.md) (structural, 4×, MEDIUM)
       - (cycle)
-  - [EditBox](element_EditBox.md) (named, 151×, HIGH)
-    - [Anchors](element_Anchors.md) (structural, 126×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
-          - (cycle)
-    - [EventHandlers](element_EventHandlers.md) (structural, 102×, HIGH)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-    - [Size](element_Size.md) (structural, 127×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-    - [TextOffset](element_TextOffset.md) (structural, 15×, HIGH)
-  - [FullResizeImage](element_FullResizeImage.md) (named, 156×, HIGH)
-    - [Anchors](element_Anchors.md) (structural, 139×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+  - [DynamicImage](element_DynamicImage.md) (named, 1288×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 1×, LOW)
+      - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+      - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+        - (cycle)
+    - [Anchors](element_Anchors.md) (structural, 1187×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
           - (cycle)
     - [Color](element_Color.md) (structural, 1×, LOW)
-    - [EventHandlers](element_EventHandlers.md) (structural, 1×, LOW)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-    - [Size](element_Size.md) (structural, 35×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-    - [Sizes](element_Sizes.md) (structural, 14×, HIGH)
-      - [BottomRight](element_BottomRight.md) (structural, 14×, HIGH)
-      - [Middle](element_Middle.md) (structural, 14×, HIGH)
-      - [TopLeft](element_TopLeft.md) (structural, 14×, HIGH)
-    - [TexCoords](element_TexCoords.md) (structural, 9×, MEDIUM)
-      - [BottomCenter](element_BottomCenter.md) (structural, 9×, MEDIUM)
-      - [BottomLeft](element_BottomLeft.md) (structural, 9×, MEDIUM)
-      - [BottomRight](element_BottomRight.md) (structural, 9×, MEDIUM)
-      - [Disabled](element_Disabled.md) (structural, 7×, MEDIUM)
-      - [Left](element_Left.md) (structural, 7×, MEDIUM)
-      - [Middle](element_Middle.md) (structural, 9×, MEDIUM)
-      - [MiddleCenter](element_MiddleCenter.md) (structural, 9×, MEDIUM)
-      - [MiddleLeft](element_MiddleLeft.md) (structural, 9×, MEDIUM)
-      - [MiddleRight](element_MiddleRight.md) (structural, 9×, MEDIUM)
-      - [Normal](element_Normal.md) (structural, 7×, MEDIUM)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, MEDIUM)
-      - [Pressed](element_Pressed.md) (structural, 7×, MEDIUM)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 1×, LOW)
-      - [Right](element_Right.md) (structural, 7×, MEDIUM)
-      - [TopCenter](element_TopCenter.md) (structural, 9×, MEDIUM)
-      - [TopLeft](element_TopLeft.md) (structural, 9×, MEDIUM)
-      - [TopRight](element_TopRight.md) (structural, 9×, MEDIUM)
+    - [EventHandlers](element_EventHandlers.md) (structural, 155×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Size](element_Size.md) (structural, 965×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Sounds](element_Sounds.md) (structural, 1×, LOW)
+      - [Sound](element_Sound.md) (structural, 20×, HIGH)
+    - [TexCoords](element_TexCoords.md) (structural, 76×, HIGH)
+      - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+      - [BottomCenter](element_BottomCenter.md) (structural, 19×, HIGH)
+      - [BottomLeft](element_BottomLeft.md) (structural, 19×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 19×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 43×, HIGH)
+      - [Left](element_Left.md) (structural, 33×, HIGH)
+      - [Middle](element_Middle.md) (structural, 41×, HIGH)
+      - [MiddleCenter](element_MiddleCenter.md) (structural, 19×, HIGH)
+      - [MiddleLeft](element_MiddleLeft.md) (structural, 19×, HIGH)
+      - [MiddleRight](element_MiddleRight.md) (structural, 19×, HIGH)
+      - [Normal](element_Normal.md) (structural, 47×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 43×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 46×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 10×, HIGH)
+      - [Right](element_Right.md) (structural, 33×, HIGH)
+      - [Top](element_Top.md) (structural, 2×, LOW)
+      - [TopCenter](element_TopCenter.md) (structural, 19×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 19×, HIGH)
+      - [TopRight](element_TopRight.md) (structural, 19×, HIGH)
+    - [TexDims](element_TexDims.md) (structural, 156×, HIGH)
+    - [TintColor](element_TintColor.md) (structural, 374×, HIGH)
+    - [Windows](element_Windows.md) (structural, 15×, HIGH)
+      - (cycle)
+  - [EditBox](element_EditBox.md) (named, 416×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 380×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [Color](element_Color.md) (structural, 2×, LOW)
+    - [EventHandlers](element_EventHandlers.md) (structural, 269×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Size](element_Size.md) (structural, 355×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [TextOffset](element_TextOffset.md) (structural, 63×, HIGH)
+    - [Windows](element_Windows.md) (structural, 3×, MEDIUM)
+      - (cycle)
+  - [FullResizeImage](element_FullResizeImage.md) (named, 450×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 2×, LOW)
+      - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+      - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+        - (cycle)
+    - [Anchors](element_Anchors.md) (structural, 409×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [Color](element_Color.md) (structural, 2×, LOW)
+    - [EventHandlers](element_EventHandlers.md) (structural, 5×, MEDIUM)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Size](element_Size.md) (structural, 113×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Sizes](element_Sizes.md) (structural, 30×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 30×, HIGH)
+      - [Middle](element_Middle.md) (structural, 30×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 30×, HIGH)
+    - [TexCoords](element_TexCoords.md) (structural, 19×, HIGH)
+      - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+      - [BottomCenter](element_BottomCenter.md) (structural, 19×, HIGH)
+      - [BottomLeft](element_BottomLeft.md) (structural, 19×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 19×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 43×, HIGH)
+      - [Left](element_Left.md) (structural, 33×, HIGH)
+      - [Middle](element_Middle.md) (structural, 41×, HIGH)
+      - [MiddleCenter](element_MiddleCenter.md) (structural, 19×, HIGH)
+      - [MiddleLeft](element_MiddleLeft.md) (structural, 19×, HIGH)
+      - [MiddleRight](element_MiddleRight.md) (structural, 19×, HIGH)
+      - [Normal](element_Normal.md) (structural, 47×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 43×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 46×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 10×, HIGH)
+      - [Right](element_Right.md) (structural, 33×, HIGH)
+      - [Top](element_Top.md) (structural, 2×, LOW)
+      - [TopCenter](element_TopCenter.md) (structural, 19×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 19×, HIGH)
+      - [TopRight](element_TopRight.md) (structural, 19×, HIGH)
     - [TexDims](element_TexDims.md) (structural, 3×, MEDIUM)
-    - [TexSlices](element_TexSlices.md) (structural, 5×, MEDIUM)
-      - [BottomCenter](element_BottomCenter.md) (structural, 5×, MEDIUM)
-      - [BottomLeft](element_BottomLeft.md) (structural, 5×, MEDIUM)
-      - [BottomRight](element_BottomRight.md) (structural, 5×, MEDIUM)
-      - [Disabled](element_Disabled.md) (structural, 11×, HIGH)
-      - [DisabledPressed](element_DisabledPressed.md) (structural, 11×, HIGH)
-      - [MiddleCenter](element_MiddleCenter.md) (structural, 5×, MEDIUM)
-      - [MiddleLeft](element_MiddleLeft.md) (structural, 5×, MEDIUM)
-      - [MiddleRight](element_MiddleRight.md) (structural, 5×, MEDIUM)
-      - [Normal](element_Normal.md) (structural, 22×, HIGH)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 16×, HIGH)
-      - [Pressed](element_Pressed.md) (structural, 16×, HIGH)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 16×, HIGH)
-      - [TopCenter](element_TopCenter.md) (structural, 5×, MEDIUM)
-      - [TopLeft](element_TopLeft.md) (structural, 5×, MEDIUM)
-      - [TopRight](element_TopRight.md) (structural, 5×, MEDIUM)
-    - [TintColor](element_TintColor.md) (structural, 28×, HIGH)
+    - [TexSlices](element_TexSlices.md) (structural, 11×, HIGH)
+      - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+      - [BottomCenter](element_BottomCenter.md) (structural, 11×, HIGH)
+      - [BottomLeft](element_BottomLeft.md) (structural, 11×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 11×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 53×, HIGH)
+      - [DisabledPressed](element_DisabledPressed.md) (structural, 36×, HIGH)
+      - [Left](element_Left.md) (structural, 3×, MEDIUM)
+      - [Middle](element_Middle.md) (structural, 10×, HIGH)
+      - [MiddleCenter](element_MiddleCenter.md) (structural, 11×, HIGH)
+      - [MiddleLeft](element_MiddleLeft.md) (structural, 11×, HIGH)
+      - [MiddleRight](element_MiddleRight.md) (structural, 11×, HIGH)
+      - [Normal](element_Normal.md) (structural, 120×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 104×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 117×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 95×, HIGH)
+      - [Right](element_Right.md) (structural, 3×, MEDIUM)
+      - [Top](element_Top.md) (structural, 2×, LOW)
+      - [TopCenter](element_TopCenter.md) (structural, 11×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 11×, HIGH)
+      - [TopRight](element_TopRight.md) (structural, 11×, HIGH)
+    - [TintColor](element_TintColor.md) (structural, 118×, HIGH)
+    - [Windows](element_Windows.md) (structural, 4×, MEDIUM)
+      - (cycle)
+  - [HorizontalResizeImage](element_HorizontalResizeImage.md) (named, 90×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 48×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [Size](element_Size.md) (structural, 49×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Sizes](element_Sizes.md) (structural, 43×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 30×, HIGH)
+      - [Middle](element_Middle.md) (structural, 30×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 30×, HIGH)
+    - [TexCoords](element_TexCoords.md) (structural, 36×, HIGH)
+      - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+      - [BottomCenter](element_BottomCenter.md) (structural, 19×, HIGH)
+      - [BottomLeft](element_BottomLeft.md) (structural, 19×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 19×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 43×, HIGH)
+      - [Left](element_Left.md) (structural, 33×, HIGH)
+      - [Middle](element_Middle.md) (structural, 41×, HIGH)
+      - [MiddleCenter](element_MiddleCenter.md) (structural, 19×, HIGH)
+      - [MiddleLeft](element_MiddleLeft.md) (structural, 19×, HIGH)
+      - [MiddleRight](element_MiddleRight.md) (structural, 19×, HIGH)
+      - [Normal](element_Normal.md) (structural, 47×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 43×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 46×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 10×, HIGH)
+      - [Right](element_Right.md) (structural, 33×, HIGH)
+      - [Top](element_Top.md) (structural, 2×, LOW)
+      - [TopCenter](element_TopCenter.md) (structural, 19×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 19×, HIGH)
+      - [TopRight](element_TopRight.md) (structural, 19×, HIGH)
+    - [TexSlices](element_TexSlices.md) (structural, 7×, MEDIUM)
+      - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+      - [BottomCenter](element_BottomCenter.md) (structural, 11×, HIGH)
+      - [BottomLeft](element_BottomLeft.md) (structural, 11×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 11×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 53×, HIGH)
+      - [DisabledPressed](element_DisabledPressed.md) (structural, 36×, HIGH)
+      - [Left](element_Left.md) (structural, 3×, MEDIUM)
+      - [Middle](element_Middle.md) (structural, 10×, HIGH)
+      - [MiddleCenter](element_MiddleCenter.md) (structural, 11×, HIGH)
+      - [MiddleLeft](element_MiddleLeft.md) (structural, 11×, HIGH)
+      - [MiddleRight](element_MiddleRight.md) (structural, 11×, HIGH)
+      - [Normal](element_Normal.md) (structural, 120×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 104×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 117×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 95×, HIGH)
+      - [Right](element_Right.md) (structural, 3×, MEDIUM)
+      - [Top](element_Top.md) (structural, 2×, LOW)
+      - [TopCenter](element_TopCenter.md) (structural, 11×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 11×, HIGH)
+      - [TopRight](element_TopRight.md) (structural, 11×, HIGH)
+    - [TintColor](element_TintColor.md) (structural, 20×, HIGH)
+    - [Windows](element_Windows.md) (structural, 3×, MEDIUM)
+      - (cycle)
+  - [Label](element_Label.md) (named, 4814×, HIGH)
+    - (cycle)
+  - [ListBox](element_ListBox.md) (named, 113×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 110×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [EventHandlers](element_EventHandlers.md) (structural, 16×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [ListData](element_ListData.md) (structural, 110×, HIGH)
+      - [ListColumns](element_ListColumns.md) (structural, 74×, HIGH)
+        - [ListColumn](element_ListColumn.md) (structural, 192×, HIGH)
+    - [Size](element_Size.md) (structural, 76×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
     - [Windows](element_Windows.md) (structural, 1×, LOW)
       - (cycle)
-  - [HorizontalResizeImage](element_HorizontalResizeImage.md) (named, 19×, HIGH)
-    - [Anchors](element_Anchors.md) (structural, 11×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
-          - (cycle)
-    - [Size](element_Size.md) (structural, 4×, MEDIUM)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-    - [Sizes](element_Sizes.md) (structural, 8×, HIGH)
-      - [BottomRight](element_BottomRight.md) (structural, 14×, HIGH)
-      - [Middle](element_Middle.md) (structural, 14×, HIGH)
-      - [TopLeft](element_TopLeft.md) (structural, 14×, HIGH)
-    - [TexCoords](element_TexCoords.md) (structural, 8×, HIGH)
-      - [BottomCenter](element_BottomCenter.md) (structural, 9×, MEDIUM)
-      - [BottomLeft](element_BottomLeft.md) (structural, 9×, MEDIUM)
-      - [BottomRight](element_BottomRight.md) (structural, 9×, MEDIUM)
-      - [Disabled](element_Disabled.md) (structural, 7×, MEDIUM)
-      - [Left](element_Left.md) (structural, 7×, MEDIUM)
-      - [Middle](element_Middle.md) (structural, 9×, MEDIUM)
-      - [MiddleCenter](element_MiddleCenter.md) (structural, 9×, MEDIUM)
-      - [MiddleLeft](element_MiddleLeft.md) (structural, 9×, MEDIUM)
-      - [MiddleRight](element_MiddleRight.md) (structural, 9×, MEDIUM)
-      - [Normal](element_Normal.md) (structural, 7×, MEDIUM)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, MEDIUM)
-      - [Pressed](element_Pressed.md) (structural, 7×, MEDIUM)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 1×, LOW)
-      - [Right](element_Right.md) (structural, 7×, MEDIUM)
-      - [TopCenter](element_TopCenter.md) (structural, 9×, MEDIUM)
-      - [TopLeft](element_TopLeft.md) (structural, 9×, MEDIUM)
-      - [TopRight](element_TopRight.md) (structural, 9×, MEDIUM)
-    - [TintColor](element_TintColor.md) (structural, 7×, HIGH)
-  - [Label](element_Label.md) (named, 1243×, HIGH)
-    - (cycle)
-  - [ListBox](element_ListBox.md) (named, 42×, HIGH)
-    - [Anchors](element_Anchors.md) (structural, 42×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
-          - (cycle)
-    - [EventHandlers](element_EventHandlers.md) (structural, 10×, HIGH)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-    - [ListData](element_ListData.md) (structural, 42×, HIGH)
-      - [ListColumns](element_ListColumns.md) (structural, 25×, HIGH)
-        - [ListColumn](element_ListColumn.md) (structural, 42×, HIGH)
-    - [Size](element_Size.md) (structural, 31×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-  - [LogDisplay](element_LogDisplay.md) (named, 1×, LOW)
-    - [Anchors](element_Anchors.md) (structural, 1×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
-          - (cycle)
-    - [Windows](element_Windows.md) (structural, 1×, HIGH)
-      - (cycle)
-  - [MapDisplay](element_MapDisplay.md) (named, 1×, LOW)
-    - [Anchors](element_Anchors.md) (structural, 1×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
-          - (cycle)
-    - [EventHandlers](element_EventHandlers.md) (structural, 1×, HIGH)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-    - [Size](element_Size.md) (structural, 1×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-  - [ScrollWindow](element_ScrollWindow.md) (named, 26×, HIGH)
-    - [Anchors](element_Anchors.md) (structural, 16×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
-          - (cycle)
-    - [Size](element_Size.md) (structural, 12×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-    - [Windows](element_Windows.md) (structural, 24×, HIGH)
-      - (cycle)
-  - [SliderBar](element_SliderBar.md) (named, 83×, HIGH)
-    - [Anchors](element_Anchors.md) (structural, 83×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
-          - (cycle)
-    - [EventHandlers](element_EventHandlers.md) (structural, 80×, HIGH)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-    - [Size](element_Size.md) (structural, 76×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-  - [StatusBar](element_StatusBar.md) (named, 9×, MEDIUM)
-    - [Anchors](element_Anchors.md) (structural, 9×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
-          - (cycle)
-  - [VerticalResizeImage](element_VerticalResizeImage.md) (named, 4×, MEDIUM)
-    - [Sizes](element_Sizes.md) (structural, 1×, LOW)
-      - [BottomRight](element_BottomRight.md) (structural, 14×, HIGH)
-      - [Middle](element_Middle.md) (structural, 14×, HIGH)
-      - [TopLeft](element_TopLeft.md) (structural, 14×, HIGH)
-    - [TexCoords](element_TexCoords.md) (structural, 1×, LOW)
-      - [BottomCenter](element_BottomCenter.md) (structural, 9×, MEDIUM)
-      - [BottomLeft](element_BottomLeft.md) (structural, 9×, MEDIUM)
-      - [BottomRight](element_BottomRight.md) (structural, 9×, MEDIUM)
-      - [Disabled](element_Disabled.md) (structural, 7×, MEDIUM)
-      - [Left](element_Left.md) (structural, 7×, MEDIUM)
-      - [Middle](element_Middle.md) (structural, 9×, MEDIUM)
-      - [MiddleCenter](element_MiddleCenter.md) (structural, 9×, MEDIUM)
-      - [MiddleLeft](element_MiddleLeft.md) (structural, 9×, MEDIUM)
-      - [MiddleRight](element_MiddleRight.md) (structural, 9×, MEDIUM)
-      - [Normal](element_Normal.md) (structural, 7×, MEDIUM)
-      - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, MEDIUM)
-      - [Pressed](element_Pressed.md) (structural, 7×, MEDIUM)
-      - [PressedHighlit](element_PressedHighlit.md) (structural, 1×, LOW)
-      - [Right](element_Right.md) (structural, 7×, MEDIUM)
-      - [TopCenter](element_TopCenter.md) (structural, 9×, MEDIUM)
-      - [TopLeft](element_TopLeft.md) (structural, 9×, MEDIUM)
-      - [TopRight](element_TopRight.md) (structural, 9×, MEDIUM)
-    - [TintColor](element_TintColor.md) (structural, 3×, HIGH)
-  - [VerticalScrollbar](element_VerticalScrollbar.md) (named, 25×, HIGH)
-    - [Anchors](element_Anchors.md) (structural, 25×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+  - [LogDisplay](element_LogDisplay.md) (named, 3×, MEDIUM)
+    - [Anchors](element_Anchors.md) (structural, 3×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
           - (cycle)
     - [EventHandlers](element_EventHandlers.md) (structural, 1×, LOW)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-    - [Size](element_Size.md) (structural, 23×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-  - [Window](element_Window.md) (named, 1001×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Size](element_Size.md) (structural, 1×, LOW)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Windows](element_Windows.md) (structural, 3×, HIGH)
+      - (cycle)
+  - [MapDisplay](element_MapDisplay.md) (named, 8×, MEDIUM)
+    - [Anchors](element_Anchors.md) (structural, 8×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [EventHandlers](element_EventHandlers.md) (structural, 8×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Size](element_Size.md) (structural, 3×, MEDIUM)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+  - [NifDisplay](element_NifDisplay.md) (named, 50×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 1×, LOW)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [EventHandlers](element_EventHandlers.md) (structural, 1×, LOW)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Rotation](element_Rotation.md) (structural, 4×, MEDIUM)
+    - [Size](element_Size.md) (structural, 1×, LOW)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Translation](element_Translation.md) (structural, 50×, HIGH)
+  - [PageWindow](element_PageWindow.md) (named, 4×, MEDIUM)
+    - [Anchors](element_Anchors.md) (structural, 1×, LOW)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [Size](element_Size.md) (structural, 1×, LOW)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Windows](element_Windows.md) (structural, 4×, HIGH)
+      - (cycle)
+  - [ScrollWindow](element_ScrollWindow.md) (named, 61×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 43×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [EventHandlers](element_EventHandlers.md) (structural, 1×, LOW)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Size](element_Size.md) (structural, 21×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Windows](element_Windows.md) (structural, 53×, HIGH)
+      - (cycle)
+  - [SliderBar](element_SliderBar.md) (named, 225×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 219×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [EventHandlers](element_EventHandlers.md) (structural, 205×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Size](element_Size.md) (structural, 186×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Windows](element_Windows.md) (structural, 6×, MEDIUM)
+      - (cycle)
+  - [StatusBar](element_StatusBar.md) (named, 32×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 32×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [Size](element_Size.md) (structural, 19×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+  - [VerticalResizeImage](element_VerticalResizeImage.md) (named, 27×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 14×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [Size](element_Size.md) (structural, 10×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Sizes](element_Sizes.md) (structural, 8×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 30×, HIGH)
+      - [Middle](element_Middle.md) (structural, 30×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 30×, HIGH)
+    - [TexCoords](element_TexCoords.md) (structural, 5×, MEDIUM)
+      - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+      - [BottomCenter](element_BottomCenter.md) (structural, 19×, HIGH)
+      - [BottomLeft](element_BottomLeft.md) (structural, 19×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 19×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 43×, HIGH)
+      - [Left](element_Left.md) (structural, 33×, HIGH)
+      - [Middle](element_Middle.md) (structural, 41×, HIGH)
+      - [MiddleCenter](element_MiddleCenter.md) (structural, 19×, HIGH)
+      - [MiddleLeft](element_MiddleLeft.md) (structural, 19×, HIGH)
+      - [MiddleRight](element_MiddleRight.md) (structural, 19×, HIGH)
+      - [Normal](element_Normal.md) (structural, 47×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 43×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 46×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 10×, HIGH)
+      - [Right](element_Right.md) (structural, 33×, HIGH)
+      - [Top](element_Top.md) (structural, 2×, LOW)
+      - [TopCenter](element_TopCenter.md) (structural, 19×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 19×, HIGH)
+      - [TopRight](element_TopRight.md) (structural, 19×, HIGH)
+    - [TexSlices](element_TexSlices.md) (structural, 3×, MEDIUM)
+      - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+      - [BottomCenter](element_BottomCenter.md) (structural, 11×, HIGH)
+      - [BottomLeft](element_BottomLeft.md) (structural, 11×, HIGH)
+      - [BottomRight](element_BottomRight.md) (structural, 11×, HIGH)
+      - [Disabled](element_Disabled.md) (structural, 53×, HIGH)
+      - [DisabledPressed](element_DisabledPressed.md) (structural, 36×, HIGH)
+      - [Left](element_Left.md) (structural, 3×, MEDIUM)
+      - [Middle](element_Middle.md) (structural, 10×, HIGH)
+      - [MiddleCenter](element_MiddleCenter.md) (structural, 11×, HIGH)
+      - [MiddleLeft](element_MiddleLeft.md) (structural, 11×, HIGH)
+      - [MiddleRight](element_MiddleRight.md) (structural, 11×, HIGH)
+      - [Normal](element_Normal.md) (structural, 120×, HIGH)
+      - [NormalHighlit](element_NormalHighlit.md) (structural, 104×, HIGH)
+      - [Pressed](element_Pressed.md) (structural, 117×, HIGH)
+      - [PressedHighlit](element_PressedHighlit.md) (structural, 95×, HIGH)
+      - [Right](element_Right.md) (structural, 3×, MEDIUM)
+      - [Top](element_Top.md) (structural, 2×, LOW)
+      - [TopCenter](element_TopCenter.md) (structural, 11×, HIGH)
+      - [TopLeft](element_TopLeft.md) (structural, 11×, HIGH)
+      - [TopRight](element_TopRight.md) (structural, 11×, HIGH)
+    - [TintColor](element_TintColor.md) (structural, 4×, MEDIUM)
+  - [VerticalScrollbar](element_VerticalScrollbar.md) (named, 62×, HIGH)
+    - [ActiveZoneOffset](element_ActiveZoneOffset.md) (structural, 2×, LOW)
+    - [Anchors](element_Anchors.md) (structural, 56×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+    - [DownOffset](element_DownOffset.md) (structural, 2×, LOW)
+    - [EventHandlers](element_EventHandlers.md) (structural, 7×, MEDIUM)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Size](element_Size.md) (structural, 47×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [ThumbOffset](element_ThumbOffset.md) (structural, 2×, LOW)
+    - [UpOffset](element_UpOffset.md) (structural, 2×, LOW)
+  - [Window](element_Window.md) (named, 3695×, HIGH)
     - [Button](element_Button.md) (named, 8×, MEDIUM)
       - [Anchor](element_Anchor.md) (structural, 2×, LOW)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
           - (cycle)
-      - [Anchors](element_Anchors.md) (structural, 556×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-        - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-          - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-          - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - [Anchors](element_Anchors.md) (structural, 1954×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+        - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+          - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+          - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
             - (cycle)
       - [AnimatedImages](element_AnimatedImages.md) (structural, 1×, LOW)
         - [Normal](element_Normal.md) (structural, 1×, HIGH)
         - [NormalHighlit](element_NormalHighlit.md) (structural, 1×, HIGH)
-      - [EventHandlers](element_EventHandlers.md) (structural, 418×, HIGH)
-        - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-      - [OverlayOffset](element_OverlayOffset.md) (structural, 7×, MEDIUM)
-      - [OverlaySize](element_OverlaySize.md) (structural, 7×, MEDIUM)
-      - [OverlayTexCoords](element_OverlayTexCoords.md) (structural, 7×, MEDIUM)
-        - [Disabled](element_Disabled.md) (structural, 7×, HIGH)
-        - [Normal](element_Normal.md) (structural, 7×, HIGH)
-        - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, HIGH)
-        - [Pressed](element_Pressed.md) (structural, 7×, HIGH)
-        - [PressedHighlit](element_PressedHighlit.md) (structural, 7×, HIGH)
-      - [ResizeImages](element_ResizeImages.md) (structural, 14×, HIGH)
-        - [Disabled](element_Disabled.md) (structural, 8×, HIGH)
-        - [Normal](element_Normal.md) (structural, 10×, HIGH)
-        - [NormalHighlit](element_NormalHighlit.md) (structural, 14×, HIGH)
-        - [Pressed](element_Pressed.md) (structural, 10×, HIGH)
-        - [PressedHighlit](element_PressedHighlit.md) (structural, 9×, HIGH)
-      - [Size](element_Size.md) (structural, 259×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-      - [TexCoords](element_TexCoords.md) (structural, 7×, MEDIUM)
-        - [BottomCenter](element_BottomCenter.md) (structural, 9×, MEDIUM)
-        - [BottomLeft](element_BottomLeft.md) (structural, 9×, MEDIUM)
-        - [BottomRight](element_BottomRight.md) (structural, 9×, MEDIUM)
-        - [Disabled](element_Disabled.md) (structural, 7×, MEDIUM)
-        - [Left](element_Left.md) (structural, 7×, MEDIUM)
-        - [Middle](element_Middle.md) (structural, 9×, MEDIUM)
-        - [MiddleCenter](element_MiddleCenter.md) (structural, 9×, MEDIUM)
-        - [MiddleLeft](element_MiddleLeft.md) (structural, 9×, MEDIUM)
-        - [MiddleRight](element_MiddleRight.md) (structural, 9×, MEDIUM)
-        - [Normal](element_Normal.md) (structural, 7×, MEDIUM)
-        - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, MEDIUM)
-        - [Pressed](element_Pressed.md) (structural, 7×, MEDIUM)
-        - [PressedHighlit](element_PressedHighlit.md) (structural, 1×, LOW)
-        - [Right](element_Right.md) (structural, 7×, MEDIUM)
-        - [TopCenter](element_TopCenter.md) (structural, 9×, MEDIUM)
-        - [TopLeft](element_TopLeft.md) (structural, 9×, MEDIUM)
-        - [TopRight](element_TopRight.md) (structural, 9×, MEDIUM)
-      - [TexDims](element_TexDims.md) (structural, 4×, MEDIUM)
-      - [TexSlices](element_TexSlices.md) (structural, 22×, HIGH)
-        - [BottomCenter](element_BottomCenter.md) (structural, 5×, MEDIUM)
-        - [BottomLeft](element_BottomLeft.md) (structural, 5×, MEDIUM)
-        - [BottomRight](element_BottomRight.md) (structural, 5×, MEDIUM)
-        - [Disabled](element_Disabled.md) (structural, 11×, HIGH)
-        - [DisabledPressed](element_DisabledPressed.md) (structural, 11×, HIGH)
-        - [MiddleCenter](element_MiddleCenter.md) (structural, 5×, MEDIUM)
-        - [MiddleLeft](element_MiddleLeft.md) (structural, 5×, MEDIUM)
-        - [MiddleRight](element_MiddleRight.md) (structural, 5×, MEDIUM)
-        - [Normal](element_Normal.md) (structural, 22×, HIGH)
-        - [NormalHighlit](element_NormalHighlit.md) (structural, 16×, HIGH)
-        - [Pressed](element_Pressed.md) (structural, 16×, HIGH)
-        - [PressedHighlit](element_PressedHighlit.md) (structural, 16×, HIGH)
-        - [TopCenter](element_TopCenter.md) (structural, 5×, MEDIUM)
-        - [TopLeft](element_TopLeft.md) (structural, 5×, MEDIUM)
-        - [TopRight](element_TopRight.md) (structural, 5×, MEDIUM)
-      - [TextColors](element_TextColors.md) (structural, 16×, HIGH)
-        - [Disabled](element_Disabled.md) (structural, 16×, HIGH)
-        - [DisabledPressed](element_DisabledPressed.md) (structural, 4×, MEDIUM)
-        - [Normal](element_Normal.md) (structural, 16×, HIGH)
-        - [NormalHighlit](element_NormalHighlit.md) (structural, 16×, HIGH)
-        - [Pressed](element_Pressed.md) (structural, 16×, HIGH)
-        - [PressedHighlit](element_PressedHighlit.md) (structural, 16×, HIGH)
-      - [TextOffset](element_TextOffset.md) (structural, 18×, HIGH)
-      - [Windows](element_Windows.md) (structural, 18×, HIGH)
+      - [Color](element_Color.md) (structural, 27×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 1×, LOW)
+      - [EventHandlers](element_EventHandlers.md) (structural, 1540×, HIGH)
+        - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+      - [Eventhandlers](element_Eventhandlers.md) (structural, 1×, LOW)
+        - [EventHandler](element_EventHandler.md) (structural, 2×, HIGH)
+      - [OverlayOffset](element_OverlayOffset.md) (structural, 31×, HIGH)
+      - [OverlaySize](element_OverlaySize.md) (structural, 27×, HIGH)
+      - [OverlayTexCoords](element_OverlayTexCoords.md) (structural, 24×, HIGH)
+        - [Disabled](element_Disabled.md) (structural, 20×, HIGH)
+        - [Normal](element_Normal.md) (structural, 24×, HIGH)
+        - [NormalHighlit](element_NormalHighlit.md) (structural, 24×, HIGH)
+        - [Pressed](element_Pressed.md) (structural, 24×, HIGH)
+        - [PressedHighlit](element_PressedHighlit.md) (structural, 24×, HIGH)
+      - [OverlayTexSlices](element_OverlayTexSlices.md) (structural, 2×, LOW)
+        - [Normal](element_Normal.md) (structural, 2×, HIGH)
+        - [NormalHighlit](element_NormalHighlit.md) (structural, 2×, HIGH)
+        - [Pressed](element_Pressed.md) (structural, 2×, HIGH)
+      - [ResizeImages](element_ResizeImages.md) (structural, 41×, HIGH)
+        - [Disabled](element_Disabled.md) (structural, 23×, HIGH)
+        - [Normal](element_Normal.md) (structural, 25×, HIGH)
+        - [NormalHighlit](element_NormalHighlit.md) (structural, 41×, HIGH)
+        - [Pressed](element_Pressed.md) (structural, 26×, HIGH)
+        - [PressedHighlit](element_PressedHighlit.md) (structural, 27×, HIGH)
+      - [Size](element_Size.md) (structural, 1023×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+      - [Sounds](element_Sounds.md) (structural, 9×, MEDIUM)
+        - [Sound](element_Sound.md) (structural, 20×, HIGH)
+      - [TexCoords](element_TexCoords.md) (structural, 47×, HIGH)
+        - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+        - [BottomCenter](element_BottomCenter.md) (structural, 19×, HIGH)
+        - [BottomLeft](element_BottomLeft.md) (structural, 19×, HIGH)
+        - [BottomRight](element_BottomRight.md) (structural, 19×, HIGH)
+        - [Disabled](element_Disabled.md) (structural, 43×, HIGH)
+        - [Left](element_Left.md) (structural, 33×, HIGH)
+        - [Middle](element_Middle.md) (structural, 41×, HIGH)
+        - [MiddleCenter](element_MiddleCenter.md) (structural, 19×, HIGH)
+        - [MiddleLeft](element_MiddleLeft.md) (structural, 19×, HIGH)
+        - [MiddleRight](element_MiddleRight.md) (structural, 19×, HIGH)
+        - [Normal](element_Normal.md) (structural, 47×, HIGH)
+        - [NormalHighlit](element_NormalHighlit.md) (structural, 43×, HIGH)
+        - [Pressed](element_Pressed.md) (structural, 46×, HIGH)
+        - [PressedHighlit](element_PressedHighlit.md) (structural, 10×, HIGH)
+        - [Right](element_Right.md) (structural, 33×, HIGH)
+        - [Top](element_Top.md) (structural, 2×, LOW)
+        - [TopCenter](element_TopCenter.md) (structural, 19×, HIGH)
+        - [TopLeft](element_TopLeft.md) (structural, 19×, HIGH)
+        - [TopRight](element_TopRight.md) (structural, 19×, HIGH)
+      - [TexDims](element_TexDims.md) (structural, 18×, HIGH)
+      - [TexSlices](element_TexSlices.md) (structural, 129×, HIGH)
+        - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+        - [BottomCenter](element_BottomCenter.md) (structural, 11×, HIGH)
+        - [BottomLeft](element_BottomLeft.md) (structural, 11×, HIGH)
+        - [BottomRight](element_BottomRight.md) (structural, 11×, HIGH)
+        - [Disabled](element_Disabled.md) (structural, 53×, HIGH)
+        - [DisabledPressed](element_DisabledPressed.md) (structural, 36×, HIGH)
+        - [Left](element_Left.md) (structural, 3×, MEDIUM)
+        - [Middle](element_Middle.md) (structural, 10×, HIGH)
+        - [MiddleCenter](element_MiddleCenter.md) (structural, 11×, HIGH)
+        - [MiddleLeft](element_MiddleLeft.md) (structural, 11×, HIGH)
+        - [MiddleRight](element_MiddleRight.md) (structural, 11×, HIGH)
+        - [Normal](element_Normal.md) (structural, 120×, HIGH)
+        - [NormalHighlit](element_NormalHighlit.md) (structural, 104×, HIGH)
+        - [Pressed](element_Pressed.md) (structural, 117×, HIGH)
+        - [PressedHighlit](element_PressedHighlit.md) (structural, 95×, HIGH)
+        - [Right](element_Right.md) (structural, 3×, MEDIUM)
+        - [Top](element_Top.md) (structural, 2×, LOW)
+        - [TopCenter](element_TopCenter.md) (structural, 11×, HIGH)
+        - [TopLeft](element_TopLeft.md) (structural, 11×, HIGH)
+        - [TopRight](element_TopRight.md) (structural, 11×, HIGH)
+      - [Text](element_Text.md) (structural, 3×, MEDIUM)
+      - [TextColors](element_TextColors.md) (structural, 85×, HIGH)
+        - [Disabled](element_Disabled.md) (structural, 76×, HIGH)
+        - [DisabledPressed](element_DisabledPressed.md) (structural, 26×, HIGH)
+        - [Normal](element_Normal.md) (structural, 79×, HIGH)
+        - [NormalHighlit](element_NormalHighlit.md) (structural, 83×, HIGH)
+        - [Pressed](element_Pressed.md) (structural, 76×, HIGH)
+        - [PressedHighlit](element_PressedHighlit.md) (structural, 83×, HIGH)
+      - [TextOffset](element_TextOffset.md) (structural, 75×, HIGH)
+      - [TintColor](element_TintColor.md) (structural, 12×, HIGH)
+      - [Windows](element_Windows.md) (structural, 131×, HIGH)
         - (cycle)
     - [ComboBox](element_ComboBox.md) (named, 4×, MEDIUM)
-      - [Anchors](element_Anchors.md) (structural, 228×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-        - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-          - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-          - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - [Anchors](element_Anchors.md) (structural, 643×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+        - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+          - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+          - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
             - (cycle)
-      - [EventHandlers](element_EventHandlers.md) (structural, 179×, HIGH)
-        - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-      - [MenuButtonOffset](element_MenuButtonOffset.md) (structural, 7×, MEDIUM)
-      - [Size](element_Size.md) (structural, 52×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-    - [FullResizeImage](element_FullResizeImage.md) (named, 2×, LOW)
-      - [Anchors](element_Anchors.md) (structural, 139×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-        - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-          - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-          - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - [EventHandlers](element_EventHandlers.md) (structural, 534×, HIGH)
+        - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+      - [MenuButtonOffset](element_MenuButtonOffset.md) (structural, 33×, HIGH)
+      - [OverlayOffset](element_OverlayOffset.md) (structural, 4×, MEDIUM)
+      - [Size](element_Size.md) (structural, 186×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+      - [TextOffset](element_TextOffset.md) (structural, 1×, LOW)
+    - [DynamicImage](element_DynamicImage.md) (named, 1×, LOW)
+      - [Anchor](element_Anchor.md) (structural, 1×, LOW)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+      - [Anchors](element_Anchors.md) (structural, 1187×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+        - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+          - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+          - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
             - (cycle)
       - [Color](element_Color.md) (structural, 1×, LOW)
-      - [EventHandlers](element_EventHandlers.md) (structural, 1×, LOW)
-        - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-      - [Size](element_Size.md) (structural, 35×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
-      - [Sizes](element_Sizes.md) (structural, 14×, HIGH)
-        - [BottomRight](element_BottomRight.md) (structural, 14×, HIGH)
-        - [Middle](element_Middle.md) (structural, 14×, HIGH)
-        - [TopLeft](element_TopLeft.md) (structural, 14×, HIGH)
-      - [TexCoords](element_TexCoords.md) (structural, 9×, MEDIUM)
-        - [BottomCenter](element_BottomCenter.md) (structural, 9×, MEDIUM)
-        - [BottomLeft](element_BottomLeft.md) (structural, 9×, MEDIUM)
-        - [BottomRight](element_BottomRight.md) (structural, 9×, MEDIUM)
-        - [Disabled](element_Disabled.md) (structural, 7×, MEDIUM)
-        - [Left](element_Left.md) (structural, 7×, MEDIUM)
-        - [Middle](element_Middle.md) (structural, 9×, MEDIUM)
-        - [MiddleCenter](element_MiddleCenter.md) (structural, 9×, MEDIUM)
-        - [MiddleLeft](element_MiddleLeft.md) (structural, 9×, MEDIUM)
-        - [MiddleRight](element_MiddleRight.md) (structural, 9×, MEDIUM)
-        - [Normal](element_Normal.md) (structural, 7×, MEDIUM)
-        - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, MEDIUM)
-        - [Pressed](element_Pressed.md) (structural, 7×, MEDIUM)
-        - [PressedHighlit](element_PressedHighlit.md) (structural, 1×, LOW)
-        - [Right](element_Right.md) (structural, 7×, MEDIUM)
-        - [TopCenter](element_TopCenter.md) (structural, 9×, MEDIUM)
-        - [TopLeft](element_TopLeft.md) (structural, 9×, MEDIUM)
-        - [TopRight](element_TopRight.md) (structural, 9×, MEDIUM)
+      - [EventHandlers](element_EventHandlers.md) (structural, 155×, HIGH)
+        - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+      - [Size](element_Size.md) (structural, 965×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+      - [Sounds](element_Sounds.md) (structural, 1×, LOW)
+        - [Sound](element_Sound.md) (structural, 20×, HIGH)
+      - [TexCoords](element_TexCoords.md) (structural, 76×, HIGH)
+        - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+        - [BottomCenter](element_BottomCenter.md) (structural, 19×, HIGH)
+        - [BottomLeft](element_BottomLeft.md) (structural, 19×, HIGH)
+        - [BottomRight](element_BottomRight.md) (structural, 19×, HIGH)
+        - [Disabled](element_Disabled.md) (structural, 43×, HIGH)
+        - [Left](element_Left.md) (structural, 33×, HIGH)
+        - [Middle](element_Middle.md) (structural, 41×, HIGH)
+        - [MiddleCenter](element_MiddleCenter.md) (structural, 19×, HIGH)
+        - [MiddleLeft](element_MiddleLeft.md) (structural, 19×, HIGH)
+        - [MiddleRight](element_MiddleRight.md) (structural, 19×, HIGH)
+        - [Normal](element_Normal.md) (structural, 47×, HIGH)
+        - [NormalHighlit](element_NormalHighlit.md) (structural, 43×, HIGH)
+        - [Pressed](element_Pressed.md) (structural, 46×, HIGH)
+        - [PressedHighlit](element_PressedHighlit.md) (structural, 10×, HIGH)
+        - [Right](element_Right.md) (structural, 33×, HIGH)
+        - [Top](element_Top.md) (structural, 2×, LOW)
+        - [TopCenter](element_TopCenter.md) (structural, 19×, HIGH)
+        - [TopLeft](element_TopLeft.md) (structural, 19×, HIGH)
+        - [TopRight](element_TopRight.md) (structural, 19×, HIGH)
+      - [TexDims](element_TexDims.md) (structural, 156×, HIGH)
+      - [TintColor](element_TintColor.md) (structural, 374×, HIGH)
+      - [Windows](element_Windows.md) (structural, 15×, HIGH)
+        - (cycle)
+    - [FullResizeImage](element_FullResizeImage.md) (named, 9×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 2×, LOW)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+          - (cycle)
+      - [Anchors](element_Anchors.md) (structural, 409×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+        - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+          - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+          - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
+            - (cycle)
+      - [Color](element_Color.md) (structural, 2×, LOW)
+      - [EventHandlers](element_EventHandlers.md) (structural, 5×, MEDIUM)
+        - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+      - [Size](element_Size.md) (structural, 113×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+      - [Sizes](element_Sizes.md) (structural, 30×, HIGH)
+        - [BottomRight](element_BottomRight.md) (structural, 30×, HIGH)
+        - [Middle](element_Middle.md) (structural, 30×, HIGH)
+        - [TopLeft](element_TopLeft.md) (structural, 30×, HIGH)
+      - [TexCoords](element_TexCoords.md) (structural, 19×, HIGH)
+        - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+        - [BottomCenter](element_BottomCenter.md) (structural, 19×, HIGH)
+        - [BottomLeft](element_BottomLeft.md) (structural, 19×, HIGH)
+        - [BottomRight](element_BottomRight.md) (structural, 19×, HIGH)
+        - [Disabled](element_Disabled.md) (structural, 43×, HIGH)
+        - [Left](element_Left.md) (structural, 33×, HIGH)
+        - [Middle](element_Middle.md) (structural, 41×, HIGH)
+        - [MiddleCenter](element_MiddleCenter.md) (structural, 19×, HIGH)
+        - [MiddleLeft](element_MiddleLeft.md) (structural, 19×, HIGH)
+        - [MiddleRight](element_MiddleRight.md) (structural, 19×, HIGH)
+        - [Normal](element_Normal.md) (structural, 47×, HIGH)
+        - [NormalHighlit](element_NormalHighlit.md) (structural, 43×, HIGH)
+        - [Pressed](element_Pressed.md) (structural, 46×, HIGH)
+        - [PressedHighlit](element_PressedHighlit.md) (structural, 10×, HIGH)
+        - [Right](element_Right.md) (structural, 33×, HIGH)
+        - [Top](element_Top.md) (structural, 2×, LOW)
+        - [TopCenter](element_TopCenter.md) (structural, 19×, HIGH)
+        - [TopLeft](element_TopLeft.md) (structural, 19×, HIGH)
+        - [TopRight](element_TopRight.md) (structural, 19×, HIGH)
       - [TexDims](element_TexDims.md) (structural, 3×, MEDIUM)
-      - [TexSlices](element_TexSlices.md) (structural, 5×, MEDIUM)
-        - [BottomCenter](element_BottomCenter.md) (structural, 5×, MEDIUM)
-        - [BottomLeft](element_BottomLeft.md) (structural, 5×, MEDIUM)
-        - [BottomRight](element_BottomRight.md) (structural, 5×, MEDIUM)
-        - [Disabled](element_Disabled.md) (structural, 11×, HIGH)
-        - [DisabledPressed](element_DisabledPressed.md) (structural, 11×, HIGH)
-        - [MiddleCenter](element_MiddleCenter.md) (structural, 5×, MEDIUM)
-        - [MiddleLeft](element_MiddleLeft.md) (structural, 5×, MEDIUM)
-        - [MiddleRight](element_MiddleRight.md) (structural, 5×, MEDIUM)
-        - [Normal](element_Normal.md) (structural, 22×, HIGH)
-        - [NormalHighlit](element_NormalHighlit.md) (structural, 16×, HIGH)
-        - [Pressed](element_Pressed.md) (structural, 16×, HIGH)
-        - [PressedHighlit](element_PressedHighlit.md) (structural, 16×, HIGH)
-        - [TopCenter](element_TopCenter.md) (structural, 5×, MEDIUM)
-        - [TopLeft](element_TopLeft.md) (structural, 5×, MEDIUM)
-        - [TopRight](element_TopRight.md) (structural, 5×, MEDIUM)
-      - [TintColor](element_TintColor.md) (structural, 28×, HIGH)
-      - [Windows](element_Windows.md) (structural, 1×, LOW)
+      - [TexSlices](element_TexSlices.md) (structural, 11×, HIGH)
+        - [Bottom](element_Bottom.md) (structural, 2×, LOW)
+        - [BottomCenter](element_BottomCenter.md) (structural, 11×, HIGH)
+        - [BottomLeft](element_BottomLeft.md) (structural, 11×, HIGH)
+        - [BottomRight](element_BottomRight.md) (structural, 11×, HIGH)
+        - [Disabled](element_Disabled.md) (structural, 53×, HIGH)
+        - [DisabledPressed](element_DisabledPressed.md) (structural, 36×, HIGH)
+        - [Left](element_Left.md) (structural, 3×, MEDIUM)
+        - [Middle](element_Middle.md) (structural, 10×, HIGH)
+        - [MiddleCenter](element_MiddleCenter.md) (structural, 11×, HIGH)
+        - [MiddleLeft](element_MiddleLeft.md) (structural, 11×, HIGH)
+        - [MiddleRight](element_MiddleRight.md) (structural, 11×, HIGH)
+        - [Normal](element_Normal.md) (structural, 120×, HIGH)
+        - [NormalHighlit](element_NormalHighlit.md) (structural, 104×, HIGH)
+        - [Pressed](element_Pressed.md) (structural, 117×, HIGH)
+        - [PressedHighlit](element_PressedHighlit.md) (structural, 95×, HIGH)
+        - [Right](element_Right.md) (structural, 3×, MEDIUM)
+        - [Top](element_Top.md) (structural, 2×, LOW)
+        - [TopCenter](element_TopCenter.md) (structural, 11×, HIGH)
+        - [TopLeft](element_TopLeft.md) (structural, 11×, HIGH)
+        - [TopRight](element_TopRight.md) (structural, 11×, HIGH)
+      - [TintColor](element_TintColor.md) (structural, 118×, HIGH)
+      - [Windows](element_Windows.md) (structural, 4×, MEDIUM)
         - (cycle)
     - [Label](element_Label.md) (named, 15×, HIGH)
       - (cycle)
     - [SliderBar](element_SliderBar.md) (named, 2×, LOW)
-      - [Anchors](element_Anchors.md) (structural, 83×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-        - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-          - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-          - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - [Anchors](element_Anchors.md) (structural, 219×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+        - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+          - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+          - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
             - (cycle)
-      - [EventHandlers](element_EventHandlers.md) (structural, 80×, HIGH)
-        - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-      - [Size](element_Size.md) (structural, 76×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
+      - [EventHandlers](element_EventHandlers.md) (structural, 205×, HIGH)
+        - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+      - [Size](element_Size.md) (structural, 186×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+      - [Windows](element_Windows.md) (structural, 6×, MEDIUM)
+        - (cycle)
     - [Window](element_Window.md) (named, 5×, MEDIUM)
       - (cycle)
-    - [Anchor](element_Anchor.md) (structural, 10×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-      - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 16×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+      - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
         - (cycle)
-    - [Anchors](element_Anchors.md) (structural, 745×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-      - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-        - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-        - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+    - [Anchors](element_Anchors.md) (structural, 2735×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+      - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+        - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+        - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
           - (cycle)
-    - [EventHandlers](element_EventHandlers.md) (structural, 280×, HIGH)
-      - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-    - [Size](element_Size.md) (structural, 624×, HIGH)
-      - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
+    - [EventHandlers](element_EventHandlers.md) (structural, 773×, HIGH)
+      - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+    - [Size](element_Size.md) (structural, 1752×, HIGH)
+      - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+    - [Sounds](element_Sounds.md) (structural, 2×, LOW)
+      - [Sound](element_Sound.md) (structural, 20×, HIGH)
     - [Visual](element_Visual.md) (structural, 1×, LOW)
       - [Color](element_Color.md) (structural, 1×, HIGH)
-    - [Windows](element_Windows.md) (structural, 476×, HIGH)
+    - [Windows](element_Windows.md) (structural, 1498×, HIGH)
       - (cycle)
+- [color](element_color.md) (structural, 1×, LOW)
 
 ## Lua API Usage (from Handlers)
 
@@ -883,18 +1440,29 @@ API functions commonly called from event handler Lua functions on this element t
 
 | API Function | Category | Call Count | From Events |
 | --- | --- | --- | --- |
-| `WindowGetId` | ui | 29 | OnLButtonUp, OnMouseOver, OnRButtonUp |
-| `WindowSetShowing` | ui | 21 | OnHyperLinkLButtonUp, OnLButtonUp |
-| `LabelSetTextColor` | ui | 12 | OnMouseOver, OnMouseOverEnd |
+| `WindowGetParent` | ui | 91 | OnLButtonUp, OnMouseOver |
+| `LabelSetTextColor` | ui | 84 | OnLButtonUp, OnMouseOver, OnMouseOverEnd |
+| `WindowGetId` | ui | 51 | OnHyperLinkRButtonUp, OnLButtonUp, OnMouseOver, OnMouseOverEnd, OnRButtonUp |
+| `WindowSetShowing` | ui | 47 | OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonUp |
+| `LabelSetText` | ui | 19 | OnLButtonDown, OnLButtonUp, OnMouseOver |
+| `TextEditBoxSetText` | ui | 12 | OnHyperLinkRButtonUp |
 | `SystemData.ActiveWindow.name:match` | data | 8 | OnLButtonDown, OnMouseOver |
+| `ListBoxGetDataIndex` | ui | 7 | OnMouseOver |
 | `CreateWindow` | ui | 6 | OnMouseOver |
-| `LabelSetText` | ui | 6 | OnMouseOver |
-| `ListBoxGetDataIndex` | ui | 6 | OnMouseOver |
-| `WindowGetParent` | ui | 2 | OnLButtonUp, OnMouseOver |
-| `WindowSetGameActionData` | ui | 2 | OnLButtonUp, OnMouseOver |
-| `SystemData.MouseOverWindow.name:match` | data | 1 | OnRButtonUp |
+| `DoesWindowExist` | ui | 6 | OnMouseOver, OnMouseOverEnd |
+| `ComboBoxSetSelectedMenuItem` | ui | 4 | OnHyperLinkRButtonUp |
+| `SystemData.ActiveWindow.name:sub` | data | 4 | OnMouseOver |
+| `LabelGetText` | ui | 3 | OnLButtonUp, OnMouseOverEnd |
+| `LabelGetTextColor` | ui | 3 | OnMouseOver |
+| `WindowSetGameActionData` | ui | 3 | OnLButtonUp, OnMouseOver |
+| `SliderBarSetCurrentPosition` | ui | 2 | OnHyperLinkRButtonUp |
+| `SystemData.MouseOverWindow.name:match` | data | 2 | OnRButtonUp |
+| `BroadcastEvent` | event | 1 | OnLButtonUp |
+| `ButtonSetPressedFlag` | ui | 1 | OnHyperLinkRButtonUp |
 | `WindowGetDimensions` | ui | 1 | OnMouseOver |
+| `WindowGetParent:find` | ui | 1 | OnLButtonUp |
 | `WindowGetScreenPosition` | ui | 1 | OnMouseOver |
+| `WindowSetMovable` | ui | 1 | OnHyperLinkRButtonUp |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -913,6 +1481,12 @@ Confidence: LOW
 
 Confidence: LOW
 
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `linkData` | table | data |
+| 1 | `flags` | boolean | modifier_flags |
+| 2 | `x` | number | mouse_x |
+| 3 | `y` | number | mouse_y |
 ### OnLButtonDown
 
 Confidence: MEDIUM
@@ -931,6 +1505,10 @@ Confidence: MEDIUM
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
+### OnMouseLeave
+
+Confidence: LOW
+
 ### OnMouseOver
 
 Confidence: HIGH
@@ -950,155 +1528,642 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.IntercomUI_IntercomDialog_Open
-- MoraleCircle.ColorChanger2
-- APAGui.UpdateFollowTargetHUD
-- APAGui.UpdatePetTargetHUD
-- BankArkel.SetCharInfo
-- Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
-- Enemy.CombatLogUI_EpsWindow_Update
-- Swift Assist.WriteLabels
-- TidyRollOptions.Initialize
-- APAGui.ApplyPetTargetHUDLayout
-- WSCT.ColorOnInitialize
-- Enemy.AssistUI_Target_Show
-- Enemy.CombatLogUI_EpsWindow_UpdateLayout
-- Killer.ShowRowTooltip
-- MoraleCircle.OnSetCustomColorEmpty
-- Swift Assist.local.WriteLabels
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.Stopwatch_Update
-- Enemy.CombatLogUI_StatsWindow_UpdateList
-- Enemy.CombatLogUI_EpsWindow_Initialize
-- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
-- MoraleCircle.OnSetCustomColorFull
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.Timer_Update
-- MoraleCircle.OnSetCustomColorFill
-- DAoCTooltips.CreateCondenseTooltip
-- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- APAGui.OnShown
-- Enemy.IntercomInitialize
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- DAoCTooltips.UpdateCondenseTooltip
-- Enemy.UI_ConfigDialog_Open
-- Enemy.Guard_GuardIndicator_Update
-- Killer.ShowTopKillersTooltip
-- APAGui.UpdateInstantOnlyHUD
-- Enemy.CombatLogUI_TargetDefenseWindow_Update
-- MoraleCircle.ColorChanger4
-- MoraleCircle.init
-- RoR_SoR.OnInitialize
-- APAGui.UpdateKitingHUD
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- MoraleCircle.ColorChanger3
-- SwiftAssist.aaLabelColorSet
-- BankArkel.PackHide
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Swift Assist.local.SetSmartLabel
-- Swift Assist.SetSmartLabel
-- Enemy.CombatLogUI_StatsWindow_Open
-- Killer.ShowPersonalStatsTooltip
-- ClosetGoblinZoneWindow.RefreshOption
-- MoraleCircle.OnSetCustomColor
-- PP.UpdateListRow
-- PP.UpdateDyeFilter
-- AggroMeter.Initialize
-- ClosetGoblinCharacterWindow.OnInitialize
-- DAoCBuff.ShowMessageWindow
+- CCM.OnInitialize
+- WARCommander.ShowInfoTitle
+- BlackBookWindow.UpdateList
+- Phantom.Initialize
+- CDown.local.SetLabels
+- DuffTimer.CreateBar
 - Killer.Initialize
-- MoraleCircle.ColorChanger1
+- Effigy.RegisterStateInfoForCastbar
+- Enemy.TimerInitialize
+- DAoCBuff.DAoCBuffFrame:UpdateI_hpte
+- DPSMeter.local.UpdateOverallTab
+- TalismanGenie.FragmentToggle
+- TurretScrap.CheckBuffs
+- WSCT.ColorOnInitialize
+- NoOverheal.OnCancelSpell
+- Obsidian.EffectBar:SetLayout
+- RVMOD_SquaredDistances.OnSquaredSetName
+- XpStatus.InitializeQuotaWindow
+- Calling.SetListLine
+- Obsidian.Setup.EffectTracker.OnSlideTimerAlpha
+- CastSequence.LoadSequence
+- RealmStatus.Loading
+- DAoCBuff.ShowMessageWindow
+- Obsidian.Castbar:SetScale
+- Obsidian.Setup.Castbar.Initialize
+- Swift Assist.SetSmartLabel
+- TalismanGenie.Search
+- Wikki's Cooldown Bar.WCDBCooldownBar:UpdateCooldown
+- SOROptions.Save
+- MapPin.Map.UpdatePinCoordinates
+- DPSMeter.local.UpdateAbilityTab
+- yAssist.WriteLabels
+- KwestorTracker.DrawQuest
+- XpStatus.ChangeDisplayMode
+- AdjustTheTip.CreateAbilityTooltip
+- CastSequence.BuildSequence
+- Aura.Aura:UpdateTimerWindowTime
+- WARCommander.Init
+- GuildWardenWin.Offline
+- CoolDownLine.Initialize
+- GetStats.OnChatLogUpdated
+- CDown.SetLabels
+- wbLeadHelper.showNormalTitle
+- Atlas.UpdateZoneName
+- APAGui.UpdateInstantOnlyHUD
+- AggroMeter.Initialize
+- Trakario.RKOTHUpdateTime
+- AbilityAlert.Display
+- DAoCTooltips.CreateCondenseTooltip
+- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- MapPin.SetupAccept
+- WarBoard_TDPS.Initialize
+- zmm.UpdateLayout
+- CoolDownLine.OnUpdate
+- SOROptions.Slide
+- Enemy.IntercomUI_IntercomDialog_Open
+- BuddyBind.GrabName
+- Phantom.PopulateWindow
+- MiracleGrowLight.local.setMode
+- Obsidian.Setup.Castbar.OnTimerOffsetYChanged
+- PotionBar.local.UpdateCooldown
+- zmm.UpdateListRow
+- BankArkel.SetCharInfo
+- PP.UpdateDyeFilter
+- RvRStatsRvRTab.Init
+- Obsidian.Setup.Castbar.OnSlideTimerDecimals
+- Obsidian.Setup.Castbar.LoadSettings
+- FastFriends.UI.CreateWindows
+- DaemonAssist.UpdateWindow
+- Enemy.AssistUI_Target_Show
+- NoOverheal.CheckOverheal
+- NoOverheal.OnPlayerEndCast
+- DuffTimer.Options.OnSliderChange
+- Aura.Aura:UpdateTimerWindow
+- BustedGUI.UpdateErrorView
+- NoOverheal.OnPlayerBeginCast
+- BlackBox.OnApplicationTwoButtonDialogHook
+- RoR_SoR.SET_CITY
+- Obsidian.Setup.EffectTracker.OnSlideTimerScale
+- MBuffGui.SetTimerText
+- TalismanGenie.GoldDustOn
+- ChattyCathy.ApplyOptions
+- Obsidian.Setup.Castbar.OnSlideTimerAlpha
+- Calling.ManageList
+- MiracleGrowLight.OnUpdate
+- MoraleCircle.OnSetCustomColor
+- SNT_CASTBAR.cleanup
+- HealGrid.HealGridCastBar:StartInteract
+- ThankTheTank.OnInitialize
+- AuctionStats.AddExtraWindow
+- Enemy.CombatLogUI_EpsWindow_Update
+- RealmStatus.OnHistoryWindowUpdate
+- KeyBar.OnLButtonUp
+- Swift Assist.WriteLabels
+- Enemy.CombatLogUI_StatsWindow_UpdateList
+- Enemy.Guard_GuardIndicator_Update
+- PeaceOut.Init
+- DammazKron.local.InitializeTOK
+- ChattyCathy.OnSlideAlpha
+- Enemy.UI_ConfigDialog_Open
+- MoraleCircle.ColorChanger4
+- MoraleCircle.OnSetCustomColorEmpty
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- CCTV.UpdateSettings
+- mmo.Initialize
+- SOROptions.Initialize
+- APAGui.UpdateFollowTargetHUD
+- DPSMeter.UpdateOverallTab
+- SwiftAssist.aaLabelColorSet
+- DPSMeter.UpdateAbilityTab
+- Rangechecker.Hostile
+- PeaceOut.UpdateLabel
+- Calling.ManageNotification
+- ChattyCathy.UpdateEntrySetup
+- Enemy.CombatLogUI_TargetDefenseWindow_Update
+- DammazKron.local.InitializeNFO
+- DammazKron.InitializeTOK
+- ReferWindow.AddPlayerReferBox
+- Trakario.BRUpdateTime
+- APAGui.ApplyPetTargetHUDLayout
+- TalismanGenie.CurioToggle
+- TalismanGenie.GoldDustToggle
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- FastInteract.OptionsSetup
+- Obsidian.local.SetTimer
+- CDown.CCDownFrameB:UpdateDurI2H
+- RoR_SoR.SET_PAIRINGS
+- TalismanGenie.EssenceOn
+- DammazKron.local.UpdateSpecial
+- Killer.ShowPersonalStatsTooltip
+- MoraleCircle.init
+- MoraleCircle.OnSetCustomColorFill
+- NoOverheal.OnMouseOver
+- RvRContribution.OnInitialize
+- TalismanGenie.FragmentOff
+- WARCommander.HideInfoTitle
+- CallingSetup.UpdateBindingTexts
+- Sequencer.Load
+- HealGrid.HealGridHUDMain:Initialize
+- LootAlert.OnInitialize
+- CDown.CCDownFrameB:SetCD
+- mmw.CreateMassMailWin
+- ScenarioStats.UpdateWindow
+- SessionRPs.CreateWindow
+- ChattyCathy.CC_ModelWindow
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- PP.UpdateListRow
+- XpStatus.DisplayStatistic
+- DAoCBuff.DAoCBuffFrame:SetBuff
+- CDown.ShowTab
+- Obsidian.Setup.EffectTracker.OnTimerOffsetXChanged
+- BloodyMess.OnInitialize
+- SOROptions.GetSettings
+- ShowHealth.TargetUpdated
+- TacticSetNames.SetLabels
+- Aura.Aura:ShowEditWindows
+- mech.slc
+- DuffTimer.SetBarLabel
+- CDown.CCDownFrameB:UpdateDurI1V
+- Amethyst.Recreate
+- MapPin.RButtonUp
+- RandomMountUI.OnDropSlotLButtonUp
+- CaVESWindow.Initialize
+- Enemy.IntercomInitialize
+- ResHelp.OnInitialize
+- ChattyCathy.CancelOptions
+- DAoCTooltips.UpdateCondenseTooltip
+- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- Killer.ShowTopKillersTooltip
+- Trakario.SCENARIO_END
+- MiracleGrow.updatePlant
+- SORPager.Known
+- Atlas.local.ShowCoordinatesOnMouseOver
+- TalismanGenie.EssenceToggle
+- TalismanGenie.TalismanStats
+- DAoCBuffSettings.SetLabels
+- CDown.CCDownFrameN:SetCD
+- Obsidian.Setup.Castbar.OnTimerOffsetXChanged
+- TalismanGenie.EssenceOff
+- BankArkel.PackHide
+- SessionRPs.ResetSortColor
+- TalismanGenie.CurioOn
+- QuickWarReport.PrepareConfirmWindowChrome
 - PotionBarSettings.OnAboutShown
+- snt_castbar.start_interact
+- WarBoard_Session.Initialize
+- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
+- NoOverheal.OnMouseOverEnd
+- PeaceOut.SetupAction
+- WarBoard_TDPS.Callback
+- BuddyBind.init
+- CDown.CCDownFrameB:Create
+- Swift Assist.local.WriteLabels
+- TidyRollOptions.Initialize
+- Calling.ClearListLine
+- QuickWarReport.TestConfirmWindow
+- BlackBox.HealthUpdate
+- Obsidian.SetTimer
+- SORPager.HidePopup
+- CDown.CCDownFrameB:UpdateDurI1H
+- Obsidian.Setup.EffectTracker.LoadSettings
+- Rangechecker.WriteLabel
+- APAGui.OnShown
+- WbLeadHelperMessage.MessageDialogOpen
+- BustedGUI.NewErrorRecorded
+- CDown.CCDownFrame:UpdateI1
+- RoR_SoR.SET_KEEP
+- Obsidian.Castbar:SetLayout
+- TalismanMonitor.UpdateIconLabel
+- ClosetGoblinZoneWindow.RefreshOption
+- SORPager.OnMouseOver
+- RoR_debolster.check
+- zmm.CreateDummyLabel
+- BustedGUI.ClearAlertFlash
+- Twister.Initialize
+- wbLeadHelper.onZoneMouseOver
+- Squared.InitImportExport
+- ScenarioStats.LoadWindow
+- TTitan.UI.DisplayManualEntry
+- Obsidian.Setup.EffectTracker.OnTimerOffsetYChanged
+- Enemy.Stopwatch_Update
+- NoOverheal.OnInitialize
+- QuickWarReport.ShowConfirmWindow
+- MapPin.local.EditMarker
+- TacticSetNames.SettingsWindow.OpenColorDialog
+- TalismanGenie.CurioOff
+- XpStatus.InitializeSetOpacityWindow
+- AtlasMap.OnMouseOverEnd
+- DuffTimer.AddNewEffectByWindow
+- SOROptions.settimer
+- Calling.ShowNotification
+- MoraleCircle.OnSetCustomColorFull
+- Sequencer.local.SetReturn
+- ClosetGoblinCharacterWindow.OnInitialize
+- MiracleGrow2.UpdatePlot
+- RoR_SoR.SET_CAMPAIGN
+- Obsidian.Setup.EffectTracker.Initialize
+- Calling.SetKillsListStrings
+- mmo.UpdateQueue
+- BuddyBind.OnRawDeviceInput
+- CallingSetup.ShowTutorialPart
+- Enemy.Timer_Update
+- Enemy.CombatLogUI_EpsWindow_Initialize
+- DuffTimer.WindowSetup
+- Enemy.EnemyEffectsIndicator:Update
+- Obsidian.Setup.Castbar.OnSlideTimerScale
+- APAGui.UpdateKitingHUD
+- RandomMountUI.OnInitialize
+- alertMod.SaveChanges
+- RandomMountUI.OnAddCustomMount
+- Rangechecker.friendly
+- TalismanGenie.Initialise
+- mml.Initialize
+- MoraleCircle.ColorChanger3
+- Enemy.CombatLogUI_StatsWindow_Open
+- MoraleCircle.ColorChanger2
+- Aura.Aura:CreateEditWindows
+- PartyCast.FetchedText
+- SOR.SetupWindows
+- TalismanGenie.DisplayData
+- APAGui.UpdatePetTargetHUD
+- Atlas.local.UpdateZoneName
+- MoraleCircle.ColorChanger1
+- DAoCBuff.DAoCBuffFrame:UpdateI2
+- MiracleGrowLight.setMode
+- TTitan.UI.DisplayRow
+- Atlas.Configuration.Initialize
+- alertMod.SetLabels
+- HealGrid.HealGridCastBar:BeginCast
+- TalismanGenie.GoldDustOff
+- TTitan.UI.Initialize
+- Atlas.ShowCoordinatesOnMouseOver
+- Aura.Aura:CreateRuntimeWindows
+- DammazKron.InitializeNFO
+- TTitan.UI.SetDataSource
+- FlagCap.OnPointUpdate
+- Killer.ShowRowTooltip
+- HealGridUtility.UpdateWARCastBarVisibility
+- SNT_CASTBAR.local.cleanup
+- BuffHead.BuffHeadEffectFrame:SetLayout
+- Obsidian.EffectBar:SetScale
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- MapPin.EditMarker
+- Sequencer.OnInitialize
+- Sequencer.SetReturn
+- CastSequence.Setup.Initialize
+- CastSequence.local.BuildSequence
+- CastSequence.local.LoadSequence
+- TastyButtonsOptions.BlockButton
+- GuildWardenWin.WinSetup
+- DammazKron.UpdateSpecial
+- Dye.Initialize
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- QuickWarReport.local.PrepareConfirmWindowChrome
+- Sequencer.Save
+- PartyCast.Update
+- Sequencer.ToggleReset
+- BustedGUI.Initialize
+- TalismanGenie.FragmentOn
+- CastSequence.SequenceBuilder.Initialize
+- SOR.Initialize
+- ScenarioStats.CallSettingsWindow
+- WARCommander.SetAssistTarget
+- WarBoard_Loc.Initialize
+- Obsidian.OnLoadingEnd
+- GuildWarden.ScrollDown
+- IHYTM.HandleSlashCmd
+- PeaceOut.PO_Tick
+- HealGrid.HealGridCastBar:Update
+- CDown.CCDownFrame:Create
+- CDown.local.ShowTab
+- RoR_SoR.OnInitialize
+- BlackBox.UpdateTimer
+- Trakario.Test
+- PotionBar.UpdateCooldown
+- alertMod.SetSliders
+- CDown.CCDownFrameB:UpdateDurI2V
+- WhatsCooking.CombatCheck
+- QuickWarReport.local.ShowConfirmWindow
+- Rangechecker.OnTargetUpdated
+- StatdollWnd.setLabels
+- Swift Assist.local.SetSmartLabel
+- ZonePOP.Update
+- BuddyBind.update
+- Effigy.RegisterStateInfoForPlayer
+- CastSequence.SequenceBuilder.OnResetTimeoutLUp
+- ThankTheTank.OnCombatAction
+- CallingSetup.Initialize
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
+- Enemy.CombatLogUI_EpsWindow_UpdateLayout
+- mech.slt
+- CleanCastbar.Initialize
+- TalismanGenie.Reset
+- VPBreakdown.UpdateDetailLabels
+- DammazKronTNFO.PlayerTargetUpdate
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- BlackBox.SetHook
+- DuffTimer.Options.GetEditBoxText
+- TacticSetNames.local.SetLabels
+- WarBoard_Loc.OnPlayerPositionUpdated
+- BlackBookWindow.Initialize
 
 
 ## Binding Resolution
 
-- Total handler declarations: 192
-- Resolved to Lua functions: 175 (91%)
+- Total handler declarations: 593
+- Resolved to Lua functions: 593 (100%)
 
+## .mod Lifecycle: Startup Windows
+
+This element type is instantiated as a startup window by the following .mod addon(s):
+
+| Frame Name | Addon | Hook | Resolution | Confidence |
+| --- | --- | --- | --- | --- |
+| BarText_InfluenceText | BarText (Influence) | OnInitialize | exact | HIGH |
 ## Seen In
 
+- AbilityAlert
+- AbilityNotifier
+- ActionPoints
+- AdjustTheTip
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - AggroMeter
+- ArmorGraphicToggle
+- Asshat
+- Assist
+- Atlas
+- AuctionStats
 - Aura
+- AutoBand
+- AutoSalvage
 - BankArkel
+- BarText (Influence)
+- BlackBook
+- BlackBox
+- Bloody Mess
+- Brizio's Crappy Computer Medic
+- BuddyBind
 - BuffHead
+- Busted
+- CCTV
+- CDown
 - CM_ClosetGoblin
+- CMap
+- CaVES
+- Calling
+- CastSequence
+- ChattyCathy
+- Cheeseboard
+- CleanCastbar
+- CleanUnitFrames
+- Clock
 - CombatTextNames
+- CoolDownLine
+- Countdown
+- Crafting Info Tooltip
+- CraftingWillard
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DaemonAssist
+- DammazKron
+- Dascore
+- Deathblow
+- Deathblow2
+- DeepSleep
+- DetauntHelper
+- Duel
+- DuffTimer
+- Dye Preview
+- EA_LoadingScreen
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraft
+- EZCraftX
+- Effigy
+- Emojii
 - Enemy
+- EveryBodyGuard
+- FastFriends
+- FastInteract
+- FlagCap
+- FozAuction
+- GCDTracker
+- GDes
+- Ges
+- GetStats
+- Group Icons SG
+- GroupRange
+- GroupSpotter
 - GuardLine
+- GuardList
+- GuardRange
+- GuildWarden
+- HealGrid
+- Hopper
+- I HATE YOU THIS MUCH
+- InfoScroller
+- ItemRack
+- JunkDump
+- KeyBar
+- Keyset
+- KeysetMonsterPlay
+- KillStreak
+- KillTracker
 - Killer
+- Kwestor
+- LibAddonButton
 - LibGroup
 - LibWBToggler
+- LootAlert
+- LoyalPet
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- Mass Refine
+- Mech
+- MegaphonePlusPlus
+- Minmap
+- Miracle Grow Remix
+- MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
+- MoraleSet
+- Moth
+- Motion
+- MyReasons
+- NaturalLog
+- NerfedButtons
+- NoOverheal
+- Obsidian
+- OverheadFonts
+- PartyAd
 - PartyCast
+- PeaceOut
+- Phantom
+- PieTracker
 - Pocket Palette
 - PotionBar
+- Pure
+- Pure Careerbar
+- Queue Queuer
+- QuickTacticSwitch
+- QuickWarReport
+- RO-Style Combat Text
+- RPs
+- RVAPI_ColorDialog
+- RVAPI_Range
+- RVMOD_3DPortrait
+- RVMOD_Manager
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
+- RVMOD_Targets
+- RaidMeter
+- RandomMount
+- Rangechecker
+- RealmStatus
+- Refer
+- ReliquaryHunter
+- RememberIt
+- Res
+- ResHelp
 - RoR_SoR
+- RoR_debolster
+- Rolodex
+- Rotation
+- RvRContribution
+- RvRStats
+- RvRStatsTab
+- SNT_CASTBAR
+- SNT_PANEL
+- SOR
+- ScenarioStats
+- Sequencer
+- SessionRPs
 - Shinies
+- ShowHealthPercent
+- SimpleCombatText
+- SimpleXY
+- SocialWindow 2.0
+- Soloq
+- SpamBayes
+- Squared
+- SquaredClick
+- Statdoll
+- Statdoll Light
+- Statdoll Remix
 - Swift Assist
+- Swinger
+- TacticSetNames
+- TalismanGenie
+- TargetInfoRing
+- Targets
+- TastyButtons
+- TaxPayer
 - TexturedButtons
+- ThankTheTank
+- ThinkOutLoud
 - TidyChat
+- TidyQueue
 - TidyRoll
+- TokenMachine
+- Tome Titan
+- TomeTracker
+- Tortall_DPS
+- Trakario
 - TurretRange
+- TurretScrap
+- Twister
+- TwisterSet
+- VPBreakdown
+- Vectors
+- WARCommander
+- WARRatingBuster
+- WBStutterLess
 - WSCT
+- WTes
+- WaaaghBar
 - WarBoard
+- WarBoard_AAOTracker
+- WarBoard_FPS
+- WarBoard_Loc
+- WarBoard_Menu
+- WarBoard_Session
+- WarBoard_TDPS
+- WarBoard_TaliMon
+- Warbuilder
+- Wargames
+- WhatsCooking
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- XpStatus+G
+- ZonePOP
+- alertMod
 - bigger_MacroWindow
+- compass
+- emotes
+- fpsbox
+- minesweep
+- nLootLink
+- talisman-monitor
+- wbLeadHelper
+- yAssistHelper
+- zMailMod
 
 ## Examples
 
-- AdvancedPetAssist: APAFollowTargetHUDLabel -> Label APAFollowTargetHUDLabel
-- AdvancedPetAssist: APAInstantOnlyHUDLabel -> Label APAInstantOnlyHUDLabel
-- AdvancedPetAssist: APAKitingHUDLabel -> Label APAKitingHUDLabel
-- AdvancedPetAssist: APALabelAttackBind -> Label APALabelAttackBind
-- AdvancedPetAssist: APALabelAutoReattack -> Label APALabelAutoReattack
-- AdvancedPetAssist: APALabelAutoReattackDelay -> Label APALabelAutoReattackDelay
+- AbilityAlert: AAText -> Label AAText
+- AbilityNotifier: AbHelpText -> Label AbHelpText
+- ActionPoints: ActionPointsWindowText -> Label ActionPointsWindowText
+- AdjustTheTip: AdjustTheTipMenuItemSliderSliderLabel -> Label AdjustTheTipMenuItemSliderSliderLabel
+- AdjustTheTip: AdjustTheTipMenuItemSliderSliderValueLabel -> Label AdjustTheTipMenuItemSliderSliderValueLabel
+- AdjustTheTip: MouseOverTargetHealthContainerTemplateHealthText -> Label MouseOverTargetHealthContainerTemplateHealthText
 
 ## Related APIs
 
+- [Anchor](element_Anchor.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (HIGH 100/100) - XML Element Type
+- [Color](element_Color.md) (HIGH 100/100) - XML Element Type
+- [EA_CheckButtonLabel](../../globals/constants/constant_EA_CheckButtonLabel.md) (HIGH 100/100) - Constant
+- [EA_Label_ChatText](../../globals/constants/constant_EA_Label_ChatText.md) (HIGH 100/100) - Constant
+- [EA_Label_DefaultSubHeading](../../globals/constants/constant_EA_Label_DefaultSubHeading.md) (HIGH 100/100) - Constant
 - [EA_Label_DefaultText](../../globals/constants/constant_EA_Label_DefaultText.md) (HIGH 100/100) - Constant
 - [EA_Label_DefaultText_Small](../../globals/constants/constant_EA_Label_DefaultText_Small.md) (HIGH 100/100) - Constant
 - [EA_Settings_ItemTitle](../../globals/constants/constant_EA_Settings_ItemTitle.md) (HIGH 100/100) - Constant
 - [EA_Settings_SectionTitle](../../globals/constants/constant_EA_Settings_SectionTitle.md) (HIGH 100/100) - Constant
-- [EA_Window_ContextMenu.AddMenuDivider](../../globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
+- [EventHandlers](element_EventHandlers.md) (HIGH 100/100) - XML Element Type
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
+- [Sounds](element_Sounds.md) (HIGH 100/100) - XML Element Type
+- [Text](element_Text.md) (HIGH 100/100) - XML Element Type
 - [TintColor](element_TintColor.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
-- [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
-- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
-- [Text](element_Text.md) (HIGH 98/100) - XML Element Type
-- [EA_Label_DefaultSubHeading](../../globals/constants/constant_EA_Label_DefaultSubHeading.md) (HIGH 90/100) - Constant
-- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
-- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
-- [Color](element_Color.md) (MEDIUM 45/100) - XML Element Type
+- [EA_Label_SocialListItem](../../globals/constants/constant_EA_Label_SocialListItem.md) (HIGH 90/100) - Constant
+- [EA_Template_AutoRollRarityHeader](../../globals/constants/constant_EA_Template_AutoRollRarityHeader.md) (HIGH 90/100) - Constant
+- [EA_Template_AutoRollTitle](../../globals/constants/constant_EA_Template_AutoRollTitle.md) (HIGH 90/100) - Constant
+- [EA_Template_OpenParty_Label](../../globals/constants/constant_EA_Template_OpenParty_Label.md) (HIGH 90/100) - Constant
+- [EA_Template_OpenParty_Label_Small](../../globals/constants/constant_EA_Template_OpenParty_Label_Small.md) (HIGH 90/100) - Constant
+- [EA_Window_HelpDescriptionTemplate](../../globals/constants/constant_EA_Window_HelpDescriptionTemplate.md) (HIGH 90/100) - Constant
+- [color](element_color.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
-- [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonDown](../handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
-- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 100/100) - XML Event
-- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 
-- [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonDown](../handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
-- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 100/100) - XML Event
-- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
-
-## Affects
-
-- none
+- [OnLButtonDown](../handlers/handler_OnLButtonDown.md) (HIGH 88/100) - XML Event
+- [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 88/100) - XML Event
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
+- [OnMouseLeave](../handlers/handler_OnMouseLeave.md) (HIGH 76/100) - XML Event

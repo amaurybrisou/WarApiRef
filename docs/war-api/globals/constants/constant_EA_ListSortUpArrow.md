@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, CM_ClosetGoblin, Shinies |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/SetupEffectCache.xml:0`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.xml:0`, `/workspace/data/raw/Shinies/Source/ShiniesUITemplates.xml:0` |
+| Addons seen in | BlackBook, BuffHead, CM_ClosetGoblin, CastSequence, EA_UiModWindow, Shinies, SocialWindow 2.0 |
+| Files seen in | BlackBook.xml, ClosetGoblin.xml, Setup/Builder.xml, Setup/SetupEffectCache.xml, Source/ShiniesUITemplates.xml, Source/SocialWindowTabFriends.xml, Source/SocialWindowTabIgnore.xml, Source/SocialWindowTabSearch.xml |
 | Namespaces detected | EA_ListSortUpArrow |
 | Source kinds | xml_attributes |
-| Example locations | BuffHeadSetupEffectCacheWindowSortBarUpArrow, ClosetGoblinCharacterWindowContentsSortTacticsUpArrow, ClosetGoblinCharacterWindowContentsSortUpArrow, ClosetGoblinZoneWindowContentsSortSetUpArrow, ClosetGoblinZoneWindowContentsSortUpArrow, Shinies_Button_DefaultListSortUpArrow |
-| XML usage count | 6 |
-| XML attribute usage count | 6 |
+| Example locations | BlackBookWindowSortBarUpArrow, BuffHeadSetupEffectCacheWindowSortBarUpArrow, CastSequenceBuilderWindowSortBarUpArrow, ClosetGoblinCharacterWindowContentsSortTacticsUpArrow, ClosetGoblinCharacterWindowContentsSortUpArrow, ClosetGoblinZoneWindowContentsSortSetUpArrow |
+| XML usage count | 13 |
+| XML attribute usage count | 13 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,38 +57,37 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 3 addons.
+Engine-supplied XML constant or template class referenced by 7 addons.
 
 ## Seen In
 
+- BlackBook
 - BuffHead
 - CM_ClosetGoblin
+- CastSequence
+- EA_UiModWindow
 - Shinies
+- SocialWindow 2.0
 
 ## Used By
 
+- BlackBookWindowSortBarUpArrow
 - BuffHeadSetupEffectCacheWindowSortBarUpArrow
+- CastSequenceBuilderWindowSortBarUpArrow
 - ClosetGoblinCharacterWindowContentsSortTacticsUpArrow
 - ClosetGoblinCharacterWindowContentsSortUpArrow
 - ClosetGoblinZoneWindowContentsSortSetUpArrow
 - ClosetGoblinZoneWindowContentsSortUpArrow
 - Shinies_Button_DefaultListSortUpArrow
+- SocialWindowTabFriendsSocketSortButtonBarUpArrow
+- SocialWindowTabIgnoreSocketSortButtonBarUpArrow
+- SocialWindowTabSearchSocketSortButtonBarUpArrow
+- UiModVersionMismatchWindowSortUpArrow
+- UiModWindowSortUpArrow
 
 ## Related APIs
 
 - [DynamicImage](../../xml/element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

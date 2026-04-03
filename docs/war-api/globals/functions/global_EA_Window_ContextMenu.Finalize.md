@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 13 addons
+- Seen in: 58 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, BuffHead, CM_ClosetGoblin, Enemy, Killer, MoraleCircle, PotionBar, RoR_SoR |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:251`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:378`, `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:72`, `/workspace/data/raw/BuffHead/Setup/SelectFont.lua:76`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.lua:130`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.lua:217`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.lua:439`, `/workspace/data/raw/BuffHead/Setup/SetupEffectCache.lua:195` |
+| Addons seen in | ActionFraction, AdjustTheTip, AggroMeter, AutoBand, BuffHead, CM_ClosetGoblin, CastSequence, Crusher |
+| Files seen in | AdjustTheTip.lua, AggroMeter.lua, AutoBand.lua, Button.lua, ClosetGoblinCharacterWindow.lua, ClosetGoblinOptionWindow.lua, ClosetGoblinZoneWindow.lua, Code/CombatLog/CombatLogEpsWindow.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | AggroMeter: AggroMeter.OnTabRBU, AggroMeter: AggroMeter.PickedListMenu, BuffHead: BuffHead.Setup.AdvancedContainersItem.OnContainerRClick, BuffHead: BuffHead.Setup.EffectCache.CreateContextMenu, BuffHead: BuffHead.Setup.Filter.CreateContextMenu, BuffHead: BuffHead.Setup.LayoutControlFrame:CreateContextMenu |
+| Example locations | ActionFraction: RightClick, ActionFraction: SetFontSelectionMenu, ActionFraction: SetPresetLocation, AdjustTheTip: ContextMenu_Finalize, AdjustTheTip: CreateContextMenu, AdjustTheTip: SpawnAnchorContextMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 41 |
-| Global usage count | 41 |
+| Lua usage count | 160 |
+| Global usage count | 160 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ EA_Window_ContextMenu.Finalize()
 
 ## Description
 
-Observed as a global function across 13 addons.
+Observed as a global function across 58 addons.
 
 ## Parameters
 
@@ -74,66 +74,100 @@ Observed as a global function across 13 addons.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- ActionFraction
+- AdjustTheTip
 - AggroMeter
+- AutoBand
 - BuffHead
 - CM_ClosetGoblin
+- CastSequence
+- Crusher
+- Dascore
+- DuffTimer
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EZCraft
+- EZCraftX
+- Effigy
 - Enemy
+- FozAuction
+- HealGrid
 - Killer
+- LibAddonButton
+- MapMonster
+- MapPin
+- MarkBuff
+- Miracle Grow Remix
+- MiracleGrow
 - MoraleCircle
+- Motion
+- NerfedButtons
+- Obsidian
+- PeaceOut
+- PlayEffectsOn
 - PotionBar
+- Pure
+- QuickNameActions+
+- RandomMount
+- Refer
 - RoR_SoR
+- SOR
 - Shinies
+- ShowMeTheBubbles
+- SocialWindow 2.0
+- TacticSetNames
+- TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyChat
+- TidyQueue
+- Tortall_DPS
 - TurretRange
+- Vectors
+- WARCommander
 - WarBoard
+- WarBoard_Loc
+- WarBoard_Menu
+- WarBoard_WarWhisperer
+- XpStatus+G
+- scenarioInfo
 
 ## Examples
 
-- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.Finalize()
-- AggroMeter: AggroMeter.PickedListMenu -> EA_Window_ContextMenu.Finalize()
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.OnContainerRClick -> EA_Window_ContextMenu.Finalize()
-- BuffHead: BuffHead.Setup.EffectCache.CreateContextMenu -> EA_Window_ContextMenu.Finalize()
-- BuffHead: BuffHead.Setup.Filter.CreateContextMenu -> EA_Window_ContextMenu.Finalize()
-- BuffHead: BuffHead.Setup.LayoutControlFrame:CreateContextMenu -> EA_Window_ContextMenu.Finalize()
+- ActionFraction: RightClick -> EA_Window_ContextMenu.Finalize(EA_Window_ContextMenu.CONTEXT_MENU_1)
+- ActionFraction: SetFontSelectionMenu -> EA_Window_ContextMenu.Finalize(EA_Window_ContextMenu.CONTEXT_MENU_3)
+- ActionFraction: SetPresetLocation -> EA_Window_ContextMenu.Finalize(EA_Window_ContextMenu.CONTEXT_MENU_2)
+- AdjustTheTip: ContextMenu_Finalize -> EA_Window_ContextMenu.Finalize(contextMenuNumber, anchor)
+- AdjustTheTip: CreateContextMenu -> EA_Window_ContextMenu.Finalize()
+- AdjustTheTip: SpawnAnchorContextMenu -> EA_Window_ContextMenu.Finalize(EA_Window_ContextMenu.CONTEXT_MENU_2)
 
 ## Related APIs
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
 - [EA_Window_ContextMenu.AddCascadingMenuItem](global_EA_Window_ContextMenu.AddCascadingMenuItem.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.AddMenuDivider](global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.AddMenuItem](global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddUserDefinedMenuItem](global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.CreateContextMenu](global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
-- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
-- [EA_Window_ContextMenu.AddUserDefinedMenuItem](global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 90/100) - Global Function
-
-## Triggered By
-
-- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [DynamicImage](../../xml/element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
-- [ListBox](../../xml/element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
+- [EA_Window_ContextMenu.Hide](global_EA_Window_ContextMenu.Hide.md) (HIGH 100/100) - Global Function
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

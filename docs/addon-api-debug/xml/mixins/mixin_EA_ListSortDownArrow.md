@@ -1,0 +1,8 @@
+# Mixin EA_ListSortDownArrow
+
+## Used By
+
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsSortDownArrow
+- CM_ClosetGoblin: ClosetGoblinCharacterWindowContentsSortTacticsDownArrow
+- CM_ClosetGoblin: ClosetGoblinZoneWindowContentsSortDownArrow
+- CM_ClosetGoblin: ClosetGoblinZoneWindowContentsSortSetDownArrow

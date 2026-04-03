@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, CM_ClosetGoblin, DAoCBuff, Enemy, Killer, Pocket Palette, PotionBar |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffMsgWindow.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:968`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogSnapshotWindow.xml:0`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:0`, `/workspace/data/raw/Enemy/Code/Core/ChooseIconDialog.xml:0` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, ArmorGraphicToggle, Atlas, AuctionStats, AutoSalvage, Busted, CDown |
+| Files seen in | AGTSettingsWindow.xml, APAGui.xml, AdvancedRenownTrainingImportDialog.xml, AdvancedRenownTrainingPresets.xml, AdvancedRenownTrainingWindow.xml, Busted.xml, CDownSettings.xml, ClosetGoblin.xml |
 | Namespaces detected | EA_Window_DefaultFrame |
 | Source kinds | xml_attributes |
-| Example locations | APAOptionsBackground, AdvancedRenownTrainingExportWindowBackground, AdvancedRenownTrainingImportNameInputWindowBackground, AdvancedRenownTrainingImportWindowBackground, AdvancedRenownTrainingLinkWindowBackground, AdvancedRenownTrainingPresetsWindowBackground |
-| XML usage count | 45 |
-| XML attribute usage count | 45 |
+| Example locations | AGTSettingsWindowFrame, APAOptionsBackground, AdvancedRenownTrainingExportWindowBackground, AdvancedRenownTrainingImportNameInputWindowBackground, AdvancedRenownTrainingImportWindowBackground, AdvancedRenownTrainingLinkWindowBackground |
+| XML usage count | 134 |
+| XML attribute usage count | 134 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,25 +57,73 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 12 addons.
+Engine-supplied XML constant or template class referenced by 59 addons.
 
 ## Seen In
 
 - AdvancedPetAssist
 - AdvancedRenownTrainer
+- ArmorGraphicToggle
+- Atlas
+- AuctionStats
+- AutoSalvage
+- Busted
+- CDown
 - CM_ClosetGoblin
+- CaVES
+- CraftingWillard
 - DAoCBuff
+- DPSMeter
+- DammazKron
+- DeepSleep
+- DetauntHelper
+- Dye Preview
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EA_UiModWindow
+- Emojii
 - Enemy
+- EveryBodyGuard
+- GroupSpotter
+- GuildWarden
+- HealGrid
 - Killer
+- Kwestor
+- LoyalPet
+- MapPin
+- Miracle Grow Remix
+- NerfedButtons
+- Phantom
 - Pocket Palette
 - PotionBar
+- QuickWarReport
+- RandomMount
+- ReliquaryHunter
+- RememberIt
 - RoR_SoR
+- SessionRPs
+- TacticSetNames
 - TidyChat
+- TidyQueue
+- TokenMachine
+- Tortall_DPS
+- Twister
+- Vectors
+- WARCommander
 - WSCT
+- WTes
+- WarBoard_Loc
+- Wargames
 - WhoHealedMe
+- XpStatus+G
+- minesweep
+- nLootLink
+- wbLeadHelper
 
 ## Used By
 
+- AGTSettingsWindowFrame
 - APAOptionsBackground
 - AdvancedRenownTrainingExportWindowBackground
 - AdvancedRenownTrainingImportNameInputWindowBackground
@@ -83,14 +131,50 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - AdvancedRenownTrainingLinkWindowBackground
 - AdvancedRenownTrainingPresetsWindowBackground
 - AdvancedRenownTrainingWindowBackground
+- AtlasConfigurationFrameContent
+- AtlasConfigurationFrameContentMapSettings
+- AtlasConfigurationFrameContentTweaksContent
+- AtlasFrameLegendContent
+- AtlasFrameMapContainer
+- AuStatsOptionsBackground
+- AutoSalvageOptionsBackground
+- BustedGUIBack
+- CDown_SettingsBackground
+- CaVESWindowOptionsWindowBackground
 - ClosetGoblinCharacterWindowBackground
 - ClosetGoblinCharacterWindowContentsActionBarSettingsBG
 - ClosetGoblinCharacterWindowContentsSetListBackground
 - ClosetGoblinZoneWindowBackground
 - ClosetGoblinZoneWindowContentsSetListBackground
+- CraftingWillardMainBackground
 - DAoCBuffMessageWindowBackground
 - DAoCBuff_SettingsBackground
 - DAoCBuff_Settings_FilterBackground
+- DKconfigWindowBackground
+- DPSMeterWindowBackground
+- DTHConfigWindowBaseBackground
+- DebugWindowBackground
+- DebugWindowLogDisplaySeperator2
+- DebugWindowOptionsBackground
+- DeepSleep_SettingsBackground
+- DevPadConfirmLoadBackground
+- DevPadConfirmLoadNameSeperator
+- DevPadDeleteWindowBackground
+- DevPadDeleteWindowNameSeperator
+- DevPadNewWindowBackground
+- DevPadNewWindowNameSeperator
+- DevPadProjectLoadBackground
+- DevPadProjectLoadNameSeperator
+- DevPadRenameWindowBackground
+- DevPadRenameWindowNameSeperator
+- DevPadSaveWindowBackground
+- DevPadSaveWindowNameSeperator
+- DevPadWindowBackground
+- DevPadWindowNameSeperator
+- DyeBG
+- EA_Window_OpenPartyBackground
+- EA_Window_OpenPartyManageSocketDefConvertToWarbandBackground
+- EmojiiChooseIconDialogBackground
 - EnemyChooseChannelDialogBackground
 - EnemyChooseIconDialogBackground
 - EnemyClickCastingDialogBackground
@@ -105,38 +189,78 @@ Observed engine XML template or inherited constant referenced by 12 addons.
 - EnemyMarkConfigDialogBackground
 - EnemyTextEntryDialogBackground
 - EnemyUnitFramePartDialogBackground
+- EveryBodyGuard_SettingsBackground
+- GroupSpotterSettingsWindowBackground
+- GuildWarden.DBWindowBG
+- HGG_HealGridBackground
+- HGG_HealGridGuiColorSelectBackground
 - KillerScoreDetailsWindowBackground
 - KillerSettingsWindowBackground
 - KillerWindowBackground
+- KwestorGui_KwestorBackground
+- LPETOptionsBackground
+- MapPinChooseIconDialogBackground
+- MineSweepWindowBackground
+- MiracleGrow2Background
+- NBSBCoreWindowBackground
+- NewHighScoreBG
+- ObjectInspectorNameSeperator
 - PPMainBG
+- PhantomSettingsFrame
 - PotionBarAboutBackground
 - PotionBarButtonsBackground
 - PotionBarTypeTemplateBackground
+- QuickWarReportConfirmBackground
+- RandomMountWindowBackground
+- ReliquaryHunterOptionsWindowBackground
+- RememberItSettingsFrame
 - RoR_SoR_OffsetBackground
 - RoR_SoR_OpacityBackground
 - RoR_SoR_ScaleBackground
+- ScenarioGroupSetOpacityWindowBackground
+- SiegeChatFiltersBackground
+- TacticSetNamesColorPickerBackground
+- TacticSetNamesSettingsWindowBackground
 - TidyChatCopyBackground
+- TidyQueueBackground
+- TokenMachineSettingsFrame
+- TortallDPSDetailTemplateBG
+- TortallDPSGroupTemplateBG
+- TortallDPSMeterAbilitiesBG
+- TortallDPSMeterBG
+- TortallDPSMeterDetailWindowBG
+- TortallDPSMeterGroupBG
+- TortallDPSMeterGroupWindowBG
+- TortallDPSMeterResetBG
+- TortallDPSMeterScaleBG
+- TortallDPSMeterTargetsBG
+- TortallDPSMeterWhatHMBG
+- TortallDPSMeterWhoHMBG
+- TortallDPSToggleBG
+- TwisterSettingsFrame
+- UiModAdvancedWindowCustomUIBackground
+- UiModAdvancedWindowModsBackground
+- Vectors_ImportBackground
+- Vectors_SettingsBackground
+- WARCommanderBackground
 - WSCTOptionsBackground
 - WSCTOptionsColorPickerWindowBackground
+- WarBoard_Loc_SetWidthWindowBackground
+- WargamesGemsBackground
+- WargamesPairsBackground
+- WargamesTTTBackground
+- WbLeadHelperMessageBackground
 - WhoHealedMeDetailsBackground
 - WhoHealedMeOptionsBackground
 - WhoHealedMeWindowBackground
+- XpStatusSetOpacityWindowBackground
+- nLootLinkGUIBackground
+- nLootLinkOptionsBackground
+- wbLeadHelperChooseIconDialogBackground
 
 ## Related APIs
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

@@ -27,10 +27,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/data/raw/Shinies/Modules/API/Shinies-API-Item.lua:22` |
+| Files seen in | Modules/API/Shinies-API-Item.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | _G.Shinies:GetModule:Item_GetAuctionDeposit, lua_call |
+| Example locations | Item_GetAuctionDeposit, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -57,28 +57,12 @@
 
 ## Description
 
-Observed GameData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+GameData.GameData.Auction.DEPOSIT_MULTIPLIER field accessed by 1 addons; commonly found in Item_GetAuctionDeposit and lua_call contexts.
 
 ## Seen In
 
 - Shinies
 
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: _G.Shinies:GetModule:Item_GetAuctionDeposit, lua_call
+- Observed in contexts: Item_GetAuctionDeposit, lua_call

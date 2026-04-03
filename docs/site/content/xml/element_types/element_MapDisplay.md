@@ -10,39 +10,38 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 153
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
-- +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TurretRange |
-| Files seen in | `/workspace/data/raw/TurrentRange/Display.xml:0` |
+| Addons seen in | Atlas, CMap, EA_LoadingScreen, Map, MapMonster, Minmap, TurretRange |
+| Files seen in | Map/Main.xml, Source/GeneralLoadingScreenTemplates.xml, Source/MapMonster_Calibrate.xml |
 | Namespaces detected | MapDisplay |
-| Source kinds | xml_frames, xml_handlers |
-| Example locations | TurretRange: TurretMapDisplay |
-| XML usage count | 1 |
-| XML attribute usage count | 1 |
-| Lua usage count | 4 |
+| Source kinds | xml_frames |
+| Example locations | Atlas: AtlasFrameMapContainerMapDisplay, CMap: CMapWindowMapDisplay, CMap: CMapWindowWMap, EA_LoadingScreen: LoadingScreenMapDefDisplay, Map: MapDisplay, MapMonster: MapMonster_CalibrateWindowMapDisplay |
+| XML usage count | 8 |
+| XML attribute usage count | 8 |
+| Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
-| Event binding presence | yes |
-| Observed in XML and Lua | yes |
+| Event binding presence | no |
+| Observed in XML and Lua | no |
 | Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
@@ -58,10 +57,12 @@
 
 ## Description
 
-MapDisplay is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnLButtonUp, OnMButtonUp, OnPointMouseOver to Lua.
+MapDisplay is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Anchors, EventHandlers, Size and bind XML events like OnHidden, OnLButtonUp, OnMButtonUp to Lua.
 
 ## Common Attributes
 
+- gutterIcon
+- handleinput
 - iconScale
 - layer
 - loadingAnim
@@ -74,31 +75,73 @@ MapDisplay is an interactive XML control. It commonly appears under Window. It i
 
 ## Common Handlers
 
+- [OnHidden](../handlers/handler_OnHidden.md)
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
 - [OnMButtonUp](../handlers/handler_OnMButtonUp.md)
+- [OnMouseLeave](../handlers/handler_OnMouseLeave.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+- [OnMouseWheel](../handlers/handler_OnMouseWheel.md)
 - [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md)
 - [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
+- [OnShown](../handlers/handler_OnShown.md)
+- [OnShutdown](../handlers/handler_OnShutdown.md)
+- [OnUpdate](../handlers/handler_OnUpdate.md)
 
 ## Common Handler Functions
 
-- Map.OnClickMap
-- Map.OnMButtonUp
 - Map.OnMouseOverPoint
+- AtlasMap.OnMouseOverPoint
+- CMapWindow.OnMouseOverPoint
+- CMapWindow.WmapOnMouseOverPoint
+- Minmap.OnMouseOverPoint
+- Tooltips.OnMouseOverMapPoint
+- Map.OnClickMap
+- CMapWindow.OnClickMap
+- CMapWindow.WmapOnClickMap
+- Minmap.OnClickMap
+- CMapWindow.MWheel
+- Minmap.HandleMouseWheel
 - Map.OnRClickMap
+- AtlasMap.OnMapRBU
+- Map.OnMButtonUp
+- AtlasMap.OnMouseOver
+- CMapWindow.WmapOver
+- AtlasMap.OnMouseOverEnd
+- CMapWindow.WmapOverEnd
+- WindowUtils.OnHidden
+- AtlasMap.OnMouseLeaveMapPin
+- WindowUtils.OnShown
+- Map.Shutdown
+- CMapWindow.UpdateCoordinatesWMap
 
 
 ## XML Event Bindings
 
 | Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
 |-------|----------|---------------------|-------------------|-----------------|
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Map.OnClickMap | `function(...)` | LOW |
+| [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) | custom | Map.OnMouseOverPoint, AtlasMap.OnMouseOverPoint, CMapWindow.OnMouseOverPoint, CMapWindow.WmapOnMouseOverPoint, Minmap.OnMouseOverPoint, Tooltips.OnMouseOverMapPoint | `` |  |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Map.OnClickMap, CMapWindow.OnClickMap, CMapWindow.WmapOnClickMap, Minmap.OnClickMap | `flags, x, y` | MEDIUM |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | CMapWindow.MWheel, Minmap.HandleMouseWheel | `x, y, delta` | LOW |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Map.OnRClickMap, AtlasMap.OnMapRBU | `flags, x, y` | MEDIUM |
 | [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | Map.OnMButtonUp | `flags, x, y` | MEDIUM |
-| [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) | custom | Map.OnMouseOverPoint | `function(...)` | LOW |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Map.OnRClickMap | `function(...)` | LOW |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Map.OnClickMap | `flags, x, y` | LOW |
-| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | Map.OnMButtonUp | `flags, x, y` | MEDIUM |
-| [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) | custom | Map.OnMouseOverPoint | `` |  |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Map.OnRClickMap | `flags, x, y` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | AtlasMap.OnMouseOver, CMapWindow.WmapOver | `` |  |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | AtlasMap.OnMouseOverEnd, CMapWindow.WmapOverEnd | `` |  |
+| [OnHidden](../handlers/handler_OnHidden.md) | lifecycle | WindowUtils.OnHidden | `` |  |
+| [OnMouseLeave](../handlers/handler_OnMouseLeave.md) | custom | AtlasMap.OnMouseLeaveMapPin | `` |  |
+| [OnShown](../handlers/handler_OnShown.md) | lifecycle | WindowUtils.OnShown | `` |  |
+| [OnShutdown](../handlers/handler_OnShutdown.md) | lifecycle | Map.Shutdown | `` |  |
+| [OnUpdate](../handlers/handler_OnUpdate.md) | lifecycle | CMapWindow.UpdateCoordinatesWMap | `elapsed` | LOW |
+
+### Per-Event Lua API Calls
+
+**OnRButtonUp** handlers call: `WindowGetShowing`
+
+**OnMouseOverEnd** handlers call: `WindowSetShowing`
+
+**OnShown** handlers call: `ButtonSetText`, `DoesWindowExist`, `LabelSetText`, `TextEditBoxSetText`, `WindowSetDimensions`, `WindowSetShowing`
+
+**OnShutdown** handlers call: `WindowUnregisterEventHandler`
 
 ## Common Inherits
 
@@ -106,69 +149,81 @@ MapDisplay is an interactive XML control. It commonly appears under Window. It i
 
 ## Common Parent Elements
 
-- [Windows](element_Windows.md) — 1× (HIGH)
+- [Windows](element_Windows.md) — 8× (HIGH)
 
 ## Common Structural Child Elements
 
-- [Anchors](element_Anchors.md) — 1× (HIGH)
-- [EventHandlers](element_EventHandlers.md) — 1× (HIGH)
-- [Size](element_Size.md) — 1× (HIGH)
-
-## Typical XML Structure
-
-```xml
-<MapDisplay iconScale="0.45" layer="Overlay" loadingAnim="MapLoadingAnim" movable="false" name="..." pinTexture="map_markers01" popable="false" shape="circle" sticky="true">
-  <Size/>
-</MapDisplay>
-```
+- [Anchors](element_Anchors.md) — 8× (HIGH)
+- [EventHandlers](element_EventHandlers.md) — 8× (HIGH)
+- [Size](element_Size.md) — 3× (MEDIUM)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `iconScale` | **required** | 100% | 0.45 |
-| `layer` | **required** | 100% | Overlay |
-| `loadingAnim` | **required** | 100% | MapLoadingAnim |
-| `movable` | **required** | 100% | false |
 | `pinTexture` | **required** | 100% | map_markers01 |
-| `popable` | **required** | 100% | false |
-| `shape` | **required** | 100% | circle |
-| `sticky` | **required** | 100% | true |
+| `layer` | optional | 75% | default, secondary, Overlay |
+| `movable` | optional | 62% | false |
+| `shape` | optional | 62% | square, circle |
+| `iconScale` | optional | 50% | 0.70, 0.7, 0.45 |
+| `loadingAnim` | optional | 50% | MapLoadingAnim |
+| `sticky` | optional | 50% | false, true |
+| `gutterIcon` | optional | 37% | 39 |
+| `popable` | optional | 37% | false |
+| `handleinput` | optional | 12% | true |
 ## Structural Sub-Elements
 
 ### [Anchors](element_Anchors.md)
 
-Observed 1 times as an unnamed child.
+Observed 8 times as an unnamed child.
 
 ### [EventHandlers](element_EventHandlers.md)
 
-Observed 1 times as an unnamed child.
+Observed 8 times as an unnamed child.
 
 ### [Size](element_Size.md)
 
-Observed 1 times as an unnamed child.
+Observed 3 times as an unnamed child.
 
 ## Recursive Hierarchy
 
 - Root: [MapDisplay](element_MapDisplay.md)
-- [Anchors](element_Anchors.md) (structural, 1×, HIGH)
-  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+- [Anchors](element_Anchors.md) (structural, 8×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
       - (cycle)
-- [EventHandlers](element_EventHandlers.md) (structural, 1×, HIGH)
-  - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
-- [Size](element_Size.md) (structural, 1×, HIGH)
-  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
+- [EventHandlers](element_EventHandlers.md) (structural, 8×, HIGH)
+  - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
+- [Size](element_Size.md) (structural, 3×, MEDIUM)
+  - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
 
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `TextEditBoxSetText` | ui | 15 | OnShown |
+| `LabelSetText` | ui | 13 | OnShown |
+| `ButtonSetText` | ui | 6 | OnShown |
+| `WindowSetDimensions` | ui | 3 | OnShown |
+| `DoesWindowExist` | ui | 2 | OnShown |
+| `WindowSetShowing` | ui | 2 | OnMouseOverEnd, OnShown |
+| `WindowUnregisterEventHandler` | ui | 2 | OnShutdown |
+| `WindowGetShowing` | ui | 1 | OnRButtonUp |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
 
+### OnHidden
+
+Confidence: HIGH
+
 ### OnLButtonUp
 
-Confidence: LOW
+Confidence: MEDIUM
 
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
@@ -184,51 +239,123 @@ Confidence: MEDIUM
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
+### OnMouseLeave
+
+Confidence: LOW
+
+### OnMouseOver
+
+Confidence: HIGH
+
+### OnMouseOverEnd
+
+Confidence: HIGH
+
+### OnMouseWheel
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `x` | number | mouse_x |
+| 1 | `y` | number | mouse_y |
+| 2 | `delta` | number | wheel_delta |
 ### OnPointMouseOver
 
 Confidence: LOW
 
 ### OnRButtonUp
 
-Confidence: LOW
+Confidence: MEDIUM
 
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
+### OnShown
+
+Confidence: HIGH
+
+### OnShutdown
+
+Confidence: HIGH
+
+### OnUpdate
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `elapsed` | number | time_delta |
+## Lua Functions Manipulating This Type
+
+- MapPin.OnUpdate
+- MapMonster_Calibrate.OnMouseOverEnd
+- Atlas.local.SetMapTransparency
+- MapMonster_Calibrate.OnLMouseButton
+- MapMonster.Calibrate_ResizeMap
+- MapMonster.Calibrate_MoveAnchor
+- MapMonster.InitializeMapPins
+- MapPin.GetMapPos
+- MapPin.UpdateGuide
+- Map.SetBorderForegroundFRI
+- MapPin.UpdateMapCoordinates
+- MapMonster.MoveMapPin
+- Atlas.local.ShowCoordinatesOnMouseOver
+- Atlas.ShowCoordinatesOnMouseOver
+- Atlas.SetMapTransparency
+- MapMonster.local.MoveMapPin
+- MapMonster.local.CreateMarker
+- Map.Initialize
+- MapMonster.local.Calibrate_MoveAnchor
+- MapMonster_Calibrate.GetDimensions
+- MapMonster_Calibrate.WindowReport
+- MapMonster.CreateMarker
+
 
 ## Binding Resolution
 
-- Total handler declarations: 4
-- Resolved to Lua functions: 1 (25%)
+- Total handler declarations: 29
+- Resolved to Lua functions: 28 (96%)
 
 ## Seen In
 
+- Atlas
+- CMap
+- EA_LoadingScreen
+- Map
+- MapMonster
+- Minmap
 - TurretRange
 
 ## Examples
 
-- TurretRange: TurretMapDisplay -> MapDisplay TurretMapDisplay
+- Atlas: AtlasFrameMapContainerMapDisplay -> MapDisplay AtlasFrameMapContainerMapDisplay
+- CMap: CMapWindowMapDisplay -> MapDisplay CMapWindowMapDisplay
+- CMap: CMapWindowWMap -> MapDisplay CMapWindowWMap
+- EA_LoadingScreen: LoadingScreenMapDefDisplay -> MapDisplay LoadingScreenMapDefDisplay
+- Map: MapDisplay -> MapDisplay MapDisplay
+- MapMonster: MapMonster_CalibrateWindowMapDisplay -> MapDisplay MapMonster_CalibrateWindowMapDisplay
 
 ## Related APIs
 
+- [Anchors](element_Anchors.md) (HIGH 100/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (HIGH 100/100) - XML Element Type
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
-- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
-- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
-
-## Used With
-
-- none
 
 ## Triggered By
 
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnMButtonUp](../handlers/handler_OnMButtonUp.md) (HIGH 100/100) - XML Event
-- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
-- [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) (HIGH 73/100) - XML Event
-
-## Affects
-
-- none
+- [OnHidden](../handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
+- [OnMButtonUp](../handlers/handler_OnMButtonUp.md) (HIGH 88/100) - XML Event
+- [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 88/100) - XML Event
+- [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 88/100) - XML Event
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
+- [OnShown](../handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [OnMouseLeave](../handlers/handler_OnMouseLeave.md) (HIGH 76/100) - XML Event
+- [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) (HIGH 76/100) - XML Event

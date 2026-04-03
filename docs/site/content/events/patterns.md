@@ -8,12 +8,12 @@
 
 - Evidence:
 
-- AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
-  - AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
-  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.LOADING_END, "AdvancedRenownTraining.OnReload")
-  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
-  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "AdvancedRenownTraining.OnReload")
-  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
+- AbilityAlert: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, "AbilityAlert.CombatEvent")
+  - ActionBarHide: RegisterEventHandler(SystemData.Events.LOADING_END, "ActionBarHide.OnLoad")
+  - ActionBarHide: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "ActionBarHide.OnLoad")
+  - ActionBarHide: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, "ActionBarHide.Combat")
+  - ActionFraction: RegisterEventHandler(SystemData.Events.LOADING_END, "ActionFractionWindow.UpdateVisibility")
+  - ActionFraction: RegisterEventHandler(SystemData.Events.ENTER_WORLD, "ActionFraction.Initialize")
 
 ## UnregisterEventHandler
 
@@ -24,24 +24,26 @@
 - Evidence:
 
 - Ace: UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "AceAddon_OnUpdate_DONOTTOUCH")
-  - AdvancedPetAssist: UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+  - ActionFraction: UnregisterEventHandler(SystemData.Events.ENTER_WORLD, "ActionFraction.Initialize")
+  - ActionFraction: UnregisterEventHandler(SystemData.Events.INTERFACE_RELOADED, "ActionFraction.Initialize")
+  - ActionFraction: UnregisterEventHandler(SystemData.Events.LOADING_END, "ActionFractionWindow.UpdateVisibility")
   - AdvancedPetAssist: UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
   - AdvancedRenownTrainer: UnregisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
-  - AggroMeter: UnregisterEventHandler(TextLogGetUpdateEventId("Chat"), "AggroMeter.OnChatLogUpdated")
-  - Aura: UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "TargetInfoFix.APPLY_TARGETINFO_FIX_DONOTTOUCH")
 
 ## BroadcastEvent
 
-- Confidence: MEDIUM
+- Confidence: HIGH
 
 - Description: Observed triggering a runtime event so existing handlers are notified.
 
 - Evidence:
 
-- Enemy: BroadcastEvent(custom_target_event)
-  - Enemy: BroadcastEvent(SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS)
-  - Enemy: BroadcastEvent(SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS)
-  - Enemy: BroadcastEvent(SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS)
+- AuctionStats: BroadcastEvent(SystemData.Events.EXIT_GAME)
+  - AutoFocus: BroadcastEvent(SystemData.Events.SEND_CHAT_TEXT)
+  - Brizio's Crappy Computer Medic: BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
+  - Brizio's Crappy Computer Medic: BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
+  - Brizio's Crappy Computer Medic: BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
+  - CNC: BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
 
 ## Game event fan-in
 
@@ -51,14 +53,14 @@
 
 - Evidence:
 
-- BroadcastMessageInvite (HIGH)
-  - ChatTextArrived (HIGH)
-  - CombatLogNewCombatEvent (HIGH)
-  - CombatLogSessionsUpdated (HIGH)
-  - CombatLogSettingsChanged (HIGH)
-  - ConfigDialogInitializeSections (HIGH)
-  - GroupsPlayerCombatUpdated (HIGH)
-  - GroupsPlayerDistanceUpdated (HIGH)
+- BroadcastMessageInvite (MEDIUM)
+  - CREATED_PREFIX..index (MEDIUM)
+  - ChatTextArrived (MEDIUM)
+  - ConfigDialogInitializeSections (MEDIUM)
+  - Global (MEDIUM)
+  - GroupsPlayerCombatUpdated (MEDIUM)
+  - GroupsPlayerDistanceUpdated (MEDIUM)
+  - GroupsPlayerEffectsUpdated (MEDIUM)
 
 ## Window event hooks
 
@@ -68,11 +70,4 @@
 
 - Evidence:
 
-- OnHidden (HIGH)
-  - OnHyperLinkLButtonUp (HIGH)
-  - OnHyperLinkRButtonUp (HIGH)
-  - OnInitialize (HIGH)
-  - OnKeyEnter (HIGH)
-  - OnKeyEscape (HIGH)
-  - OnLButtonDown (HIGH)
-  - OnLButtonUp (HIGH)
+- OnLButtonUp (MEDIUM)

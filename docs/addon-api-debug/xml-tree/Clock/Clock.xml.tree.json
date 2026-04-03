@@ -1,0 +1,467 @@
+{
+  "schema_version": "phase1-tree/v1",
+  "addon": "Clock",
+  "source_file": "Clock.xml",
+  "roots": [
+    "n1"
+  ],
+  "nodes": [
+    {
+      "node_id": "n1",
+      "parent_id": null,
+      "child_index": 0,
+      "tag": "Interface",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "noNamespaceSchemaLocation": "../../Interface.xsd",
+        "xsi": "http://www.w3.org/2001/XMLSchema-instance"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": false,
+        "is_ignored": true,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n2",
+      "parent_id": "n1",
+      "child_index": 0,
+      "tag": "Scripts",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n3",
+      "parent_id": "n2",
+      "child_index": 0,
+      "tag": "Script",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "file": "Clock.lua"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n4",
+      "parent_id": "n1",
+      "child_index": 1,
+      "tag": "Windows",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n5",
+      "parent_id": "n4",
+      "child_index": 0,
+      "tag": "Window",
+      "raw_name": "ClockWindow",
+      "resolved_name": "ClockWindow",
+      "attributes": {
+        "handleinput": "false",
+        "name": "ClockWindow",
+        "popable": "false",
+        "savesettings": "true"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "",
+        "nearest_named_tag": ""
+      }
+    },
+    {
+      "node_id": "n6",
+      "parent_id": "n5",
+      "child_index": 0,
+      "tag": "Size",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindow",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n7",
+      "parent_id": "n6",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "160",
+        "y": "35"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindow",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n8",
+      "parent_id": "n5",
+      "child_index": 1,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindow",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n9",
+      "parent_id": "n8",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "center",
+        "relativePoint": "center",
+        "relativeTo": "Root"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindow",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n10",
+      "parent_id": "n9",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "-200"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindow",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n11",
+      "parent_id": "n5",
+      "child_index": 2,
+      "tag": "Windows",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindow",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n12",
+      "parent_id": "n11",
+      "child_index": 0,
+      "tag": "Label",
+      "raw_name": "$parentText",
+      "resolved_name": "ClockWindowText",
+      "attributes": {
+        "autoresize": "true",
+        "font": "font_clear_large",
+        "handleinput": "false",
+        "layer": "popup",
+        "name": "$parentText",
+        "popable": "false",
+        "textalign": "left"
+      },
+      "flags": {
+        "is_named": true,
+        "is_structural": false,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindow",
+        "nearest_named_tag": "Window"
+      }
+    },
+    {
+      "node_id": "n13",
+      "parent_id": "n12",
+      "child_index": 0,
+      "tag": "Size",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindowText",
+        "nearest_named_tag": "Label"
+      }
+    },
+    {
+      "node_id": "n14",
+      "parent_id": "n13",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "160",
+        "y": "25"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindowText",
+        "nearest_named_tag": "Label"
+      }
+    },
+    {
+      "node_id": "n15",
+      "parent_id": "n12",
+      "child_index": 1,
+      "tag": "Anchors",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {},
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindowText",
+        "nearest_named_tag": "Label"
+      }
+    },
+    {
+      "node_id": "n16",
+      "parent_id": "n15",
+      "child_index": 0,
+      "tag": "Anchor",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "point": "left",
+        "relativePoint": "left",
+        "relativeTo": ""
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindowText",
+        "nearest_named_tag": "Label"
+      }
+    },
+    {
+      "node_id": "n17",
+      "parent_id": "n16",
+      "child_index": 0,
+      "tag": "AbsPoint",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "x": "0",
+        "y": "0"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindowText",
+        "nearest_named_tag": "Label"
+      }
+    },
+    {
+      "node_id": "n18",
+      "parent_id": "n12",
+      "child_index": 2,
+      "tag": "Color",
+      "raw_name": "",
+      "resolved_name": "",
+      "attributes": {
+        "a": "255",
+        "b": "255",
+        "g": "255",
+        "r": "255"
+      },
+      "flags": {
+        "is_named": false,
+        "is_structural": true,
+        "is_ignored": false,
+        "is_template": false
+      },
+      "source": {
+        "file": "Clock.xml",
+        "line": 0
+      },
+      "ancestor": {
+        "nearest_named_name": "ClockWindowText",
+        "nearest_named_tag": "Label"
+      }
+    }
+  ]
+}

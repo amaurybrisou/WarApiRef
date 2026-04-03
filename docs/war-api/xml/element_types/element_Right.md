@@ -2,13 +2,13 @@
 
 - Category: XML Element Type
 - Confidence level: MEDIUM
-- Confidence score: 30/100
+- Confidence score: 45/100
 
 ## Confidence Assessment
 
 - Level: MEDIUM
 
-- Score: 30/100
+- Score: 45/100
 
 - Rationale: unknown
 
@@ -48,10 +48,11 @@
 
 ## Description
 
-Right is a XML UI element. It commonly appears under TexCoords.
+Right is a XML UI element. It commonly appears under TexCoords and TexSlices.
 
 ## Common Attributes
 
+- id
 - x
 - y
 
@@ -61,19 +62,38 @@ Right is a XML UI element. It commonly appears under TexCoords.
 
 ## Common Parent Elements
 
-- [TexCoords](element_TexCoords.md) — 7× (HIGH)
+- [TexCoords](element_TexCoords.md) — 33× (HIGH)
+- [TexSlices](element_TexSlices.md) — 3× (MEDIUM)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | **required** | 100% | 0, 119, 396 |
-| `y` | **required** | 100% | 30, 24, 241, 655 |
+| `x` | **required** | 91% | 0, 418, 59, 119, ... |
+| `y` | **required** | 91% | 30, 24, 43, 0, ... |
+| `id` | optional | 8% | Order-VP-Bar-horiz-End-Cap, Victor-Bar-horiz-End-Cap, objectivebar_right |
 ## Seen In
 
 - AdvancedPetAssist
+- CleanCastbar
+- Crusher
+- EA_ThreePartBar
+- EA_UiDebugTools
+- FlagCap
+- Hopper
+- Map
+- Motion
 - PartyCast
+- Pure
+- RVAPI_ColorDialog
+- RVMOD_PlayerStatus
+- RVMOD_SquaredDistances
 - RoR_SoR
+- SNT_CASTBAR
+- SNT_INFO
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- zMailMod
 
 ## Examples
 
@@ -82,15 +102,4 @@ Right is a XML UI element. It commonly appears under TexCoords.
 ## Related APIs
 
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type

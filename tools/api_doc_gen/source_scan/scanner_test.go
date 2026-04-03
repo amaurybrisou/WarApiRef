@@ -192,3 +192,78 @@ func TestDiscoverAddonSourcesTOCManifestNoTree(t *testing.T) {
 	}
 }
 
+// TestDiscoverAddonSourcesLuaFilesystemFallback verifies that when a manifest
+// does not list Lua files, source discovery still picks up Lua files found on
+// disk under the addon directory.
+func TestDiscoverAddonSourcesLuaFilesystemFallback(t *testing.T) {
+	root := t.TempDir()
+	addonDir := filepath.Join(root, "ClockLike")
+	if err := os.MkdirAll(filepath.Join(addonDir, "nested"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	modContent := `<?xml version="1.0" encoding="UTF-8"?>
+<ModuleFile>
+  <UiMod name="ClockLike" version="1.0">
+    <Files>
+      <File name="ClockLike.xml"/>
+    </Files>
+  </UiMod>
+</ModuleFile>`
+	if err := os.WriteFile(filepath.Join(addonDir, "ClockLike.mod"), []byte(modContent), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(addonDir, "ClockLike.xml"), []byte(`<Interface/>`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(addonDir, "ClockLike.lua"), []byte(`function ClockLike.Init() end`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(addonDir, "nested", "ClockLikeNested.lua"), []byte(`function ClockLike.Nested() end`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	sources, err := DiscoverAddonSources(root)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if len(sources) != 1 {
+		t.Fatalf("expected 1 source addon, got %d", len(sources))
+	}
+	if len(sources[0].LuaFiles) != 2 {
+		t.Fatalf("expected 2 Lua files from filesystem fallback, got %d", len(sources[0].LuaFiles))
+	}
+}
+
+// TestDiscoverAddonSourcesLuaFallbackOnlyWhenManifestHasNoLua verifies that
+// fallback discovery is not applied when Lua files are already resolved from
+// the manifest.
+func TestDiscoverAddonSourcesLuaFallbackOnlyWhenManifestHasNoLua(t *testing.T) {
+	root := t.TempDir()
+	addonDir := filepath.Join(root, "ManifestLua")
+	if err := os.MkdirAll(addonDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	tocContent := "## Title: ManifestLua\nManifestLua.lua\n"
+	if err := os.WriteFile(filepath.Join(addonDir, "ManifestLua.toc"), []byte(tocContent), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(addonDir, "ManifestLua.lua"), []byte(`function ManifestLua.Init() end`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(addonDir, "Extra.lua"), []byte(`function ManifestLua.Extra() end`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	sources, err := DiscoverAddonSources(root)
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	if len(sources) != 1 {
+		t.Fatalf("expected 1 source addon, got %d", len(sources))
+	}
+	if len(sources[0].LuaFiles) != 1 {
+		t.Fatalf("expected only manifest-resolved Lua file, got %d", len(sources[0].LuaFiles))
+	}
+}

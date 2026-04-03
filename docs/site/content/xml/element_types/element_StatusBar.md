@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,12 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | PartyCast, RoR_SoR |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.xml:0`, `/workspace/data/raw/RoR_SoR/RoR_SoR.xml:0` |
+| Addons seen in | BlackBox, CCTV, CleanCastbar, CleanUnitFrames, FlagCap, PartyCast, RaidMeter, RoR_SoR |
 | Namespaces detected | StatusBar |
 | Source kinds | xml_frames |
-| Example locations | PartyCast: PartyCastWindow_Template_LargeTimerBar, PartyCast: PartyCastWindow_Template_PlainTimerBar, PartyCast: PartyCastWindow_Template_SmallTimerBar, PartyCast: PartyCastWindow_Template_SpecialTimerBar, PartyCast: PartyFrameStatusBarBar, RoR_SoR: RoR_SoR_FortTemplateLORDLEFTBAR |
-| XML usage count | 9 |
-| XML attribute usage count | 9 |
+| Example locations | BlackBox: RespawnTimerWindowBar, CCTV: CCTVRootWindowBar, CCTV: CCTVRootWindowBar2, CCTV: CCTVSnareWindowBar, CCTV: CCTVSnareWindowBar2, CCTV: CCTVStaggerWindowBar |
+| XML usage count | 32 |
+| XML attribute usage count | 32 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,7 +56,7 @@
 
 ## Description
 
-StatusBar is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors.
+StatusBar is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors, Size and be manipulated from Lua by functions such as BlackBox.OnApplicationTwoButtonDialogHook, BlackBox.UpdateTimer.
 
 ## Common Attributes
 
@@ -65,6 +64,8 @@ StatusBar is a container-style XML element. It commonly appears under Window. It
 - foreground
 - handleinput
 - inherits
+- interpolate
+- layer
 - name
 - popable
 - reverseFill
@@ -72,20 +73,31 @@ StatusBar is a container-style XML element. It commonly appears under Window. It
 ## Common Inherits
 
 - EA_StatusBar_DefaultTintable
+- EA_StatusBar_GuildXP
 - RRQTomeStatusBar
+- UnitFrameAPStatusBar
+- UnitFrameFriendlyHealthStatusBar
+- UnitFrameFriendlyHealthStatusSmallBar
+- UnitFrameHostileStatusBar
 
 ## Common Parent Elements
 
-- [Windows](element_Windows.md) — 9× (HIGH)
+- [Windows](element_Windows.md) — 32× (HIGH)
 
 ## Common Structural Child Elements
 
-- [Anchors](element_Anchors.md) — 9× (HIGH)
+- [Anchors](element_Anchors.md) — 32× (HIGH)
+- [Size](element_Size.md) — 19× (HIGH)
 
 ## Common Template Bases
 
 - EA_StatusBar_DefaultTintable
+- EA_StatusBar_GuildXP
 - RRQTomeStatusBar
+- UnitFrameAPStatusBar
+- UnitFrameFriendlyHealthStatusBar
+- UnitFrameFriendlyHealthStatusSmallBar
+- UnitFrameHostileStatusBar
 
 
 > **Note**: This element type commonly acts as a template base.
@@ -94,56 +106,68 @@ StatusBar is a container-style XML element. It commonly appears under Window. It
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `handleinput` | **required** | 100% | false |
-| `popable` | **required** | 100% | false |
-| `foreground` | optional | 55% | LOL_BAR, FORT_DefaultTintableBar, T1_DefaultTintableBar |
-| `inherits` | optional | 44% | EA_StatusBar_DefaultTintable, RRQTomeStatusBar |
-| `reverseFill` | optional | 22% | true |
-| `background` | optional | 11% | LOL_BAR |
+| `foreground` | optional | 68% | EA_StatusBar_DefaultTintableBar, CleanCastbarFG, ObjectiveBarFill, LOL_BAR, ... |
+| `handleinput` | optional | 50% | false |
+| `popable` | optional | 50% | false |
+| `inherits` | optional | 31% | EA_StatusBar_GuildXP, UnitFrameFriendlyHealthStatusBar, UnitFrameHostileStatusBar, UnitFrameAPStatusBar, ... |
+| `interpolate` | optional | 31% | false, true |
+| `layer` | optional | 15% | background, default |
+| `reverseFill` | optional | 15% | true |
+| `background` | optional | 6% | CleanCastbarBG, LOL_BAR |
 ## Structural Sub-Elements
 
 ### [Anchors](element_Anchors.md)
 
-Observed 9 times as an unnamed child.
+Observed 32 times as an unnamed child.
+
+### [Size](element_Size.md)
+
+Observed 19 times as an unnamed child.
 
 ## Recursive Hierarchy
 
 - Root: [StatusBar](element_StatusBar.md)
-- [Anchors](element_Anchors.md) (structural, 9×, HIGH)
-  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+- [Anchors](element_Anchors.md) (structural, 32×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
       - (cycle)
+- [Size](element_Size.md) (structural, 19×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
+
+## Lua Functions Manipulating This Type
+
+- BlackBox.UpdateTimer
+- BlackBox.OnApplicationTwoButtonDialogHook
 
 ## Seen In
 
+- BlackBox
+- CCTV
+- CleanCastbar
+- CleanUnitFrames
+- FlagCap
 - PartyCast
+- RaidMeter
 - RoR_SoR
+- SNT_CASTBAR
+- SNT_INFO
+- Targets
 
 ## Examples
 
-- PartyCast: PartyCastWindow_Template_LargeTimerBar -> StatusBar PartyCastWindow_Template_LargeTimerBar
-- PartyCast: PartyCastWindow_Template_PlainTimerBar -> StatusBar PartyCastWindow_Template_PlainTimerBar
-- PartyCast: PartyCastWindow_Template_SmallTimerBar -> StatusBar PartyCastWindow_Template_SmallTimerBar
-- PartyCast: PartyCastWindow_Template_SpecialTimerBar -> StatusBar PartyCastWindow_Template_SpecialTimerBar
-- PartyCast: PartyFrameStatusBarBar -> StatusBar PartyFrameStatusBarBar
-- RoR_SoR: RoR_SoR_FortTemplateLORDLEFTBAR -> StatusBar RoR_SoR_FortTemplateLORDLEFTBAR
+- BlackBox: RespawnTimerWindowBar -> StatusBar RespawnTimerWindowBar
+- CCTV: CCTVRootWindowBar -> StatusBar CCTVRootWindowBar
+- CCTV: CCTVRootWindowBar2 -> StatusBar CCTVRootWindowBar2
+- CCTV: CCTVSnareWindowBar -> StatusBar CCTVSnareWindowBar
+- CCTV: CCTVSnareWindowBar2 -> StatusBar CCTVSnareWindowBar2
+- CCTV: CCTVStaggerWindowBar -> StatusBar CCTVStaggerWindowBar
 
 ## Related APIs
 
+- [Anchors](element_Anchors.md) (HIGH 100/100) - XML Element Type
+- [EA_StatusBar_GuildXP](../../globals/constants/constant_EA_StatusBar_GuildXP.md) (HIGH 100/100) - Constant
+- [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
 - [EA_StatusBar_DefaultTintable](../../globals/constants/constant_EA_StatusBar_DefaultTintable.md) (HIGH 90/100) - Constant
-- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

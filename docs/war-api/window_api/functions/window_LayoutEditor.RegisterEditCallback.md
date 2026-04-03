@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 15 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, GuardLine |
-| Files seen in | `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/data/raw/GuardLine/GuardLine.lua:63` |
+| Addons seen in | CDown, Crusher, DAoCBuff, DeepSleep, DuffTimer, Effigy, FixGit, FlagCap |
+| Files seen in | CDown.lua, DeepSleep.lua, DuffTimer.lua, Effigy.lua, Enhancements.lua, FlagCap.lua, GuardLine.lua, SOR.lua |
 | Namespaces detected | LayoutEditor |
 | Source kinds | lua_calls |
-| Example locations | DAoCBuff: DAoCBuff.Initialize, GuardLine: GuardLine.init |
+| Example locations | CDown: Initialize, Crusher: OnLoad, DAoCBuff: Initialize, DeepSleep: Initialize, DuffTimer: OnLoadingEnd, Effigy: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,17 +65,17 @@ LayoutEditor.RegisterEditCallback(arg1)
 
 ## Description
 
-Observed as a window function across 2 addons.
+Observed as a window function across 15 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: DAoCBuff.LEH, GuardLine.OnLayoutEditorFinished |
+| arg1 | Observed as a function or method reference. | Observed values: Addon.LayoutEditorDone, CDown.LEH, Crusher.OnLayoutEditorEvent |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -83,42 +83,57 @@ Observed as a window function across 2 addons.
 
 ## Seen In
 
+- CDown
+- Crusher
 - DAoCBuff
+- DeepSleep
+- DuffTimer
+- Effigy
+- FixGit
+- FlagCap
 - GuardLine
+- Kwestor
+- Motion
+- RetAlert
+- SOR
+- Vectors
+- WTes
 
 ## Examples
 
-- DAoCBuff: DAoCBuff.Initialize -> LayoutEditor.RegisterEditCallback(DAoCBuff.LEH)
-- GuardLine: GuardLine.init -> LayoutEditor.RegisterEditCallback(GuardLine.OnLayoutEditorFinished)
+- CDown: Initialize -> LayoutEditor.RegisterEditCallback(CDown.LEH)
+- Crusher: OnLoad -> LayoutEditor.RegisterEditCallback(Crusher.OnLayoutEditorEvent)
+- DAoCBuff: Initialize -> LayoutEditor.RegisterEditCallback(DAoCBuff.LEH)
+- DeepSleep: Initialize -> LayoutEditor.RegisterEditCallback(DeepSleep.LayoutEditorDone)
+- DuffTimer: OnLoadingEnd -> LayoutEditor.RegisterEditCallback(DuffTimer.LayoutEditorCallback)
+- Effigy: Initialize -> LayoutEditor.RegisterEditCallback(Addon.LayoutEditorDone)
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 
 ## Affects
 
-- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [GameData.Account.ServerName](../../gamedata/fields/gamedata_GameData.Account.ServerName.md) (HIGH 100/100) - GameData Field
+- [GameData.Player.money](../../gamedata/fields/gamedata_GameData.Player.money.md) (HIGH 100/100) - GameData Field
+- [GameData.Player.name](../../gamedata/fields/gamedata_GameData.Player.name.md) (HIGH 100/100) - GameData Field
+- [SystemData.Events.ALL_MODULES_INITIALIZED](../../systemdata/fields/systemdata_SystemData.Events.ALL_MODULES_INITIALIZED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.CUSTOM_UI_SCALE_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.CUSTOM_UI_SCALE_CHANGED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.GROUP_EFFECTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_EFFECTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.GROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_COOLDOWN_TIMER_SET](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COOLDOWN_TIMER_SET.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_DEATH_CLEARED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH_CLEARED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_EFFECTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_EFFECTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_HOT_BAR_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HOT_BAR_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELEASE_CORPSE](../../systemdata/fields/systemdata_SystemData.Events.RELEASE_CORPSE.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

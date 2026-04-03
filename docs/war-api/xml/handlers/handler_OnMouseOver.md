@@ -2,24 +2,20 @@
 
 - Type: XML Handler
 - Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence score: 88/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Final score: 100/100
+- Score: 88/100
 
-- Raw weighted score: 138
-
-- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, referenced by generated docs or reference files, used in event registration or dispatch.
 
 ## Evidence Signals
 
 - +30 Seen in 4 or more addons: Cross-addon spread is strong.
-- +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
@@ -27,14 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, Aura, BagOMatic, BankArkel, BuffHead, CM_ClosetGoblin |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/BankArkel/BankArkel.xml:0`, `/workspace/data/raw/BuffHead/Display.xml:0`, `/workspace/data/raw/BuffHead/Setup/General.xml:0` |
+| Addons seen in | AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, Atlas, AuctionStats, Aura, AutoBand, BagOMatic |
 | Namespaces detected | OnMouseOver |
 | Source kinds | bindings, xml_handlers |
-| Example locations | AdvancedRenownTrainer: AbilityButtonTemplate.OnMouseOver, AggroMeter: AggroMeter_Button.OnMouseOver, AggroMeter: Aggro_Label_Template.OnMouseOver, AggroMeter: Aggro_Tactic_Template.OnMouseOver, AggroMeter: Aggro_Timer_Template.OnMouseOver, AnywhereTrainer: AnywhereTrainerTabTemplateInactiveImage.OnMouseOver |
-| XML usage count | 230 |
-| XML attribute usage count | 230 |
-| Lua usage count | 230 |
+| Example locations | AdvancedRenownTrainer: .OnMouseOver, AggroMeter: .OnMouseOver, AnywhereTrainer: .OnMouseOver, Atlas: .OnMouseOver, AuctionStats: .OnMouseOver, Aura: .OnMouseOver |
+| XML usage count | 0 |
+| XML attribute usage count | 0 |
+| Lua usage count | 729 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -42,7 +37,7 @@
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
-| Observed in XML and Lua | yes |
+| Observed in XML and Lua | no |
 | Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
@@ -58,7 +53,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 24 addons through frame event handlers.
+XML handler event observed across 101 addons.
 
 ## Expected Lua Binding
 
@@ -68,88 +63,159 @@ function()
 
 ## Element Types
 
-- Button
-- ComboBox
-- DynamicImage
-- EditBox
-- FullResizeImage
-- Label
-- ListBox
-- SliderBar
-- Window
+- none
 
 ## Seen In
 
 - AdvancedRenownTrainer
 - AggroMeter
 - AnywhereTrainer
+- Atlas
+- AuctionStats
 - Aura
+- AutoBand
 - BagOMatic
 - BankArkel
+- BarText (Influence)
+- BlackBook
+- Brizio's Crappy Computer Medic
 - BuffHead
 - CM_ClosetGoblin
+- CMap
+- CaVES
+- Calling
+- CastSequence
+- Cheeseboard
+- CleanUnitFrames
+- Crusher
 - DAoCBuff
+- DammazKron
+- DetauntHelper
+- DuffTimer
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_ThreePartBar
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraftX
+- Effigy
+- Emojii
 - Enemy
+- FozAuction
+- GroupSpotter
+- GuildWarden
+- HealGrid
+- JunkDump
+- KeyBar
 - Killer
+- Kwestor
+- LibAddonButton
+- LoyalPet
+- MapMonster
+- MapPin
+- MarkBuff
+- MiniMapMonster
+- Minmap
+- Miracle Grow Remix
+- MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
+- MoraleSet
+- Motion
+- NaturalLog
+- NerfedButtons
+- NoOverheal
+- Obsidian
+- PieTracker
 - Pocket Palette
 - PotionBar
+- Pure
+- QuickTacticSwitch
+- QuickWarReport
+- RVMOD_Manager
+- RVMOD_SquaredDistances
+- RandomMount
+- Refer
+- ReliquaryHunter
 - RoR_SoR
+- RvRContribution
+- SOR
+- Sequencer
+- SessionRPs
 - Shinies
+- SocialWindow 2.0
+- Squared
+- TalismanGenie
+- TastyButtons
+- TaxPayer
 - TexturedButtons
-- TidyRoll
+- Tome Titan
+- TomeTracker
 - TurretRange
+- TwisterSet
+- WARCommander
+- WBStutterLess
 - WSCT
 - WarBoard
+- WarBoard_Loc
+- WarBoard_Session
+- WarBoard_TaliMon
+- XpStatus+G
+- ZonePOP
 - bigger_MacroWindow
+- emotes
 - followTheLeader
+- nLootLink
+- talisman-monitor
+- wbLeadHelper
 
 ## Examples
 
-- AdvancedRenownTrainer: AbilityButtonTemplate -> AbilityButtonTemplate.OnMouseOver -> AdvancedRenownTraining.AbilityTooltip
-- AggroMeter: AggroMeter_Button -> AggroMeter_Button.OnMouseOver -> AggroMeter.OnMouseOverStart
-- AggroMeter: Aggro_Label_Template -> Aggro_Label_Template.OnMouseOver -> AggroMeter.SelectChar
-- AggroMeter: Aggro_Tactic_Template -> Aggro_Tactic_Template.OnMouseOver -> AggroMeter.OnMouseOverStart
-- AggroMeter: Aggro_Timer_Template -> Aggro_Timer_Template.OnMouseOver -> AggroMeter.OnMouseOverStart
-- AnywhereTrainer: AnywhereTrainerTabTemplateInactiveImage -> AnywhereTrainerTabTemplateInactiveImage.OnMouseOver -> AnywhereTrainer.OnMouseOver
+- AdvancedRenownTrainer: .OnMouseOver -> AdvancedRenownTraining.AbilityTooltip
+- AggroMeter: .OnMouseOver -> AggroMeter.SelectChar
+- AggroMeter: .OnMouseOver -> AggroMeter.OnMouseOverStart
+- AnywhereTrainer: .OnMouseOver -> AnywhereTrainer.OnMouseOver
+- Atlas: .OnMouseOver -> AtlasMap.OnMouseOver
+- Atlas: .OnMouseOver -> AtlasMap.OnLegendItemMouseOver
 
 ## Related APIs
 
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
+- [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
 - [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [EditBox](../element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](../element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
 - [ListBox](../element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
+- [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [SliderBar](../element_types/element_SliderBar.md) (HIGH 100/100) - XML Element Type
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 - [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
-- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-- [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
+- [WindowGetScale](../../window_api/functions/window_WindowGetScale.md) (HIGH 100/100) - Window Function
+- [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- [WindowSetScale](../../window_api/functions/window_WindowSetScale.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [EA_Window_ContextMenu.OnMouseOverDefaultMenuItem](../../globals/functions/global_EA_Window_ContextMenu.OnMouseOverDefaultMenuItem.md) (HIGH 80/100) - Global Function
+- [EA_Window_PublicQuestTracker.OnMouseOverInfluenceBar](../../globals/functions/global_EA_Window_PublicQuestTracker.OnMouseOverInfluenceBar.md) (HIGH 80/100) - Global Function
 
 ## Used With
 
-- [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
-- [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
-- [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
-- [Cursor.PickUp](../../globals/functions/global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
-- [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
-- [EditBox](../element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
-- [GameData.PlayerActions.DO_ABILITY](../../gamedata/fields/gamedata_GameData.PlayerActions.DO_ABILITY.md) (HIGH 100/100) - GameData Field
-- [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Triggered By
-
-- none
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
-- none
+- [GameData.Player.name](../../gamedata/fields/gamedata_GameData.Player.name.md) (HIGH 100/100) - GameData Field
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

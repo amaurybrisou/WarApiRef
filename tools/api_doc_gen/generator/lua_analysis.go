@@ -74,12 +74,8 @@ type luaAnalysisRegistration struct {
 
 func writeLuaAnalysisArtifacts(outputRoot string, corpus graph.Corpus) error {
 	for _, addon := range corpus.Addons {
-		for _, manifestFile := range addon.Manifest.Files {
-			if strings.ToLower(filepath.Ext(manifestFile)) != ".lua" {
-				continue
-			}
-
-			normalizedRelative := normalizeRelativeLuaPath(manifestFile)
+		for _, relativeLuaPath := range resolveLuaInputs(addon) {
+			normalizedRelative := normalizeRelativeLuaPath(relativeLuaPath)
 			absolutePath := filepath.Join(addon.Root, filepath.FromSlash(normalizedRelative))
 			parsed, err := lua_parser.ParseFile(addon.Name, absolutePath, addon.Manifest)
 			if err != nil {
@@ -96,6 +92,72 @@ func writeLuaAnalysisArtifacts(outputRoot string, corpus graph.Corpus) error {
 		}
 	}
 	return nil
+}
+
+func resolveLuaInputs(addon graph.AddonModel) []string {
+	manifestLua := make([]string, 0)
+	for _, manifestFile := range addon.Manifest.Files {
+		if strings.ToLower(filepath.Ext(manifestFile)) != ".lua" {
+			continue
+		}
+		normalizedRelative := normalizeRelativeLuaPath(manifestFile)
+		absolutePath := filepath.Join(addon.Root, filepath.FromSlash(normalizedRelative))
+		if _, err := os.Stat(absolutePath); err != nil {
+			continue
+		}
+		manifestLua = append(manifestLua, normalizedRelative)
+	}
+	manifestLua = uniqueSortedStrings(manifestLua)
+	if len(manifestLua) > 0 {
+		return manifestLua
+	}
+
+	return discoverLuaInputsOnDisk(addon.Root)
+}
+
+func discoverLuaInputsOnDisk(addonRoot string) []string {
+	relativePaths := make([]string, 0)
+	_ = filepath.WalkDir(addonRoot, func(path string, d os.DirEntry, err error) error {
+		if err != nil {
+			return nil
+		}
+		if d.IsDir() {
+			if strings.HasPrefix(d.Name(), ".") {
+				return filepath.SkipDir
+			}
+			return nil
+		}
+		if !strings.EqualFold(filepath.Ext(path), ".lua") {
+			return nil
+		}
+		relative, relErr := filepath.Rel(addonRoot, path)
+		if relErr != nil {
+			return nil
+		}
+		relativePaths = append(relativePaths, normalizeRelativeLuaPath(relative))
+		return nil
+	})
+	return uniqueSortedStrings(relativePaths)
+}
+
+func uniqueSortedStrings(values []string) []string {
+	if len(values) == 0 {
+		return []string{}
+	}
+	set := make(map[string]bool, len(values))
+	for _, v := range values {
+		trimmed := strings.TrimSpace(v)
+		if trimmed == "" {
+			continue
+		}
+		set[trimmed] = true
+	}
+	result := make([]string, 0, len(set))
+	for v := range set {
+		result = append(result, v)
+	}
+	sort.Strings(result)
+	return result
 }
 
 func writeLuaAnalysisArtifact(outputPath string, artifact luaAnalysisArtifact) error {

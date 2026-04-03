@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,33 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 168
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Shinies |
+| Addons seen in | Crusher, Miracle Grow Remix, Motion, Shinies, nLootLink |
+| Files seen in | MGRemix.lua, Modules/API/Shinies-API.lua, Modules/Data/Shinies-Data-Inventory.lua, Modules/UI/Shinies-UI-Post.lua, Source/Crusher.lua, Source/Motion.lua, source/nLootLinkGatherer.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page |
-| Example locations | SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED, event_page |
+| Source kinds | lua_call |
+| Example locations | Initialize, OnDisable, OnEnable, OnLoad, initEvents, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +45,7 @@
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,28 +60,16 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED field accessed by 5 addons; commonly found in Initialize and OnDisable, OnEnable, OnLoad, initEvents, lua_call contexts.
 
 ## Seen In
 
+- Crusher
+- Miracle Grow Remix
+- Motion
 - Shinies
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- nLootLink
 
 ## Notes
 
-- Observed in contexts: SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED, event_page
+- Observed in contexts: Initialize, OnDisable, OnEnable, OnLoad, initEvents, lua_call

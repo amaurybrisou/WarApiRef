@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Enemy, Killer, PotionBar, WarBoard, WhoHealedMe |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/EffectFilterDialog.xml:0`, `/workspace/data/raw/Enemy/Code/Intercom/IntercomDialog.xml:0`, `/workspace/data/raw/Enemy/Code/UnitFrames/ClickCastingDialog.xml:0`, `/workspace/data/raw/Enemy/Code/UnitFrames/EffectsIndicatorDialog.xml:0`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFramePartDialog.xml:0`, `/workspace/data/raw/Killer/Killer.xml:0`, `/workspace/data/raw/PotionBar/settings/Settings.xml:203`, `/workspace/data/raw/WarBoard/WarBoardOptions.xml:0` |
+| Addons seen in | AdvancedRenownTrainer, AutoBand, EA_OpenPartyWindow, EA_UiDebugTools, EA_UiModWindow, EZCraftX, Enemy, FozAuction |
+| Files seen in | AdvancedRenownTrainingPresets.xml, AdvancedRenownTrainingWindow.xml, AutoBandWindowConfig.xml, AutoBandWindowTemplate.xml, Code/Core/Groups/EffectFilterDialog.xml, Code/Intercom/IntercomDialog.xml, Code/UnitFrames/ClickCastingDialog.xml, Code/UnitFrames/EffectsIndicatorDialog.xml |
 | Namespaces detected | EA_Window_DefaultSeparator |
 | Source kinds | xml_attributes |
-| Example locations | AdvancedRenownTrainingPresetsWindowFooterSeparator, AdvancedRenownTrainingWindowFooterSeparator1, AdvancedRenownTrainingWindowFooterSeparator2, EnemyClickCastingDialogContentScrollChildDivider1, EnemyClickCastingDialogContentScrollChildDivider2, EnemyClickCastingDialogContentScrollChildDivider3 |
-| XML usage count | 22 |
-| XML attribute usage count | 22 |
+| Example locations | AdvancedRenownTrainingPresetsWindowFooterSeparator, AdvancedRenownTrainingWindowFooterSeparator1, AdvancedRenownTrainingWindowFooterSeparator2, AuctionWindowResultsSeparator, AutoBandWindowConfigDisplaySeperator1, AutoBandWindowConfigDisplaySeperator2 |
+| XML usage count | 72 |
+| XML attribute usage count | 72 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,22 +57,57 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 6 addons.
+Engine-supplied XML constant or template class referenced by 27 addons.
 
 ## Seen In
 
 - AdvancedRenownTrainer
+- AutoBand
+- EA_OpenPartyWindow
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraftX
 - Enemy
+- FozAuction
+- GDes
+- Ges
+- KeyBar
 - Killer
+- ObjectInspector
+- PieTracker
 - PotionBar
+- Queue Queuer
+- Res
+- SocialWindow 2.0
+- TastyButtons
+- TaxPayer
+- Tome Titan
+- WTes
 - WarBoard
 - WhoHealedMe
+- alertMod
+- wbLeadHelper
+- zMailMod
 
 ## Used By
 
 - AdvancedRenownTrainingPresetsWindowFooterSeparator
 - AdvancedRenownTrainingWindowFooterSeparator1
 - AdvancedRenownTrainingWindowFooterSeparator2
+- AuctionWindowResultsSeparator
+- AutoBandWindowConfigDisplaySeperator1
+- AutoBandWindowConfigDisplaySeperator2
+- AutoBandWindowConfigDisplaySeperator3
+- AutoBandWindowConfigDisplaySeperatorBackfill
+- AutoBandWindowTemplateDisplaySeperator
+- AutoBandWindowTemplateDisplaySeperator2
+- AutoBandWindowTemplateDisplaySeperator3
+- DebugWindowLogDisplaySeperator
+- EA_Window_OpenPartyManageSocketDefHeaderSeparator
+- EA_Window_OpenPartyManageSocketDefLegendLegendSeparator
+- EA_Window_OpenPartyNearbySocketDefLegendLegendSeparator
+- EZCraftXWindow.CraftingResult.Seperator
+- EZCraftXWindow.Seperator
 - EnemyClickCastingDialogContentScrollChildDivider1
 - EnemyClickCastingDialogContentScrollChildDivider2
 - EnemyClickCastingDialogContentScrollChildDivider3
@@ -84,30 +119,54 @@ Observed engine XML template or inherited constant referenced by 6 addons.
 - EnemyIntercomDialogDivider1
 - EnemyUnitFramePartDialogContentScrollChildDivider1
 - EnemyUnitFramePartDialogContentScrollChildDivider2
+- GDesOptionsHorizDivide
+- GesOptionsHorizDivide
+- KeyBarHelpWindowFooterSeparator
+- KeyBarHelpWindowSeparator
+- KeyBarSettingsWindowFooterSeparator
+- KeyBarSettingsWindowSeparator
 - KillerSettingsWindowContentSeparator
 - KillerSettingsWindowContentStorageSeparator
+- ObjectInspectorHorizDivide
+- ObjectInspectorHorizDivide2
+- PieTrackerHorizDivide
+- PieTrackerHorizDivide2
 - PotionBarTypeTemplateTitleSeperator
+- QueueQueuer_GUI_DisplaySeperator
+- ResOptionsHorizDivide1
+- ResOptionsHorizDivide2
+- SiegeChatFiltersDescriptionSeperator
+- SocialWindowBuddyListSeparator
+- TTitanUITopSeperator
+- TastyButtonsButtonSelectWindowButtonRangeViewSeparator
+- TastyButtonsOptionsWindowCreateViewCreateViewSeparator2
+- TastyButtonsOptionsWindowEditViewEditViewSeparator
+- TastyButtonsOptionsWindowEditViewEditViewSeparator2
+- TastyButtonsOptionsWindowGroupViewSeparator
+- TastyButtonsOptionsWindowGroupViewSeparator2
+- TastyButtonsOptionsWindowMiscViewSeparator
+- TastyButtonsOptionsWindowStateViewSeparator
+- TaxPayerHorizDivide
+- TaxPayerHorizDivide2
+- UiModVersionMismatchWindowModListSeperator
+- UiModWindowListBottomSeperator
+- UiModWindowTopSeperator
+- WTesHorizDivide
 - WarBoardOptionsTabMainSocketHorizontalDivider
 - WarBoardOptionsTabMainSocketHorizontalDivider2
 - WarBoardOptionsTabMainSocketHorizontalDivider3
 - WarBoardOptionsTabMainSocketHorizontalDividerTop
+- WbLeadHelperMessageContentScrollChildDivider1
+- WbLeadHelperMessageContentScrollChildDivider2
 - WhoHealedMeOptionsContentSeparator1
+- alertModOptionsTopSeparator
+- wbLeadHelperConfigTabDisplaySeperator1
+- zMailModLogDisplaySeparator
+- zMailModMassMailDisplaySeperator
 
 ## Related APIs
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

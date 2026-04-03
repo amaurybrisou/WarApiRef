@@ -2,36 +2,41 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 80/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 80/100
+- Final score: 100/100
+
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Main.lua:842` |
+| Addons seen in | AutoBand, Enemy, NerfedButtons |
+| Files seen in | AutoBand.lua, Code/Core/Main.lua, NerfedTalks.lua |
 | Namespaces detected | TextEditBoxSetMaxChars |
 | Source kinds | lua_calls |
-| Example locations | Enemy: Enemy.UI_TextEntryDialog_Open |
+| Example locations | AutoBand: ShowCopyLink, Enemy: UI_TextEntryDialog_Open, NerfedButtons: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -39,8 +44,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
-| Consistent arguments | no |
+| Consistent role | yes |
+| Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -66,12 +71,12 @@ Observed reading from or writing to edit-box controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: wn.."Value" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 1024*1024 |
+| arg1 | Observed as a function or method reference. | Observed values: 'EA_TextEntryGroupEntryBoxTextInput', COPY_LINK_WINDOW_NAME.."UrlInput", wn.."Value" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 1000, 1024*1024, chatInputMaxChars |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -79,28 +84,29 @@ Observed reading from or writing to edit-box controls.
 
 ## Seen In
 
+- AutoBand
 - Enemy
+- NerfedButtons
 
 ## Examples
 
-- Enemy: Enemy.UI_TextEntryDialog_Open -> TextEditBoxSetMaxChars(wn.."Value", 1024*1024)
-
-## Related APIs
-
-- none
+- AutoBand: ShowCopyLink -> TextEditBoxSetMaxChars(COPY_LINK_WINDOW_NAME.."UrlInput", 1000)
+- Enemy: UI_TextEntryDialog_Open -> TextEditBoxSetMaxChars(wn.."Value", 1024*1024)
+- NerfedButtons: Initialize -> TextEditBoxSetMaxChars('EA_TextEntryGroupEntryBoxTextInput', chatInputMaxChars)
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
+- [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
+- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_NEW_ABILITY_LEARNED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_NEW_ABILITY_LEARNED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_NEW_PET_ABILITY_LEARNED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_NEW_PET_ABILITY_LEARNED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- none

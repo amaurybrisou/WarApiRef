@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Aura |
-| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0` |
+| Addons seen in | AggroMeter, Aura, EA_OpenPartyWindow, RaidMeter, TastyButtons |
+| Files seen in | AggroMeter.xml, RaidMeter.xml, Source/AuraConfig.xml, Source/OpenPartyWindow.xml, TastyButtonsOptions.xml |
 | Namespaces detected | EA_HorizontalResizeImage_TabSeparatorMiddle |
 | Source kinds | xml_attributes |
-| Example locations | AggroMeterGrayWindowSeparatorMiddle, AuraConfigTabsSeparatorActivation, AuraConfigTabsSeparatorDeactivation, AuraConfigTabsSeparatorTrigger |
-| XML usage count | 4 |
-| XML attribute usage count | 4 |
+| Example locations | AggroMeterGrayWindowSeparatorMiddle, AuraConfigTabsSeparatorActivation, AuraConfigTabsSeparatorDeactivation, AuraConfigTabsSeparatorTrigger, EA_Window_OpenPartyTabSeparatorMiddle, RaidMeterWindowSeparatorMiddle1 |
+| XML usage count | 12 |
+| XML attribute usage count | 12 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,12 +57,15 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Engine-supplied XML constant or template class referenced by 5 addons.
 
 ## Seen In
 
 - AggroMeter
 - Aura
+- EA_OpenPartyWindow
+- RaidMeter
+- TastyButtons
 
 ## Used By
 
@@ -70,22 +73,18 @@ Observed engine XML template or inherited constant referenced by 2 addons.
 - AuraConfigTabsSeparatorActivation
 - AuraConfigTabsSeparatorDeactivation
 - AuraConfigTabsSeparatorTrigger
+- EA_Window_OpenPartyTabSeparatorMiddle
+- RaidMeterWindowSeparatorMiddle1
+- RaidMeterWindowSeparatorMiddle2
+- TastyButtonsButtonSelectWindowTabsSeparatorBetween1
+- TastyButtonsOptionsWindowTabsSeparatorBetween1
+- TastyButtonsOptionsWindowTabsSeparatorBetween2
+- TastyButtonsOptionsWindowTabsSeparatorBetween3
+- TastyButtonsOptionsWindowTabsSeparatorBetween4
 
 ## Related APIs
 
 - [HorizontalResizeImage](../../xml/element_types/element_HorizontalResizeImage.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

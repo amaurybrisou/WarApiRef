@@ -1,26 +1,21 @@
 # ColorPicker
 
 - Category: XML Element Type
-- Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence level: MEDIUM
+- Confidence score: 45/100
 
 ## Confidence Assessment
 
-- Level: HIGH
+- Level: MEDIUM
 
-- Final score: 100/100
+- Score: 45/100
 
-- Raw weighted score: 108
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, referenced by generated docs or reference files.
+- Rationale: Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes.
 
 ## Evidence Signals
 
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
-- +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 - -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
 
 ## Evidence Summary
@@ -28,21 +23,21 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | WSCT |
-| Files seen in | `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Files seen in | wsct_options/wsct_options.xml |
 | Namespaces detected | ColorPicker |
-| Source kinds | xml_frames, xml_handlers |
+| Source kinds | xml_frames |
 | Example locations | WSCT: WSCTOptionsColorPickerWindowColorPicker |
 | XML usage count | 1 |
 | XML attribute usage count | 1 |
-| Lua usage count | 1 |
+| Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | no |
 | Default UI presence | yes |
-| Event binding presence | yes |
-| Observed in XML and Lua | yes |
+| Event binding presence | no |
+| Observed in XML and Lua | no |
 | Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
@@ -58,7 +53,7 @@
 
 ## Description
 
-ColorPicker is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as ColorSize, ColorSpacing, ColorTexCoords and bind XML events like OnLButtonUp to Lua.
+ColorPicker is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Anchors, ColorSize, ColorSpacing and bind XML events like OnLButtonUp to Lua.
 
 ## Common Attributes
 
@@ -80,11 +75,8 @@ ColorPicker is an interactive XML control. It commonly appears under Window. It 
 | Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | WSCT.OnLButtonUpColorPicker | `flags, x, y` | MEDIUM |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | WSCT.OnLButtonUpColorPicker | `flags, x, y` | MEDIUM |
 
 ### Per-Event Lua API Calls
-
-**OnLButtonUp** handlers call: `LabelSetTextColor`, `SliderBarSetCurrentPosition`, `WindowAddAnchor`, `WindowClearAnchors`, `WindowSetShowing`, `WindowSetTintColor`
 
 **OnLButtonUp** handlers call: `LabelSetTextColor`, `SliderBarSetCurrentPosition`, `WindowAddAnchor`, `WindowClearAnchors`, `WindowSetShowing`, `WindowSetTintColor`
 
@@ -105,18 +97,6 @@ ColorPicker is an interactive XML control. It commonly appears under Window. It 
 - [ColorTexDims](element_ColorTexDims.md) — 1× (HIGH)
 - [EventHandlers](element_EventHandlers.md) — 1× (HIGH)
 - [Size](element_Size.md) — 1× (HIGH)
-
-## Typical XML Structure
-
-```xml
-<ColorPicker columnsPerRow="4" name="..." texture="EA_HUD_01">
-  <ColorTexCoords x="304" y="450"/>
-  <ColorTexDims x="24" y="24"/>
-  <ColorSize x="28" y="28"/>
-  <ColorSpacing x="5" y="5"/>
-  <Size/>
-</ColorPicker>
-```
 
 ## Attribute Reference
 
@@ -174,19 +154,19 @@ Observed 1 times as an unnamed child.
 
 - Root: [ColorPicker](element_ColorPicker.md)
 - [Anchors](element_Anchors.md) (structural, 1×, HIGH)
-  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
-  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
-    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
-    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 6×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 14161×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 12549×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 29×, HIGH)
       - (cycle)
 - [ColorSize](element_ColorSize.md) (structural, 1×, HIGH)
 - [ColorSpacing](element_ColorSpacing.md) (structural, 1×, HIGH)
 - [ColorTexCoords](element_ColorTexCoords.md) (structural, 1×, HIGH)
 - [ColorTexDims](element_ColorTexDims.md) (structural, 1×, HIGH)
 - [EventHandlers](element_EventHandlers.md) (structural, 1×, HIGH)
-  - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
+  - [EventHandler](element_EventHandler.md) (structural, 5515×, HIGH)
 - [Size](element_Size.md) (structural, 1×, HIGH)
-  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 9073×, HIGH)
 
 ## Lua API Usage (from Handlers)
 
@@ -233,23 +213,15 @@ Confidence: MEDIUM
 
 ## Related APIs
 
+- [Anchors](element_Anchors.md) (HIGH 100/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (HIGH 100/100) - XML Element Type
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
-- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
-- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 - [ColorSize](element_ColorSize.md) (MEDIUM 45/100) - XML Element Type
 - [ColorSpacing](element_ColorSpacing.md) (MEDIUM 45/100) - XML Element Type
 - [ColorTexCoords](element_ColorTexCoords.md) (MEDIUM 45/100) - XML Element Type
 - [ColorTexDims](element_ColorTexDims.md) (MEDIUM 45/100) - XML Element Type
 
-## Used With
-
-- none
-
 ## Triggered By
 
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-
-## Affects
-
-- none

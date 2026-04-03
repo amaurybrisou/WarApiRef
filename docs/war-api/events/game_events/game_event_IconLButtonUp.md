@@ -24,10 +24,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Intercom/Intercom.lua:4` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | IconLButtonUp |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy.IntercomInitialize |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -54,7 +54,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 1 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -70,32 +70,25 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
+- AddEventHandler
 - Enemy.IntercomUI_IntercomDialog_Open
 - addon
 
 ## Examples
 
-- Enemy: Enemy.IntercomInitialize -> IconLButtonUp -> Enemy.IntercomUI_IntercomDialog_Open
-- Enemy: Enemy.IntercomUI_IntercomDialog_Open -> Enemy.AddEventHandler(IconLButtonUp, Enemy.IntercomUI_IntercomDialog_Open)
+- Enemy: AddEventHandler -> IconLButtonUp -> Enemy.IntercomUI_IntercomDialog_Open
+- Enemy: Enemy.IntercomUI_IntercomDialog_Open -> AddEventHandler(IconLButtonUp, Enemy.IntercomUI_IntercomDialog_Open)
 
 ## Related APIs
 
-- [WindowAssignFocus](../../window_api/functions/window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
+- [Cursor.PickUp](../../globals/functions/global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
+- [EA_Window_Macro.UpdateDetails](../../globals/functions/global_EA_Window_Macro.UpdateDetails.md) (HIGH 100/100) - Global Function
+- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
-- none
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Triggered-by evidence: Enemy:Enemy.UI_Icon_OnLButtonUp
 - Only one addon surfaced this event in the current addon-api corpus.

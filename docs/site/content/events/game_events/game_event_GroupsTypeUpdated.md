@@ -23,10 +23,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Enemy |
-| Files seen in | `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrames.lua:179` |
+| Files seen in | Code/Core/Events.lua |
 | Namespaces detected | GroupsTypeUpdated |
 | Source kinds | event_page, lua_event_registration |
-| Example locations | Enemy: Enemy._GroupIconsEnabledChanged, Enemy: Enemy._UnitFramesEnabledChanged |
+| Example locations | Enemy: AddEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed as a runtime event or event-like identifier used by 1 addons.
+Runtime event with 2 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -69,35 +69,18 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Registrars And Handlers
 
-- Enemy.AddEventHandler
+- AddEventHandler
 - Enemy.GroupIcons_OnGroupsTypeUpdated
 - Enemy.UnitFrames_GroupsTypeUpdated
 - addon
 
 ## Examples
 
-- Enemy: Enemy._GroupIconsEnabledChanged -> GroupsTypeUpdated -> Enemy.GroupIcons_OnGroupsTypeUpdated
-- Enemy: Enemy._UnitFramesEnabledChanged -> GroupsTypeUpdated -> Enemy.UnitFrames_GroupsTypeUpdated
-- Enemy: Enemy.GroupIcons_OnGroupsTypeUpdated -> Enemy.AddEventHandler(GroupsTypeUpdated, Enemy.GroupIcons_OnGroupsTypeUpdated)
-- Enemy: Enemy.UnitFrames_GroupsTypeUpdated -> Enemy.AddEventHandler(GroupsTypeUpdated, Enemy.UnitFrames_GroupsTypeUpdated)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- Enemy: AddEventHandler -> GroupsTypeUpdated -> Enemy.GroupIcons_OnGroupsTypeUpdated
+- Enemy: AddEventHandler -> GroupsTypeUpdated -> Enemy.UnitFrames_GroupsTypeUpdated
+- Enemy: Enemy.GroupIcons_OnGroupsTypeUpdated -> AddEventHandler(GroupsTypeUpdated, Enemy.GroupIcons_OnGroupsTypeUpdated)
+- Enemy: Enemy.UnitFrames_GroupsTypeUpdated -> AddEventHandler(GroupsTypeUpdated, Enemy.UnitFrames_GroupsTypeUpdated)
 
 ## Notes
 
-- Triggered-by evidence: Enemy:Enemy.GroupsUpdateType
 - Only one addon surfaced this event in the current addon-api corpus.

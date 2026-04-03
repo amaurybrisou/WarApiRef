@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 31 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1294`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:33`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:1291`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1291`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:1291`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:1291` |
+| Addons seen in | Ace, Amethyst, Aura, CMap, Crusher, EZCraftX, EZGuard, Effigy |
+| Files seen in | KeyBar.lua, LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Source/AuraHelpers.lua, VerticalMorale.lua, libs/LibGUI.lua |
 | Namespaces detected | DynamicImageSetRotation |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Image:Rotate, Aura: AuraHelpers.SetDynamicImageTexture, LibWBToggler: LIBGUI_Image:Rotate, PartyCast: LIBGUI_Image:Rotate, Shinies: LIBGUI_Image:Rotate, WoH-Reticle: LIBGUI_Image:Rotate |
+| Example locations | Ace: Rotate, Amethyst: Rotate, Aura: SetDynamicImageTexture, CMap: Rotate, Crusher: Rotate, EZCraftX: Rotate |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 42 |
+| Global usage count | 42 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: self.name, window |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: angle, rotation |
+| arg1 | Observed as a function or method reference. | Observed values: "KeyBarWindowSelector", self.name, window |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 270, 90, SelectorRotation |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,24 +85,49 @@ Observed mutating runtime image resources on existing controls.
 ## Seen In
 
 - Ace
+- Amethyst
 - Aura
+- CMap
+- Crusher
+- EZCraftX
+- EZGuard
+- Effigy
+- GCDsaver
+- Hopper
+- InfoScroller
+- KeyBar
 - LibWBToggler
+- Map
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
+- VerticalMorale
+- WarBoard_WarWhisperer
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
+- xHUD
 
 ## Examples
 
-- Ace: LIBGUI_Image:Rotate -> DynamicImageSetRotation(self.name, angle)
-- Aura: AuraHelpers.SetDynamicImageTexture -> DynamicImageSetRotation(window, rotation)
-- LibWBToggler: LIBGUI_Image:Rotate -> DynamicImageSetRotation(self.name, angle)
-- PartyCast: LIBGUI_Image:Rotate -> DynamicImageSetRotation(self.name, angle)
-- Shinies: LIBGUI_Image:Rotate -> DynamicImageSetRotation(self.name, angle)
-- WoH-Reticle: LIBGUI_Image:Rotate -> DynamicImageSetRotation(self.name, angle)
+- Ace: Rotate -> DynamicImageSetRotation(self.name, angle)
+- Amethyst: Rotate -> DynamicImageSetRotation(self.name, angle)
+- Aura: SetDynamicImageTexture -> DynamicImageSetRotation(window, rotation)
+- CMap: Rotate -> DynamicImageSetRotation(self.name, angle)
+- Crusher: Rotate -> DynamicImageSetRotation(self.name, angle)
+- EZCraftX: Rotate -> DynamicImageSetRotation(self.name, angle)
 
 ## Related APIs
 
-- none
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
@@ -111,14 +136,6 @@ Observed mutating runtime image resources on existing controls.
 - [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

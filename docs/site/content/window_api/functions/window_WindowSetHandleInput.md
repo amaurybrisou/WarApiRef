@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 47 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, BuffHead, DAoCBuff, Enemy, LibWBToggler, PartyCast, Shinies, TidyChat |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:104`, `/workspace/data/raw/Ace/LibGUI.lua:89`, `/workspace/data/raw/Ace/LibGUI.lua:94`, `/workspace/data/raw/BuffHead/EffectContainer.lua:75`, `/workspace/data/raw/BuffHead/EffectFrame.lua:309`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:161`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:169` |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, Amethyst, BuffHead, CCTV, CleanUnitFrames |
+| Files seen in | AdjustTheTip.lua, CCTV.lua, CleanGroupMemberUnitFrame.lua, Code/Assist/Assist.lua, Code/GroupIcons/GroupIcon.lua, Code/Guard/Guard.lua, Code/Marks/MarkTemplate.lua, Code/UnitFrames/UnitFramePart.lua |
 | Namespaces detected | WindowSetHandleInput |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:CaptureInput, Ace: LIBGUI_ELEMENT:IgnoreInput, Ace: LIBGUI_ELEMENT:MakeMovable, BuffHead: BuffHeadEffectContainer:Create, BuffHead: BuffHeadEffectFrame:Create, DAoCBuff: DAoCBuffSettings.CreateOptionswindow |
+| Example locations | Ace: CaptureInput, Ace: IgnoreInput, Ace: MakeMovable, ActionBarHide: CaptureInput, ActionBarHide: IgnoreInput, ActionBarHide: MakeMovable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 46 |
-| Global usage count | 46 |
+| Lua usage count | 178 |
+| Global usage count | 178 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,12 +71,12 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "DAoCBuff_Settings", "EnemyGuardDistanceIndicator", "EnemyTarget" |
-| arg2 | Observed as a boolean toggle. | Observed values: (handleInput==true), chatwindow_tabs_handle_input~=false, false |
+| windowName | Observed as a target window name. | Observed values: "CCTVRootWindow", "CCTVSnareWindow", "CCTVStaggerWindow" |
+| arg2 | Observed as a boolean toggle. | Observed values: (handleInput==true), Pure.Get("group-frame-handleinput"), Pure.Get("grouppet-frame-handleinput") |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,41 +85,65 @@ Observed mutating runtime window state or presentation.
 ## Seen In
 
 - Ace
+- ActionBarHide
+- ActionFraction
+- AdjustTheTip
+- Amethyst
 - BuffHead
+- CCTV
+- CleanUnitFrames
+- Crusher
 - DAoCBuff
+- DuffTimer
+- EA_ScenarioGroupWindow
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- EveryBodyGuard
+- FastFriends
+- GCDsaver
+- GroupSpotter
+- Hopper
+- InfoScroller
+- KeyBar
 - LibWBToggler
+- Map
+- Miracle Grow Remix
+- Motion
+- NaturalLog
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- Statdoll Remix
+- TargetRing
 - TidyChat
 - TidyRoll
+- Tokens
+- Vectors
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- nRarity
+- scenarioInfo
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:CaptureInput -> WindowSetHandleInput(self.name, true)
-- Ace: LIBGUI_ELEMENT:IgnoreInput -> WindowSetHandleInput(self.name, false)
-- Ace: LIBGUI_ELEMENT:MakeMovable -> WindowSetHandleInput(self.name, true)
-- BuffHead: BuffHeadEffectContainer:Create -> WindowSetHandleInput(frame:GetName(), true)
-- BuffHead: BuffHeadEffectFrame:Create -> WindowSetHandleInput(frameName, (handleInput==true))
-- BuffHead: BuffHeadEffectFrame:Create -> WindowSetHandleInput(frame:GetName(), (handleInput==true))
-
-## Related APIs
-
-- none
+- Ace: CaptureInput -> WindowSetHandleInput(self.name, true)
+- Ace: IgnoreInput -> WindowSetHandleInput(self.name, false)
+- Ace: MakeMovable -> WindowSetHandleInput(self.name, true)
+- ActionBarHide: CaptureInput -> WindowSetHandleInput(self.name, true)
+- ActionBarHide: IgnoreInput -> WindowSetHandleInput(self.name, false)
+- ActionBarHide: MakeMovable -> WindowSetHandleInput(self.name, true)
 
 ## Used With
 
-- [WindowGetHandleInput](window_WindowGetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowSetMovable](window_WindowSetMovable.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

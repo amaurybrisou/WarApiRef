@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 18 addons
+- Seen in: 98 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, BankArkel, BuffHead, DAoCBuff, Enemy, Killer, LibWBToggler |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1116`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:735`, `/workspace/data/raw/BankArkel/BankArkel.lua:364`, `/workspace/data/raw/BankArkel/BankArkel.lua:513`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:129`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:139`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:195`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205` |
+| Addons seen in | Ace, ActionBarHide, AdvancedPetAssist, Amethyst, BankArkel, Brizio's Crappy Computer Medic, BuffHead, Busted |
+| Files seen in | AAOTracker.lua, APAGui.lua, BankArkel.lua, Busted.lua, CCM.lua, CCTV.lua, CDownSettings.lua, ChattyCathy.lua |
 | Namespaces detected | ComboBoxSetSelectedMenuItem |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_Combobox:SelectIndex, AdvancedPetAssist: AdvancedPetAssist.local.FillCombo, AdvancedPetAssist: FillCombo, BankArkel: BankArkel.PackClose, BankArkel: BankArkel.SetupCombos, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.ShowProperties |
+| Example locations | Ace: SelectIndex, ActionBarHide: SelectIndex, AdvancedPetAssist: FillCombo, Amethyst: SelectIndex, BankArkel: PackClose, BankArkel: SetupCombos |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 205 |
-| Global usage count | 205 |
+| Lua usage count | 569 |
+| Global usage count | 569 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,18 +65,18 @@ ComboBoxSetSelectedMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 18 addons.
+Observed as a window function across 98 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", "EnemyChooseChannelDialogChannelList", "EnemyClickCastingDialogContentScrollChildAction" |
+| arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", "BustedGUIAddonSelect", "CCTVSettingsCombobox3" |
 | arg2 | Observed as a function or method reference. | Observed values: #ACTIVE_CONDITION, #CONDITIONS, #CONDITIONS-1 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
@@ -85,54 +85,128 @@ Observed as a window function across 18 addons.
 ## Seen In
 
 - Ace
+- ActionBarHide
 - AdvancedPetAssist
+- Amethyst
 - BankArkel
+- Brizio's Crappy Computer Medic
 - BuffHead
+- Busted
+- CCTV
+- CDown
+- CMap
+- CaVES
+- CastSequence
+- ChattyCathy
+- Crafting Info Tooltip
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DaemonAssist
+- DammazKron
+- DeepSleep
+- DetauntHelper
+- DuffTimer
+- Dye Preview
+- EA_OpenPartyWindow
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- EveryBodyGuard
+- FozAuction
+- GCDsaver
+- GroupRange
+- GuildWarden
+- HealGrid
+- Hopper
+- InfoScroller
+- KeysetMonsterPlay
 - Killer
+- LibAddonButton
 - LibWBToggler
+- LoyalPet
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- MegaphonePlusPlus
+- Miracle Grow Remix
+- MoraleSet
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
+- OverheadFonts
 - PartyCast
 - Pocket Palette
 - PotionBar
+- Pure
+- Pure Careerbar
+- RVMOD_SquaredDistances
+- RealmStatus
+- SOR
+- ScenarioStats
+- Sequencer
 - Shinies
+- SocialWindow 2.0
+- Statdoll Remix
+- TalismanGenie
+- TargetRing
+- TastyButtons
+- TaxPayer
 - TexturedButtons
+- ThinkOutLoud
 - TidyChat
 - TidyRoll
+- TokenMachine
+- Tokens
 - TurretRange
+- Vectors
+- WARCommander
+- WBStutterLess
+- WarBoard_AAOTracker
+- WarBoard_FPS
+- WarBoard_WarWhisperer
+- WarTriage
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- ZonePOP
+- alertMod
+- nLootLink
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
 
 ## Examples
 
-- Ace: LIBGUI_Combobox:SelectIndex -> ComboBoxSetSelectedMenuItem(self.name, index)
-- AdvancedPetAssist: AdvancedPetAssist.local.FillCombo -> ComboBoxSetSelectedMenuItem(comboName, selIdx)
+- Ace: SelectIndex -> ComboBoxSetSelectedMenuItem(self.name, index)
+- ActionBarHide: SelectIndex -> ComboBoxSetSelectedMenuItem(self.name, index)
 - AdvancedPetAssist: FillCombo -> ComboBoxSetSelectedMenuItem(comboName, selIdx)
-- BankArkel: BankArkel.PackClose -> ComboBoxSetSelectedMenuItem("BankArkelBackpackCombo", 1)
-- BankArkel: BankArkel.SetupCombos -> ComboBoxSetSelectedMenuItem("BankArkelBackpackCombo", 1)
-- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.ShowProperties -> ComboBoxSetSelectedMenuItem(windowName.."PropertiesComboBox", propertyToIndex[propertyId]or 1)
+- Amethyst: SelectIndex -> ComboBoxSetSelectedMenuItem(self.name, index)
+- BankArkel: PackClose -> ComboBoxSetSelectedMenuItem("BankArkelBackpackCombo", 1)
+- BankArkel: SetupCombos -> ComboBoxSetSelectedMenuItem("BankArkelBackpackCombo", 1)
 
 ## Related APIs
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnSelChanged](../../xml/handlers/handler_OnSelChanged.md) (HIGH 88/100) - XML Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function
+- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

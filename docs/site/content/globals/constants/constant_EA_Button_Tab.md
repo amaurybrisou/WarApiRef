@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, TidyChat, TidyRoll, WSCT, WarBoard |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/Templates.xml:0`, `/workspace/data/raw/TidyChat/TidyChatTemplates.xml:0`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:0`, `/workspace/data/raw/WarBoard/WarBoardOptions.xml:0`, `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTrainingWindow.xml:0`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Atlas, Aura, AutoBand, DPSMeter, Deathblow |
+| Files seen in | APAGui.xml, AdvancedRenownTrainingWindow.xml, AggroMeter.xml, AutoBandWindow.xml, DPSMeterWindow.xml, Deathblow.xml, Deathblow2.xml, Emojii.xml |
 | Namespaces detected | EA_Button_Tab |
 | Source kinds | xml_attributes |
 | Example locations | APAOptionsTabsAutoRecall, APAOptionsTabsControls, APAOptionsTabsFollowTarget, APAOptionsTabsGeneral, APAOptionsTabsHUD, APAOptionsTabsKiting |
-| XML usage count | 19 |
-| XML attribute usage count | 19 |
+| XML usage count | 55 |
+| XML attribute usage count | 55 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,18 +57,40 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 8 addons.
+Engine-supplied XML constant or template class referenced by 30 addons.
 
 ## Seen In
 
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - AggroMeter
+- Atlas
 - Aura
+- AutoBand
+- DPSMeter
+- Deathblow
+- Deathblow2
+- EA_OpenPartyWindow
+- Emojii
+- FozAuction
+- GDes
+- Ges
+- HealGrid
+- Kwestor
+- LoyalPet
+- Queue Queuer
+- RVMOD_Manager
+- RaidMeter
+- RandomMount
+- SocialWindow 2.0
+- TastyButtons
 - TidyChat
 - TidyRoll
+- TomeTracker
 - WSCT
 - WarBoard
+- Warbuilder
+- wbLeadHelper
 
 ## Used By
 
@@ -86,27 +108,51 @@ Observed engine XML template or inherited constant referenced by 8 addons.
 - AggroMeterGrayWindowBlackTab
 - AggroMeterGrayWindowListTab
 - AggroMeterGrayWindowWhiteTab
+- AuctionWindowTabButton
 - AuraTabButtonTemplate
+- AutoBandWindowTabsConfig
+- AutoBandWindowTabsTemplate
+- AutoBandWindowTabsTools
+- DPSMeterWindowTabsAbilityTabButton
+- DPSMeterWindowTabsOverallTabButton
+- DeathblowWin1WindowClassTab
+- DeathblowWin1WindowProfileTab
+- DeathblowWin1WindowSessionTab
+- DeathblowWin1WindowSummTab
+- DeathblowWin1WindowTotalTab
+- EA_Button_OpenPartyTab
+- EmojiiChooseIconDialogTab1
+- EmojiiChooseIconDialogTab2
+- EmojiiChooseIconDialogTab3
+- GDesTabButton_Template
+- GesTabButtonTemplate
+- HGG_TabSpellTrackTabTemplate
+- KwestorGui_TabTemplate
+- LPETTabButton
+- RVMOD_ManagerWindowTabGeneral
+- RVMOD_ManagerWindowTabSettings
+- RaidMeterWindowBossTab
+- RaidMeterWindowTotalTab
+- RandomMountWindowTabBlacklist
+- RandomMountWindowTabMounts
+- RandomMountWindowTabSettings
+- SocialWindowBuddyListTabTemplate
+- SocialWindowTabTemplate
+- TAtlasTab
 - TChatTabButton
 - TRollTabButton
+- TabButton
 - TabButtonTemplate
+- TastyButtonsOptionsWindowTabTemplate
+- TomeTracker_JournalTabButton
 - WSCTTabButton
+- WarbuilderTabTemplate
+- wbLeadHelperConfigWindowTabsConfig
+- wbLeadHelperConfigWindowTabsMessages
 
 ## Related APIs
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

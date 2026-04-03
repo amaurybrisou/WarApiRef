@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 153
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
@@ -21,26 +21,24 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Shinies |
-| Files seen in | `/workspace/data/raw/Shinies/Source/Shinies.lua:169`, `/workspace/data/raw/Shinies/Source/Shinies.lua:206`, `/workspace/data/raw/Shinies/Source/Shinies.lua:219` |
+| Files seen in | Source/Shinies.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | AuctionWindow.Show, LibStub:OnDisable, LibStub:OnEnable, LibStub:UpdateDefaultAuctionHouseDisable, Shinies.OnAuctionInitReceived, SystemData.Events.AUCTION_INIT_RECEIVED |
+| Source kinds | lua_call |
+| Example locations | OnDisable, OnEnable, UpdateDefaultAuctionHouseDisable, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 1 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -60,34 +58,12 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.AUCTION_INIT_RECEIVED field accessed by 1 addons; commonly found in OnDisable and OnEnable, UpdateDefaultAuctionHouseDisable, lua_call contexts.
 
 ## Seen In
 
 - Shinies
 
-## Related APIs
-
-- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
-- [WindowUnregisterEventHandler](../../window_api/functions/window_WindowUnregisterEventHandler.md) (HIGH 90/100) - Window Function
-
-## Used With
-
-- [SystemData.Events.AUCTION_BID_RESULT_RECEIVED](systemdata_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](systemdata_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
-
 ## Notes
 
-- Observed in contexts: AuctionWindow.Show, LibStub:OnDisable, LibStub:OnEnable, LibStub:UpdateDefaultAuctionHouseDisable, Shinies.OnAuctionInitReceived, SystemData.Events.AUCTION_INIT_RECEIVED
+- Observed in contexts: OnDisable, OnEnable, UpdateDefaultAuctionHouseDisable, lua_call

@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 153
+- Raw weighted score: 143
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
@@ -21,7 +21,6 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 - +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
@@ -30,17 +29,17 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Swift Assist |
-| Files seen in | `/workspace/data/raw/swift-assist/SwiftAssist.lua:435` |
+| Files seen in | SwiftAssist.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | SwiftAssist.Initialize, SwiftAssist.OnMacrosLoaded, SystemData.Events.MACROS_LOADED, event_page, event_registration, flow |
+| Source kinds | event_page, event_registration, lua_call |
+| Example locations | Initialize, SwiftAssist.OnMacrosLoaded, SystemData.Events.MACROS_LOADED, event_page, event_registration, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 1 |
+| Documentation references | 3 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -60,7 +59,7 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.MACROS_LOADED field accessed by 1 addons; commonly found in Initialize and SwiftAssist.OnMacrosLoaded, SystemData.Events.MACROS_LOADED, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
@@ -69,19 +68,8 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 ## Related APIs
 
 - [EA_ChatWindow.OnKeyEnter](../../globals/functions/global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 
-- Observed in contexts: SwiftAssist.Initialize, SwiftAssist.OnMacrosLoaded, SystemData.Events.MACROS_LOADED, event_page, event_registration, flow
+- Observed in contexts: Initialize, SwiftAssist.OnMacrosLoaded, SystemData.Events.MACROS_LOADED, event_page, event_registration, lua_call

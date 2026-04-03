@@ -23,10 +23,10 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainer |
-| Files seen in | `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:261` |
+| Files seen in | source/AnywhereTrainer.lua |
 | Namespaces detected | EA_Window_InteractionTomeTraining |
 | Source kinds | lua_calls |
-| Example locations | AnywhereTrainer: AnywhereTrainer.OnLeftClickTome |
+| Example locations | AnywhereTrainer: OnLeftClickTome |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 1 addons.
+Shared function table with 2 member functions; the primary API surface for 1 addons.
 
 ## Functions
 
@@ -70,24 +70,8 @@ Observed shared global table or namespace surfaced in 1 addons.
 
 ## Examples
 
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickTome -> EA_Window_InteractionTomeTraining.Show()
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickTome -> EA_Window_InteractionTomeTraining.Hide()
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- AnywhereTrainer: OnLeftClickTome -> EA_Window_InteractionTomeTraining.Show()
+- AnywhereTrainer: OnLeftClickTome -> EA_Window_InteractionTomeTraining.Hide()
 
 ## Notes
 

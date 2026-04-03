@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 17 addons
+- Seen in: 76 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, Enemy, Killer |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:664`, `/workspace/data/raw/Ace/LibGUI.lua:719`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHelpers.lua:9`, `/workspace/data/raw/Aura/Source/AuraShares.lua:419`, `/workspace/data/raw/BuffHead/Setup/SelectColor.lua:78`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.lua:310`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:147`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:601` |
+| Addons seen in | Ace, ActionBarHide, AdvancedPetAssist, AdvancedRenownTrainer, Amethyst, Aura, BuffHead, CastSequence |
+| Files seen in | APAGuiHelpers.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, Code/Core/Groups/EnemyEffectFilter.lua, Code/Core/Main.lua, Code/Core/Utils.lua, Code/Intercom/Intercom.lua, Code/UnitFrames/ClickCasting.lua |
 | Namespaces detected | TextEditBoxGetText |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_MultiTextbox:GetText, Ace: LIBGUI_Textbox:GetText, AdvancedPetAssist: APAGuiHelpers.ParseRGB, AdvancedRenownTrainer: AdvancedRenownTraining.ImportNameInputOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.SavePreset |
+| Example locations | Ace: GetText, ActionBarHide: GetText, AdvancedPetAssist: ParseRGB, AdvancedRenownTrainer: ImportNameInputOkButtonPressed, AdvancedRenownTrainer: ImportOkButtonPressed, AdvancedRenownTrainer: SavePreset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 115 |
-| Global usage count | 115 |
+| Lua usage count | 411 |
+| Global usage count | 411 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -75,62 +75,109 @@ Observed reading from or writing to edit-box controls.
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
 - AdvancedPetAssist
 - AdvancedRenownTrainer
+- Amethyst
 - Aura
 - BuffHead
+- CastSequence
+- Crusher
 - DAoCBuff
+- DetauntHelper
+- DuffTimer
+- EA_UiDebugTools
+- EZCraftX
+- EZGuard
+- Effigy
 - Enemy
+- FastFriends
+- GCDsaver
+- GroupRange
+- GuildWarden
+- HealGrid
+- Hopper
+- InfoScroller
+- JunkDump
+- KeyBar
+- Keyset
 - Killer
+- LibAddonButton
 - LibWBToggler
+- LoyalPet
+- Map
+- MapMonster
+- MapPin
+- Mass Refine
+- MegaphonePlusPlus
+- Miracle Grow Remix
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
 - PartyCast
 - Pocket Palette
+- Pure
+- Pure Careerbar
+- RVAPI_ColorDialog
+- RandomMount
+- RealmStatus
+- SNT_BUTTONS
+- SNT_PANEL
+- SOR
+- Sequencer
 - Shinies
+- Squared
+- TacticSetNames
+- TargetRing
+- TastyButtons
 - TexturedButtons
+- ThinkOutLoud
 - TidyRoll
+- Tokens
 - TurretRange
+- Twister
+- Vectors
+- WarTriage
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- XpStatus+G
+- nLootLink
+- scenarioInfo
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_MultiTextbox:GetText -> TextEditBoxGetText(self.name)
-- Ace: LIBGUI_Textbox:GetText -> TextEditBoxGetText(self.name)
-- AdvancedPetAssist: APAGuiHelpers.ParseRGB -> TextEditBoxGetText(name)
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportNameInputOkButtonPressed -> TextEditBoxGetText(ImportNameInputWindowName.."NameInputBox")
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> TextEditBoxGetText(ImportWindowName.."NameInputBox")
-- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> TextEditBoxGetText(ImportWindowName.."LinkInputBox")
+- Ace: GetText -> TextEditBoxGetText(self.name)
+- ActionBarHide: GetText -> TextEditBoxGetText(self.name)
+- AdvancedPetAssist: ParseRGB -> TextEditBoxGetText(name)
+- AdvancedRenownTrainer: ImportNameInputOkButtonPressed -> TextEditBoxGetText(ImportNameInputWindowName.."NameInputBox")
+- AdvancedRenownTrainer: ImportOkButtonPressed -> TextEditBoxGetText(ImportWindowName.."NameInputBox")
+- AdvancedRenownTrainer: ImportOkButtonPressed -> TextEditBoxGetText(ImportWindowName.."LinkInputBox")
 
 ## Related APIs
 
-- none
+- [OnKeyEscape](../../xml/handlers/handler_OnKeyEscape.md) (HIGH 88/100) - XML Event
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [LabelGetText](window_LabelGetText.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

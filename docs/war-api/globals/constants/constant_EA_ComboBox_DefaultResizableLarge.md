@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, PotionBar |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Assist/AssistConfiguration.xml:0`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:0`, `/workspace/data/raw/Enemy/Code/Core/ConfigDialog.xml:0`, `/workspace/data/raw/Enemy/Code/Core/ConfigurationWindow.xml:0`, `/workspace/data/raw/Enemy/Code/Core/Groups/EffectFilterDialog.xml:0`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFramePartDialog.xml:0`, `/workspace/data/raw/PotionBar/settings/Settings.xml:537` |
+| Addons seen in | EA_UiModWindow, Enemy, EveryBodyGuard, Ges, MegaphonePlusPlus, PotionBar, RVMOD_SquaredDistances, SocialWindow 2.0 |
+| Files seen in | Code/Assist/AssistConfiguration.xml, Code/CombatLog/CombatLogStatsWindow.xml, Code/Core/ConfigDialog.xml, Code/Core/ConfigurationWindow.xml, Code/Core/Groups/EffectFilterDialog.xml, Code/UnitFrames/UnitFramePartDialog.xml, GesOptions.xml, MegaphonePlusPlus.xml |
 | Namespaces detected | EA_ComboBox_DefaultResizableLarge |
 | Source kinds | xml_attributes |
 | Example locations | $parentRightPaneQuickActionsCombo, EnemyAssistConfigurationNewTargetSoundId, EnemyCombatLogStatsWindowSession, EnemyConfigDialogSection, EnemyConfigurationWindow_PropertySelectLargeTemplateValue, EnemyConfigurationWindow_PropertySelectTemplateValue |
-| XML usage count | 8 |
-| XML attribute usage count | 8 |
+| XML usage count | 23 |
+| XML attribute usage count | 23 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,12 +57,20 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Engine-supplied XML constant or template class referenced by 10 addons.
 
 ## Seen In
 
+- EA_UiModWindow
 - Enemy
+- EveryBodyGuard
+- Ges
+- MegaphonePlusPlus
 - PotionBar
+- RVMOD_SquaredDistances
+- SocialWindow 2.0
+- Vectors
+- Warbuilder
 
 ## Used By
 
@@ -74,22 +82,25 @@ Observed engine XML template or inherited constant referenced by 2 addons.
 - EnemyConfigurationWindow_PropertySelectTemplateValue
 - EnemyEffectFilterDialogType
 - EnemyUnitFramePartDialogContentScrollChildType
+- EveryBodyGuard_Templates_ComboBoxComboBox
+- GesOptionsSoundsAppliedComboBox
+- GesOptionsSoundsRemovedComboBox
+- GesOptionsSoundsTypeComboBox1
+- GesOptionsSoundsTypeComboBox2
+- GesOptionsSoundsTypeComboBox3
+- GesOptionsSoundsTypeComboBox4
+- MegaphoneMainFontComboBox
+- MegaphoneMainSFXComboBox
+- RVMOD_SquaredDistancesSettingsWindowComboBoxFonts
+- SocialWindowTabSearchSocketComboBoxZoneNames
+- UiModWindowCategoryComboBox
+- Vectors_Templates_ComboBoxComboBox
+- WarbuilderHotBarWindowCombo
+- WarbuilderPresetWindowCombo
 
 ## Related APIs
 
 - [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

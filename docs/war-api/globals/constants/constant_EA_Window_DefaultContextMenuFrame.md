@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.xml:0`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:0`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:0` |
+| Addons seen in | Atlas, Busted, ChattyCathy, DuffTimer, ScenarioStats, SessionRPs, SocialWindow 2.0, TidyChat |
+| Files seen in | Busted.xml, ChattyCathy.xml, Configuration/Main.xml, CustomAutoRoll.xml, DuffTimerOptions.xml, ScenarioStats.xml, Source/SocialWindowBuddyList.xml, Source/SocialWindowTabFriends.xml |
 | Namespaces detected | EA_Window_DefaultContextMenuFrame |
 | Source kinds | xml_attributes |
-| Example locations | TRollAutoRoll, TidyChatOptions, TidyRollOptions |
-| XML usage count | 3 |
-| XML attribute usage count | 3 |
+| Example locations | AtlasConfigurationFrame, BustedMiniGUIBack, ChattyCathyOptBackground, DuffTimerOptionsBackground_BackgroundFill, ScenarioStatsWarningTemplateBackground, SessionRPsWarningTemplateBackground |
+| XML usage count | 12 |
+| XML attribute usage count | 12 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,34 +57,39 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Engine-supplied XML constant or template class referenced by 10 addons.
 
 ## Seen In
 
+- Atlas
+- Busted
+- ChattyCathy
+- DuffTimer
+- ScenarioStats
+- SessionRPs
+- SocialWindow 2.0
 - TidyChat
 - TidyRoll
+- WarBoard_FPS
 
 ## Used By
 
+- AtlasConfigurationFrame
+- BustedMiniGUIBack
+- ChattyCathyOptBackground
+- DuffTimerOptionsBackground_BackgroundFill
+- ScenarioStatsWarningTemplateBackground
+- SessionRPsWarningTemplateBackground
+- SocialWindowBuddyListFilterMenuBackground
+- SocialWindowTabFriendsFilterMenuBackground
 - TRollAutoRoll
 - TidyChatOptions
 - TidyRollOptions
+- WarBoard_FPSOptionsBackground
 
 ## Related APIs
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

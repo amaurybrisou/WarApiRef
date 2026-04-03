@@ -907,7 +907,15 @@ func bulletOrNone(lines []string) string {
 	if len(lines) == 0 {
 		return "- none"
 	}
-	return strings.Join(lines, "\n")
+	bulleted := make([]string, len(lines))
+	for i, line := range lines {
+		if strings.HasPrefix(line, "- ") {
+			bulleted[i] = line
+		} else {
+			bulleted[i] = "- " + line
+		}
+	}
+	return strings.Join(bulleted, "\n")
 }
 
 func indentBullets(values []string) string {
@@ -1460,7 +1468,7 @@ func renderStartupWindowFacts(facts []WindowLifecycleSemantic) string {
 // writeAddonLifecycleSemantics writes addon-level lifecycle semantic pages
 // derived from .mod manifest analysis.
 func writeAddonLifecycleSemantics(outputRoot string, corpus Corpus) error {
-	if len(corpus.AddonLifecycleSemantics) == 0 {
+	if len(corpus.AddonLifecycleSemantics) == 0 && len(corpus.LifecycleDiagnostics.SourceDirectories) == 0 {
 		return nil
 	}
 	dir := filepath.Join(outputRoot, "lifecycle", "addons")
@@ -1469,6 +1477,7 @@ func writeAddonLifecycleSemantics(outputRoot string, corpus Corpus) error {
 	}
 
 	links := []string{}
+	linksByNormalizedName := map[string]string{}
 	for _, addon := range corpus.AddonLifecycleSemantics {
 		content := "# " + addon.AddonName + " Lifecycle\n\n"
 		content += "> Source: `.mod` manifest semantic analysis\n\n"
@@ -1494,7 +1503,9 @@ func writeAddonLifecycleSemantics(outputRoot string, corpus Corpus) error {
 		if err := writeFile(path, content); err != nil {
 			return err
 		}
-		links = append(links, "- "+markdownLink(addon.AddonName, "addons/"+slug))
+		link := markdownLink(addon.AddonName, "addons/"+slug)
+		links = append(links, "- "+link)
+		linksByNormalizedName[normalizeAddonNameForInventory(addon.AddonName)] = link
 	}
 
 	index := "# Addon Lifecycle Semantics\n\n"
@@ -1541,9 +1552,57 @@ func writeAddonLifecycleSemantics(outputRoot string, corpus Corpus) error {
 			}
 			index += md.Section("Excluded Addons", bulletOrNone(excluded))
 		}
+
+		if len(corpus.LifecycleDiagnostics.SourceDirectories) > 0 {
+			exclusionByDir := map[string]LifecycleExclusion{}
+			for _, ex := range corpus.LifecycleDiagnostics.Exclusions {
+				dirName := strings.TrimSpace(ex.Directory)
+				if dirName == "" {
+					dirName = strings.TrimSpace(ex.AddonName)
+				}
+				if dirName == "" {
+					continue
+				}
+				exclusionByDir[normalizeAddonNameForInventory(dirName)] = ex
+			}
+
+			inventoryRows := make([][]string, 0, len(corpus.LifecycleDiagnostics.SourceDirectories))
+			for _, dirName := range corpus.LifecycleDiagnostics.SourceDirectories {
+				norm := normalizeAddonNameForInventory(dirName)
+				entry := dirName
+				status := "excluded"
+				reason := "not present in .mod lifecycle semantic output"
+
+				if link, ok := linksByNormalizedName[norm]; ok {
+					entry = link
+					status = "included"
+					reason = ".mod semantic lifecycle entry emitted"
+				} else if ex, ok := exclusionByDir[norm]; ok {
+					reason = ex.ReasonCode + ": " + ex.Reason
+				}
+
+				inventoryRows = append(inventoryRows, []string{dirName, entry, status, reason})
+			}
+			index += md.Section("Source Addon Inventory", md.Table([]string{"Directory", "Lifecycle Entry", "Status", "Reason"}, inventoryRows))
+		}
 	}
-	index += md.Section("Addons", bulletOrNone(links))
+	index += md.Section("Lifecycle Addons (.mod Semantic Output)", bulletOrNone(links))
 	return writeFile(filepath.Join(outputRoot, "lifecycle", "addon_lifecycle.md"), index)
+}
+
+func normalizeAddonNameForInventory(value string) string {
+	trimmed := strings.ToLower(strings.TrimSpace(value))
+	if trimmed == "" {
+		return ""
+	}
+	var b strings.Builder
+	b.Grow(len(trimmed))
+	for _, r := range trimmed {
+		if (r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') {
+			b.WriteRune(r)
+		}
+	}
+	return b.String()
 }
 
 // renderLifecycleActionTable renders a table of LifecycleActionRecord entries

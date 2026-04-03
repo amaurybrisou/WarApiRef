@@ -23,7 +23,6 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BankArkel |
-| Files seen in | `/workspace/data/raw/BankArkel/BankArkel.xml:0` |
 | Namespaces detected | Visual |
 | Source kinds | xml_frames |
 | Example locations | BankArkel: BankArkelBackpack |
@@ -79,10 +78,10 @@ Observed 1 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `b` | **required** | 73, 225, 255, 55 |
-| `g` | **required** | 218, 255, 155, 55 |
-| `r` | **required** | 255, 155, 245, 175 |
-| `a` | optional | 255, 0, 0.5, 0.8 |
+| `b` | **required** | 255, 0, 73, 225 |
+| `g` | **required** | 25, 253, 218, 255 |
+| `r` | **required** | 255, 253, 155, 245 |
+| `a` | optional | 255, 0.8, 0, 128 |
 ## Recursive Hierarchy
 
 - Root: [Visual](element_Visual.md)
@@ -98,17 +97,5 @@ Observed 1 times as an unnamed child.
 
 ## Related APIs
 
+- [Color](element_Color.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
-- [Color](element_Color.md) (MEDIUM 45/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

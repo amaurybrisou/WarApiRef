@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,11 +28,11 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, Killer, WhoHealedMe |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APACore.lua:186`, `/workspace/data/raw/AdvancedPetAssist/APAUpdateDebugWatch.lua:14`, `/workspace/data/raw/AdvancedPetAssist/AdvancedPetAssist.lua:41`, `/workspace/data/raw/Killer/KillerUtils.lua:49`, `/workspace/data/raw/WhoHealedMe/WHMCore.lua:17` |
+| Addons seen in | AdvancedPetAssist, DaemonAssist, EA_UiDebugTools, Killer, QuickTacticSwitch, QuickWarReport, WhoHealedMe |
+| Files seen in | APACore.lua, APAUpdateDebugWatch.lua, AdvancedPetAssist.lua, DALogging.lua, KillerUtils.lua, QWRCore.lua, Source/Debug.lua, WHMCore.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | AdvancedPetAssist.Log, AdvancedPetAssist.TickDebugWatch, AdvancedPetAssist.local.LogSettingsSnapshot, Killer.Log, LogSettingsSnapshot, WHMCore.Log |
+| Example locations | DEBUG, Debug, DebugLog, Log, LogSettingsSnapshot, TickDebugWatch |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 7 |
@@ -59,30 +59,18 @@
 
 ## Description
 
-Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.UiLogFilters.DEBUG field accessed by 7 addons; commonly found in DEBUG and Debug, DebugLog, Log, LogSettingsSnapshot, TickDebugWatch, lua_call contexts.
 
 ## Seen In
 
 - AdvancedPetAssist
+- DaemonAssist
+- EA_UiDebugTools
 - Killer
+- QuickTacticSwitch
+- QuickWarReport
 - WhoHealedMe
-
-## Related APIs
-
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 
-- Observed in contexts: AdvancedPetAssist.Log, AdvancedPetAssist.TickDebugWatch, AdvancedPetAssist.local.LogSettingsSnapshot, Killer.Log, LogSettingsSnapshot, WHMCore.Log
+- Observed in contexts: DEBUG, Debug, DebugLog, Log, LogSettingsSnapshot, TickDebugWatch

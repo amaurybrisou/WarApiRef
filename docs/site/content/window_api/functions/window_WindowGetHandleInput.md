@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 26 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, DAoCBuff, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:99`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:161`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:169`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:91`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:99`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:99`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:99` |
+| Addons seen in | Ace, Crusher, DAoCBuff, EZCraftX, EZGuard, Effigy, EveryBodyGuard, GCDsaver |
+| Files seen in | LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Settings.lua, Source/DAoCBuffSettings.lua, libs/LibGUI.lua |
 | Namespaces detected | WindowGetHandleInput |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:TakesInput, DAoCBuff: DAoCBuffSettings.Disable, DAoCBuff: DAoCBuffSettings.OpenOptionswindow, DAoCBuff: DAoCBuffSettings.Reactivate, DAoCBuff: DAoCBuffSettings.UC, LibWBToggler: LIBGUI_ELEMENT:TakesInput |
+| Example locations | Ace: TakesInput, Crusher: TakesInput, DAoCBuff: Disable, DAoCBuff: OpenOptionswindow, DAoCBuff: Reactivate, DAoCBuff: UC |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 32 |
+| Global usage count | 32 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,53 +71,57 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "DAoCBuff_Settings", self.name |
+| windowName | Observed as a target window name. | Observed values: "DAoCBuff_Settings", "EveryBodyGuard_Settings", "Vectors_Settings" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- Crusher
 - DAoCBuff
+- EZCraftX
+- EZGuard
+- Effigy
+- EveryBodyGuard
+- GCDsaver
+- Hopper
+- InfoScroller
 - LibWBToggler
+- Map
+- Motion
 - PartyCast
+- Pure
+- Pure Careerbar
+- RealmStatus
 - Shinies
+- TargetRing
+- Tokens
+- Vectors
+- WarTriage
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
 - WoH-Reticle
+- scenarioInfo
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:TakesInput -> WindowGetHandleInput(self.name)
-- DAoCBuff: DAoCBuffSettings.Disable -> WindowGetHandleInput("DAoCBuff_Settings")
-- DAoCBuff: DAoCBuffSettings.OpenOptionswindow -> WindowGetHandleInput("DAoCBuff_Settings")
-- DAoCBuff: DAoCBuffSettings.Reactivate -> WindowGetHandleInput("DAoCBuff_Settings")
-- DAoCBuff: DAoCBuffSettings.UC -> WindowGetHandleInput("DAoCBuff_Settings")
-- LibWBToggler: LIBGUI_ELEMENT:TakesInput -> WindowGetHandleInput(self.name)
-
-## Related APIs
-
-- none
-
-## Used With
-
-- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [SystemData.Events.UPDATE_PROCESSED](../../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
+- Ace: TakesInput -> WindowGetHandleInput(self.name)
+- Crusher: TakesInput -> WindowGetHandleInput(self.name)
+- DAoCBuff: Disable -> WindowGetHandleInput("DAoCBuff_Settings")
+- DAoCBuff: OpenOptionswindow -> WindowGetHandleInput("DAoCBuff_Settings")
+- DAoCBuff: Reactivate -> WindowGetHandleInput("DAoCBuff_Settings")
+- DAoCBuff: UC -> WindowGetHandleInput("DAoCBuff_Settings")
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 

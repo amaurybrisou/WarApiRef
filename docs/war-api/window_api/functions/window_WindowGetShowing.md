@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 26 addons
+- Seen in: 148 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 110
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -22,21 +22,21 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
+- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, AutoMark, BuffHead |
-| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:84`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:374`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:227`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:235`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:243`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:261`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:280` |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, AdvancedRenownTrainer, AggroMeter, Amethyst, AnywhereTrainer |
+| Files seen in | AAOTracker.lua, AdjustTheTip.lua, AdvancedRenownTraining.lua, AggroMeter.lua, AnywhereTrainerAdditions.lua, AuctionAssist.lua, AuctionStats.lua, AutoSalvage.lua |
 | Namespaces detected | WindowGetShowing |
 | Source kinds | lua_calls |
-| Example locations | Ace: LIBGUI_ELEMENT:Showing, AdvancedRenownTrainer: AdvancedRenownTraining.TogglePresets, AggroMeter: AggroMeter.Close, AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction, AnywhereTrainer: AnywhereTrainer.OnLeftClickBank, AnywhereTrainer: AnywhereTrainer.OnLeftClickCareer |
+| Example locations | Ace: Showing, ActionBarHide: Showing, ActionFraction: SetLocationActionPointBar, AdjustTheTip: UpdateCallback, AdvancedRenownTrainer: TogglePresets, AggroMeter: Close |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 182 |
-| Global usage count | 182 |
+| Lua usage count | 700 |
+| Global usage count | 700 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -45,13 +45,13 @@
 | Event binding presence | no |
 | Observed in XML and Lua | no |
 | Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | no |
+| Conflicting signatures | yes |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -71,78 +71,198 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "AdvancedRenownTrainingWindow", "AggroMeterGrayWindow", "AuctionWindow" |
+| windowName | Observed as a target window name. | Observed values: "AbilitiesWindow", "AdvancedRenownTrainingWindow", "AggroMeterGrayWindow" |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
 - Ace
+- ActionBarHide
+- ActionFraction
+- AdjustTheTip
 - AdvancedRenownTrainer
 - AggroMeter
+- Amethyst
 - AnywhereTrainer
 - AnywhereTrainerAdditions
+- Atlas
+- AuctionStats
 - Aura
 - AutoMark
+- AutoSalvage
+- BankWindowFix
+- BlackBook
+- Bloody Mess
 - BuffHead
+- Busted
+- CCTV
+- CMap
+- CaVES
+- Calling
+- CastSequence
+- ChattyCathy
+- Cheeseboard
+- CleanUnitFrames
 - CombatTextNames
+- CraftingWillard
+- Crusher
 - DAoCBuff
+- DPSMeter
+- DaemonAssist
+- DammazKron
+- Dascore
+- DeepSleep
+- DetauntHelper
+- DuffTimer
+- Dye Preview
+- EA_LoadingScreen
+- EA_OpenPartyWindow
+- EA_ScenarioGroupWindow
+- EA_UiDebugTools
+- EA_UiModWindow
+- EZCraftX
+- EZGuard
+- Effigy
+- Emojii
 - Enemy
+- EveryBodyGuard
+- FixGit
+- FozAuction
+- GCDsaver
+- Group Icons SG
+- GroupRange
+- GroupSpotter
 - GuardLine
+- GuardRange
+- HealGrid
+- Hopper
+- InfoScroller
+- ItemRack
+- KeyBar
+- Keyset
+- KeysetMonsterPlay
+- KillTracker
+- Kwestor
+- LibAddonButton
 - LibGroup
 - LibWBToggler
+- Map
+- MapMonster
+- MapPin
+- MarkBuff
+- Minmap
+- Miracle Grow Remix
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
 - PartyCast
+- PeaceOut
 - Pocket Palette
 - PotionBar
+- Pure
+- Pure Careerbar
+- Queue Queuer
+- QuickNameActions+
+- QuickTacticSwitch
+- RVMOD_3DPortrait
+- RaidMeter
+- RandomMount
+- RealmStatus
+- ReliquaryHunter
+- ResHelp
 - RoR_SoR
+- Rolodex
+- SNT_CASTBAR
+- SNT_INFO
+- SNT_PANEL
+- SOR
+- Sequencer
 - Shinies
+- SimpleXY
+- SocialWindow 2.0
+- Soloq
+- Squared
+- Statdoll
+- Statdoll Remix
+- TargetRing
+- TastyButtons
 - TexturedButtons
+- ThinkOutLoud
 - TidyChat
+- TidyQueue
 - TidyRoll
+- Tokens
+- Tome Titan
+- TomeTracker
+- Tortall_DPS
+- Trakario
 - TurretRange
+- VPBreakdown
+- Vectors
+- VerticalMorale
+- WBStutterLess
 - WarBoard
+- WarBoard_AAOTracker
+- WarBoard_TogglerVPBreakdown
+- WarBoard_TogglerWARCommander
+- WarBoard_WarWhisperer
+- WarTriage
 - WhoHealedMe
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- WindowMovers
 - WoH-Reticle
+- XpStatus+G
+- ZCurse_Profiler
+- bigger_MacroWindow
+- nLootLink
+- nRarity
+- scenarioInfo
+- scnoload
+- wbLeadHelper
+- xHUD
+- xPanels
+- zMailMod
 
 ## Examples
 
-- Ace: LIBGUI_ELEMENT:Showing -> WindowGetShowing(self.name)
-- AdvancedRenownTrainer: AdvancedRenownTraining.TogglePresets -> WindowGetShowing(PresetWindowName)
-- AggroMeter: AggroMeter.Close -> WindowGetShowing("AggroMeterGrayWindow")
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction -> WindowGetShowing("ShiniesWindow")
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction -> WindowGetShowing("AuctionWindow")
-- AnywhereTrainer: AnywhereTrainer.OnLeftClickBank -> WindowGetShowing("BankWindow")
+- Ace: Showing -> WindowGetShowing(self.name)
+- ActionBarHide: Showing -> WindowGetShowing(self.name)
+- ActionFraction: SetLocationActionPointBar -> WindowGetShowing("PlayerWindow")
+- AdjustTheTip: UpdateCallback -> WindowGetShowing(Tooltips.curTooltipWindow)
+- AdvancedRenownTrainer: TogglePresets -> WindowGetShowing(PresetWindowName)
+- AggroMeter: Close -> WindowGetShowing("AggroMeterGrayWindow")
 
 ## Related APIs
 
-- none
+- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
+- [OnKeyEscape](../../xml/handlers/handler_OnKeyEscape.md) (HIGH 88/100) - XML Event
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
+- [AuctionWindow.Hide](../../globals/functions/global_AuctionWindow.Hide.md) (HIGH 100/100) - Global Function
+- [DialogManager.MakeOneButtonDialog](../../globals/functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowAssignFocus](window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowGetLayer](window_WindowGetLayer.md) (HIGH 100/100) - Window Function
 - [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [BankWindow.Hide](../../globals/functions/global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
-
-## Triggered By
-
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-
-## Affects
-
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Notes
 
-- none
+- Advanced return analysis: No strong return evidence observed

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 28 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 198
+- Raw weighted score: 188
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -22,7 +22,6 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 - +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
@@ -31,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedPetAssist, AdvancedPetAssist, LibGuard, PartyCast, TurretRange, LibGuard, PartyCast, TurretRange |
-| Files seen in | `/workspace/data/raw/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:47`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:91`, `/workspace/data/raw/PartyCast/PartyCast.lua:153`, `/workspace/data/raw/PartyCast/PartyCast.lua:51`, `/workspace/data/raw/TurrentRange/Core.lua:74`, `/workspace/data/raw/TurrentRange/Core.lua:95` |
+| Addons seen in | CastSequence, Crusher, DetauntHelper, Effigy, EveryBodyGuard, GCDTracker, GuardBot, HealGrid |
+| Files seen in | Bars/HealGridCastBar.lua, Core.lua, EveryBodyGuard.lua, GuardBot.lua, IHYTM.lua, LibCooldown.lua, LoyalPet.lua, NerfedButtons.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | AdvancedPetAssist.OnPlayerCast, LibGuard.Init, LibGuard.OnShutdown, LibGuard.StartCast, PartyCast.Init, PartyCast.OnShutdown |
+| Source kinds | event_page, event_registration, lua_call |
+| Example locations | Init, Initialize, OnInitialize, OnLoad, OnShutdown, RegisterEvents |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 16 |
 | Global usage count | 16 |
 | Local definition count | 0 |
-| Documentation references | 4 |
-| Initialization flow references | 4 |
+| Documentation references | 3 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,32 +61,45 @@
 
 ## Description
 
-Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.PLAYER_BEGIN_CAST field accessed by 28 addons; commonly found in Init and Initialize, OnInitialize, OnLoad, OnShutdown, RegisterEvents, RegisterStateInfoForCastbar, Shutdown, Squared.TargetUpdate, SystemData.Events.PLAYER_BEGIN_CAST, Unload, UnregisterEvents, entry_point, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
-- AdvancedPetAssist
-- AdvancedPetAssist, LibGuard, PartyCast, TurretRange
+- CastSequence
+- Crusher
+- DetauntHelper
+- Effigy
+- EveryBodyGuard
+- GCDTracker
+- GuardBot
+- HealGrid
+- I HATE YOU THIS MUCH
+- LibCooldown
 - LibGuard
+- LoyalPet
+- MarkBuff
+- Motion
+- NerfedButtons
+- NoOverheal
+- Obsidian
 - PartyCast
+- PieTracker
+- RvRContribution
+- SNT_CASTBAR
+- Squared
+- StopRes
 - TurretRange
+- WhatsCooking
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- xHUD
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 
-- Observed in contexts: AdvancedPetAssist.OnPlayerCast, LibGuard.Init, LibGuard.OnShutdown, LibGuard.StartCast, PartyCast.Init, PartyCast.OnShutdown
+- Observed in contexts: Init, Initialize, OnInitialize, OnLoad, OnShutdown, RegisterEvents

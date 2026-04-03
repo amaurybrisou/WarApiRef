@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 176
+- Raw weighted score: 188
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -30,15 +30,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, LibGroup |
-| Files seen in | `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/LibGroup/LibGroup.lua:119` |
+| Addons seen in | Enemy, LibGroup, MegaphonePlusPlus, Squared |
+| Files seen in | Code/Core/Groups/Groups.lua, LibGroup.lua, MegaphonePlusPlus.lua, Squared.lua, SquaredWarband.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
-| Example locations | Enemy.GroupsInitialize, Enemy.Groups_OnBattlegroupMemberUpdated, LibGroup.local.SetMode, SetMode, SystemData.Events.BATTLEGROUP_MEMBER_UPDATED, event_page |
+| Example locations | GroupsInitialize, Initialize, OnLoad, OnShutdown, OnUnload, SetMode |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 3 |
 | Initialization flow references | 0 |
@@ -61,29 +61,20 @@
 
 ## Description
 
-Observed SystemData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
+SystemData.SystemData.Events.BATTLEGROUP_MEMBER_UPDATED field accessed by 4 addons; commonly found in GroupsInitialize and Initialize, OnLoad, OnShutdown, OnUnload, SetMode, SquaredWarband.UpdateMember, SystemData.Events.BATTLEGROUP_MEMBER_UPDATED, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
 - Enemy
 - LibGroup
+- MegaphonePlusPlus
+- Squared
 
 ## Related APIs
 
-- none
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 
-- Observed in contexts: Enemy.GroupsInitialize, Enemy.Groups_OnBattlegroupMemberUpdated, LibGroup.local.SetMode, SetMode, SystemData.Events.BATTLEGROUP_MEMBER_UPDATED, event_page
+- Observed in contexts: GroupsInitialize, Initialize, OnLoad, OnShutdown, OnUnload, SetMode

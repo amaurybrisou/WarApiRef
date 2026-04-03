@@ -1,4 +1,4 @@
-# Color
+# color
 
 - Category: XML Element Type
 - Confidence level: MEDIUM
@@ -10,34 +10,38 @@
 
 - Score: 45/100
 
-- Rationale: unknown
+- Rationale: Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- none
+- +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
+- -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | none |
-| Source kinds | none |
-| XML usage count | 0 |
-| XML attribute usage count | 0 |
+| Addons seen in | AbilityAlert |
+| Namespaces detected | color |
+| Source kinds | xml_frames |
+| Example locations | AbilityAlert: AAText |
+| XML usage count | 1 |
+| XML attribute usage count | 1 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | no |
-| Default UI presence | no |
+| Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
 | Consistent role | no |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
-| Weak usage only | no |
+| Weak usage only | yes |
 | Project-specific name | no |
 | Placeholder or computed name | no |
 | Conflicting signatures | no |
@@ -48,7 +52,7 @@
 
 ## Description
 
-Color is a XML UI element. It commonly appears under DynamicImage and FullResizeImage.
+color is a XML UI element. It commonly appears under Label.
 
 ## Common Attributes
 
@@ -63,63 +67,24 @@ Color is a XML UI element. It commonly appears under DynamicImage and FullResize
 
 ## Common Parent Elements
 
-- [Label](element_Label.md) — 375× (HIGH)
-- [DynamicImage](element_DynamicImage.md) — 1× (LOW)
-- [FullResizeImage](element_FullResizeImage.md) — 1× (LOW)
-- [Visual](element_Visual.md) — 1× (LOW)
+- [Label](element_Label.md) — 1× (HIGH)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `b` | **required** | 100% | 73, 225, 255, 55, ... |
-| `g` | **required** | 100% | 218, 255, 155, 55, ... |
-| `r` | **required** | 100% | 255, 155, 245, 175, ... |
-| `a` | optional | 59% | 255, 0, 0.5, 0.8 |
+| `a` | **required** | 100% | 255 |
+| `b` | **required** | 100% | 240 |
+| `g` | **required** | 100% | 240 |
+| `r` | **required** | 100% | 240 |
 ## Seen In
 
-- AggroMeter
-- Aura
-- BankArkel
-- BuffHead
-- CM_ClosetGoblin
-- CombatTextNames
-- DAoCBuff
-- Enemy
-- GuardLine
-- Killer
-- LibWBToggler
-- MoraleCircle
-- PartyCast
-- Pocket Palette
-- PotionBar
-- RoR_SoR
-- Shinies
-- Swift Assist
-- TidyChat
-- TidyRoll
-- WSCT
-- WhoHealedMe
+- AbilityAlert
 
 ## Examples
 
-- none
+- AbilityAlert: AAText -> color in Label AAText
 
 ## Related APIs
 
-- [DynamicImage](element_DynamicImage.md) (HIGH 100/100) - XML Element Type
-- [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [Label](element_Label.md) (HIGH 100/100) - XML Element Type
-- [Visual](element_Visual.md) (MEDIUM 45/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none

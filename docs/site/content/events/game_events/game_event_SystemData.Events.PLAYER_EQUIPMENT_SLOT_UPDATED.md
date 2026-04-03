@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 153
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
@@ -20,26 +20,24 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Pocket Palette |
-| Files seen in | `/workspace/data/raw/PocketPalette/PocketPalette.lua:105` |
+| Addons seen in | Statdoll Remix |
+| Files seen in | StatdollGetstats.lua, StatdollLocal.lua |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, flows, lua_event_registration |
-| Example locations | Pocket Palette: PP.Initialize |
+| Source kinds | event_page, lua_event_registration |
+| Example locations | Statdoll Remix: registerEventHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
-| Documentation references | 2 |
-| Initialization flow references | 1 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -59,7 +57,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 1 addons.
+Runtime event with 1 handler registrations observed across 1 addons.
 
 ## Handler Pattern
 
@@ -67,38 +65,26 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Payload
 
-- Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier.
+- Payload shape is not inferable from contract artifacts alone; treat this as an engine event identifier.
 
 ## Seen In
 
-- Pocket Palette
+- Statdoll Remix
 
 ## Registrars And Handlers
 
-- PP.UpdateItemSlots
-- RegisterEventHandler
+- Statdoll.Local.queueUpdate
 - global
+- registerEventHandler
 
 ## Examples
 
-- Pocket Palette: PP.Initialize -> SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED -> PP.UpdateItemSlots
-- Pocket Palette: PP.UpdateItemSlots -> RegisterEventHandler(SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED, PP.UpdateItemSlots)
+- Statdoll Remix: registerEventHandler -> SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED -> Statdoll.Local.queueUpdate
+- Statdoll Remix: Statdoll.Local.queueUpdate -> registerEventHandler(SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED, Statdoll.Local.queueUpdate)
 
 ## Related APIs
 
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 

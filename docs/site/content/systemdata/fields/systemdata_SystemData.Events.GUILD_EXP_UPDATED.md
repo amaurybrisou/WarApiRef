@@ -1,0 +1,84 @@
+# SystemData.Events.GUILD_EXP_UPDATED
+
+- Category: SystemData Field
+- Confidence level: HIGH
+- Confidence score: 100/100
+- Seen in: 2 addons
+
+## Confidence Assessment
+
+- Level: HIGH
+
+- Final score: 100/100
+
+- Raw weighted score: 156
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+
+## Evidence Signals
+
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
+- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
+- +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+
+## Evidence Summary
+
+| Evidence | Value |
+| --- | --- |
+| Addons seen in | Effigy, XpStatus+G |
+| Files seen in | States/EffigyStateGuild.lua, source/XpStatus.lua |
+| Namespaces detected | SystemData |
+| Source kinds | lua_call |
+| Example locations | OnInitialize, RegisterStateInfoForGuild, Shutdown, lua_call |
+| XML usage count | 0 |
+| XML attribute usage count | 0 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
+| Local definition count | 0 |
+| Documentation references | 1 |
+| Initialization flow references | 0 |
+| Known engine namespace | yes |
+| Default UI presence | yes |
+| Event binding presence | yes |
+| Observed in XML and Lua | no |
+| Consistent role | yes |
+| Consistent arguments | no |
+| Consistent returns | no |
+| Slash command presence | no |
+| Weak usage only | no |
+| Project-specific name | no |
+| Placeholder or computed name | no |
+| Conflicting signatures | no |
+| Conflicting roles | no |
+| Wrapper likely | no |
+| Never outside local graph | no |
+| Local helper only | no |
+
+## Description
+
+SystemData.SystemData.Events.GUILD_EXP_UPDATED field accessed by 2 addons; commonly found in OnInitialize and RegisterStateInfoForGuild, Shutdown, lua_call contexts.
+
+## Seen In
+
+- Effigy
+- XpStatus+G
+
+## Related APIs
+
+- [WindowUnRegisterEventHandler](../../window_api/functions/window_WindowUnRegisterEventHandler.md) (HIGH 98/100) - Window Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+
+## Used With
+
+- [SystemData.Events.PLAYER_EXP_UPDATED](systemdata_SystemData.Events.PLAYER_EXP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_MONEY_UPDATED](systemdata_SystemData.Events.PLAYER_MONEY_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_RENOWN_UPDATED](systemdata_SystemData.Events.PLAYER_RENOWN_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.WORLD_OBJ_RENOWN_GAINED](systemdata_SystemData.Events.WORLD_OBJ_RENOWN_GAINED.md) (HIGH 100/100) - SystemData Field
+
+## Notes
+
+- Observed in contexts: OnInitialize, RegisterStateInfoForGuild, Shutdown, lua_call

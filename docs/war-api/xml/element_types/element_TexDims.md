@@ -25,13 +25,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, AutoMark, BuffHead, DAoCBuff, Enemy, PartyCast, PotionBar, Shinies |
-| Files seen in | `/workspace/data/raw/Aura/Source/Templates.xml:0`, `/workspace/data/raw/AutoMark/Source/AutoMark.xml:0`, `/workspace/data/raw/BuffHead/Display.xml:0`, `/workspace/data/raw/BuffHead/Setup/General.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffMsgWindow.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:1079`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:1119` |
+| Addons seen in | Aura, AutoMark, Brizio's Crappy Computer Medic, BuffHead, CCTV, CDown, Calling, CleansingBuddy |
+| Files seen in | Code/Assist/Assist.xml, Code/CombatLog/CombatLogIDS.xml, Code/Core/Common.xml, Code/Core/Icon.xml, Code/GroupIcons/GroupIcons.xml, Code/Guard/GuardDistanceIndicator.xml, Code/Marks/MarkTemplate.xml, Code/Marks/Marks.xml |
 | Namespaces detected | TexDims |
 | Source kinds | xml_frames |
-| Example locations | Aura: AuraFrameImageCircle, Aura: AuraFrameImageSquare, Aura: AuraScreenFlashFrameImage, AutoMark: T_AutoMark_Marker_Border, AutoMark: T_AutoMark_Marker_Icon, BuffHead: BuffHeadBuffTemplateIconBorder |
-| XML usage count | 74 |
-| XML attribute usage count | 74 |
+| Example locations | Aura: AuraFrameImageCircle, Aura: AuraFrameImageSquare, Aura: AuraScreenFlashFrameImage, AutoMark: T_AutoMark_Marker_Border, AutoMark: T_AutoMark_Marker_Icon, Brizio's Crappy Computer Medic: CCMGUIB1 |
+| XML usage count | 189 |
+| XML attribute usage count | 189 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -56,7 +56,7 @@
 
 ## Description
 
-TexDims is a structural XML sub-element. It commonly appears under Button and CircleImage.
+TexDims is a structural XML sub-element. It commonly appears under AnimatedImage and Button.
 
 ## Common Attributes
 
@@ -69,30 +69,69 @@ TexDims is a structural XML sub-element. It commonly appears under Button and Ci
 
 ## Common Parent Elements
 
-- [DynamicImage](element_DynamicImage.md) — 65× (HIGH)
-- [Button](element_Button.md) — 4× (MEDIUM)
+- [DynamicImage](element_DynamicImage.md) — 156× (HIGH)
+- [Button](element_Button.md) — 18× (HIGH)
+- [CircleImage](element_CircleImage.md) — 11× (HIGH)
 - [FullResizeImage](element_FullResizeImage.md) — 3× (MEDIUM)
-- [CircleImage](element_CircleImage.md) — 2× (LOW)
+- [AnimatedImage](element_AnimatedImage.md) — 1× (LOW)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `x` | **required** | 100% | 64, 256, 32, 430, ... |
-| `y` | **required** | 100% | 64, 256, 32, 430, ... |
+| `x` | **required** | 100% | 64, 256, 32, 48, ... |
+| `y` | **required** | 100% | 64, 256, 32, 48, ... |
 ## Seen In
 
 - Aura
 - AutoMark
+- Brizio's Crappy Computer Medic
 - BuffHead
+- CCTV
+- CDown
+- Calling
+- CleansingBuddy
+- Compass3D
+- CoolDownLine
+- Crusher
 - DAoCBuff
+- DetauntHelper
+- DuffTimer
+- EA_LoadingScreen
+- EZCraftX
 - Enemy
+- EveryBodyGuard
+- Group Icons SG
+- GroupRange
+- GuardBot
+- HealGrid
+- KillStreak
+- Minmap
+- Motion
+- NaturalLog
+- NerfedButtons
+- Obsidian
+- Paint the leader
 - PartyCast
 - PotionBar
+- Pure
+- Pure Careerbar
+- Queue Queuer
+- RVMOD_Targets
 - Shinies
+- Squared
 - Swift Assist
+- TacticSetNames
+- TastyButtons
 - TexturedButtons
 - TidyRoll
+- Vectors
+- WaaaghBar
+- Warbuilder
+- Wikki's Cooldown Bar
+- Wikki's Cooldown Pulse
+- compass
+- yAssistHelper
 
 ## Examples
 
@@ -101,23 +140,17 @@ TexDims is a structural XML sub-element. It commonly appears under Button and Ci
 - Aura: AuraScreenFlashFrameImage -> TexDims in DynamicImage AuraScreenFlashFrameImage
 - AutoMark: T_AutoMark_Marker_Border -> TexDims in DynamicImage T_AutoMark_Marker_Border
 - AutoMark: T_AutoMark_Marker_Icon -> TexDims in DynamicImage T_AutoMark_Marker_Icon
-- BuffHead: BuffHeadBuffTemplateIconBorder -> TexDims in DynamicImage BuffHeadBuffTemplateIconBorder
+- Brizio's Crappy Computer Medic: CCMGUIB1 -> TexDims in DynamicImage CCMGUIB1
 
 ## Related APIs
 
+- [AnimatedImage](element_AnimatedImage.md) (HIGH 100/100) - XML Element Type
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [CircleImage](element_CircleImage.md) (HIGH 100/100) - XML Element Type
 - [DynamicImage](element_DynamicImage.md) (HIGH 100/100) - XML Element Type
+- [DynamicImageSetTextureDimensions](../../window_api/functions/window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
 - [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
+- [DynamicImageSetTextureDimensions](../../window_api/functions/window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function

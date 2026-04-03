@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, DAoCBuff, Enemy, Killer, TexturedButtons, TidyRoll, WSCT, WarBoard |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupContainer.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupTrackers.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:145`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:1668`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:170`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:1726` |
+| Addons seen in | BuffHead, CDown, ChattyCathy, DAoCBuff, DuffTimer, EA_OpenPartyWindow, Enemy, GDes |
+| Files seen in | CDownSettingsTabs.xml, ChattyCathy.xml, Code/Core/Groups/EffectFilterDialog.xml, Code/UnitFrames/ClickCastingDialog.xml, Code/UnitFrames/EffectsIndicatorDialog.xml, Code/UnitFrames/UnitFramePartDialog.xml, Code/UnitFrames/UnitFramesConfiguration.xml, CustomAutoRoll.xml |
 | Namespaces detected | EA_ComboBox_DefaultResizableSmall |
 | Source kinds | xml_attributes |
 | Example locations | AutoRollRowTemplateChoice, BuffHeadSetupAdvancedCompressionItemEffectWindowCastByComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementGrowthHorizontalComboBox, BuffHeadSetupAdvancedContainersItemPropertiesWindowElementGrowthVerticalComboBox, BuffHeadSetupContainerWindowContainerAlwaysShowPlacementCombo, BuffHeadSetupContainerWindowContainerBuffsPlacementCombo |
-| XML usage count | 52 |
-| XML attribute usage count | 52 |
+| XML usage count | 117 |
+| XML attribute usage count | 117 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,18 +57,37 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 9 addons.
+Engine-supplied XML constant or template class referenced by 28 addons.
 
 ## Seen In
 
 - BuffHead
+- CDown
+- ChattyCathy
 - DAoCBuff
+- DuffTimer
+- EA_OpenPartyWindow
 - Enemy
+- GDes
+- Ges
+- GroupRange
+- ItemRack
 - Killer
+- LibAddonButton
+- MapPin
+- MarkBuff
+- Obsidian
+- RVMOD_Manager
+- RVMOD_Targets
+- SOR
+- TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyRoll
+- TokenMachine
 - WSCT
 - WarBoard
+- WarBoard_FPS
 - WhoHealedMe
 
 ## Used By
@@ -81,6 +100,27 @@ Observed engine XML template or inherited constant referenced by 9 addons.
 - BuffHeadSetupContainerWindowContainerBuffsPlacementCombo
 - BuffHeadSetupContainerWindowContainerDebuffsPlacementCombo
 - BuffHeadSetupTrackersWindowTrackerTypeList
+- CCBoxTemplateCombo
+- CCBoxTemplateTabCombo
+- CDownGeneralSettingsTab_ScrollChild_LayoutComboBox
+- CDownGeneralSettingsTab_ScrollChild_MaxCDComboBox
+- CDownGeneralSettingsTab_ScrollChild_MinCDComboBox
+- CDownGeneralSettingsTab_ScrollChild_RefreshComboBox
+- CDownGeneralSettingsTab_ScrollChild_SortOrderComboBox
+- CDownNLayoutSettingsTab_ScrollChild_NCountComboBox
+- CDownNLayoutSettingsTab_ScrollChild_NFontComboBox
+- CDownNLayoutSettingsTab_ScrollChild_NGrowHorizontalComboBox
+- CDownNLayoutSettingsTab_ScrollChild_NGrowLeftComboBox
+- CDownNLayoutSettingsTab_ScrollChild_NGrowUpComboBox
+- CDownNLayoutSettingsTab_ScrollChild_NRowComboBox
+- CDownSLayoutSettingsTab_ScrollChild_SFontComboBox
+- CDownSLayoutSettingsTab_ScrollChild_SGrowHorizontalComboBox
+- CDownSLayoutSettingsTab_ScrollChild_SGrowLeftComboBox
+- CDownSLayoutSettingsTab_ScrollChild_SGrowUpComboBox
+- CDownSLayoutSettingsTab_ScrollChild_SMaxCountComboBox
+- CDownSLayoutSettingsTab_ScrollChild_SNameFontComboBox
+- ChattyCathyOptToCombo
+- ChattyCathyOptWindowCombo
 - DAoCBuffFrameSettingsTab_ScrollChild_BufforderComboBox
 - DAoCBuffFrameSettingsTab_ScrollChild_CountComboBox
 - DAoCBuffFrameSettingsTab_ScrollChild_DivideComboBox
@@ -98,6 +138,8 @@ Observed engine XML template or inherited constant referenced by 9 addons.
 - DAoCBuff_Settings_FilterFrame_ScrollChild_FilterPropertyComboBox
 - DAoCBuff_Settings_FilterFrame_ScrollChild_TextureTypeComboBox
 - DAoCBuff_Settings_FilterFrame_ScrollChild_UseandComboBox
+- DuffTimerOptions_ComboBox_cmb
+- EA_Template_AutoRollComboBox
 - EnemyClickCastingDialogContentScrollChildArchetypeMatch
 - EnemyClickCastingDialogContentScrollChildPlayerTypeMatch
 - EnemyEffectFilterDialogDescriptionMatch
@@ -113,14 +155,56 @@ Observed engine XML template or inherited constant referenced by 9 addons.
 - EnemyUnitFramesConfigurationContentScrollChildSorting1
 - EnemyUnitFramesConfigurationContentScrollChildSorting2
 - EnemyUnitFramesConfigurationContentScrollChildSorting3
+- GDesOptionsColourDeathColourComboBox
+- GDesOptionsColourDefaultColourComboBox
+- GDesOptionsColourFullHealthColourComboBox
+- GDesOptionsColourHighHealthColourComboBox
+- GDesOptionsColourMedHealthColourComboBox
+- GDesOptionsColourMinHealthColourComboBox
+- GDesOptionsColourOfflineColourComboBox
+- GesOptionsColourDeathColourComboBox
+- GesOptionsColourDefaultColourComboBox
+- GesOptionsColourFullHealthColourComboBox
+- GesOptionsColourHighHealthColourComboBox
+- GesOptionsColourMedHealthColourComboBox
+- GesOptionsColourMinHealthColourComboBox
+- GesOptionsColourOfflineColourComboBox
+- GroupRangeSetupStyleGroupBoxWindowGrowthCombo
+- ItemRackSetsCombobox
 - KillerSettingsWindowContentFeedFont
 - KillerSettingsWindowContentPersonalKdMode
+- LibAddonButtonManagerCustomItemWindowTypeComboBox
+- MapPin_SetupComboRealm
+- MarkBuffSetupSmartBuffWindowClassTypeList
+- ObsidianSetupCastbarWindowElementFillUpdatePriorityComboBox
+- ObsidianSetupCastbarWindowElementGlobalCooldownPositionComboBox
+- ObsidianSetupCastbarWindowElementIconPositionComboBox
+- ObsidianSetupCastbarWindowElementNameAlignmentComboBox
+- ObsidianSetupCastbarWindowElementTimerAlignmentComboBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementFillUpdatePriorityComboBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementNameAlignmentComboBox
+- ObsidianSetupEffectTrackerWindowElementBarsElementTimerAlignmentComboBox
+- ObsidianSetupEffectTrackerWindowElementTrackerElementIconPositionComboBox
+- RVMOD_ManagerWindowSortBy
+- RVMOD_TargetsFrameRowTemplateTemplates
+- SOROptions.DropList.DL
+- TastyButtonsButtonSelectWindowButtonRangeViewComboFirstButton
+- TastyButtonsButtonSelectWindowButtonRangeViewComboLastButton
+- TastyButtonsGeneralOptionsProfileWindowComboProfiles
+- TastyButtonsOptionsButtonInfoWindowComboButton
+- TastyButtonsOptionsWindowGroupViewComboColumnDirection
+- TastyButtonsOptionsWindowGroupViewComboRowDirection
+- TastyButtonsOptionsWindowStateViewComboShowing
+- TastyButtonsOptionsWindowStateViewComboStateType
+- TaxPayerOptionsPayerComboBox
 - TexturedButtonsSetupActionbarWindowSelectorComboBox
+- TokenOptionTemplateChoice
 - WSCTEventFrameCombo
 - WarBoardComboAlignRow1
 - WarBoardComboAlignRow2
 - WarBoardComboAlignRow3
 - WarBoardComboAlignRow4
+- WarBoard_FPSOptions_cmbLName
 - WhoHealedMeOptionsContentGroupOnlyCombo
 - WhoHealedMeOptionsContentHudVisibleCombo
 - WhoHealedMeOptionsContentMyHealsCombo
@@ -129,18 +213,6 @@ Observed engine XML template or inherited constant referenced by 9 addons.
 ## Related APIs
 
 - [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
-
-## Used With
-
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- none
 
 ## Notes
 

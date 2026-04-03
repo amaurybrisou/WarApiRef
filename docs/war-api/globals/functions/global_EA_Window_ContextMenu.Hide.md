@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 12 addons
 
 ## Confidence Assessment
 
@@ -11,32 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 110
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
+- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, TexturedButtons, TurretRange |
-| Files seen in | `/workspace/data/raw/BuffHead/Setup/SelectFont.lua:62`, `/workspace/data/raw/TexturedButtons/Setup/SelectFont.lua:64`, `/workspace/data/raw/TurrentRange/Setup/SetupDisplay.lua:366` |
+| Addons seen in | ActionFraction, AdjustTheTip, BuffHead, EZCraftX, MapMonster, Miracle Grow Remix, Obsidian, ShowMeTheBubbles |
+| Files seen in | AdjustTheTip.lua, Setup/SelectFont.lua, Setup/SetupDisplay.lua, Source/EZCraftX.lua, Source/MapMonster_Pins.lua, context.lua, showmethebubbles.lua, source/ActionFraction.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | BuffHead: BuffHead.Setup.SelectFont.SetFont, TexturedButtons: TexturedButtons.Setup.SelectFont.SetFont, TurretRange: TurretRange.Setup.Distance.SetFont |
+| Example locations | ActionFraction: AutoHideOnMouseOver, ActionFraction: SetFontSelectionMenu, ActionFraction: SetPresetLocation, AdjustTheTip: OnAnchor, AdjustTheTip: OnDelayedFadingEnabled, AdjustTheTip: SpawnAnchorContextMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 30 |
+| Global usage count | 30 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -45,13 +45,13 @@
 | Event binding presence | no |
 | Observed in XML and Lua | no |
 | Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | no |
+| Conflicting signatures | yes |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -65,49 +65,51 @@ EA_Window_ContextMenu.Hide(arg1)
 
 ## Description
 
-Observed as a global function across 3 addons.
+Observed as a global function across 12 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: menu |
+| arg1 | Observed as a function or method reference. | Observed values: 1, 2, EA_Window_ContextMenu.CONTEXT_MENU_2 |
 
 ## Returns
 
-- Not confidently inferable from addon-api docs alone.
+- Not confidently inferable from contract artifacts alone.
 
 ## Side Effects
 
-- No side effect is confidently inferable from addon-api docs alone.
+- No side effect is confidently inferable from contract artifacts alone.
 
 ## Seen In
 
+- ActionFraction
+- AdjustTheTip
 - BuffHead
+- EZCraftX
+- MapMonster
+- Miracle Grow Remix
+- Obsidian
+- ShowMeTheBubbles
+- SocialWindow 2.0
 - TexturedButtons
 - TurretRange
+- XpStatus+G
 
 ## Examples
 
-- BuffHead: BuffHead.Setup.SelectFont.SetFont -> EA_Window_ContextMenu.Hide(menu)
-- TexturedButtons: TexturedButtons.Setup.SelectFont.SetFont -> EA_Window_ContextMenu.Hide(menu)
-- TurretRange: TurretRange.Setup.Distance.SetFont -> EA_Window_ContextMenu.Hide(menu)
-
-## Related APIs
-
-- none
+- ActionFraction: AutoHideOnMouseOver -> EA_Window_ContextMenu.Hide(EA_Window_ContextMenu.CONTEXT_MENU_3)
+- ActionFraction: SetFontSelectionMenu -> EA_Window_ContextMenu.Hide(EA_Window_ContextMenu.CONTEXT_MENU_2)
+- ActionFraction: SetPresetLocation -> EA_Window_ContextMenu.Hide(EA_Window_ContextMenu.CONTEXT_MENU_3)
+- AdjustTheTip: OnAnchor -> EA_Window_ContextMenu.Hide(EA_Window_ContextMenu.CONTEXT_MENU_2)
+- AdjustTheTip: OnDelayedFadingEnabled -> EA_Window_ContextMenu.Hide(EA_Window_ContextMenu.CONTEXT_MENU_2)
+- AdjustTheTip: SpawnAnchorContextMenu -> EA_Window_ContextMenu.Hide(EA_Window_ContextMenu.CONTEXT_MENU_3)
 
 ## Used With
 
-- none
-
-## Triggered By
-
-- none
-
-## Affects
-
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [EA_Window_ContextMenu.AddMenuItem](global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.CreateContextMenu](global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.Finalize](global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
 
 ## Notes
 
