@@ -2170,20 +2170,12 @@ func describeConstant(name string, addonCount int) string {
 	return fmt.Sprintf("Observed shared constant-like symbol referenced by %d addons.", addonCount)
 }
 
-func describeElement(name string, addonCount int) string {
-	switch name {
-	case "ListData":
-		return "Structural XML sub-element of ListBox that binds a list to a named Lua backing table. The `table` attribute names the Lua table supplying row data; the optional `populationfunction` attribute names a Lua callback for custom per-row population."
-	case "ListColumns":
-		return "Structural XML container inside ListBox that groups one or more ListColumn declarations, mapping backing-table fields to row-template child windows."
-	case "ListColumn":
-		return "Structural XML element inside ListColumns that maps a single field of each backing-table row entry to a named child window of the row template. Key attributes: `windowname` (child window target) and `variable` (field name in the row table)."
-	}
-	return fmt.Sprintf("Observed XML element type instantiated by %d addons.", addonCount)
+func describeElementFallback(name string) string {
+	return name + " is an XML element type observed in contract artifacts, but structured evidence is currently sparse."
 }
 
 func inferElementDescription(symbol ElementTypeSymbol) string {
-	if text, ok := handcraftedElementDescriptions[symbol.Name]; ok {
+	if text, ok := coreElementDescriptions[symbol.Name]; ok {
 		return text
 	}
 
@@ -2204,8 +2196,8 @@ func inferElementDescription(symbol ElementTypeSymbol) string {
 	}
 	bindingEvents = firstStrings(graph.UniqueStrings(bindingEvents), 3)
 
-	if len(parents) == 0 && len(structuralChildren) == 0 && len(namedChildren) == 0 && len(inherits) == 0 && len(handlers) == 0 && len(bindingEvents) == 0 && len(handlerFns) == 0 {
-		return describeElement(symbol.Name, len(symbol.SeenIn))
+	if len(parents) == 0 && len(structuralChildren) == 0 && len(namedChildren) == 0 && len(inherits) == 0 && len(handlers) == 0 && len(bindingEvents) == 0 && len(handlerFns) == 0 && len(luaManipulators) == 0 {
+		return describeElementFallback(symbol.Name)
 	}
 
 	role := "XML UI element"
@@ -2251,20 +2243,23 @@ func inferElementDescription(symbol ElementTypeSymbol) string {
 		if len(where) > 0 {
 			return what + where
 		}
-		return what + " " + describeElement(symbol.Name, len(symbol.SeenIn))
+		return what + " " + describeElementFallback(symbol.Name)
 	}
 
 	does := " It is typically used to " + strings.Join(firstStrings(doesParts, 2), " and ") + "."
 	return what + where + does
 }
 
-var handcraftedElementDescriptions = map[string]string{
-	"Button":      "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events.",
-	"Text":        "Text is a structural XML sub-element used inside label and button-like controls to define displayed text.",
-	"ListData":    "ListData is a structural list-binding sub-element used inside list controls to connect XML definitions to Lua-backed row data.",
-	"ListColumns": "ListColumns is a structural XML container used by list controls to define how backing-table fields map to row windows.",
-	"ListColumn":  "ListColumn is a structural XML sub-element used by list controls to map one backing-table field to a target row child window.",
-	"Window":      "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua.",
+var coreElementDescriptions = map[string]string{
+	"Window":       "Window is the primary XML container element for addon UI frames. It commonly hosts named child elements and binds lifecycle or input events to Lua handlers.",
+	"Button":       "Button is an interactive XML control used for click and mouse-driven callbacks. It usually binds input events to Lua handler functions.",
+	"Label":        "Label is a display-focused XML element used to present text content in UI layouts. It commonly appears inside container elements such as Window.",
+	"Text":         "Text is a structural XML sub-element used to define display text inside parent controls. It commonly appears as a child element in label or button-style definitions.",
+	"ListBox":      "ListBox is a container-style XML element for row-based UI lists. It commonly works with structural children such as ListData and ListColumns and binds events to Lua callbacks.",
+	"ListData":     "ListData is a structural XML sub-element that binds list controls to Lua-backed row data. It commonly appears under ListBox as list data wiring.",
+	"ListColumns":  "ListColumns is a structural XML container that declares list column mappings. It commonly appears under ListBox and contains ListColumn entries.",
+	"ListColumn":   "ListColumn is a structural XML sub-element that maps one list field to a target row child element. It commonly appears under ListColumns.",
+	"ScrollWindow": "ScrollWindow is a container-style XML element for scrollable UI content. It commonly hosts child elements and binds scroll-related or input handlers to Lua.",
 }
 
 func isLikelyStructuralElement(name string, handlers []string, bindingEvents []string, handlerFns []string, namedChildren []string) bool {
