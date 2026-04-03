@@ -14,14 +14,14 @@ type sourceFunctionIndex struct {
 
 // ApplyReturnTypeInference enriches function symbols with inferred return types
 // This applies the ReturnInference engine to all functions and updates documentation
-func ApplyReturnTypeInference(corpus *Corpus, sourceModel SourceModel) {
+func ApplyReturnTypeInference(corpus *Corpus, input contractSemanticInput) {
 	if len(corpus.GlobalFunctions) == 0 && len(corpus.WindowFunctions) == 0 {
 		return
 	}
 
-	functionIndex := buildSourceFunctionIndex(sourceModel)
+	functionIndex := buildSourceFunctionIndex(input.Functions)
 	analyzer := deep_analysis.NewAdvancedReturnAnalyzer()
-	analyzer.BuildIndex(collectFunctionSources(sourceModel.Functions))
+	analyzer.BuildIndex(collectFunctionSources(input.Functions))
 	reports := analyzer.AnalyzeAll()
 
 	for i, symbol := range corpus.GlobalFunctions {
@@ -47,12 +47,12 @@ func ApplyReturnTypeInference(corpus *Corpus, sourceModel SourceModel) {
 	}
 }
 
-func buildSourceFunctionIndex(sourceModel SourceModel) sourceFunctionIndex {
+func buildSourceFunctionIndex(functions []FunctionDoc) sourceFunctionIndex {
 	idx := sourceFunctionIndex{
 		byPath: map[string]FunctionDoc{},
 		byName: map[string][]FunctionDoc{},
 	}
-	for _, fn := range sourceModel.Functions {
+	for _, fn := range functions {
 		path := fn.Addon + "." + fn.Name
 		idx.byPath[path] = fn
 		key := normalizeFunctionName(fn.Name)
@@ -166,7 +166,7 @@ func applyAdvancedReturnReport(symbol FunctionSymbol, report deep_analysis.Advan
 
 // ApplyArgumentInference enriches function parameters with inferred types and roles
 // This applies the ArgumentInference engine to add parameter documentation
-func ApplyArgumentInference(corpus *Corpus, sourceModel SourceModel) {
+func ApplyArgumentInference(corpus *Corpus, input contractSemanticInput) {
 	if len(corpus.GlobalFunctions) == 0 && len(corpus.WindowFunctions) == 0 {
 		return
 	}
@@ -176,7 +176,7 @@ func ApplyArgumentInference(corpus *Corpus, sourceModel SourceModel) {
 
 	// Build map of source functions for lookup
 	sourceFuncMap := make(map[string]FunctionDoc)
-	for _, fn := range sourceModel.Functions {
+	for _, fn := range input.Functions {
 		key := fn.Addon + "." + fn.Name
 		sourceFuncMap[key] = fn
 	}
@@ -253,10 +253,10 @@ func truncateList(items []string, maxItems int) []string {
 
 // enrichSymbolsWithAnalysis coordinates all inference and enrichment
 // This is the main entry point for applying deep_analysis to symbols
-func enrichSymbolsWithAnalysis(corpus *Corpus, sourceModel SourceModel) {
+func enrichSymbolsWithAnalysis(corpus *Corpus, input contractSemanticInput) {
 	// Apply return type inference (Priority 2)
-	ApplyReturnTypeInference(corpus, sourceModel)
+	ApplyReturnTypeInference(corpus, input)
 
 	// Apply argument inference (Priority 3)
-	ApplyArgumentInference(corpus, sourceModel)
+	ApplyArgumentInference(corpus, input)
 }

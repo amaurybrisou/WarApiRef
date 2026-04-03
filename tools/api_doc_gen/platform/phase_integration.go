@@ -18,11 +18,11 @@ import (
 //
 // Contract-only mode requires a valid sourceRoot and source-first analysis.
 // Any attempt to run without sourceRoot is a hard error.
-func runPhasedPipeline(elementTypes []ElementTypeSymbol, source SourceModel, sourceRoot string) phasedPipelineResult {
+func runPhasedPipeline(elementTypes []ElementTypeSymbol, sourceRoot string) phasedPipelineResult {
 	if strings.TrimSpace(sourceRoot) == "" {
 		panic("platform pipeline requires source-root in contract-only mode")
 	}
-	return runPhasedPipelineFromSources(elementTypes, sourceRoot, source)
+	return runPhasedPipelineFromSources(elementTypes, sourceRoot)
 }
 
 // phasedPipelineResult bundles all structured outputs from the analysis
@@ -39,13 +39,8 @@ type phasedPipelineResult struct {
 // real parsers (etree for XML, tokenizer-based lua_parser for Lua), and feeds
 // the resulting phase inputs to the 4-phase semantic pipeline.
 //
-// The pre-resolved bindings from the SourceModel are injected as supplementary
-// evidence, but the primary structural data always comes from source files.
-func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot string, source SourceModel) phasedPipelineResult {
-	if len(source.Bindings) > 0 || len(source.Frames) > 0 || len(source.Functions) > 0 || len(source.Events) > 0 || len(source.Handlers) > 0 {
-		panic("source-first pipeline guard: SourceModel input is not allowed in contract-only mode")
-	}
-
+// The primary structural data always comes from source files.
+func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot string) phasedPipelineResult {
 	addonSources, err := source_scan.DiscoverAddonSources(sourceRoot)
 	if err != nil {
 		panic(fmt.Sprintf("source-first pipeline: discover sources failed: %v", err))

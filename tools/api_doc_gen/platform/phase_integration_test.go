@@ -53,7 +53,7 @@ func TestPipelineSourceFirstProducesRicherHierarchy(t *testing.T) {
 	}
 
 	// --- Source-first path ---
-	srcResult := runPhasedPipelineFromSources(cloneTypes(baseTypes), root, SourceModel{})
+	srcResult := runPhasedPipelineFromSources(cloneTypes(baseTypes), root)
 
 	// The source-first path must have enriched element type data:
 	// Window must appear as a parent of Button (or Button as a child of Window).
@@ -82,7 +82,7 @@ func TestPipelineSourceFirstProducesRicherHierarchy(t *testing.T) {
 // fails fast when sourceRoot is missing.
 func TestPipelineDispatchRequiresSourceRoot(t *testing.T) {
 	expectPanic(t, func() {
-		runPhasedPipeline(cloneTypes([]ElementTypeSymbol{{Name: "Window"}}), SourceModel{}, "")
+		runPhasedPipeline(cloneTypes([]ElementTypeSymbol{{Name: "Window"}}), "")
 	})
 }
 
@@ -91,11 +91,10 @@ func TestPipelineDispatchRequiresSourceRoot(t *testing.T) {
 // path.
 func TestPipelineDispatchSelectsSourceFirstWhenRootProvided(t *testing.T) {
 	emptyRoot := t.TempDir()
-	source := SourceModel{}
 	types := []ElementTypeSymbol{{Name: "Window"}}
 
 	expectPanic(t, func() {
-		runPhasedPipeline(cloneTypes(types), source, emptyRoot)
+		runPhasedPipeline(cloneTypes(types), emptyRoot)
 	})
 }
 
@@ -138,7 +137,7 @@ func TestSourceFirstPreservesNamedAndStructuralChildren(t *testing.T) {
 	}
 
 	types := []ElementTypeSymbol{{Name: "ListBox"}, {Name: "Button"}, {Name: "ListData"}}
-	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+	result := runPhasedPipelineFromSources(cloneTypes(types), root)
 
 	listBox := findType(result.ElementTypes, "ListBox")
 	if listBox == nil {
@@ -275,7 +274,7 @@ func TestModManifestAddonProducesStartupWindowNote(t *testing.T) {
 	}
 
 	types := []ElementTypeSymbol{{Name: "Window"}}
-	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+	result := runPhasedPipelineFromSources(cloneTypes(types), root)
 
 	windowSym := findType(result.ElementTypes, "Window")
 	if windowSym == nil {
@@ -319,7 +318,7 @@ func TestTOCAddonHasNoModSemantics(t *testing.T) {
 	}
 
 	types := []ElementTypeSymbol{{Name: "Window"}}
-	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+	result := runPhasedPipelineFromSources(cloneTypes(types), root)
 
 	windowSym := findType(result.ElementTypes, "Window")
 	if windowSym == nil {
@@ -364,7 +363,7 @@ func TestModManifestUnresolvedCreateWindowIsNotDropped(t *testing.T) {
 	}
 
 	types := []ElementTypeSymbol{{Name: "Window"}}
-	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+	result := runPhasedPipelineFromSources(cloneTypes(types), root)
 
 	windowSym := findType(result.ElementTypes, "Window")
 	if windowSym == nil {
@@ -409,7 +408,7 @@ func TestModCallFunctionProducesLifecycleRole(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	result := runPhasedPipelineFromSources([]ElementTypeSymbol{}, root, SourceModel{})
+	result := runPhasedPipelineFromSources([]ElementTypeSymbol{}, root)
 
 	if len(result.FunctionLifecycleRoles) == 0 {
 		t.Fatal("expected at least one FunctionLifecycleRole but got none")
@@ -471,7 +470,7 @@ func TestModCreateWindowProducesStructuredWindowFact(t *testing.T) {
 	}
 
 	types := []ElementTypeSymbol{{Name: "Window"}}
-	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+	result := runPhasedPipelineFromSources(cloneTypes(types), root)
 
 	windowSym := findType(result.ElementTypes, "Window")
 	if windowSym == nil {
@@ -535,7 +534,7 @@ func TestModAddonLevelSemanticsIncludesSavedVariables(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	result := runPhasedPipelineFromSources([]ElementTypeSymbol{}, root, SourceModel{})
+	result := runPhasedPipelineFromSources([]ElementTypeSymbol{}, root)
 
 	if len(result.AddonLifecycleSemantics) == 0 {
 		t.Fatal("expected AddonLifecycleSemantics but got none")
@@ -593,7 +592,7 @@ func TestModUnresolvedRefSurvivesIntoAddonSemantics(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	result := runPhasedPipelineFromSources([]ElementTypeSymbol{}, root, SourceModel{})
+	result := runPhasedPipelineFromSources([]ElementTypeSymbol{}, root)
 
 	var addonSem *AddonLifecycleSemantic
 	for i := range result.AddonLifecycleSemantics {
@@ -663,7 +662,7 @@ func TestModProvenanceIsRecordedOnWindowFact(t *testing.T) {
 	}
 
 	types := []ElementTypeSymbol{{Name: "Window"}}
-	result := runPhasedPipelineFromSources(cloneTypes(types), root, SourceModel{})
+	result := runPhasedPipelineFromSources(cloneTypes(types), root)
 
 	windowSym := findType(result.ElementTypes, "Window")
 	if windowSym == nil {

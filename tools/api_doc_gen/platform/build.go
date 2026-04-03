@@ -189,7 +189,7 @@ type lifecycleAccumulator struct {
 }
 
 type scoringContext struct {
-	source                SourceModel
+	input                 contractSemanticInput
 	addonNames            []string
 	definitionCounts      map[string]int
 	localDefinitionCounts map[string]int
@@ -219,11 +219,11 @@ func (collector *candidateCollector) record(name string, category string, assess
 	})
 }
 
-func newScoringContext(source SourceModel) scoringContext {
+func newScoringContext(input contractSemanticInput) scoringContext {
 	addonSet := map[string]bool{}
 	definitionCounts := map[string]int{}
 	localDefinitionCounts := map[string]int{}
-	for _, doc := range source.Functions {
+	for _, doc := range input.Functions {
 		addonSet[doc.Addon] = true
 		definitionCounts[doc.Name]++
 		if doc.Local {
@@ -236,20 +236,15 @@ func newScoringContext(source SourceModel) scoringContext {
 			}
 		}
 	}
-	for _, frame := range source.Frames {
+	for _, frame := range input.Frames {
 		addonSet[frame.Addon] = true
 	}
-	for _, handler := range source.Handlers {
+	for _, handler := range input.Handlers {
 		addonSet[handler.Addon] = true
 	}
-	for _, value := range source.Globals.Namespaces {
-		addonSet[value.Addon] = true
-	}
-	for _, value := range source.Globals.SavedVariables {
-		addonSet[value.Addon] = true
-	}
+
 	return scoringContext{
-		source:                source,
+		input:                 input,
 		addonNames:            mapKeys(addonSet),
 		definitionCounts:      definitionCounts,
 		localDefinitionCounts: localDefinitionCounts,
@@ -275,16 +270,16 @@ type BuildOptions struct {
 // BuildWithOptions builds the platform corpus with explicit options.
 // Use this instead of [Build] to enable the source-first pipeline path.
 func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
-	source := sourceModelFromContracts(contracts)
+	input := semanticInputFromContracts(contracts)
 	corpus := Corpus{
 		SourceRoot:  contracts.Root,
 		Contracts:   contracts,
 		GeneratedAt: time.Now().UTC(),
 	}
-	ctx := newScoringContext(source)
+	ctx := newScoringContext(input)
 	collector := &candidateCollector{}
 
-	scopes := buildAddonScopes(source)
+	scopes := buildAddonScopes(input)
 	frameTypes := map[string]string{}
 	globalFunctions := map[string]*functionAccumulator{}
 	windowFunctions := map[string]*functionAccumulator{}
@@ -298,7 +293,7 @@ func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
 	elements := map[string]*elementAccumulator{}
 	lifecycle := map[string]*lifecycleAccumulator{}
 
-	for _, frame := range source.Frames {
+	for _, frame := range input.Frames {
 		frameName := canonicalSymbolName(frame.Name)
 		frameType := canonicalElementTypeName(frame.Type)
 		frameTypes[frame.Addon+"|"+frameName] = frameType
@@ -390,7 +385,7 @@ func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
 		}
 	}
 
-	for _, doc := range source.Functions {
+	for _, doc := range input.Functions {
 		for _, item := range doc.EventRegistrations {
 			eventName := canonicalEventName(item.Event)
 			acc := ensureEventAccumulator(selectEventAccumulator(eventName, gameEvents, windowEvents), eventName)
@@ -447,7 +442,7 @@ func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
 		}
 	}
 
-	for _, handler := range source.Handlers {
+	for _, handler := range input.Handlers {
 		eventName := canonicalEventName(handler.Event)
 		frameName := canonicalSymbolName(handler.Frame)
 		functionName := canonicalSymbolName(handler.Function)
@@ -476,7 +471,7 @@ func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
 		})
 	}
 
-	for _, event := range source.Events {
+	for _, event := range input.Events {
 		eventName := canonicalEventName(event.Name)
 		acc := ensureEventAccumulator(selectEventAccumulator(eventName, gameEvents, windowEvents), eventName)
 		for _, registration := range event.LuaRegistrations {
@@ -514,7 +509,7 @@ func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
 		extractNamespaceTokens(eventName, strings.Join(mapKeys(acc.Addons), ", "), eventName, "", "event_page", systemFields, gameFields)
 	}
 
-	for _, binding := range source.Bindings {
+	for _, binding := range input.Bindings {
 		eventName := canonicalEventName(binding.Event)
 		xmlAcc := ensureXMLHandlerAccumulator(xmlHandlers, eventName)
 		xmlAcc.Addons[binding.Addon] = true
@@ -526,54 +521,8 @@ func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
 		})
 	}
 
-	for _, example := range source.Examples {
-		eventName := canonicalEventName(example.Event)
-		xmlAcc := ensureXMLHandlerAccumulator(xmlHandlers, eventName)
-		xmlAcc.Addons[example.Addon] = true
-		xmlAcc.Examples = appendUniqueExample(xmlAcc.Examples, UsageExample{
-			Addon:   example.Addon,
-			Caller:  canonicalSymbolName(example.Frame),
-			Snippet: canonicalSymbolName(example.Frame) + "." + eventName + " -> " + canonicalSymbolName(example.LuaFunction),
-			Source:  "examples",
-		})
-	}
-
-	namespaceUsage := map[string]map[string]bool{}
-	for _, namespace := range source.Globals.Namespaces {
-		addToSetMap(namespaceUsage, namespace.Name, namespace.Addon)
-	}
-	for _, namespace := range source.Globals.Namespaces {
-		if namespace.Name == "" || namespace.Name == "SystemData" || namespace.Name == "GameData" {
-			continue
-		}
-		if len(namespaceUsage[namespace.Name]) < 2 && tables[namespace.Name] == nil && !sharedTableRoots[graph.RootSegment(namespace.Name)] {
-			continue
-		}
-		tableAcc := ensureTableAccumulator(tables, namespace.Name)
-		tableAcc.Addons[namespace.Addon] = true
-	}
-
-	for _, saved := range source.Globals.SavedVariables {
-		phase := ensureLifecycleAccumulator(lifecycle, "saved-variables")
-		phase.Addons[saved.Addon] = true
-		phase.Evidence = appendUniqueString(phase.Evidence, saved.Addon+": "+saved.Name)
-		phase.Details = appendUniqueString(phase.Details, "Saved variables persisted under addon-owned globals")
-	}
-
-	for _, flow := range source.Flows {
-		for _, step := range flow.Steps {
-			phase := ensureLifecycleAccumulator(lifecycle, step.Phase)
-			phase.Addons[flow.Addon] = true
-			if step.Detail != "" {
-				phase.Details = appendUniqueString(phase.Details, step.Detail)
-			}
-			for _, evidence := range step.Evidence {
-				phase.Evidence = appendUniqueString(phase.Evidence, flow.Addon+": "+evidence)
-				extractNamespaceTokens(evidence, flow.Addon, step.Phase, "", "flow", systemFields, gameFields)
-			}
-			extractNamespaceTokens(step.Detail, flow.Addon, step.Phase, "", "flow", systemFields, gameFields)
-		}
-	}
+	// Contract artifacts do not currently carry saved-variable, flow, or curated
+	// example docs. Those pathways are intentionally disabled in contract-only mode.
 
 	corpus.GlobalFunctions = finalizeFunctionSymbols(globalFunctions, "Global Function", ctx, collector)
 	corpus.WindowFunctions = finalizeFunctionSymbols(windowFunctions, "Window Function", ctx, collector)
@@ -586,7 +535,7 @@ func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
 	// This enriches ElementTypes with structured attribute profiles,
 	// structural child profiles, Lua API call aggregations, handler
 	// argument patterns, and .mod lifecycle facts.
-	pipelineResult := runPhasedPipeline(corpus.ElementTypes, SourceModel{}, opts.SourceRoot)
+	pipelineResult := runPhasedPipeline(corpus.ElementTypes, opts.SourceRoot)
 	corpus.ElementTypes = pipelineResult.ElementTypes
 	corpus.AddonLifecycleSemantics = pipelineResult.AddonLifecycleSemantics
 	corpus.FunctionLifecycleRoles = pipelineResult.FunctionLifecycleRoles
@@ -595,21 +544,17 @@ func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
 	corpus.SystemDataFields = finalizeFieldSymbols(systemFields, "SystemData", ctx, collector)
 	corpus.GameDataFields = finalizeFieldSymbols(gameFields, "GameData", ctx, collector)
 	corpus.SlashCommandPatterns = buildSlashPatterns(globalFunctions)
-	corpus.WindowPatterns = buildWindowPatterns(globalFunctions, windowFunctions, source.Bindings)
+	corpus.WindowPatterns = buildWindowPatterns(globalFunctions, windowFunctions, input.Bindings)
 	corpus.EventPatterns = buildEventPatterns(globalFunctions, corpus.GameEvents, corpus.WindowEvents)
 	corpus.Lifecycle = finalizeLifecycle(lifecycle)
-	corpus.Conventions = buildConventions(corpus, source)
+	corpus.Conventions = buildConventions(corpus, input)
 	corpus.InferenceRules = defaultInferenceRules()
-	corpus.Coverage = buildCoverage(corpus, collector.items, source)
-	enrichSemanticArtifacts(&corpus, source)
+	corpus.Coverage = buildCoverage(corpus, collector.items, input)
+	enrichSemanticArtifacts(&corpus, input)
 	return corpus
 }
 
-func buildAddonScopes(source SourceModel) map[string]addonScope {
-	namespaceUsage := map[string]map[string]bool{}
-	for _, namespace := range source.Globals.Namespaces {
-		addToSetMap(namespaceUsage, namespace.Name, namespace.Addon)
-	}
+func buildAddonScopes(input contractSemanticInput) map[string]addonScope {
 	scopes := map[string]addonScope{}
 	ensure := func(addon string) addonScope {
 		scope, ok := scopes[addon]
@@ -618,7 +563,7 @@ func buildAddonScopes(source SourceModel) map[string]addonScope {
 		}
 		return scope
 	}
-	for _, doc := range source.Functions {
+	for _, doc := range input.Functions {
 		scope := ensure(doc.Addon)
 		scope.roots[graph.RootSegment(doc.Addon)] = true
 		if root := graph.RootSegment(doc.Module); root != "" {
@@ -632,18 +577,6 @@ func buildAddonScopes(source SourceModel) map[string]addonScope {
 			scope.lastSegments[graph.LastSegment(alias)] = true
 		}
 		scopes[doc.Addon] = scope
-	}
-	for _, namespace := range source.Globals.Namespaces {
-		if len(namespaceUsage[namespace.Name]) != 1 {
-			continue
-		}
-		root := graph.RootSegment(namespace.Name)
-		if root == "" || root == "SystemData" || root == "GameData" || sharedTableRoots[root] || windowFunctionRoots[root] {
-			continue
-		}
-		scope := ensure(namespace.Addon)
-		scope.roots[root] = true
-		scopes[namespace.Addon] = scope
 	}
 	return scopes
 }
@@ -1191,7 +1124,7 @@ func buildEventPatterns(globalFunctions map[string]*functionAccumulator, gameEve
 	return patterns
 }
 
-func buildConventions(corpus Corpus, source SourceModel) []PatternDoc {
+func buildConventions(corpus Corpus, input contractSemanticInput) []PatternDoc {
 	patterns := []PatternDoc{}
 	patterns = append(patterns, PatternDoc{
 		Name:        "Initialization pattern",
@@ -1219,7 +1152,7 @@ func buildConventions(corpus Corpus, source SourceModel) []PatternDoc {
 		Category:    "conventions",
 		Confidence:  ConfidenceHigh,
 		Description: "XML handler names map directly to Lua functions and can be cross-checked through the bindings page.",
-		Evidence:    bindingEvidence(source.Bindings, 8),
+		Evidence:    bindingEvidence(input.Bindings, 8),
 	})
 	patterns = append(patterns, PatternDoc{
 		Name:        "XML runtime caveats",
@@ -1245,13 +1178,6 @@ func buildConventions(corpus Corpus, source SourceModel) []PatternDoc {
 			"QuickTacticSwitch: `ListBoxSetDisplayOrder` and `ListBoxGetDataIndex` are used to manage visible ordering and row-to-data mapping.",
 			"AggroMeter: `ListData table=\"AggroMeter.Listdata\" populationfunction=\"\"` suggests column-only text binding works without a custom population callback.",
 		},
-	})
-	patterns = append(patterns, PatternDoc{
-		Name:        "State management pattern",
-		Category:    "conventions",
-		Confidence:  ConfidenceMedium,
-		Description: "Persistent state is typically rooted in addon-owned globals and saved variables, then initialized before runtime hooks are attached.",
-		Evidence:    savedVariableEvidence(source.Globals.SavedVariables, 8),
 	})
 	return patterns
 }
@@ -1280,7 +1206,7 @@ func buildFunctionEvidence(acc *functionAccumulator, category string, ctx scorin
 	}
 	xmlUsageCount := 0
 	xmlAttributeUsageCount := 0
-	for _, handler := range ctx.source.Handlers {
+	for _, handler := range ctx.input.Handlers {
 		if handler.Function != acc.Name {
 			continue
 		}
@@ -1292,7 +1218,7 @@ func buildFunctionEvidence(acc *functionAccumulator, category string, ctx scorin
 		exampleLocations = append(exampleLocations, handler.Addon+": "+handler.Frame+"."+handler.Event)
 		sourceKinds["xml_handlers"] = true
 	}
-	for _, binding := range ctx.source.Bindings {
+	for _, binding := range ctx.input.Bindings {
 		if binding.LuaFunction != acc.Name && binding.XMLFunction != acc.Name {
 			continue
 		}
@@ -1300,19 +1226,6 @@ func buildFunctionEvidence(acc *functionAccumulator, category string, ctx scorin
 		xmlAttributeUsageCount++
 		exampleLocations = append(exampleLocations, binding.Addon+": "+binding.Frame+"."+binding.Event)
 		sourceKinds["bindings"] = true
-	}
-	for _, example := range ctx.source.Examples {
-		if example.LuaFunction != acc.Name {
-			continue
-		}
-		exampleLocations = append(exampleLocations, example.Addon+": "+example.Frame+"."+example.Event)
-		sourceKinds["examples"] = true
-	}
-	if countFlowReferences(acc.Name, ctx.source) > 0 {
-		sourceKinds["flows"] = true
-	}
-	if countNamespaceDefinitions(graph.RootSegment(acc.Name), ctx.source) > 0 {
-		sourceKinds["globals"] = true
 	}
 	knownEngineNamespace := isKnownEngineNamespace(acc.Name, category)
 	return confidence.Evidence{
@@ -1331,7 +1244,7 @@ func buildFunctionEvidence(acc *functionAccumulator, category string, ctx scorin
 		ExampleLocations:            firstStrings(graph.UniqueStrings(exampleLocations), 16),
 		XMLAttributeUsageCount:      xmlAttributeUsageCount,
 		DocumentationReferenceCount: documentationReferenceCount(sourceKinds, "lua_calls"),
-		TOCInitReferenceCount:       countFlowReferences(acc.Name, ctx.source),
+		TOCInitReferenceCount:       0,
 		UsedByXMLAndLua:             xmlUsageCount > 0 && len(acc.Observations) > 0,
 		ConsistentRole:              len(acc.Addons) >= 2,
 		ConsistentArguments:         hasConsistentArgumentPattern(acc.Observations),
@@ -1356,7 +1269,7 @@ func buildEventEvidence(acc *eventAccumulator, category string, ctx scoringConte
 	luaUsageCount := 0
 	xmlUsageCount := 0
 	xmlAttributeUsageCount := 0
-	for _, doc := range ctx.source.Functions {
+	for _, doc := range ctx.input.Functions {
 		for _, event := range doc.EventRegistrations {
 			if event.Event != acc.Name {
 				continue
@@ -1369,7 +1282,7 @@ func buildEventEvidence(acc *eventAccumulator, category string, ctx scoringConte
 			sourceKinds["lua_event_registration"] = true
 		}
 	}
-	for _, handler := range ctx.source.Handlers {
+	for _, handler := range ctx.input.Handlers {
 		if handler.Event != acc.Name {
 			continue
 		}
@@ -1380,16 +1293,6 @@ func buildEventEvidence(acc *eventAccumulator, category string, ctx scoringConte
 		}
 		exampleLocations = append(exampleLocations, handler.Addon+": "+handler.Frame+"."+handler.Event)
 		sourceKinds["xml_handlers"] = true
-	}
-	for _, example := range ctx.source.Examples {
-		if example.Event != acc.Name {
-			continue
-		}
-		exampleLocations = append(exampleLocations, example.Addon+": "+example.Frame+"."+example.Event)
-		sourceKinds["examples"] = true
-	}
-	if countFlowReferences(acc.Name, ctx.source) > 0 {
-		sourceKinds["flows"] = true
 	}
 	knownEngineNamespace := isKnownEngineNamespace(acc.Name, category)
 	return confidence.Evidence{
@@ -1408,7 +1311,7 @@ func buildEventEvidence(acc *eventAccumulator, category string, ctx scoringConte
 		ExampleLocations:            firstStrings(graph.UniqueStrings(exampleLocations), 16),
 		XMLAttributeUsageCount:      xmlAttributeUsageCount,
 		DocumentationReferenceCount: documentationReferenceCount(sourceKinds, "event_page"),
-		TOCInitReferenceCount:       countFlowReferences(acc.Name, ctx.source),
+		TOCInitReferenceCount:       0,
 		UsedByXMLAndLua:             xmlUsageCount > 0 && luaUsageCount > 0,
 		ConsistentRole:              len(acc.Addons) >= 2,
 		ConsistentArguments:         false,
@@ -1432,7 +1335,7 @@ func buildXMLHandlerEvidence(acc *xmlHandlerAccumulator, ctx scoringContext) con
 	sourceKinds := map[string]bool{"xml_handlers": true}
 	xmlUsageCount := 0
 	luaUsageCount := 0
-	for _, handler := range ctx.source.Handlers {
+	for _, handler := range ctx.input.Handlers {
 		if handler.Event != acc.Name {
 			continue
 		}
@@ -1442,20 +1345,13 @@ func buildXMLHandlerEvidence(acc *xmlHandlerAccumulator, ctx scoringContext) con
 		}
 		exampleLocations = append(exampleLocations, handler.Addon+": "+handler.Frame+"."+handler.Event)
 	}
-	for _, binding := range ctx.source.Bindings {
+	for _, binding := range ctx.input.Bindings {
 		if binding.Event != acc.Name {
 			continue
 		}
 		luaUsageCount++
 		exampleLocations = append(exampleLocations, binding.Addon+": "+binding.Frame+"."+binding.Event)
 		sourceKinds["bindings"] = true
-	}
-	for _, example := range ctx.source.Examples {
-		if example.Event != acc.Name {
-			continue
-		}
-		exampleLocations = append(exampleLocations, example.Addon+": "+example.Frame+"."+example.Event)
-		sourceKinds["examples"] = true
 	}
 	return confidence.Evidence{
 		SymbolName:                  acc.Name,
@@ -1517,7 +1413,7 @@ func buildFieldEvidence(acc *fieldAccumulator, namespace string, ctx scoringCont
 		ExampleLocations:            firstStrings(mapKeys(acc.Contexts), 16),
 		XMLAttributeUsageCount:      0,
 		DocumentationReferenceCount: documentationReferenceCount(sourceKinds, "observed"),
-		TOCInitReferenceCount:       countFlowReferences(acc.Name, ctx.source),
+		TOCInitReferenceCount:       0,
 		UsedByXMLAndLua:             false,
 		ConsistentRole:              len(acc.Addons) >= 2,
 		ConsistentArguments:         false,
@@ -1538,11 +1434,8 @@ func buildFieldEvidence(acc *fieldAccumulator, namespace string, ctx scoringCont
 func buildTableEvidence(acc *tableAccumulator, ctx scoringContext) confidence.Evidence {
 	files := usageFiles(acc.Examples)
 	sourceKinds := map[string]bool{"lua_calls": true}
-	if countNamespaceDefinitions(acc.Name, ctx.source) > 0 {
-		sourceKinds["globals"] = true
-	}
 	knownEngineNamespace := isKnownEngineNamespace(acc.Name, "Global Table")
-	localDefinitionCount := countNamespaceDefinitions(acc.Name, ctx.source)
+	localDefinitionCount := 0
 	return confidence.Evidence{
 		SymbolName:                  acc.Name,
 		SymbolKind:                  "Global Table",
@@ -1559,7 +1452,7 @@ func buildTableEvidence(acc *tableAccumulator, ctx scoringContext) confidence.Ev
 		ExampleLocations:            firstStrings(exampleLocationsFromExamples(acc.Examples), 16),
 		XMLAttributeUsageCount:      0,
 		DocumentationReferenceCount: documentationReferenceCount(sourceKinds, "lua_calls"),
-		TOCInitReferenceCount:       countFlowReferences(acc.Name, ctx.source),
+		TOCInitReferenceCount:       0,
 		UsedByXMLAndLua:             false,
 		ConsistentRole:              len(acc.Addons) >= 2 || knownEngineNamespace,
 		ConsistentArguments:         false,
@@ -1580,9 +1473,6 @@ func buildTableEvidence(acc *tableAccumulator, ctx scoringContext) confidence.Ev
 func buildConstantEvidence(acc *constantAccumulator, ctx scoringContext) confidence.Evidence {
 	knownEngineNamespace := isKnownEngineNamespace(acc.Name, "Constant")
 	sourceKinds := map[string]bool{"xml_attributes": true}
-	if countFlowReferences(acc.Name, ctx.source) > 0 {
-		sourceKinds["flows"] = true
-	}
 	return confidence.Evidence{
 		SymbolName:                  acc.Name,
 		SymbolKind:                  "Constant",
@@ -1599,7 +1489,7 @@ func buildConstantEvidence(acc *constantAccumulator, ctx scoringContext) confide
 		ExampleLocations:            firstStrings(mapKeys(acc.UsedBy), 16),
 		XMLAttributeUsageCount:      len(acc.UsedBy),
 		DocumentationReferenceCount: documentationReferenceCount(sourceKinds, "xml_attributes"),
-		TOCInitReferenceCount:       countFlowReferences(acc.Name, ctx.source),
+		TOCInitReferenceCount:       0,
 		UsedByXMLAndLua:             false,
 		ConsistentRole:              len(acc.Addons) >= 2 || knownEngineNamespace,
 		ConsistentArguments:         false,
@@ -1817,33 +1707,6 @@ func likelyWrapper(localDefinitionCount int, usageCount int, xmlUsageCount int, 
 	return localDefinitionCount > 0 && usageCount <= 2 && xmlUsageCount == 0 && !knownEngineNamespace
 }
 
-func countFlowReferences(name string, source SourceModel) int {
-	count := 0
-	for _, flow := range source.Flows {
-		for _, step := range flow.Steps {
-			if strings.Contains(step.Detail, name) {
-				count++
-			}
-			for _, evidence := range step.Evidence {
-				if strings.Contains(evidence, name) {
-					count++
-				}
-			}
-		}
-	}
-	return count
-}
-
-func countNamespaceDefinitions(name string, source SourceModel) int {
-	count := 0
-	for _, namespace := range source.Globals.Namespaces {
-		if namespace.Name == name {
-			count++
-		}
-	}
-	return count
-}
-
 func documentationReferenceCount(sourceKinds map[string]bool, primary string) int {
 	count := 0
 	for kind := range sourceKinds {
@@ -1913,16 +1776,16 @@ func matrixRow(summary CandidateSummary) ConfidenceMatrixRow {
 	return row
 }
 
-func buildCoverage(corpus Corpus, candidates []CandidateSummary, source SourceModel) Coverage {
+func buildCoverage(corpus Corpus, candidates []CandidateSummary, input contractSemanticInput) Coverage {
 	coverage := Coverage{
 		SourceCounts: map[string]int{
-			"function_docs": len(source.Functions),
-			"frame_docs":    len(source.Frames),
-			"handler_docs":  len(source.Handlers),
-			"event_docs":    len(source.Events),
-			"bindings":      len(source.Bindings),
-			"flows":         len(source.Flows),
-			"examples":      len(source.Examples),
+			"function_docs": len(input.Functions),
+			"frame_docs":    len(input.Frames),
+			"handler_docs":  len(input.Handlers),
+			"event_docs":    len(input.Events),
+			"bindings":      len(input.Bindings),
+			"flows":         0,
+			"examples":      0,
 		},
 		SymbolCounts: map[string]int{
 			"global_functions": len(corpus.GlobalFunctions),

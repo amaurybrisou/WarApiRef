@@ -52,13 +52,13 @@ const minCommonlyUsedWithWeight = 4
 // low-quality associations.
 const maxCommonlyUsedWithPerNode = 8
 
-func enrichSemanticArtifacts(corpus *Corpus, source SourceModel) {
+func enrichSemanticArtifacts(corpus *Corpus, input contractSemanticInput) {
 	catalog := buildSymbolCatalog(*corpus)
 
 	// Apply deep analysis inference to symbols (Priority 2: return types, Priority 3: arguments)
-	enrichSymbolsWithAnalysis(corpus, source)
+	enrichSymbolsWithAnalysis(corpus, input)
 
-	graphData, relations, links := buildSemanticGraph(*corpus, catalog, source)
+	graphData, relations, links := buildSemanticGraph(*corpus, catalog, input)
 	patternPages := buildPatternPages(*corpus, catalog, relations)
 	corpus.SymbolLinks = links
 	corpus.APIGraph = graphData
@@ -203,15 +203,15 @@ func buildSymbolCatalog(corpus Corpus) symbolCatalog {
 	return catalog
 }
 
-func buildSemanticGraph(corpus Corpus, catalog symbolCatalog, source SourceModel) (APIGraph, RelationReport, map[string]SemanticLinks) {
+func buildSemanticGraph(corpus Corpus, catalog symbolCatalog, input contractSemanticInput) (APIGraph, RelationReport, map[string]SemanticLinks) {
 	frameTypes := map[string]string{}
 	sourceFunctionsByKey := map[string]FunctionDoc{}
 	invokersByCaller := map[string][]DocLink{}
 	uiLinksByCaller := map[string][]DocLink{}
-	for _, frame := range source.Frames {
+	for _, frame := range input.Frames {
 		frameTypes[frameLookupKey(frame.Addon, frame.Name)] = frame.Type
 	}
-	for _, doc := range source.Functions {
+	for _, doc := range input.Functions {
 		sourceFunctionsByKey[callerKey(doc.Addon, doc.Name)] = doc
 	}
 
@@ -292,7 +292,7 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog, source SourceModel
 		target[key] = appendUniqueLink(target[key], link)
 	}
 
-	for _, doc := range source.Functions {
+	for _, doc := range input.Functions {
 		sourceEntry, ok := catalog.lookup(doc.Name, "function")
 		if !ok {
 			continue
@@ -324,7 +324,7 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog, source SourceModel
 		recordCombination(contextIDs, doc.Addon+": "+doc.Name)
 	}
 
-	for _, eventDoc := range source.Events {
+	for _, eventDoc := range input.Events {
 		eventEntry, ok := catalog.lookup(eventDoc.Name, "event")
 		if !ok {
 			continue
@@ -415,7 +415,7 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog, source SourceModel
 		recordCombination(contextIDs, eventName+": registration repair")
 	}
 
-	for _, binding := range source.Bindings {
+	for _, binding := range input.Bindings {
 		xmlHandlerEntry, hasXMLHandler := catalog.lookup(binding.Event, "xml_event")
 		functionEntry, hasFunction := catalog.lookup(binding.LuaFunction, "function")
 		eventEntry, hasEvent := catalog.lookup(binding.Event, "xml_event", "event")
@@ -459,7 +459,7 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog, source SourceModel
 		recordCombination(contextIDs, evidence)
 	}
 
-	for _, handler := range source.Handlers {
+	for _, handler := range input.Handlers {
 		xmlHandlerEntry, hasXMLHandler := catalog.lookup(handler.Event, "xml_event")
 		functionEntry, hasFunction := catalog.lookup(handler.Function, "function")
 		eventEntry, hasEvent := catalog.lookup(handler.Event, "xml_event", "event")
@@ -499,28 +499,6 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog, source SourceModel
 			flow.UIIDs[elementEntry.ID] = true
 			flow.Evidence[evidence] = true
 			flow.Weight++
-		}
-		recordCombination(contextIDs, evidence)
-	}
-
-	for _, example := range source.Examples {
-		functionEntry, hasFunction := catalog.lookup(example.LuaFunction, "function")
-		eventEntry, hasEvent := catalog.lookup(example.Event, "xml_event", "event")
-		xmlHandlerEntry, hasXMLHandler := catalog.lookup(example.Event, "xml_event")
-		elementEntry, hasElement := catalog.lookup(frameTypes[frameLookupKey(example.Addon, example.Frame)], "ui_element")
-		contextIDs := []string{}
-		evidence := fmt.Sprintf("%s: %s.%s -> %s", example.Addon, example.Frame, example.Event, example.LuaFunction)
-		if hasFunction {
-			contextIDs = append(contextIDs, functionEntry.ID)
-		}
-		if hasEvent {
-			contextIDs = append(contextIDs, eventEntry.ID)
-		}
-		if hasXMLHandler {
-			contextIDs = append(contextIDs, xmlHandlerEntry.ID)
-		}
-		if hasElement {
-			contextIDs = append(contextIDs, elementEntry.ID)
 		}
 		recordCombination(contextIDs, evidence)
 	}
@@ -698,7 +676,7 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog, source SourceModel
 	edges = capCommonlyUsedWithEdges(edges, maxCommonlyUsedWithPerNode)
 
 	// Enrich edges with deep analysis findings (confidence scores, rationales, missing edge types)
-	edges = enrichEdgesWithDeepAnalysis(edges, corpus, catalog, source)
+	edges = enrichEdgesWithDeepAnalysis(edges, corpus, catalog, input)
 
 	graphData := APIGraph{GeneratedAt: time.Now().UTC(), Nodes: materializeGraphNodes(catalog), Edges: edges}
 	relations := buildRelationReport(catalog, edges, relationAccumulators, eventFlows)
@@ -870,14 +848,14 @@ func capCommonlyUsedWithEdges(edges []GraphEdge, maxPerNode int) []GraphEdge {
 }
 
 // enrichEdgesWithDeepAnalysis applies deep_analysis inference to enrich edges with confidence scores
-func enrichEdgesWithDeepAnalysis(edges []GraphEdge, corpus Corpus, catalog symbolCatalog, source SourceModel) []GraphEdge {
-	if len(source.Functions) == 0 {
+func enrichEdgesWithDeepAnalysis(edges []GraphEdge, corpus Corpus, catalog symbolCatalog, input contractSemanticInput) []GraphEdge {
+	if len(input.Functions) == 0 {
 		return edges
 	}
 
 	// Create enricher and analyze function sources
 	enricher := deep_analysis.NewEdgeEnricher()
-	for _, fnDoc := range source.Functions {
+	for _, fnDoc := range input.Functions {
 		if fnDoc.Source == "" {
 			continue
 		}

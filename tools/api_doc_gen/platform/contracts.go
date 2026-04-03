@@ -21,6 +21,18 @@ type ContractModel struct {
 	LoadedAt    time.Time
 }
 
+// contractSemanticInput is the contract-native internal semantic dataset used by
+// build/semantic/enrichment internals. It intentionally excludes markdown-only
+// artifacts such as flows/examples/saved variable docs.
+type contractSemanticInput struct {
+	Root      string
+	Functions []FunctionDoc
+	Frames    []FrameDoc
+	Handlers  []HandlerDoc
+	Events    []EventDoc
+	Bindings  []BindingDoc
+}
+
 type contractXMLTree struct {
 	SchemaVersion string            `json:"schema_version"`
 	Addon         string            `json:"addon"`
@@ -433,6 +445,18 @@ func sourceModelFromContracts(model ContractModel) SourceModel {
 	sort.Slice(source.Events, func(i, j int) bool { return source.Events[i].Name < source.Events[j].Name })
 
 	return source
+}
+
+func semanticInputFromContracts(model ContractModel) contractSemanticInput {
+	source := sourceModelFromContracts(model)
+	return contractSemanticInput{
+		Root:      source.Root,
+		Functions: source.Functions,
+		Frames:    source.Frames,
+		Handlers:  source.Handlers,
+		Events:    source.Events,
+		Bindings:  source.Bindings,
+	}
 }
 
 func ensureDirectory(path string) error {
