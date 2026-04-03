@@ -280,7 +280,7 @@
 | ListColumn | XML Element Type | 100 | HIGH | +18 | +25 | +30 | 0 | +35 | 0 | 0 |
 | ListColumns | XML Element Type | 100 | HIGH | +18 | +25 | +30 | 0 | +35 | 0 | 0 |
 | ListData | XML Element Type | 100 | HIGH | +18 | +25 | +30 | 0 | +35 | 0 | 0 |
-| OnHidden | XML Handler | 100 | HIGH | +18 | 0 | +50 | +18 | 0 | 0 | 0 |
+| OnHidden | Window Event | 100 | HIGH | +18 | 0 | +50 | +18 | 0 | 0 | 0 |
 
 ## Uncertain Areas
 

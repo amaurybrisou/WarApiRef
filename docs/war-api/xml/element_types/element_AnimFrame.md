@@ -87,7 +87,7 @@ Observed XML element type instantiated by 1 addons.
 
 ## Related APIs
 
-- none
+- [AnimFrames](element_AnimFrames.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 

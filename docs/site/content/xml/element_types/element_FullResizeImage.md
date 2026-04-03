@@ -143,7 +143,7 @@ Observed 4 times as an unnamed child.
 
 ## Related APIs
 
-- none
+- [TintColor](element_TintColor.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 

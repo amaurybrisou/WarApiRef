@@ -9,24 +9,24 @@ Observed multiple addons converging on a small set of runtime events such as LOA
 
 ## Involved APIs
 
-- [SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM](../events/game_events/game_event_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM](../systemdata/fields/systemdata_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA](../events/game_events/game_event_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM](../events/game_events/game_event_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA](../systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA](../events/game_events/game_event_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.LOADING_END](../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.L_BUTTON_UP_PROCESSED](../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.L_BUTTON_UP_PROCESSED](../events/game_events/game_event_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.PLAYER_TARGET_UPDATED](../events/game_events/game_event_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.PLAYER_TARGET_UPDATED](../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.RELOAD_INTERFACE](../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.RELOAD_INTERFACE](../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [TextLogGetUpdateEventId](../events/game_events/game_event_TextLogGetUpdateEventId.md) (MEDIUM 63/100) - Game Event
 
 ## Flow Diagram
 
 ```text
-OnLButtonUp <-> OnLButtonUp
+Button <-> OnLButtonUp
 ```
 
 ## Example Code

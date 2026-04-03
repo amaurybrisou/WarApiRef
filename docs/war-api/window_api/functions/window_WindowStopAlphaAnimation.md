@@ -67,7 +67,7 @@ Observed as a window function across 1 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: logDisplayName.."ToBottomButton", scrollbarName |
+| arg1 | Observed as a function or method reference. | Observed values: logDisplayName.."ToBottomButton", scrollbarName |
 
 ## Returns
 

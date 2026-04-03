@@ -14,7 +14,7 @@ Persistent state is typically rooted in addon-owned globals and saved variables,
 ## Flow Diagram
 
 ```text
-OnLButtonUp <-> OnLButtonUp
+Button <-> OnLButtonUp
 ```
 
 ## Example Code

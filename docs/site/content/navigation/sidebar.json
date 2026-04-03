@@ -792,61 +792,61 @@
         "items": [
           {
             "label": "OnHidden",
-            "type": "xml_handler",
+            "type": "xml_event",
             "path": "xml/handlers/handler_OnHidden.md",
             "order": 1
           },
           {
             "label": "OnLButtonUp",
-            "type": "xml_handler",
+            "type": "xml_event",
             "path": "xml/handlers/handler_OnLButtonUp.md",
             "order": 2
           },
           {
             "label": "OnMouseWheel",
-            "type": "xml_handler",
+            "type": "xml_event",
             "path": "xml/handlers/handler_OnMouseWheel.md",
             "order": 3
           },
           {
             "label": "OnSelChanged",
-            "type": "xml_handler",
+            "type": "xml_event",
             "path": "xml/handlers/handler_OnSelChanged.md",
             "order": 4
           },
           {
             "label": "OnShown",
-            "type": "xml_handler",
+            "type": "xml_event",
             "path": "xml/handlers/handler_OnShown.md",
             "order": 5
           },
           {
             "label": "OnInitialize",
-            "type": "xml_handler",
+            "type": "xml_event",
             "path": "xml/handlers/handler_OnInitialize.md",
             "order": 6
           },
           {
             "label": "OnMButtonUp",
-            "type": "xml_handler",
+            "type": "xml_event",
             "path": "xml/handlers/handler_OnMButtonUp.md",
             "order": 7
           },
           {
             "label": "OnMouseOver",
-            "type": "xml_handler",
+            "type": "xml_event",
             "path": "xml/handlers/handler_OnMouseOver.md",
             "order": 8
           },
           {
             "label": "OnRButtonUp",
-            "type": "xml_handler",
+            "type": "xml_event",
             "path": "xml/handlers/handler_OnRButtonUp.md",
             "order": 9
           },
           {
             "label": "OnUpdate",
-            "type": "xml_handler",
+            "type": "xml_event",
             "path": "xml/handlers/handler_OnUpdate.md",
             "order": 10
           }

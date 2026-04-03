@@ -67,7 +67,7 @@ Observed as a global function across 1 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: L "Copy...", L "To Bottom" |
+| arg1 | Observed as a text or wstring payload. | Observed values: L "Copy...", L "To Bottom" |
 | arg2 | Observed as a function or method reference. | Observed values: TidyChatCopy.OnCopyButton, TidyChatFrames.OnToBottomButton |
 | arg3 | Observed as a boolean toggle. | Observed values: false |
 | arg4 | Observed as a boolean toggle. | Observed values: true |

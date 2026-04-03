@@ -15,7 +15,7 @@ Observed slash commands being registered through the shared LibSlash table.
 ## Flow Diagram
 
 ```text
-OnLButtonUp <-> OnLButtonUp
+Button <-> OnLButtonUp
 ```
 
 ## Example Code

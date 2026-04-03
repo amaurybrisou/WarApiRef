@@ -121,10 +121,10 @@ Observed 4 times as an unnamed child.
 | `r` | **required** | 0, 237 |
 ## Lua Functions Manipulating This Type
 
-- Moth.HealthBar
-- Moth.UpdateHealthBar
 - Moth.HideBorders
 - Moth.Clear
+- Moth.HealthBar
+- Moth.UpdateHealthBar
 
 ## Seen In
 
@@ -143,7 +143,8 @@ Observed 4 times as an unnamed child.
 
 ## Related APIs
 
-- none
+- [Window](element_Window.md) (HIGH 100/100) - XML Element Type
+- [TintColor](element_TintColor.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 

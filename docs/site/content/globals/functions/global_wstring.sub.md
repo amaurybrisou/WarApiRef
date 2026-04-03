@@ -88,8 +88,8 @@ Observed as a global function across 1 addons.
 ## Examples
 
 - Moth: Moth.UpdateLevel -> wstring.sub(unitTierDesc, 1, 1)
-- Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 2)
 - Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 1, 1)
+- Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 2)
 
 ## Related APIs
 

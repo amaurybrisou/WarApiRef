@@ -87,11 +87,10 @@ function()
 
 ## Related APIs
 
-- none
+- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By

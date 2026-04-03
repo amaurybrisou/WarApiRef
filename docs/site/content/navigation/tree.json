@@ -915,72 +915,72 @@
           "path": "xml/handlers/index.md",
           "children": [
             {
-              "id": "xml_handler:OnHidden",
+              "id": "xml_event:OnHidden",
               "label": "OnHidden",
-              "type": "xml_handler",
+              "type": "xml_event",
               "path": "xml/handlers/handler_OnHidden.md",
               "importance": 100
             },
             {
-              "id": "xml_handler:OnLButtonUp",
+              "id": "xml_event:OnLButtonUp",
               "label": "OnLButtonUp",
-              "type": "xml_handler",
+              "type": "xml_event",
               "path": "xml/handlers/handler_OnLButtonUp.md",
               "importance": 100
             },
             {
-              "id": "xml_handler:OnMouseWheel",
+              "id": "xml_event:OnMouseWheel",
               "label": "OnMouseWheel",
-              "type": "xml_handler",
+              "type": "xml_event",
               "path": "xml/handlers/handler_OnMouseWheel.md",
               "importance": 100
             },
             {
-              "id": "xml_handler:OnSelChanged",
+              "id": "xml_event:OnSelChanged",
               "label": "OnSelChanged",
-              "type": "xml_handler",
+              "type": "xml_event",
               "path": "xml/handlers/handler_OnSelChanged.md",
               "importance": 100
             },
             {
-              "id": "xml_handler:OnShown",
+              "id": "xml_event:OnShown",
               "label": "OnShown",
-              "type": "xml_handler",
+              "type": "xml_event",
               "path": "xml/handlers/handler_OnShown.md",
               "importance": 100
             },
             {
-              "id": "xml_handler:OnInitialize",
+              "id": "xml_event:OnInitialize",
               "label": "OnInitialize",
-              "type": "xml_handler",
+              "type": "xml_event",
               "path": "xml/handlers/handler_OnInitialize.md",
               "importance": 73
             },
             {
-              "id": "xml_handler:OnMButtonUp",
+              "id": "xml_event:OnMButtonUp",
               "label": "OnMButtonUp",
-              "type": "xml_handler",
+              "type": "xml_event",
               "path": "xml/handlers/handler_OnMButtonUp.md",
               "importance": 73
             },
             {
-              "id": "xml_handler:OnMouseOver",
+              "id": "xml_event:OnMouseOver",
               "label": "OnMouseOver",
-              "type": "xml_handler",
+              "type": "xml_event",
               "path": "xml/handlers/handler_OnMouseOver.md",
               "importance": 73
             },
             {
-              "id": "xml_handler:OnRButtonUp",
+              "id": "xml_event:OnRButtonUp",
               "label": "OnRButtonUp",
-              "type": "xml_handler",
+              "type": "xml_event",
               "path": "xml/handlers/handler_OnRButtonUp.md",
               "importance": 73
             },
             {
-              "id": "xml_handler:OnUpdate",
+              "id": "xml_event:OnUpdate",
               "label": "OnUpdate",
-              "type": "xml_handler",
+              "type": "xml_event",
               "path": "xml/handlers/handler_OnUpdate.md",
               "importance": 73
             }

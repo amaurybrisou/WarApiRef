@@ -260,16 +260,16 @@ Confidence: MEDIUM
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
-- Moth.HideBorders
-- Moth.Clear
-- Moth.UpdateTarget
+- Moth.Initialize
 - TidyChat.LootRoll.OnRollLinkLButtonUp
-- Moth.Anchor
 - TidyRollOptions.Initialize
+- Moth.Anchor
 - Moth.UpdateLevel
 - Moth.UpdateHealthBar
+- Moth.HideBorders
 - Moth.HealthBar
-- Moth.Initialize
+- Moth.Clear
+- Moth.UpdateTarget
 
 
 ## Binding Resolution
@@ -294,15 +294,22 @@ Confidence: MEDIUM
 
 ## Related APIs
 
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [ButtonGetDisabledFlag](../../window_api/functions/window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ButtonGetPressedFlag](../../window_api/functions/window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [ComboBox](element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](../../window_api/functions/window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [DynamicImage](element_DynamicImage.md) (HIGH 100/100) - XML Element Type
+- [EditBox](element_EditBox.md) (HIGH 100/100) - XML Element Type
+- [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
+- [Label](element_Label.md) (HIGH 100/100) - XML Element Type
 - [LabelSetFont](../../window_api/functions/window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [ListBox](element_ListBox.md) (HIGH 100/100) - XML Element Type
 - [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
@@ -323,6 +330,7 @@ Confidence: MEDIUM
 - [ComboBoxClearMenuItems](../../window_api/functions/window_ComboBoxClearMenuItems.md) (HIGH 90/100) - Window Function
 - [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 90/100) - Window Function
 - [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 90/100) - Window Function
+- [SliderBar](element_SliderBar.md) (HIGH 90/100) - XML Element Type
 - [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 90/100) - Window Function
 - [WindowSetAlpha](../../window_api/functions/window_WindowSetAlpha.md) (HIGH 90/100) - Window Function
 - [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 90/100) - Window Function
@@ -342,21 +350,25 @@ Confidence: MEDIUM
 - [WindowGetAnchor](../../window_api/functions/window_WindowGetAnchor.md) (HIGH 80/100) - Window Function
 - [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 80/100) - Window Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
+- [AnimatedImage](element_AnimatedImage.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
-- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
-- [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Handler
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnMouseWheel](../../events/window_events/window_event_OnMouseWheel.md) (HIGH 100/100) - Window Event
-- [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Handler
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-- [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
+- [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Event
+- [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
 
 ## Triggered By
 
-- none
+- [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Event
+- [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
+- [OnInitialize](../handlers/handler_OnInitialize.md) (HIGH 73/100) - XML Event
+- [OnMButtonUp](../handlers/handler_OnMButtonUp.md) (HIGH 73/100) - XML Event
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 73/100) - XML Event
+- [OnUpdate](../handlers/handler_OnUpdate.md) (HIGH 73/100) - XML Event
 
 ## Affects
 

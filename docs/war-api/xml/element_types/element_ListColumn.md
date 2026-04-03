@@ -92,7 +92,7 @@ Structural XML element inside ListColumns that maps a single field of each backi
 
 ## Related APIs
 
-- none
+- [ListColumns](element_ListColumns.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

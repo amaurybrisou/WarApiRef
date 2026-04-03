@@ -90,6 +90,7 @@ Observed as a window function across 1 addons.
 
 ## Used With
 
+- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedMenuItem](window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 90/100) - Window Function
 

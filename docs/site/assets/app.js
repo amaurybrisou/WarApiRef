@@ -4,6 +4,8 @@ const docRoot         = document.getElementById("doc");
 const searchInput     = document.getElementById("search");
 const resultsRoot     = document.getElementById("results");
 const breadcrumb      = document.getElementById("breadcrumb");
+const mcpPage         = document.getElementById("mcpPage");
+const mcpPageBtn      = document.getElementById("mcpPageBtn");
 const graphToggle     = document.getElementById("graphToggle");
 const graphPanel      = document.getElementById("graphPanel");
 const graphSvg        = document.getElementById("graphSvg");
@@ -15,6 +17,7 @@ const mcpEndpoint     = document.getElementById("mcpEndpoint");
 const mcpInitBtn      = document.getElementById("mcpInitBtn");
 const mcpToolsBtn     = document.getElementById("mcpToolsBtn");
 const mcpConsoleOut   = document.getElementById("mcpConsoleOutput");
+const MCP_ROUTE       = "mcp";
 
 // --- App state ----------------------------------------------------------------
 const DEFAULT_PATH = "index.md";
@@ -29,6 +32,10 @@ function activePath() {
 
 function toContentPath(p) {
   return "content/" + p.replace(/^\/+/, "");
+}
+
+function isMcpRoute(path) {
+  return String(path || "").toLowerCase() === MCP_ROUTE;
 }
 
 // --- Fetch helper -------------------------------------------------------------
@@ -252,6 +259,67 @@ async function loadDoc(path) {
       a.setAttribute("href", abs);
     }
   });
+
+  makeDocSectionsCollapsible();
+}
+
+function makeDocSectionsCollapsible() {
+  const nodes = Array.from(docRoot.childNodes).filter((node) => {
+    return !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim());
+  });
+  if (!nodes.length) return;
+
+  const fragment = document.createDocumentFragment();
+  let index = 0;
+
+  while (index < nodes.length) {
+    const current = nodes[index];
+    const isHeading = current.nodeType === Node.ELEMENT_NODE && (current.tagName === "H1" || current.tagName === "H2");
+
+    if (!isHeading) {
+      fragment.appendChild(current);
+      index += 1;
+      continue;
+    }
+
+    const levelClass = current.tagName.toLowerCase();
+    const details = document.createElement("details");
+    details.className = `doc-section ${levelClass}`;
+
+    const summary = document.createElement("summary");
+    summary.className = "doc-section-summary";
+
+    const title = document.createElement("span");
+    title.className = "doc-section-title";
+    title.textContent = current.textContent || "Section";
+
+    const chevron = document.createElement("span");
+    chevron.className = "doc-section-chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    chevron.textContent = ">";
+
+    summary.appendChild(title);
+    summary.appendChild(chevron);
+    details.appendChild(summary);
+
+    const body = document.createElement("div");
+    body.className = "doc-section-body";
+
+    index += 1;
+    while (index < nodes.length) {
+      const nextNode = nodes[index];
+      const nextIsHeading = nextNode.nodeType === Node.ELEMENT_NODE && (nextNode.tagName === "H1" || nextNode.tagName === "H2");
+      if (nextIsHeading) break;
+      body.appendChild(nextNode);
+      index += 1;
+    }
+
+    details.appendChild(body);
+    fragment.appendChild(details);
+  }
+
+  docRoot.innerHTML = "";
+  docRoot.appendChild(fragment);
 }
 
 // --- Graph (Cytoscape.js) ----------------------------------------------------
@@ -277,6 +345,7 @@ const KIND_COLOR = {
   event:          "#2ea87e",
   data_structure: "#6b83c0",
   xml_element:    "#a08030",
+  xml_event:      "#3b8bb5",
   xml_handler:    "#a08030",
   ui_element:     "#a08030",
 };
@@ -287,7 +356,7 @@ function kindColor(k) { return KIND_COLOR[k] || KIND_COLOR_DEFAULT; }
 function matchesKind(nodeType, selectedKind) {
   if (!selectedKind) return true;
   if (selectedKind === "xml") {
-    return nodeType === "xml_element" || nodeType === "xml_handler" || nodeType === "ui_element";
+    return nodeType === "xml_element" || nodeType === "xml_event" || nodeType === "xml_handler" || nodeType === "ui_element";
   }
   return nodeType === selectedKind;
 }
@@ -656,7 +725,7 @@ function drawGraph(filterText, filterKind) {
 // --- Event listeners ---------------------------------------------------------
 window.addEventListener("hashchange", () => {
   updateActiveNavLink();
-  loadDoc(activePath());
+  handleRoute();
 });
 
 searchInput.addEventListener("input", (e) => runSearch(e.target.value));
@@ -673,6 +742,12 @@ graphToggle.addEventListener("click", () => {
     scrollGraphIntoView();
   }
 });
+
+if (mcpPageBtn) {
+  mcpPageBtn.addEventListener("click", () => {
+    window.location.hash = MCP_ROUTE;
+  });
+}
 
 graphSearch.addEventListener("input",       () => { if (!graphPanel.classList.contains("hidden")) drawGraph(graphSearch.value, graphKindFilter.value); });
 graphKindFilter.addEventListener("change",  () => { if (!graphPanel.classList.contains("hidden")) drawGraph(graphSearch.value, graphKindFilter.value); });
@@ -700,9 +775,30 @@ if (mcpToolsBtn) {
   });
 }
 
+async function handleRoute() {
+  const path = activePath();
+
+  if (isMcpRoute(path)) {
+    generateBreadcrumb(MCP_ROUTE);
+    if (mcpPage) mcpPage.classList.remove("hidden");
+    if (mcpPageBtn) mcpPageBtn.classList.add("secondary");
+    docRoot.classList.add("hidden");
+    graphPanel.classList.add("hidden");
+    graphToggle.classList.add("hidden");
+    graphToggle.textContent = "Graph";
+    return;
+  }
+
+  if (mcpPage) mcpPage.classList.add("hidden");
+  if (mcpPageBtn) mcpPageBtn.classList.remove("secondary");
+  docRoot.classList.remove("hidden");
+  graphToggle.classList.remove("hidden");
+  await loadDoc(path);
+}
+
 // --- Init ---------------------------------------------------------------------
 (async function init() {
   await Promise.all([loadSearchIndex(), loadGraph(), loadNavigation()]);
-  await loadDoc(activePath());
+  await handleRoute();
 })();
 

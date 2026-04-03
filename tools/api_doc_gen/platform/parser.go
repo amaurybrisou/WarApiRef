@@ -105,7 +105,7 @@ func parseFunctionDoc(path string) (FunctionDoc, error) {
 	events := make([]EventRegistrationDoc, 0, len(eventRows))
 	for _, row := range eventRows {
 		events = append(events, EventRegistrationDoc{
-			Event:   strings.TrimSpace(row["Event"]),
+			Event:   graph.NormalizeEventName(row["Event"]),
 			Scope:   strings.TrimSpace(row["Scope"]),
 			Handler: strings.TrimSpace(row["Handler"]),
 		})
@@ -170,7 +170,7 @@ func parseFrameDoc(path string) (FrameDoc, error) {
 	handlerRows := parseTableRows(sections["Handlers"])
 	handlers := make([]FrameHandlerDoc, 0, len(handlerRows))
 	for _, row := range handlerRows {
-		handlers = append(handlers, FrameHandlerDoc{Event: strings.TrimSpace(row["Event"]), Function: strings.TrimSpace(row["Function"])})
+		handlers = append(handlers, FrameHandlerDoc{Event: graph.NormalizeEventName(row["Event"]), Function: strings.TrimSpace(row["Function"])})
 	}
 	return FrameDoc{
 		Name:                    strings.TrimSpace(strings.TrimPrefix(lines[0], "# Frame ")),
@@ -229,7 +229,7 @@ func parseHandlerDoc(path string) (HandlerDoc, error) {
 	return HandlerDoc{
 		Addon:    strings.TrimSpace(meta["Addon"]),
 		Frame:    strings.TrimSpace(meta["Frame"]),
-		Event:    strings.TrimSpace(meta["Event"]),
+		Event:    graph.NormalizeEventName(meta["Event"]),
 		Function: strings.TrimSpace(meta["Function"]),
 		Source:   strings.TrimSpace(meta["Source"]),
 	}, nil
@@ -284,7 +284,7 @@ func parseEventDoc(path string) (EventDoc, error) {
 		})
 	}
 	return EventDoc{
-		Name:             strings.TrimSpace(strings.TrimPrefix(lines[0], "# Event ")),
+		Name:             graph.NormalizeEventName(strings.TrimSpace(strings.TrimPrefix(lines[0], "# Event "))),
 		LuaRegistrations: registrations,
 		XMLHandlers:      xmlHandlers,
 		TriggeredBy:      parseBulletList(sections["Triggered By"]),
@@ -302,7 +302,7 @@ func parseBindings(path string) ([]BindingDoc, error) {
 		result = append(result, BindingDoc{
 			Addon:       strings.TrimSpace(row["Addon"]),
 			Frame:       strings.TrimSpace(row["Frame"]),
-			Event:       strings.TrimSpace(row["Event"]),
+			Event:       graph.NormalizeEventName(row["Event"]),
 			XMLFunction: strings.TrimSpace(row["XML Function"]),
 			LuaFunction: strings.TrimSpace(row["Lua Function"]),
 			Resolved:    parseBoolish(row["Resolved"]),
@@ -364,7 +364,7 @@ func parseExamples(path string) ([]ExampleDoc, error) {
 		result = append(result, ExampleDoc{
 			Addon:       addon,
 			Frame:       strings.TrimSpace(frameEvent[0]),
-			Event:       strings.TrimSpace(frameEvent[1]),
+			Event:       graph.NormalizeEventName(frameEvent[1]),
 			LuaFunction: luaFunction,
 		})
 	}
@@ -702,20 +702,20 @@ func parseStructuralChildAttrKeys(lines []string) map[string][]string {
 // parseCodeBlock extracts the raw text content from inside the first fenced
 // code block (``` or ```xml etc.) found in the section lines.
 func parseCodeBlock(lines []string) string {
-inFence := false
-var body []string
-for _, line := range lines {
-trimmed := strings.TrimSpace(line)
-if strings.HasPrefix(trimmed, "```") {
-if inFence {
-break // end of fence
-}
-inFence = true
-continue
-}
-if inFence {
-body = append(body, line)
-}
-}
-return strings.TrimSpace(strings.Join(body, "\n"))
+	inFence := false
+	var body []string
+	for _, line := range lines {
+		trimmed := strings.TrimSpace(line)
+		if strings.HasPrefix(trimmed, "```") {
+			if inFence {
+				break // end of fence
+			}
+			inFence = true
+			continue
+		}
+		if inFence {
+			body = append(body, line)
+		}
+	}
+	return strings.TrimSpace(strings.Join(body, "\n"))
 }

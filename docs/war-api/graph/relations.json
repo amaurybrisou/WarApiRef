@@ -1,48 +1,8 @@
 {
-  "generated_at": "2026-04-02T18:49:15.50516045Z",
+  "generated_at": "2026-04-03T00:18:09.492927764Z",
   "common_api_combinations": [
     {
-      "id": "combination:event.window.OnLButtonUp_xml_handler.OnLButtonUp",
-      "type": "common_combination",
-      "title": "OnLButtonUp + OnLButtonUp",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnLButtonUp",
-          "label": "OnLButtonUp",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnLButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
-        },
-        {
-          "id": "xml_handler:OnLButtonUp",
-          "label": "OnLButtonUp",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnLButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 2 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "OnLButtonUp \u003c-\u003e OnLButtonUp"
-      ],
-      "evidence": [
-        "TidyChat: TChatCheckboxTemplate.OnLButtonUp -\u003e TidyChat.Options.OnCheckboxLBU",
-        "TidyChat: TChatTabButton.OnLButtonUp -\u003e TidyChat.Options.OnTabLBU",
-        "TidyChat: TidyChat.Copy.CopyNext -\u003e ButtonGetDisabledFlag(c_TIDY_CHAT_COPY..\"Next\")",
-        "TidyChat: TidyChat.Copy.CopyPrev -\u003e ButtonGetDisabledFlag(c_TIDY_CHAT_COPY..\"Prev\")",
-        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_AUCTION_FILTER_CHECKBOX..\"Button\")",
-        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_COPY_SHOWING_CHECKBOX..\"Button\")"
-      ],
-      "weight": 69
-    },
-    {
-      "id": "combination:ui.Button_xml_handler.OnLButtonUp",
+      "id": "combination:ui.Button_xml_event.OnLButtonUp",
       "type": "common_combination",
       "title": "Button + OnLButtonUp",
       "description": "Observed together in the same inferred usage contexts.",
@@ -58,10 +18,10 @@
           "summary": "Observed XML element type instantiated by 2 addons."
         },
         {
-          "id": "xml_handler:OnLButtonUp",
+          "id": "xml_event:OnLButtonUp",
           "label": "OnLButtonUp",
-          "type": "xml_handler",
-          "category": "XML Handler",
+          "type": "xml_event",
+          "category": "XML Event",
           "path": "xml/handlers/handler_OnLButtonUp.md",
           "confidence": "HIGH",
           "score": 100,
@@ -72,54 +32,14 @@
         "Button \u003c-\u003e OnLButtonUp"
       ],
       "evidence": [
+        "Button: XML element relationships",
         "TidyChat: TChatTabButton.OnLButtonUp -\u003e TidyChat.Options.OnTabLBU",
         "TidyChat: TidyChat.Copy.CopyNext -\u003e ButtonGetDisabledFlag(c_TIDY_CHAT_COPY..\"Next\")",
         "TidyChat: TidyChat.Copy.CopyPrev -\u003e ButtonGetDisabledFlag(c_TIDY_CHAT_COPY..\"Prev\")",
         "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_AUCTION_FILTER_CHECKBOX..\"Button\")",
-        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_COPY_SHOWING_CHECKBOX..\"Button\")",
-        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_LOOT_ROLL_FILTER_CHECKBOX..\"Button\")"
+        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_COPY_SHOWING_CHECKBOX..\"Button\")"
       ],
-      "weight": 57
-    },
-    {
-      "id": "combination:event.window.OnLButtonUp_ui.Button",
-      "type": "common_combination",
-      "title": "OnLButtonUp + Button",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnLButtonUp",
-          "label": "OnLButtonUp",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnLButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
-        },
-        {
-          "id": "ui:Button",
-          "label": "Button",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Button.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 2 addons."
-        }
-      ],
-      "flow": [
-        "OnLButtonUp \u003c-\u003e Button"
-      ],
-      "evidence": [
-        "TidyChat: TChatTabButton.OnLButtonUp -\u003e TidyChat.Options.OnTabLBU",
-        "TidyChat: TidyChat.Copy.CopyNext -\u003e ButtonGetDisabledFlag(c_TIDY_CHAT_COPY..\"Next\")",
-        "TidyChat: TidyChat.Copy.CopyPrev -\u003e ButtonGetDisabledFlag(c_TIDY_CHAT_COPY..\"Prev\")",
-        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_AUCTION_FILTER_CHECKBOX..\"Button\")",
-        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_COPY_SHOWING_CHECKBOX..\"Button\")",
-        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_LOOT_ROLL_FILTER_CHECKBOX..\"Button\")"
-      ],
-      "weight": 57
+      "weight": 58
     },
     {
       "id": "combination:function.window.WindowAddAnchor_function.window.WindowClearAnchors",
@@ -318,6 +238,46 @@
         "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_MISC_SOCIAL_SHOWING_CHECKBOX..\"Button\")",
         "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_TEXT_ENTRY_CHANNEL_SHOWING_CHECKBOX..\"Button\")",
         "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_TEXT_ENTRY_FREE_TEXT_ENTRY_CHECKBOX..\"Button\")"
+      ],
+      "weight": 25
+    },
+    {
+      "id": "combination:event.window.OnLButtonUp_xml_event.OnLButtonUp",
+      "type": "common_combination",
+      "title": "OnLButtonUp + OnLButtonUp",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "event:window:OnLButtonUp",
+          "label": "OnLButtonUp",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnLButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
+        },
+        {
+          "id": "xml_event:OnLButtonUp",
+          "label": "OnLButtonUp",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnLButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 2 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "OnLButtonUp \u003c-\u003e OnLButtonUp"
+      ],
+      "evidence": [
+        "TidyChat: TidyChat.Copy.CopyNext -\u003e ButtonGetDisabledFlag(c_TIDY_CHAT_COPY..\"Next\")",
+        "TidyChat: TidyChat.Copy.CopyPrev -\u003e ButtonGetDisabledFlag(c_TIDY_CHAT_COPY..\"Prev\")",
+        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_AUCTION_FILTER_CHECKBOX..\"Button\")",
+        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_COPY_SHOWING_CHECKBOX..\"Button\")",
+        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_LOOT_ROLL_FILTER_CHECKBOX..\"Button\")",
+        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_MISC_SOCIAL_SHOWING_CHECKBOX..\"Button\")"
       ],
       "weight": 25
     },
@@ -802,6 +762,46 @@
       "weight": 24
     },
     {
+      "id": "combination:event.window.OnLButtonUp_ui.Button",
+      "type": "common_combination",
+      "title": "OnLButtonUp + Button",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "event:window:OnLButtonUp",
+          "label": "OnLButtonUp",
+          "type": "event",
+          "category": "Window Event",
+          "path": "events/window_events/window_event_OnLButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
+        },
+        {
+          "id": "ui:Button",
+          "label": "Button",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Button.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 2 addons."
+        }
+      ],
+      "flow": [
+        "OnLButtonUp \u003c-\u003e Button"
+      ],
+      "evidence": [
+        "TidyChat: TidyChat.Copy.CopyNext -\u003e ButtonGetDisabledFlag(c_TIDY_CHAT_COPY..\"Next\")",
+        "TidyChat: TidyChat.Copy.CopyPrev -\u003e ButtonGetDisabledFlag(c_TIDY_CHAT_COPY..\"Prev\")",
+        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_AUCTION_FILTER_CHECKBOX..\"Button\")",
+        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_COPY_SHOWING_CHECKBOX..\"Button\")",
+        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_LOGS_LOOT_ROLL_FILTER_CHECKBOX..\"Button\")",
+        "TidyChat: TidyChat.Options.OnApply -\u003e ButtonGetPressedFlag(TCHAT_MISC_SOCIAL_SHOWING_CHECKBOX..\"Button\")"
+      ],
+      "weight": 24
+    },
+    {
       "id": "combination:event.window.OnLButtonUp_function.window.ButtonSetPressedFlag",
       "type": "common_combination",
       "title": "OnLButtonUp + ButtonSetPressedFlag",
@@ -922,87 +922,7 @@
       "weight": 17
     },
     {
-      "id": "combination:event.window.OnHidden_xml_handler.OnHidden",
-      "type": "common_combination",
-      "title": "OnHidden + OnHidden",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnHidden",
-          "label": "OnHidden",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnHidden.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
-        },
-        {
-          "id": "xml_handler:OnHidden",
-          "label": "OnHidden",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnHidden.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 2 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "OnHidden \u003c-\u003e OnHidden"
-      ],
-      "evidence": [
-        "TidyChat: TidyChat.Copy.OnHidden -\u003e TextEditBoxSetText(c_TIDY_CHAT_COPY..\"Log\", L \"\")",
-        "TidyChat: TidyChatCopy.OnHidden -\u003e TidyChat.Copy.OnHidden",
-        "TidyChat: TidyChatLootRoll.OnHidden -\u003e TidyChat.LootRoll.OnHidden",
-        "TidyChat: TidyChatOptions.OnHidden -\u003e TidyChat.Options.OnHidden",
-        "TidyRoll: TRollAutoRoll.OnHidden -\u003e TidyRoll.CustomAutoRoll.OnHidden",
-        "TidyRoll: TidyRollEsc.OnHidden -\u003e TidyRoll.OnEsc"
-      ],
-      "weight": 15
-    },
-    {
-      "id": "combination:event.window.OnHidden_ui.Window",
-      "type": "common_combination",
-      "title": "OnHidden + Window",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnHidden",
-          "label": "OnHidden",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnHidden.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
-        },
-        {
-          "id": "ui:Window",
-          "label": "Window",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Window.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 3 addons."
-        }
-      ],
-      "flow": [
-        "OnHidden \u003c-\u003e Window"
-      ],
-      "evidence": [
-        "TidyChat: TidyChat.Copy.OnHidden -\u003e TextEditBoxSetText(c_TIDY_CHAT_COPY..\"Log\", L \"\")",
-        "TidyChat: TidyChatCopy.OnHidden -\u003e TidyChat.Copy.OnHidden",
-        "TidyChat: TidyChatLootRoll.OnHidden -\u003e TidyChat.LootRoll.OnHidden",
-        "TidyChat: TidyChatOptions.OnHidden -\u003e TidyChat.Options.OnHidden",
-        "TidyRoll: TRollAutoRoll.OnHidden -\u003e TidyRoll.CustomAutoRoll.OnHidden",
-        "TidyRoll: TidyRollEsc.OnHidden -\u003e TidyRoll.OnEsc"
-      ],
-      "weight": 15
-    },
-    {
-      "id": "combination:ui.Window_xml_handler.OnHidden",
+      "id": "combination:ui.Window_xml_event.OnHidden",
       "type": "common_combination",
       "title": "Window + OnHidden",
       "description": "Observed together in the same inferred usage contexts.",
@@ -1018,10 +938,10 @@
           "summary": "Observed XML element type instantiated by 3 addons."
         },
         {
-          "id": "xml_handler:OnHidden",
+          "id": "xml_event:OnHidden",
           "label": "OnHidden",
-          "type": "xml_handler",
-          "category": "XML Handler",
+          "type": "xml_event",
+          "category": "XML Event",
           "path": "xml/handlers/handler_OnHidden.md",
           "confidence": "HIGH",
           "score": 100,
@@ -1039,7 +959,7 @@
         "TidyRoll: TRollAutoRoll.OnHidden -\u003e TidyRoll.CustomAutoRoll.OnHidden",
         "TidyRoll: TidyRollEsc.OnHidden -\u003e TidyRoll.OnEsc"
       ],
-      "weight": 15
+      "weight": 16
     },
     {
       "id": "combination:function.window.ButtonSetPressedFlag_function.window.ComboBoxSetSelectedMenuItem",
@@ -1122,87 +1042,7 @@
       "weight": 14
     },
     {
-      "id": "combination:event.window.OnShown_xml_handler.OnShown",
-      "type": "common_combination",
-      "title": "OnShown + OnShown",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnShown",
-          "label": "OnShown",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnShown.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
-        },
-        {
-          "id": "xml_handler:OnShown",
-          "label": "OnShown",
-          "type": "xml_handler",
-          "category": "XML Handler",
-          "path": "xml/handlers/handler_OnShown.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 2 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "OnShown \u003c-\u003e OnShown"
-      ],
-      "evidence": [
-        "TidyChat: TidyChatCopy.OnShown -\u003e TidyChat.Copy.OnShown",
-        "TidyChat: TidyChatLootRoll.OnShown -\u003e TidyChat.LootRoll.OnShown",
-        "TidyChat: TidyChatOptions.OnShown -\u003e TidyChat.Options.OnShown",
-        "TidyRoll: TRollAutoRoll.OnShown -\u003e TidyRoll.CustomAutoRoll.OnShown",
-        "TidyRoll: TidyRollEsc.OnShown -\u003e WindowUtils.OnShown",
-        "TidyRoll: TidyRollOptions.OnShown -\u003e TidyRollOptions.OnShown"
-      ],
-      "weight": 14
-    },
-    {
-      "id": "combination:event.window.OnShown_ui.Window",
-      "type": "common_combination",
-      "title": "OnShown + Window",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnShown",
-          "label": "OnShown",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnShown.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
-        },
-        {
-          "id": "ui:Window",
-          "label": "Window",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Window.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 3 addons."
-        }
-      ],
-      "flow": [
-        "OnShown \u003c-\u003e Window"
-      ],
-      "evidence": [
-        "TidyChat: TidyChatCopy.OnShown -\u003e TidyChat.Copy.OnShown",
-        "TidyChat: TidyChatLootRoll.OnShown -\u003e TidyChat.LootRoll.OnShown",
-        "TidyChat: TidyChatOptions.OnShown -\u003e TidyChat.Options.OnShown",
-        "TidyRoll: TRollAutoRoll.OnShown -\u003e TidyRoll.CustomAutoRoll.OnShown",
-        "TidyRoll: TidyRollEsc.OnShown -\u003e WindowUtils.OnShown",
-        "TidyRoll: TidyRollOptions.OnShown -\u003e TidyRollOptions.OnShown"
-      ],
-      "weight": 14
-    },
-    {
-      "id": "combination:ui.Window_xml_handler.OnShown",
+      "id": "combination:ui.Window_xml_event.OnShown",
       "type": "common_combination",
       "title": "Window + OnShown",
       "description": "Observed together in the same inferred usage contexts.",
@@ -1218,10 +1058,10 @@
           "summary": "Observed XML element type instantiated by 3 addons."
         },
         {
-          "id": "xml_handler:OnShown",
+          "id": "xml_event:OnShown",
           "label": "OnShown",
-          "type": "xml_handler",
-          "category": "XML Handler",
+          "type": "xml_event",
+          "category": "XML Event",
           "path": "xml/handlers/handler_OnShown.md",
           "confidence": "HIGH",
           "score": 100,
@@ -1722,6 +1562,46 @@
       "weight": 13
     },
     {
+      "id": "combination:ui.Window_xml_event.OnLButtonUp",
+      "type": "common_combination",
+      "title": "Window + OnLButtonUp",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Window",
+          "label": "Window",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Window.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 3 addons."
+        },
+        {
+          "id": "xml_event:OnLButtonUp",
+          "label": "OnLButtonUp",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnLButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 2 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "Window \u003c-\u003e OnLButtonUp"
+      ],
+      "evidence": [
+        "Button: XML element relationships",
+        "ListBox: XML element relationships",
+        "TidyChat: TChatCheckboxTemplate.OnLButtonUp -\u003e TidyChat.Options.OnCheckboxLBU",
+        "TidyRoll: TRollCheckboxTemplate.OnLButtonUp -\u003e TidyRollOptions.OnCheckboxLBU",
+        "TidyRoll: TRollRadioTemplate.OnLButtonUp -\u003e TidyRollOptions.OnRadioLBU",
+        "TidyRoll: TidyRollFrame.OnLButtonUp -\u003e FrameManager.OnLButtonUp"
+      ],
+      "weight": 13
+    },
+    {
       "id": "combination:function.window.WindowAddAnchor_function.window.WindowGetShowing",
       "type": "common_combination",
       "title": "WindowAddAnchor + WindowGetShowing",
@@ -2202,46 +2082,6 @@
       "weight": 12
     },
     {
-      "id": "combination:event.window.OnLButtonUp_ui.Window",
-      "type": "common_combination",
-      "title": "OnLButtonUp + Window",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "event:window:OnLButtonUp",
-          "label": "OnLButtonUp",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnLButtonUp.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
-        },
-        {
-          "id": "ui:Window",
-          "label": "Window",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Window.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 3 addons."
-        }
-      ],
-      "flow": [
-        "OnLButtonUp \u003c-\u003e Window"
-      ],
-      "evidence": [
-        "TidyChat: TChatCheckboxTemplate.OnLButtonUp -\u003e TidyChat.Options.OnCheckboxLBU",
-        "TidyChat: TidyChat.Options.OnCheckboxLBU -\u003e ButtonGetDisabledFlag(checkboxName)",
-        "TidyChat: TidyChat.Options.OnCheckboxLBU -\u003e ButtonSetPressedFlag(checkboxName, not ButtonGetPressedFlag(checkboxName))",
-        "TidyRoll: TRollCheckboxTemplate.OnLButtonUp -\u003e TidyRollOptions.OnCheckboxLBU",
-        "TidyRoll: TRollRadioTemplate.OnLButtonUp -\u003e TidyRollOptions.OnRadioLBU",
-        "TidyRoll: TidyRollFrame.OnLButtonUp -\u003e FrameManager.OnLButtonUp"
-      ],
-      "weight": 12
-    },
-    {
       "id": "combination:function.window.DynamicImageSetTexture_function.window.WindowSetDimensions",
       "type": "common_combination",
       "title": "DynamicImageSetTexture + WindowSetDimensions",
@@ -2400,14 +2240,132 @@
         "Moth: Moth.UpdateHealthBar -\u003e WindowSetTintColor(\"MothHealthBar\", Moth.Helpers.DefaultColorConvert(DefaultColor.YELLOW))"
       ],
       "weight": 11
-    }
-  ],
-  "event_handler_ui_flows": [
+    },
     {
-      "id": "event_flow:event.window.OnLButtonUp",
-      "type": "event_handler_ui_flow",
-      "title": "OnLButtonUp",
-      "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
+      "id": "combination:function.window.WindowSetDimensions_function.window.WindowSetShowing",
+      "type": "common_combination",
+      "title": "WindowSetDimensions + WindowSetShowing",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:WindowSetDimensions",
+          "label": "WindowSetDimensions",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowSetDimensions.md",
+          "confidence": "HIGH",
+          "score": 98,
+          "summary": "Observed mutating runtime window state or presentation."
+        },
+        {
+          "id": "function:window:WindowSetShowing",
+          "label": "WindowSetShowing",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_WindowSetShowing.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed mutating runtime window state or presentation."
+        }
+      ],
+      "flow": [
+        "WindowSetDimensions \u003c-\u003e WindowSetShowing"
+      ],
+      "evidence": [
+        "Moth: Moth.UpdateHealthBar -\u003e WindowGetDimensions(\"MothBackground\")",
+        "Moth: Moth.UpdateHealthBar -\u003e WindowSetDimensions(\"MothHealthBar\", healthWidth, Moth.Global.healthBar)",
+        "Moth: Moth.UpdateHealthBar -\u003e WindowSetTintColor(\"MothHealthBar\", Moth.Helpers.DefaultColorConvert(DefaultColor.GREEN))",
+        "Moth: Moth.UpdateHealthBar -\u003e WindowSetTintColor(\"MothHealthBar\", Moth.Helpers.DefaultColorConvert(DefaultColor.ORANGE))",
+        "Moth: Moth.UpdateHealthBar -\u003e WindowSetTintColor(\"MothHealthBar\", Moth.Helpers.DefaultColorConvert(DefaultColor.RED))",
+        "Moth: Moth.UpdateHealthBar -\u003e WindowSetTintColor(\"MothHealthBar\", Moth.Helpers.DefaultColorConvert(DefaultColor.YELLOW))"
+      ],
+      "weight": 11
+    },
+    {
+      "id": "combination:function.window.ButtonGetPressedFlag_function.window.ButtonSetDisabledFlag",
+      "type": "common_combination",
+      "title": "ButtonGetPressedFlag + ButtonSetDisabledFlag",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:ButtonGetPressedFlag",
+          "label": "ButtonGetPressedFlag",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_ButtonGetPressedFlag.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as a window function across 2 addons."
+        },
+        {
+          "id": "function:window:ButtonSetDisabledFlag",
+          "label": "ButtonSetDisabledFlag",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_ButtonSetDisabledFlag.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed mutating button text or pressed state on existing controls."
+        }
+      ],
+      "flow": [
+        "ButtonGetPressedFlag \u003c-\u003e ButtonSetDisabledFlag"
+      ],
+      "evidence": [
+        "TidyRoll: TidyRollOptions.OnCheckboxLBU -\u003e ButtonGetDisabledFlag(checkboxName)",
+        "TidyRoll: TidyRollOptions.OnCheckboxLBU -\u003e ButtonSetDisabledFlag(c_TROLL_FLASH_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(checkboxName))",
+        "TidyRoll: TidyRollOptions.OnCheckboxLBU -\u003e ButtonSetDisabledFlag(c_TROLL_GLOW_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(checkboxName))",
+        "TidyRoll: TidyRollOptions.Reset -\u003e ButtonSetDisabledFlag(c_TROLL_FLASH_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(c_TROLL_FLASH_ON_NEW..\"Button\"))",
+        "TidyRoll: TidyRollOptions.Reset -\u003e ButtonSetDisabledFlag(c_TROLL_GLOW_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(c_TROLL_GLOW_ON_NEW..\"Button\"))",
+        "TidyRoll: TidyRollOptions.Reset -\u003e ComboBoxSetSelectedMenuItem(c_TROLL_DIRECTION_COMBO, directionComboIndex[GetSetting(\"button-growth-direction\")])"
+      ],
+      "weight": 10
+    },
+    {
+      "id": "combination:function.window.ButtonSetDisabledFlag_function.window.ButtonSetPressedFlag",
+      "type": "common_combination",
+      "title": "ButtonSetDisabledFlag + ButtonSetPressedFlag",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:ButtonSetDisabledFlag",
+          "label": "ButtonSetDisabledFlag",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_ButtonSetDisabledFlag.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed mutating button text or pressed state on existing controls."
+        },
+        {
+          "id": "function:window:ButtonSetPressedFlag",
+          "label": "ButtonSetPressedFlag",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_ButtonSetPressedFlag.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed mutating button text or pressed state on existing controls."
+        }
+      ],
+      "flow": [
+        "ButtonSetDisabledFlag \u003c-\u003e ButtonSetPressedFlag"
+      ],
+      "evidence": [
+        "TidyRoll: TidyRollOptions.OnCheckboxLBU -\u003e ButtonGetDisabledFlag(checkboxName)",
+        "TidyRoll: TidyRollOptions.OnCheckboxLBU -\u003e ButtonSetDisabledFlag(c_TROLL_FLASH_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(checkboxName))",
+        "TidyRoll: TidyRollOptions.OnCheckboxLBU -\u003e ButtonSetDisabledFlag(c_TROLL_GLOW_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(checkboxName))",
+        "TidyRoll: TidyRollOptions.Reset -\u003e ButtonSetDisabledFlag(c_TROLL_FLASH_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(c_TROLL_FLASH_ON_NEW..\"Button\"))",
+        "TidyRoll: TidyRollOptions.Reset -\u003e ButtonSetDisabledFlag(c_TROLL_GLOW_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(c_TROLL_GLOW_ON_NEW..\"Button\"))",
+        "TidyRoll: TidyRollOptions.Reset -\u003e ComboBoxSetSelectedMenuItem(c_TROLL_DIRECTION_COMBO, directionComboIndex[GetSetting(\"button-growth-direction\")])"
+      ],
+      "weight": 10
+    },
+    {
+      "id": "combination:event.window.OnLButtonUp_function.window.ButtonSetDisabledFlag",
+      "type": "common_combination",
+      "title": "OnLButtonUp + ButtonSetDisabledFlag",
+      "description": "Observed together in the same inferred usage contexts.",
       "participants": [
         {
           "id": "event:window:OnLButtonUp",
@@ -2418,6 +2376,48 @@
           "confidence": "HIGH",
           "score": 100,
           "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
+        },
+        {
+          "id": "function:window:ButtonSetDisabledFlag",
+          "label": "ButtonSetDisabledFlag",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_ButtonSetDisabledFlag.md",
+          "confidence": "HIGH",
+          "score": 90,
+          "summary": "Observed mutating button text or pressed state on existing controls."
+        }
+      ],
+      "flow": [
+        "OnLButtonUp \u003c-\u003e ButtonSetDisabledFlag"
+      ],
+      "evidence": [
+        "TidyRoll: TidyRollOptions.OnCheckboxLBU -\u003e ButtonGetDisabledFlag(checkboxName)",
+        "TidyRoll: TidyRollOptions.OnCheckboxLBU -\u003e ButtonSetDisabledFlag(c_TROLL_FLASH_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(checkboxName))",
+        "TidyRoll: TidyRollOptions.OnCheckboxLBU -\u003e ButtonSetDisabledFlag(c_TROLL_GLOW_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(checkboxName))",
+        "TidyRoll: TidyRollOptions.Reset -\u003e ButtonSetDisabledFlag(c_TROLL_FLASH_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(c_TROLL_FLASH_ON_NEW..\"Button\"))",
+        "TidyRoll: TidyRollOptions.Reset -\u003e ButtonSetDisabledFlag(c_TROLL_GLOW_ONLY_NEW_ITEM..\"Button\", not ButtonGetPressedFlag(c_TROLL_GLOW_ON_NEW..\"Button\"))",
+        "TidyRoll: TidyRollOptions.Reset -\u003e ComboBoxSetSelectedMenuItem(c_TROLL_DIRECTION_COMBO, directionComboIndex[GetSetting(\"button-growth-direction\")])"
+      ],
+      "weight": 10
+    }
+  ],
+  "event_handler_ui_flows": [
+    {
+      "id": "event_flow:xml_event.OnLButtonUp",
+      "type": "event_handler_ui_flow",
+      "title": "OnLButtonUp",
+      "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
+      "participants": [
+        {
+          "id": "xml_event:OnLButtonUp",
+          "label": "OnLButtonUp",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnLButtonUp.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 2 addons through frame event handlers."
         },
         {
           "id": "ui:Button",
@@ -2467,20 +2467,20 @@
       "weight": 38
     },
     {
-      "id": "event_flow:event.window.OnHidden",
+      "id": "event_flow:xml_event.OnHidden",
       "type": "event_handler_ui_flow",
       "title": "OnHidden",
       "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
       "participants": [
         {
-          "id": "event:window:OnHidden",
+          "id": "xml_event:OnHidden",
           "label": "OnHidden",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnHidden.md",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnHidden.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
+          "summary": "Observed as an XML handler hook bound by 2 addons through frame event handlers."
         },
         {
           "id": "ui:Window",
@@ -2508,20 +2508,20 @@
       "weight": 12
     },
     {
-      "id": "event_flow:event.window.OnShown",
+      "id": "event_flow:xml_event.OnShown",
       "type": "event_handler_ui_flow",
       "title": "OnShown",
       "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
       "participants": [
         {
-          "id": "event:window:OnShown",
+          "id": "xml_event:OnShown",
           "label": "OnShown",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnShown.md",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnShown.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
+          "summary": "Observed as an XML handler hook bound by 2 addons through frame event handlers."
         },
         {
           "id": "ui:Window",
@@ -2549,20 +2549,20 @@
       "weight": 12
     },
     {
-      "id": "event_flow:event.window.OnMouseWheel",
+      "id": "event_flow:xml_event.OnMouseWheel",
       "type": "event_handler_ui_flow",
       "title": "OnMouseWheel",
       "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
       "participants": [
         {
-          "id": "event:window:OnMouseWheel",
+          "id": "xml_event:OnMouseWheel",
           "label": "OnMouseWheel",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnMouseWheel.md",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnMouseWheel.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
+          "summary": "Observed as an XML handler hook bound by 2 addons through frame event handlers."
         },
         {
           "id": "ui:Window",
@@ -2586,20 +2586,20 @@
       "weight": 4
     },
     {
-      "id": "event_flow:event.window.OnSelChanged",
+      "id": "event_flow:xml_event.OnSelChanged",
       "type": "event_handler_ui_flow",
       "title": "OnSelChanged",
       "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
       "participants": [
         {
-          "id": "event:window:OnSelChanged",
+          "id": "xml_event:OnSelChanged",
           "label": "OnSelChanged",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnSelChanged.md",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnSelChanged.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
+          "summary": "Observed as an XML handler hook bound by 2 addons through frame event handlers."
         },
         {
           "id": "ui:ComboBox",
@@ -2623,20 +2623,20 @@
       "weight": 4
     },
     {
-      "id": "event_flow:event.window.OnInitialize",
+      "id": "event_flow:xml_event.OnInitialize",
       "type": "event_handler_ui_flow",
       "title": "OnInitialize",
       "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
       "participants": [
         {
-          "id": "event:window:OnInitialize",
+          "id": "xml_event:OnInitialize",
           "label": "OnInitialize",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnInitialize.md",
-          "confidence": "MEDIUM",
-          "score": 53,
-          "summary": "Observed as an engine-supplied UI event hook used by 1 addons."
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnInitialize.md",
+          "confidence": "HIGH",
+          "score": 73,
+          "summary": "Observed as an XML handler hook bound by 1 addons through frame event handlers."
         },
         {
           "id": "ui:Window",
@@ -2659,20 +2659,20 @@
       "weight": 2
     },
     {
-      "id": "event_flow:event.window.OnMButtonUp",
+      "id": "event_flow:xml_event.OnMButtonUp",
       "type": "event_handler_ui_flow",
       "title": "OnMButtonUp",
       "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
       "participants": [
         {
-          "id": "event:window:OnMButtonUp",
+          "id": "xml_event:OnMButtonUp",
           "label": "OnMButtonUp",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnMButtonUp.md",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnMButtonUp.md",
           "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
+          "score": 73,
+          "summary": "Observed as an XML handler hook bound by 1 addons through frame event handlers."
         },
         {
           "id": "ui:Window",
@@ -2695,20 +2695,20 @@
       "weight": 2
     },
     {
-      "id": "event_flow:event.window.OnMouseOver",
+      "id": "event_flow:xml_event.OnMouseOver",
       "type": "event_handler_ui_flow",
       "title": "OnMouseOver",
       "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
       "participants": [
         {
-          "id": "event:window:OnMouseOver",
+          "id": "xml_event:OnMouseOver",
           "label": "OnMouseOver",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnMouseOver.md",
-          "confidence": "MEDIUM",
-          "score": 53,
-          "summary": "Observed as an engine-supplied UI event hook used by 1 addons."
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnMouseOver.md",
+          "confidence": "HIGH",
+          "score": 73,
+          "summary": "Observed as an XML handler hook bound by 1 addons through frame event handlers."
         },
         {
           "id": "ui:Button",
@@ -2731,20 +2731,20 @@
       "weight": 2
     },
     {
-      "id": "event_flow:event.window.OnRButtonUp",
+      "id": "event_flow:xml_event.OnRButtonUp",
       "type": "event_handler_ui_flow",
       "title": "OnRButtonUp",
       "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
       "participants": [
         {
-          "id": "event:window:OnRButtonUp",
+          "id": "xml_event:OnRButtonUp",
           "label": "OnRButtonUp",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnRButtonUp.md",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnRButtonUp.md",
           "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an engine-supplied UI event hook used by 2 addons."
+          "score": 73,
+          "summary": "Observed as an XML handler hook bound by 1 addons through frame event handlers."
         },
         {
           "id": "ui:Window",
@@ -2767,20 +2767,20 @@
       "weight": 2
     },
     {
-      "id": "event_flow:event.window.OnUpdate",
+      "id": "event_flow:xml_event.OnUpdate",
       "type": "event_handler_ui_flow",
       "title": "OnUpdate",
       "description": "Observed event to handler to UI-element flow reconstructed from bindings, handlers, and examples.",
       "participants": [
         {
-          "id": "event:window:OnUpdate",
+          "id": "xml_event:OnUpdate",
           "label": "OnUpdate",
-          "type": "event",
-          "category": "Window Event",
-          "path": "events/window_events/window_event_OnUpdate.md",
-          "confidence": "MEDIUM",
-          "score": 53,
-          "summary": "Observed as an engine-supplied UI event hook used by 1 addons."
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnUpdate.md",
+          "confidence": "HIGH",
+          "score": 73,
+          "summary": "Observed as an XML handler hook bound by 1 addons through frame event handlers."
         },
         {
           "id": "ui:Window",

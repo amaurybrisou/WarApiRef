@@ -72,7 +72,7 @@ Observed mutating runtime window state or presentation.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: c_TEXT_ENTRY_WINDOW, c_TIDY_ROLL_OPTIONS.."Background", c_TIDY_ROLL_OPTIONS.."Frame" |
-| arg2 | Observed as a boolean toggle. | Observed values: chatwindow_tabs_handle_input~=false, false, not chatwindow_click_through |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: chatwindow_tabs_handle_input~=false, false, not chatwindow_click_through |
 
 ## Returns
 

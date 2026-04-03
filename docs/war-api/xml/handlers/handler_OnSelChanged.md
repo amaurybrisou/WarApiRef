@@ -83,13 +83,13 @@ function(...)
 
 ## Related APIs
 
+- [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 
 ## Used With
 
 - [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
-- [OnSelChanged](../../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
 
 ## Triggered By
 

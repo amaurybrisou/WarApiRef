@@ -153,16 +153,16 @@ Confidence: MEDIUM
 ## Related APIs
 
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 
 ## Used With
 
-- [OnSelChanged](../../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
-- [OnSelChanged](../handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Handler
+- [OnSelChanged](../handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Event
 
 ## Triggered By
 
-- none
+- [OnSelChanged](../handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Event
 
 ## Affects
 

@@ -88,10 +88,10 @@ function()
 ## Related APIs
 
 - [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 
-- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By

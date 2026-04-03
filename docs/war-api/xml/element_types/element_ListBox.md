@@ -164,7 +164,8 @@ Confidence: MEDIUM
 
 ## Related APIs
 
-- none
+- [ListData](element_ListData.md) (HIGH 100/100) - XML Element Type
+- [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 
@@ -172,7 +173,7 @@ Confidence: MEDIUM
 
 ## Triggered By
 
-- none
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 
 ## Affects
 

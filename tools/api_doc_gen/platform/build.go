@@ -300,70 +300,76 @@ func BuildWithOptions(source SourceModel, opts BuildOptions) Corpus {
 	lifecycle := map[string]*lifecycleAccumulator{}
 
 	for _, frame := range source.Frames {
-		frameTypes[frame.Addon+"|"+frame.Name] = frame.Type
-		acc := ensureElementAccumulator(elements, frame.Type)
+		frameName := canonicalSymbolName(frame.Name)
+		frameType := canonicalElementTypeName(frame.Type)
+		frameTypes[frame.Addon+"|"+frameName] = frameType
+		acc := ensureElementAccumulator(elements, frameType)
 		acc.Addons[frame.Addon] = true
 		for key := range frame.Attributes {
-			acc.Attributes[key]++
-		}
-		for _, handler := range frame.Handlers {
-			acc.Handlers[handler.Event]++
-			if handler.Function != "" {
-				acc.HandlerFunctions[handler.Function]++
-				// Track the (event, lua_function) binding pair so element pages can
-				// surface which Lua functions are commonly bound per XML event.
-				if acc.HandlerBindings[handler.Event] == nil {
-					acc.HandlerBindings[handler.Event] = map[string]int{}
-				}
-				acc.HandlerBindings[handler.Event][handler.Function]++
+			if canonicalKey := canonicalAttributeName(key); canonicalKey != "" {
+				acc.Attributes[canonicalKey]++
 			}
 		}
-		if frame.Inherits != "" {
-			acc.Inherits[frame.Inherits]++
+		for _, handler := range frame.Handlers {
+			eventName := canonicalEventName(handler.Event)
+			acc.Handlers[eventName]++
+			if functionName := canonicalSymbolName(handler.Function); functionName != "" {
+				acc.HandlerFunctions[functionName]++
+				// Track the (event, lua_function) binding pair so element pages can
+				// surface which Lua functions are commonly bound per XML event.
+				if acc.HandlerBindings[eventName] == nil {
+					acc.HandlerBindings[eventName] = map[string]int{}
+				}
+				acc.HandlerBindings[eventName][functionName]++
+			}
+		}
+		if inherits := canonicalSymbolName(frame.Inherits); inherits != "" {
+			acc.Inherits[inherits]++
 		}
 		// Track the element type of the parent that contains this frame.
-		if frame.ParentType != "" {
-			acc.ParentTypes[frame.ParentType]++
+		if parentType := canonicalElementTypeName(frame.ParentType); parentType != "" {
+			acc.ParentTypes[parentType]++
 		}
 		// Track named child element types.
 		for _, childElemType := range frame.ChildElementTypes {
-			if childElemType != "" {
-				acc.ChildElementTypes[childElemType]++
+			if childType := canonicalElementTypeName(childElemType); childType != "" {
+				acc.ChildElementTypes[childType]++
 				// Record the reverse: this child type has the current frame type as a parent.
-				childAcc := ensureElementAccumulator(elements, childElemType)
-				childAcc.ParentTypes[frame.Type]++
+				childAcc := ensureElementAccumulator(elements, childType)
+				childAcc.ParentTypes[frameType]++
 			}
 		}
 		for _, childType := range frame.StructuralChildTypes {
-			if childType != "" {
-				acc.ChildTypes[childType]++
+			if structuralType := canonicalElementTypeName(childType); structuralType != "" {
+				acc.ChildTypes[structuralType]++
 			}
 		}
 		// Feed structural children through their own elementAccumulator entries so that
 		// they get first-class pages alongside named element types (ListBox, Button, etc.).
 		for _, childType := range frame.StructuralChildTypes {
-			if childType == "" {
+			structuralType := canonicalElementTypeName(childType)
+			if structuralType == "" {
 				continue
 			}
-			childAcc := ensureElementAccumulator(elements, childType)
+			childAcc := ensureElementAccumulator(elements, structuralType)
 			childAcc.Addons[frame.Addon] = true
 			// Carry over attribute keys captured from the XML source.
 			for _, attrKey := range frame.StructuralChildAttrKeys[childType] {
-				if attrKey != "" {
-					childAcc.Attributes[attrKey]++
+				if canonicalKey := canonicalAttributeName(attrKey); canonicalKey != "" {
+					childAcc.Attributes[canonicalKey]++
 				}
 			}
 			childAcc.Examples = appendUniqueExample(childAcc.Examples, UsageExample{
 				Addon:   frame.Addon,
-				Caller:  frame.Name,
-				Snippet: childType + " in " + frame.Type + " " + frame.Name,
+				Caller:  frameName,
+				Snippet: structuralType + " in " + frameType + " " + frameName,
 				Source:  frame.Source,
 			})
 		}
 		acc.Examples = appendUniqueExample(acc.Examples, UsageExample{
 			Addon:   frame.Addon,
-			Caller:  frame.Name,
-			Snippet: frame.Type + " " + frame.Name,
+			Caller:  frameName,
+			Snippet: frameType + " " + frameName,
 			Source:  frame.Source,
 		})
 		// Collect etree-derived composition snippets for later selection.
@@ -374,34 +380,35 @@ func BuildWithOptions(source SourceModel, opts BuildOptions) Corpus {
 		if shouldKeepConstant(frame.Inherits, frame.Addon, nil) {
 			constantAcc := ensureConstantAccumulator(constants, frame.Inherits)
 			constantAcc.Addons[frame.Addon] = true
-			constantAcc.UsedBy[frame.Name] = true
+			constantAcc.UsedBy[frameName] = true
 			constantAcc.Files[frame.Source] = true
 		}
 		if shouldKeepConstant(frame.Parent, frame.Addon, nil) {
 			constantAcc := ensureConstantAccumulator(constants, frame.Parent)
 			constantAcc.Addons[frame.Addon] = true
-			constantAcc.UsedBy[frame.Name] = true
+			constantAcc.UsedBy[frameName] = true
 			constantAcc.Files[frame.Source] = true
 		}
 	}
 
 	for _, doc := range source.Functions {
 		for _, item := range doc.EventRegistrations {
-			acc := ensureEventAccumulator(selectEventAccumulator(item.Event, gameEvents, windowEvents), item.Event)
+			eventName := canonicalEventName(item.Event)
+			acc := ensureEventAccumulator(selectEventAccumulator(eventName, gameEvents, windowEvents), eventName)
 			acc.Addons[doc.Addon] = true
-			if item.Handler != "" {
-				acc.Handlers[item.Handler] = true
+			if handlerName := canonicalSymbolName(item.Handler); handlerName != "" {
+				acc.Handlers[handlerName] = true
 			}
-			if item.Scope != "" {
-				acc.Registrars[item.Scope] = true
+			if scopeName := canonicalSymbolName(item.Scope); scopeName != "" {
+				acc.Registrars[scopeName] = true
 			}
 			acc.Examples = appendUniqueExample(acc.Examples, UsageExample{
 				Addon:   doc.Addon,
 				Caller:  doc.Name,
-				Snippet: item.Event + " -> " + item.Handler,
+				Snippet: eventName + " -> " + canonicalSymbolName(item.Handler),
 				Source:  doc.Source,
 			})
-			extractNamespaceTokens(item.Event, doc.Addon, item.Handler, doc.Source, "event_registration", systemFields, gameFields)
+			extractNamespaceTokens(eventName, doc.Addon, canonicalSymbolName(item.Handler), doc.Source, "event_registration", systemFields, gameFields)
 		}
 
 		for _, call := range dedupeCallAliases(doc.Calls) {
@@ -442,52 +449,62 @@ func BuildWithOptions(source SourceModel, opts BuildOptions) Corpus {
 	}
 
 	for _, handler := range source.Handlers {
-		xmlAcc := ensureXMLHandlerAccumulator(xmlHandlers, handler.Event)
+		eventName := canonicalEventName(handler.Event)
+		frameName := canonicalSymbolName(handler.Frame)
+		functionName := canonicalSymbolName(handler.Function)
+		xmlAcc := ensureXMLHandlerAccumulator(xmlHandlers, eventName)
 		xmlAcc.Addons[handler.Addon] = true
-		xmlAcc.ElementTypes[frameTypes[handler.Addon+"|"+handler.Frame]] = true
+		if elementType := frameTypes[handler.Addon+"|"+frameName]; elementType != "" {
+			xmlAcc.ElementTypes[elementType] = true
+		}
 		xmlAcc.Examples = appendUniqueExample(xmlAcc.Examples, UsageExample{
 			Addon:   handler.Addon,
-			Caller:  handler.Frame,
-			Snippet: handler.Frame + "." + handler.Event + " -> " + handler.Function,
+			Caller:  frameName,
+			Snippet: frameName + "." + eventName + " -> " + functionName,
 			Source:  handler.Source,
 		})
 
-		eventAcc := ensureEventAccumulator(selectEventAccumulator(handler.Event, gameEvents, windowEvents), handler.Event)
+		eventAcc := ensureEventAccumulator(selectEventAccumulator(eventName, gameEvents, windowEvents), eventName)
 		eventAcc.Addons[handler.Addon] = true
-		eventAcc.Handlers[handler.Function] = true
+		if functionName != "" {
+			eventAcc.Handlers[functionName] = true
+		}
 		eventAcc.Examples = appendUniqueExample(eventAcc.Examples, UsageExample{
 			Addon:   handler.Addon,
-			Caller:  handler.Frame,
-			Snippet: handler.Frame + "." + handler.Event + " -> " + handler.Function,
+			Caller:  frameName,
+			Snippet: frameName + "." + eventName + " -> " + functionName,
 			Source:  handler.Source,
 		})
 	}
 
 	for _, event := range source.Events {
-		acc := ensureEventAccumulator(selectEventAccumulator(event.Name, gameEvents, windowEvents), event.Name)
+		eventName := canonicalEventName(event.Name)
+		acc := ensureEventAccumulator(selectEventAccumulator(eventName, gameEvents, windowEvents), eventName)
 		for _, registration := range event.LuaRegistrations {
 			acc.Addons[registration.Addon] = true
-			if registration.Registrar != "" {
-				acc.Registrars[registration.Registrar] = true
+			if registrar := canonicalSymbolName(registration.Registrar); registrar != "" {
+				acc.Registrars[registrar] = true
 			}
-			if registration.Handler != "" {
-				acc.Handlers[registration.Handler] = true
+			if handlerName := canonicalSymbolName(registration.Handler); handlerName != "" {
+				acc.Handlers[handlerName] = true
 			}
 			acc.Examples = appendUniqueExample(acc.Examples, UsageExample{
 				Addon:   registration.Addon,
-				Caller:  registration.Handler,
-				Snippet: registration.Registrar + "(" + event.Name + ", " + registration.Handler + ")",
-				Source:  event.Name,
+				Caller:  canonicalSymbolName(registration.Handler),
+				Snippet: canonicalSymbolName(registration.Registrar) + "(" + eventName + ", " + canonicalSymbolName(registration.Handler) + ")",
+				Source:  eventName,
 			})
 		}
 		for _, handler := range event.XMLHandlers {
 			acc.Addons[handler.Addon] = true
-			acc.Handlers[handler.Function] = true
+			if functionName := canonicalSymbolName(handler.Function); functionName != "" {
+				acc.Handlers[functionName] = true
+			}
 			acc.Examples = appendUniqueExample(acc.Examples, UsageExample{
 				Addon:   handler.Addon,
-				Caller:  handler.Frame,
-				Snippet: handler.Frame + "." + event.Name + " -> " + handler.Function,
-				Source:  event.Name,
+				Caller:  canonicalSymbolName(handler.Frame),
+				Snippet: canonicalSymbolName(handler.Frame) + "." + eventName + " -> " + canonicalSymbolName(handler.Function),
+				Source:  eventName,
 			})
 		}
 		for _, trigger := range event.TriggeredBy {
@@ -495,27 +512,29 @@ func BuildWithOptions(source SourceModel, opts BuildOptions) Corpus {
 				acc.TriggeredBy[trigger] = true
 			}
 		}
-		extractNamespaceTokens(event.Name, strings.Join(mapKeys(acc.Addons), ", "), event.Name, "", "event_page", systemFields, gameFields)
+		extractNamespaceTokens(eventName, strings.Join(mapKeys(acc.Addons), ", "), eventName, "", "event_page", systemFields, gameFields)
 	}
 
 	for _, binding := range source.Bindings {
-		xmlAcc := ensureXMLHandlerAccumulator(xmlHandlers, binding.Event)
+		eventName := canonicalEventName(binding.Event)
+		xmlAcc := ensureXMLHandlerAccumulator(xmlHandlers, eventName)
 		xmlAcc.Addons[binding.Addon] = true
 		xmlAcc.Examples = appendUniqueExample(xmlAcc.Examples, UsageExample{
 			Addon:   binding.Addon,
-			Caller:  binding.Frame,
-			Snippet: binding.Frame + "." + binding.Event + " -> " + binding.LuaFunction,
+			Caller:  canonicalSymbolName(binding.Frame),
+			Snippet: canonicalSymbolName(binding.Frame) + "." + eventName + " -> " + canonicalSymbolName(binding.LuaFunction),
 			Source:  binding.XMLFunction,
 		})
 	}
 
 	for _, example := range source.Examples {
-		xmlAcc := ensureXMLHandlerAccumulator(xmlHandlers, example.Event)
+		eventName := canonicalEventName(example.Event)
+		xmlAcc := ensureXMLHandlerAccumulator(xmlHandlers, eventName)
 		xmlAcc.Addons[example.Addon] = true
 		xmlAcc.Examples = appendUniqueExample(xmlAcc.Examples, UsageExample{
 			Addon:   example.Addon,
-			Caller:  example.Frame,
-			Snippet: example.Frame + "." + example.Event + " -> " + example.LuaFunction,
+			Caller:  canonicalSymbolName(example.Frame),
+			Snippet: canonicalSymbolName(example.Frame) + "." + eventName + " -> " + canonicalSymbolName(example.LuaFunction),
 			Source:  "examples",
 		})
 	}
@@ -2565,6 +2584,7 @@ func defaultInferenceRules() []string {
 }
 
 func ensureFunctionAccumulator(target map[string]*functionAccumulator, name string) *functionAccumulator {
+	name = canonicalSymbolName(name)
 	acc, ok := target[name]
 	if !ok {
 		acc = &functionAccumulator{Name: name, Addons: map[string]bool{}, Aliases: map[string]bool{}}
@@ -2574,6 +2594,7 @@ func ensureFunctionAccumulator(target map[string]*functionAccumulator, name stri
 }
 
 func ensureEventAccumulator(target map[string]*eventAccumulator, name string) *eventAccumulator {
+	name = canonicalEventName(name)
 	acc, ok := target[name]
 	if !ok {
 		acc = &eventAccumulator{Name: name, Addons: map[string]bool{}, Registrars: map[string]bool{}, Handlers: map[string]bool{}, TriggeredBy: map[string]bool{}}
@@ -2583,6 +2604,7 @@ func ensureEventAccumulator(target map[string]*eventAccumulator, name string) *e
 }
 
 func ensureXMLHandlerAccumulator(target map[string]*xmlHandlerAccumulator, name string) *xmlHandlerAccumulator {
+	name = canonicalEventName(name)
 	acc, ok := target[name]
 	if !ok {
 		acc = &xmlHandlerAccumulator{Name: name, Addons: map[string]bool{}, ElementTypes: map[string]bool{}}
@@ -2601,6 +2623,7 @@ func ensureFieldAccumulator(target map[string]*fieldAccumulator, name string) *f
 }
 
 func ensureTableAccumulator(target map[string]*tableAccumulator, name string) *tableAccumulator {
+	name = canonicalSymbolName(name)
 	acc, ok := target[name]
 	if !ok {
 		acc = &tableAccumulator{Name: name, Addons: map[string]bool{}, Functions: map[string]bool{}, Members: map[string]bool{}}
@@ -2610,6 +2633,7 @@ func ensureTableAccumulator(target map[string]*tableAccumulator, name string) *t
 }
 
 func ensureConstantAccumulator(target map[string]*constantAccumulator, name string) *constantAccumulator {
+	name = canonicalSymbolName(name)
 	acc, ok := target[name]
 	if !ok {
 		acc = &constantAccumulator{Name: name, Addons: map[string]bool{}, UsedBy: map[string]bool{}, Files: map[string]bool{}}
@@ -2619,6 +2643,7 @@ func ensureConstantAccumulator(target map[string]*constantAccumulator, name stri
 }
 
 func ensureElementAccumulator(target map[string]*elementAccumulator, name string) *elementAccumulator {
+	name = canonicalElementTypeName(name)
 	acc, ok := target[name]
 	if !ok {
 		acc = &elementAccumulator{
@@ -2636,6 +2661,22 @@ func ensureElementAccumulator(target map[string]*elementAccumulator, name string
 		target[name] = acc
 	}
 	return acc
+}
+
+func canonicalSymbolName(name string) string {
+	return strings.TrimSpace(name)
+}
+
+func canonicalElementTypeName(name string) string {
+	return canonicalSymbolName(name)
+}
+
+func canonicalAttributeName(name string) string {
+	return canonicalSymbolName(name)
+}
+
+func canonicalEventName(name string) string {
+	return graph.NormalizeEventName(name)
 }
 
 func ensureLifecycleAccumulator(target map[string]*lifecycleAccumulator, phase string) *lifecycleAccumulator {

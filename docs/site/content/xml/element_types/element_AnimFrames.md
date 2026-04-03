@@ -93,7 +93,8 @@ Observed 14 times as an unnamed child.
 
 ## Related APIs
 
-- none
+- [AnimFrame](element_AnimFrame.md) (MEDIUM 45/100) - XML Element Type
+- [AnimatedImage](element_AnimatedImage.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 

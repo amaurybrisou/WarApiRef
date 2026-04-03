@@ -77,7 +77,7 @@ function(elapsed)
 
 ## Related APIs
 
-- none
+- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

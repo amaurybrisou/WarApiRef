@@ -106,7 +106,7 @@ Observed XML element type instantiated by 3 addons.
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnHidden](../handlers/handler_OnHidden.md) | lifecycle | TidyChat.Copy.OnHidden, TidyChat.LootRoll.OnHidden, TidyChat.Options.OnHidden, TidyRoll.CustomAutoRoll.OnHidden, TidyRoll.OnEsc, TidyRollOptions.OnHidden | `function()` | MEDIUM |
 | [OnInitialize](../handlers/handler_OnInitialize.md) | lifecycle | EA_Window_DefaultLabelToggleCircle.Initialize | `function()` | MEDIUM |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | FrameManager.OnLButtonUp, TidyChat.Options.OnCheckboxLBU, TidyRollOptions.OnCheckboxLBU, TidyRollOptions.OnRadioLBU | `flags, x, y` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | FrameManager.OnLButtonUp, TidyChat.Options.OnCheckboxLBU, TidyRollOptions.OnCheckboxLBU, TidyRollOptions.OnRadioLBU | `function(...)` | LOW |
 | [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | TidyRollFrame.OnMButtonUp | `flags, x, y` | MEDIUM |
 | [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | FrameManager.OnMouseWheel, TidyChat.Copy.OnMouseWheel | `function(delta)` | MEDIUM |
 | [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | FrameManager.OnRButtonUp | `function(...)` | LOW |
@@ -260,16 +260,16 @@ Confidence: MEDIUM
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
-- Moth.HideBorders
 - Moth.Clear
-- Moth.UpdateTarget
-- TidyChat.LootRoll.OnRollLinkLButtonUp
-- Moth.Anchor
-- TidyRollOptions.Initialize
 - Moth.UpdateLevel
-- Moth.UpdateHealthBar
-- Moth.HealthBar
+- TidyChat.LootRoll.OnRollLinkLButtonUp
+- Moth.UpdateTarget
 - Moth.Initialize
+- Moth.UpdateHealthBar
+- Moth.HideBorders
+- Moth.HealthBar
+- TidyRollOptions.Initialize
+- Moth.Anchor
 
 
 ## Binding Resolution
@@ -345,18 +345,21 @@ Confidence: MEDIUM
 
 ## Used With
 
-- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
-- [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Handler
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
-- [OnMouseWheel](../../events/window_events/window_event_OnMouseWheel.md) (HIGH 100/100) - Window Event
-- [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Handler
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-- [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
+- [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Event
+- [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
 
 ## Triggered By
 
-- none
+- [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Event
+- [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
+- [OnInitialize](../handlers/handler_OnInitialize.md) (HIGH 73/100) - XML Event
+- [OnMButtonUp](../handlers/handler_OnMButtonUp.md) (HIGH 73/100) - XML Event
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 73/100) - XML Event
+- [OnUpdate](../handlers/handler_OnUpdate.md) (HIGH 73/100) - XML Event
 
 ## Affects
 

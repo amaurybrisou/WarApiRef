@@ -126,7 +126,8 @@ Observed XML element type instantiated by 2 addons.
 
 ## Related APIs
 
-- none
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
+- [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

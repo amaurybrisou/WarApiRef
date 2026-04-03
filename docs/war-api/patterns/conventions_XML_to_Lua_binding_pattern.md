@@ -10,16 +10,16 @@ XML handler names map directly to Lua functions and can be cross-checked through
 ## Involved APIs
 
 - [Button](../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [OnHidden](../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Handler
 - [OnHidden](../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Handler
+- [OnHidden](../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
 - [OnLButtonUp](../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnMouseWheel](../xml/handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Handler
+- [OnLButtonUp](../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [OnMouseWheel](../events/window_events/window_event_OnMouseWheel.md) (HIGH 100/100) - Window Event
+- [OnMouseWheel](../xml/handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Event
 - [OnSelChanged](../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
-- [OnSelChanged](../xml/handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Handler
+- [OnSelChanged](../xml/handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Event
 - [OnShown](../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-- [OnShown](../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Handler
+- [OnShown](../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Flow Diagram

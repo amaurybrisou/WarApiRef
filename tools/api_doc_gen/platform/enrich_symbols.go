@@ -7,26 +7,6 @@ import (
 	"roraddons/tools/api_doc_gen/deep_analysis"
 )
 
-// EnhancedFunctionSymbol extends FunctionSymbol with rich inference metadata
-type EnhancedFunctionSymbol struct {
-	Symbol               FunctionSymbol
-	InferredReturnType   string // best guess for return type
-	ReturnTypeConfidence int    // 0-100
-	ReturnTypeRationale  string // explanation
-	InferredParameters   []EnhancedParameter
-	AnalysisEvidence     map[string]interface{}
-}
-
-// EnhancedParameter extends ParameterDoc with inference metadata
-type EnhancedParameter struct {
-	Name             string
-	Role             string // collection, object, callback, flag, value, unknown
-	TypeSignals      []string
-	CallSiteExamples []string
-	Confidence       int
-	UsageContexts    []string
-}
-
 type sourceFunctionIndex struct {
 	byPath map[string]FunctionDoc
 	byName map[string][]FunctionDoc
@@ -182,104 +162,6 @@ func applyAdvancedReturnReport(symbol FunctionSymbol, report deep_analysis.Advan
 	}
 
 	return symbol
-}
-
-// enrichFunctionWithReturnInference analyzes a single function and infers its return type
-func enrichFunctionWithReturnInference(symbol FunctionSymbol, sourceDoc FunctionDoc, analyzer *deep_analysis.ReturnInference) EnhancedFunctionSymbol {
-	enhanced := EnhancedFunctionSymbol{
-		Symbol:           symbol,
-		AnalysisEvidence: make(map[string]interface{}),
-	}
-
-	// Analyze function source
-	fullPath := sourceDoc.Addon + "." + sourceDoc.Name
-	returnAnalysis := analyzer.AnalyzeReturns(fullPath, sourceDoc.Source)
-	analyzer.AnalyzeCallSites(fullPath, sourceDoc.Source)
-	analyzer.AnalyzeFieldAccess(fullPath, sourceDoc.Source)
-
-	// Get best guess for return type
-	bestType, confidence := returnAnalysis.BestGuess()
-	enhanced.InferredReturnType = bestType
-	enhanced.ReturnTypeConfidence = confidence
-
-	// Generate rationale
-	enhanced.ReturnTypeRationale = generateReturnTypeRationale(returnAnalysis, confidence)
-
-	// Update the symbol's returns if confident enough
-	if confidence >= 50 { // Medium+ confidence threshold
-		if enhanced.InferredReturnType != "unknown" {
-			enhanced.Symbol.Returns = []string{enhanced.InferredReturnType}
-			if confidence >= 75 {
-				// High confidence - mark as reliable
-				enhanced.Symbol.Notes = append(enhanced.Symbol.Notes,
-					fmt.Sprintf("Return type: %s (inferred with %d%% confidence)", enhanced.InferredReturnType, confidence))
-			} else {
-				// Medium confidence - mark as tentative
-				enhanced.Symbol.Notes = append(enhanced.Symbol.Notes,
-					fmt.Sprintf("Return type: %s (inferred, %d%% confidence, verify against usage)", enhanced.InferredReturnType, confidence))
-			}
-		}
-	}
-
-	// Record analysis evidence
-	enhanced.AnalysisEvidence["return_type"] = map[string]interface{}{
-		"inferred_type":       enhanced.InferredReturnType,
-		"confidence":          enhanced.ReturnTypeConfidence,
-		"evidence_count":      len(returnAnalysis.Evidence),
-		"explicit_returns":    returnAnalysis.ExplicitReturns,
-		"literal_returns":     returnAnalysis.LiteralReturns,
-		"assignment_contexts": returnAnalysis.AssignmentContexts,
-		"comparison_contexts": returnAnalysis.ComparisonContexts,
-	}
-
-	return enhanced
-}
-
-// generateReturnTypeRationale creates explanation for inferred return type
-func generateReturnTypeRationale(analysis *deep_analysis.ReturnAnalysis, confidence int) string {
-	rationale := ""
-
-	// Explicit annotations have highest precedence
-	if len(analysis.ExplicitReturns) > 0 {
-		return fmt.Sprintf("Explicitly annotated as %s", analysis.ExplicitReturns[0])
-	}
-
-	// Analyze evidence
-	if len(analysis.LiteralReturns) > 0 {
-		literals := truncateList(analysis.LiteralReturns, 3)
-		rationale = fmt.Sprintf("Returns literal values: %s", strings.Join(literals, ", "))
-	}
-
-	if len(analysis.ComparisonContexts) > 0 {
-		contexts := truncateList(analysis.ComparisonContexts, 2)
-		if rationale != "" {
-			rationale += "; "
-		}
-		rationale += fmt.Sprintf("Used in %s", strings.Join(contexts, ", "))
-	}
-
-	if len(analysis.AssignmentContexts) > 0 {
-		contexts := truncateList(analysis.AssignmentContexts, 2)
-		if rationale != "" {
-			rationale += "; "
-		}
-		rationale += fmt.Sprintf("Assigned to: %s", strings.Join(contexts, ", "))
-	}
-
-	// Add confidence qualifier
-	if confidence >= 80 {
-		rationale += " [high confidence]"
-	} else if confidence >= 60 {
-		rationale += " [medium confidence]"
-	} else if confidence >= 40 {
-		rationale += " [low confidence]"
-	}
-
-	if rationale == "" {
-		rationale = "Insufficient evidence for confident type inference"
-	}
-
-	return rationale
 }
 
 // ApplyArgumentInference enriches function parameters with inferred types and roles

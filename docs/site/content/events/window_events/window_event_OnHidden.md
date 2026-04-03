@@ -105,8 +105,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Used With
 
-- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Handler
-- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- none
 
 ## Triggered By
 

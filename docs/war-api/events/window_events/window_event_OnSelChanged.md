@@ -90,8 +90,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Used With
 
-- [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
-- [OnSelChanged](../../xml/handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Handler
+- none
 
 ## Triggered By
 

@@ -20,7 +20,7 @@ Observed registering global runtime handlers against shared event identifiers.
 ## Flow Diagram
 
 ```text
-OnLButtonUp <-> OnLButtonUp
+Button <-> OnLButtonUp
 ```
 
 ## Example Code

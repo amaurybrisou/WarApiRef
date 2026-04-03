@@ -77,7 +77,7 @@ function()
 
 ## Related APIs
 
-- none
+- [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

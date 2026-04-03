@@ -9,13 +9,13 @@ Addons consistently move from manifest loading into initialize hooks, then into 
 
 ## Involved APIs
 
-- [SystemData.Events.PLAYER_TARGET_UPDATED](../events/game_events/game_event_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.PLAYER_TARGET_UPDATED](../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_TARGET_UPDATED](../events/game_events/game_event_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - Game Event
 
 ## Flow Diagram
 
 ```text
-OnLButtonUp <-> OnLButtonUp
+Button <-> OnLButtonUp
 ```
 
 ## Example Code

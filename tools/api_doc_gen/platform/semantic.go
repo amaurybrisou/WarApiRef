@@ -144,8 +144,8 @@ func buildSymbolCatalog(corpus Corpus) symbolCatalog {
 		add(DocLink{
 			ID:         xmlHandlerID(symbol.Name),
 			Label:      symbol.Name,
-			Type:       "xml_handler",
-			Category:   "XML Handler",
+			Type:       "xml_event",
+			Category:   "XML Event",
 			Path:       slashPath("xml", "handlers", docName("handler", symbol.Name)),
 			Confidence: symbol.Confidence,
 			Score:      symbol.Score,
@@ -209,7 +209,7 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 	invokersByCaller := map[string][]DocLink{}
 	uiLinksByCaller := map[string][]DocLink{}
 	for _, frame := range corpus.Source.Frames {
-		frameTypes[frame.Addon+"|"+frame.Name] = frame.Type
+		frameTypes[frameLookupKey(frame.Addon, frame.Name)] = frame.Type
 	}
 	for _, doc := range corpus.Source.Functions {
 		sourceFunctionsByKey[callerKey(doc.Addon, doc.Name)] = doc
@@ -356,10 +356,10 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 	}
 
 	for _, binding := range corpus.Source.Bindings {
-		xmlHandlerEntry, hasXMLHandler := catalog.lookup(binding.Event, "xml_handler")
+		xmlHandlerEntry, hasXMLHandler := catalog.lookup(binding.Event, "xml_event")
 		functionEntry, hasFunction := catalog.lookup(binding.LuaFunction, "function")
-		eventEntry, hasEvent := catalog.lookup(binding.Event, "event")
-		elementEntry, hasElement := catalog.lookup(frameTypes[binding.Addon+"|"+binding.Frame], "ui_element")
+		eventEntry, hasEvent := catalog.lookup(binding.Event, "xml_event", "event")
+		elementEntry, hasElement := catalog.lookup(frameTypes[frameLookupKey(binding.Addon, binding.Frame)], "ui_element")
 		evidence := fmt.Sprintf("%s: %s.%s -> %s", binding.Addon, binding.Frame, binding.Event, binding.LuaFunction)
 		contextIDs := []string{}
 		if hasXMLHandler {
@@ -400,10 +400,10 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 	}
 
 	for _, handler := range corpus.Source.Handlers {
-		xmlHandlerEntry, hasXMLHandler := catalog.lookup(handler.Event, "xml_handler")
+		xmlHandlerEntry, hasXMLHandler := catalog.lookup(handler.Event, "xml_event")
 		functionEntry, hasFunction := catalog.lookup(handler.Function, "function")
-		eventEntry, hasEvent := catalog.lookup(handler.Event, "event")
-		elementEntry, hasElement := catalog.lookup(frameTypes[handler.Addon+"|"+handler.Frame], "ui_element")
+		eventEntry, hasEvent := catalog.lookup(handler.Event, "xml_event", "event")
+		elementEntry, hasElement := catalog.lookup(frameTypes[frameLookupKey(handler.Addon, handler.Frame)], "ui_element")
 		evidence := fmt.Sprintf("%s: %s.%s -> %s", handler.Addon, handler.Frame, handler.Event, handler.Function)
 		contextIDs := []string{}
 		if hasXMLHandler {
@@ -445,9 +445,9 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 
 	for _, example := range corpus.Source.Examples {
 		functionEntry, hasFunction := catalog.lookup(example.LuaFunction, "function")
-		eventEntry, hasEvent := catalog.lookup(example.Event, "event")
-		xmlHandlerEntry, hasXMLHandler := catalog.lookup(example.Event, "xml_handler")
-		elementEntry, hasElement := catalog.lookup(frameTypes[example.Addon+"|"+example.Frame], "ui_element")
+		eventEntry, hasEvent := catalog.lookup(example.Event, "xml_event", "event")
+		xmlHandlerEntry, hasXMLHandler := catalog.lookup(example.Event, "xml_event")
+		elementEntry, hasElement := catalog.lookup(frameTypes[frameLookupKey(example.Addon, example.Frame)], "ui_element")
 		contextIDs := []string{}
 		evidence := fmt.Sprintf("%s: %s.%s -> %s", example.Addon, example.Frame, example.Event, example.LuaFunction)
 		if hasFunction {
@@ -465,6 +465,74 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 		recordCombination(contextIDs, evidence)
 	}
 
+	for _, symbol := range corpus.ElementTypes {
+		entry, found := catalog.entries[elementTypeID(symbol.Name)]
+		if !found {
+			continue
+		}
+		contextIDs := []string{entry.ID}
+
+		for _, parent := range symbol.ParentRefs {
+			parentEntry, matched := catalog.lookup(parent.Tag, "ui_element")
+			if !matched {
+				continue
+			}
+			evidence := fmt.Sprintf("%s contains %s (%d observations)", parent.Tag, symbol.Name, parent.Count)
+			addEdge(parentEntry.ID, entry.ID, "contains", evidence)
+			contextIDs = append(contextIDs, parentEntry.ID)
+		}
+		if len(symbol.ParentRefs) == 0 {
+			for _, parentType := range symbol.CommonParentTypes {
+				parentEntry, matched := catalog.lookup(parentType, "ui_element")
+				if !matched {
+					continue
+				}
+				evidence := fmt.Sprintf("%s commonly contains %s", parentType, symbol.Name)
+				addEdge(parentEntry.ID, entry.ID, "contains", evidence)
+				contextIDs = append(contextIDs, parentEntry.ID)
+			}
+		}
+		for _, child := range symbol.ChildRefs {
+			childEntry, matched := catalog.lookup(child.Tag, "ui_element")
+			if !matched {
+				continue
+			}
+			evidence := fmt.Sprintf("%s contains named child %s (%d observations)", symbol.Name, child.Tag, child.Count)
+			addEdge(entry.ID, childEntry.ID, "contains", evidence)
+			contextIDs = append(contextIDs, childEntry.ID)
+		}
+		for _, child := range symbol.StructuralChildRefs {
+			childEntry, matched := catalog.lookup(child.Tag, "ui_element")
+			if !matched {
+				continue
+			}
+			evidence := fmt.Sprintf("%s contains structural child %s (%d observations)", symbol.Name, child.Tag, child.Count)
+			addEdge(entry.ID, childEntry.ID, "contains", evidence)
+			contextIDs = append(contextIDs, childEntry.ID)
+		}
+
+		handlerNames := append([]string{}, symbol.CommonHandlers...)
+		for _, binding := range symbol.XMLEventBindings {
+			handlerNames = append(handlerNames, binding.Event)
+		}
+		for _, handlerName := range graph.UniqueStrings(handlerNames) {
+			if handlerName == "" {
+				continue
+			}
+			if eventEntry, matched := catalog.lookup(handlerName, "xml_event", "event"); matched {
+				evidence := fmt.Sprintf("%s declares XML event %s", symbol.Name, handlerName)
+				addEdge(entry.ID, eventEntry.ID, "handled_by", evidence)
+				contextIDs = append(contextIDs, eventEntry.ID)
+			}
+			if handlerEntry, matched := catalog.lookup(handlerName, "xml_event"); matched {
+				evidence := fmt.Sprintf("%s declares XML handler %s", symbol.Name, handlerName)
+				addEdge(entry.ID, handlerEntry.ID, "handled_by", evidence)
+				contextIDs = append(contextIDs, handlerEntry.ID)
+			}
+		}
+		recordCombination(contextIDs, symbol.Name+": XML element relationships")
+	}
+
 	for _, symbol := range append(append([]FunctionSymbol{}, corpus.GlobalFunctions...), corpus.WindowFunctions...) {
 		entry, found := catalog.entries[functionSymbolID(symbol.Category, symbol.Name)]
 		if !found {
@@ -477,7 +545,7 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 			for _, link := range invokersByCaller[lookupKey] {
 				if link.Type == "event" {
 					addEdge(entry.ID, link.ID, "triggered_by", evidence)
-				} else if link.Type == "xml_handler" {
+				} else if link.Type == "xml_event" {
 					addEdge(entry.ID, link.ID, "bound_from_xml", evidence)
 				}
 				contextIDs = append(contextIDs, link.ID)
@@ -610,7 +678,7 @@ func buildNavigationTree(corpus Corpus, catalog symbolCatalog, patternPages []Pa
 			}),
 			makeCategoryNode("xml", "XML", []NavigationNode{
 				makeSectionNode("xml_element_types", "Element Types", "xml/element_types/index.md", linksToNavigationNodes(linksForType(catalog, "ui_element"))),
-				makeSectionNode("xml_handlers", "Handlers", "xml/handlers/index.md", linksToNavigationNodes(linksForType(catalog, "xml_handler"))),
+				makeSectionNode("xml_handlers", "Handlers", "xml/handlers/index.md", linksToNavigationNodes(linksForType(catalog, "xml_event"))),
 				makeSectionNode("xml_schema", "Schema", "xml/schema.md", nil),
 			}),
 			makeCategoryNode("events", "Events", []NavigationNode{
@@ -809,6 +877,8 @@ func calculateEdgeConfidence(edgeType string, weight int, evidenceCount int) int
 		baseScore = 85 + (weight-1)*2
 	case "handled_by", "triggered_by":
 		baseScore = 80 + (weight-1)*2
+	case "contains":
+		baseScore = 78 + (weight-1)*2
 	case "defined_in":
 		baseScore = 95
 	case "reads_data", "writes_state":
@@ -844,6 +914,8 @@ func generateEdgeRationale(edgeType, from, to string, weight int) string {
 		return fmt.Sprintf("%s triggers %s", from, to)
 	case "defined_in":
 		return fmt.Sprintf("%s is defined in %s", from, to)
+	case "contains":
+		return fmt.Sprintf("%s contains %s", from, to)
 	case "reads_data":
 		return fmt.Sprintf("%s reads data from %s", from, to)
 	case "writes_state":
@@ -1068,10 +1140,13 @@ func buildSemanticLinks(catalog symbolCatalog, edges []GraphEdge) map[string]Sem
 		case "calls":
 			appendLink(edge.From, "related", toEntry)
 			appendLink(edge.To, "related", fromEntry)
+		case "defined_in", "contains":
+			appendLink(edge.From, "related", toEntry)
+			appendLink(edge.To, "related", fromEntry)
 		case "commonly_used_with":
 			appendLink(edge.From, "used_with", toEntry)
 			appendLink(edge.To, "used_with", fromEntry)
-		case "triggered_by":
+		case "handled_by", "triggered_by":
 			appendLink(edge.From, "triggered_by", toEntry)
 			appendLink(edge.To, "related", fromEntry)
 		case "bound_from_xml":
@@ -1191,6 +1266,10 @@ func normalizeLookupKey(value string) string {
 
 func callerKey(addon string, caller string) string {
 	return normalizeLookupKey(addon) + "|" + normalizeLookupKey(caller)
+}
+
+func frameLookupKey(addon string, frame string) string {
+	return normalizeLookupKey(addon) + "|" + normalizeLookupKey(frame)
 }
 
 func (catalog symbolCatalog) lookup(name string, preferredTypes ...string) (DocLink, bool) {
@@ -1372,7 +1451,7 @@ func windowFunctionID(name string) string { return "function:window:" + name }
 func tableID(name string) string          { return "data:table:" + name }
 func constantID(name string) string       { return "data:constant:" + name }
 func elementTypeID(name string) string    { return "ui:" + name }
-func xmlHandlerID(name string) string     { return "xml_handler:" + name }
+func xmlHandlerID(name string) string     { return "xml_event:" + name }
 func gameEventID(name string) string      { return "event:game:" + name }
 func windowEventID(name string) string    { return "event:window:" + name }
 func systemFieldID(name string) string    { return "data:system:" + name }

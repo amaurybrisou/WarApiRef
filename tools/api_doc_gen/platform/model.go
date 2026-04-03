@@ -38,7 +38,7 @@ type FrameDoc struct {
 	Addon                   string
 	Type                    string
 	Parent                  string
-	ParentType              string              // element type tag of the direct parent named frame
+	ParentType              string // element type tag of the direct parent named frame
 	Inherits                string
 	Template                bool
 	Source                  string
@@ -309,45 +309,45 @@ type XMLEventBinding struct {
 }
 
 type ElementTypeSymbol struct {
-	Name                     string
-	Confidence               Confidence
-	RawScore                 int
-	Score                    int
-	Signals                  []confidence.Signal
-	Rationale                string
-	Evidence                 confidence.Evidence
-	Description              string
-	SeenIn                   []string
-	CommonAttributes         []string
-	CommonHandlers           []string
-	CommonHandlerFunctions   []string // Lua function names commonly bound via XML handlers on this element type
-	CommonInherits           []string
-	CommonChildTypes         []string // structural (unnamed) child element types (e.g. ListData in ListBox)
-	CommonChildElementTypes  []string // named child frame element types (e.g. Button inside Window)
-	CommonParentTypes        []string // element types that commonly contain this one (e.g. Window for Button)
-	CompositionSnippet       string   // representative XML snippet showing the hierarchy of structural children
-	XMLEventBindings         []XMLEventBinding // per-event bindings with Lua functions and inferred args
-	Examples                 []UsageExample
-	Notes                    []string
+	Name                    string
+	Confidence              Confidence
+	RawScore                int
+	Score                   int
+	Signals                 []confidence.Signal
+	Rationale               string
+	Evidence                confidence.Evidence
+	Description             string
+	SeenIn                  []string
+	CommonAttributes        []string
+	CommonHandlers          []string
+	CommonHandlerFunctions  []string // Lua function names commonly bound via XML handlers on this element type
+	CommonInherits          []string
+	CommonChildTypes        []string          // structural (unnamed) child element types (e.g. ListData in ListBox)
+	CommonChildElementTypes []string          // named child frame element types (e.g. Button inside Window)
+	CommonParentTypes       []string          // element types that commonly contain this one (e.g. Window for Button)
+	CompositionSnippet      string            // representative XML snippet showing the hierarchy of structural children
+	XMLEventBindings        []XMLEventBinding // per-event bindings with Lua functions and inferred args
+	Examples                []UsageExample
+	Notes                   []string
 
 	// Phase 4 enrichment: structured data from the semantic merge pipeline
-	AttributeProfiles        []AttributeProfileEntry  // Attribute reference table with required/optional and sample values
-	StructuralChildProfiles  []StructuralChildProfile // Detailed structural sub-element profiles
-	LuaAPICallsFromHandlers  []LuaAPICallEntry        // Aggregated Lua API calls made from XML event handlers
-	HandlerArgPatterns       []HandlerArgPatternEntry // Expected callback argument patterns per event
-	LuaManipulators          []string                 // Lua functions that manipulate frames of this type
+	AttributeProfiles       []AttributeProfileEntry  // Attribute reference table with required/optional and sample values
+	StructuralChildProfiles []StructuralChildProfile // Detailed structural sub-element profiles
+	LuaAPICallsFromHandlers []LuaAPICallEntry        // Aggregated Lua API calls made from XML event handlers
+	HandlerArgPatterns      []HandlerArgPatternEntry // Expected callback argument patterns per event
+	LuaManipulators         []string                 // Lua functions that manipulate frames of this type
 
 	// Phase 4 enrichment: relationship data with counts and confidence
-	ParentRefs               []ElementRelRef // Parent element types with observation counts
-	ChildRefs                []ElementRelRef // Named child element types with observation counts
-	StructuralChildRefs      []ElementRelRef // Structural children with observation counts
-	InheritsBases            []string        // Template bases commonly inherited
-	IsTemplate               bool            // Whether this type commonly acts as a template
+	ParentRefs          []ElementRelRef // Parent element types with observation counts
+	ChildRefs           []ElementRelRef // Named child element types with observation counts
+	StructuralChildRefs []ElementRelRef // Structural children with observation counts
+	InheritsBases       []string        // Template bases commonly inherited
+	IsTemplate          bool            // Whether this type commonly acts as a template
 
 	// Phase 4 enrichment: binding resolution statistics
-	BindingResolvedPct       int    // Percentage of handler bindings resolved to Lua source
-	BindingTotalHandlers     int    // Total handler declarations observed
-	BindingResolvedCount     int    // Number resolved to Lua functions
+	BindingResolvedPct   int // Percentage of handler bindings resolved to Lua source
+	BindingTotalHandlers int // Total handler declarations observed
+	BindingResolvedCount int // Number resolved to Lua functions
 
 	// .mod lifecycle enrichment: structured startup-window facts.
 	// Notes about startup-created windows are derived from these records.
@@ -388,9 +388,9 @@ type LuaAPICallEntry struct {
 
 // HandlerArgPatternEntry describes expected callback argument patterns for a handler event.
 type HandlerArgPatternEntry struct {
-	Event      string                // XML event name
+	Event      string                 // XML event name
 	Params     []HandlerExpectedParam // Expected parameters
-	Confidence string                // HIGH, MEDIUM, LOW
+	Confidence string                 // HIGH, MEDIUM, LOW
 }
 
 // HandlerExpectedParam describes one expected parameter in a handler callback.
@@ -415,28 +415,28 @@ type ModProvenance struct {
 // FunctionLifecycleRole describes the lifecycle role of a Lua function as
 // derived from .mod manifest semantic analysis.
 type FunctionLifecycleRole struct {
-	FuncName   string       // Qualified Lua function name (or RefName when unresolved)
-	RefName    string       // Original .mod name attribute value
-	Role       string       // "startup_entrypoint", "shutdown_entrypoint", "update_callback", "unresolved_lifecycle_ref", "unknown_lifecycle_ref"
+	FuncName   string // Qualified Lua function name (or RefName when unresolved)
+	RefName    string // Original .mod name attribute value
+	Role       string // "startup_entrypoint", "shutdown_entrypoint", "update_callback", "unresolved_lifecycle_ref", "unknown_lifecycle_ref"
 	Provenance ModProvenance
 }
 
 // WindowLifecycleSemantic holds structured facts about a window that is
 // created during an addon lifecycle hook, derived from .mod semantic analysis.
 type WindowLifecycleSemantic struct {
-	FrameName   string       // XML frame name from the .mod CreateWindow action
-	ElementType string       // Element type tag resolved for the frame (empty if unresolved)
-	HookKind    string       // Lifecycle hook kind: "OnInitialize", "OnUpdate", "OnShutdown", or ""
-	Resolution  string       // "exact", "ambiguous", or "unresolved"
-	Confidence  string       // "HIGH", "MEDIUM", or ""
+	FrameName   string // XML frame name from the .mod CreateWindow action
+	ElementType string // Element type tag resolved for the frame (empty if unresolved)
+	HookKind    string // Lifecycle hook kind: "OnInitialize", "OnUpdate", "OnShutdown", or ""
+	Resolution  string // "exact", "ambiguous", or "unresolved"
+	Confidence  string // "HIGH", "MEDIUM", or ""
 	Provenance  ModProvenance
 }
 
 // AddonLifecycleSemantic holds structured addon-level lifecycle facts derived
 // from .mod manifest semantic analysis.  One entry per .mod addon.
 type AddonLifecycleSemantic struct {
-	AddonName      string
-	HookKinds      []string // Distinct lifecycle hook kinds found
+	AddonName string
+	HookKinds []string // Distinct lifecycle hook kinds found
 
 	// Actions grouped by lifecycle phase
 	StartupActions  []LifecycleActionRecord // Actions from OnInitialize
@@ -454,13 +454,13 @@ type AddonLifecycleSemantic struct {
 // LifecycleActionRecord is a structured record of a single lifecycle action
 // from a .mod manifest.
 type LifecycleActionRecord struct {
-	ActionKind  string   // "CallFunction", "CreateWindow", or "" (unknown)
-	ActionTag   string   // Raw element tag from the .mod file
-	Name        string   // "name" attribute value from the action
-	HookKind    string   // Parent hook kind
-	HookTag     string   // Parent hook raw tag
-	Resolution  string   // "exact", "ambiguous", or "unresolved"
-	Confidence  string   // "HIGH", "MEDIUM", or ""
+	ActionKind   string   // "CallFunction", "CreateWindow", or "" (unknown)
+	ActionTag    string   // Raw element tag from the .mod file
+	Name         string   // "name" attribute value from the action
+	HookKind     string   // Parent hook kind
+	HookTag      string   // Parent hook raw tag
+	Resolution   string   // "exact", "ambiguous", or "unresolved"
+	Confidence   string   // "HIGH", "MEDIUM", or ""
 	MatchedNames []string // Matched Lua function names or XML frame names
 }
 
@@ -643,6 +643,6 @@ type Corpus struct {
 	GeneratedAt          time.Time
 
 	// .mod lifecycle enrichment: addon-level and function-level lifecycle facts.
-	AddonLifecycleSemantics []AddonLifecycleSemantic  // One per .mod addon
-	FunctionLifecycleRoles  []FunctionLifecycleRole   // Function-level lifecycle roles
+	AddonLifecycleSemantics []AddonLifecycleSemantic // One per .mod addon
+	FunctionLifecycleRoles  []FunctionLifecycleRole  // Function-level lifecycle roles
 }

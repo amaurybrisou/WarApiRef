@@ -182,6 +182,7 @@ section { padding: 0; margin: 0; }
 .current-page { font-size: .88rem; color: var(--pico-muted-color); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .topbar-actions { display: flex; gap: 8px; flex-shrink: 0; }
 .topbar-actions button { margin: 0; padding: 6px 14px; font-size: .85rem; }
+.topbar-actions button.secondary { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
 /* Breadcrumb */
 .breadcrumb {
   display:     flex;
@@ -231,6 +232,10 @@ main {
     linear-gradient(145deg, #fff7ef 0%, #fffdf9 65%);
   box-shadow: 0 10px 28px rgba(64, 28, 15, .08);
   padding: 14px 16px;
+}
+
+.mcp-page {
+  padding: 2px;
 }
 
 .mcp-console-head {
@@ -287,6 +292,61 @@ main {
 
 /* ── 10. Doc panel — Pico gives <article> card styling automatically ──────── */
 .doc-panel { padding: 26px 30px; }
+
+.doc-section {
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 10px;
+  background: var(--pico-card-background-color);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.doc-section > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 14px;
+  background: var(--pico-background-color);
+  color: var(--pico-color);
+  user-select: none;
+}
+
+.doc-section > summary::-webkit-details-marker { display: none; }
+
+.doc-section.h1 > summary {
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+
+.doc-section.h2 > summary {
+  font-size: .94rem;
+  font-weight: 600;
+}
+
+.doc-section-chevron {
+  display: inline-block;
+  color: var(--pico-muted-color);
+  transition: transform .15s ease;
+  font-size: .78rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.doc-section[open] .doc-section-chevron { transform: rotate(90deg); }
+
+.doc-section[open] > summary {
+  border-bottom: 1px solid var(--pico-muted-border-color);
+}
+
+.doc-section-body {
+  padding: 14px 16px 16px;
+}
+
+.doc-section-body > :first-child { margin-top: 0; }
+.doc-section-body > :last-child { margin-bottom: 0; }
 
 .doc-panel h1 { font-size: 1.6rem; margin-top: 0; margin-bottom: .35em; }
 .doc-panel h2 {

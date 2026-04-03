@@ -157,12 +157,11 @@ Confidence: MEDIUM
 
 ## Used With
 
-- [OnSelChanged](../../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
-- [OnSelChanged](../handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Handler
+- [OnSelChanged](../handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Event
 
 ## Triggered By
 
-- none
+- [OnSelChanged](../handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Event
 
 ## Affects
 

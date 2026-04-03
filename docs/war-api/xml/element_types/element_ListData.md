@@ -100,7 +100,8 @@ Observed 2 times as an unnamed child.
 
 ## Related APIs
 
-- none
+- [ListBox](element_ListBox.md) (HIGH 100/100) - XML Element Type
+- [ListColumns](element_ListColumns.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

@@ -38,17 +38,6 @@ func ExtractFromFile(addonName, filePath string, manifest graph.Manifest) ([]xml
 	return convertFunctions(result.Functions, addonName, filePath), nil
 }
 
-// ExtractEventRegistrations returns event registration patterns extracted from
-// a real Lua source file. These represent RegisterEventHandler / similar calls
-// found in the parsed token stream.
-func ExtractEventRegistrations(addonName, filePath string, manifest graph.Manifest) ([]graph.EventRegistration, error) {
-	result, err := lua_parser.ParseFile(addonName, filePath, manifest)
-	if err != nil {
-		return nil, fmt.Errorf("lua_ast: parse events %s: %w", filePath, err)
-	}
-	return result.Events, nil
-}
-
 // convertFunctions maps a slice of [graph.Function] (the lua_parser output
 // model) to [xml_lua_binding.LuaFunctionDef] (the Phase 2 input model).
 func convertFunctions(fns []graph.Function, addonName, filePath string) []xml_lua_binding.LuaFunctionDef {

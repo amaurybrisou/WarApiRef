@@ -98,7 +98,8 @@ Observed 5 times as an unnamed child.
 
 ## Related APIs
 
-- none
+- [ListColumn](element_ListColumn.md) (HIGH 100/100) - XML Element Type
+- [ListData](element_ListData.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 
