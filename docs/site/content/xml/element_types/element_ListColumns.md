@@ -48,7 +48,7 @@
 
 ## Description
 
-Structural XML container inside ListBox that groups one or more ListColumn declarations, mapping backing-table fields to row-template child windows.
+ListColumns is a structural XML container used by list controls to define how backing-table fields map to row windows.
 
 ## Common Attributes
 

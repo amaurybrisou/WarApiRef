@@ -48,7 +48,7 @@
 
 ## Description
 
-Structural XML element inside ListColumns that maps a single field of each backing-table row entry to a named child window of the row template. Key attributes: `windowname` (child window target) and `variable` (field name in the row table).
+ListColumn is a structural XML sub-element used by list controls to map one backing-table field to a target row child window.
 
 ## Common Attributes
 

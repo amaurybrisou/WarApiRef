@@ -56,7 +56,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 4 addons.
+MenuButtonOffset is a XML UI element. It commonly appears under ComboBox.
 
 ## Common Attributes
 

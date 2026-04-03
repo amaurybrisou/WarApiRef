@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+ColorPicker is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as ColorSize, ColorSpacing, ColorTexCoords and bind XML events like OnLButtonUp to Lua.
 
 ## Common Attributes
 

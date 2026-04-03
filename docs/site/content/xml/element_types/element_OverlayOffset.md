@@ -56,7 +56,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 4 addons.
+OverlayOffset is a XML UI element. It commonly appears under Button.
 
 ## Common Attributes
 

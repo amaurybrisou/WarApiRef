@@ -56,7 +56,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 8 addons.
+TextOffset is a XML UI element. It commonly appears under Button and EditBox.
 
 ## Common Attributes
 

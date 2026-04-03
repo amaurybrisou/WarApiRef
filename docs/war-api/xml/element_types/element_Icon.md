@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+Icon is a XML UI element. It commonly appears under Assets.
 
 ## Common Attributes
 

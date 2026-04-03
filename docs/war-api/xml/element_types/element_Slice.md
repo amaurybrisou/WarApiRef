@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 2 addons.
+Slice is a XML UI element. It commonly appears under Texture.
 
 ## Common Attributes
 

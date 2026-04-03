@@ -56,7 +56,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 8 addons.
+CircleImage is a container-style XML element. It commonly appears under Button and Window. It is typically used to organize structural children such as Size, TexCoords, TexDims and be manipulated from Lua by functions such as Enemy.EnemyEffectsIndicator:Update, TurretRange.OnUpdate.
 
 ## Common Attributes
 

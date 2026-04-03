@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 20 addons.
+Assets is a container-style XML element. It is typically used to host named child elements such as Texture.
 
 ## Common Attributes
 

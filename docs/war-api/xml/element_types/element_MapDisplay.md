@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+MapDisplay is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnLButtonUp, OnMButtonUp, OnPointMouseOver to Lua.
 
 ## Common Attributes
 

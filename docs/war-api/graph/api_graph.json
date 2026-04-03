@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T03:58:04.235706496Z",
+  "generated_at": "2026-04-03T04:08:54.558700583Z",
   "nodes": [
     {
       "id": "data:table:AlertTextWindow",
@@ -932,16 +932,6 @@
       "summary": "Observed shared global table or namespace surfaced in 1 addons."
     },
     {
-      "id": "data:table:EA_Window_Macro",
-      "label": "EA_Window_Macro",
-      "type": "data_structure",
-      "category": "Global Table",
-      "path": "globals/tables/table_EA_Window_Macro.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 3 addons."
-    },
-    {
       "id": "data:constant:EA_Window_Macro",
       "label": "EA_Window_Macro",
       "type": "data_structure",
@@ -950,6 +940,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
+    },
+    {
+      "id": "data:table:EA_Window_Macro",
+      "label": "EA_Window_Macro",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_EA_Window_Macro.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed shared global table or namespace surfaced in 3 addons."
     },
     {
       "id": "data:constant:EA_Window_MacroDetailIconButton",
@@ -6189,7 +6189,7 @@
       "path": "xml/element_types/element_AbsPoint.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 34 addons."
+      "summary": "AbsPoint is a structural XML sub-element. It commonly appears under Anchor and Anchors."
     },
     {
       "id": "ui:Anchor",
@@ -6199,7 +6199,7 @@
       "path": "xml/element_types/element_Anchor.md",
       "confidence": "MEDIUM",
       "score": 55,
-      "summary": "Observed XML element type instantiated by 33 addons."
+      "summary": "Anchor is a structural XML sub-element. It commonly appears under Anchor and Anchors. It is typically used to organize structural children such as AbsPoint, Anchor."
     },
     {
       "id": "ui:Anchors",
@@ -6209,7 +6209,7 @@
       "path": "xml/element_types/element_Anchors.md",
       "confidence": "MEDIUM",
       "score": 55,
-      "summary": "Observed XML element type instantiated by 32 addons."
+      "summary": "Anchors is a structural XML sub-element. It commonly appears under AnimatedImage and Button. It is typically used to organize structural children such as AbsPoint, Anchor."
     },
     {
       "id": "ui:AnimFrame",
@@ -6219,7 +6219,7 @@
       "path": "xml/element_types/element_AnimFrame.md",
       "confidence": "LOW",
       "score": 20,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "AnimFrame is a XML UI element. It commonly appears under AnimFrames."
     },
     {
       "id": "ui:AnimFrames",
@@ -6229,7 +6229,7 @@
       "path": "xml/element_types/element_AnimFrames.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "AnimFrames is a structural XML sub-element. It commonly appears under AnimatedImage. It is typically used to organize structural children such as AnimFrame."
     },
     {
       "id": "ui:AnimatedImage",
@@ -6239,7 +6239,7 @@
       "path": "xml/element_types/element_AnimatedImage.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "AnimatedImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as AnimFrames, Size, Windows and be manipulated from Lua by functions such as Enemy.AssistUI_Target_Show, GuardLine.update."
     },
     {
       "id": "ui:AnimatedImages",
@@ -6249,7 +6249,7 @@
       "path": "xml/element_types/element_AnimatedImages.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "AnimatedImages is a structural XML sub-element. It commonly appears under Button. It is typically used to organize structural children such as Normal, NormalHighlit."
     },
     {
       "id": "ui:Assets",
@@ -6259,7 +6259,7 @@
       "path": "xml/element_types/element_Assets.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 20 addons."
+      "summary": "Assets is a container-style XML element. It is typically used to host named child elements such as Texture."
     },
     {
       "id": "ui:BottomCenter",
@@ -6269,7 +6269,7 @@
       "path": "xml/element_types/element_BottomCenter.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "BottomCenter is a XML UI element. It commonly appears under TexCoords and TexSlices."
     },
     {
       "id": "ui:BottomLeft",
@@ -6279,7 +6279,7 @@
       "path": "xml/element_types/element_BottomLeft.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "BottomLeft is a XML UI element. It commonly appears under TexCoords and TexSlices."
     },
     {
       "id": "ui:BottomRight",
@@ -6289,7 +6289,7 @@
       "path": "xml/element_types/element_BottomRight.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "BottomRight is a XML UI element. It commonly appears under Sizes and TexCoords."
     },
     {
       "id": "ui:Button",
@@ -6299,7 +6299,7 @@
       "path": "xml/element_types/element_Button.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 27 addons."
+      "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
     },
     {
       "id": "ui:CircleImage",
@@ -6309,7 +6309,7 @@
       "path": "xml/element_types/element_CircleImage.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 8 addons."
+      "summary": "CircleImage is a container-style XML element. It commonly appears under Button and Window. It is typically used to organize structural children such as Size, TexCoords, TexDims and be manipulated from Lua by functions such as Enemy.EnemyEffectsIndicator:Update, TurretRange.OnUpdate."
     },
     {
       "id": "ui:Color",
@@ -6319,7 +6319,7 @@
       "path": "xml/element_types/element_Color.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 22 addons."
+      "summary": "Color is a XML UI element. It commonly appears under DynamicImage and FullResizeImage."
     },
     {
       "id": "ui:ColorPicker",
@@ -6329,7 +6329,7 @@
       "path": "xml/element_types/element_ColorPicker.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "ColorPicker is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as ColorSize, ColorSpacing, ColorTexCoords and bind XML events like OnLButtonUp to Lua."
     },
     {
       "id": "ui:ColorSize",
@@ -6339,7 +6339,7 @@
       "path": "xml/element_types/element_ColorSize.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "ColorSize is a XML UI element. It commonly appears under ColorPicker."
     },
     {
       "id": "ui:ColorSpacing",
@@ -6349,7 +6349,7 @@
       "path": "xml/element_types/element_ColorSpacing.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "ColorSpacing is a XML UI element. It commonly appears under ColorPicker."
     },
     {
       "id": "ui:ColorTexCoords",
@@ -6359,7 +6359,7 @@
       "path": "xml/element_types/element_ColorTexCoords.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "ColorTexCoords is a structural XML sub-element. It commonly appears under ColorPicker."
     },
     {
       "id": "ui:ColorTexDims",
@@ -6369,7 +6369,7 @@
       "path": "xml/element_types/element_ColorTexDims.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "ColorTexDims is a structural XML sub-element. It commonly appears under ColorPicker."
     },
     {
       "id": "ui:ComboBox",
@@ -6379,7 +6379,7 @@
       "path": "xml/element_types/element_ComboBox.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 18 addons."
+      "summary": "ComboBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as MenuButtonOffset, Size and bind XML events like OnMouseOver, OnSelChanged to Lua."
     },
     {
       "id": "ui:CooldownDisplay",
@@ -6389,7 +6389,7 @@
       "path": "xml/element_types/element_CooldownDisplay.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "CooldownDisplay is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Size."
     },
     {
       "id": "ui:Disabled",
@@ -6399,7 +6399,7 @@
       "path": "xml/element_types/element_Disabled.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 12 addons."
+      "summary": "Disabled is a XML UI element. It commonly appears under OverlayTexCoords and ResizeImages."
     },
     {
       "id": "ui:DisabledPressed",
@@ -6409,7 +6409,7 @@
       "path": "xml/element_types/element_DisabledPressed.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 6 addons."
+      "summary": "DisabledPressed is a XML UI element. It commonly appears under TexSlices and TextColors."
     },
     {
       "id": "ui:DynamicImage",
@@ -6419,7 +6419,7 @@
       "path": "xml/element_types/element_DynamicImage.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 26 addons."
+      "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Size, TexCoords, TexDims and bind XML events like OnLButtonDown, OnLButtonUp, OnMouseOver to Lua."
     },
     {
       "id": "ui:EditBox",
@@ -6429,7 +6429,7 @@
       "path": "xml/element_types/element_EditBox.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 13 addons."
+      "summary": "EditBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size, TextOffset and bind XML events like OnKeyEnter, OnKeyEscape, OnMouseOver to Lua."
     },
     {
       "id": "ui:EventHandler",
@@ -6439,7 +6439,7 @@
       "path": "xml/element_types/element_EventHandler.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 31 addons."
+      "summary": "EventHandler is a XML UI element. It commonly appears under EventHandlers."
     },
     {
       "id": "ui:EventHandlers",
@@ -6449,7 +6449,7 @@
       "path": "xml/element_types/element_EventHandlers.md",
       "confidence": "MEDIUM",
       "score": 55,
-      "summary": "Observed XML element type instantiated by 31 addons."
+      "summary": "EventHandlers is a structural XML sub-element. It commonly appears under Button and ColorPicker. It is typically used to organize structural children such as EventHandler."
     },
     {
       "id": "ui:FullResizeImage",
@@ -6459,7 +6459,7 @@
       "path": "xml/element_types/element_FullResizeImage.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 22 addons."
+      "summary": "FullResizeImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Size, Sizes, TexCoords and bind XML events like OnMouseOver to Lua."
     },
     {
       "id": "ui:HorizontalResizeImage",
@@ -6469,7 +6469,7 @@
       "path": "xml/element_types/element_HorizontalResizeImage.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 9 addons."
+      "summary": "HorizontalResizeImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Size, Sizes, TexCoords and be manipulated from Lua by functions such as APAGui.UpdateFollowTargetHUD, APAGui.UpdateInstantOnlyHUD."
     },
     {
       "id": "ui:Icon",
@@ -6479,7 +6479,7 @@
       "path": "xml/element_types/element_Icon.md",
       "confidence": "LOW",
       "score": 20,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "Icon is a XML UI element. It commonly appears under Assets."
     },
     {
       "id": "ui:Label",
@@ -6489,7 +6489,7 @@
       "path": "xml/element_types/element_Label.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 30 addons."
+      "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
     },
     {
       "id": "ui:Left",
@@ -6499,7 +6499,7 @@
       "path": "xml/element_types/element_Left.md",
       "confidence": "MEDIUM",
       "score": 30,
-      "summary": "Observed XML element type instantiated by 3 addons."
+      "summary": "Left is a XML UI element. It commonly appears under TexCoords."
     },
     {
       "id": "ui:ListBox",
@@ -6509,7 +6509,7 @@
       "path": "xml/element_types/element_ListBox.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 12 addons."
+      "summary": "ListBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as ListData, Size and bind XML events like OnLButtonUp, OnMouseOver, OnMouseOverEnd to Lua."
     },
     {
       "id": "ui:ListColumn",
@@ -6519,7 +6519,7 @@
       "path": "xml/element_types/element_ListColumn.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Structural XML element inside ListColumns that maps a single field of each backing-table row entry to a named child window of the row template. Key attributes: `windowname` (child window target) and `variable` (field name in the row table)."
+      "summary": "ListColumn is a structural XML sub-element used by list controls to map one backing-table field to a target row child window."
     },
     {
       "id": "ui:ListColumns",
@@ -6529,7 +6529,7 @@
       "path": "xml/element_types/element_ListColumns.md",
       "confidence": "MEDIUM",
       "score": 55,
-      "summary": "Structural XML container inside ListBox that groups one or more ListColumn declarations, mapping backing-table fields to row-template child windows."
+      "summary": "ListColumns is a structural XML container used by list controls to define how backing-table fields map to row windows."
     },
     {
       "id": "ui:ListData",
@@ -6539,7 +6539,7 @@
       "path": "xml/element_types/element_ListData.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Structural XML sub-element of ListBox that binds a list to a named Lua backing table. The `table` attribute names the Lua table supplying row data; the optional `populationfunction` attribute names a Lua callback for custom per-row population."
+      "summary": "ListData is a structural list-binding sub-element used inside list controls to connect XML definitions to Lua-backed row data."
     },
     {
       "id": "ui:LogDisplay",
@@ -6549,7 +6549,7 @@
       "path": "xml/element_types/element_LogDisplay.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "LogDisplay is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Windows."
     },
     {
       "id": "ui:MapDisplay",
@@ -6559,7 +6559,7 @@
       "path": "xml/element_types/element_MapDisplay.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "MapDisplay is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnLButtonUp, OnMButtonUp, OnPointMouseOver to Lua."
     },
     {
       "id": "ui:MenuButtonOffset",
@@ -6569,7 +6569,7 @@
       "path": "xml/element_types/element_MenuButtonOffset.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 4 addons."
+      "summary": "MenuButtonOffset is a XML UI element. It commonly appears under ComboBox."
     },
     {
       "id": "ui:Middle",
@@ -6579,7 +6579,7 @@
       "path": "xml/element_types/element_Middle.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 7 addons."
+      "summary": "Middle is a XML UI element. It commonly appears under Sizes and TexCoords."
     },
     {
       "id": "ui:MiddleCenter",
@@ -6589,7 +6589,7 @@
       "path": "xml/element_types/element_MiddleCenter.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "MiddleCenter is a XML UI element. It commonly appears under TexCoords and TexSlices."
     },
     {
       "id": "ui:MiddleLeft",
@@ -6599,7 +6599,7 @@
       "path": "xml/element_types/element_MiddleLeft.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "MiddleLeft is a XML UI element. It commonly appears under TexCoords and TexSlices."
     },
     {
       "id": "ui:MiddleRight",
@@ -6609,7 +6609,7 @@
       "path": "xml/element_types/element_MiddleRight.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "MiddleRight is a XML UI element. It commonly appears under TexCoords and TexSlices."
     },
     {
       "id": "ui:Normal",
@@ -6619,7 +6619,7 @@
       "path": "xml/element_types/element_Normal.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 15 addons."
+      "summary": "Normal is a XML UI element. It commonly appears under AnimatedImages and OverlayTexCoords."
     },
     {
       "id": "ui:NormalHighlit",
@@ -6629,7 +6629,7 @@
       "path": "xml/element_types/element_NormalHighlit.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 14 addons."
+      "summary": "NormalHighlit is a XML UI element. It commonly appears under AnimatedImages and OverlayTexCoords."
     },
     {
       "id": "ui:OverlayOffset",
@@ -6639,7 +6639,7 @@
       "path": "xml/element_types/element_OverlayOffset.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 4 addons."
+      "summary": "OverlayOffset is a XML UI element. It commonly appears under Button."
     },
     {
       "id": "ui:OverlaySize",
@@ -6649,7 +6649,7 @@
       "path": "xml/element_types/element_OverlaySize.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 4 addons."
+      "summary": "OverlaySize is a XML UI element. It commonly appears under Button."
     },
     {
       "id": "ui:OverlayTexCoords",
@@ -6659,7 +6659,7 @@
       "path": "xml/element_types/element_OverlayTexCoords.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 4 addons."
+      "summary": "OverlayTexCoords is a structural XML sub-element. It commonly appears under Button. It is typically used to organize structural children such as Disabled, Normal, NormalHighlit."
     },
     {
       "id": "ui:Pressed",
@@ -6669,7 +6669,7 @@
       "path": "xml/element_types/element_Pressed.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 13 addons."
+      "summary": "Pressed is a XML UI element. It commonly appears under OverlayTexCoords and ResizeImages."
     },
     {
       "id": "ui:PressedHighlit",
@@ -6679,7 +6679,7 @@
       "path": "xml/element_types/element_PressedHighlit.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 10 addons."
+      "summary": "PressedHighlit is a XML UI element. It commonly appears under OverlayTexCoords and ResizeImages."
     },
     {
       "id": "ui:ResizeImages",
@@ -6689,7 +6689,7 @@
       "path": "xml/element_types/element_ResizeImages.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "ResizeImages is a structural XML sub-element. It commonly appears under Button. It is typically used to organize structural children such as Disabled, Normal, NormalHighlit."
     },
     {
       "id": "ui:Right",
@@ -6699,7 +6699,7 @@
       "path": "xml/element_types/element_Right.md",
       "confidence": "MEDIUM",
       "score": 30,
-      "summary": "Observed XML element type instantiated by 3 addons."
+      "summary": "Right is a XML UI element. It commonly appears under TexCoords."
     },
     {
       "id": "ui:Script",
@@ -6709,7 +6709,7 @@
       "path": "xml/element_types/element_Script.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 12 addons."
+      "summary": "Script is a XML UI element. It commonly appears under Scripts."
     },
     {
       "id": "ui:Scripts",
@@ -6729,7 +6729,7 @@
       "path": "xml/element_types/element_ScrollWindow.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 8 addons."
+      "summary": "ScrollWindow is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Size, Windows and be manipulated from Lua by functions such as DAoCBuff.ShowMessageWindow, DAoCBuffSettings.PopulateSettings."
     },
     {
       "id": "ui:Size",
@@ -6739,7 +6739,7 @@
       "path": "xml/element_types/element_Size.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 33 addons."
+      "summary": "Size is a structural XML sub-element. It commonly appears under AnimatedImage and Button. It is typically used to organize structural children such as AbsPoint."
     },
     {
       "id": "ui:Sizes",
@@ -6749,7 +6749,7 @@
       "path": "xml/element_types/element_Sizes.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 7 addons."
+      "summary": "Sizes is a structural XML sub-element. It commonly appears under FullResizeImage and HorizontalResizeImage. It is typically used to organize structural children such as BottomRight, Middle, TopLeft."
     },
     {
       "id": "ui:Slice",
@@ -6759,7 +6759,7 @@
       "path": "xml/element_types/element_Slice.md",
       "confidence": "MEDIUM",
       "score": 35,
-      "summary": "Observed XML element type instantiated by 2 addons."
+      "summary": "Slice is a XML UI element. It commonly appears under Texture."
     },
     {
       "id": "ui:SliderBar",
@@ -6769,7 +6769,7 @@
       "path": "xml/element_types/element_SliderBar.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 14 addons."
+      "summary": "SliderBar is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnMouseOver, OnSlide to Lua."
     },
     {
       "id": "ui:StatusBar",
@@ -6779,7 +6779,7 @@
       "path": "xml/element_types/element_StatusBar.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 2 addons."
+      "summary": "StatusBar is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors."
     },
     {
       "id": "ui:TexCoords",
@@ -6789,7 +6789,7 @@
       "path": "xml/element_types/element_TexCoords.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 14 addons."
+      "summary": "TexCoords is a structural XML sub-element. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as BottomCenter, BottomLeft, BottomRight."
     },
     {
       "id": "ui:TexDims",
@@ -6799,7 +6799,7 @@
       "path": "xml/element_types/element_TexDims.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 11 addons."
+      "summary": "TexDims is a structural XML sub-element. It commonly appears under Button and CircleImage."
     },
     {
       "id": "ui:TexSlices",
@@ -6809,7 +6809,7 @@
       "path": "xml/element_types/element_TexSlices.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 8 addons."
+      "summary": "TexSlices is a structural XML sub-element. It commonly appears under Button and FullResizeImage. It is typically used to organize structural children such as BottomCenter, BottomLeft, BottomRight."
     },
     {
       "id": "ui:Text",
@@ -6819,7 +6819,7 @@
       "path": "xml/element_types/element_Text.md",
       "confidence": "HIGH",
       "score": 98,
-      "summary": "Observed XML element type instantiated by 2 addons."
+      "summary": "Text is a structural XML sub-element used inside label and button-like controls to define displayed text."
     },
     {
       "id": "ui:TextColors",
@@ -6829,7 +6829,7 @@
       "path": "xml/element_types/element_TextColors.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "TextColors is a structural XML sub-element. It commonly appears under Button. It is typically used to organize structural children such as Disabled, DisabledPressed, Normal."
     },
     {
       "id": "ui:TextOffset",
@@ -6839,7 +6839,7 @@
       "path": "xml/element_types/element_TextOffset.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 8 addons."
+      "summary": "TextOffset is a XML UI element. It commonly appears under Button and EditBox."
     },
     {
       "id": "ui:Texture",
@@ -6849,7 +6849,7 @@
       "path": "xml/element_types/element_Texture.md",
       "confidence": "MEDIUM",
       "score": 55,
-      "summary": "Observed XML element type instantiated by 19 addons."
+      "summary": "Texture is a container-style XML element. It commonly appears under Assets. It is typically used to organize structural children such as Slice and be manipulated from Lua by functions such as Aura.Aura:UpdateWindow, BuffHead.BuffHeadEffectFrame:SetLayout."
     },
     {
       "id": "ui:TintColor",
@@ -6859,7 +6859,7 @@
       "path": "xml/element_types/element_TintColor.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 14 addons."
+      "summary": "TintColor is a XML UI element. It commonly appears under CircleImage and DynamicImage."
     },
     {
       "id": "ui:TopCenter",
@@ -6869,7 +6869,7 @@
       "path": "xml/element_types/element_TopCenter.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "TopCenter is a XML UI element. It commonly appears under TexCoords and TexSlices."
     },
     {
       "id": "ui:TopLeft",
@@ -6879,7 +6879,7 @@
       "path": "xml/element_types/element_TopLeft.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "TopLeft is a XML UI element. It commonly appears under Sizes and TexCoords."
     },
     {
       "id": "ui:TopRight",
@@ -6889,7 +6889,7 @@
       "path": "xml/element_types/element_TopRight.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 5 addons."
+      "summary": "TopRight is a XML UI element. It commonly appears under TexCoords and TexSlices."
     },
     {
       "id": "ui:VerticalResizeImage",
@@ -6899,7 +6899,7 @@
       "path": "xml/element_types/element_VerticalResizeImage.md",
       "confidence": "HIGH",
       "score": 90,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "VerticalResizeImage is a container-style XML element. It commonly appears under Windows. It is typically used to organize structural children such as Sizes, TexCoords, TintColor."
     },
     {
       "id": "ui:VerticalScrollbar",
@@ -6909,7 +6909,7 @@
       "path": "xml/element_types/element_VerticalScrollbar.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 7 addons."
+      "summary": "VerticalScrollbar is a container-style XML element. It commonly appears under LogDisplay and ScrollWindow. It is typically used to organize structural children such as Size and bind XML events like OnScrollPosChanged to Lua."
     },
     {
       "id": "ui:Visual",
@@ -6919,7 +6919,7 @@
       "path": "xml/element_types/element_Visual.md",
       "confidence": "MEDIUM",
       "score": 45,
-      "summary": "Observed XML element type instantiated by 1 addons."
+      "summary": "Visual is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Color."
     },
     {
       "id": "ui:Window",
@@ -6929,7 +6929,7 @@
       "path": "xml/element_types/element_Window.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 32 addons."
+      "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
     },
     {
       "id": "ui:Windows",
@@ -6939,7 +6939,7 @@
       "path": "xml/element_types/element_Windows.md",
       "confidence": "HIGH",
       "score": 100,
-      "summary": "Observed XML element type instantiated by 32 addons."
+      "summary": "Windows is a container-style XML element. It commonly appears under AnimatedImage and Button. It is typically used to host named child elements such as AnimatedImage, Button, CircleImage."
     },
     {
       "id": "xml_event:OnHidden",

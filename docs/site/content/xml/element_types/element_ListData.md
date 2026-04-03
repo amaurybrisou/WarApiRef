@@ -57,7 +57,7 @@
 
 ## Description
 
-Structural XML sub-element of ListBox that binds a list to a named Lua backing table. The `table` attribute names the Lua table supplying row data; the optional `populationfunction` attribute names a Lua callback for custom per-row population.
+ListData is a structural list-binding sub-element used inside list controls to connect XML definitions to Lua-backed row data.
 
 ## Common Attributes
 

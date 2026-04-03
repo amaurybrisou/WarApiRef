@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+ColorSpacing is a XML UI element. It commonly appears under ColorPicker.
 
 ## Common Attributes
 

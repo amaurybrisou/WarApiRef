@@ -59,7 +59,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 7 addons.
+VerticalScrollbar is a container-style XML element. It commonly appears under LogDisplay and ScrollWindow. It is typically used to organize structural children such as Size and bind XML events like OnScrollPosChanged to Lua.
 
 ## Common Attributes
 

@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 15 addons.
+Normal is a XML UI element. It commonly appears under AnimatedImages and OverlayTexCoords.
 
 ## Common Attributes
 

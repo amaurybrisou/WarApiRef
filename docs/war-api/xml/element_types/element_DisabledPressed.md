@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 6 addons.
+DisabledPressed is a XML UI element. It commonly appears under TexSlices and TextColors.
 
 ## Common Attributes
 

@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 31 addons.
+EventHandler is a XML UI element. It commonly appears under EventHandlers.
 
 ## Common Attributes
 

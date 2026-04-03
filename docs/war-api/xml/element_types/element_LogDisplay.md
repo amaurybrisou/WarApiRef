@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+LogDisplay is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Windows.
 
 ## Common Attributes
 

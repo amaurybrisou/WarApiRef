@@ -56,7 +56,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 11 addons.
+TexDims is a structural XML sub-element. It commonly appears under Button and CircleImage.
 
 ## Common Attributes
 

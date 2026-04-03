@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 30 addons.
+Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua.
 
 ## Common Attributes
 
@@ -950,67 +950,67 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.IntercomInitialize
-- Enemy.Stopwatch_Update
-- APAGui.OnShown
-- APAGui.UpdateInstantOnlyHUD
-- ClosetGoblinZoneWindow.RefreshOption
-- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- TidyRollOptions.Initialize
 - Enemy.IntercomUI_IntercomDialog_Open
-- Enemy.CombatLogUI_EpsWindow_UpdateLayout
 - MoraleCircle.ColorChanger2
-- Enemy.Timer_Update
-- Enemy.CombatLogUI_TargetDefenseWindow_Update
-- MoraleCircle.ColorChanger4
-- MoraleCircle.OnSetCustomColorEmpty
-- Swift Assist.local.SetSmartLabel
-- AggroMeter.Initialize
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.CombatLogUI_EpsWindow_Initialize
-- Killer.ShowPersonalStatsTooltip
-- Killer.ShowRowTooltip
 - APAGui.UpdateFollowTargetHUD
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.Guard_GuardIndicator_Update
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- Enemy.CombatLogUI_StatsWindow_Open
-- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- APAGui.ApplyPetTargetHUDLayout
-- DAoCBuff.ShowMessageWindow
-- Enemy.UI_ConfigDialog_Open
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- DAoCTooltips.CreateCondenseTooltip
-- MoraleCircle.ColorChanger3
-- DAoCTooltips.UpdateCondenseTooltip
-- Killer.Initialize
-- MoraleCircle.ColorChanger1
-- APAGui.UpdateKitingHUD
-- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
-- MoraleCircle.OnSetCustomColor
-- MoraleCircle.OnSetCustomColorFull
-- PP.UpdateDyeFilter
-- MoraleCircle.OnSetCustomColorFill
-- Killer.ShowTopKillersTooltip
-- WSCT.ColorOnInitialize
 - APAGui.UpdatePetTargetHUD
 - BankArkel.SetCharInfo
-- BankArkel.PackHide
-- Enemy.AssistUI_Target_Show
-- Enemy.CombatLogUI_EpsWindow_Update
-- PotionBarSettings.OnAboutShown
-- SwiftAssist.aaLabelColorSet
-- Enemy.CombatLogUI_StatsWindow_UpdateList
-- MoraleCircle.init
-- PP.UpdateListRow
-- Swift Assist.WriteLabels
-- Swift Assist.SetSmartLabel
-- ClosetGoblinCharacterWindow.OnInitialize
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
-- RoR_SoR.OnInitialize
+- Enemy.CombatLogUI_EpsWindow_Update
+- Swift Assist.WriteLabels
+- TidyRollOptions.Initialize
+- APAGui.ApplyPetTargetHUDLayout
+- WSCT.ColorOnInitialize
+- Enemy.AssistUI_Target_Show
+- Enemy.CombatLogUI_EpsWindow_UpdateLayout
+- Killer.ShowRowTooltip
+- MoraleCircle.OnSetCustomColorEmpty
 - Swift Assist.local.WriteLabels
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.Stopwatch_Update
+- Enemy.CombatLogUI_StatsWindow_UpdateList
+- Enemy.CombatLogUI_EpsWindow_Initialize
+- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
+- MoraleCircle.OnSetCustomColorFull
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.Timer_Update
+- MoraleCircle.OnSetCustomColorFill
+- DAoCTooltips.CreateCondenseTooltip
+- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- APAGui.OnShown
+- Enemy.IntercomInitialize
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- DAoCTooltips.UpdateCondenseTooltip
+- Enemy.UI_ConfigDialog_Open
+- Enemy.Guard_GuardIndicator_Update
+- Killer.ShowTopKillersTooltip
+- APAGui.UpdateInstantOnlyHUD
+- Enemy.CombatLogUI_TargetDefenseWindow_Update
+- MoraleCircle.ColorChanger4
+- MoraleCircle.init
+- RoR_SoR.OnInitialize
+- APAGui.UpdateKitingHUD
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- MoraleCircle.ColorChanger3
+- SwiftAssist.aaLabelColorSet
+- BankArkel.PackHide
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Swift Assist.local.SetSmartLabel
+- Swift Assist.SetSmartLabel
+- Enemy.CombatLogUI_StatsWindow_Open
+- Killer.ShowPersonalStatsTooltip
+- ClosetGoblinZoneWindow.RefreshOption
+- MoraleCircle.OnSetCustomColor
+- PP.UpdateListRow
+- PP.UpdateDyeFilter
+- AggroMeter.Initialize
+- ClosetGoblinCharacterWindow.OnInitialize
+- DAoCBuff.ShowMessageWindow
+- Killer.Initialize
+- MoraleCircle.ColorChanger1
+- PotionBarSettings.OnAboutShown
 
 
 ## Binding Resolution

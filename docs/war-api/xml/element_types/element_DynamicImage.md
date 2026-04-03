@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 26 addons.
+DynamicImage is an interactive XML control. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Size, TexCoords, TexDims and bind XML events like OnLButtonDown, OnLButtonUp, OnMouseOver to Lua.
 
 ## Common Attributes
 
@@ -936,40 +936,40 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- TurretRange.OnUpdate
-- Enemy.GuardInitialize
-- RoR_SoR.OnCombat
-- SwiftAssist.Initialize
-- Swift Assist.SetSmartLabel
-- GuardLine.update
-- RoR_SoR.OnInitialize
 - Enemy.Guard_GuardIndicator_Update
+- GuardLine.update
 - PP.UpdateListRow
-- Swift Assist.local.SetTexLabel
-- Enemy.EnemyEffectsIndicator:Update
-- Enemy.AssistUI_Target_Show
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Swift Assist.local.SetSmartLabel
-- BankArkel.PackImg
-- Enemy.MarksInitialize
-- Enemy.UI_Icon_Switch
-- ClosetGoblinCharacterWindow.OnInitialize
-- Enemy.Guard_OnSettingsChanged
-- Enemy.TalismanAlerterInitialize
-- RoR_SoR.OnScenario
-- SwiftAssist.OnMacroUpdated
-- WSCT.ColorAcceptButtonOnButtonUp
-- BagOMatic.init
+- Swift Assist.SetSmartLabel
 - ClosetGoblinCharacterWindow.UpdateSortButtonIcon
-- WSCT.ColorHideMenu
-- Enemy._Initialize
-- WSCT.ColorOnInitialize
-- Enemy.TalismanAlerter_Update
-- Enemy.TalismanAlerter_OnSettingsChanged
-- Swift Assist.SetTexLabel
-- WSCT.OnLButtonUpColorPicker
 - ClosetGoblinZoneWindow.OnInitialize
+- Enemy.EnemyEffectsIndicator:Update
 - ClosetGoblin.Initialize
+- WSCT.ColorOnInitialize
+- WSCT.OnLButtonUpColorPicker
+- Enemy.TalismanAlerterInitialize
+- Enemy.TalismanAlerter_Update
+- TurretRange.OnUpdate
+- BagOMatic.init
+- RoR_SoR.OnScenario
+- Swift Assist.SetTexLabel
+- Enemy.AssistUI_Target_Show
+- RoR_SoR.OnInitialize
+- Swift Assist.local.SetTexLabel
+- SwiftAssist.OnMacroUpdated
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.GuardInitialize
+- Enemy.TalismanAlerter_OnSettingsChanged
+- SwiftAssist.Initialize
+- BankArkel.PackImg
+- ClosetGoblinCharacterWindow.OnInitialize
+- Enemy.UI_Icon_Switch
+- RoR_SoR.OnCombat
+- Swift Assist.local.SetSmartLabel
+- WSCT.ColorHideMenu
+- WSCT.ColorAcceptButtonOnButtonUp
+- Enemy._Initialize
+- Enemy.MarksInitialize
+- Enemy.Guard_OnSettingsChanged
 
 
 ## Binding Resolution

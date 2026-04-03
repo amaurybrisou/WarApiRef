@@ -56,7 +56,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 7 addons.
+Sizes is a structural XML sub-element. It commonly appears under FullResizeImage and HorizontalResizeImage. It is typically used to organize structural children such as BottomRight, Middle, TopLeft.
 
 ## Common Attributes
 

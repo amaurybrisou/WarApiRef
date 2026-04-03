@@ -167,18 +167,18 @@ type constantAccumulator struct {
 }
 
 type elementAccumulator struct {
-	Name                string
-	Addons              map[string]bool
-	Attributes          map[string]int
-	Handlers            map[string]int
-	HandlerFunctions    map[string]int            // Lua function names bound via XML handlers
-	HandlerBindings     map[string]map[string]int // event → {lua_function → count}
-	Inherits            map[string]int
-	ChildTypes          map[string]int // structural (unnamed) child element types
-	ChildElementTypes   map[string]int // named child frame element types
-	ParentTypes         map[string]int // element types that contain this one
-	Snippets            []string       // CompositionSnippet candidates from real frames
-	Examples            []UsageExample
+	Name              string
+	Addons            map[string]bool
+	Attributes        map[string]int
+	Handlers          map[string]int
+	HandlerFunctions  map[string]int            // Lua function names bound via XML handlers
+	HandlerBindings   map[string]map[string]int // event → {lua_function → count}
+	Inherits          map[string]int
+	ChildTypes        map[string]int // structural (unnamed) child element types
+	ChildElementTypes map[string]int // named child frame element types
+	ParentTypes       map[string]int // element types that contain this one
+	Snippets          []string       // CompositionSnippet candidates from real frames
+	Examples          []UsageExample
 }
 
 type lifecycleAccumulator struct {
@@ -1030,16 +1030,16 @@ func finalizeElementSymbols(values map[string]*elementAccumulator, ctx scoringCo
 			continue
 		}
 		level := toPlatformConfidence(assessment.Level)
-		result = append(result, ElementTypeSymbol{
-			Name:             acc.Name,
-			Confidence:       level,
-			RawScore:         assessment.RawScore,
-			Score:            assessment.FinalScore,
-			Signals:          assessment.Signals,
-			Rationale:        assessment.Rationale,
-			Evidence:         assessment.Evidence,
-			Description:      describeElement(acc.Name, len(acc.Addons)),
-			SeenIn:           mapKeys(acc.Addons),
+		symbol := ElementTypeSymbol{
+			Name:                    acc.Name,
+			Confidence:              level,
+			RawScore:                assessment.RawScore,
+			Score:                   assessment.FinalScore,
+			Signals:                 assessment.Signals,
+			Rationale:               assessment.Rationale,
+			Evidence:                assessment.Evidence,
+			Description:             "",
+			SeenIn:                  mapKeys(acc.Addons),
 			CommonAttributes:        topKeysByCount(acc.Attributes, 12),
 			CommonHandlers:          topKeysByCount(acc.Handlers, 12),
 			CommonHandlerFunctions:  topKeysByCount(acc.HandlerFunctions, 12),
@@ -1051,7 +1051,9 @@ func finalizeElementSymbols(values map[string]*elementAccumulator, ctx scoringCo
 			XMLEventBindings:        buildXMLEventBindings(acc.HandlerBindings),
 			Examples:                firstUsageExamples(acc.Examples, 6),
 			Notes:                   nil,
-		})
+		}
+		symbol.Description = inferElementDescription(symbol)
+		result = append(result, symbol)
 	}
 	sort.Slice(result, func(i, j int) bool { return result[i].Name < result[j].Name })
 	return result
@@ -1221,9 +1223,9 @@ func buildConventions(corpus Corpus) []PatternDoc {
 		Evidence:    bindingEvidence(corpus.Source.Bindings, 8),
 	})
 	patterns = append(patterns, PatternDoc{
-		Name:       "XML runtime caveats",
-		Category:   "conventions",
-		Confidence: ConfidenceMedium,
+		Name:        "XML runtime caveats",
+		Category:    "conventions",
+		Confidence:  ConfidenceMedium,
 		Description: "Implementation-validated findings show that XML input and scroll layout behavior can depend on ancestor state and on outer-window sizing, even when child nodes appear correctly configured.",
 		Evidence: []string{
 			"WhoHealedMe: a child `OnLButtonUp` target remained inert until the parent or template input chain was made input-enabled.",
@@ -1234,9 +1236,9 @@ func buildConventions(corpus Corpus) []PatternDoc {
 		},
 	})
 	patterns = append(patterns, PatternDoc{
-		Name:       "XML list binding pattern",
-		Category:   "conventions",
-		Confidence: ConfidenceMedium,
+		Name:        "XML list binding pattern",
+		Category:    "conventions",
+		Confidence:  ConfidenceMedium,
 		Description: "ListBox rows are commonly bound through ListData-backed Lua tables, with ListColumns supplying text fields and Lua population callbacks handling extra row setup such as icons or reordered display.",
 		Evidence: []string{
 			"QuickTacticSwitch: `ListData table=\"QTS.listDisplayData\" populationfunction=\"QTS.PopulateDisplay\"` binds a ListBox to Lua-backed row data.",
@@ -2318,6 +2320,131 @@ func describeElement(name string, addonCount int) string {
 	return fmt.Sprintf("Observed XML element type instantiated by %d addons.", addonCount)
 }
 
+func inferElementDescription(symbol ElementTypeSymbol) string {
+	if text, ok := handcraftedElementDescriptions[symbol.Name]; ok {
+		return text
+	}
+
+	parents := firstStrings(graph.UniqueStrings(symbol.CommonParentTypes), 2)
+	structuralChildren := firstStrings(graph.UniqueStrings(symbol.CommonChildTypes), 3)
+	namedChildren := firstStrings(graph.UniqueStrings(symbol.CommonChildElementTypes), 3)
+	inherits := firstStrings(graph.UniqueStrings(append(symbol.CommonInherits, symbol.InheritsBases...)), 2)
+	handlers := firstStrings(graph.UniqueStrings(symbol.CommonHandlers), 3)
+	handlerFns := firstStrings(graph.UniqueStrings(symbol.CommonHandlerFunctions), 2)
+	luaManipulators := firstStrings(graph.UniqueStrings(symbol.LuaManipulators), 2)
+
+	bindingEvents := make([]string, 0, len(symbol.XMLEventBindings))
+	for _, binding := range symbol.XMLEventBindings {
+		event := strings.TrimSpace(binding.Event)
+		if event != "" {
+			bindingEvents = append(bindingEvents, event)
+		}
+	}
+	bindingEvents = firstStrings(graph.UniqueStrings(bindingEvents), 3)
+
+	if len(parents) == 0 && len(structuralChildren) == 0 && len(namedChildren) == 0 && len(inherits) == 0 && len(handlers) == 0 && len(bindingEvents) == 0 && len(handlerFns) == 0 {
+		return describeElement(symbol.Name, len(symbol.SeenIn))
+	}
+
+	role := "XML UI element"
+	if isLikelyStructuralElement(symbol.Name, handlers, bindingEvents, handlerFns, namedChildren) {
+		role = "structural XML sub-element"
+	} else if hasInputHandlers(append(handlers, bindingEvents...)) {
+		role = "interactive XML control"
+	} else if len(structuralChildren) > 0 || len(namedChildren) > 0 {
+		role = "container-style XML element"
+	} else if len(handlers) > 0 || len(bindingEvents) > 0 || len(handlerFns) > 0 {
+		role = "event-capable XML element"
+	}
+
+	where := ""
+	if len(parents) > 0 {
+		where = " It commonly appears under " + strings.Join(parents, " and ") + "."
+	} else if len(inherits) > 0 {
+		where = " It is commonly instantiated from " + strings.Join(inherits, " and ") + " templates."
+	}
+
+	doesParts := []string{}
+	if len(structuralChildren) > 0 {
+		doesParts = append(doesParts, "organize structural children such as "+strings.Join(structuralChildren, ", "))
+	}
+	if len(namedChildren) > 0 {
+		doesParts = append(doesParts, "host named child elements such as "+strings.Join(namedChildren, ", "))
+	}
+	if len(bindingEvents) > 0 {
+		doesParts = append(doesParts, "bind XML events like "+strings.Join(bindingEvents, ", ")+" to Lua")
+	} else if len(handlers) > 0 {
+		doesParts = append(doesParts, "declare handlers such as "+strings.Join(handlers, ", "))
+	}
+	if len(handlerFns) > 0 {
+		doesParts = append(doesParts, "route callbacks to Lua functions like "+strings.Join(handlerFns, ", "))
+	}
+	if len(luaManipulators) > 0 {
+		doesParts = append(doesParts, "be manipulated from Lua by functions such as "+strings.Join(luaManipulators, ", "))
+	}
+
+	what := symbol.Name + " is " + indefiniteRolePhrase(role) + "."
+
+	if len(doesParts) == 0 {
+		if len(where) > 0 {
+			return what + where
+		}
+		return what + " " + describeElement(symbol.Name, len(symbol.SeenIn))
+	}
+
+	does := " It is typically used to " + strings.Join(firstStrings(doesParts, 2), " and ") + "."
+	return what + where + does
+}
+
+var handcraftedElementDescriptions = map[string]string{
+	"Button":      "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events.",
+	"Text":        "Text is a structural XML sub-element used inside label and button-like controls to define displayed text.",
+	"ListData":    "ListData is a structural list-binding sub-element used inside list controls to connect XML definitions to Lua-backed row data.",
+	"ListColumns": "ListColumns is a structural XML container used by list controls to define how backing-table fields map to row windows.",
+	"ListColumn":  "ListColumn is a structural XML sub-element used by list controls to map one backing-table field to a target row child window.",
+	"Window":      "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua.",
+}
+
+func isLikelyStructuralElement(name string, handlers []string, bindingEvents []string, handlerFns []string, namedChildren []string) bool {
+	if len(handlers) > 0 || len(bindingEvents) > 0 || len(handlerFns) > 0 {
+		return false
+	}
+	if len(namedChildren) > 0 {
+		return false
+	}
+	knownStructural := map[string]bool{
+		"Anchor": true, "Anchors": true, "Dimensions": true, "Size": true,
+		"Point": true, "AbsPoint": true, "Text": true, "TextColors": true,
+		"Textures": true, "TexCoords": true, "States": true, "Layer": true,
+		"Layers": true, "ListData": true, "ListColumns": true, "ListColumn": true,
+	}
+	if knownStructural[name] {
+		return true
+	}
+	return strings.HasSuffix(name, "s") && !strings.HasPrefix(name, "On")
+}
+
+func hasInputHandlers(events []string) bool {
+	for _, event := range events {
+		lower := strings.ToLower(event)
+		if strings.Contains(lower, "click") || strings.Contains(lower, "mouse") || strings.Contains(lower, "button") || strings.Contains(lower, "drag") || strings.Contains(lower, "key") {
+			return true
+		}
+	}
+	return false
+}
+
+func indefiniteRolePhrase(role string) string {
+	if role == "" {
+		return "an XML element"
+	}
+	first := strings.ToLower(string(role[0]))
+	if first == "a" || first == "e" || first == "i" || first == "o" || first == "u" {
+		return "an " + role
+	}
+	return "a " + role
+}
+
 // bestCompositionSnippet picks the most representative composition snippet from
 // all observed frames of an element type. "Most representative" means the one
 // with the most XML structure lines (more sub-elements visible), which tends to
@@ -2384,39 +2511,39 @@ func inferEventPayload(name string) []string {
 // events whose argument conventions are widely observed across many addons.
 var knownXMLHandlerArgs = map[string]string{
 	// Lifecycle hooks – no engine-supplied arguments.
-	"OnInitialize":    "function()",
-	"OnShutdown":      "function()",
-	"OnShow":          "function()",
-	"OnHide":          "function()",
-	"OnShown":         "function()",
-	"OnHidden":        "function()",
+	"OnInitialize": "function()",
+	"OnShutdown":   "function()",
+	"OnShow":       "function()",
+	"OnHide":       "function()",
+	"OnShown":      "function()",
+	"OnHidden":     "function()",
 	// Mouse / pointer events.
-	"OnMouseOver":     "function()",
-	"OnMouseOut":      "function()",
-	"OnMouseDown":     "function(button)",
-	"OnMouseUp":       "function(button)",
-	"OnClick":         "function()",
-	"OnDoubleClick":   "function()",
-	"OnMouseWheel":    "function(delta)",
+	"OnMouseOver":   "function()",
+	"OnMouseOut":    "function()",
+	"OnMouseDown":   "function(button)",
+	"OnMouseUp":     "function(button)",
+	"OnClick":       "function()",
+	"OnDoubleClick": "function()",
+	"OnMouseWheel":  "function(delta)",
 	// Keyboard events.
 	"OnEnterPressed":  "function()",
 	"OnEscapePressed": "function()",
 	"OnKeyDown":       "function(key)",
 	"OnKeyUp":         "function(key)",
 	// Value / text change events.
-	"OnTextChanged":   "function()",
-	"OnValueChanged":  "function(value)",
+	"OnTextChanged":  "function()",
+	"OnValueChanged": "function(value)",
 	// Drag events.
-	"OnDragStart":     "function()",
-	"OnDragStop":      "function()",
-	"OnReceiveDrag":   "function()",
+	"OnDragStart":   "function()",
+	"OnDragStop":    "function()",
+	"OnReceiveDrag": "function()",
 	// Resize / move events.
-	"OnSizeChanged":   "function(width, height)",
-	"OnMove":          "function()",
+	"OnSizeChanged": "function(width, height)",
+	"OnMove":        "function()",
 	// Per-frame update hook – elapsed time in seconds.
-	"OnUpdate":        "function(elapsed)",
+	"OnUpdate": "function(elapsed)",
 	// Edit box events.
-	"OnCursorChanged": "function()",
+	"OnCursorChanged":        "function()",
 	"OnInputLanguageChanged": "function()",
 	// Selection / list events.
 	"OnSelectionChanged": "function(selectedRow)",

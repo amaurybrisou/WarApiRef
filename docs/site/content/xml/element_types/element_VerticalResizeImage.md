@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+VerticalResizeImage is a container-style XML element. It commonly appears under Windows. It is typically used to organize structural children such as Sizes, TexCoords, TintColor.
 
 ## Common Attributes
 

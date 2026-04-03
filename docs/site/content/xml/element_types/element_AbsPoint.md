@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 34 addons.
+AbsPoint is a structural XML sub-element. It commonly appears under Anchor and Anchors.
 
 ## Common Attributes
 

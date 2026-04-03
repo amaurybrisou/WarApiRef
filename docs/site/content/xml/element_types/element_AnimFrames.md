@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+AnimFrames is a structural XML sub-element. It commonly appears under AnimatedImage. It is typically used to organize structural children such as AnimFrame.
 
 ## Common Attributes
 

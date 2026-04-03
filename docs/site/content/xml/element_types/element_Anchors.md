@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 32 addons.
+Anchors is a structural XML sub-element. It commonly appears under AnimatedImage and Button. It is typically used to organize structural children such as AbsPoint, Anchor.
 
 ## Common Attributes
 

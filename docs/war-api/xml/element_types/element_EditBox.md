@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 13 addons.
+EditBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size, TextOffset and bind XML events like OnKeyEnter, OnKeyEscape, OnMouseOver to Lua.
 
 ## Common Attributes
 
@@ -252,18 +252,18 @@ Confidence: MEDIUM
 | 0 | `text` | wstring | current_text |
 ## Lua Functions Manipulating This Type
 
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.GroupsUI_EffectFilterDialog_Ok
+- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- PP.UpdateDyeFilter
+- Enemy.GroupsUI_EffectFilterDialog_Open
 - Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
 - Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.GroupsUI_EffectFilterDialog_Ok
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- PP.UpdateDyeFilter
-- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
 
 
 ## Binding Resolution

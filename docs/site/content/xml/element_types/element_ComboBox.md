@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 18 addons.
+ComboBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as MenuButtonOffset, Size and bind XML events like OnMouseOver, OnSelChanged to Lua.
 
 ## Common Attributes
 
@@ -263,23 +263,23 @@ Confidence: MEDIUM
 | 0 | `index` | number | selected_index |
 ## Lua Functions Manipulating This Type
 
+- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- Enemy.IntercomUI_IntercomJoinDialog_Open
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.UI_ConfigDialog_Open
+- Enemy.IntercomUI_ChooseChannelDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
-- Enemy.IntercomUI_ChooseChannelDialog_Open
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
 - Enemy.CombatLogUI_StatsWindow_Open
-- Enemy.UI_ConfigDialog_Open
-- Enemy.UnitFramesUI_ConfigDialog_Import
-- Enemy.IntercomUI_IntercomJoinDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
 - AdvancedRenownTrainer.GeneratePresetByLinkData
 - BankArkel.SetupCombos
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.UI_ConfigDialog_OnSectionSelChanged
-- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
+- Enemy.UnitFramesUI_ConfigDialog_Import
 - Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
 
 

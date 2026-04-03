@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 3 addons.
+Right is a XML UI element. It commonly appears under TexCoords.
 
 ## Common Attributes
 

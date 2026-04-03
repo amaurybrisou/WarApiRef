@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 10 addons.
+PressedHighlit is a XML UI element. It commonly appears under OverlayTexCoords and ResizeImages.
 
 ## Common Attributes
 

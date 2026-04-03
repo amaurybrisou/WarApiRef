@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+AnimFrame is a XML UI element. It commonly appears under AnimFrames.
 
 ## Common Attributes
 

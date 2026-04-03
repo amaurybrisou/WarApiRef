@@ -54,7 +54,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 2 addons.
+Text is a structural XML sub-element used inside label and button-like controls to define displayed text.
 
 ## Common Attributes
 

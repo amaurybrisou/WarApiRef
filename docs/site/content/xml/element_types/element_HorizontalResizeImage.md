@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 9 addons.
+HorizontalResizeImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Size, Sizes, TexCoords and be manipulated from Lua by functions such as APAGui.UpdateFollowTargetHUD, APAGui.UpdateInstantOnlyHUD.
 
 ## Common Attributes
 
@@ -195,11 +195,11 @@ Observed 4 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
+- APAGui.UpdateFollowTargetHUD
 - APAGui.UpdateKitingHUD
 - APAGui.UpdateInstantOnlyHUD
 - APAGui.UpdatePetTargetHUD
 - PotionBarSettings.OnShown
-- APAGui.UpdateFollowTargetHUD
 
 ## Seen In
 

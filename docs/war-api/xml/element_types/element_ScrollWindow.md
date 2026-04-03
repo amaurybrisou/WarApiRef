@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 8 addons.
+ScrollWindow is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Size, Windows and be manipulated from Lua by functions such as DAoCBuff.ShowMessageWindow, DAoCBuffSettings.PopulateSettings.
 
 ## Common Attributes
 
@@ -733,29 +733,29 @@ Observed 12 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- DAoCBuff.ShowMessageWindow
-- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- Enemy._OnArchetypeChanged
-- Enemy.local._OnArchetypeChanged
-- Killer.Initialize
 - Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
-- Enemy._OnKeyModifierChanged
-- Enemy.local._OnKeyModifierChanged
-- DAoCBuffSettings.PopulateSettings
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- DAoCBuffSettings.PopulateSettings
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- Enemy._OnKeyModifierChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
 - Enemy.EnemyGroupIcon:ApplySettings
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy._OnArchetypeChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.local._OnKeyModifierChanged
+- Enemy.local._OnArchetypeChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- DAoCBuff.ShowMessageWindow
+- Killer.Initialize
 
 ## Seen In
 

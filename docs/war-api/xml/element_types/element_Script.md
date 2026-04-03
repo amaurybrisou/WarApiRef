@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 12 addons.
+Script is a XML UI element. It commonly appears under Scripts.
 
 ## Common Attributes
 

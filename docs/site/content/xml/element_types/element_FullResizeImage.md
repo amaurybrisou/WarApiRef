@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 22 addons.
+FullResizeImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Size, Sizes, TexCoords and bind XML events like OnMouseOver to Lua.
 
 ## Common Attributes
 
@@ -799,31 +799,31 @@ Confidence: HIGH
 
 ## Lua Functions Manipulating This Type
 
-- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
-- Enemy._Initialize
-- Killer.Initialize
 - MoraleCircle.ColorChanger1
-- MoraleCircle.ColorChanger2
-- MoraleCircle.OnSetCustomColorEmpty
-- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
 - MoraleCircle.OnSetCustomColor
-- MoraleCircle.ColorChanger3
-- WHMCore.ApplyBackgroundFillColor
-- WHMGui.RefreshConfigurationWindow
-- Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- Enemy.CombatLogUI_IDS_Initialize
+- MoraleCircle.OnSetCustomColorFill
+- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
+- Enemy._Initialize
+- Killer.ShowTopKillersTooltip
 - Killer.ShowRowTooltip
 - Killer.ShowPersonalStatsTooltip
-- MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.ColorChanger3
+- WHMCore.ApplyBackgroundFillColor
+- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- Killer.Initialize
+- MoraleCircle.ColorChanger2
 - MoraleCircle.OnSetCustomColorFull
-- MoraleCircle.ColorChanger4
-- Enemy.MarksInitialize
-- WSCT.ColorOnButtonUp
-- WSCT.OnLButtonUpColorPicker
-- Killer.ShowTopKillersTooltip
+- MoraleCircle.OnSetCustomColorEmpty
 - WSCT.OnSetCustomColor
+- WSCT.OnLButtonUpColorPicker
+- WSCT.ColorOnButtonUp
+- WHMGui.RefreshConfigurationWindow
+- Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
+- Enemy.MarksInitialize
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.CombatLogUI_IDS_Initialize
+- MoraleCircle.ColorChanger4
 
 
 ## Binding Resolution

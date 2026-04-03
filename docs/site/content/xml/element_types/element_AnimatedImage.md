@@ -56,7 +56,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 5 addons.
+AnimatedImage is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as AnimFrames, Size, Windows and be manipulated from Lua by functions such as Enemy.AssistUI_Target_Show, GuardLine.update.
 
 ## Common Attributes
 

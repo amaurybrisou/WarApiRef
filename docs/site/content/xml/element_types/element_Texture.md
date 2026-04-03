@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 19 addons.
+Texture is a container-style XML element. It commonly appears under Assets. It is typically used to organize structural children such as Slice and be manipulated from Lua by functions such as Aura.Aura:UpdateWindow, BuffHead.BuffHeadEffectFrame:SetLayout.
 
 ## Common Attributes
 
@@ -91,39 +91,39 @@ Observed 73 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- RoR_SoR.T1_UPDATE
 - DAoCBuff.DAoCBuffFrame:SetBuff
-- TurretRange.local.UpdateDisplay
-- MoraleCircle.OnSetCustomColorEmpty
-- MoraleCircle.OnSetCustomColor
-- MoraleCircle.ColorChanger1
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- TurretRange.UpdateDisplay
-- MoraleCircle.ColorChanger2
-- WoHReticle.UpdateTargets
-- Enemy.UI_Icon_Switch
-- TurretRange.Setup.Display.Initialize
-- Enemy.EnemyEffectsIndicator:Update
-- FilterSettings.DisableCondenseSettings
-- TurretRange.Display.UpdateLayout
-- TurretRange.Setup.Display.LoadSettings
-- MoraleCircle.OnSetCustomColorFull
-- MoraleCircle.ColorChanger4
-- GuardLine.update
-- TurretRange.ShowElement
 - Enemy.EnemyGroupIcon:Attach
-- Aura.Aura:UpdateWindow
-- TurretRange.Setup.Display.OnCircleInvertLUp
+- MoraleCircle.ColorChanger2
+- MoraleCircle.OnSetCustomColorFull
+- TurretRange.Display.UpdateLayout
+- MoraleCircle.ColorChanger3
+- RoR_SoR.T1_UPDATE
+- TurretRange.ShowElement
+- TurretRange.OnUpdate
+- TurretRange.Setup.Display.LoadSettings
+- GuardLine.update
 - WoHReticle.CreateRing
 - BuffHead.BuffHeadEffectFrame:Update
-- TurretRange.OnUpdate
-- MoraleCircle.ColorChanger3
-- TurretRange.Setup.Display.OnCircleModeChanged
-- TurretRange.Display.SetAlpha
-- TurretRange.local.ShowElement
-- BuffHead.BuffHeadEffectFrame:SetLayout
-- MoraleCircle.OnSetCustomColorFill
+- FilterSettings.DisableCondenseSettings
+- TurretRange.UpdateDisplay
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- TurretRange.local.UpdateDisplay
+- MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.OnSetCustomColorEmpty
+- WoHReticle.UpdateTargets
+- TurretRange.Setup.Display.Initialize
+- TurretRange.local.ShowElement
+- TurretRange.Display.SetAlpha
+- MoraleCircle.OnSetCustomColor
+- Aura.Aura:UpdateWindow
+- TurretRange.Setup.Display.OnCircleInvertLUp
+- MoraleCircle.ColorChanger1
+- Enemy.UI_Icon_Switch
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- TurretRange.Setup.Display.OnCircleModeChanged
+- BuffHead.BuffHeadEffectFrame:SetLayout
+- Enemy.EnemyEffectsIndicator:Update
+- MoraleCircle.ColorChanger4
 
 ## Seen In
 

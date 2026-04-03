@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 5 addons.
+TopRight is a XML UI element. It commonly appears under TexCoords and TexSlices.
 
 ## Common Attributes
 

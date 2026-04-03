@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 31 addons.
+EventHandlers is a structural XML sub-element. It commonly appears under Button and ColorPicker. It is typically used to organize structural children such as EventHandler.
 
 ## Common Attributes
 

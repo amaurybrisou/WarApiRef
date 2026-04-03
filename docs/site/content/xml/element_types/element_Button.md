@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 27 addons.
+Button is an interactive XML control used to trigger Lua callbacks from mouse and button events.
 
 ## Common Attributes
 
@@ -1071,62 +1071,62 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- ClosetGoblinCharacterWindow.OnShow
-- ClosetGoblinCharacterWindow.ShowHelm
-- ClosetGoblinCharacterWindow.ShowShowHelm
-- PotionBar.UpdateButton
-- RoR_SoR.Restack
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
-- Enemy.CombatLogUI_StatsWindow_Open
-- AggroMeter.OnTabLBU
-- ClosetGoblinCharacterWindow.UseItemRackToggled
-- ClosetGoblinCharacterWindow.HotbarChangeToggled1
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
 - APAGui.OnShown
-- ClosetGoblinCharacterWindow.HideShowHelm
-- ClosetGoblinCharacterWindow.ShowCloakOptions
-- Enemy.IntercomUI_ChooseChannelDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- WSCT.ColorOnInitialize
-- ClosetGoblinCharacterWindow.ShowShowHelmOnly
-- Enemy.UI_ConfigDialog_OnSectionSelChanged
-- Enemy.IntercomInitialize
-- ClosetGoblinCharacterWindow.HotbarChangeToggled5
-- ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
-- Enemy.UI_ConfigDialog_Open
-- DAoCBuff.ShowMessageWindow
-- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
-- PotionBar.local.UpdateButton
-- ClosetGoblinCharacterWindow.ShowShowCloakOnly
-- Enemy.MarksUI_MarkConfigDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- Enemy.ScenarioInfoInitialize
-- ClosetGoblinCharacterWindow.UpdateSetRow
-- ClosetGoblinCharacterWindow.HotbarChangeToggled3
-- TidyRollOptions.Initialize
-- AggroMeter.Initialize
-- ClosetGoblinCharacterWindow.HideCloakOptions
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- BankArkel.CreatePackWin
-- ClosetGoblinCharacterWindow.ShowCloakHeraldry
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
-- Killer.Initialize
-- PotionBarSettings.OnAboutShown
-- LibWBTogglerManager.Initialize
-- DAoCBuffSettings.SetLabels
-- Enemy.IntercomUI_IntercomDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - ClosetGoblinCharacterWindow.OnInitialize
+- Enemy.IntercomUI_IntercomDialog_Open
+- Enemy.IntercomInitialize
 - ClosetGoblinCharacterWindow.UpdateActionBarSettings
-- ClosetGoblinCharacterWindow.ShowCloak
-- ClosetGoblinZoneWindow.OnInitialize
-- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Enemy.IntercomUI_ChooseChannelDialog_Open
+- PotionBar.UpdateButton
+- ClosetGoblinCharacterWindow.ShowShowCloakOnly
+- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- AggroMeter.OnTabLBU
+- ClosetGoblinCharacterWindow.ShowShowHelmOnly
 - Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- ClosetGoblinCharacterWindow.HotbarChangeToggled2
-- ClosetGoblinCharacterWindow.HotbarChangeToggled4
+- ClosetGoblinCharacterWindow.ShowCloakHeraldry
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- ClosetGoblinZoneWindow.OnInitialize
+- DAoCBuff.ShowMessageWindow
+- Killer.Initialize
+- WSCT.ColorOnInitialize
+- TidyRollOptions.Initialize
+- ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- PotionBar.local.UpdateButton
+- RoR_SoR.Restack
+- Enemy.UI_ConfigDialog_Open
+- Enemy.MarksUI_MarkConfigDialog_Open
+- LibWBTogglerManager.Initialize
+- ClosetGoblinCharacterWindow.ShowHelm
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- ClosetGoblinCharacterWindow.HotbarChangeToggled2
+- ClosetGoblinCharacterWindow.ShowShowHelm
+- Enemy.CombatLogUI_StatsWindow_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
 - Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- AggroMeter.Initialize
+- ClosetGoblinCharacterWindow.HotbarChangeToggled3
+- Enemy.ScenarioInfoInitialize
+- BankArkel.CreatePackWin
+- ClosetGoblinCharacterWindow.HotbarChangeToggled4
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- ClosetGoblinCharacterWindow.ShowCloakOptions
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- ClosetGoblinCharacterWindow.UseItemRackToggled
+- ClosetGoblinCharacterWindow.HideCloakOptions
+- DAoCBuffSettings.SetLabels
+- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- ClosetGoblinCharacterWindow.HideShowHelm
+- ClosetGoblinCharacterWindow.ShowCloak
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- PotionBarSettings.OnAboutShown
+- ClosetGoblinCharacterWindow.UpdateSetRow
+- ClosetGoblinCharacterWindow.OnShow
+- ClosetGoblinCharacterWindow.HotbarChangeToggled1
+- ClosetGoblinCharacterWindow.HotbarChangeToggled5
 
 
 ## Binding Resolution

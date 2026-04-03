@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 33 addons.
+Anchor is a structural XML sub-element. It commonly appears under Anchor and Anchors. It is typically used to organize structural children such as AbsPoint, Anchor.
 
 ## Common Attributes
 

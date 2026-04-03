@@ -53,7 +53,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+ColorTexCoords is a structural XML sub-element. It commonly appears under ColorPicker.
 
 ## Common Attributes
 

@@ -387,11 +387,8 @@ func enrichElementTypesFromCatalog(elementTypes []ElementTypeSymbol, catalog *se
 			Confidence:  confidenceFromCatalogString(enriched.Confidence),
 			RawScore:    enriched.Score,
 			Score:       enriched.Score,
-			Description: strings.TrimSpace(enriched.Description),
+			Description: "",
 			SeenIn:      append([]string(nil), enriched.SeenIn...),
-		}
-		if promoted.Description == "" {
-			promoted.Description = describeElement(tag, len(enriched.SeenIn))
 		}
 		applyEnrichedElementType(&promoted, enriched)
 		elementTypes = append(elementTypes, promoted)
@@ -405,13 +402,6 @@ func enrichElementTypesFromCatalog(elementTypes []ElementTypeSymbol, catalog *se
 }
 
 func applyEnrichedElementType(sym *ElementTypeSymbol, enriched *semantic_merge.EnrichedElement) {
-	if sym.Description == "" {
-		if strings.TrimSpace(enriched.Description) != "" {
-			sym.Description = strings.TrimSpace(enriched.Description)
-		} else {
-			sym.Description = describeElement(sym.Name, len(enriched.SeenIn))
-		}
-	}
 	if sym.Score == 0 {
 		sym.Score = enriched.Score
 	}
@@ -616,6 +606,9 @@ func applyEnrichedElementType(sym *ElementTypeSymbol, enriched *semantic_merge.E
 	sort.Strings(sym.CommonChildTypes)
 	sort.Strings(sym.CommonChildElementTypes)
 	sort.Strings(sym.CommonParentTypes)
+
+	// Keep element descriptions deterministic and evidence-based.
+	sym.Description = inferElementDescription(*sym)
 }
 
 func confidenceFromCatalogString(value string) Confidence {

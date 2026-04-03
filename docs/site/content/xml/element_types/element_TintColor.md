@@ -56,7 +56,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 14 addons.
+TintColor is a XML UI element. It commonly appears under CircleImage and DynamicImage.
 
 ## Common Attributes
 

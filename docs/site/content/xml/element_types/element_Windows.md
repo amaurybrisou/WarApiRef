@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 32 addons.
+Windows is a container-style XML element. It commonly appears under AnimatedImage and Button. It is typically used to host named child elements such as AnimatedImage, Button, CircleImage.
 
 ## Common Attributes
 

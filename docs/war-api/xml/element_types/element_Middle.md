@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 7 addons.
+Middle is a XML UI element. It commonly appears under Sizes and TexCoords.
 
 ## Common Attributes
 

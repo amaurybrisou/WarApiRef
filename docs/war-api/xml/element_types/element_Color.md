@@ -48,7 +48,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 22 addons.
+Color is a XML UI element. It commonly appears under DynamicImage and FullResizeImage.
 
 ## Common Attributes
 

@@ -71,7 +71,7 @@ Observed as a window function across 6 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", self.name, timerBarName |
+| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", self.name, timerBarName |
 | arg2 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.r, red |
 | arg3 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.g, green |
 | arg4 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.b, blue |

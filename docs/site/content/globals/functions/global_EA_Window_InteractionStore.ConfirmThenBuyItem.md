@@ -67,7 +67,7 @@ Observed as a global function across 1 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: 13, item_slot_num |
+| arg1 | Observed as a numeric value. | Observed values: 13, item_slot_num |
 | arg2 | Observed as a numeric value. | Observed values: 1 |
 
 ## Returns

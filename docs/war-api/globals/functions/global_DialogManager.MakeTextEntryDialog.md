@@ -70,7 +70,7 @@ Observed as a global function across 3 addons.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | arg1 | Observed as a runtime window or control identifier. | Observed values: L "New combat log session", L "Rename combat log session", T["Shinies - Save Search"] |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: L "Enter new session name", L "Enter session name", L "Enter set name :" |
+| arg2 | Observed as a text or wstring payload. | Observed values: L "Enter new session name", L "Enter session name", L "Enter set name :" |
 | arg3 | Observed as a runtime window or control identifier. | Observed values: L "", L "Default", T["New Search"] |
 | arg4 | Observed as a function or method reference. | Observed values: ClosetGoblinCharacterWindow.OnSubmitNewSetName, ClosetGoblinCharacterWindow.OnSubmitSetRename, ShiniesBrowseUI.Searches_OnAddSuccess |
 | arg5 | Observed as a runtime window or control identifier. | Observed values: ShiniesBrowseUI.Searches_OnAddCancel, nil |

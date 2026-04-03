@@ -60,7 +60,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 14 addons.
+SliderBar is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnMouseOver, OnSlide to Lua.
 
 ## Common Attributes
 
@@ -100,7 +100,7 @@ Observed XML element type instantiated by 14 addons.
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | WSCT.OnMouseOver | `function()` | MEDIUM |
 | [OnSlide](../handlers/handler_OnSlide.md) | custom | AuraColorPicker.OnSlide, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, BuffHead.Setup.SelectColor.OnSlideTint, MoraleCircle.OnSetCustomColor, MoraleCircle.OnSetCustomColorEmpty, MoraleCircle.OnSetCustomColorFill | `function(...)` | LOW |
-| [OnSlide](../handlers/handler_OnSlide.md) | custom | AuraColorPicker.OnSlide, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, BuffHead.Setup.SelectColor.OnSlideTint, MoraleCircle.OnSetCustomColor, MoraleCircle.OnSetCustomColorEmpty, MoraleCircle.OnSetCustomColorFill, MoraleCircle.OnSetCustomColorFull, TexturedButtons.Setup.SelectColor.OnSlideTint, TexturedButtons.Setup.Tint.OnSlideTint, TurretRange.Setup.Display.OnSlideTint, TurretRange.Setup.Distance.OnSlideTint, WSCT.OnSetCustomColor, AuraConfig.OnTextureRotationSlide, AuraConfig.OnTextureScaleSlide, AuraConfig.OnTimerScaleSlide, BuffHead.Setup.AdvancedContainersItem.Properties.OnSlideScale, BuffHead.Setup.Container.OnSlideColumns, BuffHead.Setup.Container.OnSlidePaddingHorizontal, BuffHead.Setup.Container.OnSlidePaddingVertical, BuffHead.Setup.Container.OnSlideRows, BuffHead.Setup.Display.OnSlideIndicatorScale, BuffHead.Setup.Display.OnSlidePaddingHorizontal, BuffHead.Setup.Display.OnSlidePaddingVertical, BuffHead.Setup.General.OnSlideMaximumThreshold, BuffHead.Setup.Layout.Properties.OnSlideAlphaAlpha, BuffHead.Setup.Layout.Properties.OnSlideIconBorderAlpha, BuffHead.Setup.Layout.Properties.OnSlideSizeScale, BuffHead.Setup.Layout.Properties.OnSlideStatusBarBackgroundAlpha, BuffHead.Setup.Layout.Properties.OnSlideStatusBarForegroundAlpha, BuffHead.Setup.Performance.OnSlideGeneralUpdateDelay, BuffHead.Setup.Performance.OnSlideMaximumUpdates, BuffHead.Setup.Performance.OnSlidePriorityUpdateDelay, BuffHead.Setup.Performance.OnSlidePriorityUpdateStart, BuffHead.Setup.Performance.OnSlideResyncTargetDelay, DAoCBuffSettings.FilterSettings.OnSlideBB, DAoCBuffSettings.FilterSettings.OnSlideBG, DAoCBuffSettings.FilterSettings.OnSlideBR, DAoCBuffSettings.FilterSettings.OnSlideCB, DAoCBuffSettings.FilterSettings.OnSlideCG, DAoCBuffSettings.FilterSettings.OnSlideCR, LibGroup.Setup.OnSlideGroupDistanceCacheUpdate, LibGroup.Setup.OnSlideGroupDistanceSearchUpdate, LibGroup.Setup.OnSlideGroupUpdateDelay, PotionBarSettings.OnAlphaSliderChanged, PotionBarSettings.OnScaleSliderChanged, RoR_SoR.OnSlideWindowOptionsOffset, RoR_SoR.OnSlideWindowOptionsOpacity, RoR_SoR.OnSlideWindowOptionsScale, ShiniesConfigGeneral.OnSlide_UIScale, TexturedButtons.Setup.Cooldown.OnSlideCooldownAlpha, TurretRange.Setup.Display.OnSlideDistanceScale, TurretRange.Setup.General.OnSlideUpdateDelay, WSCT.SliderOnSlide, WarBoard.Options.OnSlide | `pos` | LOW |
+| [OnSlide](../handlers/handler_OnSlide.md) | custom | AuraColorPicker.OnSlide, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, BuffHead.Setup.SelectColor.OnSlideTint, MoraleCircle.OnSetCustomColor, MoraleCircle.OnSetCustomColorEmpty, MoraleCircle.OnSetCustomColorFill, MoraleCircle.OnSetCustomColorFull, TexturedButtons.Setup.SelectColor.OnSlideTint, TexturedButtons.Setup.Tint.OnSlideTint, TurretRange.Setup.Display.OnSlideTint, TurretRange.Setup.Distance.OnSlideTint, WSCT.OnSetCustomColor, AuraConfig.OnTextureRotationSlide, AuraConfig.OnTextureScaleSlide, AuraConfig.OnTimerScaleSlide, BuffHead.Setup.AdvancedContainersItem.Properties.OnSlideScale, BuffHead.Setup.Container.OnSlideColumns, BuffHead.Setup.Container.OnSlidePaddingHorizontal, BuffHead.Setup.Container.OnSlidePaddingVertical, BuffHead.Setup.Container.OnSlideRows, BuffHead.Setup.Display.OnSlideIndicatorScale, BuffHead.Setup.Display.OnSlidePaddingHorizontal, BuffHead.Setup.Display.OnSlidePaddingVertical, BuffHead.Setup.General.OnSlideMaximumThreshold, BuffHead.Setup.Layout.Properties.OnSlideAlphaAlpha, BuffHead.Setup.Layout.Properties.OnSlideIconBorderAlpha, BuffHead.Setup.Layout.Properties.OnSlideSizeScale, BuffHead.Setup.Layout.Properties.OnSlideStatusBarBackgroundAlpha, BuffHead.Setup.Layout.Properties.OnSlideStatusBarForegroundAlpha, BuffHead.Setup.Performance.OnSlideGeneralUpdateDelay, BuffHead.Setup.Performance.OnSlideMaximumUpdates, BuffHead.Setup.Performance.OnSlidePriorityUpdateDelay, BuffHead.Setup.Performance.OnSlidePriorityUpdateStart, BuffHead.Setup.Performance.OnSlideResyncTargetDelay, DAoCBuffSettings.FilterSettings.OnSlideBB, DAoCBuffSettings.FilterSettings.OnSlideBG, DAoCBuffSettings.FilterSettings.OnSlideBR, DAoCBuffSettings.FilterSettings.OnSlideCB, DAoCBuffSettings.FilterSettings.OnSlideCG, DAoCBuffSettings.FilterSettings.OnSlideCR, LibGroup.Setup.OnSlideGroupDistanceCacheUpdate, LibGroup.Setup.OnSlideGroupDistanceSearchUpdate, LibGroup.Setup.OnSlideGroupUpdateDelay, PotionBarSettings.OnAlphaSliderChanged, PotionBarSettings.OnScaleSliderChanged, RoR_SoR.OnSlideWindowOptionsOffset, RoR_SoR.OnSlideWindowOptionsOpacity, RoR_SoR.OnSlideWindowOptionsScale, ShiniesConfigGeneral.OnSlide_UIScale, TexturedButtons.Setup.Cooldown.OnSlideCooldownAlpha, TurretRange.Setup.Display.OnSlideDistanceScale, TurretRange.Setup.General.OnSlideUpdateDelay, WSCT.SliderOnSlide, WarBoard.Options.OnSlide | `value` | LOW |
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | WSCT.OnMouseOver | `` |  |
 
 ### Per-Event Lua API Calls
@@ -216,22 +216,22 @@ Confidence: LOW
 
 ## Lua Functions Manipulating This Type
 
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- MoraleCircle.OnSetCustomColorEmpty
-- RoR_SoR.OnWindowOptionsSetScale
-- WSCT.OnSetCustomColor
-- RoR_SoR.OnWindowOptionsSetOpacity
-- RoR_SoR.OnWindowOptionsSetOffset
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- MoraleCircle.ColorChanger2
 - MoraleCircle.OnSetCustomColorFull
 - MoraleCircle.ColorChanger4
-- WSCT.OnLButtonUpColorPicker
+- WSCT.ColorOnButtonUp
 - MoraleCircle.OnSetCustomColor
+- RoR_SoR.OnWindowOptionsSetOpacity
+- RoR_SoR.OnWindowOptionsSetOffset
+- WSCT.OnSetCustomColor
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
 - MoraleCircle.ColorChanger1
 - MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.ColorChanger2
 - MoraleCircle.ColorChanger3
-- WSCT.ColorOnButtonUp
+- MoraleCircle.OnSetCustomColorEmpty
+- RoR_SoR.OnWindowOptionsSetScale
+- WSCT.OnLButtonUpColorPicker
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 
 
 ## Binding Resolution

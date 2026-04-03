@@ -56,7 +56,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 4 addons.
+OverlayTexCoords is a structural XML sub-element. It commonly appears under Button. It is typically used to organize structural children such as Disabled, Normal, NormalHighlit.
 
 ## Common Attributes
 

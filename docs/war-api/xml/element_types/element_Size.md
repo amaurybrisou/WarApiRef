@@ -56,7 +56,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 33 addons.
+Size is a structural XML sub-element. It commonly appears under AnimatedImage and Button. It is typically used to organize structural children such as AbsPoint.
 
 ## Common Attributes
 

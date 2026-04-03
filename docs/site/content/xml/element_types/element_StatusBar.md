@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed XML element type instantiated by 2 addons.
+StatusBar is a container-style XML element. It commonly appears under Window. It is typically used to organize structural children such as Anchors.
 
 ## Common Attributes
 

@@ -69,8 +69,8 @@ Observed mutating runtime window state or presentation.
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: self:GetName() |
 | arg2 | Observed as a boolean toggle. | Observed values: false, true |
-| arg3 | Observed as a function or method reference. | Observed values: "", resizeData.sizePoint |
-| arg4 | Observed as a boolean toggle. | Observed values: false, resizeData.lockAspect |
+| arg3 | Observed as a text or wstring payload. | Observed values: "", resizeData.sizePoint |
+| arg4 | Observed as a function or method reference. | Observed values: false, resizeData.lockAspect |
 
 ## Returns
 

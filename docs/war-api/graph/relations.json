@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T03:58:04.235952515Z",
+  "generated_at": "2026-04-03T04:08:54.558957501Z",
   "frequent_call_chains": [
     {
       "id": "call_chain:xml_event.OnUpdate_function.window.WindowSetShowing",
@@ -53,7 +53,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "xml_event:OnLButtonUp",
@@ -93,7 +93,7 @@
           "path": "xml/element_types/element_ComboBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 18 addons."
+          "summary": "ComboBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as MenuButtonOffset, Size and bind XML events like OnMouseOver, OnSelChanged to Lua."
         },
         {
           "id": "xml_event:OnSelChanged",
@@ -133,7 +133,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         },
         {
           "id": "xml_event:OnLButtonUp",
@@ -173,7 +173,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
+          "summary": "EditBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size, TextOffset and bind XML events like OnKeyEnter, OnKeyEscape, OnMouseOver to Lua."
         },
         {
           "id": "xml_event:OnTextChanged",
@@ -213,7 +213,7 @@
           "path": "xml/element_types/element_SliderBar.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 14 addons."
+          "summary": "SliderBar is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnMouseOver, OnSlide to Lua."
         },
         {
           "id": "xml_event:OnSlide",
@@ -253,7 +253,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         },
         {
           "id": "xml_event:OnHidden",
@@ -293,7 +293,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         },
         {
           "id": "xml_event:OnMouseOver",
@@ -333,7 +333,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         },
         {
           "id": "xml_event:OnMouseOver",
@@ -373,7 +373,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         },
         {
           "id": "xml_event:OnShown",
@@ -413,7 +413,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "xml_event:OnMouseOver",
@@ -453,7 +453,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         },
         {
           "id": "xml_event:OnRButtonUp",
@@ -493,7 +493,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         },
         {
           "id": "xml_event:OnLButtonUp",
@@ -533,7 +533,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         },
         {
           "id": "xml_event:OnInitialize",
@@ -573,7 +573,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         },
         {
           "id": "xml_event:OnRButtonUp",
@@ -613,7 +613,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         },
         {
           "id": "xml_event:OnLButtonDown",
@@ -653,7 +653,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         },
         {
           "id": "xml_event:OnMouseOverEnd",
@@ -693,7 +693,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Size, TexCoords, TexDims and bind XML events like OnLButtonDown, OnLButtonUp, OnMouseOver to Lua."
         },
         {
           "id": "xml_event:OnMouseOver",
@@ -783,7 +783,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         }
       ],
       "flow": [
@@ -933,7 +933,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         },
         {
           "id": "xml_event:OnHyperLinkLButtonUp",
@@ -973,7 +973,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         },
         {
           "id": "xml_event:OnHyperLinkRButtonUp",
@@ -1053,7 +1053,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Size, TexCoords, TexDims and bind XML events like OnLButtonDown, OnLButtonUp, OnMouseOver to Lua."
         },
         {
           "id": "xml_event:OnLButtonUp",
@@ -1093,7 +1093,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         },
         {
           "id": "xml_event:OnRButtonDown",
@@ -1133,7 +1133,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "xml_event:OnRButtonUp",
@@ -1253,7 +1253,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         },
         {
           "id": "xml_event:OnKeyEscape",
@@ -1293,7 +1293,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
+          "summary": "EditBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size, TextOffset and bind XML events like OnKeyEnter, OnKeyEscape, OnMouseOver to Lua."
         },
         {
           "id": "xml_event:OnMouseOver",
@@ -1373,7 +1373,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "xml_event:OnMouseOverEnd",
@@ -1533,7 +1533,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
+          "summary": "EditBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size, TextOffset and bind XML events like OnKeyEnter, OnKeyEscape, OnMouseOver to Lua."
         },
         {
           "id": "xml_event:OnKeyEnter",
@@ -1573,7 +1573,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
+          "summary": "EditBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size, TextOffset and bind XML events like OnKeyEnter, OnKeyEscape, OnMouseOver to Lua."
         },
         {
           "id": "xml_event:OnKeyEscape",
@@ -1693,7 +1693,7 @@
           "path": "xml/element_types/element_ComboBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 18 addons."
+          "summary": "ComboBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as MenuButtonOffset, Size and bind XML events like OnMouseOver, OnSelChanged to Lua."
         },
         {
           "id": "xml_event:OnMouseOver",
@@ -1973,7 +1973,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Size, TexCoords, TexDims and bind XML events like OnLButtonDown, OnLButtonUp, OnMouseOver to Lua."
         },
         {
           "id": "xml_event:OnRButtonUp",
@@ -2063,7 +2063,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         }
       ],
       "flow": [
@@ -2465,7 +2465,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "ui:ColorPicker",
@@ -2475,7 +2475,7 @@
           "path": "xml/element_types/element_ColorPicker.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 1 addons."
+          "summary": "ColorPicker is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as ColorSize, ColorSpacing, ColorTexCoords and bind XML events like OnLButtonUp to Lua."
         },
         {
           "id": "ui:DynamicImage",
@@ -2485,7 +2485,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Size, TexCoords, TexDims and bind XML events like OnLButtonDown, OnLButtonUp, OnMouseOver to Lua."
         },
         {
           "id": "ui:Label",
@@ -2495,7 +2495,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         },
         {
           "id": "ui:ListBox",
@@ -2505,7 +2505,7 @@
           "path": "xml/element_types/element_ListBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 12 addons."
+          "summary": "ListBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as ListData, Size and bind XML events like OnLButtonUp, OnMouseOver, OnMouseOverEnd to Lua."
         },
         {
           "id": "ui:MapDisplay",
@@ -2515,7 +2515,7 @@
           "path": "xml/element_types/element_MapDisplay.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 1 addons."
+          "summary": "MapDisplay is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnLButtonUp, OnMButtonUp, OnPointMouseOver to Lua."
         },
         {
           "id": "ui:Window",
@@ -2525,7 +2525,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -2568,7 +2568,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "ui:ComboBox",
@@ -2578,7 +2578,7 @@
           "path": "xml/element_types/element_ComboBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 18 addons."
+          "summary": "ComboBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as MenuButtonOffset, Size and bind XML events like OnMouseOver, OnSelChanged to Lua."
         },
         {
           "id": "ui:DynamicImage",
@@ -2588,7 +2588,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Size, TexCoords, TexDims and bind XML events like OnLButtonDown, OnLButtonUp, OnMouseOver to Lua."
         },
         {
           "id": "ui:EditBox",
@@ -2598,7 +2598,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
+          "summary": "EditBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size, TextOffset and bind XML events like OnKeyEnter, OnKeyEscape, OnMouseOver to Lua."
         },
         {
           "id": "ui:FullResizeImage",
@@ -2608,7 +2608,7 @@
           "path": "xml/element_types/element_FullResizeImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 22 addons."
+          "summary": "FullResizeImage is an interactive XML control. It commonly appears under Button and Window. It is typically used to organize structural children such as Size, Sizes, TexCoords and bind XML events like OnMouseOver to Lua."
         },
         {
           "id": "ui:Label",
@@ -2618,7 +2618,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         },
         {
           "id": "ui:ListBox",
@@ -2628,7 +2628,7 @@
           "path": "xml/element_types/element_ListBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 12 addons."
+          "summary": "ListBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as ListData, Size and bind XML events like OnLButtonUp, OnMouseOver, OnMouseOverEnd to Lua."
         },
         {
           "id": "ui:SliderBar",
@@ -2638,7 +2638,7 @@
           "path": "xml/element_types/element_SliderBar.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 14 addons."
+          "summary": "SliderBar is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnMouseOver, OnSlide to Lua."
         },
         {
           "id": "ui:Window",
@@ -2648,7 +2648,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -2691,7 +2691,7 @@
           "path": "xml/element_types/element_ComboBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 18 addons."
+          "summary": "ComboBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as MenuButtonOffset, Size and bind XML events like OnMouseOver, OnSelChanged to Lua."
         }
       ],
       "flow": [
@@ -2734,7 +2734,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "ui:DynamicImage",
@@ -2744,7 +2744,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Size, TexCoords, TexDims and bind XML events like OnLButtonDown, OnLButtonUp, OnMouseOver to Lua."
         },
         {
           "id": "ui:Label",
@@ -2754,7 +2754,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         },
         {
           "id": "ui:ListBox",
@@ -2764,7 +2764,7 @@
           "path": "xml/element_types/element_ListBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 12 addons."
+          "summary": "ListBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as ListData, Size and bind XML events like OnLButtonUp, OnMouseOver, OnMouseOverEnd to Lua."
         },
         {
           "id": "ui:MapDisplay",
@@ -2774,7 +2774,7 @@
           "path": "xml/element_types/element_MapDisplay.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 1 addons."
+          "summary": "MapDisplay is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnLButtonUp, OnMButtonUp, OnPointMouseOver to Lua."
         },
         {
           "id": "ui:Window",
@@ -2784,7 +2784,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -2827,7 +2827,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
+          "summary": "EditBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size, TextOffset and bind XML events like OnKeyEnter, OnKeyEscape, OnMouseOver to Lua."
         }
       ],
       "flow": [
@@ -2870,7 +2870,7 @@
           "path": "xml/element_types/element_SliderBar.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 14 addons."
+          "summary": "SliderBar is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnMouseOver, OnSlide to Lua."
         }
       ],
       "flow": [
@@ -2913,7 +2913,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -2956,7 +2956,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "ui:DynamicImage",
@@ -2966,7 +2966,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Size, TexCoords, TexDims and bind XML events like OnLButtonDown, OnLButtonUp, OnMouseOver to Lua."
         },
         {
           "id": "ui:Label",
@@ -2976,7 +2976,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         },
         {
           "id": "ui:ListBox",
@@ -2986,7 +2986,7 @@
           "path": "xml/element_types/element_ListBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 12 addons."
+          "summary": "ListBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as ListData, Size and bind XML events like OnLButtonUp, OnMouseOver, OnMouseOverEnd to Lua."
         },
         {
           "id": "ui:Window",
@@ -2996,7 +2996,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3039,7 +3039,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3082,7 +3082,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "ui:DynamicImage",
@@ -3092,7 +3092,7 @@
           "path": "xml/element_types/element_DynamicImage.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 26 addons."
+          "summary": "DynamicImage is an interactive XML control. It commonly appears under Button and DynamicImage. It is typically used to organize structural children such as Size, TexCoords, TexDims and bind XML events like OnLButtonDown, OnLButtonUp, OnMouseOver to Lua."
         },
         {
           "id": "ui:Label",
@@ -3102,7 +3102,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         },
         {
           "id": "ui:Window",
@@ -3112,7 +3112,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3155,7 +3155,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "ui:Window",
@@ -3165,7 +3165,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3208,7 +3208,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
+          "summary": "EditBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size, TextOffset and bind XML events like OnKeyEnter, OnKeyEscape, OnMouseOver to Lua."
         },
         {
           "id": "ui:Window",
@@ -3218,7 +3218,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3261,7 +3261,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "ui:Window",
@@ -3271,7 +3271,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3314,7 +3314,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         }
       ],
       "flow": [
@@ -3357,7 +3357,7 @@
           "path": "xml/element_types/element_Label.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 30 addons."
+          "summary": "Label is an interactive XML control. It commonly appears under Button and CircleImage. It is typically used to organize structural children such as Size, Text, TintColor and bind XML events like OnHyperLinkLButtonUp, OnHyperLinkRButtonUp, OnLButtonDown to Lua."
         }
       ],
       "flow": [
@@ -3400,7 +3400,7 @@
           "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
+          "summary": "EditBox is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size, TextOffset and bind XML events like OnKeyEnter, OnKeyEscape, OnMouseOver to Lua."
         }
       ],
       "flow": [
@@ -3443,7 +3443,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         }
       ],
       "flow": [
@@ -3483,7 +3483,7 @@
           "path": "xml/element_types/element_Button.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 27 addons."
+          "summary": "Button is an interactive XML control used to trigger Lua callbacks from mouse and button events."
         },
         {
           "id": "ui:MapDisplay",
@@ -3493,7 +3493,7 @@
           "path": "xml/element_types/element_MapDisplay.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 1 addons."
+          "summary": "MapDisplay is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnLButtonUp, OnMButtonUp, OnPointMouseOver to Lua."
         },
         {
           "id": "ui:Window",
@@ -3503,7 +3503,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3542,7 +3542,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3581,7 +3581,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3619,7 +3619,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3657,7 +3657,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3694,7 +3694,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3731,7 +3731,7 @@
           "path": "xml/element_types/element_MapDisplay.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 1 addons."
+          "summary": "MapDisplay is an interactive XML control. It commonly appears under Window. It is typically used to organize structural children such as Size and bind XML events like OnLButtonUp, OnMButtonUp, OnPointMouseOver to Lua."
         }
       ],
       "flow": [
@@ -3767,7 +3767,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
@@ -3803,7 +3803,7 @@
           "path": "xml/element_types/element_VerticalScrollbar.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 7 addons."
+          "summary": "VerticalScrollbar is a container-style XML element. It commonly appears under LogDisplay and ScrollWindow. It is typically used to organize structural children such as Size and bind XML events like OnScrollPosChanged to Lua."
         }
       ],
       "flow": [
@@ -3839,7 +3839,7 @@
           "path": "xml/element_types/element_Window.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 32 addons."
+          "summary": "Window is a container-style XML element used as a top-level UI frame that hosts child controls and routes lifecycle or input handlers into Lua."
         }
       ],
       "flow": [
