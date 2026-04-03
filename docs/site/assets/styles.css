@@ -490,6 +490,11 @@ body:not(.show-advanced) .graph-controls {
   display: none;
 }
 
+/* Hide internal metric columns (score/rationale) by default. */
+body:not(.show-advanced) .internal-metric-cell {
+  display: none;
+}
+
 /* Visual indicator: active state matches the secondary button accent. */
 .topbar-actions #analysisToggle[aria-pressed="true"] {
   background:   var(--accent-soft);

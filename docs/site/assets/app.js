@@ -39,6 +39,66 @@ const ANALYSIS_HEADINGS = new Set([
   "binding resolution",
 ]);
 
+// Exact H2 heading text (lower-cased) that are developer-facing XML structure content.
+// These are intentionally kept visible in default mode.
+const DEVELOPER_VISIBLE_XML_HEADINGS = new Set([
+  "description",
+  "common attributes",
+  "common handlers",
+  "xml event bindings",
+  "common inherits",
+  "common parent elements",
+  "common structural child elements",
+  "typical xml structure",
+  "structural sub-elements",
+  "recursive hierarchy",
+]);
+
+const INTERNAL_METRIC_COLUMNS = new Set(["score", "rationale"]);
+
+function normalizeHeadingKey(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
+function classifyDocSectionHeading(value) {
+  const headingKey = normalizeHeadingKey(value);
+  if (ANALYSIS_HEADINGS.has(headingKey)) {
+    return ["analysis-section", "internal-section"];
+  }
+  if (DEVELOPER_VISIBLE_XML_HEADINGS.has(headingKey)) {
+    return ["developer-visible-section"];
+  }
+  return [];
+}
+
+function markInternalMetricColumns() {
+  const tables = docRoot.querySelectorAll("table");
+  tables.forEach((table) => {
+    const headerRow = table.querySelector("thead tr") || table.querySelector("tr");
+    if (!headerRow) return;
+
+    const headerCells = Array.from(headerRow.querySelectorAll("th, td"));
+    if (!headerCells.length) return;
+
+    const metricColumnIndexes = [];
+    headerCells.forEach((cell, index) => {
+      const key = normalizeHeadingKey(cell.textContent);
+      if (INTERNAL_METRIC_COLUMNS.has(key)) metricColumnIndexes.push(index);
+    });
+    if (!metricColumnIndexes.length) return;
+
+    const rowList = table.querySelectorAll("tr");
+    metricColumnIndexes.forEach((columnIndex) => {
+      rowList.forEach((row) => {
+        const rowCells = row.querySelectorAll("th, td");
+        if (columnIndex < rowCells.length) {
+          rowCells[columnIndex].classList.add("internal-metric-cell");
+        }
+      });
+    });
+  });
+}
+
 function applyAnalysisToggle(show) {
 	document.body.classList.toggle("show-advanced", show);
   document.body.classList.toggle("show-analysis", show);
@@ -330,11 +390,8 @@ function makeDocSectionsCollapsible() {
     const details = document.createElement("details");
     details.className = `doc-section ${levelClass}`;
 
-    // Mark analysis-only sections so the toggle can hide/show them.
-    const headingKey = (current.textContent || "").trim().toLowerCase();
-    if (ANALYSIS_HEADINGS.has(headingKey)) {
-      details.classList.add("analysis-section");
-    }
+    const sectionClasses = classifyDocSectionHeading(current.textContent);
+    if (sectionClasses.length) details.classList.add(...sectionClasses);
 
     const summary = document.createElement("summary");
     summary.className = "doc-section-summary";
@@ -370,6 +427,7 @@ function makeDocSectionsCollapsible() {
 
   docRoot.innerHTML = "";
   docRoot.appendChild(fragment);
+  markInternalMetricColumns();
 }
 
 // --- Graph (Cytoscape.js) ----------------------------------------------------
