@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 21 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:760`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:829`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:760`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:829`, `/workspace/data/raw/TidyChat/TidyChat.lua:1936`, `/workspace/data/raw/TidyChat/TidyChat.lua:2031`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:828` |
+| Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:761`, `/workspace/data/raw/Ace/LibGUI.lua:831`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:426`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:5`, `/workspace/data/raw/Aura/Source/AuraShares.lua:365`, `/workspace/data/raw/Aura/Source/AuraShares.lua:372`, `/workspace/data/raw/Aura/Source/AuraShares.lua:68`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283` |
 | Namespaces detected | ButtonSetPressedFlag |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Checkbox:SetValue, InfoScroller: LIBGUI_Optionbutton:SetValue, PartyCast: LIBGUI_Checkbox:SetValue, PartyCast: LIBGUI_Optionbutton:SetValue, TidyChat: TidyChat.Options.OnCheckboxLBU, TidyChat: TidyChat.Options.Reset |
+| Example locations | Ace: LIBGUI_Checkbox:SetValue, Ace: LIBGUI_Optionbutton:SetValue, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SetLabels, AdvancedRenownTrainer: AdvancedRenownTraining.ChangeTab, AdvancedRenownTrainer: AdvancedRenownTraining.OnButtonPressedActiveTab, AdvancedRenownTrainer: AdvancedRenownTraining.OnButtonPressedAdvancedTab |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 25 |
-| Global usage count | 25 |
+| Lua usage count | 302 |
+| Global usage count | 302 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: TCHAT_LOGS_AUCTION_FILTER_CHECKBOX.."Button", TCHAT_LOGS_COPY_SHOWING_CHECKBOX.."Button", TCHAT_LOGS_LOOT_ROLL_FILTER_CHECKBOX.."Button" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: GetSetting("auto-greed"), GetSetting("auto-need-for-medallions"), GetSetting("career-icon-show") |
+| arg1 | Observed as a function or method reference. | Observed values: "AggroMeterGrayWindowBlackTab", "AggroMeterGrayWindowListTab", "AggroMeterGrayWindowWhiteTab" |
+| arg2 | Observed as a function or method reference. | Observed values: (LibGroup.Settings.Distance.Enabled==true), (activeTracker.Enabled==true), (activeTracker.OnTargetChange.ClearAlwaysShow==true) |
 
 ## Returns
 
@@ -84,19 +84,36 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- Killer
+- LibGroup
+- LibWBToggler
 - PartyCast
+- Pocket Palette
+- PotionBar
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
+- TurretRange
+- WSCT
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Checkbox:SetValue -> ButtonSetPressedFlag(self.name, checkState)
-- InfoScroller: LIBGUI_Optionbutton:SetValue -> ButtonSetPressedFlag(self.name, checkState)
-- PartyCast: LIBGUI_Checkbox:SetValue -> ButtonSetPressedFlag(self.name, checkState)
-- PartyCast: LIBGUI_Optionbutton:SetValue -> ButtonSetPressedFlag(self.name, checkState)
-- TidyChat: TidyChat.Options.OnCheckboxLBU -> ButtonSetPressedFlag(checkboxName, not ButtonGetPressedFlag(checkboxName))
-- TidyChat: TidyChat.Options.Reset -> ButtonSetPressedFlag(TCHAT_TEXT_ENTRY_FREE_TEXT_ENTRY_CHECKBOX.."Button", Settings.textentry_free)
+- Ace: LIBGUI_Checkbox:SetValue -> ButtonSetPressedFlag(self.name, checkState)
+- Ace: LIBGUI_Optionbutton:SetValue -> ButtonSetPressedFlag(self.name, checkState)
+- AdvancedRenownTrainer: AdvancedRenownTrainer.local.SetLabels -> ButtonSetPressedFlag(PresetWindowName.."SaveSelectedCheckBox", CheckButton)
+- AdvancedRenownTrainer: AdvancedRenownTraining.ChangeTab -> ButtonSetPressedFlag(WindowName..AdvancedRenownTraining.ADVANCED, false)
+- AdvancedRenownTrainer: AdvancedRenownTraining.ChangeTab -> ButtonSetPressedFlag(WindowName..AdvancedRenownTraining.ACTIVE, false)
+- AdvancedRenownTrainer: AdvancedRenownTraining.ChangeTab -> ButtonSetPressedFlag(WindowName..AdvancedRenownTraining.BASIC, false)
 
 ## Related APIs
 
@@ -105,18 +122,20 @@ Observed mutating button text or pressed state on existing controls.
 ## Used With
 
 - [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- none
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

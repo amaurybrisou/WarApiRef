@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChatTemplates.xml:35`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:52` |
+| Addons seen in | AdvancedRenownTrainer, Aura, CM_ClosetGoblin, Enemy, Killer, Pocket Palette, PotionBar, Shinies |
+| Files seen in | `/workspace/data/raw/Aura/Source/Templates.xml:0`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.xml:0`, `/workspace/data/raw/Enemy/Code/Assist/AssistConfiguration.xml:0`, `/workspace/data/raw/Enemy/Code/Core/ConfigurationWindow.xml:0`, `/workspace/data/raw/Enemy/Code/ScenarioAlerter/ScenarioAlerterConfiguration.xml:0`, `/workspace/data/raw/Enemy/Code/UnitFrames/ClickCastingDialog.xml:0`, `/workspace/data/raw/Enemy/Code/UnitFrames/EffectsIndicatorDialog.xml:0`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFramePartDialog.xml:0` |
 | Namespaces detected | EA_Button_DefaultCheckBox |
 | Source kinds | xml_attributes |
-| Example locations | TChatCheckboxTemplateButton, TRollCheckboxTemplateButton |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
+| Example locations | AdvancedRenownTrainingPresetsWindowSaveSelectedCheckBox, Aura_LabelCheckButtonButton, Aura_LargeLabelCheckButtonButton, ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1, ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2, ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB3 |
+| XML usage count | 48 |
+| XML attribute usage count | 48 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,15 +57,69 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Observed engine XML template or inherited constant referenced by 10 addons.
 
 ## Seen In
 
+- AdvancedRenownTrainer
+- Aura
+- CM_ClosetGoblin
+- Enemy
+- Killer
+- Pocket Palette
+- PotionBar
+- Shinies
 - TidyChat
 - TidyRoll
 
 ## Used By
 
+- AdvancedRenownTrainingPresetsWindowSaveSelectedCheckBox
+- Aura_LabelCheckButtonButton
+- Aura_LargeLabelCheckButtonButton
+- ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB1
+- ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB2
+- ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB3
+- ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB4
+- ClosetGoblinCharacterWindowContentsActionBarSettingsCheckboxAB5
+- ClosetGoblinCharacterWindowContentsCheckboxUseItemRack
+- ClosetGoblinCharacterWindowContentsEquipmentShowCloak
+- ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry
+- ClosetGoblinCharacterWindowContentsEquipmentShowHelm
+- EnemyAssistConfigurationMarkNewTarget
+- EnemyAssistConfigurationNewTargetSound
+- EnemyAssistConfigurationTargetOnNotifyClick
+- EnemyClickCastingDialogContentScrollChildArchetype1
+- EnemyClickCastingDialogContentScrollChildArchetype2
+- EnemyClickCastingDialogContentScrollChildArchetype3
+- EnemyClickCastingDialogContentScrollChildExceptMe
+- EnemyClickCastingDialogContentScrollChildKeyModifier1
+- EnemyClickCastingDialogContentScrollChildKeyModifier2
+- EnemyClickCastingDialogContentScrollChildKeyModifier3
+- EnemyConfigurationWindow_PropertyBoolTemplateValue
+- EnemyEffectsIndicatorDialogContentScrollChildArchetype1
+- EnemyEffectsIndicatorDialogContentScrollChildArchetype2
+- EnemyEffectsIndicatorDialogContentScrollChildArchetype3
+- EnemyEffectsIndicatorDialogContentScrollChildCircleIcon
+- EnemyEffectsIndicatorDialogContentScrollChildExceptMe
+- EnemyEffectsIndicatorDialogContentScrollChildLScaleCheckBox
+- EnemyScenarioAlerterConfigurationEnabled
+- EnemyUnitFramePartDialogContentScrollChildArchetype1
+- EnemyUnitFramePartDialogContentScrollChildArchetype2
+- EnemyUnitFramePartDialogContentScrollChildArchetype3
+- EnemyUnitFramePartDialogContentScrollChildExceptMe
+- EnemyUnitFramesConfigurationContentScrollChildEnabled
+- EnemyUnitFramesConfigurationContentScrollChildSortingEnabled
+- KillerSettingsWindowContentPersonalEnabled
+- PPMainSaveSettingsButton
+- PotionBarTypeTemplateAutohideCheck
+- PotionBarTypeTemplateCheck
+- PotionBarTypeTemplateDontSplitNameCheck
+- PotionBarTypeTemplateShow1Check
+- PotionBarTypeTemplateShowLastCheck
+- ShiniesConfigPrice_CheckBox
+- ShiniesConfigPrice_PriorityRowEnable
+- Shinies_CheckButtonWithLabelButton
 - TChatCheckboxTemplateButton
 - TRollCheckboxTemplateButton
 

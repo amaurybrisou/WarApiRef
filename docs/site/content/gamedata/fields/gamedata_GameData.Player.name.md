@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 138
+- Raw weighted score: 150
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | PartyCast, Soloq |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.lua:370`, `/workspace/data/raw/PartyCast/PartyCast.lua:377`, `/workspace/data/raw/Soloq/Soloq.lua:22`, `/workspace/data/raw/Soloq/ui/Overview.lua:83` |
+| Addons seen in | Aura, Enemy, GuardLine, LibGuard, PartyCast, Shinies, followTheLeader |
+| Files seen in | `/workspace/data/raw/Aura/Source/AuraProfile.lua:171`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:4`, `/workspace/data/raw/GuardLine/GuardLine.lua:151`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:362`, `/workspace/data/raw/LibGuard/Source/LibGuard.lua:75`, `/workspace/data/raw/PartyCast/PartyCast.lua:370`, `/workspace/data/raw/PartyCast/PartyCast.lua:377`, `/workspace/data/raw/Shinies/Modules/Price/Shinies-Price-Flat.lua:40` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | PartyCast.GROUP_UPDATED, PartyCast.ON_DEATH, Soloq.OnInitialize, Soloq.setStaticLabels, lua_call |
+| Example locations | AuraProfile.GetCurrentCharacter, Enemy.Initialize, GuardLine.GetIDs, LibGuard.UpdatePetHealthProxy, LibGuard.UpdateStateMachine, PartyCast.GROUP_UPDATED |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 14 |
+| Global usage count | 14 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,18 +59,23 @@
 
 ## Description
 
-Observed GameData field used by 2 addons through generated function calls, event pages, or lifecycle evidence.
+Observed GameData field used by 7 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
+- Aura
+- Enemy
+- GuardLine
+- LibGuard
 - PartyCast
-- Soloq
+- Shinies
+- followTheLeader
 
 ## Related APIs
 
-- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [wstring.sub](../../globals/functions/global_wstring.sub.md) (MEDIUM 63/100) - Global Function
+- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
+- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 100/100) - Global Function
+- [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 70/100) - Global Function
 
 ## Used With
 
@@ -86,4 +91,4 @@ Observed GameData field used by 2 addons through generated function calls, event
 
 ## Notes
 
-- Observed in contexts: PartyCast.GROUP_UPDATED, PartyCast.ON_DEATH, Soloq.OnInitialize, Soloq.setStaticLabels, lua_call
+- Observed in contexts: AuraProfile.GetCurrentCharacter, Enemy.Initialize, GuardLine.GetIDs, LibGuard.UpdatePetHealthProxy, LibGuard.UpdateStateMachine, PartyCast.GROUP_UPDATED

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibConfig.lua:409`, `/workspace/data/raw/InfoScroller/libs/LibConfig.lua:500`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibConfig.lua:409`, `/workspace/data/raw/PartyCast/libs/LibConfig.lua:500` |
+| Addons seen in | LibWBToggler, PartyCast, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/LibWarBoardToggler/libs/LibConfig.lua:415`, `/workspace/data/raw/LibWarBoardToggler/libs/LibConfig.lua:503`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibConfig.lua:409`, `/workspace/data/raw/PartyCast/libs/LibConfig.lua:500`, `/workspace/data/raw/WoH-Reticle/libs/LibConfig.lua:409`, `/workspace/data/raw/WoH-Reticle/libs/LibConfig.lua:500` |
 | Namespaces detected | WindowGetTintColor |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LibConfigMenu:Add, InfoScroller: element.button.OnLButtonUp, PartyCast: LibConfigMenu:Add, PartyCast: PartyCast.Update, PartyCast: element.button.OnLButtonUp |
+| Example locations | LibWBToggler: LibConfigMenu:Add, LibWBToggler: element.button.OnLButtonUp, PartyCast: LibConfigMenu:Add, PartyCast: PartyCast.Update, PartyCast: element.button.OnLButtonUp, WoH-Reticle: LibConfigMenu:Add |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -83,16 +83,18 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- InfoScroller
+- LibWBToggler
 - PartyCast
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LibConfigMenu:Add -> WindowGetTintColor(LibConfig.colorizer.object.name)
-- InfoScroller: element.button.OnLButtonUp -> WindowGetTintColor(LibConfig.colorizer.object.name)
+- LibWBToggler: LibConfigMenu:Add -> WindowGetTintColor(LibConfig.colorizer.object.name)
+- LibWBToggler: element.button.OnLButtonUp -> WindowGetTintColor(LibConfig.colorizer.object.name)
 - PartyCast: LibConfigMenu:Add -> WindowGetTintColor(LibConfig.colorizer.object.name)
 - PartyCast: PartyCast.Update -> WindowGetTintColor("PartyCastWindow"..i.."TimerBar")
 - PartyCast: element.button.OnLButtonUp -> WindowGetTintColor(LibConfig.colorizer.object.name)
+- WoH-Reticle: LibConfigMenu:Add -> WindowGetTintColor(LibConfig.colorizer.object.name)
 
 ## Related APIs
 
@@ -108,6 +110,7 @@ Observed querying runtime window state or metadata.
 
 ## Affects
 
+- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

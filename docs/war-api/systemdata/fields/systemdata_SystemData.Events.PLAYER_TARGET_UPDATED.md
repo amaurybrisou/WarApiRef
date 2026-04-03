@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 186
+- Raw weighted score: 198
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -31,18 +31,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, Moth, ZCurse_Profiler, ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:2134`, `/workspace/data/raw/Moth/Moth.lua:713` |
+| Addons seen in | AdvancedPetAssist, AdvancedPetAssist, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, WoH-Reticle, followTheLeader, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:33`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:78`, `/workspace/data/raw/BuffHead/Core.lua:152`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:219`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:41` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | CurseProfiler.Initialize, CurseProfiler.localthen, Moth.Initialize, Moth.UpdateTarget, SystemData.Events.PLAYER_TARGET_UPDATED, event_page |
+| Example locations | AdvancedPetAssist.OnTargetUpdated, AutoMark.OnInitialize, AutoMark.OnPlayerTargetUpdated, AutoMark.OnSlashCommand, BuffHead.Initialize, BuffHead.OnTargetUpdated |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 23 |
+| Global usage count | 23 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 1 |
+| Initialization flow references | 5 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,19 +62,26 @@
 
 ## Description
 
-Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 9 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
-- Moth
-- Moth, ZCurse_Profiler
-- ZCurse_Profiler
+- AdvancedPetAssist
+- AdvancedPetAssist, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, WoH-Reticle, followTheLeader
+- Aura
+- AutoMark
+- BuffHead
+- DAoCBuff
+- Enemy
+- WoH-Reticle
+- followTheLeader
 
 ## Related APIs
 
-- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 98/100) - Window Function
-- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
+- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
+- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
+- [WindowSetMovable](../../window_api/functions/window_WindowSetMovable.md) (HIGH 100/100) - Window Function
 
 ## Used With
 
@@ -90,4 +97,4 @@ Observed SystemData field used by 3 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: CurseProfiler.Initialize, CurseProfiler.localthen, Moth.Initialize, Moth.UpdateTarget, SystemData.Events.PLAYER_TARGET_UPDATED, event_page
+- Observed in contexts: AdvancedPetAssist.OnTargetUpdated, AutoMark.OnInitialize, AutoMark.OnPlayerTargetUpdated, AutoMark.OnSlashCommand, BuffHead.Initialize, BuffHead.OnTargetUpdated

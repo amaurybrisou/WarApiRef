@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, TidyChat, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.xml:236`, `/workspace/data/raw/Moth/Moth.xml:109`, `/workspace/data/raw/Moth/Moth.xml:128`, `/workspace/data/raw/Moth/Moth.xml:157`, `/workspace/data/raw/Moth/Moth.xml:18`, `/workspace/data/raw/Moth/Moth.xml:30`, `/workspace/data/raw/PartyCast/PartyCast.xml:305`, `/workspace/data/raw/PartyCast/PartyCast.xml:348` |
+| Addons seen in | AggroMeter, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, Killer, PartyCast |
+| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/AuraTooltip.xml:0`, `/workspace/data/raw/BuffHead/Setup/General.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainers.xml:0` |
 | Namespaces detected | EA_FullResizeImage_TintableSolidBackground |
 | Source kinds | xml_attributes |
-| Example locations | AutoRollRowTemplateBackground, InfoScrollerTemplateBackGroundBG, MothBackground, MothBordertronned, MothCellTemplateBackground, MothHealthBar |
-| XML usage count | 13 |
-| XML attribute usage count | 13 |
+| Example locations | $parentScrollRightPaneBackground, AggroMeterWindow_AggroWindow1BorderCheck, AggroMeterWindow_AggroWindow1Seperator1, AuraShareTooltipFooterSeperator, AuraShareTooltipHeaderSeperator, AuraSharesRowBackground |
+| XML usage count | 89 |
+| XML attribute usage count | 89 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,33 +57,119 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 7 addons.
+Observed engine XML template or inherited constant referenced by 17 addons.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- AggroMeter
+- Aura
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- Killer
 - PartyCast
-- Soloq
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- minesweep
+- TurretRange
+- WarBoard
+- WhoHealedMe
 
 ## Used By
 
+- $parentScrollRightPaneBackground
+- AggroMeterWindow_AggroWindow1BorderCheck
+- AggroMeterWindow_AggroWindow1Seperator1
+- AuraShareTooltipFooterSeperator
+- AuraShareTooltipHeaderSeperator
+- AuraSharesRowBackground
+- AuraTooltipFooterSeperator
+- AuraTooltipHeaderSeperator
+- AuraWindowRowBackground
 - AutoRollRowTemplateBackground
-- InfoScrollerTemplateBackGroundBG
-- MothBackground
-- MothBordertronned
-- MothCellTemplateBackground
-- MothHealthBar
-- MothRowTemplateBackground
+- BuffHeadLayoutFrameWindowBackground
+- BuffHeadSetupAdvancedCompressionItemRowTemplateBackground
+- BuffHeadSetupAdvancedCompressionRowTemplateBackground
+- BuffHeadSetupAdvancedContainersItemRowTemplateBackground
+- BuffHeadSetupAdvancedContainersRowTemplateBackground
+- BuffHeadSetupEffectCacheRowTemplateBackground
+- BuffHeadSetupFilterRowTemplateBackground
+- BuffHeadSetupLayoutWindowLayerWindowBackground
+- BuffHeadSetupMenuRowTemplateBackground
+- BuffHeadSetupPriorityEffectsItemRowTemplateBackground
+- BuffHeadSetupPriorityEffectsRowTemplateBackground
+- BuffHeadSetupSelectColorWindowBackground
+- ClosetGoblinSetRowBackgroundName
+- ClosetGoblinZoneRowBackgroundZone
+- DAoCBuffFrameSettings_FilterRowBackground
+- DAoCBuff_FakeSettingsRowBackground
+- DAoCBuff_FrameSettingsRowBackground
+- EnemyCombatLogIDSAnchorBackground
+- EnemyCombatLogIDSRowBackground
+- EnemyCombatLogStatsWindowSnapshot_ListRowTemplateBackground
+- EnemyCombatLogStatsWindow_ListRowTemplateBackground
+- EnemyCombatLogTargetDefeseTotalWindowBackground
+- EnemyCombatLogTargetDefeseWindowBackground
+- EnemyConfigurationWindow_PropertyColorTemplateExample
+- EnemyDebugBackground
+- EnemyEffectsIndicatorDialogContentScrollChildEffectFiltersListBackground
+- EnemyKillSpamDialogBackground
+- EnemyKillSpam_AreaStatsRowTemplateFlash
+- EnemyKillSpam_RowTemplateFlash
+- EnemyMarksWindowBackground
+- EnemyScenarioInfoDialogBackground
+- EnemySimpleListRowTemplateBackground
+- EnemyUnitFramesAnchor1Background
+- EnemyUnitFramesAnchor2Background
+- EnemyUnitFramesConfigurationContentScrollChildClickCastingsListBackground
+- EnemyUnitFramesConfigurationContentScrollChildEffectsIndicatorsListBackground
+- EnemyUnitFramesConfigurationContentScrollChildUnitFramePartsListBackground
+- Frame_BG_TemlateBackground3
+- KillerPersonalCounterBg
+- KillerTooltipSep
+- KillerWindowFeedDivider
+- LayoutTemplateBackground
+- ModBackgroundTemplate
 - PartyCastWindow_Template_LargeBG
 - PartyCastWindow_Template_PlainBG
-- SoloqOverviewWindowQueueStatusLeftBorder
-- SoloqOverviewWindowUnderline
+- PotionBarButtonTemplateCooldown
+- RoR_SoR_PopperBG
+- RoR_SoR_PopperBG2
+- RoR_SoR_RealmTemplateKEEP1HPBARBARCOUNTER
+- RoR_SoR_RealmTemplateKEEP1HPBARBG
+- RoR_SoR_RealmTemplateKEEP1PROGRESSBARCOUNTER
+- RoR_SoR_RealmTemplateKEEP1PROGRESSBG
+- RoR_SoR_RealmTemplateKEEP1PROGRESSBLINK
+- RoR_SoR_RealmTemplateKEEP2HPBARBARCOUNTER
+- RoR_SoR_RealmTemplateKEEP2HPBARBG
+- RoR_SoR_RealmTemplateKEEP2PROGRESSBARCOUNTER
+- RoR_SoR_RealmTemplateKEEP2PROGRESSBG
+- RoR_SoR_RealmTemplateKEEP2PROGRESSBLINK
+- RoR_SoR_RealmTemplateLockTint
+- ShiniesAuctionsUI_ResultsRowBackground
+- ShiniesAutoUI_ItemRowBackground
+- ShiniesBrowseUI_ResultsRowBackground
+- ShiniesBrowseUI_SearchesRowBackground
+- ShiniesConfigPrice_PriorityRowBackground
+- ShiniesConfigUI_ModulesRowBackground
+- ShiniesPostUI_ResultsRowBackground
+- TexturedButtonsSetupMenuRowTemplateBackground
+- TexturedButtonsSetupSelectColorWindowBackground
 - TidyChatLootRollRowTemplateBackground
-- minesweep_BoxBG
+- TurretRangeSetupDisplayWindowSelectColorBackground
+- TurretRangeSetupDistancesRowTemplateBackground
+- WarBoardBackground
+- WhoHealedMeDetailRowTemplateFill
+- WhoHealedMeDetailsContentFill
+- WhoHealedMeHealerRowTemplateFill
+- WhoHealedMeOptionsContentBackgroundFillPreviewFill
+- WhoHealedMeOptionsContentFill
+- WhoHealedMeWindowContentFill
+- WhoHealedMeWindowContentSummaryFill
 
 ## Related APIs
 

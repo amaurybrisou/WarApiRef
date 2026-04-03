@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 19 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:200`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:200`, `/workspace/data/raw/TidyChat/TidyChat.lua:329`, `/workspace/data/raw/TidyChat/TidyChat.lua:344`, `/workspace/data/raw/TidyChat/TidyChat.lua:404` |
+| Addons seen in | Ace, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, GuardLine, Killer |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:200`, `/workspace/data/raw/Aura/Source/Aura.lua:505`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:33`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:55`, `/workspace/data/raw/Aura/Source/AuraTooltip.lua:21`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:124`, `/workspace/data/raw/BuffHead/Setup/SelectColor.lua:15`, `/workspace/data/raw/BuffHead/Setup/SetupLayout.lua:160` |
 | Namespaces detected | WindowSetAlpha |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_ELEMENT:Alpha, PartyCast: LIBGUI_ELEMENT:Alpha, PartyCast: PartyCast.FetchedText, PartyCast: PartyCast.Update, TidyChat: TidyChatCore.SetTextEntry |
+| Example locations | Ace: LIBGUI_ELEMENT:Alpha, Aura: Aura:UpdateTimerWindow, Aura: AuraHelpers.SetCircleImageTexture, Aura: AuraHelpers.SetDynamicImageTexture, Aura: AuraTooltip.OnInitialize, AutoMark: AutoMark.OnUpdate |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 24 |
-| Global usage count | 24 |
+| Lua usage count | 135 |
+| Global usage count | 135 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "PartyCastWindow"..PlayerNumber, "PartyCastWindow"..PlayerNumber.."Timer", "PartyCastWindow"..i |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: (chatwindow_tabs_handle_input~=false and 1)or 0, (scrollbar_position==c_SCROLLBAR_POSITION_HIDDEN and 0)or scrollbar_alpha, 0 |
+| windowName | Observed as a target window name. | Observed values: "DAoCBuff_SettingsGeneralButtonBackground", "DAoCBuff_SettingsListMngrButtonBackground", "DyeWindowSelectedDyeColor" |
+| arg2 | Observed as a function or method reference. | Observed values: (chatwindow_tabs_handle_input~=false and 1)or 0, (scrollbar_position==c_SCROLLBAR_POSITION_HIDDEN and 0)or scrollbar_alpha, .9 |
 
 ## Returns
 
@@ -84,18 +84,34 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- Aura
+- AutoMark
+- BuffHead
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- LibWBToggler
 - PartyCast
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
+- TurretRange
+- WSCT
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: InfoScroller.CreateCard -> WindowSetAlpha(WindowName.."BackGroundBG", InfoScroller.Settings.BGAlpha)
-- InfoScroller: InfoScroller.CreateCard -> WindowSetAlpha(WindowName.."BackGroundStart", InfoScroller.Settings.BGAlpha)
-- InfoScroller: InfoScroller.CreateCard -> WindowSetAlpha(WindowName.."BackGroundEnd", InfoScroller.Settings.BGAlpha)
-- InfoScroller: InfoScroller.CreateCard -> WindowSetAlpha(WindowName.."Image", alpha)
-- InfoScroller: LIBGUI_ELEMENT:Alpha -> WindowSetAlpha(self.name, alpha)
-- PartyCast: LIBGUI_ELEMENT:Alpha -> WindowSetAlpha(self.name, alpha)
+- Ace: LIBGUI_ELEMENT:Alpha -> WindowSetAlpha(self.name, alpha)
+- Aura: Aura:UpdateTimerWindow -> WindowSetAlpha(windowId, self:Get("timer-alpha"))
+- Aura: AuraHelpers.SetCircleImageTexture -> WindowSetAlpha(window, a)
+- Aura: AuraHelpers.SetDynamicImageTexture -> WindowSetAlpha(window, a)
+- Aura: AuraTooltip.OnInitialize -> WindowSetAlpha(windowId.."BackgroundInner", .9)
+- Aura: AuraTooltip.OnInitialize -> WindowSetAlpha(shareWindowId.."BackgroundInner", .9)
 
 ## Related APIs
 
@@ -103,7 +119,13 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [WindowGetAlpha](window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetRotation](window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureOrientation](window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
@@ -111,7 +133,6 @@ Observed mutating runtime window state or presentation.
 
 ## Affects
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

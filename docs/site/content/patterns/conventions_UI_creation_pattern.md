@@ -16,22 +16,23 @@ UI is commonly created from XML, then positioned in Lua through CreateWindow or 
 ## Flow Diagram
 
 ```text
-CreateWindow <-> CreateWindowFromTemplate
+OnLButtonUp
+  -> ui: Button, ColorPicker, DynamicImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code
 
 ```lua
-Window creation: InfoScroller: CreateWindow("InfoScrollerMainWindow", true)
+Window creation: AdvancedPetAssist: CreateWindow("APAOptions", true)
 ```
 
 ## Evidence
 
-- Window creation: InfoScroller: CreateWindow("InfoScrollerMainWindow", true)
-- Window creation: Moth: CreateWindow("Moth", true)
-- Window creation: Soloq: CreateWindow(overviewWindowName, false)
-- Window creation: TidyChat: CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
-- Window creation: TidyRoll: CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
-- Window creation: TidyRoll: CreateWindow(c_TIDY_ROLL_ANCHOR, false)
-- Template instantiation: InfoScroller: CreateWindowFromTemplate(WindowName, "InfoScrollerTemplate", "InfoScrollerMainWindow")
-- Template instantiation: InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
+- Window creation: AdvancedPetAssist: CreateWindow("APAOptions", true)
+- Window creation: AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
+- Window creation: AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
+- Window creation: AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
+- Window creation: AdvancedRenownTrainer: CreateWindow(ExportWindowName, false)
+- Window creation: AdvancedRenownTrainer: CreateWindow(LinkWindowName, false)
+- Template instantiation: Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+- Template instantiation: Ace: CreateWindowFromTemplate(w.name, base, w.parent)

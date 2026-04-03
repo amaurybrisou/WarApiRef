@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 18 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1113`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1113`, `/workspace/data/raw/TidyChat/TidyChat.lua:1936`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746` |
+| Addons seen in | Ace, AdvancedPetAssist, BankArkel, BuffHead, DAoCBuff, Enemy, Killer, LibWBToggler |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1116`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:735`, `/workspace/data/raw/BankArkel/BankArkel.lua:364`, `/workspace/data/raw/BankArkel/BankArkel.lua:513`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:129`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:139`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:195`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205` |
 | Namespaces detected | ComboBoxSetSelectedMenuItem |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Combobox:SelectIndex, PartyCast: LIBGUI_Combobox:SelectIndex, TidyChat: TidyChat.Options.Reset, TidyRoll: TidyRollOptions.Reset |
+| Example locations | Ace: LIBGUI_Combobox:SelectIndex, AdvancedPetAssist: AdvancedPetAssist.local.FillCombo, AdvancedPetAssist: FillCombo, BankArkel: BankArkel.PackClose, BankArkel: BankArkel.SetupCombos, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.ShowProperties |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 205 |
+| Global usage count | 205 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,14 +65,14 @@ ComboBoxSetSelectedMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 4 addons.
+Observed as a window function across 18 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: TCHAT_TEXT_ENTRY_ANCHOR_POINT_COMBO, TCHAT_TEXT_ENTRY_RELATIVE_TO_COMBO, c_TROLL_DIRECTION_COMBO |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: GetSetting("managment-bind-greed"), GetSetting("managment-bind-need"), GetSetting("managment-bind-pass") |
+| arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", "EnemyChooseChannelDialogChannelList", "EnemyClickCastingDialogContentScrollChildAction" |
+| arg2 | Observed as a function or method reference. | Observed values: #ACTIVE_CONDITION, #CONDITIONS, #CONDITIONS-1 |
 
 ## Returns
 
@@ -84,19 +84,33 @@ Observed as a window function across 4 addons.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedPetAssist
+- BankArkel
+- BuffHead
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
 - PartyCast
+- Pocket Palette
+- PotionBar
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
+- TurretRange
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Combobox:SelectIndex -> ComboBoxSetSelectedMenuItem(self.name, index)
-- PartyCast: LIBGUI_Combobox:SelectIndex -> ComboBoxSetSelectedMenuItem(self.name, index)
-- TidyChat: TidyChat.Options.Reset -> ComboBoxSetSelectedMenuItem(TCHAT_TEXT_ENTRY_RELATIVE_TO_COMBO, Settings.textentry_relative_to)
-- TidyChat: TidyChat.Options.Reset -> ComboBoxSetSelectedMenuItem(TCHAT_TEXT_ENTRY_ANCHOR_POINT_COMBO, Settings.textentry_anchor_point)
-- TidyRoll: TidyRollOptions.Reset -> ComboBoxSetSelectedMenuItem(c_TROLL_DIRECTION_COMBO, directionComboIndex[GetSetting("button-growth-direction")])
-- TidyRoll: TidyRollOptions.Reset -> ComboBoxSetSelectedMenuItem(c_TROLL_ONESC_COMBO, GetSetting("managment-onesc-rollchoice")+2)
+- Ace: LIBGUI_Combobox:SelectIndex -> ComboBoxSetSelectedMenuItem(self.name, index)
+- AdvancedPetAssist: AdvancedPetAssist.local.FillCombo -> ComboBoxSetSelectedMenuItem(comboName, selIdx)
+- AdvancedPetAssist: FillCombo -> ComboBoxSetSelectedMenuItem(comboName, selIdx)
+- BankArkel: BankArkel.PackClose -> ComboBoxSetSelectedMenuItem("BankArkelBackpackCombo", 1)
+- BankArkel: BankArkel.SetupCombos -> ComboBoxSetSelectedMenuItem("BankArkelBackpackCombo", 1)
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.ShowProperties -> ComboBoxSetSelectedMenuItem(windowName.."PropertiesComboBox", propertyToIndex[propertyId]or 1)
 
 ## Related APIs
 
@@ -105,7 +119,11 @@ Observed as a window function across 4 addons.
 ## Used With
 
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
+- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

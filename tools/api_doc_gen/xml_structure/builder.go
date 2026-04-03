@@ -11,20 +11,16 @@ import (
 	"github.com/beevik/etree"
 )
 
-// ignoredTags contains element tags that are layout/anchoring primitives
-// and should be marked as non-semantic (IsIgnored = true).
+// ignoredTags contains element tags that are treated as non-semantic symbols.
+// These tags are still parsed into the XML tree and retain parent/child links;
+// this map only affects semantic classification (IsIgnored), not tree presence.
 var ignoredTags = map[string]bool{
 	"Interface":     true,
 	"Assets":        true,
-	"Windows":       true,
 	"Anchors":       true,
 	"Anchor":        true,
-	"Size":          true,
-	"Sizes":         true,
 	"AbsPoint":      true,
 	"Color":         true,
-	"TexDims":       true,
-	"TexCoords":     true,
 	"TopLeft":       true,
 	"TopCenter":     true,
 	"TopRight":      true,

@@ -9,23 +9,26 @@ Addons consistently move from manifest loading into initialize hooks, then into 
 
 ## Involved APIs
 
+- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../events/game_events/game_event_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.UPDATE_PROCESSED](../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.UPDATE_PROCESSED](../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
 
 ## Flow Diagram
 
 ```text
-Label <-> OnHyperLinkRButtonUp
+OnLButtonUp
+  -> ui: Button, ColorPicker, DynamicImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code
 
 ```lua
-initialize: Creates 0 windows and calls 1 initialize hooks, Creates 3 windows and calls 1 initialize hooks
+initialize: AdvancedPetAssist: APAFollowTargetHUD, AdvancedPetAssist: APAInstantOnlyHUD
 ```
 
 ## Evidence
 
-- initialize: Creates 0 windows and calls 1 initialize hooks, Creates 3 windows and calls 1 initialize hooks
-- runtime: InfoScroller: SystemData.Events.UPDATE_PROCESSED, InfoScroller: e
-- xml: Defines 20 XML frames and 0 bound handlers, Defines 39 XML frames and 4 bound handlers
+- initialize: AdvancedPetAssist: APAFollowTargetHUD, AdvancedPetAssist: APAInstantOnlyHUD
+- runtime: Ace: SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, Ace: SystemData.Events.UPDATE_PROCESSED
+- xml: AdvancedPetAssist: APAComboAttackBind, AdvancedPetAssist: APAComboAutoReattack

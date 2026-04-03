@@ -31,18 +31,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TimeToDie, TimeToDie, ZCurse_Profiler, ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:2134`, `/workspace/data/raw/TimeToDie/TimeToDie.lua:244` |
+| Addons seen in | CombatTextNames, CombatTextNames, WSCT, WSCT |
+| Files seen in | `/workspace/data/raw/combattextnames/cmd.lua:49`, `/workspace/data/raw/combattextnames/cmd.lua:55`, `/workspace/data/raw/wsct/wsct.lua:117`, `/workspace/data/raw/wsct/wsct.lua:137` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | CurseProfiler.Initialize, CurseProfiler.orif, SystemData.Events.WORLD_OBJ_COMBAT_EVENT, TimeToDie.CombatEvent, TimeToDie.Initialize, event_page |
+| Example locations | CombatTextNames.Disable, CombatTextNames.Enable, EA_System_EventText.AddCombatEventText, SystemData.Events.WORLD_OBJ_COMBAT_EVENT, WSCT.OnCombatEvent, WSCT:RegisterSelfEvents |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 12 |
+| Global usage count | 12 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 1 |
+| Initialization flow references | 2 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -66,9 +66,9 @@ Observed SystemData field used by 3 addons through generated function calls, eve
 
 ## Seen In
 
-- TimeToDie
-- TimeToDie, ZCurse_Profiler
-- ZCurse_Profiler
+- CombatTextNames
+- CombatTextNames, WSCT
+- WSCT
 
 ## Related APIs
 
@@ -88,4 +88,4 @@ Observed SystemData field used by 3 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: CurseProfiler.Initialize, CurseProfiler.orif, SystemData.Events.WORLD_OBJ_COMBAT_EVENT, TimeToDie.CombatEvent, TimeToDie.Initialize, event_page
+- Observed in contexts: CombatTextNames.Disable, CombatTextNames.Enable, EA_System_EventText.AddCombatEventText, SystemData.Events.WORLD_OBJ_COMBAT_EVENT, WSCT.OnCombatEvent, WSCT:RegisterSelfEvents

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:734`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:803`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:734`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:803` |
+| Addons seen in | Ace, Killer, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:735`, `/workspace/data/raw/Ace/LibGUI.lua:805`, `/workspace/data/raw/Killer/KillerConfigWindow.lua:306`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:734`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:803`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:734`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:803`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:734` |
 | Namespaces detected | ButtonSetCheckButtonFlag |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Checkbox:New, InfoScroller: LIBGUI_Optionbutton:New, PartyCast: LIBGUI_Checkbox:New, PartyCast: LIBGUI_Optionbutton:New |
+| Example locations | Ace: LIBGUI_Checkbox:New, Ace: LIBGUI_Optionbutton:New, Killer: EnsureSettingsControlsInitialized, Killer: Killer.local.EnsureSettingsControlsInitialized, LibWBToggler: LIBGUI_Checkbox:New, LibWBToggler: LIBGUI_Optionbutton:New |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 12 |
+| Global usage count | 12 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: w.name |
+| arg1 | Observed as a function or method reference. | Observed values: SETTINGS_PERSONAL_CHECKBOX, w.name |
 | arg2 | Observed as a boolean toggle. | Observed values: true |
 
 ## Returns
@@ -84,15 +84,21 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- Killer
+- LibWBToggler
 - PartyCast
+- Shinies
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Checkbox:New -> ButtonSetCheckButtonFlag(w.name, true)
-- InfoScroller: LIBGUI_Optionbutton:New -> ButtonSetCheckButtonFlag(w.name, true)
-- PartyCast: LIBGUI_Checkbox:New -> ButtonSetCheckButtonFlag(w.name, true)
-- PartyCast: LIBGUI_Optionbutton:New -> ButtonSetCheckButtonFlag(w.name, true)
+- Ace: LIBGUI_Checkbox:New -> ButtonSetCheckButtonFlag(w.name, true)
+- Ace: LIBGUI_Optionbutton:New -> ButtonSetCheckButtonFlag(w.name, true)
+- Killer: EnsureSettingsControlsInitialized -> ButtonSetCheckButtonFlag(SETTINGS_PERSONAL_CHECKBOX, true)
+- Killer: Killer.local.EnsureSettingsControlsInitialized -> ButtonSetCheckButtonFlag(SETTINGS_PERSONAL_CHECKBOX, true)
+- LibWBToggler: LIBGUI_Checkbox:New -> ButtonSetCheckButtonFlag(w.name, true)
+- LibWBToggler: LIBGUI_Optionbutton:New -> ButtonSetCheckButtonFlag(w.name, true)
 
 ## Related APIs
 
@@ -101,6 +107,7 @@ Observed mutating button text or pressed state on existing controls.
 ## Used With
 
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

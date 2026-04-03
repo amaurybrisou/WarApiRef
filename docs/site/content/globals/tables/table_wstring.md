@@ -2,19 +2,19 @@
 
 - Category: Global Table
 - Confidence level: HIGH
-- Confidence score: 78/100
+- Confidence score: 90/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 78/100
+- Score: 90/100
 
-- Rationale: Promoted as HIGH confidence because matches a known engine namespace, called globally with no local definition, seen in 2 to 3 addons.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
@@ -23,15 +23,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, PartyCast, TidyChat |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:267`, `/workspace/data/raw/Moth/MothHelpers.lua:39`, `/workspace/data/raw/PartyCast/PartyCast.lua:370`, `/workspace/data/raw/PartyCast/PartyCast.lua:377`, `/workspace/data/raw/TidyChat/TidyChat.lua:1469`, `/workspace/data/raw/TidyChat/TidyChat.lua:852` |
+| Addons seen in | AdvancedRenownTrainer, AggroMeter, Aura, CombatTextNames, DAoCBuff, Enemy, GuardLine, Killer |
+| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:205`, `/workspace/data/raw/Aura/Libraries/LibPickle.lua:428`, `/workspace/data/raw/Aura/Libraries/LibPickle.lua:65`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:129`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:121`, `/workspace/data/raw/DAoCBuff/Source/Transcode.lua:289`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:700`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLog.lua:709` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | Moth: Moth.UpdateLevel, Moth: MothHelpers.CapitalizeWString, PartyCast: PartyCast.GROUP_UPDATED, PartyCast: PartyCast.ON_DEATH, TidyChat: TidyChatHooks.OnHyperLinkLButtonUpHook, TidyChat: TidyChatLogs.ProcessLootRollEntry |
+| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.OnHyperLinkLButtonUp, AggroMeter: AggroMeter.OnMouseOverStart, Aura: Aura.local.wgsub, Aura: AuraHelpers.cleanWString, Aura: DePickler:unpickle |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 6 |
+| Lua usage count | 95 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -54,16 +54,17 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 3 addons.
+Observed shared global table or namespace surfaced in 16 addons.
 
 ## Functions
 
+- wstring.char
 - wstring.find
+- wstring.format
 - wstring.gsub
-- wstring.lower
+- wstring.len
 - wstring.match
 - wstring.sub
-- wstring.upper
 
 ## Observed Members
 
@@ -71,18 +72,31 @@ Observed shared global table or namespace surfaced in 3 addons.
 
 ## Seen In
 
-- Moth
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
+- CombatTextNames
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- LibGuard
 - PartyCast
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
+- WSCT
 
 ## Examples
 
-- Moth: Moth.UpdateLevel -> wstring.sub(unitTierDesc, 1, 1)
-- Moth: MothHelpers.CapitalizeWString -> wstring.lower(wstring.sub(wstr,2))
-- Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 1, 1)
-- Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 2)
-- Moth: MothHelpers.CapitalizeWString -> wstring.upper(wstring.sub(wstr,1,1))
-- PartyCast: PartyCast.GROUP_UPDATED -> wstring.sub(GameData.Player.name, 1, -3)
+- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, arsenalUrl..BuildPattern)
+- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, BuildPattern)
+- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> wstring.match(link, wardrobeUrl..BuildPattern)
+- AdvancedRenownTrainer: AdvancedRenownTraining.OnHyperLinkLButtonUp -> wstring.gsub(linkData, hyperlinkPrefix, ERASE)
+- AggroMeter: AggroMeter.OnMouseOverStart -> wstring.format(L "%.01f", (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100)
+- Aura: Aura.local.wgsub -> wstring.gsub(s, pattern, replace)
 
 ## Related APIs
 

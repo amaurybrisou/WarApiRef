@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1313`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1313` |
+| Addons seen in | Ace, Aura, LibWBToggler, PartyCast, RoR_SoR, Shinies, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1316`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:33`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:1313`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1313`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:592`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:1313`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:1313` |
 | Namespaces detected | DynamicImageSetTextureOrientation |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_Image:TexFlip, PartyCast: LIBGUI_Image:TexFlip |
+| Example locations | Ace: LIBGUI_Image:TexFlip, Aura: AuraHelpers.SetDynamicImageTexture, LibWBToggler: LIBGUI_Image:TexFlip, PartyCast: LIBGUI_Image:TexFlip, RoR_SoR: RoR_SoR.SET_CITY, Shinies: LIBGUI_Image:TexFlip |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: WindowName.."Image", self.name |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: flipped, mirror |
+| arg1 | Observed as a function or method reference. | Observed values: "SoR_"..Window_Name.."Flames", self.name, window |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: Window_Name=="162", flipped, mirror |
 
 ## Returns
 
@@ -84,14 +84,22 @@ Observed mutating runtime image resources on existing controls.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- Aura
+- LibWBToggler
 - PartyCast
+- RoR_SoR
+- Shinies
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: InfoScroller.CreateCard -> DynamicImageSetTextureOrientation(WindowName.."Image", mirror)
-- InfoScroller: LIBGUI_Image:TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
+- Ace: LIBGUI_Image:TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
+- Aura: AuraHelpers.SetDynamicImageTexture -> DynamicImageSetTextureOrientation(window, mirror)
+- LibWBToggler: LIBGUI_Image:TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
 - PartyCast: LIBGUI_Image:TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
+- RoR_SoR: RoR_SoR.SET_CITY -> DynamicImageSetTextureOrientation("SoR_"..Window_Name.."Flames", Window_Name=="162")
+- Shinies: LIBGUI_Image:TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
 
 ## Related APIs
 
@@ -99,11 +107,9 @@ Observed mutating runtime image resources on existing controls.
 
 ## Used With
 
-- [DynamicImageSetTextureScale](window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
+- [DynamicImageSetRotation](window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
@@ -111,7 +117,6 @@ Observed mutating runtime image resources on existing controls.
 
 ## Affects
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

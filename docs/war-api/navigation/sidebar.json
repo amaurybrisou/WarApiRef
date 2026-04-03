@@ -11,178 +11,472 @@
         "order": 1,
         "items": [
           {
-            "label": "EA_ChatWindow.OnSettingsChanged",
+            "label": "Cursor.Clear",
             "type": "function",
-            "path": "globals/functions/global_EA_ChatWindow.OnSettingsChanged.md",
+            "path": "globals/functions/global_Cursor.Clear.md",
             "order": 1
           },
           {
-            "label": "EA_ChatWindow.Print",
+            "label": "Cursor.IconOnCursor",
             "type": "function",
-            "path": "globals/functions/global_EA_ChatWindow.Print.md",
+            "path": "globals/functions/global_Cursor.IconOnCursor.md",
             "order": 2
           },
           {
-            "label": "EA_ChatWindow.ShowTabCycleButtons",
+            "label": "Cursor.PickUp",
             "type": "function",
-            "path": "globals/functions/global_EA_ChatWindow.ShowTabCycleButtons.md",
+            "path": "globals/functions/global_Cursor.PickUp.md",
             "order": 3
-          },
-          {
-            "label": "EA_ChatWindow.UpdateTabScrollWindow",
-            "type": "function",
-            "path": "globals/functions/global_EA_ChatWindow.UpdateTabScrollWindow.md",
-            "order": 4
-          },
-          {
-            "label": "GameData.InteractData.GetLootList",
-            "type": "function",
-            "path": "globals/functions/global_GameData.InteractData.GetLootList.md",
-            "order": 5
-          },
-          {
-            "label": "GameData.Player.GetAdvanceData",
-            "type": "function",
-            "path": "globals/functions/global_GameData.Player.GetAdvanceData.md",
-            "order": 6
-          },
-          {
-            "label": "InterfaceCore.GetScale",
-            "type": "function",
-            "path": "globals/functions/global_InterfaceCore.GetScale.md",
-            "order": 7
-          },
-          {
-            "label": "LibSlash.RegisterSlashCmd",
-            "type": "function",
-            "path": "globals/functions/global_LibSlash.RegisterSlashCmd.md",
-            "order": 8
-          },
-          {
-            "label": "LibSlash.RegisterWSlashCmd",
-            "type": "function",
-            "path": "globals/functions/global_LibSlash.RegisterWSlashCmd.md",
-            "order": 9
-          },
-          {
-            "label": "RegisterEventHandler",
-            "type": "function",
-            "path": "globals/functions/global_RegisterEventHandler.md",
-            "order": 10
-          },
-          {
-            "label": "EA_Window_ContextMenu.AddMenuItem",
-            "type": "function",
-            "path": "globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md",
-            "order": 11
-          },
-          {
-            "label": "Icons.GetCareerIconIDFromCareerLine",
-            "type": "function",
-            "path": "globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md",
-            "order": 12
-          },
-          {
-            "label": "DoesWindowExist",
-            "type": "function",
-            "path": "globals/functions/global_DoesWindowExist.md",
-            "order": 13
-          },
-          {
-            "label": "UnregisterEventHandler",
-            "type": "function",
-            "path": "globals/functions/global_UnregisterEventHandler.md",
-            "order": 14
-          },
-          {
-            "label": "DialogManager.MakeOneButtonDialog",
-            "type": "function",
-            "path": "globals/functions/global_DialogManager.MakeOneButtonDialog.md",
-            "order": 15
-          },
-          {
-            "label": "DialogManager.MakeTwoButtonDialog",
-            "type": "function",
-            "path": "globals/functions/global_DialogManager.MakeTwoButtonDialog.md",
-            "order": 16
-          },
-          {
-            "label": "EA_Window_ContextMenu.Finalize",
-            "type": "function",
-            "path": "globals/functions/global_EA_Window_ContextMenu.Finalize.md",
-            "order": 17
-          },
-          {
-            "label": "CreateWindow",
-            "type": "function",
-            "path": "globals/functions/global_CreateWindow.md",
-            "order": 18
-          },
-          {
-            "label": "CreateWindowFromTemplate",
-            "type": "function",
-            "path": "globals/functions/global_CreateWindowFromTemplate.md",
-            "order": 19
-          },
-          {
-            "label": "DestroyWindow",
-            "type": "function",
-            "path": "globals/functions/global_DestroyWindow.md",
-            "order": 20
-          },
-          {
-            "label": "towstring",
-            "type": "function",
-            "path": "globals/functions/global_towstring.md",
-            "order": 21
-          },
-          {
-            "label": "GetIconData",
-            "type": "function",
-            "path": "globals/functions/global_GetIconData.md",
-            "order": 22
           },
           {
             "label": "DefaultColor.SetWindowTint",
             "type": "function",
             "path": "globals/functions/global_DefaultColor.SetWindowTint.md",
+            "order": 4
+          },
+          {
+            "label": "DialogManager.MakeOneButtonDialog",
+            "type": "function",
+            "path": "globals/functions/global_DialogManager.MakeOneButtonDialog.md",
+            "order": 5
+          },
+          {
+            "label": "DialogManager.MakeTwoButtonDialog",
+            "type": "function",
+            "path": "globals/functions/global_DialogManager.MakeTwoButtonDialog.md",
+            "order": 6
+          },
+          {
+            "label": "EA_BackpackUtilsMediator.GetBackpack",
+            "type": "function",
+            "path": "globals/functions/global_EA_BackpackUtilsMediator.GetBackpack.md",
+            "order": 7
+          },
+          {
+            "label": "EA_BackpackUtilsMediator.GetCurrentBackpackType",
+            "type": "function",
+            "path": "globals/functions/global_EA_BackpackUtilsMediator.GetCurrentBackpackType.md",
+            "order": 8
+          },
+          {
+            "label": "EA_BackpackUtilsMediator.GetCursorForBackpack",
+            "type": "function",
+            "path": "globals/functions/global_EA_BackpackUtilsMediator.GetCursorForBackpack.md",
+            "order": 9
+          },
+          {
+            "label": "EA_BackpackUtilsMediator.GetItemsFromBackpack",
+            "type": "function",
+            "path": "globals/functions/global_EA_BackpackUtilsMediator.GetItemsFromBackpack.md",
+            "order": 10
+          },
+          {
+            "label": "EA_ChatWindow.GetCurrentChannel",
+            "type": "function",
+            "path": "globals/functions/global_EA_ChatWindow.GetCurrentChannel.md",
+            "order": 11
+          },
+          {
+            "label": "EA_ChatWindow.InsertItemLink",
+            "type": "function",
+            "path": "globals/functions/global_EA_ChatWindow.InsertItemLink.md",
+            "order": 12
+          },
+          {
+            "label": "EA_ChatWindow.InsertText",
+            "type": "function",
+            "path": "globals/functions/global_EA_ChatWindow.InsertText.md",
+            "order": 13
+          },
+          {
+            "label": "EA_ChatWindow.OnKeyEnter",
+            "type": "function",
+            "path": "globals/functions/global_EA_ChatWindow.OnKeyEnter.md",
+            "order": 14
+          },
+          {
+            "label": "EA_ChatWindow.OnSettingsChanged",
+            "type": "function",
+            "path": "globals/functions/global_EA_ChatWindow.OnSettingsChanged.md",
+            "order": 15
+          },
+          {
+            "label": "EA_ChatWindow.Print",
+            "type": "function",
+            "path": "globals/functions/global_EA_ChatWindow.Print.md",
+            "order": 16
+          },
+          {
+            "label": "EA_ChatWindow.ShowTabCycleButtons",
+            "type": "function",
+            "path": "globals/functions/global_EA_ChatWindow.ShowTabCycleButtons.md",
+            "order": 17
+          },
+          {
+            "label": "EA_ChatWindow.UpdateTabScrollWindow",
+            "type": "function",
+            "path": "globals/functions/global_EA_ChatWindow.UpdateTabScrollWindow.md",
+            "order": 18
+          },
+          {
+            "label": "EA_Window_Backpack.GetItemsFromBackpack",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_Backpack.GetItemsFromBackpack.md",
+            "order": 19
+          },
+          {
+            "label": "EA_Window_ContextMenu.AddCascadingMenuItem",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_ContextMenu.AddCascadingMenuItem.md",
+            "order": 20
+          },
+          {
+            "label": "EA_Window_ContextMenu.AddMenuDivider",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md",
+            "order": 21
+          },
+          {
+            "label": "EA_Window_ContextMenu.AddMenuItem",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md",
+            "order": 22
+          },
+          {
+            "label": "EA_Window_ContextMenu.CreateContextMenu",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md",
             "order": 23
           },
           {
-            "label": "wstring.sub",
+            "label": "EA_Window_ContextMenu.Finalize",
             "type": "function",
-            "path": "globals/functions/global_wstring.sub.md",
+            "path": "globals/functions/global_EA_Window_ContextMenu.Finalize.md",
             "order": 24
           },
           {
-            "label": "wstring.find",
+            "label": "EA_Window_ContextMenu.Hide",
             "type": "function",
-            "path": "globals/functions/global_wstring.find.md",
+            "path": "globals/functions/global_EA_Window_ContextMenu.Hide.md",
             "order": 25
+          },
+          {
+            "label": "EA_Window_InteractionRenownTraining.Hide",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_InteractionRenownTraining.Hide.md",
+            "order": 26
+          },
+          {
+            "label": "EA_Window_InteractionRenownTraining.Show",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_InteractionRenownTraining.Show.md",
+            "order": 27
+          },
+          {
+            "label": "EA_Window_Macro.UpdateMacros",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_Macro.UpdateMacros.md",
+            "order": 28
+          },
+          {
+            "label": "GameData.GetScenarioPlayerGroups",
+            "type": "function",
+            "path": "globals/functions/global_GameData.GetScenarioPlayerGroups.md",
+            "order": 29
+          },
+          {
+            "label": "GameData.GetScenarioPlayers",
+            "type": "function",
+            "path": "globals/functions/global_GameData.GetScenarioPlayers.md",
+            "order": 30
+          },
+          {
+            "label": "GameData.Player.GetAdvanceData",
+            "type": "function",
+            "path": "globals/functions/global_GameData.Player.GetAdvanceData.md",
+            "order": 31
+          },
+          {
+            "label": "GameData.Player.GetRenownRefundCost",
+            "type": "function",
+            "path": "globals/functions/global_GameData.Player.GetRenownRefundCost.md",
+            "order": 32
+          },
+          {
+            "label": "Icons.GetCareerIconIDFromCareerLine",
+            "type": "function",
+            "path": "globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md",
+            "order": 33
+          },
+          {
+            "label": "InterfaceCore.GetResolutionScale",
+            "type": "function",
+            "path": "globals/functions/global_InterfaceCore.GetResolutionScale.md",
+            "order": 34
+          },
+          {
+            "label": "InterfaceCore.GetScale",
+            "type": "function",
+            "path": "globals/functions/global_InterfaceCore.GetScale.md",
+            "order": 35
+          },
+          {
+            "label": "InterfaceCore.ReloadUI",
+            "type": "function",
+            "path": "globals/functions/global_InterfaceCore.ReloadUI.md",
+            "order": 36
+          },
+          {
+            "label": "LibSlash.IsSlashCmdRegistered",
+            "type": "function",
+            "path": "globals/functions/global_LibSlash.IsSlashCmdRegistered.md",
+            "order": 37
+          },
+          {
+            "label": "LibSlash.RegisterSlashCmd",
+            "type": "function",
+            "path": "globals/functions/global_LibSlash.RegisterSlashCmd.md",
+            "order": 38
+          },
+          {
+            "label": "LibSlash.RegisterWSlashCmd",
+            "type": "function",
+            "path": "globals/functions/global_LibSlash.RegisterWSlashCmd.md",
+            "order": 39
+          },
+          {
+            "label": "LibSlash.UnregisterSlashCmd",
+            "type": "function",
+            "path": "globals/functions/global_LibSlash.UnregisterSlashCmd.md",
+            "order": 40
+          },
+          {
+            "label": "PartyUtils.GetPartyData",
+            "type": "function",
+            "path": "globals/functions/global_PartyUtils.GetPartyData.md",
+            "order": 41
+          },
+          {
+            "label": "PartyUtils.GetPartyMember",
+            "type": "function",
+            "path": "globals/functions/global_PartyUtils.GetPartyMember.md",
+            "order": 42
+          },
+          {
+            "label": "PartyUtils.GetWarbandData",
+            "type": "function",
+            "path": "globals/functions/global_PartyUtils.GetWarbandData.md",
+            "order": 43
+          },
+          {
+            "label": "PartyUtils.GetWarbandMember",
+            "type": "function",
+            "path": "globals/functions/global_PartyUtils.GetWarbandMember.md",
+            "order": 44
+          },
+          {
+            "label": "PartyUtils.IsPartyActive",
+            "type": "function",
+            "path": "globals/functions/global_PartyUtils.IsPartyActive.md",
+            "order": 45
           },
           {
             "label": "wstring.gsub",
             "type": "function",
             "path": "globals/functions/global_wstring.gsub.md",
-            "order": 26
+            "order": 46
           },
           {
-            "label": "wstring.lower",
+            "label": "wstring.len",
             "type": "function",
-            "path": "globals/functions/global_wstring.lower.md",
-            "order": 27
+            "path": "globals/functions/global_wstring.len.md",
+            "order": 47
           },
           {
             "label": "wstring.match",
             "type": "function",
             "path": "globals/functions/global_wstring.match.md",
-            "order": 28
+            "order": 48
           },
           {
-            "label": "wstring.upper",
+            "label": "wstring.sub",
             "type": "function",
-            "path": "globals/functions/global_wstring.upper.md",
-            "order": 29
+            "path": "globals/functions/global_wstring.sub.md",
+            "order": 49
+          },
+          {
+            "label": "DialogManager.MakeTextEntryDialog",
+            "type": "function",
+            "path": "globals/functions/global_DialogManager.MakeTextEntryDialog.md",
+            "order": 50
+          },
+          {
+            "label": "PetWindow.HasPet",
+            "type": "function",
+            "path": "globals/functions/global_PetWindow.HasPet.md",
+            "order": 51
+          },
+          {
+            "label": "RegisterEventHandler",
+            "type": "function",
+            "path": "globals/functions/global_RegisterEventHandler.md",
+            "order": 52
+          },
+          {
+            "label": "UnregisterEventHandler",
+            "type": "function",
+            "path": "globals/functions/global_UnregisterEventHandler.md",
+            "order": 53
+          },
+          {
+            "label": "EA_Window_ContextMenu.AddUserDefinedMenuItem",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md",
+            "order": 54
+          },
+          {
+            "label": "EA_Window_InteractionStore.ConfirmThenBuyItem",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_InteractionStore.ConfirmThenBuyItem.md",
+            "order": 55
+          },
+          {
+            "label": "BankWindow.Hide",
+            "type": "function",
+            "path": "globals/functions/global_BankWindow.Hide.md",
+            "order": 56
+          },
+          {
+            "label": "BankWindow.Show",
+            "type": "function",
+            "path": "globals/functions/global_BankWindow.Show.md",
+            "order": 57
+          },
+          {
+            "label": "DoesWindowExist",
+            "type": "function",
+            "path": "globals/functions/global_DoesWindowExist.md",
+            "order": 58
+          },
+          {
+            "label": "GetBuffs",
+            "type": "function",
+            "path": "globals/functions/global_GetBuffs.md",
+            "order": 59
+          },
+          {
+            "label": "GetIconData",
+            "type": "function",
+            "path": "globals/functions/global_GetIconData.md",
+            "order": 60
+          },
+          {
+            "label": "EA_Window_InteractionCoreTraining.Hide",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_InteractionCoreTraining.Hide.md",
+            "order": 61
+          },
+          {
+            "label": "EA_Window_InteractionCoreTraining.Show",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_InteractionCoreTraining.Show.md",
+            "order": 62
+          },
+          {
+            "label": "EA_Window_InteractionSpecialtyTraining.Hide",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_InteractionSpecialtyTraining.Hide.md",
+            "order": 63
+          },
+          {
+            "label": "EA_Window_InteractionSpecialtyTraining.Show",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_InteractionSpecialtyTraining.Show.md",
+            "order": 64
+          },
+          {
+            "label": "EA_Window_InteractionStore.SellItem",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_InteractionStore.SellItem.md",
+            "order": 65
+          },
+          {
+            "label": "EA_Window_InteractionTomeTraining.Hide",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_InteractionTomeTraining.Hide.md",
+            "order": 66
+          },
+          {
+            "label": "EA_Window_InteractionTomeTraining.Show",
+            "type": "function",
+            "path": "globals/functions/global_EA_Window_InteractionTomeTraining.Show.md",
+            "order": 67
+          },
+          {
+            "label": "CreateWindow",
+            "type": "function",
+            "path": "globals/functions/global_CreateWindow.md",
+            "order": 68
+          },
+          {
+            "label": "CreateWindowFromTemplate",
+            "type": "function",
+            "path": "globals/functions/global_CreateWindowFromTemplate.md",
+            "order": 69
+          },
+          {
+            "label": "DestroyWindow",
+            "type": "function",
+            "path": "globals/functions/global_DestroyWindow.md",
+            "order": 70
+          },
+          {
+            "label": "towstring",
+            "type": "function",
+            "path": "globals/functions/global_towstring.md",
+            "order": 71
+          },
+          {
+            "label": "wstring.format",
+            "type": "function",
+            "path": "globals/functions/global_wstring.format.md",
+            "order": 72
+          },
+          {
+            "label": "DefaultColor.SetLabelColor",
+            "type": "function",
+            "path": "globals/functions/global_DefaultColor.SetLabelColor.md",
+            "order": 73
+          },
+          {
+            "label": "PartyUtils.GetWarbandLeader",
+            "type": "function",
+            "path": "globals/functions/global_PartyUtils.GetWarbandLeader.md",
+            "order": 74
+          },
+          {
+            "label": "PartyUtils.GetWarbandMainAssist",
+            "type": "function",
+            "path": "globals/functions/global_PartyUtils.GetWarbandMainAssist.md",
+            "order": 75
+          },
+          {
+            "label": "wstring.find",
+            "type": "function",
+            "path": "globals/functions/global_wstring.find.md",
+            "order": 76
+          },
+          {
+            "label": "HelpTips.SetFocusOnWindow",
+            "type": "function",
+            "path": "globals/functions/global_HelpTips.SetFocusOnWindow.md",
+            "order": 77
+          },
+          {
+            "label": "wstring.char",
+            "type": "function",
+            "path": "globals/functions/global_wstring.char.md",
+            "order": 78
           }
         ]
       },
@@ -193,52 +487,172 @@
         "order": 2,
         "items": [
           {
+            "label": "AlertTextWindow",
+            "type": "data_structure",
+            "path": "globals/tables/table_AlertTextWindow.md",
+            "order": 1
+          },
+          {
+            "label": "AuctionWindow",
+            "type": "data_structure",
+            "path": "globals/tables/table_AuctionWindow.md",
+            "order": 2
+          },
+          {
+            "label": "BankWindow",
+            "type": "data_structure",
+            "path": "globals/tables/table_BankWindow.md",
+            "order": 3
+          },
+          {
+            "label": "CharacterWindow",
+            "type": "data_structure",
+            "path": "globals/tables/table_CharacterWindow.md",
+            "order": 4
+          },
+          {
+            "label": "CraftingSystem",
+            "type": "data_structure",
+            "path": "globals/tables/table_CraftingSystem.md",
+            "order": 5
+          },
+          {
+            "label": "Cursor",
+            "type": "data_structure",
+            "path": "globals/tables/table_Cursor.md",
+            "order": 6
+          },
+          {
             "label": "DefaultColor",
             "type": "data_structure",
             "path": "globals/tables/table_DefaultColor.md",
-            "order": 1
+            "order": 7
           },
           {
             "label": "DialogManager",
             "type": "data_structure",
             "path": "globals/tables/table_DialogManager.md",
-            "order": 2
+            "order": 8
+          },
+          {
+            "label": "EA_BackpackUtilsMediator",
+            "type": "data_structure",
+            "path": "globals/tables/table_EA_BackpackUtilsMediator.md",
+            "order": 9
           },
           {
             "label": "EA_ChatWindow",
             "type": "data_structure",
             "path": "globals/tables/table_EA_ChatWindow.md",
-            "order": 3
+            "order": 10
           },
           {
-            "label": "Icons",
+            "label": "EA_TextEntryGroupEntryBoxTextInput",
             "type": "data_structure",
-            "path": "globals/tables/table_Icons.md",
-            "order": 4
+            "path": "globals/tables/table_EA_TextEntryGroupEntryBoxTextInput.md",
+            "order": 11
           },
           {
-            "label": "InterfaceCore",
+            "label": "EA_Window_Backpack",
             "type": "data_structure",
-            "path": "globals/tables/table_InterfaceCore.md",
-            "order": 5
-          },
-          {
-            "label": "LibSlash",
-            "type": "data_structure",
-            "path": "globals/tables/table_LibSlash.md",
-            "order": 6
+            "path": "globals/tables/table_EA_Window_Backpack.md",
+            "order": 12
           },
           {
             "label": "EA_Window_ContextMenu",
             "type": "data_structure",
             "path": "globals/tables/table_EA_Window_ContextMenu.md",
-            "order": 7
+            "order": 13
+          },
+          {
+            "label": "EA_Window_InteractionRenownTraining",
+            "type": "data_structure",
+            "path": "globals/tables/table_EA_Window_InteractionRenownTraining.md",
+            "order": 14
+          },
+          {
+            "label": "EA_Window_Macro",
+            "type": "data_structure",
+            "path": "globals/tables/table_EA_Window_Macro.md",
+            "order": 15
+          },
+          {
+            "label": "Icons",
+            "type": "data_structure",
+            "path": "globals/tables/table_Icons.md",
+            "order": 16
+          },
+          {
+            "label": "InterfaceCore",
+            "type": "data_structure",
+            "path": "globals/tables/table_InterfaceCore.md",
+            "order": 17
+          },
+          {
+            "label": "LibSlash",
+            "type": "data_structure",
+            "path": "globals/tables/table_LibSlash.md",
+            "order": 18
+          },
+          {
+            "label": "MailWindow",
+            "type": "data_structure",
+            "path": "globals/tables/table_MailWindow.md",
+            "order": 19
+          },
+          {
+            "label": "MoneyFrame",
+            "type": "data_structure",
+            "path": "globals/tables/table_MoneyFrame.md",
+            "order": 20
+          },
+          {
+            "label": "PartyUtils",
+            "type": "data_structure",
+            "path": "globals/tables/table_PartyUtils.md",
+            "order": 21
+          },
+          {
+            "label": "PetWindow",
+            "type": "data_structure",
+            "path": "globals/tables/table_PetWindow.md",
+            "order": 22
           },
           {
             "label": "wstring",
             "type": "data_structure",
             "path": "globals/tables/table_wstring.md",
-            "order": 8
+            "order": 23
+          },
+          {
+            "label": "EA_Window_InteractionCoreTraining",
+            "type": "data_structure",
+            "path": "globals/tables/table_EA_Window_InteractionCoreTraining.md",
+            "order": 24
+          },
+          {
+            "label": "EA_Window_InteractionSpecialtyTraining",
+            "type": "data_structure",
+            "path": "globals/tables/table_EA_Window_InteractionSpecialtyTraining.md",
+            "order": 25
+          },
+          {
+            "label": "EA_Window_InteractionStore",
+            "type": "data_structure",
+            "path": "globals/tables/table_EA_Window_InteractionStore.md",
+            "order": 26
+          },
+          {
+            "label": "EA_Window_InteractionTomeTraining",
+            "type": "data_structure",
+            "path": "globals/tables/table_EA_Window_InteractionTomeTraining.md",
+            "order": 27
+          },
+          {
+            "label": "HelpTips",
+            "type": "data_structure",
+            "path": "globals/tables/table_HelpTips.md",
+            "order": 28
           }
         ]
       },
@@ -249,105 +663,105 @@
         "order": 3,
         "items": [
           {
+            "label": "EA_BrownHorizontalRule",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_BrownHorizontalRule.md",
+            "order": 1
+          },
+          {
             "label": "EA_Button_Default",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_Default.md",
-            "order": 1
+            "order": 2
           },
           {
             "label": "EA_Button_DefaultCheckBox",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultCheckBox.md",
-            "order": 2
+            "order": 3
+          },
+          {
+            "label": "EA_Button_DefaultIconFrame_Large",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultIconFrame_Large.md",
+            "order": 4
+          },
+          {
+            "label": "EA_Button_DefaultListSort",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultListSort.md",
+            "order": 5
+          },
+          {
+            "label": "EA_Button_DefaultMenuButton",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultMenuButton.md",
+            "order": 6
           },
           {
             "label": "EA_Button_DefaultResizeable",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultResizeable.md",
-            "order": 3
+            "order": 7
+          },
+          {
+            "label": "EA_Button_DefaultSmallSquare",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultSmallSquare.md",
+            "order": 8
           },
           {
             "label": "EA_Button_DefaultWindowClose",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_DefaultWindowClose.md",
-            "order": 4
+            "order": 9
+          },
+          {
+            "label": "EA_Button_ListSort",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_ListSort.md",
+            "order": 10
           },
           {
             "label": "EA_Button_ResizeIconFrameNormal",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_ResizeIconFrameNormal.md",
-            "order": 5
+            "order": 11
+          },
+          {
+            "label": "EA_Button_ResizeIconFrame_NoNormalImage",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_ResizeIconFrame_NoNormalImage.md",
+            "order": 12
           },
           {
             "label": "EA_Button_Tab",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Button_Tab.md",
-            "order": 6
-          },
-          {
-            "label": "EA_FullResizeImage_BlackTransparent",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_FullResizeImage_BlackTransparent.md",
-            "order": 7
-          },
-          {
-            "label": "EA_FullResizeImage_TintableSolidBackground",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_FullResizeImage_TintableSolidBackground.md",
-            "order": 8
-          },
-          {
-            "label": "EA_Label_DefaultText",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_Label_DefaultText.md",
-            "order": 9
-          },
-          {
-            "label": "EA_TitleBar_Default",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_TitleBar_Default.md",
-            "order": 10
-          },
-          {
-            "label": "EA_Window_DefaultContextMenuFrame",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_Window_DefaultContextMenuFrame.md",
-            "order": 11
-          },
-          {
-            "label": "EA_Window_DefaultFrame",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_Window_DefaultFrame.md",
-            "order": 12
-          },
-          {
-            "label": "EA_Button_DefaultToggleCircle",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_Button_DefaultToggleCircle.md",
             "order": 13
-          },
-          {
-            "label": "EA_Button_ResizeIconFrameHighlight",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_Button_ResizeIconFrameHighlight.md",
-            "order": 14
-          },
-          {
-            "label": "EA_Button_ResizeIconFramePressed",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_Button_ResizeIconFramePressed.md",
-            "order": 15
           },
           {
             "label": "EA_ComboBox_DefaultResizable",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ComboBox_DefaultResizable.md",
-            "order": 16
+            "order": 14
+          },
+          {
+            "label": "EA_ComboBox_DefaultResizableLarge",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_ComboBox_DefaultResizableLarge.md",
+            "order": 15
           },
           {
             "label": "EA_ComboBox_DefaultResizableSmall",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_ComboBox_DefaultResizableSmall.md",
+            "order": 16
+          },
+          {
+            "label": "EA_ComboBox_DefaultResizable_Fixed",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_ComboBox_DefaultResizable_Fixed.md",
             "order": 17
           },
           {
@@ -369,58 +783,382 @@
             "order": 20
           },
           {
+            "label": "EA_FullResizeImage_BlackTransparent",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_FullResizeImage_BlackTransparent.md",
+            "order": 21
+          },
+          {
             "label": "EA_FullResizeImage_DefaultFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_DefaultFrame.md",
-            "order": 21
+            "order": 22
           },
           {
             "label": "EA_FullResizeImage_MetalFill",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_FullResizeImage_MetalFill.md",
-            "order": 22
-          },
-          {
-            "label": "EA_FullResizeImage_TanBorder",
-            "type": "data_structure",
-            "path": "globals/constants/constant_EA_FullResizeImage_TanBorder.md",
             "order": 23
           },
           {
-            "label": "EA_Image_DefaultIcon",
+            "label": "EA_FullResizeImage_TintableSolidBackground",
             "type": "data_structure",
-            "path": "globals/constants/constant_EA_Image_DefaultIcon.md",
+            "path": "globals/constants/constant_EA_FullResizeImage_TintableSolidBackground.md",
             "order": 24
           },
           {
-            "label": "EA_Image_DefaultIconFrame",
+            "label": "EA_FullResizeImage_WhiteTransparent",
             "type": "data_structure",
-            "path": "globals/constants/constant_EA_Image_DefaultIconFrame.md",
+            "path": "globals/constants/constant_EA_FullResizeImage_WhiteTransparent.md",
             "order": 25
           },
           {
-            "label": "EA_StatusBar_DefaultTintable",
+            "label": "EA_HorizontalResizeImage_TabSeparatorMiddle",
             "type": "data_structure",
-            "path": "globals/constants/constant_EA_StatusBar_DefaultTintable.md",
+            "path": "globals/constants/constant_EA_HorizontalResizeImage_TabSeparatorMiddle.md",
             "order": 26
+          },
+          {
+            "label": "EA_LabelCheckButton",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_LabelCheckButton.md",
+            "order": 27
+          },
+          {
+            "label": "EA_Label_DefaultText",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Label_DefaultText.md",
+            "order": 28
+          },
+          {
+            "label": "EA_Label_DefaultText_Small",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Label_DefaultText_Small.md",
+            "order": 29
+          },
+          {
+            "label": "EA_ListSortDownArrow",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_ListSortDownArrow.md",
+            "order": 30
+          },
+          {
+            "label": "EA_ListSortUpArrow",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_ListSortUpArrow.md",
+            "order": 31
+          },
+          {
+            "label": "EA_MoraleButtonAnimation",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_MoraleButtonAnimation.md",
+            "order": 32
+          },
+          {
+            "label": "EA_ScrollBar_DefaultVerticalChain",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_ScrollBar_DefaultVerticalChain.md",
+            "order": 33
+          },
+          {
+            "label": "EA_Settings_ItemTitle",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Settings_ItemTitle.md",
+            "order": 34
+          },
+          {
+            "label": "EA_Settings_SectionTitle",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Settings_SectionTitle.md",
+            "order": 35
+          },
+          {
+            "label": "EA_TitleBar_Default",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_TitleBar_Default.md",
+            "order": 36
+          },
+          {
+            "label": "EA_Window_Default",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_Default.md",
+            "order": 37
           },
           {
             "label": "EA_Window_DefaultBackgroundFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultBackgroundFrame.md",
-            "order": 27
+            "order": 38
           },
           {
             "label": "EA_Window_DefaultButtonBottomFrame",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultButtonBottomFrame.md",
-            "order": 28
+            "order": 39
+          },
+          {
+            "label": "EA_Window_DefaultContextMenuFrame",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_DefaultContextMenuFrame.md",
+            "order": 40
+          },
+          {
+            "label": "EA_Window_DefaultFrame",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_DefaultFrame.md",
+            "order": 41
           },
           {
             "label": "EA_Window_DefaultFrameStatusBar",
             "type": "data_structure",
             "path": "globals/constants/constant_EA_Window_DefaultFrameStatusBar.md",
-            "order": 29
+            "order": 42
+          },
+          {
+            "label": "EA_Window_DefaultSeparator",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_DefaultSeparator.md",
+            "order": 43
+          },
+          {
+            "label": "EA_Window_DefaultTooltipBackground",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_DefaultTooltipBackground.md",
+            "order": 44
+          },
+          {
+            "label": "EA_Window_DefaultVerticalSeparator",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_DefaultVerticalSeparator.md",
+            "order": 45
+          },
+          {
+            "label": "EA_Window_Macro",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_Macro.md",
+            "order": 46
+          },
+          {
+            "label": "EA_Window_MacroDetailIconButton",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_MacroDetailIconButton.md",
+            "order": 47
+          },
+          {
+            "label": "EA_Window_MacroDetails",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_MacroDetails.md",
+            "order": 48
+          },
+          {
+            "label": "EA_Window_TabSeparatorLeftSide",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_TabSeparatorLeftSide.md",
+            "order": 49
+          },
+          {
+            "label": "EA_Window_TabSeparatorRightSide",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_TabSeparatorRightSide.md",
+            "order": 50
+          },
+          {
+            "label": "EA_Button_BottomTab",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_BottomTab.md",
+            "order": 51
+          },
+          {
+            "label": "EA_Button_DefaultBigLeftArrow",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultBigLeftArrow.md",
+            "order": 52
+          },
+          {
+            "label": "EA_Button_DefaultBigRightArrow",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultBigRightArrow.md",
+            "order": 53
+          },
+          {
+            "label": "EA_Button_DefaultDown",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultDown.md",
+            "order": 54
+          },
+          {
+            "label": "EA_Button_DefaultIconFrame",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultIconFrame.md",
+            "order": 55
+          },
+          {
+            "label": "EA_Button_DefaultIconFrame_Small",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultIconFrame_Small.md",
+            "order": 56
+          },
+          {
+            "label": "EA_Button_DefaultMinus",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultMinus.md",
+            "order": 57
+          },
+          {
+            "label": "EA_Button_DefaultPlus",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultPlus.md",
+            "order": 58
+          },
+          {
+            "label": "EA_Button_DefaultText",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultText.md",
+            "order": 59
+          },
+          {
+            "label": "EA_Button_DefaultToggleCircle",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultToggleCircle.md",
+            "order": 60
+          },
+          {
+            "label": "EA_Button_DefaultUp",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Button_DefaultUp.md",
+            "order": 61
+          },
+          {
+            "label": "EA_ComboBox_DefaultResizableMedium",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_ComboBox_DefaultResizableMedium.md",
+            "order": 62
+          },
+          {
+            "label": "EA_Default_CharacterImage",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Default_CharacterImage.md",
+            "order": 63
+          },
+          {
+            "label": "EA_Default_TrainingImage",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Default_TrainingImage.md",
+            "order": 64
+          },
+          {
+            "label": "EA_FilterMenuButtonTemplate",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_FilterMenuButtonTemplate.md",
+            "order": 65
+          },
+          {
+            "label": "EA_FullResizeImage_TintableFrame",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_FullResizeImage_TintableFrame.md",
+            "order": 66
+          },
+          {
+            "label": "EA_HorizontalResizeImage_DefaultTopFrame",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_HorizontalResizeImage_DefaultTopFrame.md",
+            "order": 67
+          },
+          {
+            "label": "EA_Image_DefaultIcon",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Image_DefaultIcon.md",
+            "order": 68
+          },
+          {
+            "label": "EA_Image_DefaultIconFrame",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Image_DefaultIconFrame.md",
+            "order": 69
+          },
+          {
+            "label": "EA_Label_DefaultSubHeading",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Label_DefaultSubHeading.md",
+            "order": 70
+          },
+          {
+            "label": "EA_ScrollBar_ChatVertical",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_ScrollBar_ChatVertical.md",
+            "order": 71
+          },
+          {
+            "label": "EA_ScrollBar_DefaultDownArrowButton",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_ScrollBar_DefaultDownArrowButton.md",
+            "order": 72
+          },
+          {
+            "label": "EA_ScrollBar_DefaultUpArrowButton",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_ScrollBar_DefaultUpArrowButton.md",
+            "order": 73
+          },
+          {
+            "label": "EA_StatusBar_DefaultTintable",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_StatusBar_DefaultTintable.md",
+            "order": 74
+          },
+          {
+            "label": "EA_Templates_BrassCoin",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Templates_BrassCoin.md",
+            "order": 75
+          },
+          {
+            "label": "EA_Templates_Color_Picker_Button",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Templates_Color_Picker_Button.md",
+            "order": 76
+          },
+          {
+            "label": "EA_Templates_GoldCoin",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Templates_GoldCoin.md",
+            "order": 77
+          },
+          {
+            "label": "EA_Templates_SilverCoin",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Templates_SilverCoin.md",
+            "order": 78
+          },
+          {
+            "label": "EA_Window_CityRating",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_CityRating.md",
+            "order": 79
+          },
+          {
+            "label": "EA_Window_ComboBoxMenuBackground",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_ComboBoxMenuBackground.md",
+            "order": 80
+          },
+          {
+            "label": "EA_Window_MacroIconButton",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_MacroIconButton.md",
+            "order": 81
+          },
+          {
+            "label": "EA_Window_MacroMacros",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_MacroMacros.md",
+            "order": 82
+          },
+          {
+            "label": "EA_Window_MacroMacrosScrollChild",
+            "type": "data_structure",
+            "path": "globals/constants/constant_EA_Window_MacroMacrosScrollChild.md",
+            "order": 83
           }
         ]
       }
@@ -480,406 +1218,526 @@
             "order": 7
           },
           {
+            "label": "ButtonSetTextColor",
+            "type": "function",
+            "path": "window_api/functions/window_ButtonSetTextColor.md",
+            "order": 8
+          },
+          {
             "label": "ComboBoxAddMenuItem",
             "type": "function",
             "path": "window_api/functions/window_ComboBoxAddMenuItem.md",
-            "order": 8
+            "order": 9
           },
           {
             "label": "ComboBoxClearMenuItems",
             "type": "function",
             "path": "window_api/functions/window_ComboBoxClearMenuItems.md",
-            "order": 9
+            "order": 10
           },
           {
             "label": "ComboBoxGetDisabledFlag",
             "type": "function",
             "path": "window_api/functions/window_ComboBoxGetDisabledFlag.md",
-            "order": 10
+            "order": 11
           },
           {
             "label": "ComboBoxGetSelectedMenuItem",
             "type": "function",
             "path": "window_api/functions/window_ComboBoxGetSelectedMenuItem.md",
-            "order": 11
-          },
-          {
-            "label": "ComboBoxSetDisabledFlag",
-            "type": "function",
-            "path": "window_api/functions/window_ComboBoxSetDisabledFlag.md",
             "order": 12
-          },
-          {
-            "label": "ComboBoxSetSelectedMenuItem",
-            "type": "function",
-            "path": "window_api/functions/window_ComboBoxSetSelectedMenuItem.md",
-            "order": 13
-          },
-          {
-            "label": "DynamicImageSetRotation",
-            "type": "function",
-            "path": "window_api/functions/window_DynamicImageSetRotation.md",
-            "order": 14
-          },
-          {
-            "label": "DynamicImageSetTextureDimensions",
-            "type": "function",
-            "path": "window_api/functions/window_DynamicImageSetTextureDimensions.md",
-            "order": 15
-          },
-          {
-            "label": "DynamicImageSetTextureOrientation",
-            "type": "function",
-            "path": "window_api/functions/window_DynamicImageSetTextureOrientation.md",
-            "order": 16
-          },
-          {
-            "label": "DynamicImageSetTextureScale",
-            "type": "function",
-            "path": "window_api/functions/window_DynamicImageSetTextureScale.md",
-            "order": 17
-          },
-          {
-            "label": "DynamicImageSetTextureSlice",
-            "type": "function",
-            "path": "window_api/functions/window_DynamicImageSetTextureSlice.md",
-            "order": 18
-          },
-          {
-            "label": "LabelGetText",
-            "type": "function",
-            "path": "window_api/functions/window_LabelGetText.md",
-            "order": 19
-          },
-          {
-            "label": "LabelGetTextColor",
-            "type": "function",
-            "path": "window_api/functions/window_LabelGetTextColor.md",
-            "order": 20
-          },
-          {
-            "label": "LabelGetWordWrap",
-            "type": "function",
-            "path": "window_api/functions/window_LabelGetWordWrap.md",
-            "order": 21
-          },
-          {
-            "label": "LabelSetFont",
-            "type": "function",
-            "path": "window_api/functions/window_LabelSetFont.md",
-            "order": 22
-          },
-          {
-            "label": "LabelSetText",
-            "type": "function",
-            "path": "window_api/functions/window_LabelSetText.md",
-            "order": 23
-          },
-          {
-            "label": "LabelSetTextAlign",
-            "type": "function",
-            "path": "window_api/functions/window_LabelSetTextAlign.md",
-            "order": 24
-          },
-          {
-            "label": "LabelSetTextColor",
-            "type": "function",
-            "path": "window_api/functions/window_LabelSetTextColor.md",
-            "order": 25
-          },
-          {
-            "label": "LabelSetWordWrap",
-            "type": "function",
-            "path": "window_api/functions/window_LabelSetWordWrap.md",
-            "order": 26
-          },
-          {
-            "label": "LayoutEditor.RegisterWindow",
-            "type": "function",
-            "path": "window_api/functions/window_LayoutEditor.RegisterWindow.md",
-            "order": 27
-          },
-          {
-            "label": "StatusBarGetCurrentValue",
-            "type": "function",
-            "path": "window_api/functions/window_StatusBarGetCurrentValue.md",
-            "order": 28
-          },
-          {
-            "label": "StatusBarSetBackgroundTint",
-            "type": "function",
-            "path": "window_api/functions/window_StatusBarSetBackgroundTint.md",
-            "order": 29
-          },
-          {
-            "label": "StatusBarSetCurrentValue",
-            "type": "function",
-            "path": "window_api/functions/window_StatusBarSetCurrentValue.md",
-            "order": 30
-          },
-          {
-            "label": "StatusBarSetForegroundTint",
-            "type": "function",
-            "path": "window_api/functions/window_StatusBarSetForegroundTint.md",
-            "order": 31
-          },
-          {
-            "label": "StatusBarSetMaximumValue",
-            "type": "function",
-            "path": "window_api/functions/window_StatusBarSetMaximumValue.md",
-            "order": 32
-          },
-          {
-            "label": "TextEditBoxGetText",
-            "type": "function",
-            "path": "window_api/functions/window_TextEditBoxGetText.md",
-            "order": 33
-          },
-          {
-            "label": "TextEditBoxSetText",
-            "type": "function",
-            "path": "window_api/functions/window_TextEditBoxSetText.md",
-            "order": 34
-          },
-          {
-            "label": "WindowAddAnchor",
-            "type": "function",
-            "path": "window_api/functions/window_WindowAddAnchor.md",
-            "order": 35
-          },
-          {
-            "label": "WindowAssignFocus",
-            "type": "function",
-            "path": "window_api/functions/window_WindowAssignFocus.md",
-            "order": 36
-          },
-          {
-            "label": "WindowClearAnchors",
-            "type": "function",
-            "path": "window_api/functions/window_WindowClearAnchors.md",
-            "order": 37
-          },
-          {
-            "label": "WindowForceProcessAnchors",
-            "type": "function",
-            "path": "window_api/functions/window_WindowForceProcessAnchors.md",
-            "order": 38
-          },
-          {
-            "label": "WindowGetAlpha",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetAlpha.md",
-            "order": 39
-          },
-          {
-            "label": "WindowGetAnchor",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetAnchor.md",
-            "order": 40
-          },
-          {
-            "label": "WindowGetDimensions",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetDimensions.md",
-            "order": 41
-          },
-          {
-            "label": "WindowGetFontAlpha",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetFontAlpha.md",
-            "order": 42
-          },
-          {
-            "label": "WindowGetHandleInput",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetHandleInput.md",
-            "order": 43
-          },
-          {
-            "label": "WindowGetId",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetId.md",
-            "order": 44
-          },
-          {
-            "label": "WindowGetLayer",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetLayer.md",
-            "order": 45
-          },
-          {
-            "label": "WindowGetPopable",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetPopable.md",
-            "order": 46
-          },
-          {
-            "label": "WindowGetScale",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetScale.md",
-            "order": 47
-          },
-          {
-            "label": "WindowGetShowing",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetShowing.md",
-            "order": 48
-          },
-          {
-            "label": "WindowGetTintColor",
-            "type": "function",
-            "path": "window_api/functions/window_WindowGetTintColor.md",
-            "order": 49
-          },
-          {
-            "label": "WindowRegisterCoreEventHandler",
-            "type": "function",
-            "path": "window_api/functions/window_WindowRegisterCoreEventHandler.md",
-            "order": 50
-          },
-          {
-            "label": "WindowSetAlpha",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetAlpha.md",
-            "order": 51
-          },
-          {
-            "label": "WindowSetDimensions",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetDimensions.md",
-            "order": 52
-          },
-          {
-            "label": "WindowSetFontAlpha",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetFontAlpha.md",
-            "order": 53
-          },
-          {
-            "label": "WindowSetGameActionData",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetGameActionData.md",
-            "order": 54
-          },
-          {
-            "label": "WindowSetGameActionTrigger",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetGameActionTrigger.md",
-            "order": 55
-          },
-          {
-            "label": "WindowSetHandleInput",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetHandleInput.md",
-            "order": 56
-          },
-          {
-            "label": "WindowSetId",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetId.md",
-            "order": 57
-          },
-          {
-            "label": "WindowSetLayer",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetLayer.md",
-            "order": 58
-          },
-          {
-            "label": "WindowSetMovable",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetMovable.md",
-            "order": 59
-          },
-          {
-            "label": "WindowSetParent",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetParent.md",
-            "order": 60
-          },
-          {
-            "label": "WindowSetPopable",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetPopable.md",
-            "order": 61
-          },
-          {
-            "label": "WindowSetScale",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetScale.md",
-            "order": 62
-          },
-          {
-            "label": "WindowSetShowing",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetShowing.md",
-            "order": 63
-          },
-          {
-            "label": "WindowSetTintColor",
-            "type": "function",
-            "path": "window_api/functions/window_WindowSetTintColor.md",
-            "order": 64
-          },
-          {
-            "label": "WindowUnregisterCoreEventHandler",
-            "type": "function",
-            "path": "window_api/functions/window_WindowUnregisterCoreEventHandler.md",
-            "order": 65
-          },
-          {
-            "label": "ButtonSetTextColor",
-            "type": "function",
-            "path": "window_api/functions/window_ButtonSetTextColor.md",
-            "order": 66
-          },
-          {
-            "label": "DynamicImageSetTexture",
-            "type": "function",
-            "path": "window_api/functions/window_DynamicImageSetTexture.md",
-            "order": 67
-          },
-          {
-            "label": "WindowRegisterEventHandler",
-            "type": "function",
-            "path": "window_api/functions/window_WindowRegisterEventHandler.md",
-            "order": 68
-          },
-          {
-            "label": "WindowStopAlphaAnimation",
-            "type": "function",
-            "path": "window_api/functions/window_WindowStopAlphaAnimation.md",
-            "order": 69
           },
           {
             "label": "ComboBoxGetSelectedText",
             "type": "function",
             "path": "window_api/functions/window_ComboBoxGetSelectedText.md",
-            "order": 70
+            "order": 13
+          },
+          {
+            "label": "ComboBoxSetDisabledFlag",
+            "type": "function",
+            "path": "window_api/functions/window_ComboBoxSetDisabledFlag.md",
+            "order": 14
+          },
+          {
+            "label": "ComboBoxSetSelectedMenuItem",
+            "type": "function",
+            "path": "window_api/functions/window_ComboBoxSetSelectedMenuItem.md",
+            "order": 15
+          },
+          {
+            "label": "DynamicImageSetRotation",
+            "type": "function",
+            "path": "window_api/functions/window_DynamicImageSetRotation.md",
+            "order": 16
+          },
+          {
+            "label": "DynamicImageSetTexture",
+            "type": "function",
+            "path": "window_api/functions/window_DynamicImageSetTexture.md",
+            "order": 17
+          },
+          {
+            "label": "DynamicImageSetTextureDimensions",
+            "type": "function",
+            "path": "window_api/functions/window_DynamicImageSetTextureDimensions.md",
+            "order": 18
+          },
+          {
+            "label": "DynamicImageSetTextureOrientation",
+            "type": "function",
+            "path": "window_api/functions/window_DynamicImageSetTextureOrientation.md",
+            "order": 19
+          },
+          {
+            "label": "DynamicImageSetTextureScale",
+            "type": "function",
+            "path": "window_api/functions/window_DynamicImageSetTextureScale.md",
+            "order": 20
+          },
+          {
+            "label": "DynamicImageSetTextureSlice",
+            "type": "function",
+            "path": "window_api/functions/window_DynamicImageSetTextureSlice.md",
+            "order": 21
+          },
+          {
+            "label": "LabelGetText",
+            "type": "function",
+            "path": "window_api/functions/window_LabelGetText.md",
+            "order": 22
+          },
+          {
+            "label": "LabelGetTextColor",
+            "type": "function",
+            "path": "window_api/functions/window_LabelGetTextColor.md",
+            "order": 23
           },
           {
             "label": "LabelGetTextDimensions",
             "type": "function",
             "path": "window_api/functions/window_LabelGetTextDimensions.md",
-            "order": 71
+            "order": 24
+          },
+          {
+            "label": "LabelGetWordWrap",
+            "type": "function",
+            "path": "window_api/functions/window_LabelGetWordWrap.md",
+            "order": 25
+          },
+          {
+            "label": "LabelSetFont",
+            "type": "function",
+            "path": "window_api/functions/window_LabelSetFont.md",
+            "order": 26
+          },
+          {
+            "label": "LabelSetText",
+            "type": "function",
+            "path": "window_api/functions/window_LabelSetText.md",
+            "order": 27
+          },
+          {
+            "label": "LabelSetTextAlign",
+            "type": "function",
+            "path": "window_api/functions/window_LabelSetTextAlign.md",
+            "order": 28
+          },
+          {
+            "label": "LabelSetTextColor",
+            "type": "function",
+            "path": "window_api/functions/window_LabelSetTextColor.md",
+            "order": 29
+          },
+          {
+            "label": "LabelSetWordWrap",
+            "type": "function",
+            "path": "window_api/functions/window_LabelSetWordWrap.md",
+            "order": 30
+          },
+          {
+            "label": "LayoutEditor.RegisterEditCallback",
+            "type": "function",
+            "path": "window_api/functions/window_LayoutEditor.RegisterEditCallback.md",
+            "order": 31
+          },
+          {
+            "label": "LayoutEditor.RegisterWindow",
+            "type": "function",
+            "path": "window_api/functions/window_LayoutEditor.RegisterWindow.md",
+            "order": 32
           },
           {
             "label": "LayoutEditor.UnregisterWindow",
             "type": "function",
             "path": "window_api/functions/window_LayoutEditor.UnregisterWindow.md",
-            "order": 72
+            "order": 33
           },
           {
-            "label": "StatusBarGetMaximumValue",
+            "label": "ScrollWindowSetOffset",
             "type": "function",
-            "path": "window_api/functions/window_StatusBarGetMaximumValue.md",
-            "order": 73
+            "path": "window_api/functions/window_ScrollWindowSetOffset.md",
+            "order": 34
+          },
+          {
+            "label": "ScrollWindowUpdateScrollRect",
+            "type": "function",
+            "path": "window_api/functions/window_ScrollWindowUpdateScrollRect.md",
+            "order": 35
+          },
+          {
+            "label": "StatusBarGetCurrentValue",
+            "type": "function",
+            "path": "window_api/functions/window_StatusBarGetCurrentValue.md",
+            "order": 36
+          },
+          {
+            "label": "StatusBarSetBackgroundTint",
+            "type": "function",
+            "path": "window_api/functions/window_StatusBarSetBackgroundTint.md",
+            "order": 37
+          },
+          {
+            "label": "StatusBarSetCurrentValue",
+            "type": "function",
+            "path": "window_api/functions/window_StatusBarSetCurrentValue.md",
+            "order": 38
+          },
+          {
+            "label": "StatusBarSetForegroundTint",
+            "type": "function",
+            "path": "window_api/functions/window_StatusBarSetForegroundTint.md",
+            "order": 39
+          },
+          {
+            "label": "StatusBarSetMaximumValue",
+            "type": "function",
+            "path": "window_api/functions/window_StatusBarSetMaximumValue.md",
+            "order": 40
+          },
+          {
+            "label": "TextEditBoxGetText",
+            "type": "function",
+            "path": "window_api/functions/window_TextEditBoxGetText.md",
+            "order": 41
+          },
+          {
+            "label": "TextEditBoxSelectAll",
+            "type": "function",
+            "path": "window_api/functions/window_TextEditBoxSelectAll.md",
+            "order": 42
+          },
+          {
+            "label": "TextEditBoxSetText",
+            "type": "function",
+            "path": "window_api/functions/window_TextEditBoxSetText.md",
+            "order": 43
+          },
+          {
+            "label": "WindowAddAnchor",
+            "type": "function",
+            "path": "window_api/functions/window_WindowAddAnchor.md",
+            "order": 44
+          },
+          {
+            "label": "WindowAssignFocus",
+            "type": "function",
+            "path": "window_api/functions/window_WindowAssignFocus.md",
+            "order": 45
+          },
+          {
+            "label": "WindowClearAnchors",
+            "type": "function",
+            "path": "window_api/functions/window_WindowClearAnchors.md",
+            "order": 46
+          },
+          {
+            "label": "WindowForceProcessAnchors",
+            "type": "function",
+            "path": "window_api/functions/window_WindowForceProcessAnchors.md",
+            "order": 47
+          },
+          {
+            "label": "WindowGetAlpha",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetAlpha.md",
+            "order": 48
+          },
+          {
+            "label": "WindowGetAnchor",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetAnchor.md",
+            "order": 49
+          },
+          {
+            "label": "WindowGetAnchorCount",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetAnchorCount.md",
+            "order": 50
+          },
+          {
+            "label": "WindowGetDimensions",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetDimensions.md",
+            "order": 51
+          },
+          {
+            "label": "WindowGetFontAlpha",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetFontAlpha.md",
+            "order": 52
+          },
+          {
+            "label": "WindowGetHandleInput",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetHandleInput.md",
+            "order": 53
+          },
+          {
+            "label": "WindowGetId",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetId.md",
+            "order": 54
+          },
+          {
+            "label": "WindowGetLayer",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetLayer.md",
+            "order": 55
           },
           {
             "label": "WindowGetOffsetFromParent",
             "type": "function",
             "path": "window_api/functions/window_WindowGetOffsetFromParent.md",
+            "order": 56
+          },
+          {
+            "label": "WindowGetParent",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetParent.md",
+            "order": 57
+          },
+          {
+            "label": "WindowGetPopable",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetPopable.md",
+            "order": 58
+          },
+          {
+            "label": "WindowGetScale",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetScale.md",
+            "order": 59
+          },
+          {
+            "label": "WindowGetScreenPosition",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetScreenPosition.md",
+            "order": 60
+          },
+          {
+            "label": "WindowGetShowing",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetShowing.md",
+            "order": 61
+          },
+          {
+            "label": "WindowGetTintColor",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetTintColor.md",
+            "order": 62
+          },
+          {
+            "label": "WindowRegisterCoreEventHandler",
+            "type": "function",
+            "path": "window_api/functions/window_WindowRegisterCoreEventHandler.md",
+            "order": 63
+          },
+          {
+            "label": "WindowRegisterEventHandler",
+            "type": "function",
+            "path": "window_api/functions/window_WindowRegisterEventHandler.md",
+            "order": 64
+          },
+          {
+            "label": "WindowSetAlpha",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetAlpha.md",
+            "order": 65
+          },
+          {
+            "label": "WindowSetDimensions",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetDimensions.md",
+            "order": 66
+          },
+          {
+            "label": "WindowSetFontAlpha",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetFontAlpha.md",
+            "order": 67
+          },
+          {
+            "label": "WindowSetGameActionData",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetGameActionData.md",
+            "order": 68
+          },
+          {
+            "label": "WindowSetGameActionTrigger",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetGameActionTrigger.md",
+            "order": 69
+          },
+          {
+            "label": "WindowSetHandleInput",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetHandleInput.md",
+            "order": 70
+          },
+          {
+            "label": "WindowSetId",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetId.md",
+            "order": 71
+          },
+          {
+            "label": "WindowSetLayer",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetLayer.md",
+            "order": 72
+          },
+          {
+            "label": "WindowSetMovable",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetMovable.md",
+            "order": 73
+          },
+          {
+            "label": "WindowSetParent",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetParent.md",
             "order": 74
+          },
+          {
+            "label": "WindowSetPopable",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetPopable.md",
+            "order": 75
+          },
+          {
+            "label": "WindowSetScale",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetScale.md",
+            "order": 76
+          },
+          {
+            "label": "WindowSetShowing",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetShowing.md",
+            "order": 77
+          },
+          {
+            "label": "WindowSetTintColor",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetTintColor.md",
+            "order": 78
+          },
+          {
+            "label": "WindowStartAlphaAnimation",
+            "type": "function",
+            "path": "window_api/functions/window_WindowStartAlphaAnimation.md",
+            "order": 79
+          },
+          {
+            "label": "WindowStopAlphaAnimation",
+            "type": "function",
+            "path": "window_api/functions/window_WindowStopAlphaAnimation.md",
+            "order": 80
+          },
+          {
+            "label": "WindowUnregisterCoreEventHandler",
+            "type": "function",
+            "path": "window_api/functions/window_WindowUnregisterCoreEventHandler.md",
+            "order": 81
+          },
+          {
+            "label": "ButtonSetStayDownFlag",
+            "type": "function",
+            "path": "window_api/functions/window_ButtonSetStayDownFlag.md",
+            "order": 82
+          },
+          {
+            "label": "ButtonSetTexture",
+            "type": "function",
+            "path": "window_api/functions/window_ButtonSetTexture.md",
+            "order": 83
+          },
+          {
+            "label": "ButtonSetTextureSlice",
+            "type": "function",
+            "path": "window_api/functions/window_ButtonSetTextureSlice.md",
+            "order": 84
+          },
+          {
+            "label": "WindowGetMovable",
+            "type": "function",
+            "path": "window_api/functions/window_WindowGetMovable.md",
+            "order": 85
+          },
+          {
+            "label": "WindowRestoreDefaultSettings",
+            "type": "function",
+            "path": "window_api/functions/window_WindowRestoreDefaultSettings.md",
+            "order": 86
+          },
+          {
+            "label": "WindowSetMoving",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetMoving.md",
+            "order": 87
+          },
+          {
+            "label": "WindowSetResizing",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetResizing.md",
+            "order": 88
+          },
+          {
+            "label": "WindowUnregisterEventHandler",
+            "type": "function",
+            "path": "window_api/functions/window_WindowUnregisterEventHandler.md",
+            "order": 89
+          },
+          {
+            "label": "ButtonGetText",
+            "type": "function",
+            "path": "window_api/functions/window_ButtonGetText.md",
+            "order": 90
+          },
+          {
+            "label": "ComboBoxExternalOpenMenu",
+            "type": "function",
+            "path": "window_api/functions/window_ComboBoxExternalOpenMenu.md",
+            "order": 91
+          },
+          {
+            "label": "StatusBarGetMaximumValue",
+            "type": "function",
+            "path": "window_api/functions/window_StatusBarGetMaximumValue.md",
+            "order": 92
+          },
+          {
+            "label": "TextEditBoxSetMaxChars",
+            "type": "function",
+            "path": "window_api/functions/window_TextEditBoxSetMaxChars.md",
+            "order": 93
+          },
+          {
+            "label": "WindowSetOffsetFromParent",
+            "type": "function",
+            "path": "window_api/functions/window_WindowSetOffsetFromParent.md",
+            "order": 94
           }
         ]
       },
@@ -909,184 +1767,262 @@
         "order": 1,
         "items": [
           {
-            "label": "Button",
-            "type": "ui_element",
-            "path": "xml/element_types/element_Button.md",
-            "order": 1
-          },
-          {
-            "label": "ComboBox",
-            "type": "ui_element",
-            "path": "xml/element_types/element_ComboBox.md",
-            "order": 2
-          },
-          {
-            "label": "DynamicImage",
-            "type": "ui_element",
-            "path": "xml/element_types/element_DynamicImage.md",
-            "order": 3
-          },
-          {
-            "label": "EditBox",
-            "type": "ui_element",
-            "path": "xml/element_types/element_EditBox.md",
-            "order": 4
-          },
-          {
-            "label": "FullResizeImage",
-            "type": "ui_element",
-            "path": "xml/element_types/element_FullResizeImage.md",
-            "order": 5
-          },
-          {
-            "label": "Label",
-            "type": "ui_element",
-            "path": "xml/element_types/element_Label.md",
-            "order": 6
-          },
-          {
-            "label": "ListBox",
-            "type": "ui_element",
-            "path": "xml/element_types/element_ListBox.md",
-            "order": 7
-          },
-          {
-            "label": "ListColumn",
-            "type": "ui_element",
-            "path": "xml/element_types/element_ListColumn.md",
-            "order": 8
-          },
-          {
-            "label": "ListColumns",
-            "type": "ui_element",
-            "path": "xml/element_types/element_ListColumns.md",
-            "order": 9
-          },
-          {
-            "label": "ListData",
-            "type": "ui_element",
-            "path": "xml/element_types/element_ListData.md",
-            "order": 10
-          },
-          {
-            "label": "TintColor",
-            "type": "ui_element",
-            "path": "xml/element_types/element_TintColor.md",
-            "order": 11
-          },
-          {
-            "label": "Window",
-            "type": "ui_element",
-            "path": "xml/element_types/element_Window.md",
-            "order": 12
-          },
-          {
-            "label": "Disabled",
-            "type": "ui_element",
-            "path": "xml/element_types/element_Disabled.md",
-            "order": 13
-          },
-          {
-            "label": "Normal",
-            "type": "ui_element",
-            "path": "xml/element_types/element_Normal.md",
-            "order": 14
-          },
-          {
-            "label": "NormalHighlit",
-            "type": "ui_element",
-            "path": "xml/element_types/element_NormalHighlit.md",
-            "order": 15
-          },
-          {
-            "label": "Pressed",
-            "type": "ui_element",
-            "path": "xml/element_types/element_Pressed.md",
-            "order": 16
-          },
-          {
-            "label": "HorizontalResizeImage",
-            "type": "ui_element",
-            "path": "xml/element_types/element_HorizontalResizeImage.md",
-            "order": 17
-          },
-          {
-            "label": "ScrollWindow",
-            "type": "ui_element",
-            "path": "xml/element_types/element_ScrollWindow.md",
-            "order": 18
-          },
-          {
-            "label": "SliderBar",
-            "type": "ui_element",
-            "path": "xml/element_types/element_SliderBar.md",
-            "order": 19
-          },
-          {
-            "label": "StatusBar",
-            "type": "ui_element",
-            "path": "xml/element_types/element_StatusBar.md",
-            "order": 20
-          },
-          {
-            "label": "AnimFrame",
-            "type": "ui_element",
-            "path": "xml/element_types/element_AnimFrame.md",
-            "order": 21
-          },
-          {
-            "label": "AnimFrames",
-            "type": "ui_element",
-            "path": "xml/element_types/element_AnimFrames.md",
-            "order": 22
-          },
-          {
             "label": "AnimatedImage",
             "type": "ui_element",
             "path": "xml/element_types/element_AnimatedImage.md",
-            "order": 23
+            "order": 1
+          },
+          {
+            "label": "Button",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Button.md",
+            "order": 2
           },
           {
             "label": "CircleImage",
             "type": "ui_element",
             "path": "xml/element_types/element_CircleImage.md",
+            "order": 3
+          },
+          {
+            "label": "ColorPicker",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ColorPicker.md",
+            "order": 4
+          },
+          {
+            "label": "ComboBox",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ComboBox.md",
+            "order": 5
+          },
+          {
+            "label": "DynamicImage",
+            "type": "ui_element",
+            "path": "xml/element_types/element_DynamicImage.md",
+            "order": 6
+          },
+          {
+            "label": "EditBox",
+            "type": "ui_element",
+            "path": "xml/element_types/element_EditBox.md",
+            "order": 7
+          },
+          {
+            "label": "FullResizeImage",
+            "type": "ui_element",
+            "path": "xml/element_types/element_FullResizeImage.md",
+            "order": 8
+          },
+          {
+            "label": "HorizontalResizeImage",
+            "type": "ui_element",
+            "path": "xml/element_types/element_HorizontalResizeImage.md",
+            "order": 9
+          },
+          {
+            "label": "Label",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Label.md",
+            "order": 10
+          },
+          {
+            "label": "ListBox",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ListBox.md",
+            "order": 11
+          },
+          {
+            "label": "ListData",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ListData.md",
+            "order": 12
+          },
+          {
+            "label": "MapDisplay",
+            "type": "ui_element",
+            "path": "xml/element_types/element_MapDisplay.md",
+            "order": 13
+          },
+          {
+            "label": "MenuButtonOffset",
+            "type": "ui_element",
+            "path": "xml/element_types/element_MenuButtonOffset.md",
+            "order": 14
+          },
+          {
+            "label": "OverlayOffset",
+            "type": "ui_element",
+            "path": "xml/element_types/element_OverlayOffset.md",
+            "order": 15
+          },
+          {
+            "label": "OverlaySize",
+            "type": "ui_element",
+            "path": "xml/element_types/element_OverlaySize.md",
+            "order": 16
+          },
+          {
+            "label": "OverlayTexCoords",
+            "type": "ui_element",
+            "path": "xml/element_types/element_OverlayTexCoords.md",
+            "order": 17
+          },
+          {
+            "label": "ResizeImages",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ResizeImages.md",
+            "order": 18
+          },
+          {
+            "label": "ScrollWindow",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ScrollWindow.md",
+            "order": 19
+          },
+          {
+            "label": "Size",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Size.md",
+            "order": 20
+          },
+          {
+            "label": "Sizes",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Sizes.md",
+            "order": 21
+          },
+          {
+            "label": "SliderBar",
+            "type": "ui_element",
+            "path": "xml/element_types/element_SliderBar.md",
+            "order": 22
+          },
+          {
+            "label": "StatusBar",
+            "type": "ui_element",
+            "path": "xml/element_types/element_StatusBar.md",
+            "order": 23
+          },
+          {
+            "label": "TexCoords",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TexCoords.md",
             "order": 24
           },
           {
-            "label": "DisabledPressed",
+            "label": "TexDims",
             "type": "ui_element",
-            "path": "xml/element_types/element_DisabledPressed.md",
+            "path": "xml/element_types/element_TexDims.md",
             "order": 25
-          },
-          {
-            "label": "Left",
-            "type": "ui_element",
-            "path": "xml/element_types/element_Left.md",
-            "order": 26
-          },
-          {
-            "label": "Middle",
-            "type": "ui_element",
-            "path": "xml/element_types/element_Middle.md",
-            "order": 27
-          },
-          {
-            "label": "PressedHighlit",
-            "type": "ui_element",
-            "path": "xml/element_types/element_PressedHighlit.md",
-            "order": 28
-          },
-          {
-            "label": "Right",
-            "type": "ui_element",
-            "path": "xml/element_types/element_Right.md",
-            "order": 29
           },
           {
             "label": "TexSlices",
             "type": "ui_element",
             "path": "xml/element_types/element_TexSlices.md",
+            "order": 26
+          },
+          {
+            "label": "TextColors",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TextColors.md",
+            "order": 27
+          },
+          {
+            "label": "TextOffset",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TextOffset.md",
+            "order": 28
+          },
+          {
+            "label": "TintColor",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TintColor.md",
+            "order": 29
+          },
+          {
+            "label": "VerticalScrollbar",
+            "type": "ui_element",
+            "path": "xml/element_types/element_VerticalScrollbar.md",
             "order": 30
+          },
+          {
+            "label": "Window",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Window.md",
+            "order": 31
+          },
+          {
+            "label": "Windows",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Windows.md",
+            "order": 32
+          },
+          {
+            "label": "Text",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Text.md",
+            "order": 33
+          },
+          {
+            "label": "VerticalResizeImage",
+            "type": "ui_element",
+            "path": "xml/element_types/element_VerticalResizeImage.md",
+            "order": 34
+          },
+          {
+            "label": "AnimFrames",
+            "type": "ui_element",
+            "path": "xml/element_types/element_AnimFrames.md",
+            "order": 35
+          },
+          {
+            "label": "AnimatedImages",
+            "type": "ui_element",
+            "path": "xml/element_types/element_AnimatedImages.md",
+            "order": 36
+          },
+          {
+            "label": "ColorSize",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ColorSize.md",
+            "order": 37
+          },
+          {
+            "label": "ColorSpacing",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ColorSpacing.md",
+            "order": 38
+          },
+          {
+            "label": "ColorTexCoords",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ColorTexCoords.md",
+            "order": 39
+          },
+          {
+            "label": "ColorTexDims",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ColorTexDims.md",
+            "order": 40
+          },
+          {
+            "label": "CooldownDisplay",
+            "type": "ui_element",
+            "path": "xml/element_types/element_CooldownDisplay.md",
+            "order": 41
+          },
+          {
+            "label": "LogDisplay",
+            "type": "ui_element",
+            "path": "xml/element_types/element_LogDisplay.md",
+            "order": 42
+          },
+          {
+            "label": "Visual",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Visual.md",
+            "order": 43
           }
         ]
       },
@@ -1115,45 +2051,45 @@
             "order": 3
           },
           {
-            "label": "OnLButtonUp",
-            "type": "xml_event",
-            "path": "xml/handlers/handler_OnLButtonUp.md",
-            "order": 4
-          },
-          {
-            "label": "OnMouseWheel",
-            "type": "xml_event",
-            "path": "xml/handlers/handler_OnMouseWheel.md",
-            "order": 5
-          },
-          {
-            "label": "OnRButtonUp",
-            "type": "xml_event",
-            "path": "xml/handlers/handler_OnRButtonUp.md",
-            "order": 6
-          },
-          {
-            "label": "OnSelChanged",
-            "type": "xml_event",
-            "path": "xml/handlers/handler_OnSelChanged.md",
-            "order": 7
-          },
-          {
-            "label": "OnShown",
-            "type": "xml_event",
-            "path": "xml/handlers/handler_OnShown.md",
-            "order": 8
-          },
-          {
             "label": "OnInitialize",
             "type": "xml_event",
             "path": "xml/handlers/handler_OnInitialize.md",
-            "order": 9
+            "order": 4
+          },
+          {
+            "label": "OnKeyEscape",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnKeyEscape.md",
+            "order": 5
+          },
+          {
+            "label": "OnLButtonDown",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnLButtonDown.md",
+            "order": 6
+          },
+          {
+            "label": "OnLButtonUp",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnLButtonUp.md",
+            "order": 7
+          },
+          {
+            "label": "OnMButtonDown",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnMButtonDown.md",
+            "order": 8
           },
           {
             "label": "OnMButtonUp",
             "type": "xml_event",
             "path": "xml/handlers/handler_OnMButtonUp.md",
+            "order": 9
+          },
+          {
+            "label": "OnMouseDrag",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnMouseDrag.md",
             "order": 10
           },
           {
@@ -1163,10 +2099,100 @@
             "order": 11
           },
           {
+            "label": "OnMouseOverEnd",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnMouseOverEnd.md",
+            "order": 12
+          },
+          {
+            "label": "OnMouseWheel",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnMouseWheel.md",
+            "order": 13
+          },
+          {
+            "label": "OnRButtonDown",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnRButtonDown.md",
+            "order": 14
+          },
+          {
+            "label": "OnRButtonUp",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnRButtonUp.md",
+            "order": 15
+          },
+          {
+            "label": "OnSelChanged",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnSelChanged.md",
+            "order": 16
+          },
+          {
+            "label": "OnShown",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnShown.md",
+            "order": 17
+          },
+          {
+            "label": "OnShutdown",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnShutdown.md",
+            "order": 18
+          },
+          {
+            "label": "OnSlide",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnSlide.md",
+            "order": 19
+          },
+          {
+            "label": "OnTextChanged",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnTextChanged.md",
+            "order": 20
+          },
+          {
             "label": "OnUpdate",
             "type": "xml_event",
             "path": "xml/handlers/handler_OnUpdate.md",
-            "order": 12
+            "order": 21
+          },
+          {
+            "label": "OnKeyEnter",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnKeyEnter.md",
+            "order": 22
+          },
+          {
+            "label": "OnMouseOut",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnMouseOut.md",
+            "order": 23
+          },
+          {
+            "label": "OnPointMouseOver",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnPointMouseOver.md",
+            "order": 24
+          },
+          {
+            "label": "OnRawDeviceInput",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnRawDeviceInput.md",
+            "order": 25
+          },
+          {
+            "label": "OnScrollPosChanged",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnScrollPosChanged.md",
+            "order": 26
+          },
+          {
+            "label": "OnSizeUpdated",
+            "type": "xml_event",
+            "path": "xml/handlers/handler_OnSizeUpdated.md",
+            "order": 27
           }
         ]
       },
@@ -1190,286 +2216,802 @@
         "order": 1,
         "items": [
           {
-            "label": "SystemData.Events.ENTER_WORLD",
+            "label": "SystemData.Events.ALL_MODULES_INITIALIZED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.ENTER_WORLD.md",
+            "path": "events/game_events/game_event_SystemData.Events.ALL_MODULES_INITIALIZED.md",
             "order": 1
           },
           {
-            "label": "SystemData.Events.EXIT_GAME",
+            "label": "SystemData.Events.AUCTION_BID_RESULT_RECEIVED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.EXIT_GAME.md",
+            "path": "events/game_events/game_event_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md",
             "order": 2
           },
           {
-            "label": "SystemData.Events.INTERACT_COMPLETE_QUEST",
+            "label": "SystemData.Events.AUCTION_INIT_RECEIVED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.INTERACT_COMPLETE_QUEST.md",
+            "path": "events/game_events/game_event_SystemData.Events.AUCTION_INIT_RECEIVED.md",
             "order": 3
           },
           {
-            "label": "SystemData.Events.INTERACT_DEFAULT",
+            "label": "SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.INTERACT_DEFAULT.md",
+            "path": "events/game_events/game_event_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md",
             "order": 4
+          },
+          {
+            "label": "SystemData.Events.BATTLEGROUP_ACCEPT_INVITATION",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.BATTLEGROUP_ACCEPT_INVITATION.md",
+            "order": 5
+          },
+          {
+            "label": "SystemData.Events.BATTLEGROUP_MEMBER_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.BATTLEGROUP_MEMBER_UPDATED.md",
+            "order": 6
+          },
+          {
+            "label": "SystemData.Events.BATTLEGROUP_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.BATTLEGROUP_UPDATED.md",
+            "order": 7
+          },
+          {
+            "label": "SystemData.Events.CAMPAIGN_ZONE_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.CAMPAIGN_ZONE_UPDATED.md",
+            "order": 8
+          },
+          {
+            "label": "SystemData.Events.CHAT_TEXT_ARRIVED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.CHAT_TEXT_ARRIVED.md",
+            "order": 9
+          },
+          {
+            "label": "SystemData.Events.CITY_SCENARIO_BEGIN",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.CITY_SCENARIO_BEGIN.md",
+            "order": 10
+          },
+          {
+            "label": "SystemData.Events.CITY_SCENARIO_END",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.CITY_SCENARIO_END.md",
+            "order": 11
+          },
+          {
+            "label": "SystemData.Events.CITY_SCENARIO_UPDATE_POINTS",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.CITY_SCENARIO_UPDATE_POINTS.md",
+            "order": 12
+          },
+          {
+            "label": "SystemData.Events.CUSTOM_UI_SCALE_CHANGED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.CUSTOM_UI_SCALE_CHANGED.md",
+            "order": 13
+          },
+          {
+            "label": "SystemData.Events.END_ITEM_ENHANCEMENT",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.END_ITEM_ENHANCEMENT.md",
+            "order": 14
+          },
+          {
+            "label": "SystemData.Events.ENTER_WORLD",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.ENTER_WORLD.md",
+            "order": 15
+          },
+          {
+            "label": "SystemData.Events.GROUP_ACCEPT_INVITATION",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.GROUP_ACCEPT_INVITATION.md",
+            "order": 16
+          },
+          {
+            "label": "SystemData.Events.GROUP_EFFECTS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.GROUP_EFFECTS_UPDATED.md",
+            "order": 17
+          },
+          {
+            "label": "SystemData.Events.GROUP_LEAVE",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.GROUP_LEAVE.md",
+            "order": 18
+          },
+          {
+            "label": "SystemData.Events.GROUP_PLAYER_ADDED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.GROUP_PLAYER_ADDED.md",
+            "order": 19
+          },
+          {
+            "label": "SystemData.Events.GROUP_SETTINGS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.GROUP_SETTINGS_UPDATED.md",
+            "order": 20
+          },
+          {
+            "label": "SystemData.Events.GROUP_SET_LEADER",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.GROUP_SET_LEADER.md",
+            "order": 21
+          },
+          {
+            "label": "SystemData.Events.GROUP_STATUS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.GROUP_STATUS_UPDATED.md",
+            "order": 22
+          },
+          {
+            "label": "SystemData.Events.GROUP_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.GROUP_UPDATED.md",
+            "order": 23
           },
           {
             "label": "SystemData.Events.INTERACT_DONE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_DONE.md",
-            "order": 5
+            "order": 24
+          },
+          {
+            "label": "SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE.md",
+            "order": 25
           },
           {
             "label": "SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md",
-            "order": 6
+            "order": 26
           },
           {
-            "label": "SystemData.Events.INTERACT_SHOW_INFLUENCE_REWARDS",
+            "label": "SystemData.Events.INTERACT_OPEN_BANK",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_INFLUENCE_REWARDS.md",
-            "order": 7
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SHOW_LOOT",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_LOOT.md",
-            "order": 8
+            "path": "events/game_events/game_event_SystemData.Events.INTERACT_OPEN_BANK.md",
+            "order": 27
           },
           {
             "label": "SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md",
-            "order": 9
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SHOW_PQ_LOOT",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_PQ_LOOT.md",
-            "order": 10
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SHOW_QUEST",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_QUEST.md",
-            "order": 11
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SHOW_STORE",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.INTERACT_SHOW_STORE.md",
-            "order": 12
+            "order": 28
           },
           {
             "label": "SystemData.Events.INTERFACE_RELOADED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.INTERFACE_RELOADED.md",
-            "order": 13
+            "order": 29
           },
           {
             "label": "SystemData.Events.ITEM_SET_DATA_ARRIVED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.ITEM_SET_DATA_ARRIVED.md",
-            "order": 14
+            "order": 30
           },
           {
-            "label": "SystemData.Events.LANGUAGE_TOGGLED",
+            "label": "SystemData.Events.LOADING_BEGIN",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.LANGUAGE_TOGGLED.md",
-            "order": 15
+            "path": "events/game_events/game_event_SystemData.Events.LOADING_BEGIN.md",
+            "order": 31
           },
           {
             "label": "SystemData.Events.LOADING_END",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.LOADING_END.md",
-            "order": 16
+            "order": 32
           },
           {
             "label": "SystemData.Events.LOG_OUT",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.LOG_OUT.md",
-            "order": 17
+            "order": 33
+          },
+          {
+            "label": "SystemData.Events.L_BUTTON_DOWN_PROCESSED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.L_BUTTON_DOWN_PROCESSED.md",
+            "order": 34
           },
           {
             "label": "SystemData.Events.L_BUTTON_UP_PROCESSED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.L_BUTTON_UP_PROCESSED.md",
-            "order": 18
+            "order": 35
           },
           {
-            "label": "SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED",
+            "label": "SystemData.Events.MACROS_LOADED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED.md",
-            "order": 19
+            "path": "events/game_events/game_event_SystemData.Events.MACROS_LOADED.md",
+            "order": 36
           },
           {
-            "label": "SystemData.Events.PLAYER_AREA_CHANGED",
+            "label": "SystemData.Events.MACRO_UPDATED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.PLAYER_AREA_CHANGED.md",
-            "order": 20
+            "path": "events/game_events/game_event_SystemData.Events.MACRO_UPDATED.md",
+            "order": 37
           },
           {
-            "label": "SystemData.Events.PLAYER_AREA_NAME_CHANGED",
+            "label": "SystemData.Events.M_BUTTON_DOWN_PROCESSED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.PLAYER_AREA_NAME_CHANGED.md",
-            "order": 21
+            "path": "events/game_events/game_event_SystemData.Events.M_BUTTON_DOWN_PROCESSED.md",
+            "order": 38
+          },
+          {
+            "label": "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md",
+            "order": 39
           },
           {
             "label": "SystemData.Events.PLAYER_BEGIN_CAST",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_BEGIN_CAST.md",
-            "order": 22
+            "order": 40
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md",
+            "order": 41
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CAREER_LINE_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_CAREER_LINE_UPDATED.md",
+            "order": 42
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CAREER_RANK_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_CAREER_RANK_UPDATED.md",
+            "order": 43
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED.md",
+            "order": 44
           },
           {
             "label": "SystemData.Events.PLAYER_CAST_TIMER_SETBACK",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md",
-            "order": 23
+            "order": 45
+          },
+          {
+            "label": "SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md",
+            "order": 46
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED.md",
+            "order": 47
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md",
+            "order": 48
           },
           {
             "label": "SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md",
-            "order": 24
+            "order": 49
           },
           {
             "label": "SystemData.Events.PLAYER_DEATH",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_DEATH.md",
-            "order": 25
+            "order": 50
+          },
+          {
+            "label": "SystemData.Events.PLAYER_DEATH_CLEARED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_DEATH_CLEARED.md",
+            "order": 51
+          },
+          {
+            "label": "SystemData.Events.PLAYER_EFFECTS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_EFFECTS_UPDATED.md",
+            "order": 52
           },
           {
             "label": "SystemData.Events.PLAYER_END_CAST",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_END_CAST.md",
-            "order": 26
+            "order": 53
+          },
+          {
+            "label": "SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED.md",
+            "order": 54
+          },
+          {
+            "label": "SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED.md",
+            "order": 55
+          },
+          {
+            "label": "SystemData.Events.PLAYER_HOT_BAR_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_HOT_BAR_UPDATED.md",
+            "order": 56
+          },
+          {
+            "label": "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md",
+            "order": 57
+          },
+          {
+            "label": "SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md",
+            "order": 58
           },
           {
             "label": "SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED.md",
-            "order": 27
+            "order": 59
           },
           {
-            "label": "SystemData.Events.PLAYER_MONEY_UPDATED",
+            "label": "SystemData.Events.PLAYER_MORALE_UPDATED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.PLAYER_MONEY_UPDATED.md",
-            "order": 28
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_MORALE_UPDATED.md",
+            "order": 60
+          },
+          {
+            "label": "SystemData.Events.PLAYER_PET_HEALTH_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_PET_HEALTH_UPDATED.md",
+            "order": 61
+          },
+          {
+            "label": "SystemData.Events.PLAYER_PET_TARGET_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_PET_TARGET_UPDATED.md",
+            "order": 62
+          },
+          {
+            "label": "SystemData.Events.PLAYER_PET_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_PET_UPDATED.md",
+            "order": 63
           },
           {
             "label": "SystemData.Events.PLAYER_POSITION_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_POSITION_UPDATED.md",
-            "order": 29
+            "order": 64
           },
           {
-            "label": "SystemData.Events.PLAYER_QUEST_ITEM_SLOT_UPDATED",
+            "label": "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.PLAYER_QUEST_ITEM_SLOT_UPDATED.md",
-            "order": 30
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_RENOWN_RANK_UPDATED.md",
+            "order": 65
           },
           {
-            "label": "SystemData.Events.PLAYER_SINGLE_ABILITY_UPDATED",
+            "label": "SystemData.Events.PLAYER_RENOWN_UPDATED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.PLAYER_SINGLE_ABILITY_UPDATED.md",
-            "order": 31
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_RENOWN_UPDATED.md",
+            "order": 66
+          },
+          {
+            "label": "SystemData.Events.PLAYER_RVR_FLAG_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_RVR_FLAG_UPDATED.md",
+            "order": 67
           },
           {
             "label": "SystemData.Events.PLAYER_START_INTERACT_TIMER",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_START_INTERACT_TIMER.md",
-            "order": 32
+            "order": 68
+          },
+          {
+            "label": "SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED.md",
+            "order": 69
           },
           {
             "label": "SystemData.Events.PLAYER_TARGET_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_TARGET_UPDATED.md",
-            "order": 33
+            "order": 70
           },
           {
             "label": "SystemData.Events.PLAYER_ZONE_CHANGED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PLAYER_ZONE_CHANGED.md",
-            "order": 34
+            "order": 71
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_ADDED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PUBLIC_QUEST_ADDED.md",
-            "order": 35
+            "order": 72
           },
           {
-            "label": "SystemData.Events.PUBLIC_QUEST_COMPLETED",
+            "label": "SystemData.Events.PUBLIC_QUEST_INFO_UPDATED",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.PUBLIC_QUEST_COMPLETED.md",
-            "order": 36
+            "path": "events/game_events/game_event_SystemData.Events.PUBLIC_QUEST_INFO_UPDATED.md",
+            "order": 73
+          },
+          {
+            "label": "SystemData.Events.PUBLIC_QUEST_REMOVED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PUBLIC_QUEST_REMOVED.md",
+            "order": 74
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_UPDATED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.PUBLIC_QUEST_UPDATED.md",
-            "order": 37
+            "order": 75
           },
           {
-            "label": "SystemData.Events.QUEST_INFO_UPDATED",
+            "label": "SystemData.Events.RELEASE_CORPSE",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.QUEST_INFO_UPDATED.md",
-            "order": 38
-          },
-          {
-            "label": "SystemData.Events.QUEST_LIST_UPDATED",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.QUEST_LIST_UPDATED.md",
-            "order": 39
-          },
-          {
-            "label": "SystemData.Events.QUIT",
-            "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.QUIT.md",
-            "order": 40
+            "path": "events/game_events/game_event_SystemData.Events.RELEASE_CORPSE.md",
+            "order": 76
           },
           {
             "label": "SystemData.Events.RELOAD_INTERFACE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md",
-            "order": 41
+            "order": 77
+          },
+          {
+            "label": "SystemData.Events.R_BUTTON_DOWN_PROCESSED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.R_BUTTON_DOWN_PROCESSED.md",
+            "order": 78
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_BEGIN",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_BEGIN.md",
+            "order": 79
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_END",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_END.md",
+            "order": 80
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_GROUP_JOIN",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_GROUP_JOIN.md",
+            "order": 81
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_GROUP_LEAVE",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_GROUP_LEAVE.md",
+            "order": 82
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW.md",
+            "order": 83
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED.md",
+            "order": 84
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED.md",
+            "order": 85
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED.md",
+            "order": 86
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED.md",
+            "order": 87
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED.md",
+            "order": 88
           },
           {
             "label": "SystemData.Events.SCENARIO_POST_MODE",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.SCENARIO_POST_MODE.md",
-            "order": 42
+            "order": 89
           },
           {
-            "label": "SystemData.Events.TOGGLE_WORLD_MAP_WINDOW",
+            "label": "SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.TOGGLE_WORLD_MAP_WINDOW.md",
-            "order": 43
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT.md",
+            "order": 90
           },
           {
-            "label": "SystemData.Events.TOME_BESTIARY_TOTAL_KILL_COUNT_UPDATED",
+            "label": "SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS",
             "type": "event",
-            "path": "events/game_events/game_event_SystemData.Events.TOME_BESTIARY_TOTAL_KILL_COUNT_UPDATED.md",
-            "order": 44
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md",
+            "order": 91
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_UPDATE_POINTS",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SCENARIO_UPDATE_POINTS.md",
+            "order": 92
+          },
+          {
+            "label": "SystemData.Events.SHOW_ALERT_TEXT",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.SHOW_ALERT_TEXT.md",
+            "order": 93
+          },
+          {
+            "label": "SystemData.Events.UPDATE_ITEM_ENHANCEMENT",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.UPDATE_ITEM_ENHANCEMENT.md",
+            "order": 94
           },
           {
             "label": "SystemData.Events.UPDATE_PROCESSED",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md",
-            "order": 45
+            "order": 95
+          },
+          {
+            "label": "SystemData.Events.USER_SETTINGS_CHANGED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.USER_SETTINGS_CHANGED.md",
+            "order": 96
+          },
+          {
+            "label": "SystemData.Events.VISIBLE_EQUIPMENT_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.VISIBLE_EQUIPMENT_UPDATED.md",
+            "order": 97
           },
           {
             "label": "SystemData.Events.WORLD_OBJ_COMBAT_EVENT",
             "type": "event",
             "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md",
-            "order": 46
+            "order": 98
+          },
+          {
+            "label": "SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED.md",
+            "order": 99
+          },
+          {
+            "label": "SystemData.Events.WORLD_OBJ_RENOWN_GAINED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_RENOWN_GAINED.md",
+            "order": 100
+          },
+          {
+            "label": "SystemData.Events.WORLD_OBJ_XP_GAINED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.WORLD_OBJ_XP_GAINED.md",
+            "order": 101
+          },
+          {
+            "label": "SystemData.Events.PLAYER_BANK_SLOT_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_BANK_SLOT_UPDATED.md",
+            "order": 102
+          },
+          {
+            "label": "CombatLogNewCombatEvent",
+            "type": "event",
+            "path": "events/game_events/game_event_CombatLogNewCombatEvent.md",
+            "order": 103
+          },
+          {
+            "label": "CombatLogSessionsUpdated",
+            "type": "event",
+            "path": "events/game_events/game_event_CombatLogSessionsUpdated.md",
+            "order": 104
+          },
+          {
+            "label": "CombatLogSettingsChanged",
+            "type": "event",
+            "path": "events/game_events/game_event_CombatLogSettingsChanged.md",
+            "order": 105
+          },
+          {
+            "label": "ConfigDialogInitializeSections",
+            "type": "event",
+            "path": "events/game_events/game_event_ConfigDialogInitializeSections.md",
+            "order": 106
+          },
+          {
+            "label": "GroupsPlayerDistanceUpdated",
+            "type": "event",
+            "path": "events/game_events/game_event_GroupsPlayerDistanceUpdated.md",
+            "order": 107
+          },
+          {
+            "label": "SettingsChanged",
+            "type": "event",
+            "path": "events/game_events/game_event_SettingsChanged.md",
+            "order": 108
           },
           {
             "label": "TextLogGetUpdateEventId",
             "type": "event",
             "path": "events/game_events/game_event_TextLogGetUpdateEventId.md",
-            "order": 47
+            "order": 109
+          },
+          {
+            "label": "BroadcastMessageInvite",
+            "type": "event",
+            "path": "events/game_events/game_event_BroadcastMessageInvite.md",
+            "order": 110
+          },
+          {
+            "label": "ChatTextArrived",
+            "type": "event",
+            "path": "events/game_events/game_event_ChatTextArrived.md",
+            "order": 111
+          },
+          {
+            "label": "GroupsPlayerCombatUpdated",
+            "type": "event",
+            "path": "events/game_events/game_event_GroupsPlayerCombatUpdated.md",
+            "order": 112
+          },
+          {
+            "label": "GroupsPlayerEffectsUpdated",
+            "type": "event",
+            "path": "events/game_events/game_event_GroupsPlayerEffectsUpdated.md",
+            "order": 113
+          },
+          {
+            "label": "GroupsPlayerInitialized",
+            "type": "event",
+            "path": "events/game_events/game_event_GroupsPlayerInitialized.md",
+            "order": 114
+          },
+          {
+            "label": "GroupsPlayerUpdated",
+            "type": "event",
+            "path": "events/game_events/game_event_GroupsPlayerUpdated.md",
+            "order": 115
+          },
+          {
+            "label": "GroupsPlayerWorldObjectIdUpdated",
+            "type": "event",
+            "path": "events/game_events/game_event_GroupsPlayerWorldObjectIdUpdated.md",
+            "order": 116
+          },
+          {
+            "label": "GroupsTypeUpdated",
+            "type": "event",
+            "path": "events/game_events/game_event_GroupsTypeUpdated.md",
+            "order": 117
+          },
+          {
+            "label": "GroupsUpdated",
+            "type": "event",
+            "path": "events/game_events/game_event_GroupsUpdated.md",
+            "order": 118
+          },
+          {
+            "label": "IconCreateContextMenu",
+            "type": "event",
+            "path": "events/game_events/game_event_IconCreateContextMenu.md",
+            "order": 119
+          },
+          {
+            "label": "PlayerTargetUpdated",
+            "type": "event",
+            "path": "events/game_events/game_event_PlayerTargetUpdated.md",
+            "order": 120
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED.md",
+            "order": 121
+          },
+          {
+            "label": "SystemData.Events.PLAYER_MONEY_UPDATED",
+            "type": "event",
+            "path": "events/game_events/game_event_SystemData.Events.PLAYER_MONEY_UPDATED.md",
+            "order": 122
+          },
+          {
+            "label": "TargetChanged",
+            "type": "event",
+            "path": "events/game_events/game_event_TargetChanged.md",
+            "order": 123
+          },
+          {
+            "label": "GroupsPlayerPetUpdated",
+            "type": "event",
+            "path": "events/game_events/game_event_GroupsPlayerPetUpdated.md",
+            "order": 124
+          },
+          {
+            "label": "GroupsTargetChanged",
+            "type": "event",
+            "path": "events/game_events/game_event_GroupsTargetChanged.md",
+            "order": 125
+          },
+          {
+            "label": "IconCreateTooltip",
+            "type": "event",
+            "path": "events/game_events/game_event_IconCreateTooltip.md",
+            "order": 126
+          },
+          {
+            "label": "IconLButtonUp",
+            "type": "event",
+            "path": "events/game_events/game_event_IconLButtonUp.md",
+            "order": 127
+          },
+          {
+            "label": "IntercomMessage",
+            "type": "event",
+            "path": "events/game_events/game_event_IntercomMessage.md",
+            "order": 128
+          },
+          {
+            "label": "IntercomMessageGuard",
+            "type": "event",
+            "path": "events/game_events/game_event_IntercomMessageGuard.md",
+            "order": 129
+          },
+          {
+            "label": "PlayerObjectWindowsChanged",
+            "type": "event",
+            "path": "events/game_events/game_event_PlayerObjectWindowsChanged.md",
+            "order": 130
+          },
+          {
+            "label": "Start",
+            "type": "event",
+            "path": "events/game_events/game_event_Start.md",
+            "order": 131
+          },
+          {
+            "label": "Stop",
+            "type": "event",
+            "path": "events/game_events/game_event_Stop.md",
+            "order": 132
+          },
+          {
+            "label": "{Name=name,Author=author,Description=description,Textures={Normal=normal,Highlighted=highlighted,Pressed=pressed,PressedHighlighted=pressedHighlighted,},}",
+            "type": "event",
+            "path": "events/game_events/game_event__Name_name_Author_author_Description_description_Textures_Normal_norm_71c4f5f6.md",
+            "order": 133
           }
         ]
       },
@@ -1498,64 +3040,148 @@
             "order": 3
           },
           {
-            "label": "OnLButtonUp",
-            "type": "event",
-            "path": "events/window_events/window_event_OnLButtonUp.md",
-            "order": 4
-          },
-          {
-            "label": "OnMButtonUp",
-            "type": "event",
-            "path": "events/window_events/window_event_OnMButtonUp.md",
-            "order": 5
-          },
-          {
-            "label": "OnMouseWheel",
-            "type": "event",
-            "path": "events/window_events/window_event_OnMouseWheel.md",
-            "order": 6
-          },
-          {
-            "label": "OnRButtonUp",
-            "type": "event",
-            "path": "events/window_events/window_event_OnRButtonUp.md",
-            "order": 7
-          },
-          {
-            "label": "OnSelChanged",
-            "type": "event",
-            "path": "events/window_events/window_event_OnSelChanged.md",
-            "order": 8
-          },
-          {
-            "label": "OnShown",
-            "type": "event",
-            "path": "events/window_events/window_event_OnShown.md",
-            "order": 9
-          },
-          {
             "label": "OnInitialize",
             "type": "event",
             "path": "events/window_events/window_event_OnInitialize.md",
-            "order": 10
+            "order": 4
           },
           {
-            "label": "OnUpdate",
+            "label": "OnKeyEnter",
             "type": "event",
-            "path": "events/window_events/window_event_OnUpdate.md",
-            "order": 11
+            "path": "events/window_events/window_event_OnKeyEnter.md",
+            "order": 5
+          },
+          {
+            "label": "OnKeyEscape",
+            "type": "event",
+            "path": "events/window_events/window_event_OnKeyEscape.md",
+            "order": 6
           },
           {
             "label": "OnLButtonDown",
             "type": "event",
             "path": "events/window_events/window_event_OnLButtonDown.md",
-            "order": 12
+            "order": 7
+          },
+          {
+            "label": "OnLButtonUp",
+            "type": "event",
+            "path": "events/window_events/window_event_OnLButtonUp.md",
+            "order": 8
+          },
+          {
+            "label": "OnMButtonDown",
+            "type": "event",
+            "path": "events/window_events/window_event_OnMButtonDown.md",
+            "order": 9
+          },
+          {
+            "label": "OnMButtonUp",
+            "type": "event",
+            "path": "events/window_events/window_event_OnMButtonUp.md",
+            "order": 10
+          },
+          {
+            "label": "OnMouseDrag",
+            "type": "event",
+            "path": "events/window_events/window_event_OnMouseDrag.md",
+            "order": 11
           },
           {
             "label": "OnMouseOver",
             "type": "event",
             "path": "events/window_events/window_event_OnMouseOver.md",
+            "order": 12
+          },
+          {
+            "label": "OnMouseOverEnd",
+            "type": "event",
+            "path": "events/window_events/window_event_OnMouseOverEnd.md",
             "order": 13
+          },
+          {
+            "label": "OnMouseWheel",
+            "type": "event",
+            "path": "events/window_events/window_event_OnMouseWheel.md",
+            "order": 14
+          },
+          {
+            "label": "OnRButtonDown",
+            "type": "event",
+            "path": "events/window_events/window_event_OnRButtonDown.md",
+            "order": 15
+          },
+          {
+            "label": "OnRButtonUp",
+            "type": "event",
+            "path": "events/window_events/window_event_OnRButtonUp.md",
+            "order": 16
+          },
+          {
+            "label": "OnSelChanged",
+            "type": "event",
+            "path": "events/window_events/window_event_OnSelChanged.md",
+            "order": 17
+          },
+          {
+            "label": "OnShown",
+            "type": "event",
+            "path": "events/window_events/window_event_OnShown.md",
+            "order": 18
+          },
+          {
+            "label": "OnShutdown",
+            "type": "event",
+            "path": "events/window_events/window_event_OnShutdown.md",
+            "order": 19
+          },
+          {
+            "label": "OnSlide",
+            "type": "event",
+            "path": "events/window_events/window_event_OnSlide.md",
+            "order": 20
+          },
+          {
+            "label": "OnTextChanged",
+            "type": "event",
+            "path": "events/window_events/window_event_OnTextChanged.md",
+            "order": 21
+          },
+          {
+            "label": "OnUpdate",
+            "type": "event",
+            "path": "events/window_events/window_event_OnUpdate.md",
+            "order": 22
+          },
+          {
+            "label": "OnMouseOut",
+            "type": "event",
+            "path": "events/window_events/window_event_OnMouseOut.md",
+            "order": 23
+          },
+          {
+            "label": "OnPointMouseOver",
+            "type": "event",
+            "path": "events/window_events/window_event_OnPointMouseOver.md",
+            "order": 24
+          },
+          {
+            "label": "OnRawDeviceInput",
+            "type": "event",
+            "path": "events/window_events/window_event_OnRawDeviceInput.md",
+            "order": 25
+          },
+          {
+            "label": "OnScrollPosChanged",
+            "type": "event",
+            "path": "events/window_events/window_event_OnScrollPosChanged.md",
+            "order": 26
+          },
+          {
+            "label": "OnSizeUpdated",
+            "type": "event",
+            "path": "events/window_events/window_event_OnSizeUpdated.md",
+            "order": 27
           }
         ]
       },
@@ -1585,340 +3211,742 @@
             "order": 1
           },
           {
+            "label": "SystemData.AlertText.Types.DEFAULT",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.AlertText.Types.DEFAULT.md",
+            "order": 2
+          },
+          {
+            "label": "SystemData.ButtonFlags.SHIFT",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.ButtonFlags.SHIFT.md",
+            "order": 3
+          },
+          {
             "label": "SystemData.ChatLogFilters.ADVICE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.ADVICE.md",
-            "order": 2
+            "order": 4
           },
           {
             "label": "SystemData.ChatLogFilters.ALLIANCE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.ALLIANCE.md",
-            "order": 3
+            "order": 5
+          },
+          {
+            "label": "SystemData.ChatLogFilters.BATTLEGROUP",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.BATTLEGROUP.md",
+            "order": 6
+          },
+          {
+            "label": "SystemData.ChatLogFilters.CRAFTING",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.CRAFTING.md",
+            "order": 7
           },
           {
             "label": "SystemData.ChatLogFilters.LOOT_ROLL",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.LOOT_ROLL.md",
-            "order": 4
+            "order": 8
           },
           {
             "label": "SystemData.ChatLogFilters.SAY",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.SAY.md",
-            "order": 5
+            "order": 9
           },
           {
             "label": "SystemData.ChatLogFilters.SCENARIO",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.SCENARIO.md",
-            "order": 6
+            "order": 10
           },
           {
-            "label": "SystemData.ClientVersion",
+            "label": "SystemData.ChatLogFilters.SHOUT",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.ClientVersion.md",
-            "order": 7
+            "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md",
+            "order": 11
+          },
+          {
+            "label": "SystemData.Events.ALL_MODULES_INITIALIZED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.ALL_MODULES_INITIALIZED.md",
+            "order": 12
+          },
+          {
+            "label": "SystemData.Events.AUCTION_BID_RESULT_RECEIVED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md",
+            "order": 13
+          },
+          {
+            "label": "SystemData.Events.AUCTION_INIT_RECEIVED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.AUCTION_INIT_RECEIVED.md",
+            "order": 14
+          },
+          {
+            "label": "SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md",
+            "order": 15
+          },
+          {
+            "label": "SystemData.Events.BATTLEGROUP_ACCEPT_INVITATION",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_ACCEPT_INVITATION.md",
+            "order": 16
+          },
+          {
+            "label": "SystemData.Events.BATTLEGROUP_MEMBER_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_MEMBER_UPDATED.md",
+            "order": 17
+          },
+          {
+            "label": "SystemData.Events.BATTLEGROUP_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md",
+            "order": 18
+          },
+          {
+            "label": "SystemData.Events.CAMPAIGN_ZONE_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.CAMPAIGN_ZONE_UPDATED.md",
+            "order": 19
+          },
+          {
+            "label": "SystemData.Events.CHAT_TEXT_ARRIVED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.CHAT_TEXT_ARRIVED.md",
+            "order": 20
+          },
+          {
+            "label": "SystemData.Events.CITY_SCENARIO_BEGIN",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.CITY_SCENARIO_BEGIN.md",
+            "order": 21
+          },
+          {
+            "label": "SystemData.Events.CITY_SCENARIO_END",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.CITY_SCENARIO_END.md",
+            "order": 22
+          },
+          {
+            "label": "SystemData.Events.CITY_SCENARIO_UPDATE_POINTS",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.CITY_SCENARIO_UPDATE_POINTS.md",
+            "order": 23
+          },
+          {
+            "label": "SystemData.Events.CUSTOM_UI_SCALE_CHANGED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.CUSTOM_UI_SCALE_CHANGED.md",
+            "order": 24
+          },
+          {
+            "label": "SystemData.Events.END_ITEM_ENHANCEMENT",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.END_ITEM_ENHANCEMENT.md",
+            "order": 25
           },
           {
             "label": "SystemData.Events.ENTER_WORLD",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md",
-            "order": 8
+            "order": 26
           },
           {
-            "label": "SystemData.Events.EXIT_GAME",
+            "label": "SystemData.Events.GROUP_ACCEPT_INVITATION",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.EXIT_GAME.md",
-            "order": 9
+            "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_ACCEPT_INVITATION.md",
+            "order": 27
           },
           {
-            "label": "SystemData.Events.INTERACT_COMPLETE_QUEST",
+            "label": "SystemData.Events.GROUP_EFFECTS_UPDATED",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_COMPLETE_QUEST.md",
-            "order": 10
+            "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_EFFECTS_UPDATED.md",
+            "order": 28
           },
           {
-            "label": "SystemData.Events.INTERACT_DEFAULT",
+            "label": "SystemData.Events.GROUP_LEAVE",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_DEFAULT.md",
-            "order": 11
+            "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_LEAVE.md",
+            "order": 29
+          },
+          {
+            "label": "SystemData.Events.GROUP_PLAYER_ADDED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_PLAYER_ADDED.md",
+            "order": 30
+          },
+          {
+            "label": "SystemData.Events.GROUP_SETTINGS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_SETTINGS_UPDATED.md",
+            "order": 31
+          },
+          {
+            "label": "SystemData.Events.GROUP_SET_LEADER",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_SET_LEADER.md",
+            "order": 32
+          },
+          {
+            "label": "SystemData.Events.GROUP_STATUS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_STATUS_UPDATED.md",
+            "order": 33
+          },
+          {
+            "label": "SystemData.Events.GROUP_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_UPDATED.md",
+            "order": 34
           },
           {
             "label": "SystemData.Events.INTERACT_DONE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md",
-            "order": 12
+            "order": 35
+          },
+          {
+            "label": "SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE.md",
+            "order": 36
           },
           {
             "label": "SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md",
-            "order": 13
+            "order": 37
           },
           {
-            "label": "SystemData.Events.INTERACT_SHOW_INFLUENCE_REWARDS",
+            "label": "SystemData.Events.INTERACT_OPEN_BANK",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_INFLUENCE_REWARDS.md",
-            "order": 14
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SHOW_LOOT",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_LOOT.md",
-            "order": 15
+            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md",
+            "order": 38
           },
           {
             "label": "SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md",
-            "order": 16
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SHOW_PQ_LOOT",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_PQ_LOOT.md",
-            "order": 17
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SHOW_QUEST",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_QUEST.md",
-            "order": 18
-          },
-          {
-            "label": "SystemData.Events.INTERACT_SHOW_STORE",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_STORE.md",
-            "order": 19
+            "order": 39
           },
           {
             "label": "SystemData.Events.INTERFACE_RELOADED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md",
-            "order": 20
+            "order": 40
           },
           {
             "label": "SystemData.Events.ITEM_SET_DATA_ARRIVED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.ITEM_SET_DATA_ARRIVED.md",
-            "order": 21
+            "order": 41
           },
           {
-            "label": "SystemData.Events.LANGUAGE_TOGGLED",
+            "label": "SystemData.Events.LOADING_BEGIN",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.LANGUAGE_TOGGLED.md",
-            "order": 22
+            "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_BEGIN.md",
+            "order": 42
           },
           {
             "label": "SystemData.Events.LOADING_END",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_END.md",
-            "order": 23
+            "order": 43
           },
           {
             "label": "SystemData.Events.LOG_OUT",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md",
-            "order": 24
+            "order": 44
+          },
+          {
+            "label": "SystemData.Events.L_BUTTON_DOWN_PROCESSED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.L_BUTTON_DOWN_PROCESSED.md",
+            "order": 45
           },
           {
             "label": "SystemData.Events.L_BUTTON_UP_PROCESSED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md",
-            "order": 25
+            "order": 46
           },
           {
-            "label": "SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED",
+            "label": "SystemData.Events.MACROS_LOADED",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED.md",
-            "order": 26
+            "path": "systemdata/fields/systemdata_SystemData.Events.MACROS_LOADED.md",
+            "order": 47
           },
           {
-            "label": "SystemData.Events.PLAYER_AREA_CHANGED",
+            "label": "SystemData.Events.MACRO_UPDATED",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_AREA_CHANGED.md",
-            "order": 27
+            "path": "systemdata/fields/systemdata_SystemData.Events.MACRO_UPDATED.md",
+            "order": 48
           },
           {
-            "label": "SystemData.Events.PLAYER_AREA_NAME_CHANGED",
+            "label": "SystemData.Events.M_BUTTON_DOWN_PROCESSED",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_AREA_NAME_CHANGED.md",
-            "order": 28
+            "path": "systemdata/fields/systemdata_SystemData.Events.M_BUTTON_DOWN_PROCESSED.md",
+            "order": 49
+          },
+          {
+            "label": "SystemData.Events.PLAYER_BANK_SLOT_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_BANK_SLOT_UPDATED.md",
+            "order": 50
+          },
+          {
+            "label": "SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED.md",
+            "order": 51
           },
           {
             "label": "SystemData.Events.PLAYER_BEGIN_CAST",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md",
-            "order": 29
+            "order": 52
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md",
+            "order": 53
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CAREER_LINE_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_LINE_UPDATED.md",
+            "order": 54
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CAREER_RANK_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_RANK_UPDATED.md",
+            "order": 55
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED.md",
+            "order": 56
           },
           {
             "label": "SystemData.Events.PLAYER_CAST_TIMER_SETBACK",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md",
-            "order": 30
+            "order": 57
+          },
+          {
+            "label": "SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md",
+            "order": 58
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED.md",
+            "order": 59
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED.md",
+            "order": 60
+          },
+          {
+            "label": "SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md",
+            "order": 61
           },
           {
             "label": "SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md",
-            "order": 31
+            "order": 62
           },
           {
             "label": "SystemData.Events.PLAYER_DEATH",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH.md",
-            "order": 32
+            "order": 63
+          },
+          {
+            "label": "SystemData.Events.PLAYER_DEATH_CLEARED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH_CLEARED.md",
+            "order": 64
+          },
+          {
+            "label": "SystemData.Events.PLAYER_EFFECTS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_EFFECTS_UPDATED.md",
+            "order": 65
           },
           {
             "label": "SystemData.Events.PLAYER_END_CAST",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_END_CAST.md",
-            "order": 33
+            "order": 66
+          },
+          {
+            "label": "SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED.md",
+            "order": 67
+          },
+          {
+            "label": "SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED.md",
+            "order": 68
+          },
+          {
+            "label": "SystemData.Events.PLAYER_HOT_BAR_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_HOT_BAR_UPDATED.md",
+            "order": 69
+          },
+          {
+            "label": "SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md",
+            "order": 70
+          },
+          {
+            "label": "SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md",
+            "order": 71
           },
           {
             "label": "SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED.md",
-            "order": 34
+            "order": 72
           },
           {
             "label": "SystemData.Events.PLAYER_MONEY_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MONEY_UPDATED.md",
-            "order": 35
+            "order": 73
+          },
+          {
+            "label": "SystemData.Events.PLAYER_MORALE_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MORALE_UPDATED.md",
+            "order": 74
+          },
+          {
+            "label": "SystemData.Events.PLAYER_PET_HEALTH_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_PET_HEALTH_UPDATED.md",
+            "order": 75
+          },
+          {
+            "label": "SystemData.Events.PLAYER_PET_TARGET_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_PET_TARGET_UPDATED.md",
+            "order": 76
+          },
+          {
+            "label": "SystemData.Events.PLAYER_PET_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_PET_UPDATED.md",
+            "order": 77
           },
           {
             "label": "SystemData.Events.PLAYER_POSITION_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_POSITION_UPDATED.md",
-            "order": 36
+            "order": 78
           },
           {
-            "label": "SystemData.Events.PLAYER_QUEST_ITEM_SLOT_UPDATED",
+            "label": "SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_QUEST_ITEM_SLOT_UPDATED.md",
-            "order": 37
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_RANK_UPDATED.md",
+            "order": 79
           },
           {
-            "label": "SystemData.Events.PLAYER_SINGLE_ABILITY_UPDATED",
+            "label": "SystemData.Events.PLAYER_RENOWN_UPDATED",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_SINGLE_ABILITY_UPDATED.md",
-            "order": 38
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_UPDATED.md",
+            "order": 80
+          },
+          {
+            "label": "SystemData.Events.PLAYER_RVR_FLAG_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_RVR_FLAG_UPDATED.md",
+            "order": 81
           },
           {
             "label": "SystemData.Events.PLAYER_START_INTERACT_TIMER",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_START_INTERACT_TIMER.md",
-            "order": 39
+            "order": 82
+          },
+          {
+            "label": "SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED.md",
+            "order": 83
           },
           {
             "label": "SystemData.Events.PLAYER_TARGET_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md",
-            "order": 40
+            "order": 84
           },
           {
             "label": "SystemData.Events.PLAYER_ZONE_CHANGED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md",
-            "order": 41
+            "order": 85
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_ADDED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_ADDED.md",
-            "order": 42
+            "order": 86
           },
           {
-            "label": "SystemData.Events.PUBLIC_QUEST_COMPLETED",
+            "label": "SystemData.Events.PUBLIC_QUEST_INFO_UPDATED",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_COMPLETED.md",
-            "order": 43
+            "path": "systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_INFO_UPDATED.md",
+            "order": 87
+          },
+          {
+            "label": "SystemData.Events.PUBLIC_QUEST_REMOVED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_REMOVED.md",
+            "order": 88
           },
           {
             "label": "SystemData.Events.PUBLIC_QUEST_UPDATED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_UPDATED.md",
-            "order": 44
+            "order": 89
           },
           {
-            "label": "SystemData.Events.QUEST_INFO_UPDATED",
+            "label": "SystemData.Events.RELEASE_CORPSE",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.QUEST_INFO_UPDATED.md",
-            "order": 45
-          },
-          {
-            "label": "SystemData.Events.QUEST_LIST_UPDATED",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.QUEST_LIST_UPDATED.md",
-            "order": 46
-          },
-          {
-            "label": "SystemData.Events.QUIT",
-            "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.QUIT.md",
-            "order": 47
+            "path": "systemdata/fields/systemdata_SystemData.Events.RELEASE_CORPSE.md",
+            "order": 90
           },
           {
             "label": "SystemData.Events.RELOAD_INTERFACE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md",
-            "order": 48
+            "order": 91
+          },
+          {
+            "label": "SystemData.Events.R_BUTTON_DOWN_PROCESSED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.R_BUTTON_DOWN_PROCESSED.md",
+            "order": 92
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_BEGIN",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_BEGIN.md",
+            "order": 93
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_END",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_END.md",
+            "order": 94
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_GROUP_JOIN",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_GROUP_JOIN.md",
+            "order": 95
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_GROUP_LEAVE",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_GROUP_LEAVE.md",
+            "order": 96
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW.md",
+            "order": 97
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED.md",
+            "order": 98
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED.md",
+            "order": 99
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED.md",
+            "order": 100
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED.md",
+            "order": 101
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED.md",
+            "order": 102
           },
           {
             "label": "SystemData.Events.SCENARIO_POST_MODE",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_POST_MODE.md",
-            "order": 49
+            "order": 103
           },
           {
-            "label": "SystemData.Events.TOGGLE_WORLD_MAP_WINDOW",
+            "label": "SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.TOGGLE_WORLD_MAP_WINDOW.md",
-            "order": 50
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT.md",
+            "order": 104
           },
           {
-            "label": "SystemData.Events.TOME_BESTIARY_TOTAL_KILL_COUNT_UPDATED",
+            "label": "SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Events.TOME_BESTIARY_TOTAL_KILL_COUNT_UPDATED.md",
-            "order": 51
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS.md",
+            "order": 105
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md",
+            "order": 106
+          },
+          {
+            "label": "SystemData.Events.SCENARIO_UPDATE_POINTS",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SCENARIO_UPDATE_POINTS.md",
+            "order": 107
+          },
+          {
+            "label": "SystemData.Events.SHOW_ALERT_TEXT",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.SHOW_ALERT_TEXT.md",
+            "order": 108
+          },
+          {
+            "label": "SystemData.Events.UPDATE_ITEM_ENHANCEMENT",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.UPDATE_ITEM_ENHANCEMENT.md",
+            "order": 109
           },
           {
             "label": "SystemData.Events.UPDATE_PROCESSED",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md",
-            "order": 52
+            "order": 110
+          },
+          {
+            "label": "SystemData.Events.USER_SETTINGS_CHANGED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.USER_SETTINGS_CHANGED.md",
+            "order": 111
+          },
+          {
+            "label": "SystemData.Events.VISIBLE_EQUIPMENT_UPDATED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.VISIBLE_EQUIPMENT_UPDATED.md",
+            "order": 112
           },
           {
             "label": "SystemData.Events.WORLD_OBJ_COMBAT_EVENT",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md",
-            "order": 53
+            "order": 113
+          },
+          {
+            "label": "SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED.md",
+            "order": 114
+          },
+          {
+            "label": "SystemData.Events.WORLD_OBJ_RENOWN_GAINED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_RENOWN_GAINED.md",
+            "order": 115
+          },
+          {
+            "label": "SystemData.Events.WORLD_OBJ_XP_GAINED",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_XP_GAINED.md",
+            "order": 116
+          },
+          {
+            "label": "SystemData.GuildPermissons.CLAIM_KEEP",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.GuildPermissons.CLAIM_KEEP.md",
+            "order": 117
           },
           {
             "label": "SystemData.ItemRarity.UTILITY",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.ItemRarity.UTILITY.md",
-            "order": 54
+            "order": 118
+          },
+          {
+            "label": "SystemData.MapTypes.OVERHEAD",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.MapTypes.OVERHEAD.md",
+            "order": 119
           },
           {
             "label": "SystemData.MouseOverWindow.name",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md",
-            "order": 55
+            "order": 120
+          },
+          {
+            "label": "SystemData.MousePosition.x",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.MousePosition.x.md",
+            "order": 121
+          },
+          {
+            "label": "SystemData.MousePosition.y",
+            "type": "data_structure",
+            "path": "systemdata/fields/systemdata_SystemData.MousePosition.y.md",
+            "order": 122
           },
           {
             "label": "SystemData.Server.Name",
             "type": "data_structure",
             "path": "systemdata/fields/systemdata_SystemData.Server.Name.md",
-            "order": 56
+            "order": 123
           },
           {
-            "label": "SystemData.Settings.Language.active",
+            "label": "SystemData.UiLogFilters.DEBUG",
             "type": "data_structure",
-            "path": "systemdata/fields/systemdata_SystemData.Settings.Language.active.md",
-            "order": 57
+            "path": "systemdata/fields/systemdata_SystemData.UiLogFilters.DEBUG.md",
+            "order": 124
           }
         ]
       }
@@ -1936,100 +3964,310 @@
         "order": 1,
         "items": [
           {
-            "label": "GameData.ActiveObjectives.updatedObjectiveIndex",
+            "label": "GameData.AbilityType.PET",
             "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.ActiveObjectives.updatedObjectiveIndex.md",
+            "path": "gamedata/fields/gamedata_GameData.AbilityType.PET.md",
             "order": 1
           },
           {
-            "label": "GameData.ActiveObjectives.updatedQuestConditionIndex",
+            "label": "GameData.AbilityType.STANDARD",
             "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.ActiveObjectives.updatedQuestConditionIndex.md",
+            "path": "gamedata/fields/gamedata_GameData.AbilityType.STANDARD.md",
             "order": 2
           },
           {
-            "label": "GameData.ActiveObjectives.updatedQuestIndex",
+            "label": "GameData.Auction.DEPOSIT_MULTIPLIER",
             "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.ActiveObjectives.updatedQuestIndex.md",
+            "path": "gamedata/fields/gamedata_GameData.Auction.DEPOSIT_MULTIPLIER.md",
             "order": 3
           },
           {
-            "label": "GameData.InteractData.GetLootList",
+            "label": "GameData.BuffTargetType.SELF",
             "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.InteractData.GetLootList.md",
+            "path": "gamedata/fields/gamedata_GameData.BuffTargetType.SELF.md",
             "order": 4
           },
           {
-            "label": "GameData.InteractQuestData.name",
+            "label": "GameData.ChatData.name",
             "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.InteractQuestData.name.md",
+            "path": "gamedata/fields/gamedata_GameData.ChatData.name.md",
             "order": 5
+          },
+          {
+            "label": "GameData.ChatData.text",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.ChatData.text.md",
+            "order": 6
+          },
+          {
+            "label": "GameData.CityId.CHAOS",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.CityId.CHAOS.md",
+            "order": 7
+          },
+          {
+            "label": "GameData.CityId.EMPIRE",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.CityId.EMPIRE.md",
+            "order": 8
+          },
+          {
+            "label": "GameData.EquipSlots.BACK",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.EquipSlots.BACK.md",
+            "order": 9
+          },
+          {
+            "label": "GameData.EquipSlots.HELM",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.EquipSlots.HELM.md",
+            "order": 10
+          },
+          {
+            "label": "GameData.Guild.m_GuildName",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Guild.m_GuildName.md",
+            "order": 11
+          },
+          {
+            "label": "GameData.HOTBAR_SWAPPABLE_PAGE_COUNT",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.HOTBAR_SWAPPABLE_PAGE_COUNT.md",
+            "order": 12
+          },
+          {
+            "label": "GameData.ItemLocs.BANK",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.ItemLocs.BANK.md",
+            "order": 13
+          },
+          {
+            "label": "GameData.ItemLocs.CRAFTING_ITEM",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.ItemLocs.CRAFTING_ITEM.md",
+            "order": 14
+          },
+          {
+            "label": "GameData.ItemLocs.CURRENCY_ITEM",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.ItemLocs.CURRENCY_ITEM.md",
+            "order": 15
+          },
+          {
+            "label": "GameData.ItemLocs.INVENTORY",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.ItemLocs.INVENTORY.md",
+            "order": 16
           },
           {
             "label": "GameData.ItemTypes.CURRENCY",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ItemTypes.CURRENCY.md",
-            "order": 6
+            "order": 17
           },
           {
             "label": "GameData.ItemTypes.ENHANCEMENT",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ItemTypes.ENHANCEMENT.md",
-            "order": 7
+            "order": 18
           },
           {
             "label": "GameData.ItemTypes.POTION",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.ItemTypes.POTION.md",
-            "order": 8
+            "order": 19
           },
           {
-            "label": "GameData.Player.Quests.updatedQuest",
+            "label": "GameData.PetCommand.ATTACK",
             "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.Player.Quests.updatedQuest.md",
-            "order": 9
+            "path": "gamedata/fields/gamedata_GameData.PetCommand.ATTACK.md",
+            "order": 20
+          },
+          {
+            "label": "GameData.PetCommand.DEFENSIVE",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.PetCommand.DEFENSIVE.md",
+            "order": 21
+          },
+          {
+            "label": "GameData.PetCommand.FOLLOW",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.PetCommand.FOLLOW.md",
+            "order": 22
+          },
+          {
+            "label": "GameData.Player",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.md",
+            "order": 23
+          },
+          {
+            "label": "GameData.Player.Pet",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.Pet.md",
+            "order": 24
+          },
+          {
+            "label": "GameData.Player.Pet.Target.name",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.Pet.Target.name.md",
+            "order": 25
+          },
+          {
+            "label": "GameData.Player.Pet.name",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.Pet.name.md",
+            "order": 26
+          },
+          {
+            "label": "GameData.Player.Renown.curRenownEarned",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.Renown.curRenownEarned.md",
+            "order": 27
+          },
+          {
+            "label": "GameData.Player.actionPoints.current",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.actionPoints.current.md",
+            "order": 28
+          },
+          {
+            "label": "GameData.Player.actionPoints.maximum",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.actionPoints.maximum.md",
+            "order": 29
+          },
+          {
+            "label": "GameData.Player.area",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.area.md",
+            "order": 30
           },
           {
             "label": "GameData.Player.area.name",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.area.name.md",
-            "order": 10
+            "order": 31
+          },
+          {
+            "label": "GameData.Player.career.line",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.career.line.md",
+            "order": 32
           },
           {
             "label": "GameData.Player.career.name",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.career.name.md",
-            "order": 11
+            "order": 33
           },
           {
-            "label": "GameData.Player.level",
+            "label": "GameData.Player.hitPoints.current",
             "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.Player.level.md",
-            "order": 12
+            "path": "gamedata/fields/gamedata_GameData.Player.hitPoints.current.md",
+            "order": 34
+          },
+          {
+            "label": "GameData.Player.hitPoints.maximum",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.hitPoints.maximum.md",
+            "order": 35
+          },
+          {
+            "label": "GameData.Player.inCombat",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.inCombat.md",
+            "order": 36
           },
           {
             "label": "GameData.Player.name",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.name.md",
-            "order": 13
+            "order": 37
+          },
+          {
+            "label": "GameData.Player.rvrZoneFlagged",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.rvrZoneFlagged.md",
+            "order": 38
+          },
+          {
+            "label": "GameData.Player.worldObjNum",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Player.worldObjNum.md",
+            "order": 39
           },
           {
             "label": "GameData.Player.zone",
             "type": "data_structure",
             "path": "gamedata/fields/gamedata_GameData.Player.zone.md",
-            "order": 14
+            "order": 40
           },
           {
-            "label": "GameData.ScenarioData.id",
+            "label": "GameData.PlayerActions.ASSIST_PLAYER",
             "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.ScenarioData.id.md",
-            "order": 15
+            "path": "gamedata/fields/gamedata_GameData.PlayerActions.ASSIST_PLAYER.md",
+            "order": 41
           },
           {
-            "label": "GameData.UpdatedItemSet",
+            "label": "GameData.PlayerActions.DO_ABILITY",
             "type": "data_structure",
-            "path": "gamedata/fields/gamedata_GameData.UpdatedItemSet.md",
-            "order": 16
+            "path": "gamedata/fields/gamedata_GameData.PlayerActions.DO_ABILITY.md",
+            "order": 42
+          },
+          {
+            "label": "GameData.PlayerActions.PERFORM_CRAFTING",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.PlayerActions.PERFORM_CRAFTING.md",
+            "order": 43
+          },
+          {
+            "label": "GameData.PlayerActions.SET_TARGET",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md",
+            "order": 44
+          },
+          {
+            "label": "GameData.ScenarioData",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.ScenarioData.md",
+            "order": 45
+          },
+          {
+            "label": "GameData.ScenarioData.startingScenario",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.ScenarioData.startingScenario.md",
+            "order": 46
+          },
+          {
+            "label": "GameData.Sound",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Sound.md",
+            "order": 47
+          },
+          {
+            "label": "GameData.Sound.BUTTON_CLICK",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.Sound.BUTTON_CLICK.md",
+            "order": 48
+          },
+          {
+            "label": "GameData.TradeSkills.APOTHECARY",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.TradeSkills.APOTHECARY.md",
+            "order": 49
+          },
+          {
+            "label": "GameData.TradeSkills.CULTIVATION",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.TradeSkills.CULTIVATION.md",
+            "order": 50
+          },
+          {
+            "label": "GameData.TradeSkills.TALISMAN",
+            "type": "data_structure",
+            "path": "gamedata/fields/gamedata_GameData.TradeSkills.TALISMAN.md",
+            "order": 51
           }
         ]
       }
@@ -2132,34 +4370,40 @@
             "order": 12
           },
           {
+            "label": "LibSlash cleanup",
+            "type": "pattern",
+            "path": "patterns/slash_commands_LibSlash_cleanup.md",
+            "order": 13
+          },
+          {
             "label": "LibSlash registration",
             "type": "pattern",
             "path": "patterns/slash_commands_LibSlash_registration.md",
-            "order": 13
+            "order": 14
           },
           {
             "label": "Runtime anchoring",
             "type": "pattern",
             "path": "patterns/window_Runtime_anchoring.md",
-            "order": 14
+            "order": 15
           },
           {
             "label": "Template instantiation",
             "type": "pattern",
             "path": "patterns/window_Template_instantiation.md",
-            "order": 15
+            "order": 16
           },
           {
             "label": "Window creation",
             "type": "pattern",
             "path": "patterns/window_Window_creation.md",
-            "order": 16
+            "order": 17
           },
           {
             "label": "XML to Lua binding",
             "type": "pattern",
             "path": "patterns/window_XML_to_Lua_binding.md",
-            "order": 17
+            "order": 18
           }
         ]
       }

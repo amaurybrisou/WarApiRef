@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:178`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:178` |
+| Addons seen in | Ace, BuffHead, LibWBToggler, PartyCast, Shinies, TexturedButtons, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:178`, `/workspace/data/raw/BuffHead/Setup/SelectColor.lua:27`, `/workspace/data/raw/BuffHead/Setup/SelectTexture.lua:59`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:178`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:178`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:178`, `/workspace/data/raw/TexturedButtons/Setup/SelectColor.lua:27`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:178` |
 | Namespaces detected | WindowGetLayer |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:Layer, PartyCast: LIBGUI_ELEMENT:Layer |
+| Example locations | Ace: LIBGUI_ELEMENT:Layer, BuffHead: BuffHead.Setup.SelectColor.Show, BuffHead: BuffHead.Setup.SelectTexture.Show, LibWBToggler: LIBGUI_ELEMENT:Layer, PartyCast: LIBGUI_ELEMENT:Layer, Shinies: LIBGUI_ELEMENT:Layer |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: self.name |
+| windowName | Observed as a target window name. | Observed values: self.name, window |
 
 ## Returns
 
@@ -83,13 +83,22 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- BuffHead
+- LibWBToggler
 - PartyCast
+- Shinies
+- TexturedButtons
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:Layer -> WindowGetLayer(self.name)
+- Ace: LIBGUI_ELEMENT:Layer -> WindowGetLayer(self.name)
+- BuffHead: BuffHead.Setup.SelectColor.Show -> WindowGetLayer(window)
+- BuffHead: BuffHead.Setup.SelectTexture.Show -> WindowGetLayer(window)
+- LibWBToggler: LIBGUI_ELEMENT:Layer -> WindowGetLayer(self.name)
 - PartyCast: LIBGUI_ELEMENT:Layer -> WindowGetLayer(self.name)
+- Shinies: LIBGUI_ELEMENT:Layer -> WindowGetLayer(self.name)
 
 ## Related APIs
 
@@ -97,6 +106,8 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
+- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
 
 ## Triggered By

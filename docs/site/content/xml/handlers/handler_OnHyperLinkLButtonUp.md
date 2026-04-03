@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 146
+- Raw weighted score: 126
 
 - Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, observed in both xml and lua paths.
 
@@ -22,23 +22,22 @@
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.xml:130`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:164`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:198`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:61`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:96`, `/workspace/data/raw/PartyCast/PartyCast.xml:142`, `/workspace/data/raw/PartyCast/PartyCast.xml:149`, `/workspace/data/raw/PartyCast/PartyCast.xml:245` |
+| Addons seen in | GuardLine, PartyCast, RoR_SoR |
+| Files seen in | `/workspace/data/raw/GuardLine/GuardLine.xml:0`, `/workspace/data/raw/PartyCast/PartyCast.xml:0`, `/workspace/data/raw/RoR_SoR/RoR_SoR.xml:0` |
 | Namespaces detected | OnHyperLinkLButtonUp |
-| Source kinds | bindings, examples, xml_handlers |
-| Example locations | InfoScroller: InfoScrollerTemplateLabel1.OnHyperLinkLButtonUp, InfoScroller: InfoScrollerTemplateLabel2.OnHyperLinkLButtonUp, InfoScroller: InfoScrollerTemplateLabel3.OnHyperLinkLButtonUp, InfoScroller: InfoScrollerTemplateLabel4.OnHyperLinkLButtonUp, InfoScroller: InfoScrollerTemplateLabel5.OnHyperLinkLButtonUp, PartyCast: PartyCastWindow_TemplateTargetWindowLabel.OnHyperLinkLButtonUp |
+| Source kinds | bindings, xml_handlers |
+| Example locations | GuardLine: GuardLineSelfWindowLabel.OnHyperLinkLButtonUp, PartyCast: PartyCastWindow_TemplateTargetWindowLabel.OnHyperLinkLButtonUp, PartyCast: PartyCastWindow_TemplateTargetWindowLabelBG.OnHyperLinkLButtonUp, PartyCast: PartyCastWindow_Template_LargeTargetWindowLabel.OnHyperLinkLButtonUp, PartyCast: PartyCastWindow_Template_LargeTargetWindowLabelBG.OnHyperLinkLButtonUp, PartyCast: PartyCastWindow_Template_PlainName.OnHyperLinkLButtonUp |
 | XML usage count | 17 |
 | XML attribute usage count | 17 |
 | Lua usage count | 17 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 2 |
+| Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | no |
 | Default UI presence | no |
@@ -59,7 +58,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 2 addons through frame event handlers.
+Observed as an XML handler hook bound by 3 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -73,17 +72,18 @@ function(...)
 
 ## Seen In
 
-- InfoScroller
+- GuardLine
 - PartyCast
+- RoR_SoR
 
 ## Examples
 
-- InfoScroller: InfoScrollerTemplateLabel1 -> InfoScrollerTemplateLabel1.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-- InfoScroller: InfoScrollerTemplateLabel2 -> InfoScrollerTemplateLabel2.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-- InfoScroller: InfoScrollerTemplateLabel3 -> InfoScrollerTemplateLabel3.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-- InfoScroller: InfoScrollerTemplateLabel4 -> InfoScrollerTemplateLabel4.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-- InfoScroller: InfoScrollerTemplateLabel5 -> InfoScrollerTemplateLabel5.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+- GuardLine: GuardLineSelfWindowLabel -> GuardLineSelfWindowLabel.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
 - PartyCast: PartyCastWindow_TemplateTargetWindowLabel -> PartyCastWindow_TemplateTargetWindowLabel.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+- PartyCast: PartyCastWindow_TemplateTargetWindowLabelBG -> PartyCastWindow_TemplateTargetWindowLabelBG.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+- PartyCast: PartyCastWindow_Template_LargeTargetWindowLabel -> PartyCastWindow_Template_LargeTargetWindowLabel.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+- PartyCast: PartyCastWindow_Template_LargeTargetWindowLabelBG -> PartyCastWindow_Template_LargeTargetWindowLabelBG.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+- PartyCast: PartyCastWindow_Template_PlainName -> PartyCastWindow_Template_PlainName.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
 
 ## Related APIs
 

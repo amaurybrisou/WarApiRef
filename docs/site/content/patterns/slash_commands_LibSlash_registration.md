@@ -15,20 +15,21 @@ Observed slash commands being registered through the shared LibSlash table.
 ## Flow Diagram
 
 ```text
-Label <-> OnHyperLinkRButtonUp
+OnLButtonUp
+  -> ui: Button, ColorPicker, DynamicImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code
 
 ```lua
-InfoScroller: LibSlash.RegisterSlashCmd("infoscroller", function(input)InfoScroller_config.Slash(input)end)
+AdvancedPetAssist: LibSlash.RegisterSlashCmd("apa", function(input)APA.SlashHandler(input)end)
 ```
 
 ## Evidence
 
-- InfoScroller: LibSlash.RegisterSlashCmd("infoscroller", function(input)InfoScroller_config.Slash(input)end)
-- InfoScroller: LibSlash.RegisterSlashCmd("info", function(input)InfoScroller_config.Slash(input)end)
-- NPC Item Sale Price: LibSlash.RegisterSlashCmd("nisp", function(args)Nisp.SlashHandler(args)end)
-- PartyCast: LibSlash.RegisterSlashCmd("pc", function(input)PartyCast.Command(input)end)
-- PartyCast: LibSlash.RegisterSlashCmd("partycast", function(input)PartyCast.Command(input)end)
-- Soloq: LibSlash.RegisterSlashCmd("soloq", function(args)Soloq.SlashCmd(args)end)
+- AdvancedPetAssist: LibSlash.RegisterSlashCmd("apa", function(input)APA.SlashHandler(input)end)
+- Aura: LibSlash.RegisterSlashCmd("aura", AuraAddon.Slash)
+- Aura: LibSlash.RegisterSlashCmd("auraconfig", AuraAddon.Slash)
+- Aura: LibSlash.RegisterSlashCmd("showaura", AuraAddon.Slash)
+- AutoMark: LibSlash.RegisterSlashCmd("automark", AutoMark.OnSlashCommand)
+- BagOMatic: LibSlash.RegisterSlashCmd("bagomatic", function(msg)BagOMatic.parse_cmd(msg)end)

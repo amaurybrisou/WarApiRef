@@ -10,8 +10,6 @@ ListBox rows are commonly bound through ListData-backed Lua tables, with ListCol
 ## Involved APIs
 
 - [ListBox](../xml/element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
-- [ListColumn](../xml/element_types/element_ListColumn.md) (HIGH 100/100) - XML Element Type
-- [ListColumns](../xml/element_types/element_ListColumns.md) (HIGH 100/100) - XML Element Type
 - [ListData](../xml/element_types/element_ListData.md) (HIGH 100/100) - XML Element Type
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
@@ -19,7 +17,7 @@ ListBox rows are commonly bound through ListData-backed Lua tables, with ListCol
 
 ```text
 OnLButtonUp
-  -> ui: Button, ListBox, Window
+  -> ui: Button, ColorPicker, DynamicImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code

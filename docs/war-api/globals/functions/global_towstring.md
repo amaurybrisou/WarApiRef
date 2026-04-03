@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 9 addons
+- Seen in: 34 addons
 
 ## Confidence Assessment
 
@@ -24,15 +24,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, NPC Item Sale Price, PartyCast, Soloq, TidyChat, TidyRoll, TimeToDie, ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1017`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:111`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1138`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1723`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1756`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1915`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1952`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:3343` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BagOMatic, BankArkel, BuffHead |
+| Files seen in | `/workspace/data/raw/Ace/AceLocale-3.0.lua:57`, `/workspace/data/raw/Ace/LibGUI.lua:1068`, `/workspace/data/raw/Ace/LibGUI.lua:1124`, `/workspace/data/raw/Ace/LibGUI.lua:426`, `/workspace/data/raw/Ace/LibGUI.lua:533`, `/workspace/data/raw/Ace/LibGUI.lua:656`, `/workspace/data/raw/Ace/LibGUI.lua:711`, `/workspace/data/raw/AdvancedPetAssist/APACommands.lua:207` |
 | Namespaces detected | towstring |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.About, InfoScroller: InfoScroller.Test, InfoScroller: LIBGUI_Button:SetText, InfoScroller: LIBGUI_Combobox:Add, InfoScroller: LIBGUI_Combobox:Select, InfoScroller: LIBGUI_Label:SetText |
+| Example locations | Ace: LIBGUI_Button:SetText, Ace: LIBGUI_Combobox:Add, Ace: LIBGUI_Combobox:Select, Ace: LIBGUI_Label:SetText, Ace: LIBGUI_MultiTextbox:SetText, Ace: LIBGUI_Textbox:SetText |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 166 |
-| Global usage count | 166 |
+| Lua usage count | 856 |
+| Global usage count | 856 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -61,13 +61,13 @@ towstring(arg1)
 
 ## Description
 
-Observed as a global function across 9 addons.
+Observed as a global function across 34 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: "", "%%^", "%^" |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: "    Posting COUNT auction(s) for ITEM with a price of PRICE per stack of SIZE.", "", "%d items remaining" |
 
 ## Returns
 
@@ -79,37 +79,74 @@ Observed as a global function across 9 addons.
 
 ## Seen In
 
-- InfoScroller
-- NPC Item Sale Price
+- Ace
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
+- BagOMatic
+- BankArkel
+- BuffHead
+- CM_ClosetGoblin
+- CombatTextNames
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- LibGroup
+- LibGuard
+- LibSlash
+- LibWBToggler
+- MiracleGrowLight
+- MoraleCircle
 - PartyCast
-- Soloq
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- Swift Assist
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- TimeToDie
-- ZCurse_Profiler
-- minesweep
+- TurretRange
+- WSCT
+- WhoHealedMe
+- WoH-Reticle
+- followTheLeader
 
 ## Examples
 
-- InfoScroller: InfoScroller.About -> towstring(CreateHyperLink(L "0",L "Sullemunk",{255,255,40},{}))
-- InfoScroller: InfoScroller.About -> towstring(version)
-- InfoScroller: InfoScroller.Test -> towstring(CreateHyperLink(L "0",L "Test-Friend",{255,75,75},{}))
-- InfoScroller: InfoScroller.Test -> towstring(CreateHyperLink(L "0",L "Test-Enemy",{75,75,255},{}))
-- InfoScroller: InfoScroller.Test -> towstring(CreateHyperLink(L "0",L "Butcher's Pass",{75,255,75},{}))
-- InfoScroller: InfoScroller.Test -> towstring(CreateHyperLink(L "0",L " 2000 Renown",{230,50,250},{}))
+- Ace: LIBGUI_Button:SetText -> towstring(text)
+- Ace: LIBGUI_Combobox:Add -> towstring(itemText)
+- Ace: LIBGUI_Combobox:Select -> towstring(value)
+- Ace: LIBGUI_Label:SetText -> towstring(text)
+- Ace: LIBGUI_MultiTextbox:SetText -> towstring(text)
+- Ace: LIBGUI_Textbox:SetText -> towstring(text)
 
 ## Related APIs
 
-- none
+- [LibSlash.IsSlashCmdRegistered](global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
+- [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
+- [LibSlash.RegisterWSlashCmd](global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
+- [LibSlash.UnregisterSlashCmd](global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
 
 ## Used With
 
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureDimensions](../../window_api/functions/window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
-- [GetIconData](global_GetIconData.md) (HIGH 71/100) - Global Function
+- [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
+- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- [PartyUtils.GetPartyData](global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
+- [CreateWindowFromTemplate](global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
@@ -122,3 +159,4 @@ Observed as a global function across 9 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

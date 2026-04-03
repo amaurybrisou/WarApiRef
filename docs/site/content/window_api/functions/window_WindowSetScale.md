@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 14 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:236`, `/workspace/data/raw/PartyCast/PartyCast.lua:1015`, `/workspace/data/raw/PartyCast/PartyCast.lua:177`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:236` |
+| Addons seen in | Ace, Aura, BuffHead, DAoCBuff, Enemy, GuardLine, LibWBToggler, PartyCast |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:236`, `/workspace/data/raw/Aura/Source/Aura.lua:505`, `/workspace/data/raw/Aura/Source/Aura.lua:534`, `/workspace/data/raw/BuffHead/AdvancedContainers.lua:36`, `/workspace/data/raw/BuffHead/Container.lua:758`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:480`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:346` |
 | Namespaces detected | WindowSetScale |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_ELEMENT:Scale, PartyCast: LIBGUI_ELEMENT:Scale, PartyCast: PartyCast.Default, PartyCast: PartyCast.FetchedText, PartyCast: PartyCast.StartCast |
+| Example locations | Ace: LIBGUI_ELEMENT:Scale, Aura: Aura:UpdateTimerWindow, Aura: Aura:UpdateWindow, BuffHead: BuffHead.local.RegisterLayoutEditor, BuffHead: BuffHeadContainer:AnchorContainers, BuffHead: BuffHeadEffectFrame:SetLayout |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 90 |
+| Global usage count | 90 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "InfoScrollerMainWindow", "PartyCastStaticWindow"..i, "PartyCastStaticWindow0" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: T_Scale, T_Scale*0.8, WindowGetScale("PartyCastStaticWindow"..PlayerNumber) |
+| windowName | Observed as a target window name. | Observed values: "DeathWindow", "EA_Window_CityCaptureJoinPromptWindow", "EnemyGuardDistanceIndicator" |
+| arg2 | Observed as a function or method reference. | Observed values: .8*adat.uiscale*(critsize/WSCT_TEXTSIZE_BASE), .8*adat.uiscale*WSCT_CRIT_SIZE_PERCENT*(adat.textsize/WSCT_TEXTSIZE_BASE), 0.000001 |
 
 ## Returns
 
@@ -84,17 +84,29 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- Aura
+- BuffHead
+- DAoCBuff
+- Enemy
+- GuardLine
+- LibWBToggler
 - PartyCast
+- PotionBar
+- RoR_SoR
+- Shinies
+- TurretRange
+- WSCT
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: InfoScroller.CreateCard -> WindowSetScale(WindowName, uiScale)
-- InfoScroller: InfoScroller.CreateCard -> WindowSetScale("InfoScrollerMainWindow", uiScale)
-- InfoScroller: LIBGUI_ELEMENT:Scale -> WindowSetScale(self.name, scale)
-- PartyCast: LIBGUI_ELEMENT:Scale -> WindowSetScale(self.name, scale)
-- PartyCast: PartyCast.Default -> WindowSetScale("PartyCastStaticWindow0", T_Scale)
-- PartyCast: PartyCast.Default -> WindowSetScale("PartyCastStaticWindow"..i, T_Scale*0.8)
+- Ace: LIBGUI_ELEMENT:Scale -> WindowSetScale(self.name, scale)
+- Aura: Aura:UpdateTimerWindow -> WindowSetScale(windowId, self:Get("timer-scale"))
+- Aura: Aura:UpdateWindow -> WindowSetScale(windowId, self:Get("texture-scale"))
+- BuffHead: BuffHead.local.RegisterLayoutEditor -> WindowSetScale(layoutWindow, WindowGetScale(container:GetName()))
+- BuffHead: BuffHeadContainer:AnchorContainers -> WindowSetScale(self:GetName(), self.Settings.Scale*InterfaceCore.GetScale())
+- BuffHead: BuffHeadEffectFrame:SetLayout -> WindowSetScale(frameName.."Icon", scale*layoutSettings.Icon.Scale)
 
 ## Related APIs
 
@@ -102,8 +114,12 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetScale](window_WindowGetScale.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
@@ -111,7 +127,6 @@ Observed mutating runtime window state or presentation.
 
 ## Affects
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

@@ -68,8 +68,7 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 
 ## Related APIs
 
-- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
+- none
 
 ## Used With
 

@@ -29,14 +29,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, TidyChat, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.xml:107`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:118`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:141`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:152`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:16`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:175`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:186`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:210` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, AutoMark, BankArkel |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.xml:0`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.xml:0`, `/workspace/data/raw/Aura/Source/AuraColorPicker.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0` |
 | Namespaces detected | Window |
 | Source kinds | xml_frames, xml_handlers |
-| Example locations | InfoScroller: InfoScrollerMainWindow, InfoScroller: InfoScrollerTemplate, InfoScroller: InfoScrollerTemplateBackGround, InfoScroller: InfoScrollerTemplateIcon1Left, InfoScroller: InfoScrollerTemplateIcon1Right, InfoScroller: InfoScrollerTemplateIcon2Left |
-| XML usage count | 88 |
-| XML attribute usage count | 88 |
-| Lua usage count | 8 |
+| Example locations | AdvancedPetAssist: APAFollowTargetHUD, AdvancedPetAssist: APAInstantOnlyHUD, AdvancedPetAssist: APAKitingHUD, AdvancedPetAssist: APAOptions, AdvancedPetAssist: APAOptionsBackground, AdvancedPetAssist: APAOptionsContent |
+| XML usage count | 1007 |
+| XML attribute usage count | 1007 |
+| Lua usage count | 18 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -60,149 +60,285 @@
 
 ## Description
 
-Observed XML element type instantiated by 7 addons.
+Observed XML element type instantiated by 32 addons.
 
 ## Common Attributes
 
 - name
+- inherits
 - layer
 - movable
 - handleinput
-- inherits
 - savesettings
 - popable
 - sticky
-- draganddrop
+- scale
+- skipinput
+- drawchildrenfirst
+- alpha
 
 ## Common Handlers
 
-- [OnHidden](../handlers/handler_OnHidden.md)
-- [OnShown](../handlers/handler_OnShown.md)
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
-- [OnMouseWheel](../handlers/handler_OnMouseWheel.md)
-- [OnInitialize](../handlers/handler_OnInitialize.md)
-- [OnMButtonUp](../handlers/handler_OnMButtonUp.md)
+- [OnHidden](../handlers/handler_OnHidden.md)
+- [OnMouseOver](../handlers/handler_OnMouseOver.md)
 - [OnRButtonUp](../handlers/handler_OnRButtonUp.md)
-- [OnUpdate](../handlers/handler_OnUpdate.md)
+- [OnShown](../handlers/handler_OnShown.md)
+- [OnInitialize](../handlers/handler_OnInitialize.md)
+- [OnLButtonDown](../handlers/handler_OnLButtonDown.md)
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md)
+- [OnRButtonDown](../handlers/handler_OnRButtonDown.md)
+- [OnKeyEscape](../handlers/handler_OnKeyEscape.md)
+- [OnMouseOut](../handlers/handler_OnMouseOut.md)
+- [OnMouseWheel](../handlers/handler_OnMouseWheel.md)
 
 ## Common Handler Functions
 
-- EA_Window_DefaultLabelToggleCircle.Initialize
-- FrameManager.OnLButtonUp
-- FrameManager.OnMouseWheel
-- FrameManager.OnRButtonUp
-- TidyChat.Copy.OnHidden
-- TidyChat.Copy.OnMouseWheel
-- TidyChat.Copy.OnShown
-- TidyChat.LootRoll.OnHidden
-- TidyChat.LootRoll.OnShown
-- TidyChat.Options.OnCheckboxLBU
-- TidyChat.Options.OnHidden
-- TidyChat.Options.OnShown
+- EA_LabelCheckButton.Initialize
+- DAoCBuffSettings.ToggleCheckBox
+- WindowUtils.OnShown
+- WindowUtils.OnHidden
+- BuffHead.Setup.Layout.OnLayersChanged
+- WindowUtils.TrapClick
+- BuffHead.Setup.Layout.Properties.OnColorExampleMouseOut
+- BuffHead.Setup.Layout.Properties.OnColorExampleMouseOver
+- BuffHead.Setup.PriorityEffectsItem.OnTargetTypeLUp
+- Killer.HideRowTooltip
+- RoR_SoR.BroadCastOption
+- RoR_SoR.OnMouseOverStart
 
 
 ## XML Event Bindings
 
 | Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
 |-------|----------|---------------------|-------------------|-----------------|
-| [OnHidden](../handlers/handler_OnHidden.md) | lifecycle | TidyChat.Copy.OnHidden, TidyChat.LootRoll.OnHidden, TidyChat.Options.OnHidden, TidyRoll.CustomAutoRoll.OnHidden, TidyRoll.OnEsc, TidyRollOptions.OnHidden | `function()` | MEDIUM |
-| [OnInitialize](../handlers/handler_OnInitialize.md) | lifecycle | EA_Window_DefaultLabelToggleCircle.Initialize | `function()` | MEDIUM |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | FrameManager.OnLButtonUp, TidyChat.Options.OnCheckboxLBU, TidyRollOptions.OnCheckboxLBU, TidyRollOptions.OnRadioLBU | `flags, x, y` | MEDIUM |
-| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | TidyRollFrame.OnMButtonUp | `flags, x, y` | MEDIUM |
-| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | FrameManager.OnMouseWheel, TidyChat.Copy.OnMouseWheel | `function(delta)` | MEDIUM |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | FrameManager.OnRButtonUp | `function(...)` | LOW |
-| [OnShown](../handlers/handler_OnShown.md) | lifecycle | TidyChat.Copy.OnShown, TidyChat.LootRoll.OnShown, TidyChat.Options.OnShown, TidyRoll.CustomAutoRoll.OnShown, TidyRollOptions.OnShown, WindowUtils.OnShown | `function()` | MEDIUM |
-| [OnUpdate](../handlers/handler_OnUpdate.md) | lifecycle | TidyRoll.OnUpdate | `function(elapsed)` | MEDIUM |
+| [OnHidden](../handlers/handler_OnHidden.md) | lifecycle | WindowUtils.OnHidden, APAGui.OnFollowTargetHUDHidden, APAGui.OnHidden, APAGui.OnInstantOnlyHUDHidden, APAGui.OnKitingHUDHidden, AdvancedRenownTraining.OnExportHidden | `function()` | MEDIUM |
+| [OnInitialize](../handlers/handler_OnInitialize.md) | lifecycle | EA_LabelCheckButton.Initialize, AdvancedRenownTraining.Initialize, AuraConfig.OnInitialize, ClosetGoblinOptionWindow.OnInitialize, EA_Window_DefaultLabelToggleCircle.Initialize, EA_Window_Macro.Initialize | `function()` | MEDIUM |
+| [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | custom | Enemy.CombatLogUI_SnapshotWindow_Hide, Enemy.CombatLogUI_StatsWindow_Hide, Enemy.GroupsUI_EffectFilterDialog_Hide, Enemy.IntercomUI_ChooseChannelDialog_Hide, Enemy.IntercomUI_IntercomDialog_Hide, Enemy.IntercomUI_IntercomJoinDialog_Hide | `function(...)` | LOW |
+| [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | input | WindowUtils.TrapClick, Enemy.UnitFramesUI_Anchor_OnLButtonDown, AdvancedRenownTraining.Select, BuffHead.Setup.AdvancedCompression.OnRowLDown, BuffHead.Setup.AdvancedCompressionItem.OnRowLDown, BuffHead.Setup.AdvancedContainers.OnRowLDown | `flags, x, y` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | DAoCBuffSettings.ToggleCheckBox, BuffHead.Setup.Layout.OnLayersChanged, BuffHead.Setup.PriorityEffectsItem.OnTargetTypeLUp, EA_LabelCheckButton.Toggle, AnywhereTrainer.OnLButtonUp, Enemy.UnitFramesUI_Anchor_OnLButtonUp | `function(...)` | LOW |
+| [OnMButtonDown](../handlers/handler_OnMButtonDown.md) | input | Enemy.UnitFramesUI_UnitFrame_OnMButtonDown, MoraleCircle.Reset | `flags, x, y` | MEDIUM |
+| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | Enemy.UnitFramesUI_UnitFrame_OnMButtonUp, TidyRollFrame.OnMButtonUp | `flags, x, y` | MEDIUM |
+| [OnMouseOut](../handlers/handler_OnMouseOut.md) | input | Killer.HideRowTooltip | `function()` | MEDIUM |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | BuffHead.Setup.Layout.Properties.OnColorExampleMouseOver, RoR_SoR.OnMouseOverStart, AggroMeter.OnMouseOverStart, Enemy.ConfigurationWindow_ShowTooltip, Enemy.UnitFramesUI_Anchor_OnMouseOver, TexturedButtons.Setup.Fonts.OnColorExampleMouseOver | `function()` | MEDIUM |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | BuffHead.Setup.Layout.Properties.OnColorExampleMouseOut, Enemy.UnitFramesUI_Anchor_OnMouseOverEnd, TexturedButtons.Setup.Fonts.OnColorExampleMouseOut, BuffHead.Setup.AdvancedCompression.OnRowMouseOut, BuffHead.Setup.AdvancedCompressionItem.OnRowMouseOut, BuffHead.Setup.AdvancedContainers.OnRowMouseOut | `function(...)` | LOW |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | FrameManager.OnMouseWheel, MoraleCircle.OnMouseWheel, TidyChat.Copy.OnMouseWheel | `function(delta)` | MEDIUM |
+| [OnRButtonDown](../handlers/handler_OnRButtonDown.md) | input | BuffHead.Setup.AdvancedCompression.OnRowRDown, BuffHead.Setup.AdvancedCompressionItem.OnRowRDown, BuffHead.Setup.AdvancedContainers.OnRowRDown, BuffHead.Setup.AdvancedContainersItem.OnRowRDown, BuffHead.Setup.Layout.OnControlFrameRButtonDown, BuffHead.Setup.Layout.OnLayoutWindowRButtonDown | `flags, x, y` | MEDIUM |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | RoR_SoR.BroadCastOption, RoR_SoR.POPOption, AggroMeter.OnTabRBU, AnywhereTrainer.OnRButtonUp, AnywhereTrainerAdditions.OnRButtonUp, AuraSettings.OnRButtonUpAuraList | `flags, x, y` | MEDIUM |
+| [OnRawDeviceInput](../handlers/handler_OnRawDeviceInput.md) | custom | BuffHead.Setup.Layout.OnRawDeviceInput | `function(...)` | LOW |
+| [OnShown](../handlers/handler_OnShown.md) | lifecycle | WindowUtils.OnShown, APAGui.OnFollowTargetHUDShown, APAGui.OnInstantOnlyHUDShown, APAGui.OnKitingHUDShown, APAGui.OnPetTargetHUDShown, APAGui.OnShown | `function()` | MEDIUM |
+| [OnShutdown](../handlers/handler_OnShutdown.md) | lifecycle | ClosetGoblinCharacterWindow.OnShutdown, ClosetGoblinZoneWindow.OnShutdown, EA_Window_Macro.Shutdown | `function()` | MEDIUM |
+| [OnSizeUpdated](../handlers/handler_OnSizeUpdated.md) | custom | RoR_SoR.OnSizeUpdated | `function(...)` | LOW |
+| [OnUpdate](../handlers/handler_OnUpdate.md) | lifecycle | BuffHead.Setup.Layout.OnUpdate, TidyRoll.OnUpdate | `function(elapsed)` | MEDIUM |
 
 ### Per-Event Lua API Calls
 
-**OnHidden** handlers call: `TextEditBoxSetText`, `WindowUtils.OnHidden`
+**OnHidden** handlers call: `BroadcastEvent`, `ButtonSetDisabledFlag`, `ButtonSetText`, `ComboBoxSetDisabledFlag`, `DoesWindowExist`, `TextEditBoxSetText`, `WindowSetShowing`, `WindowUtils.OnHidden`
 
-**OnInitialize** handlers call: `ButtonSetText`, `CreateWindow`, `LabelSetText`
+**OnInitialize** handlers call: `ButtonSetText`, `CreateWindow`, `DoesWindowExist`, `LabelSetText`, `RegisterEventHandler`, `UnregisterEventHandler`, `WindowSetAlpha`, `WindowSetShowing`, `WindowSetTintColor`
 
-**OnLButtonUp** handlers call: `ButtonGetDisabledFlag`, `ButtonGetPressedFlag`, `ButtonSetDisabledFlag`, `ButtonSetPressedFlag`, `WindowGetId`
+**OnKeyEscape** handlers call: `DestroyWindow`, `DoesWindowExist`, `WindowSetShowing`
 
-**OnShown** handlers call: `WindowUtils.OnShown`
+**OnLButtonDown** handlers call: `BroadcastEvent`, `WindowGetId`, `WindowGetParent`, `WindowSetGameActionData`, `WindowSetTintColor`
+
+**OnLButtonUp** handlers call: `ButtonGetDisabledFlag`, `ButtonGetPressedFlag`, `ButtonSetDisabledFlag`, `ButtonSetPressedFlag`, `LabelGetText`, `WindowGetId`, `WindowGetParent`, `WindowSetMovable`, `WindowSetShowing`
+
+**OnMouseOver** handlers call: `DoesWindowExist`, `LabelSetTextColor`, `WindowGetAlpha`, `WindowGetDimensions`, `WindowGetId`, `WindowGetParent`, `WindowGetScreenPosition`, `WindowSetAlpha`, `WindowSetShowing`, `WindowSetTintColor`, `WindowStartAlphaAnimation`
+
+**OnMouseOverEnd** handlers call: `DoesWindowExist`, `LabelSetTextColor`, `WindowSetShowing`, `WindowSetTintColor`, `WindowStartAlphaAnimation`
+
+**OnRButtonDown** handlers call: `WindowGetId`, `WindowSetTintColor`
+
+**OnRButtonUp** handlers call: `WindowGetId`, `WindowGetMovable`, `WindowGetParent`, `WindowSetShowing`
+
+**OnShown** handlers call: `BroadcastEvent`, `ButtonSetPressedFlag`, `ButtonSetText`, `ComboBoxSetDisabledFlag`, `DoesWindowExist`, `LabelSetText`, `TextEditBoxSetText`, `WindowAddAnchor`, `WindowClearAnchors`, `WindowSetDimensions`, `WindowSetShowing`, `WindowUtils.OnShown`
+
+**OnShutdown** handlers call: `UnregisterEventHandler`
 
 ## Common Inherits
 
-- TChatCheckboxTemplate
-- EA_TitleBar_Default
-- EA_Window_DefaultContextMenuFrame
-- EA_Window_DefaultFrame
+- EA_Window_Default
+- EA_LabelCheckButton
 - EA_Window_DefaultBackgroundFrame
+- EA_TitleBar_Default
+- EA_Window_DefaultFrame
+- WSCTEvent
+- Aura_LabelCheckButton
+- EnemyScenarioInfoDialog_CareerStatsTemplate
+- EA_Window_DefaultSeparator
+- WSCTCheckBox
 - EA_Window_DefaultButtonBottomFrame
-- EA_Window_DefaultFrameStatusBar
-- PartyFrameStatusBar
-- TChatTabLogsTemplate
-- TChatTabMiscTemplate
-- TChatTabTextEntryTemplate
-- TChatTabWindowsTemplate
+- TChatCheckboxTemplate
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
-- [ScrollWindow](element_ScrollWindow.md)
+- [Windows](element_Windows.md) — 1001× (HIGH)
+- [Window](element_Window.md) — 5× (MEDIUM)
 
 ## Common Named Child Elements
 
-- [Label](element_Label.md)
-- [DynamicImage](element_DynamicImage.md)
-- [Button](element_Button.md)
-- [Window](element_Window.md)
-- [FullResizeImage](element_FullResizeImage.md)
-- [StatusBar](element_StatusBar.md)
-- [ComboBox](element_ComboBox.md)
-- [EditBox](element_EditBox.md)
+- [Label](element_Label.md) — 15× (HIGH)
+- [Button](element_Button.md) — 8× (MEDIUM)
+- [Window](element_Window.md) — 5× (MEDIUM)
+- [ComboBox](element_ComboBox.md) — 4× (MEDIUM)
+- [FullResizeImage](element_FullResizeImage.md) — 2× (LOW)
+- [SliderBar](element_SliderBar.md) — 2× (LOW)
+
+## Common Structural Child Elements
+
+- [Size](element_Size.md) — 624× (HIGH)
+- [Windows](element_Windows.md) — 476× (HIGH)
+- [Visual](element_Visual.md) — 1× (LOW)
 
 ## Common Template Bases
 
+- Aggro_Timer_Template
+- AnywhereTrainerTabTemplate
+- Aura_LabelCheckButton
+- Aura_LargeLabelCheckButton
+- BuffHeadColorExample
+- BuffHeadSetupSelectTextureRowTemplate
+- ClosetGoblinActionBarPageSelector
+- DAoCBuffCondenseTooltipItem
+- DAoCBuffFrameSettings_G1Filter
+- DAoCBuffFrameSettings_G2Filter
+- DAoCBuffFrameSettings_G4Filter
+- DAoCBuffFrameSettings_G5Filter
+- DAoCBuff_FakeSettingsRow
+- EA_LabelCheckButton
 - EA_TitleBar_Default
+- EA_Window_CityRating
+- EA_Window_ComboBoxMenuBackground
+- EA_Window_Default
 - EA_Window_DefaultBackgroundFrame
 - EA_Window_DefaultButtonBottomFrame
 - EA_Window_DefaultContextMenuFrame
 - EA_Window_DefaultFrame
 - EA_Window_DefaultFrameStatusBar
+- EA_Window_DefaultSeparator
+- EA_Window_DefaultTooltipBackground
+- EA_Window_DefaultVerticalSeparator
+- EA_Window_TabSeparatorLeftSide
+- EA_Window_TabSeparatorRightSide
+- EnemyCombatLogStatsWindow_ListHeaderTemplate
+- EnemyMark
+- EnemyScenarioInfoDialog_CareerStatsTemplate
+- EnemyScenarioInfoDialog_PlayerStatsHeaderTemplate
+- EnemyScenarioInfoDialog_StatsRowTemplate
+- EnemyScenarioInfoDialog_StatsRowTemplateBig
+- EnemyScenarioInfoDialog_StatsRowTemplateBig2
+- EnemyScenarioInfoDialog_StatsRowTemplateBig3
+- Frame_BG_Temlate
+- MiracleGrowLightLine
+- MoneyFrame
+- OptionsTemplate
 - PartyFrameStatusBar
+- RoR_SoR_BO_Template
+- Shinies_TitleBar_Default
+- SliderWindowTemplate
 - TChatCheckboxTemplate
 - TChatTabLogsTemplate
 - TChatTabMiscTemplate
 - TChatTabTextEntryTemplate
 - TChatTabWindowsTemplate
 - TRollOverlay
+- TexturedButtonsColorExample
+- TooltipBase
+- TurretRangeDisplay
+- WSCTCheckBox
+- WSCTComboBoxTemplate
+- WSCTEvent
+- WSCTSliderTemplate
 
 
 > **Note**: This element type commonly acts as a template base.
+
+## Typical XML Structure
+
+```xml
+<Window alpha="1.0" ignorealpha="false" name="...">
+  <Size/>
+  <Visual/>
+  <Windows/>
+</Window>
+```
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `layer` | optional | 59% | secondary, overlay, popup, background, ... |
-| `movable` | optional | 54% | true, false |
-| `handleinput` | optional | 38% | false, true |
-| `inherits` | optional | 31% | PartyFrameStatusBar, EA_Window_DefaultContextMenuFrame, TChatTabWindowsTemplate, TChatTabTextEntryTemplate, ... |
-| `savesettings` | optional | 30% | true, false |
-| `popable` | optional | 27% | false, true |
-| `sticky` | optional | 15% | true, false |
-| `draganddrop` | optional | 1% | true |
+| `inherits` | optional | 59% | EA_Window_DefaultFrame, EA_TitleBar_Default, EA_Window_Default, EA_Window_TabSeparatorLeftSide, ... |
+| `layer` | optional | 31% | secondary, background, popup, overlay, ... |
+| `movable` | optional | 20% | true, false |
+| `handleinput` | optional | 20% | true, false |
+| `savesettings` | optional | 13% | true, false |
+| `popable` | optional | 6% | false, true |
+| `sticky` | optional | 6% | false, true |
+| `scale` | optional | 3% | 1.0 |
+| `skipinput` | optional | 1% | false, true |
+| `drawchildrenfirst` | optional | 0% | true |
+| `alpha` | optional | 0% | 0.85, 1.0, 1, 0.6 |
+| `draganddrop` | optional | 0% | true |
+| `parent` | optional | 0% | Root, root |
+| `id` | optional | 0% | 1 |
+| `show` | optional | 0% | false |
+| `ignorealpha` | optional | 0% | false |
+| `inhserits` | optional | 0% | EA_Window_Default |
+| `localscriptvars` | optional | 0% | true |
+| `wordwrap` | optional | 0% | false |
+## Structural Sub-Elements
+
+### [Size](element_Size.md)
+
+Observed 624 times as an unnamed child.
+
+### [Windows](element_Windows.md)
+
+Observed 476 times as an unnamed child.
+
+### [Visual](element_Visual.md)
+
+Observed 1 times as an unnamed child.
+
 ## Lua API Usage (from Handlers)
 
 API functions commonly called from event handler Lua functions on this element type:
 
 | API Function | Category | Call Count | From Events |
 | --- | --- | --- | --- |
-| `LabelSetText` | ui | 6 | OnInitialize |
-| `WindowUtils.OnHidden` | ui | 6 | OnHidden |
-| `WindowUtils.OnShown` | ui | 6 | OnShown |
-| `ButtonGetPressedFlag` | ui | 4 | OnLButtonUp |
-| `TextEditBoxSetText` | ui | 3 | OnHidden |
-| `ButtonGetDisabledFlag` | ui | 2 | OnLButtonUp |
-| `ButtonSetDisabledFlag` | ui | 2 | OnLButtonUp |
-| `ButtonSetPressedFlag` | ui | 2 | OnLButtonUp |
-| `ButtonSetText` | ui | 2 | OnInitialize |
-| `CreateWindow` | ui | 1 | OnInitialize |
-| `WindowGetId` | ui | 1 | OnLButtonUp |
+| `RegisterEventHandler` | event | 285 | OnInitialize |
+| `TextEditBoxSetText` | ui | 277 | OnHidden, OnShown |
+| `LabelSetText` | ui | 248 | OnInitialize, OnShown |
+| `ButtonSetText` | ui | 113 | OnHidden, OnInitialize, OnShown |
+| `ButtonSetPressedFlag` | ui | 104 | OnLButtonUp, OnShown |
+| `ButtonGetPressedFlag` | ui | 85 | OnLButtonUp |
+| `WindowSetShowing` | ui | 69 | OnHidden, OnInitialize, OnKeyEscape, OnLButtonUp, OnMouseOver, OnMouseOverEnd, OnRButtonUp, OnShown |
+| `DoesWindowExist` | ui | 63 | OnHidden, OnInitialize, OnKeyEscape, OnMouseOver, OnMouseOverEnd, OnShown |
+| `WindowSetDimensions` | ui | 54 | OnShown |
+| `WindowSetTintColor` | ui | 30 | OnInitialize, OnLButtonDown, OnMouseOver, OnMouseOverEnd, OnRButtonDown |
+| `ButtonGetDisabledFlag` | ui | 29 | OnLButtonUp |
+| `WindowGetId` | ui | 20 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnRButtonDown, OnRButtonUp |
+| `WindowUtils.OnHidden` | ui | 16 | OnHidden |
+| `WindowUtils.OnShown` | ui | 16 | OnShown |
+| `WindowGetParent` | ui | 14 | OnLButtonDown, OnLButtonUp, OnMouseOver, OnRButtonUp |
+| `WindowStartAlphaAnimation` | ui | 11 | OnMouseOver, OnMouseOverEnd |
+| `UnregisterEventHandler` | event | 5 | OnInitialize, OnShutdown |
+| `CreateWindow` | ui | 4 | OnInitialize |
+| `BroadcastEvent` | event | 3 | OnHidden, OnLButtonDown, OnShown |
+| `ButtonSetDisabledFlag` | ui | 3 | OnHidden, OnLButtonUp |
+| `DestroyWindow` | ui | 3 | OnKeyEscape |
+| `WindowSetAlpha` | ui | 3 | OnInitialize, OnMouseOver |
+| `ComboBoxSetDisabledFlag` | ui | 2 | OnHidden, OnShown |
+| `LabelSetTextColor` | ui | 2 | OnMouseOver, OnMouseOverEnd |
+| `WindowGetAlpha` | ui | 2 | OnMouseOver |
+| `LabelGetText` | ui | 1 | OnLButtonUp |
+| `WindowAddAnchor` | ui | 1 | OnShown |
+| `WindowClearAnchors` | ui | 1 | OnShown |
+| `WindowGetDimensions` | ui | 1 | OnMouseOver |
+| `WindowGetMovable` | ui | 1 | OnRButtonUp |
+| `WindowGetScreenPosition` | ui | 1 | OnMouseOver |
+| `WindowSetGameActionData` | ui | 1 | OnLButtonDown |
+| `WindowSetMovable` | ui | 1 | OnLButtonUp |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
@@ -215,7 +351,29 @@ Confidence: HIGH
 
 Confidence: HIGH
 
+### OnKeyEscape
+
+Confidence: LOW
+
+### OnLButtonDown
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
 ### OnLButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnMButtonDown
 
 Confidence: MEDIUM
 
@@ -233,6 +391,18 @@ Confidence: MEDIUM
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
+### OnMouseOut
+
+Confidence: HIGH
+
+### OnMouseOver
+
+Confidence: HIGH
+
+### OnMouseOverEnd
+
+Confidence: HIGH
+
 ### OnMouseWheel
 
 Confidence: MEDIUM
@@ -242,18 +412,44 @@ Confidence: MEDIUM
 | 0 | `x` | number | mouse_x |
 | 1 | `y` | number | mouse_y |
 | 2 | `delta` | number | wheel_delta |
-### OnRButtonUp
+### OnRButtonDown
 
-Confidence: LOW
+Confidence: MEDIUM
 
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
 | 0 | `flags` | number | modifier_flags |
 | 1 | `x` | number | mouse_x |
 | 2 | `y` | number | mouse_y |
+### OnRButtonUp
+
+Confidence: MEDIUM
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `flags` | number | modifier_flags |
+| 1 | `x` | number | mouse_x |
+| 2 | `y` | number | mouse_y |
+### OnRawDeviceInput
+
+Confidence: LOW
+
+| Position | Name | Type | Role |
+| --- | --- | --- | --- |
+| 0 | `deviceId` | string | identifier |
+| 1 | `itemId` | string | identifier |
+| 2 | `itemDown` | unknown | unknown |
 ### OnShown
 
 Confidence: HIGH
+
+### OnShutdown
+
+Confidence: HIGH
+
+### OnSizeUpdated
+
+Confidence: LOW
 
 ### OnUpdate
 
@@ -264,47 +460,441 @@ Confidence: MEDIUM
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
-- Moth.Clear
-- minesweep.MakeField
-- Moth.HealthBar
-- Moth.HideBorders
-- minesweep.LButtonUp
-- minesweep.Close
-- InfoScroller.OnInitialize
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- TurretRange.OnLoadComplete
+- WSCT.ColorHideMenu
+- AdvancedRenownTrainer.local.CreateAbilityWindow
+- DAoCBuff.ShowMessageWindow
+- Enemy.UnitFramesUI_UnitFramePartDialog_Hide
+- RoR_SoR.ShowPopper
+- Enemy.CombatLogUI_StatsWindow_UpdateList
+- MoraleCircle.ColorChanger1
+- PotionBarSettings.OnAboutShown
+- Aura.Aura:CreateEditWindows
+- ClosetGoblinCharacterWindow.HideShowHelm
+- MoraleCircle.ColorChanger3
+- WhoHealedMe.Shutdown
+- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- PotionBar.Shutdown
+- PotionBarSettings.OnShown
+- Killer.Initialize
+- RoR_SoR.OnInitialize
+- RoR_SoR.SetWindowShow
+- AdvancedPetAssist.AnchorInContent
+- AuraTexture.OnLoad
+- DAoCTooltips.UpdateCondenseTooltip
+- ClosetGoblinCharacterWindow.ShowHelm
+- Enemy.IntercomInitialize
+- Enemy._OnKeyModifierChanged
+- Enemy.CombatLogUI_TargetDefenseTotalWindow_Open
+- WhoHealedMe.local.IsMainWindowVisible
+- APAGui.Hide
+- AdvancedRenownTraining.Initialize
+- Aura.Aura:CreateRuntimeWindows
+- BankArkel.BackPackShow
+- ClosetGoblinZoneWindow.Show
+- Enemy.CombatLogUI_IDS_Update
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- MoraleCircle.ColorChanger2
+- PotionBarSettings.RefreshSingleRightLine
+- APAGui.UpdatePetTargetHUD
+- ClosetGoblinCharacterWindow.ShowShowCloakOnly
+- DAoCBuffFrame.MouseOverUpdate
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- MiracleGrowLight.switchBackground
+- SwiftAssist.Initialize
+- DAoCBuffSettings.SetLabels
+- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.MarksUI_MarkConfigDialog_Hide
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Enemy.local.SetStatsRow
+- PP.UpdateListRow
+- WSCT.WSCT:OpenMenu
+- ClosetGoblinCharacterWindow.HotbarChangeToggled2
+- Enemy.GroupsUI_EffectFilterDialog_Hide
+- Enemy.UI_ConfigDialog_Open
+- Enemy.EnemyMarkTemplate:ToggleMark
+- Enemy.AssistUI_Target_Show
+- PotionBarSettings.OnAboutButton
+- RoR_SoR.CloseSetOpacityWindow
+- WarBoard.SlashCommand
+- AdvancedRenownTrainer.CreateAbilityWindow
+- ClosetGoblinCharacterWindow.HotbarChangeToggled4
+- DAoCBuffSettings.CloseOptionswindow
+- Enemy.CombatLogUI_StatsWindow_Hide
+- PotionBar.Initialize
+- APAGui.ToggleKitingHUD
+- ClosetGoblinCharacterWindow.UseItemRackToggled
+- Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
+- RoR_SoR.HidePopper
+- Swift Assist.WriteLabels
+- LibWBTogglerManager.Initialize
+- DAoCTooltips.Init
+- PotionBarSettings.OnScaleSliderChanged
+- PotionBarSettings.OnCancelButton
+- PotionBarFloating.Alpha
+- PotionBarSettings.Show1Check
 - TidyRollOptions.Initialize
-- Soloq.onEnterRankedScenario
+- AdvancedRenownTraining.OnShown
+- ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- Killer.ShowTopKillersTooltip
+- Enemy.CombatLogUI_TargetDefenseWindow_Hide
+- RoR_SoR.OnScenario
+- WHMGui.HideOptionsWindow
+- APAGui.ApplyPetTargetHUDLayout
+- Enemy.MarksUI_EnemyMarksWindow_IsOpen
+- Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
+- ClosetGoblinCharacterWindow.ShowCloak
+- Enemy._Initialize
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Swift Assist.SetSmartLabel
+- APAGui.Show
+- AggroMeter.Initialize
+- ClosetGoblinCharacterWindow.UpdateSetRow
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- WSCT.UpdateAnimationOptions
+- BankArkel.PackImg
+- ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- GuardLine.OnLayoutEditorStart
+- PotionBarFloating.ShowSettings
+- ClosetGoblinCharacterWindow.HotbarChangeToggled5
+- ClosetGoblinCharacterWindow.HideCloakOptions
+- GuardLine.init
+- Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
+- ClosetGoblinCharacterWindow.OnShow
+- ClosetGoblinCharacterWindow.OnInitialize
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- ClosetGoblinZoneWindow.RefreshOption
+- AdvancedRenownTrainer.GeneratePresetByLinkData
+- AggroMeter.Close
+- ClosetGoblinCharacterWindow.ShowCloakHeraldry
+- Enemy.CombatLogUI_IDS_OnSettingsChanged
+- Enemy.CombatLogUI_EpsWindow_IsOpen
+- GuardLine.update
+- RoR_SoR.SET_KEEP
+- WHMGui.ToggleOptionsWindow
+- DAoCBuffSettings.PopulateSettings
+- Enemy.IntercomUI_ChooseChannelDialog_Hide
+- Enemy.MarksUI_EnemyMarksWindow_Update
+- WHMCommands.CmdConfig
+- PotionBar.local.UpdateButton
+- RoR_SoR.SET_BO
+- Shinies.Searches_UpdateWindowDisplay
+- WSCT.WSCT:ObjectIDAnimation
+- WarBoard.Options.EnableBoard
+- ClosetGoblinCharacterWindow.ShowCloakOptions
+- Enemy.CombatLogUI_TargetDefenseWindow_Update
+- PotionBarFloating.ReflowButtons
+- MoraleCircle.OnSetCustomColor
+- PotionBarSettings.UpdateLastCheckBasedOnInfoText
+- RoR_SoR.CloseSetScaleWindow
+- ClosetGoblinZoneWindow.Hide
+- Enemy.MarksInitialize
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_IsOpen
+- Enemy.CombatLogUI_StatsWindow_IsOpen
+- Killer.ShowRowTooltip
+- RoR_SoR.SET_CITY
+- WHMGui.RefreshConfigurationWindow
+- BankArkel.PackShow
+- ClosetGoblinCharacterWindow.UpdateHighlightOnRow
+- Enemy.CombatLogUI_StatsWindow_Open
+- MoraleCircle.OnSetCustomColorFull
+- PotionBar.Show
+- AnywhereTrainerAdditions.OnLeftClickAuction
+- TurretRange.UpdateDisplay
+- AdvancedRenownTrainer.local.CreateTab
+- Enemy.MarksUI_MarkConfigDialog_IsOpen
+- GuardLine.Libguard_Toggle
+- Enemy.UI_ChooseIconDialog_Hide
+- RoR_SoR.OnWindowOptionsSetScale
+- Enemy.CombatLogUI_EpsWindow_UpdateLayout
+- PotionBarSettings.OnAlphaSliderChanged
+- Swift Assist.local.WriteLabels
+- PotionBarSettings.OnResetButton
+- PotionBar.LibSlashHandler
+- Swift Assist.local.SetTexLabel
+- ClosetGoblinCharacterWindow.Show
+- DAoCBuff.CloseMessageWindow
+- Enemy.CombatLogUI_IDS_Initialize
+- WarBoard.LoadGeneralSettings
+- APAGui.OnShown
+- BankArkel.Init
+- Enemy.CombatLogUI_TargetDefenseTotalWindow_Hide
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- WSCT.ColorOnButtonUp
+- WSCT.ColorOnInitialize
+- DAoCBuffSettings.CreateOptionswindow
+- DAoCBuffSettings.Change_Setting
+- Enemy.GroupsUI_EffectFilterDialog_IsOpen
+- Killer.ShowPersonalStatsTooltip
 - TidyChat.LootRoll.OnRollLinkLButtonUp
-- InfoScroller.CreateCard
-- Moth.Initialize
-- Moth.UpdateHealthBar
-- Moth.Anchor
-- Moth.UpdateTarget
-- Moth.UpdateLevel
+- ClosetGoblinCharacterWindow.UpdateSlotIcons
+- Enemy.IntercomUI_IntercomJoinDialog_Open
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Hide
+- Enemy.MarksUI_EnemyMarksWindow_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy.AssistInitialize
+- Enemy.CombatLogUI_EpsWindow_Update
+- GuardLine.update2
+- MoraleCircle.init
+- APAGui.UpdateFollowTargetHUD
+- AuraTexture.OnClose
+- DAoCBuff.DAoCBuffHeadTracker:Create
+- PotionBarSettings.QuickActionsSelChanged
+- ClosetGoblinCharacterWindow.UpdateActionBarSettings
+- Enemy.GroupsInitialize
+- Enemy.CombatLogUI_EpsWindow_Hide
+- AutoMark.local.CreateMarker
+- RoR_SoR.OnSlideWindowOptionsScale
+- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- Enemy.IntercomUI_IntercomJoinDialog_Hide
+- Enemy.MarksUI_MarkConfigDialog_Open
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Hide
+- APAGui.UpdateInstantOnlyHUD
+- AutoMark.CreateMarker
+- Enemy.UI_TextEntryDialog_Open
+- Enemy.CombatLogUI_TargetDefenseWindow_IsOpen
+- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
+- RoR_SoR.SET_CAMPAIGN
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.EnemyGroupIcon:Attach
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_IsOpen
+- RoR_SoR.DefaultSettings
+- BankArkel.SetupCombos
+- Enemy.UI_ChooseIconDialog_IsOpen
+- Enemy.MarksUI_EnemyMarksWindow_Hide
+- Killer.RefreshPersonalCounter
+- AnywhereTrainer.OnLeftClickAuction
+- APAGui.UpdateKitingHUD
+- BankArkel.PackHide
+- Enemy.UI_ChooseIconDialog_Open
+- MoraleCircle.OnSetCustomColorEmpty
+- SwiftAssist.aaLabelColorSet
+- WhoHealedMe.IsMainWindowVisible
+- AggroMeter.SplitText
+- ClosetGoblinCharacterWindow.HotbarChangeToggled3
+- Enemy.local._OnKeyModifierChanged
+- RoR_SoR.Text_Stream_Fetch
+- WSCT.OnLButtonUpColorPicker
+- AdvancedPetAssist.local.ApplyHUDVisibilityFromSettings
+- DAoCBuffSettings.UC
+- Enemy.StopwatchEnabledChanged
+- Enemy.CombatLogUI_TargetDefenseTotalWindow_IsOpen
+- RoR_SoR.OnWindowOptionsSetOffset
+- BankArkel.CreatePackWin
+- BuffHead.local.RegisterLayoutEditor
+- ClosetGoblinCharacterWindow.ShowShowHelmOnly
+- WHMGui.ShowOptionsWindow
+- ClosetGoblinCharacterWindow.Hide
+- RoR_SoR.OnChatLogUpdated
+- RoR_SoR.Restack
+- RoR_SoR.OnSlideWindowOptionsOpacity
+- WSCT.WSCT:DisplayText
+- WHMGui.OnOptionsInitialize
+- Enemy.CombatLogUI_EpsWindow_Initialize
+- PotionBarSettings.OnUseCheck
+- PotionBarSettings.OnDontSplitNameCheck
+- Enemy.local._OnArchetypeChanged
+- AdvancedPetAssist.local.AnchorInContent
+- ClosetGoblinCharacterWindow.HotbarChangeToggled1
+- Enemy.UI_ConfigDialog_Hide
+- AuraAddon.Slash
+- Enemy._OnArchetypeChanged
+- TurretRange.OnUpdate
+- SwiftAssist.OnMacroUpdated
+- DAoCTooltips.CreateCondenseTooltip
+- Enemy.IntercomUI_IntercomDialog_Open
+- GuardLine.OffTarget
+- PotionBarSettings.OnHidden
+- WSCT.HideMenu
+- WHMCore.ApplyBackgroundFillColor
+- WhoHealedMe.Initialize
+- AdvancedRenownTrainer.CreateTab
+- DAoCBuffSettings.Reactivate
+- Enemy.CombatLogUI_TargetDefenseWindow_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_IsOpen
+- PotionBar.Hide
+- RoR_SoR.OnWindowOptionsSetOpacity
+- Swift Assist.SetTexLabel
+- Swift Assist.local.SetSmartLabel
+- APAGui.HidePetTargetHUD
+- AdvancedRenownTraining.ChangeTab
+- ClosetGoblinCharacterWindow.HotbarPageDownProxy
+- Enemy.IntercomUI_ChooseChannelDialog_ChannelListChanged
+- MoraleCircle.ColorChanger4
+- ClosetGoblinCharacterWindow.UpdateSlotIcon
+- Enemy.GroupsUI_EffectFilterDialog_Ok
+- Enemy.UnitFramesUI_ConfigDialog_Import
+- AdvancedRenownTraining.OnHidden
+- BankArkel.SetCharInfo
+- WarBoard.Options.OnSlide
+- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
+- PP.UpdateDyeFilter
+- TurretRange.local.UpdateDisplay
+- WHMCore.RunSettingEffects
+- AggroMeter.OnTabLBU
+- BankArkel.BackPackHide
+- ClosetGoblinCharacterWindow.HotbarPageUpProxy
+- Enemy.CombatLogUI_TargetDefenseWindow_Initialize
+- GuardLine.OnLayoutEditorFinished
+- Killer.ApplyFeedLayout
+- ClosetGoblinZoneWindow.OnInitialize
+- DAoCBuffSettings.OpenOptionswindow
+- Enemy.Stopwatch_Update
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Open
+- MoraleCircle.OnSetCustomColorFill
+- RoR_SoR.OnCombat
+- Enemy.IntercomUI_ChooseChannelDialog_Open
+- Enemy.IntercomUI_IntercomDialog_Hide
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Hide
+- PotionBarSettings.AutohideCheck
+- WSCT.OnSetCustomColor
+- WSCT.ColorAcceptButtonOnButtonUp
+- AdvancedPetAssist.ApplyHUDVisibilityFromSettings
+- Enemy.UnitFramesUI_UnitFramePartDialog_IsOpen
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- PotionBarSettings.OnAboutClose
+- Enemy.Assist_OnIntercomMessage
+- Enemy.EnemyUnitFrame:ApplySettings
+- Enemy.Timer_Update
+- GuardLine.GetIDs
+- PotionBar.UpdateButton
+- APAGui.ToggleInstantOnlyHUD
+- BuffHead.RegisterLayoutEditor
+- Enemy.CombatLogUI_EpsWindow_Open
+- RoR_SoR.CloseSetOffsetWindow
+- WarBoard.OnOptionsButton
+- AnywhereTrainer.OnLeftClickRenown
+- Enemy.SetStatsRow
+- Enemy._CombatLogUI_IDS_UpdateWindow
+- Enemy.TimerInitialize
+- PotionBarFloating.Scale
+- PotionBarSettings.OnUseCheckUpdateHighlighting
+- AuraAddon.OnLoad
+- ClosetGoblinZoneWindow.UpdateHighlightOnRow
+- DAoCBuffSettings.Disable
+- ClosetGoblinCharacterWindow.ShowShowHelm
+- WSCT.OnHidden
 
 
 ## Binding Resolution
 
-- Total handler declarations: 22
-- Resolved to Lua functions: 21 (95%)
+- Total handler declarations: 536
+- Resolved to Lua functions: 536 (100%)
 
+## .mod Lifecycle: Startup Windows
+
+This element type is instantiated as a startup window by the following .mod addon(s):
+
+| Frame Name | Addon | Hook | Resolution | Confidence |
+| --- | --- | --- | --- | --- |
+| APAFollowTargetHUD | AdvancedPetAssist | OnInitialize | exact | HIGH |
+| APAKitingHUD | AdvancedPetAssist | OnInitialize | exact | HIGH |
+| APAInstantOnlyHUD | AdvancedPetAssist | OnInitialize | exact | HIGH |
+| APAPetTargetHUD | AdvancedPetAssist | OnInitialize | exact | HIGH |
+| AdvancedRenownTrainingWindow | AdvancedRenownTrainer | OnInitialize | exact | HIGH |
+| AuraTexture | Aura | OnInitialize | exact | HIGH |
+| AuraColorPicker | Aura | OnInitialize | exact | HIGH |
+| AuraConfig | Aura | OnInitialize | exact | HIGH |
+| AuraShares | Aura | OnInitialize | exact | HIGH |
+| AuraSettings | Aura | OnInitialize | exact | HIGH |
+| BuffHeadSetupSelectTextureWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupSelectColorWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupLayoutManagerWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupAdvancedCompressionWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupAdvancedCompressionItemWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupAdvancedCompressionItemEffectWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupAdvancedContainersWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupAdvancedContainersItemWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupAdvancedContainersItemPropertiesWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupPriorityEffectsWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupPriorityEffectsItemWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupFilterWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupGeneralWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupLayoutWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupLayoutPropertiesWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupPerformanceWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupDisplayWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupContainerWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupTrackersWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupMenuWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupEffectCacheWindow | BuffHead | OnInitialize | exact | HIGH |
+| BuffHeadSetupEffectCacheTableWindow | BuffHead | OnInitialize | exact | HIGH |
+| ClosetGoblinCharacterWindow | CM_ClosetGoblin | OnInitialize | exact | HIGH |
+| ClosetGoblinZoneWindow | CM_ClosetGoblin | OnInitialize | exact | HIGH |
+| ClosetGoblinOptionWindow | CM_ClosetGoblin | OnInitialize | exact | HIGH |
+| KillerWindow | Killer | OnInitialize | exact | HIGH |
+| LibGroupSetupWindow | LibGroup | OnInitialize | exact | HIGH |
+| TexturedButtonsSetupSelectColorWindow | TexturedButtons | OnInitialize | exact | HIGH |
+| TexturedButtonsSetupMenuWindow | TexturedButtons | OnInitialize | exact | HIGH |
+| TexturedButtonsSetupTexturesWindow | TexturedButtons | OnInitialize | exact | HIGH |
+| TexturedButtonsSetupAdvancedTexturesWindow | TexturedButtons | OnInitialize | exact | HIGH |
+| TexturedButtonsSetupCooldownWindow | TexturedButtons | OnInitialize | exact | HIGH |
+| TexturedButtonsSetupFontsWindow | TexturedButtons | OnInitialize | exact | HIGH |
+| TexturedButtonsSetupTintWindow | TexturedButtons | OnInitialize | exact | HIGH |
+| TexturedButtonsSetupMiscWindow | TexturedButtons | OnInitialize | exact | HIGH |
+| TexturedButtonsSetupActionbarWindow | TexturedButtons | OnInitialize | exact | HIGH |
+| TurretRangeSetupMenuWindow | TurretRange | OnInitialize | exact | HIGH |
+| TurretRangeSetupDistancesWindow | TurretRange | OnInitialize | exact | HIGH |
+| TurretRangeSetupDistanceWindow | TurretRange | OnInitialize | exact | HIGH |
+| TurretRangeSetupDisplayWindow | TurretRange | OnInitialize | exact | HIGH |
+| TurretRangeSetupGeneralWindow | TurretRange | OnInitialize | exact | HIGH |
+| TurretRangeDisplay | TurretRange | OnInitialize | exact | HIGH |
+| WSCTContainer | WSCT | OnInitialize | exact | HIGH |
+| WhoHealedMeWindow | WhoHealedMe | OnInitialize | exact | HIGH |
+| WhoHealedMeOptions | WhoHealedMe | OnInitialize | exact | HIGH |
+| WhoHealedMeDetails | WhoHealedMe | OnInitialize | exact | HIGH |
+| MacroIconSelectionWindow | bigger_MacroWindow | OnInitialize | exact | HIGH |
+| EA_Window_Macro | bigger_MacroWindow | OnInitialize | exact | HIGH |
 ## Seen In
 
-- InfoScroller
-- Moth
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AggroMeter
+- AnywhereTrainer
+- AnywhereTrainerAdditions
+- Aura
+- AutoMark
+- BankArkel
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- LibGroup
+- LibWBToggler
+- MiracleGrowLight
+- MoraleCircle
 - PartyCast
-- Soloq
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- Swift Assist
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- minesweep
+- TurretRange
+- WSCT
+- WarBoard
+- WhoHealedMe
+- bigger_MacroWindow
 
 ## Examples
 
-- InfoScroller: InfoScrollerMainWindow -> Window InfoScrollerMainWindow
-- InfoScroller: InfoScrollerTemplate -> Window InfoScrollerTemplate
-- InfoScroller: InfoScrollerTemplateBackGround -> Window InfoScrollerTemplateBackGround
-- InfoScroller: InfoScrollerTemplateIcon1Left -> Window InfoScrollerTemplateIcon1Left
-- InfoScroller: InfoScrollerTemplateIcon1Right -> Window InfoScrollerTemplateIcon1Right
-- InfoScroller: InfoScrollerTemplateIcon2Left -> Window InfoScrollerTemplateIcon2Left
+- AdvancedPetAssist: APAFollowTargetHUD -> Window APAFollowTargetHUD
+- AdvancedPetAssist: APAInstantOnlyHUD -> Window APAInstantOnlyHUD
+- AdvancedPetAssist: APAKitingHUD -> Window APAKitingHUD
+- AdvancedPetAssist: APAOptions -> Window APAOptions
+- AdvancedPetAssist: APAOptionsBackground -> Window APAOptionsBackground
+- AdvancedPetAssist: APAOptionsContent -> Window APAOptionsContent
 
 ## Related APIs
 
@@ -316,38 +906,51 @@ Confidence: MEDIUM
 - [ButtonSetDisabledFlag](../../window_api/functions/window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [ButtonSetTextColor](../../window_api/functions/window_ButtonSetTextColor.md) (HIGH 100/100) - Window Function
 - [ComboBox](element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [ComboBoxAddMenuItem](../../window_api/functions/window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxClearMenuItems](../../window_api/functions/window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetDisabledFlag](../../window_api/functions/window_ComboBoxGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetDisabledFlag](../../window_api/functions/window_ComboBoxSetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](../../window_api/functions/window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [DynamicImage](element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [DynamicImageSetRotation](../../window_api/functions/window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureDimensions](../../window_api/functions/window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureOrientation](../../window_api/functions/window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureScale](../../window_api/functions/window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureSlice](../../window_api/functions/window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
-- [EditBox](element_EditBox.md) (HIGH 100/100) - XML Element Type
+- [EA_Window_ContextMenu.AddCascadingMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddCascadingMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuDivider](../../globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
 - [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [Label](element_Label.md) (HIGH 100/100) - XML Element Type
 - [LabelGetText](../../window_api/functions/window_LabelGetText.md) (HIGH 100/100) - Window Function
 - [LabelGetTextColor](../../window_api/functions/window_LabelGetTextColor.md) (HIGH 100/100) - Window Function
+- [LabelGetTextDimensions](../../window_api/functions/window_LabelGetTextDimensions.md) (HIGH 100/100) - Window Function
 - [LabelGetWordWrap](../../window_api/functions/window_LabelGetWordWrap.md) (HIGH 100/100) - Window Function
 - [LabelSetFont](../../window_api/functions/window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LabelSetTextAlign](../../window_api/functions/window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
 - [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
 - [LabelSetWordWrap](../../window_api/functions/window_LabelSetWordWrap.md) (HIGH 100/100) - Window Function
+- [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [ListBox](element_ListBox.md) (HIGH 100/100) - XML Element Type
+- [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
+- [ScrollWindowSetOffset](../../window_api/functions/window_ScrollWindowSetOffset.md) (HIGH 100/100) - Window Function
+- [ScrollWindowUpdateScrollRect](../../window_api/functions/window_ScrollWindowUpdateScrollRect.md) (HIGH 100/100) - Window Function
+- [Size](element_Size.md) (HIGH 100/100) - XML Element Type
+- [SliderBar](element_SliderBar.md) (HIGH 100/100) - XML Element Type
 - [StatusBarGetCurrentValue](../../window_api/functions/window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
 - [StatusBarSetBackgroundTint](../../window_api/functions/window_StatusBarSetBackgroundTint.md) (HIGH 100/100) - Window Function
 - [StatusBarSetCurrentValue](../../window_api/functions/window_StatusBarSetCurrentValue.md) (HIGH 100/100) - Window Function
 - [StatusBarSetForegroundTint](../../window_api/functions/window_StatusBarSetForegroundTint.md) (HIGH 100/100) - Window Function
 - [StatusBarSetMaximumValue](../../window_api/functions/window_StatusBarSetMaximumValue.md) (HIGH 100/100) - Window Function
 - [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
+- [TextEditBoxSelectAll](../../window_api/functions/window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowAssignFocus](../../window_api/functions/window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
@@ -355,16 +958,21 @@ Confidence: MEDIUM
 - [WindowForceProcessAnchors](../../window_api/functions/window_WindowForceProcessAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetAlpha](../../window_api/functions/window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowGetAnchor](../../window_api/functions/window_WindowGetAnchor.md) (HIGH 100/100) - Window Function
+- [WindowGetAnchorCount](../../window_api/functions/window_WindowGetAnchorCount.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowGetFontAlpha](../../window_api/functions/window_WindowGetFontAlpha.md) (HIGH 100/100) - Window Function
 - [WindowGetHandleInput](../../window_api/functions/window_WindowGetHandleInput.md) (HIGH 100/100) - Window Function
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 - [WindowGetLayer](../../window_api/functions/window_WindowGetLayer.md) (HIGH 100/100) - Window Function
+- [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 100/100) - Window Function
+- [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
 - [WindowGetPopable](../../window_api/functions/window_WindowGetPopable.md) (HIGH 100/100) - Window Function
 - [WindowGetScale](../../window_api/functions/window_WindowGetScale.md) (HIGH 100/100) - Window Function
+- [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowGetTintColor](../../window_api/functions/window_WindowGetTintColor.md) (HIGH 100/100) - Window Function
 - [WindowRegisterCoreEventHandler](../../window_api/functions/window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
+- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](../../window_api/functions/window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetFontAlpha](../../window_api/functions/window_WindowSetFontAlpha.md) (HIGH 100/100) - Window Function
@@ -379,42 +987,64 @@ Confidence: MEDIUM
 - [WindowSetScale](../../window_api/functions/window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [WindowStartAlphaAnimation](../../window_api/functions/window_WindowStartAlphaAnimation.md) (HIGH 100/100) - Window Function
+- [WindowStopAlphaAnimation](../../window_api/functions/window_WindowStopAlphaAnimation.md) (HIGH 100/100) - Window Function
 - [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
-- [ButtonSetTextColor](../../window_api/functions/window_ButtonSetTextColor.md) (HIGH 98/100) - Window Function
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 98/100) - Window Function
-- [ScrollWindow](element_ScrollWindow.md) (HIGH 90/100) - XML Element Type
-- [SliderBar](element_SliderBar.md) (HIGH 90/100) - XML Element Type
-- [StatusBar](element_StatusBar.md) (HIGH 90/100) - XML Element Type
-- [WindowStopAlphaAnimation](../../window_api/functions/window_WindowStopAlphaAnimation.md) (HIGH 90/100) - Window Function
+- [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
+- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 90/100) - Window Function
+- [ButtonSetTexture](../../window_api/functions/window_ButtonSetTexture.md) (HIGH 90/100) - Window Function
+- [ButtonSetTextureSlice](../../window_api/functions/window_ButtonSetTextureSlice.md) (HIGH 90/100) - Window Function
+- [WindowGetMovable](../../window_api/functions/window_WindowGetMovable.md) (HIGH 90/100) - Window Function
+- [WindowRestoreDefaultSettings](../../window_api/functions/window_WindowRestoreDefaultSettings.md) (HIGH 90/100) - Window Function
+- [WindowSetMoving](../../window_api/functions/window_WindowSetMoving.md) (HIGH 90/100) - Window Function
+- [WindowSetResizing](../../window_api/functions/window_WindowSetResizing.md) (HIGH 90/100) - Window Function
+- [WindowUnregisterEventHandler](../../window_api/functions/window_WindowUnregisterEventHandler.md) (HIGH 90/100) - Window Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 80/100) - Window Function
-- [LabelGetTextDimensions](../../window_api/functions/window_LabelGetTextDimensions.md) (HIGH 80/100) - Window Function
-- [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 80/100) - Window Function
+- [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 80/100) - Window Function
+- [ComboBoxExternalOpenMenu](../../window_api/functions/window_ComboBoxExternalOpenMenu.md) (HIGH 80/100) - Window Function
 - [StatusBarGetMaximumValue](../../window_api/functions/window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
-- [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 80/100) - Window Function
+- [TextEditBoxSetMaxChars](../../window_api/functions/window_TextEditBoxSetMaxChars.md) (HIGH 80/100) - Window Function
+- [WindowSetOffsetFromParent](../../window_api/functions/window_WindowSetOffsetFromParent.md) (HIGH 80/100) - Window Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
-- [AnimatedImage](element_AnimatedImage.md) (MEDIUM 45/100) - XML Element Type
+- [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
+- [Visual](element_Visual.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
-- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
+- [ButtonGetPressedFlag](../../window_api/functions/window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
+- [OnInitialize](../handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Event
+- [OnLButtonDown](../handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Event
+- [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 100/100) - XML Event
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
 - [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
 
 ## Triggered By
 
 - [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
+- [OnInitialize](../handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Event
+- [OnKeyEscape](../handlers/handler_OnKeyEscape.md) (HIGH 100/100) - XML Event
+- [OnLButtonDown](../handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnMButtonDown](../handlers/handler_OnMButtonDown.md) (HIGH 100/100) - XML Event
+- [OnMButtonUp](../handlers/handler_OnMButtonUp.md) (HIGH 100/100) - XML Event
+- [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
+- [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 100/100) - XML Event
 - [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Event
+- [OnRButtonDown](../handlers/handler_OnRButtonDown.md) (HIGH 100/100) - XML Event
 - [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
 - [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
-- [OnInitialize](../handlers/handler_OnInitialize.md) (HIGH 73/100) - XML Event
-- [OnMButtonUp](../handlers/handler_OnMButtonUp.md) (HIGH 73/100) - XML Event
-- [OnUpdate](../handlers/handler_OnUpdate.md) (HIGH 73/100) - XML Event
+- [OnShutdown](../handlers/handler_OnShutdown.md) (HIGH 100/100) - XML Event
+- [OnUpdate](../handlers/handler_OnUpdate.md) (HIGH 100/100) - XML Event
+- [OnMouseOut](../handlers/handler_OnMouseOut.md) (HIGH 93/100) - XML Event
+- [OnRawDeviceInput](../handlers/handler_OnRawDeviceInput.md) (HIGH 73/100) - XML Event
+- [OnSizeUpdated](../handlers/handler_OnSizeUpdated.md) (HIGH 73/100) - XML Event
 
 ## Affects
 

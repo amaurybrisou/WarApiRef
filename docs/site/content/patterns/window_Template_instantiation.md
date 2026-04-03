@@ -20,20 +20,20 @@ Observed repeated UI elements being instantiated from XML templates at runtime.
 
 ```text
 OnLButtonUp
-  -> ui: Button, ListBox, Window
+  -> ui: Button, ColorPicker, DynamicImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code
 
 ```lua
-InfoScroller: CreateWindowFromTemplate(WindowName, "InfoScrollerTemplate", "InfoScrollerMainWindow")
+Ace: CreateWindowFromTemplate(w.name, base, w.parent)
 ```
 
 ## Evidence
 
-- InfoScroller: CreateWindowFromTemplate(WindowName, "InfoScrollerTemplate", "InfoScrollerMainWindow")
-- InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
-- InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
-- InfoScroller: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
-- InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
-- InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
+- Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: CreateWindowFromTemplate(w.name, base, w.parent)

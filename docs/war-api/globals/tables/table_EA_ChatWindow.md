@@ -26,16 +26,16 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Lib RuString, LibSkillicon, NPC Item Sale Price, Soloq, TidyChat, TimeToDie, ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1952`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:3343`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:62`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:68`, `/workspace/data/raw/RuStringLib/RuStringLib.lua:233`, `/workspace/data/raw/Soloq/Utils.lua:7`, `/workspace/data/raw/TidyChat/TidyChat.lua:305`, `/workspace/data/raw/TidyChat/TidyChat.lua:489` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AnywhereTrainerAdditions, Aura, BagOMatic, BankArkel, DAoCBuff, Enemy |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APACore.lua:298`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:218`, `/workspace/data/raw/Aura/Source/AuraAddon.lua:469`, `/workspace/data/raw/BankArkel/BankArkel.lua:686`, `/workspace/data/raw/BankArkel/BankArkel.lua:95`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:687`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:772`, `/workspace/data/raw/Enemy/Code/Core/Utils.lua:197` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
-| Example locations | Lib RuString: LibRuString.ToggleHook, NPC Item Sale Price: Nisp.DumpClear, NPC Item Sale Price: Nisp.DumpItem, NPC Item Sale Price: Nisp.Init, NPC Item Sale Price: Nisp.SetItemTooltipData, NPC Item Sale Price: Nisp.SlashHandler |
+| Example locations | AdvancedPetAssist: AdvancedPetAssist.Print, AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink, AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown, Aura: AuraPrint, BagOMatic: BagOMatic.print, BankArkel: BankArkel.Init |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 32 |
-| Global usage count | 4 |
-| Local definition count | 3 |
+| Lua usage count | 142 |
+| Global usage count | 8 |
+| Local definition count | 6 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
@@ -57,10 +57,14 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 7 addons.
+Observed shared global table or namespace surfaced in 21 addons.
 
 ## Functions
 
+- EA_ChatWindow.GetCurrentChannel
+- EA_ChatWindow.InsertItemLink
+- EA_ChatWindow.InsertText
+- EA_ChatWindow.OnKeyEnter
 - EA_ChatWindow.OnSettingsChanged
 - EA_ChatWindow.Print
 - EA_ChatWindow.ShowTabCycleButtons
@@ -72,30 +76,44 @@ Observed shared global table or namespace surfaced in 7 addons.
 
 ## Seen In
 
-- Lib RuString
-- LibSkillicon
-- NPC Item Sale Price
-- Soloq
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AnywhereTrainerAdditions
+- Aura
+- BagOMatic
+- BankArkel
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- LibGuard
+- LibSlash
+- LibWBToggler
+- MiracleGrowLight
+- PlanB
+- RoR_SoR
+- Shinies
+- Swift Assist
 - TidyChat
-- TimeToDie
-- ZCurse_Profiler
+- WSCT
+- WhoHealedMe
 
 ## Examples
 
-- Lib RuString: LibRuString.ToggleHook -> EA_ChatWindow.Print(WRu("RuStringsLib: ýýýýý ýýýýýýýýý ýýýýýýýý ý ýýýý, ýýýýýýýýýýýýý ýýýýýýýýý. ýýý ýýýýý ýýýýýýý ýýýýýýýý '/reloadui'."))
-- NPC Item Sale Price: Nisp.DumpClear -> EA_ChatWindow.Print(L "Dump Table Cleared")
-- NPC Item Sale Price: Nisp.DumpItem -> EA_ChatWindow.Print(L "Dumped item: "..itemData.name)
-- NPC Item Sale Price: Nisp.DumpItem -> EA_ChatWindow.Print(L "Item Dump contains item: "..itemData.name)
-- NPC Item Sale Price: Nisp.Init -> EA_ChatWindow.Print(L "Nisp Installed and Enabled")
-- NPC Item Sale Price: Nisp.Init -> EA_ChatWindow.Print(L "Nisp Initialized and Enabled (/nisp for commands)")
+- AdvancedPetAssist: AdvancedPetAssist.Print -> EA_ChatWindow.Print(L "<icon149> "..msg)
+- AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink -> EA_ChatWindow.InsertText(hl)
+- AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown -> EA_ChatWindow.InsertItemLink(itemData)
+- Aura: AuraPrint -> EA_ChatWindow.Print(towstring(str))
+- BagOMatic: BagOMatic.print -> EA_ChatWindow.Print(L "[BagOMatic] "..towstring(text))
+- BankArkel: BankArkel.Init -> EA_ChatWindow.Print(StringToWString(InitTxt))
 
 ## Related APIs
 
-- none
+- [CreateWindow](../functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
-- none
+- [CreateWindow](../functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

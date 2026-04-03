@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 93/100
-- Seen in: 7 addons
+- Seen in: 31 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Lib RuString, PartyCast, Soloq, TidyChat, TidyRoll, TimeToDie, ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:2134`, `/workspace/data/raw/PartyCast/PartyCast.lua:51`, `/workspace/data/raw/RuStringLib/RuStringLib.lua:300`, `/workspace/data/raw/Soloq/Soloq.lua:22`, `/workspace/data/raw/TidyChat/TidyChat.lua:1175`, `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyChat/TidyChat.lua:676`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoMark, BagOMatic, BankArkel, BuffHead |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/AdvancedPetAssist.lua:92`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:5`, `/workspace/data/raw/Aura/Source/AuraAddon.lua:70`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:33`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:78`, `/workspace/data/raw/BankArkel/BankArkel.lua:95`, `/workspace/data/raw/BuffHead/Core.lua:152`, `/workspace/data/raw/BuffHead/Core.lua:207` |
 | Namespaces detected | RegisterEventHandler |
 | Source kinds | lua_calls |
-| Example locations | Lib RuString: LibRuString.Init, PartyCast: PartyCast.Init, Soloq: Soloq.OnInitialize, TidyChat: TidyChat.Initialize, TidyChat: TidyChatHooks.SetupHooks, TidyChat: TidyChatLogs.Initialize |
+| Example locations | AdvancedPetAssist: AdvancedPetAssist.local.RegisterLoadingEnd, AdvancedPetAssist: RegisterLoadingEnd, AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, AdvancedRenownTrainer: AdvancedRenownTraining.OnReload, AggroMeter: AggroMeter.Initialize, Aura: AuraAddon.OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 61 |
-| Global usage count | 61 |
+| Lua usage count | 214 |
+| Global usage count | 214 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -68,8 +68,8 @@ Observed registering global runtime handlers against shared event identifiers.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| eventId | Observed as a SystemData or runtime event identifier. | Observed values: SystemData.Events.ENTER_WORLD, SystemData.Events.EXIT_GAME, SystemData.Events.INTERACT_COMPLETE_QUEST |
-| handlerName | Observed as a Lua handler function reference. | Observed values: "CurseProfiler.andnot", "CurseProfiler.breakelse", "CurseProfiler.breakfor" |
+| eventId | Observed as a SystemData or runtime event identifier. | Observed values: S.combatLogEventId, SystemData.Events.ALL_MODULES_INITIALIZED, SystemData.Events.AUCTION_INIT_RECEIVED |
+| handlerName | Observed as a Lua handler function reference. | Observed values: "AdvancedRenownTraining.CreateDataTable", "AdvancedRenownTraining.OnReload", "AggroMeter.OnChatLogUpdated" |
 
 ## Returns
 
@@ -81,22 +81,46 @@ Observed registering global runtime handlers against shared event identifiers.
 
 ## Seen In
 
-- Lib RuString
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
+- AutoMark
+- BagOMatic
+- BankArkel
+- BuffHead
+- CM_ClosetGoblin
+- CombatTextNames
+- DAoCBuff
+- Enemy
+- Killer
+- LibGuard
+- LibWBToggler
+- MiracleGrowLight
 - PartyCast
-- Soloq
+- PlanB
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- TimeToDie
-- ZCurse_Profiler
+- TurretRange
+- WSCT
+- WarBoard
+- WhoHealedMe
+- WoH-Reticle
+- followTheLeader
 
 ## Examples
 
-- Lib RuString: LibRuString.Init -> RegisterEventHandler(SystemData.Events.LOADING_END, "LibRuString.OnLoad")
-- Lib RuString: LibRuString.Init -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "LibRuString.OnLoad")
-- PartyCast: PartyCast.Init -> RegisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
-- PartyCast: PartyCast.Init -> RegisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
-- PartyCast: PartyCast.Init -> RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, "PartyCast.StartCast")
-- PartyCast: PartyCast.Init -> RegisterEventHandler(SystemData.Events.PLAYER_END_CAST, "PartyCast.EndCast")
+- AdvancedPetAssist: AdvancedPetAssist.local.RegisterLoadingEnd -> RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+- AdvancedPetAssist: RegisterLoadingEnd -> RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+- AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -> RegisterEventHandler(SystemData.Events.LOADING_END, "AdvancedRenownTraining.OnReload")
+- AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -> RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
+- AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "AdvancedRenownTraining.OnReload")
+- AdvancedRenownTrainer: AdvancedRenownTraining.OnReload -> RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
 
 ## Related APIs
 
@@ -104,26 +128,28 @@ Observed registering global runtime handlers against shared event identifiers.
 
 ## Used With
 
+- [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
+- [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Event
+- [OnInitialize](../../events/window_events/window_event_OnInitialize.md) (HIGH 100/100) - Window Event
+- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
 
 ## Affects
 
-- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
+- [EA_Window_InteractionRenownTraining.Hide](global_EA_Window_InteractionRenownTraining.Hide.md) (HIGH 100/100) - Global Function
+- [EA_Window_InteractionRenownTraining.Show](global_EA_Window_InteractionRenownTraining.Show.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_BEGIN_CAST](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CAST_TIMER_SETBACK](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_DEATH](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_END_CAST](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_END_CAST.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_START_INTERACT_TIMER](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_START_INTERACT_TIMER.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

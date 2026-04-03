@@ -2,33 +2,37 @@
 
 - Category: Constant
 - Confidence level: HIGH
-- Confidence score: 90/100
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Raw weighted score: 135
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:56` |
+| Addons seen in | AggroMeter, Aura, BankArkel, BuffHead, LibGroup, Pocket Palette, Shinies, TexturedButtons |
+| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/AuraColorPicker.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/AuraTexture.xml:0`, `/workspace/data/raw/BankArkel/BankArkel.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0` |
 | Namespaces detected | EA_Window_DefaultBackgroundFrame |
 | Source kinds | xml_attributes |
-| Example locations | TidyChatLootRollBackground |
-| XML usage count | 1 |
-| XML attribute usage count | 1 |
+| Example locations | AggroMeterGrayWindowBackground, AuraColorPickerBackground, AuraConfigBackground, AuraSettingsBackground, AuraSharesBackground, AuraSharesImportExportBackground |
+| XML usage count | 53 |
+| XML attribute usage count | 53 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -53,15 +57,78 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 1 addons.
+Observed engine XML template or inherited constant referenced by 12 addons.
 
 ## Seen In
 
+- AggroMeter
+- Aura
+- BankArkel
+- BuffHead
+- LibGroup
+- Pocket Palette
+- Shinies
+- TexturedButtons
 - TidyChat
+- TurretRange
+- WarBoard
+- bigger_MacroWindow
 
 ## Used By
 
+- AggroMeterGrayWindowBackground
+- AuraColorPickerBackground
+- AuraConfigBackground
+- AuraSettingsBackground
+- AuraSharesBackground
+- AuraSharesImportExportBackground
+- AuraTextureBackground
+- BankArkelBackpackComboFrame
+- BuffHeadSetupAdvancedCompressionItemEffectWindowBackground
+- BuffHeadSetupAdvancedCompressionItemWindowBackground
+- BuffHeadSetupAdvancedCompressionWindowBackground
+- BuffHeadSetupAdvancedContainersItemPropertiesWindowBackground
+- BuffHeadSetupAdvancedContainersItemWindowBackground
+- BuffHeadSetupAdvancedContainersWindowBackground
+- BuffHeadSetupContainerWindowBackground
+- BuffHeadSetupDisplayWindowBackground
+- BuffHeadSetupEffectCacheTableWindowBackground
+- BuffHeadSetupEffectCacheWindowBackground
+- BuffHeadSetupFilterWindowBackground
+- BuffHeadSetupGeneralWindowBackground
+- BuffHeadSetupLayoutManagerWindowBackground
+- BuffHeadSetupLayoutPropertiesWindowBackground
+- BuffHeadSetupLayoutWindowBackground
+- BuffHeadSetupMenuWindowBackground
+- BuffHeadSetupPerformanceWindowBackground
+- BuffHeadSetupPriorityEffectsItemWindowBackground
+- BuffHeadSetupPriorityEffectsWindowBackground
+- BuffHeadSetupTrackersWindowBackground
+- DyeWindowBackground
+- EA_Window_MacroBackground
+- ItemWindowBackground
+- LibGroupSetupWindowBackground
+- MacroIconSelectionWindowBackground
+- PackWinBackground
+- ShiniesBrowseUI_SearchesBackground
+- ShiniesWindowBackground
+- TexturedButtonsSetupActionbarWindowBackground
+- TexturedButtonsSetupAdvancedTexturesWindowBackground
+- TexturedButtonsSetupCooldownWindowBackground
+- TexturedButtonsSetupFontsWindowBackground
+- TexturedButtonsSetupMenuWindowBackground
+- TexturedButtonsSetupMiscWindowBackground
+- TexturedButtonsSetupTexturesWindowBackground
+- TexturedButtonsSetupTintWindowBackground
 - TidyChatLootRollBackground
+- TurretRangeBoxBackground
+- TurretRangeSetupDisplayWindowBackground
+- TurretRangeSetupDistanceWindowBackground
+- TurretRangeSetupDistancesWindowBackground
+- TurretRangeSetupGeneralWindowBackground
+- TurretRangeSetupMenuWindowBackground
+- WarBoardAlignOptionsWindowBackground
+- WarBoardOptionsBackground
 
 ## Related APIs
 

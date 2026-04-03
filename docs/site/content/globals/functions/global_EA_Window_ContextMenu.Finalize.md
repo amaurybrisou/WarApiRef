@@ -2,36 +2,41 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 80/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 13 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 80/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Raw weighted score: 110
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:716` |
+| Addons seen in | AggroMeter, BuffHead, CM_ClosetGoblin, Enemy, Killer, MoraleCircle, PotionBar, RoR_SoR |
+| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.lua:251`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:378`, `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:72`, `/workspace/data/raw/BuffHead/Setup/SelectFont.lua:76`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.lua:130`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.lua:217`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.lua:439`, `/workspace/data/raw/BuffHead/Setup/SetupEffectCache.lua:195` |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChatHooks.CreateDefaultContextMenuHook |
+| Example locations | AggroMeter: AggroMeter.OnTabRBU, AggroMeter: AggroMeter.PickedListMenu, BuffHead: BuffHead.Setup.AdvancedContainersItem.OnContainerRClick, BuffHead: BuffHead.Setup.EffectCache.CreateContextMenu, BuffHead: BuffHead.Setup.Filter.CreateContextMenu, BuffHead: BuffHead.Setup.LayoutControlFrame:CreateContextMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 41 |
+| Global usage count | 41 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -39,14 +44,14 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | no |
+| Conflicting signatures | yes |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -60,7 +65,7 @@ EA_Window_ContextMenu.Finalize()
 
 ## Description
 
-Observed as a global function across 1 addons.
+Observed as a global function across 13 addons.
 
 ## Parameters
 
@@ -77,11 +82,28 @@ Observed as a global function across 1 addons.
 
 ## Seen In
 
+- AggroMeter
+- BuffHead
+- CM_ClosetGoblin
+- Enemy
+- Killer
+- MoraleCircle
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
+- TurretRange
+- WarBoard
 
 ## Examples
 
-- TidyChat: TidyChatHooks.CreateDefaultContextMenuHook -> EA_Window_ContextMenu.Finalize()
+- AggroMeter: AggroMeter.OnTabRBU -> EA_Window_ContextMenu.Finalize()
+- AggroMeter: AggroMeter.PickedListMenu -> EA_Window_ContextMenu.Finalize()
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.OnContainerRClick -> EA_Window_ContextMenu.Finalize()
+- BuffHead: BuffHead.Setup.EffectCache.CreateContextMenu -> EA_Window_ContextMenu.Finalize()
+- BuffHead: BuffHead.Setup.Filter.CreateContextMenu -> EA_Window_ContextMenu.Finalize()
+- BuffHead: BuffHead.Setup.LayoutControlFrame:CreateContextMenu -> EA_Window_ContextMenu.Finalize()
 
 ## Related APIs
 
@@ -89,17 +111,29 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- none
+- [EA_Window_ContextMenu.AddCascadingMenuItem](global_EA_Window_ContextMenu.AddCascadingMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuDivider](global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuItem](global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.CreateContextMenu](global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [EA_Window_ContextMenu.AddUserDefinedMenuItem](global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 90/100) - Global Function
 
 ## Triggered By
 
-- none
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
+- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
-- none
+- [DynamicImage](../../xml/element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
+- [ListBox](../../xml/element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.

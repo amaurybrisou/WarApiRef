@@ -2,33 +2,37 @@
 
 - Category: Constant
 - Confidence level: HIGH
-- Confidence score: 90/100
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Raw weighted score: 135
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChatCopy.xml:38` |
+| Addons seen in | BuffHead, Enemy, TidyChat, bigger_MacroWindow |
+| Files seen in | `/workspace/data/raw/BuffHead/Setup/SetupEffectCacheTable.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutManager.xml:0`, `/workspace/data/raw/Enemy/Code/Core/Common.xml:0`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:0`, `/workspace/data/raw/bigger_macrowindow/Source/MacroWindow.xml:0` |
 | Namespaces detected | EA_EditBox_DefaultFrame_Multiline |
 | Source kinds | xml_attributes |
-| Example locations | TidyChatCopyLog |
-| XML usage count | 1 |
-| XML attribute usage count | 1 |
+| Example locations | BuffHeadSetupEffectCacheTableWindowTableEditBox, BuffHeadSetupLayoutManagerWindowElementExportEditBox, BuffHeadSetupLayoutManagerWindowElementImportEditBox, EA_Window_MacroDetailsText, EnemyTextEntryDialogValue, TidyChatCopyLog |
+| XML usage count | 6 |
+| XML attribute usage count | 6 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -53,14 +57,22 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 1 addons.
+Observed engine XML template or inherited constant referenced by 4 addons.
 
 ## Seen In
 
+- BuffHead
+- Enemy
 - TidyChat
+- bigger_MacroWindow
 
 ## Used By
 
+- BuffHeadSetupEffectCacheTableWindowTableEditBox
+- BuffHeadSetupLayoutManagerWindowElementExportEditBox
+- BuffHeadSetupLayoutManagerWindowElementImportEditBox
+- EA_Window_MacroDetailsText
+- EnemyTextEntryDialogValue
 - TidyChatCopyLog
 
 ## Related APIs

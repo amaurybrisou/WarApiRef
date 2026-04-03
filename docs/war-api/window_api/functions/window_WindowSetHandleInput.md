@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:104`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:89`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:94`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:104`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:89`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:94`, `/workspace/data/raw/TidyChat/TidyChat.lua:1089`, `/workspace/data/raw/TidyChat/TidyChat.lua:239` |
+| Addons seen in | Ace, BuffHead, DAoCBuff, Enemy, LibWBToggler, PartyCast, Shinies, TidyChat |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:104`, `/workspace/data/raw/Ace/LibGUI.lua:89`, `/workspace/data/raw/Ace/LibGUI.lua:94`, `/workspace/data/raw/BuffHead/EffectContainer.lua:75`, `/workspace/data/raw/BuffHead/EffectFrame.lua:309`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:161`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:169` |
 | Namespaces detected | WindowSetHandleInput |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:CaptureInput, InfoScroller: LIBGUI_ELEMENT:IgnoreInput, InfoScroller: LIBGUI_ELEMENT:MakeMovable, PartyCast: LIBGUI_ELEMENT:CaptureInput, PartyCast: LIBGUI_ELEMENT:IgnoreInput, PartyCast: LIBGUI_ELEMENT:MakeMovable |
+| Example locations | Ace: LIBGUI_ELEMENT:CaptureInput, Ace: LIBGUI_ELEMENT:IgnoreInput, Ace: LIBGUI_ELEMENT:MakeMovable, BuffHead: BuffHeadEffectContainer:Create, BuffHead: BuffHeadEffectFrame:Create, DAoCBuff: DAoCBuffSettings.CreateOptionswindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 46 |
+| Global usage count | 46 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: c_TEXT_ENTRY_WINDOW, c_TIDY_ROLL_OPTIONS.."Background", c_TIDY_ROLL_OPTIONS.."Frame" |
-| arg2 | Observed as a boolean toggle. | Observed values: chatwindow_tabs_handle_input~=false, false, not chatwindow_click_through |
+| windowName | Observed as a target window name. | Observed values: "DAoCBuff_Settings", "EnemyGuardDistanceIndicator", "EnemyTarget" |
+| arg2 | Observed as a boolean toggle. | Observed values: (handleInput==true), chatwindow_tabs_handle_input~=false, false |
 
 ## Returns
 
@@ -84,19 +84,25 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- BuffHead
+- DAoCBuff
+- Enemy
+- LibWBToggler
 - PartyCast
+- Shinies
 - TidyChat
 - TidyRoll
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:CaptureInput -> WindowSetHandleInput(self.name, true)
-- InfoScroller: LIBGUI_ELEMENT:IgnoreInput -> WindowSetHandleInput(self.name, false)
-- InfoScroller: LIBGUI_ELEMENT:MakeMovable -> WindowSetHandleInput(self.name, true)
-- PartyCast: LIBGUI_ELEMENT:CaptureInput -> WindowSetHandleInput(self.name, true)
-- PartyCast: LIBGUI_ELEMENT:IgnoreInput -> WindowSetHandleInput(self.name, false)
-- PartyCast: LIBGUI_ELEMENT:MakeMovable -> WindowSetHandleInput(self.name, true)
+- Ace: LIBGUI_ELEMENT:CaptureInput -> WindowSetHandleInput(self.name, true)
+- Ace: LIBGUI_ELEMENT:IgnoreInput -> WindowSetHandleInput(self.name, false)
+- Ace: LIBGUI_ELEMENT:MakeMovable -> WindowSetHandleInput(self.name, true)
+- BuffHead: BuffHeadEffectContainer:Create -> WindowSetHandleInput(frame:GetName(), true)
+- BuffHead: BuffHeadEffectFrame:Create -> WindowSetHandleInput(frameName, (handleInput==true))
+- BuffHead: BuffHeadEffectFrame:Create -> WindowSetHandleInput(frame:GetName(), (handleInput==true))
 
 ## Related APIs
 
@@ -104,8 +110,7 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowGetHandleInput](window_WindowGetHandleInput.md) (HIGH 100/100) - Window Function
 - [WindowSetMovable](window_WindowSetMovable.md) (HIGH 100/100) - Window Function
 
 ## Triggered By

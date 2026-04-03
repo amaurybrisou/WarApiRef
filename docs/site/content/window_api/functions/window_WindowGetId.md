@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 21 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:269`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:269`, `/workspace/data/raw/TidyChat/TidyChat.lua:1074`, `/workspace/data/raw/TidyChat/TidyChat.lua:2094`, `/workspace/data/raw/TidyChat/TidyChat.lua:2210`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:378`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:387`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:847` |
+| Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, Aura, BagOMatic, BankArkel, BuffHead, CM_ClosetGoblin |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:269`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:378`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:426`, `/workspace/data/raw/Aura/Source/AuraShares.lua:257`, `/workspace/data/raw/Aura/Source/AuraShares.lua:297`, `/workspace/data/raw/Aura/Source/AuraTexture.lua:195`, `/workspace/data/raw/Aura/Source/AuraTexture.lua:65`, `/workspace/data/raw/BankArkel/BankArkel.lua:153` |
 | Namespaces detected | WindowGetId |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:GetId, PartyCast: LIBGUI_ELEMENT:GetId, TidyChat: TidyChat.Copy.OnCopyButton, TidyChat: TidyChat.Options.OnTabLBU, TidyChat: TidyChatFrames.OnToBottomButton, TidyRoll: TidyRoll.CustomAutoRoll.OnChoiceChange |
+| Example locations | Ace: LIBGUI_ELEMENT:GetId, AdvancedRenownTrainer: AdvancedRenownTraining.AbilityTooltip, AdvancedRenownTrainer: AdvancedRenownTraining.OnLButtonUpTab, AdvancedRenownTrainer: AdvancedRenownTraining.Select, AggroMeter: AggroMeter.OnTabLBU, AggroMeter: AggroMeter.PickedListMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 100 |
+| Global usage count | 100 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: EA_Window_ContextMenu.activeWindow, SystemData.ActiveWindow.name, buttonName |
+| windowName | Observed as a target window name. | Observed values: EA_Window_ContextMenu.activeWindow, SystemData.ActiveWindow.name, SystemData.MouseOverWindow.name |
 
 ## Returns
 
@@ -83,20 +83,36 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
+- BagOMatic
+- BankArkel
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
 - PartyCast
+- Pocket Palette
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- minesweep
+- TurretRange
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:GetId -> WindowGetId(self.name)
-- PartyCast: LIBGUI_ELEMENT:GetId -> WindowGetId(self.name)
-- TidyChat: TidyChat.Copy.OnCopyButton -> WindowGetId(EA_Window_ContextMenu.activeWindow)
-- TidyChat: TidyChat.Options.OnTabLBU -> WindowGetId(SystemData.ActiveWindow.name)
-- TidyChat: TidyChatFrames.OnToBottomButton -> WindowGetId(EA_Window_ContextMenu.activeWindow)
-- TidyRoll: TidyRoll.CustomAutoRoll.OnChoiceChange -> WindowGetId(SystemData.ActiveWindow.name)
+- Ace: LIBGUI_ELEMENT:GetId -> WindowGetId(self.name)
+- AdvancedRenownTrainer: AdvancedRenownTraining.AbilityTooltip -> WindowGetId(SystemData.MouseOverWindow.name)
+- AdvancedRenownTrainer: AdvancedRenownTraining.OnLButtonUpTab -> WindowGetId(SystemData.ActiveWindow.name)
+- AdvancedRenownTrainer: AdvancedRenownTraining.Select -> WindowGetId(activeWindow)
+- AggroMeter: AggroMeter.OnTabLBU -> WindowGetId(SystemData.ActiveWindow.name)
+- AggroMeter: AggroMeter.PickedListMenu -> WindowGetId(SystemData.MouseOverWindow.name)
 
 ## Related APIs
 
@@ -108,16 +124,21 @@ Observed querying runtime window state or metadata.
 
 ## Triggered By
 
+- [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
+- [OnLButtonDown](../../events/window_events/window_event_OnLButtonDown.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnSelChanged](../../xml/handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Event
-- [OnSelChanged](../../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
+- [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
+- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
+- [ListBox](../../xml/element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

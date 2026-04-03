@@ -68,17 +68,11 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 
 ## Related APIs
 
-- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
-- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (HIGH 81/100) - Global Function
+- none
 
 ## Used With
 
-- [SystemData.Events.ENTER_WORLD](systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERFACE_RELOADED](systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_BEGIN_CAST](systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_DEATH](systemdata_SystemData.Events.PLAYER_DEATH.md) (HIGH 100/100) - SystemData Field
+- none
 
 ## Triggered By
 

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 83/100
-- Seen in: 5 addons
+- Seen in: 21 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Soloq, TidyChat, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/Soloq/ui/Overview.lua:24`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:265`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:853`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:865`, `/workspace/data/raw/minesweep/minesweep.lua:11` |
+| Addons seen in | AdvancedPetAssist, AggroMeter, Aura, BagOMatic, CM_ClosetGoblin, DAoCBuff, Enemy, GuardLine |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:1063`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:546`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:683`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:704`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:983`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:138`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:147` |
 | Namespaces detected | DoesWindowExist |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.CreateCard, Soloq: Soloq.createOverwiewWindow, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRoll.OnLoad, TidyRoll: TidyRollOptions.RadioGetId, TidyRoll: TidyRollOptions.RadioSetId |
+| Example locations | AdvancedPetAssist: APAGui.ApplyKitingHUDColorOff, AdvancedPetAssist: APAGui.ApplyKitingHUDColorOn, AdvancedPetAssist: APAGui.ApplyPTColor, AdvancedPetAssist: APAGui.ApplyPetTargetHUDLayout, AdvancedPetAssist: APAGui.HidePetTargetHUD, AdvancedPetAssist: APAGui.InitHUDEditBoxes |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 219 |
+| Global usage count | 219 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -68,7 +68,7 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "EA_Window_LootRoll", "InfoScroller_"..i, "MineSweepWindow" |
+| windowName | Observed as a target window name. | Observed values: "APAEditHUDOnR", "APAEditKitingHUDOffR", "APAEditKitingHUDOnR" |
 
 ## Returns
 
@@ -80,20 +80,36 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 
 ## Seen In
 
-- InfoScroller
-- Soloq
+- AdvancedPetAssist
+- AggroMeter
+- Aura
+- BagOMatic
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- LibSlash
+- MoraleCircle
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- minesweep
+- TurretRange
+- WSCT
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: InfoScroller.CreateCard -> DoesWindowExist("InfoScroller_"..i)
-- Soloq: Soloq.createOverwiewWindow -> DoesWindowExist(overviewWindowName)
-- TidyChat: TidyChatFrames.Initialize -> DoesWindowExist(c_TEXT_ENTRY_WINDOW.."EntryBoxLanguageButton")
-- TidyRoll: TidyRoll.OnLoad -> DoesWindowExist("EA_Window_LootRoll")
-- TidyRoll: TidyRollOptions.RadioGetId -> DoesWindowExist(radioGroupName..index)
-- TidyRoll: TidyRollOptions.RadioSetId -> DoesWindowExist(radioGroupName..index)
+- AdvancedPetAssist: APAGui.ApplyKitingHUDColorOff -> DoesWindowExist("APAEditKitingHUDOffR")
+- AdvancedPetAssist: APAGui.ApplyKitingHUDColorOn -> DoesWindowExist("APAEditKitingHUDOnR")
+- AdvancedPetAssist: APAGui.ApplyPTColor -> DoesWindowExist("APAEditPTR")
+- AdvancedPetAssist: APAGui.ApplyPetTargetHUDLayout -> DoesWindowExist("APAPetTargetHUD")
+- AdvancedPetAssist: APAGui.HidePetTargetHUD -> DoesWindowExist("APAPetTargetHUD")
+- AdvancedPetAssist: APAGui.InitHUDEditBoxes -> DoesWindowExist("APAEditHUDOnR")
 
 ## Related APIs
 
@@ -101,27 +117,30 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 
 ## Used With
 
-- [DynamicImageSetTextureOrientation](../../window_api/functions/window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureScale](../../window_api/functions/window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
-- [InterfaceCore.GetScale](global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- [SystemData.Events.AUCTION_BID_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.AUCTION_INIT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_INIT_RECEIVED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](../../systemdata/fields/systemdata_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
-- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
+- [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 - [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [CreateWindowFromTemplate](global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
+- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
-- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
+- none
 
 ## Affects
 
-- [InterfaceCore.GetScale](global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

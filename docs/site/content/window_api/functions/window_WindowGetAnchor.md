@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:172`, `/workspace/data/raw/Moth/Moth.lua:575`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:172` |
+| Addons seen in | Ace, BuffHead, LibWBToggler, PartyCast, Pocket Palette, Shinies, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:172`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:172`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:172`, `/workspace/data/raw/PocketPalette/PocketPalette.lua:152`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:172`, `/workspace/data/raw/Shinies/Modules/Aggregator/Shinies-Aggregator-Tooltip.lua:452`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:172` |
 | Namespaces detected | WindowGetAnchor |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:GetPosition, Moth: Moth.HealthBar, PartyCast: LIBGUI_ELEMENT:GetPosition |
+| Example locations | Ace: LIBGUI_ELEMENT:GetPosition, BuffHead: BuffHead.Setup.LayoutFrame:UpdatePosition, LibWBToggler: LIBGUI_ELEMENT:GetPosition, PartyCast: LIBGUI_ELEMENT:GetPosition, Pocket Palette: PP.CreateWindow, Shinies: LIBGUI_ELEMENT:GetPosition |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "MothHealthBar", self.name |
+| windowName | Observed as a target window name. | Observed values: PP.settings.windows["main"].name, self.name, self:GetName() |
 | arg2 | Observed as a numeric value. | Observed values: 1 |
 
 ## Returns
@@ -84,15 +84,22 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- Ace
+- BuffHead
+- LibWBToggler
 - PartyCast
+- Pocket Palette
+- Shinies
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
-- Moth: Moth.HealthBar -> WindowGetAnchor("MothHealthBar", 1)
+- Ace: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
+- BuffHead: BuffHead.Setup.LayoutFrame:UpdatePosition -> WindowGetAnchor(self:GetName(), 1)
+- LibWBToggler: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
 - PartyCast: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
+- Pocket Palette: PP.CreateWindow -> WindowGetAnchor(PP.settings.windows["main"].name, 1)
+- Shinies: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
 
 ## Related APIs
 
@@ -108,6 +115,7 @@ Observed querying runtime window state or metadata.
 
 ## Affects
 
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

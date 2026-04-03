@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 6 addons
+- Seen in: 22 addons
 
 ## Confidence Assessment
 
@@ -24,15 +24,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, Soloq, TidyChat, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:30`, `/workspace/data/raw/Moth/Moth.lua:713`, `/workspace/data/raw/Soloq/ui/Overview.lua:24`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136`, `/workspace/data/raw/minesweep/minesweep.lua:11` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoMark, BagOMatic, BankArkel, CM_ClosetGoblin |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:1063`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:5`, `/workspace/data/raw/Aura/Source/AuraTooltip.lua:21`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:33`, `/workspace/data/raw/BankArkel/BankArkel.lua:172`, `/workspace/data/raw/BankArkel/BankArkel.lua:95`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.lua:87`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:752` |
 | Namespaces detected | CreateWindow |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.OnInitialize, Moth: Moth.Initialize, Soloq: Soloq.createOverwiewWindow, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRoll.CustomAutoRoll.Initialize, TidyRoll: TidyRoll.Initialize |
+| Example locations | AdvancedPetAssist: APAGui.Show, AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, AdvancedRenownTrainer: AdvancedRenownTraining.InitializeImportExport, AggroMeter: AggroMeter.Initialize, Aura: AuraTooltip.OnInitialize, AutoMark: AutoMark.OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 87 |
+| Global usage count | 87 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -67,7 +67,7 @@ Observed creating a top-level XML window from a loaded definition.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a top-level window name. | Observed values: "InfoScrollerMainWindow", "MineSweepWindow", "Moth" |
+| windowName | Observed as a top-level window name. | Observed values: "APAOptions", "AdvancedRenownTrainingPresetsWindow", "AggroMeterGrayWindow" |
 | showOnCreate | Observed as a boolean visibility flag. | Observed values: false, true |
 
 ## Returns
@@ -80,21 +80,37 @@ Observed creating a top-level XML window from a loaded definition.
 
 ## Seen In
 
-- InfoScroller
-- Moth
-- Soloq
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
+- AutoMark
+- BagOMatic
+- BankArkel
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- MiracleGrowLight
+- MoraleCircle
+- PotionBar
+- RoR_SoR
+- Shinies
+- Swift Assist
 - TidyChat
 - TidyRoll
-- minesweep
+- WSCT
+- followTheLeader
 
 ## Examples
 
-- InfoScroller: InfoScroller.OnInitialize -> CreateWindow("InfoScrollerMainWindow", true)
-- Moth: Moth.Initialize -> CreateWindow("Moth", true)
-- Soloq: Soloq.createOverwiewWindow -> CreateWindow(overviewWindowName, false)
-- TidyChat: TidyChatFrames.Initialize -> CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
-- TidyRoll: TidyRoll.CustomAutoRoll.Initialize -> CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
-- TidyRoll: TidyRoll.Initialize -> CreateWindow(c_TIDY_ROLL_ANCHOR, false)
+- AdvancedPetAssist: APAGui.Show -> CreateWindow("APAOptions", true)
+- AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -> CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
+- AdvancedRenownTrainer: AdvancedRenownTraining.InitializeImportExport -> CreateWindow(ImportWindowName, false)
+- AdvancedRenownTrainer: AdvancedRenownTraining.InitializeImportExport -> CreateWindow(ImportNameInputWindowName, false)
+- AdvancedRenownTrainer: AdvancedRenownTraining.InitializeImportExport -> CreateWindow(ExportWindowName, false)
+- AdvancedRenownTrainer: AdvancedRenownTraining.InitializeImportExport -> CreateWindow(LinkWindowName, false)
 
 ## Related APIs
 
@@ -103,27 +119,36 @@ Observed creating a top-level XML window from a loaded definition.
 ## Used With
 
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxAddMenuItem](../../window_api/functions/window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxClearMenuItems](../../window_api/functions/window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
-- [LabelSetFont](../../window_api/functions/window_LabelSetFont.md) (HIGH 100/100) - Window Function
+- [ComboBoxSetSelectedMenuItem](../../window_api/functions/window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [EA_ChatWindow](../tables/table_EA_ChatWindow.md) (HIGH 100/100) - Global Table
+- [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
+- [EA_Window_InteractionRenownTraining.Hide](global_EA_Window_InteractionRenownTraining.Hide.md) (HIGH 100/100) - Global Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
+- [OnInitialize](../../events/window_events/window_event_OnInitialize.md) (HIGH 100/100) - Window Event
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- [RegisterEventHandler](global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
 - [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [CreateWindowFromTemplate](global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Event
+- [OnInitialize](../../events/window_events/window_event_OnInitialize.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
-- [SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md) (HIGH 100/100) - SystemData Field
+- [EA_ChatWindow](../tables/table_EA_ChatWindow.md) (HIGH 100/100) - Global Table
+- [EA_Window_InteractionRenownTraining.Hide](global_EA_Window_InteractionRenownTraining.Hide.md) (HIGH 100/100) - Global Function
+- [EA_Window_InteractionRenownTraining.Show](global_EA_Window_InteractionRenownTraining.Show.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

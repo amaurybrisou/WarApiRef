@@ -9,21 +9,26 @@ Observed triggering a runtime event so existing handlers are notified.
 
 ## Involved APIs
 
-- [SystemData.Events.RELOAD_INTERFACE](../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.RELOAD_INTERFACE](../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS](../systemdata/fields/systemdata_SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS](../systemdata/fields/systemdata_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS](../events/game_events/game_event_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - Game Event
 
 ## Flow Diagram
 
 ```text
-Label <-> OnHyperLinkRButtonUp
+OnLButtonUp
+  -> ui: Button, ColorPicker, DynamicImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code
 
 ```lua
-Lib RuString: BroadcastEvent(SystemData.Events.RELOAD_INTERFACE)
+Enemy: BroadcastEvent(custom_target_event)
 ```
 
 ## Evidence
 
-- Lib RuString: BroadcastEvent(SystemData.Events.RELOAD_INTERFACE)
+- Enemy: BroadcastEvent(custom_target_event)
+- Enemy: BroadcastEvent(SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS)
+- Enemy: BroadcastEvent(SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS)
+- Enemy: BroadcastEvent(SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS)

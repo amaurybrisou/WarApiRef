@@ -30,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TimeToDie, ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:2134`, `/workspace/data/raw/TimeToDie/TimeToDie.lua:244` |
+| Addons seen in | CombatTextNames, WSCT |
+| Files seen in | `/workspace/data/raw/combattextnames/cmd.lua:55`, `/workspace/data/raw/wsct/wsct.lua:117`, `/workspace/data/raw/wsct/wsct.lua:137` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | TimeToDie: TimeToDie.Initialize, ZCurse_Profiler: CurseProfiler.Initialize |
+| Example locations | CombatTextNames: CombatTextNames.Enable, WSCT: WSCT:RegisterSelfEvents, WSCT: WSCT:UnregisterSelfEvents |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 1 |
+| Initialization flow references | 2 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -73,22 +73,24 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Seen In
 
-- TimeToDie
-- ZCurse_Profiler
+- CombatTextNames
+- WSCT
 
 ## Registrars And Handlers
 
-- CurseProfiler.orif
+- EA_System_EventText.AddCombatEventText
 - RegisterEventHandler
-- TimeToDie.CombatEvent
+- WSCT.OnCombatEvent
 - global
 
 ## Examples
 
-- TimeToDie: TimeToDie.Initialize -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> TimeToDie.CombatEvent
-- ZCurse_Profiler: CurseProfiler.Initialize -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> CurseProfiler.orif
-- TimeToDie: TimeToDie.CombatEvent -> RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, TimeToDie.CombatEvent)
-- ZCurse_Profiler: CurseProfiler.orif -> RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, CurseProfiler.orif)
+- CombatTextNames: CombatTextNames.Enable -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> EA_System_EventText.AddCombatEventText
+- WSCT: WSCT:RegisterSelfEvents -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> WSCT.OnCombatEvent
+- WSCT: WSCT:UnregisterSelfEvents -> SystemData.Events.WORLD_OBJ_COMBAT_EVENT -> EA_System_EventText.AddCombatEventText
+- CombatTextNames: EA_System_EventText.AddCombatEventText -> RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, EA_System_EventText.AddCombatEventText)
+- WSCT: EA_System_EventText.AddCombatEventText -> RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, EA_System_EventText.AddCombatEventText)
+- WSCT: WSCT.OnCombatEvent -> RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, WSCT.OnCombatEvent)
 
 ## Related APIs
 

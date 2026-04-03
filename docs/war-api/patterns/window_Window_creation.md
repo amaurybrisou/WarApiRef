@@ -16,20 +16,20 @@ Observed top-level UI windows being created from XML definitions at initializati
 
 ```text
 OnLButtonUp
-  -> ui: Button, ListBox, Window
+  -> ui: Button, ColorPicker, DynamicImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code
 
 ```lua
-InfoScroller: CreateWindow("InfoScrollerMainWindow", true)
+AdvancedPetAssist: CreateWindow("APAOptions", true)
 ```
 
 ## Evidence
 
-- InfoScroller: CreateWindow("InfoScrollerMainWindow", true)
-- Moth: CreateWindow("Moth", true)
-- Soloq: CreateWindow(overviewWindowName, false)
-- TidyChat: CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
-- TidyRoll: CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
-- TidyRoll: CreateWindow(c_TIDY_ROLL_ANCHOR, false)
+- AdvancedPetAssist: CreateWindow("APAOptions", true)
+- AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
+- AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
+- AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
+- AdvancedRenownTrainer: CreateWindow(ExportWindowName, false)
+- AdvancedRenownTrainer: CreateWindow(LinkWindowName, false)

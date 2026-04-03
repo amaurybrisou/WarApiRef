@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -11,16 +11,19 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 143
+- Raw weighted score: 198
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 - +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
@@ -28,23 +31,23 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:2134` |
+| Addons seen in | CM_ClosetGoblin, CM_ClosetGoblin, Enemy, Killer, LibWBToggler, Shinies, Enemy, Killer, LibWBToggler |
+| Files seen in | `/workspace/data/raw/ClosetGoblin/ClosetGoblin.lua:1300`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.lua:1409`, `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcons.lua:62`, `/workspace/data/raw/Enemy/Code/TalismanAlerter/TalismanAlerter.lua:37`, `/workspace/data/raw/Killer/KillerLifecycle.lua:100`, `/workspace/data/raw/Killer/KillerLifecycle.lua:4`, `/workspace/data/raw/LibWarBoardToggler/LibWBTogglerManager.lua:12` |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, lua_call |
-| Example locations | CurseProfiler.Initialize, CurseProfiler.falsedo, SystemData.Events.PLAYER_ZONE_CHANGED, event_page, event_registration, lua_call |
+| Source kinds | event_page, event_registration, flow, lua_call |
+| Example locations | ClosetGoblin.PlayerZoneChanged, ClosetGoblin.ZoneChangeInit, ClosetGoblin.ZoneChangeShutdown, Enemy.GroupIcons_OnPlayerZoneChanged, Enemy.GroupsCheckTarget, Enemy.GroupsInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 20 |
+| Global usage count | 20 |
 | Local definition count | 0 |
-| Documentation references | 3 |
-| Initialization flow references | 0 |
+| Documentation references | 4 |
+| Initialization flow references | 3 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -59,15 +62,20 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
-- ZCurse_Profiler
+- CM_ClosetGoblin
+- CM_ClosetGoblin, Enemy, Killer, LibWBToggler, Shinies
+- Enemy
+- Killer
+- LibWBToggler
 
 ## Related APIs
 
-- none
+- [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
+- [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
 
 ## Used With
 
@@ -83,4 +91,4 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: CurseProfiler.Initialize, CurseProfiler.falsedo, SystemData.Events.PLAYER_ZONE_CHANGED, event_page, event_registration, lua_call
+- Observed in contexts: ClosetGoblin.PlayerZoneChanged, ClosetGoblin.ZoneChangeInit, ClosetGoblin.ZoneChangeShutdown, Enemy.GroupIcons_OnPlayerZoneChanged, Enemy.GroupsCheckTarget, Enemy.GroupsInitialize

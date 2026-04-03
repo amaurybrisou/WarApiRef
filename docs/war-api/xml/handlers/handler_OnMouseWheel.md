@@ -27,14 +27,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChatCopy.xml:17`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:203` |
+| Addons seen in | MoraleCircle, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/MoraleCircle/MoraleCircle.xml:0`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:0`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:0` |
 | Namespaces detected | OnMouseWheel |
 | Source kinds | bindings, xml_handlers |
-| Example locations | TidyChat: TidyChatCopy.OnMouseWheel, TidyRoll: TidyRollFrame.OnMouseWheel |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
-| Lua usage count | 2 |
+| Example locations | MoraleCircle: MoraleTemplate.OnMouseWheel, TidyChat: TidyChatCopy.OnMouseWheel, TidyRoll: TidyRollFrame.OnMouseWheel |
+| XML usage count | 3 |
+| XML attribute usage count | 3 |
+| Lua usage count | 3 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 2 addons through frame event handlers.
+Observed as an XML handler hook bound by 3 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -72,11 +72,13 @@ function(delta)
 
 ## Seen In
 
+- MoraleCircle
 - TidyChat
 - TidyRoll
 
 ## Examples
 
+- MoraleCircle: MoraleTemplate -> MoraleTemplate.OnMouseWheel -> MoraleCircle.OnMouseWheel
 - TidyChat: TidyChatCopy -> TidyChatCopy.OnMouseWheel -> TidyChat.Copy.OnMouseWheel
 - TidyRoll: TidyRollFrame -> TidyRollFrame.OnMouseWheel -> FrameManager.OnMouseWheel
 
@@ -86,7 +88,7 @@ function(delta)
 
 ## Used With
 
-- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- none
 
 ## Triggered By
 

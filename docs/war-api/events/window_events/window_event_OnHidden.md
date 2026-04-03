@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 176
+- Raw weighted score: 188
 
-- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
@@ -30,13 +30,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyChat/TidyChat.xml:15`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:16`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:52`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:101`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:288`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:309` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, Enemy, RoR_SoR, Shinies |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItemEffect.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainers.xml:0` |
 | Namespaces detected | OnHidden |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
-| Example locations | TidyChat: TidyChatCopy.OnHidden, TidyChat: TidyChatFrames.Initialize, TidyChat: TidyChatLootRoll.OnHidden, TidyChat: TidyChatOptions.OnHidden, TidyRoll: TRollAutoRoll.OnHidden, TidyRoll: TidyRollEsc.OnHidden |
-| XML usage count | 6 |
-| XML attribute usage count | 6 |
+| Example locations | AdvancedPetAssist: APAFollowTargetHUD.OnHidden, AdvancedPetAssist: APAInstantOnlyHUD.OnHidden, AdvancedPetAssist: APAKitingHUD.OnHidden, AdvancedPetAssist: APAOptions.OnHidden, AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow.OnHidden, AdvancedRenownTrainer: AdvancedRenownTrainingImportNameInputWindow.OnHidden |
+| XML usage count | 79 |
+| XML attribute usage count | 79 |
 | Lua usage count | 1 |
 | Global usage count | 1 |
 | Local definition count | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 2 addons.
+Observed as an engine-supplied UI event hook used by 15 addons.
 
 ## Handler Pattern
 
@@ -73,11 +73,74 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Seen In
 
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- Aura
+- BuffHead
+- CM_ClosetGoblin
+- Enemy
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
+- TurretRange
+- WSCT
+- WhoHealedMe
+- bigger_MacroWindow
 
 ## Registrars And Handlers
 
+- APAGui.OnFollowTargetHUDHidden
+- APAGui.OnHidden
+- APAGui.OnInstantOnlyHUDHidden
+- APAGui.OnKitingHUDHidden
+- AdvancedRenownTraining.OnExportHidden
+- AdvancedRenownTraining.OnHidden
+- AdvancedRenownTraining.OnImportHidden
+- AdvancedRenownTraining.OnImportNameInputHidden
+- AdvancedRenownTraining.OnLinkHidden
+- AdvancedRenownTraining.PresetOnHidden
+- AuraConfig.OnHidden
+- AuraSettings.OnHidden
+- AuraShares.OnHidden
+- BuffHead.Setup.AdvancedCompression.OnHidden
+- BuffHead.Setup.AdvancedCompressionItem.OnHidden
+- BuffHead.Setup.AdvancedCompressionItemEffect.OnHidden
+- BuffHead.Setup.AdvancedContainers.OnHidden
+- BuffHead.Setup.AdvancedContainersItem.OnHidden
+- BuffHead.Setup.AdvancedContainersItem.Properties.OnHidden
+- BuffHead.Setup.Container.OnHidden
+- BuffHead.Setup.Display.OnHidden
+- BuffHead.Setup.EffectCache.OnHidden
+- BuffHead.Setup.EffectCacheTable.OnHidden
+- BuffHead.Setup.Filter.OnHidden
+- BuffHead.Setup.General.OnHidden
+- BuffHead.Setup.Layout.Manager.OnHidden
+- BuffHead.Setup.Layout.OnHidden
+- BuffHead.Setup.Layout.Properties.OnHidden
+- BuffHead.Setup.OnHidden
+- BuffHead.Setup.Performance.OnHidden
+- BuffHead.Setup.PriorityEffects.OnHidden
+- BuffHead.Setup.PriorityEffectsItem.OnHidden
+- BuffHead.Setup.Trackers.OnHidden
+- ClosetGoblinCharacterWindow.OnHide
+- ClosetGoblinZoneWindow.OnHide
+- EA_Window_Macro.OnHidden
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnHidden
+- Shinies.OnHidden
+- ShiniesAuctionsUI.OnHidden
+- ShiniesAutoUI.OnHidden
+- ShiniesBrowseUI.OnHidden
+- ShiniesPostUI.OnHidden
+- TexturedButtons.Setup.Actionbar.OnHidden
+- TexturedButtons.Setup.AdvancedTextures.OnHidden
+- TexturedButtons.Setup.Cooldown.OnHidden
+- TexturedButtons.Setup.Fonts.OnHidden
+- TexturedButtons.Setup.Misc.OnHidden
+- TexturedButtons.Setup.OnHidden
+- TexturedButtons.Setup.Textures.OnHidden
+- TexturedButtons.Setup.Tint.OnHidden
 - TidyChat.Copy.OnHidden
 - TidyChat.LootRoll.OnHidden
 - TidyChat.OnEntryBoxUpdateShowing
@@ -85,21 +148,30 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - TidyRoll.CustomAutoRoll.OnHidden
 - TidyRoll.OnEsc
 - TidyRollOptions.OnHidden
+- TurretRange.Setup.Display.OnHidden
+- TurretRange.Setup.Distance.OnHidden
+- TurretRange.Setup.Distances.OnHidden
+- TurretRange.Setup.General.OnHidden
+- TurretRange.Setup.OnHidden
+- WHMGui.OnWindowHidden
+- WSCT.OnHidden
 - WindowRegisterCoreEventHandler
+- WindowUtils.OnHidden
 - core
 
 ## Examples
 
 - TidyChat: TidyChatFrames.Initialize -> OnHidden -> TidyChat.OnEntryBoxUpdateShowing
-- TidyChat: TidyChatCopy -> TidyChatCopy.OnHidden -> TidyChat.Copy.OnHidden
-- TidyChat: TidyChatLootRoll -> TidyChatLootRoll.OnHidden -> TidyChat.LootRoll.OnHidden
-- TidyChat: TidyChatOptions -> TidyChatOptions.OnHidden -> TidyChat.Options.OnHidden
-- TidyRoll: TRollAutoRoll -> TRollAutoRoll.OnHidden -> TidyRoll.CustomAutoRoll.OnHidden
-- TidyRoll: TidyRollEsc -> TidyRollEsc.OnHidden -> TidyRoll.OnEsc
+- AdvancedPetAssist: APAFollowTargetHUD -> APAFollowTargetHUD.OnHidden -> APAGui.OnFollowTargetHUDHidden
+- AdvancedPetAssist: APAInstantOnlyHUD -> APAInstantOnlyHUD.OnHidden -> APAGui.OnInstantOnlyHUDHidden
+- AdvancedPetAssist: APAKitingHUD -> APAKitingHUD.OnHidden -> APAGui.OnKitingHUDHidden
+- AdvancedPetAssist: APAOptions -> APAOptions.OnHidden -> APAGui.OnHidden
+- AdvancedRenownTrainer: AdvancedRenownTrainingExportWindow -> AdvancedRenownTrainingExportWindow.OnHidden -> AdvancedRenownTraining.OnExportHidden
 
 ## Related APIs
 
-- none
+- [ButtonSetDisabledFlag](../../window_api/functions/window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
+- [ComboBoxSetDisabledFlag](../../window_api/functions/window_ComboBoxSetDisabledFlag.md) (HIGH 100/100) - Window Function
 
 ## Used With
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 18 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1107`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1107`, `/workspace/data/raw/TidyChat/TidyChat.lua:1973`, `/workspace/data/raw/TidyChat/TidyChat.lua:2117`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:378`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:782` |
+| Addons seen in | Ace, AdvancedRenownTrainer, BuffHead, DAoCBuff, Enemy, Killer, LibWBToggler, PartyCast |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1110`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.lua:455`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.lua:470`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:581`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:594`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:619`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:631`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:693` |
 | Namespaces detected | ComboBoxGetSelectedMenuItem |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Combobox:SelectedIndex, PartyCast: LIBGUI_Combobox:SelectedIndex, TidyChat: TidyChat.Options.OnApply, TidyChat: TidyChat.Options.UpdateGroupTabs, TidyRoll: TidyRoll.CustomAutoRoll.OnChoiceChange, TidyRoll: TidyRollOptions.OnApply |
+| Example locations | Ace: LIBGUI_Combobox:SelectedIndex, AdvancedRenownTrainer: AdvancedRenownTraining.OnExportButtonPressed, BuffHead: BuffHead.Setup.AdvancedContainersItem.OnPositionChanged, BuffHead: BuffHead.Setup.AdvancedContainersItem.OnTargetTypeChanged, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsBuffsChanged, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsDebuffsChanged |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 219 |
+| Global usage count | 219 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ ComboBoxGetSelectedMenuItem(arg1)
 
 ## Description
 
-Observed as a window function across 4 addons.
+Observed as a window function across 18 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: TCHAT_TEXT_ENTRY_ANCHOR_POINT_COMBO, TCHAT_TEXT_ENTRY_RELATIVE_TO_COMBO, TCHAT_WINDOWS_SELECT_WINDOW_COMBO |
+| arg1 | Observed as a function or method reference. | Observed values: "DyeWindowDyeOrderCombo", "DyeWindowDyeTypeCombo", "EnemyChooseChannelDialogChannelList" |
 
 ## Returns
 
@@ -83,19 +83,33 @@ Observed as a window function across 4 addons.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedRenownTrainer
+- BuffHead
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
 - PartyCast
+- Pocket Palette
+- PotionBar
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
+- TurretRange
+- WSCT
+- WarBoard
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Combobox:SelectedIndex -> ComboBoxGetSelectedMenuItem(self.name)
-- PartyCast: LIBGUI_Combobox:SelectedIndex -> ComboBoxGetSelectedMenuItem(self.name)
-- TidyChat: TidyChat.Options.OnApply -> ComboBoxGetSelectedMenuItem(TCHAT_TEXT_ENTRY_RELATIVE_TO_COMBO)
-- TidyChat: TidyChat.Options.OnApply -> ComboBoxGetSelectedMenuItem(TCHAT_TEXT_ENTRY_ANCHOR_POINT_COMBO)
-- TidyChat: TidyChat.Options.UpdateGroupTabs -> ComboBoxGetSelectedMenuItem(TCHAT_WINDOWS_SELECT_WINDOW_COMBO)
-- TidyRoll: TidyRoll.CustomAutoRoll.OnChoiceChange -> ComboBoxGetSelectedMenuItem(comboName)
+- Ace: LIBGUI_Combobox:SelectedIndex -> ComboBoxGetSelectedMenuItem(self.name)
+- AdvancedRenownTrainer: AdvancedRenownTraining.OnExportButtonPressed -> ComboBoxGetSelectedMenuItem(PresetWindowName.."LoadComboBox")
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.OnPositionChanged -> ComboBoxGetSelectedMenuItem(windowName.."PositionComboBox")
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.OnTargetTypeChanged -> ComboBoxGetSelectedMenuItem(windowName.."TargetComboBox")
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsBuffsChanged -> ComboBoxGetSelectedMenuItem(windowName.."ElementEffectsBuffsComboBox")
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsDebuffsChanged -> ComboBoxGetSelectedMenuItem(windowName.."ElementEffectsDebuffsComboBox")
 
 ## Related APIs
 
@@ -104,9 +118,10 @@ Observed as a window function across 4 addons.
 ## Used With
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnSelChanged](../../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
+- [OnSelChanged](../../xml/handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Event
 
 ## Triggered By
 
@@ -119,7 +134,6 @@ Observed as a window function across 4 addons.
 
 - [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [ComboBox](../../xml/element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

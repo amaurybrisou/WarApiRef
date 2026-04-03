@@ -8,27 +8,27 @@
 
 - Evidence:
 
-- Lib RuString: RegisterEventHandler(SystemData.Events.LOADING_END, "LibRuString.OnLoad")
-  - Lib RuString: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "LibRuString.OnLoad")
-  - PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
-  - PartyCast: RegisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
-  - PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, "PartyCast.StartCast")
-  - PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_END_CAST, "PartyCast.EndCast")
+- AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+  - AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.LOADING_END, "AdvancedRenownTraining.OnReload")
+  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
+  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "AdvancedRenownTraining.OnReload")
+  - AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
 
 ## UnregisterEventHandler
 
-- Confidence: MEDIUM
+- Confidence: HIGH
 
 - Description: Observed removing previously registered global runtime handlers.
 
 - Evidence:
 
-- PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
-  - PartyCast: UnregisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
-  - PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, "PartyCast.StartCast")
-  - PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_END_CAST, "PartyCast.EndCast")
-  - PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_CAST_TIMER_SETBACK, "PartyCast.SetbackCast")
-  - PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_DEATH, "PartyCast.ON_DEATH")
+- Ace: UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "AceAddon_OnUpdate_DONOTTOUCH")
+  - AdvancedPetAssist: UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+  - AdvancedPetAssist: UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+  - AdvancedRenownTrainer: UnregisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
+  - AggroMeter: UnregisterEventHandler(TextLogGetUpdateEventId("Chat"), "AggroMeter.OnChatLogUpdated")
+  - Aura: UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "TargetInfoFix.APPLY_TARGETINFO_FIX_DONOTTOUCH")
 
 ## BroadcastEvent
 
@@ -38,7 +38,10 @@
 
 - Evidence:
 
-- Lib RuString: BroadcastEvent(SystemData.Events.RELOAD_INTERFACE)
+- Enemy: BroadcastEvent(custom_target_event)
+  - Enemy: BroadcastEvent(SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS)
+  - Enemy: BroadcastEvent(SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS)
+  - Enemy: BroadcastEvent(SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS)
 
 ## Game event fan-in
 
@@ -48,14 +51,14 @@
 
 - Evidence:
 
-- SystemData.Events.ENTER_WORLD (HIGH)
-  - SystemData.Events.EXIT_GAME (HIGH)
-  - SystemData.Events.INTERACT_COMPLETE_QUEST (HIGH)
-  - SystemData.Events.INTERACT_DEFAULT (HIGH)
-  - SystemData.Events.INTERACT_DONE (HIGH)
-  - SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM (HIGH)
-  - SystemData.Events.INTERACT_SHOW_INFLUENCE_REWARDS (HIGH)
-  - SystemData.Events.INTERACT_SHOW_LOOT (HIGH)
+- BroadcastMessageInvite (HIGH)
+  - ChatTextArrived (HIGH)
+  - CombatLogNewCombatEvent (HIGH)
+  - CombatLogSessionsUpdated (HIGH)
+  - CombatLogSettingsChanged (HIGH)
+  - ConfigDialogInitializeSections (HIGH)
+  - GroupsPlayerCombatUpdated (HIGH)
+  - GroupsPlayerDistanceUpdated (HIGH)
 
 ## Window event hooks
 
@@ -69,7 +72,7 @@
   - OnHyperLinkLButtonUp (HIGH)
   - OnHyperLinkRButtonUp (HIGH)
   - OnInitialize (HIGH)
+  - OnKeyEnter (HIGH)
+  - OnKeyEscape (HIGH)
   - OnLButtonDown (HIGH)
   - OnLButtonUp (HIGH)
-  - OnMButtonUp (HIGH)
-  - OnMouseOver (MEDIUM)

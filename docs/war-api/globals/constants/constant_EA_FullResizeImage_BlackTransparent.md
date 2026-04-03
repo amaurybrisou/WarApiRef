@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.xml:21`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:107` |
+| Addons seen in | AggroMeter, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/TidyChat/TidyChat.xml:0`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:0` |
 | Namespaces detected | EA_FullResizeImage_BlackTransparent |
 | Source kinds | xml_attributes |
-| Example locations | TRollAutoRollBackground, TidyChatOptionsBackground |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
+| Example locations | AggroMeterWindowBorderCheck, AggroMeterWindow_AggroWindow3BorderCheck, AggroMeterWindow_AggroWindow5BorderCheck, TRollAutoRollBackground, TidyChatOptionsBackground |
+| XML usage count | 5 |
+| XML attribute usage count | 5 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,15 +57,19 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Observed engine XML template or inherited constant referenced by 3 addons.
 
 ## Seen In
 
+- AggroMeter
 - TidyChat
 - TidyRoll
 
 ## Used By
 
+- AggroMeterWindowBorderCheck
+- AggroMeterWindow_AggroWindow3BorderCheck
+- AggroMeterWindow_AggroWindow5BorderCheck
 - TRollAutoRollBackground
 - TidyChatOptionsBackground
 

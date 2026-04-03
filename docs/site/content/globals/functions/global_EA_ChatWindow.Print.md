@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 18 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Lib RuString, NPC Item Sale Price, Soloq, TimeToDie, ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1952`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:3343`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:62`, `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:68`, `/workspace/data/raw/RuStringLib/RuStringLib.lua:233`, `/workspace/data/raw/Soloq/Utils.lua:7`, `/workspace/data/raw/TimeToDie/TimeToDie.lua:3`, `/workspace/data/raw/nisp/Source/Nisp.lua:120` |
+| Addons seen in | AdvancedPetAssist, Aura, BagOMatic, BankArkel, DAoCBuff, Enemy, GuardLine, Killer |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APACore.lua:298`, `/workspace/data/raw/Aura/Source/AuraAddon.lua:469`, `/workspace/data/raw/BankArkel/BankArkel.lua:686`, `/workspace/data/raw/BankArkel/BankArkel.lua:95`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:687`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:772`, `/workspace/data/raw/Enemy/Code/Core/Utils.lua:197`, `/workspace/data/raw/GuardLine/GuardLine.lua:730` |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | globals, lua_calls |
-| Example locations | Lib RuString: LibRuString.ToggleHook, NPC Item Sale Price: Nisp.DumpClear, NPC Item Sale Price: Nisp.DumpItem, NPC Item Sale Price: Nisp.Init, NPC Item Sale Price: Nisp.SetItemTooltipData, NPC Item Sale Price: Nisp.SlashHandler |
+| Example locations | AdvancedPetAssist: AdvancedPetAssist.Print, Aura: AuraPrint, BagOMatic: BagOMatic.print, BankArkel: BankArkel.Init, BankArkel: BankArkel.PrintFactionGold, DAoCBuff: DAoCBuff.ResetDAoCBuff |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 29 |
-| Global usage count | 29 |
+| Lua usage count | 135 |
+| Global usage count | 135 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -66,13 +66,13 @@ EA_ChatWindow.Print(arg1)
 
 ## Description
 
-Observed as a global function across 5 addons.
+Observed as a global function across 18 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: CurseProfiler.trueor(text), L "/nisp debug dumpclear - to clear dumped items", L "/nisp debug off - to turn debugging off" |
+| arg1 | Observed as a function or method reference. | Observed values: C.TAG..towstring(text), L "<icon149> "..msg, L "<icon57> "..SwiftLineSC..SwiftVersion..L "has been initialized. Use /swift for more details" |
 
 ## Returns
 
@@ -84,20 +84,33 @@ Observed as a global function across 5 addons.
 
 ## Seen In
 
-- Lib RuString
-- NPC Item Sale Price
-- Soloq
-- TimeToDie
-- ZCurse_Profiler
+- AdvancedPetAssist
+- Aura
+- BagOMatic
+- BankArkel
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- LibGuard
+- LibSlash
+- LibWBToggler
+- MiracleGrowLight
+- PlanB
+- RoR_SoR
+- Shinies
+- Swift Assist
+- WSCT
+- WhoHealedMe
 
 ## Examples
 
-- Lib RuString: LibRuString.ToggleHook -> EA_ChatWindow.Print(WRu("RuStringsLib: ýýýýý ýýýýýýýýý ýýýýýýýý ý ýýýý, ýýýýýýýýýýýýý ýýýýýýýýý. ýýý ýýýýý ýýýýýýý ýýýýýýýý '/reloadui'."))
-- NPC Item Sale Price: Nisp.DumpClear -> EA_ChatWindow.Print(L "Dump Table Cleared")
-- NPC Item Sale Price: Nisp.DumpItem -> EA_ChatWindow.Print(L "Dumped item: "..itemData.name)
-- NPC Item Sale Price: Nisp.DumpItem -> EA_ChatWindow.Print(L "Item Dump contains item: "..itemData.name)
-- NPC Item Sale Price: Nisp.Init -> EA_ChatWindow.Print(L "Nisp Installed and Enabled")
-- NPC Item Sale Price: Nisp.Init -> EA_ChatWindow.Print(L "Nisp Initialized and Enabled (/nisp for commands)")
+- AdvancedPetAssist: AdvancedPetAssist.Print -> EA_ChatWindow.Print(L "<icon149> "..msg)
+- Aura: AuraPrint -> EA_ChatWindow.Print(towstring(str))
+- BagOMatic: BagOMatic.print -> EA_ChatWindow.Print(L "[BagOMatic] "..towstring(text))
+- BankArkel: BankArkel.Init -> EA_ChatWindow.Print(StringToWString(InitTxt))
+- BankArkel: BankArkel.PrintFactionGold -> EA_ChatWindow.Print(STWS(header))
+- BankArkel: BankArkel.PrintFactionGold -> EA_ChatWindow.Print(STWS(line))
 
 ## Related APIs
 
@@ -113,7 +126,12 @@ Observed as a global function across 5 addons.
 
 ## Affects
 
-- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- [BankWindow](../tables/table_BankWindow.md) (HIGH 100/100) - Global Table
+- [EA_ChatWindow.OnKeyEnter](global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
+- [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
+- [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
+- [BankWindow.Hide](global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
 
 ## Notes
 

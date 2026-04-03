@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:573`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:573` |
+| Addons seen in | Ace, AggroMeter, Enemy, LibWBToggler, MiracleGrowLight, PartyCast, Shinies, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:574`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:242`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcon.lua:115`, `/workspace/data/raw/Enemy/Code/Guard/Guard.lua:104`, `/workspace/data/raw/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/data/raw/Enemy/Code/UnitFrames/ClickCasting.lua:147`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrame.lua:314`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrame.lua:344` |
 | Namespaces detected | WindowSetGameActionData |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Button:Action, PartyCast: LIBGUI_Button:Action |
+| Example locations | Ace: LIBGUI_Button:Action, AggroMeter: AggroMeter.SelectChar, Enemy: Enemy.Guard_SetGuardPlayerName, Enemy: Enemy.UnitFramesUI_UnitFrame_OnLButtonDown, Enemy: EnemyClickCasting:Proceed, Enemy: EnemyGroupIcon:Attach |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 17 |
+| Global usage count | 17 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,10 +71,10 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: self.name |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: actionType |
-| arg3 | Observed as a runtime window or control identifier. | Observed values: numArg |
-| arg4 | Observed as a runtime window or control identifier. | Observed values: wstringArg |
+| windowName | Observed as a target window name. | Observed values: "EnemyGuardDistanceIndicator", WINDOW_NAME, frame.windowName |
+| arg2 | Observed as a function or method reference. | Observed values: 0, GameData.PlayerActions.ASSIST_PLAYER, GameData.PlayerActions.DO_ABILITY |
+| arg3 | Observed as a numeric value. | Observed values: 0, GameData.TradeSkills.CULTIVATION, numArg |
+| arg4 | Observed as a runtime window or control identifier. | Observed values: Enemy.isNil(g.guardPlayerName,L ""), L "", frame.playerName |
 
 ## Returns
 
@@ -86,13 +86,24 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AggroMeter
+- Enemy
+- LibWBToggler
+- MiracleGrowLight
 - PartyCast
+- Shinies
+- WoH-Reticle
+- followTheLeader
 
 ## Examples
 
-- InfoScroller: LIBGUI_Button:Action -> WindowSetGameActionData(self.name, actionType, numArg, wstringArg)
-- PartyCast: LIBGUI_Button:Action -> WindowSetGameActionData(self.name, actionType, numArg, wstringArg)
+- Ace: LIBGUI_Button:Action -> WindowSetGameActionData(self.name, actionType, numArg, wstringArg)
+- AggroMeter: AggroMeter.SelectChar -> WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))
+- Enemy: Enemy.Guard_SetGuardPlayerName -> WindowSetGameActionData("EnemyGuardDistanceIndicator", GameData.PlayerActions.SET_TARGET, 0, Enemy.isNil(g.guardPlayerName,L ""))
+- Enemy: Enemy.UnitFramesUI_UnitFrame_OnLButtonDown -> WindowSetGameActionData(frame.windowName, GameData.PlayerActions.SET_TARGET, 0, frame.playerName)
+- Enemy: EnemyClickCasting:Proceed -> WindowSetGameActionData(self.frame.windowName, GameData.PlayerActions.DO_ABILITY, self.abilityId, self.frame.playerName)
+- Enemy: EnemyClickCasting:Proceed -> WindowSetGameActionData(self.frame.windowName, 0, 0, L "")
 
 ## Related APIs
 
@@ -104,10 +115,20 @@ Observed mutating runtime window state or presentation.
 
 ## Triggered By
 
-- none
+- [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
+- [OnLButtonDown](../../events/window_events/window_event_OnLButtonDown.md) (HIGH 100/100) - Window Event
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
+- [OnMouseOver](../../events/window_events/window_event_OnMouseOver.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
+- [GameData.PlayerActions.ASSIST_PLAYER](../../gamedata/fields/gamedata_GameData.PlayerActions.ASSIST_PLAYER.md) (HIGH 100/100) - GameData Field
+- [GameData.PlayerActions.DO_ABILITY](../../gamedata/fields/gamedata_GameData.PlayerActions.DO_ABILITY.md) (HIGH 100/100) - GameData Field
+- [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
+- [Label](../../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

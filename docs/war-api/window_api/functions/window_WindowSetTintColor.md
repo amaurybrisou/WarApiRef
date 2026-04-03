@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 24 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, TidyChat, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibConfig.lua:583`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:249`, `/workspace/data/raw/Moth/Moth.lua:267`, `/workspace/data/raw/Moth/Moth.lua:588`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibConfig.lua:583`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:249` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:249`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace/data/raw/Aura/Source/Aura.lua:417`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:33`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:55` |
 | Namespaces detected | WindowSetTintColor |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:Tint, InfoScroller: LibConfig.OnUpdate, Moth: Moth.UpdateHealthBar, Moth: Moth.UpdateLevel, PartyCast: LIBGUI_ELEMENT:Tint, PartyCast: LibConfig.OnUpdate |
+| Example locations | Ace: LIBGUI_ELEMENT:Tint, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD, AdvancedPetAssist: APAGui.UpdatePetTargetHUD, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SelectAdvantage |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 32 |
-| Global usage count | 32 |
+| Lua usage count | 210 |
+| Global usage count | 210 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,10 +71,10 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "MothHealthBar", "PartyCastWindow"..PlayerNumber.."Button", "PartyCastWindow"..PlayerNumber.."ButtonIcon" |
-| arg2 | Observed as a function or method reference. | Observed values: 0, 175, 200 |
-| arg3 | Observed as a function or method reference. | Observed values: 0, 175, 200 |
-| arg4 | Observed as a function or method reference. | Observed values: 0, 200, 255 |
+| windowName | Observed as a target window name. | Observed values: "APAFollowTargetHUDFill", "APAInstantOnlyHUDFill", "APAKitingHUDFill" |
+| arg2 | Observed as a function or method reference. | Observed values: 0, 100, 12 |
+| arg3 | Observed as a function or method reference. | Observed values: 0, 100, 110 |
+| arg4 | Observed as a function or method reference. | Observed values: 0, 10, 100 |
 
 ## Returns
 
@@ -86,21 +86,39 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- Ace
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- Aura
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- LibWBToggler
+- MoraleCircle
 - PartyCast
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- minesweep
+- TurretRange
+- WSCT
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:Tint -> WindowSetTintColor(self.name, r, g, b)
-- InfoScroller: LibConfig.OnUpdate -> WindowSetTintColor(LibConfig.colorizer.object.name, LibConfig.colorizer.r:GetValue(), LibConfig.colorizer.g:GetValue(), LibConfig.colorizer.b:GetValue())
-- Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.GREEN))
-- Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.YELLOW))
-- Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.ORANGE))
-- Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.RED))
+- Ace: LIBGUI_ELEMENT:Tint -> WindowSetTintColor(self.name, r, g, b)
+- AdvancedPetAssist: APAGui.UpdateFollowTargetHUD -> WindowSetTintColor("APAFollowTargetHUDFill", APA.hudColorOnR, APA.hudColorOnG, APA.hudColorOnB)
+- AdvancedPetAssist: APAGui.UpdateFollowTargetHUD -> WindowSetTintColor("APAFollowTargetHUDFill", APA.hudColorOffR, APA.hudColorOffG, APA.hudColorOffB)
+- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 128, 128, 128)
+- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 0, 200, 0)
+- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> WindowSetTintColor("APAInstantOnlyHUDFill", 200, 100, 0)
 
 ## Related APIs
 
@@ -108,13 +126,16 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [EA_Window_ContextMenu.AddUserDefinedMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 90/100) - Global Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Triggered By
 
-- [SystemData.Events.UPDATE_PROCESSED](../../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
+- none
 
 ## Affects
 

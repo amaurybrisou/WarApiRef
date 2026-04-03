@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1281`, `/workspace/data/raw/Moth/Moth.lua:418`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1281`, `/workspace/data/raw/minesweep/minesweep.lua:128`, `/workspace/data/raw/minesweep/minesweep.lua:82` |
+| Addons seen in | Ace, Aura, LibWBToggler, MiracleGrowLight, PartyCast, RoR_SoR, Shinies, TexturedButtons |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1284`, `/workspace/data/raw/Aura/Source/AuraHelpers.lua:33`, `/workspace/data/raw/LibWarBoardToggler/LibWBToggler.lua:16`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:1281`, `/workspace/data/raw/MiracleGrowLight/MiracleGrowLight.lua:168`, `/workspace/data/raw/MiracleGrowLight/MiracleGrowLight.lua:301`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1281`, `/workspace/data/raw/RoR_SoR/RoR_SoR.lua:1055` |
 | Namespaces detected | DynamicImageSetTextureSlice |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_Image:TexSlice, Moth: Moth.UpdateNPCIcon, PartyCast: LIBGUI_Image:TexSlice, minesweep: minesweep.LButtonUp, minesweep: minesweep.RButtonUp |
+| Example locations | Ace: LIBGUI_Image:TexSlice, Aura: AuraHelpers.SetDynamicImageTexture, LibWBToggler: LIBGUI_Image:TexSlice, LibWBToggler: LibWBToggler.CreateToggler, MiracleGrowLight: MiracleGrowLight.Initialize, MiracleGrowLight: MiracleGrowLight.OnUpdate |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 24 |
+| Global usage count | 24 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: WindowName.."Icon", WindowName.."Image", iconWindow |
-| arg2 | Observed as a text or wstring payload. | Observed values: "BombDestruction", "GuildStandard", TicketTable.Image.slice |
+| arg1 | Observed as a function or method reference. | Observed values: "SoR_"..Window_Name.."BG", "SoR_"..Window_Name.."CITY_RANK", "SoR_"..Window_Name.."KEEP1KEEPRANK" |
+| arg2 | Observed as a text or wstring payload. | Observed values: "Black-Slot", "Dirt", "GreenCross" |
 
 ## Returns
 
@@ -84,19 +84,24 @@ Observed mutating runtime image resources on existing controls.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- Ace
+- Aura
+- LibWBToggler
+- MiracleGrowLight
 - PartyCast
-- minesweep
+- RoR_SoR
+- Shinies
+- TexturedButtons
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: InfoScroller.CreateCard -> DynamicImageSetTextureSlice(WindowName.."Image", TicketTable.Image.slice)
-- InfoScroller: LIBGUI_Image:TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
-- Moth: Moth.UpdateNPCIcon -> DynamicImageSetTextureSlice(iconWindow, filterData.slice)
-- PartyCast: LIBGUI_Image:TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
-- minesweep: minesweep.LButtonUp -> DynamicImageSetTextureSlice(WindowName.."Icon", "BombDestruction")
-- minesweep: minesweep.RButtonUp -> DynamicImageSetTextureSlice(WindowName.."Icon", "GuildStandard")
+- Ace: LIBGUI_Image:TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
+- Aura: AuraHelpers.SetDynamicImageTexture -> DynamicImageSetTextureSlice(window, slice)
+- LibWBToggler: LIBGUI_Image:TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
+- LibWBToggler: LibWBToggler.CreateToggler -> DynamicImageSetTextureSlice(modName.."Icon", texSlice)
+- MiracleGrowLight: MiracleGrowLight.Initialize -> DynamicImageSetTextureSlice(windowName.."Plant"..i.."ButtonFrame", "IconFrame-1")
+- MiracleGrowLight: MiracleGrowLight.Initialize -> DynamicImageSetTextureSlice(windowName.."Plant"..i.."HarvestFrame", "IconFrame-1")
 
 ## Related APIs
 
@@ -104,20 +109,19 @@ Observed mutating runtime image resources on existing controls.
 
 ## Used With
 
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetRotation](window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureOrientation](window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
+- none
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [GameData.PlayerActions.PERFORM_CRAFTING](../../gamedata/fields/gamedata_GameData.PlayerActions.PERFORM_CRAFTING.md) (HIGH 100/100) - GameData Field
+- [GameData.TradeSkills.CULTIVATION](../../gamedata/fields/gamedata_GameData.TradeSkills.CULTIVATION.md) (HIGH 100/100) - GameData Field
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

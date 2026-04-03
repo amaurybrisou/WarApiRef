@@ -2,33 +2,37 @@
 
 - Category: XML Element Type
 - Confidence level: HIGH
-- Confidence score: 90/100
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Raw weighted score: 135
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | PartyCast |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.xml:9` |
+| Addons seen in | AdvancedPetAssist, AggroMeter, Aura, BuffHead, PartyCast, PotionBar, RoR_SoR, Shinies |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupLayout.xml:0`, `/workspace/data/raw/PartyCast/PartyCast.xml:0`, `/workspace/data/raw/PotionBar/settings/Settings.xml:14`, `/workspace/data/raw/RoR_SoR/RoR_SoR.xml:0`, `/workspace/data/raw/Shinies/Source/Shinies.xml:0` |
 | Namespaces detected | HorizontalResizeImage |
 | Source kinds | xml_frames |
-| Example locations | PartyCast: LOL_BAR |
-| XML usage count | 1 |
-| XML attribute usage count | 1 |
+| Example locations | AdvancedPetAssist: APAFollowTargetHUDFill, AdvancedPetAssist: APAInstantOnlyHUDFill, AdvancedPetAssist: APAKitingHUDFill, AdvancedPetAssist: APAPetTargetHUDBg, AggroMeter: AggroMeterGrayWindowSeparatorMiddle, Aura: AuraConfigTabsSeparatorActivation |
+| XML usage count | 19 |
+| XML attribute usage count | 19 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -53,41 +57,138 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+Observed XML element type instantiated by 9 addons.
 
 ## Common Attributes
 
 - name
+- inherits
 - texture
+- handleinput
+- layer
+- savesettings
 - textureScale
 
 ## Common Inherits
 
-- none
+- EA_HorizontalResizeImage_TabSeparatorMiddle
+- BuffHeadLayoutHorizontalResizeImage
+- EA_BrownHorizontalRule
+- EA_HorizontalResizeImage_DefaultTopFrame
+
+## Common Parent Elements
+
+- [Windows](element_Windows.md) — 19× (HIGH)
 
 ## Common Structural Child Elements
 
-- [Left](element_Left.md)
-- [Middle](element_Middle.md)
-- [Right](element_Right.md)
+- [Sizes](element_Sizes.md) — 8× (HIGH)
+- [TexCoords](element_TexCoords.md) — 8× (HIGH)
+- [TintColor](element_TintColor.md) — 7× (HIGH)
+- [Size](element_Size.md) — 4× (MEDIUM)
+
+## Common Template Bases
+
+- BuffHeadLayoutHorizontalResizeImage
+- EA_BrownHorizontalRule
+- EA_HorizontalResizeImage_DefaultTopFrame
+- EA_HorizontalResizeImage_TabSeparatorMiddle
+
+## Typical XML Structure
+
+```xml
+<HorizontalResizeImage handleinput="false" name="..." savesettings="false" texture="EA_TintableImage">
+  <Sizes left="0" middle="30" right="0"/>
+  <TexCoords>
+    <Left x="0" y="0"/>
+    <Middle x="0" y="0"/>
+    <Right x="0" y="30"/>
+  </TexCoords>
+  <TintColor b="0" g="0" r="255"/>
+</HorizontalResizeImage>
+```
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `texture` | **required** | 100% | EA_Training_Specialization |
-| `textureScale` | **required** | 100% | 0.89 |
+| `inherits` | optional | 57% | EA_HorizontalResizeImage_TabSeparatorMiddle, BuffHeadLayoutHorizontalResizeImage, EA_BrownHorizontalRule, EA_HorizontalResizeImage_DefaultTopFrame |
+| `texture` | optional | 42% | EA_TintableImage, EA_Training_Specialization, EA_HUD_01 |
+| `handleinput` | optional | 26% | false |
+| `layer` | optional | 26% | background |
+| `savesettings` | optional | 21% | false |
+| `textureScale` | optional | 5% | 0.89 |
+## Structural Sub-Elements
+
+### [Sizes](element_Sizes.md)
+
+Observed 8 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `middle` | optional | 30, 200, 61, 50 |
+| `left` | optional | 0, 7 |
+| `right` | optional | 0 |
+| `bottom` | optional | 0 |
+| `top` | optional | 0 |
+### [TexCoords](element_TexCoords.md)
+
+Observed 8 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | optional | 0, 133, 88, 32 |
+| `y` | optional | 0, 163, 51, 32 |
+### [TintColor](element_TintColor.md)
+
+Observed 7 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `b` | **required** | 0, 110, 130, 50 |
+| `g` | **required** | 0, 200, 185, 130 |
+| `r` | **required** | 255, 0, 180, 200 |
+| `a` | optional | 30, 255, 0.5, 200 |
+### [Size](element_Size.md)
+
+Observed 4 times as an unnamed child.
+
+## Lua Functions Manipulating This Type
+
+- APAGui.UpdateFollowTargetHUD
+- APAGui.UpdateKitingHUD
+- APAGui.UpdateInstantOnlyHUD
+- APAGui.UpdatePetTargetHUD
+- PotionBarSettings.OnShown
+
 ## Seen In
 
+- AdvancedPetAssist
+- AggroMeter
+- Aura
+- BuffHead
 - PartyCast
+- PotionBar
+- RoR_SoR
+- Shinies
+- WSCT
 
 ## Examples
 
-- PartyCast: LOL_BAR -> HorizontalResizeImage LOL_BAR
+- AdvancedPetAssist: APAFollowTargetHUDFill -> HorizontalResizeImage APAFollowTargetHUDFill
+- AdvancedPetAssist: APAInstantOnlyHUDFill -> HorizontalResizeImage APAInstantOnlyHUDFill
+- AdvancedPetAssist: APAKitingHUDFill -> HorizontalResizeImage APAKitingHUDFill
+- AdvancedPetAssist: APAPetTargetHUDBg -> HorizontalResizeImage APAPetTargetHUDBg
+- AggroMeter: AggroMeterGrayWindowSeparatorMiddle -> HorizontalResizeImage AggroMeterGrayWindowSeparatorMiddle
+- Aura: AuraConfigTabsSeparatorActivation -> HorizontalResizeImage AuraConfigTabsSeparatorActivation
 
 ## Related APIs
 
-- none
+- [Size](element_Size.md) (HIGH 100/100) - XML Element Type
+- [Sizes](element_Sizes.md) (HIGH 100/100) - XML Element Type
+- [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
+- [TintColor](element_TintColor.md) (HIGH 100/100) - XML Element Type
+- [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

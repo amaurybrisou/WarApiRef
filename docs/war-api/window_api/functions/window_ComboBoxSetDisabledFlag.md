@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1081`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1081`, `/workspace/data/raw/TidyChat/TidyChat.lua:1915` |
+| Addons seen in | Ace, AdvancedRenownTrainer, DAoCBuff, LibWBToggler, PartyCast, PotionBar, Shinies, TidyChat |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1084`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:491`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:804`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:834`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:898`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1056`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1224`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:401` |
 | Namespaces detected | ComboBoxSetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Combobox:SetEnabled, PartyCast: LIBGUI_Combobox:SetEnabled, TidyChat: TidyChat.Options.UpdateDisabledFlags |
+| Example locations | Ace: LIBGUI_Combobox:SetEnabled, AdvancedRenownTrainer: AdvancedRenownTraining.OnExportHidden, AdvancedRenownTrainer: AdvancedRenownTraining.OnExportShown, DAoCBuff: DAoCBuffSettings.ActivateStickCombos, DAoCBuff: DAoCBuffSettings.ActivateType, DAoCBuff: DAoCBuffSettings.PopulateTarget |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 28 |
+| Global usage count | 28 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,14 +65,14 @@ ComboBoxSetDisabledFlag(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 3 addons.
+Observed as a window function across 9 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: TCHAT_TEXT_ENTRY_RELATIVE_TO_COMBO, self.name |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: not flag, pressed |
+| arg1 | Observed as a function or method reference. | Observed values: "AdvancedRenownTrainingPresetsWindowLoadComboBox", FilterWindow.."ClassTableComboBox", FilterWindow.."FilterPropertyComboBox" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: active, disable, false |
 
 ## Returns
 
@@ -84,15 +84,24 @@ Observed as a window function across 3 addons.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedRenownTrainer
+- DAoCBuff
+- LibWBToggler
 - PartyCast
+- PotionBar
+- Shinies
 - TidyChat
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Combobox:SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
-- PartyCast: LIBGUI_Combobox:SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
-- TidyChat: TidyChat.Options.UpdateDisabledFlags -> ComboBoxSetDisabledFlag(TCHAT_TEXT_ENTRY_RELATIVE_TO_COMBO, pressed)
+- Ace: LIBGUI_Combobox:SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
+- AdvancedRenownTrainer: AdvancedRenownTraining.OnExportHidden -> ComboBoxSetDisabledFlag("AdvancedRenownTrainingPresetsWindowLoadComboBox", false)
+- AdvancedRenownTrainer: AdvancedRenownTraining.OnExportShown -> ComboBoxSetDisabledFlag("AdvancedRenownTrainingPresetsWindowLoadComboBox", true)
+- DAoCBuff: DAoCBuffSettings.ActivateStickCombos -> ComboBoxSetDisabledFlag(FrameTab.."GrowLeftComboBox", active)
+- DAoCBuff: DAoCBuffSettings.ActivateStickCombos -> ComboBoxSetDisabledFlag(FrameTab.."GrowUpComboBox", active)
+- DAoCBuff: DAoCBuffSettings.ActivateStickCombos -> ComboBoxSetDisabledFlag(FrameTab.."GrowHorizontalComboBox", active)
 
 ## Related APIs
 
@@ -104,7 +113,10 @@ Observed as a window function across 3 addons.
 
 ## Triggered By
 
-- none
+- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
+- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
+- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
 
 ## Affects
 

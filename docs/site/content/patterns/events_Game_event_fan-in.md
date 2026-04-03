@@ -9,42 +9,37 @@ Observed multiple addons converging on a small set of runtime events such as LOA
 
 ## Involved APIs
 
-- [SystemData.Events.ENTER_WORLD](../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.ENTER_WORLD](../events/game_events/game_event_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.EXIT_GAME](../events/game_events/game_event_SystemData.Events.EXIT_GAME.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.EXIT_GAME](../systemdata/fields/systemdata_SystemData.Events.EXIT_GAME.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_COMPLETE_QUEST](../systemdata/fields/systemdata_SystemData.Events.INTERACT_COMPLETE_QUEST.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_COMPLETE_QUEST](../events/game_events/game_event_SystemData.Events.INTERACT_COMPLETE_QUEST.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.INTERACT_DEFAULT](../systemdata/fields/systemdata_SystemData.Events.INTERACT_DEFAULT.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DEFAULT](../events/game_events/game_event_SystemData.Events.INTERACT_DEFAULT.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.INTERACT_DONE](../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](../events/game_events/game_event_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM](../events/game_events/game_event_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM](../systemdata/fields/systemdata_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_SHOW_INFLUENCE_REWARDS](../events/game_events/game_event_SystemData.Events.INTERACT_SHOW_INFLUENCE_REWARDS.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.INTERACT_SHOW_INFLUENCE_REWARDS](../systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_INFLUENCE_REWARDS.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_SHOW_LOOT](../events/game_events/game_event_SystemData.Events.INTERACT_SHOW_LOOT.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.INTERACT_SHOW_LOOT](../systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_LOOT.md) (HIGH 100/100) - SystemData Field
+- [Text](../xml/element_types/element_Text.md) (HIGH 98/100) - XML Element Type
+- [CombatLogNewCombatEvent](../events/game_events/game_event_CombatLogNewCombatEvent.md) (HIGH 93/100) - Game Event
+- [CombatLogSessionsUpdated](../events/game_events/game_event_CombatLogSessionsUpdated.md) (HIGH 93/100) - Game Event
+- [CombatLogSettingsChanged](../events/game_events/game_event_CombatLogSettingsChanged.md) (HIGH 93/100) - Game Event
+- [ConfigDialogInitializeSections](../events/game_events/game_event_ConfigDialogInitializeSections.md) (HIGH 93/100) - Game Event
+- [GroupsPlayerDistanceUpdated](../events/game_events/game_event_GroupsPlayerDistanceUpdated.md) (HIGH 93/100) - Game Event
+- [SettingsChanged](../events/game_events/game_event_SettingsChanged.md) (HIGH 93/100) - Game Event
+- [BroadcastMessageInvite](../events/game_events/game_event_BroadcastMessageInvite.md) (HIGH 73/100) - Game Event
+- [ChatTextArrived](../events/game_events/game_event_ChatTextArrived.md) (HIGH 73/100) - Game Event
+- [GroupsPlayerCombatUpdated](../events/game_events/game_event_GroupsPlayerCombatUpdated.md) (HIGH 73/100) - Game Event
 
 ## Flow Diagram
 
 ```text
-SystemData.Events.ENTER_WORLD <-> SystemData.Events.INTERACT_DONE
+OnLButtonUp
+  -> ui: Button, ColorPicker, DynamicImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code
 
 ```lua
-SystemData.Events.ENTER_WORLD (HIGH)
+BroadcastMessageInvite (HIGH)
 ```
 
 ## Evidence
 
-- SystemData.Events.ENTER_WORLD (HIGH)
-- SystemData.Events.EXIT_GAME (HIGH)
-- SystemData.Events.INTERACT_COMPLETE_QUEST (HIGH)
-- SystemData.Events.INTERACT_DEFAULT (HIGH)
-- SystemData.Events.INTERACT_DONE (HIGH)
-- SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM (HIGH)
-- SystemData.Events.INTERACT_SHOW_INFLUENCE_REWARDS (HIGH)
-- SystemData.Events.INTERACT_SHOW_LOOT (HIGH)
+- BroadcastMessageInvite (HIGH)
+- ChatTextArrived (HIGH)
+- CombatLogNewCombatEvent (HIGH)
+- CombatLogSessionsUpdated (HIGH)
+- CombatLogSettingsChanged (HIGH)
+- ConfigDialogInitializeSections (HIGH)
+- GroupsPlayerCombatUpdated (HIGH)
+- GroupsPlayerDistanceUpdated (HIGH)

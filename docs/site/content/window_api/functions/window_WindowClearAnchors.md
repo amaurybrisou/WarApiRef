@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 22 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, TidyChat |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:152`, `/workspace/data/raw/Moth/Moth.lua:205`, `/workspace/data/raw/Moth/Moth.lua:575`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:152`, `/workspace/data/raw/TidyChat/TidyChat.lua:239`, `/workspace/data/raw/TidyChat/TidyChat.lua:344` |
+| Addons seen in | Ace, AdvancedPetAssist, AnywhereTrainerAdditions, Aura, AutoMark, BankArkel, BuffHead, CombatTextNames |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:152`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:552`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.lua:18`, `/workspace/data/raw/Aura/Source/Aura.lua:505`, `/workspace/data/raw/Aura/Source/Aura.lua:534`, `/workspace/data/raw/Aura/Source/AuraTexture.lua:41`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:124`, `/workspace/data/raw/BankArkel/BankArkel.lua:172` |
 | Namespaces detected | WindowClearAnchors |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_ELEMENT:ClearAnchors, Moth: Moth.Anchor, Moth: Moth.HealthBar, PartyCast: LIBGUI_ELEMENT:ClearAnchors, PartyCast: PartyCast.Update |
+| Example locations | Ace: LIBGUI_ELEMENT:ClearAnchors, AdvancedPetAssist: AdvancedPetAssist.local.AnchorInContent, AdvancedPetAssist: AnchorInContent, AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize, Aura: Aura:UpdateTimerWindow, Aura: Aura:UpdateWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 21 |
-| Global usage count | 21 |
+| Lua usage count | 151 |
+| Global usage count | 151 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed resetting a window layout before applying new runtime anchors.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "Moth", "MothHealthBar", "PartyCastWindow"..i |
+| windowName | Observed as a target window name. | Observed values: "AnywhereTrainerBottomBookend", "AnywhereTrainerTopBookend", "BankArkelBackpack" |
 
 ## Returns
 
@@ -83,19 +83,37 @@ Observed resetting a window layout before applying new runtime anchors.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- Ace
+- AdvancedPetAssist
+- AnywhereTrainerAdditions
+- Aura
+- AutoMark
+- BankArkel
+- BuffHead
+- CombatTextNames
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
 - PartyCast
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
+- TurretRange
+- WSCT
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: InfoScroller.CreateCard -> WindowClearAnchors(WindowName.."Image")
-- InfoScroller: LIBGUI_ELEMENT:ClearAnchors -> WindowClearAnchors(self.name)
-- Moth: Moth.Anchor -> WindowClearAnchors("Moth")
-- Moth: Moth.HealthBar -> WindowClearAnchors("MothHealthBar")
-- PartyCast: LIBGUI_ELEMENT:ClearAnchors -> WindowClearAnchors(self.name)
-- PartyCast: PartyCast.Update -> WindowClearAnchors("PartyCastWindow"..i)
+- Ace: LIBGUI_ELEMENT:ClearAnchors -> WindowClearAnchors(self.name)
+- AdvancedPetAssist: AdvancedPetAssist.local.AnchorInContent -> WindowClearAnchors(name)
+- AdvancedPetAssist: AnchorInContent -> WindowClearAnchors(name)
+- AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -> WindowClearAnchors("AnywhereTrainerTopBookend")
+- AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -> WindowClearAnchors("AnywhereTrainerBottomBookend")
+- Aura: Aura:UpdateTimerWindow -> WindowClearAnchors(windowId)
 
 ## Related APIs
 
@@ -103,16 +121,19 @@ Observed resetting a window layout before applying new runtime anchors.
 
 ## Used With
 
-- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 - [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowGetAlpha](window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowGetLayer](window_WindowGetLayer.md) (HIGH 100/100) - Window Function
+- [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [StatusBarGetMaximumValue](window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
-- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
@@ -120,7 +141,6 @@ Observed resetting a window layout before applying new runtime anchors.
 
 ## Affects
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

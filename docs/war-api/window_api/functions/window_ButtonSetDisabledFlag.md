@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 13 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:553`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:777`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:842`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:553`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:777`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:842`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:828` |
+| Addons seen in | Ace, AdvancedRenownTrainer, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, LibWBToggler, PartyCast |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:553`, `/workspace/data/raw/Ace/LibGUI.lua:778`, `/workspace/data/raw/Ace/LibGUI.lua:844`, `/workspace/data/raw/BuffHead/Setup/SetupTrackers.lua:17`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:465`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinCharacterWindow.lua:671`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1056`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1224` |
 | Namespaces detected | ButtonSetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Button:SetEnabled, InfoScroller: LIBGUI_Checkbox:SetEnabled, InfoScroller: LIBGUI_Optionbutton:SetEnabled, PartyCast: LIBGUI_Button:SetEnabled, PartyCast: LIBGUI_Checkbox:SetEnabled, PartyCast: LIBGUI_Optionbutton:SetEnabled |
+| Example locations | Ace: LIBGUI_Button:SetEnabled, Ace: LIBGUI_Checkbox:SetEnabled, Ace: LIBGUI_Optionbutton:SetEnabled, AdvancedRenownTrainer: AdvancedRenownTraining.AnywhereShow, AdvancedRenownTrainer: AdvancedRenownTraining.OnHidden, BuffHead: BuffHead.local.SetTracker |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 80 |
+| Global usage count | 80 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: c_TROLL_FLASH_ONLY_NEW_ITEM.."Button", c_TROLL_GLOW_ONLY_NEW_ITEM.."Button", self.name |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: not ButtonGetPressedFlag(c_TROLL_FLASH_ON_NEW.."Button"), not ButtonGetPressedFlag(c_TROLL_GLOW_ON_NEW.."Button"), not ButtonGetPressedFlag(checkboxName) |
+| arg1 | Observed as a function or method reference. | Observed values: "ClosetGoblinCharacterWindowContentsDeleteSet", "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry", "EnemyConfigDialogResetButton" |
+| arg2 | Observed as a function or method reference. | Observed values: (onTargetChangeEnabled==false), config_dlg.clickCastingsListSelectedIndex==nil, config_dlg.clickCastingsListSelectedIndex==nil or config_dlg.clickCastingsListSelectedIndex==#config_dlg.clickCastings |
 
 ## Returns
 
@@ -84,18 +84,28 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedRenownTrainer
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- LibWBToggler
 - PartyCast
+- PotionBar
+- Shinies
 - TidyRoll
+- WSCT
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Button:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- InfoScroller: LIBGUI_Checkbox:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- InfoScroller: LIBGUI_Optionbutton:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- PartyCast: LIBGUI_Button:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- PartyCast: LIBGUI_Checkbox:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
-- PartyCast: LIBGUI_Optionbutton:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- Ace: LIBGUI_Button:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- Ace: LIBGUI_Checkbox:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- Ace: LIBGUI_Optionbutton:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- AdvancedRenownTrainer: AdvancedRenownTraining.AnywhereShow -> ButtonSetDisabledFlag(WindowName.."PurchaseButton", true)
+- AdvancedRenownTrainer: AdvancedRenownTraining.OnHidden -> ButtonSetDisabledFlag(WindowName.."PurchaseButton", false)
+- BuffHead: BuffHead.local.SetTracker -> ButtonSetDisabledFlag(windowName.."OnTargetChangeClearAlwaysShow".."Button", (onTargetChangeEnabled==false))
 
 ## Related APIs
 
@@ -107,7 +117,8 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Triggered By
 
-- none
+- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
+- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
 
 ## Affects
 

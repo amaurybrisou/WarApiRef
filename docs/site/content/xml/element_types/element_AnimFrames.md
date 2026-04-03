@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.xml:137`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:156` |
+| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.xml:0` |
 | Namespaces detected | AnimFrames |
 | Source kinds | xml_frames |
 | Example locations | TidyRoll: TRollOverlayFlash, TidyRoll: TRollOverlayGlow |
@@ -69,11 +69,11 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Structural Child Elements
 
-- [AnimFrame](element_AnimFrame.md) — 14× (HIGH)
+- AnimFrame — 14× (HIGH)
 
 ## Structural Sub-Elements
 
-### [AnimFrame](element_AnimFrame.md)
+### AnimFrame
 
 Observed 14 times as an unnamed child.
 
@@ -93,8 +93,7 @@ Observed 14 times as an unnamed child.
 
 ## Related APIs
 
-- [AnimFrame](element_AnimFrame.md) (MEDIUM 45/100) - XML Element Type
-- [AnimatedImage](element_AnimatedImage.md) (MEDIUM 45/100) - XML Element Type
+- [AnimatedImage](element_AnimatedImage.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

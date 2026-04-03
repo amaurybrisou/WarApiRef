@@ -16,20 +16,20 @@ Observed layouts being finalized in Lua by clearing and re-adding anchors after 
 
 ```text
 OnLButtonUp
-  -> ui: Button, ListBox, Window
+  -> ui: Button, ColorPicker, DynamicImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code
 
 ```lua
-InfoScroller: WindowAddAnchor(WindowName.."Image", anchor, WindowName, anchor, T_X, T_Y)
+Ace: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
 ```
 
 ## Evidence
 
-- InfoScroller: WindowAddAnchor(WindowName.."Image", anchor, WindowName, anchor, T_X, T_Y)
-- InfoScroller: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
-- Moth: WindowAddAnchor("Moth", "bottomleft", "CursorWindow", "topleft", 0, 0)
-- Moth: WindowAddAnchor("MothHealthBar", "bottomleft", "MothBackground", "topleft", 0, yOffset)
-- PartyCast: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
-- PartyCast: WindowAddAnchor("PartyCastWindow"..i, Frame_Anchor, "PartyCastWindow_Dynamic"..i, Frame_Anchor, 0, PartyCast.Settings.Offset)
+- Ace: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
+- AdvancedPetAssist: WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
+- AdvancedPetAssist: WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
+- AdvancedRenownTrainer: WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
+- AdvancedRenownTrainer: WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
+- AnywhereTrainerAdditions: WindowAddAnchor(tab.Name, tab.Anchor.Point, tab.Anchor.RelativeTo, tab.Anchor.RelativePoint, tab.Anchor.X, tab.Anchor.Y)

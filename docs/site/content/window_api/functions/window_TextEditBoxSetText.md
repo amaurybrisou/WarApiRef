@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:655`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:668`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:710`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:723`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:668`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:710`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:723` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, Enemy, Killer |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:656`, `/workspace/data/raw/Ace/LibGUI.lua:669`, `/workspace/data/raw/Ace/LibGUI.lua:711`, `/workspace/data/raw/Ace/LibGUI.lua:724`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:983`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:147`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:163`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:220` |
 | Namespaces detected | TextEditBoxSetText |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_MultiTextbox:Clear, InfoScroller: LIBGUI_MultiTextbox:SetText, InfoScroller: LIBGUI_Textbox:Clear, InfoScroller: LIBGUI_Textbox:SetText, PartyCast: LIBGUI_MultiTextbox:Clear, PartyCast: LIBGUI_MultiTextbox:SetText |
+| Example locations | Ace: LIBGUI_MultiTextbox:Clear, Ace: LIBGUI_MultiTextbox:SetText, Ace: LIBGUI_Textbox:Clear, Ace: LIBGUI_Textbox:SetText, AdvancedPetAssist: APAGui.ApplyHUDColorOff, AdvancedPetAssist: APAGui.ApplyHUDColorOn |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 15 |
-| Global usage count | 15 |
+| Lua usage count | 203 |
+| Global usage count | 203 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed reading from or writing to edit-box controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target control name. | Observed values: c_AUTO_ROLL_ADD_BY_ID_ID_EDITBOX, c_AUTO_ROLL_ADD_BY_ID_NAME_EDITBOX, c_TIDY_CHAT_COPY.."Log" |
-| text | Observed as a text or wstring payload. | Observed values: L "", towstring(GetSetting("button-number")), towstring(GetSetting("button-offset")) |
+| windowName | Observed as a target control name. | Observed values: "APAEditHUDOffB", "APAEditHUDOffG", "APAEditHUDOffR" |
+| text | Observed as a text or wstring payload. | Observed values: DAoCBuffSettings.TmpFilter[activefilter.index].name, DAoCBuffVar.Frames[activewindow.index].name, ERASE |
 
 ## Returns
 
@@ -84,19 +84,32 @@ Observed reading from or writing to edit-box controls.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- Aura
+- BuffHead
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
 - PartyCast
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
+- TurretRange
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_MultiTextbox:Clear -> TextEditBoxSetText(self.name, L "")
-- InfoScroller: LIBGUI_MultiTextbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
-- InfoScroller: LIBGUI_Textbox:Clear -> TextEditBoxSetText(self.name, L "")
-- InfoScroller: LIBGUI_Textbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
-- PartyCast: LIBGUI_MultiTextbox:Clear -> TextEditBoxSetText(self.name, L "")
-- PartyCast: LIBGUI_MultiTextbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
+- Ace: LIBGUI_MultiTextbox:Clear -> TextEditBoxSetText(self.name, L "")
+- Ace: LIBGUI_MultiTextbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
+- Ace: LIBGUI_Textbox:Clear -> TextEditBoxSetText(self.name, L "")
+- Ace: LIBGUI_Textbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
+- AdvancedPetAssist: APAGui.ApplyHUDColorOff -> TextEditBoxSetText("APAEditHUDOffR", towstring(APA.hudColorOffR))
+- AdvancedPetAssist: APAGui.ApplyHUDColorOff -> TextEditBoxSetText("APAEditHUDOffG", towstring(APA.hudColorOffG))
 
 ## Related APIs
 
@@ -104,7 +117,14 @@ Observed reading from or writing to edit-box controls.
 
 ## Used With
 
-- none
+- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
+- [WindowAssignFocus](window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

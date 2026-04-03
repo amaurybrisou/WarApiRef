@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChatTemplates.xml:20`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:24` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, TidyChat, TidyRoll, WSCT, WarBoard |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/Templates.xml:0`, `/workspace/data/raw/TidyChat/TidyChatTemplates.xml:0`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:0`, `/workspace/data/raw/WarBoard/WarBoardOptions.xml:0`, `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTrainingWindow.xml:0`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
 | Namespaces detected | EA_Button_Tab |
 | Source kinds | xml_attributes |
-| Example locations | TChatTabButton, TRollTabButton |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
+| Example locations | APAOptionsTabsAutoRecall, APAOptionsTabsControls, APAOptionsTabsFollowTarget, APAOptionsTabsGeneral, APAOptionsTabsHUD, APAOptionsTabsKiting |
+| XML usage count | 19 |
+| XML attribute usage count | 19 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,17 +57,40 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Observed engine XML template or inherited constant referenced by 8 addons.
 
 ## Seen In
 
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
 - TidyChat
 - TidyRoll
+- WSCT
+- WarBoard
 
 ## Used By
 
+- APAOptionsTabsAutoRecall
+- APAOptionsTabsControls
+- APAOptionsTabsFollowTarget
+- APAOptionsTabsGeneral
+- APAOptionsTabsHUD
+- APAOptionsTabsKiting
+- APAOptionsTabsLos
+- AdvancedRenownTrainingWindowTabsActiveTab
+- AdvancedRenownTrainingWindowTabsAdvancedTab
+- AdvancedRenownTrainingWindowTabsBasicTab
+- AdvancedRenownTrainingWindowTabsDefTab
+- AggroMeterGrayWindowBlackTab
+- AggroMeterGrayWindowListTab
+- AggroMeterGrayWindowWhiteTab
+- AuraTabButtonTemplate
 - TChatTabButton
 - TRollTabButton
+- TabButtonTemplate
+- WSCTTabButton
 
 ## Related APIs
 

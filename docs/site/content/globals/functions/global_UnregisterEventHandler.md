@@ -2,20 +2,20 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 81/100
-- Seen in: 2 addons
+- Confidence score: 93/100
+- Seen in: 22 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 81/100
+- Score: 93/100
 
-- Rationale: Promoted as HIGH confidence because called globally with no local definition, seen in 2 to 3 addons, used in event registration or dispatch.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, called globally with no local definition, used in event registration or dispatch.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | PartyCast, TidyRoll |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.lua:153`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:249` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoMark, BuffHead, CM_ClosetGoblin |
+| Files seen in | `/workspace/data/raw/Ace/AceAddon-3.0.lua:591`, `/workspace/data/raw/AdvancedPetAssist/AdvancedPetAssist.lua:98`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:49`, `/workspace/data/raw/Aura/Source/TargetInfoFix.lua:54`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:78`, `/workspace/data/raw/BuffHead/Core.lua:207`, `/workspace/data/raw/BuffHead/Core.lua:229`, `/workspace/data/raw/BuffHead/Setup/ContainerDemo.lua:223` |
 | Namespaces detected | UnregisterEventHandler |
 | Source kinds | lua_calls |
-| Example locations | PartyCast: PartyCast.OnShutdown, TidyRoll: TidyRoll.Shutdown |
+| Example locations | Ace: AceAddon_OnUpdate_DONOTTOUCH, AdvancedPetAssist: AdvancedPetAssist.local.UnregisterLoadingEnd, AdvancedPetAssist: UnregisterLoadingEnd, AdvancedRenownTrainer: AdvancedRenownTraining.OnReload, AggroMeter: AggroMeter.Shutdown, Aura: TargetInfoFix.SET_TARGETINFO_FIX_UPDATE_FLAG_DONOTTOUCH |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 129 |
+| Global usage count | 129 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -68,8 +68,8 @@ Observed removing previously registered global runtime handlers.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| eventId | Observed as a SystemData or runtime event identifier. | Observed values: SystemData.Events.ENTER_WORLD, SystemData.Events.INTERACT_DONE, SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA |
-| handlerName | Observed as a Lua handler function reference. | Observed values: "PartyCast.EndCast", "PartyCast.GROUP_UPDATED", "PartyCast.ON_DEATH" |
+| eventId | Observed as a SystemData or runtime event identifier. | Observed values: S.combatLogEventId, SystemData.Events.AUCTION_INIT_RECEIVED, SystemData.Events.CAMPAIGN_ZONE_UPDATED |
+| handlerName | Observed as a Lua handler function reference. | Observed values: "AceAddon_OnUpdate_DONOTTOUCH", "AdvancedRenownTraining.CreateDataTable", "AggroMeter.OnChatLogUpdated" |
 
 ## Returns
 
@@ -81,17 +81,37 @@ Observed removing previously registered global runtime handlers.
 
 ## Seen In
 
+- Ace
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
+- AutoMark
+- BuffHead
+- CM_ClosetGoblin
+- CombatTextNames
+- DAoCBuff
+- Enemy
+- Killer
+- LibGuard
 - PartyCast
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyRoll
+- TurretRange
+- WSCT
+- WhoHealedMe
+- followTheLeader
 
 ## Examples
 
-- PartyCast: PartyCast.OnShutdown -> UnregisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
-- PartyCast: PartyCast.OnShutdown -> UnregisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
-- PartyCast: PartyCast.OnShutdown -> UnregisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, "PartyCast.StartCast")
-- PartyCast: PartyCast.OnShutdown -> UnregisterEventHandler(SystemData.Events.PLAYER_END_CAST, "PartyCast.EndCast")
-- PartyCast: PartyCast.OnShutdown -> UnregisterEventHandler(SystemData.Events.PLAYER_CAST_TIMER_SETBACK, "PartyCast.SetbackCast")
-- PartyCast: PartyCast.OnShutdown -> UnregisterEventHandler(SystemData.Events.PLAYER_DEATH, "PartyCast.ON_DEATH")
+- Ace: AceAddon_OnUpdate_DONOTTOUCH -> UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "AceAddon_OnUpdate_DONOTTOUCH")
+- AdvancedPetAssist: AdvancedPetAssist.local.UnregisterLoadingEnd -> UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+- AdvancedPetAssist: UnregisterLoadingEnd -> UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+- AdvancedRenownTrainer: AdvancedRenownTraining.OnReload -> UnregisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
+- AggroMeter: AggroMeter.Shutdown -> UnregisterEventHandler(TextLogGetUpdateEventId("Chat"), "AggroMeter.OnChatLogUpdated")
+- Aura: TargetInfoFix.SET_TARGETINFO_FIX_UPDATE_FLAG_DONOTTOUCH -> UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "TargetInfoFix.APPLY_TARGETINFO_FIX_DONOTTOUCH")
 
 ## Related APIs
 
@@ -99,23 +119,23 @@ Observed removing previously registered global runtime handlers.
 
 ## Used With
 
-- none
+- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [WindowGetAlpha](../../window_api/functions/window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
-- none
+- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.PLAYER_TARGET_UPDATED](../../events/game_events/game_event_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.UPDATE_PROCESSED](../../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
 
 ## Affects
 
-- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_BEGIN_CAST](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CAST_TIMER_SETBACK](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_DEATH](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_END_CAST](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_END_CAST.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_START_INTERACT_TIMER](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_START_INTERACT_TIMER.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

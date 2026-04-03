@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 15 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 110
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -22,21 +22,21 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
+- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, Soloq, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:30`, `/workspace/data/raw/Moth/Moth.lua:713`, `/workspace/data/raw/Soloq/Soloq.lua:22`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227` |
+| Addons seen in | BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy, GuardLine, Killer, MiracleGrowLight, RoR_SoR |
+| Files seen in | `/workspace/data/raw/BuffHead/AdvancedContainers.lua:36`, `/workspace/data/raw/ClosetGoblin/ClosetGoblinOptionWindow.lua:28`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:346`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffHeadFrames.lua:122`, `/workspace/data/raw/Enemy/Code/Assist/Assist.lua:7`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogEpsWindow.lua:12`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogIDS.lua:16`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogTargetDefenseWindow.lua:23` |
 | Namespaces detected | LayoutEditor |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.OnInitialize, Moth: Moth.Initialize, Soloq: Soloq.OnInitialize, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRoll.Initialize |
+| Example locations | BuffHead: BuffHead.local.RegisterLayoutEditor, BuffHead: RegisterLayoutEditor, CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize, DAoCBuff: DAoCBuffHeadTracker:Create, DAoCBuff: DAoCBuffTracker:Create, Enemy: Enemy.AssistInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 32 |
+| Global usage count | 32 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -45,13 +45,13 @@
 | Event binding presence | no |
 | Observed in XML and Lua | no |
 | Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | no |
+| Conflicting signatures | yes |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -65,15 +65,15 @@ LayoutEditor.RegisterWindow(arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 
 ## Description
 
-Observed as a window function across 5 addons.
+Observed as a window function across 15 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "InfoScrollerMainWindow", "Moth", "SoloqOverviewWindow" |
-| arg2 | Observed as a text or wstring payload. | Observed values: L "Chat Text Entry", L "Moth", L "Scroller" |
-| arg3 | Observed as a text or wstring payload. | Observed values: L "Mouse Over Target Hover", L "Scroller", L "Soloq" |
+| arg1 | Observed as a text or wstring payload. | Observed values: "ClosetGoblinOptionWindow", "EnemyCombatLogEpsWindow", "EnemyCombatLogIDSAnchor" |
+| arg2 | Observed as a text or wstring payload. | Observed values: L "", L "Chat Text Entry", L "Closet Goblin" |
+| arg3 | Observed as a text or wstring payload. | Observed values: L "", L "Alternative Buffwindow. (Head)", L "Alternative Buffwindow." |
 | arg4 | Observed as a boolean toggle. | Observed values: false, true |
 | arg5 | Observed as a boolean toggle. | Observed values: false, true |
 | arg6 | Observed as a boolean toggle. | Observed values: false, true |
@@ -89,19 +89,30 @@ Observed as a window function across 5 addons.
 
 ## Seen In
 
-- InfoScroller
-- Moth
-- Soloq
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- MiracleGrowLight
+- RoR_SoR
+- Swift Assist
+- TexturedButtons
 - TidyChat
 - TidyRoll
+- TurretRange
+- WhoHealedMe
+- followTheLeader
 
 ## Examples
 
-- InfoScroller: InfoScroller.OnInitialize -> LayoutEditor.RegisterWindow("InfoScrollerMainWindow", L "Scroller", L "Scroller", false, true, true, nil)
-- Moth: Moth.Initialize -> LayoutEditor.RegisterWindow("Moth", L "Moth", L "Mouse Over Target Hover", false, false, false, nil)
-- Soloq: Soloq.OnInitialize -> LayoutEditor.RegisterWindow("SoloqOverviewWindow", L "Soloq", L "Soloq", false, false, true, nil)
-- TidyChat: TidyChatFrames.Initialize -> LayoutEditor.RegisterWindow(c_TEXT_ENTRY_ANCHOR, L "Chat Text Entry", L "Where Text Entry are displayed.", true, false, false, nil)
-- TidyRoll: TidyRoll.Initialize -> LayoutEditor.RegisterWindow(c_TIDY_ROLL_ANCHOR, L "Tidy Roll", L "Where Tidy Roll are displayed.", false, false, true, nil)
+- BuffHead: BuffHead.local.RegisterLayoutEditor -> LayoutEditor.RegisterWindow(layoutWindow, displayName, L "", false, false, true)
+- BuffHead: RegisterLayoutEditor -> LayoutEditor.RegisterWindow(layoutWindow, displayName, L "", false, false, true)
+- CM_ClosetGoblin: ClosetGoblinOptionWindow.OnInitialize -> LayoutEditor.RegisterWindow("ClosetGoblinOptionWindow", L "Closet Goblin", L "Option Button", true, true, true, nil)
+- DAoCBuff: DAoCBuffHeadTracker:Create -> LayoutEditor.RegisterWindow(windowName, towstring(windowName), L "Alternative Buffwindow. (Head)", false, false, true, nil)
+- DAoCBuff: DAoCBuffTracker:Create -> LayoutEditor.RegisterWindow(windowName, towstring(windowName), L "Alternative Buffwindow.", false, false, true, nil)
+- Enemy: Enemy.AssistInitialize -> LayoutEditor.RegisterWindow("EnemyTarget", L "Enemy target", L "Enemy target", false, false, true, nil)
 
 ## Related APIs
 
@@ -109,26 +120,19 @@ Observed as a window function across 5 addons.
 
 ## Used With
 
-- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [WindowGetScale](window_WindowGetScale.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
-- none
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 100/100) - XML Event
+- [OnInitialize](../../events/window_events/window_event_OnInitialize.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
-- [GameData.Player.name](../../gamedata/fields/gamedata_GameData.Player.name.md) (HIGH 100/100) - GameData Field
-- [SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.SCENARIO_POST_MODE](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_POST_MODE.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

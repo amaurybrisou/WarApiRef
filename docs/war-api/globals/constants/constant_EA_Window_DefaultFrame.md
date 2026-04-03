@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, minesweep |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChatCopy.xml:21`, `/workspace/data/raw/minesweep/minesweep.xml:99` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, CM_ClosetGoblin, DAoCBuff, Enemy, Killer, Pocket Palette, PotionBar |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffMsgWindow.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:968`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogSnapshotWindow.xml:0`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.xml:0`, `/workspace/data/raw/Enemy/Code/Core/ChooseIconDialog.xml:0` |
 | Namespaces detected | EA_Window_DefaultFrame |
 | Source kinds | xml_attributes |
-| Example locations | MineSweepWindowBackground, TidyChatCopyBackground |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
+| Example locations | APAOptionsBackground, AdvancedRenownTrainingExportWindowBackground, AdvancedRenownTrainingImportNameInputWindowBackground, AdvancedRenownTrainingImportWindowBackground, AdvancedRenownTrainingLinkWindowBackground, AdvancedRenownTrainingPresetsWindowBackground |
+| XML usage count | 45 |
+| XML attribute usage count | 45 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,17 +57,70 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Observed engine XML template or inherited constant referenced by 12 addons.
 
 ## Seen In
 
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- Killer
+- Pocket Palette
+- PotionBar
+- RoR_SoR
 - TidyChat
-- minesweep
+- WSCT
+- WhoHealedMe
 
 ## Used By
 
-- MineSweepWindowBackground
+- APAOptionsBackground
+- AdvancedRenownTrainingExportWindowBackground
+- AdvancedRenownTrainingImportNameInputWindowBackground
+- AdvancedRenownTrainingImportWindowBackground
+- AdvancedRenownTrainingLinkWindowBackground
+- AdvancedRenownTrainingPresetsWindowBackground
+- AdvancedRenownTrainingWindowBackground
+- ClosetGoblinCharacterWindowBackground
+- ClosetGoblinCharacterWindowContentsActionBarSettingsBG
+- ClosetGoblinCharacterWindowContentsSetListBackground
+- ClosetGoblinZoneWindowBackground
+- ClosetGoblinZoneWindowContentsSetListBackground
+- DAoCBuffMessageWindowBackground
+- DAoCBuff_SettingsBackground
+- DAoCBuff_Settings_FilterBackground
+- EnemyChooseChannelDialogBackground
+- EnemyChooseIconDialogBackground
+- EnemyClickCastingDialogBackground
+- EnemyCombatLogSnapshotWindowBackground
+- EnemyCombatLogStatsWindowBackground
+- EnemyConfigDialogBackground
+- EnemyEffectFilterDialogBackground
+- EnemyEffectsIndicatorDialogBackground
+- EnemyIntercomDialogBackground
+- EnemyIntercomJoinDialogBackground
+- EnemyKillSpamAreaStatsDialogBackground
+- EnemyMarkConfigDialogBackground
+- EnemyTextEntryDialogBackground
+- EnemyUnitFramePartDialogBackground
+- KillerScoreDetailsWindowBackground
+- KillerSettingsWindowBackground
+- KillerWindowBackground
+- PPMainBG
+- PotionBarAboutBackground
+- PotionBarButtonsBackground
+- PotionBarTypeTemplateBackground
+- RoR_SoR_OffsetBackground
+- RoR_SoR_OpacityBackground
+- RoR_SoR_ScaleBackground
 - TidyChatCopyBackground
+- WSCTOptionsBackground
+- WSCTOptionsColorPickerWindowBackground
+- WhoHealedMeDetailsBackground
+- WhoHealedMeOptionsBackground
+- WhoHealedMeWindowBackground
 
 ## Related APIs
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 21 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 110
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -22,21 +22,21 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
+- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:463`, `/workspace/data/raw/Moth/Moth.lua:215`, `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:463`, `/workspace/data/raw/minesweep/minesweep.lua:109` |
+| Addons seen in | Ace, AdvancedPetAssist, Aura, BuffHead, CM_ClosetGoblin, CombatTextNames, DAoCBuff, Enemy |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:463`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace/data/raw/Aura/Source/Aura.lua:505`, `/workspace/data/raw/Aura/Source/AuraTooltip.lua:32`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52` |
 | Namespaces detected | LabelSetTextColor |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Label:Color, Moth: Moth.SetCellText, Moth: Moth.SetCellTextIcon, PartyCast: LIBGUI_Label:Color, PartyCast: PartyCast.FetchedText, minesweep: minesweep.ShowCell |
+| Example locations | Ace: LIBGUI_Label:Color, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD, AdvancedPetAssist: APAGui.UpdatePetTargetHUD, Aura: Aura:UpdateTimerWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 139 |
+| Global usage count | 139 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -45,13 +45,13 @@
 | Event binding presence | no |
 | Observed in XML and Lua | no |
 | Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | no |
+| Conflicting signatures | yes |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -71,10 +71,10 @@ Observed updating label text or label styling on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "PartyCastWindow"..PlayerNumber.."Name", WindowName.."Text", cellText |
-| arg2 | Observed as a function or method reference. | Observed values: DefaultColor.GOLD.r, PartyCast.Settings.Colors.Ability[1], PartyCast.Settings.Colors.Failed[1] |
-| arg3 | Observed as a function or method reference. | Observed values: DefaultColor.GOLD.g, PartyCast.Settings.Colors.Ability[2], PartyCast.Settings.Colors.Failed[2] |
-| arg4 | Observed as a function or method reference. | Observed values: DefaultColor.GOLD.b, PartyCast.Settings.Colors.Ability[3], PartyCast.Settings.Colors.Failed[3] |
+| arg1 | Observed as a text or wstring payload. | Observed values: "APAFollowTargetHUDLabel", "APAInstantOnlyHUDLabel", "APAKitingHUDLabel" |
+| arg2 | Observed as a function or method reference. | Observed values: 100, 192, 225 |
+| arg3 | Observed as a function or method reference. | Observed values: 100, 110, 180 |
+| arg4 | Observed as a function or method reference. | Observed values: 10, 100, 102 |
 
 ## Returns
 
@@ -86,19 +86,36 @@ Observed updating label text or label styling on existing controls.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- Ace
+- AdvancedPetAssist
+- Aura
+- BuffHead
+- CM_ClosetGoblin
+- CombatTextNames
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
+- MiracleGrowLight
 - PartyCast
-- minesweep
+- PotionBar
+- RoR_SoR
+- Shinies
+- Swift Assist
+- TexturedButtons
+- TurretRange
+- WSCT
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Label:Color -> LabelSetTextColor(self.name, red, green, blue)
-- Moth: Moth.SetCellText -> LabelSetTextColor(cellText, color.r, color.g, color.b)
-- Moth: Moth.SetCellTextIcon -> LabelSetTextColor(cellText, color.r, color.g, color.b)
-- PartyCast: LIBGUI_Label:Color -> LabelSetTextColor(self.name, red, green, blue)
-- PartyCast: PartyCast.FetchedText -> LabelSetTextColor("PartyCastWindow"..PlayerNumber.."Name", DefaultColor.GOLD.r, DefaultColor.GOLD.g, DefaultColor.GOLD.b)
-- PartyCast: PartyCast.FetchedText -> LabelSetTextColor("PartyCastWindow"..PlayerNumber.."Name", PartyCast.Settings.Colors.Ability[1], PartyCast.Settings.Colors.Ability[2], PartyCast.Settings.Colors.Ability[3])
+- Ace: LIBGUI_Label:Color -> LabelSetTextColor(self.name, red, green, blue)
+- AdvancedPetAssist: APAGui.UpdateFollowTargetHUD -> LabelSetTextColor("APAFollowTargetHUDLabel", 255, 255, 255)
+- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> LabelSetTextColor("APAInstantOnlyHUDLabel", 192, 192, 192)
+- AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD -> LabelSetTextColor("APAInstantOnlyHUDLabel", 255, 255, 255)
+- AdvancedPetAssist: APAGui.UpdateKitingHUD -> LabelSetTextColor("APAKitingHUDLabel", 192, 192, 192)
+- AdvancedPetAssist: APAGui.UpdateKitingHUD -> LabelSetTextColor("APAKitingHUDLabel", 255, 255, 255)
 
 ## Related APIs
 
@@ -106,16 +123,17 @@ Observed updating label text or label styling on existing controls.
 
 ## Used With
 
-- [DynamicImageSetTextureDimensions](window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [LabelGetTextColor](window_LabelGetTextColor.md) (HIGH 100/100) - Window Function
 - [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
-- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 88/100) - Global Function
-- [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 80/100) - Window Function
+- [LabelSetTextAlign](window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 71/100) - Global Function
 
 ## Triggered By
 

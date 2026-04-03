@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 12 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:178`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:178`, `/workspace/data/raw/TidyChat/TidyChat.lua:239`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
+| Addons seen in | Ace, BankArkel, BuffHead, Enemy, LibWBToggler, PartyCast, PotionBar, Shinies |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:178`, `/workspace/data/raw/BankArkel/BankArkel.lua:95`, `/workspace/data/raw/BuffHead/Container.lua:417`, `/workspace/data/raw/BuffHead/EffectFrame.lua:36`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52`, `/workspace/data/raw/BuffHead/Setup/SelectColor.lua:27`, `/workspace/data/raw/BuffHead/Setup/SelectTexture.lua:59`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogStatsWindow.lua:991` |
 | Namespaces detected | WindowSetLayer |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:Layer, PartyCast: LIBGUI_ELEMENT:Layer, TidyChat: TidyChatCore.SetWindowGroup, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollOptions.Initialize |
+| Example locations | Ace: LIBGUI_ELEMENT:Layer, BankArkel: BankArkel.Init, BuffHead: BuffHead.Setup.SelectColor.Show, BuffHead: BuffHead.Setup.SelectTexture.Show, BuffHead: BuffHead.local.SetLayer, BuffHead: BuffHead.local.SetupCoreFrame |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 40 |
+| Global usage count | 40 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: c_TEXT_ENTRY_WINDOW, c_TEXT_ENTRY_WINDOW.."ChannelButton", c_TROLL_BNUM_TBOX |
+| windowName | Observed as a target window name. | Observed values: "BankArkelBackpack", "EA_Window_ContextMenu1", "PotionBar" |
 | arg2 | Observed as a function or method reference. | Observed values: 0, 2, 3 |
 
 ## Returns
@@ -84,19 +84,27 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- BankArkel
+- BuffHead
+- Enemy
+- LibWBToggler
 - PartyCast
+- PotionBar
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:Layer -> WindowSetLayer(self.name, layer)
-- PartyCast: LIBGUI_ELEMENT:Layer -> WindowSetLayer(self.name, layer)
-- TidyChat: TidyChatCore.SetWindowGroup -> WindowSetLayer(wndGroupName.."Background", 0)
-- TidyChat: TidyChatFrames.Initialize -> WindowSetLayer(c_TEXT_ENTRY_WINDOW.."ChannelButton", 3)
-- TidyChat: TidyChatFrames.Initialize -> WindowSetLayer(c_TEXT_ENTRY_WINDOW, 2)
-- TidyRoll: TidyRollOptions.Initialize -> WindowSetLayer(c_TROLL_BNUM_TBOX, Window.Layers.POPUP)
+- Ace: LIBGUI_ELEMENT:Layer -> WindowSetLayer(self.name, layer)
+- BankArkel: BankArkel.Init -> WindowSetLayer("BankArkelBackpack", 4)
+- BuffHead: BuffHead.Setup.SelectColor.Show -> WindowSetLayer(windowName, WindowGetLayer(window)+1)
+- BuffHead: BuffHead.Setup.SelectTexture.Show -> WindowSetLayer(windowName, WindowGetLayer(window)+1)
+- BuffHead: BuffHead.local.SetLayer -> WindowSetLayer(frame:GetName(), frame.Settings.Layer)
+- BuffHead: BuffHead.local.SetupCoreFrame -> WindowSetLayer(windowName, layoutSettings.Layer)
 
 ## Related APIs
 
@@ -105,6 +113,7 @@ Observed mutating runtime window state or presentation.
 ## Used With
 
 - [WindowGetLayer](window_WindowGetLayer.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
@@ -112,7 +121,13 @@ Observed mutating runtime window state or presentation.
 
 ## Affects
 
+- [BankWindow](../../globals/tables/table_BankWindow.md) (HIGH 100/100) - Global Table
+- [EA_ChatWindow.OnKeyEnter](../../globals/functions/global_EA_ChatWindow.OnKeyEnter.md) (HIGH 100/100) - Global Function
+- [EA_Window_Backpack](../../globals/tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
+- [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [BankWindow.Hide](../../globals/functions/global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
 
 ## Notes
 

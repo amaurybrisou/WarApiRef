@@ -10,15 +10,18 @@ import (
 )
 
 type functionSpan struct {
-	RawName   string
-	ShortName string
-	Local     bool
-	Start     int
-	BodyStart int
-	End       int
-	Params    []string
-	Line      int
-	EndLine   int
+	RawName           string
+	ShortName         string
+	Local             bool
+	DeclarationKind   string
+	ReceiverName      string
+	ReceiverSeparator string
+	Start             int
+	BodyStart         int
+	End               int
+	Params            []string
+	Line              int
+	EndLine           int
 }
 
 type constValue struct {
@@ -114,19 +117,26 @@ func ParseFile(addonName string, filePath string, manifest graph.Manifest) (grap
 		})
 
 		function := graph.Function{
-			Addon:       addonName,
-			Name:        functionName,
-			Aliases:     aliasesForFunction,
-			Module:      graph.OwnerName(functionName),
-			File:        graph.NormalizePath(filePath),
-			Line:        span.Line,
-			EndLine:     span.EndLine,
-			Params:      span.Params,
-			Calls:       calls,
-			Events:      registrations,
-			StateWrites: stateNames(writes),
-			Local:       localFlag,
-			Kind:        functionKind(functionName),
+			Addon:             addonName,
+			Name:              functionName,
+			DeclaredName:      declaredFunctionName(span),
+			ShortName:         span.ShortName,
+			ScopeKind:         scopeKind(localFlag),
+			DeclarationKind:   declarationKind(span),
+			ReceiverName:      span.ReceiverName,
+			ReceiverSeparator: span.ReceiverSeparator,
+			Aliases:           aliasesForFunction,
+			Module:            graph.OwnerName(functionName),
+			File:              graph.NormalizePath(filePath),
+			Line:              span.Line,
+			EndLine:           span.EndLine,
+			DeclarationOrder:  span.Start,
+			Params:            span.Params,
+			Calls:             calls,
+			Events:            registrations,
+			StateWrites:       stateNames(writes),
+			Local:             localFlag,
+			Kind:              functionKind(functionName),
 		}
 		functions = append(functions, function)
 		events = append(events, registrations...)
@@ -183,9 +193,11 @@ func findFunctionSpans(tokens []Token) []functionSpan {
 		switch {
 		case tokens[index].IsKeyword("function"):
 			functionTokenIndex = index
+			span.DeclarationKind = "function_decl"
 			if rawName, next, ok := readNameChain(tokens, index+1); ok {
 				span.RawName = rawName
 				span.ShortName = graph.LastSegment(rawName)
+				span.ReceiverName, span.ReceiverSeparator = splitReceiver(rawName)
 				if next < len(tokens) && tokens[next].IsSymbol("(") {
 					closeIndex := matchPair(tokens, next, "(", ")")
 					span.Params = parseParameters(tokens[next+1 : closeIndex])
@@ -195,6 +207,7 @@ func findFunctionSpans(tokens []Token) []functionSpan {
 		case tokens[index].IsKeyword("local") && index+1 < len(tokens) && tokens[index+1].IsKeyword("function"):
 			functionTokenIndex = index + 1
 			span.Local = true
+			span.DeclarationKind = "local_function_decl"
 			if index+2 < len(tokens) && tokens[index+2].Kind == tokenIdentifier {
 				span.ShortName = tokens[index+2].Text
 			}
@@ -206,6 +219,7 @@ func findFunctionSpans(tokens []Token) []functionSpan {
 		case tokens[index].IsKeyword("local") && index+3 < len(tokens) && tokens[index+1].Kind == tokenIdentifier && tokens[index+2].IsSymbol("=") && tokens[index+3].IsKeyword("function"):
 			functionTokenIndex = index + 3
 			span.Local = true
+			span.DeclarationKind = "assignment_function"
 			span.ShortName = tokens[index+1].Text
 			if index+4 < len(tokens) && tokens[index+4].IsSymbol("(") {
 				closeIndex := matchPair(tokens, index+4, "(", ")")
@@ -219,8 +233,10 @@ func findFunctionSpans(tokens []Token) []functionSpan {
 			rawName, next, ok := readNameChain(tokens, index)
 			if ok && next+1 < len(tokens) && tokens[next].IsSymbol("=") && tokens[next+1].IsKeyword("function") {
 				functionTokenIndex = next + 1
+				span.DeclarationKind = "assignment_function"
 				span.RawName = rawName
 				span.ShortName = graph.LastSegment(rawName)
+				span.ReceiverName, span.ReceiverSeparator = splitReceiver(rawName)
 				if next+2 < len(tokens) && tokens[next+2].IsSymbol("(") {
 					closeIndex := matchPair(tokens, next+2, "(", ")")
 					span.Params = parseParameters(tokens[next+3 : closeIndex])
@@ -410,11 +426,13 @@ func scanRange(tokens []Token, start, end int, skip []bool, context scanContext)
 				arguments = append(arguments, strings.TrimSpace(expressionString(group)))
 			}
 			calls = append(calls, graph.Call{
-				Name:      resolvedName,
-				Line:      tokens[index].Line,
-				Arguments: arguments,
+				Name:           resolvedName,
+				CalleeRaw:      name,
+				CalleeResolved: resolvedName,
+				Line:           tokens[index].Line,
+				Arguments:      arguments,
 			})
-			registrations = append(registrations, parseEventRegistration(resolvedName, arguments, tokens[index].Line, context)...)
+			registrations = append(registrations, parseEventRegistration(name, resolvedName, arguments, tokens[index].Line, context)...)
 		}
 
 		if next < len(tokens) && tokens[next].IsSymbol("=") {
@@ -445,12 +463,16 @@ func scanRange(tokens []Token, start, end int, skip []bool, context scanContext)
 				})
 			}
 		}
+
+		if next-1 > index {
+			index = next - 1
+		}
 	}
 
 	return dedupeCalls(calls), graph.UniqueSortedEvents(registrations), graph.UniqueSortedState(state), graph.UniqueSortedModules(modules)
 }
 
-func parseEventRegistration(callee string, arguments []string, line int, context scanContext) []graph.EventRegistration {
+func parseEventRegistration(rawCallee string, callee string, arguments []string, line int, context scanContext) []graph.EventRegistration {
 	resolve := func(value string) string {
 		return resolveExpression(value, context)
 	}
@@ -466,25 +488,35 @@ func parseEventRegistration(callee string, arguments []string, line int, context
 		if len(arguments) <= handlerArgIndex || len(arguments) <= eventArgIndex {
 			return
 		}
+		eventRaw := strings.TrimSpace(arguments[eventArgIndex])
+		handlerRaw := strings.TrimSpace(arguments[handlerArgIndex])
 		eventName := resolve(arguments[eventArgIndex])
 		handlerName := resolveHandler(arguments[handlerArgIndex])
 		if strings.Contains(eventName, "[") || strings.Contains(handlerName, "[") || eventName == "" || handlerName == "" {
 			return
 		}
 		windowName := ""
+		windowRaw := ""
 		if windowArgIndex >= 0 && len(arguments) > windowArgIndex {
+			windowRaw = strings.TrimSpace(arguments[windowArgIndex])
 			windowName = resolve(arguments[windowArgIndex])
 		}
 		result = append(result, graph.EventRegistration{
-			Addon:          context.addon,
-			Registrar:      callee,
-			Event:          eventName,
-			Handler:        handlerName,
-			Window:         windowName,
-			Scope:          scope,
-			SourceFunction: context.functionName,
-			File:           context.file,
-			Line:           line,
+			Addon:           context.addon,
+			Registrar:       callee,
+			Event:           eventName,
+			EventRaw:        eventRaw,
+			EventResolved:   eventName,
+			Handler:         handlerName,
+			HandlerRaw:      handlerRaw,
+			HandlerResolved: handlerName,
+			Window:          windowName,
+			WindowRaw:       windowRaw,
+			WindowResolved:  windowName,
+			Scope:           scope,
+			SourceFunction:  context.functionName,
+			File:            context.file,
+			Line:            line,
 		})
 	}
 
@@ -498,6 +530,7 @@ func parseEventRegistration(callee string, arguments []string, line int, context
 	case "LibGroup.Register":
 		appendRegistration("library", 0, 1, -1)
 	default:
+		_ = rawCallee
 		if strings.HasSuffix(callee, ".Register") {
 			appendRegistration("library", 0, len(arguments)-1, -1)
 		}
@@ -531,7 +564,7 @@ func expandLoopRegistrations(tokens []Token, loop loopInfo, context scanContext)
 		}
 
 		makeRegistration := func(eventValue string, handlerValue string) {
-			registration := parseEventRegistration(resolvedName, []string{eventValue, handlerValue}, tokens[index].Line, context)
+			registration := parseEventRegistration(resolvedName, resolvedName, []string{eventValue, handlerValue}, tokens[index].Line, context)
 			if strings.EqualFold(resolvedName, "WindowRegisterEventHandler") || strings.EqualFold(resolvedName, "WindowRegisterCoreEventHandler") {
 				return
 			}
@@ -554,7 +587,7 @@ func expandLoopRegistrations(tokens []Token, loop loopInfo, context scanContext)
 			}
 			for _, row := range constTable.Rows {
 				if len(row) >= 2 {
-					registrations = append(registrations, parseEventRegistration(resolvedName, []string{row[0], row[1]}, tokens[index].Line, context)...)
+					registrations = append(registrations, parseEventRegistration(resolvedName, resolvedName, []string{row[0], row[1]}, tokens[index].Line, context)...)
 				}
 			}
 		}
@@ -961,7 +994,7 @@ func dedupeCalls(calls []graph.Call) []graph.Call {
 	seen := map[string]bool{}
 	result := make([]graph.Call, 0, len(calls))
 	for _, call := range calls {
-		key := call.Name + "|" + fmt.Sprintf("%d", call.Line) + "|" + strings.Join(call.Arguments, ",")
+		key := call.CalleeRaw + "|" + call.CalleeResolved + "|" + fmt.Sprintf("%d", call.Line) + "|" + strings.Join(call.Arguments, ",")
 		if seen[key] {
 			continue
 		}
@@ -1012,6 +1045,49 @@ func isPublicRoot(root string, context scanContext) bool {
 		return true
 	}
 	return isExportedIdentifier(root)
+}
+
+func declaredFunctionName(span functionSpan) string {
+	if strings.TrimSpace(span.RawName) != "" {
+		return span.RawName
+	}
+	return span.ShortName
+}
+
+func scopeKind(local bool) string {
+	if local {
+		return "local"
+	}
+	return "global"
+}
+
+func declarationKind(span functionSpan) string {
+	if strings.TrimSpace(span.DeclarationKind) != "" {
+		return span.DeclarationKind
+	}
+	if span.Local {
+		return "local_function_decl"
+	}
+	if strings.TrimSpace(span.RawName) != "" {
+		return "function_decl"
+	}
+	return "assignment_function"
+}
+
+func splitReceiver(rawName string) (string, string) {
+	trimmed := strings.TrimSpace(rawName)
+	if trimmed == "" {
+		return "", ""
+	}
+	lastDot := strings.LastIndex(trimmed, ".")
+	lastColon := strings.LastIndex(trimmed, ":")
+	if lastDot < 0 && lastColon < 0 {
+		return "", ""
+	}
+	if lastColon > lastDot {
+		return trimmed[:lastColon], ":"
+	}
+	return trimmed[:lastDot], "."
 }
 
 func maxInt(left int, right int) int {

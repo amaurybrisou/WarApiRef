@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:200`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:200` |
+| Addons seen in | Ace, DAoCBuff, GuardLine, LibWBToggler, PartyCast, RoR_SoR, Shinies, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:200`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:111`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings2ndTier.lua:1260`, `/workspace/data/raw/GuardLine/GuardLine.lua:197`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:200`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:200` |
 | Namespaces detected | WindowGetAlpha |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:Alpha, PartyCast: LIBGUI_ELEMENT:Alpha, PartyCast: PartyCast.Update |
+| Example locations | Ace: LIBGUI_ELEMENT:Alpha, DAoCBuff: DAoCBuffSettings.UC, DAoCBuff: FilterSettings.Cleanup, DAoCBuff: ImExport.Cleanup, GuardLine: GuardLine.update, LibWBToggler: LIBGUI_ELEMENT:Alpha |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "PartyCastWindow"..i, self.name |
+| windowName | Observed as a target window name. | Observed values: "DAoCBuff_Settings", "GuardLineSelfWindow", "PartyCastWindow"..i |
 
 ## Returns
 
@@ -83,14 +83,23 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- DAoCBuff
+- GuardLine
+- LibWBToggler
 - PartyCast
+- RoR_SoR
+- Shinies
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:Alpha -> WindowGetAlpha(self.name)
-- PartyCast: LIBGUI_ELEMENT:Alpha -> WindowGetAlpha(self.name)
-- PartyCast: PartyCast.Update -> WindowGetAlpha("PartyCastWindow"..i)
+- Ace: LIBGUI_ELEMENT:Alpha -> WindowGetAlpha(self.name)
+- DAoCBuff: DAoCBuffSettings.UC -> WindowGetAlpha("DAoCBuff_Settings")
+- DAoCBuff: FilterSettings.Cleanup -> WindowGetAlpha(fwindow)
+- DAoCBuff: ImExport.Cleanup -> WindowGetAlpha(iewindow)
+- GuardLine: GuardLine.update -> WindowGetAlpha("GuardLineSelfWindow")
+- LibWBToggler: LIBGUI_ELEMENT:Alpha -> WindowGetAlpha(self.name)
 
 ## Related APIs
 
@@ -98,19 +107,16 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
-- [StatusBarGetMaximumValue](window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
+- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (HIGH 93/100) - Global Function
 
 ## Triggered By
 
-- none
+- [SystemData.Events.UPDATE_PROCESSED](../../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
 
 ## Affects
 
+- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

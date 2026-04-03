@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 4 addons
+- Seen in: 22 addons
 
 ## Confidence Assessment
 
@@ -24,15 +24,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1043`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1146`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1234`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:344`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:399`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:506`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:595` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoMark, BankArkel, BuffHead |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1046`, `/workspace/data/raw/Ace/LibGUI.lua:1149`, `/workspace/data/raw/Ace/LibGUI.lua:1237`, `/workspace/data/raw/Ace/LibGUI.lua:344`, `/workspace/data/raw/Ace/LibGUI.lua:399`, `/workspace/data/raw/Ace/LibGUI.lua:506`, `/workspace/data/raw/Ace/LibGUI.lua:596`, `/workspace/data/raw/Ace/LibGUI.lua:620` |
 | Namespaces detected | CreateWindowFromTemplate |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_Button:New, InfoScroller: LIBGUI_Checkbox:New, InfoScroller: LIBGUI_Closebutton:New, InfoScroller: LIBGUI_Combobox:New, InfoScroller: LIBGUI_Image:New |
+| Example locations | Ace: LIBGUI_Button:New, Ace: LIBGUI_Checkbox:New, Ace: LIBGUI_Closebutton:New, Ace: LIBGUI_Combobox:New, Ace: LIBGUI_Image:New, Ace: LIBGUI_Label:New |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 81 |
-| Global usage count | 81 |
+| Lua usage count | 205 |
+| Global usage count | 205 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -67,9 +67,9 @@ Observed instantiating repeated UI elements from an XML template.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a runtime window instance name. | Observed values: WindowName, c_CHANNEL_MENU.."AdviceButton", c_CHANNEL_MENU.."AllianceButton" |
-| templateName | Observed as an XML template name. | Observed values: "ChannelMenuButton", "EA_Button_DefaultWindowClose", "EA_ComboBox_DefaultResizable" |
-| parentWindow | Observed as a parent window name. | Observed values: "ChatChannelSelectionWindow", "InfoScrollerMainWindow", c_TIDY_ROLL_OPTIONS |
+| windowName | Observed as a runtime window instance name. | Observed values: "AggroMeterWindow"..MobID, "BottomBoard", "Map"..MapNumber |
+| templateName | Observed as an XML template name. | Observed values: "AbilityButtonTemplate", "AggroMeterWindow", "AuraFrame" |
+| parentWindow | Observed as a parent window name. | Observed values: "ChatChannelSelectionWindow", "EA_Window_EventTextContainer", "EnemyConfigDialogSections" |
 
 ## Returns
 
@@ -81,19 +81,37 @@ Observed instantiating repeated UI elements from an XML template.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
+- AutoMark
+- BankArkel
+- BuffHead
+- CombatTextNames
+- DAoCBuff
+- Enemy
+- LibWBToggler
 - PartyCast
+- PotionBar
+- RoR_SoR
+- Shinies
 - TidyChat
 - TidyRoll
+- TurretRange
+- WarBoard
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: InfoScroller.CreateCard -> CreateWindowFromTemplate(WindowName, "InfoScrollerTemplate", "InfoScrollerMainWindow")
-- InfoScroller: LIBGUI_Button:New -> CreateWindowFromTemplate(w.name, base, w.parent)
-- InfoScroller: LIBGUI_Checkbox:New -> CreateWindowFromTemplate(w.name, base, w.parent)
-- InfoScroller: LIBGUI_Closebutton:New -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
-- InfoScroller: LIBGUI_Combobox:New -> CreateWindowFromTemplate(w.name, base, w.parent)
-- InfoScroller: LIBGUI_Image:New -> CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: LIBGUI_Button:New -> CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: LIBGUI_Checkbox:New -> CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: LIBGUI_Closebutton:New -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
+- Ace: LIBGUI_Combobox:New -> CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: LIBGUI_Image:New -> CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: LIBGUI_Label:New -> CreateWindowFromTemplate(w.name, base, w.parent)
 
 ## Related APIs
 
@@ -101,15 +119,14 @@ Observed instantiating repeated UI elements from an XML template.
 
 ## Used With
 
-- [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxAddMenuItem](../../window_api/functions/window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureOrientation](../../window_api/functions/window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTextureScale](../../window_api/functions/window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
-- [InterfaceCore.GetScale](global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [ButtonSetCheckButtonFlag](../../window_api/functions/window_ButtonSetCheckButtonFlag.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [Icons.GetCareerIconIDFromCareerLine](global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
+- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
-- [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [WindowSetId](../../window_api/functions/window_WindowSetId.md) (HIGH 100/100) - Window Function
+- [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
+- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
@@ -117,7 +134,7 @@ Observed instantiating repeated UI elements from an XML template.
 
 ## Affects
 
-- [InterfaceCore.GetScale](global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- none
 
 ## Notes
 

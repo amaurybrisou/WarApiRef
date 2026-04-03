@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, minesweep |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChatCopy.xml:30`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:57`, `/workspace/data/raw/minesweep/minesweep.xml:78` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, Aura, BankArkel, CM_ClosetGoblin, DAoCBuff, Enemy, Pocket Palette |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/AuraTexture.xml:0`, `/workspace/data/raw/BankArkel/BankArkel.xml:0`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffMsgWindow.xml:0` |
 | Namespaces detected | EA_TitleBar_Default |
 | Source kinds | xml_attributes |
-| Example locations | MineSweepWindowTitleBar, TidyChatCopyTitleBar, TidyChatLootRollTitleBar |
-| XML usage count | 3 |
-| XML attribute usage count | 3 |
+| Example locations | APAOptionsTitle, AdvancedRenownTrainingExportWindowTitleBar, AdvancedRenownTrainingImportNameInputWindowTitleBar, AdvancedRenownTrainingImportWindowTitleBar, AdvancedRenownTrainingLinkWindowTitleBar, AdvancedRenownTrainingWindowTitleBar |
+| XML usage count | 46 |
+| XML attribute usage count | 46 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,18 +57,73 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Observed engine XML template or inherited constant referenced by 14 addons.
 
 ## Seen In
 
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- Aura
+- BankArkel
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- Pocket Palette
+- PotionBar
+- RoR_SoR
 - TidyChat
-- minesweep
+- WSCT
+- WarBoard
+- bigger_MacroWindow
 
 ## Used By
 
-- MineSweepWindowTitleBar
+- APAOptionsTitle
+- AdvancedRenownTrainingExportWindowTitleBar
+- AdvancedRenownTrainingImportNameInputWindowTitleBar
+- AdvancedRenownTrainingImportWindowTitleBar
+- AdvancedRenownTrainingLinkWindowTitleBar
+- AdvancedRenownTrainingWindowTitleBar
+- AuraConfigTitleBar
+- AuraSettingsTitleBar
+- AuraSharesImportExportTitleBar
+- AuraSharesTitleBar
+- AuraTextureTitleBar
+- ClosetGoblinCharacterWindowTitleBar
+- ClosetGoblinZoneWindowTitleBar
+- DAoCBuffMessageWindowTitleBar
+- DAoCBuff_SettingsTitleBar
+- DAoCBuff_Settings_FilterTitleBar
+- DyeWindowTitleBar
+- EA_Window_MacroTitleBar
+- EnemyChooseChannelDialogTitleBar
+- EnemyChooseIconDialogTitleBar
+- EnemyClickCastingDialogTitleBar
+- EnemyCombatLogSnapshotWindowTitleBar
+- EnemyCombatLogStatsWindowTitleBar
+- EnemyConfigDialogTitleBar
+- EnemyEffectFilterDialogTitleBar
+- EnemyEffectsIndicatorDialogTitleBar
+- EnemyIntercomDialogTitleBar
+- EnemyIntercomJoinDialogTitleBar
+- EnemyKillSpamAreaStatsDialogTitleBar
+- EnemyMarkConfigDialogTitleBar
+- EnemyTextEntryDialogTitleBar
+- EnemyUnitFramePartDialogTitleBar
+- ItemWindowTitleBar
+- MacroIconSelectionWindowTitleBar
+- PPMainTitleBar
+- PackWinTitleBar
+- PotionBarAboutTitleBar
+- PotionBarTypeTemplateTitleBar
+- RoR_SoR_OffsetTitleBar
+- RoR_SoR_OpacityTitleBar
+- RoR_SoR_ScaleTitleBar
 - TidyChatCopyTitleBar
 - TidyChatLootRollTitleBar
+- WSCTOptionsColorPickerWindowTitle
+- WSCTOptionsTitle
+- WarBoardOptionsTitleBar
 
 ## Related APIs
 

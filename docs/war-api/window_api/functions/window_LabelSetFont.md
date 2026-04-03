@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 14 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:444`, `/workspace/data/raw/Moth/Moth.lua:215`, `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:444`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
+| Addons seen in | Ace, BuffHead, DAoCBuff, Enemy, Killer, LibWBToggler, PartyCast, PotionBar |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:444`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutProperties.lua:223`, `/workspace/data/raw/BuffHead/Setup/SetupLayoutProperties.lua:538`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffFrames.lua:40`, `/workspace/data/raw/Enemy/Code/Marks/MarkTemplate.lua:85`, `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFramePart.lua:210`, `/workspace/data/raw/Killer/KillerUiCache.lua:71` |
 | Namespaces detected | LabelSetFont |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Label:Font, Moth: Moth.SetCellText, Moth: Moth.SetCellTextIcon, PartyCast: LIBGUI_Label:Font, TidyRoll: TidyRollOptions.Initialize |
+| Example locations | Ace: LIBGUI_Label:Font, BuffHead: BuffHead.local.LoadFontSettings, BuffHead: BuffHead.local.SelectFont, BuffHead: BuffHeadEffectFrame:SetLayout, BuffHead: LoadFontSettings, BuffHead: SelectFont |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 36 |
+| Global usage count | 36 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,9 +71,9 @@ Observed updating label text or label styling on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: c_TROLL_BINDS_LABEL, c_TROLL_ON_ROLL_ITEMS_NUMBER_CHANGE, c_TROLL_SORTING_TEXT |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: "font_clear_large_bold", "font_clear_medium", cellFont |
-| arg3 | Observed as a numeric value. | Observed values: 20, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING, linespacing |
+| arg1 | Observed as a function or method reference. | Observed values: adat.textname, buttonLabel:GetName(), c_TROLL_BINDS_LABEL |
+| arg2 | Observed as a function or method reference. | Observed values: "font_clear_large_bold", "font_clear_medium", "font_default_text" |
+| arg3 | Observed as a function or method reference. | Observed values: 10, 20, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING |
 
 ## Returns
 
@@ -85,19 +85,29 @@ Observed updating label text or label styling on existing controls.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- Ace
+- BuffHead
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
 - PartyCast
+- PotionBar
+- Shinies
+- TexturedButtons
 - TidyRoll
+- TurretRange
+- WSCT
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Label:Font -> LabelSetFont(self.name, font, linespacing)
-- Moth: Moth.SetCellText -> LabelSetFont(cellText, cellFont, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
-- Moth: Moth.SetCellTextIcon -> LabelSetFont(cellText, cellFont, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
-- PartyCast: LIBGUI_Label:Font -> LabelSetFont(self.name, font, linespacing)
-- TidyRoll: TidyRollOptions.Initialize -> LabelSetFont(c_TROLL_TITLE, "font_clear_large_bold", 20)
-- TidyRoll: TidyRollOptions.Initialize -> LabelSetFont(c_TROLL_BINDS_LABEL, "font_clear_medium", 20)
+- Ace: LIBGUI_Label:Font -> LabelSetFont(self.name, font, linespacing)
+- BuffHead: BuffHead.local.LoadFontSettings -> LabelSetFont(windowName.."FontExampleLabel", settings.Font, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
+- BuffHead: BuffHead.local.SelectFont -> LabelSetFont(label, font.Font, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
+- BuffHead: BuffHeadEffectFrame:SetLayout -> LabelSetFont(frameName.."Time", layoutSettings.Duration.Font, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
+- BuffHead: BuffHeadEffectFrame:SetLayout -> LabelSetFont(frameName.."Stacks", layoutSettings.StackCount.Font, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
+- BuffHead: BuffHeadEffectFrame:SetLayout -> LabelSetFont(frameName.."Name", layoutSettings.Name.Font, WindowUtils.FONT_DEFAULT_TEXT_LINESPACING)
 
 ## Related APIs
 
@@ -105,17 +115,11 @@ Observed updating label text or label styling on existing controls.
 
 ## Used With
 
-- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [LabelSetTextAlign](window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
 - [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
-- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 88/100) - Global Function
-- [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 80/100) - Window Function
-- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 71/100) - Global Function
+- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
 
 ## Triggered By
 

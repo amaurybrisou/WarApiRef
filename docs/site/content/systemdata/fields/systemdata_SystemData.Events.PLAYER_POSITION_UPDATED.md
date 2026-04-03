@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -11,16 +11,19 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 143
+- Raw weighted score: 186
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 - +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
@@ -28,23 +31,23 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:2134` |
+| Addons seen in | BuffHead, BuffHead, TurretRange, TurretRange |
+| Files seen in | `/workspace/data/raw/BuffHead/Core.lua:152`, `/workspace/data/raw/TurrentRange/Core.lua:74`, `/workspace/data/raw/TurrentRange/Core.lua:95` |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, event_registration, lua_call |
-| Example locations | CurseProfiler.Initialize, CurseProfiler.untilfunction, SystemData.Events.PLAYER_POSITION_UPDATED, event_page, event_registration, lua_call |
+| Source kinds | event_page, event_registration, flow, lua_call |
+| Example locations | BuffHead.Initialize, BuffHead.OnPlayerPositionUpdated, SystemData.Events.PLAYER_POSITION_UPDATED, TurretRange.Initialize, TurretRange.OnPlayerPositionUpdated, TurretRange.Unload |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
-| Documentation references | 3 |
-| Initialization flow references | 0 |
+| Documentation references | 4 |
+| Initialization flow references | 2 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -59,11 +62,13 @@
 
 ## Description
 
-Observed SystemData field used by 1 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
-- ZCurse_Profiler
+- BuffHead
+- BuffHead, TurretRange
+- TurretRange
 
 ## Related APIs
 
@@ -83,4 +88,4 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: CurseProfiler.Initialize, CurseProfiler.untilfunction, SystemData.Events.PLAYER_POSITION_UPDATED, event_page, event_registration, lua_call
+- Observed in contexts: BuffHead.Initialize, BuffHead.OnPlayerPositionUpdated, SystemData.Events.PLAYER_POSITION_UPDATED, TurretRange.Initialize, TurretRange.OnPlayerPositionUpdated, TurretRange.Unload

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:132`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:132`, `/workspace/data/raw/TidyChat/TidyChat.lua:930` |
+| Addons seen in | Ace, BagOMatic, CM_ClosetGoblin, LibWBToggler, PartyCast, Shinies, TidyChat, TurretRange |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:132`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.lua:87`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:132`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:132`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:132`, `/workspace/data/raw/Shinies/Source/Shinies.lua:417`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TurrentRange/Core.lua:335` |
 | Namespaces detected | WindowSetParent |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:Parent, PartyCast: LIBGUI_ELEMENT:Parent, TidyChat: TidyChatFrames.Initialize |
+| Example locations | Ace: LIBGUI_ELEMENT:Parent, BagOMatic: BagOMatic.init, CM_ClosetGoblin: ClosetGoblin.Initialize, LibWBToggler: LIBGUI_ELEMENT:Parent, PartyCast: LIBGUI_ELEMENT:Parent, Shinies: CreateUI |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 14 |
+| Global usage count | 14 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: c_TEXT_ENTRY_WINDOW, c_TEXT_ENTRY_WINDOW.."ChannelButton", self.name |
-| arg2 | Observed as a text or wstring payload. | Observed values: "Root", self.parent |
+| windowName | Observed as a target window name. | Observed values: "BagOMaticButton", "Map"..MapNumber, "TurretPortrait" |
+| arg2 | Observed as a text or wstring payload. | Observed values: "CharacterWindow", "EA_Window_Backpack", "Root" |
 
 ## Returns
 
@@ -84,16 +84,24 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- BagOMatic
+- CM_ClosetGoblin
+- LibWBToggler
 - PartyCast
+- Shinies
 - TidyChat
+- TurretRange
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:Parent -> WindowSetParent(self.name, self.parent)
+- Ace: LIBGUI_ELEMENT:Parent -> WindowSetParent(self.name, self.parent)
+- BagOMatic: BagOMatic.init -> WindowSetParent("BagOMaticButton", "EA_Window_Backpack")
+- CM_ClosetGoblin: ClosetGoblin.Initialize -> WindowSetParent("yClosetGoblinButton", "CharacterWindow")
+- LibWBToggler: LIBGUI_ELEMENT:Parent -> WindowSetParent(self.name, self.parent)
 - PartyCast: LIBGUI_ELEMENT:Parent -> WindowSetParent(self.name, self.parent)
-- TidyChat: TidyChatFrames.Initialize -> WindowSetParent(c_TEXT_ENTRY_WINDOW.."ChannelButton", "Root")
-- TidyChat: TidyChatFrames.Initialize -> WindowSetParent(c_TEXT_ENTRY_WINDOW, "Root")
+- Shinies: CreateUI -> WindowSetParent(config.windowId, windowId)
 
 ## Related APIs
 
@@ -105,10 +113,14 @@ Observed mutating runtime window state or presentation.
 
 ## Triggered By
 
-- none
+- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
 
 ## Affects
 
+- [EA_Window_Backpack](../../globals/tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

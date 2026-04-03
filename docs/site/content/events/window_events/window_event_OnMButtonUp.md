@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 176
+- Raw weighted score: 188
 
-- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
@@ -30,13 +30,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:202` |
+| Addons seen in | Enemy, TidyChat, TidyRoll, TurretRange, followTheLeader |
+| Files seen in | `/workspace/data/raw/Enemy/Code/UnitFrames/UnitFrame.xml:0`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:0`, `/workspace/data/raw/TurrentRange/Display.xml:0`, `/workspace/data/raw/followTheLeader/followTheLeader.xml:0` |
 | Namespaces detected | OnMButtonUp |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
-| Example locations | TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollFrame.OnMButtonUp |
-| XML usage count | 1 |
-| XML attribute usage count | 1 |
+| Example locations | Enemy: EnemyUnitFrame.OnMButtonUp, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollFrame.OnMButtonUp, TurretRange: TurretMapDisplay.OnMButtonUp, followTheLeader: followTheLeaderWindow.OnMButtonUp |
+| XML usage count | 4 |
+| XML attribute usage count | 4 |
 | Lua usage count | 1 |
 | Global usage count | 1 |
 | Local definition count | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 2 addons.
+Observed as an engine-supplied UI event hook used by 5 addons.
 
 ## Handler Pattern
 
@@ -73,20 +73,29 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Seen In
 
+- Enemy
 - TidyChat
 - TidyRoll
+- TurretRange
+- followTheLeader
 
 ## Registrars And Handlers
 
+- Enemy.UnitFramesUI_UnitFrame_OnMButtonUp
+- Map.OnMButtonUp
 - TidyChat.OnChannelButtonMButtonUp
 - TidyRollFrame.OnMButtonUp
 - WindowRegisterCoreEventHandler
 - core
+- followTheLeader.OnMButtonUp
 
 ## Examples
 
 - TidyChat: TidyChatFrames.Initialize -> OnMButtonUp -> TidyChat.OnChannelButtonMButtonUp
+- Enemy: EnemyUnitFrame -> EnemyUnitFrame.OnMButtonUp -> Enemy.UnitFramesUI_UnitFrame_OnMButtonUp
 - TidyRoll: TidyRollFrame -> TidyRollFrame.OnMButtonUp -> TidyRollFrame.OnMButtonUp
+- TurretRange: TurretMapDisplay -> TurretMapDisplay.OnMButtonUp -> Map.OnMButtonUp
+- followTheLeader: followTheLeaderWindow -> followTheLeaderWindow.OnMButtonUp -> followTheLeader.OnMButtonUp
 - TidyChat: TidyChat.OnChannelButtonMButtonUp -> WindowRegisterCoreEventHandler(OnMButtonUp, TidyChat.OnChannelButtonMButtonUp)
 
 ## Related APIs

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:226`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:231`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:226`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:231`, `/workspace/data/raw/TidyChat/TidyChat.lua:868` |
+| Addons seen in | Ace, Aura, Enemy, LibWBToggler, PartyCast, Shinies, TidyChat, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:226`, `/workspace/data/raw/Ace/LibGUI.lua:231`, `/workspace/data/raw/Aura/Source/AuraShares.lua:379`, `/workspace/data/raw/Aura/Source/AuraShares.lua:397`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:842`, `/workspace/data/raw/Enemy/Code/Intercom/Intercom.lua:234`, `/workspace/data/raw/Enemy/Code/Intercom/Intercom.lua:338`, `/workspace/data/raw/Enemy/Code/Intercom/Intercom.lua:422` |
 | Namespaces detected | WindowAssignFocus |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:Defocus, InfoScroller: LIBGUI_ELEMENT:Focus, PartyCast: LIBGUI_ELEMENT:Defocus, PartyCast: LIBGUI_ELEMENT:Focus, TidyChat: TidyChatHooks.OnEnterChatTextHook |
+| Example locations | Ace: LIBGUI_ELEMENT:Defocus, Ace: LIBGUI_ELEMENT:Focus, Aura: AuraShares.OnExportAura, Aura: AuraShares.OnImportAura, Enemy: Enemy.IntercomUI_ChooseChannelDialog_Open, Enemy: Enemy.IntercomUI_IntercomDialog_Open |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 19 |
+| Global usage count | 19 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ WindowAssignFocus(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 3 addons.
+Observed as a window function across 8 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: c_TEXT_ENTRY_WINDOW.."EntryBoxTextInput", self.name |
+| arg1 | Observed as a function or method reference. | Observed values: "EnemyChooseChannelDialog", "EnemyIntercomDialog", "EnemyIntercomJoinDialog" |
 | arg2 | Observed as a boolean toggle. | Observed values: false, true |
 
 ## Returns
@@ -84,17 +84,23 @@ Observed as a window function across 3 addons.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- Aura
+- Enemy
+- LibWBToggler
 - PartyCast
+- Shinies
 - TidyChat
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:Defocus -> WindowAssignFocus(self.name, false)
-- InfoScroller: LIBGUI_ELEMENT:Focus -> WindowAssignFocus(self.name, true)
-- PartyCast: LIBGUI_ELEMENT:Defocus -> WindowAssignFocus(self.name, false)
-- PartyCast: LIBGUI_ELEMENT:Focus -> WindowAssignFocus(self.name, true)
-- TidyChat: TidyChatHooks.OnEnterChatTextHook -> WindowAssignFocus(c_TEXT_ENTRY_WINDOW.."EntryBoxTextInput", true)
+- Ace: LIBGUI_ELEMENT:Defocus -> WindowAssignFocus(self.name, false)
+- Ace: LIBGUI_ELEMENT:Focus -> WindowAssignFocus(self.name, true)
+- Aura: AuraShares.OnExportAura -> WindowAssignFocus(exportWindow.."AuraText", true)
+- Aura: AuraShares.OnImportAura -> WindowAssignFocus(importWindow.."AuraText", true)
+- Enemy: Enemy.IntercomUI_ChooseChannelDialog_Open -> WindowAssignFocus("EnemyChooseChannelDialog", true)
+- Enemy: Enemy.IntercomUI_IntercomDialog_Open -> WindowAssignFocus("EnemyIntercomDialog", true)
 
 ## Related APIs
 
@@ -102,14 +108,19 @@ Observed as a window function across 3 addons.
 
 ## Used With
 
-- none
+- [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
+- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [IconLButtonUp](../../events/game_events/game_event_IconLButtonUp.md) (MEDIUM 43/100) - Game Event
 
 ## Affects
 
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

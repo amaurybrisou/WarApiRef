@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1075`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1075`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, BankArkel, BuffHead, DAoCBuff, Enemy, Killer |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1078`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:735`, `/workspace/data/raw/BankArkel/BankArkel.lua:513`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:70`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.lua:342`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:228`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283` |
 | Namespaces detected | ComboBoxClearMenuItems |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Combobox:Clear, PartyCast: LIBGUI_Combobox:Clear, TidyRoll: TidyRollOptions.Initialize |
+| Example locations | Ace: LIBGUI_Combobox:Clear, AdvancedPetAssist: AdvancedPetAssist.local.FillCombo, AdvancedPetAssist: FillCombo, AdvancedRenownTrainer: AdvancedRenownTrainer.local.SaveCurrentSpecAsPreset, AdvancedRenownTrainer: AdvancedRenownTraining.DeletePreset, AdvancedRenownTrainer: AdvancedRenownTraining.SavePreset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 121 |
+| Global usage count | 121 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ ComboBoxClearMenuItems(arg1)
 
 ## Description
 
-Observed as a window function across 3 addons.
+Observed as a window function across 17 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: c_TROLL_DIRECTION_COMBO, c_TROLL_GREED_COMBO, c_TROLL_NEED_COMBO |
+| arg1 | Observed as a function or method reference. | Observed values: "AdvancedRenownTrainingPresetsWindowLoadComboBox", "BankArkelBackpackCombo", "EnemyChooseChannelDialogChannelList" |
 
 ## Returns
 
@@ -83,18 +83,32 @@ Observed as a window function across 3 addons.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- BankArkel
+- BuffHead
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
 - PartyCast
+- PotionBar
+- Shinies
+- TexturedButtons
 - TidyRoll
+- TurretRange
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Combobox:Clear -> ComboBoxClearMenuItems(self.name)
-- PartyCast: LIBGUI_Combobox:Clear -> ComboBoxClearMenuItems(self.name)
-- TidyRoll: TidyRollOptions.Initialize -> ComboBoxClearMenuItems(c_TROLL_DIRECTION_COMBO)
-- TidyRoll: TidyRollOptions.Initialize -> ComboBoxClearMenuItems(c_TROLL_ONESC_COMBO)
-- TidyRoll: TidyRollOptions.Initialize -> ComboBoxClearMenuItems(c_TROLL_NEED_COMBO)
-- TidyRoll: TidyRollOptions.Initialize -> ComboBoxClearMenuItems(c_TROLL_GREED_COMBO)
+- Ace: LIBGUI_Combobox:Clear -> ComboBoxClearMenuItems(self.name)
+- AdvancedPetAssist: AdvancedPetAssist.local.FillCombo -> ComboBoxClearMenuItems(comboName)
+- AdvancedPetAssist: FillCombo -> ComboBoxClearMenuItems(comboName)
+- AdvancedRenownTrainer: AdvancedRenownTrainer.local.SaveCurrentSpecAsPreset -> ComboBoxClearMenuItems(PresetWindowName.."LoadComboBox")
+- AdvancedRenownTrainer: AdvancedRenownTraining.DeletePreset -> ComboBoxClearMenuItems(PresetWindowName.."LoadComboBox")
+- AdvancedRenownTrainer: AdvancedRenownTraining.SavePreset -> ComboBoxClearMenuItems(PresetWindowName.."LoadComboBox")
 
 ## Related APIs
 
@@ -104,15 +118,16 @@ Observed as a window function across 3 addons.
 
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
-- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
-- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

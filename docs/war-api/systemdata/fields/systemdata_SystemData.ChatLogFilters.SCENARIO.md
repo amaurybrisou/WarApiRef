@@ -65,7 +65,7 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 
 ## Related APIs
 
-- [WindowSetId](../../window_api/functions/window_WindowSetId.md) (HIGH 100/100) - Window Function
+- none
 
 ## Used With
 

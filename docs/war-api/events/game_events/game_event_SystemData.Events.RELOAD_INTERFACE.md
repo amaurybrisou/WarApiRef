@@ -30,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Lib RuString, TidyChat, TidyRoll, TimeToDie |
-| Files seen in | `/workspace/data/raw/RuStringLib/RuStringLib.lua:300`, `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227`, `/workspace/data/raw/TimeToDie/TimeToDie.lua:244` |
+| Addons seen in | AdvancedRenownTrainer, Aura, BagOMatic, BuffHead, CM_ClosetGoblin, LibWBToggler, PlanB, TexturedButtons |
+| Files seen in | `/workspace/data/raw/Aura/Source/AuraAddon.lua:70`, `/workspace/data/raw/BuffHead/Core.lua:152`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.lua:73`, `/workspace/data/raw/LibWarBoardToggler/LibWBTogglerManager.lua:12`, `/workspace/data/raw/PlanB/PlanB.lua:35`, `/workspace/data/raw/TexturedButtons/TexturedButtons.lua:492`, `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | Lib RuString: LibRuString.Init, TidyChat: TidyChat.Initialize, TidyRoll: TidyRoll.Initialize, TimeToDie: TimeToDie.Initialize |
+| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.Initialize, Aura: AuraAddon.OnInitialize, BagOMatic: BagOMatic.init, BuffHead: BuffHead.Initialize, CM_ClosetGoblin: ClosetGoblin.OnInitialize, LibWBToggler: LibWBTogglerManager.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 13 |
+| Global usage count | 13 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 4 |
+| Initialization flow references | 12 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 4 addons.
+Observed as a shared SystemData runtime event used by 13 addons.
 
 ## Handler Pattern
 
@@ -73,41 +73,59 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Seen In
 
-- Lib RuString
+- AdvancedRenownTrainer
+- Aura
+- BagOMatic
+- BuffHead
+- CM_ClosetGoblin
+- LibWBToggler
+- PlanB
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- TimeToDie
+- TurretRange
+- WarBoard
+- WhoHealedMe
 
 ## Registrars And Handlers
 
-- LibRuString.OnLoad
+- AdvancedRenownTraining.OnReload
+- AuraAddon.OnLoad
+- BagOMatic.restore_filters
+- BuffHead.OnLoadingEnd
+- ClosetGoblin.Initialize
+- LibWBTogglerManager.CheckMods
+- PlanB.HandleLoading
 - RegisterEventHandler
+- TexturedButtons.OnLoadComplete
 - TidyChat.OnLoad
 - TidyRoll.OnLoad
-- TimeToDie.LoadingEnd
+- TurretRange.OnLoadComplete
+- WHMEvents.OnLoadingEnd
+- WarBoard.SortMods
 - global
 
 ## Examples
 
-- Lib RuString: LibRuString.Init -> SystemData.Events.RELOAD_INTERFACE -> LibRuString.OnLoad
-- TidyChat: TidyChat.Initialize -> SystemData.Events.RELOAD_INTERFACE -> TidyChat.OnLoad
-- TidyRoll: TidyRoll.Initialize -> SystemData.Events.RELOAD_INTERFACE -> TidyRoll.OnLoad
-- TimeToDie: TimeToDie.Initialize -> SystemData.Events.RELOAD_INTERFACE -> TimeToDie.LoadingEnd
-- Lib RuString: LibRuString.OnLoad -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, LibRuString.OnLoad)
-- TidyChat: TidyChat.OnLoad -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, TidyChat.OnLoad)
+- AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -> SystemData.Events.RELOAD_INTERFACE -> AdvancedRenownTraining.OnReload
+- Aura: AuraAddon.OnInitialize -> SystemData.Events.RELOAD_INTERFACE -> AuraAddon.OnLoad
+- BagOMatic: BagOMatic.init -> SystemData.Events.RELOAD_INTERFACE -> BagOMatic.restore_filters
+- BuffHead: BuffHead.Initialize -> SystemData.Events.RELOAD_INTERFACE -> BuffHead.OnLoadingEnd
+- CM_ClosetGoblin: ClosetGoblin.OnInitialize -> SystemData.Events.RELOAD_INTERFACE -> ClosetGoblin.Initialize
+- LibWBToggler: LibWBTogglerManager.Initialize -> SystemData.Events.RELOAD_INTERFACE -> LibWBTogglerManager.CheckMods
 
 ## Related APIs
 
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
+- [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
 - [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
+- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (HIGH 93/100) - Global Function
 
 ## Used With
 
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.LOADING_END](game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Triggered By

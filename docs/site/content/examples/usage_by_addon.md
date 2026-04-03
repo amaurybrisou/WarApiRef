@@ -4,38 +4,38 @@
 
 | Addon | Frame | Event | Lua Function |
 | --- | --- | --- | --- |
-| InfoScroller | InfoScrollerTemplateLabel1 | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
-| InfoScroller | InfoScrollerTemplateLabel1 | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
-| InfoScroller | InfoScrollerTemplateLabel2 | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
-| InfoScroller | InfoScrollerTemplateLabel2 | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
-| InfoScroller | InfoScrollerTemplateLabel3 | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
-| InfoScroller | InfoScrollerTemplateLabel3 | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
-| InfoScroller | InfoScrollerTemplateLabel4 | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
-| InfoScroller | InfoScrollerTemplateLabel4 | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
-| InfoScroller | InfoScrollerTemplateLabel5 | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
-| InfoScroller | InfoScrollerTemplateLabel5 | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
-| PartyCast | PartyCastWindow_TemplateTargetWindowLabel | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
-| PartyCast | PartyCastWindow_TemplateTargetWindowLabel | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
+| AdvancedPetAssist | APAComboAttackBind | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboAutoReattack | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboAutoReattackDelay | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboCastDelay | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboCastOnAcquire | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboCombatExitDelay | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboDebug | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboEnabled | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboFTAutoArmMount | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboFTFollowOnMount | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboFTPendingDelay | OnSelChanged | APAGui.OnComboChanged |
+| AdvancedPetAssist | APAComboFTRedirectCooldown | OnSelChanged | APAGui.OnComboChanged |
 
 ## Representative Function Usage
 
-- CreateWindow: InfoScroller -> CreateWindow("InfoScrollerMainWindow", true)
-- CreateWindow: Moth -> CreateWindow("Moth", true)
-- CreateWindow: Soloq -> CreateWindow(overviewWindowName, false)
-- CreateWindow: TidyChat -> CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
-- CreateWindow: TidyRoll -> CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
-- CreateWindow: TidyRoll -> CreateWindow(c_TIDY_ROLL_ANCHOR, false)
-- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(WindowName, "InfoScrollerTemplate", "InfoScrollerMainWindow")
-- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(w.name, base, w.parent)
-- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(w.name, base, w.parent)
-- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
-- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(w.name, base, w.parent)
-- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(w.name, base, w.parent)
-- DefaultColor.SetWindowTint: TidyRoll -> DefaultColor.SetWindowTint(rowName.."Background", color)
-- DestroyWindow: InfoScroller -> DestroyWindow(self.name)
-- DestroyWindow: PartyCast -> DestroyWindow(self.name)
-- DestroyWindow: TidyRoll -> DestroyWindow(self:GetName())
-- DestroyWindow: minesweep -> DestroyWindow("MineSweepWindow")
-- DestroyWindow: minesweep -> DestroyWindow("MineSweepWindow")
-- DialogManager.MakeOneButtonDialog: TidyChat -> DialogManager.MakeOneButtonDialog(L "Log is empty\n", L "Ok")
-- DialogManager.MakeTwoButtonDialog: Lib RuString -> DialogManager.MakeTwoButtonDialog(GetStringFromTable("CustomizeUiStrings",StringTables.CustomizeUi.TEXT_UI_MOD_SETTINGS_CHANGED_DIALOG), GetString(StringTables.Default.LABEL_YES), function()BroadcastEvent(SystemData.Events.RELOAD_INTERFACE)end, GetString(StringTables.Default.LABEL_NO), nil)
+- BankWindow.Hide: AnywhereTrainer -> BankWindow.Hide()
+- BankWindow.Hide: AnywhereTrainerAdditions -> BankWindow.Hide()
+- BankWindow.Hide: BankArkel -> BankWindow.Hide()
+- BankWindow.Show: AnywhereTrainer -> BankWindow.Show()
+- BankWindow.Show: BagOMatic -> BankWindow.Show()
+- BankWindow.Show: BankArkel -> BankWindow.Show()
+- CreateWindow: AdvancedPetAssist -> CreateWindow("APAOptions", true)
+- CreateWindow: AdvancedRenownTrainer -> CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
+- CreateWindow: AdvancedRenownTrainer -> CreateWindow(ImportWindowName, false)
+- CreateWindow: AdvancedRenownTrainer -> CreateWindow(ImportNameInputWindowName, false)
+- CreateWindow: AdvancedRenownTrainer -> CreateWindow(ExportWindowName, false)
+- CreateWindow: AdvancedRenownTrainer -> CreateWindow(LinkWindowName, false)
+- CreateWindowFromTemplate: Ace -> CreateWindowFromTemplate(w.name, base, w.parent)
+- CreateWindowFromTemplate: Ace -> CreateWindowFromTemplate(w.name, base, w.parent)
+- CreateWindowFromTemplate: Ace -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
+- CreateWindowFromTemplate: Ace -> CreateWindowFromTemplate(w.name, base, w.parent)
+- CreateWindowFromTemplate: Ace -> CreateWindowFromTemplate(w.name, base, w.parent)
+- CreateWindowFromTemplate: Ace -> CreateWindowFromTemplate(w.name, base, w.parent)
+- Cursor.Clear: AnywhereTrainerAdditions -> Cursor.Clear()
+- Cursor.Clear: CM_ClosetGoblin -> Cursor.Clear()

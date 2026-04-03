@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | PartyCast |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.xml:210`, `/workspace/data/raw/PartyCast/PartyCast.xml:52`, `/workspace/data/raw/PartyCast/PartyCast.xml:719` |
+| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.xml:0` |
 | Namespaces detected | EA_StatusBar_DefaultTintable |
 | Source kinds | xml_attributes |
 | Example locations | PartyCastWindow_Template_LargeTimerBar, PartyCastWindow_Template_SmallTimerBar, PartyFrameStatusBarBar |

@@ -26,11 +26,11 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1283` |
+| Addons seen in | AdvancedRenownTrainer |
+| Files seen in | `/workspace/data/raw/advancedrenowntrainer/AdvancedRenownTraining.lua:510` |
 | Namespaces detected | GameData |
 | Source kinds | globals, lua_calls |
-| Example locations | ZCurse_Profiler: CurseProfiler.breakfor |
+| Example locations | AdvancedRenownTrainer: AdvancedRenownTraining.CreateDataTable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
@@ -80,11 +80,11 @@ Observed as a global function across 1 addons.
 
 ## Seen In
 
-- ZCurse_Profiler
+- AdvancedRenownTrainer
 
 ## Examples
 
-- ZCurse_Profiler: CurseProfiler.breakfor -> GameData.Player.GetAdvanceData()
+- AdvancedRenownTrainer: AdvancedRenownTraining.CreateDataTable -> GameData.Player.GetAdvanceData()
 
 ## Related APIs
 
@@ -96,8 +96,7 @@ Observed as a global function across 1 addons.
 
 ## Triggered By
 
-- [SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED](../../events/game_events/game_event_SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.PLAYER_SINGLE_ABILITY_UPDATED](../../events/game_events/game_event_SystemData.Events.PLAYER_SINGLE_ABILITY_UPDATED.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED](../../events/game_events/game_event_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md) (HIGH 100/100) - Game Event
 
 ## Affects
 

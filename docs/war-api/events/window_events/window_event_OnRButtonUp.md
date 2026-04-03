@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 176
+- Raw weighted score: 188
 
-- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
@@ -30,13 +30,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:201`, `/workspace/data/raw/minesweep/minesweep.xml:58` |
+| Addons seen in | AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy |
+| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.xml:0`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/BuffHead/Setup/General.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.xml:0` |
 | Namespaces detected | OnRButtonUp |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
-| Example locations | TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollFrame.OnRButtonUp, minesweep: minesweep_Box.OnRButtonUp |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
+| Example locations | AggroMeter: AggroMeterGrayListBox.OnRButtonUp, AggroMeter: AggroMeter_Button.OnRButtonUp, AnywhereTrainer: AnywhereTrainerTabTemplate.OnRButtonUp, AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnRButtonUp, Aura: AuraSharesRow.OnRButtonUp, Aura: AuraWindowRow.OnRButtonUp |
+| XML usage count | 108 |
+| XML attribute usage count | 108 |
 | Lua usage count | 1 |
 | Global usage count | 1 |
 | Local definition count | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 3 addons.
+Observed as an engine-supplied UI event hook used by 21 addons.
 
 ## Handler Pattern
 
@@ -73,32 +73,121 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Seen In
 
+- AggroMeter
+- AnywhereTrainer
+- AnywhereTrainerAdditions
+- Aura
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- Killer
+- MiracleGrowLight
+- MoraleCircle
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- minesweep
+- TurretRange
+- WarBoard
+- followTheLeader
 
 ## Registrars And Handlers
 
+- AggroMeter.OnTabRBU
+- AggroMeter.PickedListMenu
+- AnywhereTrainer.OnRButtonUp
+- AnywhereTrainerAdditions.OnRButtonUp
+- AuraSettings.OnRButtonUpAuraList
+- AuraShares.OnRButtonUpAuraList
+- BuffHead.Setup.AdvancedCompression.OnRowRUp
+- BuffHead.Setup.AdvancedCompressionItem.OnRowRUp
+- BuffHead.Setup.AdvancedContainers.OnRowRUp
+- BuffHead.Setup.AdvancedContainersItem.OnContainerRClick
+- BuffHead.Setup.AdvancedContainersItem.OnRowRUp
+- BuffHead.Setup.EffectCache.OnRowRUp
+- BuffHead.Setup.Filter.OnRowRUp
+- BuffHead.Setup.Layout.OnControlFrameRButtonUp
+- BuffHead.Setup.OnRowRUp
+- BuffHead.Setup.PriorityEffects.OnRowRUp
+- BuffHead.Setup.PriorityEffectsItem.OnRowRUp
+- BuffHead.Setup.SelectTexture.OnTextureRowRUp
+- ClosetGoblinCharacterWindow.EquipmentRButtonUp
+- ClosetGoblinCharacterWindow.OnSetRowContextMenu
+- ClosetGoblinOptionWindow.OnRButtonUp
+- ClosetGoblinZoneWindow.OnSetZoneRowContextMenu
+- DAoCBuffFrame.OnRButtonUp
+- Enemy.CombatLogUI_EpsWindow_OnRButtonUp
+- Enemy.CombatLogUI_StatsWindow_SortColumnRClick
+- Enemy.CombatLogUI_TargetDefenseTotalWindow_OnRButtonUp
+- Enemy.CombatLogUI_TargetDefenseWindow_OnRButtonUp
+- Enemy.KillSpamUI_KillSpamDialog_OnRButtonUp
+- Enemy.KillSpamUI_KillSpamDialog_OnRowRButtonUp
+- Enemy.KillSpamUI_PlayerKDR_OnRButtonUp
+- Enemy.MarkUI_EnemyMark_OnRButtonUp
+- Enemy.MarksUI_EnemyMarkIcon_OnRButtonUp
+- Enemy.MarksUI_EnemyMarksWindow_OnAddRButtonUp
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_OnValueRClick
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_SortColumnRClick
+- Enemy.StopwatchReset
+- Enemy.TimerUI_OnRButtonUp
+- Enemy.UI_Debug_OnRButtonUp
+- Enemy.UI_Icon_OnRButtonUp
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig1ActionRButtonUp
+- Enemy.UnitFramesUI_UnitFrame_OnRButtonUp
 - FrameManager.OnRButtonUp
+- Killer.OnPersonalCounterRButtonUp
+- Map.OnRClickMap
+- MiracleGrowLight.switchBackground
+- MiracleGrowLight.switchMode
+- MoraleCircle.RightClick
+- PP.ItemSlotRMouse
+- PotionBarFloating.ActivatorRButtonUp
+- PotionBarFloating.RButtonUp
+- RoR_SoR.BroadCastOption
+- RoR_SoR.OnTabRBU
+- RoR_SoR.POPOption
+- ShiniesAuctionsUI.OnRButtonUp_Results_ListItem
+- ShiniesBrowseUI.OnRButtonUp_Results_ListItem
+- ShiniesBrowseUI.OnRButtonUp_Searches
+- ShiniesPostUI.OnRButtonUp_Results_ListItem
+- TexturedButtons.Setup.OnRowRUp
 - TidyChat.ToggleOptions
+- TurretRange.Setup.Distances.OnRowRUp
+- WarBoard.OpenLayoutMenu
 - WindowRegisterCoreEventHandler
 - core
-- minesweep.RButtonUp
+- followTheLeader.OnRButtonUp
 
 ## Examples
 
 - TidyChat: TidyChatFrames.Initialize -> OnRButtonUp -> TidyChat.ToggleOptions
-- TidyRoll: TidyRollFrame -> TidyRollFrame.OnRButtonUp -> FrameManager.OnRButtonUp
-- minesweep: minesweep_Box -> minesweep_Box.OnRButtonUp -> minesweep.RButtonUp
-- TidyChat: TidyChat.ToggleOptions -> WindowRegisterCoreEventHandler(OnRButtonUp, TidyChat.ToggleOptions)
+- AggroMeter: AggroMeterGrayListBox -> AggroMeterGrayListBox.OnRButtonUp -> AggroMeter.PickedListMenu
+- AggroMeter: AggroMeter_Button -> AggroMeter_Button.OnRButtonUp -> AggroMeter.OnTabRBU
+- AnywhereTrainer: AnywhereTrainerTabTemplate -> AnywhereTrainerTabTemplate.OnRButtonUp -> AnywhereTrainer.OnRButtonUp
+- AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate -> AnywhereTrainerAdditionsTabTemplate.OnRButtonUp -> AnywhereTrainerAdditions.OnRButtonUp
+- Aura: AuraSharesRow -> AuraSharesRow.OnRButtonUp -> AuraShares.OnRButtonUpAuraList
 
 ## Related APIs
 
-- [DynamicImageSetTextureSlice](../../window_api/functions/window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
+- [EA_Window_ContextMenu.AddCascadingMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddCascadingMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuDivider](../../globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
+- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
+- [WindowGetMovable](../../window_api/functions/window_WindowGetMovable.md) (HIGH 90/100) - Window Function
 
 ## Used With
 
-- none
+- [EA_Window_ContextMenu.AddMenuDivider](../../globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Triggered By
 

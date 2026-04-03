@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:143` |
+| Addons seen in | Killer |
+| Files seen in | `/workspace/data/raw/Killer/KillerZoneHistory.lua:5` |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | CurseProfiler.untilfunction, lua_call |
+| Example locations | Killer.local.ResolveZoneIdFromName, ResolveZoneIdFromName, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -61,7 +61,7 @@ Observed GameData field used by 1 addons through generated function calls, event
 
 ## Seen In
 
-- ZCurse_Profiler
+- Killer
 
 ## Related APIs
 
@@ -81,4 +81,4 @@ Observed GameData field used by 1 addons through generated function calls, event
 
 ## Notes
 
-- Observed in contexts: CurseProfiler.untilfunction, lua_call
+- Observed in contexts: Killer.local.ResolveZoneIdFromName, ResolveZoneIdFromName, lua_call

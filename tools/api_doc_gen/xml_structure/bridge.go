@@ -86,9 +86,6 @@ func (tree *XMLTree) ToFramesAndHandlers() ([]Frame, []Handler) {
 
 		// Collect named children and structural children
 		for _, child := range node.Children {
-			if child.IsIgnored {
-				continue
-			}
 			if child.IsNamed {
 				frame.Children = append(frame.Children, child.Name)
 				frame.ChildElementTypes = append(frame.ChildElementTypes, child.Tag)

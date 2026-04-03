@@ -8,12 +8,12 @@
 
 - Evidence:
 
-- InfoScroller: CreateWindow("InfoScrollerMainWindow", true)
-  - Moth: CreateWindow("Moth", true)
-  - Soloq: CreateWindow(overviewWindowName, false)
-  - TidyChat: CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
-  - TidyRoll: CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
-  - TidyRoll: CreateWindow(c_TIDY_ROLL_ANCHOR, false)
+- AdvancedPetAssist: CreateWindow("APAOptions", true)
+  - AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
+  - AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
+  - AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
+  - AdvancedRenownTrainer: CreateWindow(ExportWindowName, false)
+  - AdvancedRenownTrainer: CreateWindow(LinkWindowName, false)
 
 ## Template instantiation
 
@@ -23,12 +23,12 @@
 
 - Evidence:
 
-- InfoScroller: CreateWindowFromTemplate(WindowName, "InfoScrollerTemplate", "InfoScrollerMainWindow")
-  - InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
-  - InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
-  - InfoScroller: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
-  - InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
-  - InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
+- Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+  - Ace: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
+  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+  - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
 
 ## Runtime anchoring
 
@@ -38,12 +38,12 @@
 
 - Evidence:
 
-- InfoScroller: WindowAddAnchor(WindowName.."Image", anchor, WindowName, anchor, T_X, T_Y)
-  - InfoScroller: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
-  - Moth: WindowAddAnchor("Moth", "bottomleft", "CursorWindow", "topleft", 0, 0)
-  - Moth: WindowAddAnchor("MothHealthBar", "bottomleft", "MothBackground", "topleft", 0, yOffset)
-  - PartyCast: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
-  - PartyCast: WindowAddAnchor("PartyCastWindow"..i, Frame_Anchor, "PartyCastWindow_Dynamic"..i, Frame_Anchor, 0, PartyCast.Settings.Offset)
+- Ace: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
+  - AdvancedPetAssist: WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
+  - AdvancedPetAssist: WindowAddAnchor(name, "topleft", "APAOptionsContent", "topleft", x, y)
+  - AdvancedRenownTrainer: WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
+  - AdvancedRenownTrainer: WindowAddAnchor(t.windowName, t.relativePoint, t.relativeTo, t.point, t.x, t.y)
+  - AnywhereTrainerAdditions: WindowAddAnchor(tab.Name, tab.Anchor.Point, tab.Anchor.RelativeTo, tab.Anchor.RelativePoint, tab.Anchor.X, tab.Anchor.Y)
 
 ## XML to Lua binding
 
@@ -53,9 +53,9 @@
 
 - Evidence:
 
-- InfoScroller: InfoScrollerTemplateLabel1.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel1.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel2.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel2.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel3.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel3.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
+- AdvancedPetAssist: APAComboAttackBind.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboAutoReattack.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboAutoReattackDelay.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboCastDelay.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged -> APAGui.OnComboChanged

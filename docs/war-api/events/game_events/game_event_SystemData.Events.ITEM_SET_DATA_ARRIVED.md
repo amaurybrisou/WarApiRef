@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 153
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
@@ -20,24 +20,26 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:2134` |
+| Addons seen in | Pocket Palette |
+| Files seen in | `/workspace/data/raw/PocketPalette/PocketPalette.lua:105` |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, lua_event_registration |
-| Example locations | ZCurse_Profiler: CurseProfiler.Initialize |
+| Source kinds | event_page, flows, lua_event_registration |
+| Example locations | Pocket Palette: PP.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
 | Global usage count | 1 |
 | Local definition count | 0 |
-| Documentation references | 1 |
-| Initialization flow references | 0 |
+| Documentation references | 2 |
+| Initialization flow references | 1 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -69,18 +71,18 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Seen In
 
-- ZCurse_Profiler
+- Pocket Palette
 
 ## Registrars And Handlers
 
-- CurseProfiler.functionwhile
+- PP.UpdateItemSlots
 - RegisterEventHandler
 - global
 
 ## Examples
 
-- ZCurse_Profiler: CurseProfiler.Initialize -> SystemData.Events.ITEM_SET_DATA_ARRIVED -> CurseProfiler.functionwhile
-- ZCurse_Profiler: CurseProfiler.functionwhile -> RegisterEventHandler(SystemData.Events.ITEM_SET_DATA_ARRIVED, CurseProfiler.functionwhile)
+- Pocket Palette: PP.Initialize -> SystemData.Events.ITEM_SET_DATA_ARRIVED -> PP.UpdateItemSlots
+- Pocket Palette: PP.UpdateItemSlots -> RegisterEventHandler(SystemData.Events.ITEM_SET_DATA_ARRIVED, PP.UpdateItemSlots)
 
 ## Related APIs
 

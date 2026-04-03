@@ -86,21 +86,29 @@ type AddonSpec struct {
 }
 
 type Call struct {
-	Name      string
-	Line      int
-	Arguments []string
+	Name           string
+	CalleeRaw      string
+	CalleeResolved string
+	Line           int
+	Arguments      []string
 }
 
 type EventRegistration struct {
-	Addon          string
-	Registrar      string
-	Event          string
-	Handler        string
-	Window         string
-	Scope          string
-	SourceFunction string
-	File           string
-	Line           int
+	Addon           string
+	Registrar       string
+	Event           string
+	EventRaw        string
+	EventResolved   string
+	Handler         string
+	HandlerRaw      string
+	HandlerResolved string
+	Window          string
+	WindowRaw       string
+	WindowResolved  string
+	Scope           string
+	SourceFunction  string
+	File            string
+	Line            int
 }
 
 type StateVariable struct {
@@ -125,19 +133,26 @@ type Module struct {
 }
 
 type Function struct {
-	Addon       string
-	Name        string
-	Aliases     []string
-	Module      string
-	File        string
-	Line        int
-	EndLine     int
-	Params      []string
-	Calls       []Call
-	Events      []EventRegistration
-	StateWrites []string
-	Local       bool
-	Kind        string
+	Addon             string
+	Name              string
+	DeclaredName      string
+	ShortName         string
+	ScopeKind         string
+	DeclarationKind   string
+	ReceiverName      string
+	ReceiverSeparator string
+	Aliases           []string
+	Module            string
+	File              string
+	Line              int
+	EndLine           int
+	DeclarationOrder  int
+	Params            []string
+	Calls             []Call
+	Events            []EventRegistration
+	StateWrites       []string
+	Local             bool
+	Kind              string
 }
 
 type Frame struct {

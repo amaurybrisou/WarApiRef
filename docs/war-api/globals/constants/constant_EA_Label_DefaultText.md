@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.xml:41`, `/workspace/data/raw/TidyChat/TidyChat.xml:52`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:127` |
+| Addons seen in | AdvancedPetAssist, TidyChat, TidyRoll, WSCT |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/TidyChat/TidyChat.xml:0`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:0`, `/workspace/data/raw/wsct/wsct_options/wsct_options.xml:0` |
 | Namespaces detected | EA_Label_DefaultText |
 | Source kinds | xml_attributes |
-| Example locations | TRollAutoRollTitleLabel, TidyChatOptionsTitleLabel, TidyChatOptionsVersionLabel |
-| XML usage count | 3 |
-| XML attribute usage count | 3 |
+| Example locations | APAFollowTargetHUDLabel, APAInstantOnlyHUDLabel, APAKitingHUDLabel, APALabelAttackBind, APALabelAutoReattack, APALabelAutoReattackDelay |
+| XML usage count | 71 |
+| XML attribute usage count | 71 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,18 +57,88 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Observed engine XML template or inherited constant referenced by 4 addons.
 
 ## Seen In
 
+- AdvancedPetAssist
 - TidyChat
 - TidyRoll
+- WSCT
 
 ## Used By
 
+- APAFollowTargetHUDLabel
+- APAInstantOnlyHUDLabel
+- APAKitingHUDLabel
+- APALabelAttackBind
+- APALabelAutoReattack
+- APALabelAutoReattackDelay
+- APALabelCastDelay
+- APALabelCastOnAcquire
+- APALabelCombatExitDelay
+- APALabelDebug
+- APALabelEnabled
+- APALabelFTAutoArmMount
+- APALabelFTFollowOnMount
+- APALabelFTPendingDelay
+- APALabelFTRedirectCooldown
+- APALabelFTTargetFilter
+- APALabelFollowTarget
+- APALabelGlobalCooldown
+- APALabelHUDColorOff
+- APALabelHUDColorOn
+- APALabelHUDSection
+- APALabelHUDVisible
+- APALabelHeelBind
+- APALabelHeelKeepsFT
+- APALabelInstantOnlyHUDSection
+- APALabelInstantOnlyHUDVisible
+- APALabelInstantPriorityWindow
+- APALabelInstantReserveWindow
+- APALabelKiting
+- APALabelKitingDuration
+- APALabelKitingGrace
+- APALabelKitingGrowth
+- APALabelKitingHUDColorOff
+- APALabelKitingHUDColorOn
+- APALabelKitingHUDSection
+- APALabelKitingHUDVisible
+- APALabelKitingInstantOnly
+- APALabelKitingInterval
+- APALabelKitingMaxMult
+- APALabelKitingPostCastFollow
+- APALabelLeash
+- APALabelLeashHardCeiling
+- APALabelLeashInterval
+- APALabelLeashRetries
+- APALabelLos
+- APALabelLosFollow
+- APALabelLosFollowGrowth
+- APALabelLosFollowMaxMult
+- APALabelLosInterval
+- APALabelLosNudges
+- APALabelNoTargetGrace
+- APALabelPTColor
+- APALabelPTEnabled
+- APALabelPTSection
+- APALabelPassiveAutoAttack
+- APALabelRmbArmsFT
+- APALabelSectionAutoRecall
+- APALabelSectionKiting
+- APALabelSectionLos
+- APALabelSectionMouseControls
+- APALabelStance
+- APAPetTargetHUDHP
+- APAPetTargetHUDName
 - TRollAutoRollTitleLabel
 - TidyChatOptionsTitleLabel
 - TidyChatOptionsVersionLabel
+- WSCTOptionsColorPickerWindowCustomColorText
+- WSCTOptionsEventWindowLabel
+- WSCTOptionsFrameWindowLabel
+- WSCTOptionsProfileWindowCustomLabel
+- WSCTOptionsProfileWindowLabel
 
 ## Related APIs
 

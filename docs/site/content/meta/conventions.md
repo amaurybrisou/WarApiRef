@@ -8,9 +8,9 @@
 
 - Evidence:
 
-- initialize: Creates 0 windows and calls 1 initialize hooks, Creates 3 windows and calls 1 initialize hooks
-  - runtime: InfoScroller: SystemData.Events.UPDATE_PROCESSED, InfoScroller: e
-  - xml: Defines 20 XML frames and 0 bound handlers, Defines 39 XML frames and 4 bound handlers
+- initialize: AdvancedPetAssist: APAFollowTargetHUD, AdvancedPetAssist: APAInstantOnlyHUD
+  - runtime: Ace: SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, Ace: SystemData.Events.UPDATE_PROCESSED
+  - xml: AdvancedPetAssist: APAComboAttackBind, AdvancedPetAssist: APAComboAutoReattack
 
 ## Event registration pattern
 
@@ -20,14 +20,14 @@
 
 - Evidence:
 
-- RegisterEventHandler: Lib RuString: RegisterEventHandler(SystemData.Events.LOADING_END, "LibRuString.OnLoad")
-  - RegisterEventHandler: Lib RuString: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "LibRuString.OnLoad")
-  - RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
-  - RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
-  - RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, "PartyCast.StartCast")
-  - RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_END_CAST, "PartyCast.EndCast")
-  - UnregisterEventHandler: PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
-  - UnregisterEventHandler: PartyCast: UnregisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
+- RegisterEventHandler: AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+  - RegisterEventHandler: AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
+  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.LOADING_END, "AdvancedRenownTraining.OnReload")
+  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
+  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "AdvancedRenownTraining.OnReload")
+  - RegisterEventHandler: AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, "AdvancedRenownTraining.CreateDataTable")
+  - UnregisterEventHandler: Ace: UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "AceAddon_OnUpdate_DONOTTOUCH")
+  - UnregisterEventHandler: AdvancedPetAssist: UnregisterEventHandler(SystemData.Events.LOADING_END, LOADING_END_HANDLER)
 
 ## UI creation pattern
 
@@ -37,14 +37,14 @@
 
 - Evidence:
 
-- Window creation: InfoScroller: CreateWindow("InfoScrollerMainWindow", true)
-  - Window creation: Moth: CreateWindow("Moth", true)
-  - Window creation: Soloq: CreateWindow(overviewWindowName, false)
-  - Window creation: TidyChat: CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
-  - Window creation: TidyRoll: CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
-  - Window creation: TidyRoll: CreateWindow(c_TIDY_ROLL_ANCHOR, false)
-  - Template instantiation: InfoScroller: CreateWindowFromTemplate(WindowName, "InfoScrollerTemplate", "InfoScrollerMainWindow")
-  - Template instantiation: InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
+- Window creation: AdvancedPetAssist: CreateWindow("APAOptions", true)
+  - Window creation: AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
+  - Window creation: AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
+  - Window creation: AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
+  - Window creation: AdvancedRenownTrainer: CreateWindow(ExportWindowName, false)
+  - Window creation: AdvancedRenownTrainer: CreateWindow(LinkWindowName, false)
+  - Template instantiation: Ace: CreateWindowFromTemplate(w.name, base, w.parent)
+  - Template instantiation: Ace: CreateWindowFromTemplate(w.name, base, w.parent)
 
 ## XML to Lua binding pattern
 
@@ -54,14 +54,14 @@
 
 - Evidence:
 
-- InfoScroller: InfoScrollerTemplateLabel1.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel1.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel2.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel2.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel3.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel3.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel4.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
-  - InfoScroller: InfoScrollerTemplateLabel4.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
+- AdvancedPetAssist: APAComboAttackBind.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboAutoReattack.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboAutoReattackDelay.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboCastDelay.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboCastOnAcquire.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboCombatExitDelay.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboDebug.OnSelChanged -> APAGui.OnComboChanged
+  - AdvancedPetAssist: APAComboEnabled.OnSelChanged -> APAGui.OnComboChanged
 
 ## XML runtime caveats
 
@@ -98,11 +98,11 @@
 
 - Evidence:
 
-- InfoScroller: InfoScroller.Settings
-  - Lib RuString: LibRuString.Settings
-  - NPC Item Sale Price: Nisp.DebugEnabled
-  - NPC Item Sale Price: Nisp.DumpItemsTable
-  - NPC Item Sale Price: Nisp.Enabled
-  - PartyCast: PartyCast.Settings
-  - Soloq: Soloq.db
-  - TidyChat: TidyChat.Settings
+- AdvancedPetAssist: APA_Settings
+  - AdvancedRenownTrainer: AdvancedRenownTraining.Presets
+  - AggroMeter: AggroMeter.Settings
+  - BagOMatic: BagOMatic.saved
+  - BankArkel: BankArkel.db
+  - BuffHead: BuffHead.Settings
+  - CM_ClosetGoblin: ClosetGoblin.setData
+  - CM_ClosetGoblin: ClosetGoblin.settings

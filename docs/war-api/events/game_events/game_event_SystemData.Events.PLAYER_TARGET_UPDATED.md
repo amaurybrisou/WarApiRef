@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 186
+- Raw weighted score: 198
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -30,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:2134`, `/workspace/data/raw/Moth/Moth.lua:713` |
+| Addons seen in | AdvancedPetAssist, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, WoH-Reticle, followTheLeader |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/AdvancedPetAssist.lua:60`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:33`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:78`, `/workspace/data/raw/BuffHead/Core.lua:152`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/data/raw/Enemy/Code/Core/Groups/Groups.lua:22`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:41`, `/workspace/data/raw/WoH-Reticle/WoHReticle.lua:70` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | Moth: Moth.Initialize, ZCurse_Profiler: CurseProfiler.Initialize |
+| Example locations | AdvancedPetAssist: AdvancedPetAssist.local.RegisterCoreEvents, AdvancedPetAssist: RegisterCoreEvents, AutoMark: AutoMark.OnInitialize, AutoMark: AutoMark.OnSlashCommand, BuffHead: BuffHead.Initialize, DAoCBuff: DAoCBuff.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 1 |
+| Initialization flow references | 5 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 2 addons.
+Observed as a shared SystemData runtime event used by 8 addons.
 
 ## Handler Pattern
 
@@ -73,28 +73,41 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Seen In
 
-- Moth
-- ZCurse_Profiler
+- AdvancedPetAssist
+- Aura
+- AutoMark
+- BuffHead
+- DAoCBuff
+- Enemy
+- WoH-Reticle
+- followTheLeader
 
 ## Registrars And Handlers
 
-- CurseProfiler.localthen
-- Moth.UpdateTarget
+- AdvancedPetAssist.OnTargetUpdated
+- AutoMark.OnPlayerTargetUpdated
+- BuffHead.OnTargetUpdated
+- DAoCBuff.OnEventHC
+- Enemy.Groups_OnPlayerTargetUpdated
+- Enemy.OnPlayerTargetUpdated
 - RegisterEventHandler
-- WindowRegisterEventHandler
+- TargetInfoFix.SET_TARGETINFO_FIX_UPDATE_FLAG_DONOTTOUCH
+- WoHReticle.UpdateTargets
+- followTheLeader.OnTargetUpdated
 - global
-- window
 
 ## Examples
 
-- Moth: Moth.Initialize -> SystemData.Events.PLAYER_TARGET_UPDATED -> Moth.UpdateTarget
-- ZCurse_Profiler: CurseProfiler.Initialize -> SystemData.Events.PLAYER_TARGET_UPDATED -> CurseProfiler.localthen
-- Moth: Moth.UpdateTarget -> WindowRegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, Moth.UpdateTarget)
-- ZCurse_Profiler: CurseProfiler.localthen -> RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, CurseProfiler.localthen)
+- AdvancedPetAssist: AdvancedPetAssist.local.RegisterCoreEvents -> SystemData.Events.PLAYER_TARGET_UPDATED -> AdvancedPetAssist.OnTargetUpdated
+- AdvancedPetAssist: RegisterCoreEvents -> SystemData.Events.PLAYER_TARGET_UPDATED -> AdvancedPetAssist.OnTargetUpdated
+- AutoMark: AutoMark.OnInitialize -> SystemData.Events.PLAYER_TARGET_UPDATED -> AutoMark.OnPlayerTargetUpdated
+- AutoMark: AutoMark.OnSlashCommand -> SystemData.Events.PLAYER_TARGET_UPDATED -> AutoMark.OnPlayerTargetUpdated
+- BuffHead: BuffHead.Initialize -> SystemData.Events.PLAYER_TARGET_UPDATED -> BuffHead.OnTargetUpdated
+- DAoCBuff: DAoCBuff.Initialize -> SystemData.Events.PLAYER_TARGET_UPDATED -> DAoCBuff.OnEventHC
 
 ## Related APIs
 
-- none
+- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (HIGH 93/100) - Global Function
 
 ## Used With
 

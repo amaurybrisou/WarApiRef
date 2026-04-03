@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Soloq, TidyChat, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/Soloq/ui/Overview.xml:65`, `/workspace/data/raw/TidyChat/TidyChat.xml:63`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:32`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:58`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:138`, `/workspace/data/raw/minesweep/minesweep.xml:89` |
+| Addons seen in | AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, CM_ClosetGoblin, DAoCBuff |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/APAGui.xml:0`, `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/Aura/Source/AuraConfig.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/Aura/Source/AuraTexture.xml:0`, `/workspace/data/raw/BankArkel/BankArkel.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0` |
 | Namespaces detected | EA_Button_DefaultWindowClose |
 | Source kinds | xml_attributes |
-| Example locations | MineSweepWindowClose, SoloqOverviewWindowCloseButton, TRollAutoRollCloseButton, TidyChatCopyClose, TidyChatLootRollClose, TidyChatOptionsCloseButton |
-| XML usage count | 6 |
-| XML attribute usage count | 6 |
+| Example locations | APAOptionsClose, AdvancedRenownTrainingLinkWindowClose, AdvancedRenownTrainingWindowClose, AggroMeterGrayWindowClose, AuraConfigClose, AuraSettingsClose |
+| XML usage count | 84 |
+| XML attribute usage count | 84 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,23 +57,120 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 4 addons.
+Observed engine XML template or inherited constant referenced by 23 addons.
 
 ## Seen In
 
-- Soloq
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
+- BankArkel
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- Killer
+- LibGroup
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- minesweep
+- TurretRange
+- WSCT
+- WarBoard
+- WhoHealedMe
+- bigger_MacroWindow
 
 ## Used By
 
-- MineSweepWindowClose
-- SoloqOverviewWindowCloseButton
+- APAOptionsClose
+- AdvancedRenownTrainingLinkWindowClose
+- AdvancedRenownTrainingWindowClose
+- AggroMeterGrayWindowClose
+- AuraConfigClose
+- AuraSettingsClose
+- AuraSharesClose
+- AuraSharesImportExportClose
+- AuraTextureClose
+- BuffHeadSetupAdvancedCompressionItemEffectWindowClose
+- BuffHeadSetupAdvancedCompressionItemWindowClose
+- BuffHeadSetupAdvancedCompressionWindowClose
+- BuffHeadSetupAdvancedContainersItemPropertiesWindowClose
+- BuffHeadSetupAdvancedContainersItemWindowClose
+- BuffHeadSetupAdvancedContainersWindowClose
+- BuffHeadSetupContainerWindowClose
+- BuffHeadSetupDisplayWindowClose
+- BuffHeadSetupEffectCacheTableWindowClose
+- BuffHeadSetupEffectCacheWindowClose
+- BuffHeadSetupFilterWindowClose
+- BuffHeadSetupGeneralWindowClose
+- BuffHeadSetupLayoutManagerWindowClose
+- BuffHeadSetupLayoutPropertiesWindowClose
+- BuffHeadSetupLayoutWindowClose
+- BuffHeadSetupMenuWindowClose
+- BuffHeadSetupPerformanceWindowClose
+- BuffHeadSetupPriorityEffectsItemWindowClose
+- BuffHeadSetupPriorityEffectsWindowClose
+- BuffHeadSetupTrackersWindowClose
+- ClosetGoblinCharacterWindowClose
+- ClosetGoblinZoneWindowClose
+- DAoCBuffMessageWindowClose
+- DAoCBuff_SettingsClose
+- DAoCBuff_Settings_FilterClose
+- EA_Window_MacroClose
+- EnemyChooseChannelDialogClose
+- EnemyChooseIconDialogClose
+- EnemyClickCastingDialogClose
+- EnemyCombatLogSnapshotWindowClose
+- EnemyCombatLogStatsWindowClose
+- EnemyConfigDialogClose
+- EnemyEffectFilterDialogClose
+- EnemyEffectsIndicatorDialogClose
+- EnemyIntercomDialogClose
+- EnemyIntercomJoinDialogClose
+- EnemyKillSpamAreaStatsDialogClose
+- EnemyMarkConfigDialogClose
+- EnemyScenarioInfoDialogCancelButton
+- EnemyTextEntryDialogClose
+- EnemyUnitFramePartDialogClose
+- KillerScoreDetailsWindowClose
+- KillerSettingsWindowClose
+- LibGroupSetupWindowClose
+- MacroIconSelectionWindowClose
+- PPMainClose
+- PackWinClose
+- PotionBarAboutClose
+- PotionBarTypeTemplateClose
+- RoR_SoR_OffsetClose
+- RoR_SoR_OpacityClose
+- RoR_SoR_ScaleClose
+- ShiniesWindowClose
 - TRollAutoRollCloseButton
+- TexturedButtonsSetupActionbarWindowClose
+- TexturedButtonsSetupAdvancedTexturesWindowClose
+- TexturedButtonsSetupCooldownWindowClose
+- TexturedButtonsSetupFontsWindowClose
+- TexturedButtonsSetupMenuWindowClose
+- TexturedButtonsSetupMiscWindowClose
+- TexturedButtonsSetupTexturesWindowClose
+- TexturedButtonsSetupTintWindowClose
 - TidyChatCopyClose
 - TidyChatLootRollClose
 - TidyChatOptionsCloseButton
+- TurretRangeSetupDisplayWindowClose
+- TurretRangeSetupDistanceWindowClose
+- TurretRangeSetupDistancesWindowClose
+- TurretRangeSetupGeneralWindowClose
+- TurretRangeSetupMenuWindowClose
+- WSCTOptionsClose
+- WSCTOptionsColorPickerWindowClose
+- WarBoardOptionsClose
+- WhoHealedMeDetailsClose
+- WhoHealedMeOptionsClose
 
 ## Related APIs
 

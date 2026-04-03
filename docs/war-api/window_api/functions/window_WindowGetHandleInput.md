@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:99`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:99` |
+| Addons seen in | Ace, DAoCBuff, LibWBToggler, PartyCast, Shinies, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:99`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:112`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:161`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:169`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:91`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:99`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:99`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:99` |
 | Namespaces detected | WindowGetHandleInput |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:TakesInput, PartyCast: LIBGUI_ELEMENT:TakesInput |
+| Example locations | Ace: LIBGUI_ELEMENT:TakesInput, DAoCBuff: DAoCBuffSettings.Disable, DAoCBuff: DAoCBuffSettings.OpenOptionswindow, DAoCBuff: DAoCBuffSettings.Reactivate, DAoCBuff: DAoCBuffSettings.UC, LibWBToggler: LIBGUI_ELEMENT:TakesInput |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 9 |
+| Global usage count | 9 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: self.name |
+| windowName | Observed as a target window name. | Observed values: "DAoCBuff_Settings", self.name |
 
 ## Returns
 
@@ -83,13 +83,21 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- DAoCBuff
+- LibWBToggler
 - PartyCast
+- Shinies
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:TakesInput -> WindowGetHandleInput(self.name)
-- PartyCast: LIBGUI_ELEMENT:TakesInput -> WindowGetHandleInput(self.name)
+- Ace: LIBGUI_ELEMENT:TakesInput -> WindowGetHandleInput(self.name)
+- DAoCBuff: DAoCBuffSettings.Disable -> WindowGetHandleInput("DAoCBuff_Settings")
+- DAoCBuff: DAoCBuffSettings.OpenOptionswindow -> WindowGetHandleInput("DAoCBuff_Settings")
+- DAoCBuff: DAoCBuffSettings.Reactivate -> WindowGetHandleInput("DAoCBuff_Settings")
+- DAoCBuff: DAoCBuffSettings.UC -> WindowGetHandleInput("DAoCBuff_Settings")
+- LibWBToggler: LIBGUI_ELEMENT:TakesInput -> WindowGetHandleInput(self.name)
 
 ## Related APIs
 
@@ -97,14 +105,18 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- none
+- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [SystemData.Events.UPDATE_PROCESSED](../../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
 
 ## Affects
 
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

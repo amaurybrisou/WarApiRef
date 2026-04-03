@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 13 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:558`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:782`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:847`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:558`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:782`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:847`, `/workspace/data/raw/TidyChat/TidyChat.lua:2031`, `/workspace/data/raw/TidyChat/TidyChat.lua:2275` |
+| Addons seen in | Ace, AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, Enemy, LibWBToggler, PartyCast |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:558`, `/workspace/data/raw/Ace/LibGUI.lua:783`, `/workspace/data/raw/Ace/LibGUI.lua:849`, `/workspace/data/raw/Aura/Source/AuraTexture.lua:147`, `/workspace/data/raw/BuffHead/Setup/SetupTrackers.lua:239`, `/workspace/data/raw/BuffHead/Setup/SetupTrackers.lua:253`, `/workspace/data/raw/BuffHead/Setup/SetupTrackers.lua:267`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.lua:1350` |
 | Namespaces detected | ButtonGetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Button:Enabled, InfoScroller: LIBGUI_Checkbox:Enabled, InfoScroller: LIBGUI_Optionbutton:Enabled, PartyCast: LIBGUI_Button:Enabled, PartyCast: LIBGUI_Checkbox:Enabled, PartyCast: LIBGUI_Optionbutton:Enabled |
+| Example locations | Ace: LIBGUI_Button:Enabled, Ace: LIBGUI_Checkbox:Enabled, Ace: LIBGUI_Optionbutton:Enabled, AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances, Aura: AuraTexture.OnIconLButtonUp, BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 64 |
+| Global usage count | 64 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ ButtonGetDisabledFlag(arg1)
 
 ## Description
 
-Observed as a window function across 4 addons.
+Observed as a window function across 13 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: buttonName, c_TIDY_CHAT_COPY.."Next", c_TIDY_CHAT_COPY.."Prev" |
+| arg1 | Observed as a function or method reference. | Observed values: "EnemyConfigDialogResetAllButton", "EnemyConfigDialogResetButton", "EnemyEffectsIndicatorDialogContentScrollChildChooseIconButton" |
 
 ## Returns
 
@@ -83,19 +83,28 @@ Observed as a window function across 4 addons.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedRenownTrainer
+- Aura
+- BuffHead
+- DAoCBuff
+- Enemy
+- LibWBToggler
 - PartyCast
+- PotionBar
+- Shinies
 - TidyChat
 - TidyRoll
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Button:Enabled -> ButtonGetDisabledFlag(self.name)
-- InfoScroller: LIBGUI_Checkbox:Enabled -> ButtonGetDisabledFlag(self.name)
-- InfoScroller: LIBGUI_Optionbutton:Enabled -> ButtonGetDisabledFlag(self.name)
-- PartyCast: LIBGUI_Button:Enabled -> ButtonGetDisabledFlag(self.name)
-- PartyCast: LIBGUI_Checkbox:Enabled -> ButtonGetDisabledFlag(self.name)
-- PartyCast: LIBGUI_Optionbutton:Enabled -> ButtonGetDisabledFlag(self.name)
+- Ace: LIBGUI_Button:Enabled -> ButtonGetDisabledFlag(self.name)
+- Ace: LIBGUI_Checkbox:Enabled -> ButtonGetDisabledFlag(self.name)
+- Ace: LIBGUI_Optionbutton:Enabled -> ButtonGetDisabledFlag(self.name)
+- AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances -> ButtonGetDisabledFlag(WindowName.."PurchaseButton")
+- Aura: AuraTexture.OnIconLButtonUp -> ButtonGetDisabledFlag(SystemData.ActiveWindow.name)
+- BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -> ButtonGetDisabledFlag(windowName.."OnTargetChangeClearAlwaysShow".."Button")
 
 ## Related APIs
 
@@ -103,14 +112,20 @@ Observed as a window function across 4 addons.
 
 ## Used With
 
-- none
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [WindowGetParent](window_WindowGetParent.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

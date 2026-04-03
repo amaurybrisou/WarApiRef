@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:663`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:718`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:663`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:718`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:434`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:782` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, Aura, BuffHead, DAoCBuff, Enemy, Killer |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:664`, `/workspace/data/raw/Ace/LibGUI.lua:719`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHelpers.lua:9`, `/workspace/data/raw/Aura/Source/AuraShares.lua:419`, `/workspace/data/raw/BuffHead/Setup/SelectColor.lua:78`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.lua:310`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:147`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:601` |
 | Namespaces detected | TextEditBoxGetText |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_MultiTextbox:GetText, InfoScroller: LIBGUI_Textbox:GetText, PartyCast: LIBGUI_MultiTextbox:GetText, PartyCast: LIBGUI_Textbox:GetText, TidyRoll: TidyRoll.CustomAutoRoll.AddById, TidyRoll: TidyRollOptions.OnApply |
+| Example locations | Ace: LIBGUI_MultiTextbox:GetText, Ace: LIBGUI_Textbox:GetText, AdvancedPetAssist: APAGuiHelpers.ParseRGB, AdvancedRenownTrainer: AdvancedRenownTraining.ImportNameInputOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed, AdvancedRenownTrainer: AdvancedRenownTraining.SavePreset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 115 |
+| Global usage count | 115 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed reading from or writing to edit-box controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: c_AUTO_ROLL_ADD_BY_ID_ID_EDITBOX, c_AUTO_ROLL_ADD_BY_ID_NAME_EDITBOX, c_TROLL_BNUM_TBOX |
+| arg1 | Observed as a function or method reference. | Observed values: "DyeWindowFilterEditBox", "EnemyChooseChannelDialogTellDetailsName", "EnemyClickCastingDialogContentScrollChildActionConfig2Command" |
 
 ## Returns
 
@@ -83,18 +83,32 @@ Observed reading from or writing to edit-box controls.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- Aura
+- BuffHead
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
 - PartyCast
+- Pocket Palette
+- Shinies
+- TexturedButtons
 - TidyRoll
+- TurretRange
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_MultiTextbox:GetText -> TextEditBoxGetText(self.name)
-- InfoScroller: LIBGUI_Textbox:GetText -> TextEditBoxGetText(self.name)
-- PartyCast: LIBGUI_MultiTextbox:GetText -> TextEditBoxGetText(self.name)
-- PartyCast: LIBGUI_Textbox:GetText -> TextEditBoxGetText(self.name)
-- TidyRoll: TidyRoll.CustomAutoRoll.AddById -> TextEditBoxGetText(c_AUTO_ROLL_ADD_BY_ID_ID_EDITBOX)
-- TidyRoll: TidyRoll.CustomAutoRoll.AddById -> TextEditBoxGetText(c_AUTO_ROLL_ADD_BY_ID_NAME_EDITBOX)
+- Ace: LIBGUI_MultiTextbox:GetText -> TextEditBoxGetText(self.name)
+- Ace: LIBGUI_Textbox:GetText -> TextEditBoxGetText(self.name)
+- AdvancedPetAssist: APAGuiHelpers.ParseRGB -> TextEditBoxGetText(name)
+- AdvancedRenownTrainer: AdvancedRenownTraining.ImportNameInputOkButtonPressed -> TextEditBoxGetText(ImportNameInputWindowName.."NameInputBox")
+- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> TextEditBoxGetText(ImportWindowName.."NameInputBox")
+- AdvancedRenownTrainer: AdvancedRenownTraining.ImportOkButtonPressed -> TextEditBoxGetText(ImportWindowName.."LinkInputBox")
 
 ## Related APIs
 
@@ -102,7 +116,11 @@ Observed reading from or writing to edit-box controls.
 
 ## Used With
 
-- none
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
 
 ## Triggered By
 

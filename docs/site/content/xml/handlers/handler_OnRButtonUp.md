@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 126
+- Raw weighted score: 138
 
-- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, observed in both xml and lua paths.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, used directly in xml handler attributes, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
@@ -27,14 +27,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.xml:201`, `/workspace/data/raw/minesweep/minesweep.xml:58` |
+| Addons seen in | AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, BuffHead, CM_ClosetGoblin, DAoCBuff, Enemy |
+| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.xml:0`, `/workspace/data/raw/AnywhereTrainerAdditions/AnywhereTrainerAdditions.xml:0`, `/workspace/data/raw/Aura/Source/AuraSettings.xml:0`, `/workspace/data/raw/Aura/Source/AuraShares.xml:0`, `/workspace/data/raw/BuffHead/Setup/General.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompression.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItem.xml:0` |
 | Namespaces detected | OnRButtonUp |
 | Source kinds | bindings, xml_handlers |
-| Example locations | TidyRoll: TidyRollFrame.OnRButtonUp, minesweep: minesweep_Box.OnRButtonUp |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
-| Lua usage count | 2 |
+| Example locations | AggroMeter: AggroMeterGrayListBox.OnRButtonUp, AggroMeter: AggroMeter_Button.OnRButtonUp, AnywhereTrainer: AnywhereTrainerTabTemplate.OnRButtonUp, AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate.OnRButtonUp, Aura: AuraSharesRow.OnRButtonUp, Aura: AuraWindowRow.OnRButtonUp |
+| XML usage count | 108 |
+| XML attribute usage count | 108 |
+| Lua usage count | 108 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-Observed as an XML handler hook bound by 2 addons through frame event handlers.
+Observed as an XML handler hook bound by 20 addons through frame event handlers.
 
 ## Expected Lua Binding
 
@@ -69,27 +69,66 @@ function(...)
 ## Element Types
 
 - Button
+- DynamicImage
+- Label
+- ListBox
+- MapDisplay
 - Window
 
 ## Seen In
 
+- AggroMeter
+- AnywhereTrainer
+- AnywhereTrainerAdditions
+- Aura
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
+- Enemy
+- Killer
+- MiracleGrowLight
+- MoraleCircle
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyRoll
-- minesweep
+- TurretRange
+- WarBoard
+- followTheLeader
 
 ## Examples
 
-- TidyRoll: TidyRollFrame -> TidyRollFrame.OnRButtonUp -> FrameManager.OnRButtonUp
-- minesweep: minesweep_Box -> minesweep_Box.OnRButtonUp -> minesweep.RButtonUp
+- AggroMeter: AggroMeterGrayListBox -> AggroMeterGrayListBox.OnRButtonUp -> AggroMeter.PickedListMenu
+- AggroMeter: AggroMeter_Button -> AggroMeter_Button.OnRButtonUp -> AggroMeter.OnTabRBU
+- AnywhereTrainer: AnywhereTrainerTabTemplate -> AnywhereTrainerTabTemplate.OnRButtonUp -> AnywhereTrainer.OnRButtonUp
+- AnywhereTrainerAdditions: AnywhereTrainerAdditionsTabTemplate -> AnywhereTrainerAdditionsTabTemplate.OnRButtonUp -> AnywhereTrainerAdditions.OnRButtonUp
+- Aura: AuraSharesRow -> AuraSharesRow.OnRButtonUp -> AuraShares.OnRButtonUpAuraList
+- Aura: AuraWindowRow -> AuraWindowRow.OnRButtonUp -> AuraSettings.OnRButtonUpAuraList
 
 ## Related APIs
 
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [DynamicImageSetTextureSlice](../../window_api/functions/window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
+- [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
+- [EA_Window_ContextMenu.AddCascadingMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddCascadingMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuDivider](../../globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.AddMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
+- [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
+- [ListBox](../element_types/element_ListBox.md) (HIGH 100/100) - XML Element Type
+- [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
+- [WindowGetMovable](../../window_api/functions/window_WindowGetMovable.md) (HIGH 90/100) - Window Function
 
 ## Used With
 
-- none
+- [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [DynamicImage](../element_types/element_DynamicImage.md) (HIGH 100/100) - XML Element Type
+- [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
+- [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

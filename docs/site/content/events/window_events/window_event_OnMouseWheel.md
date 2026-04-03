@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChatCopy.xml:17`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:203` |
+| Addons seen in | MoraleCircle, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/MoraleCircle/MoraleCircle.xml:0`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:0`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:0` |
 | Namespaces detected | OnMouseWheel |
 | Source kinds | event_page, xml_handlers |
-| Example locations | TidyChat: TidyChatCopy.OnMouseWheel, TidyRoll: TidyRollFrame.OnMouseWheel |
-| XML usage count | 2 |
-| XML attribute usage count | 2 |
+| Example locations | MoraleCircle: MoraleTemplate.OnMouseWheel, TidyChat: TidyChatCopy.OnMouseWheel, TidyRoll: TidyRollFrame.OnMouseWheel |
+| XML usage count | 3 |
+| XML attribute usage count | 3 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 2 addons.
+Observed as an engine-supplied UI event hook used by 3 addons.
 
 ## Handler Pattern
 
@@ -69,16 +69,19 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Seen In
 
+- MoraleCircle
 - TidyChat
 - TidyRoll
 
 ## Registrars And Handlers
 
 - FrameManager.OnMouseWheel
+- MoraleCircle.OnMouseWheel
 - TidyChat.Copy.OnMouseWheel
 
 ## Examples
 
+- MoraleCircle: MoraleTemplate -> MoraleTemplate.OnMouseWheel -> MoraleCircle.OnMouseWheel
 - TidyChat: TidyChatCopy -> TidyChatCopy.OnMouseWheel -> TidyChat.Copy.OnMouseWheel
 - TidyRoll: TidyRollFrame -> TidyRollFrame.OnMouseWheel -> FrameManager.OnMouseWheel
 

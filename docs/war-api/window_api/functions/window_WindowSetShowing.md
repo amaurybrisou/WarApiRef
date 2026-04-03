@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 34 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, TidyChat, TidyRoll, ZCurse_Profiler, minesweep |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1065`, `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:74`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:79`, `/workspace/data/raw/Moth/Moth.lua:167`, `/workspace/data/raw/Moth/Moth.lua:267`, `/workspace/data/raw/Moth/Moth.lua:418`, `/workspace/data/raw/Moth/Moth.lua:460` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, AnywhereTrainerAdditions, Aura, AutoMark, BankArkel |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:74`, `/workspace/data/raw/Ace/LibGUI.lua:79`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:1063`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:1071`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:546`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:983`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:138`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:181` |
 | Namespaces detected | WindowSetShowing |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_ELEMENT:Hide, InfoScroller: LIBGUI_ELEMENT:Show, Moth: Moth.Clear, Moth: Moth.HealthBar, Moth: Moth.HideBorders |
+| Example locations | Ace: LIBGUI_ELEMENT:Hide, Ace: LIBGUI_ELEMENT:Show, AdvancedPetAssist: APAGui.Hide, AdvancedPetAssist: APAGui.HidePetTargetHUD, AdvancedPetAssist: APAGui.OnShown, AdvancedPetAssist: APAGui.Show |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 67 |
-| Global usage count | 67 |
+| Lua usage count | 912 |
+| Global usage count | 912 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "DefaultTooltip", "EA_Window_LootRoll", "EA_Window_WorldMap" |
-| arg2 | Observed as a boolean toggle. | Observed values: (NameOfTargetBG~=L "")and PartyCast.Settings.ShowTarget, InfoScroller.Settings.Alignment=="left" or InfoScroller.Settings.Alignment=="center", InfoScroller.Settings.Alignment=="right" or InfoScroller.Settings.Alignment=="center" |
+| windowName | Observed as a target window name. | Observed values: "APAInstantOnlyHUD", "APAKitingHUD", "APAOptions" |
+| arg2 | Observed as a boolean toggle. | Observed values: (KEEP1_State==4), (KEEP2_State==4), (NameOfTargetBG~=L "")and PartyCast.Settings.ShowTarget |
 
 ## Returns
 
@@ -84,48 +84,86 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- Ace
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AggroMeter
+- AnywhereTrainerAdditions
+- Aura
+- AutoMark
+- BankArkel
+- BuffHead
+- CM_ClosetGoblin
+- CombatTextNames
+- DAoCBuff
+- Enemy
+- GuardLine
+- Killer
+- LibGroup
+- LibSlash
+- LibWBToggler
+- MiracleGrowLight
 - PartyCast
-- Soloq
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- Swift Assist
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- ZCurse_Profiler
-- minesweep
+- TurretRange
+- WSCT
+- WarBoard
+- WhoHealedMe
+- WoH-Reticle
+- followTheLeader
 
 ## Examples
 
-- InfoScroller: InfoScroller.CreateCard -> WindowSetShowing(WindowName.."BackGroundStart", InfoScroller.Settings.Alignment=="right" or InfoScroller.Settings.Alignment=="center")
-- InfoScroller: InfoScroller.CreateCard -> WindowSetShowing(WindowName.."BackGroundEnd", InfoScroller.Settings.Alignment=="left" or InfoScroller.Settings.Alignment=="center")
-- InfoScroller: InfoScroller.CreateCard -> WindowSetShowing(WindowName.."BackGround", InfoScroller.Settings.ShowBG)
-- InfoScroller: LIBGUI_ELEMENT:Hide -> WindowSetShowing(self.name, false)
-- InfoScroller: LIBGUI_ELEMENT:Show -> WindowSetShowing(self.name, true)
-- Moth: Moth.Clear -> WindowSetShowing("Moth", false)
+- Ace: LIBGUI_ELEMENT:Hide -> WindowSetShowing(self.name, false)
+- Ace: LIBGUI_ELEMENT:Show -> WindowSetShowing(self.name, true)
+- AdvancedPetAssist: APAGui.Hide -> WindowSetShowing("APAOptions", false)
+- AdvancedPetAssist: APAGui.HidePetTargetHUD -> WindowSetShowing("APAPetTargetHUD", false)
+- AdvancedPetAssist: APAGui.OnShown -> WindowSetShowing("APAOptionsTabsControls", false)
+- AdvancedPetAssist: APAGui.Show -> WindowSetShowing("APAOptions", true)
 
 ## Related APIs
 
-- none
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 100/100) - XML Event
 
 ## Used With
 
-- [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
-- [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
-- [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [ComboBoxGetSelectedText](window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
+- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
+- [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
+- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowAssignFocus](window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
-- [WindowUnregisterCoreEventHandler](window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
+- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
+- [WindowStartAlphaAnimation](window_WindowStartAlphaAnimation.md) (HIGH 100/100) - Window Function
+- [WindowStopAlphaAnimation](window_WindowStopAlphaAnimation.md) (HIGH 100/100) - Window Function
+- [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
 
 ## Triggered By
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
+- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

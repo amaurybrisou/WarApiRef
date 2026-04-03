@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Lib RuString, TidyChat, TidyRoll, TimeToDie |
-| Files seen in | `/workspace/data/raw/RuStringLib/RuStringLib.lua:282`, `/workspace/data/raw/TidyChat/TidyChat.lua:189`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:265`, `/workspace/data/raw/TimeToDie/TimeToDie.lua:229` |
+| Addons seen in | BuffHead, TidyChat, TidyRoll, TurretRange |
+| Files seen in | `/workspace/data/raw/BuffHead/Core.lua:79`, `/workspace/data/raw/TidyChat/TidyChat.lua:189`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:265`, `/workspace/data/raw/TurrentRange/Core.lua:41` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
-| Example locations | Lib RuString: LibRuString.OnLoad, TidyChat: TidyChat.OnLoad, TidyRoll: TidyRoll.OnLoad, TimeToDie: TimeToDie.LoadingEnd |
+| Example locations | BuffHead: BuffHead.local.RegisterLibs, BuffHead: RegisterLibs, TidyChat: TidyChat.OnLoad, TidyRoll: TidyRoll.OnLoad, TurretRange: RegisterLibs, TurretRange: TurretRange.local.RegisterLibs |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -72,8 +72,8 @@ Observed wiring slash commands through a shared command-registration table.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "forcedrustrings", "tchat", "timetodie" |
-| arg2 | Observed as a function or method reference. | Observed values: TidyChat.ToggleOptions, TidyRoll.ToggleOptions, TimeToDie.AverageReport |
+| arg1 | Observed as a text or wstring payload. | Observed values: "buffhead", "tchat", "troll" |
+| arg2 | Observed as a function or method reference. | Observed values: TidyChat.ToggleOptions, TidyRoll.ToggleOptions, function(args)BuffHead.SlashCommand(args)end |
 
 ## Returns
 
@@ -85,30 +85,28 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Seen In
 
-- Lib RuString
+- BuffHead
 - TidyChat
 - TidyRoll
-- TimeToDie
+- TurretRange
 
 ## Examples
 
-- Lib RuString: LibRuString.OnLoad -> LibSlash.RegisterWSlashCmd("forcedrustrings", function(input)if(input==L "true")then LibRuString.ToggleHook(true)elseif(input==L "false")then LibRuString.ToggleHook(false)end end)
+- BuffHead: BuffHead.local.RegisterLibs -> LibSlash.RegisterWSlashCmd("buffhead", function(args)BuffHead.SlashCommand(args)end)
+- BuffHead: RegisterLibs -> LibSlash.RegisterWSlashCmd("buffhead", function(args)BuffHead.SlashCommand(args)end)
 - TidyChat: TidyChat.OnLoad -> LibSlash.RegisterWSlashCmd("tchat", TidyChat.ToggleOptions)
 - TidyRoll: TidyRoll.OnLoad -> LibSlash.RegisterWSlashCmd("troll", TidyRoll.ToggleOptions)
-- TimeToDie: TimeToDie.LoadingEnd -> LibSlash.RegisterWSlashCmd("ttd", TimeToDie.AverageReport)
-- TimeToDie: TimeToDie.LoadingEnd -> LibSlash.RegisterWSlashCmd("timetodie", TimeToDie.AverageReport)
-- TimeToDie: TimeToDie.LoadingEnd -> LibSlash.RegisterWSlashCmd("ttdlast", TimeToDie.LastDeathReport)
+- TurretRange: RegisterLibs -> LibSlash.RegisterWSlashCmd("turretrange", function(args)TurretRange.SlashCommand(args)end)
+- TurretRange: TurretRange.local.RegisterLibs -> LibSlash.RegisterWSlashCmd("turretrange", function(args)TurretRange.SlashCommand(args)end)
 
 ## Related APIs
 
-- none
+- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
 - [SystemData.Events.LOADING_END](../../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.RELOAD_INTERFACE](../../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
@@ -122,3 +120,4 @@ Observed wiring slash commands through a shared command-registration table.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

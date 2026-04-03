@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 26 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, Soloq, TidyChat, TidyRoll, ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1065`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:84`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:84`, `/workspace/data/raw/Soloq/Soloq.lua:166`, `/workspace/data/raw/Soloq/ui/Overview.lua:38`, `/workspace/data/raw/TidyChat/TidyChat.lua:1089` |
+| Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, AnywhereTrainer, AnywhereTrainerAdditions, Aura, AutoMark, BuffHead |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:84`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:374`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:227`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:235`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:243`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:261`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:271`, `/workspace/data/raw/AnywhereTrainer/source/AnywhereTrainer.lua:280` |
 | Namespaces detected | WindowGetShowing |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:Showing, PartyCast: LIBGUI_ELEMENT:Showing, PartyCast: PartyCast.FetchedText, PartyCast: PartyCast.Update, Soloq: Soloq.onEnterRankedScenario, Soloq: Soloq.toggleOverviewWindow |
+| Example locations | Ace: LIBGUI_ELEMENT:Showing, AdvancedRenownTrainer: AdvancedRenownTraining.TogglePresets, AggroMeter: AggroMeter.Close, AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction, AnywhereTrainer: AnywhereTrainer.OnLeftClickBank, AnywhereTrainer: AnywhereTrainer.OnLeftClickCareer |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 18 |
-| Global usage count | 18 |
+| Lua usage count | 182 |
+| Global usage count | 182 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "EA_Window_WorldMap", "PartyCastWindow"..PlayerNumber, "PartyCastWindow_Dynamic"..i |
+| windowName | Observed as a target window name. | Observed values: "AdvancedRenownTrainingWindow", "AggroMeterGrayWindow", "AuctionWindow" |
 
 ## Returns
 
@@ -83,21 +83,41 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- AdvancedRenownTrainer
+- AggroMeter
+- AnywhereTrainer
+- AnywhereTrainerAdditions
+- Aura
+- AutoMark
+- BuffHead
+- CombatTextNames
+- DAoCBuff
+- Enemy
+- GuardLine
+- LibGroup
+- LibWBToggler
 - PartyCast
-- Soloq
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- ZCurse_Profiler
+- TurretRange
+- WarBoard
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:Showing -> WindowGetShowing(self.name)
-- PartyCast: LIBGUI_ELEMENT:Showing -> WindowGetShowing(self.name)
-- PartyCast: PartyCast.FetchedText -> WindowGetShowing("PartyCastWindow"..PlayerNumber)
-- PartyCast: PartyCast.Update -> WindowGetShowing("PartyCastWindow_Dynamic"..i)
-- Soloq: Soloq.onEnterRankedScenario -> WindowGetShowing("SoloqOverviewWindow")
-- Soloq: Soloq.toggleOverviewWindow -> WindowGetShowing(overviewWindowName)
+- Ace: LIBGUI_ELEMENT:Showing -> WindowGetShowing(self.name)
+- AdvancedRenownTrainer: AdvancedRenownTraining.TogglePresets -> WindowGetShowing(PresetWindowName)
+- AggroMeter: AggroMeter.Close -> WindowGetShowing("AggroMeterGrayWindow")
+- AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction -> WindowGetShowing("ShiniesWindow")
+- AnywhereTrainer: AnywhereTrainer.OnLeftClickAuction -> WindowGetShowing("AuctionWindow")
+- AnywhereTrainer: AnywhereTrainer.OnLeftClickBank -> WindowGetShowing("BankWindow")
 
 ## Related APIs
 
@@ -105,20 +125,22 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowGetAlpha](window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
-- [StatusBarGetMaximumValue](window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
+- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowGetLayer](window_WindowGetLayer.md) (HIGH 100/100) - Window Function
+- [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [BankWindow.Hide](../../globals/functions/global_BankWindow.Hide.md) (HIGH 88/100) - Global Function
 
 ## Triggered By
 
-- none
+- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 
 ## Affects
 
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

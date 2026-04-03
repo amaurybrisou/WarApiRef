@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 14 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1065`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1065`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
+| Addons seen in | Ace, BankArkel, BuffHead, DAoCBuff, Enemy, Killer, LibWBToggler, PartyCast |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1068`, `/workspace/data/raw/BankArkel/BankArkel.lua:513`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedCompressionItemEffect.lua:70`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItem.lua:342`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:205`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:283`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:431`, `/workspace/data/raw/BuffHead/Setup/SetupContainer.lua:187` |
 | Namespaces detected | ComboBoxAddMenuItem |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Combobox:Add, PartyCast: LIBGUI_Combobox:Add, TidyRoll: TidyRollOptions.Initialize |
+| Example locations | Ace: LIBGUI_Combobox:Add, BankArkel: BankArkel.SetupCombos, BuffHead: BuffHead.Setup.AdvancedCompressionItemEffect.Initialize, BuffHead: BuffHead.Setup.AdvancedContainersItem.Initialize, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Initialize, BuffHead: BuffHead.Setup.Container.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 295 |
+| Global usage count | 295 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,14 +65,14 @@ ComboBoxAddMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 3 addons.
+Observed as a window function across 14 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: c_TROLL_DIRECTION_COMBO, self.name |
-| arg2 | Observed as a text or wstring payload. | Observed values: L "down", L "left", L "right" |
+| arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", "EnemyChooseChannelDialogChannelList", "EnemyClickCastingDialogContentScrollChildAction" |
+| arg2 | Observed as a function or method reference. | Observed values: BankArkel.db.Entry[i].Name, L "---", L "0.#" |
 
 ## Returns
 
@@ -84,18 +84,29 @@ Observed as a window function across 3 addons.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- BankArkel
+- BuffHead
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
 - PartyCast
+- PotionBar
+- Shinies
+- TexturedButtons
 - TidyRoll
+- TurretRange
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Combobox:Add -> ComboBoxAddMenuItem(self.name, itemText)
-- PartyCast: LIBGUI_Combobox:Add -> ComboBoxAddMenuItem(self.name, itemText)
-- TidyRoll: TidyRollOptions.Initialize -> ComboBoxAddMenuItem(c_TROLL_DIRECTION_COMBO, L "down")
-- TidyRoll: TidyRollOptions.Initialize -> ComboBoxAddMenuItem(c_TROLL_DIRECTION_COMBO, L "up")
-- TidyRoll: TidyRollOptions.Initialize -> ComboBoxAddMenuItem(c_TROLL_DIRECTION_COMBO, L "left")
-- TidyRoll: TidyRollOptions.Initialize -> ComboBoxAddMenuItem(c_TROLL_DIRECTION_COMBO, L "right")
+- Ace: LIBGUI_Combobox:Add -> ComboBoxAddMenuItem(self.name, itemText)
+- BankArkel: BankArkel.SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", StringToWString(tbNone))
+- BankArkel: BankArkel.SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", StringToWString(tbSelf))
+- BankArkel: BankArkel.SetupCombos -> ComboBoxAddMenuItem("BankArkelBackpackCombo", BankArkel.db.Entry[i].Name)
+- BuffHead: BuffHead.Setup.AdvancedCompressionItemEffect.Initialize -> ComboBoxAddMenuItem(windowName.."CastByComboBox", localization["Setup.AdvancedCompressionItemEffect.CastBy.Self"])
+- BuffHead: BuffHead.Setup.AdvancedCompressionItemEffect.Initialize -> ComboBoxAddMenuItem(windowName.."CastByComboBox", localization["Setup.AdvancedCompressionItemEffect.CastBy.Others"])
 
 ## Related APIs
 
@@ -103,11 +114,11 @@ Observed as a window function across 3 addons.
 
 ## Used With
 
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
-- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
-- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
+- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 

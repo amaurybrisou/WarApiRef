@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 4 addons
+- Seen in: 14 addons
 
 ## Confidence Assessment
 
@@ -24,15 +24,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:120`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:120`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:99`, `/workspace/data/raw/minesweep/minesweep.lua:11`, `/workspace/data/raw/minesweep/minesweep.lua:156` |
+| Addons seen in | Ace, Aura, AutoMark, BuffHead, DAoCBuff, Enemy, LibWBToggler, PartyCast |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:120`, `/workspace/data/raw/Aura/Source/Aura.lua:359`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:27`, `/workspace/data/raw/BuffHead/Container.lua:886`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:767`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffHeadFrames.lua:212`, `/workspace/data/raw/Enemy/Code/Core/Main.lua:827`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIcon.lua:115` |
 | Namespaces detected | DestroyWindow |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_ELEMENT:Destroy, PartyCast: LIBGUI_ELEMENT:Destroy, TidyRoll: TidyRollFrame:Destroy, minesweep: minesweep.Close, minesweep: minesweep.MakeField |
+| Example locations | Ace: LIBGUI_ELEMENT:Destroy, Aura: Aura:DeleteWindow, AutoMark: AutoMark.local.DestroyMarker, AutoMark: DestroyMarker, BuffHead: BuffHeadContainer:Destroy, DAoCBuff: DAoCBuff.CloseMessageWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 37 |
+| Global usage count | 37 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -67,7 +67,7 @@ Observed tearing down runtime-created windows.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "MineSweepWindow", self.name, self:GetName() |
+| windowName | Observed as a target window name. | Observed values: "DAoCBuffMessageWindow", "PotionBar", "PotionBarFloatingActivator" |
 
 ## Returns
 
@@ -79,18 +79,29 @@ Observed tearing down runtime-created windows.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- Aura
+- AutoMark
+- BuffHead
+- DAoCBuff
+- Enemy
+- LibWBToggler
 - PartyCast
+- PotionBar
+- RoR_SoR
+- Shinies
 - TidyRoll
-- minesweep
+- WSCT
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_ELEMENT:Destroy -> DestroyWindow(self.name)
-- PartyCast: LIBGUI_ELEMENT:Destroy -> DestroyWindow(self.name)
-- TidyRoll: TidyRollFrame:Destroy -> DestroyWindow(self:GetName())
-- minesweep: minesweep.Close -> DestroyWindow("MineSweepWindow")
-- minesweep: minesweep.MakeField -> DestroyWindow("MineSweepWindow")
+- Ace: LIBGUI_ELEMENT:Destroy -> DestroyWindow(self.name)
+- Aura: Aura:DeleteWindow -> DestroyWindow(windowId)
+- AutoMark: AutoMark.local.DestroyMarker -> DestroyWindow(marker.window_name)
+- AutoMark: DestroyMarker -> DestroyWindow(marker.window_name)
+- BuffHead: BuffHeadContainer:Destroy -> DestroyWindow(self:GetName())
+- DAoCBuff: DAoCBuff.CloseMessageWindow -> DestroyWindow("DAoCBuffMessageWindow")
 
 ## Related APIs
 

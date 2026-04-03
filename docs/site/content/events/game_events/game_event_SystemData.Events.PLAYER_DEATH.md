@@ -30,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | PartyCast, TimeToDie |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.lua:51`, `/workspace/data/raw/TimeToDie/TimeToDie.lua:244` |
+| Addons seen in | PartyCast, PlanB |
+| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.lua:51`, `/workspace/data/raw/PlanB/PlanB.lua:35` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | PartyCast: PartyCast.Init, TimeToDie: TimeToDie.Initialize |
+| Example locations | PartyCast: PartyCast.Init, PlanB: PlanB.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 2 |
 | Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 2 |
+| Initialization flow references | 3 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -74,25 +74,25 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Seen In
 
 - PartyCast
-- TimeToDie
+- PlanB
 
 ## Registrars And Handlers
 
 - PartyCast.ON_DEATH
+- PlanB.SetPage
 - RegisterEventHandler
-- TimeToDie.PlayerDeath
 - global
 
 ## Examples
 
 - PartyCast: PartyCast.Init -> SystemData.Events.PLAYER_DEATH -> PartyCast.ON_DEATH
-- TimeToDie: TimeToDie.Initialize -> SystemData.Events.PLAYER_DEATH -> TimeToDie.PlayerDeath
+- PlanB: PlanB.Initialize -> SystemData.Events.PLAYER_DEATH -> PlanB.SetPage
 - PartyCast: PartyCast.ON_DEATH -> RegisterEventHandler(SystemData.Events.PLAYER_DEATH, PartyCast.ON_DEATH)
-- TimeToDie: TimeToDie.PlayerDeath -> RegisterEventHandler(SystemData.Events.PLAYER_DEATH, TimeToDie.PlayerDeath)
+- PlanB: PlanB.SetPage -> RegisterEventHandler(SystemData.Events.PLAYER_DEATH, PlanB.SetPage)
 
 ## Related APIs
 
-- [wstring.sub](../../globals/functions/global_wstring.sub.md) (MEDIUM 63/100) - Global Function
+- none
 
 ## Used With
 

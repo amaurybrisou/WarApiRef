@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 118
+- Raw weighted score: 130
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
@@ -26,16 +26,16 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:14`, `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:236`, `/workspace/data/raw/PartyCast/PartyCast.lua:1015`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:236` |
+| Addons seen in | Ace, BuffHead, DAoCBuff, Enemy, GuardLine, LibWBToggler, PartyCast, PotionBar |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:236`, `/workspace/data/raw/BuffHead/AdvancedContainers.lua:275`, `/workspace/data/raw/BuffHead/Container.lua:758`, `/workspace/data/raw/BuffHead/EffectFrame.lua:52`, `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:8`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:105`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:3`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:71` |
 | Namespaces detected | InterfaceCore |
 | Source kinds | globals, lua_calls |
-| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: InfoScroller.ResetSettings, InfoScroller: LIBGUI_ELEMENT:Scale, PartyCast: LIBGUI_ELEMENT:Scale, PartyCast: PartyCast.Default |
+| Example locations | Ace: LIBGUI_ELEMENT:Scale, BuffHead: AutoSize, BuffHead: BuffHead.AdvancedContainers.OnLayoutEditorFinished, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show, BuffHead: BuffHead.Setup.Layout.Properties.Show, BuffHead: BuffHead.Setup.LayoutFrame:Create |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 1 |
-| Local definition count | 2 |
+| Lua usage count | 51 |
+| Global usage count | 3 |
+| Local definition count | 7 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
@@ -57,11 +57,13 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 2 addons.
+Observed shared global table or namespace surfaced in 13 addons.
 
 ## Functions
 
+- InterfaceCore.GetResolutionScale
 - InterfaceCore.GetScale
+- InterfaceCore.ReloadUI
 
 ## Observed Members
 
@@ -69,16 +71,28 @@ Observed shared global table or namespace surfaced in 2 addons.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- BuffHead
+- DAoCBuff
+- Enemy
+- GuardLine
+- LibWBToggler
 - PartyCast
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
+- TurretRange
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: InfoScroller.CreateCard -> InterfaceCore.GetScale()
-- InfoScroller: InfoScroller.ResetSettings -> InterfaceCore.GetScale()
-- InfoScroller: LIBGUI_ELEMENT:Scale -> InterfaceCore.GetScale()
-- PartyCast: LIBGUI_ELEMENT:Scale -> InterfaceCore.GetScale()
-- PartyCast: PartyCast.Default -> InterfaceCore.GetScale()
+- Ace: LIBGUI_ELEMENT:Scale -> InterfaceCore.GetScale()
+- BuffHead: AutoSize -> InterfaceCore.GetScale()
+- BuffHead: BuffHead.AdvancedContainers.OnLayoutEditorFinished -> InterfaceCore.GetScale()
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -> InterfaceCore.GetScale()
+- BuffHead: BuffHead.Setup.Layout.Properties.Show -> InterfaceCore.GetScale()
+- BuffHead: BuffHead.Setup.LayoutFrame:Create -> InterfaceCore.GetScale()
 
 ## Related APIs
 

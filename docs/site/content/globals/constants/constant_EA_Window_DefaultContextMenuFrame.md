@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.xml:4`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:90`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:298` |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.xml:0`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:0`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:0` |
 | Namespaces detected | EA_Window_DefaultContextMenuFrame |
 | Source kinds | xml_attributes |
 | Example locations | TRollAutoRoll, TidyChatOptions, TidyRollOptions |

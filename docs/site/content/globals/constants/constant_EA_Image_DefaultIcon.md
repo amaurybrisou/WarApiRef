@@ -23,7 +23,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:16` |
+| Files seen in | `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:0` |
 | Namespaces detected | EA_Image_DefaultIcon |
 | Source kinds | xml_attributes |
 | Example locations | AutoRollRowTemplateIcon |

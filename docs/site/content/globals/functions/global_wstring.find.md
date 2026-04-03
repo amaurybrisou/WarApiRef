@@ -93,7 +93,7 @@ Observed as a global function across 1 addons.
 
 ## Used With
 
-- [wstring.match](global_wstring.match.md) (MEDIUM 45/100) - Global Function
+- none
 
 ## Triggered By
 

@@ -31,18 +31,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | PartyCast, PartyCast, TimeToDie, TimeToDie |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.lua:153`, `/workspace/data/raw/PartyCast/PartyCast.lua:51`, `/workspace/data/raw/TimeToDie/TimeToDie.lua:244` |
+| Addons seen in | PartyCast, PartyCast, PlanB, PlanB |
+| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.lua:153`, `/workspace/data/raw/PartyCast/PartyCast.lua:51`, `/workspace/data/raw/PlanB/PlanB.lua:35` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | PartyCast.Init, PartyCast.ON_DEATH, PartyCast.OnShutdown, SystemData.Events.PLAYER_DEATH, TimeToDie.Initialize, TimeToDie.PlayerDeath |
+| Example locations | PartyCast.Init, PartyCast.ON_DEATH, PartyCast.OnShutdown, PlanB.Initialize, PlanB.SetPage, SystemData.Events.PLAYER_DEATH |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 11 |
 | Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 2 |
+| Initialization flow references | 3 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -67,22 +67,16 @@ Observed SystemData field used by 3 addons through generated function calls, eve
 ## Seen In
 
 - PartyCast
-- PartyCast, TimeToDie
-- TimeToDie
+- PartyCast, PlanB
+- PlanB
 
 ## Related APIs
 
-- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
-- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (HIGH 81/100) - Global Function
+- [LibSlash.IsSlashCmdRegistered](../../globals/functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
 
 ## Used With
 
-- [SystemData.Events.ENTER_WORLD](systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERFACE_RELOADED](systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_BEGIN_CAST](systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CAST_TIMER_SETBACK](systemdata_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md) (HIGH 100/100) - SystemData Field
+- none
 
 ## Triggered By
 
@@ -94,4 +88,4 @@ Observed SystemData field used by 3 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: PartyCast.Init, PartyCast.ON_DEATH, PartyCast.OnShutdown, SystemData.Events.PLAYER_DEATH, TimeToDie.Initialize, TimeToDie.PlayerDeath
+- Observed in contexts: PartyCast.Init, PartyCast.ON_DEATH, PartyCast.OnShutdown, PlanB.Initialize, PlanB.SetPage, SystemData.Events.PLAYER_DEATH

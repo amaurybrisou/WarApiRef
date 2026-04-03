@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 21 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, TidyChat, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1171`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1258`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:367`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:419`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:527`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:649`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:703` |
+| Addons seen in | Ace, AdvancedPetAssist, AnywhereTrainer, Aura, BankArkel, BuffHead, DAoCBuff, Enemy |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1174`, `/workspace/data/raw/Ace/LibGUI.lua:1261`, `/workspace/data/raw/Ace/LibGUI.lua:367`, `/workspace/data/raw/Ace/LibGUI.lua:419`, `/workspace/data/raw/Ace/LibGUI.lua:527`, `/workspace/data/raw/Ace/LibGUI.lua:650`, `/workspace/data/raw/Ace/LibGUI.lua:704`, `/workspace/data/raw/Ace/LibGUI.lua:983` |
 | Namespaces detected | WindowSetDimensions |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_Button:Resize, InfoScroller: LIBGUI_Image:Resize, InfoScroller: LIBGUI_Label:Resize, InfoScroller: LIBGUI_MultiTextbox:Resize, InfoScroller: LIBGUI_Scrollbar:Resize |
+| Example locations | Ace: LIBGUI_Button:Resize, Ace: LIBGUI_Image:Resize, Ace: LIBGUI_Label:Resize, Ace: LIBGUI_MultiTextbox:Resize, Ace: LIBGUI_Scrollbar:Resize, Ace: LIBGUI_Statusbar:Resize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 32 |
-| Global usage count | 32 |
+| Lua usage count | 140 |
+| Global usage count | 140 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,9 +71,9 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "MineSweepWindow", "MothHealthBar", WindowName.."Image" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 10+(fieldX*28), 140, 32 |
-| arg3 | Observed as a function or method reference. | Observed values: 20, 30, 32 |
+| windowName | Observed as a target window name. | Observed values: "APAOptions", "APAOptionsContent", "APAOptionsTitleText" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 1, 100, 1000 |
+| arg3 | Observed as a runtime window or control identifier. | Observed values: 1, 100, 110 |
 
 ## Returns
 
@@ -85,21 +85,36 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- Ace
+- AdvancedPetAssist
+- AnywhereTrainer
+- Aura
+- BankArkel
+- BuffHead
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
 - PartyCast
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- minesweep
+- TurretRange
+- WSCT
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: InfoScroller.CreateCard -> WindowSetDimensions(WindowName.."Image", width*scale, height*scale)
-- InfoScroller: LIBGUI_Button:Resize -> WindowSetDimensions(self.name, width, self.height)
-- InfoScroller: LIBGUI_Image:Resize -> WindowSetDimensions(self.name, width, height)
-- InfoScroller: LIBGUI_Label:Resize -> WindowSetDimensions(self.name, self.width, self.height)
-- InfoScroller: LIBGUI_MultiTextbox:Resize -> WindowSetDimensions(self.name, self.width, self.height)
-- InfoScroller: LIBGUI_Scrollbar:Resize -> WindowSetDimensions(self.name, self.width, self.height)
+- Ace: LIBGUI_Button:Resize -> WindowSetDimensions(self.name, width, self.height)
+- Ace: LIBGUI_Image:Resize -> WindowSetDimensions(self.name, width, height)
+- Ace: LIBGUI_Label:Resize -> WindowSetDimensions(self.name, self.width, self.height)
+- Ace: LIBGUI_MultiTextbox:Resize -> WindowSetDimensions(self.name, self.width, self.height)
+- Ace: LIBGUI_Scrollbar:Resize -> WindowSetDimensions(self.name, self.width, self.height)
+- Ace: LIBGUI_Statusbar:Resize -> WindowSetDimensions(self.name, width, self.height)
 
 ## Related APIs
 
@@ -107,13 +122,10 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
-- [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 80/100) - Window Function
+- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowGetScale](window_WindowGetScale.md) (HIGH 100/100) - Window Function
+- [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 
@@ -121,7 +133,6 @@ Observed mutating runtime window state or presentation.
 
 ## Affects
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

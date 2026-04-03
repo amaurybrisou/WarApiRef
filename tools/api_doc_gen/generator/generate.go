@@ -62,11 +62,17 @@ func Generate(outputRoot string, corpus graph.Corpus) error {
 	if err := writeExamples(outputRoot, corpus); err != nil {
 		return err
 	}
+	if err := writeLuaAnalysisArtifacts(outputRoot, corpus); err != nil {
+		return err
+	}
+	if err := writeXMLTreeArtifacts(outputRoot, corpus); err != nil {
+		return err
+	}
 	return writeSectionIndexes(outputRoot, corpus)
 }
 
 func prepareOutput(outputRoot string) error {
-	managed := []string{"lua", "xml", "bindings", "flows", "patterns", "examples", "meta"}
+	managed := []string{"lua", "lua-analysis", "xml", "xml-tree", "bindings", "flows", "patterns", "examples", "meta"}
 	for _, name := range managed {
 		if err := os.RemoveAll(filepath.Join(outputRoot, name)); err != nil {
 			return fmt.Errorf("reset output %s: %w", name, err)
@@ -82,6 +88,8 @@ func prepareOutput(outputRoot string) error {
 		filepath.Join(outputRoot, "xml", "templates"),
 		filepath.Join(outputRoot, "xml", "mixins"),
 		filepath.Join(outputRoot, "xml", "handlers"),
+		filepath.Join(outputRoot, "lua-analysis"),
+		filepath.Join(outputRoot, "xml-tree"),
 		filepath.Join(outputRoot, "bindings"),
 		filepath.Join(outputRoot, "flows"),
 		filepath.Join(outputRoot, "patterns"),

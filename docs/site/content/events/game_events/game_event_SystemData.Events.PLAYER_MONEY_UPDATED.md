@@ -1,42 +1,37 @@
 # SystemData.Events.PLAYER_MONEY_UPDATED
 
 - Category: Game Event
-- Confidence level: HIGH
-- Confidence score: 100/100
+- Confidence level: MEDIUM
+- Confidence score: 63/100
 
 ## Confidence Assessment
 
-- Level: HIGH
+- Level: MEDIUM
 
-- Final score: 100/100
+- Score: 63/100
 
-- Raw weighted score: 123
-
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, matches a known engine namespace, used in event registration or dispatch.
 
 ## Evidence Signals
 
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
-- +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
-- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- -15 Only referenced by one internal path: Structural evidence outside a single internal path is missing.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:2134` |
+| Addons seen in | Shinies |
 | Namespaces detected | SystemData |
-| Source kinds | event_page, lua_event_registration |
-| Example locations | ZCurse_Profiler: CurseProfiler.Initialize |
+| Source kinds | event_page |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 0 |
+| Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 1 |
+| Documentation references | 0 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
@@ -69,18 +64,16 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Seen In
 
-- ZCurse_Profiler
+- Shinies
 
 ## Registrars And Handlers
 
-- CurseProfiler.ifbreak
 - RegisterEventHandler
-- global
+- ShiniesPostUI.OnPlayerMoneyUpdated
 
 ## Examples
 
-- ZCurse_Profiler: CurseProfiler.Initialize -> SystemData.Events.PLAYER_MONEY_UPDATED -> CurseProfiler.ifbreak
-- ZCurse_Profiler: CurseProfiler.ifbreak -> RegisterEventHandler(SystemData.Events.PLAYER_MONEY_UPDATED, CurseProfiler.ifbreak)
+- Shinies: ShiniesPostUI.OnPlayerMoneyUpdated -> RegisterEventHandler(SystemData.Events.PLAYER_MONEY_UPDATED, ShiniesPostUI.OnPlayerMoneyUpdated)
 
 ## Related APIs
 

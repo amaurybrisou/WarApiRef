@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 16 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:755`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:824`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:755`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:824`, `/workspace/data/raw/TidyChat/TidyChat.lua:1915`, `/workspace/data/raw/TidyChat/TidyChat.lua:1973`, `/workspace/data/raw/TidyChat/TidyChat.lua:2031`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746` |
+| Addons seen in | Ace, BuffHead, DAoCBuff, Enemy, Killer, LibGroup, LibWBToggler, PartyCast |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:756`, `/workspace/data/raw/Ace/LibGUI.lua:826`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:701`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:711`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:835`, `/workspace/data/raw/BuffHead/Setup/SetupAdvancedContainersItemProperties.lua:845`, `/workspace/data/raw/BuffHead/Setup/SetupDisplay.lua:102`, `/workspace/data/raw/BuffHead/Setup/SetupEffectCache.lua:419` |
 | Namespaces detected | ButtonGetPressedFlag |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Checkbox:GetValue, InfoScroller: LIBGUI_Optionbutton:GetValue, PartyCast: LIBGUI_Checkbox:GetValue, PartyCast: LIBGUI_Optionbutton:GetValue, TidyChat: TidyChat.Options.OnApply, TidyChat: TidyChat.Options.OnCheckboxLBU |
+| Example locations | Ace: LIBGUI_Checkbox:GetValue, Ace: LIBGUI_Optionbutton:GetValue, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp, BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 32 |
-| Global usage count | 32 |
+| Lua usage count | 118 |
+| Global usage count | 118 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ ButtonGetPressedFlag(arg1)
 
 ## Description
 
-Observed as a window function across 4 addons.
+Observed as a window function across 16 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: TCHAT_LOGS_AUCTION_FILTER_CHECKBOX.."Button", TCHAT_LOGS_COPY_SHOWING_CHECKBOX.."Button", TCHAT_LOGS_LOOT_ROLL_FILTER_CHECKBOX.."Button" |
+| arg1 | Observed as a function or method reference. | Observed values: "EnemyClickCastingDialogContentScrollChildArchetype1", "EnemyClickCastingDialogContentScrollChildArchetype2", "EnemyClickCastingDialogContentScrollChildArchetype3" |
 
 ## Returns
 
@@ -83,19 +83,31 @@ Observed as a window function across 4 addons.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- BuffHead
+- DAoCBuff
+- Enemy
+- Killer
+- LibGroup
+- LibWBToggler
 - PartyCast
+- PotionBar
+- Shinies
+- TexturedButtons
 - TidyChat
 - TidyRoll
+- TurretRange
+- WSCT
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Checkbox:GetValue -> ButtonGetPressedFlag(self.name)
-- InfoScroller: LIBGUI_Optionbutton:GetValue -> ButtonGetPressedFlag(self.name)
-- PartyCast: LIBGUI_Checkbox:GetValue -> ButtonGetPressedFlag(self.name)
-- PartyCast: LIBGUI_Optionbutton:GetValue -> ButtonGetPressedFlag(self.name)
-- TidyChat: TidyChat.Options.OnApply -> ButtonGetPressedFlag(TCHAT_TEXT_ENTRY_FREE_TEXT_ENTRY_CHECKBOX.."Button")
-- TidyChat: TidyChat.Options.OnApply -> ButtonGetPressedFlag(TCHAT_TEXT_ENTRY_CHANNEL_SHOWING_CHECKBOX.."Button")
+- Ace: LIBGUI_Checkbox:GetValue -> ButtonGetPressedFlag(self.name)
+- Ace: LIBGUI_Optionbutton:GetValue -> ButtonGetPressedFlag(self.name)
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp -> ButtonGetPressedFlag(windowName.."ElementEffectsAlwaysShowEnable".."Button")
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp -> ButtonGetPressedFlag(windowName.."ElementEffectsPermanent".."Button")
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp -> ButtonGetPressedFlag(windowName.."ElementHandleInputEnableRemovable".."Button")
+- BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp -> ButtonGetPressedFlag(windowName.."ElementHandleInputShowTooltips".."Button")
 
 ## Related APIs
 
@@ -103,11 +115,9 @@ Observed as a window function across 4 addons.
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ComboBoxGetSelectedMenuItem](window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 
@@ -116,7 +126,6 @@ Observed as a window function across 4 addons.
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

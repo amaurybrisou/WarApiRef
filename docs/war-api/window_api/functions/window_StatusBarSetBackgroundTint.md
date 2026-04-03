@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyRoll |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1028`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1028`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:105` |
+| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, TidyRoll, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1031`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:1028`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1028`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:1028`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:105`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:1028` |
 | Namespaces detected | StatusBarSetBackgroundTint |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Statusbar:BackColor, PartyCast: LIBGUI_Statusbar:BackColor, PartyCast: PartyCast.FetchedText, TidyRoll: TidyRollFrame:InitializeTimerBar |
+| Example locations | Ace: LIBGUI_Statusbar:BackColor, LibWBToggler: LIBGUI_Statusbar:BackColor, PartyCast: LIBGUI_Statusbar:BackColor, PartyCast: PartyCast.FetchedText, Shinies: LIBGUI_Statusbar:BackColor, TidyRoll: TidyRollFrame:InitializeTimerBar |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ StatusBarSetBackgroundTint(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a window function across 3 addons.
+Observed as a window function across 6 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", self.name, timerBarName |
+| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", self.name, timerBarName |
 | arg2 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.r, red |
 | arg3 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.g, green |
 | arg4 | Observed as a function or method reference. | Observed values: DefaultColor.BLACK.b, blue |
@@ -86,15 +86,20 @@ Observed as a window function across 3 addons.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- LibWBToggler
 - PartyCast
+- Shinies
 - TidyRoll
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
+- Ace: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
+- LibWBToggler: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
 - PartyCast: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
 - PartyCast: PartyCast.FetchedText -> StatusBarSetBackgroundTint("PartyCastWindow"..PlayerNumber.."TimerBar", DefaultColor.BLACK.r, DefaultColor.BLACK.g, DefaultColor.BLACK.b)
+- Shinies: LIBGUI_Statusbar:BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
 - TidyRoll: TidyRollFrame:InitializeTimerBar -> StatusBarSetBackgroundTint(timerBarName, DefaultColor.BLACK.r, DefaultColor.BLACK.g, DefaultColor.BLACK.b)
 
 ## Related APIs
@@ -111,6 +116,7 @@ Observed as a window function across 3 addons.
 
 ## Affects
 
+- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

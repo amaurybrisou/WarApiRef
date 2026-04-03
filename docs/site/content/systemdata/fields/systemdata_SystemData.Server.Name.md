@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ZCurse_Profiler |
-| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:3343` |
+| Addons seen in | Aura |
+| Files seen in | `/workspace/data/raw/Aura/Source/AuraProfile.lua:171`, `/workspace/data/raw/Aura/Source/AuraProfile.lua:23`, `/workspace/data/raw/Aura/Source/AuraProfile.lua:85` |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | CurseProfiler.repeatnil, lua_call |
+| Example locations | AuraProfile.GetCurrentCharacter, AuraProfile.LoadCharacterSettings, AuraProfile.SaveCharacterSettings, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -61,7 +61,7 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 
 ## Seen In
 
-- ZCurse_Profiler
+- Aura
 
 ## Related APIs
 
@@ -81,4 +81,4 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: CurseProfiler.repeatnil, lua_call
+- Observed in contexts: AuraProfile.GetCurrentCharacter, AuraProfile.LoadCharacterSettings, AuraProfile.SaveCharacterSettings, lua_call

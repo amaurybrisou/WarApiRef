@@ -10,34 +10,36 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 170
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | PartyCast, minesweep |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.xml:186`, `/workspace/data/raw/PartyCast/PartyCast.xml:327`, `/workspace/data/raw/PartyCast/PartyCast.xml:631`, `/workspace/data/raw/PartyCast/PartyCast.xml:80`, `/workspace/data/raw/minesweep/minesweep.xml:8` |
+| Addons seen in | AggroMeter, BuffHead, CM_ClosetGoblin, MiracleGrowLight, PartyCast, Pocket Palette, PotionBar, RoR_SoR |
+| Files seen in | `/workspace/data/raw/AggroMeter/AggroMeter.xml:0`, `/workspace/data/raw/BuffHead/Setup/SetupLayout.xml:0`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.xml:0`, `/workspace/data/raw/MiracleGrowLight/window.xml:0`, `/workspace/data/raw/PartyCast/PartyCast.xml:0`, `/workspace/data/raw/PocketPalette/PocketPalette.xml:0`, `/workspace/data/raw/PotionBar/source/Floating.xml:0`, `/workspace/data/raw/RoR_SoR/RoR_SoR.xml:0` |
 | Namespaces detected | EA_Button_Default |
-| Source kinds | xml_attributes |
-| Example locations | PartyCastWindow_TemplateButton, PartyCastWindow_Template_LargeButton, PartyCastWindow_Template_PlainButton, PartyCastWindow_Template_SmallButton, minesweep_Box |
-| XML usage count | 5 |
-| XML attribute usage count | 5 |
+| Source kinds | flows, xml_attributes |
+| Example locations | Aggro_Button_Template, BuffHeadLayoutResizeButton, ClosetGoblinDefaultButton, ItemWindowSlotButton, MiracleGrowLightButton, PartyCastWindow_TemplateButton |
+| XML usage count | 16 |
+| XML attribute usage count | 16 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 0 |
-| Initialization flow references | 0 |
+| Documentation references | 1 |
+| Initialization flow references | 1 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | no |
@@ -57,20 +59,38 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 2 addons.
+Observed engine XML template or inherited constant referenced by 9 addons.
 
 ## Seen In
 
+- AggroMeter
+- BuffHead
+- CM_ClosetGoblin
+- MiracleGrowLight
 - PartyCast
-- minesweep
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
 
 ## Used By
 
+- Aggro_Button_Template
+- BuffHeadLayoutResizeButton
+- ClosetGoblinDefaultButton
+- ItemWindowSlotButton
+- MiracleGrowLightButton
 - PartyCastWindow_TemplateButton
 - PartyCastWindow_Template_LargeButton
 - PartyCastWindow_Template_PlainButton
 - PartyCastWindow_Template_SmallButton
-- minesweep_Box
+- PotionBarButtonTemplate
+- RoR_SoR_RealmTemplateCLAIM_WINDOW1BUTTON
+- RoR_SoR_RealmTemplateCLAIM_WINDOW1BUTTON2
+- RoR_SoR_RealmTemplateCLAIM_WINDOW2BUTTON
+- RoR_SoR_RealmTemplateCLAIM_WINDOW2BUTTON2
+- Shinies_IconButton
+- Shinies_IconButton_Overlay
 
 ## Related APIs
 

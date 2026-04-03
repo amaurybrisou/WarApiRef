@@ -14,22 +14,23 @@ Persistent state is typically rooted in addon-owned globals and saved variables,
 ## Flow Diagram
 
 ```text
-Label <-> OnHyperLinkRButtonUp
+OnLButtonUp
+  -> ui: Button, ColorPicker, DynamicImage, Label, ListBox, MapDisplay, Window
 ```
 
 ## Example Code
 
 ```lua
-InfoScroller: InfoScroller.Settings
+AdvancedPetAssist: APA_Settings
 ```
 
 ## Evidence
 
-- InfoScroller: InfoScroller.Settings
-- Lib RuString: LibRuString.Settings
-- NPC Item Sale Price: Nisp.DebugEnabled
-- NPC Item Sale Price: Nisp.DumpItemsTable
-- NPC Item Sale Price: Nisp.Enabled
-- PartyCast: PartyCast.Settings
-- Soloq: Soloq.db
-- TidyChat: TidyChat.Settings
+- AdvancedPetAssist: APA_Settings
+- AdvancedRenownTrainer: AdvancedRenownTraining.Presets
+- AggroMeter: AggroMeter.Settings
+- BagOMatic: BagOMatic.saved
+- BankArkel: BankArkel.db
+- BuffHead: BuffHead.Settings
+- CM_ClosetGoblin: ClosetGoblin.setData
+- CM_ClosetGoblin: ClosetGoblin.settings

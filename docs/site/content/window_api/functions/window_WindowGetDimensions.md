@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 20 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, TidyChat |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1043`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1146`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1234`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:506`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:619`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:679`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:734`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:803` |
+| Addons seen in | Ace, AdvancedPetAssist, AnywhereTrainer, Aura, BuffHead, DAoCBuff, Enemy, Killer |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:1046`, `/workspace/data/raw/Ace/LibGUI.lua:1149`, `/workspace/data/raw/Ace/LibGUI.lua:1237`, `/workspace/data/raw/Ace/LibGUI.lua:506`, `/workspace/data/raw/Ace/LibGUI.lua:620`, `/workspace/data/raw/Ace/LibGUI.lua:680`, `/workspace/data/raw/Ace/LibGUI.lua:735`, `/workspace/data/raw/Ace/LibGUI.lua:805` |
 | Namespaces detected | WindowGetDimensions |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Button:New, InfoScroller: LIBGUI_Checkbox:New, InfoScroller: LIBGUI_Combobox:New, InfoScroller: LIBGUI_Image:New, InfoScroller: LIBGUI_MultiTextbox:New, InfoScroller: LIBGUI_Optionbutton:New |
+| Example locations | Ace: LIBGUI_Button:New, Ace: LIBGUI_Checkbox:New, Ace: LIBGUI_Combobox:New, Ace: LIBGUI_Image:New, Ace: LIBGUI_MultiTextbox:New, Ace: LIBGUI_Optionbutton:New |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 23 |
-| Global usage count | 23 |
+| Lua usage count | 113 |
+| Global usage count | 113 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "MothBackground", c_CHANNEL_MENU, cellName.."NPCIcon" |
+| windowName | Observed as a target window name. | Observed values: "APAPetTargetHUD", "CharacterWindow", "DAoCBuffCondenseTooltipText" |
 
 ## Returns
 
@@ -83,19 +83,35 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- Ace
+- AdvancedPetAssist
+- AnywhereTrainer
+- Aura
+- BuffHead
+- DAoCBuff
+- Enemy
+- Killer
+- LibWBToggler
+- MiracleGrowLight
 - PartyCast
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- TexturedButtons
 - TidyChat
+- TurretRange
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Button:New -> WindowGetDimensions(w.name)
-- InfoScroller: LIBGUI_Checkbox:New -> WindowGetDimensions(w.name)
-- InfoScroller: LIBGUI_Combobox:New -> WindowGetDimensions(w.name)
-- InfoScroller: LIBGUI_Image:New -> WindowGetDimensions(w.name)
-- InfoScroller: LIBGUI_MultiTextbox:New -> WindowGetDimensions(w.name)
-- InfoScroller: LIBGUI_Optionbutton:New -> WindowGetDimensions(w.name)
+- Ace: LIBGUI_Button:New -> WindowGetDimensions(w.name)
+- Ace: LIBGUI_Checkbox:New -> WindowGetDimensions(w.name)
+- Ace: LIBGUI_Combobox:New -> WindowGetDimensions(w.name)
+- Ace: LIBGUI_Image:New -> WindowGetDimensions(w.name)
+- Ace: LIBGUI_MultiTextbox:New -> WindowGetDimensions(w.name)
+- Ace: LIBGUI_Optionbutton:New -> WindowGetDimensions(w.name)
 
 ## Related APIs
 
@@ -104,9 +120,9 @@ Observed querying runtime window state or metadata.
 ## Used With
 
 - [ButtonSetCheckButtonFlag](window_ButtonSetCheckButtonFlag.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 
 ## Triggered By

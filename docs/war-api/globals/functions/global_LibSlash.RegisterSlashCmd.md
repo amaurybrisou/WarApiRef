@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 26 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, NPC Item Sale Price, PartyCast, Soloq, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:30`, `/workspace/data/raw/PartyCast/PartyCast.lua:51`, `/workspace/data/raw/Soloq/Soloq.lua:22`, `/workspace/data/raw/minesweep/minesweep.lua:7`, `/workspace/data/raw/nisp/Source/Nisp.lua:26` |
+| Addons seen in | AdvancedPetAssist, Aura, AutoMark, BagOMatic, CM_ClosetGoblin, DAoCBuff, GuardLine, Killer |
+| Files seen in | `/workspace/data/raw/AdvancedPetAssist/AdvancedPetAssist.lua:193`, `/workspace/data/raw/Aura/Source/AuraAddon.lua:70`, `/workspace/data/raw/AutoMark/Source/AutoMark.lua:33`, `/workspace/data/raw/ClosetGoblin/ClosetGoblin.lua:87`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuff.lua:25`, `/workspace/data/raw/GuardLine/GuardLine.lua:63`, `/workspace/data/raw/Killer/KillerLifecycle.lua:4`, `/workspace/data/raw/LibGroup/LibGroup.lua:443` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
-| Example locations | InfoScroller: InfoScroller.OnInitialize, NPC Item Sale Price: Nisp.Init, PartyCast: PartyCast.Init, Soloq: Soloq.OnInitialize, minesweep: minesweep.OnInitialize |
+| Example locations | AdvancedPetAssist: AdvancedPetAssist.Initialize, Aura: AuraAddon.OnInitialize, AutoMark: AutoMark.OnInitialize, BagOMatic: BagOMatic.init, CM_ClosetGoblin: ClosetGoblin.Initialize, DAoCBuff: DAoCBuff.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 39 |
+| Global usage count | 39 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -72,8 +72,8 @@ Observed wiring slash commands through a shared command-registration table.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| slashName | Observed as a slash command token. | Observed values: "info", "infoscroller", "nisp" |
-| handler | Observed as a command handler callback. | Observed values: function(args)Nisp.SlashHandler(args)end, function(args)Soloq.SlashCmd(args)end, function(input)InfoScroller_config.Slash(input)end |
+| slashName | Observed as a slash command token. | Observed values: "PotionBar", "addon", "apa" |
+| handler | Observed as a command handler callback. | Observed values: AuraAddon.Slash, AutoMark.OnSlashCommand, ClosetGoblin.OnSlashCommand |
 
 ## Returns
 
@@ -85,28 +85,51 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Seen In
 
-- InfoScroller
-- NPC Item Sale Price
+- AdvancedPetAssist
+- Aura
+- AutoMark
+- BagOMatic
+- CM_ClosetGoblin
+- DAoCBuff
+- GuardLine
+- Killer
+- LibGroup
+- LibGuard
+- LibSlash
+- LibWBToggler
+- MiracleGrowLight
 - PartyCast
-- Soloq
-- minesweep
+- PlanB
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- Swift Assist
+- TexturedButtons
+- WSCT
+- WarBoard
+- WhoHealedMe
+- WoH-Reticle
+- followTheLeader
 
 ## Examples
 
-- InfoScroller: InfoScroller.OnInitialize -> LibSlash.RegisterSlashCmd("infoscroller", function(input)InfoScroller_config.Slash(input)end)
-- InfoScroller: InfoScroller.OnInitialize -> LibSlash.RegisterSlashCmd("info", function(input)InfoScroller_config.Slash(input)end)
-- NPC Item Sale Price: Nisp.Init -> LibSlash.RegisterSlashCmd("nisp", function(args)Nisp.SlashHandler(args)end)
-- PartyCast: PartyCast.Init -> LibSlash.RegisterSlashCmd("pc", function(input)PartyCast.Command(input)end)
-- PartyCast: PartyCast.Init -> LibSlash.RegisterSlashCmd("partycast", function(input)PartyCast.Command(input)end)
-- Soloq: Soloq.OnInitialize -> LibSlash.RegisterSlashCmd("soloq", function(args)Soloq.SlashCmd(args)end)
+- AdvancedPetAssist: AdvancedPetAssist.Initialize -> LibSlash.RegisterSlashCmd("apa", function(input)APA.SlashHandler(input)end)
+- Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("aura", AuraAddon.Slash)
+- Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("auraconfig", AuraAddon.Slash)
+- Aura: AuraAddon.OnInitialize -> LibSlash.RegisterSlashCmd("showaura", AuraAddon.Slash)
+- AutoMark: AutoMark.OnInitialize -> LibSlash.RegisterSlashCmd("automark", AutoMark.OnSlashCommand)
+- BagOMatic: BagOMatic.init -> LibSlash.RegisterSlashCmd("bagomatic", function(msg)BagOMatic.parse_cmd(msg)end)
 
 ## Related APIs
 
-- none
+- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
-- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [RegisterEventHandler](global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
+- [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
@@ -114,18 +137,12 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Affects
 
-- [GameData.Player.name](../../gamedata/fields/gamedata_GameData.Player.name.md) (HIGH 100/100) - GameData Field
-- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
+- [EA_Window_Backpack](../tables/table_EA_Window_Backpack.md) (HIGH 100/100) - Global Table
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_BEGIN_CAST](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CAST_TIMER_SETBACK](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_DEATH](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_END_CAST](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_END_CAST.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_START_INTERACT_TIMER](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_START_INTERACT_TIMER.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.SCENARIO_POST_MODE](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_POST_MODE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

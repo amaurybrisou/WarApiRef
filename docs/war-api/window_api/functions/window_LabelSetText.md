@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 29 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, TidyChat, TidyRoll, minesweep |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:426`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:439`, `/workspace/data/raw/Moth/Moth.lua:215`, `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:426`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:439`, `/workspace/data/raw/Soloq/ui/Overview.lua:104` |
+| Addons seen in | Ace, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, BankArkel, BuffHead, CM_ClosetGoblin |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:426`, `/workspace/data/raw/Ace/LibGUI.lua:439`, `/workspace/data/raw/AdvancedPetAssist/APAGui.lua:983`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:11`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:181`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:241`, `/workspace/data/raw/AdvancedPetAssist/APAGuiHUD.lua:98`, `/workspace/data/raw/AggroMeter/AggroMeter.lua:5` |
 | Namespaces detected | LabelSetText |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Label:Clear, InfoScroller: LIBGUI_Label:SetText, Moth: Moth.SetCellText, Moth: Moth.SetCellTextIcon, PartyCast: LIBGUI_Label:Clear, PartyCast: LIBGUI_Label:SetText |
+| Example locations | Ace: LIBGUI_Label:Clear, Ace: LIBGUI_Label:SetText, AdvancedPetAssist: APAGui.OnShown, AdvancedPetAssist: APAGui.UpdateFollowTargetHUD, AdvancedPetAssist: APAGui.UpdateInstantOnlyHUD, AdvancedPetAssist: APAGui.UpdateKitingHUD |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 103 |
-| Global usage count | 103 |
+| Lua usage count | 1055 |
+| Global usage count | 1055 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed updating label text or label styling on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target control name. | Observed values: "MineSweepWindowTitleBarText", "PartyCastWindow"..PlayerNumber.."Morale", "PartyCastWindow"..PlayerNumber.."MoraleBG" |
-| text | Observed as a text or wstring payload. | Observed values: L "  "..towstring(SpellName), L "  Interupted!", L " Icon               Name                    Id           Choice" |
+| windowName | Observed as a target control name. | Observed values: "APAFollowTargetHUDLabel", "APAInstantOnlyHUDLabel", "APAKitingHUDLabel" |
+| text | Observed as a text or wstring payload. | Observed values: APA.PetTarget.cachedName, Enemy.isNil(data.name,L ""), Enemy.toWString(eps.value) |
 
 ## Returns
 
@@ -84,22 +84,44 @@ Observed updating label text or label styling on existing controls.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- Ace
+- AdvancedPetAssist
+- AdvancedRenownTrainer
+- AggroMeter
+- Aura
+- BankArkel
+- BuffHead
+- CM_ClosetGoblin
+- CombatTextNames
+- DAoCBuff
+- Enemy
+- Killer
+- LibGroup
+- LibWBToggler
+- MiracleGrowLight
+- MoraleCircle
 - PartyCast
-- Soloq
+- Pocket Palette
+- PotionBar
+- RoR_SoR
+- Shinies
+- Swift Assist
+- TexturedButtons
 - TidyChat
 - TidyRoll
-- minesweep
+- TurretRange
+- WSCT
+- WhoHealedMe
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Label:Clear -> LabelSetText(self.name, L "")
-- InfoScroller: LIBGUI_Label:SetText -> LabelSetText(self.name, towstring(text))
-- Moth: Moth.SetCellText -> LabelSetText(cellText, L "")
-- Moth: Moth.SetCellText -> LabelSetText(cellText, text)
-- Moth: Moth.SetCellTextIcon -> LabelSetText(cellText, L "")
-- PartyCast: LIBGUI_Label:Clear -> LabelSetText(self.name, L "")
+- Ace: LIBGUI_Label:Clear -> LabelSetText(self.name, L "")
+- Ace: LIBGUI_Label:SetText -> LabelSetText(self.name, towstring(text))
+- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APAOptionsTitleText", L "AdvancedPetAssist")
+- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APALabelSectionAutoRecall", L "--- Auto Recall ---")
+- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APALabelSectionMouseControls", L "--- Mouse Controls ---")
+- AdvancedPetAssist: APAGui.OnShown -> LabelSetText("APALabelSectionLos", L "--- LOS Detection ---")
 
 ## Related APIs
 
@@ -107,20 +129,30 @@ Observed updating label text or label styling on existing controls.
 
 ## Used With
 
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
+- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureDimensions](window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
-- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
+- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
 - [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
-- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 88/100) - Global Function
-- [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 80/100) - Window Function
+- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
+- [PartyUtils.GetPartyData](../../globals/functions/global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
+- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [EA_Window_ContextMenu.AddUserDefinedMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 90/100) - Global Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
-- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 71/100) - Global Function
 
 ## Triggered By
 
-- none
+- [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
+- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
 
 ## Affects
 

@@ -10,17 +10,19 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 153
+- Raw weighted score: 186
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 - +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
@@ -28,23 +30,23 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:676` |
+| Addons seen in | BuffHead, Shinies, TidyChat |
+| Files seen in | `/workspace/data/raw/BuffHead/Setup/SetupLayout.lua:234`, `/workspace/data/raw/Shinies/Modules/UI/Shinies-UI-Browse.lua:463`, `/workspace/data/raw/TidyChat/TidyChat.lua:676` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | TidyChat: TidyChatHooks.SetupHooks |
+| Example locations | BuffHead: BuffHead.Setup.Layout.Show, Shinies: _G.Shinies:NewModule.OnSelChanged_Criteria_MultiSelCombo, TidyChat: TidyChatHooks.SetupHooks |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 1 |
+| Initialization flow references | 3 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -59,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 1 addons.
+Observed as a shared SystemData runtime event used by 3 addons.
 
 ## Handler Pattern
 
@@ -71,17 +73,27 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Seen In
 
+- BuffHead
+- Shinies
 - TidyChat
 
 ## Registrars And Handlers
 
+- BuffHead.Setup.Layout.OnLButtonUpProcessed
 - RegisterEventHandler
+- ShiniesBrowseUI.Criteria_ReopenComboBox
 - TidyChat.OnLBU
+- WindowRegisterEventHandler
 - global
+- window
 
 ## Examples
 
+- BuffHead: BuffHead.Setup.Layout.Show -> SystemData.Events.L_BUTTON_UP_PROCESSED -> BuffHead.Setup.Layout.OnLButtonUpProcessed
+- Shinies: _G.Shinies:NewModule.OnSelChanged_Criteria_MultiSelCombo -> SystemData.Events.L_BUTTON_UP_PROCESSED -> ShiniesBrowseUI.Criteria_ReopenComboBox
 - TidyChat: TidyChatHooks.SetupHooks -> SystemData.Events.L_BUTTON_UP_PROCESSED -> TidyChat.OnLBU
+- BuffHead: BuffHead.Setup.Layout.OnLButtonUpProcessed -> RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, BuffHead.Setup.Layout.OnLButtonUpProcessed)
+- Shinies: ShiniesBrowseUI.Criteria_ReopenComboBox -> WindowRegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, ShiniesBrowseUI.Criteria_ReopenComboBox)
 - TidyChat: TidyChat.OnLBU -> RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, TidyChat.OnLBU)
 
 ## Related APIs
@@ -102,4 +114,4 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Notes
 
-- Only one addon surfaced this event in the current addon-api corpus.
+- none

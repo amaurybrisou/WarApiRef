@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 118
+- Raw weighted score: 130
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, Moth, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145` |
+| Addons seen in | BuffHead, CM_ClosetGoblin, DAoCBuff, TidyRoll |
+| Files seen in | `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:55`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:47`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145` |
 | Namespaces detected | DefaultColor |
 | Source kinds | globals, lua_calls |
-| Example locations | TidyRoll: TidyRoll.CustomAutoRoll.Initialize |
+| Example locations | BuffHead: BuffHead.Setup.LayoutControlFrame:Create, BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor, TidyRoll: TidyRoll.CustomAutoRoll.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 5 |
+| Global usage count | 2 |
 | Local definition count | 3 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -57,10 +57,11 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 3 addons.
+Observed shared global table or namespace surfaced in 4 addons.
 
 ## Functions
 
+- DefaultColor.SetLabelColor
 - DefaultColor.SetWindowTint
 
 ## Observed Members
@@ -69,17 +70,22 @@ Observed shared global table or namespace surfaced in 3 addons.
 
 ## Seen In
 
-- InfoScroller
-- Moth
+- BuffHead
+- CM_ClosetGoblin
+- DAoCBuff
 - TidyRoll
 
 ## Examples
 
+- BuffHead: BuffHead.Setup.LayoutControlFrame:Create -> DefaultColor.SetWindowTint(windowName, DefaultColor.YELLOW)
+- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Frame", frameColor)
+- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Background", backgroundColor)
+- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetLabelColor(self:GetName().."Name", nameColor)
 - TidyRoll: TidyRoll.CustomAutoRoll.Initialize -> DefaultColor.SetWindowTint(rowName.."Background", color)
 
 ## Related APIs
 
-- [GetIconData](../functions/global_GetIconData.md) (HIGH 71/100) - Global Function
+- none
 
 ## Used With
 

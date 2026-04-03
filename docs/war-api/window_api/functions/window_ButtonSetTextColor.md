@@ -2,20 +2,22 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 98/100
-- Seen in: 3 addons
+- Confidence score: 100/100
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 98/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Raw weighted score: 110
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | InfoScroller, PartyCast, TidyChat |
-| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:543`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:543`, `/workspace/data/raw/TidyChat/TidyChat.lua:1013` |
+| Addons seen in | Ace, LibWBToggler, PartyCast, Shinies, TidyChat, WoH-Reticle |
+| Files seen in | `/workspace/data/raw/Ace/LibGUI.lua:543`, `/workspace/data/raw/LibWarBoardToggler/libs/LibGUI.lua:543`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:543`, `/workspace/data/raw/Shinies/Libraries/LibGUI.lua:543`, `/workspace/data/raw/TidyChat/TidyChat.lua:1013`, `/workspace/data/raw/WoH-Reticle/libs/LibGUI.lua:543` |
 | Namespaces detected | ButtonSetTextColor |
 | Source kinds | lua_calls |
-| Example locations | InfoScroller: LIBGUI_Button:TextColor, PartyCast: LIBGUI_Button:TextColor, TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors |
+| Example locations | Ace: LIBGUI_Button:TextColor, LibWBToggler: LIBGUI_Button:TextColor, PartyCast: LIBGUI_Button:TextColor, Shinies: LIBGUI_Button:TextColor, TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors, WoH-Reticle: LIBGUI_Button:TextColor |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 17 |
+| Global usage count | 17 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -85,18 +87,21 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
-- InfoScroller
+- Ace
+- LibWBToggler
 - PartyCast
+- Shinies
 - TidyChat
+- WoH-Reticle
 
 ## Examples
 
-- InfoScroller: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
+- Ace: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
+- LibWBToggler: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
 - PartyCast: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
+- Shinies: LIBGUI_Button:TextColor -> ButtonSetTextColor(self.name, red, green, blue)
 - TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors -> ButtonSetTextColor(channelButton, Button.ButtonState.NORMAL, channelColor.r, channelColor.g, channelColor.b)
 - TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors -> ButtonSetTextColor(channelButton, Button.ButtonState.HIGHLIGHTED, channelColor.r, channelColor.g, channelColor.b)
-- TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors -> ButtonSetTextColor(channelButton, Button.ButtonState.PRESSED, channelColor.r, channelColor.g, channelColor.b)
-- TidyChat: TidyChatFrames.UpdateTidyChannelButtonsColors -> ButtonSetTextColor(channelButton, Button.ButtonState.PRESSED_HIGHLIGHTED, channelColor.r, channelColor.g, channelColor.b)
 
 ## Related APIs
 

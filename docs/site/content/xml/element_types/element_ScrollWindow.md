@@ -2,33 +2,37 @@
 
 - Category: XML Element Type
 - Confidence level: HIGH
-- Confidence score: 90/100
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Raw weighted score: 135
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | PartyCast |
-| Files seen in | `/workspace/data/raw/PartyCast/PartyCast.xml:550` |
+| Addons seen in | DAoCBuff, Enemy, Killer, PartyCast, PotionBar, Shinies, WhoHealedMe, bigger_MacroWindow |
+| Files seen in | `/workspace/data/raw/DAoCBuff/Source/DAoCBuffMsgWindow.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettings.xml:0`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:2132`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:2462`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:3`, `/workspace/data/raw/DAoCBuff/Source/DAoCBuffSettingsTabs.xml:978`, `/workspace/data/raw/Enemy/Code/CombatLog/CombatLogConfiguration.xml:0`, `/workspace/data/raw/Enemy/Code/GroupIcons/GroupIconsConfiguration.xml:0` |
 | Namespaces detected | ScrollWindow |
 | Source kinds | xml_frames |
-| Example locations | PartyCast: PartyCastWindow_Template_SpecialNewCastScroll |
-| XML usage count | 1 |
-| XML attribute usage count | 1 |
+| Example locations | DAoCBuff: DAoCBuffFrameSettingsTab, DAoCBuff: DAoCBuffGeneralSettingsTab, DAoCBuff: DAoCBuffListManagerTab, DAoCBuff: DAoCBuffMessageWindowScrollWindow, DAoCBuff: DAoCBuff_Settings_FilterFrame, DAoCBuff: DAoCBuff_Settings_FrameSettings |
+| XML usage count | 27 |
+| XML attribute usage count | 27 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -53,48 +57,123 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+Observed XML element type instantiated by 8 addons.
 
 ## Common Attributes
 
-- autoHideScrollBar
+- name
 - childscrollwindow
 - lineheight
-- name
+- scrollbar
+- autoHideScrollBar
+- inherits
+- autohidescrollbar
+- layer
 
 ## Common Inherits
 
-- none
+- DAoCBuffFrameSettingsTab
+- DAoCBuffGeneralSettingsTab
+- DAoCBuffListManagerTab
 
 ## Common Parent Elements
 
-- [Window](element_Window.md)
+- [Windows](element_Windows.md) — 26× (HIGH)
 
-## Common Named Child Elements
+## Common Structural Child Elements
 
-- [Window](element_Window.md)
+- [Windows](element_Windows.md) — 24× (HIGH)
+- [Size](element_Size.md) — 12× (HIGH)
+
+## Common Template Bases
+
+- DAoCBuffFrameSettingsTab
+- DAoCBuffGeneralSettingsTab
+- DAoCBuffListManagerTab
 
 
 > **Note**: This element type commonly acts as a template base.
+
+## Typical XML Structure
+
+```xml
+<ScrollWindow autoHideScrollBar="false" childscrollwindow="$parentScrollChild" lineheight="18" name="..." scrollbar="$parentScrollbar">
+  <Size/>
+  <Windows/>
+</ScrollWindow>
+```
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `autoHideScrollBar` | **required** | 100% | true |
-| `childscrollwindow` | **required** | 100% | $parent_scroll |
-| `lineheight` | **required** | 100% | 38 |
+| `childscrollwindow` | **required** | 88% | $parent_ScrollChild, $parentScrollChild, $parent_scroll, $parentRightPane, ... |
+| `lineheight` | **required** | 88% | 18, 38, 19, 55, ... |
+| `scrollbar` | **required** | 85% | $parent_Scrollbar, $parentScrollbar, $parentBar, IconsScrollbar |
+| `autoHideScrollBar` | optional | 55% | true, false |
+| `inherits` | optional | 11% | DAoCBuffFrameSettingsTab, DAoCBuffListManagerTab, DAoCBuffGeneralSettingsTab |
+| `autohidescrollbar` | optional | 7% | true |
+| `layer` | optional | 3% | secondary |
+## Structural Sub-Elements
+
+### [Windows](element_Windows.md)
+
+Observed 24 times as an unnamed child.
+
+### [Size](element_Size.md)
+
+Observed 12 times as an unnamed child.
+
+## Lua Functions Manipulating This Type
+
+- DAoCBuff.ShowMessageWindow
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Enemy.EnemyGroupIcon:ApplySettings
+- DAoCBuffSettings.PopulateSettings
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- Enemy._OnArchetypeChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.local._OnKeyModifierChanged
+- Enemy.local._OnArchetypeChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Enemy._OnKeyModifierChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Killer.Initialize
+
 ## Seen In
 
+- DAoCBuff
+- Enemy
+- Killer
 - PartyCast
+- PotionBar
+- Shinies
+- WhoHealedMe
+- bigger_MacroWindow
 
 ## Examples
 
-- PartyCast: PartyCastWindow_Template_SpecialNewCastScroll -> ScrollWindow PartyCastWindow_Template_SpecialNewCastScroll
+- DAoCBuff: DAoCBuffFrameSettingsTab -> ScrollWindow DAoCBuffFrameSettingsTab
+- DAoCBuff: DAoCBuffGeneralSettingsTab -> ScrollWindow DAoCBuffGeneralSettingsTab
+- DAoCBuff: DAoCBuffListManagerTab -> ScrollWindow DAoCBuffListManagerTab
+- DAoCBuff: DAoCBuffMessageWindowScrollWindow -> ScrollWindow DAoCBuffMessageWindowScrollWindow
+- DAoCBuff: DAoCBuff_Settings_FilterFrame -> ScrollWindow DAoCBuff_Settings_FilterFrame
+- DAoCBuff: DAoCBuff_Settings_FrameSettings -> ScrollWindow DAoCBuff_Settings_FrameSettings
 
 ## Related APIs
 
-- [Window](element_Window.md) (HIGH 100/100) - XML Element Type
+- [Size](element_Size.md) (HIGH 100/100) - XML Element Type
+- [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

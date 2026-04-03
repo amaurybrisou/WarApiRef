@@ -2,36 +2,41 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 70/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 70/100
+- Final score: 100/100
+
+- Raw weighted score: 113
 
 - Rationale: Promoted as HIGH confidence because matches a known engine namespace, referenced by generated docs or reference files, called globally with no local definition.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145` |
+| Addons seen in | BuffHead, TidyRoll |
+| Files seen in | `/workspace/data/raw/BuffHead/Setup/LayoutControlFrame.lua:55`, `/workspace/data/raw/BuffHead/Setup/LayoutFrame.lua:47`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145` |
 | Namespaces detected | DefaultColor |
 | Source kinds | globals, lua_calls |
-| Example locations | TidyRoll: TidyRoll.CustomAutoRoll.Initialize |
+| Example locations | BuffHead: BuffHead.Setup.LayoutControlFrame:Create, BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor, TidyRoll: TidyRoll.CustomAutoRoll.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -39,8 +44,8 @@
 | Default UI presence | no |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
-| Consistent arguments | no |
+| Consistent role | yes |
+| Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -60,14 +65,14 @@ DefaultColor.SetWindowTint(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 1 addons.
+Observed as a global function across 2 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: rowName.."Background" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: color |
+| arg1 | Observed as a function or method reference. | Observed values: rowName.."Background", self:GetName().."Background", self:GetName().."Frame" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: DefaultColor.YELLOW, backgroundColor, color |
 
 ## Returns
 
@@ -79,10 +84,14 @@ Observed as a global function across 1 addons.
 
 ## Seen In
 
+- BuffHead
 - TidyRoll
 
 ## Examples
 
+- BuffHead: BuffHead.Setup.LayoutControlFrame:Create -> DefaultColor.SetWindowTint(windowName, DefaultColor.YELLOW)
+- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Frame", frameColor)
+- BuffHead: BuffHead.Setup.LayoutFrame:UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Background", backgroundColor)
 - TidyRoll: TidyRoll.CustomAutoRoll.Initialize -> DefaultColor.SetWindowTint(rowName.."Background", color)
 
 ## Related APIs
@@ -103,5 +112,4 @@ Observed as a global function across 1 addons.
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
