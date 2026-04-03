@@ -256,8 +256,8 @@ func newScoringContext(source SourceModel) scoringContext {
 	}
 }
 
-func Build(source SourceModel) Corpus {
-	return BuildWithOptions(source, BuildOptions{})
+func Build(contracts ContractModel) Corpus {
+	return BuildWithOptions(contracts, BuildOptions{})
 }
 
 // BuildOptions configures optional behaviour for [Build].
@@ -265,21 +265,20 @@ type BuildOptions struct {
 	// SourceRoot, when non-empty, enables the source-first pipeline path.
 	// The directory must contain addon sub-directories with manifest files
 	// (*.mod or *.toc). When set, real XML and Lua source files are parsed
-	// directly; the flattened SourceModel is used only as supplementary data.
+	// directly from the addons directory.
 	//
-	// When empty (the default), the pipeline runs in degraded compatibility
-	// mode: it reconstructs XML trees and Lua definitions from the pre-flattened
-	// SourceModel docs. This path is lossy and should not be used when real
-	// source files are available.
+	// In contract-only mode SourceRoot is required; the pipeline panics
+	// if it is empty.
 	SourceRoot string
 }
 
 // BuildWithOptions builds the platform corpus with explicit options.
 // Use this instead of [Build] to enable the source-first pipeline path.
-func BuildWithOptions(source SourceModel, opts BuildOptions) Corpus {
+func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
+	source := sourceModelFromContracts(contracts)
 	corpus := Corpus{
-		SourceRoot:  source.Root,
-		Source:      source,
+		SourceRoot:  contracts.Root,
+		Contracts:   contracts,
 		GeneratedAt: time.Now().UTC(),
 	}
 	ctx := newScoringContext(source)
@@ -599,10 +598,10 @@ func BuildWithOptions(source SourceModel, opts BuildOptions) Corpus {
 	corpus.WindowPatterns = buildWindowPatterns(globalFunctions, windowFunctions, source.Bindings)
 	corpus.EventPatterns = buildEventPatterns(globalFunctions, corpus.GameEvents, corpus.WindowEvents)
 	corpus.Lifecycle = finalizeLifecycle(lifecycle)
-	corpus.Conventions = buildConventions(corpus)
+	corpus.Conventions = buildConventions(corpus, source)
 	corpus.InferenceRules = defaultInferenceRules()
-	corpus.Coverage = buildCoverage(corpus, collector.items)
-	enrichSemanticArtifacts(&corpus)
+	corpus.Coverage = buildCoverage(corpus, collector.items, source)
+	enrichSemanticArtifacts(&corpus, source)
 	return corpus
 }
 
@@ -1192,7 +1191,7 @@ func buildEventPatterns(globalFunctions map[string]*functionAccumulator, gameEve
 	return patterns
 }
 
-func buildConventions(corpus Corpus) []PatternDoc {
+func buildConventions(corpus Corpus, source SourceModel) []PatternDoc {
 	patterns := []PatternDoc{}
 	patterns = append(patterns, PatternDoc{
 		Name:        "Initialization pattern",
@@ -1220,7 +1219,7 @@ func buildConventions(corpus Corpus) []PatternDoc {
 		Category:    "conventions",
 		Confidence:  ConfidenceHigh,
 		Description: "XML handler names map directly to Lua functions and can be cross-checked through the bindings page.",
-		Evidence:    bindingEvidence(corpus.Source.Bindings, 8),
+		Evidence:    bindingEvidence(source.Bindings, 8),
 	})
 	patterns = append(patterns, PatternDoc{
 		Name:        "XML runtime caveats",
@@ -1252,7 +1251,7 @@ func buildConventions(corpus Corpus) []PatternDoc {
 		Category:    "conventions",
 		Confidence:  ConfidenceMedium,
 		Description: "Persistent state is typically rooted in addon-owned globals and saved variables, then initialized before runtime hooks are attached.",
-		Evidence:    savedVariableEvidence(corpus.Source.Globals.SavedVariables, 8),
+		Evidence:    savedVariableEvidence(source.Globals.SavedVariables, 8),
 	})
 	return patterns
 }
@@ -1914,16 +1913,16 @@ func matrixRow(summary CandidateSummary) ConfidenceMatrixRow {
 	return row
 }
 
-func buildCoverage(corpus Corpus, candidates []CandidateSummary) Coverage {
+func buildCoverage(corpus Corpus, candidates []CandidateSummary, source SourceModel) Coverage {
 	coverage := Coverage{
 		SourceCounts: map[string]int{
-			"function_docs": len(corpus.Source.Functions),
-			"frame_docs":    len(corpus.Source.Frames),
-			"handler_docs":  len(corpus.Source.Handlers),
-			"event_docs":    len(corpus.Source.Events),
-			"bindings":      len(corpus.Source.Bindings),
-			"flows":         len(corpus.Source.Flows),
-			"examples":      len(corpus.Source.Examples),
+			"function_docs": len(source.Functions),
+			"frame_docs":    len(source.Frames),
+			"handler_docs":  len(source.Handlers),
+			"event_docs":    len(source.Events),
+			"bindings":      len(source.Bindings),
+			"flows":         len(source.Flows),
+			"examples":      len(source.Examples),
 		},
 		SymbolCounts: map[string]int{
 			"global_functions": len(corpus.GlobalFunctions),

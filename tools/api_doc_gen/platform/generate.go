@@ -183,7 +183,7 @@ func writeIndex(outputRoot string, corpus Corpus) error {
 		{"Rejected addon-local", fmt.Sprintf("%d", len(corpus.Coverage.RejectedAddonLocal))},
 	}
 	content := "# WAR Addon Development API Reference\n\n"
-	content += fmt.Sprintf("Generated from addon-api rooted at `%s`. The source corpus contained %d function docs, %d frame docs, %d handler docs, and %d event docs.\n\n", corpus.SourceRoot, len(corpus.Source.Functions), len(corpus.Source.Frames), len(corpus.Source.Handlers), len(corpus.Source.Events))
+	content += fmt.Sprintf("Generated from addon-api rooted at `%s`. The source corpus contained %d function docs, %d frame docs, %d handler docs, and %d event docs.\n\n", corpus.SourceRoot, corpus.Coverage.SourceCounts["function_docs"], corpus.Coverage.SourceCounts["frame_docs"], corpus.Coverage.SourceCounts["handler_docs"], corpus.Coverage.SourceCounts["event_docs"])
 	content += md.Section("Coverage", md.Table([]string{"Category", "Count"}, rows))
 	content += md.Section("Candidate Outcomes", md.Table([]string{"Outcome", "Count"}, candidateRows))
 	content += md.Section("Sections",
@@ -716,8 +716,15 @@ func writeLifecycle(outputRoot string, corpus Corpus) error {
 
 func writeExamples(outputRoot string, corpus Corpus) error {
 	rows := [][]string{}
-	for _, example := range corpus.Source.Examples {
-		rows = append(rows, []string{example.Addon, example.Frame, example.Event, example.LuaFunction})
+	for _, links := range corpus.Contracts.Links {
+		for _, link := range links.HandlerLinks {
+			frame := firstNonEmpty(link.XML.ResolvedName, link.XML.RawName)
+			luaFn := firstNonEmpty(link.Lua.QualifiedName, link.Lua.DeclaredName, link.Lua.ShortName)
+			rows = append(rows, []string{links.Addon, frame, link.XML.Event, luaFn})
+			if len(rows) == 80 {
+				break
+			}
+		}
 		if len(rows) == 80 {
 			break
 		}

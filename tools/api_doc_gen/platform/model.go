@@ -617,7 +617,7 @@ type PatternPage struct {
 
 type Corpus struct {
 	SourceRoot           string
-	Source               SourceModel
+	Contracts            ContractModel
 	GlobalFunctions      []FunctionSymbol
 	WindowFunctions      []FunctionSymbol
 	GlobalTables         []TableSymbol

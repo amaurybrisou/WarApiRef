@@ -142,9 +142,7 @@ func runPlatformMode(args []string) error {
 	if err != nil {
 		return fmt.Errorf("load contract inputs: %w", err)
 	}
-	source := platform.SourceModelFromContracts(contracts)
-
-	corpus := platform.BuildWithOptions(source, platform.BuildOptions{SourceRoot: sourceRoot})
+	corpus := platform.BuildWithOptions(contracts, platform.BuildOptions{SourceRoot: sourceRoot})
 	return platform.Generate(outputRoot, corpus)
 }
 

@@ -206,7 +206,7 @@ func LoadContractInputs(addonAPIRoot string) (ContractModel, error) {
 	return model, nil
 }
 
-func SourceModelFromContracts(model ContractModel) SourceModel {
+func sourceModelFromContracts(model ContractModel) SourceModel {
 	source := SourceModel{
 		Root:     model.Root,
 		LoadedAt: model.LoadedAt,
