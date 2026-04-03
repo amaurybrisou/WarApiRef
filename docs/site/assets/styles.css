@@ -116,6 +116,26 @@ section { padding: 0; margin: 0; }
 
 .nav-tree details { border: none; padding: 0; margin: 0; }
 
+.nav-group { position: relative; }
+
+.nav-group.nav-depth-1::before,
+.nav-group.nav-depth-2::before,
+.nav-group.nav-depth-3::before,
+.nav-group.nav-depth-4::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  width: 1px;
+  background: color-mix(in oklab, var(--pico-muted-color) 30%, transparent);
+  pointer-events: none;
+}
+
+.nav-group.nav-depth-1::before { left: 14px; }
+.nav-group.nav-depth-2::before { left: 28px; }
+.nav-group.nav-depth-3::before { left: 42px; }
+.nav-group.nav-depth-4::before { left: 56px; }
+
 .nav-tree details > summary {
   list-style:    none;
   display:       flex;
@@ -124,7 +144,7 @@ section { padding: 0; margin: 0; }
   padding:       5px 8px;
   border-radius: 5px;
   font-size:     .72rem;
-  font-weight:   600;
+  font-weight:   500;
   text-transform: uppercase;
   letter-spacing: .07em;
   color:         var(--pico-muted-color);
@@ -144,9 +164,17 @@ section { padding: 0; margin: 0; }
 .nav-tree details > summary:hover { background: var(--pico-muted-border-color); color: var(--pico-color); }
 .nav-tree details > summary::-webkit-details-marker { display: none; }
 
+.nav-tree .nav-structural > summary {
+  color: color-mix(in oklab, var(--pico-muted-color) 92%, black);
+}
+
+.nav-tree .nav-group[open] > summary {
+  color: color-mix(in oklab, var(--pico-color) 70%, var(--pico-muted-color));
+}
+
 .nav-link {
   display:       block;
-  padding:       4px 10px;
+  padding:       4px 12px;
   margin:        1px 0;
   border-radius: 5px;
   color:         var(--pico-color);
@@ -158,11 +186,33 @@ section { padding: 0; margin: 0; }
   transition:    background .1s;
 }
 .nav-link:hover  { background: var(--pico-muted-border-color); color: var(--pico-color); }
-.nav-link.active { background: var(--accent-soft); color: var(--accent); font-weight: 500; }
+.nav-link.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+  box-shadow: inset 2px 0 0 var(--accent);
+}
 
-.nav-depth-1 { padding-left: 18px; }
-.nav-depth-2 { padding-left: 28px; }
-.nav-depth-3 { padding-left: 38px; }
+.nav-link.nav-depth-1,
+.nav-tree details > summary.nav-depth-1,
+.nav-group-title.nav-depth-1 { padding-left: 22px; }
+
+.nav-link.nav-depth-2,
+.nav-tree details > summary.nav-depth-2,
+.nav-group-title.nav-depth-2 { padding-left: 36px; }
+
+.nav-link.nav-depth-3,
+.nav-tree details > summary.nav-depth-3,
+.nav-group-title.nav-depth-3 { padding-left: 50px; }
+
+.nav-link.nav-depth-4,
+.nav-tree details > summary.nav-depth-4,
+.nav-group-title.nav-depth-4 { padding-left: 64px; }
+
+.nav-group-link {
+  font-size: .8rem;
+  color: var(--pico-muted-color);
+}
 
 /* ── 7. Content area ─────────────────────────────────────────────────────── */
 .content-area { display: flex; flex-direction: column; min-height: 100vh; overflow: hidden; }

@@ -121,36 +121,56 @@ async function postMcp(method, params) {
 }
 
 // --- Navigation tree  (collapsible via <details>/<summary>) ------------------
-const INDENT = ["", "nav-depth-1", "nav-depth-2", "nav-depth-3"];
+const INDENT = ["", "nav-depth-1", "nav-depth-2", "nav-depth-3", "nav-depth-4"];
+const STRUCTURAL_LABELS = new Set([
+  "GLOBALS",
+  "FUNCTIONS",
+  "TABLES",
+  "CONSTANTS",
+]);
+
+function isStructuralGroup(item, hasKids) {
+  if (!hasKids) return false;
+  const label = String(item.label || "").trim().toUpperCase();
+  const path = String(item.path || "").trim().toLowerCase();
+  if (!path) return true;
+  if (STRUCTURAL_LABELS.has(label)) return true;
+  return path.endsWith("/index.md");
+}
 
 function buildTree(items, parent, depth) {
   depth = depth || 0;
   items.forEach((item) => {
     const children = item.children || item.items;
     const hasKids  = Array.isArray(children) && children.length > 0;
+    const depthCls = INDENT[Math.min(depth, 4)] || "";
 
     if (hasKids) {
       // Collapsible group
       const details = document.createElement("details");
+      details.className = "nav-group" + (depthCls ? " " + depthCls : "");
+      const structuralOnly = isStructuralGroup(item, hasKids);
+      if (structuralOnly) details.classList.add("nav-structural");
 
       const summary = document.createElement("summary");
+      summary.className = "nav-group-summary" + (depthCls ? " " + depthCls : "");
       summary.textContent = item.label;
       details.appendChild(summary);
 
       // If the group itself has a page, add a direct link inside
-      if (item.path) {
-        const self = makeNavLink(item.path, "-> " + item.label, INDENT[Math.min(depth, 3)]);
+      if (item.path && !structuralOnly) {
+        const self = makeNavLink(item.path, "Overview", depthCls + " nav-group-link");
         details.appendChild(self);
       }
 
       buildTree(children, details, depth + 1);
       parent.appendChild(details);
     } else if (item.path) {
-      parent.appendChild(makeNavLink(item.path, item.label, INDENT[Math.min(depth, 3)]));
+      parent.appendChild(makeNavLink(item.path, item.label, depthCls));
     } else {
       // Label-only (separator)
       const lbl = document.createElement("div");
-      lbl.className = "nav-group-title " + (INDENT[Math.min(depth, 3)] || "");
+      lbl.className = "nav-group-title " + depthCls;
       lbl.textContent = item.label;
       parent.appendChild(lbl);
     }
