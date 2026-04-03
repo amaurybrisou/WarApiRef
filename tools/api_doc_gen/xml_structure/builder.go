@@ -15,26 +15,7 @@ import (
 // These tags are still parsed into the XML tree and retain parent/child links;
 // this map only affects semantic classification (IsIgnored), not tree presence.
 var ignoredTags = map[string]bool{
-	"Interface":     true,
-	"Assets":        true,
-	"Anchors":       true,
-	"Anchor":        true,
-	"AbsPoint":      true,
-	"Color":         true,
-	"TopLeft":       true,
-	"TopCenter":     true,
-	"TopRight":      true,
-	"MiddleLeft":    true,
-	"MiddleCenter":  true,
-	"MiddleRight":   true,
-	"BottomLeft":    true,
-	"BottomCenter":  true,
-	"BottomRight":   true,
-	"EventHandlers": true,
-	"EventHandler":  true,
-	"Texture":       true,
-	"Font":          true,
-	"Layer":         true,
+	"Interface": true,
 }
 
 // maxSampleValues limits the number of distinct sample values stored per attribute.

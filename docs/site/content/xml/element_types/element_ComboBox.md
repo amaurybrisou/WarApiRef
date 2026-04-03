@@ -232,24 +232,24 @@ Confidence: MEDIUM
 | 0 | `index` | number | selected_index |
 ## Lua Functions Manipulating This Type
 
-- Enemy.UI_ConfigDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.UI_ConfigDialog_OnSectionSelChanged
 - Enemy.IntercomUI_ChooseChannelDialog_Open
 - Enemy.IntercomUI_IntercomJoinDialog_Open
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
 - Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
 - BankArkel.SetupCombos
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- AdvancedRenownTrainer.GeneratePresetByLinkData
 - Enemy.UnitFramesUI_ConfigDialog_Import
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - Enemy.CombatLogUI_StatsWindow_Open
-- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- AdvancedRenownTrainer.GeneratePresetByLinkData
+- Enemy.UI_ConfigDialog_Open
+- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
 
 
 ## Binding Resolution

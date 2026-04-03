@@ -222,16 +222,16 @@ Confidence: MEDIUM
 ## Lua Functions Manipulating This Type
 
 - Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
 - Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
 - Enemy.GroupsUI_EffectFilterDialog_Ok
-- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
 - Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
 - PP.UpdateDyeFilter
 
 

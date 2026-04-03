@@ -227,31 +227,31 @@ Confidence: HIGH
 
 ## Lua Functions Manipulating This Type
 
-- MoraleCircle.OnSetCustomColorFill
-- MoraleCircle.ColorChanger4
-- WHMCore.ApplyBackgroundFillColor
 - Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
-- Killer.ShowRowTooltip
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Killer.Initialize
-- Killer.ShowTopKillersTooltip
-- MoraleCircle.ColorChanger1
-- MoraleCircle.OnSetCustomColorFull
-- MoraleCircle.ColorChanger3
-- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
-- Enemy.MarksInitialize
-- MoraleCircle.OnSetCustomColorEmpty
-- Killer.ShowPersonalStatsTooltip
-- MoraleCircle.ColorChanger2
+- Enemy._Initialize
+- WHMCore.ApplyBackgroundFillColor
 - Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
 - MoraleCircle.OnSetCustomColor
-- WSCT.OnSetCustomColor
-- WSCT.ColorOnButtonUp
+- MoraleCircle.ColorChanger1
+- MoraleCircle.OnSetCustomColorEmpty
+- MoraleCircle.ColorChanger2
+- MoraleCircle.ColorChanger3
 - WSCT.OnLButtonUpColorPicker
 - WHMGui.RefreshConfigurationWindow
-- Enemy._Initialize
+- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- Killer.ShowPersonalStatsTooltip
+- Killer.ShowTopKillersTooltip
+- MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.OnSetCustomColorFull
+- MoraleCircle.ColorChanger4
+- Enemy.MarksInitialize
 - Enemy.CombatLogUI_IDS_Initialize
+- Killer.Initialize
+- Killer.ShowRowTooltip
+- WSCT.ColorOnButtonUp
+- WSCT.OnSetCustomColor
 
 
 ## Binding Resolution

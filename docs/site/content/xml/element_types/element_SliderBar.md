@@ -186,22 +186,22 @@ Confidence: LOW
 
 ## Lua Functions Manipulating This Type
 
+- MoraleCircle.OnSetCustomColorFill
 - RoR_SoR.OnWindowOptionsSetOffset
+- MoraleCircle.OnSetCustomColorEmpty
 - WSCT.OnLButtonUpColorPicker
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- WSCT.OnSetCustomColor
 - MoraleCircle.OnSetCustomColor
+- MoraleCircle.ColorChanger1
 - MoraleCircle.ColorChanger3
 - RoR_SoR.OnWindowOptionsSetOpacity
-- WSCT.ColorOnButtonUp
-- MoraleCircle.ColorChanger1
-- MoraleCircle.OnSetCustomColorFill
-- MoraleCircle.ColorChanger4
 - RoR_SoR.OnWindowOptionsSetScale
+- WSCT.ColorOnButtonUp
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
 - MoraleCircle.ColorChanger2
 - MoraleCircle.OnSetCustomColorFull
-- MoraleCircle.OnSetCustomColorEmpty
-- WSCT.OnSetCustomColor
+- MoraleCircle.ColorChanger4
 
 
 ## Binding Resolution

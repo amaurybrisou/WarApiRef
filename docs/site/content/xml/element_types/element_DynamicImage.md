@@ -288,40 +288,40 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.TalismanAlerterInitialize
-- PP.UpdateListRow
-- RoR_SoR.OnInitialize
 - BankArkel.PackImg
-- Enemy.GuardInitialize
-- SwiftAssist.Initialize
-- Swift Assist.local.SetSmartLabel
-- WSCT.ColorOnInitialize
-- Enemy.Guard_OnSettingsChanged
-- Enemy.EnemyEffectsIndicator:Update
-- Enemy.MarksInitialize
-- RoR_SoR.OnCombat
-- Swift Assist.local.SetTexLabel
-- Swift Assist.SetSmartLabel
-- ClosetGoblinCharacterWindow.UpdateSortButtonIcon
-- GuardLine.update
-- RoR_SoR.OnScenario
-- SwiftAssist.OnMacroUpdated
-- Enemy.AssistUI_Target_Show
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.Guard_GuardIndicator_Update
-- Enemy.TalismanAlerter_Update
-- BagOMatic.init
-- WSCT.OnLButtonUpColorPicker
-- Enemy.UI_Icon_Switch
-- ClosetGoblinZoneWindow.OnInitialize
-- ClosetGoblin.Initialize
 - Enemy._Initialize
-- Swift Assist.SetTexLabel
-- TurretRange.OnUpdate
-- WSCT.ColorAcceptButtonOnButtonUp
-- ClosetGoblinCharacterWindow.OnInitialize
-- WSCT.ColorHideMenu
 - Enemy.TalismanAlerter_OnSettingsChanged
+- SwiftAssist.Initialize
+- Swift Assist.SetSmartLabel
+- Swift Assist.local.SetSmartLabel
+- WSCT.ColorHideMenu
+- ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- ClosetGoblin.Initialize
+- Enemy.EnemyEffectsIndicator:Update
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- GuardLine.update
+- ClosetGoblinCharacterWindow.OnInitialize
+- PP.UpdateListRow
+- WSCT.ColorAcceptButtonOnButtonUp
+- BagOMatic.init
+- Enemy.TalismanAlerter_Update
+- Swift Assist.SetTexLabel
+- Enemy.AssistUI_Target_Show
+- SwiftAssist.OnMacroUpdated
+- Enemy.UI_Icon_Switch
+- Enemy.GuardInitialize
+- Enemy.Guard_OnSettingsChanged
+- RoR_SoR.OnInitialize
+- RoR_SoR.OnCombat
+- WSCT.OnLButtonUpColorPicker
+- ClosetGoblinZoneWindow.OnInitialize
+- Enemy.Guard_GuardIndicator_Update
+- Enemy.TalismanAlerterInitialize
+- RoR_SoR.OnScenario
+- TurretRange.OnUpdate
+- Enemy.MarksInitialize
+- Swift Assist.local.SetTexLabel
+- WSCT.ColorOnInitialize
 
 
 ## Binding Resolution

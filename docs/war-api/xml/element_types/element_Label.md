@@ -322,67 +322,67 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.Timer_Update
-- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- RoR_SoR.OnInitialize
-- Enemy.CombatLogUI_EpsWindow_Initialize
-- Swift Assist.local.SetSmartLabel
-- DAoCBuff.ShowMessageWindow
-- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
-- Swift Assist.local.WriteLabels
-- Killer.ShowTopKillersTooltip
-- MoraleCircle.OnSetCustomColorFull
-- SwiftAssist.aaLabelColorSet
-- Swift Assist.SetSmartLabel
-- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- Enemy.IntercomInitialize
-- Enemy.AssistUI_Target_Show
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- MoraleCircle.ColorChanger3
-- DAoCTooltips.CreateCondenseTooltip
-- PP.UpdateDyeFilter
-- APAGui.UpdateFollowTargetHUD
-- DAoCTooltips.UpdateCondenseTooltip
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.UI_ConfigDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- APAGui.UpdateInstantOnlyHUD
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- BankArkel.SetCharInfo
-- BankArkel.PackHide
-- Enemy.CombatLogUI_EpsWindow_UpdateLayout
-- MoraleCircle.ColorChanger2
-- PotionBarSettings.OnAboutShown
-- Swift Assist.WriteLabels
-- AggroMeter.Initialize
-- Killer.ShowRowTooltip
-- MoraleCircle.init
-- MoraleCircle.OnSetCustomColorEmpty
-- MoraleCircle.ColorChanger4
-- WSCT.ColorOnInitialize
-- APAGui.UpdatePetTargetHUD
+- Enemy.Guard_GuardIndicator_Update
 - Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
-- Killer.ShowPersonalStatsTooltip
-- PP.UpdateListRow
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.CombatLogUI_StatsWindow_UpdateList
-- Enemy.CombatLogUI_TargetDefenseWindow_Update
+- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
+- RoR_SoR.OnInitialize
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- Enemy.CombatLogUI_EpsWindow_Update
 - Killer.Initialize
+- Swift Assist.local.SetSmartLabel
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- MoraleCircle.ColorChanger4
+- BankArkel.SetCharInfo
+- DAoCBuff.ShowMessageWindow
+- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- APAGui.UpdateInstantOnlyHUD
+- BankArkel.PackHide
+- Enemy.CombatLogUI_StatsWindow_Open
+- PP.UpdateDyeFilter
+- MoraleCircle.ColorChanger3
+- PP.UpdateListRow
+- WSCT.ColorOnInitialize
+- APAGui.UpdateFollowTargetHUD
+- APAGui.UpdateKitingHUD
+- ClosetGoblinCharacterWindow.OnInitialize
+- Enemy.UI_ConfigDialog_Open
+- Swift Assist.SetSmartLabel
+- Enemy.CombatLogUI_EpsWindow_Initialize
+- MoraleCircle.OnSetCustomColor
+- Swift Assist.local.WriteLabels
+- Swift Assist.WriteLabels
+- APAGui.ApplyPetTargetHUDLayout
+- ClosetGoblinZoneWindow.RefreshOption
+- MoraleCircle.ColorChanger1
+- MoraleCircle.OnSetCustomColorFull
+- PotionBarSettings.OnAboutShown
+- DAoCTooltips.UpdateCondenseTooltip
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- MoraleCircle.init
+- Enemy.AssistUI_Target_Show
+- Enemy.CombatLogUI_TargetDefenseWindow_Update
+- TidyRollOptions.Initialize
+- AggroMeter.Initialize
+- Enemy.Stopwatch_Update
+- Killer.ShowRowTooltip
+- MoraleCircle.ColorChanger2
+- MoraleCircle.OnSetCustomColorEmpty
+- SwiftAssist.aaLabelColorSet
+- APAGui.UpdatePetTargetHUD
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.CombatLogUI_StatsWindow_UpdateList
+- Killer.ShowPersonalStatsTooltip
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.CombatLogUI_EpsWindow_UpdateLayout
+- Killer.ShowTopKillersTooltip
 - MoraleCircle.OnSetCustomColorFill
 - APAGui.OnShown
-- APAGui.ApplyPetTargetHUDLayout
-- ClosetGoblinCharacterWindow.OnInitialize
-- Enemy.Guard_GuardIndicator_Update
-- ClosetGoblinZoneWindow.RefreshOption
-- Enemy.CombatLogUI_StatsWindow_Open
-- MoraleCircle.ColorChanger1
-- MoraleCircle.OnSetCustomColor
-- APAGui.UpdateKitingHUD
+- Enemy.IntercomInitialize
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.Timer_Update
 - Enemy.IntercomUI_IntercomDialog_Open
-- Enemy.CombatLogUI_EpsWindow_Update
-- TidyRollOptions.Initialize
-- Enemy.Stopwatch_Update
+- DAoCTooltips.CreateCondenseTooltip
 
 
 ## Binding Resolution

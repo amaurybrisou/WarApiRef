@@ -127,28 +127,28 @@ Observed 12 times as an unnamed child.
 ## Lua Functions Manipulating This Type
 
 - DAoCBuff.ShowMessageWindow
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.EnemyGroupIcon:ApplySettings
 - DAoCBuffSettings.PopulateSettings
-- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
-- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
-- Enemy._OnArchetypeChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.local._OnKeyModifierChanged
-- Enemy.local._OnArchetypeChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
-- Enemy._OnKeyModifierChanged
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.local._OnArchetypeChanged
+- Enemy._OnKeyModifierChanged
 - Killer.Initialize
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- Enemy._OnArchetypeChanged
+- Enemy.local._OnKeyModifierChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.EnemyGroupIcon:ApplySettings
 
 ## Seen In
 
