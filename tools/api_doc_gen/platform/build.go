@@ -821,7 +821,7 @@ func finalizeEventSymbols(values map[string]*eventAccumulator, category string, 
 			Signals:        assessment.Signals,
 			Rationale:      assessment.Rationale,
 			Evidence:       assessment.Evidence,
-			Description:    describeEvent(acc.Name, category, len(acc.Addons)),
+			Description:    describeEvent(acc.Name, category, len(acc.Addons), len(acc.Registrars), len(acc.Handlers)),
 			HandlerPattern: inferEventHandlerPattern(acc.Name),
 			Payload:        inferEventPayload(acc.Name),
 			SeenIn:         mapKeys(acc.Addons),
@@ -851,7 +851,7 @@ func finalizeXMLHandlerSymbols(values map[string]*xmlHandlerAccumulator, ctx sco
 			Signals:         assessment.Signals,
 			Rationale:       assessment.Rationale,
 			Evidence:        assessment.Evidence,
-			Description:     describeXMLHandler(acc.Name, len(acc.Addons)),
+			Description:     describeXMLHandler(acc.Name, len(acc.Addons), mapKeys(acc.ElementTypes)),
 			ExpectedBinding: inferXMLBinding(acc.Name),
 			ElementTypes:    mapKeys(acc.ElementTypes),
 			SeenIn:          mapKeys(acc.Addons),
@@ -880,7 +880,7 @@ func finalizeFieldSymbols(values map[string]*fieldAccumulator, namespace string,
 			Signals:     assessment.Signals,
 			Rationale:   assessment.Rationale,
 			Evidence:    assessment.Evidence,
-			Description: describeField(acc.Name, namespace, len(acc.Addons)),
+			Description: describeField(acc.Name, namespace, len(acc.Addons), mapKeys(acc.Contexts)),
 			SeenIn:      mapKeys(acc.Addons),
 			Notes:       fieldNotes(acc),
 		})
@@ -918,7 +918,7 @@ func finalizeTableSymbols(values map[string]*tableAccumulator, ctx scoringContex
 			Signals:              assessment.Signals,
 			Rationale:            assessment.Rationale,
 			Evidence:             assessment.Evidence,
-			Description:          describeTable(acc.Name, len(acc.Addons)),
+			Description:          describeTable(acc.Name, len(acc.Addons), len(acc.Members), len(acc.Functions)),
 			SeenIn:               mapKeys(acc.Addons),
 			Functions:            mapKeys(acc.Functions),
 			ObservedMembers:      mapKeys(acc.Members),
@@ -947,7 +947,7 @@ func finalizeConstantSymbols(values map[string]*constantAccumulator, ctx scoring
 			Signals:     assessment.Signals,
 			Rationale:   assessment.Rationale,
 			Evidence:    assessment.Evidence,
-			Description: describeConstant(acc.Name, len(acc.Addons)),
+			Description: describeConstant(acc.Name, len(acc.Addons), len(acc.UsedBy)),
 			SeenIn:      mapKeys(acc.Addons),
 			UsedBy:      mapKeys(acc.UsedBy),
 			Notes:       graph.UniqueStrings(acc.Notes),
@@ -2145,33 +2145,76 @@ func describeFunction(name string, category string, addonCount int) string {
 	}
 }
 
-func describeEvent(name string, category string, addonCount int) string {
-	if category == "Window Event" {
-		return fmt.Sprintf("Observed as an engine-supplied UI event hook used by %d addons.", addonCount)
+func describeEvent(name string, category string, addonCount int, registrarCount int, handlerCount int) string {
+	switch category {
+	case "Window Event":
+		if handlerCount > 1 {
+			return fmt.Sprintf("Engine-supplied UI event hook bound by %d addons through window handlers.", addonCount)
+		}
+		return "Engine-supplied UI event hook for window-scoped event handling."
+	case "System Event":
+		if registrarCount > handlerCount && handlerCount > 0 {
+			return fmt.Sprintf("Shared SystemData runtime event registered by %d addons and handled by %d handler functions.", registrarCount, handlerCount)
+		}
+		return fmt.Sprintf("Shared SystemData runtime event observed across %d addons.", addonCount)
+	default:
+		if handlerCount > 0 {
+			return fmt.Sprintf("Runtime event with %d handler registrations observed across %d addons.", handlerCount, addonCount)
+		}
+		return fmt.Sprintf("Observed as a runtime event across %d addons.", addonCount)
 	}
-	if strings.HasPrefix(name, "SystemData.Events.") {
-		return fmt.Sprintf("Observed as a shared SystemData runtime event used by %d addons.", addonCount)
+}
+
+func describeXMLHandler(name string, addonCount int, elementTypes []string) string {
+	if len(elementTypes) > 0 {
+		typesStr := strings.Join(firstStrings(elementTypes, 2), ", ")
+		if len(elementTypes) > 2 {
+			typesStr += " and others"
+		}
+		return fmt.Sprintf("XML handler event commonly bound to %s elements in %d addons.", typesStr, addonCount)
 	}
-	return fmt.Sprintf("Observed as a runtime event or event-like identifier used by %d addons.", addonCount)
+	return fmt.Sprintf("XML handler event observed across %d addons.", addonCount)
 }
 
-func describeXMLHandler(name string, addonCount int) string {
-	return fmt.Sprintf("Observed as an XML handler hook bound by %d addons through frame event handlers.", addonCount)
-}
-
-func describeField(name string, namespace string, addonCount int) string {
-	return fmt.Sprintf("Observed %s field used by %d addons through generated function calls, event pages, or lifecycle evidence.", namespace, addonCount)
-}
-
-func describeTable(name string, addonCount int) string {
-	return fmt.Sprintf("Observed shared global table or namespace surfaced in %d addons.", addonCount)
-}
-
-func describeConstant(name string, addonCount int) string {
-	if strings.HasPrefix(name, "EA_") {
-		return fmt.Sprintf("Observed engine XML template or inherited constant referenced by %d addons.", addonCount)
+func describeField(name string, namespace string, addonCount int, contextTypes []string) string {
+	if len(contextTypes) > 0 {
+		contextStr := contextTypes[0]
+		if len(contextTypes) > 1 {
+			contextStr += " and " + strings.Join(contextTypes[1:], ", ")
+		}
+		return fmt.Sprintf("%s.%s field accessed by %d addons; commonly found in %s contexts.", namespace, name, addonCount, contextStr)
 	}
-	return fmt.Sprintf("Observed shared constant-like symbol referenced by %d addons.", addonCount)
+	return fmt.Sprintf("%s field from %s namespace accessed by %d addons.", name, namespace, addonCount)
+}
+
+func describeTable(name string, addonCount int, memberCount int, functionCount int) string {
+	if memberCount > 0 && functionCount > 0 {
+		return fmt.Sprintf("Shared table with %d member functions and %d data members accessed by %d addons.", functionCount, memberCount, addonCount)
+	}
+	if functionCount > 0 {
+		return fmt.Sprintf("Shared function table with %d member functions; the primary API surface for %d addons.", functionCount, addonCount)
+	}
+	if memberCount > 0 {
+		return fmt.Sprintf("Shared data table with %d observed members accessed by %d addons.", memberCount, addonCount)
+	}
+	return fmt.Sprintf("Shared global table or namespace accessed by %d addons.", addonCount)
+}
+
+func describeConstant(name string, addonCount int, usageCount int) string {
+	switch {
+	case strings.HasPrefix(name, "EA_"):
+		if strings.Contains(name, "Color") || strings.Contains(name, "COLOR") {
+			return fmt.Sprintf("Engine XML color constant for standard UI styling; inherited by %d addons.", addonCount)
+		}
+		if strings.HasPrefix(name, "EA_BUTTON") || strings.HasPrefix(name, "EA_WINDOW") {
+			return fmt.Sprintf("Engine XML template or element constant referenced by %d addons.", addonCount)
+		}
+		return fmt.Sprintf("Engine-supplied XML constant or template class referenced by %d addons.", addonCount)
+	case usageCount > 1:
+		return fmt.Sprintf("Shared constant used by %d function contexts across %d addons.", usageCount, addonCount)
+	default:
+		return fmt.Sprintf("Shared constant referenced by %d addons.", addonCount)
+	}
 }
 
 func describeElementFallback(name string) string {
