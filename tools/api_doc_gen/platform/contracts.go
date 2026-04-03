@@ -218,11 +218,8 @@ func LoadContractInputs(addonAPIRoot string) (ContractModel, error) {
 	return model, nil
 }
 
-func sourceModelFromContracts(model ContractModel) SourceModel {
-	source := SourceModel{
-		Root:     model.Root,
-		LoadedAt: model.LoadedAt,
-	}
+func semanticInputFromContracts(model ContractModel) contractSemanticInput {
+	input := contractSemanticInput{Root: model.Root}
 
 	for _, analysis := range model.LuaAnalyses {
 		for _, fn := range analysis.Functions {
@@ -254,7 +251,7 @@ func sourceModelFromContracts(model ContractModel) SourceModel {
 				})
 			}
 
-			source.Functions = append(source.Functions, FunctionDoc{
+			input.Functions = append(input.Functions, FunctionDoc{
 				Name:               name,
 				Addon:              analysis.Addon,
 				Kind:               fn.DeclarationKind,
@@ -281,9 +278,9 @@ func sourceModelFromContracts(model ContractModel) SourceModel {
 			}
 			registrar := strings.TrimSpace(reg.Registrar)
 			if registrar != "" {
-				for i := range source.Functions {
-					if source.Functions[i].Addon == analysis.Addon && symbolMatches(source.Functions[i], registrar) {
-						source.Functions[i].EventRegistrations = append(source.Functions[i].EventRegistrations, sourceEventReg)
+				for i := range input.Functions {
+					if input.Functions[i].Addon == analysis.Addon && symbolMatches(input.Functions[i], registrar) {
+						input.Functions[i].EventRegistrations = append(input.Functions[i].EventRegistrations, sourceEventReg)
 					}
 				}
 			}
@@ -291,7 +288,7 @@ func sourceModelFromContracts(model ContractModel) SourceModel {
 	}
 
 	eventByName := map[string]*EventDoc{}
-	for _, fn := range source.Functions {
+	for _, fn := range input.Functions {
 		for _, reg := range fn.EventRegistrations {
 			event := ensureEventDoc(eventByName, reg.Event)
 			event.LuaRegistrations = append(event.LuaRegistrations, EventUsageDoc{
@@ -377,9 +374,9 @@ func sourceModelFromContracts(model ContractModel) SourceModel {
 	}
 
 	for _, frame := range frameByID {
-		source.Frames = append(source.Frames, frame)
+		input.Frames = append(input.Frames, frame)
 		for _, h := range frame.Handlers {
-			source.Handlers = append(source.Handlers, HandlerDoc{
+			input.Handlers = append(input.Handlers, HandlerDoc{
 				Addon:    frame.Addon,
 				Frame:    frame.Name,
 				Event:    h.Event,
@@ -406,7 +403,7 @@ func sourceModelFromContracts(model ContractModel) SourceModel {
 				continue
 			}
 
-			source.Bindings = append(source.Bindings, BindingDoc{
+			input.Bindings = append(input.Bindings, BindingDoc{
 				Addon:       links.Addon,
 				Frame:       firstNonEmpty(link.XML.ResolvedName, link.XML.RawName),
 				Event:       eventName,
@@ -418,45 +415,33 @@ func sourceModelFromContracts(model ContractModel) SourceModel {
 	}
 
 	for _, event := range eventByName {
-		source.Events = append(source.Events, *event)
+		input.Events = append(input.Events, *event)
 	}
 
-	sort.Slice(source.Functions, func(i, j int) bool {
-		if source.Functions[i].Addon == source.Functions[j].Addon {
-			return source.Functions[i].Name < source.Functions[j].Name
+	sort.Slice(input.Functions, func(i, j int) bool {
+		if input.Functions[i].Addon == input.Functions[j].Addon {
+			return input.Functions[i].Name < input.Functions[j].Name
 		}
-		return source.Functions[i].Addon < source.Functions[j].Addon
+		return input.Functions[i].Addon < input.Functions[j].Addon
 	})
-	sort.Slice(source.Frames, func(i, j int) bool {
-		if source.Frames[i].Addon == source.Frames[j].Addon {
-			return source.Frames[i].Name < source.Frames[j].Name
+	sort.Slice(input.Frames, func(i, j int) bool {
+		if input.Frames[i].Addon == input.Frames[j].Addon {
+			return input.Frames[i].Name < input.Frames[j].Name
 		}
-		return source.Frames[i].Addon < source.Frames[j].Addon
+		return input.Frames[i].Addon < input.Frames[j].Addon
 	})
-	sort.Slice(source.Handlers, func(i, j int) bool {
-		if source.Handlers[i].Addon == source.Handlers[j].Addon {
-			if source.Handlers[i].Frame == source.Handlers[j].Frame {
-				return source.Handlers[i].Event < source.Handlers[j].Event
+	sort.Slice(input.Handlers, func(i, j int) bool {
+		if input.Handlers[i].Addon == input.Handlers[j].Addon {
+			if input.Handlers[i].Frame == input.Handlers[j].Frame {
+				return input.Handlers[i].Event < input.Handlers[j].Event
 			}
-			return source.Handlers[i].Frame < source.Handlers[j].Frame
+			return input.Handlers[i].Frame < input.Handlers[j].Frame
 		}
-		return source.Handlers[i].Addon < source.Handlers[j].Addon
+		return input.Handlers[i].Addon < input.Handlers[j].Addon
 	})
-	sort.Slice(source.Events, func(i, j int) bool { return source.Events[i].Name < source.Events[j].Name })
+	sort.Slice(input.Events, func(i, j int) bool { return input.Events[i].Name < input.Events[j].Name })
 
-	return source
-}
-
-func semanticInputFromContracts(model ContractModel) contractSemanticInput {
-	source := sourceModelFromContracts(model)
-	return contractSemanticInput{
-		Root:      source.Root,
-		Functions: source.Functions,
-		Frames:    source.Frames,
-		Handlers:  source.Handlers,
-		Events:    source.Events,
-		Bindings:  source.Bindings,
-	}
+	return input
 }
 
 func ensureDirectory(path string) error {

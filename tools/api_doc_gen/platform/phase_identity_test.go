@@ -2,38 +2,65 @@ package platform
 
 import "testing"
 
-func TestSynthesizeXMLTreesPreservesDerivedRawName(t *testing.T) {
-	source := SourceModel{
-		Frames: []FrameDoc{
+func TestSemanticInputFromContractsPreservesRawNameAndParent(t *testing.T) {
+	parentID := "n_parent"
+	childID := "n_child"
+
+	model := ContractModel{
+		Root: "addons-api",
+		XMLTrees: []contractXMLTree{
 			{
-				Addon:      "advancedrenowntrainer",
-				Name:       "AdvancedRenownTrainingPresetsWindowBackground",
-				RawName:    "$parentBackground",
-				Type:       "Window",
-				Parent:     "AdvancedRenownTrainingPresetsWindow",
-				ParentType: "Window",
-				Source:     "advancedrenowntrainer/AdvancedRenownTrainingPresets.xml:13",
-				Attributes: map[string]string{"name": "$parentBackground", "inherits": "EA_Window_DefaultFrame"},
+				SchemaVersion: "phase1-tree/v1",
+				Addon:         "advancedrenowntrainer",
+				SourceFile:    "advancedrenowntrainer/AdvancedRenownTrainingPresets.xml",
+				Nodes: []contractXMLNode{
+					{
+						NodeID:       parentID,
+						Tag:          "Window",
+						RawName:      "AdvancedRenownTrainingPresetsWindow",
+						ResolvedName: "AdvancedRenownTrainingPresetsWindow",
+						Attributes:   map[string]string{"name": "AdvancedRenownTrainingPresetsWindow"},
+						Flags:        contractNodeFlags{IsNamed: true},
+					},
+					{
+						NodeID:       childID,
+						ParentID:     &parentID,
+						Tag:          "Window",
+						RawName:      "$parentBackground",
+						ResolvedName: "AdvancedRenownTrainingPresetsWindowBackground",
+						Attributes: map[string]string{
+							"name":     "$parentBackground",
+							"inherits": "EA_Window_DefaultFrame",
+						},
+						Flags: contractNodeFlags{IsNamed: true},
+					},
+				},
 			},
 		},
 	}
 
-	trees := synthesizeXMLTrees(source)
-	if len(trees) != 1 || len(trees[0].AllNodes) != 1 {
-		t.Fatalf("expected one synthesized XML node, got %d trees and %d nodes", len(trees), len(trees[0].AllNodes))
+	input := semanticInputFromContracts(model)
+	if len(input.Frames) == 0 {
+		t.Fatal("expected at least one frame in semantic input")
 	}
 
-	node := trees[0].AllNodes[0]
-	if node.Name != "AdvancedRenownTrainingPresetsWindowBackground" {
-		t.Fatalf("expected resolved frame name to survive, got %q", node.Name)
+	var child *FrameDoc
+	for i := range input.Frames {
+		if input.Frames[i].Name == "AdvancedRenownTrainingPresetsWindowBackground" {
+			child = &input.Frames[i]
+			break
+		}
 	}
-	if node.RawName != "$parentBackground" {
-		t.Fatalf("expected raw frame name to survive, got %q", node.RawName)
+	if child == nil {
+		t.Fatal("expected child frame in semantic input")
 	}
-	if node.Attributes["name"] != "$parentBackground" {
-		t.Fatalf("expected raw name attribute to survive, got %q", node.Attributes["name"])
+	if child.RawName != "$parentBackground" {
+		t.Fatalf("expected raw frame name to survive, got %q", child.RawName)
 	}
-	if node.ParentFrameName != "AdvancedRenownTrainingPresetsWindow" {
-		t.Fatalf("expected parent frame name to survive, got %q", node.ParentFrameName)
+	if child.Attributes["name"] != "$parentBackground" {
+		t.Fatalf("expected raw name attribute to survive, got %q", child.Attributes["name"])
+	}
+	if child.Parent != "AdvancedRenownTrainingPresetsWindow" {
+		t.Fatalf("expected parent frame name to survive, got %q", child.Parent)
 	}
 }

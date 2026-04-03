@@ -127,19 +127,6 @@ type GlobalsDoc struct {
 	SavedVariables []SavedVariableDoc
 }
 
-type SourceModel struct {
-	Root      string
-	Functions []FunctionDoc
-	Frames    []FrameDoc
-	Handlers  []HandlerDoc
-	Events    []EventDoc
-	Bindings  []BindingDoc
-	Flows     []FlowDoc
-	Examples  []ExampleDoc
-	Globals   GlobalsDoc
-	LoadedAt  time.Time
-}
-
 type Confidence string
 
 const (

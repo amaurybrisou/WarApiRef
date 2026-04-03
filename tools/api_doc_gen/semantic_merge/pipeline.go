@@ -19,8 +19,8 @@ type PipelineInput struct {
 	LuaFunctions []xml_lua_binding.LuaFunctionDef
 
 	// PreResolvedBindings provides pre-existing XML↔Lua binding resolution data
-	// from the platform SourceModel.Bindings, enabling Phase 2 to start with
-	// already-known binding evidence.
+	// from the platform contract-derived binding set, enabling Phase 2 to start
+	// with already-known binding evidence.
 	PreResolvedBindings []PreResolvedBinding
 
 	// ModSemantics carries the semantic analysis results derived from each
@@ -31,8 +31,8 @@ type PipelineInput struct {
 	ModSemantics []*mod_semantic.ModuleSemantic
 }
 
-// PreResolvedBinding is a pre-existing XML↔Lua binding from the SourceModel,
-// providing additional evidence for Phase 2 correlation.
+// PreResolvedBinding is a pre-existing XML↔Lua binding from contract-derived
+// platform inputs, providing additional evidence for Phase 2 correlation.
 type PreResolvedBinding struct {
 	Addon       string
 	Frame       string
@@ -79,7 +79,7 @@ func RunPipeline(input *PipelineInput) *PipelineOutput {
 	luaIndex := buildLuaIndex(input.LuaFunctions)
 	output.Bindings = xml_lua_binding.BuildBindings(output.XMLCorpus, luaIndex)
 
-	// Inject pre-resolved bindings from the SourceModel as additional evidence
+	// Inject pre-resolved bindings from contract-derived inputs as additional evidence
 	injectPreResolvedBindings(output.Bindings, input.PreResolvedBindings, luaIndex)
 
 	// Phase 3: Deep semantic analysis of correlated Lua functions
