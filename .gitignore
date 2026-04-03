@@ -20,3 +20,4 @@ docs/addon-api/
 
 # Local docker/runtime leftovers
 *.pid
+addons/*
