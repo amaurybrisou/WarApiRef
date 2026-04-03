@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1074`, `/workspace/data/raw/TidyChat/TidyChat.lua:2094`, `/workspace/data/raw/TidyChat/TidyChat.lua:2210`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:378`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:387`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:847`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:895` |
+| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:269`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:269`, `/workspace/data/raw/TidyChat/TidyChat.lua:1074`, `/workspace/data/raw/TidyChat/TidyChat.lua:2094`, `/workspace/data/raw/TidyChat/TidyChat.lua:2210`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:378`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:387`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:847` |
 | Namespaces detected | WindowGetId |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChat.Copy.OnCopyButton, TidyChat: TidyChat.Options.OnTabLBU, TidyChat: TidyChatFrames.OnToBottomButton, TidyRoll: TidyRoll.CustomAutoRoll.OnChoiceChange, TidyRoll: TidyRoll.CustomAutoRoll.OnDeleteButton, TidyRoll: TidyRollOptions.OnRadioLBU |
+| Example locations | InfoScroller: LIBGUI_ELEMENT:GetId, PartyCast: LIBGUI_ELEMENT:GetId, TidyChat: TidyChat.Copy.OnCopyButton, TidyChat: TidyChat.Options.OnTabLBU, TidyChat: TidyChatFrames.OnToBottomButton, TidyRoll: TidyRoll.CustomAutoRoll.OnChoiceChange |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -83,17 +83,20 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
 - TidyChat
 - TidyRoll
+- minesweep
 
 ## Examples
 
+- InfoScroller: LIBGUI_ELEMENT:GetId -> WindowGetId(self.name)
+- PartyCast: LIBGUI_ELEMENT:GetId -> WindowGetId(self.name)
 - TidyChat: TidyChat.Copy.OnCopyButton -> WindowGetId(EA_Window_ContextMenu.activeWindow)
 - TidyChat: TidyChat.Options.OnTabLBU -> WindowGetId(SystemData.ActiveWindow.name)
 - TidyChat: TidyChatFrames.OnToBottomButton -> WindowGetId(EA_Window_ContextMenu.activeWindow)
 - TidyRoll: TidyRoll.CustomAutoRoll.OnChoiceChange -> WindowGetId(SystemData.ActiveWindow.name)
-- TidyRoll: TidyRoll.CustomAutoRoll.OnDeleteButton -> WindowGetId(buttonName)
-- TidyRoll: TidyRollOptions.OnRadioLBU -> WindowGetId(radioName)
 
 ## Related APIs
 
@@ -101,7 +104,6 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Triggered By

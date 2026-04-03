@@ -23,14 +23,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyChat |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:270`, `/workspace/data/raw/Moth/MothHelpers.lua:39`, `/workspace/data/raw/TidyChat/TidyChat.lua:1469`, `/workspace/data/raw/TidyChat/TidyChat.lua:852` |
+| Addons seen in | Moth, PartyCast, TidyChat |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:267`, `/workspace/data/raw/Moth/MothHelpers.lua:39`, `/workspace/data/raw/PartyCast/PartyCast.lua:370`, `/workspace/data/raw/PartyCast/PartyCast.lua:377`, `/workspace/data/raw/TidyChat/TidyChat.lua:1469`, `/workspace/data/raw/TidyChat/TidyChat.lua:852` |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | Moth: Moth.UpdateLevel, Moth: MothHelpers.CapitalizeWString, TidyChat: TidyChatHooks.OnHyperLinkLButtonUpHook, TidyChat: TidyChatLogs.ProcessLootRollEntry |
+| Example locations | Moth: Moth.UpdateLevel, Moth: MothHelpers.CapitalizeWString, PartyCast: PartyCast.GROUP_UPDATED, PartyCast: PartyCast.ON_DEATH, TidyChat: TidyChatHooks.OnHyperLinkLButtonUpHook, TidyChat: TidyChatLogs.ProcessLootRollEntry |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
+| Lua usage count | 12 |
 | Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -54,7 +54,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 2 addons.
+Observed shared global table or namespace surfaced in 3 addons.
 
 ## Functions
 
@@ -72,16 +72,17 @@ Observed shared global table or namespace surfaced in 2 addons.
 ## Seen In
 
 - Moth
+- PartyCast
 - TidyChat
 
 ## Examples
 
 - Moth: Moth.UpdateLevel -> wstring.sub(unitTierDesc, 1, 1)
 - Moth: MothHelpers.CapitalizeWString -> wstring.lower(wstring.sub(wstr,2))
-- Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 1, 1)
 - Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 2)
+- Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 1, 1)
 - Moth: MothHelpers.CapitalizeWString -> wstring.upper(wstring.sub(wstr,1,1))
-- TidyChat: TidyChatHooks.OnHyperLinkLButtonUpHook -> wstring.gsub(linkData, TCROLL_TAG, ERASE)
+- PartyCast: PartyCast.GROUP_UPDATED -> wstring.sub(GameData.Player.name, 1, -3)
 
 ## Related APIs
 

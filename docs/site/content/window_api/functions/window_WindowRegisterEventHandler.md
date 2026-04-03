@@ -25,7 +25,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Moth |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:721` |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:713` |
 | Namespaces detected | WindowRegisterEventHandler |
 | Source kinds | lua_calls |
 | Example locations | Moth: Moth.Initialize |

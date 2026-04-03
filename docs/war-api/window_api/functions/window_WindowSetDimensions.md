@@ -2,20 +2,22 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 98/100
-- Seen in: 3 addons
+- Confidence score: 100/100
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 98/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Raw weighted score: 110
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:215`, `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/Moth/Moth.lua:421`, `/workspace/data/raw/Moth/Moth.lua:591`, `/workspace/data/raw/TidyChat/TidyChat.lua:980`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
+| Addons seen in | InfoScroller, Moth, PartyCast, TidyChat, TidyRoll, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1171`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1258`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:367`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:419`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:527`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:649`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:703` |
 | Namespaces detected | WindowSetDimensions |
 | Source kinds | lua_calls |
-| Example locations | Moth: Moth.SetCellText, Moth: Moth.SetCellTextIcon, Moth: Moth.UpdateHealthBar, Moth: Moth.UpdateNPCIcon, TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons, TidyRoll: TidyRollOptions.Initialize |
+| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_Button:Resize, InfoScroller: LIBGUI_Image:Resize, InfoScroller: LIBGUI_Label:Resize, InfoScroller: LIBGUI_MultiTextbox:Resize, InfoScroller: LIBGUI_Scrollbar:Resize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 32 |
+| Global usage count | 32 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -69,9 +71,9 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "MothHealthBar", c_CHANNEL_MENU, c_TROLL_BNUM_TBOX |
-| arg2 | Observed as a numeric value. | Observed values: 140, 32, 50 |
-| arg3 | Observed as a numeric value. | Observed values: 20, 30, 32 |
+| windowName | Observed as a target window name. | Observed values: "MineSweepWindow", "MothHealthBar", WindowName.."Image" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 10+(fieldX*28), 140, 32 |
+| arg3 | Observed as a function or method reference. | Observed values: 20, 30, 32 |
 
 ## Returns
 
@@ -83,18 +85,21 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
 - TidyChat
 - TidyRoll
+- minesweep
 
 ## Examples
 
-- Moth: Moth.SetCellText -> WindowSetDimensions(cellName, LabelGetTextDimensions(cellText))
-- Moth: Moth.SetCellTextIcon -> WindowSetDimensions(cellName, 32, 32)
-- Moth: Moth.UpdateHealthBar -> WindowSetDimensions("MothHealthBar", healthWidth, Moth.Global.healthBar)
-- Moth: Moth.UpdateNPCIcon -> WindowSetDimensions(cellName, WindowGetDimensions(cellName.."NPCIcon"))
-- TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons -> WindowSetDimensions(c_CHANNEL_MENU, x, y+28*3)
-- TidyRoll: TidyRollOptions.Initialize -> WindowSetDimensions(c_TROLL_VERSION, 80, 30)
+- InfoScroller: InfoScroller.CreateCard -> WindowSetDimensions(WindowName.."Image", width*scale, height*scale)
+- InfoScroller: LIBGUI_Button:Resize -> WindowSetDimensions(self.name, width, self.height)
+- InfoScroller: LIBGUI_Image:Resize -> WindowSetDimensions(self.name, width, height)
+- InfoScroller: LIBGUI_Label:Resize -> WindowSetDimensions(self.name, self.width, self.height)
+- InfoScroller: LIBGUI_MultiTextbox:Resize -> WindowSetDimensions(self.name, self.width, self.height)
+- InfoScroller: LIBGUI_Scrollbar:Resize -> WindowSetDimensions(self.name, self.width, self.height)
 
 ## Related APIs
 
@@ -104,15 +109,11 @@ Observed mutating runtime window state or presentation.
 
 - [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 98/100) - Window Function
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 90/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 90/100) - Window Function
-- [DynamicImageSetTextureScale](window_DynamicImageSetTextureScale.md) (HIGH 80/100) - Window Function
-- [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 80/100) - Window Function
+- [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 - [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 80/100) - Window Function
-- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 71/100) - Global Function
 
 ## Triggered By
 
@@ -120,9 +121,7 @@ Observed mutating runtime window state or presentation.
 
 ## Affects
 
-- [SystemData.ChatLogFilters.ADVICE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ADVICE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.ChatLogFilters.ALLIANCE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ALLIANCE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.ChatLogFilters.SCENARIO](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SCENARIO.md) (HIGH 100/100) - SystemData Field
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

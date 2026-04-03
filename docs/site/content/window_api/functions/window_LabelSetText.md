@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:215`, `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/TidyChat/TidyChat.lua:2117`, `/workspace/data/raw/TidyChat/TidyChat.lua:2201`, `/workspace/data/raw/TidyChat/TidyChat.lua:2321`, `/workspace/data/raw/TidyChat/TidyChat.lua:2333`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:115` |
+| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, TidyChat, TidyRoll, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:426`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:439`, `/workspace/data/raw/Moth/Moth.lua:215`, `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:426`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:439`, `/workspace/data/raw/Soloq/ui/Overview.lua:104` |
 | Namespaces detected | LabelSetText |
 | Source kinds | lua_calls |
-| Example locations | Moth: Moth.SetCellText, Moth: Moth.SetCellTextIcon, TidyChat: TidyChat.Copy.InitializeCopyWindow, TidyChat: TidyChat.LootRoll.InitializeLootRollWindow, TidyChat: TidyChat.LootRoll.OnRollLinkLButtonUp, TidyChat: TidyChat.Options.UpdateGroupTabs |
+| Example locations | InfoScroller: LIBGUI_Label:Clear, InfoScroller: LIBGUI_Label:SetText, Moth: Moth.SetCellText, Moth: Moth.SetCellTextIcon, PartyCast: LIBGUI_Label:Clear, PartyCast: LIBGUI_Label:SetText |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 46 |
-| Global usage count | 46 |
+| Lua usage count | 103 |
+| Global usage count | 103 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed updating label text or label styling on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target control name. | Observed values: TCHAT_WINDOWS_TABS_INFO_LABEL, c_AUTO_ROLL_ADD_BY_ID_ID_LABEL, c_AUTO_ROLL_ADD_BY_ID_LABEL |
-| text | Observed as a text or wstring payload. | Observed values: L " Icon               Name                    Id           Choice", L "", L "Add item to auto roll list by id" |
+| windowName | Observed as a target control name. | Observed values: "MineSweepWindowTitleBarText", "PartyCastWindow"..PlayerNumber.."Morale", "PartyCastWindow"..PlayerNumber.."MoraleBG" |
+| text | Observed as a text or wstring payload. | Observed values: L "  "..towstring(SpellName), L "  Interupted!", L " Icon               Name                    Id           Choice" |
 
 ## Returns
 
@@ -84,18 +84,22 @@ Observed updating label text or label styling on existing controls.
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
+- Soloq
 - TidyChat
 - TidyRoll
+- minesweep
 
 ## Examples
 
+- InfoScroller: LIBGUI_Label:Clear -> LabelSetText(self.name, L "")
+- InfoScroller: LIBGUI_Label:SetText -> LabelSetText(self.name, towstring(text))
 - Moth: Moth.SetCellText -> LabelSetText(cellText, L "")
 - Moth: Moth.SetCellText -> LabelSetText(cellText, text)
 - Moth: Moth.SetCellTextIcon -> LabelSetText(cellText, L "")
-- TidyChat: TidyChat.Copy.InitializeCopyWindow -> LabelSetText(c_TIDY_CHAT_COPY.."TitleBarText", L "Chat Copy")
-- TidyChat: TidyChat.LootRoll.InitializeLootRollWindow -> LabelSetText(c_TIDY_CHAT_LOOT_ROLL.."TitleBarText", L "Roll History")
-- TidyChat: TidyChat.LootRoll.OnRollLinkLButtonUp -> LabelSetText(c_TIDY_CHAT_LOOT_ROLL.."InfoLabel", TidyChatLootRoll.itemRollData.info)
+- PartyCast: LIBGUI_Label:Clear -> LabelSetText(self.name, L "")
 
 ## Related APIs
 
@@ -104,14 +108,14 @@ Observed updating label text or label styling on existing controls.
 ## Used With
 
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureDimensions](window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
 - [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
-- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 90/100) - Window Function
-- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 90/100) - Window Function
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 90/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 90/100) - Window Function
+- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
+- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 88/100) - Global Function
 - [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 80/100) - Window Function
+- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 - [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 71/100) - Global Function
 
 ## Triggered By

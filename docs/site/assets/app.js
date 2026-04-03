@@ -481,9 +481,9 @@ function drawFallbackSvg(nodes, links) {
 
 function graphViewportHeightPx() {
   if (window.matchMedia && window.matchMedia("(max-width: 960px)").matches) {
-    return 420;
+    return 500;
   }
-  return 600;
+  return 700;
 }
 
 function drawGraph(filterText, filterKind) {

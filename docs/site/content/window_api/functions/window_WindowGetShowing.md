@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1089`, `/workspace/data/raw/TidyChat/TidyChat.lua:218`, `/workspace/data/raw/TidyChat/TidyChat.lua:808`, `/workspace/data/raw/TidyChat/TidyChat.lua:825`, `/workspace/data/raw/TidyChat/TidyChat.lua:868`, `/workspace/data/raw/TidyChat/TidyChat.lua:904`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:140` |
+| Addons seen in | InfoScroller, PartyCast, Soloq, TidyChat, TidyRoll, ZCurse_Profiler |
+| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:1065`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:84`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:84`, `/workspace/data/raw/Soloq/Soloq.lua:166`, `/workspace/data/raw/Soloq/ui/Overview.lua:38`, `/workspace/data/raw/TidyChat/TidyChat.lua:1089` |
 | Namespaces detected | WindowGetShowing |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChat.OnEntryBoxUpdateShowing, TidyChat: TidyChat.OnLBU, TidyChat: TidyChat.ToggleOptions, TidyChat: TidyChatFrames.Initialize, TidyChat: TidyChatHooks.DestroyWindowGroupHook, TidyChat: TidyChatHooks.OnEnterChatTextHook |
+| Example locations | InfoScroller: LIBGUI_ELEMENT:Showing, PartyCast: LIBGUI_ELEMENT:Showing, PartyCast: PartyCast.FetchedText, PartyCast: PartyCast.Update, Soloq: Soloq.onEnterRankedScenario, Soloq: Soloq.toggleOverviewWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 18 |
+| Global usage count | 18 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: c_TEXT_ENTRY_WINDOW.."EntryBox", c_TEXT_ENTRY_WINDOW.."EntryBoxLanguageButton", c_TIDY_CHAT_OPTIONS |
+| windowName | Observed as a target window name. | Observed values: "EA_Window_WorldMap", "PartyCastWindow"..PlayerNumber, "PartyCastWindow_Dynamic"..i |
 
 ## Returns
 
@@ -83,17 +83,21 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
+- Soloq
 - TidyChat
 - TidyRoll
+- ZCurse_Profiler
 
 ## Examples
 
-- TidyChat: TidyChat.OnEntryBoxUpdateShowing -> WindowGetShowing(c_TEXT_ENTRY_WINDOW.."EntryBox")
-- TidyChat: TidyChat.OnLBU -> WindowGetShowing(c_TEXT_ENTRY_WINDOW.."EntryBox")
-- TidyChat: TidyChat.ToggleOptions -> WindowGetShowing(c_TIDY_CHAT_OPTIONS)
-- TidyChat: TidyChatFrames.Initialize -> WindowGetShowing(c_TEXT_ENTRY_WINDOW.."EntryBoxLanguageButton")
-- TidyChat: TidyChatHooks.DestroyWindowGroupHook -> WindowGetShowing(c_TIDY_CHAT_OPTIONS)
-- TidyChat: TidyChatHooks.OnEnterChatTextHook -> WindowGetShowing(c_TEXT_ENTRY_WINDOW.."EntryBox")
+- InfoScroller: LIBGUI_ELEMENT:Showing -> WindowGetShowing(self.name)
+- PartyCast: LIBGUI_ELEMENT:Showing -> WindowGetShowing(self.name)
+- PartyCast: PartyCast.FetchedText -> WindowGetShowing("PartyCastWindow"..PlayerNumber)
+- PartyCast: PartyCast.Update -> WindowGetShowing("PartyCastWindow_Dynamic"..i)
+- Soloq: Soloq.onEnterRankedScenario -> WindowGetShowing("SoloqOverviewWindow")
+- Soloq: Soloq.toggleOverviewWindow -> WindowGetShowing(overviewWindowName)
 
 ## Related APIs
 
@@ -102,18 +106,16 @@ Observed querying runtime window state or metadata.
 ## Used With
 
 - [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowRegisterCoreEventHandler](window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
+- [WindowGetAlpha](window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [StatusBarGetMaximumValue](window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
 
 ## Triggered By
 
-- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
-- [OnRButtonUp](../../events/window_events/window_event_OnRButtonUp.md) (HIGH 100/100) - Window Event
-- [OnShown](../../events/window_events/window_event_OnShown.md) (HIGH 100/100) - Window Event
-- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../events/game_events/game_event_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - Game Event
+- none
 
 ## Affects
 

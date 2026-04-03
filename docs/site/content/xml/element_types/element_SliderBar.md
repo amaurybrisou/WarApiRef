@@ -93,7 +93,7 @@ Observed XML element type instantiated by 1 addons.
 
 ## Related APIs
 
-- none
+- [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

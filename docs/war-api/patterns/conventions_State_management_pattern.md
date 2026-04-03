@@ -14,18 +14,22 @@ Persistent state is typically rooted in addon-owned globals and saved variables,
 ## Flow Diagram
 
 ```text
-Button <-> OnLButtonUp
+Label <-> OnHyperLinkRButtonUp
 ```
 
 ## Example Code
 
 ```lua
-NPC Item Sale Price: Nisp.DebugEnabled
+InfoScroller: InfoScroller.Settings
 ```
 
 ## Evidence
 
+- InfoScroller: InfoScroller.Settings
+- Lib RuString: LibRuString.Settings
 - NPC Item Sale Price: Nisp.DebugEnabled
 - NPC Item Sale Price: Nisp.DumpItemsTable
 - NPC Item Sale Price: Nisp.Enabled
+- PartyCast: PartyCast.Settings
+- Soloq: Soloq.db
 - TidyChat: TidyChat.Settings

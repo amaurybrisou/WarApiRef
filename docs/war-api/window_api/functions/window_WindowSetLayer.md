@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:239`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
+| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:178`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:178`, `/workspace/data/raw/TidyChat/TidyChat.lua:239`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
 | Namespaces detected | WindowSetLayer |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChatCore.SetWindowGroup, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollOptions.Initialize |
+| Example locations | InfoScroller: LIBGUI_ELEMENT:Layer, PartyCast: LIBGUI_ELEMENT:Layer, TidyChat: TidyChatCore.SetWindowGroup, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollOptions.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 14 |
+| Global usage count | 14 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -84,17 +84,19 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
 - TidyChat
 - TidyRoll
 
 ## Examples
 
+- InfoScroller: LIBGUI_ELEMENT:Layer -> WindowSetLayer(self.name, layer)
+- PartyCast: LIBGUI_ELEMENT:Layer -> WindowSetLayer(self.name, layer)
 - TidyChat: TidyChatCore.SetWindowGroup -> WindowSetLayer(wndGroupName.."Background", 0)
 - TidyChat: TidyChatFrames.Initialize -> WindowSetLayer(c_TEXT_ENTRY_WINDOW.."ChannelButton", 3)
 - TidyChat: TidyChatFrames.Initialize -> WindowSetLayer(c_TEXT_ENTRY_WINDOW, 2)
 - TidyRoll: TidyRollOptions.Initialize -> WindowSetLayer(c_TROLL_BNUM_TBOX, Window.Layers.POPUP)
-- TidyRoll: TidyRollOptions.Initialize -> WindowSetLayer(c_TROLL_OFFSET_TBOX, Window.Layers.POPUP)
-- TidyRoll: TidyRollOptions.Initialize -> WindowSetLayer(c_TROLL_DIRECTION_COMBO, Window.Layers.POPUP)
 
 ## Related APIs
 
@@ -102,11 +104,7 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowGetOffsetFromParent](window_WindowGetOffsetFromParent.md) (HIGH 80/100) - Window Function
+- [WindowGetLayer](window_WindowGetLayer.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 

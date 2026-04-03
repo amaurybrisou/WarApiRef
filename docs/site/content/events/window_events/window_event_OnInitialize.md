@@ -1,22 +1,24 @@
 # OnInitialize
 
 - Category: Window Event
-- Confidence level: MEDIUM
-- Confidence score: 53/100
+- Confidence level: HIGH
+- Confidence score: 83/100
 
 ## Confidence Assessment
 
-- Level: MEDIUM
+- Level: HIGH
 
-- Score: 53/100
+- Score: 83/100
 
-- Rationale: Promoted as MEDIUM confidence because used directly in xml handler attributes, referenced by generated docs or reference files, used in event registration or dispatch.
+- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, reinforced across multiple generated source types.
 
 ## Evidence Signals
 
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 - -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
 
 ## Evidence Summary
@@ -26,15 +28,15 @@
 | Addons seen in | TidyRoll |
 | Files seen in | `/workspace/data/raw/TidyRoll/TidyRoll.xml:78` |
 | Namespaces detected | OnInitialize |
-| Source kinds | event_page, xml_handlers |
+| Source kinds | event_page, flows, xml_handlers |
 | Example locations | TidyRoll: TRollRadioTemplate.OnInitialize |
 | XML usage count | 1 |
 | XML attribute usage count | 1 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 1 |
-| Initialization flow references | 0 |
+| Documentation references | 2 |
+| Initialization flow references | 3 |
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |

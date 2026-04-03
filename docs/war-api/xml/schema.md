@@ -9,26 +9,37 @@ Observed schema information derived from generated frame pages. This is a usage-
 | AnimFrame | 1 |  | id, x, y |
 | AnimFrames | 1 |  |  |
 | AnimatedImage | 1 |  | fps, handleinput, layer, name |
-| Button | 2 | OnLButtonUp, OnMouseOver | name, inherits, font, id |
+| Button | 5 | OnLButtonUp, OnMouseOver, OnRButtonUp | name, inherits, layer, handleinput |
+| CircleImage | 1 |  | handleinput, layer, name, numsegments |
 | ComboBox | 2 | OnSelChanged | inherits, layer, name |
-| Disabled | 1 |  | texture, x, y |
-| DynamicImage | 2 |  | name, handleinput, layer, inherits |
+| Disabled | 2 |  | id, texture, x, y |
+| DisabledPressed | 1 |  | id |
+| DynamicImage | 6 |  | name, handleinput, texture, textureScale |
 | EditBox | 2 |  | inherits, name, font, maxchars |
-| FullResizeImage | 3 |  | inherits, name, handleinput, alpha |
-| Label | 3 |  | name, inherits, font, handleinput |
+| FullResizeImage | 7 |  | name, inherits, handleinput, alpha |
+| HorizontalResizeImage | 1 |  | name, texture, textureScale |
+| Label | 7 | OnHyperLinkRButtonUp, OnHyperLinkLButtonUp | name, font, textalign, layer |
+| Left | 1 |  | x, y |
 | ListBox | 2 | OnLButtonUp | name, rowcount, rowdef, rowspacing |
 | ListColumn | 2 |  | format, variable, windowname |
 | ListColumns | 2 |  |  |
 | ListData | 2 |  | table, populationfunction |
-| Normal | 1 |  | texture, x, y |
-| NormalHighlit | 1 |  | texture, x, y |
-| Pressed | 1 |  | texture, x, y |
+| Middle | 1 |  | x, y |
+| Normal | 2 |  | id, texture, x, y |
+| NormalHighlit | 2 |  | id, texture, x, y |
+| Pressed | 2 |  | id, texture, x, y |
+| PressedHighlit | 1 |  | id |
+| Right | 1 |  | x, y |
+| ScrollWindow | 1 |  | autoHideScrollBar, childscrollwindow, lineheight, name |
 | SliderBar | 1 |  | inherits, name |
-| TintColor | 1 |  | b, g, r |
-| Window | 3 | OnHidden, OnShown, OnLButtonUp, OnMouseWheel | name, inherits, layer, movable |
+| StatusBar | 1 |  | handleinput, name, popable, inherits |
+| TexSlices | 1 |  |  |
+| TintColor | 5 |  | b, g, r, a |
+| Window | 7 | OnHidden, OnShown, OnLButtonUp, OnMouseWheel | name, layer, movable, handleinput |
 
 ## Shared Inherits Constants
 
+- EA_Button_Default
 - EA_Button_DefaultCheckBox
 - EA_Button_DefaultResizeable
 - EA_Button_DefaultToggleCircle
@@ -50,6 +61,5 @@ Observed schema information derived from generated frame pages. This is a usage-
 - EA_Image_DefaultIcon
 - EA_Image_DefaultIconFrame
 - EA_Label_DefaultText
+- EA_StatusBar_DefaultTintable
 - EA_TitleBar_Default
-- EA_Window_DefaultBackgroundFrame
-- EA_Window_DefaultButtonBottomFrame

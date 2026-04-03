@@ -2,6 +2,7 @@
 
 ## Constants
 
+- [EA_Button_Default](constant_EA_Button_Default.md) (HIGH 100/100)
 - [EA_Button_DefaultCheckBox](constant_EA_Button_DefaultCheckBox.md) (HIGH 100/100)
 - [EA_Button_DefaultResizeable](constant_EA_Button_DefaultResizeable.md) (HIGH 100/100)
 - [EA_Button_DefaultToggleCircle](constant_EA_Button_DefaultToggleCircle.md) (HIGH 90/100)
@@ -23,9 +24,10 @@
 - [EA_Image_DefaultIcon](constant_EA_Image_DefaultIcon.md) (HIGH 90/100)
 - [EA_Image_DefaultIconFrame](constant_EA_Image_DefaultIconFrame.md) (HIGH 90/100)
 - [EA_Label_DefaultText](constant_EA_Label_DefaultText.md) (HIGH 100/100)
-- [EA_TitleBar_Default](constant_EA_TitleBar_Default.md) (HIGH 90/100)
+- [EA_StatusBar_DefaultTintable](constant_EA_StatusBar_DefaultTintable.md) (HIGH 90/100)
+- [EA_TitleBar_Default](constant_EA_TitleBar_Default.md) (HIGH 100/100)
 - [EA_Window_DefaultBackgroundFrame](constant_EA_Window_DefaultBackgroundFrame.md) (HIGH 90/100)
 - [EA_Window_DefaultButtonBottomFrame](constant_EA_Window_DefaultButtonBottomFrame.md) (HIGH 90/100)
 - [EA_Window_DefaultContextMenuFrame](constant_EA_Window_DefaultContextMenuFrame.md) (HIGH 100/100)
-- [EA_Window_DefaultFrame](constant_EA_Window_DefaultFrame.md) (HIGH 90/100)
+- [EA_Window_DefaultFrame](constant_EA_Window_DefaultFrame.md) (HIGH 100/100)
 - [EA_Window_DefaultFrameStatusBar](constant_EA_Window_DefaultFrameStatusBar.md) (HIGH 90/100)

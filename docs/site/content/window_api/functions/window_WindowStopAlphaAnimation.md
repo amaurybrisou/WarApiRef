@@ -67,7 +67,7 @@ Observed as a window function across 1 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: logDisplayName.."ToBottomButton", scrollbarName |
+| arg1 | Observed as a function or method reference. | Observed values: logDisplayName.."ToBottomButton", scrollbarName |
 
 ## Returns
 
@@ -92,9 +92,7 @@ Observed as a window function across 1 addons.
 
 ## Used With
 
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 90/100) - Window Function
+- none
 
 ## Triggered By
 

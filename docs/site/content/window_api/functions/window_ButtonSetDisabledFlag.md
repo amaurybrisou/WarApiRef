@@ -2,37 +2,41 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 90/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
+
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:828` |
+| Addons seen in | InfoScroller, PartyCast, TidyRoll |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:553`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:777`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:842`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:553`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:777`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:842`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:828` |
 | Namespaces detected | ButtonSetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | TidyRoll: TidyRollOptions.OnCheckboxLBU, TidyRoll: TidyRollOptions.Reset |
+| Example locations | InfoScroller: LIBGUI_Button:SetEnabled, InfoScroller: LIBGUI_Checkbox:SetEnabled, InfoScroller: LIBGUI_Optionbutton:SetEnabled, PartyCast: LIBGUI_Button:SetEnabled, PartyCast: LIBGUI_Checkbox:SetEnabled, PartyCast: LIBGUI_Optionbutton:SetEnabled |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -40,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -67,8 +71,8 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: c_TROLL_FLASH_ONLY_NEW_ITEM.."Button", c_TROLL_GLOW_ONLY_NEW_ITEM.."Button" |
-| arg2 | Observed as a function or method reference. | Observed values: not ButtonGetPressedFlag(c_TROLL_FLASH_ON_NEW.."Button"), not ButtonGetPressedFlag(c_TROLL_GLOW_ON_NEW.."Button"), not ButtonGetPressedFlag(checkboxName) |
+| arg1 | Observed as a function or method reference. | Observed values: c_TROLL_FLASH_ONLY_NEW_ITEM.."Button", c_TROLL_GLOW_ONLY_NEW_ITEM.."Button", self.name |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: not ButtonGetPressedFlag(c_TROLL_FLASH_ON_NEW.."Button"), not ButtonGetPressedFlag(c_TROLL_GLOW_ON_NEW.."Button"), not ButtonGetPressedFlag(checkboxName) |
 
 ## Returns
 
@@ -80,14 +84,18 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
 - TidyRoll
 
 ## Examples
 
-- TidyRoll: TidyRollOptions.OnCheckboxLBU -> ButtonSetDisabledFlag(c_TROLL_FLASH_ONLY_NEW_ITEM.."Button", not ButtonGetPressedFlag(checkboxName))
-- TidyRoll: TidyRollOptions.OnCheckboxLBU -> ButtonSetDisabledFlag(c_TROLL_GLOW_ONLY_NEW_ITEM.."Button", not ButtonGetPressedFlag(checkboxName))
-- TidyRoll: TidyRollOptions.Reset -> ButtonSetDisabledFlag(c_TROLL_FLASH_ONLY_NEW_ITEM.."Button", not ButtonGetPressedFlag(c_TROLL_FLASH_ON_NEW.."Button"))
-- TidyRoll: TidyRollOptions.Reset -> ButtonSetDisabledFlag(c_TROLL_GLOW_ONLY_NEW_ITEM.."Button", not ButtonGetPressedFlag(c_TROLL_GLOW_ON_NEW.."Button"))
+- InfoScroller: LIBGUI_Button:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- InfoScroller: LIBGUI_Checkbox:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- InfoScroller: LIBGUI_Optionbutton:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- PartyCast: LIBGUI_Button:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- PartyCast: LIBGUI_Checkbox:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
+- PartyCast: LIBGUI_Optionbutton:SetEnabled -> ButtonSetDisabledFlag(self.name, not flag)
 
 ## Related APIs
 
@@ -95,22 +103,16 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Used With
 
-- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- none
 
 ## Affects
 
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- none

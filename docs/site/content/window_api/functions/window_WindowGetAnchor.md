@@ -2,36 +2,41 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 80/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 80/100
+- Final score: 100/100
+
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:578` |
+| Addons seen in | InfoScroller, Moth, PartyCast |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:172`, `/workspace/data/raw/Moth/Moth.lua:575`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:172` |
 | Namespaces detected | WindowGetAnchor |
 | Source kinds | lua_calls |
-| Example locations | Moth: Moth.HealthBar |
+| Example locations | InfoScroller: LIBGUI_ELEMENT:GetPosition, Moth: Moth.HealthBar, PartyCast: LIBGUI_ELEMENT:GetPosition |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -39,8 +44,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
-| Consistent arguments | no |
+| Consistent role | yes |
+| Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -66,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "MothHealthBar" |
+| windowName | Observed as a target window name. | Observed values: "MothHealthBar", self.name |
 | arg2 | Observed as a numeric value. | Observed values: 1 |
 
 ## Returns
@@ -79,11 +84,15 @@ Observed querying runtime window state or metadata.
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
 
 ## Examples
 
+- InfoScroller: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
 - Moth: Moth.HealthBar -> WindowGetAnchor("MothHealthBar", 1)
+- PartyCast: LIBGUI_ELEMENT:GetPosition -> WindowGetAnchor(self.name, 1)
 
 ## Related APIs
 
@@ -91,7 +100,7 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- none
 
 ## Triggered By
 
@@ -103,4 +112,4 @@ Observed querying runtime window state or metadata.
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- none

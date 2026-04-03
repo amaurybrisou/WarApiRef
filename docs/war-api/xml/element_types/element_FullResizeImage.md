@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/Moth/Moth.xml:109`, `/workspace/data/raw/Moth/Moth.xml:128`, `/workspace/data/raw/Moth/Moth.xml:157`, `/workspace/data/raw/Moth/Moth.xml:18`, `/workspace/data/raw/Moth/Moth.xml:30`, `/workspace/data/raw/Moth/Moth.xml:42`, `/workspace/data/raw/Moth/Moth.xml:53`, `/workspace/data/raw/Moth/Moth.xml:64` |
+| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, TidyChat, TidyRoll, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.xml:236`, `/workspace/data/raw/Moth/Moth.xml:109`, `/workspace/data/raw/Moth/Moth.xml:128`, `/workspace/data/raw/Moth/Moth.xml:157`, `/workspace/data/raw/Moth/Moth.xml:18`, `/workspace/data/raw/Moth/Moth.xml:30`, `/workspace/data/raw/Moth/Moth.xml:42`, `/workspace/data/raw/Moth/Moth.xml:53` |
 | Namespaces detected | FullResizeImage |
 | Source kinds | xml_frames |
-| Example locations | Moth: MothBackground, Moth: MothBorderDark, Moth: MothBorderDecorative, Moth: MothBorderGold, Moth: MothBorderSilver, Moth: MothBorderTan |
-| XML usage count | 17 |
-| XML attribute usage count | 17 |
+| Example locations | InfoScroller: InfoScrollerTemplateBackGroundBG, Moth: MothBackground, Moth: MothBorderDark, Moth: MothBorderDecorative, Moth: MothBorderGold, Moth: MothBorderSilver |
+| XML usage count | 29 |
+| XML attribute usage count | 29 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,15 +57,17 @@
 
 ## Description
 
-Observed XML element type instantiated by 3 addons.
+Observed XML element type instantiated by 7 addons.
 
 ## Common Attributes
 
-- inherits
 - name
+- inherits
 - handleinput
 - alpha
 - layer
+- texture
+- movable
 
 ## Common Inherits
 
@@ -81,10 +83,11 @@ Observed XML element type instantiated by 3 addons.
 ## Common Parent Elements
 
 - [Window](element_Window.md)
+- [Button](element_Button.md)
 
 ## Common Structural Child Elements
 
-- [TintColor](element_TintColor.md) — 4× (MEDIUM)
+- [TintColor](element_TintColor.md) — 10× (HIGH)
 
 ## Common Template Bases
 
@@ -104,47 +107,55 @@ Observed XML element type instantiated by 3 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | **required** | 100% | EA_FullResizeImage_TintableSolidBackground, EA_Button_ResizeIconFrameNormal, EA_Button_ResizeIconFramePressed, EA_Button_ResizeIconFrameHighlight, ... |
-| `handleinput` | optional | 23% | false |
-| `alpha` | optional | 17% | 0.5, 0 |
-| `layer` | optional | 5% | overlay |
+| `inherits` | **required** | 89% | EA_FullResizeImage_TintableSolidBackground, EA_Button_ResizeIconFrameNormal, EA_Button_ResizeIconFramePressed, EA_Button_ResizeIconFrameHighlight, ... |
+| `handleinput` | optional | 44% | false, true |
+| `alpha` | optional | 31% | 0.4, 0.5, 0, 0.8, ... |
+| `layer` | optional | 24% | background, overlay, default |
+| `texture` | optional | 10% | EA_HUD_01 |
+| `movable` | optional | 3% | false |
 ## Structural Sub-Elements
 
 ### [TintColor](element_TintColor.md)
 
-Observed 4 times as an unnamed child.
+Observed 10 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `b` | **required** | 0, 36, 166 |
-| `g` | **required** | 0, 28, 84 |
-| `r` | **required** | 0, 237 |
+| `b` | **required** | 0, 36, 166, 200 |
+| `g` | **required** | 0, 28, 84, 200 |
+| `r` | **required** | 0, 237, 200, 55 |
+| `a` | optional | 1, 0.4, 0.5, 0.8 |
 ## Lua Functions Manipulating This Type
 
-- Moth.HideBorders
 - Moth.Clear
-- Moth.HealthBar
 - Moth.UpdateHealthBar
+- Moth.HealthBar
+- Moth.HideBorders
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
+- Soloq
 - TidyChat
 - TidyRoll
+- minesweep
 
 ## Examples
 
+- InfoScroller: InfoScrollerTemplateBackGroundBG -> FullResizeImage InfoScrollerTemplateBackGroundBG
 - Moth: MothBackground -> FullResizeImage MothBackground
 - Moth: MothBorderDark -> FullResizeImage MothBorderDark
 - Moth: MothBorderDecorative -> FullResizeImage MothBorderDecorative
 - Moth: MothBorderGold -> FullResizeImage MothBorderGold
 - Moth: MothBorderSilver -> FullResizeImage MothBorderSilver
-- Moth: MothBorderTan -> FullResizeImage MothBorderTan
 
 ## Related APIs
 
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
+- [TintColor](element_TintColor.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
-- [TintColor](element_TintColor.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 

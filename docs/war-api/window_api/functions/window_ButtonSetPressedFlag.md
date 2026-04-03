@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1936`, `/workspace/data/raw/TidyChat/TidyChat.lua:2031`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:828`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:853` |
+| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:760`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:829`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:760`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:829`, `/workspace/data/raw/TidyChat/TidyChat.lua:1936`, `/workspace/data/raw/TidyChat/TidyChat.lua:2031`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:828` |
 | Namespaces detected | ButtonSetPressedFlag |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChat.Options.OnCheckboxLBU, TidyChat: TidyChat.Options.Reset, TidyRoll: TidyRollOptions.OnCheckboxLBU, TidyRoll: TidyRollOptions.RadioSetId, TidyRoll: TidyRollOptions.Reset |
+| Example locations | InfoScroller: LIBGUI_Checkbox:SetValue, InfoScroller: LIBGUI_Optionbutton:SetValue, PartyCast: LIBGUI_Checkbox:SetValue, PartyCast: LIBGUI_Optionbutton:SetValue, TidyChat: TidyChat.Options.OnCheckboxLBU, TidyChat: TidyChat.Options.Reset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 21 |
-| Global usage count | 21 |
+| Lua usage count | 25 |
+| Global usage count | 25 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -84,17 +84,19 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
 - TidyChat
 - TidyRoll
 
 ## Examples
 
+- InfoScroller: LIBGUI_Checkbox:SetValue -> ButtonSetPressedFlag(self.name, checkState)
+- InfoScroller: LIBGUI_Optionbutton:SetValue -> ButtonSetPressedFlag(self.name, checkState)
+- PartyCast: LIBGUI_Checkbox:SetValue -> ButtonSetPressedFlag(self.name, checkState)
+- PartyCast: LIBGUI_Optionbutton:SetValue -> ButtonSetPressedFlag(self.name, checkState)
 - TidyChat: TidyChat.Options.OnCheckboxLBU -> ButtonSetPressedFlag(checkboxName, not ButtonGetPressedFlag(checkboxName))
 - TidyChat: TidyChat.Options.Reset -> ButtonSetPressedFlag(TCHAT_TEXT_ENTRY_FREE_TEXT_ENTRY_CHECKBOX.."Button", Settings.textentry_free)
-- TidyChat: TidyChat.Options.Reset -> ButtonSetPressedFlag(TCHAT_TEXT_ENTRY_CHANNEL_SHOWING_CHECKBOX.."Button", Settings.textentry_channel_showing)
-- TidyChat: TidyChat.Options.Reset -> ButtonSetPressedFlag(TCHAT_LOGS_AUCTION_FILTER_CHECKBOX.."Button", Settings.auction_filter_showing)
-- TidyChat: TidyChat.Options.Reset -> ButtonSetPressedFlag(TCHAT_LOGS_LOOT_ROLL_FILTER_CHECKBOX.."Button", Settings.advanced_loot_roll_showing)
-- TidyChat: TidyChat.Options.Reset -> ButtonSetPressedFlag(TCHAT_LOGS_COPY_SHOWING_CHECKBOX.."Button", Settings.copy_showing)
 
 ## Related APIs
 
@@ -102,15 +104,9 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ButtonGetDisabledFlag](window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
-- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 90/100) - Window Function
 
 ## Triggered By
 

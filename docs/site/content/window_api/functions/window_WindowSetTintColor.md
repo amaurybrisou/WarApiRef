@@ -2,20 +2,22 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 98/100
-- Seen in: 3 addons
+- Confidence score: 100/100
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 98/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Raw weighted score: 110
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:270`, `/workspace/data/raw/Moth/Moth.lua:591`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:134`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:196` |
+| Addons seen in | InfoScroller, Moth, PartyCast, TidyChat, TidyRoll, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibConfig.lua:583`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:249`, `/workspace/data/raw/Moth/Moth.lua:267`, `/workspace/data/raw/Moth/Moth.lua:588`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibConfig.lua:583`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:249` |
 | Namespaces detected | WindowSetTintColor |
 | Source kinds | lua_calls |
-| Example locations | Moth: Moth.UpdateHealthBar, Moth: Moth.UpdateLevel, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollFrame:SetIcon, TidyRoll: TidyRollFrame:SetLootData |
+| Example locations | InfoScroller: LIBGUI_ELEMENT:Tint, InfoScroller: LibConfig.OnUpdate, Moth: Moth.UpdateHealthBar, Moth: Moth.UpdateLevel, PartyCast: LIBGUI_ELEMENT:Tint, PartyCast: LibConfig.OnUpdate |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 32 |
+| Global usage count | 32 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -58,7 +60,7 @@
 ## Signature (inferred)
 
 ```lua
-WindowSetTintColor(windowName, arg2)
+WindowSetTintColor(windowName, arg2, arg3, arg4)
 ```
 
 ## Description
@@ -69,8 +71,10 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "MothHealthBar", buttonName, c_TEXT_ENTRY_WINDOW.."EntryBoxBG" |
-| arg2 | Observed as a function or method reference. | Observed values: 0, Moth.Helpers.DefaultColorConvert(DefaultColor.GREEN), Moth.Helpers.DefaultColorConvert(DefaultColor.ORANGE) |
+| windowName | Observed as a target window name. | Observed values: "MothHealthBar", "PartyCastWindow"..PlayerNumber.."Button", "PartyCastWindow"..PlayerNumber.."ButtonIcon" |
+| arg2 | Observed as a function or method reference. | Observed values: 0, 175, 200 |
+| arg3 | Observed as a function or method reference. | Observed values: 0, 175, 200 |
+| arg4 | Observed as a function or method reference. | Observed values: 0, 200, 255 |
 
 ## Returns
 
@@ -82,18 +86,21 @@ Observed mutating runtime window state or presentation.
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
 - TidyChat
 - TidyRoll
+- minesweep
 
 ## Examples
 
+- InfoScroller: LIBGUI_ELEMENT:Tint -> WindowSetTintColor(self.name, r, g, b)
+- InfoScroller: LibConfig.OnUpdate -> WindowSetTintColor(LibConfig.colorizer.object.name, LibConfig.colorizer.r:GetValue(), LibConfig.colorizer.g:GetValue(), LibConfig.colorizer.b:GetValue())
 - Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.GREEN))
 - Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.YELLOW))
 - Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.ORANGE))
 - Moth: Moth.UpdateHealthBar -> WindowSetTintColor("MothHealthBar", Moth.Helpers.DefaultColorConvert(DefaultColor.RED))
-- Moth: Moth.UpdateLevel -> WindowSetTintColor(cellName.."RankBackgroundTint", Moth.Helpers.DefaultColorConvert(unitConColor))
-- TidyChat: TidyChatFrames.Initialize -> WindowSetTintColor(c_TEXT_ENTRY_WINDOW.."EntryBoxBG", 0, 0, 0)
 
 ## Related APIs
 
@@ -102,12 +109,12 @@ Observed mutating runtime window state or presentation.
 ## Used With
 
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
 
 ## Triggered By
 
-- none
+- [SystemData.Events.UPDATE_PROCESSED](../../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
 
 ## Affects
 

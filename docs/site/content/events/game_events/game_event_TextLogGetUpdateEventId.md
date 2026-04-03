@@ -1,22 +1,24 @@
 # TextLogGetUpdateEventId
 
 - Category: Game Event
-- Confidence level: MEDIUM
-- Confidence score: 63/100
+- Confidence level: HIGH
+- Confidence score: 93/100
 
 ## Confidence Assessment
 
-- Level: MEDIUM
+- Level: HIGH
 
-- Score: 63/100
+- Score: 93/100
 
-- Rationale: Promoted as MEDIUM confidence because referenced by generated docs or reference files, called globally with no local definition, used in event registration or dispatch.
+- Rationale: Promoted as HIGH confidence because referenced by generated docs or reference files, called globally with no local definition, reinforced across multiple generated source types.
 
 ## Evidence Signals
 
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +10 Referenced from initialization flow: Lifecycle reconstruction references this symbol.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
+- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
@@ -25,15 +27,15 @@
 | Addons seen in | TidyChat |
 | Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1175` |
 | Namespaces detected | TextLogGetUpdateEventId |
-| Source kinds | event_page, lua_event_registration |
+| Source kinds | event_page, flows, lua_event_registration |
 | Example locations | TidyChat: TidyChatLogs.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
 | Lua usage count | 3 |
 | Global usage count | 3 |
 | Local definition count | 0 |
-| Documentation references | 1 |
-| Initialization flow references | 0 |
+| Documentation references | 2 |
+| Initialization flow references | 1 |
 | Known engine namespace | no |
 | Default UI presence | no |
 | Event binding presence | yes |
@@ -90,7 +92,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Used With
 
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 81/100) - Global Function
+- none
 
 ## Triggered By
 

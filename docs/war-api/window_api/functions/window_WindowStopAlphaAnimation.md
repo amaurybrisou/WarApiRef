@@ -92,9 +92,7 @@ Observed as a window function across 1 addons.
 
 ## Used With
 
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 90/100) - Window Function
+- none
 
 ## Triggered By
 

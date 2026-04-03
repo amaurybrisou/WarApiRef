@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyRoll |
-| Files seen in | `/workspace/data/raw/Moth/Moth.xml:165`, `/workspace/data/raw/Moth/Moth.xml:185`, `/workspace/data/raw/Moth/Moth.xml:196`, `/workspace/data/raw/Moth/Moth.xml:207`, `/workspace/data/raw/Moth/Moth.xml:219`, `/workspace/data/raw/Moth/Moth.xml:97`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:16`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:26` |
+| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, TidyRoll, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.xml:111`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:122`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:145`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:156`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:179`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:190`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:214`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:225` |
 | Namespaces detected | DynamicImage |
 | Source kinds | xml_frames |
-| Example locations | Moth: MothCellTemplateCareerIcon, Moth: MothCellTemplateDiffMaskIcon, Moth: MothCellTemplateMapPinIconSlice, Moth: MothCellTemplateNPCIcon, Moth: MothCellTemplateRankBackground, Moth: MothRvRFlagIndicator |
-| XML usage count | 10 |
-| XML attribute usage count | 10 |
+| Example locations | InfoScroller: InfoScrollerTemplateBackGroundEnd, InfoScroller: InfoScrollerTemplateBackGroundStart, InfoScroller: InfoScrollerTemplateIcon1LeftIcon, InfoScroller: InfoScrollerTemplateIcon1RightIcon, InfoScroller: InfoScrollerTemplateIcon2LeftIcon, InfoScroller: InfoScrollerTemplateIcon2RightIcon |
+| XML usage count | 39 |
+| XML attribute usage count | 39 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,18 +57,21 @@
 
 ## Description
 
-Observed XML element type instantiated by 2 addons.
+Observed XML element type instantiated by 6 addons.
 
 ## Common Attributes
 
 - name
 - handleinput
-- layer
-- inherits
 - texture
 - textureScale
-- popable
+- layer
+- alpha
 - slice
+- texturescale
+- inherits
+- popable
+- mirrorTexCoords
 
 ## Common Inherits
 
@@ -86,6 +89,10 @@ Observed XML element type instantiated by 2 addons.
 
 - [DynamicImage](element_DynamicImage.md)
 
+## Common Structural Child Elements
+
+- [TintColor](element_TintColor.md) — 2× (MEDIUM)
+
 ## Common Template Bases
 
 - EA_Image_DefaultIcon
@@ -99,34 +106,54 @@ Observed XML element type instantiated by 2 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `handleinput` | optional | 80% | false |
-| `layer` | optional | 80% | overlay, default, background |
-| `inherits` | optional | 30% | TargetLevelBackgroundTemplate, EA_Image_DefaultIcon, EA_Image_DefaultIconFrame |
-| `texture` | optional | 30% | EA_HUD_01, map_markers01 |
-| `textureScale` | optional | 30% | 0.75, 1.0, 0.875 |
-| `popable` | optional | 20% | false |
-| `slice` | optional | 20% | RvR-Flag, LordHeroSpecial-Skull |
+| `handleinput` | **required** | 94% | false, true |
+| `texture` | optional | 61% | SEPERATOR, Fade, EA_HUD_01, map_markers01, ... |
+| `textureScale` | optional | 58% | 1, 0.75, 1.0, 0.45, ... |
+| `layer` | optional | 46% | default, background, overlay |
+| `alpha` | optional | 43% | 1, 0.4 |
+| `slice` | optional | 12% | RvR-Flag, LordHeroSpecial-Skull, tactic-white, Neutral-Frame |
+| `texturescale` | optional | 10% | 1, 0.8, 0.425 |
+| `inherits` | optional | 7% | TargetLevelBackgroundTemplate, EA_Image_DefaultIcon, EA_Image_DefaultIconFrame |
+| `popable` | optional | 5% | false |
+| `mirrorTexCoords` | optional | 2% | true |
+## Structural Sub-Elements
+
+### [TintColor](element_TintColor.md)
+
+Observed 2 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `b` | **required** | 0, 36, 166, 200 |
+| `g` | **required** | 0, 28, 84, 200 |
+| `r` | **required** | 0, 237, 200, 55 |
+| `a` | optional | 1, 0.4, 0.5, 0.8 |
 ## Lua Functions Manipulating This Type
 
 - Moth.UpdateTarget
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
+- Soloq
 - TidyRoll
+- minesweep
 
 ## Examples
 
-- Moth: MothCellTemplateCareerIcon -> DynamicImage MothCellTemplateCareerIcon
-- Moth: MothCellTemplateDiffMaskIcon -> DynamicImage MothCellTemplateDiffMaskIcon
-- Moth: MothCellTemplateMapPinIconSlice -> DynamicImage MothCellTemplateMapPinIconSlice
-- Moth: MothCellTemplateNPCIcon -> DynamicImage MothCellTemplateNPCIcon
-- Moth: MothCellTemplateRankBackground -> DynamicImage MothCellTemplateRankBackground
-- Moth: MothRvRFlagIndicator -> DynamicImage MothRvRFlagIndicator
+- InfoScroller: InfoScrollerTemplateBackGroundEnd -> DynamicImage InfoScrollerTemplateBackGroundEnd
+- InfoScroller: InfoScrollerTemplateBackGroundStart -> DynamicImage InfoScrollerTemplateBackGroundStart
+- InfoScroller: InfoScrollerTemplateIcon1LeftIcon -> DynamicImage InfoScrollerTemplateIcon1LeftIcon
+- InfoScroller: InfoScrollerTemplateIcon1RightIcon -> DynamicImage InfoScrollerTemplateIcon1RightIcon
+- InfoScroller: InfoScrollerTemplateIcon2LeftIcon -> DynamicImage InfoScrollerTemplateIcon2LeftIcon
+- InfoScroller: InfoScrollerTemplateIcon2RightIcon -> DynamicImage InfoScrollerTemplateIcon2RightIcon
 
 ## Related APIs
 
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
+- [TintColor](element_TintColor.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Used With

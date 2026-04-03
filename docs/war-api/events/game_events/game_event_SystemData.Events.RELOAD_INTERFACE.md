@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 186
+- Raw weighted score: 198
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -30,18 +30,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227` |
+| Addons seen in | Lib RuString, TidyChat, TidyRoll, TimeToDie |
+| Files seen in | `/workspace/data/raw/RuStringLib/RuStringLib.lua:300`, `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227`, `/workspace/data/raw/TimeToDie/TimeToDie.lua:244` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, flows, lua_event_registration |
-| Example locations | TidyChat: TidyChat.Initialize, TidyRoll: TidyRoll.Initialize |
+| Example locations | Lib RuString: LibRuString.Init, TidyChat: TidyChat.Initialize, TidyRoll: TidyRoll.Initialize, TimeToDie: TimeToDie.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 2 |
-| Initialization flow references | 2 |
+| Initialization flow references | 4 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as a shared SystemData runtime event used by 2 addons.
+Observed as a shared SystemData runtime event used by 4 addons.
 
 ## Handler Pattern
 
@@ -73,36 +73,42 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Seen In
 
+- Lib RuString
 - TidyChat
 - TidyRoll
+- TimeToDie
 
 ## Registrars And Handlers
 
+- LibRuString.OnLoad
 - RegisterEventHandler
 - TidyChat.OnLoad
 - TidyRoll.OnLoad
+- TimeToDie.LoadingEnd
 - global
 
 ## Examples
 
+- Lib RuString: LibRuString.Init -> SystemData.Events.RELOAD_INTERFACE -> LibRuString.OnLoad
 - TidyChat: TidyChat.Initialize -> SystemData.Events.RELOAD_INTERFACE -> TidyChat.OnLoad
 - TidyRoll: TidyRoll.Initialize -> SystemData.Events.RELOAD_INTERFACE -> TidyRoll.OnLoad
+- TimeToDie: TimeToDie.Initialize -> SystemData.Events.RELOAD_INTERFACE -> TimeToDie.LoadingEnd
+- Lib RuString: LibRuString.OnLoad -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, LibRuString.OnLoad)
 - TidyChat: TidyChat.OnLoad -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, TidyChat.OnLoad)
-- TidyRoll: TidyRoll.OnLoad -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, TidyRoll.OnLoad)
 
 ## Related APIs
 
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
-- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 90/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
+- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.LOADING_END](game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 90/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
+- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Triggered By
 

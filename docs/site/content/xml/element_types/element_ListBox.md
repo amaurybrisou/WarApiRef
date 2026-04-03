@@ -165,6 +165,7 @@ Confidence: MEDIUM
 ## Related APIs
 
 - [ListData](element_ListData.md) (HIGH 100/100) - XML Element Type
+- [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

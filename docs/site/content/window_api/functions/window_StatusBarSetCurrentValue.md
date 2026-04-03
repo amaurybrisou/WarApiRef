@@ -2,36 +2,41 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 80/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 80/100
+- Final score: 100/100
+
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:115` |
+| Addons seen in | InfoScroller, PartyCast, TidyRoll |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:993`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:993`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:115` |
 | Namespaces detected | StatusBarSetCurrentValue |
 | Source kinds | lua_calls |
-| Example locations | TidyRoll: TidyRollFrame:SetTimer |
+| Example locations | InfoScroller: LIBGUI_Statusbar:SetValue, PartyCast: LIBGUI_Statusbar:SetValue, PartyCast: PartyCast.FetchedText, TidyRoll: TidyRollFrame:SetTimer |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -39,8 +44,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
-| Consistent arguments | no |
+| Consistent role | yes |
+| Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -60,14 +65,14 @@ StatusBarSetCurrentValue(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 1 addons.
+Observed as a window function across 3 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: timerFrame:GetName().."Bar" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: timer |
+| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..PlayerNumber.."TimerBar", self.name, timerFrame:GetName().."Bar" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 1, timer, value |
 
 ## Returns
 
@@ -79,10 +84,15 @@ Observed as a window function across 1 addons.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
 - TidyRoll
 
 ## Examples
 
+- InfoScroller: LIBGUI_Statusbar:SetValue -> StatusBarSetCurrentValue(self.name, value)
+- PartyCast: LIBGUI_Statusbar:SetValue -> StatusBarSetCurrentValue(self.name, value)
+- PartyCast: PartyCast.FetchedText -> StatusBarSetCurrentValue("PartyCastWindow"..PlayerNumber.."TimerBar", 1)
 - TidyRoll: TidyRollFrame:SetTimer -> StatusBarSetCurrentValue(timerFrame:GetName().."Bar", timer)
 
 ## Related APIs
@@ -103,4 +113,4 @@ Observed as a window function across 1 addons.
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- none

@@ -2,20 +2,20 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 81/100
-- Seen in: 2 addons
+- Confidence score: 93/100
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 81/100
+- Score: 93/100
 
-- Rationale: Promoted as HIGH confidence because called globally with no local definition, seen in 2 to 3 addons, used in event registration or dispatch.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, called globally with no local definition, used in event registration or dispatch.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1175`, `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyChat/TidyChat.lua:676`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227` |
+| Addons seen in | Lib RuString, PartyCast, Soloq, TidyChat, TidyRoll, TimeToDie, ZCurse_Profiler |
+| Files seen in | `/workspace/data/raw/CurseProfiler/CurseProfilerCompiled.lua:2134`, `/workspace/data/raw/PartyCast/PartyCast.lua:51`, `/workspace/data/raw/RuStringLib/RuStringLib.lua:300`, `/workspace/data/raw/Soloq/Soloq.lua:22`, `/workspace/data/raw/TidyChat/TidyChat.lua:1175`, `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyChat/TidyChat.lua:676`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227` |
 | Namespaces detected | RegisterEventHandler |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChat.Initialize, TidyChat: TidyChatHooks.SetupHooks, TidyChat: TidyChatLogs.Initialize, TidyRoll: TidyRoll.Initialize |
+| Example locations | Lib RuString: LibRuString.Init, PartyCast: PartyCast.Init, Soloq: Soloq.OnInitialize, TidyChat: TidyChat.Initialize, TidyChat: TidyChatHooks.SetupHooks, TidyChat: TidyChatLogs.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 61 |
+| Global usage count | 61 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -68,8 +68,8 @@ Observed registering global runtime handlers against shared event identifiers.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| eventId | Observed as a SystemData or runtime event identifier. | Observed values: SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM, SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA, SystemData.Events.LOADING_END |
-| handlerName | Observed as a Lua handler function reference. | Observed values: "TidyChat.OnChatLogUpdated", "TidyChat.OnCombatLogUpdated", "TidyChat.OnLBU" |
+| eventId | Observed as a SystemData or runtime event identifier. | Observed values: SystemData.Events.ENTER_WORLD, SystemData.Events.EXIT_GAME, SystemData.Events.INTERACT_COMPLETE_QUEST |
+| handlerName | Observed as a Lua handler function reference. | Observed values: "CurseProfiler.andnot", "CurseProfiler.breakelse", "CurseProfiler.breakfor" |
 
 ## Returns
 
@@ -81,17 +81,22 @@ Observed registering global runtime handlers against shared event identifiers.
 
 ## Seen In
 
+- Lib RuString
+- PartyCast
+- Soloq
 - TidyChat
 - TidyRoll
+- TimeToDie
+- ZCurse_Profiler
 
 ## Examples
 
-- TidyChat: TidyChat.Initialize -> RegisterEventHandler(SystemData.Events.LOADING_END, "TidyChat.OnLoad")
-- TidyChat: TidyChat.Initialize -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "TidyChat.OnLoad")
-- TidyChat: TidyChatHooks.SetupHooks -> RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, "TidyChat.OnLBU")
-- TidyChat: TidyChatLogs.Initialize -> RegisterEventHandler(chatLogEventId, "TidyChat.OnChatLogUpdated")
-- TidyChat: TidyChatLogs.Initialize -> RegisterEventHandler(combatLogEventId, "TidyChat.OnCombatLogUpdated")
-- TidyChat: TidyChatLogs.Initialize -> RegisterEventHandler(systemLogEventId, "TidyChat.OnSystemLogUpdated")
+- Lib RuString: LibRuString.Init -> RegisterEventHandler(SystemData.Events.LOADING_END, "LibRuString.OnLoad")
+- Lib RuString: LibRuString.Init -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "LibRuString.OnLoad")
+- PartyCast: PartyCast.Init -> RegisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
+- PartyCast: PartyCast.Init -> RegisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
+- PartyCast: PartyCast.Init -> RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, "PartyCast.StartCast")
+- PartyCast: PartyCast.Init -> RegisterEventHandler(SystemData.Events.PLAYER_END_CAST, "PartyCast.EndCast")
 
 ## Related APIs
 
@@ -99,7 +104,8 @@ Observed registering global runtime handlers against shared event identifiers.
 
 ## Used With
 
-- [TextLogGetUpdateEventId](../../events/game_events/game_event_TextLogGetUpdateEventId.md) (MEDIUM 63/100) - Game Event
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 
 ## Triggered By
 
@@ -107,9 +113,15 @@ Observed registering global runtime handlers against shared event identifiers.
 
 ## Affects
 
-- [EA_ChatWindow](../tables/table_EA_ChatWindow.md) (HIGH 100/100) - Global Table
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERACT_DONE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_BEGIN_CAST](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CAST_TIMER_SETBACK](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_DEATH](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_END_CAST](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_END_CAST.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_START_INTERACT_TIMER](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_START_INTERACT_TIMER.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 
 ## Notes

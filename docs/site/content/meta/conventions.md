@@ -9,8 +9,8 @@
 - Evidence:
 
 - initialize: Creates 0 windows and calls 1 initialize hooks, Creates 3 windows and calls 1 initialize hooks
-  - runtime: Moth: SystemData.Events.PLAYER_TARGET_UPDATED, Registers 1 runtime events
-  - xml: Defines 20 XML frames and 0 bound handlers, Defines 47 XML frames and 22 bound handlers
+  - runtime: InfoScroller: SystemData.Events.UPDATE_PROCESSED, InfoScroller: e
+  - xml: Defines 20 XML frames and 0 bound handlers, Defines 39 XML frames and 4 bound handlers
 
 ## Event registration pattern
 
@@ -20,14 +20,14 @@
 
 - Evidence:
 
-- RegisterEventHandler: TidyChat: RegisterEventHandler(SystemData.Events.LOADING_END, "TidyChat.OnLoad")
-  - RegisterEventHandler: TidyChat: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "TidyChat.OnLoad")
-  - RegisterEventHandler: TidyChat: RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, "TidyChat.OnLBU")
-  - RegisterEventHandler: TidyChat: RegisterEventHandler(chatLogEventId, "TidyChat.OnChatLogUpdated")
-  - RegisterEventHandler: TidyChat: RegisterEventHandler(combatLogEventId, "TidyChat.OnCombatLogUpdated")
-  - RegisterEventHandler: TidyChat: RegisterEventHandler(systemLogEventId, "TidyChat.OnSystemLogUpdated")
-  - UnregisterEventHandler: TidyRoll: UnregisterEventHandler(SystemData.Events.LOADING_END, "TidyRoll.OnLoad")
-  - UnregisterEventHandler: TidyRoll: UnregisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "TidyRoll.OnLoad")
+- RegisterEventHandler: Lib RuString: RegisterEventHandler(SystemData.Events.LOADING_END, "LibRuString.OnLoad")
+  - RegisterEventHandler: Lib RuString: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "LibRuString.OnLoad")
+  - RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
+  - RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
+  - RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, "PartyCast.StartCast")
+  - RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_END_CAST, "PartyCast.EndCast")
+  - UnregisterEventHandler: PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
+  - UnregisterEventHandler: PartyCast: UnregisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
 
 ## UI creation pattern
 
@@ -37,14 +37,14 @@
 
 - Evidence:
 
-- Window creation: Moth: CreateWindow("Moth", true)
+- Window creation: InfoScroller: CreateWindow("InfoScrollerMainWindow", true)
+  - Window creation: Moth: CreateWindow("Moth", true)
+  - Window creation: Soloq: CreateWindow(overviewWindowName, false)
   - Window creation: TidyChat: CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
   - Window creation: TidyRoll: CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
   - Window creation: TidyRoll: CreateWindow(c_TIDY_ROLL_ANCHOR, false)
-  - Window creation: TidyRoll: CreateWindow(c_TIDY_ROLL_TIMER, false)
-  - Window creation: TidyRoll: CreateWindow(c_TIDY_ROLL_ESC, false)
-  - Template instantiation: TidyChat: CreateWindowFromTemplate(c_CHANNEL_MENU.."AllianceButton", "ChannelMenuButton", "ChatChannelSelectionWindow")
-  - Template instantiation: TidyChat: CreateWindowFromTemplate(c_CHANNEL_MENU.."AdviceButton", "ChannelMenuButton", "ChatChannelSelectionWindow")
+  - Template instantiation: InfoScroller: CreateWindowFromTemplate(WindowName, "InfoScrollerTemplate", "InfoScrollerMainWindow")
+  - Template instantiation: InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
 
 ## XML to Lua binding pattern
 
@@ -54,14 +54,14 @@
 
 - Evidence:
 
-- TidyChat: TChatCheckboxTemplate.OnLButtonUp -> TidyChat.Options.OnCheckboxLBU
-  - TidyChat: TChatTabButton.OnLButtonUp -> TidyChat.Options.OnTabLBU
-  - TidyChat: TChatTabWindowsTemplateSelectWindowCombo.OnSelChanged -> TidyChat.Options.UpdateGroupTabs
-  - TidyChat: TidyChatCopy.OnHidden -> TidyChat.Copy.OnHidden
-  - TidyChat: TidyChatCopy.OnMouseWheel -> TidyChat.Copy.OnMouseWheel
-  - TidyChat: TidyChatCopy.OnShown -> TidyChat.Copy.OnShown
-  - TidyChat: TidyChatCopyClose.OnLButtonUp -> TidyChat.Copy.OnClose
-  - TidyChat: TidyChatCopyNext.OnLButtonUp -> TidyChat.Copy.CopyNext
+- InfoScroller: InfoScrollerTemplateLabel1.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel1.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel2.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel2.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel3.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel3.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel4.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel4.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
 
 ## XML runtime caveats
 
@@ -98,7 +98,11 @@
 
 - Evidence:
 
-- NPC Item Sale Price: Nisp.DebugEnabled
+- InfoScroller: InfoScroller.Settings
+  - Lib RuString: LibRuString.Settings
+  - NPC Item Sale Price: Nisp.DebugEnabled
   - NPC Item Sale Price: Nisp.DumpItemsTable
   - NPC Item Sale Price: Nisp.Enabled
+  - PartyCast: PartyCast.Settings
+  - Soloq: Soloq.db
   - TidyChat: TidyChat.Settings

@@ -10,7 +10,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 146
+- Raw weighted score: 126
 
 - Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, observed in both xml and lua paths.
 
@@ -22,7 +22,6 @@
 - +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
@@ -31,14 +30,14 @@
 | Addons seen in | TidyChat, TidyRoll |
 | Files seen in | `/workspace/data/raw/TidyChat/TidyChat.xml:14`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:15`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:51`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:100`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:287`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:308` |
 | Namespaces detected | OnShown |
-| Source kinds | bindings, examples, xml_handlers |
+| Source kinds | bindings, xml_handlers |
 | Example locations | TidyChat: TidyChatCopy.OnShown, TidyChat: TidyChatLootRoll.OnShown, TidyChat: TidyChatOptions.OnShown, TidyRoll: TRollAutoRoll.OnShown, TidyRoll: TidyRollEsc.OnShown, TidyRoll: TidyRollOptions.OnShown |
 | XML usage count | 6 |
 | XML attribute usage count | 6 |
 | Lua usage count | 6 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 2 |
+| Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | no |
 | Default UI presence | no |

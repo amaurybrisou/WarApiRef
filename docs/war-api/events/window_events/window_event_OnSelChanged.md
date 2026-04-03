@@ -10,9 +10,9 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 126
+- Raw weighted score: 106
 
-- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, reinforced across multiple generated source types.
+- Rationale: Promoted as HIGH confidence because used directly in xml handler attributes, referenced by generated docs or reference files, seen in 2 to 3 addons.
 
 ## Evidence Signals
 
@@ -21,7 +21,6 @@
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
-- +20 Reinforced across multiple generated source types: Evidence comes from several independent addon-api source types.
 
 ## Evidence Summary
 
@@ -30,14 +29,14 @@
 | Addons seen in | TidyChat, TidyRoll |
 | Files seen in | `/workspace/data/raw/TidyChat/TidyChatTabWindows.xml:29`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:58` |
 | Namespaces detected | OnSelChanged |
-| Source kinds | event_page, examples, xml_handlers |
+| Source kinds | event_page, xml_handlers |
 | Example locations | TidyChat: TChatTabWindowsTemplateSelectWindowCombo.OnSelChanged, TidyRoll: AutoRollRowTemplateChoice.OnSelChanged |
 | XML usage count | 2 |
 | XML attribute usage count | 2 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 2 |
+| Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | no |
 | Default UI presence | no |

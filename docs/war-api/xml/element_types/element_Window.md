@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 186
+- Raw weighted score: 198
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -29,13 +29,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/Moth/Moth.xml:124`, `/workspace/data/raw/Moth/Moth.xml:153`, `/workspace/data/raw/Moth/Moth.xml:6`, `/workspace/data/raw/TidyChat/TidyChat.xml:138`, `/workspace/data/raw/TidyChat/TidyChat.xml:139`, `/workspace/data/raw/TidyChat/TidyChat.xml:140`, `/workspace/data/raw/TidyChat/TidyChat.xml:141`, `/workspace/data/raw/TidyChat/TidyChat.xml:151` |
+| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, TidyChat, TidyRoll, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.xml:107`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:118`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:141`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:152`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:16`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:175`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:186`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:210` |
 | Namespaces detected | Window |
 | Source kinds | xml_frames, xml_handlers |
-| Example locations | Moth: Moth, Moth: MothCellTemplate, Moth: MothRowTemplate, TidyChat: TChatCheckboxTemplate, TidyChat: TChatTabLogsTemplate, TidyChat: TChatTabLogsTemplateAuctionFilterCheckbox |
-| XML usage count | 48 |
-| XML attribute usage count | 48 |
+| Example locations | InfoScroller: InfoScrollerMainWindow, InfoScroller: InfoScrollerTemplate, InfoScroller: InfoScrollerTemplateBackGround, InfoScroller: InfoScrollerTemplateIcon1Left, InfoScroller: InfoScrollerTemplateIcon1Right, InfoScroller: InfoScrollerTemplateIcon2Left |
+| XML usage count | 88 |
+| XML attribute usage count | 88 |
 | Lua usage count | 8 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -60,17 +60,18 @@
 
 ## Description
 
-Observed XML element type instantiated by 3 addons.
+Observed XML element type instantiated by 7 addons.
 
 ## Common Attributes
 
 - name
-- inherits
 - layer
 - movable
 - handleinput
+- inherits
 - savesettings
 - popable
+- sticky
 - draganddrop
 
 ## Common Handlers
@@ -126,32 +127,33 @@ Observed XML element type instantiated by 3 addons.
 ## Common Inherits
 
 - TChatCheckboxTemplate
-- EA_Window_DefaultContextMenuFrame
 - EA_TitleBar_Default
+- EA_Window_DefaultContextMenuFrame
+- EA_Window_DefaultFrame
 - EA_Window_DefaultBackgroundFrame
 - EA_Window_DefaultButtonBottomFrame
-- EA_Window_DefaultFrame
 - EA_Window_DefaultFrameStatusBar
+- PartyFrameStatusBar
 - TChatTabLogsTemplate
 - TChatTabMiscTemplate
 - TChatTabTextEntryTemplate
 - TChatTabWindowsTemplate
-- TRollOverlay
 
 ## Common Parent Elements
 
 - [Window](element_Window.md)
+- [ScrollWindow](element_ScrollWindow.md)
 
 ## Common Named Child Elements
 
 - [Label](element_Label.md)
-- [Button](element_Button.md)
-- [FullResizeImage](element_FullResizeImage.md)
-- [Window](element_Window.md)
-- [ComboBox](element_ComboBox.md)
 - [DynamicImage](element_DynamicImage.md)
+- [Button](element_Button.md)
+- [Window](element_Window.md)
+- [FullResizeImage](element_FullResizeImage.md)
+- [StatusBar](element_StatusBar.md)
+- [ComboBox](element_ComboBox.md)
 - [EditBox](element_EditBox.md)
-- [ListBox](element_ListBox.md)
 
 ## Common Template Bases
 
@@ -161,6 +163,7 @@ Observed XML element type instantiated by 3 addons.
 - EA_Window_DefaultContextMenuFrame
 - EA_Window_DefaultFrame
 - EA_Window_DefaultFrameStatusBar
+- PartyFrameStatusBar
 - TChatCheckboxTemplate
 - TChatTabLogsTemplate
 - TChatTabMiscTemplate
@@ -175,13 +178,14 @@ Observed XML element type instantiated by 3 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 52% | EA_Window_DefaultContextMenuFrame, TChatTabWindowsTemplate, TChatTabTextEntryTemplate, TChatTabLogsTemplate, ... |
-| `layer` | optional | 37% | default, overlay, background, popup, ... |
-| `movable` | optional | 33% | true, false |
-| `handleinput` | optional | 25% | false, true |
-| `savesettings` | optional | 22% | false, true |
-| `popable` | optional | 16% | false, true |
-| `draganddrop` | optional | 2% | true |
+| `layer` | optional | 59% | secondary, overlay, popup, background, ... |
+| `movable` | optional | 54% | true, false |
+| `handleinput` | optional | 38% | false, true |
+| `inherits` | optional | 31% | PartyFrameStatusBar, EA_Window_DefaultContextMenuFrame, TChatTabWindowsTemplate, TChatTabTextEntryTemplate, ... |
+| `savesettings` | optional | 30% | true, false |
+| `popable` | optional | 27% | false, true |
+| `sticky` | optional | 15% | true, false |
+| `draganddrop` | optional | 1% | true |
 ## Lua API Usage (from Handlers)
 
 API functions commonly called from event handler Lua functions on this element type:
@@ -260,16 +264,22 @@ Confidence: MEDIUM
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
-- Moth.Initialize
-- TidyChat.LootRoll.OnRollLinkLButtonUp
-- TidyRollOptions.Initialize
-- Moth.Anchor
 - Moth.UpdateLevel
-- Moth.UpdateHealthBar
 - Moth.HideBorders
-- Moth.HealthBar
+- TidyChat.LootRoll.OnRollLinkLButtonUp
+- InfoScroller.OnInitialize
 - Moth.Clear
 - Moth.UpdateTarget
+- Moth.Initialize
+- Moth.Anchor
+- minesweep.LButtonUp
+- InfoScroller.CreateCard
+- Moth.UpdateHealthBar
+- Soloq.onEnterRankedScenario
+- TidyRollOptions.Initialize
+- minesweep.MakeField
+- minesweep.Close
+- Moth.HealthBar
 
 
 ## Binding Resolution
@@ -279,81 +289,117 @@ Confidence: MEDIUM
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
+- Soloq
 - TidyChat
 - TidyRoll
+- minesweep
 
 ## Examples
 
-- Moth: Moth -> Window Moth
-- Moth: MothCellTemplate -> Window MothCellTemplate
-- Moth: MothRowTemplate -> Window MothRowTemplate
-- TidyChat: TChatCheckboxTemplate -> Window TChatCheckboxTemplate
-- TidyChat: TChatTabLogsTemplate -> Window TChatTabLogsTemplate
-- TidyChat: TChatTabLogsTemplateAuctionFilterCheckbox -> Window TChatTabLogsTemplateAuctionFilterCheckbox
+- InfoScroller: InfoScrollerMainWindow -> Window InfoScrollerMainWindow
+- InfoScroller: InfoScrollerTemplate -> Window InfoScrollerTemplate
+- InfoScroller: InfoScrollerTemplateBackGround -> Window InfoScrollerTemplateBackGround
+- InfoScroller: InfoScrollerTemplateIcon1Left -> Window InfoScrollerTemplateIcon1Left
+- InfoScroller: InfoScrollerTemplateIcon1Right -> Window InfoScrollerTemplateIcon1Right
+- InfoScroller: InfoScrollerTemplateIcon2Left -> Window InfoScrollerTemplateIcon2Left
 
 ## Related APIs
 
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [ButtonGetDisabledFlag](../../window_api/functions/window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ButtonGetPressedFlag](../../window_api/functions/window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ButtonGetTextColor](../../window_api/functions/window_ButtonGetTextColor.md) (HIGH 100/100) - Window Function
+- [ButtonSetCheckButtonFlag](../../window_api/functions/window_ButtonSetCheckButtonFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetDisabledFlag](../../window_api/functions/window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBox](element_ComboBox.md) (HIGH 100/100) - XML Element Type
+- [ComboBoxAddMenuItem](../../window_api/functions/window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
+- [ComboBoxClearMenuItems](../../window_api/functions/window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
+- [ComboBoxGetDisabledFlag](../../window_api/functions/window_ComboBoxGetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [ComboBoxSetDisabledFlag](../../window_api/functions/window_ComboBoxSetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](../../window_api/functions/window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [DynamicImage](element_DynamicImage.md) (HIGH 100/100) - XML Element Type
+- [DynamicImageSetRotation](../../window_api/functions/window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureDimensions](../../window_api/functions/window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureOrientation](../../window_api/functions/window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureScale](../../window_api/functions/window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureSlice](../../window_api/functions/window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
 - [EditBox](element_EditBox.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [Label](element_Label.md) (HIGH 100/100) - XML Element Type
+- [LabelGetText](../../window_api/functions/window_LabelGetText.md) (HIGH 100/100) - Window Function
+- [LabelGetTextColor](../../window_api/functions/window_LabelGetTextColor.md) (HIGH 100/100) - Window Function
+- [LabelGetWordWrap](../../window_api/functions/window_LabelGetWordWrap.md) (HIGH 100/100) - Window Function
 - [LabelSetFont](../../window_api/functions/window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetTextAlign](../../window_api/functions/window_LabelSetTextAlign.md) (HIGH 100/100) - Window Function
+- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [LabelSetWordWrap](../../window_api/functions/window_LabelSetWordWrap.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [ListBox](element_ListBox.md) (HIGH 100/100) - XML Element Type
+- [StatusBarGetCurrentValue](../../window_api/functions/window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
+- [StatusBarSetBackgroundTint](../../window_api/functions/window_StatusBarSetBackgroundTint.md) (HIGH 100/100) - Window Function
+- [StatusBarSetCurrentValue](../../window_api/functions/window_StatusBarSetCurrentValue.md) (HIGH 100/100) - Window Function
+- [StatusBarSetForegroundTint](../../window_api/functions/window_StatusBarSetForegroundTint.md) (HIGH 100/100) - Window Function
+- [StatusBarSetMaximumValue](../../window_api/functions/window_StatusBarSetMaximumValue.md) (HIGH 100/100) - Window Function
+- [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowAssignFocus](../../window_api/functions/window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowForceProcessAnchors](../../window_api/functions/window_WindowForceProcessAnchors.md) (HIGH 100/100) - Window Function
+- [WindowGetAlpha](../../window_api/functions/window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowGetAnchor](../../window_api/functions/window_WindowGetAnchor.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowGetFontAlpha](../../window_api/functions/window_WindowGetFontAlpha.md) (HIGH 100/100) - Window Function
+- [WindowGetHandleInput](../../window_api/functions/window_WindowGetHandleInput.md) (HIGH 100/100) - Window Function
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
+- [WindowGetLayer](../../window_api/functions/window_WindowGetLayer.md) (HIGH 100/100) - Window Function
+- [WindowGetPopable](../../window_api/functions/window_WindowGetPopable.md) (HIGH 100/100) - Window Function
+- [WindowGetScale](../../window_api/functions/window_WindowGetScale.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
+- [WindowGetTintColor](../../window_api/functions/window_WindowGetTintColor.md) (HIGH 100/100) - Window Function
 - [WindowRegisterCoreEventHandler](../../window_api/functions/window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
+- [WindowSetAlpha](../../window_api/functions/window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetFontAlpha](../../window_api/functions/window_WindowSetFontAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
+- [WindowSetGameActionTrigger](../../window_api/functions/window_WindowSetGameActionTrigger.md) (HIGH 100/100) - Window Function
 - [WindowSetHandleInput](../../window_api/functions/window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
 - [WindowSetId](../../window_api/functions/window_WindowSetId.md) (HIGH 100/100) - Window Function
 - [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
+- [WindowSetMovable](../../window_api/functions/window_WindowSetMovable.md) (HIGH 100/100) - Window Function
+- [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
+- [WindowSetPopable](../../window_api/functions/window_WindowSetPopable.md) (HIGH 100/100) - Window Function
+- [WindowSetScale](../../window_api/functions/window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 100/100) - Window Function
+- [ButtonSetTextColor](../../window_api/functions/window_ButtonSetTextColor.md) (HIGH 98/100) - Window Function
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
 - [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 98/100) - Window Function
-- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
-- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 98/100) - Window Function
-- [ButtonSetDisabledFlag](../../window_api/functions/window_ButtonSetDisabledFlag.md) (HIGH 90/100) - Window Function
-- [ButtonSetTextColor](../../window_api/functions/window_ButtonSetTextColor.md) (HIGH 90/100) - Window Function
-- [ComboBoxAddMenuItem](../../window_api/functions/window_ComboBoxAddMenuItem.md) (HIGH 90/100) - Window Function
-- [ComboBoxClearMenuItems](../../window_api/functions/window_ComboBoxClearMenuItems.md) (HIGH 90/100) - Window Function
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 90/100) - Window Function
-- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 90/100) - Window Function
+- [ScrollWindow](element_ScrollWindow.md) (HIGH 90/100) - XML Element Type
 - [SliderBar](element_SliderBar.md) (HIGH 90/100) - XML Element Type
-- [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 90/100) - Window Function
-- [WindowSetAlpha](../../window_api/functions/window_WindowSetAlpha.md) (HIGH 90/100) - Window Function
-- [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 90/100) - Window Function
+- [StatusBar](element_StatusBar.md) (HIGH 90/100) - XML Element Type
 - [WindowStopAlphaAnimation](../../window_api/functions/window_WindowStopAlphaAnimation.md) (HIGH 90/100) - Window Function
-- [WindowUnregisterCoreEventHandler](../../window_api/functions/window_WindowUnregisterCoreEventHandler.md) (HIGH 90/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 80/100) - Window Function
-- [ComboBoxSetDisabledFlag](../../window_api/functions/window_ComboBoxSetDisabledFlag.md) (HIGH 80/100) - Window Function
-- [DynamicImageSetTextureScale](../../window_api/functions/window_DynamicImageSetTextureScale.md) (HIGH 80/100) - Window Function
-- [DynamicImageSetTextureSlice](../../window_api/functions/window_DynamicImageSetTextureSlice.md) (HIGH 80/100) - Window Function
 - [LabelGetTextDimensions](../../window_api/functions/window_LabelGetTextDimensions.md) (HIGH 80/100) - Window Function
 - [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 80/100) - Window Function
-- [StatusBarSetBackgroundTint](../../window_api/functions/window_StatusBarSetBackgroundTint.md) (HIGH 80/100) - Window Function
-- [StatusBarSetCurrentValue](../../window_api/functions/window_StatusBarSetCurrentValue.md) (HIGH 80/100) - Window Function
-- [StatusBarSetForegroundTint](../../window_api/functions/window_StatusBarSetForegroundTint.md) (HIGH 80/100) - Window Function
-- [StatusBarSetMaximumValue](../../window_api/functions/window_StatusBarSetMaximumValue.md) (HIGH 80/100) - Window Function
-- [WindowAssignFocus](../../window_api/functions/window_WindowAssignFocus.md) (HIGH 80/100) - Window Function
-- [WindowGetAnchor](../../window_api/functions/window_WindowGetAnchor.md) (HIGH 80/100) - Window Function
+- [StatusBarGetMaximumValue](../../window_api/functions/window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
 - [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 80/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
 - [AnimatedImage](element_AnimatedImage.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Event
@@ -364,10 +410,10 @@ Confidence: MEDIUM
 - [OnHidden](../handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 100/100) - XML Event
+- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 100/100) - XML Event
 - [OnShown](../handlers/handler_OnShown.md) (HIGH 100/100) - XML Event
 - [OnInitialize](../handlers/handler_OnInitialize.md) (HIGH 73/100) - XML Event
 - [OnMButtonUp](../handlers/handler_OnMButtonUp.md) (HIGH 73/100) - XML Event
-- [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 73/100) - XML Event
 - [OnUpdate](../handlers/handler_OnUpdate.md) (HIGH 73/100) - XML Event
 
 ## Affects

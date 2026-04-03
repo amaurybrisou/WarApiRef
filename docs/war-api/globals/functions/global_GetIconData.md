@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 71/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyRoll |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:134`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:180` |
+| Addons seen in | Moth, PartyCast, TidyRoll |
+| Files seen in | `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:134`, `/workspace/data/raw/TidyRoll/TidyRollFrame.lua:180` |
 | Namespaces detected | GetIconData |
 | Source kinds | lua_calls |
-| Example locations | Moth: Moth.SetCellTextIcon, TidyRoll: TidyRollFrame:SetCareerIcon, TidyRoll: TidyRollFrame:SetIcon |
+| Example locations | Moth: Moth.SetCellTextIcon, PartyCast: PartyCast.FetchedText, TidyRoll: TidyRollFrame:SetCareerIcon, TidyRoll: TidyRollFrame:SetIcon |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ GetIconData(arg1)
 
 ## Description
 
-Observed as a shared query API across 2 addons.
+Observed as a shared query API across 3 addons.
 
 ## Parameters
 
@@ -81,11 +81,14 @@ Observed as a shared query API across 2 addons.
 ## Seen In
 
 - Moth
+- PartyCast
 - TidyRoll
 
 ## Examples
 
 - Moth: Moth.SetCellTextIcon -> GetIconData(Icons.GetCareerIconIDFromCareerLine(text))
+- PartyCast: PartyCast.FetchedText -> GetIconData(tonumber(SPLIT_TEXT[7]))
+- PartyCast: PartyCast.FetchedText -> GetIconData(tonumber(Target_Icon))
 - TidyRoll: TidyRollFrame:SetCareerIcon -> GetIconData(careerIconNum)
 - TidyRoll: TidyRollFrame:SetIcon -> GetIconData(iconNum)
 
@@ -95,11 +98,13 @@ Observed as a shared query API across 2 addons.
 
 ## Used With
 
+- [DynamicImageSetTextureDimensions](../../window_api/functions/window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
 - [LabelSetFont](../../window_api/functions/window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 90/100) - Window Function
-- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 90/100) - Window Function
+- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
+- [Icons.GetCareerIconIDFromCareerLine](global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 88/100) - Global Function
+- [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

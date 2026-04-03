@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:2031`, `/workspace/data/raw/TidyChat/TidyChat.lua:2275`, `/workspace/data/raw/TidyChat/TidyChat.lua:2287`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:387`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:828` |
+| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:558`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:782`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:847`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:558`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:782`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:847`, `/workspace/data/raw/TidyChat/TidyChat.lua:2031`, `/workspace/data/raw/TidyChat/TidyChat.lua:2275` |
 | Namespaces detected | ButtonGetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChat.Copy.CopyNext, TidyChat: TidyChat.Copy.CopyPrev, TidyChat: TidyChat.Options.OnCheckboxLBU, TidyRoll: TidyRoll.CustomAutoRoll.OnDeleteButton, TidyRoll: TidyRollOptions.OnCheckboxLBU |
+| Example locations | InfoScroller: LIBGUI_Button:Enabled, InfoScroller: LIBGUI_Checkbox:Enabled, InfoScroller: LIBGUI_Optionbutton:Enabled, PartyCast: LIBGUI_Button:Enabled, PartyCast: LIBGUI_Checkbox:Enabled, PartyCast: LIBGUI_Optionbutton:Enabled |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ ButtonGetDisabledFlag(arg1)
 
 ## Description
 
-Observed as a window function across 2 addons.
+Observed as a window function across 4 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: buttonName, c_TIDY_CHAT_COPY.."Next", c_TIDY_CHAT_COPY.."Prev" |
+| arg1 | Observed as a function or method reference. | Observed values: buttonName, c_TIDY_CHAT_COPY.."Next", c_TIDY_CHAT_COPY.."Prev" |
 
 ## Returns
 
@@ -83,16 +83,19 @@ Observed as a window function across 2 addons.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
 - TidyChat
 - TidyRoll
 
 ## Examples
 
-- TidyChat: TidyChat.Copy.CopyNext -> ButtonGetDisabledFlag(c_TIDY_CHAT_COPY.."Next")
-- TidyChat: TidyChat.Copy.CopyPrev -> ButtonGetDisabledFlag(c_TIDY_CHAT_COPY.."Prev")
-- TidyChat: TidyChat.Options.OnCheckboxLBU -> ButtonGetDisabledFlag(checkboxName)
-- TidyRoll: TidyRoll.CustomAutoRoll.OnDeleteButton -> ButtonGetDisabledFlag(buttonName)
-- TidyRoll: TidyRollOptions.OnCheckboxLBU -> ButtonGetDisabledFlag(checkboxName)
+- InfoScroller: LIBGUI_Button:Enabled -> ButtonGetDisabledFlag(self.name)
+- InfoScroller: LIBGUI_Checkbox:Enabled -> ButtonGetDisabledFlag(self.name)
+- InfoScroller: LIBGUI_Optionbutton:Enabled -> ButtonGetDisabledFlag(self.name)
+- PartyCast: LIBGUI_Button:Enabled -> ButtonGetDisabledFlag(self.name)
+- PartyCast: LIBGUI_Checkbox:Enabled -> ButtonGetDisabledFlag(self.name)
+- PartyCast: LIBGUI_Optionbutton:Enabled -> ButtonGetDisabledFlag(self.name)
 
 ## Related APIs
 
@@ -100,22 +103,14 @@ Observed as a window function across 2 addons.
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- none
 
 ## Triggered By
 
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- none
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

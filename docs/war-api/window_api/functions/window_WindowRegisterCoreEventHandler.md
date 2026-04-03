@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 141
+- Raw weighted score: 153
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
+| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:285`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:285`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
 | Namespaces detected | WindowRegisterCoreEventHandler |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollOptions.Initialize |
+| Example locations | InfoScroller: LIBGUI_ELEMENT:RegisterEvent, PartyCast: LIBGUI_ELEMENT:RegisterEvent, TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollOptions.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -74,7 +74,7 @@ Observed binding On* window events directly to a named window.
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: c_TEXT_ENTRY_WINDOW.."ChannelButton", c_TEXT_ENTRY_WINDOW.."EntryBox", c_TEXT_ENTRY_WINDOW.."EntryBoxTextInput" |
 | windowEvent | Observed as an On* window event string. | Observed values: "OnHidden", "OnLButtonDown", "OnLButtonUp" |
-| handlerName | Observed as a Lua handler reference. | Observed values: "TidyChat.OnChannelButtonMButtonUp", "TidyChat.OnEntryBoxTextInputLBD", "TidyChat.OnEntryBoxUpdateShowing" |
+| handlerName | Observed as a Lua handler reference. | Observed values: "LIBGUI_ELEMENT.events."..e.."."..self.name, "TidyChat.OnChannelButtonMButtonUp", "TidyChat.OnEntryBoxTextInputLBD" |
 
 ## Returns
 
@@ -86,17 +86,19 @@ Observed binding On* window events directly to a named window.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
 - TidyChat
 - TidyRoll
 
 ## Examples
 
+- InfoScroller: LIBGUI_ELEMENT:RegisterEvent -> WindowRegisterCoreEventHandler(self.name, e, "LIBGUI_ELEMENT.events."..e.."."..self.name)
+- PartyCast: LIBGUI_ELEMENT:RegisterEvent -> WindowRegisterCoreEventHandler(self.name, e, "LIBGUI_ELEMENT.events."..e.."."..self.name)
 - TidyChat: TidyChatFrames.Initialize -> WindowRegisterCoreEventHandler(c_TEXT_ENTRY_WINDOW.."ChannelButton", "OnRButtonUp", "TidyChat.ToggleOptions")
 - TidyChat: TidyChatFrames.Initialize -> WindowRegisterCoreEventHandler(c_TEXT_ENTRY_WINDOW.."ChannelButton", "OnMButtonUp", "TidyChat.OnChannelButtonMButtonUp")
 - TidyChat: TidyChatFrames.Initialize -> WindowRegisterCoreEventHandler(c_TEXT_ENTRY_WINDOW.."EntryBox", "OnShown", "TidyChat.OnEntryBoxUpdateShowing")
 - TidyChat: TidyChatFrames.Initialize -> WindowRegisterCoreEventHandler(c_TEXT_ENTRY_WINDOW.."EntryBox", "OnHidden", "TidyChat.OnEntryBoxUpdateShowing")
-- TidyChat: TidyChatFrames.Initialize -> WindowRegisterCoreEventHandler(c_TEXT_ENTRY_WINDOW.."EntryBoxTextInput", "OnLButtonDown", "TidyChat.OnEntryBoxTextInputLBD")
-- TidyRoll: TidyRollOptions.Initialize -> WindowRegisterCoreEventHandler(c_TROLL_CLOSE, "OnLButtonUp", "TidyRollOptions.OnClose")
 
 ## Related APIs
 
@@ -104,11 +106,7 @@ Observed binding On* window events directly to a named window.
 
 ## Used With
 
-- [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
+- none
 
 ## Triggered By
 

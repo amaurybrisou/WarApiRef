@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:2201`, `/workspace/data/raw/TidyChat/TidyChat.lua:980`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
+| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:533`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:533`, `/workspace/data/raw/TidyChat/TidyChat.lua:2201`, `/workspace/data/raw/TidyChat/TidyChat.lua:980`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:136` |
 | Namespaces detected | ButtonSetText |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChat.Copy.InitializeCopyWindow, TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons, TidyRoll: TidyRoll.CustomAutoRoll.Initialize, TidyRoll: TidyRollOptions.Initialize |
+| Example locations | InfoScroller: LIBGUI_Button:SetText, PartyCast: LIBGUI_Button:SetText, TidyChat: TidyChat.Copy.InitializeCopyWindow, TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons, TidyRoll: TidyRoll.CustomAutoRoll.Initialize, TidyRoll: TidyRollOptions.Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 17 |
+| Global usage count | 17 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -84,17 +84,19 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
 - TidyChat
 - TidyRoll
 
 ## Examples
 
+- InfoScroller: LIBGUI_Button:SetText -> ButtonSetText(self.name, text and L "true" or L "false")
+- InfoScroller: LIBGUI_Button:SetText -> ButtonSetText(self.name, towstring(text))
+- PartyCast: LIBGUI_Button:SetText -> ButtonSetText(self.name, text and L "true" or L "false")
+- PartyCast: LIBGUI_Button:SetText -> ButtonSetText(self.name, towstring(text))
 - TidyChat: TidyChat.Copy.InitializeCopyWindow -> ButtonSetText(c_TIDY_CHAT_COPY.."Prev", L "Prev "..entriesPerPage)
 - TidyChat: TidyChat.Copy.InitializeCopyWindow -> ButtonSetText(c_TIDY_CHAT_COPY.."Next", L "Next "..entriesPerPage)
-- TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons -> ButtonSetText(c_CHANNEL_MENU.."AllianceButton", L "/"..GetChatString(StringTables.Chat.CHAT_CHANNEL_NAME_ALLIANCE))
-- TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons -> ButtonSetText(c_CHANNEL_MENU.."AdviceButton", L "/"..GetChatString(StringTables.Chat.CHAT_CHANNEL_NAME_ADVICE))
-- TidyChat: TidyChatFrames.InitializeChannelMenuTidyChannelButtons -> ButtonSetText(c_CHANNEL_MENU.."ScenarioButton", L "/"..GetChatString(StringTables.Chat.CHAT_CHANNEL_NAME_SCENARIO))
-- TidyRoll: TidyRoll.CustomAutoRoll.Initialize -> ButtonSetText(c_AUTO_ROLL_APPLY_BUTTON, L "Ok")
 
 ## Related APIs
 
@@ -102,15 +104,13 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Used With
 
+- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
+- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [SystemData.ChatLogFilters.ADVICE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ADVICE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.ChatLogFilters.ALLIANCE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ALLIANCE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.ChatLogFilters.SCENARIO](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SCENARIO.md) (HIGH 100/100) - SystemData Field
-- [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
-- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 90/100) - Window Function
-- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 90/100) - Window Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
+- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
@@ -118,9 +118,6 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Affects
 
-- [SystemData.ChatLogFilters.ADVICE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ADVICE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.ChatLogFilters.ALLIANCE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ALLIANCE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.ChatLogFilters.SCENARIO](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SCENARIO.md) (HIGH 100/100) - SystemData Field
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

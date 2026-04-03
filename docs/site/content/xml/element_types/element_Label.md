@@ -10,38 +10,41 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 198
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +20 Observed in both XML and Lua paths: Cross-source linkage reinforces platform-level usage.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/Moth/Moth.xml:173`, `/workspace/data/raw/TidyChat/TidyChat.xml:41`, `/workspace/data/raw/TidyChat/TidyChat.xml:52`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:65`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:16`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:27`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:88`, `/workspace/data/raw/TidyChat/TidyChatTabTextEntry.xml:117` |
+| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, TidyChat, TidyRoll, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.xml:101`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:129`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:135`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:163`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:169`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:197`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:203`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:21` |
 | Namespaces detected | Label |
-| Source kinds | xml_frames |
-| Example locations | Moth: MothCellTemplateText, TidyChat: TChatCheckboxTemplateLabel, TidyChat: TChatLabel, TidyChat: TChatTabTextEntryTemplateAnchorPointLabel, TidyChat: TChatTabTextEntryTemplateBackgroundAlphaLabel, TidyChat: TChatTabTextEntryTemplateChannelAlphaLabel |
-| XML usage count | 32 |
-| XML attribute usage count | 32 |
-| Lua usage count | 0 |
+| Source kinds | xml_frames, xml_handlers |
+| Example locations | InfoScroller: InfoScrollerMainWindowLabel1, InfoScroller: InfoScrollerTemplateLabel1, InfoScroller: InfoScrollerTemplateLabel1BG, InfoScroller: InfoScrollerTemplateLabel2, InfoScroller: InfoScrollerTemplateLabel2BG, InfoScroller: InfoScrollerTemplateLabel3 |
+| XML usage count | 117 |
+| XML attribute usage count | 117 |
+| Lua usage count | 2 |
 | Global usage count | 0 |
 | Local definition count | 0 |
-| Documentation references | 0 |
+| Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
-| Event binding presence | no |
-| Observed in XML and Lua | no |
+| Event binding presence | yes |
+| Observed in XML and Lua | yes |
 | Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
@@ -57,21 +60,40 @@
 
 ## Description
 
-Observed XML element type instantiated by 3 addons.
+Observed XML element type instantiated by 7 addons.
 
 ## Common Attributes
 
 - name
-- inherits
 - font
-- handleinput
 - textalign
+- layer
+- handleinput
 - autoresize
 - wordwrap
+- warnOnTextCropped
+- popable
 - maxchars
-- autoresizewidth
-- sticky
-- text
+- inherits
+- textAutoFitMinScale
+
+## Common Handlers
+
+- [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md)
+- [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md)
+
+## Common Handler Functions
+
+- EA_ChatWindow.OnHyperLinkRButtonUp
+- EA_ChatWindow.OnHyperLinkLButtonUp
+
+
+## XML Event Bindings
+
+| Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
+|-------|----------|---------------------|-------------------|-----------------|
+| [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md) | custom | EA_ChatWindow.OnHyperLinkLButtonUp | `function(...)` | LOW |
+| [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) | custom | EA_ChatWindow.OnHyperLinkRButtonUp | `function(...)` | LOW |
 
 ## Common Inherits
 
@@ -82,6 +104,7 @@ Observed XML element type instantiated by 3 addons.
 ## Common Parent Elements
 
 - [Window](element_Window.md)
+- [Button](element_Button.md)
 
 ## Common Template Bases
 
@@ -96,46 +119,79 @@ Observed XML element type instantiated by 3 addons.
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `inherits` | optional | 75% | EA_Label_DefaultText, TChatLabel, TRollLabel |
-| `font` | optional | 43% | font_clear_small_bold, font_clear_large_bold, font_clear_medium, font_clear_default |
-| `handleinput` | optional | 31% | false |
-| `textalign` | optional | 28% | left, center, right |
-| `autoresize` | optional | 21% | true |
-| `wordwrap` | optional | 18% | true |
-| `maxchars` | optional | 6% | 1024, 256 |
-| `autoresizewidth` | optional | 3% | true |
-| `sticky` | optional | 3% | false |
-| `text` | optional | 3% |  |
+| `font` | **required** | 84% | font_clear_medium, font_clear_small_bold, font_chat_text, font_clear_tiny, ... |
+| `textalign` | **required** | 80% | left, center, bottom, right |
+| `layer` | optional | 72% | overlay, secondary, default, background, ... |
+| `handleinput` | optional | 71% | false, true |
+| `autoresize` | optional | 63% | true, false |
+| `wordwrap` | optional | 38% | true, false |
+| `warnOnTextCropped` | optional | 37% | false |
+| `popable` | optional | 34% | false |
+| `maxchars` | optional | 29% | 1024, 72, 100, 16, ... |
+| `inherits` | optional | 20% | EA_Label_DefaultText, TChatLabel, TRollLabel |
+| `textAutoFitMinScale` | optional | 18% | 0.3 |
+| `autoresizewidth` | optional | 12% | true |
+| `sticky` | optional | 9% | false, true |
+| `autoresizeheight` | optional | 7% | true |
+| `ellipsisOnCrop` | optional | 3% | true |
+| `fontscale` | optional | 1% | 0.5 |
+| `scale` | optional | 1% | 0.5 |
+| `text` | optional | 0% |  |
+## Handler Callback Signatures
+
+Expected callback argument patterns for event handlers on this element type:
+
+### OnHyperLinkLButtonUp
+
+Confidence: LOW
+
+### OnHyperLinkRButtonUp
+
+Confidence: LOW
+
 ## Lua Functions Manipulating This Type
 
 - TidyRollOptions.Initialize
 
+
+## Binding Resolution
+
+- Total handler declarations: 37
+- Resolved to Lua functions: 0 (0%)
+
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
+- Soloq
 - TidyChat
 - TidyRoll
+- minesweep
 
 ## Examples
 
-- Moth: MothCellTemplateText -> Label MothCellTemplateText
-- TidyChat: TChatCheckboxTemplateLabel -> Label TChatCheckboxTemplateLabel
-- TidyChat: TChatLabel -> Label TChatLabel
-- TidyChat: TChatTabTextEntryTemplateAnchorPointLabel -> Label TChatTabTextEntryTemplateAnchorPointLabel
-- TidyChat: TChatTabTextEntryTemplateBackgroundAlphaLabel -> Label TChatTabTextEntryTemplateBackgroundAlphaLabel
-- TidyChat: TChatTabTextEntryTemplateChannelAlphaLabel -> Label TChatTabTextEntryTemplateChannelAlphaLabel
+- InfoScroller: InfoScrollerMainWindowLabel1 -> Label InfoScrollerMainWindowLabel1
+- InfoScroller: InfoScrollerTemplateLabel1 -> Label InfoScrollerTemplateLabel1
+- InfoScroller: InfoScrollerTemplateLabel1BG -> Label InfoScrollerTemplateLabel1BG
+- InfoScroller: InfoScrollerTemplateLabel2 -> Label InfoScrollerTemplateLabel2
+- InfoScroller: InfoScrollerTemplateLabel2BG -> Label InfoScrollerTemplateLabel2BG
+- InfoScroller: InfoScrollerTemplateLabel3 -> Label InfoScrollerTemplateLabel3
 
 ## Related APIs
 
-- none
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
+- [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 
-- none
+- [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) (HIGH 100/100) - XML Event
 
 ## Triggered By
 
-- none
+- [OnHyperLinkLButtonUp](../handlers/handler_OnHyperLinkLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnHyperLinkRButtonUp](../handlers/handler_OnHyperLinkRButtonUp.md) (HIGH 100/100) - XML Event
 
 ## Affects
 

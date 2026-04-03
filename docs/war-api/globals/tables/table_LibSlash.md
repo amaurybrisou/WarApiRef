@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | LibSlash, NPC Item Sale Price, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:189`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:265`, `/workspace/data/raw/nisp/Source/Nisp.lua:26` |
+| Addons seen in | InfoScroller, Lib RuString, LibSlash, NPC Item Sale Price, PartyCast, Soloq, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:30`, `/workspace/data/raw/PartyCast/PartyCast.lua:51`, `/workspace/data/raw/RuStringLib/RuStringLib.lua:282`, `/workspace/data/raw/Soloq/Soloq.lua:22`, `/workspace/data/raw/TidyChat/TidyChat.lua:189`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:265`, `/workspace/data/raw/TimeToDie/TimeToDie.lua:229`, `/workspace/data/raw/minesweep/minesweep.lua:7` |
 | Namespaces detected | LibSlash |
 | Source kinds | globals, lua_calls |
-| Example locations | NPC Item Sale Price: Nisp.Init, TidyChat: TidyChat.OnLoad, TidyRoll: TidyRoll.OnLoad |
+| Example locations | InfoScroller: InfoScroller.OnInitialize, Lib RuString: LibRuString.OnLoad, NPC Item Sale Price: Nisp.Init, PartyCast: PartyCast.Init, Soloq: Soloq.OnInitialize, TidyChat: TidyChat.OnLoad |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
+| Lua usage count | 14 |
 | Global usage count | 2 |
 | Local definition count | 1 |
 | Documentation references | 1 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 4 addons.
+Observed shared global table or namespace surfaced in 10 addons.
 
 ## Functions
 
@@ -70,16 +70,25 @@ Observed shared global table or namespace surfaced in 4 addons.
 
 ## Seen In
 
+- InfoScroller
+- Lib RuString
 - LibSlash
 - NPC Item Sale Price
+- PartyCast
+- Soloq
 - TidyChat
 - TidyRoll
+- TimeToDie
+- minesweep
 
 ## Examples
 
+- InfoScroller: InfoScroller.OnInitialize -> LibSlash.RegisterSlashCmd("infoscroller", function(input)InfoScroller_config.Slash(input)end)
+- InfoScroller: InfoScroller.OnInitialize -> LibSlash.RegisterSlashCmd("info", function(input)InfoScroller_config.Slash(input)end)
+- Lib RuString: LibRuString.OnLoad -> LibSlash.RegisterWSlashCmd("forcedrustrings", function(input)if(input==L "true")then LibRuString.ToggleHook(true)elseif(input==L "false")then LibRuString.ToggleHook(false)end end)
 - NPC Item Sale Price: Nisp.Init -> LibSlash.RegisterSlashCmd("nisp", function(args)Nisp.SlashHandler(args)end)
-- TidyChat: TidyChat.OnLoad -> LibSlash.RegisterWSlashCmd("tchat", TidyChat.ToggleOptions)
-- TidyRoll: TidyRoll.OnLoad -> LibSlash.RegisterWSlashCmd("troll", TidyRoll.ToggleOptions)
+- PartyCast: PartyCast.Init -> LibSlash.RegisterSlashCmd("pc", function(input)PartyCast.Command(input)end)
+- PartyCast: PartyCast.Init -> LibSlash.RegisterSlashCmd("partycast", function(input)PartyCast.Command(input)end)
 
 ## Related APIs
 

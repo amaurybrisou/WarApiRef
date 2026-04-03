@@ -2,37 +2,41 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 90/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Raw weighted score: 135
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:215`, `/workspace/data/raw/Moth/Moth.lua:227` |
+| Addons seen in | InfoScroller, Moth, PartyCast, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:463`, `/workspace/data/raw/Moth/Moth.lua:215`, `/workspace/data/raw/Moth/Moth.lua:227`, `/workspace/data/raw/PartyCast/PartyCast.lua:399`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:463`, `/workspace/data/raw/minesweep/minesweep.lua:109` |
 | Namespaces detected | LabelSetTextColor |
 | Source kinds | lua_calls |
-| Example locations | Moth: Moth.SetCellText, Moth: Moth.SetCellTextIcon |
+| Example locations | InfoScroller: LIBGUI_Label:Color, Moth: Moth.SetCellText, Moth: Moth.SetCellTextIcon, PartyCast: LIBGUI_Label:Color, PartyCast: PartyCast.FetchedText, minesweep: minesweep.ShowCell |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -40,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -67,10 +71,10 @@ Observed updating label text or label styling on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: cellText |
-| arg2 | Observed as a function or method reference. | Observed values: color.r |
-| arg3 | Observed as a function or method reference. | Observed values: color.g |
-| arg4 | Observed as a function or method reference. | Observed values: color.b |
+| arg1 | Observed as a text or wstring payload. | Observed values: "PartyCastWindow"..PlayerNumber.."Name", WindowName.."Text", cellText |
+| arg2 | Observed as a function or method reference. | Observed values: DefaultColor.GOLD.r, PartyCast.Settings.Colors.Ability[1], PartyCast.Settings.Colors.Failed[1] |
+| arg3 | Observed as a function or method reference. | Observed values: DefaultColor.GOLD.g, PartyCast.Settings.Colors.Ability[2], PartyCast.Settings.Colors.Failed[2] |
+| arg4 | Observed as a function or method reference. | Observed values: DefaultColor.GOLD.b, PartyCast.Settings.Colors.Ability[3], PartyCast.Settings.Colors.Failed[3] |
 
 ## Returns
 
@@ -82,12 +86,19 @@ Observed updating label text or label styling on existing controls.
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
+- minesweep
 
 ## Examples
 
+- InfoScroller: LIBGUI_Label:Color -> LabelSetTextColor(self.name, red, green, blue)
 - Moth: Moth.SetCellText -> LabelSetTextColor(cellText, color.r, color.g, color.b)
 - Moth: Moth.SetCellTextIcon -> LabelSetTextColor(cellText, color.r, color.g, color.b)
+- PartyCast: LIBGUI_Label:Color -> LabelSetTextColor(self.name, red, green, blue)
+- PartyCast: PartyCast.FetchedText -> LabelSetTextColor("PartyCastWindow"..PlayerNumber.."Name", DefaultColor.GOLD.r, DefaultColor.GOLD.g, DefaultColor.GOLD.b)
+- PartyCast: PartyCast.FetchedText -> LabelSetTextColor("PartyCastWindow"..PlayerNumber.."Name", PartyCast.Settings.Colors.Ability[1], PartyCast.Settings.Colors.Ability[2], PartyCast.Settings.Colors.Ability[3])
 
 ## Related APIs
 
@@ -95,11 +106,15 @@ Observed updating label text or label styling on existing controls.
 
 ## Used With
 
+- [DynamicImageSetTextureDimensions](window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
+- [LabelGetTextColor](window_LabelGetTextColor.md) (HIGH 100/100) - Window Function
 - [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 90/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
+- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 88/100) - Global Function
 - [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 80/100) - Window Function
+- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 - [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 71/100) - Global Function
 
 ## Triggered By
@@ -112,4 +127,4 @@ Observed updating label text or label styling on existing controls.
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- none

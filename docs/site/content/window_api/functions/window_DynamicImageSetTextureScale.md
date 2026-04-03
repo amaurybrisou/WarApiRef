@@ -2,36 +2,41 @@
 
 - Category: Window Function
 - Confidence level: HIGH
-- Confidence score: 80/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 80/100
+- Final score: 100/100
+
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:421` |
+| Addons seen in | InfoScroller, Moth, PartyCast |
+| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1323`, `/workspace/data/raw/Moth/Moth.lua:418`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1323` |
 | Namespaces detected | DynamicImageSetTextureScale |
 | Source kinds | lua_calls |
-| Example locations | Moth: Moth.UpdateNPCIcon |
+| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_Image:TexScale, Moth: Moth.UpdateNPCIcon, PartyCast: LIBGUI_Image:TexScale |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -39,8 +44,8 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
-| Consistent arguments | no |
+| Consistent role | yes |
+| Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
@@ -66,8 +71,8 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: iconWindow |
-| arg2 | Observed as a function or method reference. | Observed values: filterData.scale |
+| arg1 | Observed as a function or method reference. | Observed values: WindowName.."Image", iconWindow, self.name |
+| arg2 | Observed as a function or method reference. | Observed values: TicketTable.Image.scale, filterData.scale, scale |
 
 ## Returns
 
@@ -79,11 +84,16 @@ Observed mutating runtime image resources on existing controls.
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
 
 ## Examples
 
+- InfoScroller: InfoScroller.CreateCard -> DynamicImageSetTextureScale(WindowName.."Image", TicketTable.Image.scale)
+- InfoScroller: LIBGUI_Image:TexScale -> DynamicImageSetTextureScale(self.name, scale)
 - Moth: Moth.UpdateNPCIcon -> DynamicImageSetTextureScale(iconWindow, filterData.scale)
+- PartyCast: LIBGUI_Image:TexScale -> DynamicImageSetTextureScale(self.name, scale)
 
 ## Related APIs
 
@@ -91,11 +101,11 @@ Observed mutating runtime image resources on existing controls.
 
 ## Used With
 
-- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 90/100) - Window Function
-- [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 80/100) - Window Function
+- [DynamicImageSetTextureOrientation](window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 98/100) - Window Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
@@ -103,8 +113,9 @@ Observed mutating runtime image resources on existing controls.
 
 ## Affects
 
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
+- none

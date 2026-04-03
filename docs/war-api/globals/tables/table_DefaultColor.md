@@ -26,7 +26,7 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyRoll |
+| Addons seen in | InfoScroller, Moth, TidyRoll |
 | Files seen in | `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:145` |
 | Namespaces detected | DefaultColor |
 | Source kinds | globals, lua_calls |
@@ -35,7 +35,7 @@
 | XML attribute usage count | 0 |
 | Lua usage count | 1 |
 | Global usage count | 1 |
-| Local definition count | 2 |
+| Local definition count | 3 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
 | Known engine namespace | yes |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Observed shared global table or namespace surfaced in 2 addons.
+Observed shared global table or namespace surfaced in 3 addons.
 
 ## Functions
 
@@ -69,6 +69,7 @@ Observed shared global table or namespace surfaced in 2 addons.
 
 ## Seen In
 
+- InfoScroller
 - Moth
 - TidyRoll
 

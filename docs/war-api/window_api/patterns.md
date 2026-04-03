@@ -2,48 +2,48 @@
 
 ## Window creation
 
-- Confidence: MEDIUM
+- Confidence: HIGH
 
 - Description: Observed top-level UI windows being created from XML definitions at initialization time.
 
 - Evidence:
 
-- Moth: CreateWindow("Moth", true)
+- InfoScroller: CreateWindow("InfoScrollerMainWindow", true)
+  - Moth: CreateWindow("Moth", true)
+  - Soloq: CreateWindow(overviewWindowName, false)
   - TidyChat: CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
   - TidyRoll: CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
   - TidyRoll: CreateWindow(c_TIDY_ROLL_ANCHOR, false)
-  - TidyRoll: CreateWindow(c_TIDY_ROLL_TIMER, false)
-  - TidyRoll: CreateWindow(c_TIDY_ROLL_ESC, false)
 
 ## Template instantiation
 
-- Confidence: MEDIUM
+- Confidence: HIGH
 
 - Description: Observed repeated UI elements being instantiated from XML templates at runtime.
 
 - Evidence:
 
-- TidyChat: CreateWindowFromTemplate(c_CHANNEL_MENU.."AllianceButton", "ChannelMenuButton", "ChatChannelSelectionWindow")
-  - TidyChat: CreateWindowFromTemplate(c_CHANNEL_MENU.."AdviceButton", "ChannelMenuButton", "ChatChannelSelectionWindow")
-  - TidyChat: CreateWindowFromTemplate(c_CHANNEL_MENU.."ScenarioButton", "ChannelMenuButton", "ChatChannelSelectionWindow")
-  - TidyRoll: CreateWindowFromTemplate(c_TROLL_TITLE, "EA_Label_DefaultText", c_TIDY_ROLL_OPTIONS)
-  - TidyRoll: CreateWindowFromTemplate(c_TROLL_VERSION, "EA_Label_DefaultText", c_TIDY_ROLL_OPTIONS)
-  - TidyRoll: CreateWindowFromTemplate(c_TROLL_CLOSE, "EA_Button_DefaultWindowClose", c_TIDY_ROLL_OPTIONS)
+- InfoScroller: CreateWindowFromTemplate(WindowName, "InfoScrollerTemplate", "InfoScrollerMainWindow")
+  - InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
+  - InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
+  - InfoScroller: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
+  - InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
+  - InfoScroller: CreateWindowFromTemplate(w.name, base, w.parent)
 
 ## Runtime anchoring
 
-- Confidence: MEDIUM
+- Confidence: HIGH
 
 - Description: Observed layouts being finalized in Lua by clearing and re-adding anchors after window creation.
 
 - Evidence:
 
-- Moth: WindowAddAnchor("Moth", "bottomleft", "CursorWindow", "topleft", 0, 0)
+- InfoScroller: WindowAddAnchor(WindowName.."Image", anchor, WindowName, anchor, T_X, T_Y)
+  - InfoScroller: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
+  - Moth: WindowAddAnchor("Moth", "bottomleft", "CursorWindow", "topleft", 0, 0)
   - Moth: WindowAddAnchor("MothHealthBar", "bottomleft", "MothBackground", "topleft", 0, yOffset)
-  - TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW.."EntryBox", "topleft", c_TEXT_ENTRY_WINDOW, "topleft", EntryBoxAnchorXOffset, 0)
-  - TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW.."EntryBox", "bottomright", c_TEXT_ENTRY_WINDOW, "bottomright", 0, 0)
-  - TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW, TEAnchorPoint.."left", TEAnchorRelativeWindow, TEAnchorRelativePoint.."left", 0, 0)
-  - TidyChat: WindowAddAnchor(c_TEXT_ENTRY_WINDOW, TEAnchorPoint.."right", TEAnchorRelativeWindow, TEAnchorRelativePoint.."right", 0, 0)
+  - PartyCast: WindowAddAnchor(self.name, pointOnAnchor, anchorWindow, pointOnSelf, xOffset, yOffset)
+  - PartyCast: WindowAddAnchor("PartyCastWindow"..i, Frame_Anchor, "PartyCastWindow_Dynamic"..i, Frame_Anchor, 0, PartyCast.Settings.Offset)
 
 ## XML to Lua binding
 
@@ -53,9 +53,9 @@
 
 - Evidence:
 
-- TidyChat: TChatCheckboxTemplate.OnLButtonUp -> TidyChat.Options.OnCheckboxLBU
-  - TidyChat: TChatTabButton.OnLButtonUp -> TidyChat.Options.OnTabLBU
-  - TidyChat: TChatTabWindowsTemplateSelectWindowCombo.OnSelChanged -> TidyChat.Options.UpdateGroupTabs
-  - TidyChat: TidyChatCopy.OnHidden -> TidyChat.Copy.OnHidden
-  - TidyChat: TidyChatCopy.OnMouseWheel -> TidyChat.Copy.OnMouseWheel
-  - TidyChat: TidyChatCopy.OnShown -> TidyChat.Copy.OnShown
+- InfoScroller: InfoScrollerTemplateLabel1.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel1.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel2.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel2.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel3.OnHyperLinkLButtonUp -> EA_ChatWindow.OnHyperLinkLButtonUp
+  - InfoScroller: InfoScrollerTemplateLabel3.OnHyperLinkRButtonUp -> EA_ChatWindow.OnHyperLinkRButtonUp

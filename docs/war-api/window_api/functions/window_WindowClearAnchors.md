@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyChat |
-| Files seen in | `/workspace/data/raw/Moth/Moth.lua:205`, `/workspace/data/raw/Moth/Moth.lua:578`, `/workspace/data/raw/TidyChat/TidyChat.lua:239`, `/workspace/data/raw/TidyChat/TidyChat.lua:344`, `/workspace/data/raw/TidyChat/TidyChat.lua:404`, `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyChat/TidyChat.lua:980` |
+| Addons seen in | InfoScroller, Moth, PartyCast, TidyChat |
+| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.lua:95`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:152`, `/workspace/data/raw/Moth/Moth.lua:205`, `/workspace/data/raw/Moth/Moth.lua:575`, `/workspace/data/raw/PartyCast/PartyCast.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:152`, `/workspace/data/raw/TidyChat/TidyChat.lua:239`, `/workspace/data/raw/TidyChat/TidyChat.lua:344` |
 | Namespaces detected | WindowClearAnchors |
 | Source kinds | lua_calls |
-| Example locations | Moth: Moth.Anchor, Moth: Moth.HealthBar, TidyChat: TidyChatCore.SetTextEntry, TidyChat: TidyChatCore.SetWindowGroup, TidyChat: TidyChatCore.SetWindowTextLog, TidyChat: TidyChatFrames.Initialize |
+| Example locations | InfoScroller: InfoScroller.CreateCard, InfoScroller: LIBGUI_ELEMENT:ClearAnchors, Moth: Moth.Anchor, Moth: Moth.HealthBar, PartyCast: LIBGUI_ELEMENT:ClearAnchors, PartyCast: PartyCast.Update |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 15 |
-| Global usage count | 15 |
+| Lua usage count | 21 |
+| Global usage count | 21 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed resetting a window layout before applying new runtime anchors.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "Moth", "MothHealthBar", c_CHANNEL_MENU.."WarbandButton" |
+| windowName | Observed as a target window name. | Observed values: "Moth", "MothHealthBar", "PartyCastWindow"..i |
 
 ## Returns
 
@@ -83,17 +83,19 @@ Observed resetting a window layout before applying new runtime anchors.
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
 - TidyChat
 
 ## Examples
 
+- InfoScroller: InfoScroller.CreateCard -> WindowClearAnchors(WindowName.."Image")
+- InfoScroller: LIBGUI_ELEMENT:ClearAnchors -> WindowClearAnchors(self.name)
 - Moth: Moth.Anchor -> WindowClearAnchors("Moth")
 - Moth: Moth.HealthBar -> WindowClearAnchors("MothHealthBar")
-- TidyChat: TidyChatCore.SetTextEntry -> WindowClearAnchors(c_TEXT_ENTRY_WINDOW.."EntryBox")
-- TidyChat: TidyChatCore.SetTextEntry -> WindowClearAnchors(c_TEXT_ENTRY_WINDOW)
-- TidyChat: TidyChatCore.SetWindowGroup -> WindowClearAnchors(wndGroupName.."Foreground")
-- TidyChat: TidyChatCore.SetWindowGroup -> WindowClearAnchors(wndGroupName)
+- PartyCast: LIBGUI_ELEMENT:ClearAnchors -> WindowClearAnchors(self.name)
+- PartyCast: PartyCast.Update -> WindowClearAnchors("PartyCastWindow"..i)
 
 ## Related APIs
 
@@ -101,21 +103,16 @@ Observed resetting a window layout before applying new runtime anchors.
 
 ## Used With
 
-- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [SystemData.ChatLogFilters.ADVICE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ADVICE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.ChatLogFilters.ALLIANCE](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.ALLIANCE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.ChatLogFilters.SCENARIO](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SCENARIO.md) (HIGH 100/100) - SystemData Field
+- [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [WindowGetAlpha](window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [WindowRegisterCoreEventHandler](window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
 - [WindowSetHandleInput](window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 90/100) - Window Function
-- [WindowStopAlphaAnimation](window_WindowStopAlphaAnimation.md) (HIGH 90/100) - Window Function
-- [WindowGetOffsetFromParent](window_WindowGetOffsetFromParent.md) (HIGH 80/100) - Window Function
-- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 71/100) - Global Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [StatusBarGetMaximumValue](window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
@@ -123,6 +120,7 @@ Observed resetting a window layout before applying new runtime anchors.
 
 ## Affects
 
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

@@ -10,13 +10,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes, matches a known engine namespace.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -26,13 +26,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth, TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/Moth/Moth.xml:109`, `/workspace/data/raw/Moth/Moth.xml:128`, `/workspace/data/raw/Moth/Moth.xml:157`, `/workspace/data/raw/Moth/Moth.xml:18`, `/workspace/data/raw/Moth/Moth.xml:30`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:9`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:9` |
+| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, TidyChat, TidyRoll, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.xml:236`, `/workspace/data/raw/Moth/Moth.xml:109`, `/workspace/data/raw/Moth/Moth.xml:128`, `/workspace/data/raw/Moth/Moth.xml:157`, `/workspace/data/raw/Moth/Moth.xml:18`, `/workspace/data/raw/Moth/Moth.xml:30`, `/workspace/data/raw/PartyCast/PartyCast.xml:305`, `/workspace/data/raw/PartyCast/PartyCast.xml:348` |
 | Namespaces detected | EA_FullResizeImage_TintableSolidBackground |
 | Source kinds | xml_attributes |
-| Example locations | AutoRollRowTemplateBackground, MothBackground, MothBordertronned, MothCellTemplateBackground, MothHealthBar, MothRowTemplateBackground |
-| XML usage count | 7 |
-| XML attribute usage count | 7 |
+| Example locations | AutoRollRowTemplateBackground, InfoScrollerTemplateBackGroundBG, MothBackground, MothBordertronned, MothCellTemplateBackground, MothHealthBar |
+| XML usage count | 13 |
+| XML attribute usage count | 13 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -57,23 +57,33 @@
 
 ## Description
 
-Observed engine XML template or inherited constant referenced by 3 addons.
+Observed engine XML template or inherited constant referenced by 7 addons.
 
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
+- Soloq
 - TidyChat
 - TidyRoll
+- minesweep
 
 ## Used By
 
 - AutoRollRowTemplateBackground
+- InfoScrollerTemplateBackGroundBG
 - MothBackground
 - MothBordertronned
 - MothCellTemplateBackground
 - MothHealthBar
 - MothRowTemplateBackground
+- PartyCastWindow_Template_LargeBG
+- PartyCastWindow_Template_PlainBG
+- SoloqOverviewWindowQueueStatusLeftBorder
+- SoloqOverviewWindowUnderline
 - TidyChatLootRollRowTemplateBackground
+- minesweep_BoxBG
 
 ## Related APIs
 

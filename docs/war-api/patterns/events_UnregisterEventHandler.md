@@ -9,27 +9,37 @@ Observed removing previously registered global runtime handlers.
 
 ## Involved APIs
 
-- [SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA](../systemdata/fields/systemdata_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA](../events/game_events/game_event_SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.LOADING_END](../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOADING_END](../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.RELOAD_INTERFACE](../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.RELOAD_INTERFACE](../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERACT_DONE](../events/game_events/game_event_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.INTERACT_DONE](../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_BEGIN_CAST](../events/game_events/game_event_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.PLAYER_BEGIN_CAST](../systemdata/fields/systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CAST_TIMER_SETBACK](../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CAST_TIMER_SETBACK](../events/game_events/game_event_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.PLAYER_DEATH](../events/game_events/game_event_SystemData.Events.PLAYER_DEATH.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.PLAYER_DEATH](../systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_END_CAST](../systemdata/fields/systemdata_SystemData.Events.PLAYER_END_CAST.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_END_CAST](../events/game_events/game_event_SystemData.Events.PLAYER_END_CAST.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.PLAYER_START_INTERACT_TIMER](../systemdata/fields/systemdata_SystemData.Events.PLAYER_START_INTERACT_TIMER.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_START_INTERACT_TIMER](../events/game_events/game_event_SystemData.Events.PLAYER_START_INTERACT_TIMER.md) (HIGH 100/100) - Game Event
+- [UnregisterEventHandler](../globals/functions/global_UnregisterEventHandler.md) (HIGH 81/100) - Global Function
 
 ## Flow Diagram
 
 ```text
-Button <-> OnLButtonUp
+SystemData.Events.ENTER_WORLD <-> SystemData.Events.INTERACT_DONE
 ```
 
 ## Example Code
 
 ```lua
-TidyRoll: UnregisterEventHandler(SystemData.Events.LOADING_END, "TidyRoll.OnLoad")
+PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
 ```
 
 ## Evidence
 
-- TidyRoll: UnregisterEventHandler(SystemData.Events.LOADING_END, "TidyRoll.OnLoad")
-- TidyRoll: UnregisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "TidyRoll.OnLoad")
-- TidyRoll: UnregisterEventHandler(SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA, "TidyRoll.UpdateLootRollData")
+- PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
+- PartyCast: UnregisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
+- PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, "PartyCast.StartCast")
+- PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_END_CAST, "PartyCast.EndCast")
+- PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_CAST_TIMER_SETBACK, "PartyCast.SetbackCast")
+- PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_DEATH, "PartyCast.ON_DEATH")

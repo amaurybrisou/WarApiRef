@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:2249`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:329`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:434`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:746` |
+| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:655`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:668`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:710`, `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:723`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:655`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:668`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:710`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:723` |
 | Namespaces detected | TextEditBoxSetText |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChat.Copy.OnHidden, TidyRoll: TidyRoll.CustomAutoRoll.AddById, TidyRoll: TidyRoll.CustomAutoRoll.Reset, TidyRoll: TidyRollOptions.Reset |
+| Example locations | InfoScroller: LIBGUI_MultiTextbox:Clear, InfoScroller: LIBGUI_MultiTextbox:SetText, InfoScroller: LIBGUI_Textbox:Clear, InfoScroller: LIBGUI_Textbox:SetText, PartyCast: LIBGUI_MultiTextbox:Clear, PartyCast: LIBGUI_MultiTextbox:SetText |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 15 |
+| Global usage count | 15 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -84,17 +84,19 @@ Observed reading from or writing to edit-box controls.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
 - TidyChat
 - TidyRoll
 
 ## Examples
 
-- TidyChat: TidyChat.Copy.OnHidden -> TextEditBoxSetText(c_TIDY_CHAT_COPY.."Log", L "")
-- TidyRoll: TidyRoll.CustomAutoRoll.AddById -> TextEditBoxSetText(c_AUTO_ROLL_ADD_BY_ID_ID_EDITBOX, L "")
-- TidyRoll: TidyRoll.CustomAutoRoll.AddById -> TextEditBoxSetText(c_AUTO_ROLL_ADD_BY_ID_NAME_EDITBOX, L "")
-- TidyRoll: TidyRoll.CustomAutoRoll.Reset -> TextEditBoxSetText(c_AUTO_ROLL_ADD_BY_ID_ID_EDITBOX, L "")
-- TidyRoll: TidyRoll.CustomAutoRoll.Reset -> TextEditBoxSetText(c_AUTO_ROLL_ADD_BY_ID_NAME_EDITBOX, L "")
-- TidyRoll: TidyRollOptions.Reset -> TextEditBoxSetText(c_TROLL_BNUM_TBOX, towstring(GetSetting("button-number")))
+- InfoScroller: LIBGUI_MultiTextbox:Clear -> TextEditBoxSetText(self.name, L "")
+- InfoScroller: LIBGUI_MultiTextbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
+- InfoScroller: LIBGUI_Textbox:Clear -> TextEditBoxSetText(self.name, L "")
+- InfoScroller: LIBGUI_Textbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
+- PartyCast: LIBGUI_MultiTextbox:Clear -> TextEditBoxSetText(self.name, L "")
+- PartyCast: LIBGUI_MultiTextbox:SetText -> TextEditBoxSetText(self.name, towstring(text))
 
 ## Related APIs
 
@@ -102,25 +104,14 @@ Observed reading from or writing to edit-box controls.
 
 ## Used With
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
-- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 90/100) - Window Function
-- [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 90/100) - Window Function
+- none
 
 ## Triggered By
 
-- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 100/100) - XML Event
-- [OnHidden](../../events/window_events/window_event_OnHidden.md) (HIGH 100/100) - Window Event
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- none
 
 ## Affects
 
-- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Notes

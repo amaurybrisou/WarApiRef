@@ -92,8 +92,8 @@ Observed as a window function across 1 addons.
 
 - [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 98/100) - Window Function
-- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 90/100) - Window Function
+- [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 
 ## Triggered By
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:1973`, `/workspace/data/raw/TidyChat/TidyChat.lua:2117`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:378`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:782` |
+| Addons seen in | InfoScroller, PartyCast, TidyChat, TidyRoll |
+| Files seen in | `/workspace/data/raw/InfoScroller/libs/LibGUI.lua:1107`, `/workspace/data/raw/PartyCast/libs/LibGUI.lua:1107`, `/workspace/data/raw/TidyChat/TidyChat.lua:1973`, `/workspace/data/raw/TidyChat/TidyChat.lua:2117`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.lua:378`, `/workspace/data/raw/TidyRoll/TidyRollOptions.lua:782` |
 | Namespaces detected | ComboBoxGetSelectedMenuItem |
 | Source kinds | lua_calls |
-| Example locations | TidyChat: TidyChat.Options.OnApply, TidyChat: TidyChat.Options.UpdateGroupTabs, TidyRoll: TidyRoll.CustomAutoRoll.OnChoiceChange, TidyRoll: TidyRollOptions.OnApply |
+| Example locations | InfoScroller: LIBGUI_Combobox:SelectedIndex, PartyCast: LIBGUI_Combobox:SelectedIndex, TidyChat: TidyChat.Options.OnApply, TidyChat: TidyChat.Options.UpdateGroupTabs, TidyRoll: TidyRoll.CustomAutoRoll.OnChoiceChange, TidyRoll: TidyRollOptions.OnApply |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 12 |
+| Global usage count | 12 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxGetSelectedMenuItem(arg1)
 
 ## Description
 
-Observed as a window function across 2 addons.
+Observed as a window function across 4 addons.
 
 ## Parameters
 
@@ -83,17 +83,19 @@ Observed as a window function across 2 addons.
 
 ## Seen In
 
+- InfoScroller
+- PartyCast
 - TidyChat
 - TidyRoll
 
 ## Examples
 
+- InfoScroller: LIBGUI_Combobox:SelectedIndex -> ComboBoxGetSelectedMenuItem(self.name)
+- PartyCast: LIBGUI_Combobox:SelectedIndex -> ComboBoxGetSelectedMenuItem(self.name)
 - TidyChat: TidyChat.Options.OnApply -> ComboBoxGetSelectedMenuItem(TCHAT_TEXT_ENTRY_RELATIVE_TO_COMBO)
 - TidyChat: TidyChat.Options.OnApply -> ComboBoxGetSelectedMenuItem(TCHAT_TEXT_ENTRY_ANCHOR_POINT_COMBO)
 - TidyChat: TidyChat.Options.UpdateGroupTabs -> ComboBoxGetSelectedMenuItem(TCHAT_WINDOWS_SELECT_WINDOW_COMBO)
 - TidyRoll: TidyRoll.CustomAutoRoll.OnChoiceChange -> ComboBoxGetSelectedMenuItem(comboName)
-- TidyRoll: TidyRollOptions.OnApply -> ComboBoxGetSelectedMenuItem(c_TROLL_ONESC_COMBO)
-- TidyRoll: TidyRollOptions.OnApply -> ComboBoxGetSelectedMenuItem(c_TROLL_NEED_COMBO)
 
 ## Related APIs
 
@@ -105,8 +107,6 @@ Observed as a window function across 2 addons.
 - [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
 - [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 90/100) - Window Function
-- [ComboBoxGetSelectedText](window_ComboBoxGetSelectedText.md) (HIGH 80/100) - Window Function
 
 ## Triggered By
 

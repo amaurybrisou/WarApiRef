@@ -30,13 +30,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:201` |
+| Addons seen in | TidyChat, TidyRoll, minesweep |
+| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:201`, `/workspace/data/raw/minesweep/minesweep.xml:58` |
 | Namespaces detected | OnRButtonUp |
 | Source kinds | event_page, flows, lua_event_registration, xml_handlers |
-| Example locations | TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollFrame.OnRButtonUp |
-| XML usage count | 1 |
-| XML attribute usage count | 1 |
+| Example locations | TidyChat: TidyChatFrames.Initialize, TidyRoll: TidyRollFrame.OnRButtonUp, minesweep: minesweep_Box.OnRButtonUp |
+| XML usage count | 2 |
+| XML attribute usage count | 2 |
 | Lua usage count | 1 |
 | Global usage count | 1 |
 | Local definition count | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-Observed as an engine-supplied UI event hook used by 2 addons.
+Observed as an engine-supplied UI event hook used by 3 addons.
 
 ## Handler Pattern
 
@@ -75,6 +75,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 - TidyChat
 - TidyRoll
+- minesweep
 
 ## Registrars And Handlers
 
@@ -82,16 +83,18 @@ Observed as an On* callback routed into a module-qualified Lua function.
 - TidyChat.ToggleOptions
 - WindowRegisterCoreEventHandler
 - core
+- minesweep.RButtonUp
 
 ## Examples
 
 - TidyChat: TidyChatFrames.Initialize -> OnRButtonUp -> TidyChat.ToggleOptions
 - TidyRoll: TidyRollFrame -> TidyRollFrame.OnRButtonUp -> FrameManager.OnRButtonUp
+- minesweep: minesweep_Box -> minesweep_Box.OnRButtonUp -> minesweep.RButtonUp
 - TidyChat: TidyChat.ToggleOptions -> WindowRegisterCoreEventHandler(OnRButtonUp, TidyChat.ToggleOptions)
 
 ## Related APIs
 
-- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureSlice](../../window_api/functions/window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
 
 ## Used With
 

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 186
+- Raw weighted score: 198
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -31,18 +31,18 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | TidyChat, TidyChat, TidyRoll, TidyRoll |
-| Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:249` |
+| Addons seen in | Lib RuString, Lib RuString, TidyChat, TidyRoll, TimeToDie, TidyChat, TidyRoll, TimeToDie |
+| Files seen in | `/workspace/data/raw/RuStringLib/RuStringLib.lua:233`, `/workspace/data/raw/RuStringLib/RuStringLib.lua:300`, `/workspace/data/raw/TidyChat/TidyChat.lua:144`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:227`, `/workspace/data/raw/TidyRoll/TidyRoll.lua:249`, `/workspace/data/raw/TimeToDie/TimeToDie.lua:244` |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, flow, lua_call |
-| Example locations | SystemData.Events.RELOAD_INTERFACE, TidyChat.Initialize, TidyChat.OnLoad, TidyRoll.Initialize, TidyRoll.OnLoad, TidyRoll.Shutdown |
+| Example locations | LibRuString.Init, LibRuString.OnLoad, LibRuString.ToggleHook, SystemData.Events.RELOAD_INTERFACE, TidyChat.Initialize, TidyChat.OnLoad |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 4 |
-| Initialization flow references | 2 |
+| Initialization flow references | 4 |
 | Known engine namespace | yes |
 | Default UI presence | yes |
 | Event binding presence | yes |
@@ -62,23 +62,29 @@
 
 ## Description
 
-Observed SystemData field used by 3 addons through generated function calls, event pages, or lifecycle evidence.
+Observed SystemData field used by 5 addons through generated function calls, event pages, or lifecycle evidence.
 
 ## Seen In
 
+- Lib RuString
+- Lib RuString, TidyChat, TidyRoll, TimeToDie
 - TidyChat
-- TidyChat, TidyRoll
 - TidyRoll
+- TimeToDie
 
 ## Related APIs
 
+- [EA_ChatWindow.Print](../../globals/functions/global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 81/100) - Global Function
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
+- [DialogManager.MakeTwoButtonDialog](../../globals/functions/global_DialogManager.MakeTwoButtonDialog.md) (HIGH 80/100) - Global Function
 - [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 80/100) - Window Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
 - [SystemData.Events.LOADING_END](systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
 
 ## Triggered By
 
@@ -90,4 +96,4 @@ Observed SystemData field used by 3 addons through generated function calls, eve
 
 ## Notes
 
-- Observed in contexts: SystemData.Events.RELOAD_INTERFACE, TidyChat.Initialize, TidyChat.OnLoad, TidyRoll.Initialize, TidyRoll.OnLoad, TidyRoll.Shutdown
+- Observed in contexts: LibRuString.Init, LibRuString.OnLoad, LibRuString.ToggleHook, SystemData.Events.RELOAD_INTERFACE, TidyChat.Initialize, TidyChat.OnLoad

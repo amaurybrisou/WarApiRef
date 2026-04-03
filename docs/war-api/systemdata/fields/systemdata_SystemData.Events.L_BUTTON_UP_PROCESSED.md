@@ -68,7 +68,7 @@ Observed SystemData field used by 1 addons through generated function calls, eve
 
 ## Related APIs
 
-- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 81/100) - Global Function
+- none
 
 ## Used With
 

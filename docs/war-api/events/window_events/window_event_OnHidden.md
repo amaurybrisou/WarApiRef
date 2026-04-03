@@ -33,14 +33,14 @@
 | Addons seen in | TidyChat, TidyRoll |
 | Files seen in | `/workspace/data/raw/TidyChat/TidyChat.lua:930`, `/workspace/data/raw/TidyChat/TidyChat.xml:15`, `/workspace/data/raw/TidyChat/TidyChatCopy.xml:16`, `/workspace/data/raw/TidyChat/TidyChatLootRoll.xml:52`, `/workspace/data/raw/TidyRoll/CustomAutoRoll.xml:101`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:288`, `/workspace/data/raw/TidyRoll/TidyRoll.xml:309` |
 | Namespaces detected | OnHidden |
-| Source kinds | event_page, examples, flows, lua_event_registration, xml_handlers |
+| Source kinds | event_page, flows, lua_event_registration, xml_handlers |
 | Example locations | TidyChat: TidyChatCopy.OnHidden, TidyChat: TidyChatFrames.Initialize, TidyChat: TidyChatLootRoll.OnHidden, TidyChat: TidyChatOptions.OnHidden, TidyRoll: TRollAutoRoll.OnHidden, TidyRoll: TidyRollEsc.OnHidden |
 | XML usage count | 6 |
 | XML attribute usage count | 6 |
 | Lua usage count | 1 |
 | Global usage count | 1 |
 | Local definition count | 0 |
-| Documentation references | 4 |
+| Documentation references | 3 |
 | Initialization flow references | 1 |
 | Known engine namespace | no |
 | Default UI presence | no |
@@ -99,9 +99,7 @@ Observed as an On* callback routed into a module-qualified Lua function.
 
 ## Related APIs
 
-- [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
-- [WindowSetHandleInput](../../window_api/functions/window_WindowSetHandleInput.md) (HIGH 100/100) - Window Function
+- none
 
 ## Used With
 

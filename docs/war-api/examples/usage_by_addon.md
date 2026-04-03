@@ -4,38 +4,38 @@
 
 | Addon | Frame | Event | Lua Function |
 | --- | --- | --- | --- |
-| TidyChat | TChatCheckboxTemplate | OnLButtonUp | TidyChat.Options.OnCheckboxLBU |
-| TidyChat | TChatTabButton | OnLButtonUp | TidyChat.Options.OnTabLBU |
-| TidyChat | TChatTabWindowsTemplateSelectWindowCombo | OnSelChanged | TidyChat.Options.UpdateGroupTabs |
-| TidyChat | TidyChatCopy | OnHidden | TidyChat.Copy.OnHidden |
-| TidyChat | TidyChatCopy | OnMouseWheel | TidyChat.Copy.OnMouseWheel |
-| TidyChat | TidyChatCopy | OnShown | TidyChat.Copy.OnShown |
-| TidyChat | TidyChatCopyClose | OnLButtonUp | TidyChat.Copy.OnClose |
-| TidyChat | TidyChatCopyNext | OnLButtonUp | TidyChat.Copy.CopyNext |
-| TidyChat | TidyChatCopyPrev | OnLButtonUp | TidyChat.Copy.CopyPrev |
-| TidyChat | TidyChatLootRoll | OnHidden | TidyChat.LootRoll.OnHidden |
-| TidyChat | TidyChatLootRoll | OnShown | TidyChat.LootRoll.OnShown |
-| TidyChat | TidyChatLootRollClose | OnLButtonUp | TidyChat.LootRoll.OnClose |
+| InfoScroller | InfoScrollerTemplateLabel1 | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
+| InfoScroller | InfoScrollerTemplateLabel1 | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
+| InfoScroller | InfoScrollerTemplateLabel2 | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
+| InfoScroller | InfoScrollerTemplateLabel2 | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
+| InfoScroller | InfoScrollerTemplateLabel3 | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
+| InfoScroller | InfoScrollerTemplateLabel3 | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
+| InfoScroller | InfoScrollerTemplateLabel4 | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
+| InfoScroller | InfoScrollerTemplateLabel4 | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
+| InfoScroller | InfoScrollerTemplateLabel5 | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
+| InfoScroller | InfoScrollerTemplateLabel5 | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
+| PartyCast | PartyCastWindow_TemplateTargetWindowLabel | OnHyperLinkLButtonUp | EA_ChatWindow.OnHyperLinkLButtonUp |
+| PartyCast | PartyCastWindow_TemplateTargetWindowLabel | OnHyperLinkRButtonUp | EA_ChatWindow.OnHyperLinkRButtonUp |
 
 ## Representative Function Usage
 
+- CreateWindow: InfoScroller -> CreateWindow("InfoScrollerMainWindow", true)
+- CreateWindow: Moth -> CreateWindow("Moth", true)
+- CreateWindow: Soloq -> CreateWindow(overviewWindowName, false)
+- CreateWindow: TidyChat -> CreateWindow(c_TEXT_ENTRY_ANCHOR, false)
+- CreateWindow: TidyRoll -> CreateWindow(c_TROLL_AUTO_ROLL_WINDOW, false)
+- CreateWindow: TidyRoll -> CreateWindow(c_TIDY_ROLL_ANCHOR, false)
+- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(WindowName, "InfoScrollerTemplate", "InfoScrollerMainWindow")
+- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(w.name, base, w.parent)
+- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(w.name, base, w.parent)
+- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
+- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(w.name, base, w.parent)
+- CreateWindowFromTemplate: InfoScroller -> CreateWindowFromTemplate(w.name, base, w.parent)
 - DefaultColor.SetWindowTint: TidyRoll -> DefaultColor.SetWindowTint(rowName.."Background", color)
+- DestroyWindow: InfoScroller -> DestroyWindow(self.name)
+- DestroyWindow: PartyCast -> DestroyWindow(self.name)
+- DestroyWindow: TidyRoll -> DestroyWindow(self:GetName())
+- DestroyWindow: minesweep -> DestroyWindow("MineSweepWindow")
+- DestroyWindow: minesweep -> DestroyWindow("MineSweepWindow")
 - DialogManager.MakeOneButtonDialog: TidyChat -> DialogManager.MakeOneButtonDialog(L "Log is empty\n", L "Ok")
-- DoesWindowExist: TidyChat -> DoesWindowExist(c_TEXT_ENTRY_WINDOW.."EntryBoxLanguageButton")
-- DoesWindowExist: TidyRoll -> DoesWindowExist("EA_Window_LootRoll")
-- DoesWindowExist: TidyRoll -> DoesWindowExist(radioGroupName..index)
-- DoesWindowExist: TidyRoll -> DoesWindowExist(radioGroupName..index)
-- EA_ChatWindow.OnSettingsChanged: TidyChat -> EA_ChatWindow.OnSettingsChanged()
-- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Dump Table Cleared")
-- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Dumped item: "..itemData.name)
-- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Item Dump contains item: "..itemData.name)
-- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Nisp Installed and Enabled")
-- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Nisp Initialized and Enabled (/nisp for commands)")
-- EA_ChatWindow.Print: NPC Item Sale Price -> EA_ChatWindow.Print(L "Nisp Initialized, but disabled (/nisp for commands)")
-- EA_ChatWindow.ShowTabCycleButtons: TidyChat -> EA_ChatWindow.ShowTabCycleButtons(wndGroupName, false)
-- EA_ChatWindow.UpdateTabScrollWindow: TidyChat -> EA_ChatWindow.UpdateTabScrollWindow(wndGroupId)
-- EA_Window_ContextMenu.AddMenuItem: TidyChat -> EA_Window_ContextMenu.AddMenuItem(L "Copy...", TidyChatCopy.OnCopyButton, false, true)
-- EA_Window_ContextMenu.AddMenuItem: TidyChat -> EA_Window_ContextMenu.AddMenuItem(L "To Bottom", TidyChatFrames.OnToBottomButton, false, true)
-- EA_Window_ContextMenu.Finalize: TidyChat -> EA_Window_ContextMenu.Finalize()
-- GetIconData: Moth -> GetIconData(Icons.GetCareerIconIDFromCareerLine(text))
-- GetIconData: TidyRoll -> GetIconData(careerIconNum)
+- DialogManager.MakeTwoButtonDialog: Lib RuString -> DialogManager.MakeTwoButtonDialog(GetStringFromTable("CustomizeUiStrings",StringTables.CustomizeUi.TEXT_UI_MOD_SETTINGS_CHANGED_DIALOG), GetString(StringTables.Default.LABEL_YES), function()BroadcastEvent(SystemData.Events.RELOAD_INTERFACE)end, GetString(StringTables.Default.LABEL_NO), nil)

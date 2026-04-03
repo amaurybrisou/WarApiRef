@@ -1,34 +1,37 @@
 # TintColor
 
 - Category: XML Element Type
-- Confidence level: MEDIUM
-- Confidence score: 45/100
+- Confidence level: HIGH
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
-- Level: MEDIUM
+- Level: HIGH
 
-- Score: 45/100
+- Final score: 100/100
 
-- Rationale: Promoted as MEDIUM confidence because matches default ui or extracted base ui surface, used directly in xml handler attributes.
+- Raw weighted score: 110
+
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, used directly in xml handler attributes.
 
 ## Evidence Signals
 
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +30 Used directly in XML handler attributes: XML exposure suggests an engine-level contract.
-- -20 Only one weak usage site: Evidence is too shallow to trust as platform API.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Moth |
-| Files seen in | `/workspace/data/raw/Moth/Moth.xml:128`, `/workspace/data/raw/Moth/Moth.xml:157`, `/workspace/data/raw/Moth/Moth.xml:18`, `/workspace/data/raw/Moth/Moth.xml:30` |
+| Addons seen in | InfoScroller, Moth, PartyCast, Soloq, minesweep |
+| Files seen in | `/workspace/data/raw/InfoScroller/InfoScroller.xml:236`, `/workspace/data/raw/InfoScroller/InfoScroller.xml:42`, `/workspace/data/raw/Moth/Moth.xml:128`, `/workspace/data/raw/Moth/Moth.xml:157`, `/workspace/data/raw/Moth/Moth.xml:18`, `/workspace/data/raw/Moth/Moth.xml:30`, `/workspace/data/raw/PartyCast/PartyCast.xml:305`, `/workspace/data/raw/PartyCast/PartyCast.xml:348` |
 | Namespaces detected | TintColor |
 | Source kinds | xml_frames |
-| Example locations | Moth: MothBackground, Moth: MothBordertronned, Moth: MothCellTemplateBackground, Moth: MothRowTemplateBackground |
-| XML usage count | 4 |
-| XML attribute usage count | 4 |
+| Example locations | InfoScroller: InfoScrollerTemplateBackGroundBG, InfoScroller: InfoScrollerTemplateSeperatorBG, Moth: MothBackground, Moth: MothBordertronned, Moth: MothCellTemplateBackground, Moth: MothRowTemplateBackground |
+| XML usage count | 12 |
+| XML attribute usage count | 12 |
 | Lua usage count | 0 |
 | Global usage count | 0 |
 | Local definition count | 0 |
@@ -38,11 +41,11 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
-| Weak usage only | yes |
+| Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
 | Conflicting signatures | no |
@@ -53,13 +56,14 @@
 
 ## Description
 
-Observed XML element type instantiated by 1 addons.
+Observed XML element type instantiated by 5 addons.
 
 ## Common Attributes
 
 - b
 - g
 - r
+- a
 
 ## Common Inherits
 
@@ -67,21 +71,29 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Parent Elements
 
-- [FullResizeImage](element_FullResizeImage.md) — 4× (HIGH)
+- [FullResizeImage](element_FullResizeImage.md) — 10× (HIGH)
+- [DynamicImage](element_DynamicImage.md) — 2× (MEDIUM)
 
 ## Attribute Reference
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `b` | **required** | 100% | 0, 36, 166 |
-| `g` | **required** | 100% | 0, 28, 84 |
-| `r` | **required** | 100% | 0, 237 |
+| `b` | **required** | 100% | 0, 36, 166, 200, ... |
+| `g` | **required** | 100% | 0, 28, 84, 200, ... |
+| `r` | **required** | 100% | 0, 237, 200, 55 |
+| `a` | optional | 50% | 1, 0.4, 0.5, 0.8 |
 ## Seen In
 
+- InfoScroller
 - Moth
+- PartyCast
+- Soloq
+- minesweep
 
 ## Examples
 
+- InfoScroller: InfoScrollerTemplateBackGroundBG -> TintColor in FullResizeImage InfoScrollerTemplateBackGroundBG
+- InfoScroller: InfoScrollerTemplateSeperatorBG -> TintColor in DynamicImage InfoScrollerTemplateSeperatorBG
 - Moth: MothBackground -> TintColor in FullResizeImage MothBackground
 - Moth: MothBordertronned -> TintColor in FullResizeImage MothBordertronned
 - Moth: MothCellTemplateBackground -> TintColor in FullResizeImage MothCellTemplateBackground
@@ -89,6 +101,7 @@ Observed XML element type instantiated by 1 addons.
 
 ## Related APIs
 
+- [DynamicImage](element_DynamicImage.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 
 ## Used With

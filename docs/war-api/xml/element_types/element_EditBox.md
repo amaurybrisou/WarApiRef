@@ -85,7 +85,7 @@ Observed XML element type instantiated by 2 addons.
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `inherits` | **required** | 100% | EA_EditBox_DefaultFrame_Multiline, EA_EditBox_DefaultFrame |
-| `font` | optional | 33% | font_clear_small_bold |
+| `font` | optional | 33% | font_guild_MP_R_17 |
 | `maxchars` | optional | 33% | 10240 |
 ## Seen In
 

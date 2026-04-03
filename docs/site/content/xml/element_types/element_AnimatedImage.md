@@ -106,6 +106,7 @@ Observed 2 times as an unnamed child.
 
 ## Related APIs
 
+- [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 - [AnimFrames](element_AnimFrames.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With

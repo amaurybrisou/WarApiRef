@@ -9,33 +9,40 @@ Runtime events are typically wired through RegisterEventHandler or window-scoped
 
 ## Involved APIs
 
+- [SystemData.Events.INTERACT_DONE](../events/game_events/game_event_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.INTERACT_DONE](../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.LOADING_END](../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.L_BUTTON_UP_PROCESSED](../events/game_events/game_event_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - Game Event
-- [SystemData.Events.L_BUTTON_UP_PROCESSED](../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_BEGIN_CAST](../events/game_events/game_event_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.PLAYER_BEGIN_CAST](../systemdata/fields/systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_END_CAST](../events/game_events/game_event_SystemData.Events.PLAYER_END_CAST.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.PLAYER_END_CAST](../systemdata/fields/systemdata_SystemData.Events.PLAYER_END_CAST.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_START_INTERACT_TIMER](../systemdata/fields/systemdata_SystemData.Events.PLAYER_START_INTERACT_TIMER.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_START_INTERACT_TIMER](../events/game_events/game_event_SystemData.Events.PLAYER_START_INTERACT_TIMER.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.RELOAD_INTERFACE](../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
-- [RegisterEventHandler](../globals/functions/global_RegisterEventHandler.md) (HIGH 81/100) - Global Function
+- [RegisterEventHandler](../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
+- [UnregisterEventHandler](../globals/functions/global_UnregisterEventHandler.md) (HIGH 81/100) - Global Function
 
 ## Flow Diagram
 
 ```text
-Button <-> OnLButtonUp
+SystemData.Events.ENTER_WORLD <-> SystemData.Events.INTERACT_DONE
 ```
 
 ## Example Code
 
 ```lua
-RegisterEventHandler: TidyChat: RegisterEventHandler(SystemData.Events.LOADING_END, "TidyChat.OnLoad")
+RegisterEventHandler: Lib RuString: RegisterEventHandler(SystemData.Events.LOADING_END, "LibRuString.OnLoad")
 ```
 
 ## Evidence
 
-- RegisterEventHandler: TidyChat: RegisterEventHandler(SystemData.Events.LOADING_END, "TidyChat.OnLoad")
-- RegisterEventHandler: TidyChat: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "TidyChat.OnLoad")
-- RegisterEventHandler: TidyChat: RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, "TidyChat.OnLBU")
-- RegisterEventHandler: TidyChat: RegisterEventHandler(chatLogEventId, "TidyChat.OnChatLogUpdated")
-- RegisterEventHandler: TidyChat: RegisterEventHandler(combatLogEventId, "TidyChat.OnCombatLogUpdated")
-- RegisterEventHandler: TidyChat: RegisterEventHandler(systemLogEventId, "TidyChat.OnSystemLogUpdated")
-- UnregisterEventHandler: TidyRoll: UnregisterEventHandler(SystemData.Events.LOADING_END, "TidyRoll.OnLoad")
-- UnregisterEventHandler: TidyRoll: UnregisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "TidyRoll.OnLoad")
+- RegisterEventHandler: Lib RuString: RegisterEventHandler(SystemData.Events.LOADING_END, "LibRuString.OnLoad")
+- RegisterEventHandler: Lib RuString: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "LibRuString.OnLoad")
+- RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
+- RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
+- RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, "PartyCast.StartCast")
+- RegisterEventHandler: PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_END_CAST, "PartyCast.EndCast")
+- UnregisterEventHandler: PartyCast: UnregisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, "PartyCast.StartInteract")
+- UnregisterEventHandler: PartyCast: UnregisterEventHandler(SystemData.Events.INTERACT_DONE, "PartyCast.EndCast")
