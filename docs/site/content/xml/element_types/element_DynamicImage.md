@@ -936,40 +936,40 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.AssistUI_Target_Show
-- Enemy.Guard_OnSettingsChanged
-- Enemy.Guard_GuardIndicator_Update
-- SwiftAssist.Initialize
-- Swift Assist.SetTexLabel
 - TurretRange.OnUpdate
-- BagOMatic.init
-- RoR_SoR.OnInitialize
-- Swift Assist.local.SetSmartLabel
-- ClosetGoblinCharacterWindow.UpdateSortButtonIcon
-- Enemy._Initialize
-- Enemy.TalismanAlerter_OnSettingsChanged
-- WSCT.ColorHideMenu
-- ClosetGoblinZoneWindow.OnInitialize
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.TalismanAlerterInitialize
-- WSCT.ColorAcceptButtonOnButtonUp
-- ClosetGoblin.Initialize
-- PP.UpdateListRow
-- RoR_SoR.OnScenario
-- Swift Assist.local.SetTexLabel
-- BankArkel.PackImg
 - Enemy.GuardInitialize
-- Enemy.TalismanAlerter_Update
 - RoR_SoR.OnCombat
-- ClosetGoblinCharacterWindow.OnInitialize
-- Enemy.EnemyEffectsIndicator:Update
-- Enemy.UI_Icon_Switch
-- WSCT.OnLButtonUpColorPicker
-- WSCT.ColorOnInitialize
-- Enemy.MarksInitialize
-- GuardLine.update
-- SwiftAssist.OnMacroUpdated
+- SwiftAssist.Initialize
 - Swift Assist.SetSmartLabel
+- GuardLine.update
+- RoR_SoR.OnInitialize
+- Enemy.Guard_GuardIndicator_Update
+- PP.UpdateListRow
+- Swift Assist.local.SetTexLabel
+- Enemy.EnemyEffectsIndicator:Update
+- Enemy.AssistUI_Target_Show
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Swift Assist.local.SetSmartLabel
+- BankArkel.PackImg
+- Enemy.MarksInitialize
+- Enemy.UI_Icon_Switch
+- ClosetGoblinCharacterWindow.OnInitialize
+- Enemy.Guard_OnSettingsChanged
+- Enemy.TalismanAlerterInitialize
+- RoR_SoR.OnScenario
+- SwiftAssist.OnMacroUpdated
+- WSCT.ColorAcceptButtonOnButtonUp
+- BagOMatic.init
+- ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- WSCT.ColorHideMenu
+- Enemy._Initialize
+- WSCT.ColorOnInitialize
+- Enemy.TalismanAlerter_Update
+- Enemy.TalismanAlerter_OnSettingsChanged
+- Swift Assist.SetTexLabel
+- WSCT.OnLButtonUpColorPicker
+- ClosetGoblinZoneWindow.OnInitialize
+- ClosetGoblin.Initialize
 
 
 ## Binding Resolution
@@ -1019,6 +1019,8 @@ Confidence: MEDIUM
 
 - [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
 - [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
+- [EA_ListSortDownArrow](../../globals/constants/constant_EA_ListSortDownArrow.md) (HIGH 100/100) - Constant
+- [EA_ListSortUpArrow](../../globals/constants/constant_EA_ListSortUpArrow.md) (HIGH 100/100) - Constant
 - [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
@@ -1027,6 +1029,13 @@ Confidence: MEDIUM
 - [TintColor](element_TintColor.md) (HIGH 100/100) - XML Element Type
 - [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [EA_Default_CharacterImage](../../globals/constants/constant_EA_Default_CharacterImage.md) (HIGH 90/100) - Constant
+- [EA_Default_TrainingImage](../../globals/constants/constant_EA_Default_TrainingImage.md) (HIGH 90/100) - Constant
+- [EA_Image_DefaultIcon](../../globals/constants/constant_EA_Image_DefaultIcon.md) (HIGH 90/100) - Constant
+- [EA_Image_DefaultIconFrame](../../globals/constants/constant_EA_Image_DefaultIconFrame.md) (HIGH 90/100) - Constant
+- [EA_Templates_BrassCoin](../../globals/constants/constant_EA_Templates_BrassCoin.md) (HIGH 90/100) - Constant
+- [EA_Templates_GoldCoin](../../globals/constants/constant_EA_Templates_GoldCoin.md) (HIGH 90/100) - Constant
+- [EA_Templates_SilverCoin](../../globals/constants/constant_EA_Templates_SilverCoin.md) (HIGH 90/100) - Constant
 - [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 - [Anchor](element_Anchor.md) (MEDIUM 55/100) - XML Element Type
 - [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type

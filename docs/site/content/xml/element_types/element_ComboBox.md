@@ -263,24 +263,24 @@ Confidence: MEDIUM
 | 0 | `index` | number | selected_index |
 ## Lua Functions Manipulating This Type
 
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.UnitFramesUI_ConfigDialog_Import
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- Enemy.IntercomUI_ChooseChannelDialog_Open
-- Enemy.IntercomUI_IntercomJoinDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.UI_ConfigDialog_OnSectionSelChanged
-- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
 - Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
+- Enemy.IntercomUI_ChooseChannelDialog_Open
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Enemy.CombatLogUI_StatsWindow_Open
+- Enemy.UI_ConfigDialog_Open
+- Enemy.UnitFramesUI_ConfigDialog_Import
+- Enemy.IntercomUI_IntercomJoinDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
 - AdvancedRenownTrainer.GeneratePresetByLinkData
 - BankArkel.SetupCombos
-- Enemy.UI_ConfigDialog_Open
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
 - Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- Enemy.CombatLogUI_StatsWindow_Open
 
 
 ## Binding Resolution
@@ -322,10 +322,15 @@ Confidence: MEDIUM
 
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
+- [EA_ComboBox_DefaultResizable](../../globals/constants/constant_EA_ComboBox_DefaultResizable.md) (HIGH 100/100) - Constant
+- [EA_ComboBox_DefaultResizableLarge](../../globals/constants/constant_EA_ComboBox_DefaultResizableLarge.md) (HIGH 100/100) - Constant
+- [EA_ComboBox_DefaultResizableSmall](../../globals/constants/constant_EA_ComboBox_DefaultResizableSmall.md) (HIGH 100/100) - Constant
+- [EA_ComboBox_DefaultResizable_Fixed](../../globals/constants/constant_EA_ComboBox_DefaultResizable_Fixed.md) (HIGH 100/100) - Constant
 - [MenuButtonOffset](element_MenuButtonOffset.md) (HIGH 100/100) - XML Element Type
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [EA_ComboBox_DefaultResizableMedium](../../globals/constants/constant_EA_ComboBox_DefaultResizableMedium.md) (HIGH 90/100) - Constant
 - [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
 - [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 

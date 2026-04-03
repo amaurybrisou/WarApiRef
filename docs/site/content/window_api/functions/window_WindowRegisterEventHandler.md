@@ -96,7 +96,11 @@ Observed binding SystemData events directly to a named window.
 
 ## Related APIs
 
-- none
+- [SystemData.Events.AUCTION_BID_RESULT_RECEIVED](../../events/game_events/game_event_SystemData.Events.AUCTION_BID_RESULT_RECEIVED.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.AUCTION_INIT_RECEIVED](../../events/game_events/game_event_SystemData.Events.AUCTION_INIT_RECEIVED.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED](../../events/game_events/game_event_SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.INTERACT_DONE](../../events/game_events/game_event_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../events/game_events/game_event_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - Game Event
 
 ## Used With
 

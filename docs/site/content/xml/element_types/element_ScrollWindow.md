@@ -733,29 +733,29 @@ Observed 12 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
+- DAoCBuff.ShowMessageWindow
 - Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.EnemyGroupIcon:ApplySettings
-- DAoCBuff.ShowMessageWindow
 - Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
-- Enemy.local._OnArchetypeChanged
-- Enemy._OnKeyModifierChanged
-- DAoCBuffSettings.PopulateSettings
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- Enemy.local._OnKeyModifierChanged
 - Enemy._OnArchetypeChanged
+- Enemy.local._OnArchetypeChanged
+- Killer.Initialize
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- Enemy._OnKeyModifierChanged
+- Enemy.local._OnKeyModifierChanged
+- DAoCBuffSettings.PopulateSettings
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Killer.Initialize
+- Enemy.EnemyGroupIcon:ApplySettings
 
 ## Seen In
 

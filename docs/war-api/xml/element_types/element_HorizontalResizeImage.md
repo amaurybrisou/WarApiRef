@@ -195,11 +195,11 @@ Observed 4 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
+- APAGui.UpdateKitingHUD
 - APAGui.UpdateInstantOnlyHUD
 - APAGui.UpdatePetTargetHUD
 - PotionBarSettings.OnShown
 - APAGui.UpdateFollowTargetHUD
-- APAGui.UpdateKitingHUD
 
 ## Seen In
 

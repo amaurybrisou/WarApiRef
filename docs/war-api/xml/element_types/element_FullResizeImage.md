@@ -799,31 +799,31 @@ Confidence: HIGH
 
 ## Lua Functions Manipulating This Type
 
-- WSCT.ColorOnButtonUp
-- Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
-- Enemy.MarksInitialize
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Killer.ShowPersonalStatsTooltip
-- Killer.ShowRowTooltip
-- MoraleCircle.ColorChanger2
-- MoraleCircle.OnSetCustomColorFill
+- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
 - Enemy._Initialize
+- Killer.Initialize
+- MoraleCircle.ColorChanger1
+- MoraleCircle.ColorChanger2
+- MoraleCircle.OnSetCustomColorEmpty
+- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
+- MoraleCircle.OnSetCustomColor
+- MoraleCircle.ColorChanger3
+- WHMCore.ApplyBackgroundFillColor
+- WHMGui.RefreshConfigurationWindow
+- Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
 - Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
 - Enemy.CombatLogUI_IDS_Initialize
+- Killer.ShowRowTooltip
+- Killer.ShowPersonalStatsTooltip
+- MoraleCircle.OnSetCustomColorFill
 - MoraleCircle.OnSetCustomColorFull
 - MoraleCircle.ColorChanger4
-- MoraleCircle.OnSetCustomColorEmpty
-- WHMCore.ApplyBackgroundFillColor
-- Killer.Initialize
-- Killer.ShowTopKillersTooltip
-- MoraleCircle.OnSetCustomColor
-- MoraleCircle.ColorChanger1
+- Enemy.MarksInitialize
+- WSCT.ColorOnButtonUp
 - WSCT.OnLButtonUpColorPicker
-- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
-- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
-- MoraleCircle.ColorChanger3
+- Killer.ShowTopKillersTooltip
 - WSCT.OnSetCustomColor
-- WHMGui.RefreshConfigurationWindow
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 
 
 ## Binding Resolution

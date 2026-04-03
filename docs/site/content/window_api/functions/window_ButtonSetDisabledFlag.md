@@ -72,7 +72,7 @@ Observed mutating button text or pressed state on existing controls.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | arg1 | Observed as a function or method reference. | Observed values: "ClosetGoblinCharacterWindowContentsDeleteSet", "ClosetGoblinCharacterWindowContentsEquipmentShowCloakHeraldry", "EnemyConfigDialogResetButton" |
-| arg2 | Observed as a function or method reference. | Observed values: (onTargetChangeEnabled==false), config_dlg.clickCastingsListSelectedIndex==nil, config_dlg.clickCastingsListSelectedIndex==nil or config_dlg.clickCastingsListSelectedIndex==#config_dlg.clickCastings |
+| arg2 | Observed as a boolean toggle. | Observed values: (onTargetChangeEnabled==false), config_dlg.clickCastingsListSelectedIndex==nil, config_dlg.clickCastingsListSelectedIndex==nil or config_dlg.clickCastingsListSelectedIndex==#config_dlg.clickCastings |
 
 ## Returns
 

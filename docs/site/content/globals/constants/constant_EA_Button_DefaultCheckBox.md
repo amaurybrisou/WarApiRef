@@ -125,7 +125,7 @@ Observed engine XML template or inherited constant referenced by 10 addons.
 
 ## Related APIs
 
-- none
+- [Button](../../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

@@ -133,6 +133,7 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
 - [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 - [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [CreateWindowFromTemplate](global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 - [towstring](global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By

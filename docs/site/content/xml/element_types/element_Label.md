@@ -950,67 +950,67 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.CombatLogUI_EpsWindow_Update
-- Killer.ShowRowTooltip
-- Swift Assist.local.WriteLabels
-- Enemy.IntercomUI_IntercomDialog_Open
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- MoraleCircle.ColorChanger1
-- MoraleCircle.ColorChanger2
-- PP.UpdateListRow
-- PP.UpdateDyeFilter
-- APAGui.UpdateFollowTargetHUD
-- Enemy.AssistUI_Target_Show
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- BankArkel.SetCharInfo
-- Killer.ShowPersonalStatsTooltip
-- MoraleCircle.ColorChanger3
-- Swift Assist.local.SetSmartLabel
-- APAGui.UpdatePetTargetHUD
-- ClosetGoblinCharacterWindow.OnInitialize
 - Enemy.IntercomInitialize
+- Enemy.Stopwatch_Update
+- APAGui.OnShown
+- APAGui.UpdateInstantOnlyHUD
+- ClosetGoblinZoneWindow.RefreshOption
+- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- TidyRollOptions.Initialize
+- Enemy.IntercomUI_IntercomDialog_Open
+- Enemy.CombatLogUI_EpsWindow_UpdateLayout
+- MoraleCircle.ColorChanger2
+- Enemy.Timer_Update
+- Enemy.CombatLogUI_TargetDefenseWindow_Update
 - MoraleCircle.ColorChanger4
 - MoraleCircle.OnSetCustomColorEmpty
-- DAoCTooltips.CreateCondenseTooltip
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- MoraleCircle.OnSetCustomColor
-- RoR_SoR.OnInitialize
+- Swift Assist.local.SetSmartLabel
+- AggroMeter.Initialize
 - Enemy.GroupsUI_EffectFilterDialog_Open
 - Enemy.CombatLogUI_EpsWindow_Initialize
-- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
-- Killer.ShowTopKillersTooltip
-- MoraleCircle.OnSetCustomColorFull
-- AggroMeter.Initialize
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- DAoCTooltips.UpdateCondenseTooltip
+- Killer.ShowPersonalStatsTooltip
+- Killer.ShowRowTooltip
+- APAGui.UpdateFollowTargetHUD
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
 - Enemy.Guard_GuardIndicator_Update
-- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- PotionBarSettings.OnAboutShown
-- ClosetGoblinZoneWindow.RefreshOption
-- Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
-- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- Enemy.UI_ConfigDialog_Open
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
 - Enemy.CombatLogUI_StatsWindow_Open
-- WSCT.ColorOnInitialize
-- APAGui.UpdateInstantOnlyHUD
-- BankArkel.PackHide
-- DAoCBuff.ShowMessageWindow
-- Enemy.CombatLogUI_TargetDefenseWindow_Update
-- Killer.Initialize
-- MoraleCircle.OnSetCustomColorFill
+- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
 - APAGui.ApplyPetTargetHUDLayout
+- DAoCBuff.ShowMessageWindow
+- Enemy.UI_ConfigDialog_Open
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- DAoCTooltips.CreateCondenseTooltip
+- MoraleCircle.ColorChanger3
+- DAoCTooltips.UpdateCondenseTooltip
+- Killer.Initialize
+- MoraleCircle.ColorChanger1
+- APAGui.UpdateKitingHUD
+- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
+- MoraleCircle.OnSetCustomColor
+- MoraleCircle.OnSetCustomColorFull
+- PP.UpdateDyeFilter
+- MoraleCircle.OnSetCustomColorFill
+- Killer.ShowTopKillersTooltip
+- WSCT.ColorOnInitialize
+- APAGui.UpdatePetTargetHUD
+- BankArkel.SetCharInfo
+- BankArkel.PackHide
+- Enemy.AssistUI_Target_Show
+- Enemy.CombatLogUI_EpsWindow_Update
+- PotionBarSettings.OnAboutShown
+- SwiftAssist.aaLabelColorSet
 - Enemy.CombatLogUI_StatsWindow_UpdateList
 - MoraleCircle.init
+- PP.UpdateListRow
 - Swift Assist.WriteLabels
 - Swift Assist.SetSmartLabel
-- TidyRollOptions.Initialize
-- Enemy.Timer_Update
-- Enemy.Stopwatch_Update
-- Enemy.CombatLogUI_EpsWindow_UpdateLayout
-- APAGui.OnShown
-- APAGui.UpdateKitingHUD
+- ClosetGoblinCharacterWindow.OnInitialize
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- SwiftAssist.aaLabelColorSet
+- Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
+- RoR_SoR.OnInitialize
+- Swift Assist.local.WriteLabels
 
 
 ## Binding Resolution
@@ -1062,6 +1062,10 @@ Confidence: MEDIUM
 
 ## Related APIs
 
+- [EA_Label_DefaultText](../../globals/constants/constant_EA_Label_DefaultText.md) (HIGH 100/100) - Constant
+- [EA_Label_DefaultText_Small](../../globals/constants/constant_EA_Label_DefaultText_Small.md) (HIGH 100/100) - Constant
+- [EA_Settings_ItemTitle](../../globals/constants/constant_EA_Settings_ItemTitle.md) (HIGH 100/100) - Constant
+- [EA_Settings_SectionTitle](../../globals/constants/constant_EA_Settings_SectionTitle.md) (HIGH 100/100) - Constant
 - [EA_Window_ContextMenu.AddMenuDivider](../../globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [TintColor](element_TintColor.md) (HIGH 100/100) - XML Element Type
@@ -1070,6 +1074,7 @@ Confidence: MEDIUM
 - [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
 - [Text](element_Text.md) (HIGH 98/100) - XML Element Type
+- [EA_Label_DefaultSubHeading](../../globals/constants/constant_EA_Label_DefaultSubHeading.md) (HIGH 90/100) - Constant
 - [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
 - [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 - [Color](element_Color.md) (MEDIUM 45/100) - XML Element Type

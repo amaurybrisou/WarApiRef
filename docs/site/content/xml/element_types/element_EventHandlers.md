@@ -149,7 +149,6 @@ Observed 1707 times as an unnamed child.
 ## Used With
 
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
-- [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
 - [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
 
 ## Triggered By

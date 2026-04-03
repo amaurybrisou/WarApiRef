@@ -91,39 +91,39 @@ Observed 73 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- BuffHead.BuffHeadEffectFrame:SetLayout
-- TurretRange.ShowElement
-- WoHReticle.CreateRing
-- TurretRange.Display.SetAlpha
-- Enemy.EnemyGroupIcon:Attach
-- TurretRange.UpdateDisplay
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- MoraleCircle.ColorChanger2
-- Enemy.EnemyEffectsIndicator:Update
-- MoraleCircle.OnSetCustomColorEmpty
-- TurretRange.Display.UpdateLayout
-- TurretRange.OnUpdate
-- MoraleCircle.ColorChanger4
-- TurretRange.Setup.Display.Initialize
-- FilterSettings.DisableCondenseSettings
-- GuardLine.update
-- TurretRange.local.UpdateDisplay
-- TurretRange.Setup.Display.LoadSettings
-- TurretRange.Setup.Display.OnCircleInvertLUp
-- MoraleCircle.ColorChanger1
-- Aura.Aura:UpdateWindow
-- DAoCBuff.DAoCBuffFrame:SetBuff
-- Enemy.UI_Icon_Switch
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - RoR_SoR.T1_UPDATE
+- DAoCBuff.DAoCBuffFrame:SetBuff
+- TurretRange.local.UpdateDisplay
+- MoraleCircle.OnSetCustomColorEmpty
+- MoraleCircle.OnSetCustomColor
+- MoraleCircle.ColorChanger1
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- TurretRange.UpdateDisplay
+- MoraleCircle.ColorChanger2
+- WoHReticle.UpdateTargets
+- Enemy.UI_Icon_Switch
+- TurretRange.Setup.Display.Initialize
+- Enemy.EnemyEffectsIndicator:Update
+- FilterSettings.DisableCondenseSettings
+- TurretRange.Display.UpdateLayout
+- TurretRange.Setup.Display.LoadSettings
+- MoraleCircle.OnSetCustomColorFull
+- MoraleCircle.ColorChanger4
+- GuardLine.update
+- TurretRange.ShowElement
+- Enemy.EnemyGroupIcon:Attach
+- Aura.Aura:UpdateWindow
+- TurretRange.Setup.Display.OnCircleInvertLUp
+- WoHReticle.CreateRing
+- BuffHead.BuffHeadEffectFrame:Update
+- TurretRange.OnUpdate
 - MoraleCircle.ColorChanger3
 - TurretRange.Setup.Display.OnCircleModeChanged
-- MoraleCircle.OnSetCustomColorFill
-- MoraleCircle.OnSetCustomColor
-- WoHReticle.UpdateTargets
-- BuffHead.BuffHeadEffectFrame:Update
+- TurretRange.Display.SetAlpha
 - TurretRange.local.ShowElement
-- MoraleCircle.OnSetCustomColorFull
+- BuffHead.BuffHeadEffectFrame:SetLayout
+- MoraleCircle.OnSetCustomColorFill
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
 
 ## Seen In
 

@@ -244,12 +244,12 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
+- DAoCBuffSettings.Change_Setting
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - ClosetGoblinCharacterWindow.UpdateHighlightOnRow
 - ClosetGoblinZoneWindow.UpdateHighlightOnRow
-- DAoCBuffSettings.Change_Setting
-- DAoCBuffSettings.SetLabels
 - DAoCBuffSettings.CreateOptionswindow
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- DAoCBuffSettings.SetLabels
 
 
 ## Binding Resolution

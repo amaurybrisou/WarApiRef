@@ -77,7 +77,7 @@ Observed engine XML template or inherited constant referenced by 3 addons.
 
 ## Related APIs
 
-- none
+- [AnimatedImage](../../xml/element_types/element_AnimatedImage.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

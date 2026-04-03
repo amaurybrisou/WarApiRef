@@ -98,6 +98,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 ## Related APIs
 
 - [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 100/100) - Global Function
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
 
 ## Used With
 

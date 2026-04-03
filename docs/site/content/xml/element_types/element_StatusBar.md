@@ -133,6 +133,7 @@ Observed 9 times as an unnamed child.
 ## Related APIs
 
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [EA_StatusBar_DefaultTintable](../../globals/constants/constant_EA_StatusBar_DefaultTintable.md) (HIGH 90/100) - Constant
 - [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With

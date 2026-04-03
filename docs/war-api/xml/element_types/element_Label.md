@@ -950,67 +950,67 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy.UI_ConfigDialog_Open
-- PotionBarSettings.OnAboutShown
-- DAoCBuff.ShowMessageWindow
-- PP.UpdateDyeFilter
-- Swift Assist.local.SetSmartLabel
-- Enemy.AssistUI_Target_Show
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.CombatLogUI_TargetDefenseWindow_Update
-- Killer.ShowPersonalStatsTooltip
-- APAGui.ApplyPetTargetHUDLayout
-- MoraleCircle.ColorChanger2
-- PP.UpdateListRow
-- SwiftAssist.aaLabelColorSet
-- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- ClosetGoblinCharacterWindow.OnInitialize
 - Enemy.IntercomInitialize
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.Guard_GuardIndicator_Update
-- Killer.ShowTopKillersTooltip
+- Enemy.Stopwatch_Update
 - APAGui.OnShown
-- Enemy.CombatLogUI_StatsWindow_Open
 - APAGui.UpdateInstantOnlyHUD
+- ClosetGoblinZoneWindow.RefreshOption
+- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- TidyRollOptions.Initialize
+- Enemy.IntercomUI_IntercomDialog_Open
+- Enemy.CombatLogUI_EpsWindow_UpdateLayout
+- MoraleCircle.ColorChanger2
+- Enemy.Timer_Update
+- Enemy.CombatLogUI_TargetDefenseWindow_Update
+- MoraleCircle.ColorChanger4
+- MoraleCircle.OnSetCustomColorEmpty
+- Swift Assist.local.SetSmartLabel
+- AggroMeter.Initialize
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.CombatLogUI_EpsWindow_Initialize
+- Killer.ShowPersonalStatsTooltip
 - Killer.ShowRowTooltip
+- APAGui.UpdateFollowTargetHUD
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.Guard_GuardIndicator_Update
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- Enemy.CombatLogUI_StatsWindow_Open
+- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- APAGui.ApplyPetTargetHUDLayout
+- DAoCBuff.ShowMessageWindow
+- Enemy.UI_ConfigDialog_Open
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- DAoCTooltips.CreateCondenseTooltip
+- MoraleCircle.ColorChanger3
+- DAoCTooltips.UpdateCondenseTooltip
+- Killer.Initialize
+- MoraleCircle.ColorChanger1
+- APAGui.UpdateKitingHUD
+- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
+- MoraleCircle.OnSetCustomColor
+- MoraleCircle.OnSetCustomColorFull
+- PP.UpdateDyeFilter
+- MoraleCircle.OnSetCustomColorFill
+- Killer.ShowTopKillersTooltip
+- WSCT.ColorOnInitialize
+- APAGui.UpdatePetTargetHUD
+- BankArkel.SetCharInfo
+- BankArkel.PackHide
+- Enemy.AssistUI_Target_Show
+- Enemy.CombatLogUI_EpsWindow_Update
+- PotionBarSettings.OnAboutShown
+- SwiftAssist.aaLabelColorSet
+- Enemy.CombatLogUI_StatsWindow_UpdateList
 - MoraleCircle.init
+- PP.UpdateListRow
 - Swift Assist.WriteLabels
 - Swift Assist.SetSmartLabel
-- BankArkel.PackHide
-- ClosetGoblinZoneWindow.RefreshOption
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.CombatLogUI_EpsWindow_UpdateLayout
-- Enemy.CombatLogUI_EpsWindow_Update
-- APAGui.UpdatePetTargetHUD
-- Enemy.Stopwatch_Update
-- Enemy.CombatLogUI_TargetDefenseTotalWindow_Update
+- ClosetGoblinCharacterWindow.OnInitialize
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- DAoCTooltips.UpdateCondenseTooltip
-- DAoCTooltips.CreateCondenseTooltip
-- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- Enemy.CombatLogUI_StatsWindow_UpdateList
-- MoraleCircle.ColorChanger4
-- WSCT.ColorOnInitialize
-- BankArkel.SetCharInfo
-- Killer.Initialize
-- MoraleCircle.OnSetCustomColorFill
-- RoR_SoR.OnInitialize
-- TidyRollOptions.Initialize
-- APAGui.UpdateKitingHUD
-- MoraleCircle.ColorChanger3
-- MoraleCircle.OnSetCustomColor
-- Swift Assist.local.WriteLabels
-- MoraleCircle.OnSetCustomColorEmpty
-- AggroMeter.Initialize
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
 - Enemy.CombatLogUI_StatsWindow_ListRowMouseOver
-- Enemy.CombatLogUI_EpsWindow_Initialize
-- MoraleCircle.ColorChanger1
-- MoraleCircle.OnSetCustomColorFull
-- APAGui.UpdateFollowTargetHUD
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.Timer_Update
-- Enemy.IntercomUI_IntercomDialog_Open
+- RoR_SoR.OnInitialize
+- Swift Assist.local.WriteLabels
 
 
 ## Binding Resolution

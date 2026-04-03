@@ -126,6 +126,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.LOADING_END](game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Triggered By

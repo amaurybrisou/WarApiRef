@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T03:16:50.193460783Z",
+  "generated_at": "2026-04-03T03:58:04.235706496Z",
   "nodes": [
     {
       "id": "data:table:AlertTextWindow",
@@ -932,16 +932,6 @@
       "summary": "Observed shared global table or namespace surfaced in 1 addons."
     },
     {
-      "id": "data:constant:EA_Window_Macro",
-      "label": "EA_Window_Macro",
-      "type": "data_structure",
-      "category": "Constant",
-      "path": "globals/constants/constant_EA_Window_Macro.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
-    },
-    {
       "id": "data:table:EA_Window_Macro",
       "label": "EA_Window_Macro",
       "type": "data_structure",
@@ -950,6 +940,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed shared global table or namespace surfaced in 3 addons."
+    },
+    {
+      "id": "data:constant:EA_Window_Macro",
+      "label": "EA_Window_Macro",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Window_Macro.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
     },
     {
       "id": "data:constant:EA_Window_MacroDetailIconButton",
@@ -9714,6 +9714,27 @@
       ]
     },
     {
+      "from": "event:game:SystemData.Events.INTERFACE_RELOADED",
+      "to": "function:global:RegisterEventHandler",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"DeathWindow\", true)",
+        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"EA_Window_CityCaptureJoinPromptWindow\", true)",
+        "SystemData.Events.INTERFACE_RELOADED",
+        "SystemData.Events.INTERFACE_RELOADED: registration repair"
+      ],
+      "rationale": "event:game:SystemData.Events.INTERFACE_RELOADED and function:global:RegisterEventHandler are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"DeathWindow\", true)",
+        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"EA_Window_CityCaptureJoinPromptWindow\", true)",
+        "SystemData.Events.INTERFACE_RELOADED",
+        "SystemData.Events.INTERFACE_RELOADED: registration repair"
+      ]
+    },
+    {
       "from": "event:game:SystemData.Events.LOADING_END",
       "to": "event:game:SystemData.Events.RELOAD_INTERFACE",
       "type": "commonly_used_with",
@@ -9781,6 +9802,27 @@
       ]
     },
     {
+      "from": "event:game:SystemData.Events.LOADING_END",
+      "to": "function:global:RegisterEventHandler",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnReload -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnReload -\u003e UnregisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "SystemData.Events.LOADING_END",
+        "SystemData.Events.LOADING_END: registration repair"
+      ],
+      "rationale": "event:game:SystemData.Events.LOADING_END and function:global:RegisterEventHandler are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnReload -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnReload -\u003e UnregisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "SystemData.Events.LOADING_END",
+        "SystemData.Events.LOADING_END: registration repair"
+      ]
+    },
+    {
       "from": "event:game:SystemData.Events.RELOAD_INTERFACE",
       "to": "function:global:DoesWindowExist",
       "type": "commonly_used_with",
@@ -9820,6 +9862,27 @@
         "TidyRoll: TidyRoll.OnLoad -\u003e LibSlash.RegisterWSlashCmd(\"troll\", TidyRoll.ToggleOptions)",
         "TidyRoll: TidyRoll.OnLoad -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_LootRoll\", \"OnHidden\")",
         "TidyRoll: TidyRoll.OnLoad -\u003e WindowUnregisterCoreEventHandler(\"EA_Window_LootRoll\", \"OnShown\")"
+      ]
+    },
+    {
+      "from": "event:game:SystemData.Events.RELOAD_INTERFACE",
+      "to": "function:global:RegisterEventHandler",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnReload -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnReload -\u003e UnregisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "SystemData.Events.RELOAD_INTERFACE",
+        "SystemData.Events.RELOAD_INTERFACE: registration repair"
+      ],
+      "rationale": "event:game:SystemData.Events.RELOAD_INTERFACE and function:global:RegisterEventHandler are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnReload -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.OnReload -\u003e UnregisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "SystemData.Events.RELOAD_INTERFACE",
+        "SystemData.Events.RELOAD_INTERFACE: registration repair"
       ]
     },
     {
@@ -9912,31 +9975,6 @@
         "AdvancedRenownTrainer: AdvancedRenownTraining.Respecialize -\u003e GameData.Player.GetRenownRefundCost()",
         "CM_ClosetGoblin: ClosetGoblinCharacterWindow.OnClickDeleteSetButton -\u003e DialogManager.MakeTwoButtonDialog(cgL[\"confirm_delete_set\"]:gsub(L \"#1#\",set.name), confirmYes, ClosetGoblinCharacterWindow.OnConfirmDeleteSet, confirmNo, nil)",
         "Enemy: Enemy.CombatLogUI_StatsWindow_SessionDelete -\u003e DialogManager.MakeTwoButtonDialog(L \"Delete session '\"..session.name..L \"' ?\", L \"Yes\", function()Enemy.CombatLog_StatsSessionDelete(session.stats)end, L \"No\")"
-      ]
-    },
-    {
-      "from": "event:window:OnLButtonUp",
-      "to": "function:window:ButtonGetDisabledFlag",
-      "type": "commonly_used_with",
-      "confidence_score": 70,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances -\u003e ButtonGetDisabledFlag(WindowName..\"PurchaseButton\")",
-        "Aura: AuraTexture.OnIconLButtonUp -\u003e ButtonGetDisabledFlag(SystemData.ActiveWindow.name)",
-        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(SystemData.ActiveWindow.name)",
-        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name))",
-        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name)))",
-        "BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -\u003e ButtonGetDisabledFlag(windowName..\"OnTargetChangeClearAlwaysShow\"..\"Button\")"
-      ],
-      "rationale": "event:window:OnLButtonUp and function:window:ButtonGetDisabledFlag are commonly used together",
-      "weight": 6,
-      "evidence": [
-        "AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances -\u003e ButtonGetDisabledFlag(WindowName..\"PurchaseButton\")",
-        "Aura: AuraTexture.OnIconLButtonUp -\u003e ButtonGetDisabledFlag(SystemData.ActiveWindow.name)",
-        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(SystemData.ActiveWindow.name)",
-        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name))",
-        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name)))",
-        "BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -\u003e ButtonGetDisabledFlag(windowName..\"OnTargetChangeClearAlwaysShow\"..\"Button\")"
       ]
     },
     {
@@ -10037,6 +10075,31 @@
         "AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink -\u003e ComboBoxGetSelectedText(PresetWindowName..\"LoadComboBox\")",
         "AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink -\u003e EA_ChatWindow.InsertText(hl)",
         "AdvancedRenownTrainer: AdvancedRenownTraining.ImportNameInputOkButtonPressed -\u003e TextEditBoxGetText(ImportNameInputWindowName..\"NameInputBox\")"
+      ]
+    },
+    {
+      "from": "event:window:OnLButtonUp",
+      "to": "ui:Window",
+      "type": "commonly_used_with",
+      "confidence_score": 70,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementEffectsAlwaysShowEnable\"..\"Button\")",
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementEffectsPermanent\"..\"Button\")",
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementHandleInputEnableRemovable\"..\"Button\")",
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementHandleInputShowTooltips\"..\"Button\")",
+        "BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -\u003e ButtonGetDisabledFlag(windowName..\"OnTargetChangeClearAlwaysShow\"..\"Button\")",
+        "DAoCBuff: DAoCBuffSettings.FilterRowOnLButtonUp -\u003e LabelGetText(SystemData.ActiveWindow.name..\"Name\")"
+      ],
+      "rationale": "event:window:OnLButtonUp and ui:Window are commonly used together",
+      "weight": 6,
+      "evidence": [
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementEffectsAlwaysShowEnable\"..\"Button\")",
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementEffectsPermanent\"..\"Button\")",
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementHandleInputEnableRemovable\"..\"Button\")",
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementHandleInputShowTooltips\"..\"Button\")",
+        "BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -\u003e ButtonGetDisabledFlag(windowName..\"OnTargetChangeClearAlwaysShow\"..\"Button\")",
+        "DAoCBuff: DAoCBuffSettings.FilterRowOnLButtonUp -\u003e LabelGetText(SystemData.ActiveWindow.name..\"Name\")"
       ]
     },
     {
@@ -10450,6 +10513,27 @@
     },
     {
       "from": "function:global:CreateWindow",
+      "to": "function:global:EA_Window_InteractionRenownTraining.Hide",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")"
+      ],
+      "rationale": "function:global:CreateWindow and function:global:EA_Window_InteractionRenownTraining.Hide are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")"
+      ]
+    },
+    {
+      "from": "function:global:CreateWindow",
       "to": "function:global:LibSlash.RegisterSlashCmd",
       "type": "commonly_used_with",
       "confidence_score": 71,
@@ -10494,6 +10578,27 @@
         "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"EA_Window_CityCaptureJoinPromptWindow\", true)",
         "MiracleGrowLight: MiracleGrowLight.Initialize -\u003e DynamicImageSetTextureSlice(windowName..\"Plant\"..i..\"ButtonFrame\", \"IconFrame-1\")",
         "MiracleGrowLight: MiracleGrowLight.Initialize -\u003e DynamicImageSetTextureSlice(windowName..\"Plant\"..i..\"HarvestFrame\", \"IconFrame-1\")"
+      ]
+    },
+    {
+      "from": "function:global:CreateWindow",
+      "to": "function:window:ButtonSetPressedFlag",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Enemy: Enemy.UnitFramesUI_EffectsIndicatorDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyEffectsIndicatorDialogContent\", 0)",
+        "Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyClickCastingDialogContent\", 0)",
+        "Enemy: Enemy.UnitFramesUI_UnitFramePartDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyUnitFramePartDialogContent\", 0)",
+        "Pocket Palette: PP.CreateWindow -\u003e WindowGetAnchor(PP.settings.windows[\"main\"].name, 1)"
+      ],
+      "rationale": "function:global:CreateWindow and function:window:ButtonSetPressedFlag are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "Enemy: Enemy.UnitFramesUI_EffectsIndicatorDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyEffectsIndicatorDialogContent\", 0)",
+        "Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyClickCastingDialogContent\", 0)",
+        "Enemy: Enemy.UnitFramesUI_UnitFramePartDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyUnitFramePartDialogContent\", 0)",
+        "Pocket Palette: PP.CreateWindow -\u003e WindowGetAnchor(PP.settings.windows[\"main\"].name, 1)"
       ]
     },
     {
@@ -10572,45 +10677,28 @@
       ]
     },
     {
-      "from": "function:global:CreateWindow",
-      "to": "function:window:WindowSetAlpha",
+      "from": "function:global:CreateWindowFromTemplate",
+      "to": "function:global:DoesWindowExist",
       "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
+      "confidence_score": 70,
+      "evidence_count": 6,
       "evidence_sources": [
-        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(shareWindowId..\"BackgroundInner\", .9)",
-        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(windowId..\"BackgroundInner\", .9)",
-        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"DeathWindow\", true)",
-        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"EA_Window_CityCaptureJoinPromptWindow\", true)"
+        "AggroMeter: AggroMeter.SplitText -\u003e WindowStartAlphaAnimation(\"AggroMeterWindow\"..MobID, Window.AnimationType.SINGLE_NO_RESET, 0, 1, 0.5, false, 0, 0)",
+        "Enemy: EnemyGroupIcon:Attach -\u003e Icons.GetCareerIconIDFromCareerLine(self.playerCareer)",
+        "RoR_SoR: RoR_SoR.SET_CAMPAIGN -\u003e LabelGetTextDimensions(\"SoR_\"..Window_Name..\"_BannerLabel\")",
+        "RoR_SoR: RoR_SoR.SET_CITY -\u003e DynamicImageSetTextureOrientation(\"SoR_\"..Window_Name..\"Flames\", Window_Name==\"162\")",
+        "RoR_SoR: RoR_SoR.SET_KEEP -\u003e LabelGetText(\"SoR_\"..Window_Name..\"KEEP1SAFETIMER\")",
+        "RoR_SoR: RoR_SoR.SET_KEEP -\u003e LabelGetText(\"SoR_\"..Window_Name..\"KEEP2SAFETIMER\")"
       ],
-      "rationale": "function:global:CreateWindow and function:window:WindowSetAlpha are commonly used together",
-      "weight": 4,
+      "rationale": "function:global:CreateWindowFromTemplate and function:global:DoesWindowExist are commonly used together",
+      "weight": 6,
       "evidence": [
-        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(shareWindowId..\"BackgroundInner\", .9)",
-        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(windowId..\"BackgroundInner\", .9)",
-        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"DeathWindow\", true)",
-        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"EA_Window_CityCaptureJoinPromptWindow\", true)"
-      ]
-    },
-    {
-      "from": "function:global:CreateWindow",
-      "to": "function:window:WindowSetShowing",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "AdvancedPetAssist: APAGui.Show -\u003e CreateWindow(\"APAOptions\", true)",
-        "AdvancedPetAssist: APAGui.Show -\u003e WindowSetShowing(\"APAOptions\", true)",
-        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
-        "DAoCBuff: DAoCBuff.ShowMessageWindow -\u003e ScrollWindowUpdateScrollRect(\"DAoCBuffMessageWindowScrollWindow\")"
-      ],
-      "rationale": "function:global:CreateWindow and function:window:WindowSetShowing are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "AdvancedPetAssist: APAGui.Show -\u003e CreateWindow(\"APAOptions\", true)",
-        "AdvancedPetAssist: APAGui.Show -\u003e WindowSetShowing(\"APAOptions\", true)",
-        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
-        "DAoCBuff: DAoCBuff.ShowMessageWindow -\u003e ScrollWindowUpdateScrollRect(\"DAoCBuffMessageWindowScrollWindow\")"
+        "AggroMeter: AggroMeter.SplitText -\u003e WindowStartAlphaAnimation(\"AggroMeterWindow\"..MobID, Window.AnimationType.SINGLE_NO_RESET, 0, 1, 0.5, false, 0, 0)",
+        "Enemy: EnemyGroupIcon:Attach -\u003e Icons.GetCareerIconIDFromCareerLine(self.playerCareer)",
+        "RoR_SoR: RoR_SoR.SET_CAMPAIGN -\u003e LabelGetTextDimensions(\"SoR_\"..Window_Name..\"_BannerLabel\")",
+        "RoR_SoR: RoR_SoR.SET_CITY -\u003e DynamicImageSetTextureOrientation(\"SoR_\"..Window_Name..\"Flames\", Window_Name==\"162\")",
+        "RoR_SoR: RoR_SoR.SET_KEEP -\u003e LabelGetText(\"SoR_\"..Window_Name..\"KEEP1SAFETIMER\")",
+        "RoR_SoR: RoR_SoR.SET_KEEP -\u003e LabelGetText(\"SoR_\"..Window_Name..\"KEEP2SAFETIMER\")"
       ]
     },
     {
@@ -10786,31 +10874,6 @@
         "AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow -\u003e WindowSetId(t.windowName, t.id)",
         "AdvancedRenownTrainer: CreateAbilityWindow -\u003e DynamicImageSetTexture(t.windowName..\"Square\", GetIconData(t.icon), 0, 0)",
         "AdvancedRenownTrainer: CreateAbilityWindow -\u003e GetIconData(t.icon)"
-      ]
-    },
-    {
-      "from": "function:global:CreateWindowFromTemplate",
-      "to": "function:window:WindowSetShowing",
-      "type": "commonly_used_with",
-      "confidence_score": 70,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "AutoMark: AutoMark.local.CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
-        "AutoMark: AutoMark.local.CreateMarker -\u003e GetIconData(career_icon_id)",
-        "AutoMark: CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
-        "AutoMark: CreateMarker -\u003e GetIconData(career_icon_id)",
-        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
-        "Enemy: Enemy.CombatLogUI_IDS_Update -\u003e Icons.GetCareerIconIDFromCareerLine(career)"
-      ],
-      "rationale": "function:global:CreateWindowFromTemplate and function:window:WindowSetShowing are commonly used together",
-      "weight": 6,
-      "evidence": [
-        "AutoMark: AutoMark.local.CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
-        "AutoMark: AutoMark.local.CreateMarker -\u003e GetIconData(career_icon_id)",
-        "AutoMark: CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
-        "AutoMark: CreateMarker -\u003e GetIconData(career_icon_id)",
-        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
-        "Enemy: Enemy.CombatLogUI_IDS_Update -\u003e Icons.GetCareerIconIDFromCareerLine(career)"
       ]
     },
     {
@@ -12085,6 +12148,29 @@
     },
     {
       "from": "function:global:InterfaceCore.GetScale",
+      "to": "function:window:WindowClearAnchors",
+      "type": "commonly_used_with",
+      "confidence_score": 59,
+      "evidence_count": 5,
+      "evidence_sources": [
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -\u003e InterfaceCore.GetScale()",
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -\u003e WindowGetScreenPosition(BuffHead.Setup.AdvancedContainersItem.WindowName)",
+        "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e InterfaceCore.GetScale()",
+        "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e WindowGetScreenPosition(BuffHead.Setup.Layout.WindowName)",
+        "Shinies: Tooltips.AddExtraWindow -\u003e WindowGetAnchorCount(windowToAnchorTo)"
+      ],
+      "rationale": "function:global:InterfaceCore.GetScale and function:window:WindowClearAnchors are commonly used together",
+      "weight": 5,
+      "evidence": [
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -\u003e InterfaceCore.GetScale()",
+        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -\u003e WindowGetScreenPosition(BuffHead.Setup.AdvancedContainersItem.WindowName)",
+        "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e InterfaceCore.GetScale()",
+        "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e WindowGetScreenPosition(BuffHead.Setup.Layout.WindowName)",
+        "Shinies: Tooltips.AddExtraWindow -\u003e WindowGetAnchorCount(windowToAnchorTo)"
+      ]
+    },
+    {
+      "from": "function:global:InterfaceCore.GetScale",
       "to": "function:window:WindowGetScale",
       "type": "commonly_used_with",
       "confidence_score": 70,
@@ -12129,29 +12215,6 @@
         "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e InterfaceCore.GetScale()",
         "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e WindowGetScreenPosition(BuffHead.Setup.Layout.WindowName)",
         "BuffHead: BuffHead.local.GetRelativeScreenPosition -\u003e WindowGetScreenPosition(containerWindow)"
-      ]
-    },
-    {
-      "from": "function:global:InterfaceCore.GetScale",
-      "to": "function:window:WindowSetScale",
-      "type": "commonly_used_with",
-      "confidence_score": 59,
-      "evidence_count": 5,
-      "evidence_sources": [
-        "Ace: LIBGUI_ELEMENT:Scale -\u003e InterfaceCore.GetScale()",
-        "Ace: LIBGUI_ELEMENT:Scale -\u003e WindowGetScale(self.name)",
-        "Ace: LIBGUI_ELEMENT:Scale -\u003e WindowSetScale(self.name, scale)",
-        "BuffHead: BuffHeadContainer:AnchorContainers -\u003e WindowSetScale(self:GetName(), self.Settings.Scale*InterfaceCore.GetScale())",
-        "RoR_SoR: RoR_SoR.Restack -\u003e InterfaceCore.GetResolutionScale()"
-      ],
-      "rationale": "function:global:InterfaceCore.GetScale and function:window:WindowSetScale are commonly used together",
-      "weight": 5,
-      "evidence": [
-        "Ace: LIBGUI_ELEMENT:Scale -\u003e InterfaceCore.GetScale()",
-        "Ace: LIBGUI_ELEMENT:Scale -\u003e WindowGetScale(self.name)",
-        "Ace: LIBGUI_ELEMENT:Scale -\u003e WindowSetScale(self.name, scale)",
-        "BuffHead: BuffHeadContainer:AnchorContainers -\u003e WindowSetScale(self:GetName(), self.Settings.Scale*InterfaceCore.GetScale())",
-        "RoR_SoR: RoR_SoR.Restack -\u003e InterfaceCore.GetResolutionScale()"
       ]
     },
     {
@@ -12483,23 +12546,25 @@
       "from": "function:global:RegisterEventHandler",
       "to": "function:window:WindowRegisterEventHandler",
       "type": "commonly_used_with",
-      "confidence_score": 59,
-      "evidence_count": 5,
+      "confidence_score": 74,
+      "evidence_count": 6,
       "evidence_sources": [
         "SystemData.Events.AUCTION_BID_RESULT_RECEIVED",
+        "SystemData.Events.AUCTION_BID_RESULT_RECEIVED: registration repair",
         "SystemData.Events.AUCTION_INIT_RECEIVED",
+        "SystemData.Events.AUCTION_INIT_RECEIVED: registration repair",
         "SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED",
-        "SystemData.Events.INTERACT_DONE",
-        "SystemData.Events.L_BUTTON_UP_PROCESSED"
+        "SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED: registration repair"
       ],
       "rationale": "function:global:RegisterEventHandler and function:window:WindowRegisterEventHandler are commonly used together",
-      "weight": 5,
+      "weight": 10,
       "evidence": [
         "SystemData.Events.AUCTION_BID_RESULT_RECEIVED",
+        "SystemData.Events.AUCTION_BID_RESULT_RECEIVED: registration repair",
         "SystemData.Events.AUCTION_INIT_RECEIVED",
+        "SystemData.Events.AUCTION_INIT_RECEIVED: registration repair",
         "SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED",
-        "SystemData.Events.INTERACT_DONE",
-        "SystemData.Events.L_BUTTON_UP_PROCESSED"
+        "SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED: registration repair"
       ]
     },
     {
@@ -12521,6 +12586,27 @@
         "DAoCBuff: DAoCBuffSettings.UC -\u003e WindowGetHandleInput(\"DAoCBuff_Settings\")",
         "DAoCBuff: FilterSettings.Cleanup -\u003e WindowGetAlpha(fwindow)",
         "DAoCBuff: ImExport.Cleanup -\u003e WindowGetAlpha(iewindow)"
+      ]
+    },
+    {
+      "from": "function:global:towstring",
+      "to": "function:global:wstring.format",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
+        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e wstring.format(L \"%.01f\", (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100)",
+        "Enemy: Enemy.FormatNumberShort -\u003e wstring.format(L \"%.2f K\", number/1000)",
+        "Enemy: Enemy.FormatNumberShort -\u003e wstring.format(L \"%.2f M\", number/1000000)"
+      ],
+      "rationale": "function:global:towstring and function:global:wstring.format are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e WindowGetParent(SystemData.MouseOverWindow.name)",
+        "AggroMeter: AggroMeter.OnMouseOverStart -\u003e wstring.format(L \"%.01f\", (AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(TimerNumber)].aggro/AggroMeter.MaxAggro[tostring(MobNumber)])*100)",
+        "Enemy: Enemy.FormatNumberShort -\u003e wstring.format(L \"%.2f K\", number/1000)",
+        "Enemy: Enemy.FormatNumberShort -\u003e wstring.format(L \"%.2f M\", number/1000000)"
       ]
     },
     {
@@ -12692,27 +12778,6 @@
         "BuffHead: BuffHead.Setup.SelectColor.Show -\u003e WindowSetLayer(windowName, WindowGetLayer(window)+1)",
         "DAoCBuff: DAoCBuffHeadTracker:Create -\u003e LayoutEditor.RegisterWindow(windowName, towstring(windowName), L \"Alternative Buffwindow. (Head)\", false, false, true, nil)",
         "DAoCBuff: DAoCBuffTracker:Create -\u003e LayoutEditor.RegisterWindow(windowName, towstring(windowName), L \"Alternative Buffwindow.\", false, false, true, nil)"
-      ]
-    },
-    {
-      "from": "function:global:towstring",
-      "to": "function:window:WindowGetShowing",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "BuffHead: BuffHead.Setup.SelectColor.Show -\u003e WindowGetLayer(window)",
-        "BuffHead: BuffHead.Setup.SelectColor.Show -\u003e WindowSetLayer(windowName, WindowGetLayer(window)+1)",
-        "Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update -\u003e WindowSetId(\"EnemyScenarioInfoDialogScoreDestrLabel\", NewTooltip(L \"Destruction points\"))",
-        "Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update -\u003e WindowSetId(\"EnemyScenarioInfoDialogScoreOrderLabel\", NewTooltip(L \"Order points\"))"
-      ],
-      "rationale": "function:global:towstring and function:window:WindowGetShowing are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "BuffHead: BuffHead.Setup.SelectColor.Show -\u003e WindowGetLayer(window)",
-        "BuffHead: BuffHead.Setup.SelectColor.Show -\u003e WindowSetLayer(windowName, WindowGetLayer(window)+1)",
-        "Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update -\u003e WindowSetId(\"EnemyScenarioInfoDialogScoreDestrLabel\", NewTooltip(L \"Destruction points\"))",
-        "Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update -\u003e WindowSetId(\"EnemyScenarioInfoDialogScoreOrderLabel\", NewTooltip(L \"Order points\"))"
       ]
     },
     {
@@ -15673,145 +15738,76 @@
       ]
     },
     {
-      "from": "ui:Anchor",
-      "to": "ui:Anchors",
-      "type": "commonly_used_with",
-      "confidence_score": 70,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "AbsPoint: XML element relationships",
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "Window: XML element relationships"
-      ],
-      "rationale": "ui:Anchor and ui:Anchors are commonly used together",
-      "weight": 6,
-      "evidence": [
-        "AbsPoint: XML element relationships",
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "Window: XML element relationships"
-      ]
-    },
-    {
-      "from": "ui:Anchor",
-      "to": "ui:Button",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "Window: XML element relationships"
-      ],
-      "rationale": "ui:Anchor and ui:Button are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "Window: XML element relationships"
-      ]
-    },
-    {
-      "from": "ui:Anchors",
-      "to": "ui:Button",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "Window: XML element relationships"
-      ],
-      "rationale": "ui:Anchors and ui:Button are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "Window: XML element relationships"
-      ]
-    },
-    {
       "from": "ui:Anchors",
       "to": "ui:EventHandlers",
       "type": "commonly_used_with",
-      "confidence_score": 75,
-      "evidence_count": 6,
+      "confidence_score": 59,
+      "evidence_count": 5,
       "evidence_sources": [
-        "Button: XML element relationships",
-        "ComboBox: XML element relationships",
-        "DynamicImage: XML element relationships",
         "EditBox: XML element relationships",
-        "FullResizeImage: XML element relationships",
-        "Label: XML element relationships"
+        "ListBox: XML element relationships",
+        "MapDisplay: XML element relationships",
+        "SliderBar: XML element relationships",
+        "VerticalScrollbar: XML element relationships"
       ],
       "rationale": "ui:Anchors and ui:EventHandlers are commonly used together",
-      "weight": 11,
+      "weight": 5,
       "evidence": [
-        "Button: XML element relationships",
-        "ComboBox: XML element relationships",
-        "DynamicImage: XML element relationships",
         "EditBox: XML element relationships",
-        "FullResizeImage: XML element relationships",
-        "Label: XML element relationships"
+        "ListBox: XML element relationships",
+        "MapDisplay: XML element relationships",
+        "SliderBar: XML element relationships",
+        "VerticalScrollbar: XML element relationships"
       ]
     },
     {
       "from": "ui:Anchors",
       "to": "ui:Size",
       "type": "commonly_used_with",
-      "confidence_score": 79,
+      "confidence_score": 75,
       "evidence_count": 6,
       "evidence_sources": [
         "AbsPoint: XML element relationships",
         "AnimatedImage: XML element relationships",
         "CircleImage: XML element relationships",
-        "ComboBox: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "DynamicImage: XML element relationships"
+        "EditBox: XML element relationships",
+        "HorizontalResizeImage: XML element relationships"
       ],
       "rationale": "ui:Anchors and ui:Size are commonly used together",
-      "weight": 15,
+      "weight": 11,
       "evidence": [
         "AbsPoint: XML element relationships",
         "AnimatedImage: XML element relationships",
         "CircleImage: XML element relationships",
-        "ComboBox: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "DynamicImage: XML element relationships"
+        "EditBox: XML element relationships",
+        "HorizontalResizeImage: XML element relationships"
       ]
     },
     {
       "from": "ui:Anchors",
       "to": "ui:Windows",
       "type": "commonly_used_with",
-      "confidence_score": 74,
+      "confidence_score": 71,
       "evidence_count": 6,
       "evidence_sources": [
         "AnimatedImage: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "EditBox: XML element relationships",
         "ListBox: XML element relationships",
         "LogDisplay: XML element relationships",
-        "MapDisplay: XML element relationships"
+        "MapDisplay: XML element relationships",
+        "ScrollWindow: XML element relationships"
       ],
       "rationale": "ui:Anchors and ui:Windows are commonly used together",
-      "weight": 10,
+      "weight": 7,
       "evidence": [
         "AnimatedImage: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "EditBox: XML element relationships",
         "ListBox: XML element relationships",
         "LogDisplay: XML element relationships",
-        "MapDisplay: XML element relationships"
+        "MapDisplay: XML element relationships",
+        "ScrollWindow: XML element relationships"
       ]
     },
     {
@@ -16241,31 +16237,6 @@
       "from": "ui:EventHandlers",
       "to": "ui:Size",
       "type": "commonly_used_with",
-      "confidence_score": 73,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "ComboBox: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "EditBox: XML element relationships",
-        "FullResizeImage: XML element relationships",
-        "Label: XML element relationships",
-        "ListBox: XML element relationships"
-      ],
-      "rationale": "ui:EventHandlers and ui:Size are commonly used together",
-      "weight": 9,
-      "evidence": [
-        "ComboBox: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "EditBox: XML element relationships",
-        "FullResizeImage: XML element relationships",
-        "Label: XML element relationships",
-        "ListBox: XML element relationships"
-      ]
-    },
-    {
-      "from": "ui:EventHandlers",
-      "to": "ui:Windows",
-      "type": "commonly_used_with",
       "confidence_score": 59,
       "evidence_count": 5,
       "evidence_sources": [
@@ -16275,7 +16246,7 @@
         "SliderBar: XML element relationships",
         "VerticalScrollbar: XML element relationships"
       ],
-      "rationale": "ui:EventHandlers and ui:Windows are commonly used together",
+      "rationale": "ui:EventHandlers and ui:Size are commonly used together",
       "weight": 5,
       "evidence": [
         "EditBox: XML element relationships",
@@ -16617,22 +16588,20 @@
       "from": "ui:Size",
       "to": "ui:Windows",
       "type": "commonly_used_with",
-      "confidence_score": 72,
-      "evidence_count": 6,
+      "confidence_score": 59,
+      "evidence_count": 5,
       "evidence_sources": [
         "AnimatedImage: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "EditBox: XML element relationships",
         "ListBox: XML element relationships",
         "MapDisplay: XML element relationships",
         "ScrollWindow: XML element relationships"
       ],
       "rationale": "ui:Size and ui:Windows are commonly used together",
-      "weight": 8,
+      "weight": 5,
       "evidence": [
         "AnimatedImage: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "EditBox: XML element relationships",
         "ListBox: XML element relationships",
         "MapDisplay: XML element relationships",
         "ScrollWindow: XML element relationships"
@@ -16642,20 +16611,18 @@
       "from": "ui:Sizes",
       "to": "ui:TexCoords",
       "type": "commonly_used_with",
-      "confidence_score": 59,
-      "evidence_count": 5,
+      "confidence_score": 58,
+      "evidence_count": 4,
       "evidence_sources": [
         "BottomRight: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
         "Middle: XML element relationships",
         "TopLeft: XML element relationships",
         "VerticalResizeImage: XML element relationships"
       ],
       "rationale": "ui:Sizes and ui:TexCoords are commonly used together",
-      "weight": 5,
+      "weight": 4,
       "evidence": [
         "BottomRight: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
         "Middle: XML element relationships",
         "TopLeft: XML element relationships",
         "VerticalResizeImage: XML element relationships"
@@ -21179,6 +21146,1191 @@
       ]
     },
     {
+      "from": "ui:AnimatedImage",
+      "to": "data:constant:EA_MoraleButtonAnimation",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "AnimatedImage inherits XML template EA_MoraleButtonAnimation"
+      ],
+      "rationale": "ui:AnimatedImage inherits XML template data:constant:EA_MoraleButtonAnimation",
+      "weight": 1,
+      "evidence": [
+        "AnimatedImage inherits XML template EA_MoraleButtonAnimation"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_BottomTab",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_BottomTab"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_BottomTab",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_BottomTab"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_Default",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_Default"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_Default",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_Default"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultBigLeftArrow",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultBigLeftArrow"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultBigLeftArrow",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultBigLeftArrow"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultBigRightArrow",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultBigRightArrow"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultBigRightArrow",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultBigRightArrow"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultCheckBox",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultCheckBox"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultCheckBox",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultCheckBox"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultDown",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultDown"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultDown",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultDown"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultIconFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultIconFrame"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultIconFrame",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultIconFrame"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultIconFrame_Large",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultIconFrame_Large"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultIconFrame_Large",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultIconFrame_Large"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultIconFrame_Small",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultIconFrame_Small"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultIconFrame_Small",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultIconFrame_Small"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultListSort",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultListSort"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultListSort",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultListSort"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultMenuButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultMenuButton"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultMenuButton",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultMenuButton"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultMinus",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultMinus"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultMinus",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultMinus"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultPlus",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultPlus"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultPlus",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultPlus"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultResizeable",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultResizeable"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultResizeable",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultResizeable"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultSmallSquare",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultSmallSquare"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultSmallSquare",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultSmallSquare"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultText",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultText"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultText",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultText"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultToggleCircle",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultToggleCircle"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultToggleCircle",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultToggleCircle"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultUp",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultUp"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultUp",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultUp"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultWindowClose",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultWindowClose"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultWindowClose",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultWindowClose"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_ListSort",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_ListSort"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_ListSort",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_ListSort"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_ResizeIconFrame_NoNormalImage",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_ResizeIconFrame_NoNormalImage"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_ResizeIconFrame_NoNormalImage",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_ResizeIconFrame_NoNormalImage"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_Tab",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_Tab"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_Tab",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_Tab"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_FilterMenuButtonTemplate",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_FilterMenuButtonTemplate"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_FilterMenuButtonTemplate",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_FilterMenuButtonTemplate"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_ScrollBar_DefaultDownArrowButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_ScrollBar_DefaultDownArrowButton"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_ScrollBar_DefaultDownArrowButton",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_ScrollBar_DefaultDownArrowButton"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_ScrollBar_DefaultUpArrowButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_ScrollBar_DefaultUpArrowButton"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_ScrollBar_DefaultUpArrowButton",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_ScrollBar_DefaultUpArrowButton"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Templates_Color_Picker_Button",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Templates_Color_Picker_Button"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Templates_Color_Picker_Button",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Templates_Color_Picker_Button"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Window_MacroDetailIconButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Window_MacroDetailIconButton"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Window_MacroDetailIconButton",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Window_MacroDetailIconButton"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Window_MacroIconButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Window_MacroIconButton"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Window_MacroIconButton",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Window_MacroIconButton"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "data:constant:EA_ComboBox_DefaultResizable",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizable"
+      ],
+      "rationale": "ui:ComboBox inherits XML template data:constant:EA_ComboBox_DefaultResizable",
+      "weight": 1,
+      "evidence": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizable"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "data:constant:EA_ComboBox_DefaultResizableLarge",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableLarge"
+      ],
+      "rationale": "ui:ComboBox inherits XML template data:constant:EA_ComboBox_DefaultResizableLarge",
+      "weight": 1,
+      "evidence": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableLarge"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "data:constant:EA_ComboBox_DefaultResizableMedium",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableMedium"
+      ],
+      "rationale": "ui:ComboBox inherits XML template data:constant:EA_ComboBox_DefaultResizableMedium",
+      "weight": 1,
+      "evidence": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableMedium"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "data:constant:EA_ComboBox_DefaultResizableSmall",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableSmall"
+      ],
+      "rationale": "ui:ComboBox inherits XML template data:constant:EA_ComboBox_DefaultResizableSmall",
+      "weight": 1,
+      "evidence": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableSmall"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "data:constant:EA_ComboBox_DefaultResizable_Fixed",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizable_Fixed"
+      ],
+      "rationale": "ui:ComboBox inherits XML template data:constant:EA_ComboBox_DefaultResizable_Fixed",
+      "weight": 1,
+      "evidence": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizable_Fixed"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Default_CharacterImage",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Default_CharacterImage"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Default_CharacterImage",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Default_CharacterImage"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Default_TrainingImage",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Default_TrainingImage"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Default_TrainingImage",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Default_TrainingImage"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Image_DefaultIcon",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Image_DefaultIcon"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Image_DefaultIcon",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Image_DefaultIcon"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Image_DefaultIconFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Image_DefaultIconFrame"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Image_DefaultIconFrame",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Image_DefaultIconFrame"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_ListSortDownArrow",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_ListSortDownArrow"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_ListSortDownArrow",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_ListSortDownArrow"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_ListSortUpArrow",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_ListSortUpArrow"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_ListSortUpArrow",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_ListSortUpArrow"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Templates_BrassCoin",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Templates_BrassCoin"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Templates_BrassCoin",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Templates_BrassCoin"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Templates_GoldCoin",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Templates_GoldCoin"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Templates_GoldCoin",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Templates_GoldCoin"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Templates_SilverCoin",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Templates_SilverCoin"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Templates_SilverCoin",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Templates_SilverCoin"
+      ]
+    },
+    {
+      "from": "ui:EditBox",
+      "to": "data:constant:EA_EditBox_DefaultFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "EditBox inherits XML template EA_EditBox_DefaultFrame"
+      ],
+      "rationale": "ui:EditBox inherits XML template data:constant:EA_EditBox_DefaultFrame",
+      "weight": 1,
+      "evidence": [
+        "EditBox inherits XML template EA_EditBox_DefaultFrame"
+      ]
+    },
+    {
+      "from": "ui:EditBox",
+      "to": "data:constant:EA_EditBox_DefaultFrame_Multiline",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "EditBox inherits XML template EA_EditBox_DefaultFrame_Multiline"
+      ],
+      "rationale": "ui:EditBox inherits XML template data:constant:EA_EditBox_DefaultFrame_Multiline",
+      "weight": 1,
+      "evidence": [
+        "EditBox inherits XML template EA_EditBox_DefaultFrame_Multiline"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_Button_ResizeIconFrameNormal",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_Button_ResizeIconFrameNormal"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_Button_ResizeIconFrameNormal",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_Button_ResizeIconFrameNormal"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_BlackTransparent",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_BlackTransparent"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_BlackTransparent",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_BlackTransparent"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_DefaultFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_DefaultFrame"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_DefaultFrame",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_DefaultFrame"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_MetalFill",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_MetalFill"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_MetalFill",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_MetalFill"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_TintableFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_TintableFrame"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_TintableFrame",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_TintableFrame"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_TintableSolidBackground",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_TintableSolidBackground"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_TintableSolidBackground",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_TintableSolidBackground"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_WhiteTransparent",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_WhiteTransparent"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_WhiteTransparent",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_WhiteTransparent"
+      ]
+    },
+    {
+      "from": "ui:HorizontalResizeImage",
+      "to": "data:constant:EA_BrownHorizontalRule",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "HorizontalResizeImage inherits XML template EA_BrownHorizontalRule"
+      ],
+      "rationale": "ui:HorizontalResizeImage inherits XML template data:constant:EA_BrownHorizontalRule",
+      "weight": 1,
+      "evidence": [
+        "HorizontalResizeImage inherits XML template EA_BrownHorizontalRule"
+      ]
+    },
+    {
+      "from": "ui:HorizontalResizeImage",
+      "to": "data:constant:EA_HorizontalResizeImage_DefaultTopFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "HorizontalResizeImage inherits XML template EA_HorizontalResizeImage_DefaultTopFrame"
+      ],
+      "rationale": "ui:HorizontalResizeImage inherits XML template data:constant:EA_HorizontalResizeImage_DefaultTopFrame",
+      "weight": 1,
+      "evidence": [
+        "HorizontalResizeImage inherits XML template EA_HorizontalResizeImage_DefaultTopFrame"
+      ]
+    },
+    {
+      "from": "ui:HorizontalResizeImage",
+      "to": "data:constant:EA_HorizontalResizeImage_TabSeparatorMiddle",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "HorizontalResizeImage inherits XML template EA_HorizontalResizeImage_TabSeparatorMiddle"
+      ],
+      "rationale": "ui:HorizontalResizeImage inherits XML template data:constant:EA_HorizontalResizeImage_TabSeparatorMiddle",
+      "weight": 1,
+      "evidence": [
+        "HorizontalResizeImage inherits XML template EA_HorizontalResizeImage_TabSeparatorMiddle"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "data:constant:EA_Label_DefaultSubHeading",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Label inherits XML template EA_Label_DefaultSubHeading"
+      ],
+      "rationale": "ui:Label inherits XML template data:constant:EA_Label_DefaultSubHeading",
+      "weight": 1,
+      "evidence": [
+        "Label inherits XML template EA_Label_DefaultSubHeading"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "data:constant:EA_Label_DefaultText",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Label inherits XML template EA_Label_DefaultText"
+      ],
+      "rationale": "ui:Label inherits XML template data:constant:EA_Label_DefaultText",
+      "weight": 1,
+      "evidence": [
+        "Label inherits XML template EA_Label_DefaultText"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "data:constant:EA_Label_DefaultText_Small",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Label inherits XML template EA_Label_DefaultText_Small"
+      ],
+      "rationale": "ui:Label inherits XML template data:constant:EA_Label_DefaultText_Small",
+      "weight": 1,
+      "evidence": [
+        "Label inherits XML template EA_Label_DefaultText_Small"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "data:constant:EA_Settings_ItemTitle",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Label inherits XML template EA_Settings_ItemTitle"
+      ],
+      "rationale": "ui:Label inherits XML template data:constant:EA_Settings_ItemTitle",
+      "weight": 1,
+      "evidence": [
+        "Label inherits XML template EA_Settings_ItemTitle"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "data:constant:EA_Settings_SectionTitle",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Label inherits XML template EA_Settings_SectionTitle"
+      ],
+      "rationale": "ui:Label inherits XML template data:constant:EA_Settings_SectionTitle",
+      "weight": 1,
+      "evidence": [
+        "Label inherits XML template EA_Settings_SectionTitle"
+      ]
+    },
+    {
+      "from": "ui:SliderBar",
+      "to": "data:constant:EA_Default_SliderBar",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SliderBar inherits XML template EA_Default_SliderBar"
+      ],
+      "rationale": "ui:SliderBar inherits XML template data:constant:EA_Default_SliderBar",
+      "weight": 1,
+      "evidence": [
+        "SliderBar inherits XML template EA_Default_SliderBar"
+      ]
+    },
+    {
+      "from": "ui:StatusBar",
+      "to": "data:constant:EA_StatusBar_DefaultTintable",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "StatusBar inherits XML template EA_StatusBar_DefaultTintable"
+      ],
+      "rationale": "ui:StatusBar inherits XML template data:constant:EA_StatusBar_DefaultTintable",
+      "weight": 1,
+      "evidence": [
+        "StatusBar inherits XML template EA_StatusBar_DefaultTintable"
+      ]
+    },
+    {
+      "from": "ui:VerticalScrollbar",
+      "to": "data:constant:EA_ScrollBar_ChatVertical",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "VerticalScrollbar inherits XML template EA_ScrollBar_ChatVertical"
+      ],
+      "rationale": "ui:VerticalScrollbar inherits XML template data:constant:EA_ScrollBar_ChatVertical",
+      "weight": 1,
+      "evidence": [
+        "VerticalScrollbar inherits XML template EA_ScrollBar_ChatVertical"
+      ]
+    },
+    {
+      "from": "ui:VerticalScrollbar",
+      "to": "data:constant:EA_ScrollBar_DefaultVerticalChain",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "VerticalScrollbar inherits XML template EA_ScrollBar_DefaultVerticalChain"
+      ],
+      "rationale": "ui:VerticalScrollbar inherits XML template data:constant:EA_ScrollBar_DefaultVerticalChain",
+      "weight": 1,
+      "evidence": [
+        "VerticalScrollbar inherits XML template EA_ScrollBar_DefaultVerticalChain"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_LabelCheckButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_LabelCheckButton"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_LabelCheckButton",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_LabelCheckButton"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_TitleBar_Default",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_TitleBar_Default"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_TitleBar_Default",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_TitleBar_Default"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_CityRating",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_CityRating"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_CityRating",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_CityRating"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_ComboBoxMenuBackground",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_ComboBoxMenuBackground"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_ComboBoxMenuBackground",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_ComboBoxMenuBackground"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_Default",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_Default"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_Default",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_Default"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultBackgroundFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultBackgroundFrame"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultBackgroundFrame",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultBackgroundFrame"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultButtonBottomFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultButtonBottomFrame"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultButtonBottomFrame",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultButtonBottomFrame"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultContextMenuFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultContextMenuFrame"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultContextMenuFrame",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultContextMenuFrame"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultFrame"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultFrame",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultFrame"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultFrameStatusBar",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultFrameStatusBar"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultFrameStatusBar",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultFrameStatusBar"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultSeparator",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultSeparator"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultSeparator",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultSeparator"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultTooltipBackground",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultTooltipBackground"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultTooltipBackground",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultTooltipBackground"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultVerticalSeparator",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultVerticalSeparator"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultVerticalSeparator",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultVerticalSeparator"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_TabSeparatorLeftSide",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_TabSeparatorLeftSide"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_TabSeparatorLeftSide",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_TabSeparatorLeftSide"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_TabSeparatorRightSide",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_TabSeparatorRightSide"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_TabSeparatorRightSide",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_TabSeparatorRightSide"
+      ]
+    },
+    {
       "from": "function:global:CreateWindow",
       "to": "data:system:SystemData.Events.LOADING_END",
       "type": "reads_data",
@@ -23401,6 +24553,1815 @@
       "weight": 1,
       "evidence": [
         "Shinies: _G.Shinies:NewModule.Criteria_ReopenComboBox -\u003e WindowUnregisterEventHandler(lastComboSelected, SystemData.Events.L_BUTTON_UP_PROCESSED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.ALL_MODULES_INITIALIZED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.ALL_MODULES_INITIALIZED, ClosetGoblin.OnAllModulesInitialized)",
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.ALL_MODULES_INITIALIZED, RoR_SoR.Enable)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.ALL_MODULES_INITIALIZED",
+      "weight": 2,
+      "evidence": [
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.ALL_MODULES_INITIALIZED, ClosetGoblin.OnAllModulesInitialized)",
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.ALL_MODULES_INITIALIZED, RoR_SoR.Enable)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.AUCTION_BID_RESULT_RECEIVED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Shinies: RegisterEventHandler(SystemData.Events.AUCTION_BID_RESULT_RECEIVED, ShiniesAPI.Core_OnAuctionBidResultReceived)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.AUCTION_BID_RESULT_RECEIVED",
+      "weight": 1,
+      "evidence": [
+        "Shinies: RegisterEventHandler(SystemData.Events.AUCTION_BID_RESULT_RECEIVED, ShiniesAPI.Core_OnAuctionBidResultReceived)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.AUCTION_INIT_RECEIVED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Shinies: RegisterEventHandler(SystemData.Events.AUCTION_INIT_RECEIVED, Shinies.OnAuctionInitReceived)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.AUCTION_INIT_RECEIVED",
+      "weight": 1,
+      "evidence": [
+        "Shinies: RegisterEventHandler(SystemData.Events.AUCTION_INIT_RECEIVED, Shinies.OnAuctionInitReceived)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Shinies: RegisterEventHandler(SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED, ShiniesAPI.Core_OnAuctionSearchResultReceived)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED",
+      "weight": 1,
+      "evidence": [
+        "Shinies: RegisterEventHandler(SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED, ShiniesAPI.Core_OnAuctionSearchResultReceived)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.BATTLEGROUP_ACCEPT_INVITATION",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "followTheLeader: RegisterEventHandler(SystemData.Events.BATTLEGROUP_ACCEPT_INVITATION, followTheLeader.RequestUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.BATTLEGROUP_ACCEPT_INVITATION",
+      "weight": 1,
+      "evidence": [
+        "followTheLeader: RegisterEventHandler(SystemData.Events.BATTLEGROUP_ACCEPT_INVITATION, followTheLeader.RequestUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.BATTLEGROUP_MEMBER_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.BATTLEGROUP_MEMBER_UPDATED, Enemy.Groups_OnBattlegroupMemberUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.BATTLEGROUP_MEMBER_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.BATTLEGROUP_MEMBER_UPDATED, Enemy.Groups_OnBattlegroupMemberUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.BATTLEGROUP_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.BATTLEGROUP_UPDATED, Enemy.GroupsUpdateType)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.BATTLEGROUP_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.BATTLEGROUP_UPDATED, Enemy.GroupsUpdateType)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.CAMPAIGN_ZONE_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Killer: RegisterEventHandler(SystemData.Events.CAMPAIGN_ZONE_UPDATED, Killer.OnCampaignZoneUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.CAMPAIGN_ZONE_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Killer: RegisterEventHandler(SystemData.Events.CAMPAIGN_ZONE_UPDATED, Killer.OnCampaignZoneUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.CHAT_TEXT_ARRIVED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.CHAT_TEXT_ARRIVED, Enemy.OnChatTextArrived)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.CHAT_TEXT_ARRIVED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.CHAT_TEXT_ARRIVED, Enemy.OnChatTextArrived)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.CITY_SCENARIO_BEGIN",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.CITY_SCENARIO_BEGIN, Enemy.GroupsUpdateType)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.CITY_SCENARIO_BEGIN",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.CITY_SCENARIO_BEGIN, Enemy.GroupsUpdateType)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.CITY_SCENARIO_END",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.CITY_SCENARIO_END, Enemy.GroupsUpdateType)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.CITY_SCENARIO_END",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.CITY_SCENARIO_END, Enemy.GroupsUpdateType)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.CITY_SCENARIO_UPDATE_POINTS",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.CITY_SCENARIO_UPDATE_POINTS, Enemy.ScenarioInfoUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.CITY_SCENARIO_UPDATE_POINTS",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.CITY_SCENARIO_UPDATE_POINTS, Enemy.ScenarioInfoUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.CUSTOM_UI_SCALE_CHANGED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.CUSTOM_UI_SCALE_CHANGED, DAoCBuff.U)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.CUSTOM_UI_SCALE_CHANGED",
+      "weight": 1,
+      "evidence": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.CUSTOM_UI_SCALE_CHANGED, DAoCBuff.U)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.END_ITEM_ENHANCEMENT",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.END_ITEM_ENHANCEMENT, Enemy.TalismanAlerter_Update)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.END_ITEM_ENHANCEMENT",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.END_ITEM_ENHANCEMENT, Enemy.TalismanAlerter_Update)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.ENTER_WORLD",
+      "type": "registration",
+      "confidence_score": 89,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.ENTER_WORLD, DAoCBuff.OnReload)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.ENTER_WORLD, DAoCBuff.TargetsCleared)",
+        "PartyCast: RegisterEventHandler(SystemData.Events.ENTER_WORLD, PartyCast.GROUP_UPDATED)",
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.ENTER_WORLD, RoR_SoR.Enable)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.ENTER_WORLD",
+      "weight": 4,
+      "evidence": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.ENTER_WORLD, DAoCBuff.OnReload)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.ENTER_WORLD, DAoCBuff.TargetsCleared)",
+        "PartyCast: RegisterEventHandler(SystemData.Events.ENTER_WORLD, PartyCast.GROUP_UPDATED)",
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.ENTER_WORLD, RoR_SoR.Enable)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.GROUP_ACCEPT_INVITATION",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "followTheLeader: RegisterEventHandler(SystemData.Events.GROUP_ACCEPT_INVITATION, followTheLeader.RequestUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.GROUP_ACCEPT_INVITATION",
+      "weight": 1,
+      "evidence": [
+        "followTheLeader: RegisterEventHandler(SystemData.Events.GROUP_ACCEPT_INVITATION, followTheLeader.RequestUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.GROUP_EFFECTS_UPDATED",
+      "type": "registration",
+      "confidence_score": 87,
+      "evidence_count": 3,
+      "evidence_sources": [
+        "BuffHead: RegisterEventHandler(SystemData.Events.GROUP_EFFECTS_UPDATED, BuffHead.OnGroupEffectsUpdated)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.GROUP_EFFECTS_UPDATED, DAoCBuff.OnEventG)",
+        "Enemy: RegisterEventHandler(SystemData.Events.GROUP_EFFECTS_UPDATED, Enemy.Groups_OnGroupEffectUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.GROUP_EFFECTS_UPDATED",
+      "weight": 3,
+      "evidence": [
+        "BuffHead: RegisterEventHandler(SystemData.Events.GROUP_EFFECTS_UPDATED, BuffHead.OnGroupEffectsUpdated)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.GROUP_EFFECTS_UPDATED, DAoCBuff.OnEventG)",
+        "Enemy: RegisterEventHandler(SystemData.Events.GROUP_EFFECTS_UPDATED, Enemy.Groups_OnGroupEffectUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.GROUP_LEAVE",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "LibGuard: RegisterEventHandler(SystemData.Events.GROUP_LEAVE, LibGuard.GROUP_UPDATED)",
+        "followTheLeader: RegisterEventHandler(SystemData.Events.GROUP_LEAVE, followTheLeader.RequestUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.GROUP_LEAVE",
+      "weight": 2,
+      "evidence": [
+        "LibGuard: RegisterEventHandler(SystemData.Events.GROUP_LEAVE, LibGuard.GROUP_UPDATED)",
+        "followTheLeader: RegisterEventHandler(SystemData.Events.GROUP_LEAVE, followTheLeader.RequestUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.GROUP_PLAYER_ADDED",
+      "type": "registration",
+      "confidence_score": 87,
+      "evidence_count": 3,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.GROUP_PLAYER_ADDED, Enemy.GroupsUpdate)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.GROUP_PLAYER_ADDED, LibGuard.GROUP_UPDATED)",
+        "followTheLeader: RegisterEventHandler(SystemData.Events.GROUP_PLAYER_ADDED, followTheLeader.RequestUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.GROUP_PLAYER_ADDED",
+      "weight": 3,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.GROUP_PLAYER_ADDED, Enemy.GroupsUpdate)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.GROUP_PLAYER_ADDED, LibGuard.GROUP_UPDATED)",
+        "followTheLeader: RegisterEventHandler(SystemData.Events.GROUP_PLAYER_ADDED, followTheLeader.RequestUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.GROUP_SETTINGS_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "followTheLeader: RegisterEventHandler(SystemData.Events.GROUP_SETTINGS_UPDATED, followTheLeader.RequestUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.GROUP_SETTINGS_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "followTheLeader: RegisterEventHandler(SystemData.Events.GROUP_SETTINGS_UPDATED, followTheLeader.RequestUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.GROUP_SET_LEADER",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "followTheLeader: RegisterEventHandler(SystemData.Events.GROUP_SET_LEADER, followTheLeader.RequestUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.GROUP_SET_LEADER",
+      "weight": 1,
+      "evidence": [
+        "followTheLeader: RegisterEventHandler(SystemData.Events.GROUP_SET_LEADER, followTheLeader.RequestUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.GROUP_STATUS_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.GROUP_STATUS_UPDATED, Enemy.Groups_OnGroupStatusUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.GROUP_STATUS_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.GROUP_STATUS_UPDATED, Enemy.Groups_OnGroupStatusUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.GROUP_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.GROUP_UPDATED, DAoCBuff.OnEventGU)",
+        "Enemy: RegisterEventHandler(SystemData.Events.GROUP_UPDATED, Enemy.GroupsUpdateType)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.GROUP_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.GROUP_UPDATED, DAoCBuff.OnEventGU)",
+        "Enemy: RegisterEventHandler(SystemData.Events.GROUP_UPDATED, Enemy.GroupsUpdateType)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.INTERACT_DONE",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "PartyCast: RegisterEventHandler(SystemData.Events.INTERACT_DONE, PartyCast.EndCast)",
+        "Shinies: RegisterEventHandler(SystemData.Events.INTERACT_DONE, Shinies.OnInteractDone)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.INTERACT_DONE",
+      "weight": 2,
+      "evidence": [
+        "PartyCast: RegisterEventHandler(SystemData.Events.INTERACT_DONE, PartyCast.EndCast)",
+        "Shinies: RegisterEventHandler(SystemData.Events.INTERACT_DONE, Shinies.OnInteractDone)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE, Enemy.ScenarioAlerter_OnInteractLeaveScenarioQueue)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE, Enemy.ScenarioAlerter_OnInteractLeaveScenarioQueue)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "TidyRoll: RegisterEventHandler(SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM, TidyRoll.OnLootRollFirstItem)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM",
+      "weight": 1,
+      "evidence": [
+        "TidyRoll: RegisterEventHandler(SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM, TidyRoll.OnLootRollFirstItem)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.INTERACT_OPEN_BANK",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "BankArkel: RegisterEventHandler(SystemData.Events.INTERACT_OPEN_BANK, BankArkel.OnOpenBank)",
+        "Shinies: RegisterEventHandler(SystemData.Events.INTERACT_OPEN_BANK, ShiniesDataInventory.OnInteractBankOpen)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.INTERACT_OPEN_BANK",
+      "weight": 2,
+      "evidence": [
+        "BankArkel: RegisterEventHandler(SystemData.Events.INTERACT_OPEN_BANK, BankArkel.OnOpenBank)",
+        "Shinies: RegisterEventHandler(SystemData.Events.INTERACT_OPEN_BANK, ShiniesDataInventory.OnInteractBankOpen)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "TidyRoll: RegisterEventHandler(SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA, TidyRoll.UpdateLootRollData)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA",
+      "weight": 1,
+      "evidence": [
+        "TidyRoll: RegisterEventHandler(SystemData.Events.INTERACT_SHOW_LOOT_ROLL_DATA, TidyRoll.UpdateLootRollData)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.INTERFACE_RELOADED",
+      "type": "registration",
+      "confidence_score": 89,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.INTERFACE_RELOADED, DAoCBuff.OnReload)",
+        "Enemy: RegisterEventHandler(SystemData.Events.INTERFACE_RELOADED, Enemy._Initialize)",
+        "PartyCast: RegisterEventHandler(SystemData.Events.INTERFACE_RELOADED, PartyCast.GROUP_UPDATED)",
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.INTERFACE_RELOADED, RoR_SoR.Enable)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.INTERFACE_RELOADED",
+      "weight": 4,
+      "evidence": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.INTERFACE_RELOADED, DAoCBuff.OnReload)",
+        "Enemy: RegisterEventHandler(SystemData.Events.INTERFACE_RELOADED, Enemy._Initialize)",
+        "PartyCast: RegisterEventHandler(SystemData.Events.INTERFACE_RELOADED, PartyCast.GROUP_UPDATED)",
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.INTERFACE_RELOADED, RoR_SoR.Enable)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.ITEM_SET_DATA_ARRIVED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Pocket Palette: RegisterEventHandler(SystemData.Events.ITEM_SET_DATA_ARRIVED, PP.UpdateItemSlots)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.ITEM_SET_DATA_ARRIVED",
+      "weight": 1,
+      "evidence": [
+        "Pocket Palette: RegisterEventHandler(SystemData.Events.ITEM_SET_DATA_ARRIVED, PP.UpdateItemSlots)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.LOADING_BEGIN",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.LOADING_BEGIN, ClosetGoblin.LoadingBegin)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.LOADING_BEGIN",
+      "weight": 1,
+      "evidence": [
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.LOADING_BEGIN, ClosetGoblin.LoadingBegin)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.LOADING_END",
+      "type": "registration",
+      "confidence_score": 95,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, AdvancedPetAssist.OnLoadingEnd)",
+        "AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.LOADING_END, AdvancedRenownTraining.OnReload)",
+        "Aura: RegisterEventHandler(SystemData.Events.LOADING_END, AuraAddon.OnLoad)",
+        "BagOMatic: RegisterEventHandler(SystemData.Events.LOADING_END, BagOMatic.restore_filters)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.LOADING_END, BuffHead.OnLoadingEnd)",
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.LOADING_END, ClosetGoblin.Initialize)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.LOADING_END",
+      "weight": 21,
+      "evidence": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.LOADING_END, AdvancedPetAssist.OnLoadingEnd)",
+        "AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.LOADING_END, AdvancedRenownTraining.OnReload)",
+        "Aura: RegisterEventHandler(SystemData.Events.LOADING_END, AuraAddon.OnLoad)",
+        "BagOMatic: RegisterEventHandler(SystemData.Events.LOADING_END, BagOMatic.restore_filters)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.LOADING_END, BuffHead.OnLoadingEnd)",
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.LOADING_END, ClosetGoblin.Initialize)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.LOG_OUT",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "BankArkel: RegisterEventHandler(SystemData.Events.LOG_OUT, BankArkel.LogOut)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.LOG_OUT",
+      "weight": 1,
+      "evidence": [
+        "BankArkel: RegisterEventHandler(SystemData.Events.LOG_OUT, BankArkel.LogOut)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.L_BUTTON_DOWN_PROCESSED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.L_BUTTON_DOWN_PROCESSED, AdvancedPetAssist.OnLButtonDown)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.L_BUTTON_DOWN_PROCESSED",
+      "weight": 2,
+      "evidence": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.L_BUTTON_DOWN_PROCESSED, AdvancedPetAssist.OnLButtonDown)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.L_BUTTON_UP_PROCESSED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "BuffHead: RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, BuffHead.Setup.Layout.OnLButtonUpProcessed)",
+        "TidyChat: RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, TidyChat.OnLBU)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.L_BUTTON_UP_PROCESSED",
+      "weight": 2,
+      "evidence": [
+        "BuffHead: RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, BuffHead.Setup.Layout.OnLButtonUpProcessed)",
+        "TidyChat: RegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, TidyChat.OnLBU)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.MACROS_LOADED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Swift Assist: RegisterEventHandler(SystemData.Events.MACROS_LOADED, SwiftAssist.OnMacrosLoaded)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.MACROS_LOADED",
+      "weight": 1,
+      "evidence": [
+        "Swift Assist: RegisterEventHandler(SystemData.Events.MACROS_LOADED, SwiftAssist.OnMacrosLoaded)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.MACRO_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Swift Assist: RegisterEventHandler(SystemData.Events.MACRO_UPDATED, SwiftAssist.OnMacroUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.MACRO_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Swift Assist: RegisterEventHandler(SystemData.Events.MACRO_UPDATED, SwiftAssist.OnMacroUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.M_BUTTON_DOWN_PROCESSED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.M_BUTTON_DOWN_PROCESSED, AdvancedPetAssist.OnMButtonDown)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.M_BUTTON_DOWN_PROCESSED",
+      "weight": 2,
+      "evidence": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.M_BUTTON_DOWN_PROCESSED, AdvancedPetAssist.OnMButtonDown)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_BANK_SLOT_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_BANK_SLOT_UPDATED, ShiniesDataInventory.OnPlayerBankSlotUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_BANK_SLOT_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_BANK_SLOT_UPDATED, ShiniesDataInventory.OnPlayerBankSlotUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "PotionBar: RegisterEventHandler(SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED, PotionBar.OnPlayerBattleLevelUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "PotionBar: RegisterEventHandler(SystemData.Events.PLAYER_BATTLE_LEVEL_UPDATED, PotionBar.OnPlayerBattleLevelUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_BEGIN_CAST",
+      "type": "registration",
+      "confidence_score": 91,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, AdvancedPetAssist.OnPlayerCast)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, LibGuard.StartCast)",
+        "PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, PartyCast.StartCast)",
+        "TurretRange: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, TurretRange.OnBeginCast)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_BEGIN_CAST",
+      "weight": 5,
+      "evidence": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, AdvancedPetAssist.OnPlayerCast)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, LibGuard.StartCast)",
+        "PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, PartyCast.StartCast)",
+        "TurretRange: RegisterEventHandler(SystemData.Events.PLAYER_BEGIN_CAST, TurretRange.OnBeginCast)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, AdvancedRenownTraining.CreateDataTable)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, AdvancedRenownTraining.CreateDataTable)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_CAREER_LINE_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_LINE_UPDATED, Enemy._PlayerCareerLineUpdated)",
+        "TexturedButtons: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_LINE_UPDATED, TexturedButtons.OnCareerLineUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_CAREER_LINE_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_LINE_UPDATED, Enemy._PlayerCareerLineUpdated)",
+        "TexturedButtons: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_LINE_UPDATED, TexturedButtons.OnCareerLineUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_CAREER_RANK_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_RANK_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_CAREER_RANK_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_RANK_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "PlanB: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED, PlanB.SetPage)",
+        "WSCT: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED, WSCT.PLAYER_CAREER_RESOURCE_UPDATED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "PlanB: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED, PlanB.SetPage)",
+        "WSCT: RegisterEventHandler(SystemData.Events.PLAYER_CAREER_RESOURCE_UPDATED, WSCT.PLAYER_CAREER_RESOURCE_UPDATED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_CAST_TIMER_SETBACK",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_CAST_TIMER_SETBACK, PartyCast.SetbackCast)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_CAST_TIMER_SETBACK",
+      "weight": 1,
+      "evidence": [
+        "PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_CAST_TIMER_SETBACK, PartyCast.SetbackCast)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED",
+      "type": "registration",
+      "confidence_score": 95,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "Ace: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, AceTimerOnPlayerCombatFlagDONOTTOUCH)",
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, AdvancedPetAssist.OnCombatFlagUpdated)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, DAoCBuff.CombatUpdate)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, Enemy.Groups_OnCurrentPlayerCombatFlagUpdated)",
+        "PlanB: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, PlanB.SetPage)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, AceTimerOnPlayerCombatFlagDONOTTOUCH)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED",
+      "weight": 9,
+      "evidence": [
+        "Ace: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, AceTimerOnPlayerCombatFlagDONOTTOUCH)",
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, AdvancedPetAssist.OnCombatFlagUpdated)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, DAoCBuff.CombatUpdate)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, Enemy.Groups_OnCurrentPlayerCombatFlagUpdated)",
+        "PlanB: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, PlanB.SetPage)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, AceTimerOnPlayerCombatFlagDONOTTOUCH)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED",
+      "type": "registration",
+      "confidence_score": 87,
+      "evidence_count": 3,
+      "evidence_sources": [
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED, ShiniesAPI.Core_OnPlayerCraftingSlotUpdated)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED, ShiniesDataInventory.OnPlayerCraftingSlotUpdated)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED, ShiniesPostUI.OnPlayerCraftingSlotUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED",
+      "weight": 3,
+      "evidence": [
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED, ShiniesAPI.Core_OnPlayerCraftingSlotUpdated)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED, ShiniesDataInventory.OnPlayerCraftingSlotUpdated)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_CRAFTING_SLOT_UPDATED, ShiniesPostUI.OnPlayerCraftingSlotUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Killer: RegisterEventHandler(SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED, Killer.OnCurrencyUpdated)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED, ShiniesDataInventory.OnPlayerCurrencySlotUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "Killer: RegisterEventHandler(SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED, Killer.OnCurrencyUpdated)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_CURRENCY_SLOT_UPDATED, ShiniesDataInventory.OnPlayerCurrencySlotUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)",
+        "WSCT: RegisterEventHandler(SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED, WSCT.PLAYER_CUR_ACTION_POINTS_UPDATED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)",
+        "WSCT: RegisterEventHandler(SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED, WSCT.PLAYER_CUR_ACTION_POINTS_UPDATED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)",
+        "WSCT: RegisterEventHandler(SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED, WSCT.PLAYER_CUR_HIT_POINTS_UPDATED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)",
+        "WSCT: RegisterEventHandler(SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED, WSCT.PLAYER_CUR_HIT_POINTS_UPDATED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_DEATH",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_DEATH, PartyCast.ON_DEATH)",
+        "PlanB: RegisterEventHandler(SystemData.Events.PLAYER_DEATH, PlanB.SetPage)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_DEATH",
+      "weight": 2,
+      "evidence": [
+        "PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_DEATH, PartyCast.ON_DEATH)",
+        "PlanB: RegisterEventHandler(SystemData.Events.PLAYER_DEATH, PlanB.SetPage)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_DEATH_CLEARED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.PLAYER_DEATH_CLEARED, DAoCBuff.TargetsCleared)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_DEATH_CLEARED",
+      "weight": 1,
+      "evidence": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.PLAYER_DEATH_CLEARED, DAoCBuff.TargetsCleared)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_EFFECTS_UPDATED",
+      "type": "registration",
+      "confidence_score": 89,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "BuffHead: RegisterEventHandler(SystemData.Events.PLAYER_EFFECTS_UPDATED, BuffHead.OnGroupEffectsUpdated)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.PLAYER_EFFECTS_UPDATED, DAoCBuff.OnEvent)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_EFFECTS_UPDATED, Enemy.Groups_OnCurrentPlayerEffectsUpdated)",
+        "WSCT: RegisterEventHandler(SystemData.Events.PLAYER_EFFECTS_UPDATED, WSCT.PLAYER_EFFECTS_UPDATED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_EFFECTS_UPDATED",
+      "weight": 4,
+      "evidence": [
+        "BuffHead: RegisterEventHandler(SystemData.Events.PLAYER_EFFECTS_UPDATED, BuffHead.OnGroupEffectsUpdated)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.PLAYER_EFFECTS_UPDATED, DAoCBuff.OnEvent)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_EFFECTS_UPDATED, Enemy.Groups_OnCurrentPlayerEffectsUpdated)",
+        "WSCT: RegisterEventHandler(SystemData.Events.PLAYER_EFFECTS_UPDATED, WSCT.PLAYER_EFFECTS_UPDATED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_END_CAST",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_END_CAST, PartyCast.EndCast)",
+        "TurretRange: RegisterEventHandler(SystemData.Events.PLAYER_END_CAST, TurretRange.OnCastEnd)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_END_CAST",
+      "weight": 2,
+      "evidence": [
+        "PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_END_CAST, PartyCast.EndCast)",
+        "TurretRange: RegisterEventHandler(SystemData.Events.PLAYER_END_CAST, TurretRange.OnCastEnd)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Pocket Palette: RegisterEventHandler(SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED, PP.UpdateItemSlots)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Pocket Palette: RegisterEventHandler(SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED, PP.UpdateItemSlots)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "followTheLeader: RegisterEventHandler(SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED, followTheLeader.RequestUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "followTheLeader: RegisterEventHandler(SystemData.Events.PLAYER_GROUP_LEADER_STATUS_UPDATED, followTheLeader.RequestUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_HOT_BAR_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "TexturedButtons: RegisterEventHandler(SystemData.Events.PLAYER_HOT_BAR_UPDATED, TexturedButtons.OnHotbarUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_HOT_BAR_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "TexturedButtons: RegisterEventHandler(SystemData.Events.PLAYER_HOT_BAR_UPDATED, TexturedButtons.OnHotbarUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "type": "registration",
+      "confidence_score": 95,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, ClosetGoblin.OnInventorySlotUpdated)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, Enemy.TalismanAlerter_Update)",
+        "Pocket Palette: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, PP.UpdateItemSlots)",
+        "PotionBar: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, PotionBar.InventorySlotUpdated)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, ShiniesAPI.Core_OnPlayerInventorySlotUpdated)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, ShiniesDataInventory.OnPlayerInventorySlotUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED",
+      "weight": 7,
+      "evidence": [
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, ClosetGoblin.OnInventorySlotUpdated)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, Enemy.TalismanAlerter_Update)",
+        "Pocket Palette: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, PP.UpdateItemSlots)",
+        "PotionBar: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, PotionBar.InventorySlotUpdated)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, ShiniesAPI.Core_OnPlayerInventorySlotUpdated)",
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED, ShiniesDataInventory.OnPlayerInventorySlotUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_MONEY_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_MONEY_UPDATED, ShiniesPostUI.OnPlayerMoneyUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_MONEY_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Shinies: RegisterEventHandler(SystemData.Events.PLAYER_MONEY_UPDATED, ShiniesPostUI.OnPlayerMoneyUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_MORALE_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_MORALE_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)",
+        "WSCT: RegisterEventHandler(SystemData.Events.PLAYER_MORALE_UPDATED, WSCT.PLAYER_MORALE_UPDATED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_MORALE_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_MORALE_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)",
+        "WSCT: RegisterEventHandler(SystemData.Events.PLAYER_MORALE_UPDATED, WSCT.PLAYER_MORALE_UPDATED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_PET_HEALTH_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_PET_HEALTH_UPDATED, Enemy.Groups_OnPlayerPetHealthUpdated)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.PLAYER_PET_HEALTH_UPDATED, LibGuard.UpdatePetHealthProxy)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_PET_HEALTH_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_PET_HEALTH_UPDATED, Enemy.Groups_OnPlayerPetHealthUpdated)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.PLAYER_PET_HEALTH_UPDATED, LibGuard.UpdatePetHealthProxy)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_PET_TARGET_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.PLAYER_PET_TARGET_UPDATED, AdvancedPetAssist.OnPetTargetUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_PET_TARGET_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.PLAYER_PET_TARGET_UPDATED, AdvancedPetAssist.OnPetTargetUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_PET_UPDATED",
+      "type": "registration",
+      "confidence_score": 87,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.PLAYER_PET_UPDATED, AdvancedPetAssist.OnPetUpdated)",
+        "TurretRange: RegisterEventHandler(SystemData.Events.PLAYER_PET_UPDATED, TurretRange.OnPetUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_PET_UPDATED",
+      "weight": 3,
+      "evidence": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.PLAYER_PET_UPDATED, AdvancedPetAssist.OnPetUpdated)",
+        "TurretRange: RegisterEventHandler(SystemData.Events.PLAYER_PET_UPDATED, TurretRange.OnPetUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_POSITION_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "BuffHead: RegisterEventHandler(SystemData.Events.PLAYER_POSITION_UPDATED, BuffHead.OnPlayerPositionUpdated)",
+        "TurretRange: RegisterEventHandler(SystemData.Events.PLAYER_POSITION_UPDATED, TurretRange.OnPlayerPositionUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_POSITION_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "BuffHead: RegisterEventHandler(SystemData.Events.PLAYER_POSITION_UPDATED, BuffHead.OnPlayerPositionUpdated)",
+        "TurretRange: RegisterEventHandler(SystemData.Events.PLAYER_POSITION_UPDATED, TurretRange.OnPlayerPositionUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "PotionBar: RegisterEventHandler(SystemData.Events.PLAYER_RENOWN_RANK_UPDATED, PotionBar.OnPlayerRenownRankUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_RENOWN_RANK_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "PotionBar: RegisterEventHandler(SystemData.Events.PLAYER_RENOWN_RANK_UPDATED, PotionBar.OnPlayerRenownRankUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_RENOWN_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Killer: RegisterEventHandler(SystemData.Events.PLAYER_RENOWN_UPDATED, Killer.OnRenownUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_RENOWN_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Killer: RegisterEventHandler(SystemData.Events.PLAYER_RENOWN_UPDATED, Killer.OnRenownUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_RVR_FLAG_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_RVR_FLAG_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_RVR_FLAG_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_RVR_FLAG_UPDATED, Enemy.Groups_OnCurrentPlayerUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_START_INTERACT_TIMER",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, PartyCast.StartInteract)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_START_INTERACT_TIMER",
+      "weight": 1,
+      "evidence": [
+        "PartyCast: RegisterEventHandler(SystemData.Events.PLAYER_START_INTERACT_TIMER, PartyCast.StartInteract)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED",
+      "type": "registration",
+      "confidence_score": 87,
+      "evidence_count": 3,
+      "evidence_sources": [
+        "BuffHead: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED, BuffHead.OnTargetEffectsUpdated)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED, DAoCBuff.OnEventH)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED, Enemy.Groups_OnPlayerTargetEffectsUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED",
+      "weight": 3,
+      "evidence": [
+        "BuffHead: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED, BuffHead.OnTargetEffectsUpdated)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED, DAoCBuff.OnEventH)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED, Enemy.Groups_OnPlayerTargetEffectsUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_TARGET_UPDATED",
+      "type": "registration",
+      "confidence_score": 95,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, AdvancedPetAssist.OnTargetUpdated)",
+        "Aura: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, TargetInfoFix.SET_TARGETINFO_FIX_UPDATE_FLAG_DONOTTOUCH)",
+        "AutoMark: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, AutoMark.OnPlayerTargetUpdated)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, BuffHead.OnTargetUpdated)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, DAoCBuff.OnEventHC)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, Enemy.Groups_OnPlayerTargetUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_TARGET_UPDATED",
+      "weight": 11,
+      "evidence": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, AdvancedPetAssist.OnTargetUpdated)",
+        "Aura: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, TargetInfoFix.SET_TARGETINFO_FIX_UPDATE_FLAG_DONOTTOUCH)",
+        "AutoMark: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, AutoMark.OnPlayerTargetUpdated)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, BuffHead.OnTargetUpdated)",
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, DAoCBuff.OnEventHC)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_TARGET_UPDATED, Enemy.Groups_OnPlayerTargetUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PLAYER_ZONE_CHANGED",
+      "type": "registration",
+      "confidence_score": 95,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, ClosetGoblin.PlayerZoneChanged)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, Enemy.GroupIcons_OnPlayerZoneChanged)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, Enemy.GroupsCheckTarget)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, Enemy.TalismanAlerter_Update)",
+        "Killer: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, Killer.OnZoneChanged)",
+        "LibWBToggler: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, LibWBTogglerManager.CheckMods)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PLAYER_ZONE_CHANGED",
+      "weight": 7,
+      "evidence": [
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, ClosetGoblin.PlayerZoneChanged)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, Enemy.GroupIcons_OnPlayerZoneChanged)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, Enemy.GroupsCheckTarget)",
+        "Enemy: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, Enemy.TalismanAlerter_Update)",
+        "Killer: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, Killer.OnZoneChanged)",
+        "LibWBToggler: RegisterEventHandler(SystemData.Events.PLAYER_ZONE_CHANGED, LibWBTogglerManager.CheckMods)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PUBLIC_QUEST_ADDED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.PUBLIC_QUEST_ADDED, RoR_SoR.UpdateObjectives)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PUBLIC_QUEST_ADDED",
+      "weight": 1,
+      "evidence": [
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.PUBLIC_QUEST_ADDED, RoR_SoR.UpdateObjectives)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PUBLIC_QUEST_INFO_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.PUBLIC_QUEST_INFO_UPDATED, RoR_SoR.UpdateObjectives)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PUBLIC_QUEST_INFO_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.PUBLIC_QUEST_INFO_UPDATED, RoR_SoR.UpdateObjectives)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PUBLIC_QUEST_REMOVED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.PUBLIC_QUEST_REMOVED, RoR_SoR.UpdateObjectives)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PUBLIC_QUEST_REMOVED",
+      "weight": 1,
+      "evidence": [
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.PUBLIC_QUEST_REMOVED, RoR_SoR.UpdateObjectives)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.PUBLIC_QUEST_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.PUBLIC_QUEST_UPDATED, RoR_SoR.UpdateObjectives)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.PUBLIC_QUEST_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.PUBLIC_QUEST_UPDATED, RoR_SoR.UpdateObjectives)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.RELEASE_CORPSE",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.RELEASE_CORPSE, DAoCBuff.TargetsCleared)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.RELEASE_CORPSE",
+      "weight": 1,
+      "evidence": [
+        "DAoCBuff: RegisterEventHandler(SystemData.Events.RELEASE_CORPSE, DAoCBuff.TargetsCleared)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.RELOAD_INTERFACE",
+      "type": "registration",
+      "confidence_score": 95,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, AdvancedRenownTraining.OnReload)",
+        "Aura: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, AuraAddon.OnLoad)",
+        "BagOMatic: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, BagOMatic.restore_filters)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, BuffHead.OnLoadingEnd)",
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, ClosetGoblin.Initialize)",
+        "LibWBToggler: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, LibWBTogglerManager.CheckMods)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.RELOAD_INTERFACE",
+      "weight": 13,
+      "evidence": [
+        "AdvancedRenownTrainer: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, AdvancedRenownTraining.OnReload)",
+        "Aura: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, AuraAddon.OnLoad)",
+        "BagOMatic: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, BagOMatic.restore_filters)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, BuffHead.OnLoadingEnd)",
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, ClosetGoblin.Initialize)",
+        "LibWBToggler: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, LibWBTogglerManager.CheckMods)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.R_BUTTON_DOWN_PROCESSED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.R_BUTTON_DOWN_PROCESSED, AdvancedPetAssist.OnRButtonDown)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.R_BUTTON_DOWN_PROCESSED",
+      "weight": 2,
+      "evidence": [
+        "AdvancedPetAssist: RegisterEventHandler(SystemData.Events.R_BUTTON_DOWN_PROCESSED, AdvancedPetAssist.OnRButtonDown)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_BEGIN",
+      "type": "registration",
+      "confidence_score": 89,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_BEGIN, Enemy.GroupsUpdateType)",
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_BEGIN, Enemy.ScenarioInfoUpdate)",
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.SCENARIO_BEGIN, RoR_SoR.OnScenario)",
+        "followTheLeader: RegisterEventHandler(SystemData.Events.SCENARIO_BEGIN, followTheLeader.OnScenarioBegin)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_BEGIN",
+      "weight": 4,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_BEGIN, Enemy.GroupsUpdateType)",
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_BEGIN, Enemy.ScenarioInfoUpdate)",
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.SCENARIO_BEGIN, RoR_SoR.OnScenario)",
+        "followTheLeader: RegisterEventHandler(SystemData.Events.SCENARIO_BEGIN, followTheLeader.OnScenarioBegin)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_END",
+      "type": "registration",
+      "confidence_score": 89,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_END, Enemy.GroupsUpdateType)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.SCENARIO_END, LibGuard.GROUP_UPDATED)",
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.SCENARIO_END, RoR_SoR.OnScenario)",
+        "followTheLeader: RegisterEventHandler(SystemData.Events.SCENARIO_END, followTheLeader.OnScenarioEnd)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_END",
+      "weight": 4,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_END, Enemy.GroupsUpdateType)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.SCENARIO_END, LibGuard.GROUP_UPDATED)",
+        "RoR_SoR: RegisterEventHandler(SystemData.Events.SCENARIO_END, RoR_SoR.OnScenario)",
+        "followTheLeader: RegisterEventHandler(SystemData.Events.SCENARIO_END, followTheLeader.OnScenarioEnd)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_GROUP_JOIN",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_GROUP_JOIN, Enemy.GroupsUpdateType)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.SCENARIO_GROUP_JOIN, LibGuard.GROUP_UPDATED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_GROUP_JOIN",
+      "weight": 2,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_GROUP_JOIN, Enemy.GroupsUpdateType)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.SCENARIO_GROUP_JOIN, LibGuard.GROUP_UPDATED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_GROUP_LEAVE",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_GROUP_LEAVE, Enemy.GroupsUpdateType)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.SCENARIO_GROUP_LEAVE, LibGuard.GROUP_UPDATED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_GROUP_LEAVE",
+      "weight": 2,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_GROUP_LEAVE, Enemy.GroupsUpdateType)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.SCENARIO_GROUP_LEAVE, LibGuard.GROUP_UPDATED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW, Enemy.ScenarioAlerter_OnScenarioInstanceJoinNow)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_INSTANCE_JOIN_NOW, Enemy.ScenarioAlerter_OnScenarioInstanceJoinNow)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED, Enemy.GroupsUpdate)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED, LibGuard.GROUP_UPDATED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED, Enemy.GroupsUpdate)",
+        "LibGuard: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_GROUPS_UPDATED, LibGuard.GROUP_UPDATED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED, Enemy.GroupsUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_RESERVATIONS_UPDATED, Enemy.GroupsUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED, Enemy.ScenarioInfoUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_STATS_UPDATED, Enemy.ScenarioInfoUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED, Enemy.ScenarioInfoUpdate)",
+        "followTheLeader: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED, followTheLeader.RequestUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED",
+      "weight": 2,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED, Enemy.ScenarioInfoUpdate)",
+        "followTheLeader: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYERS_LIST_UPDATED, followTheLeader.RequestUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED, Enemy.Groups_OnScenarioPlayerHitsUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_PLAYER_HITS_UPDATED, Enemy.Groups_OnScenarioPlayerHitsUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_POST_MODE",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_POST_MODE, Enemy.ScenarioInfoUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_POST_MODE",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_POST_MODE, Enemy.ScenarioInfoUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT, Enemy.ScenarioAlerter_OnScenarioShowJoinPrompt)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT, Enemy.ScenarioAlerter_OnScenarioShowJoinPrompt)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS, Enemy.ScenarioInfoCheckBroadcast)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS, Enemy.ScenarioInfoCheckBroadcast)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SCENARIO_UPDATE_POINTS",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_UPDATE_POINTS, Enemy.ScenarioInfoUpdate)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SCENARIO_UPDATE_POINTS",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SCENARIO_UPDATE_POINTS, Enemy.ScenarioInfoUpdate)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.SHOW_ALERT_TEXT",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SHOW_ALERT_TEXT, Enemy.Groups_OnShowAlertText)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.SHOW_ALERT_TEXT",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.SHOW_ALERT_TEXT, Enemy.Groups_OnShowAlertText)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.UPDATE_ITEM_ENHANCEMENT",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Enemy: RegisterEventHandler(SystemData.Events.UPDATE_ITEM_ENHANCEMENT, Enemy.TalismanAlerter_Update)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.UPDATE_ITEM_ENHANCEMENT",
+      "weight": 1,
+      "evidence": [
+        "Enemy: RegisterEventHandler(SystemData.Events.UPDATE_ITEM_ENHANCEMENT, Enemy.TalismanAlerter_Update)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.UPDATE_PROCESSED",
+      "type": "registration",
+      "confidence_score": 95,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "Ace: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, AceAddon_OnUpdate_DONOTTOUCH)",
+        "Ace: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, AceTimerOnUpdateDONOTTOUCH)",
+        "Aura: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, TargetInfoFix.APPLY_TARGETINFO_FIX_DONOTTOUCH)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, BuffHead.Setup.ContainerDemo.OnUpdate)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, BuffHead.Setup.Demo.OnUpdate)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, BuffHead.Setup.EffectCache.UpdateSearch)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.UPDATE_PROCESSED",
+      "weight": 24,
+      "evidence": [
+        "Ace: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, AceAddon_OnUpdate_DONOTTOUCH)",
+        "Ace: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, AceTimerOnUpdateDONOTTOUCH)",
+        "Aura: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, TargetInfoFix.APPLY_TARGETINFO_FIX_DONOTTOUCH)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, BuffHead.Setup.ContainerDemo.OnUpdate)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, BuffHead.Setup.Demo.OnUpdate)",
+        "BuffHead: RegisterEventHandler(SystemData.Events.UPDATE_PROCESSED, BuffHead.Setup.EffectCache.UpdateSearch)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.USER_SETTINGS_CHANGED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "TexturedButtons: RegisterEventHandler(SystemData.Events.USER_SETTINGS_CHANGED, TexturedButtons.OnSettingsChanged)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.USER_SETTINGS_CHANGED",
+      "weight": 1,
+      "evidence": [
+        "TexturedButtons: RegisterEventHandler(SystemData.Events.USER_SETTINGS_CHANGED, TexturedButtons.OnSettingsChanged)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.VISIBLE_EQUIPMENT_UPDATED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.VISIBLE_EQUIPMENT_UPDATED, ClosetGoblin.OnVisibleEquipmentUpdated)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.VISIBLE_EQUIPMENT_UPDATED",
+      "weight": 1,
+      "evidence": [
+        "CM_ClosetGoblin: RegisterEventHandler(SystemData.Events.VISIBLE_EQUIPMENT_UPDATED, ClosetGoblin.OnVisibleEquipmentUpdated)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.WORLD_OBJ_COMBAT_EVENT",
+      "type": "registration",
+      "confidence_score": 87,
+      "evidence_count": 3,
+      "evidence_sources": [
+        "CombatTextNames: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, EA_System_EventText.AddCombatEventText)",
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, EA_System_EventText.AddCombatEventText)",
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, WSCT.OnCombatEvent)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.WORLD_OBJ_COMBAT_EVENT",
+      "weight": 3,
+      "evidence": [
+        "CombatTextNames: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, EA_System_EventText.AddCombatEventText)",
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, EA_System_EventText.AddCombatEventText)",
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, WSCT.OnCombatEvent)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED, EA_System_EventText.AddInfluenceText)",
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED, WSCT.WORLD_OBJ_INFLUENCE_GAINED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED",
+      "weight": 2,
+      "evidence": [
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED, EA_System_EventText.AddInfluenceText)",
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_INFLUENCE_GAINED, WSCT.WORLD_OBJ_INFLUENCE_GAINED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.WORLD_OBJ_RENOWN_GAINED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_RENOWN_GAINED, EA_System_EventText.AddRenownText)",
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_RENOWN_GAINED, WSCT.WORLD_OBJ_RENOWN_GAINED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.WORLD_OBJ_RENOWN_GAINED",
+      "weight": 2,
+      "evidence": [
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_RENOWN_GAINED, EA_System_EventText.AddRenownText)",
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_RENOWN_GAINED, WSCT.WORLD_OBJ_RENOWN_GAINED)"
+      ]
+    },
+    {
+      "from": "function:global:RegisterEventHandler",
+      "to": "event:game:SystemData.Events.WORLD_OBJ_XP_GAINED",
+      "type": "registration",
+      "confidence_score": 85,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_XP_GAINED, EA_System_EventText.AddXpText)",
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_XP_GAINED, WSCT.WORLD_OBJ_XP_GAINED)"
+      ],
+      "rationale": "function:global:RegisterEventHandler registers event:game:SystemData.Events.WORLD_OBJ_XP_GAINED",
+      "weight": 2,
+      "evidence": [
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_XP_GAINED, EA_System_EventText.AddXpText)",
+        "WSCT: RegisterEventHandler(SystemData.Events.WORLD_OBJ_XP_GAINED, WSCT.WORLD_OBJ_XP_GAINED)"
+      ]
+    },
+    {
+      "from": "function:window:WindowRegisterEventHandler",
+      "to": "event:game:SystemData.Events.AUCTION_BID_RESULT_RECEIVED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Shinies: WindowRegisterEventHandler(SystemData.Events.AUCTION_BID_RESULT_RECEIVED, AuctionWindow.ReceivedBidResult)"
+      ],
+      "rationale": "function:window:WindowRegisterEventHandler registers event:game:SystemData.Events.AUCTION_BID_RESULT_RECEIVED",
+      "weight": 1,
+      "evidence": [
+        "Shinies: WindowRegisterEventHandler(SystemData.Events.AUCTION_BID_RESULT_RECEIVED, AuctionWindow.ReceivedBidResult)"
+      ]
+    },
+    {
+      "from": "function:window:WindowRegisterEventHandler",
+      "to": "event:game:SystemData.Events.AUCTION_INIT_RECEIVED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Shinies: WindowRegisterEventHandler(SystemData.Events.AUCTION_INIT_RECEIVED, AuctionWindow.Show)"
+      ],
+      "rationale": "function:window:WindowRegisterEventHandler registers event:game:SystemData.Events.AUCTION_INIT_RECEIVED",
+      "weight": 1,
+      "evidence": [
+        "Shinies: WindowRegisterEventHandler(SystemData.Events.AUCTION_INIT_RECEIVED, AuctionWindow.Show)"
+      ]
+    },
+    {
+      "from": "function:window:WindowRegisterEventHandler",
+      "to": "event:game:SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Shinies: WindowRegisterEventHandler(SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED, AuctionWindow.OnSearchResultsReceived)"
+      ],
+      "rationale": "function:window:WindowRegisterEventHandler registers event:game:SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED",
+      "weight": 1,
+      "evidence": [
+        "Shinies: WindowRegisterEventHandler(SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED, AuctionWindow.OnSearchResultsReceived)"
+      ]
+    },
+    {
+      "from": "function:window:WindowRegisterEventHandler",
+      "to": "event:game:SystemData.Events.INTERACT_DONE",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Shinies: WindowRegisterEventHandler(SystemData.Events.INTERACT_DONE, AuctionWindow.Hide)"
+      ],
+      "rationale": "function:window:WindowRegisterEventHandler registers event:game:SystemData.Events.INTERACT_DONE",
+      "weight": 1,
+      "evidence": [
+        "Shinies: WindowRegisterEventHandler(SystemData.Events.INTERACT_DONE, AuctionWindow.Hide)"
+      ]
+    },
+    {
+      "from": "function:window:WindowRegisterEventHandler",
+      "to": "event:game:SystemData.Events.L_BUTTON_UP_PROCESSED",
+      "type": "registration",
+      "confidence_score": 83,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Shinies: WindowRegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, ShiniesBrowseUI.Criteria_ReopenComboBox)"
+      ],
+      "rationale": "function:window:WindowRegisterEventHandler registers event:game:SystemData.Events.L_BUTTON_UP_PROCESSED",
+      "weight": 1,
+      "evidence": [
+        "Shinies: WindowRegisterEventHandler(SystemData.Events.L_BUTTON_UP_PROCESSED, ShiniesBrowseUI.Criteria_ReopenComboBox)"
       ]
     },
     {

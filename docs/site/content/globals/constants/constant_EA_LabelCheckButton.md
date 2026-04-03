@@ -160,7 +160,7 @@ Observed engine XML template or inherited constant referenced by 7 addons.
 
 ## Related APIs
 
-- none
+- [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

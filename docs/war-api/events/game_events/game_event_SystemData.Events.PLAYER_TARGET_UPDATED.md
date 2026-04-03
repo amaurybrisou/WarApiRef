@@ -107,6 +107,7 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Related APIs
 
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (HIGH 93/100) - Global Function
 
 ## Used With

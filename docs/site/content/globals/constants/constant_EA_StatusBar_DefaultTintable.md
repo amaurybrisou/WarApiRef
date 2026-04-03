@@ -67,7 +67,7 @@ Observed engine XML template or inherited constant referenced by 1 addons.
 
 ## Related APIs
 
-- none
+- [StatusBar](../../xml/element_types/element_StatusBar.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

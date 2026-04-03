@@ -216,22 +216,22 @@ Confidence: LOW
 
 ## Lua Functions Manipulating This Type
 
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- MoraleCircle.OnSetCustomColor
-- MoraleCircle.OnSetCustomColorFill
-- MoraleCircle.ColorChanger3
-- MoraleCircle.ColorChanger4
-- RoR_SoR.OnWindowOptionsSetScale
-- RoR_SoR.OnWindowOptionsSetOffset
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- MoraleCircle.ColorChanger1
-- WSCT.ColorOnButtonUp
+- MoraleCircle.OnSetCustomColorEmpty
+- RoR_SoR.OnWindowOptionsSetScale
+- WSCT.OnSetCustomColor
+- RoR_SoR.OnWindowOptionsSetOpacity
+- RoR_SoR.OnWindowOptionsSetOffset
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - MoraleCircle.ColorChanger2
 - MoraleCircle.OnSetCustomColorFull
-- MoraleCircle.OnSetCustomColorEmpty
-- WSCT.OnSetCustomColor
+- MoraleCircle.ColorChanger4
 - WSCT.OnLButtonUpColorPicker
-- RoR_SoR.OnWindowOptionsSetOpacity
+- MoraleCircle.OnSetCustomColor
+- MoraleCircle.ColorChanger1
+- MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.ColorChanger3
+- WSCT.ColorOnButtonUp
 
 
 ## Binding Resolution
@@ -267,6 +267,7 @@ Confidence: LOW
 
 ## Related APIs
 
+- [EA_Default_SliderBar](../../globals/constants/constant_EA_Default_SliderBar.md) (HIGH 100/100) - Constant
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type

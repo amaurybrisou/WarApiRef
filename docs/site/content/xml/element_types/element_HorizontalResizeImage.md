@@ -195,11 +195,11 @@ Observed 4 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
+- APAGui.UpdateKitingHUD
 - APAGui.UpdateInstantOnlyHUD
 - APAGui.UpdatePetTargetHUD
 - PotionBarSettings.OnShown
 - APAGui.UpdateFollowTargetHUD
-- APAGui.UpdateKitingHUD
 
 ## Seen In
 
@@ -224,11 +224,14 @@ Observed 4 times as an unnamed child.
 
 ## Related APIs
 
+- [EA_BrownHorizontalRule](../../globals/constants/constant_EA_BrownHorizontalRule.md) (HIGH 100/100) - Constant
+- [EA_HorizontalResizeImage_TabSeparatorMiddle](../../globals/constants/constant_EA_HorizontalResizeImage_TabSeparatorMiddle.md) (HIGH 100/100) - Constant
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Sizes](element_Sizes.md) (HIGH 100/100) - XML Element Type
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
 - [TintColor](element_TintColor.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [EA_HorizontalResizeImage_DefaultTopFrame](../../globals/constants/constant_EA_HorizontalResizeImage_DefaultTopFrame.md) (HIGH 90/100) - Constant
 - [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With

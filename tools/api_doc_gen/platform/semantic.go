@@ -218,6 +218,14 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 	edgeAccumulators := map[string]*graphEdgeAccumulator{}
 	relationAccumulators := map[string]*relationAccumulator{}
 	eventFlows := map[string]*eventFlowAccumulator{}
+	type systemEventRegistration struct {
+		EventName       string
+		RegistrarID     string
+		HandlerID       string
+		HandlerResolved bool
+		Evidence        string
+	}
+	pendingSystemEventRepairs := map[string][]systemEventRegistration{}
 
 	addEdge := func(fromID string, toID string, edgeType string, evidence string) {
 		if fromID == "" || toID == "" || fromID == toID {
@@ -233,6 +241,15 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 		if strings.TrimSpace(evidence) != "" {
 			accumulator.Evidence[evidence] = true
 		}
+	}
+
+	hasAnyEdge := func(nodeID string) bool {
+		for _, accumulator := range edgeAccumulators {
+			if accumulator.From == nodeID || accumulator.To == nodeID {
+				return true
+			}
+		}
+		return false
 	}
 
 	recordCombination := func(symbolIDs []string, evidence string) {
@@ -312,22 +329,37 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 		if !ok {
 			continue
 		}
+		isSystemEvent := strings.HasPrefix(eventDoc.Name, "SystemData.Events.")
 		contextIDs := []string{eventEntry.ID}
 		for _, usage := range eventDoc.LuaRegistrations {
+			evidence := fmt.Sprintf("%s: %s(%s, %s)", usage.Addon, usage.Registrar, eventDoc.Name, usage.Handler)
+			registrarEntry, registrarFound := catalog.lookup(usage.Registrar, "function")
 			handlerEntry, found := catalog.lookup(usage.Handler, "function")
+			registrarID := ""
+			handlerID := ""
 			if found {
-				evidence := fmt.Sprintf("%s: %s -> %s", usage.Addon, usage.Registrar, usage.Handler)
+				evidence = fmt.Sprintf("%s: %s -> %s", usage.Addon, usage.Registrar, usage.Handler)
 				addEdge(handlerEntry.ID, eventEntry.ID, "triggered_by", evidence)
 				contextIDs = append(contextIDs, handlerEntry.ID)
+				handlerID = handlerEntry.ID
 				flow := ensureEventFlow(eventEntry.ID)
 				flow.HandlerIDs[handlerEntry.ID] = true
 				flow.Evidence[evidence] = true
 				flow.Weight++
 			}
 			appendCallerLink(invokersByCaller, usage.Addon, usage.Handler, eventEntry)
-			registrarEntry, found := catalog.lookup(usage.Registrar, "function")
-			if found {
+			if registrarFound {
 				contextIDs = append(contextIDs, registrarEntry.ID)
+				registrarID = registrarEntry.ID
+			}
+			if isSystemEvent {
+				pendingSystemEventRepairs[eventEntry.ID] = append(pendingSystemEventRepairs[eventEntry.ID], systemEventRegistration{
+					EventName:       eventDoc.Name,
+					RegistrarID:     registrarID,
+					HandlerID:       handlerID,
+					HandlerResolved: found,
+					Evidence:        evidence,
+				})
 			}
 		}
 		for _, xmlUsage := range eventDoc.XMLHandlers {
@@ -353,6 +385,34 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 			contextIDs = append(contextIDs, triggerEntry.ID)
 		}
 		recordCombination(contextIDs, eventDoc.Name)
+	}
+
+	// Targeted underlink repair for SystemData events with explicit registration
+	// evidence that remain isolated in the graph. Emit only legitimate links:
+	// registration edges and handled_by when handler resolution is explicit.
+	for eventID, registrations := range pendingSystemEventRepairs {
+		if hasAnyEdge(eventID) {
+			continue
+		}
+		contextIDs := []string{eventID}
+		eventName := ""
+		for _, registration := range registrations {
+			if eventName == "" {
+				eventName = registration.EventName
+			}
+			if registration.RegistrarID != "" {
+				addEdge(registration.RegistrarID, eventID, "registration", registration.Evidence)
+				contextIDs = append(contextIDs, registration.RegistrarID)
+			}
+			if registration.HandlerResolved && registration.HandlerID != "" {
+				addEdge(eventID, registration.HandlerID, "handled_by", registration.Evidence)
+				contextIDs = append(contextIDs, registration.HandlerID)
+			}
+		}
+		if eventName == "" {
+			eventName = eventID
+		}
+		recordCombination(contextIDs, eventName+": registration repair")
 	}
 
 	for _, binding := range corpus.Source.Bindings {
@@ -897,6 +957,8 @@ func calculateEdgeConfidence(edgeType string, weight int, evidenceCount int) int
 		baseScore = 85 + (weight-1)*2
 	case "handled_by", "triggered_by":
 		baseScore = 80 + (weight-1)*2
+	case "registration":
+		baseScore = 83 + (weight-1)*2
 	case "contains":
 		baseScore = 78 + (weight-1)*2
 	case "defined_in":
@@ -932,6 +994,8 @@ func generateEdgeRationale(edgeType, from, to string, weight int) string {
 		return fmt.Sprintf("%s calls %s (%d observations)", from, to, weight)
 	case "handled_by":
 		return fmt.Sprintf("%s is handled by %s", from, to)
+	case "registration":
+		return fmt.Sprintf("%s registers %s", from, to)
 	case "triggered_by":
 		return fmt.Sprintf("%s triggers %s", from, to)
 	case "defined_in":
@@ -1175,6 +1239,9 @@ func buildSemanticLinks(catalog symbolCatalog, edges []GraphEdge) map[string]Sem
 			appendLink(edge.To, "related", fromEntry)
 		case "bound_from_xml":
 			appendLink(edge.From, "triggered_by", toEntry)
+			appendLink(edge.To, "related", fromEntry)
+		case "registration":
+			appendLink(edge.From, "related", toEntry)
 			appendLink(edge.To, "related", fromEntry)
 		case "reads_data", "writes_state", "updates_ui":
 			appendLink(edge.From, "affects", toEntry)

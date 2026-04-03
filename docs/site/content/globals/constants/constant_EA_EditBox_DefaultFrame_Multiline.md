@@ -77,7 +77,7 @@ Observed engine XML template or inherited constant referenced by 4 addons.
 
 ## Related APIs
 
-- none
+- [EditBox](../../xml/element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

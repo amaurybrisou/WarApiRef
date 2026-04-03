@@ -98,7 +98,7 @@ Observed engine XML template or inherited constant referenced by 7 addons.
 
 ## Related APIs
 
-- none
+- [VerticalScrollbar](../../xml/element_types/element_VerticalScrollbar.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

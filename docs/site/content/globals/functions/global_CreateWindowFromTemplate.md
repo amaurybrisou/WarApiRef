@@ -125,7 +125,7 @@ Observed instantiating repeated UI elements from an XML template.
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetId](../../window_api/functions/window_WindowSetId.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
 
 ## Triggered By

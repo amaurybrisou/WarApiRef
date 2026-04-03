@@ -936,40 +936,40 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- Enemy._Initialize
-- Enemy.GuardInitialize
-- SwiftAssist.OnMacroUpdated
-- Swift Assist.SetSmartLabel
 - TurretRange.OnUpdate
-- Enemy.UI_Icon_Switch
-- Enemy.TalismanAlerter_OnSettingsChanged
-- PP.UpdateListRow
-- Enemy.EnemyEffectsIndicator:Update
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.TalismanAlerterInitialize
-- GuardLine.update
-- BagOMatic.init
-- Enemy.AssistUI_Target_Show
-- Enemy.MarksInitialize
+- Enemy.GuardInitialize
 - RoR_SoR.OnCombat
 - SwiftAssist.Initialize
-- Swift Assist.SetTexLabel
-- BankArkel.PackImg
-- ClosetGoblin.Initialize
-- Enemy.TalismanAlerter_Update
-- RoR_SoR.OnScenario
-- WSCT.ColorOnInitialize
-- WSCT.ColorAcceptButtonOnButtonUp
-- ClosetGoblinCharacterWindow.UpdateSortButtonIcon
-- Enemy.Guard_OnSettingsChanged
-- ClosetGoblinCharacterWindow.OnInitialize
-- WSCT.OnLButtonUpColorPicker
-- WSCT.ColorHideMenu
-- ClosetGoblinZoneWindow.OnInitialize
-- Enemy.Guard_GuardIndicator_Update
+- Swift Assist.SetSmartLabel
+- GuardLine.update
 - RoR_SoR.OnInitialize
+- Enemy.Guard_GuardIndicator_Update
+- PP.UpdateListRow
 - Swift Assist.local.SetTexLabel
+- Enemy.EnemyEffectsIndicator:Update
+- Enemy.AssistUI_Target_Show
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
 - Swift Assist.local.SetSmartLabel
+- BankArkel.PackImg
+- Enemy.MarksInitialize
+- Enemy.UI_Icon_Switch
+- ClosetGoblinCharacterWindow.OnInitialize
+- Enemy.Guard_OnSettingsChanged
+- Enemy.TalismanAlerterInitialize
+- RoR_SoR.OnScenario
+- SwiftAssist.OnMacroUpdated
+- WSCT.ColorAcceptButtonOnButtonUp
+- BagOMatic.init
+- ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- WSCT.ColorHideMenu
+- Enemy._Initialize
+- WSCT.ColorOnInitialize
+- Enemy.TalismanAlerter_Update
+- Enemy.TalismanAlerter_OnSettingsChanged
+- Swift Assist.SetTexLabel
+- WSCT.OnLButtonUpColorPicker
+- ClosetGoblinZoneWindow.OnInitialize
+- ClosetGoblin.Initialize
 
 
 ## Binding Resolution

@@ -9,8 +9,8 @@ Observed XML handler events routing directly into addon Lua functions through sh
 
 ## Involved APIs
 
-- [OnSelChanged](../xml/handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Event
 - [OnSelChanged](../events/window_events/window_event_OnSelChanged.md) (HIGH 100/100) - Window Event
+- [OnSelChanged](../xml/handlers/handler_OnSelChanged.md) (HIGH 100/100) - XML Event
 
 ## Flow Diagram
 

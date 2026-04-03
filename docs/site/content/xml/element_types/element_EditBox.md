@@ -252,18 +252,18 @@ Confidence: MEDIUM
 | 0 | `text` | wstring | current_text |
 ## Lua Functions Manipulating This Type
 
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
-- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- PP.UpdateDyeFilter
 - Enemy.GroupsUI_EffectFilterDialog_Ok
+- Enemy.GroupsUI_EffectFilterDialog_Open
 - Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- PP.UpdateDyeFilter
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
 
 
 ## Binding Resolution
@@ -298,6 +298,8 @@ Confidence: MEDIUM
 
 ## Related APIs
 
+- [EA_EditBox_DefaultFrame](../../globals/constants/constant_EA_EditBox_DefaultFrame.md) (HIGH 100/100) - Constant
+- [EA_EditBox_DefaultFrame_Multiline](../../globals/constants/constant_EA_EditBox_DefaultFrame_Multiline.md) (HIGH 100/100) - Constant
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [TextOffset](element_TextOffset.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type

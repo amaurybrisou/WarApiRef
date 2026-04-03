@@ -91,39 +91,39 @@ Observed 73 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- MoraleCircle.OnSetCustomColorEmpty
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- MoraleCircle.OnSetCustomColor
-- TurretRange.ShowElement
-- GuardLine.update
+- RoR_SoR.T1_UPDATE
+- DAoCBuff.DAoCBuffFrame:SetBuff
 - TurretRange.local.UpdateDisplay
-- TurretRange.Setup.Display.OnCircleModeChanged
-- TurretRange.Setup.Display.LoadSettings
+- MoraleCircle.OnSetCustomColorEmpty
+- MoraleCircle.OnSetCustomColor
+- MoraleCircle.ColorChanger1
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - TurretRange.UpdateDisplay
 - MoraleCircle.ColorChanger2
-- MoraleCircle.ColorChanger1
-- BuffHead.BuffHeadEffectFrame:Update
-- TurretRange.Display.UpdateLayout
-- MoraleCircle.ColorChanger4
-- WoHReticle.CreateRing
 - WoHReticle.UpdateTargets
-- TurretRange.Display.SetAlpha
-- MoraleCircle.ColorChanger3
-- TurretRange.local.ShowElement
-- FilterSettings.DisableCondenseSettings
-- TurretRange.OnUpdate
-- TurretRange.Setup.Display.Initialize
-- TurretRange.Setup.Display.OnCircleInvertLUp
-- Enemy.EnemyEffectsIndicator:Update
-- RoR_SoR.T1_UPDATE
-- BuffHead.BuffHeadEffectFrame:SetLayout
 - Enemy.UI_Icon_Switch
+- TurretRange.Setup.Display.Initialize
+- Enemy.EnemyEffectsIndicator:Update
+- FilterSettings.DisableCondenseSettings
+- TurretRange.Display.UpdateLayout
+- TurretRange.Setup.Display.LoadSettings
+- MoraleCircle.OnSetCustomColorFull
+- MoraleCircle.ColorChanger4
+- GuardLine.update
+- TurretRange.ShowElement
 - Enemy.EnemyGroupIcon:Attach
 - Aura.Aura:UpdateWindow
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- DAoCBuff.DAoCBuffFrame:SetBuff
+- TurretRange.Setup.Display.OnCircleInvertLUp
+- WoHReticle.CreateRing
+- BuffHead.BuffHeadEffectFrame:Update
+- TurretRange.OnUpdate
+- MoraleCircle.ColorChanger3
+- TurretRange.Setup.Display.OnCircleModeChanged
+- TurretRange.Display.SetAlpha
+- TurretRange.local.ShowElement
+- BuffHead.BuffHeadEffectFrame:SetLayout
 - MoraleCircle.OnSetCustomColorFill
-- MoraleCircle.OnSetCustomColorFull
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
 
 ## Seen In
 

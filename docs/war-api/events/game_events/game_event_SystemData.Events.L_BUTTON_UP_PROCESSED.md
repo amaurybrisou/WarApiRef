@@ -98,7 +98,8 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 
 ## Related APIs
 
-- none
+- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (HIGH 93/100) - Global Function
 
 ## Used With
 

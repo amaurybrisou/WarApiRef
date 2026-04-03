@@ -180,10 +180,8 @@ Observed 3 times as an unnamed child.
 
 ## Used With
 
-- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
-- [Anchor](element_Anchor.md) (MEDIUM 55/100) - XML Element Type
 - [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 
 ## Triggered By

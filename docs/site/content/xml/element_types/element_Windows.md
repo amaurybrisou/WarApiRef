@@ -775,7 +775,6 @@ Observed XML element type instantiated by 32 addons.
 
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
-- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 
 ## Triggered By
 
