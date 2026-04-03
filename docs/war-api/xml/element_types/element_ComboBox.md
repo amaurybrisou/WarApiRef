@@ -64,21 +64,21 @@ Observed XML element type instantiated by 18 addons.
 
 ## Common Attributes
 
-- name
+- autoresize
 - inherits
 - layer
 - maxvisibleitems
-- show
 - menubackground
 - menuitembutton
+- name
 - scrollbar
 - selectedbutton
-- autoresize
+- show
 
 ## Common Handlers
 
-- [OnSelChanged](../handlers/handler_OnSelChanged.md)
 - [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnSelChanged](../handlers/handler_OnSelChanged.md)
 
 ## Common Handler Functions
 
@@ -102,6 +102,8 @@ Observed XML element type instantiated by 18 addons.
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.ConfigurationWindow_ShowTooltip, PotionBarSettings.OnMouseoverActivator, PotionBarSettings.OnMouseoverBuild, PotionBarSettings.OnMouseoverInfoTextBR, PotionBarSettings.OnMouseoverInfoTextTR, PotionBarSettings.OnMouseoverMethod | `function()` | MEDIUM |
 | [OnSelChanged](../handlers/handler_OnSelChanged.md) | data | APAGui.OnComboChanged, WHMGui.OnOptionsComboChanged, Enemy.ConfigurationWindow_OnChange, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsComboChanged, PP.UpdateDyeList | `index` | MEDIUM |
+| [OnSelChanged](../handlers/handler_OnSelChanged.md) | data | APAGui.OnComboChanged, WHMGui.OnOptionsComboChanged, Enemy.ConfigurationWindow_OnChange, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsComboChanged, PP.UpdateDyeList, AdvancedRenownTraining.SelectedItemChanged, AuraConfig.OnActivationSoundComboChanged, AuraConfig.OnDeactivationSoundComboChanged, AuraConfig.OnTriggerTypeSelChanged, BankArkel.PackCombo, BuffHead.Setup.AdvancedContainersItem.OnPositionChanged, BuffHead.Setup.AdvancedContainersItem.OnTargetTypeChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsBuffsChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsDebuffsChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnElementChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnGrowthHorizontalChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnGrowthVerticalChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnLayerChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnLayoutChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnMaximumThresholdChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnMinimumThresholdChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnPositionAnchorChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnPositionPlacementChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertiesChanged, BuffHead.Setup.Container.OnContainerAlwaysShowAnchorChanged, BuffHead.Setup.Container.OnContainerAlwaysShowPlacementChanged, BuffHead.Setup.Container.OnContainerBuffsAnchorChanged, BuffHead.Setup.Container.OnContainerBuffsPlacementChanged, BuffHead.Setup.Container.OnContainerDebuffsAnchorChanged, BuffHead.Setup.Container.OnContainerDebuffsPlacementChanged, BuffHead.Setup.Container.OnSizeContainerTypeChanged, BuffHead.Setup.Display.OnLayerChanged, BuffHead.Setup.Display.OnSortByChanged, BuffHead.Setup.Display.OnSortDirectionChanged, BuffHead.Setup.General.OnCompressionChanged, BuffHead.Setup.Layout.Manager.OnExportLayoutChanged, BuffHead.Setup.Layout.Manager.OnLayoutsLayoutChanged, BuffHead.Setup.Layout.Properties.OnDurationFormatChanged, BuffHead.Setup.Layout.Properties.OnElementChanged, BuffHead.Setup.Layout.Properties.OnFontAlignmentChanged, BuffHead.Setup.Layout.Properties.OnIconBorderColorTypeChanged, BuffHead.Setup.Layout.Properties.OnLayerLayerChanged, BuffHead.Setup.Layout.Properties.OnPropertiesChanged, BuffHead.Setup.Layout.Properties.OnStatusBarForegroundColorTypeChanged, BuffHead.Setup.Layout.Properties.OnStatusBarOrientationChanged, BuffHead.Setup.Performance.OnEffectAnchoringChanged, BuffHead.Setup.PriorityEffects.OnAnimationChanged, BuffHead.Setup.Trackers.OnTrackerBuffChanged, BuffHead.Setup.Trackers.OnTrackerDebuffChanged, BuffHead.Setup.Trackers.OnTrackerTypeChanged, DAoCBuffSettings.BufforderChanged, DAoCBuffSettings.CountChanged, DAoCBuffSettings.DivideChanged, DAoCBuffSettings.FilterSettings.ClassTableChanged, DAoCBuffSettings.FilterSettings.ConditionChanged, DAoCBuffSettings.FilterSettings.ConditionTypeChanged, DAoCBuffSettings.FilterSettings.FilterPropertyChanged, DAoCBuffSettings.FilterSettings.G1FilterChanged, DAoCBuffSettings.FilterSettings.G2ListChanged, DAoCBuffSettings.FilterSettings.G4HistoryBrowserChanged, DAoCBuffSettings.FilterSettings.G4UseandChanged, DAoCBuffSettings.FilterSettings.G5DurationChanged, DAoCBuffSettings.FilterSettings.G5FilterChanged, DAoCBuffSettings.FilterSettings.TextureChanged, DAoCBuffSettings.FilterSettings.TextureTypeChanged, DAoCBuffSettings.FilterSettings.UseandChanged, DAoCBuffSettings.FontChanged, DAoCBuffSettings.GrowHorizontalChanged, DAoCBuffSettings.GrowLeftChanged, DAoCBuffSettings.GrowUpChanged, DAoCBuffSettings.LeftListChanged, DAoCBuffSettings.ManagerModeChanged, DAoCBuffSettings.PermabuffsChanged, DAoCBuffSettings.RefreshChanged, DAoCBuffSettings.RemoveListChanged, DAoCBuffSettings.RightListChanged, DAoCBuffSettings.RowChanged, DAoCBuffSettings.StickChanged, DAoCBuffSettings.TargetChanged, DAoCBuffSettings.TypeChanged, Enemy.AssistUI_ConfigDialog_OnNewTargetSoundIdSelChanged, Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged, Enemy.CombatLogUI_StatsWindow_OnTypeSelChanged, Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged, Enemy.IntercomUI_ChooseChannelDialog_ChannelListChanged, Enemy.UI_ConfigDialog_OnSectionSelChanged, Enemy.UnitFramesUI_ConfigDialog_OnSorting1Changed, Enemy.UnitFramesUI_ConfigDialog_OnSorting2Changed, Enemy.UnitFramesUI_ConfigDialog_OnSorting3Changed, Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged, Enemy.UnitFramesUI_UnitFramePartDialog_OnTypeSelChanged, PotionBarSettings.ActivatorComboSelChanged, PotionBarSettings.BuildComboSelChanged, PotionBarSettings.ComboMethod, PotionBarSettings.InfoTextBRComboSelChanged, PotionBarSettings.InfoTextTRComboSelChanged, PotionBarSettings.QuickActionsSelChanged, ShiniesBrowseUI.OnSelChanged_Criteria_ItemSlotCombo, ShiniesBrowseUI.OnSelChanged_Criteria_ItemTypeCombo, ShiniesBrowseUI.OnSelChanged_Criteria_ModifierCombo, TexturedButtons.Setup.Actionbar.OnBarChanged, TexturedButtons.Setup.Actionbar.OnSelectorChanged, TexturedButtons.Setup.AdvancedTextures.OnCustomChanged, TexturedButtons.Setup.AdvancedTextures.OnCustomTextureChanged, TexturedButtons.Setup.AdvancedTextures.OnCustomTextureSliceChanged, TexturedButtons.Setup.AdvancedTextures.OnPresetChanged, TexturedButtons.Setup.AdvancedTextures.OnSlotTypeChanged, TexturedButtons.Setup.Misc.OnActionButtonPickUpModifierChanged, TexturedButtons.Setup.Misc.OnCustomGlowChanged, TexturedButtons.Setup.Textures.OnCustomChanged, TexturedButtons.Setup.Textures.OnCustomTextureChanged, TexturedButtons.Setup.Textures.OnCustomTextureSliceChanged, TexturedButtons.Setup.Textures.OnPresetChanged, TexturedButtons.Setup.Tint.OnTintTypeChanged, TidyChat.Options.UpdateGroupTabs, TidyRoll.CustomAutoRoll.OnChoiceChange, TurretRange.Setup.Display.OnCircleModeChanged, TurretRange.Setup.Display.OnCircleTypeChanged, TurretRange.Setup.Display.OnDistanceLayoutChanged, TurretRange.Setup.Display.OnDistanceTypeChanged, TurretRange.Setup.Display.OnElementChanged, TurretRange.Setup.Display.OnGraphicTypeChanged, WSCT.ComboOnSelChanged, WSCT.EventOnSelChanged, WSCT.FrameComboOnSelChanged, WSCT.FrameOnSelChanged | `index` | MEDIUM |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.ConfigurationWindow_ShowTooltip, PotionBarSettings.OnMouseoverActivator, PotionBarSettings.OnMouseoverBuild, PotionBarSettings.OnMouseoverInfoTextBR, PotionBarSettings.OnMouseoverInfoTextTR, PotionBarSettings.OnMouseoverMethod, PotionBarSettings.OnMouseoverQuickActions, WSCT.FrameComboOnMouseOver, WSCT.OnMouseOver | `` |  |
 
 ### Per-Event Lua API Calls
 
@@ -109,19 +111,23 @@ Observed XML element type instantiated by 18 addons.
 
 **OnSelChanged** handlers call: `ButtonGetPressedFlag`, `ButtonSetDisabledFlag`, `ButtonSetPressedFlag`, `ButtonSetText`, `ComboBoxGetSelectedMenuItem`, `ComboBoxGetSelectedText`, `ComboBoxSetDisabledFlag`, `ComboBoxSetSelectedMenuItem`, `CreateWindowFromTemplate`, `DestroyWindow`, `DoesWindowExist`, `DynamicImageSetTexture`, `DynamicImageSetTextureSlice`, `LabelSetText`, `ListBoxSetDisplayOrder`, `ScrollWindowUpdateScrollRect`, `SliderBarGetCurrentPosition`, `TextEditBoxGetText`, `WindowAddAnchor`, `WindowClearAnchors`, `WindowGetId`, `WindowGetParent`, `WindowSetShowing`
 
+**OnSelChanged** handlers call: `ButtonGetPressedFlag`, `ButtonSetDisabledFlag`, `ButtonSetPressedFlag`, `ButtonSetText`, `ComboBoxGetSelectedMenuItem`, `ComboBoxGetSelectedText`, `ComboBoxSetDisabledFlag`, `ComboBoxSetSelectedMenuItem`, `CreateWindowFromTemplate`, `DestroyWindow`, `DoesWindowExist`, `DynamicImageSetTexture`, `DynamicImageSetTextureSlice`, `LabelSetText`, `ListBoxSetDisplayOrder`, `ScrollWindowUpdateScrollRect`, `SliderBarGetCurrentPosition`, `TextEditBoxGetText`, `WindowAddAnchor`, `WindowClearAnchors`, `WindowGetId`, `WindowGetParent`, `WindowSetShowing`
+
+**OnMouseOver** handlers call: `WindowGetParent`
+
 ## Common Inherits
 
-- EA_ComboBox_DefaultResizable
-- EA_ComboBox_DefaultResizableSmall
 - APA_ComboBox
-- Aura_ComboBox_DefaultResizableTiny
-- Aura_ComboBox_DefaultResizableLarge
-- EA_ComboBox_DefaultResizableLarge
-- EA_ComboBox_DefaultResizable_Fixed
-- Shinies_ComboBox_DefaultResizableLarge
 - APA_ComboBoxWide
 - Aura_ComboBox_DefaultResizable
+- Aura_ComboBox_DefaultResizableLarge
+- Aura_ComboBox_DefaultResizableTiny
+- EA_ComboBox_DefaultResizable
+- EA_ComboBox_DefaultResizableLarge
 - EA_ComboBox_DefaultResizableMedium
+- EA_ComboBox_DefaultResizableSmall
+- EA_ComboBox_DefaultResizable_Fixed
+- Shinies_ComboBox_DefaultResizableLarge
 
 ## Common Parent Elements
 
@@ -130,6 +136,8 @@ Observed XML element type instantiated by 18 addons.
 
 ## Common Structural Child Elements
 
+- [Anchors](element_Anchors.md) — 228× (HIGH)
+- [EventHandlers](element_EventHandlers.md) — 179× (HIGH)
 - [Size](element_Size.md) — 52× (HIGH)
 - [MenuButtonOffset](element_MenuButtonOffset.md) — 7× (MEDIUM)
 
@@ -174,6 +182,14 @@ Observed XML element type instantiated by 18 addons.
 | `autoresize` | optional | 2% | true |
 ## Structural Sub-Elements
 
+### [Anchors](element_Anchors.md)
+
+Observed 228 times as an unnamed child.
+
+### [EventHandlers](element_EventHandlers.md)
+
+Observed 179 times as an unnamed child.
+
 ### [Size](element_Size.md)
 
 Observed 52 times as an unnamed child.
@@ -186,6 +202,21 @@ Observed 7 times as an unnamed child.
 | --- | --- | --- |
 | `x` | **required** | 5 |
 | `y` | **required** | 5 |
+## Recursive Hierarchy
+
+- Root: [ComboBox](element_ComboBox.md)
+- [Anchors](element_Anchors.md) (structural, 228×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - (cycle)
+- [EventHandlers](element_EventHandlers.md) (structural, 179×, HIGH)
+  - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
+- [MenuButtonOffset](element_MenuButtonOffset.md) (structural, 7×, MEDIUM)
+- [Size](element_Size.md) (structural, 52×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
+
 ## Lua API Usage (from Handlers)
 
 API functions commonly called from event handler Lua functions on this element type:
@@ -232,24 +263,24 @@ Confidence: MEDIUM
 | 0 | `index` | number | selected_index |
 ## Lua Functions Manipulating This Type
 
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
 - Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- Enemy.UnitFramesUI_ConfigDialog_Import
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
 - Enemy.IntercomUI_ChooseChannelDialog_Open
 - Enemy.IntercomUI_IntercomJoinDialog_Open
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
-- BankArkel.SetupCombos
-- Enemy.UnitFramesUI_ConfigDialog_Import
-- Enemy.CombatLogUI_StatsWindow_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.UI_ConfigDialog_OnSectionSelChanged
 - Enemy.IntercomUI_IntercomJoinDialog_AddGroup
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
 - AdvancedRenownTrainer.GeneratePresetByLinkData
+- BankArkel.SetupCombos
 - Enemy.UI_ConfigDialog_Open
 - Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- Enemy.CombatLogUI_StatsWindow_Open
 
 
 ## Binding Resolution
@@ -295,6 +326,8 @@ Confidence: MEDIUM
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With
 

@@ -17,6 +17,7 @@ const mcpEndpoint     = document.getElementById("mcpEndpoint");
 const mcpInitBtn      = document.getElementById("mcpInitBtn");
 const mcpToolsBtn     = document.getElementById("mcpToolsBtn");
 const mcpConsoleOut   = document.getElementById("mcpConsoleOutput");
+const analysisToggle  = document.getElementById("analysisToggle");
 const MCP_ROUTE       = "mcp";
 
 // --- App state ----------------------------------------------------------------
@@ -24,6 +25,27 @@ const DEFAULT_PATH = "index.md";
 let searchEntries  = [];
 let graphData      = null;
 let cyInstance     = null;   // Cytoscape instance
+
+// --- Analysis toggle ---------------------------------------------------------
+const ANALYSIS_STORAGE_KEY = "war-api-show-analysis";
+
+// Exact H2 heading text (lower-cased) that belong to the internal analysis surface.
+// Any section whose title matches is hidden by default and revealed via the toggle.
+const ANALYSIS_HEADINGS = new Set([
+  "confidence assessment",
+  "evidence signals",
+  "evidence summary",
+  "binding resolution",
+]);
+
+function applyAnalysisToggle(show) {
+  document.body.classList.toggle("show-analysis", show);
+  if (analysisToggle) {
+    analysisToggle.classList.toggle("secondary", show);
+    analysisToggle.setAttribute("aria-pressed", show ? "true" : "false");
+  }
+  try { localStorage.setItem(ANALYSIS_STORAGE_KEY, show ? "1" : "0"); } catch {}
+}
 
 // --- Routing helpers ----------------------------------------------------------
 function activePath() {
@@ -285,6 +307,12 @@ function makeDocSectionsCollapsible() {
     const levelClass = current.tagName.toLowerCase();
     const details = document.createElement("details");
     details.className = `doc-section ${levelClass}`;
+
+    // Mark analysis-only sections so the toggle can hide/show them.
+    const headingKey = (current.textContent || "").trim().toLowerCase();
+    if (ANALYSIS_HEADINGS.has(headingKey)) {
+      details.classList.add("analysis-section");
+    }
 
     const summary = document.createElement("summary");
     summary.className = "doc-section-summary";
@@ -775,6 +803,12 @@ if (mcpToolsBtn) {
   });
 }
 
+if (analysisToggle) {
+  analysisToggle.addEventListener("click", () => {
+    applyAnalysisToggle(!document.body.classList.contains("show-analysis"));
+  });
+}
+
 async function handleRoute() {
   const path = activePath();
 
@@ -798,6 +832,11 @@ async function handleRoute() {
 
 // --- Init ---------------------------------------------------------------------
 (async function init() {
+  // Restore analysis toggle preference (default: hidden).
+  let showAnalysis = false;
+  try { showAnalysis = localStorage.getItem(ANALYSIS_STORAGE_KEY) === "1"; } catch {}
+  applyAnalysisToggle(showAnalysis);
+
   await Promise.all([loadSearchIndex(), loadGraph(), loadNavigation()]);
   await handleRoute();
 })();

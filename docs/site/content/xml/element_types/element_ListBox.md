@@ -64,16 +64,16 @@ Observed XML element type instantiated by 12 addons.
 
 ## Common Attributes
 
-- name
-- rowdef
-- rowspacing
-- visiblerows
-- scrollbar
-- rowcount
-- layer
 - color
 - draganddrop
+- layer
+- name
+- rowcount
+- rowdef
+- rowspacing
+- scrollbar
 - scrollbarPosition
+- visiblerows
 
 ## Common Handlers
 
@@ -102,8 +102,16 @@ Observed XML element type instantiated by 12 addons.
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.KillSpamUI_KillSpamDialog_OnMouseOver | `function()` | MEDIUM |
 | [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | Enemy.KillSpamUI_KillSpamDialog_OnMouseOverEnd | `function(...)` | LOW |
 | [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | AggroMeter.PickedListMenu | `flags, x, y` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | , Enemy.UnitFramesUI_ConfigDialog_OnClickCastingsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnUnitFramePartsListLButtonUp, Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListLButtonUp, TidyRoll.CustomAutoRoll.OnListLbuttonUp | `flags, x, y` | MEDIUM |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.KillSpamUI_KillSpamDialog_OnMouseOver | `` |  |
+| [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | Enemy.KillSpamUI_KillSpamDialog_OnMouseOverEnd | `` |  |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | AggroMeter.PickedListMenu | `flags, x, y` | MEDIUM |
 
 ### Per-Event Lua API Calls
+
+**OnLButtonUp** handlers call: `Cursor.Clear`, `Cursor.IconOnCursor`, `ListBoxGetDataIndex`, `WindowGetId`
+
+**OnRButtonUp** handlers call: `ListBoxGetDataIndex`, `WindowGetId`
 
 **OnLButtonUp** handlers call: `Cursor.Clear`, `Cursor.IconOnCursor`, `ListBoxGetDataIndex`, `WindowGetId`
 
@@ -119,8 +127,10 @@ Observed XML element type instantiated by 12 addons.
 
 ## Common Structural Child Elements
 
+- [Anchors](element_Anchors.md) — 42× (HIGH)
 - [ListData](element_ListData.md) — 42× (HIGH)
 - [Size](element_Size.md) — 31× (HIGH)
+- [EventHandlers](element_EventHandlers.md) — 10× (HIGH)
 
 
 > **Note**: This element type commonly acts as a template base.
@@ -155,6 +165,10 @@ Observed XML element type instantiated by 12 addons.
 | `scrollbarPosition` | optional | 2% | left |
 ## Structural Sub-Elements
 
+### [Anchors](element_Anchors.md)
+
+Observed 42 times as an unnamed child.
+
 ### [ListData](element_ListData.md)
 
 Observed 42 times as an unnamed child.
@@ -166,6 +180,27 @@ Observed 42 times as an unnamed child.
 ### [Size](element_Size.md)
 
 Observed 31 times as an unnamed child.
+
+### [EventHandlers](element_EventHandlers.md)
+
+Observed 10 times as an unnamed child.
+
+## Recursive Hierarchy
+
+- Root: [ListBox](element_ListBox.md)
+- [Anchors](element_Anchors.md) (structural, 42×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - (cycle)
+- [EventHandlers](element_EventHandlers.md) (structural, 10×, HIGH)
+  - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
+- [ListData](element_ListData.md) (structural, 42×, HIGH)
+  - [ListColumns](element_ListColumns.md) (structural, 25×, HIGH)
+    - [ListColumn](element_ListColumn.md) (structural, 42×, HIGH)
+- [Size](element_Size.md) (structural, 31×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
 
 ## Lua API Usage (from Handlers)
 
@@ -209,12 +244,12 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- DAoCBuffSettings.SetLabels
-- DAoCBuffSettings.CreateOptionswindow
+- DAoCBuffSettings.Change_Setting
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - ClosetGoblinCharacterWindow.UpdateHighlightOnRow
 - ClosetGoblinZoneWindow.UpdateHighlightOnRow
-- DAoCBuffSettings.Change_Setting
+- DAoCBuffSettings.CreateOptionswindow
+- DAoCBuffSettings.SetLabels
 
 
 ## Binding Resolution
@@ -258,6 +293,8 @@ Confidence: MEDIUM
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With
 

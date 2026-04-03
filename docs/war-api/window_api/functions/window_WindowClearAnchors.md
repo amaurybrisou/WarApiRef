@@ -121,7 +121,6 @@ Observed resetting a window layout before applying new runtime anchors.
 
 ## Used With
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 - [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
@@ -133,7 +132,6 @@ Observed resetting a window layout before applying new runtime anchors.
 - [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [StatusBarGetMaximumValue](window_StatusBarGetMaximumValue.md) (HIGH 80/100) - Window Function
-- [towstring](../../globals/functions/global_towstring.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 
@@ -142,6 +140,7 @@ Observed resetting a window layout before applying new runtime anchors.
 ## Affects
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [Anchor](../../xml/element_types/element_Anchor.md) (MEDIUM 55/100) - XML Element Type
 
 ## Notes
 

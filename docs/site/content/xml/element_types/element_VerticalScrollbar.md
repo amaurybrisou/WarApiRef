@@ -64,8 +64,8 @@ Observed XML element type instantiated by 7 addons.
 ## Common Attributes
 
 - inherits
-- name
 - layer
+- name
 
 ## Common Handlers
 
@@ -81,11 +81,12 @@ Observed XML element type instantiated by 7 addons.
 | Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md) | data | MacroIcons.ScrollPos | `function(...)` | LOW |
+| [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md) | data | MacroIcons.ScrollPos | `scrollPos` | LOW |
 
 ## Common Inherits
 
-- EA_ScrollBar_DefaultVerticalChain
 - EA_ScrollBar_ChatVertical
+- EA_ScrollBar_DefaultVerticalChain
 
 ## Common Parent Elements
 
@@ -93,7 +94,9 @@ Observed XML element type instantiated by 7 addons.
 
 ## Common Structural Child Elements
 
+- [Anchors](element_Anchors.md) — 25× (HIGH)
 - [Size](element_Size.md) — 23× (HIGH)
+- [EventHandlers](element_EventHandlers.md) — 1× (LOW)
 
 ## Common Template Bases
 
@@ -116,9 +119,31 @@ Observed XML element type instantiated by 7 addons.
 | `layer` | **required** | 96% | popup |
 ## Structural Sub-Elements
 
+### [Anchors](element_Anchors.md)
+
+Observed 25 times as an unnamed child.
+
 ### [Size](element_Size.md)
 
 Observed 23 times as an unnamed child.
+
+### [EventHandlers](element_EventHandlers.md)
+
+Observed 1 times as an unnamed child.
+
+## Recursive Hierarchy
+
+- Root: [VerticalScrollbar](element_VerticalScrollbar.md)
+- [Anchors](element_Anchors.md) (structural, 25×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - (cycle)
+- [EventHandlers](element_EventHandlers.md) (structural, 1×, LOW)
+  - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
+- [Size](element_Size.md) (structural, 23×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
 
 ## Handler Callback Signatures
 
@@ -160,6 +185,8 @@ Confidence: LOW
 
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With
 

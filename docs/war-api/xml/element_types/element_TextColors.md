@@ -72,16 +72,16 @@ Observed XML element type instantiated by 5 addons.
 
 ## Common Structural Child Elements
 
-- Disabled — 16× (HIGH)
-- Normal — 16× (HIGH)
-- NormalHighlit — 16× (HIGH)
-- Pressed — 16× (HIGH)
-- PressedHighlit — 16× (HIGH)
-- DisabledPressed — 4× (MEDIUM)
+- [Disabled](element_Disabled.md) — 16× (HIGH)
+- [Normal](element_Normal.md) — 16× (HIGH)
+- [NormalHighlit](element_NormalHighlit.md) — 16× (HIGH)
+- [Pressed](element_Pressed.md) — 16× (HIGH)
+- [PressedHighlit](element_PressedHighlit.md) — 16× (HIGH)
+- [DisabledPressed](element_DisabledPressed.md) — 4× (MEDIUM)
 
 ## Structural Sub-Elements
 
-### Disabled
+### [Disabled](element_Disabled.md)
 
 Observed 16 times as an unnamed child.
 
@@ -96,7 +96,7 @@ Observed 16 times as an unnamed child.
 | `id` | optional | morale-white, RightTabFrame, ability-white, tactic-black |
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_Button_ListSortNormal |
 | `texture` | optional | EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
-### Normal
+### [Normal](element_Normal.md)
 
 Observed 16 times as an unnamed child.
 
@@ -111,7 +111,7 @@ Observed 16 times as an unnamed child.
 | `a` | optional | 255 |
 | `texture` | optional | bpKtxt, EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, BuffHeadLayoutVerticalButtonNormal, BuffHeadLayoutHorizontalButtonNormal |
-### NormalHighlit
+### [NormalHighlit](element_NormalHighlit.md)
 
 Observed 16 times as an unnamed child.
 
@@ -126,7 +126,7 @@ Observed 16 times as an unnamed child.
 | `x` | optional | 27, 105, 0 |
 | `y` | optional | 28, 44, 0 |
 | `texture` | optional | EA_SquareFrame_Highlight, ShiniesIconBorderHighlight, TidyRoll_SquareFrame_Highlight |
-### Pressed
+### [Pressed](element_Pressed.md)
 
 Observed 16 times as an unnamed child.
 
@@ -141,7 +141,7 @@ Observed 16 times as an unnamed child.
 | `y` | optional | 56, 44, 0 |
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed, EA_Button_ListSortPressed |
 | `texture` | optional | EA_SquareFrame_Pressed, ShiniesIconBorderHighlight, TidyRoll_SquareFrame |
-### PressedHighlit
+### [PressedHighlit](element_PressedHighlit.md)
 
 Observed 16 times as an unnamed child.
 
@@ -155,7 +155,7 @@ Observed 16 times as an unnamed child.
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed |
 | `x` | optional | 0, 120 |
 | `y` | optional | 56, 44 |
-### DisabledPressed
+### [DisabledPressed](element_DisabledPressed.md)
 
 Observed 4 times as an unnamed child.
 
@@ -166,6 +166,16 @@ Observed 4 times as an unnamed child.
 | `b` | optional | 36 |
 | `g` | optional | 57 |
 | `r` | optional | 95 |
+## Recursive Hierarchy
+
+- Root: [TextColors](element_TextColors.md)
+- [Disabled](element_Disabled.md) (structural, 16×, HIGH)
+- [DisabledPressed](element_DisabledPressed.md) (structural, 4×, MEDIUM)
+- [Normal](element_Normal.md) (structural, 16×, HIGH)
+- [NormalHighlit](element_NormalHighlit.md) (structural, 16×, HIGH)
+- [Pressed](element_Pressed.md) (structural, 16×, HIGH)
+- [PressedHighlit](element_PressedHighlit.md) (structural, 16×, HIGH)
+
 ## Seen In
 
 - AdvancedPetAssist
@@ -186,10 +196,16 @@ Observed 4 times as an unnamed child.
 ## Related APIs
 
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
+- [Disabled](element_Disabled.md) (MEDIUM 45/100) - XML Element Type
+- [DisabledPressed](element_DisabledPressed.md) (MEDIUM 45/100) - XML Element Type
+- [Normal](element_Normal.md) (MEDIUM 45/100) - XML Element Type
+- [NormalHighlit](element_NormalHighlit.md) (MEDIUM 45/100) - XML Element Type
+- [Pressed](element_Pressed.md) (MEDIUM 45/100) - XML Element Type
+- [PressedHighlit](element_PressedHighlit.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
-- none
+- [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

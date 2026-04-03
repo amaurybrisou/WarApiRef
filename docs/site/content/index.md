@@ -10,7 +10,7 @@ Generated from addon-api rooted at `/workspace/docs/addon-api`. The source corpu
 | Window functions | 94 |
 | Global tables | 28 |
 | Constants | 83 |
-| XML element types | 43 |
+| XML element types | 76 |
 | XML handlers | 27 |
 | Game events | 133 |
 | Window events | 27 |

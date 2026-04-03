@@ -11,6 +11,7 @@ Observed layouts being finalized in Lua by clearing and re-adding anchors after 
 
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowAddAnchor](../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
+- [Anchor](../xml/element_types/element_Anchor.md) (MEDIUM 55/100) - XML Element Type
 
 ## Flow Diagram
 

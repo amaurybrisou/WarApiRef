@@ -93,9 +93,9 @@ Observed querying runtime window state or metadata.
 
 - AggroMeter: AggroMeter.OnMouseOverStart -> WindowGetParent(SystemData.MouseOverWindow.name)
 - AggroMeter: AggroMeter.SelectChar -> WindowGetParent(SystemData.MouseOverWindow.name)
-- Aura: AuraTexture.OnIconLButtonUp -> WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name))
 - Aura: AuraTexture.OnIconLButtonUp -> WindowGetParent(SystemData.ActiveWindow.name)
 - Aura: AuraTexture.OnIconLButtonUp -> WindowGetParent(WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name)))
+- Aura: AuraTexture.OnIconLButtonUp -> WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name))
 - Enemy: Enemy.MarkUI_EnemyMark_OnLButtonDown -> WindowGetParent(SystemData.MouseOverWindow.name)
 
 ## Related APIs

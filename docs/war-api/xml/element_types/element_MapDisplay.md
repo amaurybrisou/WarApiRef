@@ -95,6 +95,10 @@ Observed XML element type instantiated by 1 addons.
 | [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | Map.OnMButtonUp | `flags, x, y` | MEDIUM |
 | [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) | custom | Map.OnMouseOverPoint | `function(...)` | LOW |
 | [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Map.OnRClickMap | `function(...)` | LOW |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Map.OnClickMap | `flags, x, y` | LOW |
+| [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | Map.OnMButtonUp | `flags, x, y` | MEDIUM |
+| [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) | custom | Map.OnMouseOverPoint | `` |  |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Map.OnRClickMap | `flags, x, y` | LOW |
 
 ## Common Inherits
 
@@ -106,6 +110,8 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Structural Child Elements
 
+- [Anchors](element_Anchors.md) — 1× (HIGH)
+- [EventHandlers](element_EventHandlers.md) — 1× (HIGH)
 - [Size](element_Size.md) — 1× (HIGH)
 
 ## Typical XML Structure
@@ -130,9 +136,31 @@ Observed XML element type instantiated by 1 addons.
 | `sticky` | **required** | 100% | true |
 ## Structural Sub-Elements
 
+### [Anchors](element_Anchors.md)
+
+Observed 1 times as an unnamed child.
+
+### [EventHandlers](element_EventHandlers.md)
+
+Observed 1 times as an unnamed child.
+
 ### [Size](element_Size.md)
 
 Observed 1 times as an unnamed child.
+
+## Recursive Hierarchy
+
+- Root: [MapDisplay](element_MapDisplay.md)
+- [Anchors](element_Anchors.md) (structural, 1×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - (cycle)
+- [EventHandlers](element_EventHandlers.md) (structural, 1×, HIGH)
+  - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
+- [Size](element_Size.md) (structural, 1×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
 
 ## Handler Callback Signatures
 
@@ -187,6 +215,8 @@ Confidence: LOW
 
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With
 

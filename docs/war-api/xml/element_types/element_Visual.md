@@ -67,6 +67,27 @@ Observed XML element type instantiated by 1 addons.
 
 - [Window](element_Window.md) — 1× (HIGH)
 
+## Common Structural Child Elements
+
+- [Color](element_Color.md) — 1× (HIGH)
+
+## Structural Sub-Elements
+
+### [Color](element_Color.md)
+
+Observed 1 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `b` | **required** | 73, 225, 255, 55 |
+| `g` | **required** | 218, 255, 155, 55 |
+| `r` | **required** | 255, 155, 245, 175 |
+| `a` | optional | 255, 0, 0.5, 0.8 |
+## Recursive Hierarchy
+
+- Root: [Visual](element_Visual.md)
+- [Color](element_Color.md) (structural, 1×, HIGH)
+
 ## Seen In
 
 - BankArkel
@@ -78,6 +99,7 @@ Observed XML element type instantiated by 1 addons.
 ## Related APIs
 
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
+- [Color](element_Color.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 

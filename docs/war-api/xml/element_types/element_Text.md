@@ -58,8 +58,8 @@ Observed XML element type instantiated by 2 addons.
 
 ## Common Attributes
 
-- text
 - alignment
+- text
 
 ## Common Inherits
 

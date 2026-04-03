@@ -413,8 +413,10 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 	// Build set of element type names that will have their own pages in this run.
 	// Used to decide whether CommonChildTypes entries can be rendered as links.
 	elementTypePageNames := map[string]bool{}
+	elementTypeByName := map[string]ElementTypeSymbol{}
 	for _, s := range corpus.ElementTypes {
 		elementTypePageNames[s.Name] = true
+		elementTypeByName[s.Name] = s
 	}
 
 	// Build set of XMLHandler event names that have dedicated pages so we can
@@ -539,6 +541,7 @@ func writeElementTypes(outputRoot string, corpus Corpus) error {
 		if len(symbol.StructuralChildProfiles) > 0 {
 			content += renderStructuralChildProfiles(symbol.StructuralChildProfiles, elementTypePageNames)
 		}
+		content += renderRecursiveHierarchy(symbol, elementTypeByName, elementTypePageNames)
 		// Phase 4 enrichment: Lua API Usage from Handlers
 		if len(symbol.LuaAPICallsFromHandlers) > 0 {
 			content += renderLuaAPICallsFromHandlers(symbol.LuaAPICallsFromHandlers)
@@ -1212,6 +1215,154 @@ func renderStructuralChildProfiles(profiles []StructuralChildProfile, elementTyp
 		}
 	}
 	return content
+}
+
+type hierarchyEdge struct {
+	Tag        string
+	Kind       string
+	Count      int
+	Confidence string
+}
+
+// renderRecursiveHierarchy writes a deterministic descendant tree for this
+// element type using source-derived named/structural relationships.
+func renderRecursiveHierarchy(root ElementTypeSymbol, byName map[string]ElementTypeSymbol, elementTypePages map[string]bool) string {
+	edges := elementHierarchyEdges(root)
+	if len(edges) == 0 {
+		return ""
+	}
+
+	var b strings.Builder
+	b.WriteString("## Recursive Hierarchy\n\n")
+	b.WriteString("- Root: ")
+	b.WriteString(formatHierarchyNode(root.Name, elementTypePages))
+	b.WriteString("\n")
+
+	visited := map[string]bool{root.Name: true}
+	renderHierarchyEdges(&b, edges, 0, visited, byName, elementTypePages)
+	b.WriteString("\n")
+	return b.String()
+}
+
+func renderHierarchyEdges(
+	b *strings.Builder,
+	edges []hierarchyEdge,
+	depth int,
+	path map[string]bool,
+	byName map[string]ElementTypeSymbol,
+	elementTypePages map[string]bool,
+) {
+	const maxDepth = 8
+	if depth >= maxDepth {
+		indent := strings.Repeat("  ", depth)
+		b.WriteString(indent + "- ... (depth limit reached)\n")
+		return
+	}
+
+	for _, edge := range edges {
+		indent := strings.Repeat("  ", depth)
+		b.WriteString(indent + "- ")
+		b.WriteString(formatHierarchyNode(edge.Tag, elementTypePages))
+		b.WriteString(" ")
+		b.WriteString(formatHierarchyMeta(edge))
+		b.WriteString("\n")
+
+		if path[edge.Tag] {
+			b.WriteString(indent + "  - (cycle)\n")
+			continue
+		}
+
+		child, ok := byName[edge.Tag]
+		if !ok {
+			continue
+		}
+		childEdges := elementHierarchyEdges(child)
+		if len(childEdges) == 0 {
+			continue
+		}
+
+		path[edge.Tag] = true
+		renderHierarchyEdges(b, childEdges, depth+1, path, byName, elementTypePages)
+		delete(path, edge.Tag)
+	}
+}
+
+func elementHierarchyEdges(symbol ElementTypeSymbol) []hierarchyEdge {
+	byKey := make(map[string]hierarchyEdge)
+
+	for _, child := range symbol.ChildRefs {
+		key := "named|" + child.Tag
+		byKey[key] = hierarchyEdge{
+			Tag:        child.Tag,
+			Kind:       "named",
+			Count:      child.Count,
+			Confidence: child.Confidence,
+		}
+	}
+	for _, child := range symbol.StructuralChildRefs {
+		key := "structural|" + child.Tag
+		byKey[key] = hierarchyEdge{
+			Tag:        child.Tag,
+			Kind:       "structural",
+			Count:      child.Count,
+			Confidence: child.Confidence,
+		}
+	}
+
+	// Backward compatibility: when refs are unavailable, fall back to flat lists.
+	if len(symbol.ChildRefs) == 0 {
+		for _, tag := range symbol.CommonChildElementTypes {
+			key := "named|" + tag
+			if _, exists := byKey[key]; exists {
+				continue
+			}
+			byKey[key] = hierarchyEdge{Tag: tag, Kind: "named"}
+		}
+	}
+	if len(symbol.StructuralChildRefs) == 0 {
+		for _, tag := range symbol.CommonChildTypes {
+			key := "structural|" + tag
+			if _, exists := byKey[key]; exists {
+				continue
+			}
+			byKey[key] = hierarchyEdge{Tag: tag, Kind: "structural"}
+		}
+	}
+
+	result := make([]hierarchyEdge, 0, len(byKey))
+	for _, edge := range byKey {
+		if strings.TrimSpace(edge.Tag) == "" {
+			continue
+		}
+		result = append(result, edge)
+	}
+
+	sort.Slice(result, func(i, j int) bool {
+		if result[i].Kind != result[j].Kind {
+			return result[i].Kind < result[j].Kind
+		}
+		return result[i].Tag < result[j].Tag
+	})
+
+	return result
+}
+
+func formatHierarchyNode(tag string, elementTypePages map[string]bool) string {
+	if elementTypePages[tag] {
+		return markdownLink(tag, docName("element", tag))
+	}
+	return tag
+}
+
+func formatHierarchyMeta(edge hierarchyEdge) string {
+	parts := []string{edge.Kind}
+	if edge.Count > 0 {
+		parts = append(parts, fmt.Sprintf("%d×", edge.Count))
+	}
+	if strings.TrimSpace(edge.Confidence) != "" {
+		parts = append(parts, edge.Confidence)
+	}
+	return "(" + strings.Join(parts, ", ") + ")"
 }
 
 // renderLuaAPICallsFromHandlers generates a section showing API calls commonly

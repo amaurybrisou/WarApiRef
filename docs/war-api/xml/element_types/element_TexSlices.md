@@ -73,16 +73,25 @@ Observed XML element type instantiated by 8 addons.
 
 ## Common Structural Child Elements
 
-- Normal — 22× (HIGH)
-- NormalHighlit — 16× (HIGH)
-- Pressed — 16× (HIGH)
-- PressedHighlit — 16× (HIGH)
-- Disabled — 11× (HIGH)
-- DisabledPressed — 11× (HIGH)
+- [Normal](element_Normal.md) — 22× (HIGH)
+- [NormalHighlit](element_NormalHighlit.md) — 16× (HIGH)
+- [Pressed](element_Pressed.md) — 16× (HIGH)
+- [PressedHighlit](element_PressedHighlit.md) — 16× (HIGH)
+- [Disabled](element_Disabled.md) — 11× (HIGH)
+- [DisabledPressed](element_DisabledPressed.md) — 11× (HIGH)
+- [BottomCenter](element_BottomCenter.md) — 5× (MEDIUM)
+- [BottomLeft](element_BottomLeft.md) — 5× (MEDIUM)
+- [BottomRight](element_BottomRight.md) — 5× (MEDIUM)
+- [MiddleCenter](element_MiddleCenter.md) — 5× (MEDIUM)
+- [MiddleLeft](element_MiddleLeft.md) — 5× (MEDIUM)
+- [MiddleRight](element_MiddleRight.md) — 5× (MEDIUM)
+- [TopCenter](element_TopCenter.md) — 5× (MEDIUM)
+- [TopLeft](element_TopLeft.md) — 5× (MEDIUM)
+- [TopRight](element_TopRight.md) — 5× (MEDIUM)
 
 ## Structural Sub-Elements
 
-### Normal
+### [Normal](element_Normal.md)
 
 Observed 22 times as an unnamed child.
 
@@ -97,7 +106,7 @@ Observed 22 times as an unnamed child.
 | `a` | optional | 255 |
 | `texture` | optional | bpKtxt, EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, BuffHeadLayoutVerticalButtonNormal, BuffHeadLayoutHorizontalButtonNormal |
-### NormalHighlit
+### [NormalHighlit](element_NormalHighlit.md)
 
 Observed 16 times as an unnamed child.
 
@@ -112,7 +121,7 @@ Observed 16 times as an unnamed child.
 | `x` | optional | 27, 105, 0 |
 | `y` | optional | 28, 44, 0 |
 | `texture` | optional | EA_SquareFrame_Highlight, ShiniesIconBorderHighlight, TidyRoll_SquareFrame_Highlight |
-### Pressed
+### [Pressed](element_Pressed.md)
 
 Observed 16 times as an unnamed child.
 
@@ -127,7 +136,7 @@ Observed 16 times as an unnamed child.
 | `y` | optional | 56, 44, 0 |
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed, EA_Button_ListSortPressed |
 | `texture` | optional | EA_SquareFrame_Pressed, ShiniesIconBorderHighlight, TidyRoll_SquareFrame |
-### PressedHighlit
+### [PressedHighlit](element_PressedHighlit.md)
 
 Observed 16 times as an unnamed child.
 
@@ -141,7 +150,7 @@ Observed 16 times as an unnamed child.
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed |
 | `x` | optional | 0, 120 |
 | `y` | optional | 56, 44 |
-### Disabled
+### [Disabled](element_Disabled.md)
 
 Observed 11 times as an unnamed child.
 
@@ -156,7 +165,7 @@ Observed 11 times as an unnamed child.
 | `id` | optional | morale-white, RightTabFrame, ability-white, tactic-black |
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_Button_ListSortNormal |
 | `texture` | optional | EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
-### DisabledPressed
+### [DisabledPressed](element_DisabledPressed.md)
 
 Observed 11 times as an unnamed child.
 
@@ -167,6 +176,106 @@ Observed 11 times as an unnamed child.
 | `b` | optional | 36 |
 | `g` | optional | 57 |
 | `r` | optional | 95 |
+### [BottomCenter](element_BottomCenter.md)
+
+Observed 5 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | optional | 272, 60, 356, 26 |
+| `y` | optional | 197, 35, 684, 38 |
+| `id` | optional | Border-Bottom-Center |
+### [BottomLeft](element_BottomLeft.md)
+
+Observed 5 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | optional | 256, 0, 346 |
+| `y` | optional | 197, 35, 684, 38 |
+| `id` | optional | Border-Bottom-Left |
+### [BottomRight](element_BottomRight.md)
+
+Observed 5 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** | 16, 350, 2, 135 |
+| `y` | **required** | 15, 197, 2, 35 |
+| `id` | optional | Border-Bottom-Right |
+### [MiddleCenter](element_MiddleCenter.md)
+
+Observed 5 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | optional | 272, 60, 356, 32 |
+| `y` | optional | 172, 18, 680, 32 |
+| `id` | optional | Border-Middle-Center |
+### [MiddleLeft](element_MiddleLeft.md)
+
+Observed 5 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | optional | 256, 0, 346 |
+| `y` | optional | 172, 18, 680, 25 |
+| `id` | optional | Border-Middle-Left |
+### [MiddleRight](element_MiddleRight.md)
+
+Observed 5 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | optional | 350, 135, 346, 39 |
+| `y` | optional | 172, 18, 680, 25 |
+| `id` | optional | Border-Middle-Right |
+### [TopCenter](element_TopCenter.md)
+
+Observed 5 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | optional | 272, 60, 356, 26 |
+| `y` | optional | 157, 0, 669 |
+| `id` | optional | Border-Top-Center |
+### [TopLeft](element_TopLeft.md)
+
+Observed 5 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** | 16, 256, 2, 0 |
+| `y` | **required** | 15, 157, 2, 0 |
+| `id` | optional | Border-Top-Left |
+### [TopRight](element_TopRight.md)
+
+Observed 5 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | optional | 350, 135, 400, 39 |
+| `y` | optional | 157, 0, 669 |
+| `id` | optional | Border-Top-Right |
+## Recursive Hierarchy
+
+- Root: [TexSlices](element_TexSlices.md)
+- [BottomCenter](element_BottomCenter.md) (structural, 5×, MEDIUM)
+- [BottomLeft](element_BottomLeft.md) (structural, 5×, MEDIUM)
+- [BottomRight](element_BottomRight.md) (structural, 5×, MEDIUM)
+- [Disabled](element_Disabled.md) (structural, 11×, HIGH)
+- [DisabledPressed](element_DisabledPressed.md) (structural, 11×, HIGH)
+- [MiddleCenter](element_MiddleCenter.md) (structural, 5×, MEDIUM)
+- [MiddleLeft](element_MiddleLeft.md) (structural, 5×, MEDIUM)
+- [MiddleRight](element_MiddleRight.md) (structural, 5×, MEDIUM)
+- [Normal](element_Normal.md) (structural, 22×, HIGH)
+- [NormalHighlit](element_NormalHighlit.md) (structural, 16×, HIGH)
+- [Pressed](element_Pressed.md) (structural, 16×, HIGH)
+- [PressedHighlit](element_PressedHighlit.md) (structural, 16×, HIGH)
+- [TopCenter](element_TopCenter.md) (structural, 5×, MEDIUM)
+- [TopLeft](element_TopLeft.md) (structural, 5×, MEDIUM)
+- [TopRight](element_TopRight.md) (structural, 5×, MEDIUM)
+
 ## Seen In
 
 - AggroMeter
@@ -191,10 +300,28 @@ Observed 11 times as an unnamed child.
 
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
+- [BottomCenter](element_BottomCenter.md) (MEDIUM 45/100) - XML Element Type
+- [BottomLeft](element_BottomLeft.md) (MEDIUM 45/100) - XML Element Type
+- [BottomRight](element_BottomRight.md) (MEDIUM 45/100) - XML Element Type
+- [Disabled](element_Disabled.md) (MEDIUM 45/100) - XML Element Type
+- [DisabledPressed](element_DisabledPressed.md) (MEDIUM 45/100) - XML Element Type
+- [MiddleCenter](element_MiddleCenter.md) (MEDIUM 45/100) - XML Element Type
+- [MiddleLeft](element_MiddleLeft.md) (MEDIUM 45/100) - XML Element Type
+- [MiddleRight](element_MiddleRight.md) (MEDIUM 45/100) - XML Element Type
+- [Normal](element_Normal.md) (MEDIUM 45/100) - XML Element Type
+- [NormalHighlit](element_NormalHighlit.md) (MEDIUM 45/100) - XML Element Type
+- [Pressed](element_Pressed.md) (MEDIUM 45/100) - XML Element Type
+- [PressedHighlit](element_PressedHighlit.md) (MEDIUM 45/100) - XML Element Type
+- [TopCenter](element_TopCenter.md) (MEDIUM 45/100) - XML Element Type
+- [TopLeft](element_TopLeft.md) (MEDIUM 45/100) - XML Element Type
+- [TopRight](element_TopRight.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
-- none
+- [OverlayTexCoords](element_OverlayTexCoords.md) (HIGH 100/100) - XML Element Type
+- [ResizeImages](element_ResizeImages.md) (HIGH 100/100) - XML Element Type
+- [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
+- [TextColors](element_TextColors.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

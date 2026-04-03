@@ -61,13 +61,13 @@ Observed XML element type instantiated by 2 addons.
 
 ## Common Attributes
 
+- background
+- foreground
 - handleinput
+- inherits
 - name
 - popable
-- foreground
-- inherits
 - reverseFill
-- background
 
 ## Common Inherits
 
@@ -77,6 +77,10 @@ Observed XML element type instantiated by 2 addons.
 ## Common Parent Elements
 
 - [Windows](element_Windows.md) — 9× (HIGH)
+
+## Common Structural Child Elements
+
+- [Anchors](element_Anchors.md) — 9× (HIGH)
 
 ## Common Template Bases
 
@@ -96,6 +100,22 @@ Observed XML element type instantiated by 2 addons.
 | `inherits` | optional | 44% | EA_StatusBar_DefaultTintable, RRQTomeStatusBar |
 | `reverseFill` | optional | 22% | true |
 | `background` | optional | 11% | LOL_BAR |
+## Structural Sub-Elements
+
+### [Anchors](element_Anchors.md)
+
+Observed 9 times as an unnamed child.
+
+## Recursive Hierarchy
+
+- Root: [StatusBar](element_StatusBar.md)
+- [Anchors](element_Anchors.md) (structural, 9×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - (cycle)
+
 ## Seen In
 
 - PartyCast
@@ -113,6 +133,7 @@ Observed XML element type instantiated by 2 addons.
 ## Related APIs
 
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With
 

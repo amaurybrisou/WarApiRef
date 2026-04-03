@@ -17,7 +17,7 @@
 | Symbol Type | Count |
 | --- | --- |
 | constants | 83 |
-| element_types | 43 |
+| element_types | 76 |
 | game_events | 133 |
 | gamedata | 51 |
 | global_functions | 78 |

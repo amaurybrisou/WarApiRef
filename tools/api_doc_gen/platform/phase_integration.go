@@ -3,6 +3,7 @@ package platform
 import (
 	"fmt"
 	"os"
+	"sort"
 	"strings"
 
 	"roraddons/tools/api_doc_gen/lua_ast"
@@ -355,16 +356,94 @@ func enrichElementTypesFromCatalog(elementTypes []ElementTypeSymbol, catalog *se
 	if catalog == nil {
 		return elementTypes
 	}
-
+	typeIndex := make(map[string]int, len(elementTypes))
 	for i, sym := range elementTypes {
-		enriched, ok := catalog.Elements[sym.Name]
+		typeIndex[sym.Name] = i
+	}
+
+	for i := range elementTypes {
+		enriched, ok := catalog.Elements[elementTypes[i].Name]
 		if !ok {
 			continue
 		}
+		applyEnrichedElementType(&elementTypes[i], enriched)
+	}
 
-		// Attribute profiles
-		for _, attr := range enriched.AttributeProfiles {
-			elementTypes[i].AttributeProfiles = append(elementTypes[i].AttributeProfiles, AttributeProfileEntry{
+	// Promote element types discovered from source-first XML that are not
+	// already present in the platform symbol set seeded from parsed docs.
+	missingTags := make([]string, 0)
+	for tag := range catalog.Elements {
+		if _, ok := typeIndex[tag]; ok {
+			continue
+		}
+		missingTags = append(missingTags, tag)
+	}
+	sort.Strings(missingTags)
+
+	for _, tag := range missingTags {
+		enriched := catalog.Elements[tag]
+		promoted := ElementTypeSymbol{
+			Name:        tag,
+			Confidence:  confidenceFromCatalogString(enriched.Confidence),
+			RawScore:    enriched.Score,
+			Score:       enriched.Score,
+			Description: strings.TrimSpace(enriched.Description),
+			SeenIn:      append([]string(nil), enriched.SeenIn...),
+		}
+		if promoted.Description == "" {
+			promoted.Description = describeElement(tag, len(enriched.SeenIn))
+		}
+		applyEnrichedElementType(&promoted, enriched)
+		elementTypes = append(elementTypes, promoted)
+	}
+
+	sort.Slice(elementTypes, func(i, j int) bool {
+		return elementTypes[i].Name < elementTypes[j].Name
+	})
+
+	return elementTypes
+}
+
+func applyEnrichedElementType(sym *ElementTypeSymbol, enriched *semantic_merge.EnrichedElement) {
+	if sym.Description == "" {
+		if strings.TrimSpace(enriched.Description) != "" {
+			sym.Description = strings.TrimSpace(enriched.Description)
+		} else {
+			sym.Description = describeElement(sym.Name, len(enriched.SeenIn))
+		}
+	}
+	if sym.Score == 0 {
+		sym.Score = enriched.Score
+	}
+	if sym.RawScore == 0 {
+		sym.RawScore = enriched.Score
+	}
+	if sym.Confidence == "" {
+		sym.Confidence = confidenceFromCatalogString(enriched.Confidence)
+	}
+	if len(sym.SeenIn) == 0 {
+		sym.SeenIn = append(sym.SeenIn, enriched.SeenIn...)
+	}
+
+	// Attribute profiles
+	for _, attr := range enriched.AttributeProfiles {
+		sym.AttributeProfiles = append(sym.AttributeProfiles, AttributeProfileEntry{
+			Name:         attr.Name,
+			IsRequired:   attr.IsRequired,
+			SampleValues: attr.SampleValues,
+			Count:        attr.Count,
+			TotalCount:   attr.TotalCount,
+		})
+	}
+
+	// Structural child profiles
+	for _, sc := range enriched.StructuralChildren {
+		profile := StructuralChildProfile{
+			Tag:   sc.Tag,
+			Count: sc.Count,
+		}
+		for _, attr := range sc.Attributes {
+			profile.Attributes = append(profile.Attributes, AttributeProfileEntry{
 				Name:         attr.Name,
 				IsRequired:   attr.IsRequired,
 				SampleValues: attr.SampleValues,
@@ -372,141 +451,184 @@ func enrichElementTypesFromCatalog(elementTypes []ElementTypeSymbol, catalog *se
 				TotalCount:   attr.TotalCount,
 			})
 		}
+		sym.StructuralChildProfiles = append(sym.StructuralChildProfiles, profile)
+	}
 
-		// Structural child profiles
-		for _, sc := range enriched.StructuralChildren {
-			profile := StructuralChildProfile{
-				Tag:   sc.Tag,
-				Count: sc.Count,
-			}
-			for _, attr := range sc.Attributes {
-				profile.Attributes = append(profile.Attributes, AttributeProfileEntry{
-					Name:         attr.Name,
-					IsRequired:   attr.IsRequired,
-					SampleValues: attr.SampleValues,
-					Count:        attr.Count,
-					TotalCount:   attr.TotalCount,
-				})
-			}
-			elementTypes[i].StructuralChildProfiles = append(elementTypes[i].StructuralChildProfiles, profile)
+	// Lua API calls from handlers — now including Category
+	for _, call := range enriched.LuaAPICalls {
+		sym.LuaAPICallsFromHandlers = append(sym.LuaAPICallsFromHandlers, LuaAPICallEntry{
+			Function:   call.Function,
+			Count:      call.Count,
+			Category:   call.Category,
+			FromEvents: call.FromEvents,
+		})
+	}
+
+	// Handler argument patterns
+	for _, pattern := range enriched.HandlerArgPatterns {
+		entry := HandlerArgPatternEntry{
+			Event:      pattern.Event,
+			Confidence: pattern.Confidence,
 		}
-
-		// Lua API calls from handlers — now including Category
-		for _, call := range enriched.LuaAPICalls {
-			elementTypes[i].LuaAPICallsFromHandlers = append(elementTypes[i].LuaAPICallsFromHandlers, LuaAPICallEntry{
-				Function:   call.Function,
-				Count:      call.Count,
-				Category:   call.Category,
-				FromEvents: call.FromEvents,
+		for _, p := range pattern.ExpectedParams {
+			entry.Params = append(entry.Params, HandlerExpectedParam{
+				Position: p.Position,
+				Name:     p.Name,
+				Type:     p.Type,
+				Role:     p.Role,
 			})
 		}
+		sym.HandlerArgPatterns = append(sym.HandlerArgPatterns, entry)
+	}
 
-		// Handler argument patterns
-		for _, pattern := range enriched.HandlerArgPatterns {
-			entry := HandlerArgPatternEntry{
-				Event:      pattern.Event,
-				Confidence: pattern.Confidence,
-			}
-			for _, p := range pattern.ExpectedParams {
-				entry.Params = append(entry.Params, HandlerExpectedParam{
-					Position: p.Position,
-					Name:     p.Name,
-					Type:     p.Type,
-					Role:     p.Role,
-				})
-			}
-			elementTypes[i].HandlerArgPatterns = append(elementTypes[i].HandlerArgPatterns, entry)
-		}
+	// Lua manipulators
+	for _, m := range enriched.LuaManipulators {
+		sym.LuaManipulators = append(sym.LuaManipulators, m.Function)
+	}
 
-		// Lua manipulators
-		for _, m := range enriched.LuaManipulators {
-			elementTypes[i].LuaManipulators = append(elementTypes[i].LuaManipulators, m.Function)
-		}
+	// Enriched parent references with counts and confidence
+	for _, p := range enriched.Parents {
+		sym.ParentRefs = append(sym.ParentRefs, ElementRelRef{
+			Tag:        p.Tag,
+			Count:      p.Count,
+			Confidence: p.Confidence,
+		})
+	}
 
-		// Enriched parent references with counts and confidence
+	// Enriched named child references with counts and confidence
+	for _, c := range enriched.Children {
+		sym.ChildRefs = append(sym.ChildRefs, ElementRelRef{
+			Tag:        c.Tag,
+			Count:      c.Count,
+			Confidence: c.Confidence,
+		})
+	}
+
+	// Enriched structural child references with counts
+	for _, sc := range enriched.StructuralChildren {
+		sym.StructuralChildRefs = append(sym.StructuralChildRefs, ElementRelRef{
+			Tag:        sc.Tag,
+			Count:      sc.Count,
+			Confidence: sc.Confidence,
+		})
+	}
+
+	// Enrich parents/children flat lists if empty (backward compat)
+	if len(enriched.Parents) > 0 && len(sym.CommonParentTypes) == 0 {
 		for _, p := range enriched.Parents {
-			elementTypes[i].ParentRefs = append(elementTypes[i].ParentRefs, ElementRelRef{
-				Tag:        p.Tag,
-				Count:      p.Count,
-				Confidence: p.Confidence,
-			})
+			sym.CommonParentTypes = append(sym.CommonParentTypes, p.Tag)
 		}
-
-		// Enriched named child references with counts and confidence
+	}
+	if len(enriched.Children) > 0 && len(sym.CommonChildElementTypes) == 0 {
 		for _, c := range enriched.Children {
-			elementTypes[i].ChildRefs = append(elementTypes[i].ChildRefs, ElementRelRef{
-				Tag:        c.Tag,
-				Count:      c.Count,
-				Confidence: c.Confidence,
-			})
+			sym.CommonChildElementTypes = append(sym.CommonChildElementTypes, c.Tag)
 		}
-
-		// Enriched structural child references with counts
+	}
+	if len(enriched.StructuralChildren) > 0 && len(sym.CommonChildTypes) == 0 {
 		for _, sc := range enriched.StructuralChildren {
-			elementTypes[i].StructuralChildRefs = append(elementTypes[i].StructuralChildRefs, ElementRelRef{
-				Tag:        sc.Tag,
-				Count:      sc.Count,
-				Confidence: sc.Confidence,
-			})
-		}
-
-		// Enrich parents/children flat lists if empty (backward compat)
-		if len(enriched.Parents) > 0 && len(sym.CommonParentTypes) == 0 {
-			for _, p := range enriched.Parents {
-				elementTypes[i].CommonParentTypes = append(elementTypes[i].CommonParentTypes, p.Tag)
-			}
-		}
-		if len(enriched.Children) > 0 && len(sym.CommonChildElementTypes) == 0 {
-			for _, c := range enriched.Children {
-				elementTypes[i].CommonChildElementTypes = append(elementTypes[i].CommonChildElementTypes, c.Tag)
-			}
-		}
-		if len(enriched.StructuralChildren) > 0 && len(sym.CommonChildTypes) == 0 {
-			for _, sc := range enriched.StructuralChildren {
-				elementTypes[i].CommonChildTypes = append(elementTypes[i].CommonChildTypes, sc.Tag)
-			}
-		}
-
-		// Inheritance data
-		if len(enriched.InheritsBases) > 0 {
-			elementTypes[i].InheritsBases = enriched.InheritsBases
-		}
-		elementTypes[i].IsTemplate = enriched.IsTemplate
-
-		// Composition snippet (if available from Phase 4 and not already set)
-		if enriched.CompositionSnippet != "" && elementTypes[i].CompositionSnippet == "" {
-			elementTypes[i].CompositionSnippet = enriched.CompositionSnippet
-		}
-
-		// Enrich event bindings with per-event Lua API calls and categories
-		enrichEventBindingsFromCatalog(&elementTypes[i], enriched)
-
-		// Binding resolution statistics
-		enrichBindingStats(&elementTypes[i], enriched)
-
-		// .mod lifecycle window facts — map ModLifecycleWindowFact records from
-		// the catalog's EnrichedElement into platform WindowLifecycleSemantic.
-		for _, wf := range enriched.LifecycleWindowFacts {
-			elementTypes[i].StartupWindowFacts = append(elementTypes[i].StartupWindowFacts, WindowLifecycleSemantic{
-				FrameName:   wf.FrameName,
-				ElementType: sym.Name,
-				HookKind:    wf.HookKind,
-				Resolution:  wf.Resolution,
-				Confidence:  wf.Confidence,
-				Provenance: ModProvenance{
-					AddonName:   wf.AddonName,
-					HookKind:    wf.HookKind,
-					HookTag:     wf.HookTag,
-					ActionTag:   wf.ActionTag,
-					ActionIndex: wf.ActionIndex,
-					Resolution:  wf.Resolution,
-					Confidence:  wf.Confidence,
-				},
-			})
+			sym.CommonChildTypes = append(sym.CommonChildTypes, sc.Tag)
 		}
 	}
 
-	return elementTypes
+	if len(sym.CommonAttributes) == 0 {
+		for _, attr := range enriched.AttributeProfiles {
+			sym.CommonAttributes = append(sym.CommonAttributes, attr.Name)
+		}
+	}
+
+	// Inheritance data
+	if len(enriched.InheritsBases) > 0 {
+		sym.InheritsBases = enriched.InheritsBases
+	}
+	if len(sym.CommonInherits) == 0 && len(enriched.InheritsBases) > 0 {
+		sym.CommonInherits = append(sym.CommonInherits, enriched.InheritsBases...)
+	}
+	sym.IsTemplate = enriched.IsTemplate
+
+	// Composition snippet (if available from Phase 4 and not already set)
+	if enriched.CompositionSnippet != "" && sym.CompositionSnippet == "" {
+		sym.CompositionSnippet = enriched.CompositionSnippet
+	}
+
+	for _, eb := range enriched.EventBindings {
+		xmlBinding := XMLEventBinding{
+			Event:          eb.Event,
+			InferredArgs:   eb.InferredArgs,
+			ArgsConfidence: eb.ArgsConfidence,
+			Category:       eb.Category,
+			LuaAPICalls:    append([]string(nil), eb.LuaAPICalls...),
+		}
+		for _, bf := range eb.LuaFunctions {
+			xmlBinding.LuaFunctions = append(xmlBinding.LuaFunctions, bf.Name)
+		}
+		sym.XMLEventBindings = append(sym.XMLEventBindings, xmlBinding)
+	}
+
+	if len(sym.CommonHandlers) == 0 {
+		for _, eb := range enriched.EventBindings {
+			sym.CommonHandlers = append(sym.CommonHandlers, eb.Event)
+		}
+	}
+	if len(sym.CommonHandlerFunctions) == 0 {
+		for _, eb := range enriched.EventBindings {
+			for _, bf := range eb.LuaFunctions {
+				sym.CommonHandlerFunctions = appendUniqueString(sym.CommonHandlerFunctions, bf.Name)
+			}
+		}
+	}
+
+	// Enrich event bindings with per-event Lua API calls and categories
+	enrichEventBindingsFromCatalog(sym, enriched)
+
+	// Binding resolution statistics
+	enrichBindingStats(sym, enriched)
+
+	// .mod lifecycle window facts — map ModLifecycleWindowFact records from
+	// the catalog's EnrichedElement into platform WindowLifecycleSemantic.
+	for _, wf := range enriched.LifecycleWindowFacts {
+		sym.StartupWindowFacts = append(sym.StartupWindowFacts, WindowLifecycleSemantic{
+			FrameName:   wf.FrameName,
+			ElementType: sym.Name,
+			HookKind:    wf.HookKind,
+			Resolution:  wf.Resolution,
+			Confidence:  wf.Confidence,
+			Provenance: ModProvenance{
+				AddonName:   wf.AddonName,
+				HookKind:    wf.HookKind,
+				HookTag:     wf.HookTag,
+				ActionTag:   wf.ActionTag,
+				ActionIndex: wf.ActionIndex,
+				Resolution:  wf.Resolution,
+				Confidence:  wf.Confidence,
+			},
+		})
+	}
+
+	if len(enriched.Notes) > 0 {
+		for _, note := range enriched.Notes {
+			sym.Notes = appendUniqueString(sym.Notes, note)
+		}
+	}
+
+	sort.Strings(sym.CommonAttributes)
+	sort.Strings(sym.CommonHandlers)
+	sort.Strings(sym.CommonInherits)
+	sort.Strings(sym.CommonChildTypes)
+	sort.Strings(sym.CommonChildElementTypes)
+	sort.Strings(sym.CommonParentTypes)
+}
+
+func confidenceFromCatalogString(value string) Confidence {
+	switch strings.ToUpper(strings.TrimSpace(value)) {
+	case "HIGH":
+		return ConfidenceHigh
+	case "MEDIUM":
+		return ConfidenceMedium
+	case "LOW":
+		return ConfidenceLow
+	default:
+		return ConfidenceLow
+	}
 }
 
 // enrichEventBindingsFromCatalog transfers per-event Lua API calls and category

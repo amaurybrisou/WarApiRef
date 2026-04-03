@@ -64,19 +64,19 @@ Observed XML element type instantiated by 14 addons.
 
 ## Common Attributes
 
-- name
-- inherits
-- numticks
-- locktoticks
-- scale
 - background
+- inherits
+- locktoticks
+- name
+- numticks
+- scale
 - sliderbutton
 - tickmark
 
 ## Common Handlers
 
-- [OnSlide](../handlers/handler_OnSlide.md)
 - [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnSlide](../handlers/handler_OnSlide.md)
 
 ## Common Handler Functions
 
@@ -100,6 +100,8 @@ Observed XML element type instantiated by 14 addons.
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | WSCT.OnMouseOver | `function()` | MEDIUM |
 | [OnSlide](../handlers/handler_OnSlide.md) | custom | AuraColorPicker.OnSlide, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, BuffHead.Setup.SelectColor.OnSlideTint, MoraleCircle.OnSetCustomColor, MoraleCircle.OnSetCustomColorEmpty, MoraleCircle.OnSetCustomColorFill | `function(...)` | LOW |
+| [OnSlide](../handlers/handler_OnSlide.md) | custom | AuraColorPicker.OnSlide, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, BuffHead.Setup.SelectColor.OnSlideTint, MoraleCircle.OnSetCustomColor, MoraleCircle.OnSetCustomColorEmpty, MoraleCircle.OnSetCustomColorFill, MoraleCircle.OnSetCustomColorFull, TexturedButtons.Setup.SelectColor.OnSlideTint, TexturedButtons.Setup.Tint.OnSlideTint, TurretRange.Setup.Display.OnSlideTint, TurretRange.Setup.Distance.OnSlideTint, WSCT.OnSetCustomColor, AuraConfig.OnTextureRotationSlide, AuraConfig.OnTextureScaleSlide, AuraConfig.OnTimerScaleSlide, BuffHead.Setup.AdvancedContainersItem.Properties.OnSlideScale, BuffHead.Setup.Container.OnSlideColumns, BuffHead.Setup.Container.OnSlidePaddingHorizontal, BuffHead.Setup.Container.OnSlidePaddingVertical, BuffHead.Setup.Container.OnSlideRows, BuffHead.Setup.Display.OnSlideIndicatorScale, BuffHead.Setup.Display.OnSlidePaddingHorizontal, BuffHead.Setup.Display.OnSlidePaddingVertical, BuffHead.Setup.General.OnSlideMaximumThreshold, BuffHead.Setup.Layout.Properties.OnSlideAlphaAlpha, BuffHead.Setup.Layout.Properties.OnSlideIconBorderAlpha, BuffHead.Setup.Layout.Properties.OnSlideSizeScale, BuffHead.Setup.Layout.Properties.OnSlideStatusBarBackgroundAlpha, BuffHead.Setup.Layout.Properties.OnSlideStatusBarForegroundAlpha, BuffHead.Setup.Performance.OnSlideGeneralUpdateDelay, BuffHead.Setup.Performance.OnSlideMaximumUpdates, BuffHead.Setup.Performance.OnSlidePriorityUpdateDelay, BuffHead.Setup.Performance.OnSlidePriorityUpdateStart, BuffHead.Setup.Performance.OnSlideResyncTargetDelay, DAoCBuffSettings.FilterSettings.OnSlideBB, DAoCBuffSettings.FilterSettings.OnSlideBG, DAoCBuffSettings.FilterSettings.OnSlideBR, DAoCBuffSettings.FilterSettings.OnSlideCB, DAoCBuffSettings.FilterSettings.OnSlideCG, DAoCBuffSettings.FilterSettings.OnSlideCR, LibGroup.Setup.OnSlideGroupDistanceCacheUpdate, LibGroup.Setup.OnSlideGroupDistanceSearchUpdate, LibGroup.Setup.OnSlideGroupUpdateDelay, PotionBarSettings.OnAlphaSliderChanged, PotionBarSettings.OnScaleSliderChanged, RoR_SoR.OnSlideWindowOptionsOffset, RoR_SoR.OnSlideWindowOptionsOpacity, RoR_SoR.OnSlideWindowOptionsScale, ShiniesConfigGeneral.OnSlide_UIScale, TexturedButtons.Setup.Cooldown.OnSlideCooldownAlpha, TurretRange.Setup.Display.OnSlideDistanceScale, TurretRange.Setup.General.OnSlideUpdateDelay, WSCT.SliderOnSlide, WarBoard.Options.OnSlide | `pos` | LOW |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | WSCT.OnMouseOver | `` |  |
 
 ### Per-Event Lua API Calls
 
@@ -107,10 +109,14 @@ Observed XML element type instantiated by 14 addons.
 
 **OnSlide** handlers call: `ButtonGetPressedFlag`, `ComboBoxGetSelectedMenuItem`, `LabelSetText`, `LabelSetTextColor`, `SliderBarGetCurrentPosition`, `SliderBarSetCurrentPosition`, `TextEditBoxGetText`, `TextEditBoxSetText`, `WindowGetParent`, `WindowSetAlpha`, `WindowSetScale`, `WindowSetTintColor`
 
+**OnSlide** handlers call: `ButtonGetPressedFlag`, `ComboBoxGetSelectedMenuItem`, `LabelSetText`, `LabelSetTextColor`, `SliderBarGetCurrentPosition`, `SliderBarSetCurrentPosition`, `TextEditBoxGetText`, `TextEditBoxSetText`, `WindowGetParent`, `WindowSetAlpha`, `WindowSetScale`, `WindowSetTintColor`
+
+**OnMouseOver** handlers call: `WindowGetParent`
+
 ## Common Inherits
 
-- EA_Default_SliderBar
 - Aura_Default_SliderBar
+- EA_Default_SliderBar
 
 ## Common Parent Elements
 
@@ -119,6 +125,8 @@ Observed XML element type instantiated by 14 addons.
 
 ## Common Structural Child Elements
 
+- [Anchors](element_Anchors.md) — 83× (HIGH)
+- [EventHandlers](element_EventHandlers.md) — 80× (HIGH)
 - [Size](element_Size.md) — 76× (HIGH)
 
 ## Common Template Bases
@@ -150,9 +158,31 @@ Observed XML element type instantiated by 14 addons.
 | `tickmark` | optional | 1% | Aura_Default_SliderTick |
 ## Structural Sub-Elements
 
+### [Anchors](element_Anchors.md)
+
+Observed 83 times as an unnamed child.
+
+### [EventHandlers](element_EventHandlers.md)
+
+Observed 80 times as an unnamed child.
+
 ### [Size](element_Size.md)
 
 Observed 76 times as an unnamed child.
+
+## Recursive Hierarchy
+
+- Root: [SliderBar](element_SliderBar.md)
+- [Anchors](element_Anchors.md) (structural, 83×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - (cycle)
+- [EventHandlers](element_EventHandlers.md) (structural, 80×, HIGH)
+  - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
+- [Size](element_Size.md) (structural, 76×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
 
 ## Lua API Usage (from Handlers)
 
@@ -186,22 +216,22 @@ Confidence: LOW
 
 ## Lua Functions Manipulating This Type
 
-- MoraleCircle.OnSetCustomColorFill
-- RoR_SoR.OnWindowOptionsSetOffset
-- MoraleCircle.OnSetCustomColorEmpty
-- WSCT.OnLButtonUpColorPicker
-- WSCT.OnSetCustomColor
-- MoraleCircle.OnSetCustomColor
-- MoraleCircle.ColorChanger1
-- MoraleCircle.ColorChanger3
-- RoR_SoR.OnWindowOptionsSetOpacity
-- RoR_SoR.OnWindowOptionsSetScale
-- WSCT.ColorOnButtonUp
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- MoraleCircle.OnSetCustomColor
+- MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.ColorChanger3
+- MoraleCircle.ColorChanger4
+- RoR_SoR.OnWindowOptionsSetScale
+- RoR_SoR.OnWindowOptionsSetOffset
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- MoraleCircle.ColorChanger1
+- WSCT.ColorOnButtonUp
 - MoraleCircle.ColorChanger2
 - MoraleCircle.OnSetCustomColorFull
-- MoraleCircle.ColorChanger4
+- MoraleCircle.OnSetCustomColorEmpty
+- WSCT.OnSetCustomColor
+- WSCT.OnLButtonUpColorPicker
+- RoR_SoR.OnWindowOptionsSetOpacity
 
 
 ## Binding Resolution
@@ -240,6 +270,8 @@ Confidence: LOW
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With
 

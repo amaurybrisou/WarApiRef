@@ -76,6 +76,7 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Structural Child Elements
 
+- [Anchors](element_Anchors.md) — 1× (HIGH)
 - [Size](element_Size.md) — 1× (HIGH)
 
 
@@ -102,9 +103,25 @@ Observed XML element type instantiated by 1 addons.
 | `sticky` | **required** | 100% | true |
 ## Structural Sub-Elements
 
+### [Anchors](element_Anchors.md)
+
+Observed 1 times as an unnamed child.
+
 ### [Size](element_Size.md)
 
 Observed 1 times as an unnamed child.
+
+## Recursive Hierarchy
+
+- Root: [CooldownDisplay](element_CooldownDisplay.md)
+- [Anchors](element_Anchors.md) (structural, 1×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - (cycle)
+- [Size](element_Size.md) (structural, 1×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
 
 ## Seen In
 
@@ -118,6 +135,7 @@ Observed 1 times as an unnamed child.
 
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With
 

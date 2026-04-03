@@ -155,6 +155,7 @@ Observed positioning windows relative to other runtime UI elements.
 ## Affects
 
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [Anchor](../../xml/element_types/element_Anchor.md) (MEDIUM 55/100) - XML Element Type
 
 ## Notes
 

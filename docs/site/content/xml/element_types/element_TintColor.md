@@ -60,10 +60,10 @@ Observed XML element type instantiated by 14 addons.
 
 ## Common Attributes
 
+- a
 - b
 - g
 - r
-- a
 
 ## Common Inherits
 
@@ -123,9 +123,7 @@ Observed XML element type instantiated by 14 addons.
 
 ## Used With
 
-- [Size](element_Size.md) (HIGH 100/100) - XML Element Type
-- [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
-- [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- none
 
 ## Triggered By
 

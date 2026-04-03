@@ -417,6 +417,21 @@ main {
 /* ── 12. Utilities ───────────────────────────────────────────────────────── */
 .hidden { display: none !important; }
 
+/* ── 12.5. Analysis toggle ──────────────────────────────────────────────── */
+/* Analysis sections (Confidence Assessment, Evidence Signals, Evidence Summary,
+   Binding Resolution) are hidden by default. The "Analysis" topbar button adds
+   .show-analysis to <body> to reveal them. State is persisted in localStorage. */
+body:not(.show-analysis) .doc-section.analysis-section {
+  display: none;
+}
+
+/* Visual indicator: active state matches the secondary button accent. */
+.topbar-actions #analysisToggle[aria-pressed="true"] {
+  background:   var(--accent-soft);
+  border-color: var(--accent);
+  color:        var(--accent);
+}
+
 /* ── 13. Responsive ──────────────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .app-shell { grid-template-columns: 1fr; }

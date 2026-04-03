@@ -1971,58 +1971,256 @@
             "order": 34
           },
           {
+            "label": "Anchor",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Anchor.md",
+            "order": 35
+          },
+          {
+            "label": "Anchors",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Anchors.md",
+            "order": 36
+          },
+          {
+            "label": "EventHandlers",
+            "type": "ui_element",
+            "path": "xml/element_types/element_EventHandlers.md",
+            "order": 37
+          },
+          {
+            "label": "ListColumns",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ListColumns.md",
+            "order": 38
+          },
+          {
+            "label": "Texture",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Texture.md",
+            "order": 39
+          },
+          {
+            "label": "AbsPoint",
+            "type": "ui_element",
+            "path": "xml/element_types/element_AbsPoint.md",
+            "order": 40
+          },
+          {
             "label": "AnimFrames",
             "type": "ui_element",
             "path": "xml/element_types/element_AnimFrames.md",
-            "order": 35
+            "order": 41
           },
           {
             "label": "AnimatedImages",
             "type": "ui_element",
             "path": "xml/element_types/element_AnimatedImages.md",
-            "order": 36
+            "order": 42
+          },
+          {
+            "label": "Assets",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Assets.md",
+            "order": 43
+          },
+          {
+            "label": "BottomCenter",
+            "type": "ui_element",
+            "path": "xml/element_types/element_BottomCenter.md",
+            "order": 44
+          },
+          {
+            "label": "BottomLeft",
+            "type": "ui_element",
+            "path": "xml/element_types/element_BottomLeft.md",
+            "order": 45
+          },
+          {
+            "label": "BottomRight",
+            "type": "ui_element",
+            "path": "xml/element_types/element_BottomRight.md",
+            "order": 46
+          },
+          {
+            "label": "Color",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Color.md",
+            "order": 47
           },
           {
             "label": "ColorSize",
             "type": "ui_element",
             "path": "xml/element_types/element_ColorSize.md",
-            "order": 37
+            "order": 48
           },
           {
             "label": "ColorSpacing",
             "type": "ui_element",
             "path": "xml/element_types/element_ColorSpacing.md",
-            "order": 38
+            "order": 49
           },
           {
             "label": "ColorTexCoords",
             "type": "ui_element",
             "path": "xml/element_types/element_ColorTexCoords.md",
-            "order": 39
+            "order": 50
           },
           {
             "label": "ColorTexDims",
             "type": "ui_element",
             "path": "xml/element_types/element_ColorTexDims.md",
-            "order": 40
+            "order": 51
           },
           {
             "label": "CooldownDisplay",
             "type": "ui_element",
             "path": "xml/element_types/element_CooldownDisplay.md",
-            "order": 41
+            "order": 52
+          },
+          {
+            "label": "Disabled",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Disabled.md",
+            "order": 53
+          },
+          {
+            "label": "DisabledPressed",
+            "type": "ui_element",
+            "path": "xml/element_types/element_DisabledPressed.md",
+            "order": 54
+          },
+          {
+            "label": "EventHandler",
+            "type": "ui_element",
+            "path": "xml/element_types/element_EventHandler.md",
+            "order": 55
+          },
+          {
+            "label": "ListColumn",
+            "type": "ui_element",
+            "path": "xml/element_types/element_ListColumn.md",
+            "order": 56
           },
           {
             "label": "LogDisplay",
             "type": "ui_element",
             "path": "xml/element_types/element_LogDisplay.md",
-            "order": 42
+            "order": 57
+          },
+          {
+            "label": "Middle",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Middle.md",
+            "order": 58
+          },
+          {
+            "label": "MiddleCenter",
+            "type": "ui_element",
+            "path": "xml/element_types/element_MiddleCenter.md",
+            "order": 59
+          },
+          {
+            "label": "MiddleLeft",
+            "type": "ui_element",
+            "path": "xml/element_types/element_MiddleLeft.md",
+            "order": 60
+          },
+          {
+            "label": "MiddleRight",
+            "type": "ui_element",
+            "path": "xml/element_types/element_MiddleRight.md",
+            "order": 61
+          },
+          {
+            "label": "Normal",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Normal.md",
+            "order": 62
+          },
+          {
+            "label": "NormalHighlit",
+            "type": "ui_element",
+            "path": "xml/element_types/element_NormalHighlit.md",
+            "order": 63
+          },
+          {
+            "label": "Pressed",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Pressed.md",
+            "order": 64
+          },
+          {
+            "label": "PressedHighlit",
+            "type": "ui_element",
+            "path": "xml/element_types/element_PressedHighlit.md",
+            "order": 65
+          },
+          {
+            "label": "Script",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Script.md",
+            "order": 66
+          },
+          {
+            "label": "TopCenter",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TopCenter.md",
+            "order": 67
+          },
+          {
+            "label": "TopLeft",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TopLeft.md",
+            "order": 68
+          },
+          {
+            "label": "TopRight",
+            "type": "ui_element",
+            "path": "xml/element_types/element_TopRight.md",
+            "order": 69
           },
           {
             "label": "Visual",
             "type": "ui_element",
             "path": "xml/element_types/element_Visual.md",
-            "order": 43
+            "order": 70
+          },
+          {
+            "label": "Scripts",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Scripts.md",
+            "order": 71
+          },
+          {
+            "label": "Slice",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Slice.md",
+            "order": 72
+          },
+          {
+            "label": "Left",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Left.md",
+            "order": 73
+          },
+          {
+            "label": "Right",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Right.md",
+            "order": 74
+          },
+          {
+            "label": "AnimFrame",
+            "type": "ui_element",
+            "path": "xml/element_types/element_AnimFrame.md",
+            "order": 75
+          },
+          {
+            "label": "Icon",
+            "type": "ui_element",
+            "path": "xml/element_types/element_Icon.md",
+            "order": 76
           }
         ]
       },

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T03:04:20.179849949Z",
+  "generated_at": "2026-04-03T03:16:50.193737465Z",
   "frequent_call_chains": [
     {
       "id": "call_chain:xml_event.OnUpdate_function.window.WindowSetShowing",
@@ -237,7 +237,7 @@
         "Aura: AuraConfigGeneralTextureRotationSlider.OnSlide -\u003e AuraConfig.OnTextureRotationSlide",
         "Aura: AuraConfigGeneralTextureScaleSlider.OnSlide -\u003e AuraConfig.OnTextureScaleSlide"
       ],
-      "weight": 161
+      "weight": 160
     },
     {
       "id": "combination:ui.Window_xml_event.OnHidden",
@@ -357,7 +357,7 @@
         "Aura: AuraSharesRow.OnMouseOver -\u003e AuraShares.OnMouseOverAuraList",
         "Aura: AuraWindowRow.OnMouseOver -\u003e AuraSettings.OnMouseOverAuraList"
       ],
-      "weight": 129
+      "weight": 127
     },
     {
       "id": "combination:ui.Window_xml_event.OnShown",
@@ -1360,86 +1360,6 @@
       "weight": 23
     },
     {
-      "id": "combination:ui.EditBox_xml_event.OnKeyEnter",
-      "type": "common_combination",
-      "title": "EditBox + OnKeyEnter",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:EditBox",
-          "label": "EditBox",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_EditBox.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
-        },
-        {
-          "id": "xml_event:OnKeyEnter",
-          "label": "OnKeyEnter",
-          "type": "xml_event",
-          "category": "XML Event",
-          "path": "xml/handlers/handler_OnKeyEnter.md",
-          "confidence": "HIGH",
-          "score": 93,
-          "summary": "Observed as an XML handler hook bound by 4 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "EditBox \u003c-\u003e OnKeyEnter"
-      ],
-      "evidence": [
-        "Aura: AuraConfigActivationAlertTextText.OnKeyEnter -\u003e none",
-        "Aura: AuraConfigDeactivationAlertTextText.OnKeyEnter -\u003e none",
-        "Aura: AuraConfigGeneralName.OnKeyEnter -\u003e none",
-        "Aura: AuraConfigGeneralOffsetX.OnKeyEnter -\u003e none",
-        "Aura: AuraConfigGeneralOffsetY.OnKeyEnter -\u003e none",
-        "Aura: AuraConfigTimerOffsetX.OnKeyEnter -\u003e none"
-      ],
-      "weight": 23
-    },
-    {
-      "id": "combination:ui.EditBox_xml_event.OnKeyEscape",
-      "type": "common_combination",
-      "title": "EditBox + OnKeyEscape",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:EditBox",
-          "label": "EditBox",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_EditBox.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 13 addons."
-        },
-        {
-          "id": "xml_event:OnKeyEscape",
-          "label": "OnKeyEscape",
-          "type": "xml_event",
-          "category": "XML Event",
-          "path": "xml/handlers/handler_OnKeyEscape.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 5 addons through frame event handlers."
-        }
-      ],
-      "flow": [
-        "EditBox \u003c-\u003e OnKeyEscape"
-      ],
-      "evidence": [
-        "Aura: AuraConfigActivationAlertTextText.OnKeyEscape -\u003e none",
-        "Aura: AuraConfigDeactivationAlertTextText.OnKeyEscape -\u003e none",
-        "Aura: AuraConfigGeneralName.OnKeyEscape -\u003e none",
-        "Aura: AuraConfigGeneralOffsetX.OnKeyEscape -\u003e none",
-        "Aura: AuraConfigGeneralOffsetY.OnKeyEscape -\u003e none",
-        "Aura: AuraConfigTimerOffsetX.OnKeyEscape -\u003e none"
-      ],
-      "weight": 23
-    },
-    {
       "id": "combination:ui.Button_xml_event.OnMouseOverEnd",
       "type": "common_combination",
       "title": "Button + OnMouseOverEnd",
@@ -1600,44 +1520,84 @@
       "weight": 22
     },
     {
-      "id": "combination:ui.ComboBox_xml_event.OnMouseOver",
+      "id": "combination:ui.EditBox_xml_event.OnKeyEnter",
       "type": "common_combination",
-      "title": "ComboBox + OnMouseOver",
+      "title": "EditBox + OnKeyEnter",
       "description": "Observed together in the same inferred usage contexts.",
       "participants": [
         {
-          "id": "ui:ComboBox",
-          "label": "ComboBox",
+          "id": "ui:EditBox",
+          "label": "EditBox",
           "type": "ui_element",
           "category": "XML Element Type",
-          "path": "xml/element_types/element_ComboBox.md",
+          "path": "xml/element_types/element_EditBox.md",
           "confidence": "HIGH",
           "score": 100,
-          "summary": "Observed XML element type instantiated by 18 addons."
+          "summary": "Observed XML element type instantiated by 13 addons."
         },
         {
-          "id": "xml_event:OnMouseOver",
-          "label": "OnMouseOver",
+          "id": "xml_event:OnKeyEnter",
+          "label": "OnKeyEnter",
           "type": "xml_event",
           "category": "XML Event",
-          "path": "xml/handlers/handler_OnMouseOver.md",
+          "path": "xml/handlers/handler_OnKeyEnter.md",
           "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed as an XML handler hook bound by 24 addons through frame event handlers."
+          "score": 93,
+          "summary": "Observed as an XML handler hook bound by 4 addons through frame event handlers."
         }
       ],
       "flow": [
-        "ComboBox \u003c-\u003e OnMouseOver"
+        "EditBox \u003c-\u003e OnKeyEnter"
       ],
       "evidence": [
-        "ComboBox: XML element relationships",
-        "Enemy: EnemyConfigurationWindow_PropertySelectLargeTemplateValue.OnMouseOver -\u003e Enemy.ConfigurationWindow_ShowTooltip",
-        "Enemy: EnemyConfigurationWindow_PropertySelectTemplateValue.OnMouseOver -\u003e Enemy.ConfigurationWindow_ShowTooltip",
-        "PotionBar: $parentRightPaneQuickActionsCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverQuickActions",
-        "PotionBar: PotionBarTypeTemplateActivatorCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverActivator",
-        "PotionBar: PotionBarTypeTemplateBuildCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverBuild"
+        "Aura: AuraConfigActivationAlertTextText.OnKeyEnter -\u003e none",
+        "Aura: AuraConfigDeactivationAlertTextText.OnKeyEnter -\u003e none",
+        "Aura: AuraConfigGeneralName.OnKeyEnter -\u003e none",
+        "Aura: AuraConfigGeneralOffsetX.OnKeyEnter -\u003e none",
+        "Aura: AuraConfigGeneralOffsetY.OnKeyEnter -\u003e none",
+        "Aura: AuraConfigTimerOffsetX.OnKeyEnter -\u003e none"
       ],
-      "weight": 21
+      "weight": 22
+    },
+    {
+      "id": "combination:ui.EditBox_xml_event.OnKeyEscape",
+      "type": "common_combination",
+      "title": "EditBox + OnKeyEscape",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:EditBox",
+          "label": "EditBox",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_EditBox.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 13 addons."
+        },
+        {
+          "id": "xml_event:OnKeyEscape",
+          "label": "OnKeyEscape",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnKeyEscape.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 5 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "EditBox \u003c-\u003e OnKeyEscape"
+      ],
+      "evidence": [
+        "Aura: AuraConfigActivationAlertTextText.OnKeyEscape -\u003e none",
+        "Aura: AuraConfigDeactivationAlertTextText.OnKeyEscape -\u003e none",
+        "Aura: AuraConfigGeneralName.OnKeyEscape -\u003e none",
+        "Aura: AuraConfigGeneralOffsetX.OnKeyEscape -\u003e none",
+        "Aura: AuraConfigGeneralOffsetY.OnKeyEscape -\u003e none",
+        "Aura: AuraConfigTimerOffsetX.OnKeyEscape -\u003e none"
+      ],
+      "weight": 22
     },
     {
       "id": "combination:event.window.OnRButtonUp_function.global.EA_Window_ContextMenu.CreateContextMenu",
@@ -1718,6 +1678,46 @@
         "AggroMeter: AggroMeter.OnTabRBU -\u003e EA_Window_ContextMenu.AddMenuItem(L \"\u003cicon00057\u003e Enabled\", AggroMeter.ToggeEnable, false, true)"
       ],
       "weight": 21
+    },
+    {
+      "id": "combination:ui.ComboBox_xml_event.OnMouseOver",
+      "type": "common_combination",
+      "title": "ComboBox + OnMouseOver",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:ComboBox",
+          "label": "ComboBox",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_ComboBox.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 18 addons."
+        },
+        {
+          "id": "xml_event:OnMouseOver",
+          "label": "OnMouseOver",
+          "type": "xml_event",
+          "category": "XML Event",
+          "path": "xml/handlers/handler_OnMouseOver.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed as an XML handler hook bound by 24 addons through frame event handlers."
+        }
+      ],
+      "flow": [
+        "ComboBox \u003c-\u003e OnMouseOver"
+      ],
+      "evidence": [
+        "Enemy: EnemyConfigurationWindow_PropertySelectLargeTemplateValue.OnMouseOver -\u003e Enemy.ConfigurationWindow_ShowTooltip",
+        "Enemy: EnemyConfigurationWindow_PropertySelectTemplateValue.OnMouseOver -\u003e Enemy.ConfigurationWindow_ShowTooltip",
+        "PotionBar: $parentRightPaneQuickActionsCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverQuickActions",
+        "PotionBar: PotionBarTypeTemplateActivatorCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverActivator",
+        "PotionBar: PotionBarTypeTemplateBuildCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverBuild",
+        "PotionBar: PotionBarTypeTemplateCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverMethod"
+      ],
+      "weight": 20
     },
     {
       "id": "combination:function.global.DoesWindowExist_function.global.towstring",
@@ -2280,6 +2280,46 @@
       "weight": 16
     },
     {
+      "id": "combination:ui.Anchors_ui.Size",
+      "type": "common_combination",
+      "title": "Anchors + Size",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "ui:Anchors",
+          "label": "Anchors",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Anchors.md",
+          "confidence": "MEDIUM",
+          "score": 55,
+          "summary": "Observed XML element type instantiated by 32 addons."
+        },
+        {
+          "id": "ui:Size",
+          "label": "Size",
+          "type": "ui_element",
+          "category": "XML Element Type",
+          "path": "xml/element_types/element_Size.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed XML element type instantiated by 33 addons."
+        }
+      ],
+      "flow": [
+        "Anchors \u003c-\u003e Size"
+      ],
+      "evidence": [
+        "AbsPoint: XML element relationships",
+        "AnimatedImage: XML element relationships",
+        "CircleImage: XML element relationships",
+        "ComboBox: XML element relationships",
+        "CooldownDisplay: XML element relationships",
+        "DynamicImage: XML element relationships"
+      ],
+      "weight": 15
+    },
+    {
       "id": "combination:function.global.CreateWindowFromTemplate_function.global.GetIconData",
       "type": "common_combination",
       "title": "CreateWindowFromTemplate + GetIconData",
@@ -2396,46 +2436,6 @@
         "AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown -\u003e EA_ChatWindow.InsertItemLink(itemData)",
         "Enemy: Enemy.ConfigurationWindow_OnMacroMouseDrag -\u003e Cursor.IconOnCursor()",
         "Enemy: Enemy.ConfigurationWindow_OnMacroMouseDrag -\u003e Cursor.PickUp(Cursor.SOURCE_MACRO, p.macroId, p.macroId, p.macroIconNum, false)"
-      ],
-      "weight": 15
-    },
-    {
-      "id": "combination:function.window.DynamicImageSetTexture_function.window.DynamicImageSetTextureDimensions",
-      "type": "common_combination",
-      "title": "DynamicImageSetTexture + DynamicImageSetTextureDimensions",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "function:window:DynamicImageSetTexture",
-          "label": "DynamicImageSetTexture",
-          "type": "function",
-          "category": "Window Function",
-          "path": "window_api/functions/window_DynamicImageSetTexture.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed mutating runtime image resources on existing controls."
-        },
-        {
-          "id": "function:window:DynamicImageSetTextureDimensions",
-          "label": "DynamicImageSetTextureDimensions",
-          "type": "function",
-          "category": "Window Function",
-          "path": "window_api/functions/window_DynamicImageSetTextureDimensions.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed mutating runtime image resources on existing controls."
-        }
-      ],
-      "flow": [
-        "DynamicImageSetTexture \u003c-\u003e DynamicImageSetTextureDimensions"
-      ],
-      "evidence": [
-        "BuffHead: BuffHead.local.SetTextureButton -\u003e DynamicImageSetTextureDimensions(textureButton..\"Texture\", dimensions.Width, dimensions.Height)",
-        "BuffHead: SetTextureButton -\u003e DynamicImageSetTextureDimensions(textureButton..\"Texture\", dimensions.Width, dimensions.Height)",
-        "Enemy: Enemy.UnitFramePart_ApplyTexture -\u003e DynamicImageSetTextureDimensions(windowName, texture.dx, texture.dy)",
-        "Enemy: Enemy.UnitFramesParts_CareerIconInitialize -\u003e Icons.GetCareerIconIDFromCareerLine(cache.career)",
-        "PartyCast: PartyCast.FetchedText -\u003e PartyUtils.GetPartyData()",
-        "PartyCast: PartyCast.FetchedText -\u003e StatusBarSetBackgroundTint(\"PartyCastWindow\"..PlayerNumber..\"TimerBar\", DefaultColor.BLACK.r, DefaultColor.BLACK.g, DefaultColor.BLACK.b)"
       ],
       "weight": 15
     }

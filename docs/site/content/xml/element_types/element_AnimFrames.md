@@ -69,11 +69,11 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Structural Child Elements
 
-- AnimFrame — 14× (HIGH)
+- [AnimFrame](element_AnimFrame.md) — 14× (HIGH)
 
 ## Structural Sub-Elements
 
-### AnimFrame
+### [AnimFrame](element_AnimFrame.md)
 
 Observed 14 times as an unnamed child.
 
@@ -82,6 +82,11 @@ Observed 14 times as an unnamed child.
 | `id` | **required** | 1, 2, 3, 4 |
 | `x` | **required** | 0, 72, 144, 216 |
 | `y` | **required** | 0, 85, 170 |
+## Recursive Hierarchy
+
+- Root: [AnimFrames](element_AnimFrames.md)
+- [AnimFrame](element_AnimFrame.md) (structural, 14×, HIGH)
+
 ## Seen In
 
 - TidyRoll
@@ -94,6 +99,7 @@ Observed 14 times as an unnamed child.
 ## Related APIs
 
 - [AnimatedImage](element_AnimatedImage.md) (HIGH 100/100) - XML Element Type
+- [AnimFrame](element_AnimFrame.md) (LOW 20/100) - XML Element Type
 
 ## Used With
 

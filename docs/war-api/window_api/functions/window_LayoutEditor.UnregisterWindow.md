@@ -71,7 +71,7 @@ Observed as a window function across 6 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: "KillerPersonalCounter", "KillerWindow", "WhoHealedMeWindow" |
+| arg1 | Observed as a text or wstring payload. | Observed values: "KillerPersonalCounter", "KillerWindow", "WhoHealedMeWindow" |
 
 ## Returns
 

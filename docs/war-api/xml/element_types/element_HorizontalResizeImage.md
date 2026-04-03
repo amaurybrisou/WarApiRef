@@ -61,20 +61,20 @@ Observed XML element type instantiated by 9 addons.
 
 ## Common Attributes
 
-- name
-- inherits
-- texture
 - handleinput
+- inherits
 - layer
+- name
 - savesettings
+- texture
 - textureScale
 
 ## Common Inherits
 
-- EA_HorizontalResizeImage_TabSeparatorMiddle
 - BuffHeadLayoutHorizontalResizeImage
 - EA_BrownHorizontalRule
 - EA_HorizontalResizeImage_DefaultTopFrame
+- EA_HorizontalResizeImage_TabSeparatorMiddle
 
 ## Common Parent Elements
 
@@ -82,6 +82,7 @@ Observed XML element type instantiated by 9 addons.
 
 ## Common Structural Child Elements
 
+- [Anchors](element_Anchors.md) — 11× (HIGH)
 - [Sizes](element_Sizes.md) — 8× (HIGH)
 - [TexCoords](element_TexCoords.md) — 8× (HIGH)
 - [TintColor](element_TintColor.md) — 7× (HIGH)
@@ -120,6 +121,10 @@ Observed XML element type instantiated by 9 addons.
 | `textureScale` | optional | 5% | 0.89 |
 ## Structural Sub-Elements
 
+### [Anchors](element_Anchors.md)
+
+Observed 11 times as an unnamed child.
+
 ### [Sizes](element_Sizes.md)
 
 Observed 8 times as an unnamed child.
@@ -153,13 +158,48 @@ Observed 7 times as an unnamed child.
 
 Observed 4 times as an unnamed child.
 
+## Recursive Hierarchy
+
+- Root: [HorizontalResizeImage](element_HorizontalResizeImage.md)
+- [Anchors](element_Anchors.md) (structural, 11×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - (cycle)
+- [Size](element_Size.md) (structural, 4×, MEDIUM)
+  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
+- [Sizes](element_Sizes.md) (structural, 8×, HIGH)
+  - [BottomRight](element_BottomRight.md) (structural, 14×, HIGH)
+  - [Middle](element_Middle.md) (structural, 14×, HIGH)
+  - [TopLeft](element_TopLeft.md) (structural, 14×, HIGH)
+- [TexCoords](element_TexCoords.md) (structural, 8×, HIGH)
+  - [BottomCenter](element_BottomCenter.md) (structural, 9×, MEDIUM)
+  - [BottomLeft](element_BottomLeft.md) (structural, 9×, MEDIUM)
+  - [BottomRight](element_BottomRight.md) (structural, 9×, MEDIUM)
+  - [Disabled](element_Disabled.md) (structural, 7×, MEDIUM)
+  - [Left](element_Left.md) (structural, 7×, MEDIUM)
+  - [Middle](element_Middle.md) (structural, 9×, MEDIUM)
+  - [MiddleCenter](element_MiddleCenter.md) (structural, 9×, MEDIUM)
+  - [MiddleLeft](element_MiddleLeft.md) (structural, 9×, MEDIUM)
+  - [MiddleRight](element_MiddleRight.md) (structural, 9×, MEDIUM)
+  - [Normal](element_Normal.md) (structural, 7×, MEDIUM)
+  - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, MEDIUM)
+  - [Pressed](element_Pressed.md) (structural, 7×, MEDIUM)
+  - [PressedHighlit](element_PressedHighlit.md) (structural, 1×, LOW)
+  - [Right](element_Right.md) (structural, 7×, MEDIUM)
+  - [TopCenter](element_TopCenter.md) (structural, 9×, MEDIUM)
+  - [TopLeft](element_TopLeft.md) (structural, 9×, MEDIUM)
+  - [TopRight](element_TopRight.md) (structural, 9×, MEDIUM)
+- [TintColor](element_TintColor.md) (structural, 7×, HIGH)
+
 ## Lua Functions Manipulating This Type
 
-- APAGui.UpdateFollowTargetHUD
-- APAGui.UpdateKitingHUD
 - APAGui.UpdateInstantOnlyHUD
 - APAGui.UpdatePetTargetHUD
 - PotionBarSettings.OnShown
+- APAGui.UpdateFollowTargetHUD
+- APAGui.UpdateKitingHUD
 
 ## Seen In
 
@@ -189,6 +229,7 @@ Observed 4 times as an unnamed child.
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
 - [TintColor](element_TintColor.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With
 

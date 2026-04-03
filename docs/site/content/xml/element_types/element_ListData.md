@@ -61,8 +61,8 @@ Structural XML sub-element of ListBox that binds a list to a named Lua backing t
 
 ## Common Attributes
 
-- table
 - populationfunction
+- table
 
 ## Common Inherits
 
@@ -74,7 +74,7 @@ Structural XML sub-element of ListBox that binds a list to a named Lua backing t
 
 ## Common Structural Child Elements
 
-- ListColumns — 25× (HIGH)
+- [ListColumns](element_ListColumns.md) — 25× (HIGH)
 
 ## Attribute Reference
 
@@ -84,9 +84,15 @@ Structural XML sub-element of ListBox that binds a list to a named Lua backing t
 | `populationfunction` | **required** | 97% | AuraShares.PopulateDisplay, AuraTexture.PopulateIconsListDisplay, AuraSettings.PopulateDisplay, BuffHead.Setup.OnPopulate, ... |
 ## Structural Sub-Elements
 
-### ListColumns
+### [ListColumns](element_ListColumns.md)
 
 Observed 25 times as an unnamed child.
+
+## Recursive Hierarchy
+
+- Root: [ListData](element_ListData.md)
+- [ListColumns](element_ListColumns.md) (structural, 25×, HIGH)
+  - [ListColumn](element_ListColumn.md) (structural, 42×, HIGH)
 
 ## Seen In
 
@@ -115,6 +121,7 @@ Observed 25 times as an unnamed child.
 ## Related APIs
 
 - [ListBox](element_ListBox.md) (HIGH 100/100) - XML Element Type
+- [ListColumns](element_ListColumns.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With
 

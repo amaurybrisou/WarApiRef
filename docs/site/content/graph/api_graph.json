@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T03:04:20.179537677Z",
+  "generated_at": "2026-04-03T03:16:50.193460783Z",
   "nodes": [
     {
       "id": "data:table:AlertTextWindow",
@@ -932,16 +932,6 @@
       "summary": "Observed shared global table or namespace surfaced in 1 addons."
     },
     {
-      "id": "data:table:EA_Window_Macro",
-      "label": "EA_Window_Macro",
-      "type": "data_structure",
-      "category": "Global Table",
-      "path": "globals/tables/table_EA_Window_Macro.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Observed shared global table or namespace surfaced in 3 addons."
-    },
-    {
       "id": "data:constant:EA_Window_Macro",
       "label": "EA_Window_Macro",
       "type": "data_structure",
@@ -950,6 +940,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed engine XML template or inherited constant referenced by 1 addons."
+    },
+    {
+      "id": "data:table:EA_Window_Macro",
+      "label": "EA_Window_Macro",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_EA_Window_Macro.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Observed shared global table or namespace surfaced in 3 addons."
     },
     {
       "id": "data:constant:EA_Window_MacroDetailIconButton",
@@ -6182,6 +6182,46 @@
       "summary": "Observed as a global function across 6 addons."
     },
     {
+      "id": "ui:AbsPoint",
+      "label": "AbsPoint",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_AbsPoint.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 34 addons."
+    },
+    {
+      "id": "ui:Anchor",
+      "label": "Anchor",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Anchor.md",
+      "confidence": "MEDIUM",
+      "score": 55,
+      "summary": "Observed XML element type instantiated by 33 addons."
+    },
+    {
+      "id": "ui:Anchors",
+      "label": "Anchors",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Anchors.md",
+      "confidence": "MEDIUM",
+      "score": 55,
+      "summary": "Observed XML element type instantiated by 32 addons."
+    },
+    {
+      "id": "ui:AnimFrame",
+      "label": "AnimFrame",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_AnimFrame.md",
+      "confidence": "LOW",
+      "score": 20,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
       "id": "ui:AnimFrames",
       "label": "AnimFrames",
       "type": "ui_element",
@@ -6212,6 +6252,46 @@
       "summary": "Observed XML element type instantiated by 1 addons."
     },
     {
+      "id": "ui:Assets",
+      "label": "Assets",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Assets.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 20 addons."
+    },
+    {
+      "id": "ui:BottomCenter",
+      "label": "BottomCenter",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_BottomCenter.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
+      "id": "ui:BottomLeft",
+      "label": "BottomLeft",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_BottomLeft.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
+      "id": "ui:BottomRight",
+      "label": "BottomRight",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_BottomRight.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
       "id": "ui:Button",
       "label": "Button",
       "type": "ui_element",
@@ -6230,6 +6310,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 8 addons."
+    },
+    {
+      "id": "ui:Color",
+      "label": "Color",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Color.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 22 addons."
     },
     {
       "id": "ui:ColorPicker",
@@ -6302,6 +6392,26 @@
       "summary": "Observed XML element type instantiated by 1 addons."
     },
     {
+      "id": "ui:Disabled",
+      "label": "Disabled",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Disabled.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 12 addons."
+    },
+    {
+      "id": "ui:DisabledPressed",
+      "label": "DisabledPressed",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_DisabledPressed.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 6 addons."
+    },
+    {
       "id": "ui:DynamicImage",
       "label": "DynamicImage",
       "type": "ui_element",
@@ -6320,6 +6430,26 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 13 addons."
+    },
+    {
+      "id": "ui:EventHandler",
+      "label": "EventHandler",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_EventHandler.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 31 addons."
+    },
+    {
+      "id": "ui:EventHandlers",
+      "label": "EventHandlers",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_EventHandlers.md",
+      "confidence": "MEDIUM",
+      "score": 55,
+      "summary": "Observed XML element type instantiated by 31 addons."
     },
     {
       "id": "ui:FullResizeImage",
@@ -6342,6 +6472,16 @@
       "summary": "Observed XML element type instantiated by 9 addons."
     },
     {
+      "id": "ui:Icon",
+      "label": "Icon",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Icon.md",
+      "confidence": "LOW",
+      "score": 20,
+      "summary": "Observed XML element type instantiated by 1 addons."
+    },
+    {
       "id": "ui:Label",
       "label": "Label",
       "type": "ui_element",
@@ -6352,6 +6492,16 @@
       "summary": "Observed XML element type instantiated by 30 addons."
     },
     {
+      "id": "ui:Left",
+      "label": "Left",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Left.md",
+      "confidence": "MEDIUM",
+      "score": 30,
+      "summary": "Observed XML element type instantiated by 3 addons."
+    },
+    {
       "id": "ui:ListBox",
       "label": "ListBox",
       "type": "ui_element",
@@ -6360,6 +6510,26 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 12 addons."
+    },
+    {
+      "id": "ui:ListColumn",
+      "label": "ListColumn",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ListColumn.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Structural XML element inside ListColumns that maps a single field of each backing-table row entry to a named child window of the row template. Key attributes: `windowname` (child window target) and `variable` (field name in the row table)."
+    },
+    {
+      "id": "ui:ListColumns",
+      "label": "ListColumns",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_ListColumns.md",
+      "confidence": "MEDIUM",
+      "score": 55,
+      "summary": "Structural XML container inside ListBox that groups one or more ListColumn declarations, mapping backing-table fields to row-template child windows."
     },
     {
       "id": "ui:ListData",
@@ -6402,6 +6572,66 @@
       "summary": "Observed XML element type instantiated by 4 addons."
     },
     {
+      "id": "ui:Middle",
+      "label": "Middle",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Middle.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 7 addons."
+    },
+    {
+      "id": "ui:MiddleCenter",
+      "label": "MiddleCenter",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_MiddleCenter.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
+      "id": "ui:MiddleLeft",
+      "label": "MiddleLeft",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_MiddleLeft.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
+      "id": "ui:MiddleRight",
+      "label": "MiddleRight",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_MiddleRight.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
+      "id": "ui:Normal",
+      "label": "Normal",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Normal.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 15 addons."
+    },
+    {
+      "id": "ui:NormalHighlit",
+      "label": "NormalHighlit",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_NormalHighlit.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 14 addons."
+    },
+    {
       "id": "ui:OverlayOffset",
       "label": "OverlayOffset",
       "type": "ui_element",
@@ -6432,6 +6662,26 @@
       "summary": "Observed XML element type instantiated by 4 addons."
     },
     {
+      "id": "ui:Pressed",
+      "label": "Pressed",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Pressed.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 13 addons."
+    },
+    {
+      "id": "ui:PressedHighlit",
+      "label": "PressedHighlit",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_PressedHighlit.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 10 addons."
+    },
+    {
       "id": "ui:ResizeImages",
       "label": "ResizeImages",
       "type": "ui_element",
@@ -6440,6 +6690,36 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
+      "id": "ui:Right",
+      "label": "Right",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Right.md",
+      "confidence": "MEDIUM",
+      "score": 30,
+      "summary": "Observed XML element type instantiated by 3 addons."
+    },
+    {
+      "id": "ui:Script",
+      "label": "Script",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Script.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 12 addons."
+    },
+    {
+      "id": "ui:Scripts",
+      "label": "Scripts",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Scripts.md",
+      "confidence": "MEDIUM",
+      "score": 40,
+      "summary": "Observed XML element type instantiated by 12 addons."
     },
     {
       "id": "ui:ScrollWindow",
@@ -6470,6 +6750,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 7 addons."
+    },
+    {
+      "id": "ui:Slice",
+      "label": "Slice",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Slice.md",
+      "confidence": "MEDIUM",
+      "score": 35,
+      "summary": "Observed XML element type instantiated by 2 addons."
     },
     {
       "id": "ui:SliderBar",
@@ -6552,6 +6842,16 @@
       "summary": "Observed XML element type instantiated by 8 addons."
     },
     {
+      "id": "ui:Texture",
+      "label": "Texture",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_Texture.md",
+      "confidence": "MEDIUM",
+      "score": 55,
+      "summary": "Observed XML element type instantiated by 19 addons."
+    },
+    {
       "id": "ui:TintColor",
       "label": "TintColor",
       "type": "ui_element",
@@ -6560,6 +6860,36 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Observed XML element type instantiated by 14 addons."
+    },
+    {
+      "id": "ui:TopCenter",
+      "label": "TopCenter",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TopCenter.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
+      "id": "ui:TopLeft",
+      "label": "TopLeft",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TopLeft.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 5 addons."
+    },
+    {
+      "id": "ui:TopRight",
+      "label": "TopRight",
+      "type": "ui_element",
+      "category": "XML Element Type",
+      "path": "xml/element_types/element_TopRight.md",
+      "confidence": "MEDIUM",
+      "score": 45,
+      "summary": "Observed XML element type instantiated by 5 addons."
     },
     {
       "id": "ui:VerticalResizeImage",
@@ -9586,6 +9916,31 @@
     },
     {
       "from": "event:window:OnLButtonUp",
+      "to": "function:window:ButtonGetDisabledFlag",
+      "type": "commonly_used_with",
+      "confidence_score": 70,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances -\u003e ButtonGetDisabledFlag(WindowName..\"PurchaseButton\")",
+        "Aura: AuraTexture.OnIconLButtonUp -\u003e ButtonGetDisabledFlag(SystemData.ActiveWindow.name)",
+        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(SystemData.ActiveWindow.name)",
+        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name))",
+        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name)))",
+        "BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -\u003e ButtonGetDisabledFlag(windowName..\"OnTargetChangeClearAlwaysShow\"..\"Button\")"
+      ],
+      "rationale": "event:window:OnLButtonUp and function:window:ButtonGetDisabledFlag are commonly used together",
+      "weight": 6,
+      "evidence": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.PurchaseAdvances -\u003e ButtonGetDisabledFlag(WindowName..\"PurchaseButton\")",
+        "Aura: AuraTexture.OnIconLButtonUp -\u003e ButtonGetDisabledFlag(SystemData.ActiveWindow.name)",
+        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(SystemData.ActiveWindow.name)",
+        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name))",
+        "Aura: AuraTexture.OnIconLButtonUp -\u003e WindowGetParent(WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name)))",
+        "BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -\u003e ButtonGetDisabledFlag(windowName..\"OnTargetChangeClearAlwaysShow\"..\"Button\")"
+      ]
+    },
+    {
+      "from": "event:window:OnLButtonUp",
       "to": "function:window:ComboBoxGetSelectedText",
       "type": "commonly_used_with",
       "confidence_score": 71,
@@ -9682,31 +10037,6 @@
         "AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink -\u003e ComboBoxGetSelectedText(PresetWindowName..\"LoadComboBox\")",
         "AdvancedRenownTrainer: AdvancedRenownTraining.ExportToLink -\u003e EA_ChatWindow.InsertText(hl)",
         "AdvancedRenownTrainer: AdvancedRenownTraining.ImportNameInputOkButtonPressed -\u003e TextEditBoxGetText(ImportNameInputWindowName..\"NameInputBox\")"
-      ]
-    },
-    {
-      "from": "event:window:OnLButtonUp",
-      "to": "ui:Window",
-      "type": "commonly_used_with",
-      "confidence_score": 70,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementEffectsAlwaysShowEnable\"..\"Button\")",
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementEffectsPermanent\"..\"Button\")",
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementHandleInputEnableRemovable\"..\"Button\")",
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementHandleInputShowTooltips\"..\"Button\")",
-        "BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -\u003e ButtonGetDisabledFlag(windowName..\"OnTargetChangeClearAlwaysShow\"..\"Button\")",
-        "DAoCBuff: DAoCBuffSettings.FilterRowOnLButtonUp -\u003e LabelGetText(SystemData.ActiveWindow.name..\"Name\")"
-      ],
-      "rationale": "event:window:OnLButtonUp and ui:Window are commonly used together",
-      "weight": 6,
-      "evidence": [
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsAlwaysShowEnableLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementEffectsAlwaysShowEnable\"..\"Button\")",
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsPermanentLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementEffectsPermanent\"..\"Button\")",
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputEnableRemovableLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementHandleInputEnableRemovable\"..\"Button\")",
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.OnHandleInputShowTooltipsLUp -\u003e ButtonGetPressedFlag(windowName..\"ElementHandleInputShowTooltips\"..\"Button\")",
-        "BuffHead: BuffHead.Setup.Trackers.OnTargetChangeClearAlwaysShowLUp -\u003e ButtonGetDisabledFlag(windowName..\"OnTargetChangeClearAlwaysShow\"..\"Button\")",
-        "DAoCBuff: DAoCBuffSettings.FilterRowOnLButtonUp -\u003e LabelGetText(SystemData.ActiveWindow.name..\"Name\")"
       ]
     },
     {
@@ -10120,27 +10450,6 @@
     },
     {
       "from": "function:global:CreateWindow",
-      "to": "function:global:EA_Window_InteractionRenownTraining.Hide",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")"
-      ],
-      "rationale": "function:global:CreateWindow and function:global:EA_Window_InteractionRenownTraining.Hide are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
-        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")"
-      ]
-    },
-    {
-      "from": "function:global:CreateWindow",
       "to": "function:global:LibSlash.RegisterSlashCmd",
       "type": "commonly_used_with",
       "confidence_score": 71,
@@ -10214,27 +10523,6 @@
     },
     {
       "from": "function:global:CreateWindow",
-      "to": "function:window:ComboBoxSetSelectedMenuItem",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "Enemy: Enemy.UI_ConfigDialog_Open -\u003e ScrollWindowSetOffset(config_dlg.currentSection.windowName..\"Content\", scroll)",
-        "Enemy: Enemy.UnitFramesUI_EffectsIndicatorDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyEffectsIndicatorDialogContent\", 0)",
-        "Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyClickCastingDialogContent\", 0)",
-        "Pocket Palette: PP.CreateWindow -\u003e WindowGetAnchor(PP.settings.windows[\"main\"].name, 1)"
-      ],
-      "rationale": "function:global:CreateWindow and function:window:ComboBoxSetSelectedMenuItem are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "Enemy: Enemy.UI_ConfigDialog_Open -\u003e ScrollWindowSetOffset(config_dlg.currentSection.windowName..\"Content\", scroll)",
-        "Enemy: Enemy.UnitFramesUI_EffectsIndicatorDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyEffectsIndicatorDialogContent\", 0)",
-        "Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyClickCastingDialogContent\", 0)",
-        "Pocket Palette: PP.CreateWindow -\u003e WindowGetAnchor(PP.settings.windows[\"main\"].name, 1)"
-      ]
-    },
-    {
-      "from": "function:global:CreateWindow",
       "to": "function:window:LabelSetText",
       "type": "commonly_used_with",
       "confidence_score": 70,
@@ -10281,6 +10569,48 @@
         "GuardLine: GuardLine.init -\u003e InterfaceCore.GetResolutionScale()",
         "GuardLine: GuardLine.init -\u003e LayoutEditor.RegisterEditCallback(GuardLine.OnLayoutEditorFinished)",
         "TidyChat: TidyChatFrames.Initialize -\u003e WindowRegisterCoreEventHandler(c_TEXT_ENTRY_WINDOW..\"ChannelButton\", \"OnRButtonUp\", \"TidyChat.ToggleOptions\")"
+      ]
+    },
+    {
+      "from": "function:global:CreateWindow",
+      "to": "function:window:WindowSetAlpha",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(shareWindowId..\"BackgroundInner\", .9)",
+        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(windowId..\"BackgroundInner\", .9)",
+        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"DeathWindow\", true)",
+        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"EA_Window_CityCaptureJoinPromptWindow\", true)"
+      ],
+      "rationale": "function:global:CreateWindow and function:window:WindowSetAlpha are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(shareWindowId..\"BackgroundInner\", .9)",
+        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(windowId..\"BackgroundInner\", .9)",
+        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"DeathWindow\", true)",
+        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"EA_Window_CityCaptureJoinPromptWindow\", true)"
+      ]
+    },
+    {
+      "from": "function:global:CreateWindow",
+      "to": "function:window:WindowSetShowing",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "AdvancedPetAssist: APAGui.Show -\u003e CreateWindow(\"APAOptions\", true)",
+        "AdvancedPetAssist: APAGui.Show -\u003e WindowSetShowing(\"APAOptions\", true)",
+        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
+        "DAoCBuff: DAoCBuff.ShowMessageWindow -\u003e ScrollWindowUpdateScrollRect(\"DAoCBuffMessageWindowScrollWindow\")"
+      ],
+      "rationale": "function:global:CreateWindow and function:window:WindowSetShowing are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "AdvancedPetAssist: APAGui.Show -\u003e CreateWindow(\"APAOptions\", true)",
+        "AdvancedPetAssist: APAGui.Show -\u003e WindowSetShowing(\"APAOptions\", true)",
+        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
+        "DAoCBuff: DAoCBuff.ShowMessageWindow -\u003e ScrollWindowUpdateScrollRect(\"DAoCBuffMessageWindowScrollWindow\")"
       ]
     },
     {
@@ -10331,31 +10661,6 @@
         "AutoMark: CreateMarker -\u003e GetIconData(career_icon_id)",
         "Enemy: Enemy.CombatLogUI_IDS_Update -\u003e Icons.GetCareerIconIDFromCareerLine(career)",
         "Enemy: Enemy.UnitFramesParts_CareerIconInitialize -\u003e Icons.GetCareerIconIDFromCareerLine(cache.career)"
-      ]
-    },
-    {
-      "from": "function:global:CreateWindowFromTemplate",
-      "to": "function:global:towstring",
-      "type": "commonly_used_with",
-      "confidence_score": 70,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "AggroMeter: AggroMeter.SplitText -\u003e WindowStartAlphaAnimation(\"AggroMeterWindow\"..MobID, Window.AnimationType.SINGLE_NO_RESET, 0, 1, 0.5, false, 0, 0)",
-        "DAoCBuff: DAoCBuffHeadTracker:Create -\u003e LayoutEditor.RegisterWindow(windowName, towstring(windowName), L \"Alternative Buffwindow. (Head)\", false, false, true, nil)",
-        "RoR_SoR: RoR_SoR.SET_CAMPAIGN -\u003e LabelGetTextDimensions(\"SoR_\"..Window_Name..\"_BannerLabel\")",
-        "RoR_SoR: RoR_SoR.SET_CITY -\u003e DynamicImageSetTextureOrientation(\"SoR_\"..Window_Name..\"Flames\", Window_Name==\"162\")",
-        "RoR_SoR: RoR_SoR.SET_KEEP -\u003e LabelGetText(\"SoR_\"..Window_Name..\"KEEP1SAFETIMER\")",
-        "RoR_SoR: RoR_SoR.SET_KEEP -\u003e LabelGetText(\"SoR_\"..Window_Name..\"KEEP2SAFETIMER\")"
-      ],
-      "rationale": "function:global:CreateWindowFromTemplate and function:global:towstring are commonly used together",
-      "weight": 6,
-      "evidence": [
-        "AggroMeter: AggroMeter.SplitText -\u003e WindowStartAlphaAnimation(\"AggroMeterWindow\"..MobID, Window.AnimationType.SINGLE_NO_RESET, 0, 1, 0.5, false, 0, 0)",
-        "DAoCBuff: DAoCBuffHeadTracker:Create -\u003e LayoutEditor.RegisterWindow(windowName, towstring(windowName), L \"Alternative Buffwindow. (Head)\", false, false, true, nil)",
-        "RoR_SoR: RoR_SoR.SET_CAMPAIGN -\u003e LabelGetTextDimensions(\"SoR_\"..Window_Name..\"_BannerLabel\")",
-        "RoR_SoR: RoR_SoR.SET_CITY -\u003e DynamicImageSetTextureOrientation(\"SoR_\"..Window_Name..\"Flames\", Window_Name==\"162\")",
-        "RoR_SoR: RoR_SoR.SET_KEEP -\u003e LabelGetText(\"SoR_\"..Window_Name..\"KEEP1SAFETIMER\")",
-        "RoR_SoR: RoR_SoR.SET_KEEP -\u003e LabelGetText(\"SoR_\"..Window_Name..\"KEEP2SAFETIMER\")"
       ]
     },
     {
@@ -10481,6 +10786,31 @@
         "AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow -\u003e WindowSetId(t.windowName, t.id)",
         "AdvancedRenownTrainer: CreateAbilityWindow -\u003e DynamicImageSetTexture(t.windowName..\"Square\", GetIconData(t.icon), 0, 0)",
         "AdvancedRenownTrainer: CreateAbilityWindow -\u003e GetIconData(t.icon)"
+      ]
+    },
+    {
+      "from": "function:global:CreateWindowFromTemplate",
+      "to": "function:window:WindowSetShowing",
+      "type": "commonly_used_with",
+      "confidence_score": 70,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "AutoMark: AutoMark.local.CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
+        "AutoMark: AutoMark.local.CreateMarker -\u003e GetIconData(career_icon_id)",
+        "AutoMark: CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
+        "AutoMark: CreateMarker -\u003e GetIconData(career_icon_id)",
+        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
+        "Enemy: Enemy.CombatLogUI_IDS_Update -\u003e Icons.GetCareerIconIDFromCareerLine(career)"
+      ],
+      "rationale": "function:global:CreateWindowFromTemplate and function:window:WindowSetShowing are commonly used together",
+      "weight": 6,
+      "evidence": [
+        "AutoMark: AutoMark.local.CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
+        "AutoMark: AutoMark.local.CreateMarker -\u003e GetIconData(career_icon_id)",
+        "AutoMark: CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
+        "AutoMark: CreateMarker -\u003e GetIconData(career_icon_id)",
+        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
+        "Enemy: Enemy.CombatLogUI_IDS_Update -\u003e Icons.GetCareerIconIDFromCareerLine(career)"
       ]
     },
     {
@@ -11755,29 +12085,6 @@
     },
     {
       "from": "function:global:InterfaceCore.GetScale",
-      "to": "function:window:WindowClearAnchors",
-      "type": "commonly_used_with",
-      "confidence_score": 59,
-      "evidence_count": 5,
-      "evidence_sources": [
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -\u003e InterfaceCore.GetScale()",
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -\u003e WindowGetScreenPosition(BuffHead.Setup.AdvancedContainersItem.WindowName)",
-        "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e InterfaceCore.GetScale()",
-        "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e WindowGetScreenPosition(BuffHead.Setup.Layout.WindowName)",
-        "Shinies: Tooltips.AddExtraWindow -\u003e WindowGetAnchorCount(windowToAnchorTo)"
-      ],
-      "rationale": "function:global:InterfaceCore.GetScale and function:window:WindowClearAnchors are commonly used together",
-      "weight": 5,
-      "evidence": [
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -\u003e InterfaceCore.GetScale()",
-        "BuffHead: BuffHead.Setup.AdvancedContainersItem.Properties.Show -\u003e WindowGetScreenPosition(BuffHead.Setup.AdvancedContainersItem.WindowName)",
-        "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e InterfaceCore.GetScale()",
-        "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e WindowGetScreenPosition(BuffHead.Setup.Layout.WindowName)",
-        "Shinies: Tooltips.AddExtraWindow -\u003e WindowGetAnchorCount(windowToAnchorTo)"
-      ]
-    },
-    {
-      "from": "function:global:InterfaceCore.GetScale",
       "to": "function:window:WindowGetScale",
       "type": "commonly_used_with",
       "confidence_score": 70,
@@ -11822,6 +12129,29 @@
         "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e InterfaceCore.GetScale()",
         "BuffHead: BuffHead.Setup.Layout.Properties.Show -\u003e WindowGetScreenPosition(BuffHead.Setup.Layout.WindowName)",
         "BuffHead: BuffHead.local.GetRelativeScreenPosition -\u003e WindowGetScreenPosition(containerWindow)"
+      ]
+    },
+    {
+      "from": "function:global:InterfaceCore.GetScale",
+      "to": "function:window:WindowSetScale",
+      "type": "commonly_used_with",
+      "confidence_score": 59,
+      "evidence_count": 5,
+      "evidence_sources": [
+        "Ace: LIBGUI_ELEMENT:Scale -\u003e InterfaceCore.GetScale()",
+        "Ace: LIBGUI_ELEMENT:Scale -\u003e WindowGetScale(self.name)",
+        "Ace: LIBGUI_ELEMENT:Scale -\u003e WindowSetScale(self.name, scale)",
+        "BuffHead: BuffHeadContainer:AnchorContainers -\u003e WindowSetScale(self:GetName(), self.Settings.Scale*InterfaceCore.GetScale())",
+        "RoR_SoR: RoR_SoR.Restack -\u003e InterfaceCore.GetResolutionScale()"
+      ],
+      "rationale": "function:global:InterfaceCore.GetScale and function:window:WindowSetScale are commonly used together",
+      "weight": 5,
+      "evidence": [
+        "Ace: LIBGUI_ELEMENT:Scale -\u003e InterfaceCore.GetScale()",
+        "Ace: LIBGUI_ELEMENT:Scale -\u003e WindowGetScale(self.name)",
+        "Ace: LIBGUI_ELEMENT:Scale -\u003e WindowSetScale(self.name, scale)",
+        "BuffHead: BuffHeadContainer:AnchorContainers -\u003e WindowSetScale(self:GetName(), self.Settings.Scale*InterfaceCore.GetScale())",
+        "RoR_SoR: RoR_SoR.Restack -\u003e InterfaceCore.GetResolutionScale()"
       ]
     },
     {
@@ -12366,23 +12696,23 @@
     },
     {
       "from": "function:global:towstring",
-      "to": "function:window:WindowClearAnchors",
+      "to": "function:window:WindowGetShowing",
       "type": "commonly_used_with",
       "confidence_score": 58,
       "evidence_count": 4,
       "evidence_sources": [
         "BuffHead: BuffHead.Setup.SelectColor.Show -\u003e WindowGetLayer(window)",
         "BuffHead: BuffHead.Setup.SelectColor.Show -\u003e WindowSetLayer(windowName, WindowGetLayer(window)+1)",
-        "DAoCBuff: DAoCBuffHeadTracker:Create -\u003e LayoutEditor.RegisterWindow(windowName, towstring(windowName), L \"Alternative Buffwindow. (Head)\", false, false, true, nil)",
-        "DAoCBuff: DAoCBuffTracker:Create -\u003e LayoutEditor.RegisterWindow(windowName, towstring(windowName), L \"Alternative Buffwindow.\", false, false, true, nil)"
+        "Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update -\u003e WindowSetId(\"EnemyScenarioInfoDialogScoreDestrLabel\", NewTooltip(L \"Destruction points\"))",
+        "Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update -\u003e WindowSetId(\"EnemyScenarioInfoDialogScoreOrderLabel\", NewTooltip(L \"Order points\"))"
       ],
-      "rationale": "function:global:towstring and function:window:WindowClearAnchors are commonly used together",
+      "rationale": "function:global:towstring and function:window:WindowGetShowing are commonly used together",
       "weight": 4,
       "evidence": [
         "BuffHead: BuffHead.Setup.SelectColor.Show -\u003e WindowGetLayer(window)",
         "BuffHead: BuffHead.Setup.SelectColor.Show -\u003e WindowSetLayer(windowName, WindowGetLayer(window)+1)",
-        "DAoCBuff: DAoCBuffHeadTracker:Create -\u003e LayoutEditor.RegisterWindow(windowName, towstring(windowName), L \"Alternative Buffwindow. (Head)\", false, false, true, nil)",
-        "DAoCBuff: DAoCBuffTracker:Create -\u003e LayoutEditor.RegisterWindow(windowName, towstring(windowName), L \"Alternative Buffwindow.\", false, false, true, nil)"
+        "Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update -\u003e WindowSetId(\"EnemyScenarioInfoDialogScoreDestrLabel\", NewTooltip(L \"Destruction points\"))",
+        "Enemy: Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update -\u003e WindowSetId(\"EnemyScenarioInfoDialogScoreOrderLabel\", NewTooltip(L \"Order points\"))"
       ]
     },
     {
@@ -15343,24 +15673,168 @@
       ]
     },
     {
-      "from": "ui:Button",
-      "to": "ui:CircleImage",
+      "from": "ui:Anchor",
+      "to": "ui:Anchors",
+      "type": "commonly_used_with",
+      "confidence_score": 70,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "AbsPoint: XML element relationships",
+        "Anchor: XML element relationships",
+        "Anchors: XML element relationships",
+        "Button: XML element relationships",
+        "DynamicImage: XML element relationships",
+        "Window: XML element relationships"
+      ],
+      "rationale": "ui:Anchor and ui:Anchors are commonly used together",
+      "weight": 6,
+      "evidence": [
+        "AbsPoint: XML element relationships",
+        "Anchor: XML element relationships",
+        "Anchors: XML element relationships",
+        "Button: XML element relationships",
+        "DynamicImage: XML element relationships",
+        "Window: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Anchor",
+      "to": "ui:Button",
       "type": "commonly_used_with",
       "confidence_score": 58,
       "evidence_count": 4,
       "evidence_sources": [
-        "Size: XML element relationships",
-        "TexCoords: XML element relationships",
-        "TexDims: XML element relationships",
-        "Windows: XML element relationships"
+        "Anchor: XML element relationships",
+        "Anchors: XML element relationships",
+        "Button: XML element relationships",
+        "Window: XML element relationships"
       ],
-      "rationale": "ui:Button and ui:CircleImage are commonly used together",
+      "rationale": "ui:Anchor and ui:Button are commonly used together",
       "weight": 4,
       "evidence": [
-        "Size: XML element relationships",
+        "Anchor: XML element relationships",
+        "Anchors: XML element relationships",
+        "Button: XML element relationships",
+        "Window: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Anchors",
+      "to": "ui:Button",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Anchor: XML element relationships",
+        "Anchors: XML element relationships",
+        "Button: XML element relationships",
+        "Window: XML element relationships"
+      ],
+      "rationale": "ui:Anchors and ui:Button are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "Anchor: XML element relationships",
+        "Anchors: XML element relationships",
+        "Button: XML element relationships",
+        "Window: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Anchors",
+      "to": "ui:EventHandlers",
+      "type": "commonly_used_with",
+      "confidence_score": 75,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "Button: XML element relationships",
+        "ComboBox: XML element relationships",
+        "DynamicImage: XML element relationships",
+        "EditBox: XML element relationships",
+        "FullResizeImage: XML element relationships",
+        "Label: XML element relationships"
+      ],
+      "rationale": "ui:Anchors and ui:EventHandlers are commonly used together",
+      "weight": 11,
+      "evidence": [
+        "Button: XML element relationships",
+        "ComboBox: XML element relationships",
+        "DynamicImage: XML element relationships",
+        "EditBox: XML element relationships",
+        "FullResizeImage: XML element relationships",
+        "Label: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Anchors",
+      "to": "ui:Size",
+      "type": "commonly_used_with",
+      "confidence_score": 79,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "AbsPoint: XML element relationships",
+        "AnimatedImage: XML element relationships",
+        "CircleImage: XML element relationships",
+        "ComboBox: XML element relationships",
+        "CooldownDisplay: XML element relationships",
+        "DynamicImage: XML element relationships"
+      ],
+      "rationale": "ui:Anchors and ui:Size are commonly used together",
+      "weight": 15,
+      "evidence": [
+        "AbsPoint: XML element relationships",
+        "AnimatedImage: XML element relationships",
+        "CircleImage: XML element relationships",
+        "ComboBox: XML element relationships",
+        "CooldownDisplay: XML element relationships",
+        "DynamicImage: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Anchors",
+      "to": "ui:Windows",
+      "type": "commonly_used_with",
+      "confidence_score": 74,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "AnimatedImage: XML element relationships",
+        "CooldownDisplay: XML element relationships",
+        "EditBox: XML element relationships",
+        "ListBox: XML element relationships",
+        "LogDisplay: XML element relationships",
+        "MapDisplay: XML element relationships"
+      ],
+      "rationale": "ui:Anchors and ui:Windows are commonly used together",
+      "weight": 10,
+      "evidence": [
+        "AnimatedImage: XML element relationships",
+        "CooldownDisplay: XML element relationships",
+        "EditBox: XML element relationships",
+        "ListBox: XML element relationships",
+        "LogDisplay: XML element relationships",
+        "MapDisplay: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:Disabled",
+      "type": "commonly_used_with",
+      "confidence_score": 59,
+      "evidence_count": 5,
+      "evidence_sources": [
+        "OverlayTexCoords: XML element relationships",
+        "ResizeImages: XML element relationships",
         "TexCoords: XML element relationships",
-        "TexDims: XML element relationships",
-        "Windows: XML element relationships"
+        "TexSlices: XML element relationships",
+        "TextColors: XML element relationships"
+      ],
+      "rationale": "ui:Button and ui:Disabled are commonly used together",
+      "weight": 5,
+      "evidence": [
+        "OverlayTexCoords: XML element relationships",
+        "ResizeImages: XML element relationships",
+        "TexCoords: XML element relationships",
+        "TexSlices: XML element relationships",
+        "TextColors: XML element relationships"
       ]
     },
     {
@@ -15542,25 +16016,25 @@
       "from": "ui:ComboBox",
       "to": "xml_event:OnMouseOver",
       "type": "commonly_used_with",
-      "confidence_score": 85,
+      "confidence_score": 84,
       "evidence_count": 6,
       "evidence_sources": [
-        "ComboBox: XML element relationships",
         "Enemy: EnemyConfigurationWindow_PropertySelectLargeTemplateValue.OnMouseOver -\u003e Enemy.ConfigurationWindow_ShowTooltip",
         "Enemy: EnemyConfigurationWindow_PropertySelectTemplateValue.OnMouseOver -\u003e Enemy.ConfigurationWindow_ShowTooltip",
         "PotionBar: $parentRightPaneQuickActionsCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverQuickActions",
         "PotionBar: PotionBarTypeTemplateActivatorCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverActivator",
-        "PotionBar: PotionBarTypeTemplateBuildCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverBuild"
+        "PotionBar: PotionBarTypeTemplateBuildCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverBuild",
+        "PotionBar: PotionBarTypeTemplateCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverMethod"
       ],
       "rationale": "ui:ComboBox and xml_event:OnMouseOver are commonly used together",
-      "weight": 21,
+      "weight": 20,
       "evidence": [
-        "ComboBox: XML element relationships",
         "Enemy: EnemyConfigurationWindow_PropertySelectLargeTemplateValue.OnMouseOver -\u003e Enemy.ConfigurationWindow_ShowTooltip",
         "Enemy: EnemyConfigurationWindow_PropertySelectTemplateValue.OnMouseOver -\u003e Enemy.ConfigurationWindow_ShowTooltip",
         "PotionBar: $parentRightPaneQuickActionsCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverQuickActions",
         "PotionBar: PotionBarTypeTemplateActivatorCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverActivator",
-        "PotionBar: PotionBarTypeTemplateBuildCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverBuild"
+        "PotionBar: PotionBarTypeTemplateBuildCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverBuild",
+        "PotionBar: PotionBarTypeTemplateCombo.OnMouseOver -\u003e PotionBarSettings.OnMouseoverMethod"
       ]
     },
     {
@@ -15667,7 +16141,7 @@
       "from": "ui:EditBox",
       "to": "xml_event:OnKeyEnter",
       "type": "commonly_used_with",
-      "confidence_score": 87,
+      "confidence_score": 86,
       "evidence_count": 6,
       "evidence_sources": [
         "Aura: AuraConfigActivationAlertTextText.OnKeyEnter -\u003e none",
@@ -15678,7 +16152,7 @@
         "Aura: AuraConfigTimerOffsetX.OnKeyEnter -\u003e none"
       ],
       "rationale": "ui:EditBox and xml_event:OnKeyEnter are commonly used together",
-      "weight": 23,
+      "weight": 22,
       "evidence": [
         "Aura: AuraConfigActivationAlertTextText.OnKeyEnter -\u003e none",
         "Aura: AuraConfigDeactivationAlertTextText.OnKeyEnter -\u003e none",
@@ -15692,7 +16166,7 @@
       "from": "ui:EditBox",
       "to": "xml_event:OnKeyEscape",
       "type": "commonly_used_with",
-      "confidence_score": 87,
+      "confidence_score": 86,
       "evidence_count": 6,
       "evidence_sources": [
         "Aura: AuraConfigActivationAlertTextText.OnKeyEscape -\u003e none",
@@ -15703,7 +16177,7 @@
         "Aura: AuraConfigTimerOffsetX.OnKeyEscape -\u003e none"
       ],
       "rationale": "ui:EditBox and xml_event:OnKeyEscape are commonly used together",
-      "weight": 23,
+      "weight": 22,
       "evidence": [
         "Aura: AuraConfigActivationAlertTextText.OnKeyEscape -\u003e none",
         "Aura: AuraConfigDeactivationAlertTextText.OnKeyEscape -\u003e none",
@@ -15761,6 +16235,54 @@
         "Aura: AuraConfigTimerOffsetY.OnTextChanged -\u003e AuraConfig.OnTimerOffsetYChanged",
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowElementContainerSizeColumnsEditBox.OnTextChanged -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeColumnsChanged",
         "BuffHead: BuffHeadSetupAdvancedContainersItemPropertiesWindowElementContainerSizeRowsEditBox.OnTextChanged -\u003e BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeRowsChanged"
+      ]
+    },
+    {
+      "from": "ui:EventHandlers",
+      "to": "ui:Size",
+      "type": "commonly_used_with",
+      "confidence_score": 73,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "ComboBox: XML element relationships",
+        "DynamicImage: XML element relationships",
+        "EditBox: XML element relationships",
+        "FullResizeImage: XML element relationships",
+        "Label: XML element relationships",
+        "ListBox: XML element relationships"
+      ],
+      "rationale": "ui:EventHandlers and ui:Size are commonly used together",
+      "weight": 9,
+      "evidence": [
+        "ComboBox: XML element relationships",
+        "DynamicImage: XML element relationships",
+        "EditBox: XML element relationships",
+        "FullResizeImage: XML element relationships",
+        "Label: XML element relationships",
+        "ListBox: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:EventHandlers",
+      "to": "ui:Windows",
+      "type": "commonly_used_with",
+      "confidence_score": 59,
+      "evidence_count": 5,
+      "evidence_sources": [
+        "EditBox: XML element relationships",
+        "ListBox: XML element relationships",
+        "MapDisplay: XML element relationships",
+        "SliderBar: XML element relationships",
+        "VerticalScrollbar: XML element relationships"
+      ],
+      "rationale": "ui:EventHandlers and ui:Windows are commonly used together",
+      "weight": 5,
+      "evidence": [
+        "EditBox: XML element relationships",
+        "ListBox: XML element relationships",
+        "MapDisplay: XML element relationships",
+        "SliderBar: XML element relationships",
+        "VerticalScrollbar: XML element relationships"
       ]
     },
     {
@@ -15934,7 +16456,7 @@
       "from": "ui:ListBox",
       "to": "xml_event:OnLButtonUp",
       "type": "commonly_used_with",
-      "confidence_score": 78,
+      "confidence_score": 77,
       "evidence_count": 6,
       "evidence_sources": [
         "DAoCBuff: DAoCBuffListManagerTab_ScrollChild_LeftList.OnLButtonUp -\u003e none",
@@ -15945,7 +16467,7 @@
         "Enemy: EnemyUnitFramesConfigurationContentScrollChildEffectsIndicatorsList.OnLButtonUp -\u003e Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListLButtonUp"
       ],
       "rationale": "ui:ListBox and xml_event:OnLButtonUp are commonly used together",
-      "weight": 14,
+      "weight": 13,
       "evidence": [
         "DAoCBuff: DAoCBuffListManagerTab_ScrollChild_LeftList.OnLButtonUp -\u003e none",
         "DAoCBuff: DAoCBuffListManagerTab_ScrollChild_RightList.OnLButtonUp -\u003e none",
@@ -15956,70 +16478,187 @@
       ]
     },
     {
-      "from": "ui:Size",
-      "to": "ui:TexCoords",
+      "from": "ui:Normal",
+      "to": "ui:NormalHighlit",
       "type": "commonly_used_with",
       "confidence_score": 58,
       "evidence_count": 4,
       "evidence_sources": [
-        "CircleImage: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "FullResizeImage: XML element relationships",
-        "HorizontalResizeImage: XML element relationships"
+        "AnimatedImages: XML element relationships",
+        "OverlayTexCoords: XML element relationships",
+        "ResizeImages: XML element relationships",
+        "TextColors: XML element relationships"
       ],
-      "rationale": "ui:Size and ui:TexCoords are commonly used together",
+      "rationale": "ui:Normal and ui:NormalHighlit are commonly used together",
       "weight": 4,
       "evidence": [
-        "CircleImage: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "FullResizeImage: XML element relationships",
-        "HorizontalResizeImage: XML element relationships"
+        "AnimatedImages: XML element relationships",
+        "OverlayTexCoords: XML element relationships",
+        "ResizeImages: XML element relationships",
+        "TextColors: XML element relationships"
       ]
     },
     {
-      "from": "ui:Size",
-      "to": "ui:TintColor",
+      "from": "ui:OverlayTexCoords",
+      "to": "ui:ResizeImages",
       "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
+      "confidence_score": 59,
+      "evidence_count": 5,
       "evidence_sources": [
-        "CircleImage: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
-        "Label: XML element relationships"
+        "Disabled: XML element relationships",
+        "Normal: XML element relationships",
+        "NormalHighlit: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
       ],
-      "rationale": "ui:Size and ui:TintColor are commonly used together",
-      "weight": 4,
+      "rationale": "ui:OverlayTexCoords and ui:ResizeImages are commonly used together",
+      "weight": 5,
       "evidence": [
-        "CircleImage: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
-        "Label: XML element relationships"
+        "Disabled: XML element relationships",
+        "Normal: XML element relationships",
+        "NormalHighlit: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:OverlayTexCoords",
+      "to": "ui:TexCoords",
+      "type": "commonly_used_with",
+      "confidence_score": 59,
+      "evidence_count": 5,
+      "evidence_sources": [
+        "Disabled: XML element relationships",
+        "Normal: XML element relationships",
+        "NormalHighlit: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
+      ],
+      "rationale": "ui:OverlayTexCoords and ui:TexCoords are commonly used together",
+      "weight": 5,
+      "evidence": [
+        "Disabled: XML element relationships",
+        "Normal: XML element relationships",
+        "NormalHighlit: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:OverlayTexCoords",
+      "to": "ui:TexSlices",
+      "type": "commonly_used_with",
+      "confidence_score": 59,
+      "evidence_count": 5,
+      "evidence_sources": [
+        "Disabled: XML element relationships",
+        "Normal: XML element relationships",
+        "NormalHighlit: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
+      ],
+      "rationale": "ui:OverlayTexCoords and ui:TexSlices are commonly used together",
+      "weight": 5,
+      "evidence": [
+        "Disabled: XML element relationships",
+        "Normal: XML element relationships",
+        "NormalHighlit: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:ResizeImages",
+      "to": "ui:TexCoords",
+      "type": "commonly_used_with",
+      "confidence_score": 59,
+      "evidence_count": 5,
+      "evidence_sources": [
+        "Disabled: XML element relationships",
+        "Normal: XML element relationships",
+        "NormalHighlit: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
+      ],
+      "rationale": "ui:ResizeImages and ui:TexCoords are commonly used together",
+      "weight": 5,
+      "evidence": [
+        "Disabled: XML element relationships",
+        "Normal: XML element relationships",
+        "NormalHighlit: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:ResizeImages",
+      "to": "ui:TexSlices",
+      "type": "commonly_used_with",
+      "confidence_score": 59,
+      "evidence_count": 5,
+      "evidence_sources": [
+        "Disabled: XML element relationships",
+        "Normal: XML element relationships",
+        "NormalHighlit: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
+      ],
+      "rationale": "ui:ResizeImages and ui:TexSlices are commonly used together",
+      "weight": 5,
+      "evidence": [
+        "Disabled: XML element relationships",
+        "Normal: XML element relationships",
+        "NormalHighlit: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
       ]
     },
     {
       "from": "ui:Size",
       "to": "ui:Windows",
       "type": "commonly_used_with",
-      "confidence_score": 77,
+      "confidence_score": 72,
       "evidence_count": 6,
       "evidence_sources": [
         "AnimatedImage: XML element relationships",
-        "CircleImage: XML element relationships",
-        "ComboBox: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "EditBox: XML element relationships"
+        "EditBox: XML element relationships",
+        "ListBox: XML element relationships",
+        "MapDisplay: XML element relationships",
+        "ScrollWindow: XML element relationships"
       ],
       "rationale": "ui:Size and ui:Windows are commonly used together",
-      "weight": 13,
+      "weight": 8,
       "evidence": [
         "AnimatedImage: XML element relationships",
-        "CircleImage: XML element relationships",
-        "ComboBox: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "EditBox: XML element relationships"
+        "EditBox: XML element relationships",
+        "ListBox: XML element relationships",
+        "MapDisplay: XML element relationships",
+        "ScrollWindow: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:Sizes",
+      "to": "ui:TexCoords",
+      "type": "commonly_used_with",
+      "confidence_score": 59,
+      "evidence_count": 5,
+      "evidence_sources": [
+        "BottomRight: XML element relationships",
+        "HorizontalResizeImage: XML element relationships",
+        "Middle: XML element relationships",
+        "TopLeft: XML element relationships",
+        "VerticalResizeImage: XML element relationships"
+      ],
+      "rationale": "ui:Sizes and ui:TexCoords are commonly used together",
+      "weight": 5,
+      "evidence": [
+        "BottomRight: XML element relationships",
+        "HorizontalResizeImage: XML element relationships",
+        "Middle: XML element relationships",
+        "TopLeft: XML element relationships",
+        "VerticalResizeImage: XML element relationships"
       ]
     },
     {
@@ -16037,7 +16676,7 @@
         "Aura: AuraConfigGeneralTextureScaleSlider.OnSlide -\u003e AuraConfig.OnTextureScaleSlide"
       ],
       "rationale": "ui:SliderBar and xml_event:OnSlide are commonly used together",
-      "weight": 161,
+      "weight": 160,
       "evidence": [
         "Aura: AuraColorPickerAlpha.OnSlide -\u003e AuraColorPicker.OnSlide",
         "Aura: AuraColorPickerBlue.OnSlide -\u003e AuraColorPicker.OnSlide",
@@ -16049,67 +16688,48 @@
     },
     {
       "from": "ui:TexCoords",
-      "to": "ui:TintColor",
+      "to": "ui:TexSlices",
+      "type": "commonly_used_with",
+      "confidence_score": 78,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "BottomCenter: XML element relationships",
+        "BottomLeft: XML element relationships",
+        "BottomRight: XML element relationships",
+        "Disabled: XML element relationships",
+        "MiddleCenter: XML element relationships",
+        "MiddleLeft: XML element relationships"
+      ],
+      "rationale": "ui:TexCoords and ui:TexSlices are commonly used together",
+      "weight": 14,
+      "evidence": [
+        "BottomCenter: XML element relationships",
+        "BottomLeft: XML element relationships",
+        "BottomRight: XML element relationships",
+        "Disabled: XML element relationships",
+        "MiddleCenter: XML element relationships",
+        "MiddleLeft: XML element relationships"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:TextColors",
       "type": "commonly_used_with",
       "confidence_score": 58,
       "evidence_count": 4,
       "evidence_sources": [
-        "CircleImage: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
-        "VerticalResizeImage: XML element relationships"
+        "Disabled: XML element relationships",
+        "DisabledPressed: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
       ],
-      "rationale": "ui:TexCoords and ui:TintColor are commonly used together",
+      "rationale": "ui:TexSlices and ui:TextColors are commonly used together",
       "weight": 4,
       "evidence": [
-        "CircleImage: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
-        "VerticalResizeImage: XML element relationships"
-      ]
-    },
-    {
-      "from": "ui:TexCoords",
-      "to": "ui:Windows",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "CircleImage: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
-        "VerticalResizeImage: XML element relationships"
-      ],
-      "rationale": "ui:TexCoords and ui:Windows are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "CircleImage: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
-        "VerticalResizeImage: XML element relationships"
-      ]
-    },
-    {
-      "from": "ui:TintColor",
-      "to": "ui:Windows",
-      "type": "commonly_used_with",
-      "confidence_score": 59,
-      "evidence_count": 5,
-      "evidence_sources": [
-        "CircleImage: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
-        "Label: XML element relationships",
-        "VerticalResizeImage: XML element relationships"
-      ],
-      "rationale": "ui:TintColor and ui:Windows are commonly used together",
-      "weight": 5,
-      "evidence": [
-        "CircleImage: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
-        "Label: XML element relationships",
-        "VerticalResizeImage: XML element relationships"
+        "Disabled: XML element relationships",
+        "DisabledPressed: XML element relationships",
+        "Pressed: XML element relationships",
+        "PressedHighlit: XML element relationships"
       ]
     },
     {
@@ -16227,7 +16847,7 @@
         "Aura: AuraWindowRow.OnMouseOver -\u003e AuraSettings.OnMouseOverAuraList"
       ],
       "rationale": "ui:Window and xml_event:OnMouseOver are commonly used together",
-      "weight": 129,
+      "weight": 127,
       "evidence": [
         "AdvancedRenownTrainer: AbilityButtonTemplate.OnMouseOver -\u003e AdvancedRenownTraining.AbilityTooltip",
         "AdvancedRenownTrainer: AdvancedRenownTraining.AbilityTooltip -\u003e WindowGetId(SystemData.MouseOverWindow.name)",
@@ -16313,6 +16933,91 @@
       ]
     },
     {
+      "from": "ui:Anchor",
+      "to": "ui:AbsPoint",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Anchor contains AbsPoint (3500 observations)",
+        "Anchor contains structural child AbsPoint (3500 observations)"
+      ],
+      "rationale": "ui:Anchor contains ui:AbsPoint",
+      "weight": 2,
+      "evidence": [
+        "Anchor contains AbsPoint (3500 observations)",
+        "Anchor contains structural child AbsPoint (3500 observations)"
+      ]
+    },
+    {
+      "from": "ui:Anchors",
+      "to": "ui:AbsPoint",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Anchors contains AbsPoint (3 observations)",
+        "Anchors contains structural child AbsPoint (3 observations)"
+      ],
+      "rationale": "ui:Anchors contains ui:AbsPoint",
+      "weight": 2,
+      "evidence": [
+        "Anchors contains AbsPoint (3 observations)",
+        "Anchors contains structural child AbsPoint (3 observations)"
+      ]
+    },
+    {
+      "from": "ui:Anchors",
+      "to": "ui:Anchor",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Anchors contains Anchor (3889 observations)",
+        "Anchors contains structural child Anchor (3889 observations)"
+      ],
+      "rationale": "ui:Anchors contains ui:Anchor",
+      "weight": 2,
+      "evidence": [
+        "Anchors contains Anchor (3889 observations)",
+        "Anchors contains structural child Anchor (3889 observations)"
+      ]
+    },
+    {
+      "from": "ui:AnimFrames",
+      "to": "ui:AnimFrame",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "AnimFrames contains AnimFrame (14 observations)",
+        "AnimFrames contains structural child AnimFrame (14 observations)"
+      ],
+      "rationale": "ui:AnimFrames contains ui:AnimFrame",
+      "weight": 2,
+      "evidence": [
+        "AnimFrames contains AnimFrame (14 observations)",
+        "AnimFrames contains structural child AnimFrame (14 observations)"
+      ]
+    },
+    {
+      "from": "ui:AnimatedImage",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "AnimatedImage contains Anchors (12 observations)",
+        "AnimatedImage contains structural child Anchors (12 observations)"
+      ],
+      "rationale": "ui:AnimatedImage contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "AnimatedImage contains Anchors (12 observations)",
+        "AnimatedImage contains structural child Anchors (12 observations)"
+      ]
+    },
+    {
       "from": "ui:AnimatedImage",
       "to": "ui:AnimFrames",
       "type": "contains",
@@ -16364,6 +17069,106 @@
       ]
     },
     {
+      "from": "ui:AnimatedImages",
+      "to": "ui:Normal",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "AnimatedImages contains Normal (1 observations)",
+        "AnimatedImages contains structural child Normal (1 observations)"
+      ],
+      "rationale": "ui:AnimatedImages contains ui:Normal",
+      "weight": 2,
+      "evidence": [
+        "AnimatedImages contains Normal (1 observations)",
+        "AnimatedImages contains structural child Normal (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:AnimatedImages",
+      "to": "ui:NormalHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "AnimatedImages contains NormalHighlit (1 observations)",
+        "AnimatedImages contains structural child NormalHighlit (1 observations)"
+      ],
+      "rationale": "ui:AnimatedImages contains ui:NormalHighlit",
+      "weight": 2,
+      "evidence": [
+        "AnimatedImages contains NormalHighlit (1 observations)",
+        "AnimatedImages contains structural child NormalHighlit (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:Assets",
+      "to": "ui:Icon",
+      "type": "contains",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Assets contains Icon (25 observations)"
+      ],
+      "rationale": "ui:Assets contains ui:Icon",
+      "weight": 1,
+      "evidence": [
+        "Assets contains Icon (25 observations)"
+      ]
+    },
+    {
+      "from": "ui:Assets",
+      "to": "ui:Texture",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Assets contains Texture (374 observations)",
+        "Assets contains named child Texture (374 observations)"
+      ],
+      "rationale": "ui:Assets contains ui:Texture",
+      "weight": 2,
+      "evidence": [
+        "Assets contains Texture (374 observations)",
+        "Assets contains named child Texture (374 observations)"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:Anchor",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Button contains Anchor (2 observations)",
+        "Button contains structural child Anchor (2 observations)"
+      ],
+      "rationale": "ui:Button contains ui:Anchor",
+      "weight": 2,
+      "evidence": [
+        "Button contains Anchor (2 observations)",
+        "Button contains structural child Anchor (2 observations)"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Button contains Anchors (556 observations)",
+        "Button contains structural child Anchors (556 observations)"
+      ],
+      "rationale": "ui:Button contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "Button contains Anchors (556 observations)",
+        "Button contains structural child Anchors (556 observations)"
+      ]
+    },
+    {
       "from": "ui:Button",
       "to": "ui:AnimatedImages",
       "type": "contains",
@@ -16378,6 +17183,23 @@
       "evidence": [
         "Button contains AnimatedImages (1 observations)",
         "Button contains structural child AnimatedImages (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Button contains EventHandlers (418 observations)",
+        "Button contains structural child EventHandlers (418 observations)"
+      ],
+      "rationale": "ui:Button contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "Button contains EventHandlers (418 observations)",
+        "Button contains structural child EventHandlers (418 observations)"
       ]
     },
     {
@@ -16569,6 +17391,23 @@
     },
     {
       "from": "ui:CircleImage",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "CircleImage contains Anchors (22 observations)",
+        "CircleImage contains structural child Anchors (22 observations)"
+      ],
+      "rationale": "ui:CircleImage contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "CircleImage contains Anchors (22 observations)",
+        "CircleImage contains structural child Anchors (22 observations)"
+      ]
+    },
+    {
+      "from": "ui:CircleImage",
       "to": "ui:Size",
       "type": "contains",
       "confidence_score": 80,
@@ -16654,6 +17493,23 @@
     },
     {
       "from": "ui:ColorPicker",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ColorPicker contains Anchors (1 observations)",
+        "ColorPicker contains structural child Anchors (1 observations)"
+      ],
+      "rationale": "ui:ColorPicker contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "ColorPicker contains Anchors (1 observations)",
+        "ColorPicker contains structural child Anchors (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:ColorPicker",
       "to": "ui:ColorSize",
       "type": "contains",
       "confidence_score": 80,
@@ -16722,6 +17578,23 @@
     },
     {
       "from": "ui:ColorPicker",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ColorPicker contains EventHandlers (1 observations)",
+        "ColorPicker contains structural child EventHandlers (1 observations)"
+      ],
+      "rationale": "ui:ColorPicker contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "ColorPicker contains EventHandlers (1 observations)",
+        "ColorPicker contains structural child EventHandlers (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:ColorPicker",
       "to": "ui:Size",
       "type": "contains",
       "confidence_score": 80,
@@ -16735,6 +17608,40 @@
       "evidence": [
         "ColorPicker contains Size (1 observations)",
         "ColorPicker contains structural child Size (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ComboBox contains Anchors (228 observations)",
+        "ComboBox contains structural child Anchors (228 observations)"
+      ],
+      "rationale": "ui:ComboBox contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "ComboBox contains Anchors (228 observations)",
+        "ComboBox contains structural child Anchors (228 observations)"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ComboBox contains EventHandlers (179 observations)",
+        "ComboBox contains structural child EventHandlers (179 observations)"
+      ],
+      "rationale": "ui:ComboBox contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "ComboBox contains EventHandlers (179 observations)",
+        "ComboBox contains structural child EventHandlers (179 observations)"
       ]
     },
     {
@@ -16773,6 +17680,23 @@
     },
     {
       "from": "ui:CooldownDisplay",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "CooldownDisplay contains Anchors (1 observations)",
+        "CooldownDisplay contains structural child Anchors (1 observations)"
+      ],
+      "rationale": "ui:CooldownDisplay contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "CooldownDisplay contains Anchors (1 observations)",
+        "CooldownDisplay contains structural child Anchors (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:CooldownDisplay",
       "to": "ui:Size",
       "type": "contains",
       "confidence_score": 80,
@@ -16786,6 +17710,74 @@
       "evidence": [
         "CooldownDisplay contains Size (1 observations)",
         "CooldownDisplay contains structural child Size (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "ui:Anchor",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "DynamicImage contains Anchor (1 observations)",
+        "DynamicImage contains structural child Anchor (1 observations)"
+      ],
+      "rationale": "ui:DynamicImage contains ui:Anchor",
+      "weight": 2,
+      "evidence": [
+        "DynamicImage contains Anchor (1 observations)",
+        "DynamicImage contains structural child Anchor (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "DynamicImage contains Anchors (216 observations)",
+        "DynamicImage contains structural child Anchors (216 observations)"
+      ],
+      "rationale": "ui:DynamicImage contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "DynamicImage contains Anchors (216 observations)",
+        "DynamicImage contains structural child Anchors (216 observations)"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "ui:Color",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "DynamicImage contains Color (1 observations)",
+        "DynamicImage contains structural child Color (1 observations)"
+      ],
+      "rationale": "ui:DynamicImage contains ui:Color",
+      "weight": 2,
+      "evidence": [
+        "DynamicImage contains Color (1 observations)",
+        "DynamicImage contains structural child Color (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "DynamicImage contains EventHandlers (40 observations)",
+        "DynamicImage contains structural child EventHandlers (40 observations)"
+      ],
+      "rationale": "ui:DynamicImage contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "DynamicImage contains EventHandlers (40 observations)",
+        "DynamicImage contains structural child EventHandlers (40 observations)"
       ]
     },
     {
@@ -16875,6 +17867,40 @@
     },
     {
       "from": "ui:EditBox",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "EditBox contains Anchors (126 observations)",
+        "EditBox contains structural child Anchors (126 observations)"
+      ],
+      "rationale": "ui:EditBox contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "EditBox contains Anchors (126 observations)",
+        "EditBox contains structural child Anchors (126 observations)"
+      ]
+    },
+    {
+      "from": "ui:EditBox",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "EditBox contains EventHandlers (102 observations)",
+        "EditBox contains structural child EventHandlers (102 observations)"
+      ],
+      "rationale": "ui:EditBox contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "EditBox contains EventHandlers (102 observations)",
+        "EditBox contains structural child EventHandlers (102 observations)"
+      ]
+    },
+    {
+      "from": "ui:EditBox",
       "to": "ui:Size",
       "type": "contains",
       "confidence_score": 80,
@@ -16905,6 +17931,74 @@
       "evidence": [
         "EditBox contains TextOffset (15 observations)",
         "EditBox contains structural child TextOffset (15 observations)"
+      ]
+    },
+    {
+      "from": "ui:EventHandlers",
+      "to": "ui:EventHandler",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "EventHandlers contains EventHandler (1707 observations)",
+        "EventHandlers contains structural child EventHandler (1707 observations)"
+      ],
+      "rationale": "ui:EventHandlers contains ui:EventHandler",
+      "weight": 2,
+      "evidence": [
+        "EventHandlers contains EventHandler (1707 observations)",
+        "EventHandlers contains structural child EventHandler (1707 observations)"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "FullResizeImage contains Anchors (139 observations)",
+        "FullResizeImage contains structural child Anchors (139 observations)"
+      ],
+      "rationale": "ui:FullResizeImage contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "FullResizeImage contains Anchors (139 observations)",
+        "FullResizeImage contains structural child Anchors (139 observations)"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "ui:Color",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "FullResizeImage contains Color (1 observations)",
+        "FullResizeImage contains structural child Color (1 observations)"
+      ],
+      "rationale": "ui:FullResizeImage contains ui:Color",
+      "weight": 2,
+      "evidence": [
+        "FullResizeImage contains Color (1 observations)",
+        "FullResizeImage contains structural child Color (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "FullResizeImage contains EventHandlers (1 observations)",
+        "FullResizeImage contains structural child EventHandlers (1 observations)"
+      ],
+      "rationale": "ui:FullResizeImage contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "FullResizeImage contains EventHandlers (1 observations)",
+        "FullResizeImage contains structural child EventHandlers (1 observations)"
       ]
     },
     {
@@ -17028,6 +18122,23 @@
     },
     {
       "from": "ui:HorizontalResizeImage",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "HorizontalResizeImage contains Anchors (11 observations)",
+        "HorizontalResizeImage contains structural child Anchors (11 observations)"
+      ],
+      "rationale": "ui:HorizontalResizeImage contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "HorizontalResizeImage contains Anchors (11 observations)",
+        "HorizontalResizeImage contains structural child Anchors (11 observations)"
+      ]
+    },
+    {
+      "from": "ui:HorizontalResizeImage",
       "to": "ui:Size",
       "type": "contains",
       "confidence_score": 80,
@@ -17092,6 +18203,57 @@
       "evidence": [
         "HorizontalResizeImage contains TintColor (7 observations)",
         "HorizontalResizeImage contains structural child TintColor (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Label contains Anchors (1238 observations)",
+        "Label contains structural child Anchors (1238 observations)"
+      ],
+      "rationale": "ui:Label contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "Label contains Anchors (1238 observations)",
+        "Label contains structural child Anchors (1238 observations)"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "ui:Color",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Label contains Color (375 observations)",
+        "Label contains structural child Color (375 observations)"
+      ],
+      "rationale": "ui:Label contains ui:Color",
+      "weight": 2,
+      "evidence": [
+        "Label contains Color (375 observations)",
+        "Label contains structural child Color (375 observations)"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Label contains EventHandlers (95 observations)",
+        "Label contains structural child EventHandlers (95 observations)"
+      ],
+      "rationale": "ui:Label contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "Label contains EventHandlers (95 observations)",
+        "Label contains structural child EventHandlers (95 observations)"
       ]
     },
     {
@@ -17164,6 +18326,40 @@
     },
     {
       "from": "ui:ListBox",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ListBox contains Anchors (42 observations)",
+        "ListBox contains structural child Anchors (42 observations)"
+      ],
+      "rationale": "ui:ListBox contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "ListBox contains Anchors (42 observations)",
+        "ListBox contains structural child Anchors (42 observations)"
+      ]
+    },
+    {
+      "from": "ui:ListBox",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ListBox contains EventHandlers (10 observations)",
+        "ListBox contains structural child EventHandlers (10 observations)"
+      ],
+      "rationale": "ui:ListBox contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "ListBox contains EventHandlers (10 observations)",
+        "ListBox contains structural child EventHandlers (10 observations)"
+      ]
+    },
+    {
+      "from": "ui:ListBox",
       "to": "ui:ListData",
       "type": "contains",
       "confidence_score": 80,
@@ -17197,6 +18393,57 @@
       ]
     },
     {
+      "from": "ui:ListColumns",
+      "to": "ui:ListColumn",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ListColumns contains ListColumn (42 observations)",
+        "ListColumns contains structural child ListColumn (42 observations)"
+      ],
+      "rationale": "ui:ListColumns contains ui:ListColumn",
+      "weight": 2,
+      "evidence": [
+        "ListColumns contains ListColumn (42 observations)",
+        "ListColumns contains structural child ListColumn (42 observations)"
+      ]
+    },
+    {
+      "from": "ui:ListData",
+      "to": "ui:ListColumns",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ListData contains ListColumns (25 observations)",
+        "ListData contains structural child ListColumns (25 observations)"
+      ],
+      "rationale": "ui:ListData contains ui:ListColumns",
+      "weight": 2,
+      "evidence": [
+        "ListData contains ListColumns (25 observations)",
+        "ListData contains structural child ListColumns (25 observations)"
+      ]
+    },
+    {
+      "from": "ui:LogDisplay",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "LogDisplay contains Anchors (1 observations)",
+        "LogDisplay contains structural child Anchors (1 observations)"
+      ],
+      "rationale": "ui:LogDisplay contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "LogDisplay contains Anchors (1 observations)",
+        "LogDisplay contains structural child Anchors (1 observations)"
+      ]
+    },
+    {
       "from": "ui:LogDisplay",
       "to": "ui:Windows",
       "type": "contains",
@@ -17215,6 +18462,40 @@
     },
     {
       "from": "ui:MapDisplay",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "MapDisplay contains Anchors (1 observations)",
+        "MapDisplay contains structural child Anchors (1 observations)"
+      ],
+      "rationale": "ui:MapDisplay contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "MapDisplay contains Anchors (1 observations)",
+        "MapDisplay contains structural child Anchors (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:MapDisplay",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "MapDisplay contains EventHandlers (1 observations)",
+        "MapDisplay contains structural child EventHandlers (1 observations)"
+      ],
+      "rationale": "ui:MapDisplay contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "MapDisplay contains EventHandlers (1 observations)",
+        "MapDisplay contains structural child EventHandlers (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:MapDisplay",
       "to": "ui:Size",
       "type": "contains",
       "confidence_score": 80,
@@ -17228,6 +18509,208 @@
       "evidence": [
         "MapDisplay contains Size (1 observations)",
         "MapDisplay contains structural child Size (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:OverlayTexCoords",
+      "to": "ui:Disabled",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "OverlayTexCoords contains Disabled (7 observations)",
+        "OverlayTexCoords contains structural child Disabled (7 observations)"
+      ],
+      "rationale": "ui:OverlayTexCoords contains ui:Disabled",
+      "weight": 2,
+      "evidence": [
+        "OverlayTexCoords contains Disabled (7 observations)",
+        "OverlayTexCoords contains structural child Disabled (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:OverlayTexCoords",
+      "to": "ui:Normal",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "OverlayTexCoords contains Normal (7 observations)",
+        "OverlayTexCoords contains structural child Normal (7 observations)"
+      ],
+      "rationale": "ui:OverlayTexCoords contains ui:Normal",
+      "weight": 2,
+      "evidence": [
+        "OverlayTexCoords contains Normal (7 observations)",
+        "OverlayTexCoords contains structural child Normal (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:OverlayTexCoords",
+      "to": "ui:NormalHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "OverlayTexCoords contains NormalHighlit (7 observations)",
+        "OverlayTexCoords contains structural child NormalHighlit (7 observations)"
+      ],
+      "rationale": "ui:OverlayTexCoords contains ui:NormalHighlit",
+      "weight": 2,
+      "evidence": [
+        "OverlayTexCoords contains NormalHighlit (7 observations)",
+        "OverlayTexCoords contains structural child NormalHighlit (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:OverlayTexCoords",
+      "to": "ui:Pressed",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "OverlayTexCoords contains Pressed (7 observations)",
+        "OverlayTexCoords contains structural child Pressed (7 observations)"
+      ],
+      "rationale": "ui:OverlayTexCoords contains ui:Pressed",
+      "weight": 2,
+      "evidence": [
+        "OverlayTexCoords contains Pressed (7 observations)",
+        "OverlayTexCoords contains structural child Pressed (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:OverlayTexCoords",
+      "to": "ui:PressedHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "OverlayTexCoords contains PressedHighlit (7 observations)",
+        "OverlayTexCoords contains structural child PressedHighlit (7 observations)"
+      ],
+      "rationale": "ui:OverlayTexCoords contains ui:PressedHighlit",
+      "weight": 2,
+      "evidence": [
+        "OverlayTexCoords contains PressedHighlit (7 observations)",
+        "OverlayTexCoords contains structural child PressedHighlit (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:ResizeImages",
+      "to": "ui:Disabled",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ResizeImages contains Disabled (8 observations)",
+        "ResizeImages contains structural child Disabled (8 observations)"
+      ],
+      "rationale": "ui:ResizeImages contains ui:Disabled",
+      "weight": 2,
+      "evidence": [
+        "ResizeImages contains Disabled (8 observations)",
+        "ResizeImages contains structural child Disabled (8 observations)"
+      ]
+    },
+    {
+      "from": "ui:ResizeImages",
+      "to": "ui:Normal",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ResizeImages contains Normal (10 observations)",
+        "ResizeImages contains structural child Normal (10 observations)"
+      ],
+      "rationale": "ui:ResizeImages contains ui:Normal",
+      "weight": 2,
+      "evidence": [
+        "ResizeImages contains Normal (10 observations)",
+        "ResizeImages contains structural child Normal (10 observations)"
+      ]
+    },
+    {
+      "from": "ui:ResizeImages",
+      "to": "ui:NormalHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ResizeImages contains NormalHighlit (14 observations)",
+        "ResizeImages contains structural child NormalHighlit (14 observations)"
+      ],
+      "rationale": "ui:ResizeImages contains ui:NormalHighlit",
+      "weight": 2,
+      "evidence": [
+        "ResizeImages contains NormalHighlit (14 observations)",
+        "ResizeImages contains structural child NormalHighlit (14 observations)"
+      ]
+    },
+    {
+      "from": "ui:ResizeImages",
+      "to": "ui:Pressed",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ResizeImages contains Pressed (10 observations)",
+        "ResizeImages contains structural child Pressed (10 observations)"
+      ],
+      "rationale": "ui:ResizeImages contains ui:Pressed",
+      "weight": 2,
+      "evidence": [
+        "ResizeImages contains Pressed (10 observations)",
+        "ResizeImages contains structural child Pressed (10 observations)"
+      ]
+    },
+    {
+      "from": "ui:ResizeImages",
+      "to": "ui:PressedHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ResizeImages contains PressedHighlit (9 observations)",
+        "ResizeImages contains structural child PressedHighlit (9 observations)"
+      ],
+      "rationale": "ui:ResizeImages contains ui:PressedHighlit",
+      "weight": 2,
+      "evidence": [
+        "ResizeImages contains PressedHighlit (9 observations)",
+        "ResizeImages contains structural child PressedHighlit (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:Scripts",
+      "to": "ui:Script",
+      "type": "contains",
+      "confidence_score": 78,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Scripts contains Script (16 observations)"
+      ],
+      "rationale": "ui:Scripts contains ui:Script",
+      "weight": 1,
+      "evidence": [
+        "Scripts contains Script (16 observations)"
+      ]
+    },
+    {
+      "from": "ui:ScrollWindow",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "ScrollWindow contains Anchors (16 observations)",
+        "ScrollWindow contains structural child Anchors (16 observations)"
+      ],
+      "rationale": "ui:ScrollWindow contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "ScrollWindow contains Anchors (16 observations)",
+        "ScrollWindow contains structural child Anchors (16 observations)"
       ]
     },
     {
@@ -17265,6 +18748,108 @@
       ]
     },
     {
+      "from": "ui:Size",
+      "to": "ui:AbsPoint",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Size contains AbsPoint (2634 observations)",
+        "Size contains structural child AbsPoint (2634 observations)"
+      ],
+      "rationale": "ui:Size contains ui:AbsPoint",
+      "weight": 2,
+      "evidence": [
+        "Size contains AbsPoint (2634 observations)",
+        "Size contains structural child AbsPoint (2634 observations)"
+      ]
+    },
+    {
+      "from": "ui:Sizes",
+      "to": "ui:BottomRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Sizes contains BottomRight (14 observations)",
+        "Sizes contains structural child BottomRight (14 observations)"
+      ],
+      "rationale": "ui:Sizes contains ui:BottomRight",
+      "weight": 2,
+      "evidence": [
+        "Sizes contains BottomRight (14 observations)",
+        "Sizes contains structural child BottomRight (14 observations)"
+      ]
+    },
+    {
+      "from": "ui:Sizes",
+      "to": "ui:Middle",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Sizes contains Middle (14 observations)",
+        "Sizes contains structural child Middle (14 observations)"
+      ],
+      "rationale": "ui:Sizes contains ui:Middle",
+      "weight": 2,
+      "evidence": [
+        "Sizes contains Middle (14 observations)",
+        "Sizes contains structural child Middle (14 observations)"
+      ]
+    },
+    {
+      "from": "ui:Sizes",
+      "to": "ui:TopLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Sizes contains TopLeft (14 observations)",
+        "Sizes contains structural child TopLeft (14 observations)"
+      ],
+      "rationale": "ui:Sizes contains ui:TopLeft",
+      "weight": 2,
+      "evidence": [
+        "Sizes contains TopLeft (14 observations)",
+        "Sizes contains structural child TopLeft (14 observations)"
+      ]
+    },
+    {
+      "from": "ui:SliderBar",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "SliderBar contains Anchors (83 observations)",
+        "SliderBar contains structural child Anchors (83 observations)"
+      ],
+      "rationale": "ui:SliderBar contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "SliderBar contains Anchors (83 observations)",
+        "SliderBar contains structural child Anchors (83 observations)"
+      ]
+    },
+    {
+      "from": "ui:SliderBar",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "SliderBar contains EventHandlers (80 observations)",
+        "SliderBar contains structural child EventHandlers (80 observations)"
+      ],
+      "rationale": "ui:SliderBar contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "SliderBar contains EventHandlers (80 observations)",
+        "SliderBar contains structural child EventHandlers (80 observations)"
+      ]
+    },
+    {
       "from": "ui:SliderBar",
       "to": "ui:Size",
       "type": "contains",
@@ -17279,6 +18864,686 @@
       "evidence": [
         "SliderBar contains Size (76 observations)",
         "SliderBar contains structural child Size (76 observations)"
+      ]
+    },
+    {
+      "from": "ui:StatusBar",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "StatusBar contains Anchors (9 observations)",
+        "StatusBar contains structural child Anchors (9 observations)"
+      ],
+      "rationale": "ui:StatusBar contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "StatusBar contains Anchors (9 observations)",
+        "StatusBar contains structural child Anchors (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:BottomCenter",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains BottomCenter (9 observations)",
+        "TexCoords contains structural child BottomCenter (9 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:BottomCenter",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains BottomCenter (9 observations)",
+        "TexCoords contains structural child BottomCenter (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:BottomLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains BottomLeft (9 observations)",
+        "TexCoords contains structural child BottomLeft (9 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:BottomLeft",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains BottomLeft (9 observations)",
+        "TexCoords contains structural child BottomLeft (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:BottomRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains BottomRight (9 observations)",
+        "TexCoords contains structural child BottomRight (9 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:BottomRight",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains BottomRight (9 observations)",
+        "TexCoords contains structural child BottomRight (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:Disabled",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains Disabled (7 observations)",
+        "TexCoords contains structural child Disabled (7 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:Disabled",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains Disabled (7 observations)",
+        "TexCoords contains structural child Disabled (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:Left",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains Left (7 observations)",
+        "TexCoords contains structural child Left (7 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:Left",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains Left (7 observations)",
+        "TexCoords contains structural child Left (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:Middle",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains Middle (9 observations)",
+        "TexCoords contains structural child Middle (9 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:Middle",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains Middle (9 observations)",
+        "TexCoords contains structural child Middle (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:MiddleCenter",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains MiddleCenter (9 observations)",
+        "TexCoords contains structural child MiddleCenter (9 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:MiddleCenter",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains MiddleCenter (9 observations)",
+        "TexCoords contains structural child MiddleCenter (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:MiddleLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains MiddleLeft (9 observations)",
+        "TexCoords contains structural child MiddleLeft (9 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:MiddleLeft",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains MiddleLeft (9 observations)",
+        "TexCoords contains structural child MiddleLeft (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:MiddleRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains MiddleRight (9 observations)",
+        "TexCoords contains structural child MiddleRight (9 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:MiddleRight",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains MiddleRight (9 observations)",
+        "TexCoords contains structural child MiddleRight (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:Normal",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains Normal (7 observations)",
+        "TexCoords contains structural child Normal (7 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:Normal",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains Normal (7 observations)",
+        "TexCoords contains structural child Normal (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:NormalHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains NormalHighlit (7 observations)",
+        "TexCoords contains structural child NormalHighlit (7 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:NormalHighlit",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains NormalHighlit (7 observations)",
+        "TexCoords contains structural child NormalHighlit (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:Pressed",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains Pressed (7 observations)",
+        "TexCoords contains structural child Pressed (7 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:Pressed",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains Pressed (7 observations)",
+        "TexCoords contains structural child Pressed (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:PressedHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains PressedHighlit (1 observations)",
+        "TexCoords contains structural child PressedHighlit (1 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:PressedHighlit",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains PressedHighlit (1 observations)",
+        "TexCoords contains structural child PressedHighlit (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:Right",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains Right (7 observations)",
+        "TexCoords contains structural child Right (7 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:Right",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains Right (7 observations)",
+        "TexCoords contains structural child Right (7 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:TopCenter",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains TopCenter (9 observations)",
+        "TexCoords contains structural child TopCenter (9 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:TopCenter",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains TopCenter (9 observations)",
+        "TexCoords contains structural child TopCenter (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:TopLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains TopLeft (9 observations)",
+        "TexCoords contains structural child TopLeft (9 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:TopLeft",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains TopLeft (9 observations)",
+        "TexCoords contains structural child TopLeft (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexCoords",
+      "to": "ui:TopRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexCoords contains TopRight (9 observations)",
+        "TexCoords contains structural child TopRight (9 observations)"
+      ],
+      "rationale": "ui:TexCoords contains ui:TopRight",
+      "weight": 2,
+      "evidence": [
+        "TexCoords contains TopRight (9 observations)",
+        "TexCoords contains structural child TopRight (9 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:BottomCenter",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains BottomCenter (5 observations)",
+        "TexSlices contains structural child BottomCenter (5 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:BottomCenter",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains BottomCenter (5 observations)",
+        "TexSlices contains structural child BottomCenter (5 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:BottomLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains BottomLeft (5 observations)",
+        "TexSlices contains structural child BottomLeft (5 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:BottomLeft",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains BottomLeft (5 observations)",
+        "TexSlices contains structural child BottomLeft (5 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:BottomRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains BottomRight (5 observations)",
+        "TexSlices contains structural child BottomRight (5 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:BottomRight",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains BottomRight (5 observations)",
+        "TexSlices contains structural child BottomRight (5 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:Disabled",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains Disabled (11 observations)",
+        "TexSlices contains structural child Disabled (11 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:Disabled",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains Disabled (11 observations)",
+        "TexSlices contains structural child Disabled (11 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:DisabledPressed",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains DisabledPressed (11 observations)",
+        "TexSlices contains structural child DisabledPressed (11 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:DisabledPressed",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains DisabledPressed (11 observations)",
+        "TexSlices contains structural child DisabledPressed (11 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:MiddleCenter",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains MiddleCenter (5 observations)",
+        "TexSlices contains structural child MiddleCenter (5 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:MiddleCenter",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains MiddleCenter (5 observations)",
+        "TexSlices contains structural child MiddleCenter (5 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:MiddleLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains MiddleLeft (5 observations)",
+        "TexSlices contains structural child MiddleLeft (5 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:MiddleLeft",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains MiddleLeft (5 observations)",
+        "TexSlices contains structural child MiddleLeft (5 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:MiddleRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains MiddleRight (5 observations)",
+        "TexSlices contains structural child MiddleRight (5 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:MiddleRight",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains MiddleRight (5 observations)",
+        "TexSlices contains structural child MiddleRight (5 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:Normal",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains Normal (22 observations)",
+        "TexSlices contains structural child Normal (22 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:Normal",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains Normal (22 observations)",
+        "TexSlices contains structural child Normal (22 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:NormalHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains NormalHighlit (16 observations)",
+        "TexSlices contains structural child NormalHighlit (16 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:NormalHighlit",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains NormalHighlit (16 observations)",
+        "TexSlices contains structural child NormalHighlit (16 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:Pressed",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains Pressed (16 observations)",
+        "TexSlices contains structural child Pressed (16 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:Pressed",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains Pressed (16 observations)",
+        "TexSlices contains structural child Pressed (16 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:PressedHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains PressedHighlit (16 observations)",
+        "TexSlices contains structural child PressedHighlit (16 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:PressedHighlit",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains PressedHighlit (16 observations)",
+        "TexSlices contains structural child PressedHighlit (16 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:TopCenter",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains TopCenter (5 observations)",
+        "TexSlices contains structural child TopCenter (5 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:TopCenter",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains TopCenter (5 observations)",
+        "TexSlices contains structural child TopCenter (5 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:TopLeft",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains TopLeft (5 observations)",
+        "TexSlices contains structural child TopLeft (5 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:TopLeft",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains TopLeft (5 observations)",
+        "TexSlices contains structural child TopLeft (5 observations)"
+      ]
+    },
+    {
+      "from": "ui:TexSlices",
+      "to": "ui:TopRight",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TexSlices contains TopRight (5 observations)",
+        "TexSlices contains structural child TopRight (5 observations)"
+      ],
+      "rationale": "ui:TexSlices contains ui:TopRight",
+      "weight": 2,
+      "evidence": [
+        "TexSlices contains TopRight (5 observations)",
+        "TexSlices contains structural child TopRight (5 observations)"
+      ]
+    },
+    {
+      "from": "ui:TextColors",
+      "to": "ui:Disabled",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TextColors contains Disabled (16 observations)",
+        "TextColors contains structural child Disabled (16 observations)"
+      ],
+      "rationale": "ui:TextColors contains ui:Disabled",
+      "weight": 2,
+      "evidence": [
+        "TextColors contains Disabled (16 observations)",
+        "TextColors contains structural child Disabled (16 observations)"
+      ]
+    },
+    {
+      "from": "ui:TextColors",
+      "to": "ui:DisabledPressed",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TextColors contains DisabledPressed (4 observations)",
+        "TextColors contains structural child DisabledPressed (4 observations)"
+      ],
+      "rationale": "ui:TextColors contains ui:DisabledPressed",
+      "weight": 2,
+      "evidence": [
+        "TextColors contains DisabledPressed (4 observations)",
+        "TextColors contains structural child DisabledPressed (4 observations)"
+      ]
+    },
+    {
+      "from": "ui:TextColors",
+      "to": "ui:Normal",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TextColors contains Normal (16 observations)",
+        "TextColors contains structural child Normal (16 observations)"
+      ],
+      "rationale": "ui:TextColors contains ui:Normal",
+      "weight": 2,
+      "evidence": [
+        "TextColors contains Normal (16 observations)",
+        "TextColors contains structural child Normal (16 observations)"
+      ]
+    },
+    {
+      "from": "ui:TextColors",
+      "to": "ui:NormalHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TextColors contains NormalHighlit (16 observations)",
+        "TextColors contains structural child NormalHighlit (16 observations)"
+      ],
+      "rationale": "ui:TextColors contains ui:NormalHighlit",
+      "weight": 2,
+      "evidence": [
+        "TextColors contains NormalHighlit (16 observations)",
+        "TextColors contains structural child NormalHighlit (16 observations)"
+      ]
+    },
+    {
+      "from": "ui:TextColors",
+      "to": "ui:Pressed",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TextColors contains Pressed (16 observations)",
+        "TextColors contains structural child Pressed (16 observations)"
+      ],
+      "rationale": "ui:TextColors contains ui:Pressed",
+      "weight": 2,
+      "evidence": [
+        "TextColors contains Pressed (16 observations)",
+        "TextColors contains structural child Pressed (16 observations)"
+      ]
+    },
+    {
+      "from": "ui:TextColors",
+      "to": "ui:PressedHighlit",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "TextColors contains PressedHighlit (16 observations)",
+        "TextColors contains structural child PressedHighlit (16 observations)"
+      ],
+      "rationale": "ui:TextColors contains ui:PressedHighlit",
+      "weight": 2,
+      "evidence": [
+        "TextColors contains PressedHighlit (16 observations)",
+        "TextColors contains structural child PressedHighlit (16 observations)"
+      ]
+    },
+    {
+      "from": "ui:Texture",
+      "to": "ui:Slice",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Texture contains Slice (73 observations)",
+        "Texture contains structural child Slice (73 observations)"
+      ],
+      "rationale": "ui:Texture contains ui:Slice",
+      "weight": 2,
+      "evidence": [
+        "Texture contains Slice (73 observations)",
+        "Texture contains structural child Slice (73 observations)"
       ]
     },
     {
@@ -17334,6 +19599,40 @@
     },
     {
       "from": "ui:VerticalScrollbar",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "VerticalScrollbar contains Anchors (25 observations)",
+        "VerticalScrollbar contains structural child Anchors (25 observations)"
+      ],
+      "rationale": "ui:VerticalScrollbar contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "VerticalScrollbar contains Anchors (25 observations)",
+        "VerticalScrollbar contains structural child Anchors (25 observations)"
+      ]
+    },
+    {
+      "from": "ui:VerticalScrollbar",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "VerticalScrollbar contains EventHandlers (1 observations)",
+        "VerticalScrollbar contains structural child EventHandlers (1 observations)"
+      ],
+      "rationale": "ui:VerticalScrollbar contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "VerticalScrollbar contains EventHandlers (1 observations)",
+        "VerticalScrollbar contains structural child EventHandlers (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:VerticalScrollbar",
       "to": "ui:Size",
       "type": "contains",
       "confidence_score": 80,
@@ -17347,6 +19646,57 @@
       "evidence": [
         "VerticalScrollbar contains Size (23 observations)",
         "VerticalScrollbar contains structural child Size (23 observations)"
+      ]
+    },
+    {
+      "from": "ui:Visual",
+      "to": "ui:Color",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Visual contains Color (1 observations)",
+        "Visual contains structural child Color (1 observations)"
+      ],
+      "rationale": "ui:Visual contains ui:Color",
+      "weight": 2,
+      "evidence": [
+        "Visual contains Color (1 observations)",
+        "Visual contains structural child Color (1 observations)"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "ui:Anchor",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Window contains Anchor (10 observations)",
+        "Window contains structural child Anchor (10 observations)"
+      ],
+      "rationale": "ui:Window contains ui:Anchor",
+      "weight": 2,
+      "evidence": [
+        "Window contains Anchor (10 observations)",
+        "Window contains structural child Anchor (10 observations)"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "ui:Anchors",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Window contains Anchors (745 observations)",
+        "Window contains structural child Anchors (745 observations)"
+      ],
+      "rationale": "ui:Window contains ui:Anchors",
+      "weight": 2,
+      "evidence": [
+        "Window contains Anchors (745 observations)",
+        "Window contains structural child Anchors (745 observations)"
       ]
     },
     {
@@ -17381,6 +19731,23 @@
       "evidence": [
         "Window contains ComboBox (4 observations)",
         "Window contains named child ComboBox (4 observations)"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "ui:EventHandlers",
+      "type": "contains",
+      "confidence_score": 80,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "Window contains EventHandlers (280 observations)",
+        "Window contains structural child EventHandlers (280 observations)"
+      ],
+      "rationale": "ui:Window contains ui:EventHandlers",
+      "weight": 2,
+      "evidence": [
+        "Window contains EventHandlers (280 observations)",
+        "Window contains structural child EventHandlers (280 observations)"
       ]
     },
     {
@@ -25640,6 +28007,38 @@
         "PartyCast: PartyCast.FetchedText -\u003e StatusBarSetMaximumValue(\"PartyCastWindow\"..PlayerNumber..\"TimerBar\", -1)",
         "PartyCast: PartyCast.FetchedText -\u003e StatusBarSetMaximumValue(\"PartyCastWindow\"..PlayerNumber..\"TimerBar\", 1)",
         "PartyCast: PartyCast.FetchedText -\u003e StatusBarSetMaximumValue(\"PartyCastWindow\"..PlayerNumber..\"TimerBar\", tonumber(SPLIT_TEXT[6]))"
+      ]
+    },
+    {
+      "from": "function:window:WindowAddAnchor",
+      "to": "ui:Anchor",
+      "type": "writes_state",
+      "confidence_score": 70,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -\u003e WindowAddAnchor(tab.Name, tab.Anchor.Point, tab.Anchor.RelativeTo, tab.Anchor.RelativePoint, tab.Anchor.X, tab.Anchor.Y)"
+      ],
+      "rationale": "function:window:WindowAddAnchor updates state in ui:Anchor",
+      "weight": 1,
+      "evidence": [
+        "AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -\u003e WindowAddAnchor(tab.Name, tab.Anchor.Point, tab.Anchor.RelativeTo, tab.Anchor.RelativePoint, tab.Anchor.X, tab.Anchor.Y)"
+      ]
+    },
+    {
+      "from": "function:window:WindowClearAnchors",
+      "to": "ui:Anchor",
+      "type": "writes_state",
+      "confidence_score": 72,
+      "evidence_count": 2,
+      "evidence_sources": [
+        "AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -\u003e WindowClearAnchors(\"AnywhereTrainerBottomBookend\")",
+        "AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -\u003e WindowClearAnchors(\"AnywhereTrainerTopBookend\")"
+      ],
+      "rationale": "function:window:WindowClearAnchors updates state in ui:Anchor",
+      "weight": 2,
+      "evidence": [
+        "AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -\u003e WindowClearAnchors(\"AnywhereTrainerBottomBookend\")",
+        "AnywhereTrainerAdditions: AnywhereTrainerAdditions.Initialize -\u003e WindowClearAnchors(\"AnywhereTrainerTopBookend\")"
       ]
     },
     {

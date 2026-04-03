@@ -72,15 +72,15 @@ Observed XML element type instantiated by 5 addons.
 
 ## Common Structural Child Elements
 
-- NormalHighlit — 14× (HIGH)
-- Normal — 10× (HIGH)
-- Pressed — 10× (HIGH)
-- PressedHighlit — 9× (HIGH)
-- Disabled — 8× (HIGH)
+- [NormalHighlit](element_NormalHighlit.md) — 14× (HIGH)
+- [Normal](element_Normal.md) — 10× (HIGH)
+- [Pressed](element_Pressed.md) — 10× (HIGH)
+- [PressedHighlit](element_PressedHighlit.md) — 9× (HIGH)
+- [Disabled](element_Disabled.md) — 8× (HIGH)
 
 ## Structural Sub-Elements
 
-### NormalHighlit
+### [NormalHighlit](element_NormalHighlit.md)
 
 Observed 14 times as an unnamed child.
 
@@ -95,7 +95,7 @@ Observed 14 times as an unnamed child.
 | `x` | optional | 27, 105, 0 |
 | `y` | optional | 28, 44, 0 |
 | `texture` | optional | EA_SquareFrame_Highlight, ShiniesIconBorderHighlight, TidyRoll_SquareFrame_Highlight |
-### Normal
+### [Normal](element_Normal.md)
 
 Observed 10 times as an unnamed child.
 
@@ -110,7 +110,7 @@ Observed 10 times as an unnamed child.
 | `a` | optional | 255 |
 | `texture` | optional | bpKtxt, EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_AnimatedImage_DefaultChoiceOverlay, BuffHeadLayoutVerticalButtonNormal, BuffHeadLayoutHorizontalButtonNormal |
-### Pressed
+### [Pressed](element_Pressed.md)
 
 Observed 10 times as an unnamed child.
 
@@ -125,7 +125,7 @@ Observed 10 times as an unnamed child.
 | `y` | optional | 56, 44, 0 |
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed, EA_Button_ListSortPressed |
 | `texture` | optional | EA_SquareFrame_Pressed, ShiniesIconBorderHighlight, TidyRoll_SquareFrame |
-### PressedHighlit
+### [PressedHighlit](element_PressedHighlit.md)
 
 Observed 9 times as an unnamed child.
 
@@ -139,7 +139,7 @@ Observed 9 times as an unnamed child.
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, BuffHeadLayoutVerticalButtonPressed, BuffHeadLayoutHorizontalButtonPressed |
 | `x` | optional | 0, 120 |
 | `y` | optional | 56, 44 |
-### Disabled
+### [Disabled](element_Disabled.md)
 
 Observed 8 times as an unnamed child.
 
@@ -154,6 +154,15 @@ Observed 8 times as an unnamed child.
 | `id` | optional | morale-white, RightTabFrame, ability-white, tactic-black |
 | `def` | optional | EA_HorizontalResizeImage_DefaultComboBox, EA_Button_ListSortNormal |
 | `texture` | optional | EA_SquareFrame, ShiniesIconBorderNormal, TidyRoll_SquareFrame |
+## Recursive Hierarchy
+
+- Root: [ResizeImages](element_ResizeImages.md)
+- [Disabled](element_Disabled.md) (structural, 8×, HIGH)
+- [Normal](element_Normal.md) (structural, 10×, HIGH)
+- [NormalHighlit](element_NormalHighlit.md) (structural, 14×, HIGH)
+- [Pressed](element_Pressed.md) (structural, 10×, HIGH)
+- [PressedHighlit](element_PressedHighlit.md) (structural, 9×, HIGH)
+
 ## Seen In
 
 - AdvancedPetAssist
@@ -174,10 +183,17 @@ Observed 8 times as an unnamed child.
 ## Related APIs
 
 - [Button](element_Button.md) (HIGH 100/100) - XML Element Type
+- [Disabled](element_Disabled.md) (MEDIUM 45/100) - XML Element Type
+- [Normal](element_Normal.md) (MEDIUM 45/100) - XML Element Type
+- [NormalHighlit](element_NormalHighlit.md) (MEDIUM 45/100) - XML Element Type
+- [Pressed](element_Pressed.md) (MEDIUM 45/100) - XML Element Type
+- [PressedHighlit](element_PressedHighlit.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
-- none
+- [OverlayTexCoords](element_OverlayTexCoords.md) (HIGH 100/100) - XML Element Type
+- [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
+- [TexSlices](element_TexSlices.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

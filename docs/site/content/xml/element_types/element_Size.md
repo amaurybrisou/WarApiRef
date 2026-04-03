@@ -86,6 +86,25 @@ Observed XML element type instantiated by 33 addons.
 - [CooldownDisplay](element_CooldownDisplay.md) — 1× (LOW)
 - [MapDisplay](element_MapDisplay.md) — 1× (LOW)
 
+## Common Structural Child Elements
+
+- [AbsPoint](element_AbsPoint.md) — 2634× (HIGH)
+
+## Structural Sub-Elements
+
+### [AbsPoint](element_AbsPoint.md)
+
+Observed 2634 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** | 120, 220, 550, 0 |
+| `y` | **required** | 28, 850, 0, 32 |
+## Recursive Hierarchy
+
+- Root: [Size](element_Size.md)
+- [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
+
 ## Seen In
 
 - AdvancedPetAssist
@@ -149,13 +168,14 @@ Observed XML element type instantiated by 33 addons.
 - [SliderBar](element_SliderBar.md) (HIGH 100/100) - XML Element Type
 - [VerticalScrollbar](element_VerticalScrollbar.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
+- [AbsPoint](element_AbsPoint.md) (MEDIUM 45/100) - XML Element Type
 - [CooldownDisplay](element_CooldownDisplay.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
-- [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
-- [TintColor](element_TintColor.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 
 ## Triggered By
 

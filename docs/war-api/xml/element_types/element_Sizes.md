@@ -60,10 +60,10 @@ Observed XML element type instantiated by 7 addons.
 
 ## Common Attributes
 
-- middle
-- left
-- right
 - bottom
+- left
+- middle
+- right
 - top
 
 ## Common Inherits
@@ -78,7 +78,9 @@ Observed XML element type instantiated by 7 addons.
 
 ## Common Structural Child Elements
 
-- Middle — 14× (HIGH)
+- [BottomRight](element_BottomRight.md) — 14× (HIGH)
+- [Middle](element_Middle.md) — 14× (HIGH)
+- [TopLeft](element_TopLeft.md) — 14× (HIGH)
 
 ## Attribute Reference
 
@@ -91,7 +93,16 @@ Observed XML element type instantiated by 7 addons.
 | `top` | optional | 4% | 0 |
 ## Structural Sub-Elements
 
-### Middle
+### [BottomRight](element_BottomRight.md)
+
+Observed 14 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** | 16, 350, 2, 135 |
+| `y` | **required** | 15, 197, 2, 35 |
+| `id` | optional | Border-Bottom-Right |
+### [Middle](element_Middle.md)
 
 Observed 14 times as an unnamed child.
 
@@ -99,6 +110,22 @@ Observed 14 times as an unnamed child.
 | --- | --- | --- |
 | `x` | **required** | 0, 424, 78, 2 |
 | `y` | **required** | 0, 762, 25, 2 |
+### [TopLeft](element_TopLeft.md)
+
+Observed 14 times as an unnamed child.
+
+| Attribute | Required | Sample Values |
+| --- | --- | --- |
+| `x` | **required** | 16, 256, 2, 0 |
+| `y` | **required** | 15, 157, 2, 0 |
+| `id` | optional | Border-Top-Left |
+## Recursive Hierarchy
+
+- Root: [Sizes](element_Sizes.md)
+- [BottomRight](element_BottomRight.md) (structural, 14×, HIGH)
+- [Middle](element_Middle.md) (structural, 14×, HIGH)
+- [TopLeft](element_TopLeft.md) (structural, 14×, HIGH)
+
 ## Seen In
 
 - AdvancedPetAssist
@@ -123,10 +150,13 @@ Observed 14 times as an unnamed child.
 - [FullResizeImage](element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [HorizontalResizeImage](element_HorizontalResizeImage.md) (HIGH 100/100) - XML Element Type
 - [VerticalResizeImage](element_VerticalResizeImage.md) (HIGH 90/100) - XML Element Type
+- [BottomRight](element_BottomRight.md) (MEDIUM 45/100) - XML Element Type
+- [Middle](element_Middle.md) (MEDIUM 45/100) - XML Element Type
+- [TopLeft](element_TopLeft.md) (MEDIUM 45/100) - XML Element Type
 
 ## Used With
 
-- none
+- [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
 
 ## Triggered By
 

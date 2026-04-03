@@ -57,8 +57,8 @@ Observed XML element type instantiated by 1 addons.
 
 ## Common Attributes
 
-- name
 - inherits
+- name
 - texture
 
 ## Common Inherits
@@ -127,6 +127,33 @@ Observed 1 times as an unnamed child.
 | --- | --- | --- |
 | `x` | optional | 0, 133, 88, 32 |
 | `y` | optional | 0, 163, 51, 32 |
+## Recursive Hierarchy
+
+- Root: [VerticalResizeImage](element_VerticalResizeImage.md)
+- [Sizes](element_Sizes.md) (structural, 1×, LOW)
+  - [BottomRight](element_BottomRight.md) (structural, 14×, HIGH)
+  - [Middle](element_Middle.md) (structural, 14×, HIGH)
+  - [TopLeft](element_TopLeft.md) (structural, 14×, HIGH)
+- [TexCoords](element_TexCoords.md) (structural, 1×, LOW)
+  - [BottomCenter](element_BottomCenter.md) (structural, 9×, MEDIUM)
+  - [BottomLeft](element_BottomLeft.md) (structural, 9×, MEDIUM)
+  - [BottomRight](element_BottomRight.md) (structural, 9×, MEDIUM)
+  - [Disabled](element_Disabled.md) (structural, 7×, MEDIUM)
+  - [Left](element_Left.md) (structural, 7×, MEDIUM)
+  - [Middle](element_Middle.md) (structural, 9×, MEDIUM)
+  - [MiddleCenter](element_MiddleCenter.md) (structural, 9×, MEDIUM)
+  - [MiddleLeft](element_MiddleLeft.md) (structural, 9×, MEDIUM)
+  - [MiddleRight](element_MiddleRight.md) (structural, 9×, MEDIUM)
+  - [Normal](element_Normal.md) (structural, 7×, MEDIUM)
+  - [NormalHighlit](element_NormalHighlit.md) (structural, 7×, MEDIUM)
+  - [Pressed](element_Pressed.md) (structural, 7×, MEDIUM)
+  - [PressedHighlit](element_PressedHighlit.md) (structural, 1×, LOW)
+  - [Right](element_Right.md) (structural, 7×, MEDIUM)
+  - [TopCenter](element_TopCenter.md) (structural, 9×, MEDIUM)
+  - [TopLeft](element_TopLeft.md) (structural, 9×, MEDIUM)
+  - [TopRight](element_TopRight.md) (structural, 9×, MEDIUM)
+- [TintColor](element_TintColor.md) (structural, 3×, HIGH)
+
 ## Seen In
 
 - BuffHead

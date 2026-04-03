@@ -64,25 +64,25 @@ Observed XML element type instantiated by 13 addons.
 
 ## Common Attributes
 
-- name
+- background
+- font
+- handleinput
 - inherits
-- maxchars
 - input
 - layer
-- warnOnTextCropped
-- font
-- taborder
-- handleinput
-- background
-- scrolling
 - maxChars
+- maxchars
+- name
+- scrolling
+- taborder
+- warnOnTextCropped
 
 ## Common Handlers
 
-- [OnTextChanged](../handlers/handler_OnTextChanged.md)
 - [OnKeyEnter](../handlers/handler_OnKeyEnter.md)
 - [OnKeyEscape](../handlers/handler_OnKeyEscape.md)
 - [OnMouseOver](../handlers/handler_OnMouseOver.md)
+- [OnTextChanged](../handlers/handler_OnTextChanged.md)
 
 ## Common Handler Functions
 
@@ -106,18 +106,24 @@ Observed XML element type instantiated by 13 addons.
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.ConfigurationWindow_ShowTooltip, Enemy.GroupsUI_EffectFilterDialog_OnAbilityIdsMouseOver, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig2CommandMouseOver | `function()` | MEDIUM |
 | [OnTextChanged](../handlers/handler_OnTextChanged.md) | data | Enemy.ConfigurationWindow_OnChange, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsEditChanged, BuffHead.Setup.SelectColor.OnTintChanged, ShiniesAutoUI.OnPriceChange, ShiniesPostUI.OnPriceChange | `function()` | MEDIUM |
+| [OnTextChanged](../handlers/handler_OnTextChanged.md) | data | Enemy.ConfigurationWindow_OnChange, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsEditChanged, BuffHead.Setup.SelectColor.OnTintChanged, ShiniesAutoUI.OnPriceChange, ShiniesPostUI.OnPriceChange, TexturedButtons.Setup.SelectColor.OnTintChanged, TexturedButtons.Setup.Tint.OnTintChanged, TurretRange.Setup.Display.OnTintChanged, TurretRange.Setup.Distance.OnTintChanged, AuraConfig.OnTextureOffsetXChanged, AuraConfig.OnTextureOffsetYChanged, AuraConfig.OnTimerOffsetXChanged, AuraConfig.OnTimerOffsetYChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerPaddingXChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerPaddingYChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeColumnsChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeRowsChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnIndicatorPaddingXChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnIndicatorPaddingYChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnMaximumThresholdChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnMinimumThresholdChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnOffsetXChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnOffsetYChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnPlacementFixedOffsetXChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnPlacementFixedOffsetYChanged, BuffHead.Setup.Display.OnOffsetXChanged, BuffHead.Setup.Display.OnOffsetYChanged, BuffHead.Setup.EffectCache.OnSearchChanged, BuffHead.Setup.Layout.Properties.OnCoreSizeSizeHeightChanged, BuffHead.Setup.Layout.Properties.OnCoreSizeSizeWidthChanged, BuffHead.Setup.Layout.Properties.OnOffsetXChanged, BuffHead.Setup.Layout.Properties.OnOffsetYChanged, BuffHead.Setup.Layout.Properties.OnSizeScaleChanged, BuffHead.Setup.Layout.Properties.OnSizeSizeHeightChanged, BuffHead.Setup.Layout.Properties.OnSizeSizeWidthChanged, BuffHead.Setup.PriorityEffectsItem.OnAbilityIdChanged, PP.UpdateDyeFilter, ShiniesConfigGeneral.OnTextChanged_UIScale, ShiniesPostUI.OnStackChange, ShiniesPostUI.OnStackSizeChange, TexturedButtons.Setup.Actionbar.OnPaddingXChanged, TexturedButtons.Setup.Actionbar.OnPaddingYChanged, TexturedButtons.Setup.Actionbar.OnSpacingXChanged, TexturedButtons.Setup.Actionbar.OnSpacingYChanged, TurretRange.Setup.Display.OnDistanceOffsetXChanged, TurretRange.Setup.Display.OnDistanceOffsetYChanged, TurretRange.Setup.Display.OnGraphicLimitChanged | `text` | MEDIUM |
+| [OnKeyEnter](../handlers/handler_OnKeyEnter.md) | custom | - | `` |  |
+| [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | custom | - | `` |  |
+| [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.ConfigurationWindow_ShowTooltip, Enemy.GroupsUI_EffectFilterDialog_OnAbilityIdsMouseOver, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig2CommandMouseOver | `` |  |
 
 ### Per-Event Lua API Calls
 
 **OnTextChanged** handlers call: `ButtonGetPressedFlag`, `ComboBoxGetSelectedMenuItem`, `RegisterEventHandler`, `SliderBarGetCurrentPosition`, `SliderBarSetCurrentPosition`, `TextEditBoxGetText`, `WindowSetTintColor`
 
+**OnTextChanged** handlers call: `ButtonGetPressedFlag`, `ComboBoxGetSelectedMenuItem`, `RegisterEventHandler`, `SliderBarGetCurrentPosition`, `SliderBarSetCurrentPosition`, `TextEditBoxGetText`, `WindowSetTintColor`
+
 ## Common Inherits
 
-- EA_EditBox_DefaultFrame
 - Aura_EditBox_DefaultFrame
+- EA_EditBox_DefaultFrame
 - EA_EditBox_DefaultFrame_Multiline
-- Shinies_GoldCoin_EditBox_DefaultFrame
 - Shinies_BrassCoin_EditBox_DefaultFrame
+- Shinies_GoldCoin_EditBox_DefaultFrame
 - Shinies_SilverCoin_EditBox_DefaultFrame
 
 ## Common Parent Elements
@@ -127,6 +133,8 @@ Observed XML element type instantiated by 13 addons.
 ## Common Structural Child Elements
 
 - [Size](element_Size.md) — 127× (HIGH)
+- [Anchors](element_Anchors.md) — 126× (HIGH)
+- [EventHandlers](element_EventHandlers.md) — 102× (HIGH)
 - [TextOffset](element_TextOffset.md) — 15× (HIGH)
 
 ## Common Template Bases
@@ -175,6 +183,14 @@ Observed XML element type instantiated by 13 addons.
 
 Observed 127 times as an unnamed child.
 
+### [Anchors](element_Anchors.md)
+
+Observed 126 times as an unnamed child.
+
+### [EventHandlers](element_EventHandlers.md)
+
+Observed 102 times as an unnamed child.
+
 ### [TextOffset](element_TextOffset.md)
 
 Observed 15 times as an unnamed child.
@@ -183,6 +199,21 @@ Observed 15 times as an unnamed child.
 | --- | --- | --- |
 | `x` | **required** | 5, 4, 10, 0 |
 | `y` | **required** | 5, 2, 3, 0 |
+## Recursive Hierarchy
+
+- Root: [EditBox](element_EditBox.md)
+- [Anchors](element_Anchors.md) (structural, 126×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 3×, MEDIUM)
+  - [Anchor](element_Anchor.md) (structural, 3889×, HIGH)
+    - [AbsPoint](element_AbsPoint.md) (structural, 3500×, HIGH)
+    - [Anchor](element_Anchor.md) (structural, 22×, HIGH)
+      - (cycle)
+- [EventHandlers](element_EventHandlers.md) (structural, 102×, HIGH)
+  - [EventHandler](element_EventHandler.md) (structural, 1707×, HIGH)
+- [Size](element_Size.md) (structural, 127×, HIGH)
+  - [AbsPoint](element_AbsPoint.md) (structural, 2634×, HIGH)
+- [TextOffset](element_TextOffset.md) (structural, 15×, HIGH)
+
 ## Lua API Usage (from Handlers)
 
 API functions commonly called from event handler Lua functions on this element type:
@@ -221,18 +252,18 @@ Confidence: MEDIUM
 | 0 | `text` | wstring | current_text |
 ## Lua Functions Manipulating This Type
 
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- Enemy.GroupsUI_EffectFilterDialog_Ok
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
 - PP.UpdateDyeFilter
+- Enemy.GroupsUI_EffectFilterDialog_Ok
+- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
 
 
 ## Binding Resolution
@@ -270,6 +301,8 @@ Confidence: MEDIUM
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [TextOffset](element_TextOffset.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
+- [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 
 ## Used With
 
