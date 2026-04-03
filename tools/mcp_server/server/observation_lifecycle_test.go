@@ -261,7 +261,7 @@ func TestPromoteObservationSuccess(t *testing.T) {
 	if err != nil {
 		t.Fatalf("read seed file: %v", err)
 	}
-	if !strings.Contains(string(content), "<!-- observation:obs_to_promote") {
+	if !strings.Contains(string(content), "<!-- OBSERVATION:obs_to_promote") {
 		t.Fatalf("promotion marker not found in seed file; content:\n%s", string(content))
 	}
 	if !strings.Contains(string(content), "Test claim statement") {
@@ -353,6 +353,109 @@ func TestPromoteObservationDuplicatePrevented(t *testing.T) {
 	}
 }
 
+func TestPromoteObservationDuplicatePreventedNewMarkerFormat(t *testing.T) {
+	rec := buildTestRecord("obs_dedup_new", lifecycleStatusAccepted)
+	feedRoot := setupTestFeedingRoot(t, []lifecycleRecord{rec})
+	wsRoot := wsRootFromFeeding(feedRoot)
+
+	seedRelPath := "docs/platform/seeds/xml_conventions.md"
+	seedAbsPath := filepath.Join(wsRoot, filepath.FromSlash(seedRelPath))
+	if err := os.MkdirAll(filepath.Dir(seedAbsPath), 0o755); err != nil {
+		t.Fatalf("mkdir seed: %v", err)
+	}
+	// Pre-populate with new-format marker for the same entry.
+	existingContent := "# XML Conventions\n\n<!-- OBSERVATION:obs_dedup_new (promoted:2026-01-01T00:00:00Z) -->\n- Some claim\n"
+	if err := os.WriteFile(seedAbsPath, []byte(existingContent), 0o644); err != nil {
+		t.Fatalf("write seed: %v", err)
+	}
+
+	app := newTestApp(t, feedRoot)
+	resp := app.promoteObservation(schema.PromoteObservationRequest{ObservationID: "obs_dedup_new"})
+	if len(resp.Errors) > 0 {
+		t.Fatalf("unexpected errors: %v", resp.Errors)
+	}
+	for _, u := range resp.SeedUpdates {
+		if !u.Duplicate {
+			t.Fatalf("expected duplicate=true for all seed updates, got: %+v", u)
+		}
+	}
+
+	content, err := os.ReadFile(seedAbsPath)
+	if err != nil {
+		t.Fatalf("read seed: %v", err)
+	}
+	if string(content) != existingContent {
+		t.Fatalf("seed file should not have been modified for duplicate promotion (new marker format)")
+	}
+}
+
+func TestPromoteObservationUnresolvedSymbolsAreWarningsOnly(t *testing.T) {
+	rec := buildTestRecord("obs_unresolved_symbols", lifecycleStatusAccepted)
+	claims := rec.Observation["claims"].([]any)
+	firstClaim := claims[0].(map[string]any)
+	firstClaim["symbols"] = []any{"Definitely_Not_A_Real_WAR_API_Symbol_12345"}
+	rec.Observation["claims"] = claims
+
+	feedRoot := setupTestFeedingRoot(t, []lifecycleRecord{rec})
+	wsRoot := wsRootFromFeeding(feedRoot)
+
+	seedRelPath := "docs/platform/seeds/xml_conventions.md"
+	seedAbsPath := filepath.Join(wsRoot, filepath.FromSlash(seedRelPath))
+	if err := os.MkdirAll(filepath.Dir(seedAbsPath), 0o755); err != nil {
+		t.Fatalf("mkdir seed: %v", err)
+	}
+	if err := os.WriteFile(seedAbsPath, []byte("# XML Conventions\n"), 0o644); err != nil {
+		t.Fatalf("write seed: %v", err)
+	}
+
+	app := newTestApp(t, feedRoot)
+	<-app.storeDone
+	if app.storeErr != nil {
+		t.Fatalf("store failed to load for symbol validation test: %v", app.storeErr)
+	}
+	resp := app.promoteObservation(schema.PromoteObservationRequest{ObservationID: "obs_unresolved_symbols"})
+
+	if len(resp.Errors) > 0 {
+		t.Fatalf("promotion should not fail on unresolved symbols, got errors: %v", resp.Errors)
+	}
+	if !resp.Promoted {
+		t.Fatalf("expected promoted=true despite unresolved symbol warnings")
+	}
+
+	foundUnresolvedWarning := false
+	for _, w := range resp.Warnings {
+		if w.Code == "unresolved_symbol" {
+			foundUnresolvedWarning = true
+			break
+		}
+	}
+	if !foundUnresolvedWarning {
+		t.Fatalf("expected unresolved_symbol warning, got: %+v", resp.Warnings)
+	}
+
+	content, err := os.ReadFile(seedAbsPath)
+	if err != nil {
+		t.Fatalf("read seed file: %v", err)
+	}
+	if !strings.Contains(string(content), "<!-- OBSERVATION:obs_unresolved_symbols") {
+		t.Fatalf("expected promoted marker in seed file")
+	}
+}
+
+func TestPromotionFragmentEmitsTraceabilityMarker(t *testing.T) {
+	rec := buildTestRecord("obs_traceability", lifecycleStatusAccepted)
+	promotedAt := "2026-04-03T12:34:56Z"
+
+	fragment := buildPromotionFragment(rec, "obs_traceability", promotedAt)
+
+	if !strings.Contains(fragment, "<!-- OBSERVATION:obs_traceability (promoted:2026-04-03T12:34:56Z) -->") {
+		t.Fatalf("expected new traceability marker in promotion fragment, got:\n%s", fragment)
+	}
+	if !strings.Contains(fragment, "> Source: TestAddon | Confidence: MEDIUM | Promoted: 2026-04-03") {
+		t.Fatalf("expected source/confidence/promotion traceability line in fragment, got:\n%s", fragment)
+	}
+}
+
 func TestPromoteObservationRejectedBlocked(t *testing.T) {
 	rec := buildTestRecord("obs_rejected", lifecycleStatusRejected)
 	app := newTestApp(t, setupTestFeedingRoot(t, []lifecycleRecord{rec}))
@@ -432,6 +535,12 @@ func TestRegeneratePlatformScopeOneStep(t *testing.T) {
 	if len(resp.Steps) != 1 {
 		t.Fatalf("expected 1 step for scope=platform, got %d", len(resp.Steps))
 	}
+	if resp.Steps[0].Label != "generate platform docs" {
+		t.Fatalf("unexpected platform step label: %+v", resp.Steps[0])
+	}
+	if resp.Steps[0].Command != "go run ./tools/api_doc_gen generate platform ./docs/addon-api ./docs/war-api" {
+		t.Fatalf("unexpected platform command wiring: %q", resp.Steps[0].Command)
+	}
 }
 
 func TestRegenerateSiteScopeOneStep(t *testing.T) {
@@ -439,6 +548,37 @@ func TestRegenerateSiteScopeOneStep(t *testing.T) {
 	resp := app.regenerateFromPromotedKnowledge(schema.RegenerateRequest{Scope: "site", DryRun: true})
 	if len(resp.Steps) != 1 {
 		t.Fatalf("expected 1 step for scope=site, got %d", len(resp.Steps))
+	}
+	if resp.Steps[0].Label != "generate site content" {
+		t.Fatalf("unexpected site step label: %+v", resp.Steps[0])
+	}
+	if resp.Steps[0].Command != "go run ./tools/api_doc_gen generate site ./docs/war-api ./docs/site/content" {
+		t.Fatalf("unexpected site command wiring: %q", resp.Steps[0].Command)
+	}
+}
+
+func TestRegenerateFullScopeCommandWiring(t *testing.T) {
+	app := newTestApp(t, setupTestFeedingRoot(t, nil))
+	resp := app.regenerateFromPromotedKnowledge(schema.RegenerateRequest{Scope: "full", DryRun: true})
+	if len(resp.Steps) != 2 {
+		t.Fatalf("expected 2 steps for full scope, got %d", len(resp.Steps))
+	}
+	if resp.Steps[0].Command != "go run ./tools/api_doc_gen generate platform ./docs/addon-api ./docs/war-api" {
+		t.Fatalf("unexpected full-scope first command: %q", resp.Steps[0].Command)
+	}
+	if resp.Steps[1].Command != "go run ./tools/api_doc_gen generate site ./docs/war-api ./docs/site/content" {
+		t.Fatalf("unexpected full-scope second command: %q", resp.Steps[1].Command)
+	}
+}
+
+func TestRegenerateDefaultScopeWiresToFull(t *testing.T) {
+	app := newTestApp(t, setupTestFeedingRoot(t, nil))
+	resp := app.regenerateFromPromotedKnowledge(schema.RegenerateRequest{DryRun: true})
+	if resp.Scope != "full" {
+		t.Fatalf("expected default scope to resolve to full, got %q", resp.Scope)
+	}
+	if len(resp.Steps) != 2 {
+		t.Fatalf("expected 2 steps for default scope, got %d", len(resp.Steps))
 	}
 }
 
@@ -655,15 +795,15 @@ func TestDuplicateRejectionNotAppended(t *testing.T) {
 		t.Fatalf("first rejection unexpected errors: %v", resp1.Errors)
 	}
 
-	// Reject again (same ID already in rejected store).
+	// Reject again (same ID already rejected) should now be blocked by immutability.
 	resp2 := app.reviewObservation(schema.ReviewObservationRequest{
 		ObservationID: "obs_dup_reject",
 		Verdict:       "reject",
 		Reviewer:      "bob",
 		Notes:         "second rejection attempt",
 	})
-	if len(resp2.Errors) > 0 {
-		t.Fatalf("second rejection unexpected errors: %v", resp2.Errors)
+	if len(resp2.Errors) == 0 {
+		t.Fatalf("expected immutability error on second rejection attempt")
 	}
 
 	// The rejected store must contain exactly one entry for this observation_id.
@@ -683,3 +823,29 @@ func TestDuplicateRejectionNotAppended(t *testing.T) {
 	}
 }
 
+func TestRejectedObservationIsImmutable(t *testing.T) {
+	rec := buildTestRecord("obs_rejected_immutable", lifecycleStatusRejected)
+	feedRoot := setupTestFeedingRoot(t, []lifecycleRecord{rec})
+	app := newTestApp(t, feedRoot)
+
+	resp := app.reviewObservation(schema.ReviewObservationRequest{
+		ObservationID: "obs_rejected_immutable",
+		Verdict:       "accept",
+		Reviewer:      "alice",
+		Notes:         "attempting to resurrect a rejected observation",
+	})
+	if len(resp.Errors) == 0 {
+		t.Fatalf("expected immutability error when re-reviewing a rejected observation")
+	}
+	if !strings.Contains(strings.ToLower(resp.Errors[0]), "rejected") {
+		t.Fatalf("expected rejected immutability message, got: %v", resp.Errors)
+	}
+
+	records, _, err := readQueueRecords(filepath.Join(feedRoot, "review_queue", defaultQueueFileName))
+	if err != nil {
+		t.Fatalf("read queue: %v", err)
+	}
+	if len(records) != 1 || records[0].effectiveStatus() != lifecycleStatusRejected {
+		t.Fatalf("rejected record must remain rejected, got: %+v", records)
+	}
+}

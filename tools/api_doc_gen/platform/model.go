@@ -406,6 +406,29 @@ type AddonLifecycleSemantic struct {
 	SavedVariables []string
 }
 
+// LifecycleExclusion records one addon exclusion decision from lifecycle
+// discovery diagnostics.
+type LifecycleExclusion struct {
+	AddonName  string // Addon display name (manifest name when available)
+	Directory  string // Source directory name under SourceRoot
+	ReasonCode string // Stable code: no_manifest, no_resolved_source_files, toc_only
+	Reason     string // Human-readable reason
+}
+
+// LifecycleDiscoveryDiagnostics captures source discovery accounting so that
+// lifecycle reports can clearly explain inclusion/exclusion behavior.
+type LifecycleDiscoveryDiagnostics struct {
+	SourceRoot                 string
+	SourceDirectoryCount       int
+	ManifestDiscoveredCount    int // Addons discovered by manifest scan (.mod/.toc)
+	SourceScannedAddonCount    int // Addons with at least one manifest-listed XML/Lua file on disk
+	ModSemanticAddonCount      int // Source-scanned addons with .mod manifest semantics
+	LifecycleCatalogAddonCount int // Final addons emitted in AddonLifecycleSemantics
+
+	NoManifestDirectories []string
+	Exclusions            []LifecycleExclusion
+}
+
 // LifecycleActionRecord is a structured record of a single lifecycle action
 // from a .mod manifest.
 type LifecycleActionRecord struct {
@@ -600,4 +623,5 @@ type Corpus struct {
 	// .mod lifecycle enrichment: addon-level and function-level lifecycle facts.
 	AddonLifecycleSemantics []AddonLifecycleSemantic // One per .mod addon
 	FunctionLifecycleRoles  []FunctionLifecycleRole  // Function-level lifecycle roles
+	LifecycleDiagnostics    LifecycleDiscoveryDiagnostics
 }

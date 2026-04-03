@@ -543,6 +543,7 @@ func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
 	corpus.ElementTypes = pipelineResult.ElementTypes
 	corpus.AddonLifecycleSemantics = pipelineResult.AddonLifecycleSemantics
 	corpus.FunctionLifecycleRoles = pipelineResult.FunctionLifecycleRoles
+	corpus.LifecycleDiagnostics = pipelineResult.LifecycleDiagnostics
 	corpus.GameEvents = finalizeEventSymbols(gameEvents, "Game Event", ctx, collector)
 	corpus.WindowEvents = finalizeEventSymbols(windowEvents, "Window Event", ctx, collector)
 	corpus.SystemDataFields = finalizeFieldSymbols(systemFields, "SystemData", ctx, collector)

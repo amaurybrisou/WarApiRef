@@ -308,13 +308,10 @@ func (a *App) reviewObservation(req schema.ReviewObservationRequest) schema.Revi
 		resp.Errors = append(resp.Errors, "cannot re-review a promoted observation; promoted records are immutable until a superseding workflow is available")
 		return resp
 	}
-	if current == lifecycleStatusRejected && req.Verdict == "reject" {
-		resp.Warnings = append(resp.Warnings, model.Warning{
-			Code:    "already_rejected",
-			Message: "observation is already rejected",
-		})
+	if current == lifecycleStatusRejected {
+		resp.Errors = append(resp.Errors, "cannot re-review a rejected observation; rejected records are immutable")
+		return resp
 	}
-
 	now := time.Now().UTC().Format(time.RFC3339)
 	newStatus := lifecycleStatusAccepted
 	if req.Verdict == "reject" {

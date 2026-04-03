@@ -3,9 +3,11 @@ package platform
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 
+	"roraddons/tools/api_doc_gen/graph"
 	"roraddons/tools/api_doc_gen/lua_ast"
 	"roraddons/tools/api_doc_gen/mod_semantic"
 	"roraddons/tools/api_doc_gen/semantic_merge"
@@ -31,6 +33,7 @@ type phasedPipelineResult struct {
 	ElementTypes            []ElementTypeSymbol
 	AddonLifecycleSemantics []AddonLifecycleSemantic
 	FunctionLifecycleRoles  []FunctionLifecycleRole
+	LifecycleDiagnostics    LifecycleDiscoveryDiagnostics
 }
 
 // runPhasedPipelineFromSources is the PRIMARY pipeline path.
@@ -102,6 +105,9 @@ func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot s
 		modSemantics = append(modSemantics, sem)
 	}
 
+	diagnostics := buildLifecycleDiscoveryDiagnostics(sourceRoot, addonSources)
+	diagnostics.ModSemanticAddonCount = len(modSemantics)
+
 	output := semantic_merge.RunPipeline(&semantic_merge.PipelineInput{
 		XMLTrees:     trees,
 		LuaFunctions: luaDefs,
@@ -109,11 +115,87 @@ func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot s
 	})
 	enriched := enrichElementTypesFromCatalog(elementTypes, output.Catalog)
 	enriched = enrichElementTypesFromModSemantics(enriched, output.ModSemantics, frameTypeByName)
-	return phasedPipelineResult{
+	result := phasedPipelineResult{
 		ElementTypes:            enriched,
 		AddonLifecycleSemantics: buildAddonLifecycleSemantics(output.Catalog),
 		FunctionLifecycleRoles:  buildFunctionLifecycleRoles(output.Catalog),
+		LifecycleDiagnostics:    diagnostics,
 	}
+	result.LifecycleDiagnostics.LifecycleCatalogAddonCount = len(result.AddonLifecycleSemantics)
+	return result
+}
+
+func buildLifecycleDiscoveryDiagnostics(sourceRoot string, addonSources []source_scan.AddonSource) LifecycleDiscoveryDiagnostics {
+	diagnostics := LifecycleDiscoveryDiagnostics{SourceRoot: graph.NormalizePath(sourceRoot)}
+
+	entries, err := os.ReadDir(sourceRoot)
+	if err == nil {
+		for _, entry := range entries {
+			if !entry.IsDir() {
+				continue
+			}
+			name := strings.TrimSpace(entry.Name())
+			if name == "" || strings.HasPrefix(name, ".") {
+				continue
+			}
+			diagnostics.SourceDirectoryCount++
+			addonPath := filepath.Join(sourceRoot, name)
+			modMatches, _ := filepath.Glob(filepath.Join(addonPath, "*.mod"))
+			tocMatches, _ := filepath.Glob(filepath.Join(addonPath, "*.toc"))
+			if len(modMatches) == 0 && len(tocMatches) == 0 {
+				diagnostics.NoManifestDirectories = append(diagnostics.NoManifestDirectories, name)
+				diagnostics.Exclusions = append(diagnostics.Exclusions, LifecycleExclusion{
+					AddonName:  name,
+					Directory:  name,
+					ReasonCode: "no_manifest",
+					Reason:     "directory has no .mod or .toc manifest and is excluded at source discovery",
+				})
+			}
+		}
+	}
+
+	specs, err := graph.DiscoverAddons(sourceRoot, nil)
+	if err == nil {
+		diagnostics.ManifestDiscoveredCount = len(specs)
+	}
+
+	diagnostics.SourceScannedAddonCount = len(addonSources)
+	sourcesByAddon := make(map[string]source_scan.AddonSource, len(addonSources))
+	for _, src := range addonSources {
+		sourcesByAddon[src.AddonName] = src
+		if src.ModuleTree == nil {
+			diagnostics.Exclusions = append(diagnostics.Exclusions, LifecycleExclusion{
+				AddonName:  src.AddonName,
+				Directory:  filepath.Base(src.AddonPath),
+				ReasonCode: "toc_only",
+				Reason:     "addon has .toc manifest; lifecycle page is .mod semantic analysis only",
+			})
+		}
+	}
+
+	if err == nil {
+		for _, spec := range specs {
+			if _, ok := sourcesByAddon[spec.Name]; ok {
+				continue
+			}
+			diagnostics.Exclusions = append(diagnostics.Exclusions, LifecycleExclusion{
+				AddonName:  spec.Name,
+				Directory:  filepath.Base(spec.Path),
+				ReasonCode: "no_resolved_source_files",
+				Reason:     "manifest discovered but none of the manifest-listed XML/Lua files resolved on disk",
+			})
+		}
+	}
+
+	sort.Strings(diagnostics.NoManifestDirectories)
+	sort.Slice(diagnostics.Exclusions, func(i, j int) bool {
+		if diagnostics.Exclusions[i].ReasonCode == diagnostics.Exclusions[j].ReasonCode {
+			return diagnostics.Exclusions[i].AddonName < diagnostics.Exclusions[j].AddonName
+		}
+		return diagnostics.Exclusions[i].ReasonCode < diagnostics.Exclusions[j].ReasonCode
+	})
+
+	return diagnostics
 }
 
 // enrichElementTypesFromCatalog applies the Phase 4 EnrichedElementCatalog to the

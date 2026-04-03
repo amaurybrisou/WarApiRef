@@ -1499,6 +1499,49 @@ func writeAddonLifecycleSemantics(outputRoot string, corpus Corpus) error {
 
 	index := "# Addon Lifecycle Semantics\n\n"
 	index += "> Structured lifecycle facts derived from `.mod` manifest analysis.\n\n"
+	index += md.Section("What This List Represents", md.BulletList([]string{
+		"This page is not an inventory of all addon directories under the source root.",
+		"It lists addons that reached `.mod` semantic lifecycle extraction in the source-first pipeline.",
+		"Addons can be excluded for explicit reasons (no manifest, no resolved source files, or `.toc`-only).",
+		"Use the diagnostics section below to identify exclusions and counts.",
+	}))
+
+	if corpus.LifecycleDiagnostics.SourceRoot != "" {
+		rows := [][]string{
+			{"source_root", corpus.LifecycleDiagnostics.SourceRoot},
+			{"source_directories", fmt.Sprintf("%d", corpus.LifecycleDiagnostics.SourceDirectoryCount)},
+			{"manifest_discovered", fmt.Sprintf("%d", corpus.LifecycleDiagnostics.ManifestDiscoveredCount)},
+			{"source_scanned_addons", fmt.Sprintf("%d", corpus.LifecycleDiagnostics.SourceScannedAddonCount)},
+			{"mod_semantic_addons", fmt.Sprintf("%d", corpus.LifecycleDiagnostics.ModSemanticAddonCount)},
+			{"lifecycle_catalog_addons", fmt.Sprintf("%d", corpus.LifecycleDiagnostics.LifecycleCatalogAddonCount)},
+			{"excluded_entries", fmt.Sprintf("%d", len(corpus.LifecycleDiagnostics.Exclusions))},
+		}
+		index += md.Section("Diagnostics", md.Table([]string{"Metric", "Value"}, rows))
+
+		reasonCounts := map[string]int{}
+		for _, ex := range corpus.LifecycleDiagnostics.Exclusions {
+			reasonCounts[ex.ReasonCode]++
+		}
+		reasonRows := [][]string{}
+		for _, code := range sortedKeys(reasonCounts) {
+			reasonRows = append(reasonRows, []string{code, fmt.Sprintf("%d", reasonCounts[code])})
+		}
+		if len(reasonRows) > 0 {
+			index += md.Section("Exclusion Reasons", md.Table([]string{"Reason", "Count"}, reasonRows))
+		}
+
+		if len(corpus.LifecycleDiagnostics.Exclusions) > 0 {
+			excluded := make([]string, 0, len(corpus.LifecycleDiagnostics.Exclusions))
+			for _, ex := range corpus.LifecycleDiagnostics.Exclusions {
+				display := ex.AddonName
+				if strings.TrimSpace(ex.Directory) != "" && !strings.EqualFold(ex.Directory, ex.AddonName) {
+					display += " [dir: " + ex.Directory + "]"
+				}
+				excluded = append(excluded, display+" - "+ex.Reason)
+			}
+			index += md.Section("Excluded Addons", bulletOrNone(excluded))
+		}
+	}
 	index += md.Section("Addons", bulletOrNone(links))
 	return writeFile(filepath.Join(outputRoot, "lifecycle", "addon_lifecycle.md"), index)
 }
