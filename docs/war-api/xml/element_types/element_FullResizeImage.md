@@ -127,10 +127,10 @@ Observed 10 times as an unnamed child.
 | `a` | optional | 1, 0.4, 0.5, 0.8 |
 ## Lua Functions Manipulating This Type
 
-- Moth.Clear
-- Moth.UpdateHealthBar
 - Moth.HealthBar
+- Moth.UpdateHealthBar
 - Moth.HideBorders
+- Moth.Clear
 
 ## Seen In
 

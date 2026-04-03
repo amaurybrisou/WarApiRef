@@ -141,21 +141,22 @@ type Function struct {
 }
 
 type Frame struct {
-	Addon                    string
-	Name                     string
-	Type                     string
-	Parent                   string
-	ParentType               string              // element type tag of the direct parent named frame (e.g. "Window" for a Button inside a Window)
-	File                     string
-	Line                     int
-	Children                 []string
-	ChildElementTypes        []string            // element type tags of named child frames (distinct from unnamed structural children)
-	StructuralChildTypes     []string            // element type tags that appear as unnamed structural children (e.g. ListData, ListColumns)
-	StructuralChildAttrKeys  map[string][]string // attribute keys per structural child type, e.g. {"ListData": ["populationfunction", "table"]}
-	CompositionSnippet       string              // etree-derived XML snippet showing the structural hierarchy of unnamed children
-	Inherits                 string
-	Attributes               map[string]string
-	Template                 bool
+	Addon                   string
+	Name                    string
+	RawName                 string
+	Type                    string
+	Parent                  string
+	ParentType              string // element type tag of the direct parent named frame (e.g. "Window" for a Button inside a Window)
+	File                    string
+	Line                    int
+	Children                []string
+	ChildElementTypes       []string            // element type tags of named child frames (distinct from unnamed structural children)
+	StructuralChildTypes    []string            // element type tags that appear as unnamed structural children (e.g. ListData, ListColumns)
+	StructuralChildAttrKeys map[string][]string // attribute keys per structural child type, e.g. {"ListData": ["populationfunction", "table"]}
+	CompositionSnippet      string              // etree-derived XML snippet showing the structural hierarchy of unnamed children
+	Inherits                string
+	Attributes              map[string]string
+	Template                bool
 }
 
 type XMLHandler struct {

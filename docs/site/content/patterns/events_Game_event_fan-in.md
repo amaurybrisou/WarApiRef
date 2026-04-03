@@ -13,10 +13,10 @@ Observed multiple addons converging on a small set of runtime events such as LOA
 - [SystemData.Events.ENTER_WORLD](../events/game_events/game_event_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.EXIT_GAME](../events/game_events/game_event_SystemData.Events.EXIT_GAME.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.EXIT_GAME](../systemdata/fields/systemdata_SystemData.Events.EXIT_GAME.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_COMPLETE_QUEST](../events/game_events/game_event_SystemData.Events.INTERACT_COMPLETE_QUEST.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.INTERACT_COMPLETE_QUEST](../systemdata/fields/systemdata_SystemData.Events.INTERACT_COMPLETE_QUEST.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERACT_DEFAULT](../events/game_events/game_event_SystemData.Events.INTERACT_DEFAULT.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.INTERACT_COMPLETE_QUEST](../events/game_events/game_event_SystemData.Events.INTERACT_COMPLETE_QUEST.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.INTERACT_DEFAULT](../systemdata/fields/systemdata_SystemData.Events.INTERACT_DEFAULT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERACT_DEFAULT](../events/game_events/game_event_SystemData.Events.INTERACT_DEFAULT.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.INTERACT_DONE](../systemdata/fields/systemdata_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.INTERACT_DONE](../events/game_events/game_event_SystemData.Events.INTERACT_DONE.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM](../events/game_events/game_event_SystemData.Events.INTERACT_LOOT_ROLL_FIRST_ITEM.md) (HIGH 100/100) - Game Event

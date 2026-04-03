@@ -126,12 +126,7 @@ func ParseModManifestTree(path string) (ModuleTree, error) {
 		return ModuleTree{Manifest: manifest}, nil
 	}
 
-	// Find the root element (expected to be <UiMod>, but captured generically).
-	var rootElem *etree.Element
-	for _, child := range doc.ChildElements() {
-		rootElem = child
-		break
-	}
+	rootElem := findManifestRoot(doc)
 	if rootElem == nil {
 		return ModuleTree{}, fmt.Errorf("parse mod manifest %s: no root element found", path)
 	}
@@ -143,15 +138,40 @@ func ParseModManifestTree(path string) (ModuleTree, error) {
 	return ModuleTree{Root: root, Manifest: manifest}, nil
 }
 
+func findManifestRoot(doc *etree.Document) *etree.Element {
+	for _, child := range doc.ChildElements() {
+		if child.Tag == "UiMod" {
+			return child
+		}
+		if nested := findNamedElement(child, "UiMod"); nested != nil {
+			return nested
+		}
+		return child
+	}
+	return nil
+}
+
+func findNamedElement(elem *etree.Element, target string) *etree.Element {
+	for _, child := range elem.ChildElements() {
+		if child.Tag == target {
+			return child
+		}
+		if nested := findNamedElement(child, target); nested != nil {
+			return nested
+		}
+	}
+	return nil
+}
+
 // knownModSections maps a top-level child tag name to its ModSectionKind.
 var knownModSections = map[string]ModSectionKind{
-	"Files":         ModSectionFiles,
+	"Files":          ModSectionFiles,
 	"SavedVariables": ModSectionSavedVars,
-	"OnInitialize":  ModSectionOnInitialize,
-	"OnUpdate":      ModSectionOnUpdate,
-	"OnShutdown":    ModSectionOnShutdown,
-	"Author":        ModSectionAuthor,
-	"Description":   ModSectionDescription,
+	"OnInitialize":   ModSectionOnInitialize,
+	"OnUpdate":       ModSectionOnUpdate,
+	"OnShutdown":     ModSectionOnShutdown,
+	"Author":         ModSectionAuthor,
+	"Description":    ModSectionDescription,
 }
 
 // buildModNode recursively converts an etree.Element into a ModNode,

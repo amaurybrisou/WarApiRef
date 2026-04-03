@@ -95,8 +95,8 @@ Observed as a global function across 9 addons.
 - InfoScroller: InfoScroller.About -> towstring(version)
 - InfoScroller: InfoScroller.Test -> towstring(CreateHyperLink(L "0",L "Test-Friend",{255,75,75},{}))
 - InfoScroller: InfoScroller.Test -> towstring(CreateHyperLink(L "0",L "Test-Enemy",{75,75,255},{}))
-- InfoScroller: InfoScroller.Test -> towstring(CreateHyperLink(L "0",L " 2000 Renown",{230,50,250},{}))
 - InfoScroller: InfoScroller.Test -> towstring(CreateHyperLink(L "0",L "Butcher's Pass",{75,255,75},{}))
+- InfoScroller: InfoScroller.Test -> towstring(CreateHyperLink(L "0",L " 2000 Renown",{230,50,250},{}))
 
 ## Related APIs
 

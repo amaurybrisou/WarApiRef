@@ -50,7 +50,7 @@ Do not patch graph emission if evidence is missing upstream.
 
 Prefer Make targets for reproducible local workflows:
 
-- Build images: `make build`
+- Build images: `make build`(CRITICAL when patching code)
 - Generate addon docs: `make generate-addon`
 - Generate platform docs: `make generate-platform`
 - Generate site content: `make generate-site`

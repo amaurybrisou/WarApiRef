@@ -7,7 +7,7 @@ services:
     working_dir: /workspace
     volumes:
       - .:/workspace
-      - "./addons:/workspace/data/raw"
+      - "./addons:/workspace/data/raw:ro"
     entrypoint:
       - api_doc_gen
 

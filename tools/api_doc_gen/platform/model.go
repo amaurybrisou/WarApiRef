@@ -35,6 +35,7 @@ type EventRegistrationDoc struct {
 
 type FrameDoc struct {
 	Name                    string
+	RawName                 string
 	Addon                   string
 	Type                    string
 	Parent                  string

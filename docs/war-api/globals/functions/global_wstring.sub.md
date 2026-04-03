@@ -88,8 +88,8 @@ Observed as a global function across 2 addons.
 ## Examples
 
 - Moth: Moth.UpdateLevel -> wstring.sub(unitTierDesc, 1, 1)
-- Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 2)
 - Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 1, 1)
+- Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 2)
 - PartyCast: PartyCast.GROUP_UPDATED -> wstring.sub(GameData.Player.name, 1, -3)
 - PartyCast: PartyCast.ON_DEATH -> wstring.sub(GameData.Player.name, 1, -3)
 

@@ -71,8 +71,8 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "PartyCastWindow"..PlayerNumber.."TargetWindowIcon", self.name |
-| arg2 | Observed as a numeric value. | Observed values: 0, 64, width |
+| arg1 | Observed as a text or wstring payload. | Observed values: "PartyCastWindow"..PlayerNumber.."TargetWindowIcon", self.name |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, 64, width |
 | arg3 | Observed as a runtime window or control identifier. | Observed values: 0, 64, height |
 
 ## Returns

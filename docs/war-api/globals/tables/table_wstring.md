@@ -79,8 +79,8 @@ Observed shared global table or namespace surfaced in 3 addons.
 
 - Moth: Moth.UpdateLevel -> wstring.sub(unitTierDesc, 1, 1)
 - Moth: MothHelpers.CapitalizeWString -> wstring.lower(wstring.sub(wstr,2))
-- Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 2)
 - Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 1, 1)
+- Moth: MothHelpers.CapitalizeWString -> wstring.sub(wstr, 2)
 - Moth: MothHelpers.CapitalizeWString -> wstring.upper(wstring.sub(wstr,1,1))
 - PartyCast: PartyCast.GROUP_UPDATED -> wstring.sub(GameData.Player.name, 1, -3)
 

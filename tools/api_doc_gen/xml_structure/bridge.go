@@ -12,6 +12,7 @@ import (
 type Frame struct {
 	Addon                   string
 	Name                    string
+	RawName                 string
 	Type                    string
 	Parent                  string
 	ParentType              string
@@ -72,6 +73,7 @@ func (tree *XMLTree) ToFramesAndHandlers() ([]Frame, []Handler) {
 		frame := Frame{
 			Addon:      tree.Addon,
 			Name:       node.Name,
+			RawName:    node.RawName,
 			Type:       node.Tag,
 			Parent:     node.ParentFrameName,
 			ParentType: node.ParentFrameType,

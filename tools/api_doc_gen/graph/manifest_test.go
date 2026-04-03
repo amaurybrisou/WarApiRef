@@ -122,6 +122,52 @@ func TestParseModManifestTreeKnownSections(t *testing.T) {
 	}
 }
 
+func TestParseModManifestTreeModuleFileWrapper(t *testing.T) {
+	dir := t.TempDir()
+	path := writeModFile(t, dir, "WrappedAddon.mod", `<?xml version="1.0" encoding="UTF-8"?>
+<ModuleFile>
+  <UiMod name="WrappedAddon" version="1.0">
+    <Files>
+      <File name="WrappedAddon.lua"/>
+      <File name="WrappedAddonWindow.xml"/>
+    </Files>
+    <SavedVariables>
+      <SavedVariable name="WrappedAddon.Settings"/>
+    </SavedVariables>
+    <OnInitialize>
+      <CreateWindow name="WrappedAddonWindow" show="false"/>
+      <CallFunction name="WrappedAddon.Initialize"/>
+    </OnInitialize>
+  </UiMod>
+</ModuleFile>`)
+
+	tree, err := ParseModManifestTree(path)
+	if err != nil {
+		t.Fatalf("ParseModManifestTree failed: %v", err)
+	}
+	if tree.Root == nil {
+		t.Fatal("expected non-nil root")
+	}
+	if tree.Root.Tag != "UiMod" {
+		t.Fatalf("root tag: got %q, want UiMod", tree.Root.Tag)
+	}
+	if tree.Manifest.Name != "WrappedAddon" {
+		t.Fatalf("manifest name: got %q, want WrappedAddon", tree.Manifest.Name)
+	}
+	if len(tree.Manifest.Files) != 2 {
+		t.Fatalf("manifest files: got %d, want 2", len(tree.Manifest.Files))
+	}
+	if tree.Manifest.Files[1] != "WrappedAddonWindow.xml" {
+		t.Fatalf("second manifest file: got %q", tree.Manifest.Files[1])
+	}
+	if len(tree.Manifest.CreateWindows) != 1 || tree.Manifest.CreateWindows[0] != "WrappedAddonWindow" {
+		t.Fatalf("create windows: got %v", tree.Manifest.CreateWindows)
+	}
+	if len(tree.Manifest.InitializeCalls) != 1 || tree.Manifest.InitializeCalls[0] != "WrappedAddon.Initialize" {
+		t.Fatalf("initialize calls: got %v", tree.Manifest.InitializeCalls)
+	}
+}
+
 // TestParseModManifestTreeUnknownSections verifies that sections with tags
 // not in the known set are preserved in the tree with Section ==
 // ModSectionUnknown and are not silently discarded.

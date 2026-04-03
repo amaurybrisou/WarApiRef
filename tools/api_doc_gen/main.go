@@ -14,7 +14,7 @@ import (
 	"roraddons/tools/api_doc_gen/normalizer"
 	"roraddons/tools/api_doc_gen/platform"
 	"roraddons/tools/api_doc_gen/site"
-	"roraddons/tools/api_doc_gen/xml_parser"
+	"roraddons/tools/api_doc_gen/xml_structure"
 )
 
 const sourceRootManifestFile = ".api_doc_gen_source_root"
@@ -219,7 +219,7 @@ func parseAddon(spec graph.AddonSpec) (graph.AddonModel, error) {
 			addon.Events = append(addon.Events, parsed.Events...)
 			addon.State = append(addon.State, parsed.State...)
 		case ".xml":
-			parsed, err := xml_parser.ParseFile(spec.Name, absolutePath)
+			parsed, err := parseXMLFile(spec.Name, absolutePath)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "warning: skipping xml file %s: %v\n", graph.NormalizePath(absolutePath), err)
 				continue
@@ -240,6 +240,53 @@ func parseAddon(spec graph.AddonSpec) (graph.AddonModel, error) {
 	addon.Frames = graph.UniqueSortedFrames(addon.Frames)
 	addon.Handlers = graph.UniqueSortedHandlers(addon.Handlers)
 	return addon, nil
+}
+
+func parseXMLFile(addonName string, filePath string) (graph.XMLFileResult, error) {
+	tree, err := xml_structure.ParseFile(addonName, filePath)
+	if err != nil {
+		return graph.XMLFileResult{}, err
+	}
+
+	frames, handlers := tree.ToFramesAndHandlers()
+	graphFrames := make([]graph.Frame, 0, len(frames))
+	for _, frame := range frames {
+		graphFrames = append(graphFrames, graph.Frame{
+			Addon:                   frame.Addon,
+			Name:                    frame.Name,
+			RawName:                 frame.RawName,
+			Type:                    frame.Type,
+			Parent:                  frame.Parent,
+			ParentType:              frame.ParentType,
+			File:                    frame.File,
+			Line:                    frame.Line,
+			Children:                frame.Children,
+			ChildElementTypes:       frame.ChildElementTypes,
+			StructuralChildTypes:    frame.StructuralChildTypes,
+			StructuralChildAttrKeys: frame.StructuralChildAttrKeys,
+			CompositionSnippet:      frame.CompositionSnippet,
+			Inherits:                frame.Inherits,
+			Attributes:              frame.Attributes,
+			Template:                frame.Template,
+		})
+	}
+
+	graphHandlers := make([]graph.XMLHandler, 0, len(handlers))
+	for _, handler := range handlers {
+		graphHandlers = append(graphHandlers, graph.XMLHandler{
+			Addon:    handler.Addon,
+			Frame:    handler.Frame,
+			Event:    handler.Event,
+			Function: handler.Function,
+			File:     handler.File,
+			Line:     handler.Line,
+		})
+	}
+
+	return graph.XMLFileResult{
+		Frames:   graph.UniqueSortedFrames(graphFrames),
+		Handlers: graph.UniqueSortedHandlers(graphHandlers),
+	}, nil
 }
 
 func resolveSourceRoot(argument string) (string, error) {

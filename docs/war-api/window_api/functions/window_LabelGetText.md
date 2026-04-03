@@ -71,7 +71,7 @@ Observed as a window function across 3 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "TomeWindowTitlePageStatPremadeMMRNumber", "TomeWindowTitlePageStatSoloMMRNumber", self.name |
+| arg1 | Observed as a function or method reference. | Observed values: "TomeWindowTitlePageStatPremadeMMRNumber", "TomeWindowTitlePageStatSoloMMRNumber", self.name |
 
 ## Returns
 

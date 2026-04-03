@@ -506,6 +506,10 @@ func writeFrames(outputRoot string, corpus graph.Corpus) error {
 		for _, frame := range addon.Frames {
 			content := "# Frame " + frame.Name + "\n\n"
 			content += "- Addon: " + frame.Addon + "\n"
+			content += "- Resolved Name: " + frame.Name + "\n"
+			if strings.TrimSpace(frame.RawName) != "" && frame.RawName != frame.Name {
+				content += "- Raw Name: " + frame.RawName + "\n"
+			}
 			content += "- Type: " + frame.Type + "\n"
 			content += "- Parent: " + safeValue(frame.Parent) + "\n"
 			content += "- Parent Type: " + safeValue(frame.ParentType) + "\n"
@@ -545,6 +549,10 @@ func writeTemplates(outputRoot string, corpus graph.Corpus) error {
 			}
 			content := "# Template " + frame.Name + "\n\n"
 			content += "- Addon: " + frame.Addon + "\n"
+			content += "- Resolved Name: " + frame.Name + "\n"
+			if strings.TrimSpace(frame.RawName) != "" && frame.RawName != frame.Name {
+				content += "- Raw Name: " + frame.RawName + "\n"
+			}
 			content += "- Type: " + frame.Type + "\n"
 			content += "- Inherits: " + safeValue(frame.Inherits) + "\n"
 			content += "- Source: `" + frame.File + ":" + fmt.Sprintf("%d", frame.Line) + "`\n\n"

@@ -3,6 +3,7 @@ package platform
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"roraddons/tools/api_doc_gen/lua_ast"
 	"roraddons/tools/api_doc_gen/mod_semantic"
@@ -196,7 +197,7 @@ func synthesizeXMLTrees(source SourceModel) []*xml_structure.XMLTree {
 		elem := &xml_structure.XMLElement{
 			Tag:             frame.Type,
 			Name:            frame.Name,
-			RawName:         frame.Name,
+			RawName:         frame.RawName,
 			Addon:           frame.Addon,
 			File:            fileKey,
 			IsNamed:         frame.Name != "",
@@ -208,6 +209,13 @@ func synthesizeXMLTrees(source SourceModel) []*xml_structure.XMLTree {
 		}
 		if elem.Attributes == nil {
 			elem.Attributes = make(map[string]string)
+		}
+		if elem.RawName == "" {
+			if rawAttr := strings.TrimSpace(elem.Attributes["name"]); rawAttr != "" {
+				elem.RawName = rawAttr
+			} else {
+				elem.RawName = frame.Name
+			}
 		}
 
 		// Add handlers from the frame doc

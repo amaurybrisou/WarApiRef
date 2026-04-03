@@ -14,8 +14,8 @@ Observed XML handler events routing directly into addon Lua functions through sh
 - [Label](../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
 - [OnHyperLinkLButtonUp](../events/window_events/window_event_OnHyperLinkLButtonUp.md) (HIGH 100/100) - Window Event
 - [OnHyperLinkLButtonUp](../xml/handlers/handler_OnHyperLinkLButtonUp.md) (HIGH 100/100) - XML Event
-- [OnHyperLinkRButtonUp](../xml/handlers/handler_OnHyperLinkRButtonUp.md) (HIGH 100/100) - XML Event
 - [OnHyperLinkRButtonUp](../events/window_events/window_event_OnHyperLinkRButtonUp.md) (HIGH 100/100) - Window Event
+- [OnHyperLinkRButtonUp](../xml/handlers/handler_OnHyperLinkRButtonUp.md) (HIGH 100/100) - XML Event
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Flow Diagram

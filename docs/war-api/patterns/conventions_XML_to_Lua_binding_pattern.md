@@ -12,10 +12,10 @@ XML handler names map directly to Lua functions and can be cross-checked through
 - [Button](../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [EA_ChatWindow](../globals/tables/table_EA_ChatWindow.md) (HIGH 100/100) - Global Table
 - [Label](../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
-- [OnHyperLinkLButtonUp](../xml/handlers/handler_OnHyperLinkLButtonUp.md) (HIGH 100/100) - XML Event
 - [OnHyperLinkLButtonUp](../events/window_events/window_event_OnHyperLinkLButtonUp.md) (HIGH 100/100) - Window Event
-- [OnHyperLinkRButtonUp](../events/window_events/window_event_OnHyperLinkRButtonUp.md) (HIGH 100/100) - Window Event
+- [OnHyperLinkLButtonUp](../xml/handlers/handler_OnHyperLinkLButtonUp.md) (HIGH 100/100) - XML Event
 - [OnHyperLinkRButtonUp](../xml/handlers/handler_OnHyperLinkRButtonUp.md) (HIGH 100/100) - XML Event
+- [OnHyperLinkRButtonUp](../events/window_events/window_event_OnHyperLinkRButtonUp.md) (HIGH 100/100) - Window Event
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 
 ## Flow Diagram

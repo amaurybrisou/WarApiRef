@@ -264,22 +264,22 @@ Confidence: MEDIUM
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
-- Moth.UpdateLevel
-- Moth.HideBorders
-- TidyChat.LootRoll.OnRollLinkLButtonUp
-- InfoScroller.OnInitialize
 - Moth.Clear
-- Moth.UpdateTarget
-- Moth.Initialize
-- Moth.Anchor
-- minesweep.LButtonUp
-- InfoScroller.CreateCard
-- Moth.UpdateHealthBar
-- Soloq.onEnterRankedScenario
-- TidyRollOptions.Initialize
 - minesweep.MakeField
-- minesweep.Close
 - Moth.HealthBar
+- Moth.HideBorders
+- minesweep.LButtonUp
+- minesweep.Close
+- InfoScroller.OnInitialize
+- TidyRollOptions.Initialize
+- Soloq.onEnterRankedScenario
+- TidyChat.LootRoll.OnRollLinkLButtonUp
+- InfoScroller.CreateCard
+- Moth.Initialize
+- Moth.UpdateHealthBar
+- Moth.Anchor
+- Moth.UpdateTarget
+- Moth.UpdateLevel
 
 
 ## Binding Resolution

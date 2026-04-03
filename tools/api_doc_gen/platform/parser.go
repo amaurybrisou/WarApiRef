@@ -174,6 +174,7 @@ func parseFrameDoc(path string) (FrameDoc, error) {
 	}
 	return FrameDoc{
 		Name:                    strings.TrimSpace(strings.TrimPrefix(lines[0], "# Frame ")),
+		RawName:                 normalizeNone(meta["Raw Name"]),
 		Addon:                   strings.TrimSpace(meta["Addon"]),
 		Type:                    strings.TrimSpace(meta["Type"]),
 		Parent:                  normalizeNone(meta["Parent"]),
