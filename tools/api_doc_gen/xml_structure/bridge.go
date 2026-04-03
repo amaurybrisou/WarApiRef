@@ -1,6 +1,5 @@
-// Package xml_structure provides a conversion bridge from the new Phase 1
-// XMLTree/XMLCorpus model to the existing graph.Frame/graph.XMLHandler types,
-// allowing the old pipeline to consume Phase 1 output without modification.
+// Package xml_structure provides conversion helpers from XMLTree/XMLCorpus
+// into graph-facing DTOs used by addon documentation generation.
 package xml_structure
 
 import (
@@ -38,10 +37,8 @@ type Handler struct {
 	Line     int
 }
 
-// ToFramesAndHandlers converts an XMLTree into the flat Frame/Handler lists
-// that the existing platform pipeline expects. This allows incremental
-// migration: the new Phase 1 parser can be used while the rest of the
-// pipeline still consumes the old data shapes.
+// ToFramesAndHandlers converts an XMLTree into flat Frame/Handler lists used
+// by addon docs generation.
 func (tree *XMLTree) ToFramesAndHandlers() ([]Frame, []Handler) {
 	var frames []Frame
 	var handlers []Handler

@@ -12,6 +12,27 @@ This repository now exposes a consolidated documentation pipeline with a single 
 - `docs/site`: browsable static site and generated site content
 - `infra/docker`: Dockerfiles for generator and site containers
 
+## Contract-Native Semantic Pipeline
+
+The semantic source of truth is contract artifacts only:
+
+1. `xml-tree` (`phase1-tree/v1`)
+2. `lua-analysis` (`phase2-lua/v1`)
+3. `xml-lua-links` (`phase3-xml-lua-link/v1`)
+
+Contract phase mapping:
+
+1. Phase 1 = `xml-tree`
+2. Phase 2 = `lua-analysis`
+3. Phase 3 = `xml-lua-links`
+
+Rules:
+
+- Markdown addon docs under `docs/addon-api` and generated platform docs under `docs/war-api` are presentation artifacts only.
+- Markdown/docs are never semantic input.
+- Missing or invalid contract artifacts are hard errors.
+- Degraded/fallback semantic modes are not supported.
+
 ## Generator Commands
 
 - `go run tools/api_doc_gen/main.go generate addon ./data/raw ./docs/addon-api`
@@ -257,3 +278,5 @@ This is a lightweight diagnostics UI for MCP health checks and client-contract v
 When running through Docker Compose, the service mounts the parent AddOns directory as `/workspace_addons` (read-only), and `data/raw/.api_doc_gen_source_root` resolves to that path.
 
 `docs/addon-api` is intentionally treated as an intermediate output and is gitignored. Regenerate it with `make generate-addon` when needed.
+
+`docs/war-api` and `docs/site/content` are generated outputs for presentation and MCP consumption; they are not semantic inputs to the pipeline.

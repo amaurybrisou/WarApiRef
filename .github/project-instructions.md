@@ -31,12 +31,18 @@ Priorities:
 
 When working on analysis or graph issues, think in phases:
 
-1. XML parse
-2. XML structural facts
-3. Lua parse
-4. XML ↔ Lua correlation
-5. semantic enrichment
-6. catalog / graph emission
+1. Phase 1 contract input: `xml-tree` (`phase1-tree/v1`)
+2. Phase 2 contract input: `lua-analysis` (`phase2-lua/v1`)
+3. Phase 3 contract input: `xml-lua-links` (`phase3-xml-lua-link/v1`)
+4. semantic enrichment
+5. catalog / graph emission
+
+Contract-only rule:
+
+- Semantic input is contract artifacts only (`xml-tree`, `lua-analysis`, `xml-lua-links`).
+- Missing/invalid contracts are hard failures.
+- Degraded/fallback semantic modes are not allowed.
+- Markdown under `docs/addon-api`, `docs/war-api`, and site docs is presentation output only and must never be used as semantic evidence.
 
 For any bug, identify:
 - what evidence exists

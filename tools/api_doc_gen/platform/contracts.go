@@ -215,6 +215,10 @@ func LoadContractInputs(addonAPIRoot string) (ContractModel, error) {
 		model.Links = append(model.Links, artifact)
 	}
 
+	if err := validateContractModelConsistency(model); err != nil {
+		return ContractModel{}, err
+	}
+
 	return model, nil
 }
 
@@ -506,7 +510,7 @@ func validateXMLTreeArtifact(path string, artifact contractXMLTree) error {
 	if strings.TrimSpace(artifact.SourceFile) == "" {
 		return fmt.Errorf("xml-tree %s: missing source_file", graph.NormalizePath(path))
 	}
-	if artifact.Nodes == nil || len(artifact.Nodes) == 0 {
+	if len(artifact.Nodes) == 0 {
 		return fmt.Errorf("xml-tree %s: missing nodes", graph.NormalizePath(path))
 	}
 	for _, node := range artifact.Nodes {
@@ -560,6 +564,84 @@ func validateXMLLuaLinksArtifact(path string, artifact contractXMLLuaLinks) erro
 	if artifact.HandlerLinks == nil {
 		return fmt.Errorf("xml-lua-links %s: missing handler_links", graph.NormalizePath(path))
 	}
+	return nil
+}
+
+func validateContractModelConsistency(model ContractModel) error {
+	if len(model.XMLTrees) == 0 {
+		return fmt.Errorf("contract consistency: missing xml-tree artifacts")
+	}
+	if len(model.LuaAnalyses) == 0 {
+		return fmt.Errorf("contract consistency: missing lua-analysis artifacts")
+	}
+	if len(model.Links) == 0 {
+		return fmt.Errorf("contract consistency: missing xml-lua-links artifacts")
+	}
+
+	xmlAddons := map[string]bool{}
+	xmlNodesByAddon := map[string]map[string]bool{}
+	for _, tree := range model.XMLTrees {
+		addon := strings.TrimSpace(tree.Addon)
+		xmlAddons[addon] = true
+		nodeSet, ok := xmlNodesByAddon[addon]
+		if !ok {
+			nodeSet = map[string]bool{}
+			xmlNodesByAddon[addon] = nodeSet
+		}
+		for _, node := range tree.Nodes {
+			nodeSet[strings.TrimSpace(node.NodeID)] = true
+		}
+	}
+
+	luaAddons := map[string]bool{}
+	luaSymbolsByAddon := map[string]map[string]bool{}
+	for _, analysis := range model.LuaAnalyses {
+		addon := strings.TrimSpace(analysis.Addon)
+		luaAddons[addon] = true
+		symbolSet, ok := luaSymbolsByAddon[addon]
+		if !ok {
+			symbolSet = map[string]bool{}
+			luaSymbolsByAddon[addon] = symbolSet
+		}
+		for _, fn := range analysis.Functions {
+			for _, candidate := range []string{fn.QualifiedName, fn.DeclaredName, fn.ShortName} {
+				if name := strings.TrimSpace(candidate); name != "" {
+					symbolSet[strings.ToLower(name)] = true
+				}
+			}
+		}
+	}
+
+	for _, links := range model.Links {
+		addon := strings.TrimSpace(links.Addon)
+		if !xmlAddons[addon] {
+			return fmt.Errorf("contract consistency: xml-lua-links addon %q has no matching xml-tree artifacts", addon)
+		}
+		if !luaAddons[addon] {
+			return fmt.Errorf("contract consistency: xml-lua-links addon %q has no matching lua-analysis artifacts", addon)
+		}
+
+		nodeSet := xmlNodesByAddon[addon]
+		symbolSet := luaSymbolsByAddon[addon]
+		for i, link := range links.HandlerLinks {
+			parentNodeID := strings.TrimSpace(link.XML.ParentNodeID)
+			if parentNodeID == "" {
+				return fmt.Errorf("contract consistency: xml-lua-links addon %q handler_links[%d] missing xml.parent_node_id", addon, i)
+			}
+			if !nodeSet[parentNodeID] {
+				return fmt.Errorf("contract consistency: xml-lua-links addon %q handler_links[%d] references unknown xml parent_node_id %q", addon, i, parentNodeID)
+			}
+
+			luaName := firstNonEmpty(link.Lua.QualifiedName, link.Lua.DeclaredName, link.Lua.ShortName)
+			if luaName == "" {
+				return fmt.Errorf("contract consistency: xml-lua-links addon %q handler_links[%d] missing lua function identity", addon, i)
+			}
+			if !symbolSet[strings.ToLower(luaName)] {
+				return fmt.Errorf("contract consistency: xml-lua-links addon %q handler_links[%d] references unknown lua function %q", addon, i, luaName)
+			}
+		}
+	}
+
 	return nil
 }
 

@@ -270,6 +270,10 @@ type BuildOptions struct {
 // BuildWithOptions builds the platform corpus with explicit options.
 // Use this instead of [Build] to enable the source-first pipeline path.
 func BuildWithOptions(contracts ContractModel, opts BuildOptions) Corpus {
+	if err := validateContractModelConsistency(contracts); err != nil {
+		panic("contract-only pipeline guard: " + err.Error())
+	}
+
 	input := semanticInputFromContracts(contracts)
 	corpus := Corpus{
 		SourceRoot:  contracts.Root,
@@ -1991,9 +1995,9 @@ func inferParameter(functionName string, index int, samples []string) (string, s
 func inferReturns(name string) []string {
 	last := graph.LastSegment(name)
 	if strings.HasPrefix(last, "Get") || strings.HasPrefix(last, "Does") {
-		return []string{"Observed as a query-style API. The concrete return shape is not inferable from addon-api docs alone."}
+		return []string{"Observed as a query-style API. The concrete return shape is not inferable from contract artifacts alone."}
 	}
-	return []string{"Not confidently inferable from addon-api docs alone."}
+	return []string{"Not confidently inferable from contract artifacts alone."}
 }
 
 func inferSideEffects(name string) []string {
@@ -2017,7 +2021,7 @@ func inferSideEffects(name string) []string {
 	case strings.HasPrefix(name, "Send"):
 		return []string{"Sends a client action request back into the engine."}
 	default:
-		return []string{"No side effect is confidently inferable from addon-api docs alone."}
+		return []string{"No side effect is confidently inferable from contract artifacts alone."}
 	}
 }
 
@@ -2355,10 +2359,10 @@ func inferEventHandlerPattern(name string) string {
 
 func inferEventPayload(name string) []string {
 	if strings.HasPrefix(name, "SystemData.Events.") {
-		return []string{"Payload shape is not inferable from addon-api docs alone; treat this as an engine event identifier."}
+		return []string{"Payload shape is not inferable from contract artifacts alone; treat this as an engine event identifier."}
 	}
 	if isWindowEventName(name) {
-		return []string{"Window callback arguments are not fully inferable from addon-api docs alone."}
+		return []string{"Window callback arguments are not fully inferable from contract artifacts alone."}
 	}
 	return []string{"Payload not inferable from addon-level documentation alone."}
 }
@@ -2539,7 +2543,7 @@ func xmlHandlerNotes(name string) []string {
 		conf := xmlHandlerArgsConfidence(name)
 		notes = append(notes, "Expected callback signature inferred from common WAR XML handler conventions ("+conf+" confidence).")
 	} else {
-		notes = append(notes, "Expected binding arguments remain uncertain because addon-api docs capture symbol linkage, not full handler signatures.")
+		notes = append(notes, "Expected binding arguments remain uncertain because contract artifacts capture symbol linkage, not full handler signatures.")
 	}
 	if !strings.HasPrefix(name, "On") {
 		notes = append(notes, "Non-On* handler names should be reviewed manually; most XML hooks are On* events.")
@@ -2807,20 +2811,6 @@ func bindingEvidence(bindings []BindingDoc, limit int) []string {
 		if len(result) == limit {
 			break
 		}
-	}
-	return result
-}
-
-func savedVariableEvidence(values []SavedVariableDoc, limit int) []string {
-	result := []string{}
-	for _, item := range values {
-		result = append(result, item.Addon+": "+item.Name)
-		if len(result) == limit {
-			break
-		}
-	}
-	if len(result) == 0 {
-		return []string{"No saved-variable rows were available in the generated globals page."}
 	}
 	return result
 }

@@ -94,39 +94,6 @@ type BindingDoc struct {
 	Resolved    bool
 }
 
-type FlowDoc struct {
-	Addon string
-	Steps []FlowStepDoc
-}
-
-type FlowStepDoc struct {
-	Phase    string
-	Detail   string
-	Evidence []string
-}
-
-type ExampleDoc struct {
-	Addon       string
-	Frame       string
-	Event       string
-	LuaFunction string
-}
-
-type GlobalNamespaceDoc struct {
-	Addon string
-	Name  string
-}
-
-type SavedVariableDoc struct {
-	Addon string
-	Name  string
-}
-
-type GlobalsDoc struct {
-	Namespaces     []GlobalNamespaceDoc
-	SavedVariables []SavedVariableDoc
-}
-
 type Confidence string
 
 const (

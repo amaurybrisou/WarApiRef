@@ -12,8 +12,8 @@
 // lists, local/global scope, and downstream call chains. This is a genuine
 // parse step on real source files, not a reconstruction from flattened docs.
 //
-// Callers should prefer [ExtractFromFile] over the synthetic reconstruction
-// in platform/phase_integration.go, which is the degraded fallback path.
+// [ExtractFromFile] is the contract-native Lua extraction path used by the
+// semantic pipeline.
 package lua_ast
 
 import (
