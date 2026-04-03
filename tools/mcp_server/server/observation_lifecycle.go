@@ -27,12 +27,12 @@ const (
 
 // lifecycleRecord is the on-disk representation of one observation entry.
 type lifecycleRecord struct {
-	IngestedAtUTC   string         `json:"ingested_at_utc"`
-	SourcePath      string         `json:"source_path,omitempty"`
-	Observation     map[string]any `json:"observation"`
-	LifecycleStatus string         `json:"lifecycle_status,omitempty"`
+	IngestedAtUTC   string           `json:"ingested_at_utc"`
+	SourcePath      string           `json:"source_path,omitempty"`
+	Observation     map[string]any   `json:"observation"`
+	LifecycleStatus string           `json:"lifecycle_status,omitempty"`
 	Review          *lifecycleReview `json:"review,omitempty"`
-	PromotedAtUTC   string         `json:"promoted_at_utc,omitempty"`
+	PromotedAtUTC   string           `json:"promoted_at_utc,omitempty"`
 }
 
 type lifecycleReview struct {
@@ -407,6 +407,16 @@ func (a *App) promoteObservation(req schema.PromoteObservationRequest) schema.Pr
 		return resp
 	}
 
+	// Validate symbols referenced in claims before promotion.
+	// This is a non-blocking check: warnings are issued but promotion proceeds.
+	// Rationale: symbols may be forward-references to planned symbol docs, or may resolve
+	// on the next docs regeneration after new symbols are added.
+	if rec.Observation != nil {
+		if symbolWarnings := validateClaimSymbols(a, rec); len(symbolWarnings) > 0 {
+			resp.Warnings = append(resp.Warnings, symbolWarnings...)
+		}
+	}
+
 	// Determine seed targets.
 	var seedPaths []string
 	if strings.TrimSpace(req.SeedPathOverride) != "" {
@@ -440,6 +450,7 @@ func (a *App) promoteObservation(req schema.PromoteObservationRequest) schema.Pr
 	promotedAt := time.Now().UTC().Format(time.RFC3339)
 
 	// Build the markdown fragment to append for each claim.
+	// Fragment includes HTML comment metadata for audit trail and seed file traceability.
 	fragment := buildPromotionFragment(rec, entryID, promotedAt)
 
 	for _, seedRelPath := range seedPaths {
@@ -632,10 +643,17 @@ func (a *App) regenerateFromPromotedKnowledge(req schema.RegenerateRequest) sche
 }
 
 // buildPromotionFragment creates the markdown block appended to a seed file.
+// The fragment includes HTML comment metadata identifying:
+//   - observation entry_id (for traceability and duplicate prevention)
+//   - promoted_at timestamp (audit trail)
+//   - source verification indicators (addon name, confidence level)
+//
+// This metadata enables seed file versioning without structural changes.
 func buildPromotionFragment(rec lifecycleRecord, entryID, promotedAt string) string {
 	var sb strings.Builder
 	sb.WriteString("\n")
-	sb.WriteString(fmt.Sprintf("<!-- observation:%s promoted:%s -->\n", entryID, promotedAt))
+	// Root metadata marker
+	sb.WriteString(fmt.Sprintf("<!-- OBSERVATION:%s (promoted:%s) -->\n", entryID, promotedAt))
 
 	obs := rec.Observation
 	if obs == nil {
@@ -698,13 +716,21 @@ func buildPromotionFragment(rec lifecycleRecord, entryID, promotedAt string) str
 }
 
 // isDuplicatePromotion checks whether the seed file already contains a promotion marker for entryID.
+// Checks both old format (<!-- observation:... -->) and new format (<!-- OBSERVATION:... -->)
+// for backwards compatibility during migration.
 func isDuplicatePromotion(seedAbsPath, entryID string) bool {
 	content, err := os.ReadFile(seedAbsPath)
 	if err != nil {
 		return false
 	}
-	marker := fmt.Sprintf("<!-- observation:%s ", entryID)
-	return strings.Contains(string(content), marker)
+	// Check new format with uppercase marker
+	markerNew := fmt.Sprintf("<!-- OBSERVATION:%s ", entryID)
+	if strings.Contains(string(content), markerNew) {
+		return true
+	}
+	// Check old format with lowercase marker for backwards compatibility
+	markerOld := fmt.Sprintf("<!-- observation:%s ", entryID)
+	return strings.Contains(string(content), markerOld)
 }
 
 // appendToSeedFile creates or appends the fragment to the seed file.
@@ -719,4 +745,87 @@ func appendToSeedFile(seedAbsPath, fragment string) error {
 	defer f.Close()
 	_, err = f.WriteString(fragment)
 	return err
+}
+
+// validateClaimSymbols validates that symbols referenced in observation claims
+// can be resolved in the generated docs. Returns warnings for unresolved symbols.
+//
+// Validation is non-blocking: warnings are issued but do not prevent promotion.
+// Rationale:
+//   - Symbols may be forward-references to planned symbol docs
+//   - Symbols may resolve after next docs regeneration
+//   - Observation-level symbols are informational (not enforcing semantic contracts)
+//
+// Warning is generated if:
+//   - claims[].symbols[] contains symbol_id that cannot be found in generated docs
+//   - lookup returns neither exact nor fuzzy match
+func validateClaimSymbols(a *App, rec lifecycleRecord) []model.Warning {
+	warnings := []model.Warning{}
+
+	// Ensure store is loaded before attempting symbol resolution.
+	a.ensureStoreLoaded()
+	if a.storeErr != nil || a.store == nil {
+		// Store load failed; skip symbol validation with advisory warning.
+		warnings = append(warnings, model.Warning{
+			Code:    "store_unavailable",
+			Message: "symbol store unavailable; skipping symbol validation. Promoted symbols will not be verified.",
+		})
+		return warnings
+	}
+
+	obs := rec.Observation
+	if obs == nil {
+		return warnings
+	}
+
+	claims, ok := obs["claims"].([]any)
+	if !ok || len(claims) == 0 {
+		return warnings
+	}
+
+	resolvedSymbols := make(map[string]bool)
+
+	for _, rawClaim := range claims {
+		claim, ok := rawClaim.(map[string]any)
+		if !ok {
+			continue
+		}
+
+		symbols, ok := claim["symbols"].([]any)
+		if !ok || len(symbols) == 0 {
+			continue
+		}
+
+		for _, s := range symbols {
+			symbolID, ok := s.(string)
+			if !ok || strings.TrimSpace(symbolID) == "" {
+				continue
+			}
+			symbolID = strings.TrimSpace(symbolID)
+
+			// Cache lookup results to avoid redundant queries.
+			if _, alreadyChecked := resolvedSymbols[symbolID]; alreadyChecked {
+				continue
+			}
+			resolvedSymbols[symbolID] = false
+
+			// Attempt exact and fuzzy lookup.
+			_, found, _, _ := a.store.LookupSymbol(symbolID, "")
+			if found {
+				resolvedSymbols[symbolID] = true
+				continue
+			}
+
+			// Symbol not found: issue warning.
+			warnings = append(warnings, model.Warning{
+				Code: "unresolved_symbol",
+				Message: fmt.Sprintf("symbol %q (referenced in claim) could not be resolved in generated docs. "+
+					"This is advisory; symbols may be forward-references or resolve after docs regeneration. "+
+					"Consider verifying symbol spelling and whether the canonical docs should be updated.",
+					symbolID),
+			})
+		}
+	}
+
+	return warnings
 }
