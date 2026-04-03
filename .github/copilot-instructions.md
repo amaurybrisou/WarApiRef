@@ -1,5 +1,9 @@
 # Copilot Instructions For WAR_API_Ref
 
+## Project wide instructions
+
+[See .github/project-instructions.md](./project-instructions.md)
+
 ## Scope
 
 This workspace builds a multi-phase WAR addon API documentation pipeline and static docs site.
@@ -13,6 +17,7 @@ For architecture and contract context, read [README.md](../README.md) first.
 
 ## Non-Negotiable Rules
 
+- DO NOT create random markdown reports files in the repo. If you need to document something, put it in a clearly named file under the /agent-docs or a subdirectory named 'agent-docs' with a clear title and structure.
 - Keep changes minimal and targeted to the request.
 - Do not invent relationships, correlations, or graph edges.
 - Prefer explicit evidence over heuristics.
@@ -82,3 +87,7 @@ For non-trivial tasks, summarize:
 2. what was fixed and why
 3. what was validated
 4. what remains unresolved
+
+## Languages instructions
+
+- For Go code, follow the [Go instructions](./go.instructions.md).
