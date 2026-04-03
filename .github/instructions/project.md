@@ -1,133 +1,113 @@
-# CLEAN PROJECT — STRICT INSTRUCTIONS
+# PROJECT INSTRUCTIONS
 
-## CONTEXT
+## Goal
 
-This repository implements a multi-phase analysis pipeline:
+Maintain a reliable multi-phase analysis pipeline for:
 - XML parsing
 - Lua analysis
-- Semantic enrichment
-- Catalog generation
+- semantic enrichment
+- catalog / graph generation
 
-The current codebase contains inconsistencies, dead code, and partial structures.
-This task is a **strict cleanup phase** before any further feature work.
-
----
-
-## GLOBAL RULES
-
-- DO NOT add new features
-- DO NOT change business logic
-- DO NOT guess missing intent
-- KEEP behavior strictly identical
-- PRIORITIZE consistency and determinism
+Priorities:
+1. correctness
+2. determinism
+3. traceability
+4. minimal safe changes
 
 ---
 
-## TASKS
+## Core Rules
 
-### 1. REMOVE DEAD CODE
-
-- Delete:
-  - unused functions
-  - unused structs/types
-  - unused files
-- Remove:
-  - commented-out code blocks
-  - legacy parsing logic not used in `RunPipeline`
+- Do not guess missing intent or semantics
+- Do not invent relationships, edges, or correlations
+- Prefer explicit evidence over heuristics
+- Keep behavior unchanged unless the task explicitly requires otherwise
+- Make the smallest safe change possible
+- Do not refactor unrelated parts while fixing a targeted issue
 
 ---
 
-### 2. NORMALIZE NAMING
+## Pipeline Discipline
 
-Apply a **single naming strategy** across the entire project:
+When working on analysis or graph issues, think in phases:
 
-- XML entities
-- Lua functions
-- EnrichedElement
-- Catalog structures
+1. XML parse
+2. XML structural facts
+3. Lua parse
+4. XML ↔ Lua correlation
+5. semantic enrichment
+6. catalog / graph emission
 
-Rules:
-- consistent casing (choose one: camelCase OR PascalCase OR snake_case)
-- no duplicated semantic variants
-- no implicit naming differences
+For any bug, identify:
+- what evidence exists
+- in which phase it appears
+- in which phase it is lost, ignored, or mis-modeled
 
----
-
-### 3. REMOVE DUPLICATES
-
-Ensure **one canonical representation** for:
-
-- functions
-- events
-- XML elements
-
-Tasks:
-- merge duplicates
-- remove redundant entries
-- align references
+Do not patch blindly at the graph layer if the evidence is missing upstream.
 
 ---
 
-### 4. FIX IMPORTS
+## Cleanup Rules
 
+Allowed:
+- remove confirmed dead code
 - remove unused imports
-- group imports (std / external / internal)
-- ensure deterministic builds
+- normalize names only through existing canonicalization paths
+- deduplicate only when equivalence is proven
+- reduce noisy logs
+
+Not allowed:
+- speculative cleanup
+- architecture rewrites during a bugfix
+- changing emitted semantics without proof
+- deleting code that is not confirmed unused
 
 ---
 
-### 5. PACKAGE STRUCTURE
+## Naming and Canonicalization
 
-Enforce clear separation:
+- Use one canonical lookup strategy for keys
+- Normalize at ingestion / accumulator boundaries
+- Do not change display labels unless explicitly required
+- Preserve public/output naming when possible
 
-- `/xml` → XML parsing only
-- `/lua` → Lua analysis only
-- `/semantic` → enrichment logic
-- `/catalog` → final structures
-
-Tasks:
-- move misplaced files
-- remove circular dependencies
-- ensure clean boundaries
+Canonicalization must prevent duplicate internal symbols, not silently alter published meaning.
 
 ---
 
-### 6. LOGGING
+## Graph Rules
 
-- remove noisy logs
-- keep only:
-  - structured debug logs
-  - pipeline validation logs
+- Structural nodes and behavioral nodes must stay distinct
+- XML element types are not XML events
+- XML events are not Lua functions
+- Only emit edges backed by existing pipeline evidence
+- Prefer no edge over a weak or overstated edge
 
----
-
-### 7. PIPELINE VALIDATION
-
-Validate:
-
-- `RunPipeline` executes end-to-end
-- no nil / empty unexpected states
-- no broken references
-- output remains stable
+When a node is dangling, classify it before patching:
+- no current evidence
+- missing emission rule
+- missing XML ↔ Lua correlation
+- model / vocabulary limitation
 
 ---
 
-## OUTPUT REQUIREMENTS
+## Validation
 
-Provide:
+After meaningful changes:
+- validate edited files
+- run the relevant generator / pipeline when possible
+- regenerate artifacts when graph/catalog logic changed
+- compare before/after results
+- report unresolved cases explicitly
 
-1. List of removed files / functions / structs
-2. List of renamed elements
-3. List of deduplicated entities
-4. Summary of package restructuring
-5. Confirmation that pipeline runs successfully
+If full runtime validation is unavailable, say so clearly.
 
 ---
 
-## STRICT WARNING
+## Output Expectations
 
-If something is unclear:
-→ DO NOT GUESS
-→ KEEP EXISTING BEHAVIOR
-
-Cleanup must improve clarity without altering functionality.
+For non-trivial changes, report briefly:
+1. files changed
+2. what was removed / normalized / fixed
+3. what was validated
+4. what remains unresolved
