@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, Minmap, Queue Queuer, TidyQueue |
-| Files seen in | Code/ScenarioAlerter/ScenarioAlerter.lua, QueueQueuer.lua, TidyQueue.lua, core.lua |
+| Addons seen in | CMap, Enemy, Minmap, Queue Queuer, TidyQueue |
+| Files seen in | CMap.lua, Code/ScenarioAlerter/ScenarioAlerter.lua, QueueQueuer.lua, TidyQueue.lua, core.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | DoTask, LeaveNextScenarios, LeaveQueues, LeaveScenario, OnInitialize, OnShutdown |
@@ -60,10 +60,11 @@
 
 ## Description
 
-SystemData.SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE field accessed by 4 addons; commonly found in DoTask and LeaveNextScenarios, LeaveQueues, LeaveScenario, OnInitialize, OnShutdown, _ScenarioAlerterEnabledChanged, lua_call contexts.
+SystemData.SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE field accessed by 5 addons; commonly found in DoTask and LeaveNextScenarios, LeaveQueues, LeaveScenario, OnInitialize, OnShutdown, _ScenarioAlerterEnabledChanged, lua_call contexts.
 
 ## Seen In
 
+- CMap
 - Enemy
 - Minmap
 - Queue Queuer

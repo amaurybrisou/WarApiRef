@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 17 addons
+- Seen in: 18 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Crusher: UpdateDisplayedConfig, DAoCBuff: ShowMessageWindow, DuffTimer: SetAdvWindow, Enemy: CombatLogUI_ConfigDialog_OnInitialize, Enemy: GroupIconsUI_ConfigDialog_OnInitialize, Enemy: GuardUI_ConfigDialog_OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 31 |
-| Global usage count | 31 |
+| Lua usage count | 35 |
+| Global usage count | 35 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ScrollWindowUpdateScrollRect(arg1)
 
 ## Description
 
-Observed as a window function across 17 addons.
+Observed as a window function across 18 addons.
 
 ## Parameters
 
@@ -95,6 +95,7 @@ Observed as a window function across 17 addons.
 - RVMOD_Manager
 - RVMOD_Targets
 - Shinies
+- SocialWindow 2.0
 - Tome Titan
 - Vectors
 - Wikki's Cooldown Bar

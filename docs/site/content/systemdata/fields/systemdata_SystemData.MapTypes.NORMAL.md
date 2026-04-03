@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Atlas, Map, MapMonster, Minmap |
-| Files seen in | Map.lua, Map/Main.lua, Source/MapMonster_Calibrate.lua, core.lua |
+| Addons seen in | Atlas, CMap, EA_LoadingScreen, Map, MapMonster, Minmap |
+| Files seen in | CMap.lua, Map.lua, Map/Main.lua, Source/MapMonster_Calibrate.lua, core.lua, source/scenarioenterloadingscreen.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | Calibrate_CreateMap, Initialize, InitializeMapDisplay, SlideZoom, lua_call |
+| Example locations | Calibrate_CreateMap, InitScenarioEnterLoadScreen, Initialize, InitializeMapDisplay, SlideZoom, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,15 +59,21 @@
 
 ## Description
 
-SystemData.SystemData.MapTypes.NORMAL field accessed by 4 addons; commonly found in Calibrate_CreateMap and Initialize, InitializeMapDisplay, SlideZoom, lua_call contexts.
+SystemData.SystemData.MapTypes.NORMAL field accessed by 6 addons; commonly found in Calibrate_CreateMap and InitScenarioEnterLoadScreen, Initialize, InitializeMapDisplay, SlideZoom, lua_call contexts.
 
 ## Seen In
 
 - Atlas
+- CMap
+- EA_LoadingScreen
 - Map
 - MapMonster
 - Minmap
 
+## Related APIs
+
+- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
+
 ## Notes
 
-- Observed in contexts: Calibrate_CreateMap, Initialize, InitializeMapDisplay, SlideZoom, lua_call
+- Observed in contexts: Calibrate_CreateMap, InitScenarioEnterLoadScreen, Initialize, InitializeMapDisplay, SlideZoom, lua_call

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | RoR_SoR, RvRContribution, ZCurse_Profiler, xHUD |
-| Files seen in | CurseProfilerCompiled.lua, RoR_SoR.lua, rvr-contribution.lua, xHUD.lua |
+| Addons seen in | CMap, RoR_SoR, RvRContribution, ZCurse_Profiler, xHUD |
+| Files seen in | CMap.lua, CurseProfilerCompiled.lua, RoR_SoR.lua, rvr-contribution.lua, xHUD.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Initialize, OnInitialize, OnShutdown, RegisterSelfEvents, lua_call |
@@ -60,10 +60,11 @@
 
 ## Description
 
-SystemData.SystemData.Events.PUBLIC_QUEST_UPDATED field accessed by 4 addons; commonly found in Initialize and OnInitialize, OnShutdown, RegisterSelfEvents, lua_call contexts.
+SystemData.SystemData.Events.PUBLIC_QUEST_UPDATED field accessed by 5 addons; commonly found in Initialize and OnInitialize, OnShutdown, RegisterSelfEvents, lua_call contexts.
 
 ## Seen In
 
+- CMap
 - RoR_SoR
 - RvRContribution
 - ZCurse_Profiler
@@ -71,6 +72,7 @@ SystemData.SystemData.Events.PUBLIC_QUEST_UPDATED field accessed by 4 addons; co
 
 ## Related APIs
 
+- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 

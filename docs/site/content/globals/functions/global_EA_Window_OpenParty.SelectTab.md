@@ -84,6 +84,10 @@ Observed as a global function across 1 addons.
 
 - Pure: OnOpenPartiesWindow -> EA_Window_OpenParty.SelectTab(EA_Window_OpenParty.TAB_NEARBY)
 
+## Related APIs
+
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+
 ## Notes
 
 - Only one addon surfaced this symbol in the current corpus.

@@ -1,6 +1,6 @@
 # WAR Addon Development API Reference
 
-Generated from addon-api rooted at `C:/Return of Reckoning/Interface/AddOns/WAR_API_Ref/docs/addon-api`. The source corpus contained 27410 function docs, 15557 frame docs, 1 handler docs, and 91 event docs.
+Generated from addon-api rooted at `/workspace/docs/addon-api`. The source corpus contained 27410 function docs, 15557 frame docs, 1 handler docs, and 91 event docs.
 
 ## Coverage
 

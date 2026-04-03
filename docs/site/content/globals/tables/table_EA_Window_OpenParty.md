@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Pure, Squared |
+| Addons seen in | NoUselessMods-Assist, Pure, Squared |
 | Files seen in | Source/PurePlayer.lua |
 | Namespaces detected | EA_Window_OpenParty |
 | Source kinds | lua_calls |
-| Example locations | Pure: OnOpenPartiesWindow, Squared: OnMenuClickShowWarband, Squared: OnViewGroupOptions |
+| Example locations | NoUselessMods-Assist: OnFormWarparty, Pure: OnOpenPartiesWindow, Squared: OnMenuClickShowWarband, Squared: OnViewGroupOptions |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
+| Lua usage count | 5 |
 | Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 3 member functions; the primary API surface for 2 addons.
+Shared function table with 3 member functions; the primary API surface for 3 addons.
 
 ## Functions
 
@@ -71,11 +71,13 @@ Shared function table with 3 member functions; the primary API surface for 2 add
 
 ## Seen In
 
+- NoUselessMods-Assist
 - Pure
 - Squared
 
 ## Examples
 
+- NoUselessMods-Assist: OnFormWarparty -> EA_Window_OpenParty.OpenToManageTab()
 - Pure: OnOpenPartiesWindow -> EA_Window_OpenParty.SelectTab(EA_Window_OpenParty.TAB_NEARBY)
 - Pure: OnOpenPartiesWindow -> EA_Window_OpenParty.ToggleFullWindow()
 - Squared: OnMenuClickShowWarband -> EA_Window_OpenParty.OpenToManageTab()

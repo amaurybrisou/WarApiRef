@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 16 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Arsenal Rank: isInGroup, AutoBand: cmd_dump_party_data, DeepSleep: AddGroupMenuItems, EZGuard: UpdateGroup, Enemy: _GroupsUpdate, EveryBodyGuard: ActivateGuard_Hard |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 29 |
-| Global usage count | 29 |
+| Lua usage count | 30 |
+| Global usage count | 30 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ PartyUtils.GetPartyData()
 
 ## Description
 
-Observed as a global function across 16 addons.
+Observed as a global function across 17 addons.
 
 ## Parameters
 
@@ -91,6 +91,7 @@ Observed as a global function across 16 addons.
 - Info_DeathBlow
 - LibGroup
 - LibGuard
+- NoUselessMods-Assist
 - PartyCast
 - Pure
 - Squared
@@ -107,10 +108,6 @@ Observed as a global function across 16 addons.
 - EZGuard: UpdateGroup -> PartyUtils.GetPartyData()
 - Enemy: _GroupsUpdate -> PartyUtils.GetPartyData()
 - EveryBodyGuard: ActivateGuard_Hard -> PartyUtils.GetPartyData()
-
-## Used With
-
-- [PartyUtils.GetWarbandData](global_PartyUtils.GetWarbandData.md) (HIGH 100/100) - Global Function
 
 ## Affects
 

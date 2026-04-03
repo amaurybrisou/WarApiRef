@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 22 addons
+- Seen in: 24 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdjustTheTip, Amethyst, Aura, Busted, CCTV, CDown, Calling, DAoCBuff |
-| Files seen in | AdjustTheTip.lua, Amethyst.lua, Busted.lua, CCTV.lua, CDownFrames.lua, CallingNotification.lua, Code/Guard/Guard.lua, Code/TalismanAlerter/TalismanAlerter.lua |
+| Addons seen in | AdjustTheTip, Amethyst, Aura, Busted, CCTV, CDown, CMap, Calling |
+| Files seen in | AdjustTheTip.lua, Amethyst.lua, Busted.lua, CCTV.lua, CDownFrames.lua, CMap.lua, CallingNotification.lua, Code/Guard/Guard.lua |
 | Namespaces detected | WindowStopAlphaAnimation |
 | Source kinds | lua_calls |
 | Example locations | AdjustTheTip: UpdateUnit, Amethyst: ShowCastBar, Amethyst: ShowDummyCastBar, Amethyst: StartInteractTimer, Aura: Deactivate, Busted: ClearAlertFlash |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 53 |
-| Global usage count | 53 |
+| Lua usage count | 57 |
+| Global usage count | 57 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ WindowStopAlphaAnimation(arg1)
 
 ## Description
 
-Observed as a window function across 22 addons.
+Observed as a window function across 24 addons.
 
 ## Parameters
 
@@ -89,9 +89,11 @@ Observed as a window function across 22 addons.
 - Busted
 - CCTV
 - CDown
+- CMap
 - Calling
 - DAoCBuff
 - DuffTimer
+- EA_LoadingScreen
 - EA_UiDebugTools
 - Enemy
 - LibAddonButton

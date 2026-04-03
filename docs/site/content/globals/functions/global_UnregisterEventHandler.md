@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: MEDIUM
 - Confidence score: 68/100
-- Seen in: 104 addons
+- Seen in: 116 addons
 
 ## Confidence Assessment
 
@@ -26,14 +26,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, ActionFraction, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, ArmorGraphicToggle, AuctionStats, Aura |
-| Files seen in | AceAddon-3.0.lua, AdvancedPetAssist.lua, AdvancedRenownTraining.lua, AggroMeter.lua, ArmorGraphicToggle.lua, AuctionAssist.lua, AuctionStats.lua, AutoDismount.lua |
+| Files seen in | AAOTracker.lua, AceAddon-3.0.lua, AdvancedPetAssist.lua, AdvancedRenownTraining.lua, AggroMeter.lua, ArmorGraphicToggle.lua, AuctionAssist.lua, AuctionStats.lua |
 | Namespaces detected | UnregisterEventHandler |
 | Source kinds | lua_calls |
 | Example locations | Ace: AceAddon_OnUpdate_DONOTTOUCH, ActionFraction: Initialize, ActionFraction: Shutdown, AdvancedPetAssist: UnregisterLoadingEnd, AdvancedRenownTrainer: OnReload, AggroMeter: Shutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 483 |
-| Global usage count | 483 |
+| Lua usage count | 506 |
+| Global usage count | 506 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -69,7 +69,7 @@ Observed removing previously registered global runtime handlers.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | eventId | Observed as a SystemData or runtime event identifier. | Observed values: "EA_CareerResourceWindow", "LPET", "Root" |
-| handlerName | Observed as a Lua handler function reference. | Observed values: "AceAddon_OnUpdate_DONOTTOUCH", "ActionFraction.Initialize", "ActionFractionWindow.UpdateVisibility" |
+| handlerName | Observed as a Lua handler function reference. | Observed values: "AAOTracker.BuffTracker", "AceAddon_OnUpdate_DONOTTOUCH", "ActionFraction.Initialize" |
 
 ## Returns
 
@@ -111,6 +111,7 @@ Observed removing previously registered global runtime handlers.
 - DeMoNiCore
 - DetauntHelper
 - Ding
+- EA_ThreePartBar
 - EZGuard
 - Effigy
 - Enemy
@@ -136,12 +137,15 @@ Observed removing previously registered global runtime handlers.
 - MegaphonePlusPlus
 - NerfedButtons
 - NoOverheal
+- NoUselessMods-Assist
 - Obsidian
 - OilTimer
+- Paint the leader
 - PartyAd
 - PartyCast
 - PeaceOut
 - Phantom
+- PieTracker
 - Pure
 - Queue Queuer
 - QuickNameActions+
@@ -165,10 +169,13 @@ Observed removing previously registered global runtime handlers.
 - ScenarioStats
 - SessionRPs
 - Shinies
+- SimpleXY
+- SocialWindow 2.0
 - SquaredClick
 - Statdoll Remix
 - StopRes
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThankTheResser
 - TheSeeker
@@ -177,9 +184,14 @@ Observed removing previously registered global runtime handlers.
 - Trakario
 - TurretRange
 - Vectors
+- WBStutterLess
 - WSCT
+- WTes
+- WarBoard_AAOTracker
+- WarBoard_WarWhisperer
 - WhoHealedMe
 - followTheLeader
+- fpsbox
 - hideInf
 - nLootLink
 - rorAutoInviter
@@ -206,13 +218,20 @@ Observed removing previously registered global runtime handlers.
 
 ## Used With
 
+- [LibSlash.IsSlashCmdRegistered](global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
+- [LibSlash.RegisterWSlashCmd](global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 - [DestroyWindow](global_DestroyWindow.md) (HIGH 75/100) - Global Function
 
 ## Affects
 
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_ACTIVE_TACTICS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ACTIVE_TACTICS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field

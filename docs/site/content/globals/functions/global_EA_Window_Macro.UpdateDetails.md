@@ -93,6 +93,10 @@ Observed as a global function across 2 addons.
 - Enemy: OnMacroMouseDrag -> EA_Window_Macro.UpdateDetails(macro_id)
 - Enemy: SetMacro -> EA_Window_Macro.UpdateDetails(slot)
 
+## Related APIs
+
+- [IconLButtonUp](../../events/game_events/game_event_IconLButtonUp.md) (MEDIUM 43/100) - Game Event
+
 ## Used With
 
 - [Cursor.IconOnCursor](global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
@@ -101,3 +105,4 @@ Observed as a global function across 2 addons.
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

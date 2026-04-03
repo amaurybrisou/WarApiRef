@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 101 addons
+- Seen in: 109 addons
 
 ## Confidence Assessment
 
@@ -31,8 +31,8 @@
 | Example locations | Ace: New, ActionBarHide: New, ActionFraction: Initialize, AdjustTheTip: AddTargetHealthToMouseOver, AdjustTheTip: CreateCheckBoxMenuItem, AdjustTheTip: CreateSliderMenuItem |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 730 |
-| Global usage count | 730 |
+| Lua usage count | 764 |
+| Global usage count | 764 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -97,6 +97,7 @@ Observed instantiating repeated UI elements from an XML template.
 - BankWindowFix
 - Bloody Mess
 - BuffHead
+- CMap
 - CharacterScreenTabFix
 - CleanCastbar
 - CleansingBuddy
@@ -109,12 +110,15 @@ Observed instantiating repeated UI elements from an XML template.
 - DammazKron
 - DetauntHelper
 - DuffTimer
+- EA_LoadingScreen
 - EA_ScenarioGroupWindow
+- EA_ThreePartBar
 - EZCraftX
 - EZGuard
 - Effigy
 - Emojii
 - Enemy
+- FozAuction
 - GCDsaver
 - GetStats
 - Group Icons
@@ -133,6 +137,7 @@ Observed instantiating repeated UI elements from an XML template.
 - MarkBuff
 - MiniMapMonster
 - Miracle Grow Remix
+- MoraleSet
 - Motion
 - NaturalLog
 - OverheadFonts
@@ -165,10 +170,13 @@ Observed instantiating repeated UI elements from an XML template.
 - TidyRoll
 - Tokens
 - Tome Titan
+- Tortall_DPS
 - TurretRange
 - VerticalMorale
+- WBStutterLess
 - WarBoard
 - WarBoard_Menu
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar
@@ -187,10 +195,10 @@ Observed instantiating repeated UI elements from an XML template.
 
 - Ace: New -> CreateWindowFromTemplate(w.name, base, w.parent)
 - Ace: New -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
-- ActionBarHide: New -> CreateWindowFromTemplate(w.name, base, w.parent)
 - ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_ComboBox_DefaultResizable", w.parent)
-- ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_EditBox_DefaultFrame_Multiline", w.parent)
-- ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_Default_SliderBar", w.parent)
+- ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultCheckBox", w.parent)
+- ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
+- ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_EditBox_DefaultFrame", w.parent)
 
 ## Related APIs
 

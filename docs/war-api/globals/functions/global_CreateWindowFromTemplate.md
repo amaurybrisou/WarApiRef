@@ -196,9 +196,9 @@ Observed instantiating repeated UI elements from an XML template.
 - Ace: New -> CreateWindowFromTemplate(w.name, base, w.parent)
 - Ace: New -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
 - ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_ComboBox_DefaultResizable", w.parent)
-- ActionBarHide: New -> CreateWindowFromTemplate(w.name, base, w.parent)
+- ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultCheckBox", w.parent)
+- ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
 - ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_EditBox_DefaultFrame", w.parent)
-- ActionBarHide: New -> CreateWindowFromTemplate(w.name, "EA_EditBox_DefaultFrame_Multiline", w.parent)
 
 ## Related APIs
 

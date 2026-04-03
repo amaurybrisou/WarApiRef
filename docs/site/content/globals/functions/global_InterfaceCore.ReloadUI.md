@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Effigy, Enemy, SessionRPs, TastyButtons, Vertigo, nLootLink |
+| Addons seen in | Effigy, Enemy, SessionRPs, TastyButtons, Vertigo, WBStutterLess, nLootLink |
 | Files seen in | Code/Assist/Assist.lua, Code/CombatLog/CombatLog.lua, Code/Core/Main.lua, Code/GroupIcons/GroupIcons.lua, Code/Guard/Guard.lua, Code/TalismanAlerter/TalismanAlerter.lua, Code/Timer/Timer.lua, Code/UnitFrames/UnitFrames.lua |
 | Namespaces detected | InterfaceCore |
 | Source kinds | lua_calls |
 | Example locations | Effigy: SlashHandler, Enemy: AssistUI_ConfigDialog_OnReset, Enemy: CombatLogResetSettings, Enemy: CombatLogUI_ConfigDialog_OnReset, Enemy: GroupIconsUI_ConfigDialog_OnReset, Enemy: GuardUI_ConfigDialog_OnReset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 19 |
-| Global usage count | 19 |
+| Lua usage count | 20 |
+| Global usage count | 20 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ InterfaceCore.ReloadUI()
 
 ## Description
 
-Observed as a global function across 6 addons.
+Observed as a global function across 7 addons.
 
 ## Parameters
 
@@ -87,6 +87,7 @@ Observed as a global function across 6 addons.
 - SessionRPs
 - TastyButtons
 - Vertigo
+- WBStutterLess
 - nLootLink
 
 ## Examples

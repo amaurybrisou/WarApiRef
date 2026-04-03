@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -30,8 +30,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | KeyBar, Swift Assist |
-| Files seen in | KeyBar.lua, SwiftAssist.lua |
+| Addons seen in | KeyBar, Swift Assist, bigger_MacroWindow |
+| Files seen in | KeyBar.lua, SwiftAssist.lua, source/macrowindow.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | Initialize, OnInitialize, SwiftAssist.OnMacroUpdated, SystemData.Events.MACRO_UPDATED, event_page, event_registration |
@@ -61,12 +61,13 @@
 
 ## Description
 
-SystemData.SystemData.Events.MACRO_UPDATED field accessed by 2 addons; commonly found in Initialize and OnInitialize, SwiftAssist.OnMacroUpdated, SystemData.Events.MACRO_UPDATED, event_page, event_registration, lua_call contexts.
+SystemData.SystemData.Events.MACRO_UPDATED field accessed by 3 addons; commonly found in Initialize and OnInitialize, SwiftAssist.OnMacroUpdated, SystemData.Events.MACRO_UPDATED, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
 - KeyBar
 - Swift Assist
+- bigger_MacroWindow
 
 ## Related APIs
 

@@ -68,7 +68,7 @@ SystemData.SystemData.Events.CONVERSATION_TEXT_ARRIVED field accessed by 1 addon
 
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
-- [GuildWindow.IsPlayerInAGuild](../../globals/functions/global_GuildWindow.IsPlayerInAGuild.md) (HIGH 71/100) - Global Function
+- [GuildWindow.IsPlayerInAGuild](../../globals/functions/global_GuildWindow.IsPlayerInAGuild.md) (HIGH 83/100) - Global Function
 
 ## Notes
 

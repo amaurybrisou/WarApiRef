@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Arsenal Rank, AutoBand, DeepSleep, EZGuard, Enemy, EveryBodyGuard, Group Icons SG, GuardLine |
-| Files seen in | Code/Core/Groups/EnemyPlayer.lua, Code/Core/Groups/Groups.lua, Source/Hopper.lua, Source/LibGuard.lua, Source/PureGroup.lua, Source/PureGroupPet.lua, source/MapPin.lua |
+| Addons seen in | Arsenal Rank, AutoBand, CMap, DeepSleep, EA_OpenPartyWindow, EZGuard, Enemy, EveryBodyGuard |
+| Files seen in | Code/Core/Groups/EnemyPlayer.lua, Code/Core/Groups/Groups.lua, Source/Hopper.lua, Source/LibGuard.lua, Source/PureGroup.lua, Source/PureGroupPet.lua, source/MapPin.lua, source/openpartywindow.lua |
 | Namespaces detected | PartyUtils |
 | Source kinds | lua_calls |
-| Example locations | Arsenal Rank: isInGroup, AutoBand: cmd_dump_party_data, DeepSleep: AddGroupMenuItems, EZGuard: UpdateGroup, Enemy: Groups_OnBattlegroupMemberUpdated, Enemy: Groups_OnGroupStatusUpdated |
+| Example locations | Arsenal Rank: isInGroup, AutoBand: cmd_dump_party_data, CMap: CmapLButton, CMap: TidyQueueLButton, DeepSleep: AddGroupMenuItems, EA_OpenPartyWindow: CountWarband |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 75 |
-| Global usage count | 13 |
+| Lua usage count | 97 |
+| Global usage count | 15 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 13 member functions; the primary API surface for 29 addons.
+Shared function table with 15 member functions; the primary API surface for 33 addons.
 
 ## Functions
 
@@ -74,6 +74,8 @@ Shared function table with 13 member functions; the primary API surface for 29 a
 - PartyUtils.IsPlayerInWarband
 - PartyUtils.IsWarbandFull
 - PartyUtils.MoveWarbandMember
+- PartyUtils.SetMasterLooter
+- PartyUtils.SwapWarbandMembers
 
 ## Observed Members
 
@@ -83,7 +85,9 @@ Shared function table with 13 member functions; the primary API surface for 29 a
 
 - Arsenal Rank
 - AutoBand
+- CMap
 - DeepSleep
+- EA_OpenPartyWindow
 - EZGuard
 - Enemy
 - EveryBodyGuard
@@ -95,6 +99,7 @@ Shared function table with 13 member functions; the primary API surface for 29 a
 - LibGuard
 - MapPin
 - MegaphonePlusPlus
+- NoUselessMods-Assist
 - PartyCast
 - Pure
 - Queue Queuer
@@ -102,6 +107,7 @@ Shared function table with 13 member functions; the primary API surface for 29 a
 - Refer
 - ResHelp
 - RoR_SoR
+- SocialWindow 2.0
 - Squared
 - Swift Assist
 - TokenMachine
@@ -115,10 +121,10 @@ Shared function table with 13 member functions; the primary API surface for 29 a
 
 - Arsenal Rank: isInGroup -> PartyUtils.GetPartyData()
 - AutoBand: cmd_dump_party_data -> PartyUtils.GetPartyData()
-- DeepSleep: AddGroupMenuItems -> PartyUtils.GetPartyData()
-- EZGuard: UpdateGroup -> PartyUtils.IsPlayerInWarband(EZGuard.Player.name)
-- EZGuard: UpdateGroup -> PartyUtils.GetWarbandParty(partyIndex)
-- EZGuard: UpdateGroup -> PartyUtils.GetPartyData()
+- CMap: CmapLButton -> PartyUtils.GetWarbandLeader()
+- CMap: CmapLButton -> PartyUtils.IsPartyActive()
+- CMap: TidyQueueLButton -> PartyUtils.GetWarbandLeader()
+- CMap: TidyQueueLButton -> PartyUtils.IsPartyActive()
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 36 addons
+- Seen in: 38 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, BuffHead, CCTV, Crusher, EZCraftX, EZGuard |
+| Addons seen in | Ace, ActionBarHide, Amethyst, BuffHead, CCTV, CMap, Crusher, EZCraftX |
 | Files seen in | CCTV.lua, Castbar.lua, Code/UnitFrames/UnitFramePart.lua, EffectFrame.lua, EffectTracker/EffectBar.lua, Entry.lua, LibGUI.lua, LibGui.lua |
 | Namespaces detected | LabelSetTextAlign |
 | Source kinds | lua_calls |
-| Example locations | Ace: Align, ActionBarHide: Align, Amethyst: Align, BuffHead: SetLayout, CCTV: UpdateSettings, Crusher: Align |
+| Example locations | Ace: Align, ActionBarHide: Align, Amethyst: Align, BuffHead: SetLayout, CCTV: UpdateSettings, CMap: Align |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 53 |
-| Global usage count | 53 |
+| Lua usage count | 55 |
+| Global usage count | 55 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -89,6 +89,7 @@ Observed updating label text or label styling on existing controls.
 - Amethyst
 - BuffHead
 - CCTV
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -112,6 +113,7 @@ Observed updating label text or label styling on existing controls.
 - TargetRing
 - Tokens
 - WSCT
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse

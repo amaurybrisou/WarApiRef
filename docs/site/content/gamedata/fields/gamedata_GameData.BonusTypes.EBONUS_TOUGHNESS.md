@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CaVES, Effigy, Statdoll, Statdoll Light, Statdoll Remix |
-| Files seen in | Statdoll.lua, StatdollLocal.lua, States/EffigyStatePlayer.lua, source/CaVES.lua |
+| Addons seen in | CaVES, Effigy, FozAuction, Statdoll, Statdoll Light, Statdoll Remix |
+| Files seen in | Source/auctionwindowsearchcontrols.lua, Statdoll.lua, StatdollLocal.lua, States/EffigyStatePlayer.lua, source/CaVES.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | GetValues, SetReference, UpdatePlayerToughness, UpdateToughnessLabel, getLocalStats, lua_call |
+| Example locations | GetValues, SetReference, SpawnStatisticMenu, UpdatePlayerToughness, UpdateToughnessLabel, getLocalStats |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,16 +59,17 @@
 
 ## Description
 
-GameData.GameData.BonusTypes.EBONUS_TOUGHNESS field accessed by 5 addons; commonly found in GetValues and SetReference, UpdatePlayerToughness, UpdateToughnessLabel, getLocalStats, lua_call contexts.
+GameData.GameData.BonusTypes.EBONUS_TOUGHNESS field accessed by 6 addons; commonly found in GetValues and SetReference, SpawnStatisticMenu, UpdatePlayerToughness, UpdateToughnessLabel, getLocalStats, lua_call contexts.
 
 ## Seen In
 
 - CaVES
 - Effigy
+- FozAuction
 - Statdoll
 - Statdoll Light
 - Statdoll Remix
 
 ## Notes
 
-- Observed in contexts: GetValues, SetReference, UpdatePlayerToughness, UpdateToughnessLabel, getLocalStats, lua_call
+- Observed in contexts: GetValues, SetReference, SpawnStatisticMenu, UpdatePlayerToughness, UpdateToughnessLabel, getLocalStats

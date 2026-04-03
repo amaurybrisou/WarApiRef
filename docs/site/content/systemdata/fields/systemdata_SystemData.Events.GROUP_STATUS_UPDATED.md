@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -30,15 +30,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | EZGuard, Enemy, EveryBodyGuard, Info_DeathBlow, LibGroup, Pure, Squared |
+| Addons seen in | EZGuard, Enemy, EveryBodyGuard, Info_DeathBlow, LibGroup, Pure, Squared, WBStutterLess |
 | Files seen in | Code/Core/Groups/Groups.lua, EZGuard.lua, EveryBodyGuard.lua, Info_DeathBlow.lua, LibGroup.lua, Source/PureGroup.lua, Source/PureGroupPet.lua, Squared.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
-| Example locations | GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoad, OnShutdown |
+| Example locations | GroupWindowHook, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoad |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 15 |
-| Global usage count | 15 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 3 |
 | Initialization flow references | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.GROUP_STATUS_UPDATED field accessed by 7 addons; commonly found in GroupsInitialize and Initialize, LoadUnitFrame, OnInitialize, OnLoad, OnShutdown, OnUnload, SetMode, Shutdown, SquaredGroup.UpdateGroupStatus, SystemData.Events.GROUP_STATUS_UPDATED, UnloadUnitFrame, event_page, event_registration, lua_call contexts.
+SystemData.SystemData.Events.GROUP_STATUS_UPDATED field accessed by 8 addons; commonly found in GroupWindowHook and GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoad, OnShutdown, OnUnload, SetMode, Shutdown, SquaredGroup.UpdateGroupStatus, SystemData.Events.GROUP_STATUS_UPDATED, UnloadUnitFrame, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
@@ -72,22 +72,14 @@ SystemData.SystemData.Events.GROUP_STATUS_UPDATED field accessed by 7 addons; co
 - LibGroup
 - Pure
 - Squared
+- WBStutterLess
 
 ## Related APIs
 
-- [WindowSetDrawWhenInterfaceHidden](../../window_api/functions/window_WindowSetDrawWhenInterfaceHidden.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
-## Used With
-
-- [SystemData.Events.BATTLEGROUP_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_PLAYER_ADDED](systemdata_SystemData.Events.GROUP_PLAYER_ADDED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_UPDATED](systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOADING_END](systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_PET_HEALTH_UPDATED](systemdata_SystemData.Events.PLAYER_PET_HEALTH_UPDATED.md) (HIGH 100/100) - SystemData Field
-
 ## Notes
 
-- Observed in contexts: GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoad, OnShutdown
+- Observed in contexts: GroupWindowHook, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoad

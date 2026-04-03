@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CleanUnitFrames, DuelInvite, Effigy, Enemy, HealGrid, Pure, Refer, Squared |
-| Files seen in | Code/UnitFrames/UnitFrame.lua, Source/PureGroup.lua, Source/PureTarget.lua, Units/HealGridUnitFriendlyTarget.lua |
+| Addons seen in | Assist, CleanUnitFrames, DuelInvite, EA_OpenPartyWindow, Effigy, Enemy, HealGrid, PieTracker |
+| Files seen in | Code/UnitFrames/UnitFrame.lua, Source/PureGroup.lua, Source/PureTarget.lua, Units/HealGridUnitFriendlyTarget.lua, source/openpartywindowtabmanage.lua, source/openpartywindowtabnearby.lua, source/socialwindowbuddylisttabfriends.lua, source/socialwindowtabfriends.lua |
 | Namespaces detected | PlayerMenuWindow |
 | Source kinds | lua_calls |
-| Example locations | CleanUnitFrames: OnRButtonUp, DuelInvite: OnDuel, Effigy: FriendlyRightClickMenu, Enemy: UnitFramesUI_UnitFrame_OnRButtonUp, HealGrid: ShowDropdownMenu, Pure: OnRButtonUp |
+| Example locations | Assist: PlayerMenuWindowShowMenu, CleanUnitFrames: OnRButtonUp, DuelInvite: OnDuel, EA_OpenPartyWindow: OnRButtonUpGroupLeaderLine, EA_OpenPartyWindow: ShowWarbandMemberMenu, Effigy: FriendlyRightClickMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 38 |
+| Lua usage count | 59 |
 | Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 3 member functions; the primary API surface for 9 addons.
+Shared function table with 3 member functions; the primary API surface for 13 addons.
 
 ## Functions
 
@@ -71,24 +71,28 @@ Shared function table with 3 member functions; the primary API surface for 9 add
 
 ## Seen In
 
+- Assist
 - CleanUnitFrames
 - DuelInvite
+- EA_OpenPartyWindow
 - Effigy
 - Enemy
 - HealGrid
+- PieTracker
 - Pure
 - Refer
+- SocialWindow 2.0
 - Squared
 - xHUD
 
 ## Examples
 
-- CleanUnitFrames: OnRButtonUp -> PlayerMenuWindow.ShowMenu(targetName)
-- DuelInvite: OnDuel -> PlayerMenuWindow.Done()
-- Effigy: FriendlyRightClickMenu -> PlayerMenuWindow.ShowMenu(TargetInfo:UnitName("selffriendlytarget"), TargetInfo:UnitEntityId("selffriendlytarget"), nil)
-- Enemy: UnitFramesUI_UnitFrame_OnRButtonUp -> PlayerMenuWindow.NewCustomItem(GetString(StringTables.Default.LABEL_GROUP_OPTIONS), EA_Window_OpenParty.OpenToManageTab, false)
-- Enemy: UnitFramesUI_UnitFrame_OnRButtonUp -> PlayerMenuWindow.NewCustomItem(L "Unit frames options", function()Enemy.UI_ConfigDialog_Open("UnitFrames")end, false)
-- Enemy: UnitFramesUI_UnitFrame_OnRButtonUp -> PlayerMenuWindow.NewCustomItem(L "Group icons options", function()Enemy.UI_ConfigDialog_Open("GroupIcons")end, false)
+- Assist: PlayerMenuWindowShowMenu -> PlayerMenuWindow.NewCustomItem(L "Set as Assist 1", Assist.Setat1, false)
+- Assist: PlayerMenuWindowShowMenu -> PlayerMenuWindow.NewCustomItem(L "Set as Assist 2", Assist.Setat2, false)
+- Assist: PlayerMenuWindowShowMenu -> PlayerMenuWindow.NewCustomItem(L "Set as Assist 3", Assist.Setat3, false)
+- Assist: PlayerMenuWindowShowMenu -> PlayerMenuWindow.NewCustomItem(L "Set as Friendly 1", Assist.Setft1, false)
+- Assist: PlayerMenuWindowShowMenu -> PlayerMenuWindow.NewCustomItem(L "Set as Friendly 2", Assist.Setft2, false)
+- Assist: PlayerMenuWindowShowMenu -> PlayerMenuWindow.NewCustomItem(L "Set as Friendly 3", Assist.Setft3, false)
 
 ## Notes
 

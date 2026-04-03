@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 31 addons
+- Seen in: 33 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Amethyst, Aura, CDown, Crusher, EZCraftX, EZGuard, Effigy |
+| Addons seen in | Ace, Amethyst, Aura, CDown, CMap, Crusher, EZCraftX, EZGuard |
 | Files seen in | CDownFrames.lua, FlagCap.lua, InfoScroller.lua, LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, RoR_SoR.lua, Source/AuraHelpers.lua |
 | Namespaces detected | DynamicImageSetTextureOrientation |
 | Source kinds | lua_calls |
-| Example locations | Ace: TexFlip, Amethyst: TexFlip, Aura: SetDynamicImageTexture, CDown: Create, Crusher: TexFlip, EZCraftX: TexFlip |
+| Example locations | Ace: TexFlip, Amethyst: TexFlip, Aura: SetDynamicImageTexture, CDown: Create, CMap: TexFlip, Crusher: TexFlip |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 37 |
-| Global usage count | 37 |
+| Lua usage count | 39 |
+| Global usage count | 39 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -88,6 +88,7 @@ Observed mutating runtime image resources on existing controls.
 - Amethyst
 - Aura
 - CDown
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -109,6 +110,7 @@ Observed mutating runtime image resources on existing controls.
 - TargetRing
 - Tokens
 - VerticalMorale
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -122,8 +124,8 @@ Observed mutating runtime image resources on existing controls.
 - Amethyst: TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
 - Aura: SetDynamicImageTexture -> DynamicImageSetTextureOrientation(window, mirror)
 - CDown: Create -> DynamicImageSetTextureOrientation(TimeBarEnd, true)
+- CMap: TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
 - Crusher: TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
-- EZCraftX: TexFlip -> DynamicImageSetTextureOrientation(self.name, flipped)
 
 ## Used With
 

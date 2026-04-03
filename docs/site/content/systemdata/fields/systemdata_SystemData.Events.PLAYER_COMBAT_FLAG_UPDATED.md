@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 17 addons
+- Seen in: 19 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionBarHide, ArmorGraphicToggle, Atlas, Aura, CNC, Crusher, DAoCBuff, DPSMeter |
-| Files seen in | ActionBarHide.lua, ArmorGraphicToggle.lua, CNC.lua, Code/Core/Groups/Groups.lua, DPSMeter.lua, IHYTM.lua, Map.lua, Map/Main.lua |
+| Addons seen in | AbilityNotifier, ActionBarHide, ArmorGraphicToggle, Atlas, Aura, CNC, Crusher, DAoCBuff |
+| Files seen in | AbilityNotifier.lua, ActionBarHide.lua, ArmorGraphicToggle.lua, CNC.lua, Code/Core/Groups/Groups.lua, DPSMeter.lua, IHYTM.lua, Map.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | ArmorGraphicToggle_Disable, ArmorGraphicToggle_Enable, GroupsInitialize, Initialize, JumpStartEventBasedAuras, LoadUnitFrame |
@@ -60,10 +60,11 @@
 
 ## Description
 
-SystemData.SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED field accessed by 17 addons; commonly found in ArmorGraphicToggle_Disable and ArmorGraphicToggle_Enable, GroupsInitialize, Initialize, JumpStartEventBasedAuras, LoadUnitFrame, OnDisable, OnEnable, OnInit, OnInitialize, OnLoad, OnShutdown, OnSkavenStatusChange, RegisterEventHandlers, RegisterSelfEvents, RegisterStateInfoForCombat, Shutdown, UnloadUnitFrame, UnregisterSelfEvents, lua_call contexts.
+SystemData.SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED field accessed by 19 addons; commonly found in ArmorGraphicToggle_Disable and ArmorGraphicToggle_Enable, GroupsInitialize, Initialize, JumpStartEventBasedAuras, LoadUnitFrame, OnDisable, OnEnable, OnInit, OnInitialize, OnLoad, OnShutdown, OnSkavenStatusChange, RegisterEventHandlers, RegisterSelfEvents, RegisterStateInfoForCombat, Shutdown, UnloadUnitFrame, UnregisterSelfEvents, lua_call contexts.
 
 ## Seen In
 
+- AbilityNotifier
 - ActionBarHide
 - ArmorGraphicToggle
 - Atlas
@@ -76,6 +77,7 @@ SystemData.SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED field accessed by 17 add
 - Enemy
 - I HATE YOU THIS MUCH
 - Map
+- MoraleSet
 - Motion
 - PlanB
 - Pure
@@ -85,14 +87,20 @@ SystemData.SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED field accessed by 17 add
 ## Related APIs
 
 - [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
+- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Used With
 
-- [SystemData.Events.RELOAD_INTERFACE](systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
+- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
+- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 

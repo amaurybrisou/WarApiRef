@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ding, Effigy, FastFriends, Pure, Squared, Statdoll, Statdoll Light, TimeToDie |
-| Files seen in | Ding.lua, FastFriends.lua, Source/PurePlayer.lua, SquaredGroup.lua, SquaredPlayer.lua, Statdoll.lua, States/EffigyStatePlayer.lua, States/EffigyStateTargets.lua |
+| Addons seen in | Ding, Effigy, FastFriends, FozAuction, Pure, Squared, Statdoll, Statdoll Light |
+| Files seen in | Ding.lua, FastFriends.lua, Source/PurePlayer.lua, Source/auctionwindow.lua, SquaredGroup.lua, SquaredPlayer.lua, Statdoll.lua, States/EffigyStatePlayer.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | AverageReport, DefaultSyncForChar, DisplayStatistic, FormatDefenses, LevelUp, OnLoad |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 18 |
-| Global usage count | 18 |
+| Lua usage count | 19 |
+| Global usage count | 19 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,13 +59,14 @@
 
 ## Description
 
-GameData.GameData.Player.level field accessed by 9 addons; commonly found in AverageReport and DefaultSyncForChar, DisplayStatistic, FormatDefenses, LevelUp, OnLoad, OnPlayerLevelUpdated, ShouldSync, Slash, UpdateExp, UpdateGroup, UpdateLevel, UpdatePlayerHP, UpdatePlayerLevel, UpdateRestedExp, UpdateTarget, calcextra, lua_call contexts.
+GameData.GameData.Player.level field accessed by 10 addons; commonly found in AverageReport and DefaultSyncForChar, DisplayStatistic, FormatDefenses, LevelUp, OnLoad, OnPlayerLevelUpdated, PopulateSearchResultsRow, ShouldSync, Slash, UpdateExp, UpdateGroup, UpdateLevel, UpdatePlayerHP, UpdatePlayerLevel, UpdateRestedExp, UpdateTarget, calcextra, lua_call contexts.
 
 ## Seen In
 
 - Ding
 - Effigy
 - FastFriends
+- FozAuction
 - Pure
 - Squared
 - Statdoll

@@ -98,10 +98,7 @@ Observed as a global function across 6 addons.
 
 ## Used With
 
-- [wstring.gsub](global_wstring.gsub.md) (HIGH 100/100) - Global Function
-- [wstring.upper](global_wstring.upper.md) (HIGH 100/100) - Global Function
 - [wstring.find](global_wstring.find.md) (HIGH 75/100) - Global Function
-- [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

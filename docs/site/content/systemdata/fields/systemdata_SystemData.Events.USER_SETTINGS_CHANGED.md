@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 11 addons
+- Seen in: 12 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Brizio's Crappy Computer Medic, CNC, Calling, IdentityFound, Keyset, PlayEffectsOn, Quick Performance Toggle, RVMOD_Manager |
+| Addons seen in | Brizio's Crappy Computer Medic, CNC, Calling, EA_UiModWindow, IdentityFound, Keyset, PlayEffectsOn, Quick Performance Toggle |
 | Files seen in | CCM.lua, CNC.lua, CallingKeybinding.lua, Core.lua, IdentityFound.lua, RVMOD_Manager.lua, RVMOD_SquaredDistances.lua, Source/PlayEffectsOn.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | CombatCheck, Initialize, LoadProfile, OnInitialize, OnLButtonUpB1, OnLButtonUpB2 |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 23 |
-| Global usage count | 23 |
+| Lua usage count | 24 |
+| Global usage count | 24 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,13 +60,14 @@
 
 ## Description
 
-SystemData.SystemData.Events.USER_SETTINGS_CHANGED field accessed by 11 addons; commonly found in CombatCheck and Initialize, LoadProfile, OnInitialize, OnLButtonUpB1, OnLButtonUpB2, OnLoadComplete, OnRawDeviceInput, OnShutdown, RegisterEventHandlers, SetMode, Shutdown, Switch, Unload, handler, lua_call, perf1, perf2, perfC, perfH, perfL, perfM, perfU contexts.
+SystemData.SystemData.Events.USER_SETTINGS_CHANGED field accessed by 12 addons; commonly found in CombatCheck and Initialize, LoadProfile, OnInitialize, OnLButtonUpB1, OnLButtonUpB2, OnLoadComplete, OnRawDeviceInput, OnShutdown, RegisterEventHandlers, SaveAndReloadAdvanced, SetMode, Shutdown, Switch, Unload, handler, lua_call, perf1, perf2, perfC, perfH, perfL, perfM, perfU contexts.
 
 ## Seen In
 
 - Brizio's Crappy Computer Medic
 - CNC
 - Calling
+- EA_UiModWindow
 - IdentityFound
 - Keyset
 - PlayEffectsOn
@@ -78,14 +79,9 @@ SystemData.SystemData.Events.USER_SETTINGS_CHANGED field accessed by 11 addons; 
 
 ## Related APIs
 
-- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
 - [BroadcastEvent](../../globals/functions/global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
-
-## Used With
-
-- [BroadcastEvent](../../globals/functions/global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 
 ## Notes
 

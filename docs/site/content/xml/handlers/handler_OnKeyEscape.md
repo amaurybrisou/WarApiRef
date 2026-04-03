@@ -23,13 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoBand, DuffTimer, EA_UiDebugTools, Emojii, Enemy, MapPin, Mass Refine, XpStatus+G |
+| Addons seen in | AutoBand, DuffTimer, EA_UiDebugTools, Emojii, Enemy, MapPin, Mass Refine, SocialWindow 2.0 |
 | Namespaces detected | OnKeyEscape |
 | Source kinds | bindings, xml_handlers |
 | Example locations | AutoBand: .OnKeyEscape, DuffTimer: .OnKeyEscape, EA_UiDebugTools: .OnKeyEscape, Emojii: .OnKeyEscape, Enemy: .OnKeyEscape, MapPin: .OnKeyEscape |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 23 |
+| Lua usage count | 25 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 9 addons.
+XML handler event observed across 10 addons.
 
 ## Expected Lua Binding
 
@@ -74,6 +74,7 @@ function(...)
 - Enemy
 - MapPin
 - Mass Refine
+- SocialWindow 2.0
 - XpStatus+G
 - wbLeadHelper
 

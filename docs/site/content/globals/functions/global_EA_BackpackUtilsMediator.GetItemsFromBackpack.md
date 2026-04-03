@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 131
+- Raw weighted score: 143
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AuctionStats, BagOMatic, TidyRoll |
-| Files seen in | AuctionAssist.lua, BagOMatic.lua, CustomAutoRoll.lua |
+| Addons seen in | AuctionStats, BagOMatic, FozAuction, TidyRoll |
+| Files seen in | AuctionAssist.lua, BagOMatic.lua, CustomAutoRoll.lua, Source/auctionwindowsellcontrols.lua |
 | Namespaces detected | EA_BackpackUtilsMediator |
 | Source kinds | lua_calls |
-| Example locations | AuctionStats: OnSearchResultsReceived, AuctionStats: PutUpForAuction, BagOMatic: SalvageHook, BagOMatic: findItemInBagPack, TidyRoll: OnListLbuttonUp |
+| Example locations | AuctionStats: OnSearchResultsReceived, AuctionStats: PutUpForAuction, BagOMatic: SalvageHook, BagOMatic: findItemInBagPack, FozAuction: DropItemIfPossible, FozAuction: ItemSlotMouseOver |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -66,13 +66,13 @@ EA_BackpackUtilsMediator.GetItemsFromBackpack(arg1)
 
 ## Description
 
-Observed as a global function across 3 addons.
+Observed as a global function across 4 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: CreateAuctionWindow.itemInventorySlot.backpack, backpackType |
+| arg1 | Observed as a function or method reference. | Observed values: AuctionWindowSellControls.itemInventorySlot.backpack, CreateAuctionWindow.itemInventorySlot.backpack, backpackType |
 
 ## Returns
 
@@ -86,6 +86,7 @@ Observed as a global function across 3 addons.
 
 - AuctionStats
 - BagOMatic
+- FozAuction
 - TidyRoll
 
 ## Examples
@@ -94,11 +95,22 @@ Observed as a global function across 3 addons.
 - AuctionStats: PutUpForAuction -> EA_BackpackUtilsMediator.GetItemsFromBackpack(CreateAuctionWindow.itemInventorySlot.backpack)
 - BagOMatic: SalvageHook -> EA_BackpackUtilsMediator.GetItemsFromBackpack(backpackType)
 - BagOMatic: findItemInBagPack -> EA_BackpackUtilsMediator.GetItemsFromBackpack(backpackType)
-- TidyRoll: OnListLbuttonUp -> EA_BackpackUtilsMediator.GetItemsFromBackpack(backpackType)
+- FozAuction: DropItemIfPossible -> EA_BackpackUtilsMediator.GetItemsFromBackpack(backpackType)
+- FozAuction: ItemSlotMouseOver -> EA_BackpackUtilsMediator.GetItemsFromBackpack(AuctionWindowSellControls.itemInventorySlot.backpack)
 
 ## Used With
 
+- [Cursor.Clear](global_Cursor.Clear.md) (HIGH 100/100) - Global Function
+- [Cursor.IconOnCursor](global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
+- [Cursor.PickUp](global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
 - [EA_BackpackUtilsMediator.GetCurrentBackpackType](global_EA_BackpackUtilsMediator.GetCurrentBackpackType.md) (HIGH 100/100) - Global Function
+- [EA_BackpackUtilsMediator.GetCursorForBackpack](global_EA_BackpackUtilsMediator.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
+- [SystemData.TrialAlert.ALERT_AUCTION](../../systemdata/fields/systemdata_SystemData.TrialAlert.ALERT_AUCTION.md) (HIGH 100/100) - SystemData Field
+- [EA_BackpackUtilsMediator.ReleaseLockForSlot](global_EA_BackpackUtilsMediator.ReleaseLockForSlot.md) (HIGH 90/100) - Global Function
+
+## Affects
+
+- [SystemData.TrialAlert.ALERT_AUCTION](../../systemdata/fields/systemdata_SystemData.TrialAlert.ALERT_AUCTION.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 17 addons
+- Seen in: 21 addons
 
 ## Confidence Assessment
 
@@ -29,7 +29,7 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CM_ClosetGoblin, Effigy, HealHoverAssist, NAMBLA, QuickNameActions+, RVAPI_ColorDialog, RVAPI_Range, RVMOD_3DPortrait |
+| Addons seen in | CM_ClosetGoblin, EA_LoadingScreen, EA_OpenPartyWindow, EA_UiModWindow, Effigy, HealHoverAssist, NAMBLA, QuickNameActions+ |
 | Files seen in | ClosetGoblin.lua, Effigy.lua, HealHoverAssist.lua, NAMBLA.lua, QuickNameActionsRessurected.lua, RVAPI_ColorDialog.lua, RVAPI_Range.lua, RVMOD_3DPortrait.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
@@ -60,11 +60,14 @@
 
 ## Description
 
-SystemData.SystemData.Events.ALL_MODULES_INITIALIZED field accessed by 17 addons; commonly found in Initialize and NAMBLA_Initialize, OnInitialize, OnShutdown, RegisterSelfEvents, Shutdown, lua_call contexts.
+SystemData.SystemData.Events.ALL_MODULES_INITIALIZED field accessed by 21 addons; commonly found in Initialize and NAMBLA_Initialize, OnInitialize, OnShutdown, RegisterSelfEvents, Shutdown, lua_call contexts.
 
 ## Seen In
 
 - CM_ClosetGoblin
+- EA_LoadingScreen
+- EA_OpenPartyWindow
+- EA_UiModWindow
 - Effigy
 - HealHoverAssist
 - NAMBLA
@@ -80,6 +83,7 @@ SystemData.SystemData.Events.ALL_MODULES_INITIALIZED field accessed by 17 addons
 - RoR_SoR
 - Sequencer
 - UnrealDBAnnouncer
+- WBStutterLess
 - hideInf
 
 ## Related APIs

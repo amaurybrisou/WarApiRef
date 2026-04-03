@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AuctionStats, BagOMatic, Crusher, Motion, TidyRoll, zMailMod |
-| Files seen in | Source/Crusher.lua, Source/Motion.lua |
+| Addons seen in | AuctionStats, BagOMatic, Crusher, FozAuction, Motion, TidyRoll, zMailMod |
+| Files seen in | Source/Crusher.lua, Source/Motion.lua, Source/auctionwindowsellcontrols.lua |
 | Namespaces detected | EA_BackpackUtilsMediator |
 | Source kinds | lua_calls |
 | Example locations | AuctionStats: OnSearchResultsReceived, AuctionStats: PutUpForAuction, BagOMatic: SalvageHook, BagOMatic: findItemInBagPack, Crusher: StopCrushing, Crusher: continueCrushing |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 22 |
-| Global usage count | 6 |
+| Lua usage count | 32 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 6 member functions; the primary API surface for 6 addons.
+Shared function table with 7 member functions; the primary API surface for 7 addons.
 
 ## Functions
 
@@ -66,6 +66,7 @@ Shared function table with 6 member functions; the primary API surface for 6 add
 - EA_BackpackUtilsMediator.GetCursorForBackpack
 - EA_BackpackUtilsMediator.GetItemsFromBackpack
 - EA_BackpackUtilsMediator.ReleaseAllLocksForWindow
+- EA_BackpackUtilsMediator.ReleaseLockForSlot
 - EA_BackpackUtilsMediator.RequestLockForSlot
 
 ## Observed Members
@@ -77,6 +78,7 @@ Shared function table with 6 member functions; the primary API surface for 6 add
 - AuctionStats
 - BagOMatic
 - Crusher
+- FozAuction
 - Motion
 - TidyRoll
 - zMailMod

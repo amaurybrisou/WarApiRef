@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionFraction, AdjustTheTip, Amethyst, BuffHead, CleanUnitFrames, Crusher, DAoCBuff |
+| Addons seen in | Ace, ActionFraction, AdjustTheTip, Amethyst, BuffHead, CMap, CleanUnitFrames, Crusher |
 | Files seen in | Code/Assist/Assist.lua, Code/CombatLog/CombatLog.lua, Code/Core/Main.lua, Code/GroupIcons/GroupIcons.lua, Code/Guard/Guard.lua, Code/TalismanAlerter/TalismanAlerter.lua, Code/Timer/Timer.lua, Code/UnitFrames/EffectsIndicator.lua |
 | Namespaces detected | InterfaceCore |
 | Source kinds | lua_calls |
 | Example locations | Ace: Scale, ActionFraction: ResetWindow, AdjustTheTip: UpdateCallback, Amethyst: Recreate, Amethyst: Scale, BuffHead: AnchorContainers |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 156 |
+| Lua usage count | 165 |
 | Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 3 member functions; the primary API surface for 64 addons.
+Shared function table with 3 member functions; the primary API surface for 69 addons.
 
 ## Functions
 
@@ -76,9 +76,11 @@ Shared function table with 3 member functions; the primary API surface for 64 ad
 - AdjustTheTip
 - Amethyst
 - BuffHead
+- CMap
 - CleanUnitFrames
 - Crusher
 - DAoCBuff
+- EA_LoadingScreen
 - EA_UiDebugTools
 - EZCraftX
 - EZGuard
@@ -102,6 +104,7 @@ Shared function table with 3 member functions; the primary API surface for 64 ad
 - Obsidian
 - PartyCast
 - PotionBar
+- Preciousss
 - Pure
 - Pure Careerbar
 - RO-Style Combat Text
@@ -124,6 +127,8 @@ Shared function table with 3 member functions; the primary API surface for 64 ad
 - TurretRange
 - Vectors
 - Vertigo
+- WBStutterLess
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse

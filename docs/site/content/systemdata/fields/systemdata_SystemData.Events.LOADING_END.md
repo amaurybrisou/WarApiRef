@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 98 addons
+- Seen in: 106 addons
 
 ## Confidence Assessment
 
@@ -30,15 +30,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionBarHide, ActionFraction, AdvancedPetAssist, AdvancedRenownTrainer, ArmorGraphicToggle, Atlas, Aura, BagOMatic |
-| Files seen in | ActionBarHide.lua, AdvancedPetAssist.lua, AdvancedRenownTraining.lua, ArmorGraphicToggle.lua, BagOMatic.lua, CDown.lua, CleanTargetWindow.lua, CleansingBuddy.lua |
+| Addons seen in | ActionBarHide, ActionFraction, AdvancedPetAssist, AdvancedRenownTrainer, ArmorGraphicToggle, Asshat, Atlas, Aura |
+| Files seen in | ActionBarHide.lua, AdvancedPetAssist.lua, AdvancedRenownTraining.lua, ArmorGraphicToggle.lua, Asshat.lua, BagOMatic.lua, CDown.lua, CMap.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | ArmorGraphicToggle_Disable, ArmorGraphicToggle_Enable, DelayInit, DisableBars, EnableBars, Init |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 47 |
-| Global usage count | 47 |
+| Lua usage count | 49 |
+| Global usage count | 49 |
 | Local definition count | 0 |
 | Documentation references | 3 |
 | Initialization flow references | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.LOADING_END field accessed by 98 addons; commonly found in ArmorGraphicToggle_Disable and ArmorGraphicToggle_Enable, DelayInit, DisableBars, EnableBars, Init, Init_Warden, Initialize, InitializePlayer, LOADING_END, LibRange.OnLoad, LoadUnitFrame, NAMBLA_Initialize, OnInit, OnInitialize, OnLoad, OnLoadCastbar, OnLoadingEnd, OnShutdown, RegisterCoreEvents, RegisterEventHandlerDK, RegisterEventHandlers, RegisterLoadingEnd, RegisterStateInfoForCastbar, RegisterStateInfoForPlayer, RegisterStateInfoForTargets, Shutdown, ShutdownPlayer, Squared.OnLoad, SquaredRangeFading.LoadingEnd, SystemData.Events.LOADING_END, Unload, UnloadUnitFrame, UnregisterCoreEvents, UnregisterEventHandlerDK, UnregisterEventHandlers, UnregisterLoadingEnd, ZoneChangeInit, ZoneChangeShutdown, _ScenarioInfoEnabledChanged, entry_point, event_page, event_registration, init, lua_call, onInit, onInitialize contexts.
+SystemData.SystemData.Events.LOADING_END field accessed by 106 addons; commonly found in ArmorGraphicToggle_Disable and ArmorGraphicToggle_Enable, DelayInit, DisableBars, EnableBars, Init, InitComplete, Init_Warden, Initialise, Initialize, InitializePlayer, LOADING_END, LibRange.OnLoad, LoadUnitFrame, NAMBLA_Initialize, OnInit, OnInitialize, OnLoad, OnLoadCastbar, OnLoadingEnd, OnShutdown, RegisterCoreEvents, RegisterEventHandlerDK, RegisterEventHandlers, RegisterLoadingEnd, RegisterStateInfoForCastbar, RegisterStateInfoForPlayer, RegisterStateInfoForTargets, Shutdown, ShutdownPlayer, Squared.OnLoad, SquaredRangeFading.LoadingEnd, SystemData.Events.LOADING_END, Unload, UnloadUnitFrame, UnregisterCoreEvents, UnregisterEventHandlerDK, UnregisterEventHandlers, UnregisterLoadingEnd, ZoneChangeInit, ZoneChangeShutdown, _ScenarioInfoEnabledChanged, entry_point, event_page, event_registration, init, lua_call, onInit, onInitialize contexts.
 
 ## Seen In
 
@@ -70,12 +70,14 @@ SystemData.SystemData.Events.LOADING_END field accessed by 98 addons; commonly f
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - ArmorGraphicToggle
+- Asshat
 - Atlas
 - Aura
 - BagOMatic
 - BuffHead
 - CDown
 - CM_ClosetGoblin
+- CMap
 - CastSequence
 - CleanUnitFrames
 - CleansingBuddy
@@ -85,6 +87,7 @@ SystemData.SystemData.Events.LOADING_END field accessed by 98 addons; commonly f
 - DammazKron
 - Default Tactic Set
 - Ding
+- EA_LoadingScreen
 - Effigy
 - Enemy
 - FastFriends
@@ -115,10 +118,12 @@ SystemData.SystemData.Events.LOADING_END field accessed by 98 addons; commonly f
 - MiracleGrowLight
 - MoraleBG
 - Motion
+- MyReasons
 - NAMBLA
 - NaturalLog
 - NerfedButtons
 - Obsidian
+- Paint the leader
 - PeaceOut
 - PetFixWindow
 - Phantom
@@ -154,11 +159,14 @@ SystemData.SystemData.Events.LOADING_END field accessed by 98 addons; commonly f
 - TwisterSet
 - VPBreakdown
 - Vectors
+- WTes
 - WarBoard
 - WarBoard_TaliMon
+- WarBoard_WarWhisperer
 - WhoHealedMe
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
+- fpsbox
 - nLootLink
 - scnoload
 - wbLeadHelper
@@ -166,18 +174,11 @@ SystemData.SystemData.Events.LOADING_END field accessed by 98 addons; commonly f
 
 ## Related APIs
 
-- [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [LabelSetFont](../../window_api/functions/window_LabelSetFont.md) (HIGH 100/100) - Window Function
-- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
-- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.IsSlashCmdRegistered](../../globals/functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
-- [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [WindowRegisterCoreEventHandler](../../window_api/functions/window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
-- [WindowSetDrawWhenInterfaceHidden](../../window_api/functions/window_WindowSetDrawWhenInterfaceHidden.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
 - [WindowUnregisterEventHandler](../../window_api/functions/window_WindowUnregisterEventHandler.md) (HIGH 100/100) - Window Function
 - [EA_Window_InteractionRenownTraining.GetPointsAvailable](../../globals/functions/global_EA_Window_InteractionRenownTraining.GetPointsAvailable.md) (HIGH 98/100) - Global Function
 - [EA_Window_InteractionRenownTraining.GetPointsSpent](../../globals/functions/global_EA_Window_InteractionRenownTraining.GetPointsSpent.md) (HIGH 98/100) - Global Function
@@ -185,24 +186,21 @@ SystemData.SystemData.Events.LOADING_END field accessed by 98 addons; commonly f
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Used With
 
+- [GameData.Account.ServerName](../../gamedata/fields/gamedata_GameData.Account.ServerName.md) (HIGH 100/100) - GameData Field
 - [SystemData.Events.ALL_MODULES_INITIALIZED](systemdata_SystemData.Events.ALL_MODULES_INITIALIZED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.BATTLEGROUP_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_PLAYER_ADDED](systemdata_SystemData.Events.GROUP_PLAYER_ADDED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_STATUS_UPDATED](systemdata_SystemData.Events.GROUP_STATUS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_UPDATED](systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes

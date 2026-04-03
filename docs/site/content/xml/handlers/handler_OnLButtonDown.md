@@ -23,13 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, BuffHead, CM_ClosetGoblin, Calling, Crusher, DaemonAssist, DetauntHelper, EA_ScenarioGroupWindow |
+| Addons seen in | AdvancedRenownTrainer, BuffHead, CM_ClosetGoblin, CMap, Calling, Crusher, DaemonAssist, DetauntHelper |
 | Namespaces detected | OnLButtonDown |
 | Source kinds | bindings, xml_handlers |
-| Example locations | AdvancedRenownTrainer: .OnLButtonDown, BuffHead: .OnLButtonDown, CM_ClosetGoblin: .OnLButtonDown, Calling: .OnLButtonDown, Crusher: .OnLButtonDown, DaemonAssist: .OnLButtonDown |
+| Example locations | AdvancedRenownTrainer: .OnLButtonDown, BuffHead: .OnLButtonDown, CM_ClosetGoblin: .OnLButtonDown, CMap: .OnLButtonDown, Calling: .OnLButtonDown, Crusher: .OnLButtonDown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 147 |
+| Lua usage count | 161 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 42 addons.
+XML handler event observed across 48 addons.
 
 ## Expected Lua Binding
 
@@ -70,14 +70,18 @@ function(...)
 - AdvancedRenownTrainer
 - BuffHead
 - CM_ClosetGoblin
+- CMap
 - Calling
 - Crusher
 - DaemonAssist
 - DetauntHelper
+- EA_LoadingScreen
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
 - Effigy
 - Enemy
+- FozAuction
 - GetStats
 - GuildWarden
 - HealGrid
@@ -97,6 +101,7 @@ function(...)
 - RVMOD_Manager
 - RVMOD_SquaredDistances
 - Sequencer
+- SocialWindow 2.0
 - Squared
 - Targets
 - TexturedButtons
@@ -107,6 +112,7 @@ function(...)
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - XpStatus+G
+- bigger_MacroWindow
 - emotes
 - nLootLink
 

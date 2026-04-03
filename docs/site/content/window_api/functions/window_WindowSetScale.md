@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 82 addons
+- Seen in: 90 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Ace: Scale, ActionFraction: ResetWindow, Amethyst: Recreate, Amethyst: Scale, Atlas: PopulateInterface, Atlas: UpdateLegend |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 294 |
-| Global usage count | 294 |
+| Lua usage count | 317 |
+| Global usage count | 317 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -94,6 +94,7 @@ Observed mutating runtime window state or presentation.
 - BuffHead
 - CCTV
 - CDown
+- CMap
 - Calling
 - CastSequence
 - CleanCastbar
@@ -103,6 +104,8 @@ Observed mutating runtime window state or presentation.
 - DAoCBuff
 - DetauntHelper
 - DuffTimer
+- EA_LoadingScreen
+- EA_ThreePartBar
 - EZCraftX
 - EZGuard
 - Effigy
@@ -127,6 +130,7 @@ Observed mutating runtime window state or presentation.
 - Motion
 - MouseHint
 - Obsidian
+- Paint the leader
 - PartyCast
 - PotionBar
 - Pure
@@ -150,16 +154,20 @@ Observed mutating runtime window state or presentation.
 - TargetRing
 - TidyQueue
 - Tokens
+- Tortall_DPS
 - TurretRange
 - Vectors
 - VerticalTactics
 - WSCT
+- WTes
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WindowMovers
 - WoH-Reticle
 - XpStatus+G
+- fpsbox
 - nLootLink
 - nRarity
 - scenarioInfo

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 65 addons
+- Seen in: 71 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Ace: Add, ActionBarHide: Add, Amethyst: Add, BankArkel: SetupCombos, BuffHead: Initialize, BuffHead: LoadEffectsSettings |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 554 |
-| Global usage count | 554 |
+| Lua usage count | 587 |
+| Global usage count | 587 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,14 +65,14 @@ ComboBoxAddMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 65 addons.
+Observed as a window function across 71 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
 | arg1 | Observed as a function or method reference. | Observed values: "BankArkelBackpackCombo", "BustedGUIAddonSelect", "CCTVSettingsCombobox4" |
-| arg2 | Observed as a function or method reference. | Observed values: BankArkel.db.Entry[i].Name, CraftValueTip.GetPhrase("config","langdefault"), GetString(StringTables.Default.LABEL_GREED) |
+| arg2 | Observed as a function or method reference. | Observed values: BankArkel.db.Entry[i].Name, CraftValueTip.GetPhrase("config","langdefault"), GameData.Player.name |
 
 ## Returns
 
@@ -92,6 +92,7 @@ Observed as a window function across 65 addons.
 - Busted
 - CCTV
 - CDown
+- CMap
 - CaVES
 - CastSequence
 - ChattyCathy
@@ -99,11 +100,13 @@ Observed as a window function across 65 addons.
 - Crusher
 - DAoCBuff
 - DPSMeter
+- EA_OpenPartyWindow
 - EA_UiDebugTools
 - EZCraftX
 - EZGuard
 - Effigy
 - Enemy
+- FozAuction
 - GCDsaver
 - GroupRange
 - GuildWarden
@@ -129,6 +132,7 @@ Observed as a window function across 65 addons.
 - SOR
 - ScenarioStats
 - Shinies
+- SocialWindow 2.0
 - Statdoll Remix
 - TalismanGenie
 - TargetRing
@@ -140,6 +144,8 @@ Observed as a window function across 65 addons.
 - Tokens
 - TurretRange
 - TwisterSet
+- WBStutterLess
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -166,11 +172,9 @@ Observed as a window function across 65 addons.
 
 ## Used With
 
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [DefaultColor.SetWindowTint](../../globals/functions/global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function
 - [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function

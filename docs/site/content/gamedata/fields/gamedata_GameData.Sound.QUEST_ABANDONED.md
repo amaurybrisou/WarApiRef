@@ -65,7 +65,6 @@ GameData.GameData.Sound.QUEST_ABANDONED field accessed by 1 addons; commonly fou
 
 ## Related APIs
 
-- [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
 - [AlertTextWindow.AddAlert](../../globals/functions/global_AlertTextWindow.AddAlert.md) (HIGH 75/100) - Global Function
 
 ## Notes

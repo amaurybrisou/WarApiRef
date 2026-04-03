@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, BankArkel, Busted, ChattyCathy, DPSMeter, EA_UiDebugTools, PotionBar, TidyRoll |
+| Addons seen in | AdvancedRenownTrainer, BankArkel, Busted, ChattyCathy, DPSMeter, EA_OpenPartyWindow, EA_UiDebugTools, PotionBar |
 | Files seen in | AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, BankArkel.lua, Busted.lua, ChattyCathy.lua, DPSMeterWindow.lua, Source/bust/Busted.lua, Source/devpad/DebugWindowCodePad.lua |
 | Namespaces detected | ComboBoxGetSelectedText |
 | Source kinds | lua_calls |
 | Example locations | AdvancedRenownTrainer: DeletePreset, AdvancedRenownTrainer: ExportToLink, AdvancedRenownTrainer: OnExportButtonPressed, AdvancedRenownTrainer: OnLoadPressed, AdvancedRenownTrainer: SelectedItemChanged, BankArkel: PackCombo |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 17 |
-| Global usage count | 17 |
+| Lua usage count | 18 |
+| Global usage count | 18 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxGetSelectedText(arg1)
 
 ## Description
 
-Observed as a window function across 8 addons.
+Observed as a window function across 9 addons.
 
 ## Parameters
 
@@ -88,6 +88,7 @@ Observed as a window function across 8 addons.
 - Busted
 - ChattyCathy
 - DPSMeter
+- EA_OpenPartyWindow
 - EA_UiDebugTools
 - PotionBar
 - TidyRoll

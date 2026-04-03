@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 93/100
-- Seen in: 45 addons
+- Seen in: 51 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AuctionStats, AutoFocus, Brizio's Crappy Computer Medic, CNC, Calling, DasBoot, DetauntHelper, EA_ScenarioGroupWindow |
-| Files seen in | AuctionStats.lua, AutoFocus.lua, CCM.lua, CNC.lua, Calling.lua, CallingChat.lua, CallingKeybinding.lua, Code/GroupIcons/GroupIcons.lua |
+| Addons seen in | Assist, AuctionStats, AutoFocus, Brizio's Crappy Computer Medic, CMap, CNC, Calling, DasBoot |
+| Files seen in | AuctionStats.lua, AutoFocus.lua, CCM.lua, CMap.lua, CNC.lua, Calling.lua, CallingChat.lua, CallingKeybinding.lua |
 | Namespaces detected | BroadcastEvent |
 | Source kinds | lua_calls |
-| Example locations | AuctionStats: OnUpdate, AutoFocus: SlashExec, Brizio's Crappy Computer Medic: OnLButtonUpB1, Brizio's Crappy Computer Medic: OnLButtonUpB2, Brizio's Crappy Computer Medic: Switch, CNC: CombatCheck |
+| Example locations | Assist: CheckSCPlayers, AuctionStats: OnUpdate, AutoFocus: SlashExec, Brizio's Crappy Computer Medic: OnLButtonUpB1, Brizio's Crappy Computer Medic: OnLButtonUpB2, Brizio's Crappy Computer Medic: Switch |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 125 |
-| Global usage count | 125 |
+| Lua usage count | 146 |
+| Global usage count | 146 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -80,14 +80,18 @@ Observed triggering a runtime event so existing handlers are notified.
 
 ## Seen In
 
+- Assist
 - AuctionStats
 - AutoFocus
 - Brizio's Crappy Computer Medic
+- CMap
 - CNC
 - Calling
 - DasBoot
 - DetauntHelper
+- EA_LoadingScreen
 - EA_ScenarioGroupWindow
+- EA_UiModWindow
 - EZGuard
 - Effigy
 - Enemy
@@ -104,6 +108,8 @@ Observed triggering a runtime event so existing handlers are notified.
 - Lib RuString
 - LoyalPet
 - Minmap
+- NoUselessMods-Assist
+- Paint the leader
 - PeaceOut
 - Phantom
 - PlayEffectsOn
@@ -128,26 +134,31 @@ Observed triggering a runtime event so existing handlers are notified.
 
 ## Examples
 
+- Assist: CheckSCPlayers -> BroadcastEvent(SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS)
+- Assist: CheckSCPlayers -> BroadcastEvent(SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS)
 - AuctionStats: OnUpdate -> BroadcastEvent(SystemData.Events.EXIT_GAME)
 - AutoFocus: SlashExec -> BroadcastEvent(SystemData.Events.SEND_CHAT_TEXT)
 - Brizio's Crappy Computer Medic: OnLButtonUpB1 -> BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
 - Brizio's Crappy Computer Medic: OnLButtonUpB2 -> BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
-- Brizio's Crappy Computer Medic: Switch -> BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
-- CNC: CombatCheck -> BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
 
 ## Related APIs
 
 - [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 88/100) - XML Event
 - [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [Stop](../../events/game_events/game_event_Stop.md) (MEDIUM 43/100) - Game Event
 
 ## Used With
 
-- [EA_ChatWindow.Print](global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
-- [SystemData.Events.USER_SETTINGS_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.USER_SETTINGS_CHANGED.md) (HIGH 100/100) - SystemData Field
+- [GameData.GetScenarioPlayers](global_GameData.GetScenarioPlayers.md) (HIGH 100/100) - Global Function
+- [SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
 
 ## Affects
 
+- [GameData.GetScenarioPlayers](global_GameData.GetScenarioPlayers.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.EXIT_GAME](../../systemdata/fields/systemdata_SystemData.Events.EXIT_GAME.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.SEND_CHAT_TEXT](../../systemdata/fields/systemdata_SystemData.Events.SEND_CHAT_TEXT.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.USER_SETTINGS_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.USER_SETTINGS_CHANGED.md) (HIGH 100/100) - SystemData Field
 

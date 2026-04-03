@@ -9,11 +9,11 @@
 - Evidence:
 
 - AbilityAlert: CreateWindow("AAWindow", true)
+  - AbilityNotifier: CreateWindow("AbHelpWindow", true)
   - ActionFraction: CreateWindow(windowName, true)
+  - ActionPoints: CreateWindow("ActionPointsWindow", true)
   - AdvancedPetAssist: CreateWindow("APAOptions", true)
   - AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
-  - AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
-  - AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
 
 ## Template instantiation
 
@@ -25,10 +25,10 @@
 
 - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
   - Ace: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
-  - ActionBarHide: CreateWindowFromTemplate(w.name, base, w.parent)
   - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_ComboBox_DefaultResizable", w.parent)
-  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_EditBox_DefaultFrame_Multiline", w.parent)
-  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_Default_SliderBar", w.parent)
+  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_Button_DefaultCheckBox", w.parent)
+  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
+  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_EditBox_DefaultFrame", w.parent)
 
 ## Runtime anchoring
 

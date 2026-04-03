@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 15 addons
+- Seen in: 19 addons
 
 ## Confidence Assessment
 
@@ -30,7 +30,7 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, AutoBand, DAoCBuff, EZGuard, Enemy, EveryBodyGuard, Greedy, Info_DeathBlow |
+| Addons seen in | Aura, AutoBand, DAoCBuff, EA_OpenPartyWindow, EZGuard, Enemy, EveryBodyGuard, Greedy |
 | Files seen in | AutoBand.lua, Code/Core/Groups/Groups.lua, EZGuard.lua, EveryBodyGuard.lua, Greedy.lua, Info_DeathBlow.lua, LibGroup.lua, MegaphonePlus.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
@@ -61,13 +61,14 @@
 
 ## Description
 
-SystemData.SystemData.Events.GROUP_UPDATED field accessed by 15 addons; commonly found in GroupsInitialize and Initialize, JumpStartEventBasedAuras, LoadUnitFrame, OnInitialize, OnLoad, OnShutdown, OnUnload, RegisterEventHandlers, Shutdown, Squared.ChangeMode, SquaredGroup.UpdateGroup, SystemData.Events.GROUP_UPDATED, UnloadUnitFrame, UnregisterEventHandlers, event_page, event_registration, init, lua_call contexts.
+SystemData.SystemData.Events.GROUP_UPDATED field accessed by 19 addons; commonly found in GroupsInitialize and Initialize, JumpStartEventBasedAuras, LoadUnitFrame, OnInitialize, OnLoad, OnShutdown, OnUnload, RegisterEventHandlers, Shutdown, Squared.ChangeMode, SquaredGroup.UpdateGroup, SystemData.Events.GROUP_UPDATED, UnloadUnitFrame, UnregisterEventHandlers, event_page, event_registration, init, lua_call contexts.
 
 ## Seen In
 
 - Aura
 - AutoBand
 - DAoCBuff
+- EA_OpenPartyWindow
 - EZGuard
 - Enemy
 - EveryBodyGuard
@@ -75,29 +76,31 @@ SystemData.SystemData.Events.GROUP_UPDATED field accessed by 15 addons; commonly
 - Info_DeathBlow
 - LibGroup
 - MegaphonePlus
+- NoUselessMods-Assist
 - Pure
 - RVAPI_Range
 - Refer
 - Rotation
 - Squared
+- Tortall_DPS
+- WarBoard_WarWhisperer
 
 ## Related APIs
 
 - [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
-- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.IsSlashCmdRegistered](../../globals/functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
-- [WindowSetDrawWhenInterfaceHidden](../../window_api/functions/window_WindowSetDrawWhenInterfaceHidden.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- [DefaultColor.LabelSetTextColor](../../globals/functions/global_DefaultColor.LabelSetTextColor.md) (MEDIUM 55/100) - Global Function
 
 ## Used With
 
+- [SystemData.Events.BATTLEGROUP_MEMBER_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_MEMBER_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.BATTLEGROUP_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_PLAYER_ADDED](systemdata_SystemData.Events.GROUP_PLAYER_ADDED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_STATUS_UPDATED](systemdata_SystemData.Events.GROUP_STATUS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOADING_END](systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_PET_HEALTH_UPDATED](systemdata_SystemData.Events.PLAYER_PET_HEALTH_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.GROUP_SETTINGS_UPDATED](systemdata_SystemData.Events.GROUP_SETTINGS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.L_BUTTON_UP_PROCESSED](systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_ZONE_CHANGED](systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

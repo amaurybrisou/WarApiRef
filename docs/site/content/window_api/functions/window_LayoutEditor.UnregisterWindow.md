@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 35 addons
+- Seen in: 38 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Amethyst: Recreate, Atlas: Shutdown, CDown: RestartTracker, DAoCBuff: Shutdown, Effigy: destroy, Effigy: setup |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 70 |
-| Global usage count | 70 |
+| Lua usage count | 73 |
+| Global usage count | 73 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ LayoutEditor.UnregisterWindow(arg1)
 
 ## Description
 
-Observed as a window function across 35 addons.
+Observed as a window function across 38 addons.
 
 ## Parameters
 
@@ -95,6 +95,7 @@ Observed as a window function across 35 addons.
 - LibAddonButton
 - Map
 - Miracle Grow Remix
+- MoraleSet
 - NerfedButtons
 - Obsidian
 - Phantom
@@ -111,10 +112,12 @@ Observed as a window function across 35 addons.
 - TidyRoll
 - TurretRange
 - Twister
+- WTes
 - WhoHealedMe
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - emotes
+- fpsbox
 - scenarioInfo
 - xHUD
 - xPanels

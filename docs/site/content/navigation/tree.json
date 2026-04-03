@@ -16,6 +16,13 @@
           "path": "globals/functions/index.md",
           "children": [
             {
+              "id": "function:global:AuctionWindow.Hide",
+              "label": "AuctionWindow.Hide",
+              "type": "function",
+              "path": "globals/functions/global_AuctionWindow.Hide.md",
+              "importance": 100
+            },
+            {
               "id": "function:global:Cursor.Clear",
               "label": "Cursor.Clear",
               "type": "function",
@@ -69,6 +76,13 @@
               "label": "EA_BackpackUtilsMediator.GetCurrentBackpackType",
               "type": "function",
               "path": "globals/functions/global_EA_BackpackUtilsMediator.GetCurrentBackpackType.md",
+              "importance": 100
+            },
+            {
+              "id": "function:global:EA_BackpackUtilsMediator.GetCursorForBackpack",
+              "label": "EA_BackpackUtilsMediator.GetCursorForBackpack",
+              "type": "function",
+              "path": "globals/functions/global_EA_BackpackUtilsMediator.GetCursorForBackpack.md",
               "importance": 100
             },
             {
@@ -282,6 +296,27 @@
               "importance": 100
             },
             {
+              "id": "function:global:EA_Window_OpenParty.OpenToManageTab",
+              "label": "EA_Window_OpenParty.OpenToManageTab",
+              "type": "function",
+              "path": "globals/functions/global_EA_Window_OpenParty.OpenToManageTab.md",
+              "importance": 100
+            },
+            {
+              "id": "function:global:EA_Window_OpenParty.ToggleFullWindow",
+              "label": "EA_Window_OpenParty.ToggleFullWindow",
+              "type": "function",
+              "path": "globals/functions/global_EA_Window_OpenParty.ToggleFullWindow.md",
+              "importance": 100
+            },
+            {
+              "id": "function:global:EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID",
+              "label": "EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID",
+              "type": "function",
+              "path": "globals/functions/global_EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID.md",
+              "importance": 100
+            },
+            {
               "id": "function:global:EA_Window_ScenarioLobby.OnJoinInstanceWait",
               "label": "EA_Window_ScenarioLobby.OnJoinInstanceWait",
               "type": "function",
@@ -335,6 +370,13 @@
               "label": "Icons.GetCareerIconIDFromCareerLine",
               "type": "function",
               "path": "globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md",
+              "importance": 100
+            },
+            {
+              "id": "function:global:Icons.GetCareerIconIDFromCareerNamesID",
+              "label": "Icons.GetCareerIconIDFromCareerNamesID",
+              "type": "function",
+              "path": "globals/functions/global_Icons.GetCareerIconIDFromCareerNamesID.md",
               "importance": 100
             },
             {
@@ -408,6 +450,13 @@
               "importance": 100
             },
             {
+              "id": "function:global:PartyUtils.GetWarbandMember",
+              "label": "PartyUtils.GetWarbandMember",
+              "type": "function",
+              "path": "globals/functions/global_PartyUtils.GetWarbandMember.md",
+              "importance": 100
+            },
+            {
               "id": "function:global:PartyUtils.IsPartyActive",
               "label": "PartyUtils.IsPartyActive",
               "type": "function",
@@ -462,6 +511,13 @@
               "type": "function",
               "path": "globals/functions/global_wstring.upper.md",
               "importance": 100
+            },
+            {
+              "id": "function:global:EA_BackpackUtilsMediator.RequestLockForSlot",
+              "label": "EA_BackpackUtilsMediator.RequestLockForSlot",
+              "type": "function",
+              "path": "globals/functions/global_EA_BackpackUtilsMediator.RequestLockForSlot.md",
+              "importance": 98
             },
             {
               "id": "function:global:EA_ChatTabManager.GetTabName",
@@ -520,13 +576,6 @@
               "importance": 96
             },
             {
-              "id": "function:global:Icons.GetCareerIconIDFromCareerNamesID",
-              "label": "Icons.GetCareerIconIDFromCareerNamesID",
-              "type": "function",
-              "path": "globals/functions/global_Icons.GetCareerIconIDFromCareerNamesID.md",
-              "importance": 96
-            },
-            {
               "id": "function:global:PartyUtils.GetWarbandMainAssist",
               "label": "PartyUtils.GetWarbandMainAssist",
               "type": "function",
@@ -534,10 +583,17 @@
               "importance": 96
             },
             {
-              "id": "function:global:PartyUtils.GetWarbandMember",
-              "label": "PartyUtils.GetWarbandMember",
+              "id": "function:global:PartyUtils.GetWarbandParty",
+              "label": "PartyUtils.GetWarbandParty",
               "type": "function",
-              "path": "globals/functions/global_PartyUtils.GetWarbandMember.md",
+              "path": "globals/functions/global_PartyUtils.GetWarbandParty.md",
+              "importance": 96
+            },
+            {
+              "id": "function:global:PartyUtils.IsWarbandFull",
+              "label": "PartyUtils.IsWarbandFull",
+              "type": "function",
+              "path": "globals/functions/global_PartyUtils.IsWarbandFull.md",
               "importance": 96
             },
             {
@@ -548,10 +604,10 @@
               "importance": 93
             },
             {
-              "id": "function:global:EA_BackpackUtilsMediator.RequestLockForSlot",
-              "label": "EA_BackpackUtilsMediator.RequestLockForSlot",
+              "id": "function:global:EA_BackpackUtilsMediator.ReleaseLockForSlot",
+              "label": "EA_BackpackUtilsMediator.ReleaseLockForSlot",
               "type": "function",
-              "path": "globals/functions/global_EA_BackpackUtilsMediator.RequestLockForSlot.md",
+              "path": "globals/functions/global_EA_BackpackUtilsMediator.ReleaseLockForSlot.md",
               "importance": 90
             },
             {
@@ -566,13 +622,6 @@
               "label": "EA_Window_InteractionStore.ConfirmThenBuyItem",
               "type": "function",
               "path": "globals/functions/global_EA_Window_InteractionStore.ConfirmThenBuyItem.md",
-              "importance": 90
-            },
-            {
-              "id": "function:global:EA_Window_OpenParty.OpenToManageTab",
-              "label": "EA_Window_OpenParty.OpenToManageTab",
-              "type": "function",
-              "path": "globals/functions/global_EA_Window_OpenParty.OpenToManageTab.md",
               "importance": 90
             },
             {
@@ -608,6 +657,13 @@
               "label": "DefaultColor.SetLabelColor",
               "type": "function",
               "path": "globals/functions/global_DefaultColor.SetLabelColor.md",
+              "importance": 88
+            },
+            {
+              "id": "function:global:PartyUtils.MoveWarbandMember",
+              "label": "PartyUtils.MoveWarbandMember",
+              "type": "function",
+              "path": "globals/functions/global_PartyUtils.MoveWarbandMember.md",
               "importance": 88
             },
             {
@@ -653,6 +709,13 @@
               "importance": 83
             },
             {
+              "id": "function:global:GuildWindow.IsPlayerInAGuild",
+              "label": "GuildWindow.IsPlayerInAGuild",
+              "type": "function",
+              "path": "globals/functions/global_GuildWindow.IsPlayerInAGuild.md",
+              "importance": 83
+            },
+            {
               "id": "function:global:DialogManager.MakeThreeButtonDialog",
               "label": "DialogManager.MakeThreeButtonDialog",
               "type": "function",
@@ -667,13 +730,6 @@
               "importance": 80
             },
             {
-              "id": "function:global:EA_BackpackUtilsMediator.GetCursorForBackpack",
-              "label": "EA_BackpackUtilsMediator.GetCursorForBackpack",
-              "type": "function",
-              "path": "globals/functions/global_EA_BackpackUtilsMediator.GetCursorForBackpack.md",
-              "importance": 80
-            },
-            {
               "id": "function:global:EA_ChatWindoW.Print",
               "label": "EA_ChatWindoW.Print",
               "type": "function",
@@ -685,6 +741,13 @@
               "label": "EA_ChatWindow.InsertQuestLink",
               "type": "function",
               "path": "globals/functions/global_EA_ChatWindow.InsertQuestLink.md",
+              "importance": 80
+            },
+            {
+              "id": "function:global:EA_ChatWindow.OnHyperLinkLButtonUp",
+              "label": "EA_ChatWindow.OnHyperLinkLButtonUp",
+              "type": "function",
+              "path": "globals/functions/global_EA_ChatWindow.OnHyperLinkLButtonUp.md",
               "importance": 80
             },
             {
@@ -716,6 +779,13 @@
               "importance": 80
             },
             {
+              "id": "function:global:EA_TrialAlertWindow.Show",
+              "label": "EA_TrialAlertWindow.Show",
+              "type": "function",
+              "path": "globals/functions/global_EA_TrialAlertWindow.Show.md",
+              "importance": 80
+            },
+            {
               "id": "function:global:EA_Window_Backpack.ConfirmThenRefine",
               "label": "EA_Window_Backpack.ConfirmThenRefine",
               "type": "function",
@@ -727,6 +797,13 @@
               "label": "EA_Window_Backpack.IsRefinable",
               "type": "function",
               "path": "globals/functions/global_EA_Window_Backpack.IsRefinable.md",
+              "importance": 80
+            },
+            {
+              "id": "function:global:EA_Window_ContextMenu.CreateOpacityOnlyContextMenu",
+              "label": "EA_Window_ContextMenu.CreateOpacityOnlyContextMenu",
+              "type": "function",
+              "path": "globals/functions/global_EA_Window_ContextMenu.CreateOpacityOnlyContextMenu.md",
               "importance": 80
             },
             {
@@ -912,17 +989,24 @@
               "importance": 80
             },
             {
-              "id": "function:global:EA_Window_OpenParty.ToggleFullWindow",
-              "label": "EA_Window_OpenParty.ToggleFullWindow",
+              "id": "function:global:EA_Window_PublicQuestTracker.OnMouseOverInfluenceBar",
+              "label": "EA_Window_PublicQuestTracker.OnMouseOverInfluenceBar",
               "type": "function",
-              "path": "globals/functions/global_EA_Window_OpenParty.ToggleFullWindow.md",
+              "path": "globals/functions/global_EA_Window_PublicQuestTracker.OnMouseOverInfluenceBar.md",
               "importance": 80
             },
             {
-              "id": "function:global:EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID",
-              "label": "EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID",
+              "id": "function:global:EA_Window_ScenarioLobby.Initialize",
+              "label": "EA_Window_ScenarioLobby.Initialize",
               "type": "function",
-              "path": "globals/functions/global_EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID.md",
+              "path": "globals/functions/global_EA_Window_ScenarioLobby.Initialize.md",
+              "importance": 80
+            },
+            {
+              "id": "function:global:EA_Window_ScenarioLobby.OnJoinAllQueues",
+              "label": "EA_Window_ScenarioLobby.OnJoinAllQueues",
+              "type": "function",
+              "path": "globals/functions/global_EA_Window_ScenarioLobby.OnJoinAllQueues.md",
               "importance": 80
             },
             {
@@ -986,6 +1070,13 @@
               "label": "DestroyWindow",
               "type": "function",
               "path": "globals/functions/global_DestroyWindow.md",
+              "importance": 75
+            },
+            {
+              "id": "function:global:PlayerMenuWindow.NewCustomItem",
+              "label": "PlayerMenuWindow.NewCustomItem",
+              "type": "function",
+              "path": "globals/functions/global_PlayerMenuWindow.NewCustomItem.md",
               "importance": 75
             },
             {
@@ -1059,13 +1150,6 @@
               "importance": 71
             },
             {
-              "id": "function:global:GuildWindow.IsPlayerInAGuild",
-              "label": "GuildWindow.IsPlayerInAGuild",
-              "type": "function",
-              "path": "globals/functions/global_GuildWindow.IsPlayerInAGuild.md",
-              "importance": 71
-            },
-            {
               "id": "function:global:PetWindow.HasPet",
               "label": "PetWindow.HasPet",
               "type": "function",
@@ -1087,6 +1171,13 @@
               "importance": 68
             },
             {
+              "id": "function:global:DefaultColor.LabelSetTextColor",
+              "label": "DefaultColor.LabelSetTextColor",
+              "type": "function",
+              "path": "globals/functions/global_DefaultColor.LabelSetTextColor.md",
+              "importance": 55
+            },
+            {
               "id": "function:global:wstring.byte",
               "label": "wstring.byte",
               "type": "function",
@@ -1094,17 +1185,17 @@
               "importance": 55
             },
             {
+              "id": "function:global:DefaultColor.SetListRowTint",
+              "label": "DefaultColor.SetListRowTint",
+              "type": "function",
+              "path": "globals/functions/global_DefaultColor.SetListRowTint.md",
+              "importance": 45
+            },
+            {
               "id": "function:global:PartyUtils.GetBolsterMenuText",
               "label": "PartyUtils.GetBolsterMenuText",
               "type": "function",
               "path": "globals/functions/global_PartyUtils.GetBolsterMenuText.md",
-              "importance": 45
-            },
-            {
-              "id": "function:global:PartyUtils.GetWarbandParty",
-              "label": "PartyUtils.GetWarbandParty",
-              "type": "function",
-              "path": "globals/functions/global_PartyUtils.GetWarbandParty.md",
               "importance": 45
             },
             {
@@ -1115,17 +1206,17 @@
               "importance": 45
             },
             {
-              "id": "function:global:PartyUtils.IsWarbandFull",
-              "label": "PartyUtils.IsWarbandFull",
+              "id": "function:global:PartyUtils.SetMasterLooter",
+              "label": "PartyUtils.SetMasterLooter",
               "type": "function",
-              "path": "globals/functions/global_PartyUtils.IsWarbandFull.md",
+              "path": "globals/functions/global_PartyUtils.SetMasterLooter.md",
               "importance": 45
             },
             {
-              "id": "function:global:PartyUtils.MoveWarbandMember",
-              "label": "PartyUtils.MoveWarbandMember",
+              "id": "function:global:PartyUtils.SwapWarbandMembers",
+              "label": "PartyUtils.SwapWarbandMembers",
               "type": "function",
-              "path": "globals/functions/global_PartyUtils.MoveWarbandMember.md",
+              "path": "globals/functions/global_PartyUtils.SwapWarbandMembers.md",
               "importance": 45
             },
             {
@@ -1291,6 +1382,13 @@
               "importance": 100
             },
             {
+              "id": "data:table:EA_Window_PublicQuestTracker",
+              "label": "EA_Window_PublicQuestTracker",
+              "type": "data_structure",
+              "path": "globals/tables/table_EA_Window_PublicQuestTracker.md",
+              "importance": 100
+            },
+            {
               "id": "data:table:EA_Window_ScenarioLobby",
               "label": "EA_Window_ScenarioLobby",
               "type": "data_structure",
@@ -1396,6 +1494,13 @@
               "importance": 80
             },
             {
+              "id": "data:table:EA_TrialAlertWindow",
+              "label": "EA_TrialAlertWindow",
+              "type": "data_structure",
+              "path": "globals/tables/table_EA_TrialAlertWindow.md",
+              "importance": 80
+            },
+            {
               "id": "data:table:EA_Window_InteractionCoreTraining",
               "label": "EA_Window_InteractionCoreTraining",
               "type": "data_structure",
@@ -1428,13 +1533,6 @@
               "label": "EA_Window_LootRoll",
               "type": "data_structure",
               "path": "globals/tables/table_EA_Window_LootRoll.md",
-              "importance": 80
-            },
-            {
-              "id": "data:table:EA_Window_PublicQuestTracker",
-              "label": "EA_Window_PublicQuestTracker",
-              "type": "data_structure",
-              "path": "globals/tables/table_EA_Window_PublicQuestTracker.md",
               "importance": 80
             },
             {
@@ -3547,6 +3645,13 @@
               "importance": 90
             },
             {
+              "id": "function:window:ComboBoxIsMenuOpen",
+              "label": "ComboBoxIsMenuOpen",
+              "type": "function",
+              "path": "window_api/functions/window_ComboBoxIsMenuOpen.md",
+              "importance": 80
+            },
+            {
               "id": "function:window:StatusBarGetMaximumValue",
               "label": "StatusBarGetMaximumValue",
               "type": "function",
@@ -3572,6 +3677,13 @@
               "label": "WindowGameAction",
               "type": "function",
               "path": "window_api/functions/window_WindowGameAction.md",
+              "importance": 80
+            },
+            {
+              "id": "function:window:WindowResizeOnChildren",
+              "label": "WindowResizeOnChildren",
+              "type": "function",
+              "path": "window_api/functions/window_WindowResizeOnChildren.md",
               "importance": 80
             },
             {
@@ -4344,6 +4456,13 @@
               "importance": 88
             },
             {
+              "id": "xml_event:OnPointMouseOver",
+              "label": "OnPointMouseOver",
+              "type": "xml_event",
+              "path": "xml/handlers/handler_OnPointMouseOver.md",
+              "importance": 88
+            },
+            {
               "id": "xml_event:OnRButtonDown",
               "label": "OnRButtonDown",
               "type": "xml_event",
@@ -4414,6 +4533,13 @@
               "importance": 76
             },
             {
+              "id": "xml_event:OnMouseDrag",
+              "label": "OnMouseDrag",
+              "type": "xml_event",
+              "path": "xml/handlers/handler_OnMouseDrag.md",
+              "importance": 76
+            },
+            {
               "id": "xml_event:OnMouseLeave",
               "label": "OnMouseLeave",
               "type": "xml_event",
@@ -4421,10 +4547,10 @@
               "importance": 76
             },
             {
-              "id": "xml_event:OnPointMouseOver",
-              "label": "OnPointMouseOver",
+              "id": "xml_event:OnScrollPosChanged",
+              "label": "OnScrollPosChanged",
               "type": "xml_event",
-              "path": "xml/handlers/handler_OnPointMouseOver.md",
+              "path": "xml/handlers/handler_OnScrollPosChanged.md",
               "importance": 76
             },
             {
@@ -5010,6 +5136,20 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.ChatLogFilters.GROUP",
+              "label": "SystemData.ChatLogFilters.GROUP",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.GROUP.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.ChatLogFilters.GUILD",
+              "label": "SystemData.ChatLogFilters.GUILD",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.GUILD.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.ChatLogFilters.LOOT_ROLL",
               "label": "SystemData.ChatLogFilters.LOOT_ROLL",
               "type": "data_structure",
@@ -5059,6 +5199,13 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.ChatLogFilters.USER_ERROR",
+              "label": "SystemData.ChatLogFilters.USER_ERROR",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.ChatLogFilters.USER_ERROR.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.ClientVersion",
               "label": "SystemData.ClientVersion",
               "type": "data_structure",
@@ -5080,10 +5227,31 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.Directories.AddOnsInterface",
+              "label": "SystemData.Directories.AddOnsInterface",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Directories.AddOnsInterface.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Directories.CustomInterface",
+              "label": "SystemData.Directories.CustomInterface",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Directories.CustomInterface.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.Events",
               "label": "SystemData.Events",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.ALLIANCE_UPDATED",
+              "label": "SystemData.Events.ALLIANCE_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.ALLIANCE_UPDATED.md",
               "importance": 100
             },
             {
@@ -5192,6 +5360,13 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.Events.CITY_CAPTURE_LEAVE",
+              "label": "SystemData.Events.CITY_CAPTURE_LEAVE",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.CITY_CAPTURE_LEAVE.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.Events.CITY_CAPTURE_LEAVE_QUEUE",
               "label": "SystemData.Events.CITY_CAPTURE_LEAVE_QUEUE",
               "type": "data_structure",
@@ -5245,6 +5420,13 @@
               "label": "SystemData.Events.CRAFTING_SHOW_WINDOW",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.CRAFTING_SHOW_WINDOW.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.CURRENT_EVENTS_LIST_UPDATED",
+              "label": "SystemData.Events.CURRENT_EVENTS_LIST_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.CURRENT_EVENTS_LIST_UPDATED.md",
               "importance": 100
             },
             {
@@ -5311,6 +5493,13 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.Events.GROUP_KICK_PLAYER",
+              "label": "SystemData.Events.GROUP_KICK_PLAYER",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_KICK_PLAYER.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.Events.GROUP_LEAVE",
               "label": "SystemData.Events.GROUP_LEAVE",
               "type": "data_structure",
@@ -5322,6 +5511,13 @@
               "label": "SystemData.Events.GROUP_PLAYER_ADDED",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_PLAYER_ADDED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.GROUP_SETTINGS_PRIVACY_UPDATED",
+              "label": "SystemData.Events.GROUP_SETTINGS_PRIVACY_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.GROUP_SETTINGS_PRIVACY_UPDATED.md",
               "importance": 100
             },
             {
@@ -5374,10 +5570,31 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.Events.GUILD_INFO_UPDATED",
+              "label": "SystemData.Events.GUILD_INFO_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.GUILD_INFO_UPDATED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.GUILD_MEMBER_UPDATE",
+              "label": "SystemData.Events.GUILD_MEMBER_UPDATE",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.GUILD_MEMBER_UPDATE.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.Events.GUILD_REFRESH",
               "label": "SystemData.Events.GUILD_REFRESH",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.GUILD_REFRESH.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.GUILD_TAX_TITHE_UPDATED",
+              "label": "SystemData.Events.GUILD_TAX_TITHE_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.GUILD_TAX_TITHE_UPDATED.md",
               "importance": 100
             },
             {
@@ -5668,6 +5885,13 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.Events.OPEN_LFM_WINDOW",
+              "label": "SystemData.Events.OPEN_LFM_WINDOW",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.OPEN_LFM_WINDOW.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.Events.PAIRING_MAP_HOTSPOT_DATA_UPDATED",
               "label": "SystemData.Events.PAIRING_MAP_HOTSPOT_DATA_UPDATED",
               "type": "data_structure",
@@ -5777,6 +6001,13 @@
               "label": "SystemData.Events.PLAYER_CAST_TIMER_SETBACK",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CAST_TIMER_SETBACK.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.PLAYER_CHAPTER_UPDATED",
+              "label": "SystemData.Events.PLAYER_CHAPTER_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_CHAPTER_UPDATED.md",
               "importance": 100
             },
             {
@@ -5987,6 +6218,13 @@
               "label": "SystemData.Events.PLAYER_MONEY_UPDATED",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MONEY_UPDATED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.PLAYER_MORALE_BAR_UPDATED",
+              "label": "SystemData.Events.PLAYER_MORALE_BAR_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.PLAYER_MORALE_BAR_UPDATED.md",
               "importance": 100
             },
             {
@@ -6298,6 +6536,13 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.Events.RVR_REWARD_POOLS_UPDATED",
+              "label": "SystemData.Events.RVR_REWARD_POOLS_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.RVR_REWARD_POOLS_UPDATED.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.Events.R_BUTTON_DOWN_PROCESSED",
               "label": "SystemData.Events.R_BUTTON_DOWN_PROCESSED",
               "type": "data_structure",
@@ -6487,6 +6732,48 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.Events.SOCIAL_OPENPARTYINTEREST_UPDATED",
+              "label": "SystemData.Events.SOCIAL_OPENPARTYINTEREST_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.SOCIAL_OPENPARTYINTEREST_UPDATED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.SOCIAL_OPENPARTYWORLD_SETTINGS_UPDATED",
+              "label": "SystemData.Events.SOCIAL_OPENPARTYWORLD_SETTINGS_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.SOCIAL_OPENPARTYWORLD_SETTINGS_UPDATED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.SOCIAL_OPENPARTY_NOTIFY",
+              "label": "SystemData.Events.SOCIAL_OPENPARTY_NOTIFY",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.SOCIAL_OPENPARTY_NOTIFY.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.SOCIAL_OPENPARTY_UPDATED",
+              "label": "SystemData.Events.SOCIAL_OPENPARTY_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.SOCIAL_OPENPARTY_UPDATED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.SOCIAL_OPENPARTY_WORLD_UPDATED",
+              "label": "SystemData.Events.SOCIAL_OPENPARTY_WORLD_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.SOCIAL_OPENPARTY_WORLD_UPDATED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.SOCIAL_OPTIONS_UPDATED",
+              "label": "SystemData.Events.SOCIAL_OPTIONS_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.SOCIAL_OPTIONS_UPDATED.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.Events.SOCIAL_SEARCH_UPDATED",
               "label": "SystemData.Events.SOCIAL_SEARCH_UPDATED",
               "type": "data_structure",
@@ -6494,10 +6781,24 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.Events.SOCIAL_YOU_HAVE_BEEN_FRIENDED",
+              "label": "SystemData.Events.SOCIAL_YOU_HAVE_BEEN_FRIENDED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.SOCIAL_YOU_HAVE_BEEN_FRIENDED.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.Events.SPELL_CAST_CANCEL",
               "label": "SystemData.Events.SPELL_CAST_CANCEL",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.SPELL_CAST_CANCEL.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.STREAMING_STATUS_UPDATED",
+              "label": "SystemData.Events.STREAMING_STATUS_UPDATED",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.STREAMING_STATUS_UPDATED.md",
               "importance": 100
             },
             {
@@ -6519,6 +6820,27 @@
               "label": "SystemData.Events.TOGGLE_BACKPACK_WINDOW",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Events.TOGGLE_BACKPACK_WINDOW.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.TOGGLE_BATTLEGROUP_WINDOW",
+              "label": "SystemData.Events.TOGGLE_BATTLEGROUP_WINDOW",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.TOGGLE_BATTLEGROUP_WINDOW.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.TOGGLE_SCENARIO_SUMMARY_WINDOW",
+              "label": "SystemData.Events.TOGGLE_SCENARIO_SUMMARY_WINDOW",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.TOGGLE_SCENARIO_SUMMARY_WINDOW.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Events.TOGGLE_SOCIAL_WINDOW",
+              "label": "SystemData.Events.TOGGLE_SOCIAL_WINDOW",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Events.TOGGLE_SOCIAL_WINDOW.md",
               "importance": 100
             },
             {
@@ -6669,10 +6991,45 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.ItemRarity.ARTIFACT",
+              "label": "SystemData.ItemRarity.ARTIFACT",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.ItemRarity.ARTIFACT.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.ItemRarity.COMMON",
+              "label": "SystemData.ItemRarity.COMMON",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.ItemRarity.COMMON.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.ItemRarity.RARE",
+              "label": "SystemData.ItemRarity.RARE",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.ItemRarity.RARE.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.ItemRarity.UNCOMMON",
+              "label": "SystemData.ItemRarity.UNCOMMON",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.ItemRarity.UNCOMMON.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.ItemRarity.UTILITY",
               "label": "SystemData.ItemRarity.UTILITY",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.ItemRarity.UTILITY.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.ItemRarity.VERY_RARE",
+              "label": "SystemData.ItemRarity.VERY_RARE",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.ItemRarity.VERY_RARE.md",
               "importance": 100
             },
             {
@@ -6739,6 +7096,13 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.Server.ID",
+              "label": "SystemData.Server.ID",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Server.ID.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.Server.Name",
               "label": "SystemData.Server.Name",
               "type": "data_structure",
@@ -6757,6 +7121,20 @@
               "label": "SystemData.Settings.Names",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.Settings.Names.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Settings.Performance.custom1.abilityEffects",
+              "label": "SystemData.Settings.Performance.custom1.abilityEffects",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Settings.Performance.custom1.abilityEffects.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.Settings.UseCustomUI",
+              "label": "SystemData.Settings.UseCustomUI",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.Settings.UseCustomUI.md",
               "importance": 100
             },
             {
@@ -6781,6 +7159,13 @@
               "importance": 100
             },
             {
+              "id": "data:system:SystemData.TrialAlert.ALERT_AUCTION",
+              "label": "SystemData.TrialAlert.ALERT_AUCTION",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.TrialAlert.ALERT_AUCTION.md",
+              "importance": 100
+            },
+            {
               "id": "data:system:SystemData.UiLogFilters.DEBUG",
               "label": "SystemData.UiLogFilters.DEBUG",
               "type": "data_structure",
@@ -6799,6 +7184,13 @@
               "label": "SystemData.UiLogFilters.FUNCTION",
               "type": "data_structure",
               "path": "systemdata/fields/systemdata_SystemData.UiLogFilters.FUNCTION.md",
+              "importance": 100
+            },
+            {
+              "id": "data:system:SystemData.UserInput.ReplyToPlayerName",
+              "label": "SystemData.UserInput.ReplyToPlayerName",
+              "type": "data_structure",
+              "path": "systemdata/fields/systemdata_SystemData.UserInput.ReplyToPlayerName.md",
               "importance": 100
             },
             {
@@ -6943,10 +7335,45 @@
               "importance": 100
             },
             {
+              "id": "data:game:GameData.Auction.RESTRICTION_GUILD_ALLIANCE_ONLY",
+              "label": "GameData.Auction.RESTRICTION_GUILD_ALLIANCE_ONLY",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.Auction.RESTRICTION_GUILD_ALLIANCE_ONLY.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.Auction.RESTRICTION_GUILD_ONLY",
+              "label": "GameData.Auction.RESTRICTION_GUILD_ONLY",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.Auction.RESTRICTION_GUILD_ONLY.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.Auction.RESTRICTION_NONE",
+              "label": "GameData.Auction.RESTRICTION_NONE",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.Auction.RESTRICTION_NONE.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.BonusTypes.EBONUS_AP_REGEN",
+              "label": "GameData.BonusTypes.EBONUS_AP_REGEN",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_AP_REGEN.md",
+              "importance": 100
+            },
+            {
               "id": "data:game:GameData.BonusTypes.EBONUS_ARMOR",
               "label": "GameData.BonusTypes.EBONUS_ARMOR",
               "type": "data_structure",
               "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_ARMOR.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.BonusTypes.EBONUS_ARMOR_PENETRATION_REDUCTION",
+              "label": "GameData.BonusTypes.EBONUS_ARMOR_PENETRATION_REDUCTION",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_ARMOR_PENETRATION_REDUCTION.md",
               "importance": 100
             },
             {
@@ -7013,6 +7440,13 @@
               "importance": 100
             },
             {
+              "id": "data:game:GameData.BonusTypes.EBONUS_CRITICAL_HIT_RATE_REDUCTION",
+              "label": "GameData.BonusTypes.EBONUS_CRITICAL_HIT_RATE_REDUCTION",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_CRITICAL_HIT_RATE_REDUCTION.md",
+              "importance": 100
+            },
+            {
               "id": "data:game:GameData.BonusTypes.EBONUS_DAMAGE_MAGIC",
               "label": "GameData.BonusTypes.EBONUS_DAMAGE_MAGIC",
               "type": "data_structure",
@@ -7055,10 +7489,31 @@
               "importance": 100
             },
             {
+              "id": "data:game:GameData.BonusTypes.EBONUS_HATE_CAUSED",
+              "label": "GameData.BonusTypes.EBONUS_HATE_CAUSED",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_HATE_CAUSED.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.BonusTypes.EBONUS_HATE_RECEIVED",
+              "label": "GameData.BonusTypes.EBONUS_HATE_RECEIVED",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_HATE_RECEIVED.md",
+              "importance": 100
+            },
+            {
               "id": "data:game:GameData.BonusTypes.EBONUS_HEALING_POWER",
               "label": "GameData.BonusTypes.EBONUS_HEALING_POWER",
               "type": "data_structure",
               "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_HEALING_POWER.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.BonusTypes.EBONUS_HEALTH_REGEN",
+              "label": "GameData.BonusTypes.EBONUS_HEALTH_REGEN",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_HEALTH_REGEN.md",
               "importance": 100
             },
             {
@@ -7073,6 +7528,20 @@
               "label": "GameData.BonusTypes.EBONUS_INTELLIGENCE",
               "type": "data_structure",
               "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_INTELLIGENCE.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.BonusTypes.EBONUS_MORALE_REGEN",
+              "label": "GameData.BonusTypes.EBONUS_MORALE_REGEN",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_MORALE_REGEN.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.BonusTypes.EBONUS_NONE",
+              "label": "GameData.BonusTypes.EBONUS_NONE",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_NONE.md",
               "importance": 100
             },
             {
@@ -7101,6 +7570,34 @@
               "label": "GameData.BonusTypes.EBONUS_TOUGHNESS",
               "type": "data_structure",
               "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_TOUGHNESS.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.BonusTypes.EBONUS_TRADE_SKILL_APOTHECARY",
+              "label": "GameData.BonusTypes.EBONUS_TRADE_SKILL_APOTHECARY",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_TRADE_SKILL_APOTHECARY.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.BonusTypes.EBONUS_TRADE_SKILL_CULTIVATION",
+              "label": "GameData.BonusTypes.EBONUS_TRADE_SKILL_CULTIVATION",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_TRADE_SKILL_CULTIVATION.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.BonusTypes.EBONUS_TRADE_SKILL_SALVAGING",
+              "label": "GameData.BonusTypes.EBONUS_TRADE_SKILL_SALVAGING",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_TRADE_SKILL_SALVAGING.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.BonusTypes.EBONUS_TRADE_SKILL_TALISMAN",
+              "label": "GameData.BonusTypes.EBONUS_TRADE_SKILL_TALISMAN",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_TRADE_SKILL_TALISMAN.md",
               "importance": 100
             },
             {
@@ -7342,6 +7839,13 @@
               "importance": 100
             },
             {
+              "id": "data:game:GameData.ChatData",
+              "label": "GameData.ChatData",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.ChatData.md",
+              "importance": 100
+            },
+            {
               "id": "data:game:GameData.ChatData.name",
               "label": "GameData.ChatData.name",
               "type": "data_structure",
@@ -7479,6 +7983,20 @@
               "label": "GameData.Guild",
               "type": "data_structure",
               "path": "gamedata/fields/gamedata_GameData.Guild.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.Guild.TaxRate",
+              "label": "GameData.Guild.TaxRate",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.Guild.TaxRate.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.Guild.TitheRate",
+              "label": "GameData.Guild.TitheRate",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.Guild.TitheRate.md",
               "importance": 100
             },
             {
@@ -7636,6 +8154,62 @@
               "importance": 100
             },
             {
+              "id": "data:game:GameData.OpenPartyInterest.DUNGEON",
+              "label": "GameData.OpenPartyInterest.DUNGEON",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.OpenPartyInterest.DUNGEON.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.OpenPartyInterest.NOT_SET",
+              "label": "GameData.OpenPartyInterest.NOT_SET",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.OpenPartyInterest.NOT_SET.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.OpenPartyInterest.PQ",
+              "label": "GameData.OpenPartyInterest.PQ",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.OpenPartyInterest.PQ.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.OpenPartyInterest.PVE",
+              "label": "GameData.OpenPartyInterest.PVE",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.OpenPartyInterest.PVE.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.OpenPartyInterest.RVR",
+              "label": "GameData.OpenPartyInterest.RVR",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.OpenPartyInterest.RVR.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.OpenPartyInterest.SCENARIO",
+              "label": "GameData.OpenPartyInterest.SCENARIO",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.OpenPartyInterest.SCENARIO.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.OpenPartyRequestType.ALL",
+              "label": "GameData.OpenPartyRequestType.ALL",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.OpenPartyRequestType.ALL.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.OpenPartyRequestType.ALL_BRIEF",
+              "label": "GameData.OpenPartyRequestType.ALL_BRIEF",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.OpenPartyRequestType.ALL_BRIEF.md",
+              "importance": 100
+            },
+            {
               "id": "data:game:GameData.PetCommand.ATTACK",
               "label": "GameData.PetCommand.ATTACK",
               "type": "data_structure",
@@ -7699,10 +8273,31 @@
               "importance": 100
             },
             {
+              "id": "data:game:GameData.Player.Group.Settings.autoLootInRvR",
+              "label": "GameData.Player.Group.Settings.autoLootInRvR",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.Player.Group.Settings.autoLootInRvR.md",
+              "importance": 100
+            },
+            {
               "id": "data:game:GameData.Player.Group.Settings.isPublic",
               "label": "GameData.Player.Group.Settings.isPublic",
               "type": "data_structure",
               "path": "gamedata/fields/gamedata_GameData.Player.Group.Settings.isPublic.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.Player.Group.Settings.lootMode",
+              "label": "GameData.Player.Group.Settings.lootMode",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.Player.Group.Settings.lootMode.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.Player.Group.Settings.lootThreshold",
+              "label": "GameData.Player.Group.Settings.lootThreshold",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.Player.Group.Settings.lootThreshold.md",
               "importance": 100
             },
             {
@@ -7976,6 +8571,20 @@
               "label": "GameData.Player.isInSiege",
               "type": "data_structure",
               "path": "gamedata/fields/gamedata_GameData.Player.isInSiege.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.Player.isOpenPartyInterested",
+              "label": "GameData.Player.isOpenPartyInterested",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.Player.isOpenPartyInterested.md",
+              "importance": 100
+            },
+            {
+              "id": "data:game:GameData.Player.isOpenPartyWorldSearchable",
+              "label": "GameData.Player.isOpenPartyWorldSearchable",
+              "type": "data_structure",
+              "path": "gamedata/fields/gamedata_GameData.Player.isOpenPartyWorldSearchable.md",
               "importance": 100
             },
             {

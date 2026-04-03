@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 22 addons
+- Seen in: 23 addons
 
 ## Confidence Assessment
 
@@ -31,7 +31,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, CCTV, CaVES, DAoCBuff, DuffTimer, EZGuard, Effigy, Enemy |
-| Files seen in | CCTV.lua, Code/Core/Groups/Groups.lua, Core.lua, DuffTimer.lua, EZGuard.lua, EveryBodyGuard.lua, GCDsaver.lua, PhantomLib/PhantomLib.lua |
+| Files seen in | AAOTracker.lua, CCTV.lua, Code/Core/Groups/Groups.lua, Core.lua, DuffTimer.lua, EZGuard.lua, EveryBodyGuard.lua, GCDsaver.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | EnforceEventStates, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoadingEnd |
@@ -61,7 +61,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.PLAYER_EFFECTS_UPDATED field accessed by 22 addons; commonly found in EnforceEventStates and GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoadingEnd, OnShutdown, RegisterEvents, RegisterSelfEvents, RegisterStateInfoForPlayer, SetSelfTracking, Shutdown, Statdoll.Local.onUpdate, SystemData.Events.PLAYER_EFFECTS_UPDATED, UnloadUnitFrame, UnregisterEvents, UnregisterSelfEvents, event_page, event_registration, lua_call, registerEventHandler, unregisterEventHandler contexts.
+SystemData.SystemData.Events.PLAYER_EFFECTS_UPDATED field accessed by 23 addons; commonly found in EnforceEventStates and GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnLoadingEnd, OnShutdown, RegisterEvents, RegisterSelfEvents, RegisterStateInfoForPlayer, SetSelfTracking, Shutdown, Statdoll.Local.onUpdate, SystemData.Events.PLAYER_EFFECTS_UPDATED, UnloadUnitFrame, UnregisterEvents, UnregisterSelfEvents, event_page, event_registration, lua_call, registerEventHandler, unregisterEventHandler contexts.
 
 ## Seen In
 
@@ -85,6 +85,7 @@ SystemData.SystemData.Events.PLAYER_EFFECTS_UPDATED field accessed by 22 addons;
 - TurretScrap
 - Twister
 - WSCT
+- WarBoard_AAOTracker
 - WhatsCooking
 - xHUD
 

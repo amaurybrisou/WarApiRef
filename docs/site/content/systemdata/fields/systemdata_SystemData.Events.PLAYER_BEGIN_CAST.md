@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 27 addons
+- Seen in: 28 addons
 
 ## Confidence Assessment
 
@@ -34,11 +34,11 @@
 | Files seen in | Bars/HealGridCastBar.lua, Core.lua, EveryBodyGuard.lua, GuardBot.lua, IHYTM.lua, LibCooldown.lua, LoyalPet.lua, NerfedButtons.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
-| Example locations | Init, Initialize, OnInitialize, OnLoad, OnShutdown, RegisterStateInfoForCastbar |
+| Example locations | Init, Initialize, OnInitialize, OnLoad, OnShutdown, RegisterEvents |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 3 |
 | Initialization flow references | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.PLAYER_BEGIN_CAST field accessed by 27 addons; commonly found in Init and Initialize, OnInitialize, OnLoad, OnShutdown, RegisterStateInfoForCastbar, Shutdown, Squared.TargetUpdate, SystemData.Events.PLAYER_BEGIN_CAST, Unload, entry_point, event_page, event_registration, lua_call contexts.
+SystemData.SystemData.Events.PLAYER_BEGIN_CAST field accessed by 28 addons; commonly found in Init and Initialize, OnInitialize, OnLoad, OnShutdown, RegisterEvents, RegisterStateInfoForCastbar, Shutdown, Squared.TargetUpdate, SystemData.Events.PLAYER_BEGIN_CAST, Unload, UnregisterEvents, entry_point, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
@@ -83,6 +83,7 @@ SystemData.SystemData.Events.PLAYER_BEGIN_CAST field accessed by 27 addons; comm
 - NoOverheal
 - Obsidian
 - PartyCast
+- PieTracker
 - RvRContribution
 - SNT_CASTBAR
 - Squared
@@ -101,4 +102,4 @@ SystemData.SystemData.Events.PLAYER_BEGIN_CAST field accessed by 27 addons; comm
 
 ## Notes
 
-- Observed in contexts: Init, Initialize, OnInitialize, OnLoad, OnShutdown, RegisterStateInfoForCastbar
+- Observed in contexts: Init, Initialize, OnInitialize, OnLoad, OnShutdown, RegisterEvents

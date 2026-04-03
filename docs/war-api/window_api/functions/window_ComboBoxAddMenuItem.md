@@ -172,7 +172,6 @@ Observed as a window function across 71 addons.
 
 ## Used With
 
-- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function

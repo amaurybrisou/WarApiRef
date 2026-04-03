@@ -98,14 +98,7 @@ Observed reading from or writing to edit-box controls.
 
 - [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
-
-## Affects
-
-- [SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_NEW_ABILITY_LEARNED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_NEW_ABILITY_LEARNED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_NEW_PET_ABILITY_LEARNED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_NEW_PET_ABILITY_LEARNED.md) (HIGH 100/100) - SystemData Field
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

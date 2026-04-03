@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 114 addons
+- Seen in: 130 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Amethyst, AuctionStats, Aura |
-| Files seen in | APAGui.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, AggroMeter.lua, AutoBand.lua, BankArkel.lua, BlackBookWindow.lua, Bloody Mess.lua |
+| Addons seen in | Ace, ActionBarHide, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Amethyst, Assist, AuctionStats |
+| Files seen in | AAOTracker.lua, APAGui.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, AggroMeter.lua, AutoBand.lua, BankArkel.lua, BlackBookWindow.lua |
 | Namespaces detected | ButtonSetText |
 | Source kinds | lua_calls |
 | Example locations | Ace: SetText, ActionBarHide: SetText, AdvancedPetAssist: OnShown, AdvancedRenownTrainer: AnywhereShow, AdvancedRenownTrainer: OnHidden, AdvancedRenownTrainer: SetImportExportLabels |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 673 |
-| Global usage count | 673 |
+| Lua usage count | 787 |
+| Global usage count | 787 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -90,6 +90,7 @@ Observed mutating button text or pressed state on existing controls.
 - AdvancedRenownTrainer
 - AggroMeter
 - Amethyst
+- Assist
 - AuctionStats
 - Aura
 - AutoBand
@@ -100,10 +101,12 @@ Observed mutating button text or pressed state on existing controls.
 - BuffHead
 - CDown
 - CM_ClosetGoblin
+- CMap
 - CaVES
 - Calling
 - CastSequence
 - ChattyCathy
+- Cheeseboard
 - Crusher
 - DAoCBuff
 - DPSMeter
@@ -112,14 +115,17 @@ Observed mutating button text or pressed state on existing controls.
 - DetauntHelper
 - DuffTimer
 - Dye Preview
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
 - Emojii
 - Enemy
 - FastFriends
+- FozAuction
 - GCDsaver
 - GroupRange
 - GuildWarden
@@ -139,11 +145,14 @@ Observed mutating button text or pressed state on existing controls.
 - Mass Refine
 - MegaphonePlusPlus
 - Miracle Grow Remix
+- MoraleSet
 - Motion
 - NaturalLog
 - NerfedButtons
+- ObjectInspector
 - Obsidian
 - PartyCast
+- PieTracker
 - Pocket Palette
 - PotionBar
 - Pure
@@ -168,12 +177,14 @@ Observed mutating button text or pressed state on existing controls.
 - Sequencer
 - SessionRPs
 - Shinies
+- SocialWindow 2.0
 - Squared
 - Statdoll Remix
 - TacticSetNames
 - TalismanGenie
 - TargetRing
 - TastyButtons
+- TaxPayer
 - ThinkOutLoud
 - TidyChat
 - TidyQueue
@@ -183,7 +194,11 @@ Observed mutating button text or pressed state on existing controls.
 - TurretRange
 - TwisterSet
 - Vectors
+- WBStutterLess
 - WSCT
+- WTes
+- WarBoard_AAOTracker
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar
@@ -191,6 +206,7 @@ Observed mutating button text or pressed state on existing controls.
 - WoH-Reticle
 - XpStatus+G
 - alertMod
+- bigger_MacroWindow
 - followTheLeader
 - nLootLink
 - scenarioInfo
@@ -220,11 +236,10 @@ Observed mutating button text or pressed state on existing controls.
 - [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
-- [ComboBoxClearMenuItems](window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [DefaultColor.SetWindowTint](../../globals/functions/global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function

@@ -84,20 +84,18 @@ GameData.GameData.PlayerActions.SET_TARGET field accessed by 17 addons; commonly
 ## Related APIs
 
 - [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
+- [Icons.GetCareerIconIDFromCareerNamesID](../../globals/functions/global_Icons.GetCareerIconIDFromCareerNamesID.md) (HIGH 100/100) - Global Function
 - [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
 - [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
 - [WindowSetGameActionTrigger](../../window_api/functions/window_WindowSetGameActionTrigger.md) (HIGH 100/100) - Window Function
-- [Icons.GetCareerIconIDFromCareerNamesID](../../globals/functions/global_Icons.GetCareerIconIDFromCareerNamesID.md) (HIGH 96/100) - Global Function
 - [EA_Window_ContextMenu.GameActionData](../../globals/functions/global_EA_Window_ContextMenu.GameActionData.md) (HIGH 80/100) - Global Function
 - [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
 - [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

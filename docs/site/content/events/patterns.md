@@ -9,11 +9,11 @@
 - Evidence:
 
 - AbilityAlert: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, "AbilityAlert.CombatEvent")
+  - AbilityNotifier: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, "AbHelp.CombatEvent")
+  - AbilityNotifier: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, "AbHelp.CombatUpdated")
   - ActionBarHide: RegisterEventHandler(SystemData.Events.LOADING_END, "ActionBarHide.OnLoad")
   - ActionBarHide: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "ActionBarHide.OnLoad")
   - ActionBarHide: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, "ActionBarHide.Combat")
-  - ActionFraction: RegisterEventHandler(SystemData.Events.LOADING_END, "ActionFractionWindow.UpdateVisibility")
-  - ActionFraction: RegisterEventHandler(SystemData.Events.ENTER_WORLD, "ActionFraction.Initialize")
 
 ## UnregisterEventHandler
 
@@ -38,12 +38,12 @@
 
 - Evidence:
 
-- AuctionStats: BroadcastEvent(SystemData.Events.EXIT_GAME)
+- Assist: BroadcastEvent(SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS)
+  - Assist: BroadcastEvent(SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS)
+  - AuctionStats: BroadcastEvent(SystemData.Events.EXIT_GAME)
   - AutoFocus: BroadcastEvent(SystemData.Events.SEND_CHAT_TEXT)
   - Brizio's Crappy Computer Medic: BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
   - Brizio's Crappy Computer Medic: BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
-  - Brizio's Crappy Computer Medic: BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
-  - CNC: BroadcastEvent(SystemData.Events.USER_SETTINGS_CHANGED)
 
 ## Game event fan-in
 

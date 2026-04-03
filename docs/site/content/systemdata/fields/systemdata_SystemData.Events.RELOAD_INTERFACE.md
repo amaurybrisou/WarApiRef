@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 62 addons
+- Seen in: 65 addons
 
 ## Confidence Assessment
 
@@ -37,8 +37,8 @@
 | Example locations | Init, Initialize, LOADING_END, LoadUnitFrame, NAMBLA_Initialize, OnClickReloadUI |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 23 |
-| Global usage count | 23 |
+| Lua usage count | 25 |
+| Global usage count | 25 |
 | Local definition count | 0 |
 | Documentation references | 3 |
 | Initialization flow references | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.RELOAD_INTERFACE field accessed by 62 addons; commonly found in Init and Initialize, LOADING_END, LoadUnitFrame, NAMBLA_Initialize, OnClickReloadUI, OnInitialize, OnShutdown, RegisterCoreEvents, RegisterEventHandlers, Shutdown, Squared.OnLoad, SystemData.Events.RELOAD_INTERFACE, ToggleHook, Unload, UnloadUnitFrame, UnregisterCoreEvents, entry_point, event_page, event_registration, init, lua_call, onInitialize contexts.
+SystemData.SystemData.Events.RELOAD_INTERFACE field accessed by 65 addons; commonly found in Init and Initialize, LOADING_END, LoadUnitFrame, NAMBLA_Initialize, OnClickReloadUI, OnInitialize, OnShutdown, RegisterCoreEvents, RegisterEventHandlers, SaveAndReloadAdvanced, SaveAndReloadMods, Shutdown, Squared.OnLoad, SystemData.Events.RELOAD_INTERFACE, ToggleHook, Unload, UnloadUnitFrame, UnregisterCoreEvents, entry_point, event_page, event_registration, init, lua_call, onInitialize contexts.
 
 ## Seen In
 
@@ -76,6 +76,7 @@ SystemData.SystemData.Events.RELOAD_INTERFACE field accessed by 62 addons; commo
 - Crusher
 - Default Tactic Set
 - DuffTimer
+- EA_UiModWindow
 - Effigy
 - GroupSpotter
 - HammerTime
@@ -121,9 +122,11 @@ SystemData.SystemData.Events.RELOAD_INTERFACE field accessed by 62 addons; commo
 - Twister
 - TwisterSet
 - WarBoard
+- WarBoard_WarWhisperer
 - WhoHealedMe
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
+- fpsbox
 - nLootLink
 - scnoload
 - xHUD
@@ -132,7 +135,6 @@ SystemData.SystemData.Events.RELOAD_INTERFACE field accessed by 62 addons; commo
 
 - [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
 - [LibSlash.IsSlashCmdRegistered](../../globals/functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
 - [EA_Window_InteractionRenownTraining.GetPointsAvailable](../../globals/functions/global_EA_Window_InteractionRenownTraining.GetPointsAvailable.md) (HIGH 98/100) - Global Function
 - [EA_Window_InteractionRenownTraining.GetPointsSpent](../../globals/functions/global_EA_Window_InteractionRenownTraining.GetPointsSpent.md) (HIGH 98/100) - Global Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
@@ -145,7 +147,6 @@ SystemData.SystemData.Events.RELOAD_INTERFACE field accessed by 62 addons; commo
 - [SystemData.Events.ALL_MODULES_INITIALIZED](systemdata_SystemData.Events.ALL_MODULES_INITIALIZED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED](systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function

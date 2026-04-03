@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 40 addons
+- Seen in: 46 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, AuctionStats, AutoSalvage, BuddyBind, Calling, Crusher |
-| Files seen in | BuddyBind.lua, CallingKeybinding.lua, KillerConfigWindow.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Options.lua |
+| Addons seen in | Ace, ActionBarHide, Amethyst, AuctionStats, AutoSalvage, BuddyBind, CMap, Calling |
+| Files seen in | BuddyBind.lua, CMap.lua, CallingKeybinding.lua, KillerConfigWindow.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua |
 | Namespaces detected | ButtonSetCheckButtonFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: New, ActionBarHide: New, Amethyst: New, AuctionStats: ExitOnComplete, AuctionStats: SetCheckBox, AuctionStats: ToggleCheckBox |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 105 |
-| Global usage count | 105 |
+| Lua usage count | 118 |
+| Global usage count | 118 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "PhantomSettingsHideBarLock", "PhantomSettingsHideGroupBuffs", "PhantomSettingsHideMainAssist" |
+| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_MacroIconSlot"..slot, "PhantomSettingsHideBarLock", "PhantomSettingsHideGroupBuffs" |
 | arg2 | Observed as a boolean toggle. | Observed values: Status, false, status |
 
 ## Returns
@@ -90,9 +90,11 @@ Observed mutating button text or pressed state on existing controls.
 - AuctionStats
 - AutoSalvage
 - BuddyBind
+- CMap
 - Calling
 - Crusher
 - EA_ScenarioGroupWindow
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
@@ -111,15 +113,19 @@ Observed mutating button text or pressed state on existing controls.
 - Pure Careerbar
 - RealmStatus
 - Shinies
+- SocialWindow 2.0
 - TalismanGenie
 - TargetRing
 - TastyButtons
 - Tokens
 - WARCommander
+- WBStutterLess
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WoH-Reticle
+- bigger_MacroWindow
 - nLootLink
 - scenarioInfo
 - xHUD
@@ -143,6 +149,7 @@ Observed mutating button text or pressed state on existing controls.
 - [ButtonGetCheckButtonFlag](window_ButtonGetCheckButtonFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetStayDownFlag](window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.M_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.M_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.R_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.R_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field

@@ -23,13 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AuctionStats, AutoBand, AutoSalvage, BlackBook, CM_ClosetGoblin, CaVES, Calling |
+| Addons seen in | AdvancedRenownTrainer, AuctionStats, AutoBand, AutoSalvage, BlackBook, CM_ClosetGoblin, CMap, CaVES |
 | Namespaces detected | OnInitialize |
 | Source kinds | bindings, xml_handlers |
 | Example locations | AdvancedRenownTrainer: .OnInitialize, AuctionStats: .OnInitialize, AutoBand: .OnInitialize, AutoSalvage: .OnInitialize, BlackBook: .OnInitialize, CM_ClosetGoblin: .OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 31 |
+| Lua usage count | 55 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 25 addons.
+XML handler event observed across 35 addons.
 
 ## Expected Lua Binding
 
@@ -73,24 +73,34 @@ function()
 - AutoSalvage
 - BlackBook
 - CM_ClosetGoblin
+- CMap
 - CaVES
 - Calling
 - DPSMeter
+- EA_LoadingScreen
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_UiModWindow
 - FastInteract
+- FozAuction
 - LoyalPet
 - MapMonster
 - Minmap
 - Miracle Grow Remix
 - MiracleGrow
+- MoraleSet
 - RandomMount
+- SocialWindow 2.0
 - TastyButtons
 - TokenMachine
 - Tome Titan
+- Tortall_DPS
 - WSCT
 - WhoHealedMe
 - XpStatus+G
 - alertMod
+- bigger_MacroWindow
+- fpsbox
 - wbLeadHelper
 
 ## Examples
@@ -134,6 +144,7 @@ function()
 - [WindowSetAlpha](../../window_api/functions/window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetFontAlpha](../../window_api/functions/window_WindowSetFontAlpha.md) (HIGH 100/100) - Window Function
+- [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
 - [WindowSetParent](../../window_api/functions/window_WindowSetParent.md) (HIGH 100/100) - Window Function
 - [WindowSetScale](../../window_api/functions/window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
@@ -141,11 +152,11 @@ function()
 - [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
+- [GuildWindow.IsPlayerInAGuild](../../globals/functions/global_GuildWindow.IsPlayerInAGuild.md) (HIGH 83/100) - Global Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 - [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 - [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
-- [GuildWindow.IsPlayerInAGuild](../../globals/functions/global_GuildWindow.IsPlayerInAGuild.md) (HIGH 71/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
@@ -157,19 +168,23 @@ function()
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 - [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Affects
 
+- [GameData.Account.ServerName](../../gamedata/fields/gamedata_GameData.Account.ServerName.md) (HIGH 100/100) - GameData Field
 - [GameData.CityId.CHAOS](../../gamedata/fields/gamedata_GameData.CityId.CHAOS.md) (HIGH 100/100) - GameData Field
 - [GameData.CityId.EMPIRE](../../gamedata/fields/gamedata_GameData.CityId.EMPIRE.md) (HIGH 100/100) - GameData Field
 - [GameData.Player.name](../../gamedata/fields/gamedata_GameData.Player.name.md) (HIGH 100/100) - GameData Field
 - [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.ALL_MODULES_INITIALIZED](../../systemdata/fields/systemdata_SystemData.Events.ALL_MODULES_INITIALIZED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.BATTLEGROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.CAMPAIGN_PAIRING_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.CAMPAIGN_PAIRING_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.CAMPAIGN_ZONE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.CAMPAIGN_ZONE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.CHAT_REPLY](../../systemdata/fields/systemdata_SystemData.Events.CHAT_REPLY.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.CHAT_TEXT_ARRIVED](../../systemdata/fields/systemdata_SystemData.Events.CHAT_TEXT_ARRIVED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.CONVERSATION_TEXT_ARRIVED](../../systemdata/fields/systemdata_SystemData.Events.CONVERSATION_TEXT_ARRIVED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
@@ -180,6 +195,7 @@ function()
 - [SystemData.Events.GROUP_STATUS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_STATUS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.GROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.GUILD_EXP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GUILD_EXP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.GUILD_REFRESH](../../systemdata/fields/systemdata_SystemData.Events.GUILD_REFRESH.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_LEAVE_SCENARIO_QUEUE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_BEGIN](../../systemdata/fields/systemdata_SystemData.Events.LOADING_BEGIN.md) (HIGH 100/100) - SystemData Field
@@ -190,6 +206,7 @@ function()
 - [SystemData.Events.OBJECTIVE_CONTROL_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.OBJECTIVE_CONTROL_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.OBJECTIVE_OWNER_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.OBJECTIVE_OWNER_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_ABILITY_TOGGLED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ABILITY_TOGGLED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_AREA_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AREA_CHANGED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_BEGIN_CAST](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_DEATH](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_DEATH.md) (HIGH 100/100) - SystemData Field
@@ -198,6 +215,7 @@ function()
 - [SystemData.Events.PLAYER_EXP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_EXP_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_HOT_BAR_PAGE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HOT_BAR_PAGE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_HOT_BAR_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HOT_BAR_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_INFLUENCE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INFLUENCE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_MONEY_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MONEY_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_MORALE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MORALE_UPDATED.md) (HIGH 100/100) - SystemData Field
@@ -206,6 +224,7 @@ function()
 - [SystemData.Events.PLAYER_RENOWN_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_RENOWN_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_EFFECTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_ZONE_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PUBLIC_QUEST_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.R_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.R_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
@@ -222,6 +241,7 @@ function()
 - [SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_SHOW_JOIN_PROMPT.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.SCENARIO_STARTING_SCENARIO_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_STARTING_SCENARIO_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.SHOW_ALERT_TEXT](../../systemdata/fields/systemdata_SystemData.Events.SHOW_ALERT_TEXT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SOCIAL_SEARCH_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.SOCIAL_SEARCH_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.SPELL_CAST_CANCEL](../../systemdata/fields/systemdata_SystemData.Events.SPELL_CAST_CANCEL.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.USER_SETTINGS_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.USER_SETTINGS_CHANGED.md) (HIGH 100/100) - SystemData Field

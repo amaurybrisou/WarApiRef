@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 12 addons
+- Seen in: 14 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuddyBind, BuffHead, Calling, Dascore, Miracle Grow Remix, RVAPI_ColorDialog, RVMOD_Manager, RVMOD_SquaredDistances |
+| Addons seen in | BuddyBind, BuffHead, Calling, Dascore, EA_OpenPartyWindow, FozAuction, Miracle Grow Remix, RVAPI_ColorDialog |
 | Files seen in | BuddyBind.lua, CallingKeybinding.lua, Dascore.lua, Modules/UI/Shinies-UI-Browse.lua, RVAPI_ColorDialog.lua, RVMOD_Manager.lua, RVMOD_SquaredDistances.lua, RVMOD_Targets.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | Criteria_ReopenComboBox, InitLayout, Initialize, OnComboBoxConditionClick, OnExitBindingMode, OnHidden |
+| Example locations | Criteria_ReopenComboBox, InitLayout, Initialize, OnCheckItemSlot, OnCheckItemType, OnComboBoxConditionClick |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 16 |
-| Global usage count | 16 |
+| Lua usage count | 21 |
+| Global usage count | 21 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.L_BUTTON_UP_PROCESSED field accessed by 12 addons; commonly found in Criteria_ReopenComboBox and InitLayout, Initialize, OnComboBoxConditionClick, OnExitBindingMode, OnHidden, OnInitialize, OnLButtonRawDeviceInput, OnRawDeviceInput, OnSelChanged_Criteria_MultiSelCombo, ReopenComboBox, SetupHooks, Show, Shutdown, StartBinding, lua_call contexts.
+SystemData.SystemData.Events.L_BUTTON_UP_PROCESSED field accessed by 14 addons; commonly found in Criteria_ReopenComboBox and InitLayout, Initialize, OnCheckItemSlot, OnCheckItemType, OnComboBoxConditionClick, OnExitBindingMode, OnHidden, OnInitialize, OnLButtonRawDeviceInput, OnRawDeviceInput, OnSelChanged_Criteria_MultiSelCombo, ReopenComboBox, ReopenItemSlots, ReopenItemTypes, SetupHooks, Show, Shutdown, StartBinding, UpdateAdditonalFiltersButton, lua_call contexts.
 
 ## Seen In
 
@@ -68,6 +68,8 @@ SystemData.SystemData.Events.L_BUTTON_UP_PROCESSED field accessed by 12 addons; 
 - BuffHead
 - Calling
 - Dascore
+- EA_OpenPartyWindow
+- FozAuction
 - Miracle Grow Remix
 - RVAPI_ColorDialog
 - RVMOD_Manager
@@ -85,15 +87,23 @@ SystemData.SystemData.Events.L_BUTTON_UP_PROCESSED field accessed by 12 addons; 
 - [WindowUnregisterEventHandler](../../window_api/functions/window_WindowUnregisterEventHandler.md) (HIGH 100/100) - Window Function
 - [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+- [DefaultColor.LabelSetTextColor](../../globals/functions/global_DefaultColor.LabelSetTextColor.md) (MEDIUM 55/100) - Global Function
 
 ## Used With
 
 - [ButtonSetCheckButtonFlag](../../window_api/functions/window_ButtonSetCheckButtonFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
+- [ComboBoxExternalOpenMenu](../../window_api/functions/window_ComboBoxExternalOpenMenu.md) (HIGH 100/100) - Window Function
+- [SystemData.Events.BATTLEGROUP_MEMBER_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_MEMBER_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.BATTLEGROUP_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.GROUP_SETTINGS_UPDATED](systemdata_SystemData.Events.GROUP_SETTINGS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.GROUP_UPDATED](systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.M_BUTTON_UP_PROCESSED](systemdata_SystemData.Events.M_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_ZONE_CHANGED](systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.R_BUTTON_UP_PROCESSED](systemdata_SystemData.Events.R_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [WindowUnregisterEventHandler](../../window_api/functions/window_WindowUnregisterEventHandler.md) (HIGH 100/100) - Window Function
 
 ## Notes
 
-- Observed in contexts: Criteria_ReopenComboBox, InitLayout, Initialize, OnComboBoxConditionClick, OnExitBindingMode, OnHidden
+- Observed in contexts: Criteria_ReopenComboBox, InitLayout, Initialize, OnCheckItemSlot, OnCheckItemType, OnComboBoxConditionClick

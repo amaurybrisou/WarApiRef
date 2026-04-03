@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 131 addons
+- Seen in: 153 addons
 
 ## Confidence Assessment
 
@@ -24,15 +24,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AbilityAlert, ActionFraction, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Aura, AutoMark, BagOMatic |
-| Files seen in | APAGui.lua, AbilityAlert.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, AggroMeter.lua, BagOMatic.lua, BankArkel.lua, BlackBox.lua |
+| Addons seen in | AbilityAlert, AbilityNotifier, ActionFraction, ActionPoints, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Asshat |
+| Files seen in | AAOTracker.lua, APAGui.lua, AbilityAlert.lua, AbilityNotifier.lua, ActionPoints.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, AggroMeter.lua |
 | Namespaces detected | CreateWindow |
 | Source kinds | lua_calls |
-| Example locations | AbilityAlert: Initialize, ActionFraction: Initialize, AdvancedPetAssist: Show, AdvancedRenownTrainer: Initialize, AdvancedRenownTrainer: InitializeImportExport, AggroMeter: Initialize |
+| Example locations | AbilityAlert: Initialize, AbilityNotifier: Initialize, ActionFraction: Initialize, ActionPoints: Initialize, AdvancedPetAssist: Show, AdvancedRenownTrainer: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 313 |
-| Global usage count | 313 |
+| Lua usage count | 342 |
+| Global usage count | 342 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -67,7 +67,7 @@ Observed creating a top-level XML window from a loaded definition.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a top-level window name. | Observed values: "AAWindow", "APAOptions", "AdvancedRenownTrainingPresetsWindow" |
+| windowName | Observed as a top-level window name. | Observed values: "AAWindow", "APAOptions", "AbHelpWindow" |
 | showOnCreate | Observed as a boolean visibility flag. | Observed values: KillTracker_Options.showToggle, MiracleGrow.Settings.showing, false |
 
 ## Returns
@@ -81,10 +81,13 @@ Observed creating a top-level XML window from a loaded definition.
 ## Seen In
 
 - AbilityAlert
+- AbilityNotifier
 - ActionFraction
+- ActionPoints
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - AggroMeter
+- Asshat
 - Aura
 - AutoMark
 - BagOMatic
@@ -98,14 +101,17 @@ Observed creating a top-level XML window from a loaded definition.
 - CM_ClosetGoblin
 - Calling
 - ChattyCathy
+- Cheeseboard
 - CleanUnitFrames
 - CleansingBuddy
+- Clock
 - CoolDownLine
 - Countdown
 - DAoCBuff
 - DPSMeter
 - DeepSleep
 - Dye Preview
+- EA_OpenPartyWindow
 - EA_UiDebugTools
 - Emojii
 - Enemy
@@ -118,6 +124,8 @@ Observed creating a top-level XML window from a loaded definition.
 - Group Icons SG
 - GroupSpotter
 - GuardLine
+- GuardList
+- GuardRange
 - GuildWarden
 - HealGrid
 - InfoScroller
@@ -141,12 +149,17 @@ Observed creating a top-level XML window from a loaded definition.
 - MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
+- MoraleSet
 - Moth
 - MouseHint
+- MyReasons
 - NerfedButtons
 - NoOverheal
+- ObjectInspector
+- Paint the leader
 - PeaceOut
 - Phantom
+- PieTracker
 - PlayEffectsOn
 - PotionBar
 - Pure
@@ -167,6 +180,7 @@ Observed creating a top-level XML window from a loaded definition.
 - RetAlert
 - RoR_SoR
 - RoR_debolster
+- Rolodex
 - Rotation
 - RvRContribution
 - RvRStats
@@ -178,6 +192,8 @@ Observed creating a top-level XML window from a loaded definition.
 - ScenarioStats
 - Sequencer
 - Shinies
+- SimpleXY
+- SocialWindow 2.0
 - Soloq
 - Squared
 - Statdoll Remix
@@ -185,6 +201,7 @@ Observed creating a top-level XML window from a loaded definition.
 - Swinger
 - TalismanGenie
 - TastyButtons
+- TaxPayer
 - ThankTheTank
 - TheSeeker
 - ThinkOutLoud
@@ -200,12 +217,17 @@ Observed creating a top-level XML window from a loaded definition.
 - WARCommander
 - WARRatingBuster
 - WSCT
+- WTes
+- WarBoard_AAOTracker
 - WarBoard_FPS
+- WarBoard_WarWhisperer
 - WhatsCooking
 - XpStatus+G
 - ZonePOP
+- bigger_MacroWindow
 - emotes
 - followTheLeader
+- fpsbox
 - minesweep
 - nLootLink
 - wbLeadHelper
@@ -215,11 +237,11 @@ Observed creating a top-level XML window from a loaded definition.
 ## Examples
 
 - AbilityAlert: Initialize -> CreateWindow("AAWindow", true)
+- AbilityNotifier: Initialize -> CreateWindow("AbHelpWindow", true)
 - ActionFraction: Initialize -> CreateWindow(windowName, true)
+- ActionPoints: Initialize -> CreateWindow("ActionPointsWindow", true)
 - AdvancedPetAssist: Show -> CreateWindow("APAOptions", true)
 - AdvancedRenownTrainer: Initialize -> CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
-- AdvancedRenownTrainer: InitializeImportExport -> CreateWindow(ImportWindowName, false)
-- AdvancedRenownTrainer: InitializeImportExport -> CreateWindow(ImportNameInputWindowName, false)
 
 ## Related APIs
 
@@ -250,6 +272,9 @@ Observed creating a top-level XML window from a loaded definition.
 - [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
@@ -260,13 +285,13 @@ Observed creating a top-level XML window from a loaded definition.
 
 ## Affects
 
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
 

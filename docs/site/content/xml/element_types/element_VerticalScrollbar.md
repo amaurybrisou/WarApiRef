@@ -72,7 +72,7 @@ VerticalScrollbar is an interactive XML control. It commonly appears under EditB
 ## Common Handlers
 
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md)
-- OnScrollPosChanged
+- [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md)
 
 ## Common Handler Functions
 
@@ -89,7 +89,7 @@ VerticalScrollbar is an interactive XML control. It commonly appears under EditB
 | Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | AuctionWindow.OnVertScrollLButtonUp, DPSMeter.OnScrollbarLButtonUp, ManualWindow.OnVertScrollLButtonUp, ScenarioGroupWindow.OnVertScrollLButtonUp, emotes.OnVertScrollLButtonUp | `flags, x, y` | MEDIUM |
-| OnScrollPosChanged | data | MacroIcons.ScrollPos | `scrollPos` | MEDIUM |
+| [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md) | data | MacroIcons.ScrollPos | `scrollPos` | MEDIUM |
 
 ### Per-Event Lua API Calls
 
@@ -228,6 +228,7 @@ Confidence: MEDIUM
 | 0 | `scrollPos` | number | scroll_position |
 ## Lua Functions Manipulating This Type
 
+- EA_Window_Macro.Initialize
 - MacroIcons.OnInitialize
 
 
@@ -296,3 +297,4 @@ Confidence: MEDIUM
 ## Triggered By
 
 - [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [OnScrollPosChanged](../handlers/handler_OnScrollPosChanged.md) (HIGH 76/100) - XML Event

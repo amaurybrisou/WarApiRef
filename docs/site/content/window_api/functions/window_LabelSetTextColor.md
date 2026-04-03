@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 108 addons
+- Seen in: 116 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, ActionBarHide, ActionFraction, AdvancedPetAssist, Amethyst, AuctionStats, Aura, BuddyBind |
-| Files seen in | APAGuiHUD.lua, AuctionStats.lua, BuddyBind.lua, Busted.lua, CDownSettings.lua, CallingList.lua, CallingNotification.lua, Castbar.lua |
+| Files seen in | AAOTWarBoard.lua, AAOTracker.lua, APAGuiHUD.lua, AuctionStats.lua, BuddyBind.lua, Busted.lua, CDownSettings.lua, CallingList.lua |
 | Namespaces detected | LabelSetTextColor |
 | Source kinds | lua_calls |
 | Example locations | Ace: Color, ActionBarHide: Color, ActionFraction: SetPercentageBasedColors, ActionFraction: UpdateActionPoints, AdvancedPetAssist: UpdateFollowTargetHUD, AdvancedPetAssist: UpdateInstantOnlyHUD |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 639 |
-| Global usage count | 639 |
+| Lua usage count | 662 |
+| Global usage count | 662 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -98,10 +98,12 @@ Observed updating label text or label styling on existing controls.
 - Busted
 - CDown
 - CM_ClosetGoblin
+- CMap
 - CaVES
 - Calling
 - CastSequence
 - CleanUnitFrames
+- Clock
 - CombatTextNames
 - Countdown
 - Crusher
@@ -110,12 +112,15 @@ Observed updating label text or label styling on existing controls.
 - DammazKron
 - DeepSleep
 - DetauntHelper
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
 - Enemy
+- FozAuction
 - GCDTracker
 - GCDsaver
 - Group Icons SG
@@ -173,14 +178,17 @@ Observed updating label text or label styling on existing controls.
 - TastyButtons
 - TexturedButtons
 - Tokens
+- Tortall_DPS
 - Trakario
 - TurretRange
 - WARCommander
 - WSCT
+- WarBoard_AAOTracker
 - WarBoard_Loc
 - WarBoard_Session
 - WarBoard_TogglerSquared
 - WarBoard_TogglerWARCommander
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar
@@ -216,9 +224,11 @@ Observed updating label text or label styling on existing controls.
 ## Used With
 
 - [Color](../../xml/element_types/element_Color.md) (HIGH 100/100) - XML Element Type
+- [DefaultColor.SetWindowTint](../../globals/functions/global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
 - [LabelGetTextColor](window_LabelGetTextColor.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [DefaultColor.GetRowColor](../../globals/functions/global_DefaultColor.GetRowColor.md) (HIGH 96/100) - Global Function
 
 ## Notes
 

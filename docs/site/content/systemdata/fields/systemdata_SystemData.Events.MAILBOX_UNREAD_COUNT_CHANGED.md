@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Minmap, zMailMod |
-| Files seen in | core.lua, zMailMod.lua |
+| Addons seen in | CMap, Minmap, zMailMod |
+| Files seen in | CMap.lua, core.lua, zMailMod.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Initialize, RegisterEventsHandlers, lua_call |
@@ -60,12 +60,17 @@
 
 ## Description
 
-SystemData.SystemData.Events.MAILBOX_UNREAD_COUNT_CHANGED field accessed by 2 addons; commonly found in Initialize and RegisterEventsHandlers, lua_call contexts.
+SystemData.SystemData.Events.MAILBOX_UNREAD_COUNT_CHANGED field accessed by 3 addons; commonly found in Initialize and RegisterEventsHandlers, lua_call contexts.
 
 ## Seen In
 
+- CMap
 - Minmap
 - zMailMod
+
+## Related APIs
+
+- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

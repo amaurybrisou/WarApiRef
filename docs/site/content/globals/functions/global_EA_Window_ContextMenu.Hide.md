@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 11 addons
+- Seen in: 12 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | ActionFraction: AutoHideOnMouseOver, ActionFraction: SetFontSelectionMenu, ActionFraction: SetPresetLocation, AdjustTheTip: OnAnchor, AdjustTheTip: OnDelayedFadingEnabled, AdjustTheTip: SpawnAnchorContextMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 21 |
-| Global usage count | 21 |
+| Lua usage count | 30 |
+| Global usage count | 30 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ EA_Window_ContextMenu.Hide(arg1)
 
 ## Description
 
-Observed as a global function across 11 addons.
+Observed as a global function across 12 addons.
 
 ## Parameters
 
@@ -91,6 +91,7 @@ Observed as a global function across 11 addons.
 - Miracle Grow Remix
 - Obsidian
 - ShowMeTheBubbles
+- SocialWindow 2.0
 - TexturedButtons
 - TurretRange
 - XpStatus+G

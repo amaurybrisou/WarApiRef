@@ -124,10 +124,6 @@ Observed as a window function across 31 addons.
 - Crusher: GetValue -> StatusBarGetCurrentValue(self.name)
 - EZCraftX: GetValue -> StatusBarGetCurrentValue(self.name)
 
-## Used With
-
-- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
-
 ## Notes
 
 - none

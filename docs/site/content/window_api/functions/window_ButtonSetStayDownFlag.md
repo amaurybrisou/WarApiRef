@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 12 addons
+- Seen in: 15 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Bloody Mess, BuddyBind, Calling, DetauntHelper, HealGrid, KillTracker, Kwestor, RvRStats |
-| Files seen in | Bloody Mess.lua, BuddyBind.lua, CallingKeybinding.lua, CallingSetup.lua, Gui/HealGridGuiUtility.lua, Gui/KwestorGui.lua, Source/Config/Config.lua, Source/KillTracker.lua |
+| Addons seen in | Bloody Mess, BuddyBind, CMap, Calling, DetauntHelper, EA_UiModWindow, FozAuction, HealGrid |
+| Files seen in | Bloody Mess.lua, BuddyBind.lua, CMap.lua, CallingKeybinding.lua, CallingSetup.lua, Gui/HealGridGuiUtility.lua, Gui/KwestorGui.lua, Source/Config/Config.lua |
 | Namespaces detected | ButtonSetStayDownFlag |
 | Source kinds | lua_calls |
-| Example locations | Bloody Mess: OnInitialize, BuddyBind: OnExitBindingMode, BuddyBind: OnLButtonRawDeviceInput, BuddyBind: OnRawDeviceInput, Calling: EnableSubMenu, Calling: OnRawDeviceInput |
+| Example locations | Bloody Mess: OnInitialize, BuddyBind: OnExitBindingMode, BuddyBind: OnLButtonRawDeviceInput, BuddyBind: OnRawDeviceInput, CMap: Initialize, Calling: EnableSubMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 29 |
-| Global usage count | 29 |
+| Lua usage count | 35 |
+| Global usage count | 35 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "BloodyMessOptionsEnableCheckBoxButton", "CallingSetupCategories"..subName, "CharacterWindowTabRvRStats" |
+| arg1 | Observed as a text or wstring payload. | Observed values: "BloodyMessOptionsEnableCheckBoxButton", "CMapWindowMapWorldMapButton", "CallingSetupCategories"..subName |
 | arg2 | Observed as a boolean toggle. | Observed values: false, flag, setit |
 
 ## Returns
@@ -86,8 +86,11 @@ Observed mutating button text or pressed state on existing controls.
 
 - Bloody Mess
 - BuddyBind
+- CMap
 - Calling
 - DetauntHelper
+- EA_UiModWindow
+- FozAuction
 - HealGrid
 - KillTracker
 - Kwestor
@@ -103,8 +106,8 @@ Observed mutating button text or pressed state on existing controls.
 - BuddyBind: OnExitBindingMode -> ButtonSetStayDownFlag(BuddyBind.bindingButtonName, false)
 - BuddyBind: OnLButtonRawDeviceInput -> ButtonSetStayDownFlag(BuddyBind.bindingButtonName, true)
 - BuddyBind: OnRawDeviceInput -> ButtonSetStayDownFlag(BuddyBind.bindingButtonName, false)
+- CMap: Initialize -> ButtonSetStayDownFlag("CMapWindowMapWorldMapButton", true)
 - Calling: EnableSubMenu -> ButtonSetStayDownFlag("CallingSetupCategories"..subName, val)
-- Calling: OnRawDeviceInput -> ButtonSetStayDownFlag(KeyMappingWindow.bindingButtonName, false)
 
 ## Related APIs
 
@@ -120,12 +123,29 @@ Observed mutating button text or pressed state on existing controls.
 
 ## Affects
 
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.CURRENT_EVENTS_LIST_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.CURRENT_EVENTS_LIST_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.MAILBOX_UNREAD_COUNT_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.MAILBOX_UNREAD_COUNT_CHANGED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.M_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.M_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_AREA_NAME_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AREA_NAME_CHANGED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CHAPTER_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CHAPTER_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_INFLUENCE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_INFLUENCE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_RVR_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_RVR_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_ZONE_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PUBLIC_QUEST_ADDED](../../systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_ADDED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PUBLIC_QUEST_REMOVED](../../systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_REMOVED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PUBLIC_QUEST_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PUBLIC_QUEST_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.R_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.R_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.USER_SETTINGS_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.USER_SETTINGS_CHANGED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_ACTIVE_QUEUE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_BEGIN](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_BEGIN.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_END](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.TOGGLE_SCENARIO_SUMMARY_WINDOW](../../systemdata/fields/systemdata_SystemData.Events.TOGGLE_SCENARIO_SUMMARY_WINDOW.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.TOGGLE_WORLD_MAP_WINDOW](../../systemdata/fields/systemdata_SystemData.Events.TOGGLE_WORLD_MAP_WINDOW.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MapTypes.NORMAL](../../systemdata/fields/systemdata_SystemData.MapTypes.NORMAL.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MapTypes.OVERHEAD](../../systemdata/fields/systemdata_SystemData.MapTypes.OVERHEAD.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

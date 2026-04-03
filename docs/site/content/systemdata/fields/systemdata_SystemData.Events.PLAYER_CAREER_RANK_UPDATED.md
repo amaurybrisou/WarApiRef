@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -30,7 +30,7 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ding, Effigy, Enemy, GuildWarden, Pure, QuickNameActions+, RoR_debolster, Squared |
+| Addons seen in | Ding, EA_OpenPartyWindow, Effigy, Enemy, GuildWarden, Pure, QuickNameActions+, RoR_debolster |
 | Files seen in | Code/Core/Groups/Groups.lua, Ding.lua, GuildWarden.lua, QuickNameActionsRessurected.lua, RoR_debolster.lua, Source/PurePlayer.lua, Source/TomeTracker_Journal.lua, Squared.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
@@ -61,11 +61,12 @@
 
 ## Description
 
-SystemData.SystemData.Events.PLAYER_CAREER_RANK_UPDATED field accessed by 9 addons; commonly found in GroupsInitialize and Init_Warden, Initialize, LoadUnitFrame, OnLoad, OnShutdown, OnUnload, RegisterStateInfoForPlayer, SquaredGroup.UpdateLevel, SquaredPlayer.UpdateLevel, SystemData.Events.PLAYER_CAREER_RANK_UPDATED, UnloadUnitFrame, event_page, event_registration, load, lua_call, unload contexts.
+SystemData.SystemData.Events.PLAYER_CAREER_RANK_UPDATED field accessed by 10 addons; commonly found in GroupsInitialize and Init_Warden, Initialize, LoadUnitFrame, OnLoad, OnShutdown, OnUnload, RegisterStateInfoForPlayer, SquaredGroup.UpdateLevel, SquaredPlayer.UpdateLevel, SystemData.Events.PLAYER_CAREER_RANK_UPDATED, UnloadUnitFrame, event_page, event_registration, load, lua_call, unload contexts.
 
 ## Seen In
 
 - Ding
+- EA_OpenPartyWindow
 - Effigy
 - Enemy
 - GuildWarden

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 19 addons
+- Seen in: 22 addons
 
 ## Confidence Assessment
 
@@ -30,8 +30,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BlackBook, Calling, Dascore, DetauntHelper, EA_ScenarioGroupWindow, Enemy, EveryBodyGuard, Hopper |
-| Files seen in | BlackBook.lua, Calling.lua, Code/Core/Groups/Groups.lua, Code/ScenarioInfo/ScenarioInfo.lua, Dascore.lua, EveryBodyGuard.lua, Info_DeathBlow.lua, LibGroup.lua |
+| Addons seen in | BlackBook, CMap, Calling, Dascore, DetauntHelper, EA_OpenPartyWindow, EA_ScenarioGroupWindow, Enemy |
+| Files seen in | BlackBook.lua, CMap.lua, Calling.lua, Code/Core/Groups/Groups.lua, Code/ScenarioInfo/ScenarioInfo.lua, Dascore.lua, EveryBodyGuard.lua, Info_DeathBlow.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | CheckSettingsInit, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnShutdown |
@@ -61,14 +61,16 @@
 
 ## Description
 
-SystemData.SystemData.Events.SCENARIO_BEGIN field accessed by 19 addons; commonly found in CheckSettingsInit and GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnShutdown, RegisterSelfEvents, Shutdown, Squared.ChangeMode, Start, Stop, SystemData.Events.SCENARIO_BEGIN, UnloadUnitFrame, UnregisterSelfEvents, WarningWindowButton, _ScenarioInfoEnabledChanged, event_page, event_registration, lua_call contexts.
+SystemData.SystemData.Events.SCENARIO_BEGIN field accessed by 22 addons; commonly found in CheckSettingsInit and GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, OnShutdown, RegisterSelfEvents, Shutdown, Squared.ChangeMode, Start, Stop, SystemData.Events.SCENARIO_BEGIN, UnloadUnitFrame, UnregisterSelfEvents, WarningWindowButton, _ScenarioInfoEnabledChanged, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
 - BlackBook
+- CMap
 - Calling
 - Dascore
 - DetauntHelper
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - Enemy
 - EveryBodyGuard
@@ -83,11 +85,12 @@ SystemData.SystemData.Events.SCENARIO_BEGIN field accessed by 19 addons; commonl
 - Squared
 - TheSeeker
 - Trakario
+- WarBoard_WarWhisperer
 - followTheLeader
 
 ## Related APIs
 
-- [WindowSetDrawWhenInterfaceHidden](../../window_api/functions/window_WindowSetDrawWhenInterfaceHidden.md) (HIGH 100/100) - Window Function
+- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function

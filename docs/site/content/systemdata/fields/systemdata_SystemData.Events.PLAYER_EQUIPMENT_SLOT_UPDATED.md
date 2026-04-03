@@ -74,7 +74,6 @@ SystemData.SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED field accessed by 6 a
 
 ## Related APIs
 
-- [TextEditBoxSetMaxChars](../../window_api/functions/window_TextEditBoxSetMaxChars.md) (HIGH 100/100) - Window Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 

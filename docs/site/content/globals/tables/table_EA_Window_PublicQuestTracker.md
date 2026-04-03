@@ -2,34 +2,38 @@
 
 - Category: Global Table
 - Confidence level: HIGH
-- Confidence score: 80/100
+- Confidence score: 100/100
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 80/100
+- Final score: 100/100
+
+- Raw weighted score: 113
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdjustTheTip |
+| Addons seen in | AdjustTheTip, BarText (Influence) |
 | Namespaces detected | EA_Window_PublicQuestTracker |
 | Source kinds | lua_calls |
-| Example locations | AdjustTheTip: UpdateInfluenceTooltip |
+| Example locations | AdjustTheTip: UpdateInfluenceTooltip, BarText (Influence): OnMouseOver, BarText (Influence): PlayerInfluenceUpdated |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 3 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -52,11 +56,12 @@
 
 ## Description
 
-Shared function table with 1 member functions; the primary API surface for 1 addons.
+Shared function table with 2 member functions; the primary API surface for 2 addons.
 
 ## Functions
 
 - EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID
+- EA_Window_PublicQuestTracker.OnMouseOverInfluenceBar
 
 ## Observed Members
 
@@ -65,10 +70,13 @@ Shared function table with 1 member functions; the primary API surface for 1 add
 ## Seen In
 
 - AdjustTheTip
+- BarText (Influence)
 
 ## Examples
 
 - AdjustTheTip: UpdateInfluenceTooltip -> EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID()
+- BarText (Influence): OnMouseOver -> EA_Window_PublicQuestTracker.OnMouseOverInfluenceBar()
+- BarText (Influence): PlayerInfluenceUpdated -> EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID()
 
 ## Notes
 

@@ -2,20 +2,20 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 71/100
-- Seen in: 2 addons
+- Confidence score: 83/100
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 71/100
+- Score: 83/100
 
-- Rationale: Promoted as HIGH confidence because called globally with no local definition, seen in 2 to 3 addons, role is consistent across addons.
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, called globally with no local definition, role is consistent across addons.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | rorAutoInviter, zMailMod |
-| Files seen in | rorAutoInviter.lua, zMailModMassMail.lua |
+| Addons seen in | FozAuction, Rolodex, rorAutoInviter, zMailMod |
+| Files seen in | Rolodex.lua, Source/auctionwindow.lua, rorAutoInviter.lua, zMailModMassMail.lua |
 | Namespaces detected | GuildWindow |
 | Source kinds | lua_calls |
-| Example locations | rorAutoInviter: OnInitialize, zMailMod: GetNameList |
+| Example locations | FozAuction: PlayerCanSearchAllianceAuctions, FozAuction: PlayerCanSearchGuildAuctions, Rolodex: UpdateList, rorAutoInviter: OnInitialize, zMailMod: GetNameList |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ GuildWindow.IsPlayerInAGuild()
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 4 addons.
 
 ## Parameters
 
@@ -79,11 +79,16 @@ Observed as a global function across 2 addons.
 
 ## Seen In
 
+- FozAuction
+- Rolodex
 - rorAutoInviter
 - zMailMod
 
 ## Examples
 
+- FozAuction: PlayerCanSearchAllianceAuctions -> GuildWindow.IsPlayerInAGuild()
+- FozAuction: PlayerCanSearchGuildAuctions -> GuildWindow.IsPlayerInAGuild()
+- Rolodex: UpdateList -> GuildWindow.IsPlayerInAGuild()
 - rorAutoInviter: OnInitialize -> GuildWindow.IsPlayerInAGuild()
 - zMailMod: GetNameList -> GuildWindow.IsPlayerInAGuild()
 

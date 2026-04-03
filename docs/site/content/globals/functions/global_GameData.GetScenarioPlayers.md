@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Arsenal Rank, DetauntHelper, Enemy, Trakario |
-| Files seen in | ArsenalRank.lua, Code/ScenarioInfo/ScenarioInfo.lua, Source/TargetInfo.lua, trakario.lua |
+| Addons seen in | Arsenal Rank, Assist, DetauntHelper, Enemy, Trakario, WarBoard_WarWhisperer |
+| Files seen in | ArsenalRank.lua, Code/ScenarioInfo/ScenarioInfo.lua, Source/TargetInfo.lua, assist.lua, trakario.lua, warwhisperer.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_calls |
-| Example locations | Arsenal Rank: update, DetauntHelper: _UpdateScenarioInfo, Enemy: ScenarioInfoUpdateData, Trakario: GetCareerIDByName, Trakario: GetDeathCountByName |
+| Example locations | Arsenal Rank: update, Assist: CheckSCPlayers, DetauntHelper: _UpdateScenarioInfo, Enemy: ScenarioInfoUpdateData, Trakario: GetCareerIDByName, Trakario: GetDeathCountByName |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -66,7 +66,7 @@ GameData.GetScenarioPlayers()
 
 ## Description
 
-Observed as a global function across 4 addons.
+Observed as a global function across 6 addons.
 
 ## Parameters
 
@@ -84,17 +84,30 @@ Observed as a global function across 4 addons.
 ## Seen In
 
 - Arsenal Rank
+- Assist
 - DetauntHelper
 - Enemy
 - Trakario
+- WarBoard_WarWhisperer
 
 ## Examples
 
 - Arsenal Rank: update -> GameData.GetScenarioPlayers()
+- Assist: CheckSCPlayers -> GameData.GetScenarioPlayers()
 - DetauntHelper: _UpdateScenarioInfo -> GameData.GetScenarioPlayers()
 - Enemy: ScenarioInfoUpdateData -> GameData.GetScenarioPlayers()
 - Trakario: GetCareerIDByName -> GameData.GetScenarioPlayers()
 - Trakario: GetDeathCountByName -> GameData.GetScenarioPlayers()
+
+## Related APIs
+
+- [BroadcastEvent](global_BroadcastEvent.md) (HIGH 93/100) - Global Function
+
+## Used With
+
+- [SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
+- [BroadcastEvent](global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 
 ## Affects
 

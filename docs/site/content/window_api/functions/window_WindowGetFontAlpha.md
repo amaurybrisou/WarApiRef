@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 23 addons
+- Seen in: 25 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver, Hopper, InfoScroller |
+| Addons seen in | Ace, CMap, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver, Hopper |
 | Files seen in | LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, libs/LibGUI.lua |
 | Namespaces detected | WindowGetFontAlpha |
 | Source kinds | lua_calls |
-| Example locations | Ace: FontAlpha, Crusher: FontAlpha, EZCraftX: FontAlpha, EZGuard: FontAlpha, Effigy: FontAlpha, GCDsaver: FontAlpha |
+| Example locations | Ace: FontAlpha, CMap: FontAlpha, Crusher: FontAlpha, EZCraftX: FontAlpha, EZGuard: FontAlpha, Effigy: FontAlpha |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 23 |
-| Global usage count | 23 |
+| Lua usage count | 25 |
+| Global usage count | 25 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -84,6 +84,7 @@ Observed querying runtime window state or metadata.
 ## Seen In
 
 - Ace
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -101,6 +102,7 @@ Observed querying runtime window state or metadata.
 - Shinies
 - TargetRing
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -110,11 +112,11 @@ Observed querying runtime window state or metadata.
 ## Examples
 
 - Ace: FontAlpha -> WindowGetFontAlpha(self.name)
+- CMap: FontAlpha -> WindowGetFontAlpha(self.name)
 - Crusher: FontAlpha -> WindowGetFontAlpha(self.name)
 - EZCraftX: FontAlpha -> WindowGetFontAlpha(self.name)
 - EZGuard: FontAlpha -> WindowGetFontAlpha(self.name)
 - Effigy: FontAlpha -> WindowGetFontAlpha(self.name)
-- GCDsaver: FontAlpha -> WindowGetFontAlpha(self.name)
 
 ## Used With
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 84 addons
+- Seen in: 93 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdjustTheTip, AdvancedPetAssist, Amethyst, AnywhereTrainer, AuctionStats, Aura, BuffHead |
-| Files seen in | APAGuiHUD.lua, AdjustTheTip.lua, Amethyst.lua, AuctionStats.lua, Button.lua, Classes/Display.lua, Code/GroupIcons/GroupIcon.lua, Code/UnitFrames/EffectsIndicator.lua |
+| Addons seen in | Ace, AdjustTheTip, AdvancedPetAssist, Amethyst, AnywhereTrainer, AuctionStats, Aura, BarText (Influence) |
+| Files seen in | APAGuiHUD.lua, AdjustTheTip.lua, Amethyst.lua, AuctionStats.lua, BarText_Influence.lua, Button.lua, CMap.lua, Classes/Display.lua |
 | Namespaces detected | WindowGetDimensions |
 | Source kinds | lua_calls |
 | Example locations | Ace: New, AdjustTheTip: AddTargetHealthToMouseOver, AdjustTheTip: UpdateCallback, AdvancedPetAssist: ApplyPetTargetHUDLayout, Amethyst: New, Amethyst: SavePosition |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 471 |
-| Global usage count | 471 |
+| Lua usage count | 514 |
+| Global usage count | 514 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "APAPetTargetHUD", "AbilityTooltipBackground", "CharacterWindow" |
+| windowName | Observed as a target window name. | Observed values: "APAPetTargetHUD", "AbilityTooltipBackground", "BarText_InfluenceOverlay" |
 
 ## Returns
 
@@ -90,7 +90,9 @@ Observed querying runtime window state or metadata.
 - AnywhereTrainer
 - AuctionStats
 - Aura
+- BarText (Influence)
 - BuffHead
+- CMap
 - CaVES
 - CastSequence
 - Crafting Info Tooltip
@@ -100,7 +102,11 @@ Observed querying runtime window state or metadata.
 - DammazKron
 - DetauntHelper
 - DuffTimer
+- EA_LoadingScreen
+- EA_OpenPartyWindow
+- EA_ThreePartBar
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
@@ -136,6 +142,7 @@ Observed querying runtime window state or metadata.
 - PartyCast
 - Pocket Palette
 - PotionBar
+- Preciousss
 - Pure
 - Pure Careerbar
 - RVAPI_ColorDialog
@@ -159,6 +166,8 @@ Observed querying runtime window state or metadata.
 - VerticalTactics
 - WARCommander
 - WARRatingBuster
+- WTes
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar
@@ -184,13 +193,17 @@ Observed querying runtime window state or metadata.
 - [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
 - [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
 - [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
+- [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 - [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
+- [EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID](../../globals/functions/global_EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID.md) (HIGH 100/100) - Global Function
+- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
 - [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [StatusBarSetBackgroundTint](window_StatusBarSetBackgroundTint.md) (HIGH 100/100) - Window Function
 - [StatusBarSetForegroundTint](window_StatusBarSetForegroundTint.md) (HIGH 100/100) - Window Function
 - [StatusBarSetMaximumValue](window_StatusBarSetMaximumValue.md) (HIGH 100/100) - Window Function
@@ -201,7 +214,10 @@ Observed querying runtime window state or metadata.
 - [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [wstring.gsub](../../globals/functions/global_wstring.gsub.md) (HIGH 100/100) - Global Function
+- [wstring.upper](../../globals/functions/global_wstring.upper.md) (HIGH 100/100) - Global Function
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
+- [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

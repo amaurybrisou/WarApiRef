@@ -67,7 +67,7 @@ Observed reading from or writing to edit-box controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "zMailModMassMailToEditBox", win.."ToEditBox" |
+| arg1 | Observed as a text or wstring payload. | Observed values: "zMailModMassMailToEditBox", win.."ToEditBox" |
 
 ## Returns
 

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 24 addons
+- Seen in: 27 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Atlas, Auto Cape/Helm Show, CM_ClosetGoblin, Ding, Enemy, GCDsaver, Killer, Kwestor |
-| Files seen in | ClosetGoblin.lua, Code/Core/Groups/Groups.lua, Code/GroupIcons/GroupIcons.lua, Code/TalismanAlerter/TalismanAlerter.lua, Core.lua, CurseProfilerCompiled.lua, Ding.lua, GCDsaver.lua |
+| Addons seen in | Atlas, Auto Cape/Helm Show, BarText (Influence), CM_ClosetGoblin, CMap, Ding, EA_OpenPartyWindow, Enemy |
+| Files seen in | BarText_Influence.lua, CMap.lua, ClosetGoblin.lua, Code/Core/Groups/Groups.lua, Code/GroupIcons/GroupIcons.lua, Code/TalismanAlerter/TalismanAlerter.lua, Core.lua, CurseProfilerCompiled.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | GroupsInitialize, Init, Initialize, InitializePlayer, OnDisable, OnEnable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 19 |
-| Global usage count | 19 |
+| Lua usage count | 20 |
+| Global usage count | 20 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,14 +60,17 @@
 
 ## Description
 
-SystemData.SystemData.Events.PLAYER_ZONE_CHANGED field accessed by 24 addons; commonly found in GroupsInitialize and Init, Initialize, InitializePlayer, OnDisable, OnEnable, OnShutdown, RegisterEventHandlers, RegisterEvents, Shutdown, ShutdownPlayer, UnregisterEventHandlers, UnregisterEvents, ZoneChangeInit, ZoneChangeShutdown, _GroupIconsEnabledChanged, _TalismanAlerterEnabledChanged, init, lua_call contexts.
+SystemData.SystemData.Events.PLAYER_ZONE_CHANGED field accessed by 27 addons; commonly found in GroupsInitialize and Init, Initialize, InitializePlayer, OnDisable, OnEnable, OnInitialize, OnShutdown, RegisterEventHandlers, RegisterEvents, Shutdown, ShutdownPlayer, UnregisterEventHandlers, UnregisterEvents, ZoneChangeInit, ZoneChangeShutdown, _GroupIconsEnabledChanged, _TalismanAlerterEnabledChanged, init, lua_call contexts.
 
 ## Seen In
 
 - Atlas
 - Auto Cape/Helm Show
+- BarText (Influence)
 - CM_ClosetGoblin
+- CMap
 - Ding
+- EA_OpenPartyWindow
 - Enemy
 - GCDsaver
 - Killer
@@ -91,8 +94,18 @@ SystemData.SystemData.Events.PLAYER_ZONE_CHANGED field accessed by 24 addons; co
 
 ## Related APIs
 
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
+- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
+- [DefaultColor.LabelSetTextColor](../../globals/functions/global_DefaultColor.LabelSetTextColor.md) (MEDIUM 55/100) - Global Function
+
+## Used With
+
+- [SystemData.Events.BATTLEGROUP_MEMBER_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_MEMBER_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.BATTLEGROUP_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.GROUP_SETTINGS_UPDATED](systemdata_SystemData.Events.GROUP_SETTINGS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.GROUP_UPDATED](systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.L_BUTTON_UP_PROCESSED](systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

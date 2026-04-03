@@ -23,13 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CM_ClosetGoblin, Calling, Map, Tome Titan, VerticalMorale |
+| Addons seen in | CM_ClosetGoblin, CMap, Calling, EA_LoadingScreen, Map, MoraleSet, SocialWindow 2.0, Tome Titan |
 | Namespaces detected | OnShutdown |
 | Source kinds | bindings, xml_handlers |
-| Example locations | CM_ClosetGoblin: .OnShutdown, Calling: .OnShutdown, Map: .OnShutdown, Tome Titan: .OnShutdown, VerticalMorale: .OnShutdown |
+| Example locations | CM_ClosetGoblin: .OnShutdown, CMap: .OnShutdown, Calling: .OnShutdown, EA_LoadingScreen: .OnShutdown, Map: .OnShutdown, MoraleSet: .OnShutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
+| Lua usage count | 17 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 5 addons.
+XML handler event observed across 10 addons.
 
 ## Expected Lua Binding
 
@@ -68,26 +68,33 @@ function()
 ## Seen In
 
 - CM_ClosetGoblin
+- CMap
 - Calling
+- EA_LoadingScreen
 - Map
+- MoraleSet
+- SocialWindow 2.0
 - Tome Titan
 - VerticalMorale
+- bigger_MacroWindow
 
 ## Examples
 
 - CM_ClosetGoblin: .OnShutdown -> ClosetGoblinCharacterWindow.OnShutdown
 - CM_ClosetGoblin: .OnShutdown -> ClosetGoblinZoneWindow.OnShutdown
+- CMap: .OnShutdown -> CMapWindow.Shutdown
 - Calling: .OnShutdown -> CallingSetup.Shutdown
-- Map: .OnShutdown -> Map.Shutdown
-- Tome Titan: .OnShutdown -> TTitan.UI.Shutdown
-- VerticalMorale: .OnShutdown -> VerticalMorale.Shutdown
+- EA_LoadingScreen: .OnShutdown -> EA_Window_LoadingScreen.Shutdown
+- EA_LoadingScreen: .OnShutdown -> EA_Window_LoadingScreen.ShutdownScenarioEnterLoadScreen
 
 ## Related APIs
 
 - [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowGetAnchor](../../window_api/functions/window_WindowGetAnchor.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 100/100) - Window Function
+- [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowUnregisterEventHandler](../../window_api/functions/window_WindowUnregisterEventHandler.md) (HIGH 100/100) - Window Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [TextEditBoxGetHistory](../../window_api/functions/window_TextEditBoxGetHistory.md) (HIGH 80/100) - Window Function

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 33 addons
+- Seen in: 35 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, Crusher, EZCraftX, EZGuard, Effigy |
+| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, CMap, Crusher, EZCraftX, EZGuard |
 | Files seen in | AdjustTheTip.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, PartyCast.lua, RoR_SoR.lua, TidyRollFrame.lua |
 | Namespaces detected | StatusBarSetForegroundTint |
 | Source kinds | lua_calls |
-| Example locations | Ace: ForeColor, ActionBarHide: ForeColor, AdjustTheTip: AddTargetHealthToMouseOver, Amethyst: ForeColor, Crusher: ForeColor, EZCraftX: ForeColor |
+| Example locations | Ace: ForeColor, ActionBarHide: ForeColor, AdjustTheTip: AddTargetHealthToMouseOver, Amethyst: ForeColor, CMap: ForeColor, Crusher: ForeColor |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 41 |
-| Global usage count | 41 |
+| Lua usage count | 43 |
+| Global usage count | 43 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ StatusBarSetForegroundTint(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a window function across 33 addons.
+Observed as a window function across 35 addons.
 
 ## Parameters
 
@@ -90,6 +90,7 @@ Observed as a window function across 33 addons.
 - ActionBarHide
 - AdjustTheTip
 - Amethyst
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -112,6 +113,7 @@ Observed as a window function across 33 addons.
 - TargetRing
 - TidyRoll
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -126,8 +128,8 @@ Observed as a window function across 33 addons.
 - ActionBarHide: ForeColor -> StatusBarSetForegroundTint(self.name, red, green, blue)
 - AdjustTheTip: AddTargetHealthToMouseOver -> StatusBarSetForegroundTint(c_HEALTH_BAR_CONTAINER.."HealthPercentBarBar", 0, 255, 0)
 - Amethyst: ForeColor -> StatusBarSetForegroundTint(self.name, red, green, blue)
+- CMap: ForeColor -> StatusBarSetForegroundTint(self.name, red, green, blue)
 - Crusher: ForeColor -> StatusBarSetForegroundTint(self.name, red, green, blue)
-- EZCraftX: ForeColor -> StatusBarSetForegroundTint(self.name, red, green, blue)
 
 ## Used With
 

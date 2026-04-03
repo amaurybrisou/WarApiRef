@@ -78,9 +78,9 @@ PressedHighlit is a XML UI element. It commonly appears under OverlayTexCoords a
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `id` | optional | 39% | morale-white, RightTabFrame-Rollover, Tactics-Button-Depressed, SquareButton-Depressed, ... |
-| `b` | optional | 34% | 63, 0, 36, 45, ... |
-| `g` | optional | 34% | 213, 85, 57, 255, ... |
-| `r` | optional | 34% | 250, 255, 95, 226, ... |
+| `b` | optional | 34% | 63, 36, 0, 45, ... |
+| `g` | optional | 34% | 213, 57, 85, 255, ... |
+| `r` | optional | 34% | 250, 95, 255, 226, ... |
 | `a` | optional | 33% | 255, 1 |
 | `x` | optional | 14% | 0, 120, 172, 475, ... |
 | `y` | optional | 14% | 56, 44, 370, 420, ... |

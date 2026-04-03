@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 10 addons
+- Seen in: 11 addons
 
 ## Confidence Assessment
 
@@ -32,11 +32,11 @@
 | Files seen in | CallingChat.lua, Code/Core/Communication.lua, CramTheSpam.lua, Emojii.lua, IHYTM.lua, MegaphonePlus.lua, MegaphonePlusPlus.lua, ResHelp.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | ChatHandler, ExamineChatMessage, Filter, FilterChat, OnChat, OnChatText |
+| Example locations | ChatHandler, ExamineChatMessage, Filter, FilterChat, GotRX, OnChat |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 10 |
-| Global usage count | 10 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,7 +59,7 @@
 
 ## Description
 
-GameData.GameData.ChatData.name field accessed by 10 addons; commonly found in ChatHandler and ExamineChatMessage, Filter, FilterChat, OnChat, OnChatText, OnChatTextArrived, OnMessageReceived, lua_call, test contexts.
+GameData.GameData.ChatData.name field accessed by 11 addons; commonly found in ChatHandler and ExamineChatMessage, Filter, FilterChat, GotRX, OnChat, OnChatText, OnChatTextArrived, OnMessageReceived, lua_call, test contexts.
 
 ## Seen In
 
@@ -72,15 +72,15 @@ GameData.GameData.ChatData.name field accessed by 10 addons; commonly found in C
 - MegaphonePlus
 - MegaphonePlusPlus
 - ResHelp
+- WarBoard_WarWhisperer
 - rorAutoInviter
 
 ## Related APIs
 
-- [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
+- [PartyUtils.IsWarbandFull](../../globals/functions/global_PartyUtils.IsWarbandFull.md) (HIGH 96/100) - Global Function
 - [AlertTextWindow.AddAlert](../../globals/functions/global_AlertTextWindow.AddAlert.md) (HIGH 75/100) - Global Function
 - [wstring.find](../../globals/functions/global_wstring.find.md) (HIGH 75/100) - Global Function
-- [PartyUtils.IsWarbandFull](../../globals/functions/global_PartyUtils.IsWarbandFull.md) (MEDIUM 45/100) - Global Function
 
 ## Notes
 
-- Observed in contexts: ChatHandler, ExamineChatMessage, Filter, FilterChat, OnChat, OnChatText
+- Observed in contexts: ChatHandler, ExamineChatMessage, Filter, FilterChat, GotRX, OnChat

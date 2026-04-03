@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 28 addons
+- Seen in: 31 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, Aura, CombatTextNames, Crafting Info Tooltip, Cram The Spam, DammazKron, EA_UiDebugTools, Group Icons SG |
-| Files seen in | AdvancedRenownTrainingImportExport.lua, Core/DK_Core.lua, Core/DK_Utils.lua, CraftValueTip.lua, CramTheSpam.lua, GroupIconsSG.lua, GuardLine.lua, IHYTM.lua |
+| Addons seen in | AdvancedRenownTrainer, Aura, BarText (Influence), CombatTextNames, Crafting Info Tooltip, Cram The Spam, DammazKron, EA_UiDebugTools |
+| Files seen in | AdvancedRenownTrainingImportExport.lua, BarText_Influence.lua, Core/DK_Core.lua, Core/DK_Utils.lua, CraftValueTip.lua, CramTheSpam.lua, GroupIconsSG.lua, GuardLine.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: OnHyperLinkLButtonUp, Aura: unpickle, Aura: wgsub, CombatTextNames: TruncateAbilityName, Crafting Info Tooltip: GetPhrase, Cram The Spam: FuzzyFilterTest |
+| Example locations | AdvancedRenownTrainer: OnHyperLinkLButtonUp, Aura: unpickle, Aura: wgsub, BarText (Influence): PlayerInfluenceUpdated, CombatTextNames: TruncateAbilityName, Crafting Info Tooltip: GetPhrase |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 151 |
-| Global usage count | 151 |
+| Lua usage count | 163 |
+| Global usage count | 163 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ wstring.gsub(arg1, arg2, arg3)
 
 ## Description
 
-Observed as a global function across 28 addons.
+Observed as a global function across 31 addons.
 
 ## Parameters
 
@@ -84,6 +84,7 @@ Observed as a global function across 28 addons.
 
 - AdvancedRenownTrainer
 - Aura
+- BarText (Influence)
 - CombatTextNames
 - Crafting Info Tooltip
 - Cram The Spam
@@ -106,25 +107,29 @@ Observed as a global function across 28 addons.
 - Refer
 - RoR_SoR
 - Shinies
+- SocialWindow 2.0
 - TidyChat
 - TomeTracker
 - Trakario
 - WSCT
+- WarBoard_WarWhisperer
 
 ## Examples
 
 - AdvancedRenownTrainer: OnHyperLinkLButtonUp -> wstring.gsub(linkData, hyperlinkPrefix, ERASE)
 - Aura: unpickle -> wstring.gsub(s, L "P1$", L "")
 - Aura: wgsub -> wstring.gsub(s, pattern, replace)
-- CombatTextNames: TruncateAbilityName -> wstring.gsub(wstring.gsub(text,L " of ",L "O"), L "%s", L "")
-- CombatTextNames: TruncateAbilityName -> wstring.gsub(text, L " of ", L "O")
-- CombatTextNames: TruncateAbilityName -> wstring.gsub(text, L "%l*", L "")
+- BarText (Influence): PlayerInfluenceUpdated -> wstring.gsub(BarText_Influence_Config.currentFormatString, L "%[inf%]", inf)
+- BarText (Influence): PlayerInfluenceUpdated -> wstring.gsub(text, L "%[infmax%]", infmax)
+- BarText (Influence): PlayerInfluenceUpdated -> wstring.gsub(text, L "%[infp%]", infp)
 
 ## Used With
 
-- [wstring.lower](global_wstring.lower.md) (HIGH 100/100) - Global Function
-- [wstring.match](global_wstring.match.md) (HIGH 100/100) - Global Function
-- [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
+- [EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID](global_EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID.md) (HIGH 100/100) - Global Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [wstring.format](global_wstring.format.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

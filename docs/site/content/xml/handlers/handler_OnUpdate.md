@@ -23,13 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, EA_ScenarioGroupWindow, EZCraftX, Group Icons, HealGrid, KeyBar, LootAlert, RealmStatus |
+| Addons seen in | BuffHead, CMap, EA_LoadingScreen, EA_OpenPartyWindow, EA_ScenarioGroupWindow, EZCraftX, Group Icons, HealGrid |
 | Namespaces detected | OnUpdate |
 | Source kinds | bindings, xml_handlers |
-| Example locations | BuffHead: .OnUpdate, EA_ScenarioGroupWindow: .OnUpdate, EZCraftX: .OnUpdate, Group Icons: .OnUpdate, HealGrid: .OnUpdate, KeyBar: .OnUpdate |
+| Example locations | BuffHead: .OnUpdate, CMap: .OnUpdate, EA_LoadingScreen: .OnUpdate, EA_OpenPartyWindow: .OnUpdate, EA_ScenarioGroupWindow: .OnUpdate, EZCraftX: .OnUpdate |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 18 |
+| Lua usage count | 24 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 11 addons.
+XML handler event observed across 14 addons.
 
 ## Expected Lua Binding
 
@@ -68,6 +68,9 @@ function(elapsed)
 ## Seen In
 
 - BuffHead
+- CMap
+- EA_LoadingScreen
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EZCraftX
 - Group Icons
@@ -82,16 +85,17 @@ function(elapsed)
 ## Examples
 
 - BuffHead: .OnUpdate -> BuffHead.Setup.Layout.OnUpdate
-- EA_ScenarioGroupWindow: .OnUpdate -> ScenarioGroupWindow.OnUpdate
-- EZCraftX: .OnUpdate -> EZCraftX.OnUpdate
-- Group Icons: .OnUpdate -> GroupIcons.IconWindow_OnUpdate
-- HealGrid: .OnUpdate -> HealGridUnitTooltip.OnUpdate
-- KeyBar: .OnUpdate -> KeyBar.Update
+- CMap: .OnUpdate -> CMapWindow.UpdateCoordinatesWMap
+- EA_LoadingScreen: .OnUpdate -> EA_Window_LoadingScreen.OnUpdate
+- EA_OpenPartyWindow: .OnUpdate -> EA_Window_OpenParty.OnUpdateForFlyOut
+- EA_OpenPartyWindow: .OnUpdate -> EA_Window_OpenParty.OnUpdate
+- EA_OpenPartyWindow: .OnUpdate -> EA_Window_OpenPartyNearby.OnUpdate
 
 ## Related APIs
 
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [ButtonGetDisabledFlag](../../window_api/functions/window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetDisabledFlag](../../window_api/functions/window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureSlice](../../window_api/functions/window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
 - [EA_ChatWindow.Print](../../globals/functions/global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
@@ -114,6 +118,7 @@ function(elapsed)
 - [WindowGetAlpha](../../window_api/functions/window_WindowGetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowGetGameActionData](../../window_api/functions/window_WindowGetGameActionData.md) (HIGH 100/100) - Window Function
+- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 - [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](../../window_api/functions/window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
@@ -125,15 +130,18 @@ function(elapsed)
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 - [WindowStartAlphaAnimation](../../window_api/functions/window_WindowStartAlphaAnimation.md) (HIGH 100/100) - Window Function
+- [wstring.len](../../globals/functions/global_wstring.len.md) (HIGH 100/100) - Global Function
 - [wstring.upper](../../globals/functions/global_wstring.upper.md) (HIGH 100/100) - Global Function
 - [BroadcastEvent](../../globals/functions/global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
+- [EA_Window_OpenParty.SelectTab](../../globals/functions/global_EA_Window_OpenParty.SelectTab.md) (HIGH 80/100) - Global Function
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 - [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
 - [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 - [SettingsChanged](../../events/game_events/game_event_SettingsChanged.md) (MEDIUM 63/100) - Game Event
 - [Start](../../events/game_events/game_event_Start.md) (MEDIUM 43/100) - Game Event
+- [Stop](../../events/game_events/game_event_Stop.md) (MEDIUM 43/100) - Game Event
 
 ## Used With
 
@@ -153,6 +161,8 @@ function(elapsed)
 - [SystemData.Events.EXIT_GAME](../../systemdata/fields/systemdata_SystemData.Events.EXIT_GAME.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_PET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_PET_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.SEND_CHAT_TEXT](../../systemdata/fields/systemdata_SystemData.Events.SEND_CHAT_TEXT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MousePosition.x](../../systemdata/fields/systemdata_SystemData.MousePosition.x.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MousePosition.y](../../systemdata/fields/systemdata_SystemData.MousePosition.y.md) (HIGH 100/100) - SystemData Field
 

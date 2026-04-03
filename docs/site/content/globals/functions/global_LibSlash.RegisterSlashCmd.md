@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 85/100
-- Seen in: 148 addons
+- Seen in: 163 addons
 
 ## Confidence Assessment
 
@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionBarCD, ActionBarHide, AdvancedPetAssist, Amethyst, ArmorGraphicToggle, Atlas, AuctionStats, Aura |
-| Files seen in | ActionBarCD.lua, ActionBarHide.lua, AdvancedPetAssist.lua, Amethyst.lua, ArmorGraphicToggle.lua, AuctionStats.lua, AutoBand.lua, AutoFocus.lua |
+| Addons seen in | AbilityNotifier, ActionBarCD, ActionBarHide, AdvancedPetAssist, Amethyst, ArmorGraphicToggle, Asshat, Assist |
+| Files seen in | AAOTracker.lua, AbilityNotifier.lua, ActionBarCD.lua, ActionBarHide.lua, AdvancedPetAssist.lua, Amethyst.lua, ArmorGraphicToggle.lua, Asshat.lua |
 | Namespaces detected | LibSlash |
 | Source kinds | lua_calls |
-| Example locations | ActionBarCD: Initialize, ActionBarHide: OnLoad, AdvancedPetAssist: Initialize, Amethyst: Initialize, ArmorGraphicToggle: OnInitialize, Atlas: RegisterSlashCommands |
+| Example locations | AbilityNotifier: Initialize, ActionBarCD: Initialize, ActionBarHide: OnLoad, AdvancedPetAssist: Initialize, Amethyst: Initialize, ArmorGraphicToggle: OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 259 |
-| Global usage count | 259 |
+| Lua usage count | 284 |
+| Global usage count | 284 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -69,8 +69,8 @@ Observed wiring slash commands through a shared command-registration table.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| slashName | Observed as a slash command token. | Observed values: "CCM", "CCTV", "CDL" |
-| handler | Observed as a command handler callback. | Observed values: Atlas.Configuration.Toggle, AuctionAssist.OnSlash, AuctionStats.OnSlashCommand |
+| slashName | Observed as a slash command token. | Observed values: "AAOT", "AAOTd", "Assist" |
+| handler | Observed as a command handler callback. | Observed values: AAOTracker.Slash, Atlas.Configuration.Toggle, AuctionAssist.OnSlash |
 
 ## Returns
 
@@ -82,11 +82,14 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Seen In
 
+- AbilityNotifier
 - ActionBarCD
 - ActionBarHide
 - AdvancedPetAssist
 - Amethyst
 - ArmorGraphicToggle
+- Asshat
+- Assist
 - Atlas
 - AuctionStats
 - Aura
@@ -101,6 +104,7 @@ Observed wiring slash commands through a shared command-registration table.
 - CCTV
 - CDown
 - CM_ClosetGoblin
+- CMap
 - ChatAlert
 - ChattyCathy
 - CleanUnitFrames
@@ -117,6 +121,7 @@ Observed wiring slash commands through a shared command-registration table.
 - DuffTimer
 - DwarfTalk
 - Dye Preview
+- EA_LoadingScreen
 - EZCraftX
 - EZGuard
 - Effigy
@@ -157,14 +162,17 @@ Observed wiring slash commands through a shared command-registration table.
 - MiracleGrow
 - MiracleGrowLight
 - Motion
+- MyReasons
 - NPC Item Sale Price
 - NaturalLog
+- ObjectInspector
 - OilTimer
 - PagerWentPoof
 - PartyAd
 - PartyCast
 - PeaceOut
 - Phantom
+- PieTracker
 - PlanB
 - Pocket Palette
 - PotionBar
@@ -192,18 +200,21 @@ Observed wiring slash commands through a shared command-registration table.
 - SessionRPs
 - Shinies
 - SimpleCombatText
+- SimpleXY
 - Soloq
 - Squared
 - Swift Assist
 - TargetRing
 - Targets
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThankTheResser
 - TheSeeker
 - TokenMachine
 - Tome Titan
 - TomeTracker
+- Tortall_DPS
 - Tortall_SCC
 - VPBreakdown
 - Vectors
@@ -212,8 +223,12 @@ Observed wiring slash commands through a shared command-registration table.
 - Vertigo
 - WARCommander
 - WARRatingBuster
+- WBStutterLess
 - WSCT
+- WTes
 - WarBoard
+- WarBoard_AAOTracker
+- WarBoard_WarWhisperer
 - WarTriage
 - Wargames
 - WhoHealedMe
@@ -233,12 +248,12 @@ Observed wiring slash commands through a shared command-registration table.
 
 ## Examples
 
+- AbilityNotifier: Initialize -> LibSlash.RegisterSlashCmd("an", slashhandler)
+- AbilityNotifier: Initialize -> LibSlash.RegisterSlashCmd("anot", slashhandler)
 - ActionBarCD: Initialize -> LibSlash.RegisterSlashCmd("abcd", function(args)ActionBarCD.SlashHandler(args)end)
 - ActionBarHide: OnLoad -> LibSlash.RegisterSlashCmd("abh", function()ActionBarHide.OptionsWindow()end)
 - AdvancedPetAssist: Initialize -> LibSlash.RegisterSlashCmd("apa", function(input)APA.SlashHandler(input)end)
 - Amethyst: Initialize -> LibSlash.RegisterSlashCmd("amt", function(msg)Amethyst.Slash(msg)end)
-- Amethyst: Initialize -> LibSlash.RegisterSlashCmd("amethyst", function(msg)Amethyst.Slash(msg)end)
-- ArmorGraphicToggle: OnInitialize -> LibSlash.RegisterSlashCmd("agt", function(msg)ArmorGraphicToggle.Slash(msg)end)
 
 ## Related APIs
 
@@ -251,11 +266,19 @@ Observed wiring slash commands through a shared command-registration table.
 - [ComboBoxSetSelectedMenuItem](../../window_api/functions/window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [EA_ChatWindow.Print](global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [CreateWindow](global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+
+## Affects
+
+- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

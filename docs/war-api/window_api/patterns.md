@@ -26,9 +26,9 @@
 - Ace: CreateWindowFromTemplate(w.name, base, w.parent)
   - Ace: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
   - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_ComboBox_DefaultResizable", w.parent)
-  - ActionBarHide: CreateWindowFromTemplate(w.name, base, w.parent)
+  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_Button_DefaultCheckBox", w.parent)
+  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
   - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_EditBox_DefaultFrame", w.parent)
-  - ActionBarHide: CreateWindowFromTemplate(w.name, "EA_EditBox_DefaultFrame_Multiline", w.parent)
 
 ## Runtime anchoring
 

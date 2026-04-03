@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, AdvancedRenownTrainer, Aura, BankArkel, BankWindowFix, CM_ClosetGoblin, Crusher, Enemy |
+| Addons seen in | ActionFraction, AdvancedRenownTrainer, Aura, BankArkel, BankWindowFix, CM_ClosetGoblin, Crusher, EA_UiModWindow |
 | Files seen in | Code/CombatLog/CombatLog.lua, Code/CombatLog/CombatLogStatsWindow.lua, Code/Core/Groups/EnemyEffectFilter.lua, Code/Core/Main.lua, Code/Marks/Marks.lua, Code/UnitFrames/ClickCasting.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFramePart.lua |
 | Namespaces detected | DialogManager |
 | Source kinds | lua_calls |
 | Example locations | ActionFraction: SetLocationActionPointBar, AdvancedRenownTrainer: Respecialize, Aura: OnImportExportOkButton, BankArkel: ConvertDB, BankArkel: Init, BankWindowFix: BagEquipmentRButtonUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 90 |
+| Lua usage count | 98 |
 | Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 4 member functions; the primary API surface for 25 addons.
+Shared function table with 4 member functions; the primary API surface for 27 addons.
 
 ## Functions
 
@@ -79,7 +79,9 @@ Shared function table with 4 member functions; the primary API surface for 25 ad
 - BankWindowFix
 - CM_ClosetGoblin
 - Crusher
+- EA_UiModWindow
 - Enemy
+- FozAuction
 - Hopper
 - Lib RuString
 - MapMonster

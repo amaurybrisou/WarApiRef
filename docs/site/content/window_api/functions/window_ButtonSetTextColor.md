@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 34 addons
+- Seen in: 36 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Addons seen in | Ace, ActionBarHide, Amethyst, CMap, Crusher, EZCraftX, EZGuard, Effigy |
 | Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, TTitan_TTButton.lua, TTitan_UI.lua, TastyButtons.lua, TidyChat.lua |
 | Namespaces detected | ButtonSetTextColor |
 | Source kinds | lua_calls |
-| Example locations | Ace: TextColor, ActionBarHide: TextColor, Amethyst: TextColor, Crusher: TextColor, EZCraftX: TextColor, EZGuard: TextColor |
+| Example locations | Ace: TextColor, ActionBarHide: TextColor, Amethyst: TextColor, CMap: TextColor, Crusher: TextColor, EZCraftX: TextColor |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 56 |
-| Global usage count | 56 |
+| Lua usage count | 58 |
+| Global usage count | 58 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -89,6 +89,7 @@ Observed mutating button text or pressed state on existing controls.
 - Ace
 - ActionBarHide
 - Amethyst
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -112,6 +113,7 @@ Observed mutating button text or pressed state on existing controls.
 - Tokens
 - Tome Titan
 - TwisterSet
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -126,9 +128,9 @@ Observed mutating button text or pressed state on existing controls.
 - Ace: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
 - ActionBarHide: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
 - Amethyst: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
+- CMap: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
 - Crusher: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
 - EZCraftX: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
-- EZGuard: TextColor -> ButtonSetTextColor(self.name, red, green, blue)
 
 ## Used With
 

@@ -84,7 +84,6 @@ SystemData.SystemData.Events.PLAYER_INVENTORY_SLOT_UPDATED field accessed by 17 
 
 ## Related APIs
 
-- [TextEditBoxSetMaxChars](../../window_api/functions/window_TextEditBoxSetMaxChars.md) (HIGH 100/100) - Window Function
 - [WindowGetOffsetFromParent](../../window_api/functions/window_WindowGetOffsetFromParent.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event

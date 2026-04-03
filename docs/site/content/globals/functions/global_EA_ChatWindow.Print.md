@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 123 addons
+- Seen in: 140 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionBarHide, AdvancedPetAssist, Amethyst, ArmorGraphicToggle, Arsenal Rank, AuctionStats, Aura, AutoBand |
-| Files seen in | AB_realmrank.lua, AB_stats.lua, AB_util.lua, APACore.lua, ActionBarHide.lua, Amethyst.lua, ArmorGraphicToggle.lua, ArsenalRank.lua |
+| Addons seen in | AbilityNotifier, ActionBarHide, AdvancedPetAssist, Amethyst, ArmorGraphicToggle, Arsenal Rank, Asshat, Assist |
+| Files seen in | AAOTracker.lua, AB_realmrank.lua, AB_stats.lua, AB_util.lua, APACore.lua, AbilityNotifier.lua, ActionBarHide.lua, Amethyst.lua |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | lua_calls |
-| Example locations | ActionBarHide: OnLoad, AdvancedPetAssist: Print, Amethyst: ApplySettings, Amethyst: Initialize, ArmorGraphicToggle: print, Arsenal Rank: init |
+| Example locations | AbilityNotifier: Echo, ActionBarHide: OnLoad, AdvancedPetAssist: Print, Amethyst: ApplySettings, Amethyst: Initialize, ArmorGraphicToggle: print |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 561 |
-| Global usage count | 561 |
+| Lua usage count | 634 |
+| Global usage count | 634 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ EA_ChatWindow.Print(arg1)
 
 ## Description
 
-Observed as a global function across 123 addons.
+Observed as a global function across 140 addons.
 
 ## Parameters
 
@@ -83,11 +83,14 @@ Observed as a global function across 123 addons.
 
 ## Seen In
 
+- AbilityNotifier
 - ActionBarHide
 - AdvancedPetAssist
 - Amethyst
 - ArmorGraphicToggle
 - Arsenal Rank
+- Asshat
+- Assist
 - AuctionStats
 - Aura
 - AutoBand
@@ -95,6 +98,7 @@ Observed as a global function across 123 addons.
 - AutoSalvage
 - BagOMatic
 - BankArkel
+- BarText (Influence)
 - BlackBook
 - Bloody Mess
 - BuffThrottle
@@ -113,6 +117,9 @@ Observed as a global function across 123 addons.
 - DeMoNiCore
 - DetauntHelper
 - DwarfTalk
+- EA_LoadingScreen
+- EA_OpenPartyWindow
+- EZCraft
 - EZGuard
 - Effigy
 - EmoteAlert
@@ -124,6 +131,8 @@ Observed as a global function across 123 addons.
 - Group Icons
 - GroupRange
 - GuardLine
+- GuardList
+- GuardRange
 - GuildWarden
 - HealAll
 - Hopper
@@ -145,12 +154,16 @@ Observed as a global function across 123 addons.
 - MiracleGrow
 - MiracleGrowLight
 - Motion
+- MyReasons
 - NPC Item Sale Price
 - NerfedButtons
 - NervAlert
 - NoOverheal
+- ObjectInspector
 - OilTimer
+- Paint the leader
 - PartyAd
+- PieTracker
 - PlanB
 - Pure
 - Queue Queuer
@@ -166,6 +179,7 @@ Observed as a global function across 123 addons.
 - SOR
 - ScenarioStats
 - Shinies
+- SimpleXY
 - Soloq
 - Squared
 - SquaredClick
@@ -173,6 +187,7 @@ Observed as a global function across 123 addons.
 - Swift Assist
 - Targets
 - TastyButtons
+- TaxPayer
 - ThankTheResser
 - TheSeeker
 - ThinkOutLoud
@@ -189,6 +204,8 @@ Observed as a global function across 123 addons.
 - WARCommander
 - WARRatingBuster
 - WSCT
+- WTes
+- WarBoard_AAOTracker
 - WarBoard_TaliMon
 - WarTriage
 - War_RU
@@ -209,12 +226,12 @@ Observed as a global function across 123 addons.
 
 ## Examples
 
+- AbilityNotifier: Echo -> EA_ChatWindow.Print(StringToWString(tostring(what)))
 - ActionBarHide: OnLoad -> EA_ChatWindow.Print(L "ActionBarHide Loaded")
 - AdvancedPetAssist: Print -> EA_ChatWindow.Print(L "<icon149> "..msg)
 - Amethyst: ApplySettings -> EA_ChatWindow.Print(L "Amethyst: Settings applied.")
 - Amethyst: Initialize -> EA_ChatWindow.Print(L "Amethyst Initialized. Configuration via /amt")
 - ArmorGraphicToggle: print -> EA_ChatWindow.Print(towstring(msg))
-- Arsenal Rank: init -> EA_ChatWindow.Print(towstring("Starting ArsenalRank!"))
 
 ## Related APIs
 
@@ -227,14 +244,9 @@ Observed as a global function across 123 addons.
 
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [WindowGetTintColor](../../window_api/functions/window_WindowGetTintColor.md) (HIGH 100/100) - Window Function
-- [BroadcastEvent](global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function
 - [RegisterEventHandler](global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
-
-## Affects
-
-- [SystemData.Events.SCENARIO_POST_MODE](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_POST_MODE.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

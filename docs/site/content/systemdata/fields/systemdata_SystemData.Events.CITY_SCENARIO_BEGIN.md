@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -30,8 +30,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | EA_ScenarioGroupWindow, Enemy, LibGroup, Squared |
-| Files seen in | Code/Core/Groups/Groups.lua, LibGroup.lua, Source/ScenarioGroupWindow.lua, Squared.lua |
+| Addons seen in | EA_OpenPartyWindow, EA_ScenarioGroupWindow, Enemy, LibGroup, Squared |
+| Files seen in | Code/Core/Groups/Groups.lua, LibGroup.lua, Source/ScenarioGroupWindow.lua, Squared.lua, source/openpartywindow.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | GroupsInitialize, Initialize, Squared.ChangeMode, SystemData.Events.CITY_SCENARIO_BEGIN, event_page, event_registration |
@@ -61,10 +61,11 @@
 
 ## Description
 
-SystemData.SystemData.Events.CITY_SCENARIO_BEGIN field accessed by 4 addons; commonly found in GroupsInitialize and Initialize, Squared.ChangeMode, SystemData.Events.CITY_SCENARIO_BEGIN, event_page, event_registration, lua_call contexts.
+SystemData.SystemData.Events.CITY_SCENARIO_BEGIN field accessed by 5 addons; commonly found in GroupsInitialize and Initialize, Squared.ChangeMode, SystemData.Events.CITY_SCENARIO_BEGIN, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - Enemy
 - LibGroup

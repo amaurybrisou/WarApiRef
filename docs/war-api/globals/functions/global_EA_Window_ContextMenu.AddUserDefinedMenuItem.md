@@ -72,7 +72,7 @@ Observed as a global function across 8 addons.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | arg1 | Observed as a text or wstring payload. | Observed values: "ActionFractionWindowContextAutoHide", "ActionFractionWindowContextColorCodeCurrentAP", "MoraleSliders" |
-| arg2 | Observed as a function or method reference. | Observed values: 3, EA_Window_ContextMenu.CONTEXT_MENU_1, EA_Window_ContextMenu.CONTEXT_MENU_2 |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 3, EA_Window_ContextMenu.CONTEXT_MENU_1, EA_Window_ContextMenu.CONTEXT_MENU_2 |
 
 ## Returns
 

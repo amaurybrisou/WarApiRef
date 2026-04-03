@@ -23,14 +23,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, AdjustTheTip, AdvancedRenownTrainer, AggroMeter, Aura, BuddyBind, CCTV, CaVES |
+| Addons seen in | ActionFraction, AdjustTheTip, AdvancedRenownTrainer, AggroMeter, Aura, BarText (Influence), BuddyBind, CCTV |
 | Files seen in | Bars/HealGridCastBar.lua, Code/CombatLog/CombatLog.lua, Code/Core/Utils.lua, Configuration/Config.lua, Configuration/HopperConfig.lua, Configuration/HopperConfig_General.lua, Configuration/PureConfig.lua, Configuration/PureConfig_Group.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
 | Example locations | ActionFraction: Initialize, AdjustTheTip: GetAbilityCastTimeText, AdjustTheTip: UpdateInfluenceTooltip, AdvancedRenownTrainer: ImportOkButtonPressed, AdvancedRenownTrainer: OnHyperLinkLButtonUp, AggroMeter: OnMouseOverStart |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 666 |
+| Lua usage count | 700 |
 | Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -54,7 +54,7 @@
 
 ## Description
 
-Shared function table with 11 member functions; the primary API surface for 87 addons.
+Shared function table with 11 member functions; the primary API surface for 93 addons.
 
 ## Functions
 
@@ -81,12 +81,14 @@ Shared function table with 11 member functions; the primary API surface for 87 a
 - AdvancedRenownTrainer
 - AggroMeter
 - Aura
+- BarText (Influence)
 - BuddyBind
 - CCTV
 - CaVES
 - Calling
 - CastSequence
 - CleanUnitFrames
+- Clock
 - CombatTextNames
 - CoolDownLine
 - Crafting Info Tooltip
@@ -95,6 +97,7 @@ Shared function table with 11 member functions; the primary API surface for 87 a
 - DAoCBuff
 - DammazKron
 - DuffTimer
+- EA_LoadingScreen
 - EA_UiDebugTools
 - Effigy
 - Emojii
@@ -123,6 +126,7 @@ Shared function table with 11 member functions; the primary API surface for 87 a
 - Miracle Grow Remix
 - Moth
 - Motion
+- MyReasons
 - NAMBLA
 - NaturalLog
 - Obsidian
@@ -145,6 +149,7 @@ Shared function table with 11 member functions; the primary API surface for 87 a
 - Sequencer
 - SessionRPs
 - Shinies
+- SocialWindow 2.0
 - Squared
 - Statdoll
 - Statdoll Light
@@ -159,6 +164,7 @@ Shared function table with 11 member functions; the primary API surface for 87 a
 - VPBreakdown
 - Vectors
 - WSCT
+- WarBoard_WarWhisperer
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - XpStatus+G

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 32 addons
+- Seen in: 35 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AbilityAlert, ActionBarHide, ActionFraction, AdjustTheTip, AggroMeter, Amethyst, Aura, Busted |
-| Files seen in | AbilityAlert.lua, ActionBarHide.lua, AdjustTheTip.lua, AggroMeter.lua, Amethyst.lua, Busted.lua, CCTV.lua, CDownFrames.lua |
+| Addons seen in | AbilityAlert, AbilityNotifier, ActionBarHide, ActionFraction, AdjustTheTip, AggroMeter, Amethyst, Aura |
+| Files seen in | AbilityAlert.lua, AbilityNotifier.lua, ActionBarHide.lua, AdjustTheTip.lua, AggroMeter.lua, Amethyst.lua, Busted.lua, CCTV.lua |
 | Namespaces detected | WindowStartAlphaAnimation |
 | Source kinds | lua_calls |
-| Example locations | AbilityAlert: Display, ActionBarHide: ChangeAlpha, ActionFraction: OnUpdate, ActionFraction: UpdateActionFractionVisibility, AdjustTheTip: UpdateUnit, AggroMeter: SplitText |
+| Example locations | AbilityAlert: Display, AbilityNotifier: Notify, ActionBarHide: ChangeAlpha, ActionFraction: OnUpdate, ActionFraction: UpdateActionFractionVisibility, AdjustTheTip: UpdateUnit |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 109 |
-| Global usage count | 109 |
+| Lua usage count | 127 |
+| Global usage count | 127 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ WindowStartAlphaAnimation(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
 
 ## Description
 
-Observed as a window function across 32 addons.
+Observed as a window function across 35 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "AAWindow", "AggroMeterWindow"..MobID, "BustedMiniGUIText" |
+| arg1 | Observed as a text or wstring payload. | Observed values: "AAWindow", "AbHelpWindow", "AggroMeterWindow"..MobID |
 | arg2 | Observed as a function or method reference. | Observed values: 1, 2, SINGLE_NO_RESET |
 | arg3 | Observed as a function or method reference. | Observed values: 0, 0.0, 0.1 |
 | arg4 | Observed as a function or method reference. | Observed values: 0, 0.0, 0.2 |
@@ -91,6 +91,7 @@ Observed as a window function across 32 addons.
 ## Seen In
 
 - AbilityAlert
+- AbilityNotifier
 - ActionBarHide
 - ActionFraction
 - AdjustTheTip
@@ -103,6 +104,8 @@ Observed as a window function across 32 addons.
 - ChattyCathy
 - Countdown
 - DAoCBuff
+- EA_LoadingScreen
+- EA_OpenPartyWindow
 - EA_UiDebugTools
 - Emojii
 - Enemy
@@ -126,11 +129,11 @@ Observed as a window function across 32 addons.
 ## Examples
 
 - AbilityAlert: Display -> WindowStartAlphaAnimation("AAWindow", Window.AnimationType.EASE_OUT, 1.0, 0.0, 2, false, 0, 0)
+- AbilityNotifier: Notify -> WindowStartAlphaAnimation("AbHelpWindow", Window.AnimationType.EASE_OUT, 1, 0, 2, false, 0, 1)
 - ActionBarHide: ChangeAlpha -> WindowStartAlphaAnimation("EA_ActionBar"..k, Window.AnimationType.SINGLE_NO_RESET, alphastart, targetalpha, ActionBarHide.Settings.FadeInTime, false, ActionBarHide.Settings.FadeInDelay, 0)
 - ActionBarHide: ChangeAlpha -> WindowStartAlphaAnimation("EA_ActionBar"..k, Window.AnimationType.SINGLE_NO_RESET, alphastart, targetalpha, ActionBarHide.Settings.FadeOutTime, false, ActionBarHide.Settings.FadeOutDelay, 0)
 - ActionFraction: OnUpdate -> WindowStartAlphaAnimation(windowName.."LabelCurrentAP", Window.AnimationType.SINGLE_NO_RESET_HIDE, 1.0, 0.0, 2.0, false, 0, 0)
 - ActionFraction: OnUpdate -> WindowStartAlphaAnimation(windowName.."LabelMaximumAP", Window.AnimationType.SINGLE_NO_RESET_HIDE, 1.0, 0.0, 2.0, false, 0, 0)
-- ActionFraction: UpdateActionFractionVisibility -> WindowStartAlphaAnimation(windowName.."LabelCurrentAP", Window.AnimationType.SINGLE_NO_RESET, currentAlpha, 1.0, 0.5, false, 0, 0)
 
 ## Related APIs
 

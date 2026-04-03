@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 83/100
-- Seen in: 113 addons
+- Seen in: 122 addons
 
 ## Confidence Assessment
 
@@ -32,8 +32,8 @@
 | Example locations | AdvancedPetAssist: ApplyKitingHUDColorOff, AdvancedPetAssist: ApplyKitingHUDColorOn, AdvancedPetAssist: ApplyPTColor, AdvancedPetAssist: ApplyPetTargetHUDLayout, AdvancedPetAssist: EnsureSmallEditBox, AdvancedPetAssist: HidePetTargetHUD |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 726 |
-| Global usage count | 726 |
+| Lua usage count | 752 |
+| Global usage count | 752 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -88,6 +88,7 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - BagOMatic
 - Busted
 - CM_ClosetGoblin
+- CMap
 - ChattyCathy
 - CleansingBuddy
 - CoolDownLine
@@ -100,8 +101,10 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - DeepSleep
 - DetauntHelper
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZCraftX
 - Effigy
 - Emojii
@@ -109,6 +112,7 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - EveryBodyGuard
 - FastFriends
 - FastInteract
+- FozAuction
 - GetStats
 - GroupSpotter
 - GuardLine
@@ -131,6 +135,7 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - Minmap
 - Miracle Grow Remix
 - MoraleCircle
+- MoraleSet
 - Motion
 - NaturalLog
 - Obsidian
@@ -158,6 +163,7 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - Sequencer
 - Shinies
 - ShowHealthPercent
+- SocialWindow 2.0
 - Soloq
 - Squared
 - SquaredClick
@@ -182,11 +188,14 @@ Observed guarding runtime window creation and cleanup by checking whether a name
 - VerticalTactics
 - WARCommander
 - WSCT
+- WTes
+- WarBoard_WarWhisperer
 - WhoHealedMe
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WoH-Reticle
 - XpStatus+G
+- bigger_MacroWindow
 - minesweep
 - nRarity
 - wbLeadHelper

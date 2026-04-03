@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 28 addons
+- Seen in: 30 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Addons seen in | Ace, ActionBarHide, Amethyst, CMap, Crusher, EZCraftX, EZGuard, Effigy |
 | Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, config_Main.lua, libs/LibGUI.lua |
 | Namespaces detected | WindowSetPopable |
 | Source kinds | lua_calls |
-| Example locations | Ace: Popable, ActionBarHide: Popable, Amethyst: Popable, Crusher: Popable, EZCraftX: Popable, EZGuard: Popable |
+| Example locations | Ace: Popable, ActionBarHide: Popable, Amethyst: Popable, CMap: Popable, Crusher: Popable, EZCraftX: Popable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 29 |
-| Global usage count | 29 |
+| Lua usage count | 31 |
+| Global usage count | 31 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -87,6 +87,7 @@ Observed mutating runtime window state or presentation.
 - Ace
 - ActionBarHide
 - Amethyst
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -105,6 +106,7 @@ Observed mutating runtime window state or presentation.
 - Shinies
 - TargetRing
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -118,9 +120,9 @@ Observed mutating runtime window state or presentation.
 - Ace: Popable -> WindowSetPopable(self.name, val)
 - ActionBarHide: Popable -> WindowSetPopable(self.name, val)
 - Amethyst: Popable -> WindowSetPopable(self.name, val)
+- CMap: Popable -> WindowSetPopable(self.name, val)
 - Crusher: Popable -> WindowSetPopable(self.name, val)
 - EZCraftX: Popable -> WindowSetPopable(self.name, val)
-- EZGuard: Popable -> WindowSetPopable(self.name, val)
 
 ## Used With
 

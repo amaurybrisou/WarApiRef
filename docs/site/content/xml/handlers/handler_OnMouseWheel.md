@@ -23,13 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | GuildWarden, Minmap, MoraleCircle, NaturalLog, TidyChat |
+| Addons seen in | CMap, GuildWarden, Minmap, MoraleCircle, NaturalLog, SocialWindow 2.0, TidyChat |
 | Namespaces detected | OnMouseWheel |
 | Source kinds | bindings, xml_handlers |
-| Example locations | GuildWarden: .OnMouseWheel, Minmap: .OnMouseWheel, MoraleCircle: .OnMouseWheel, NaturalLog: .OnMouseWheel, TidyChat: .OnMouseWheel |
+| Example locations | CMap: .OnMouseWheel, GuildWarden: .OnMouseWheel, Minmap: .OnMouseWheel, MoraleCircle: .OnMouseWheel, NaturalLog: .OnMouseWheel, SocialWindow 2.0: .OnMouseWheel |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
+| Lua usage count | 9 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 5 addons.
+XML handler event observed across 7 addons.
 
 ## Expected Lua Binding
 
@@ -67,19 +67,22 @@ function(delta)
 
 ## Seen In
 
+- CMap
 - GuildWarden
 - Minmap
 - MoraleCircle
 - NaturalLog
+- SocialWindow 2.0
 - TidyChat
 
 ## Examples
 
+- CMap: .OnMouseWheel -> CMapWindow.MWheel
+- CMap: .OnMouseWheel -> CMapWindow.MWheelWholeZoom
 - GuildWarden: .OnMouseWheel -> GuildWardenWin.Scroll
 - Minmap: .OnMouseWheel -> Minmap.HandleMouseWheel
 - MoraleCircle: .OnMouseWheel -> MoraleCircle.OnMouseWheel
 - NaturalLog: .OnMouseWheel -> lnHandler.Scroll
-- TidyChat: .OnMouseWheel -> TidyChat.Copy.OnMouseWheel
 
 ## Related APIs
 

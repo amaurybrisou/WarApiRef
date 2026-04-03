@@ -277,7 +277,7 @@ EditBox is an interactive XML control. It commonly appears under Window. It is t
 | Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnTextChanged](../handlers/handler_OnTextChanged.md) | data | Enemy.ConfigurationWindow_OnChange, zMailModSend.FixRecipient, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsEditChanged, MiracleGrow2.LayoutBarCChanged, MiracleGrow2.LayoutProgDimChanged, BuffHead.Setup.SelectColor.OnTintChanged, MapPin.TimeChanged, MiracleGrow2.ConfigThrobCChanged, Obsidian.Setup.SelectColor.OnTintChanged, ShiniesAutoUI.OnPriceChange, ShiniesPostUI.OnPriceChange, TexturedButtons.Setup.SelectColor.OnTintChanged, TexturedButtons.Setup.Tint.OnTintChanged, TurretRange.Setup.Display.OnTintChanged, TurretRange.Setup.Distance.OnTintChanged, Vectors.Settings.FloatEditBoxChanged, MassMailWindow.FixRecipient, MiracleGrow2.LayoutDimChanged, NBSBParam.OnParamChange, wbLeadHelperConfigTab.OnChanged, zMailModSend.OnTextChanged, , AuraConfig.OnTextureOffsetXChanged, AuraConfig.OnTextureOffsetYChanged, AuraConfig.OnTimerOffsetXChanged, AuraConfig.OnTimerOffsetYChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerPaddingXChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerPaddingYChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeColumnsChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnContainerSizeRowsChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnIndicatorPaddingXChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnIndicatorPaddingYChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnMaximumThresholdChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnMinimumThresholdChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnOffsetXChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnOffsetYChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnPlacementFixedOffsetXChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnPlacementFixedOffsetYChanged, BuffHead.Setup.Display.OnOffsetXChanged, BuffHead.Setup.Display.OnOffsetYChanged, BuffHead.Setup.EffectCache.OnSearchChanged, BuffHead.Setup.Layout.Properties.OnCoreSizeSizeHeightChanged, BuffHead.Setup.Layout.Properties.OnCoreSizeSizeWidthChanged, BuffHead.Setup.Layout.Properties.OnOffsetXChanged, BuffHead.Setup.Layout.Properties.OnOffsetYChanged, BuffHead.Setup.Layout.Properties.OnSizeScaleChanged, BuffHead.Setup.Layout.Properties.OnSizeSizeHeightChanged, BuffHead.Setup.Layout.Properties.OnSizeSizeWidthChanged, BuffHead.Setup.PriorityEffectsItem.OnAbilityIdChanged, CastSequence.FindAbility.OnAbilityIdChanged, CastSequence.SequenceBuilder.OnPageChanged, CastSequence.SequenceBuilder.OnSlotChanged, CastSequence.Setup.OnCastModifierChanged, DebugWindow.AutoSender, DebugWindow.PreventType, DevPadWindow.OnCodeChanged, GDes.ExtrasFeatureOffsetXKeyEntry, GDes.ExtrasFeatureOffsetYKeyEntry, GDes.ExtrasIconsOffsetXKeyEntry, GDes.ExtrasIconsOffsetYKeyEntry, Ges.ExtrasFeatureOffsetXKeyEntry, Ges.ExtrasFeatureOffsetYKeyEntry, Ges.ExtrasTrackerOffsetXKeyEntry, Ges.ExtrasTrackerOffsetYKeyEntry, GroupRangeSetup.General.OnOffsetXChanged, GroupRangeSetup.General.OnOffsetYChanged, GroupRangeSetup.Style.Pointer.OnOffsetXChanged, GroupRangeSetup.Style.Pointer.OnOffsetYChanged, GroupRangeSetup.Style.PointerReverse.OnOffsetXChanged, GroupRangeSetup.Style.PointerReverse.OnOffsetYChanged, GroupRangeSetup.Style.SimpleText.OnOffsetXChanged, GroupRangeSetup.Style.SimpleText.OnOffsetYChanged, LibAddonButton.Manager.Advanced.OnAnimationFpsChanged, LibAddonButton.Manager.Advanced.OnHeightChanged, LibAddonButton.Manager.Advanced.OnSimpleTextureChanged, LibAddonButton.Manager.Advanced.OnWidthChanged, MapMonster.Editor.OnLabelChange, MapMonster.Editor.OnNoteChange, MapMonster.Editor.OnPosTextChanged, MapMonster.PinTypeEditor.OnPinTypeTextChange, MapMonster.PinTypeEditor.OnRadiusTextChange, MapMonster.PinTypeEditor.OnSubTypeTextChange, MassMailWindow.OnTextChanged, Megaphone.SaveSettings, MiracleGrow2.ConfigSoundChanged, Obsidian.Setup.Castbar.OnBackgroundBorderSizeChanged, Obsidian.Setup.Castbar.OnGeneralSizeHeightChanged, Obsidian.Setup.Castbar.OnGeneralSizeWidthChanged, Obsidian.Setup.Castbar.OnGlobalCooldownOffsetXChanged, Obsidian.Setup.Castbar.OnGlobalCooldownOffsetYChanged, Obsidian.Setup.Castbar.OnGlobalCooldownSizeHeightChanged, Obsidian.Setup.Castbar.OnGlobalCooldownSizeWidthChanged, Obsidian.Setup.Castbar.OnIconOffsetXChanged, Obsidian.Setup.Castbar.OnIconOffsetYChanged, Obsidian.Setup.Castbar.OnNameOffsetXChanged, Obsidian.Setup.Castbar.OnNameOffsetYChanged, Obsidian.Setup.Castbar.OnTimerOffsetXChanged, Obsidian.Setup.Castbar.OnTimerOffsetYChanged, Obsidian.Setup.EffectTracker.OnGeneralFixedDurationChanged, Obsidian.Setup.EffectTracker.OnGeneralMaximumDurationChanged, Obsidian.Setup.EffectTracker.OnGeneralSizeHeightChanged, Obsidian.Setup.EffectTracker.OnGeneralSizeWidthChanged, Obsidian.Setup.EffectTracker.OnGeneralSpacingChanged, Obsidian.Setup.EffectTracker.OnNameOffsetXChanged, Obsidian.Setup.EffectTracker.OnNameOffsetYChanged, Obsidian.Setup.EffectTracker.OnTimerOffsetXChanged, Obsidian.Setup.EffectTracker.OnTimerOffsetYChanged, Obsidian.Setup.EffectTracker.OnTrackerIconOffsetXChanged, Obsidian.Setup.EffectTracker.OnTrackerIconOffsetYChanged, Obsidian.Setup.EffectTracker.OnTrackerOffsetXChanged, Obsidian.Setup.EffectTracker.OnTrackerOffsetYChanged, PP.UpdateDyeFilter, PartyAdWindow.OnPurposeTextChanged, RVAPI_ColorDialog.OnTextChangedEdit, ShiniesConfigGeneral.OnTextChanged_UIScale, ShiniesPostUI.OnStackChange, ShiniesPostUI.OnStackSizeChange, TexturedButtons.Setup.Actionbar.OnPaddingXChanged, TexturedButtons.Setup.Actionbar.OnPaddingYChanged, TexturedButtons.Setup.Actionbar.OnSpacingXChanged, TexturedButtons.Setup.Actionbar.OnSpacingYChanged, TurretRange.Setup.Display.OnDistanceOffsetXChanged, TurretRange.Setup.Display.OnDistanceOffsetYChanged, TurretRange.Setup.Display.OnGraphicLimitChanged, Twister.OnButtonTextChanged, XpStatus.OnQuotaTextChanged, zMailModOptions.OnTextChanged | `text` | MEDIUM |
-| [OnKeyEnter](../handlers/handler_OnKeyEnter.md) | custom | , nLootLinkGUI.search, WarBoard_FPSOptions.OnEnterKeyPressed, snt_panel.text_input, EA_ChatWindow.OnRename, MapPin.SendCommand, MapPin.SendText, ObjectInspector.InspectObject, zMailModSend.FixComplete, AuctionWindowSearchControls.OnLButtonUpSearch, DebugWindow.TextSend, DevPadWindow.ConfirmRename, DevPadWindow.CreateNewFile, DevPadWindow.SaveFile, DuffTimer.Options.OnEditBoxChanged, Ges.ExtrasFeatureOffsetXKeyEntry, Ges.ExtrasFeatureOffsetYKeyEntry, Ges.ExtrasTrackerOffsetXKeyEntry, Ges.ExtrasTrackerOffsetYKeyEntry, MapMonster.Editor.OnPosEnterKey, MassMailWindow.FixComplete, MassRefine.OnKeyEnter, RandomMountUI.OnMinLevelChanged, SocialWindowTabFriends.AddFriend, SocialWindowTabFriends.OnDescriptionAccept, SocialWindowTabIgnore.AddIgnore, Twister.OnButtonTextEnter, XpStatus.OnKeyEnter | `Command` | LOW |
+| [OnKeyEnter](../handlers/handler_OnKeyEnter.md) | custom | , nLootLinkGUI.search, WarBoard_FPSOptions.OnEnterKeyPressed, snt_panel.text_input, EA_ChatWindow.OnRename, MapPin.SendCommand, MapPin.SendText, ObjectInspector.InspectObject, zMailModSend.FixComplete, AuctionWindowSearchControls.OnLButtonUpSearch, DebugWindow.TextSend, DevPadWindow.ConfirmRename, DevPadWindow.CreateNewFile, DevPadWindow.SaveFile, DuffTimer.Options.OnEditBoxChanged, Ges.ExtrasFeatureOffsetXKeyEntry, Ges.ExtrasFeatureOffsetYKeyEntry, Ges.ExtrasTrackerOffsetXKeyEntry, Ges.ExtrasTrackerOffsetYKeyEntry, MapMonster.Editor.OnPosEnterKey, MassMailWindow.FixComplete, MassRefine.OnKeyEnter, RandomMountUI.OnMinLevelChanged, SocialWindowTabFriends.AddFriend, SocialWindowTabFriends.OnDescriptionAccept, SocialWindowTabIgnore.AddIgnore, Twister.OnButtonTextEnter, XpStatus.OnKeyEnter | `flags, mouseX, mouseY` | LOW |
 | [OnKeyEscape](../handlers/handler_OnKeyEscape.md) | custom | , EA_ChatWindow.OnCancelRename, zMailModSend.FixRecipient, DebugWindow.TextClear, DevPadWindow.OnKeyEscape, DuffTimer.Options.OnEditBoxChanged, Ges.ExtrasFeatureOffsetXKeyEntry, Ges.ExtrasFeatureOffsetYKeyEntry, Ges.ExtrasTrackerOffsetXKeyEntry, Ges.ExtrasTrackerOffsetYKeyEntry, MassMailWindow.FixRecipient, MassRefine.OnKeyEscape, SocialWindowTabFriends.OnCancelDescription, XpStatus.OnKeyEscape | `` |  |
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.ConfigurationWindow_ShowTooltip, MapMonster.PinTypeEditor.MouseOverDescription, EZCraftX.OnMouseOver_Text3Chars, Enemy.GroupsUI_EffectFilterDialog_OnAbilityIdsMouseOver, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionConfig2CommandMouseOver, LPET.OnMouseOver, WbLeadHelperMessage.OnMouseOverLabelEditBox, WbLeadHelperMessage.OnMouseOverMessageEditBox, wbLeadHelperConfigTab.OnMouseOverMessageEndLabel, wbLeadHelperConfigTab.OnMouseOverMessageStartLabel | `` |  |
 | [OnLButtonDown](../handlers/handler_OnLButtonDown.md) | input | zMailModSend.FixRecipient, MassMailWindow.FixRecipient | `flags, x, y` | MEDIUM |
@@ -373,7 +373,7 @@ EditBox is an interactive XML control. It commonly appears under Window. It is t
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `inherits` | **required** | 95% | EA_EditBox_DefaultFrame, Aura_EditBox_DefaultFrame, EA_EditBox_DefaultFrame_Multiline, CraftingWillardEditbox, ... |
-| `maxchars` | optional | 68% | 20, 76, 2048, 5, ... |
+| `maxchars` | optional | 68% | 76, 20, 5, 3, ... |
 | `input` | optional | 29% | nospaces, numbers, textandnumbers |
 | `layer` | optional | 25% | secondary, default, popup, 2, ... |
 | `taborder` | optional | 24% | 1, 2, 3, 4, ... |
@@ -1282,9 +1282,9 @@ API functions commonly called from event handler Lua functions on this element t
 
 | API Function | Category | Call Count | From Events |
 | --- | --- | --- | --- |
-| `TextEditBoxGetText` | ui | 495 | OnEnterPressed, OnFocusLost, OnKeyEnter, OnKeyEscape, OnLButtonDown, OnLButtonUp, OnRButtonDown, OnRButtonUp, OnTextChanged |
-| `TextEditBoxSetText` | ui | 95 | OnEnterPressed, OnFocusLost, OnKeyEnter, OnKeyEscape, OnLButtonDown, OnLButtonUp, OnRButtonDown, OnRButtonUp, OnRawDeviceInput, OnTextChanged |
-| `WindowSetShowing` | ui | 88 | OnKeyEnter, OnKeyEscape, OnLButtonDown, OnLButtonUp, OnRButtonDown, OnRButtonUp, OnTextChanged |
+| `TextEditBoxGetText` | ui | 498 | OnEnterPressed, OnFocusLost, OnKeyEnter, OnKeyEscape, OnLButtonDown, OnLButtonUp, OnRButtonDown, OnRButtonUp, OnTextChanged |
+| `TextEditBoxSetText` | ui | 97 | OnEnterPressed, OnFocusLost, OnKeyEnter, OnKeyEscape, OnLButtonDown, OnLButtonUp, OnRButtonDown, OnRButtonUp, OnRawDeviceInput, OnTextChanged |
+| `WindowSetShowing` | ui | 90 | OnKeyEnter, OnKeyEscape, OnLButtonDown, OnLButtonUp, OnRButtonDown, OnRButtonUp, OnTextChanged |
 | `ComboBoxGetSelectedMenuItem` | ui | 59 | OnEnterPressed, OnFocusLost, OnKeyEnter, OnTextChanged |
 | `SliderBarSetCurrentPosition` | ui | 55 | OnTextChanged |
 | `SliderBarGetCurrentPosition` | ui | 28 | OnTextChanged |
@@ -1405,59 +1405,70 @@ Confidence: MEDIUM
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
-- XpStatus.OnQuotaTextChanged
-- mmw.AutoComplete
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- MapPin.local.EditMarker
-- Squared.OpenImportExport
-- Sequencer.Save
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- LPET.AddProfileOnButtonUp
+- LPET.SaveProfileOnButtonUp
+- mmw.FixComplete
+- LibSlash.Initialize
 - PP.UpdateDyeFilter
-- RandomMountUI.Refresh
-- mms.SetNewLayout
+- Sequencer.Save
+- mmw.AutoComplete
+- Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
+- MapPin.OnUpdate
+- Sequencer.ToggleReset
+- BustedGUI.UpdateErrorView
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- Twister.OnLoad
+- mmw.OnRawDeviceInput
+- XpStatus.OnQuotaTextChanged
+- WbLeadHelperMessage.MessageDialogOpen
+- LPET.RenameProfileOnButtonUp
+- Sequencer.Load
+- SocialWindowTabFriends.OnCancelDescription
+- XpStatus.OnSetNewQuota
+- mmw.LoadRecipient
+- MapPin.RButtonUp
+- MapPin.SendText
+- Sequencer.SetReturn
+- SocialWindow.FriendAdd
+- SocialWindowTabFriends.OnDescriptionAccept
+- WBStutterLess.OnSave
+- WBStutterLess.Initialize
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- GuildWardenWin.WinSetup
+- RandomMountUI.OnMinLevelChanged
+- Sequencer.local.SetReturn
+- Squared.ImportSettings
+- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
+- MapPin.SetupAccept
+- EA_Window_Macro.OnSave
+- Squared.ExportSettings
+- Twister.OnButtonTextChanged
+- Twister.CloseSettingsWindow
+- mmw.FormatRecipient
+- mmo.ValidateSettings
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- GuildWarden.filter
+- RandomMountUI.Refresh
+- WbLeadHelperMessage.OnOk
+- mms.SetNewLayout
+- UiModWindow.UpdateAdvancedSettings
+- Squared.OpenImportExport
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- SocialWindow.IgnoreAdd
+- EA_Window_Macro.Initialize
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- SocialWindow.OnNewMember
+- XpStatus.InitializeQuotaWindow
+- Enemy.GroupsUI_EffectFilterDialog_Ok
+- EA_Window_Macro.UpdateDetails
+- mms.SetDefaultLayout
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
 - GuildWarden.GetCombosFilters
-- LPET.AddProfileOnButtonUp
-- Sequencer.SetReturn
-- XpStatus.OnSetNewQuota
-- Enemy.IntercomUI_ChooseChannelDialog_OnOkButton
-- Twister.OnLoad
-- mmo.ValidateSettings
-- mmw.FormatRecipient
-- LibSlash.Initialize
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- GuildWardenWin.WinSetup
-- LPET.RenameProfileOnButtonUp
-- XpStatus.InitializeQuotaWindow
-- WbLeadHelperMessage.MessageDialogOpen
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Squared.ExportSettings
-- GuildWarden.filter
-- MapPin.SetupAccept
-- Sequencer.Load
-- Twister.CloseSettingsWindow
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- Sequencer.ToggleReset
-- Sequencer.local.SetReturn
-- mmw.FixComplete
-- mmw.LoadRecipient
-- mmw.OnRawDeviceInput
-- LPET.SaveProfileOnButtonUp
-- Twister.OnButtonTextChanged
-- WbLeadHelperMessage.OnOk
-- Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged
-- RandomMountUI.OnMinLevelChanged
-- Squared.ImportSettings
 - MapPin.EditMarker
-- MapPin.SendText
-- MapPin.RButtonUp
-- MapPin.OnUpdate
-- mms.SetDefaultLayout
+- MapPin.local.EditMarker
 - XpStatus.ShowQuotaWindow
-- BustedGUI.UpdateErrorView
-- Enemy.GroupsUI_EffectFilterDialog_Ok
-- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
 
 
 ## Binding Resolution

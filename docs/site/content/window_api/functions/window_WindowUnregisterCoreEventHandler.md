@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 41 addons
+- Seen in: 44 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, BetterCC, BuddyBind, Calling, Crusher, EA_ScenarioGroupWindow |
+| Addons seen in | Ace, ActionBarHide, Amethyst, BetterCC, BuddyBind, CMap, Calling, Crusher |
 | Files seen in | BetterCC.lua, BuddyBind.lua, CallingKeybinding.lua, Core.lua, LibGUI.lua, LibGui.lua, LibRange.lua, Libraries/LibGUI.lua |
 | Namespaces detected | WindowUnregisterCoreEventHandler |
 | Source kinds | lua_calls |
 | Example locations | Ace: UnregisterEvent, ActionBarHide: UnregisterEvent, Amethyst: UnregisterEvent, BetterCC: UpdatePulse, BuddyBind: OnExitBindingMode, BuddyBind: OnRawDeviceInput |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 55 |
-| Global usage count | 55 |
+| Lua usage count | 59 |
+| Global usage count | 59 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,14 +65,14 @@ WindowUnregisterCoreEventHandler(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 41 addons.
+Observed as a window function across 44 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
 | arg1 | Observed as a function or method reference. | Observed values: "EA_Window_LootRoll", "EA_Window_ScenarioLobby", "KeyMappingWindowActionsList" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: "OnHidden", "OnLButtonDown", "OnLButtonUp" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: "OnHidden", "OnKeyTab", "OnLButtonDown" |
 
 ## Returns
 
@@ -89,6 +89,7 @@ Observed as a window function across 41 addons.
 - Amethyst
 - BetterCC
 - BuddyBind
+- CMap
 - Calling
 - Crusher
 - EA_ScenarioGroupWindow
@@ -111,11 +112,13 @@ Observed as a window function across 41 addons.
 - RVMOD_3DPortrait
 - RVMOD_PlayerStatus
 - RealmStatus
+- Rolodex
 - Shinies
 - TargetRing
 - TidyQueue
 - TidyRoll
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse

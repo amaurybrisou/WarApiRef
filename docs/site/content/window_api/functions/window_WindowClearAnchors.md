@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 114 addons
+- Seen in: 130 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Ace: ClearAnchors, ActionBarHide: ClearAnchors, ActionFraction: ResetWindow, ActionFraction: SetLocationActionPointBar, ActionFraction: SetLocationCenterScreen, AdjustTheTip: UpdateCallback |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 612 |
-| Global usage count | 612 |
+| Lua usage count | 645 |
+| Global usage count | 645 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -99,6 +99,7 @@ Observed resetting a window layout before applying new runtime anchors.
 - BlackBook
 - BuffHead
 - CDown
+- CMap
 - CastSequence
 - ChattyCathy
 - CombatTextNames
@@ -109,7 +110,11 @@ Observed resetting a window layout before applying new runtime anchors.
 - Dascore
 - DetauntHelper
 - DuffTimer
+- EA_LoadingScreen
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_ThreePartBar
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
@@ -120,6 +125,8 @@ Observed resetting a window layout before applying new runtime anchors.
 - GroupRange
 - GroupSpotter
 - GuardBot
+- GuardList
+- GuardRange
 - HealGrid
 - Hopper
 - InfoScroller
@@ -136,6 +143,7 @@ Observed resetting a window layout before applying new runtime anchors.
 - MiniMapMonster
 - Miracle Grow Remix
 - MoraleBG
+- MoraleSet
 - Moth
 - Motion
 - MouseHint
@@ -145,6 +153,7 @@ Observed resetting a window layout before applying new runtime anchors.
 - OverheadFonts
 - PartyCast
 - PotionBar
+- Preciousss
 - Pure
 - Pure Careerbar
 - QuickWarReport
@@ -167,6 +176,8 @@ Observed resetting a window layout before applying new runtime anchors.
 - SessionRPs
 - Shinies
 - SimpleCombatText
+- SimpleXY
+- SocialWindow 2.0
 - Squared
 - SquaredHotIndicators
 - TacticSetNames
@@ -177,13 +188,16 @@ Observed resetting a window layout before applying new runtime anchors.
 - TidyChat
 - Tokens
 - TomeTracker
+- Tortall_DPS
 - TurretRange
 - Vectors
 - VerticalMorale
 - VerticalTactics
 - WARRatingBuster
 - WSCT
+- WTes
 - WarBoard_Loc
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar
@@ -191,7 +205,9 @@ Observed resetting a window layout before applying new runtime anchors.
 - WindowMovers
 - WoH-Reticle
 - XpStatus+G
+- bigger_MacroWindow
 - emotes
+- fpsbox
 - scenarioInfo
 - wbLeadHelper
 - xHUD
@@ -222,15 +238,18 @@ Observed resetting a window layout before applying new runtime anchors.
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [DialogManager.MakeOneButtonDialog](../../globals/functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
 - [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [PartyUtils.GetWarbandMember](../../globals/functions/global_PartyUtils.GetWarbandMember.md) (HIGH 100/100) - Global Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowGetId](window_WindowGetId.md) (HIGH 100/100) - Window Function
 - [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowSetLayer](window_WindowSetLayer.md) (HIGH 100/100) - Window Function
 - [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [PartyUtils.MoveWarbandMember](../../globals/functions/global_PartyUtils.MoveWarbandMember.md) (HIGH 88/100) - Global Function
+- [PartyUtils.SwapWarbandMembers](../../globals/functions/global_PartyUtils.SwapWarbandMembers.md) (MEDIUM 45/100) - Global Function
 
 ## Notes
 

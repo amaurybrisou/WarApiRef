@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 110 addons
+- Seen in: 122 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, AdvancedRenownTrainer, AggroMeter, Amethyst, Atlas |
-| Files seen in | AdjustTheTip.lua, AdvancedRenownTraining.lua, AggroMeter.lua, AuctionAssist.lua, BlackBookWindow.lua, Bloody Mess.lua, BuddyBind.lua, CCTV.lua |
+| Files seen in | AAOTracker.lua, AdjustTheTip.lua, AdvancedRenownTraining.lua, AggroMeter.lua, AuctionAssist.lua, BlackBookWindow.lua, Bloody Mess.lua, BuddyBind.lua |
 | Namespaces detected | ButtonSetPressedFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: SetValue, ActionBarHide: SetValue, ActionFraction: Initialize, ActionFraction: ResetWindow, ActionFraction: RightClick, ActionFraction: ToggleAutoHide |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 938 |
-| Global usage count | 938 |
+| Lua usage count | 1009 |
+| Global usage count | 1009 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -102,9 +102,11 @@ Observed mutating button text or pressed state on existing controls.
 - CCTV
 - CDown
 - CM_ClosetGoblin
+- CMap
 - CaVES
 - Calling
 - CastSequence
+- Cheeseboard
 - Crafting Info Tooltip
 - Crusher
 - DAoCBuff
@@ -112,7 +114,9 @@ Observed mutating button text or pressed state on existing controls.
 - DammazKron
 - DetauntHelper
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
@@ -120,6 +124,7 @@ Observed mutating button text or pressed state on existing controls.
 - Enemy
 - EveryBodyGuard
 - FastFriends
+- FozAuction
 - GCDsaver
 - Group Icons SG
 - GroupRange
@@ -150,6 +155,7 @@ Observed mutating button text or pressed state on existing controls.
 - Obsidian
 - PartyCast
 - Phantom
+- PieTracker
 - Pocket Palette
 - PotionBar
 - Pure
@@ -168,10 +174,12 @@ Observed mutating button text or pressed state on existing controls.
 - SNT_INFO
 - Sequencer
 - Shinies
+- SocialWindow 2.0
 - Statdoll Remix
 - TalismanGenie
 - TargetRing
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyChat
 - TidyQueue
@@ -182,11 +190,15 @@ Observed mutating button text or pressed state on existing controls.
 - Vectors
 - WARCommander
 - WSCT
+- WTes
+- WarBoard_AAOTracker
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WoH-Reticle
 - XpStatus+G
+- bigger_MacroWindow
 - nLootLink
 - nRarity
 - scenarioInfo
@@ -220,8 +232,9 @@ Observed mutating button text or pressed state on existing controls.
 - [ButtonSetCheckButtonFlag](window_ButtonSetCheckButtonFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetStayDownFlag](window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
+- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 - [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.M_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.M_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.R_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.R_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
@@ -229,15 +242,13 @@ Observed mutating button text or pressed state on existing controls.
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
+- [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

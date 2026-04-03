@@ -29,7 +29,7 @@
 | Example locations | AdvancedPetAssist: .OnShown, AdvancedRenownTrainer: .OnShown, Aura: .OnShown, BlackBook: .OnShown, CCTV: .OnShown, CM_ClosetGoblin: .OnShown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 55 |
+| Lua usage count | 66 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 33 addons.
+XML handler event observed across 38 addons.
 
 ## Expected Lua Binding
 
@@ -77,8 +77,11 @@ function()
 - Calling
 - Crusher
 - DPSMeter
+- EA_OpenPartyWindow
 - EA_UiDebugTools
+- EA_UiModWindow
 - Enemy
+- FozAuction
 - LoyalPet
 - MapMonster
 - Motion
@@ -89,6 +92,7 @@ function()
 - ReliquaryHunter
 - Sequencer
 - Shinies
+- SocialWindow 2.0
 - TidyChat
 - TidyRoll
 - Tome Titan
@@ -99,6 +103,7 @@ function()
 - WarBoard_FPS
 - WhoHealedMe
 - alertMod
+- bigger_MacroWindow
 - nLootLink
 
 ## Examples

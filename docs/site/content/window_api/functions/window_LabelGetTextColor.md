@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 31 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Addons seen in | Ace, ActionBarHide, Amethyst, CMap, Crusher, EZCraftX, EZGuard, Effigy |
 | Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, WARCommander.lua, libs/LibGUI.lua |
 | Namespaces detected | LabelGetTextColor |
 | Source kinds | lua_calls |
-| Example locations | Ace: Color, ActionBarHide: Color, Amethyst: Color, Crusher: Color, EZCraftX: Color, EZGuard: Color |
+| Example locations | Ace: Color, ActionBarHide: Color, Amethyst: Color, CMap: Color, Crusher: Color, EZCraftX: Color |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 29 |
-| Global usage count | 29 |
+| Lua usage count | 31 |
+| Global usage count | 31 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ LabelGetTextColor(arg1)
 
 ## Description
 
-Observed as a window function across 29 addons.
+Observed as a window function across 31 addons.
 
 ## Parameters
 
@@ -86,6 +86,7 @@ Observed as a window function across 29 addons.
 - Ace
 - ActionBarHide
 - Amethyst
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -105,6 +106,7 @@ Observed as a window function across 29 addons.
 - TargetRing
 - Tokens
 - WARCommander
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -118,9 +120,9 @@ Observed as a window function across 29 addons.
 - Ace: Color -> LabelGetTextColor(self.name)
 - ActionBarHide: Color -> LabelGetTextColor(self.name)
 - Amethyst: Color -> LabelGetTextColor(self.name)
+- CMap: Color -> LabelGetTextColor(self.name)
 - Crusher: Color -> LabelGetTextColor(self.name)
 - EZCraftX: Color -> LabelGetTextColor(self.name)
-- EZGuard: Color -> LabelGetTextColor(self.name)
 
 ## Related APIs
 

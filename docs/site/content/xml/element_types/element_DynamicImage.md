@@ -339,11 +339,11 @@ DynamicImage is an interactive XML control. It commonly appears under Button and
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `handleinput` | optional | 78% | false, true |
-| `texture` | optional | 71% | EA_SquareFrame, AggroMeterIcon, EA_Abilities01_d5, EA_ScreenFlash, ... |
+| `texture` | optional | 71% | EA_SquareFrame, AggroMeterIcon, EA_Abilities01_d5, EA_HUD_01, ... |
 | `layer` | optional | 65% | background, overlay, popup, default, ... |
-| `texturescale` | optional | 33% | 0.35, 1.00, .5, 1.18, ... |
+| `texturescale` | optional | 33% | 0.35, 1.00, .5, 1.5, ... |
 | `textureScale` | optional | 14% | 1.0, 0.5, 0.43, 1, ... |
-| `slice` | optional | 12% | Tab-ALL, Round-Swatch-Selection-Ring, Radio-Button, Map-Zoom-Slider-Background, ... |
+| `slice` | optional | 12% | Tab-ALL, Round-Swatch-Selection-Ring, Radio-Button, You-Have-Mail, ... |
 | `inherits` | optional | 12% | EA_Default_TrainingImage, Aggro_Tactic_Template, EA_ListSortUpArrow, EA_ListSortDownArrow, ... |
 | `popable` | optional | 7% | false, true |
 | `id` | optional | 6% | 1, 2, 3, 5, ... |
@@ -1326,121 +1326,126 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- yAssist.Initialize
-- Calling.ShowCallerIcon
-- Enemy.GuardInitialize
-- NerfedButtons.Initialize
-- WSCT.ColorAcceptButtonOnButtonUp
-- Enemy.Guard_GuardIndicator_Update
-- ResHelp.OnUpdate
-- Twister.OnUpdate
-- TokenMachine.Initialize
-- KeyBar.MouseOver
-- KwestorTracker.DrawQuest
-- MiniMapMonster.local.DisplayPin
-- Enemy.UI_Icon_Switch
-- Enemy.Guard_OnSettingsChanged
-- TomeTracker.Journal.Initialize
-- ClosetGoblinCharacterWindow.OnInitialize
-- Swift Assist.local.SetSmartLabel
-- TomeTracker.Journal.MapButtonShow
-- KeyBarSettings.SaveSettingsWindow
-- RoR_SoR.OnScenario
-- TacticSetNames.UpdateSliders
-- VerticalMorale.Create
-- Swift Assist.SetSmartLabel
-- MapMonster.local.CreateMarker
-- Swift Assist.local.SetTexLabel
-- SwiftAssist.OnMacroUpdated
-- zmm.UpdateLayout
-- Calling.ManageNotification
-- Enemy.TalismanAlerterInitialize
-- Swift Assist.SetTexLabel
-- Twister.SetActiveAura
-- Moth.UpdateTarget
-- TacticSetNames.local.UpdateColorPickerPreview
-- Enemy.MarksInitialize
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- NerfedButtons.Shutdown
-- MoraleBar.Create
-- TalismanMonitor.Setup
-- BloodyMess.PlayEffect
-- CallingSetup.OnShowTargetIconClick
-- CallingSetup.OnShowCallerIconClick
-- MapMonster.CreateMarker
-- mmv.SetNewLayout
-- CCM.OnInitialize
-- KeyBar.OnInitialize
-- TurretRange.OnUpdate
-- HealGridIcon.Initialize
-- WSCT.ColorHideMenu
-- Enemy.EnemyEffectsIndicator:Update
-- RandomMountUI.OnAddCustomMount
-- TacticSetNames.UpdateColorPickerPreview
-- MapPin.TestTooltip
-- WSCT.OnLButtonUpColorPicker
-- WSCT.ColorOnInitialize
-- Trakario.SetCarrier
-- Calling.ShowTargetIcon
-- NBSBCore.IconOnMouseOverEnd
-- Squared.SavePosition
-- GuardLine.update
-- MapMonster.local.DisplayPinsForZone
-- MiniMapMonster.RemovePin
-- MouseHint.OnInitialize
-- TacticSetNames.local.UpdateSliders
-- BankArkel.PackImg
-- Enemy.TalismanAlerter_Update
-- GroupSpotter.OnMouseOverEnd
-- yAssist.SetTexLabel
-- mms.SetNewLayout
-- CCTV.Update
-- GuardBot.AttachIconWindow
-- GuardBot.SetupIconWindow
-- MapMonster.DisplayPinsForZone
-- PP.UpdateListRow
-- Dye.Initialize
-- GroupSpotter.toggle
-- GroupSpotter.InitializeSettingsWindow
-- MiniMapMonster.DisplayPin
-- Calling.ShowNotification
-- SwiftAssist.Initialize
-- BagOMatic.init
-- ClosetGoblin.Initialize
-- CallingSetup.SetAutoAssist
-- Squared.RestorePosition
-- GuildWardenWin.WinSetup
-- KeyBar.Update
-- MouseHint.OnUpdate
-- Calling.Initialize
-- Enemy._Initialize
-- Enemy.TalismanAlerter_OnSettingsChanged
-- RVMOD_3DPortrait.Update3DPortraitScenes
-- KeyBar.MoveWindow
-- RoR_SoR.OnCombat
-- Trakario.local.SetCarrier
-- TomeTracker.Journal.MapButtonHide
-- yAssist.SetAssist
-- ClosetGoblinZoneWindow.OnInitialize
-- Enemy.AssistUI_Target_Show
-- GetStats.OnInitialize
-- RandomMountUI.OnDropSlotLButtonUp
-- CCM.UpdateUI
-- GroupSpotter.Initialize
-- GroupSpotter.OnMouseOverStart
-- MapMonster.local.DisplayPin
-- NBSBCore.IconOnMouseOver
-- Twister.OnLoad
-- VerticalMorale.Initialize
-- BlackBookWindow.UpdateSortButtons
-- CoolDownLine.OnUpdate
 - GuardBot.ResetGuardData
-- MapMonster.Editor.ShowZoneHooked
-- RoR_SoR.OnInitialize
+- NBSBCore.IconOnMouseOverEnd
 - TomeTracker.Journal.MapButtonToggle
+- Twister.SetActiveAura
+- NerfedButtons.Shutdown
+- MapPin.TestTooltip
+- NBSBCore.IconOnMouseOver
+- WSCT.ColorHideMenu
+- MapMonster.Editor.ShowZoneHooked
+- MapMonster.local.CreateMarker
+- TacticSetNames.local.UpdateColorPickerPreview
+- Trakario.local.SetCarrier
+- KeyBar.MoveWindow
+- BankArkel.PackImg
+- Enemy.EnemyEffectsIndicator:Update
+- Enemy.Guard_GuardIndicator_Update
+- GroupSpotter.toggle
+- KeyBar.MouseOver
+- Enemy.UI_Icon_Switch
+- Calling.ShowTargetIcon
+- Swift Assist.local.SetSmartLabel
+- CoolDownLine.OnUpdate
+- TacticSetNames.local.UpdateSliders
+- WSCT.ColorAcceptButtonOnButtonUp
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- MapMonster.local.DisplayPinsForZone
+- CCTV.Update
+- SwiftAssist.OnMacroUpdated
+- KeyBarSettings.SaveSettingsWindow
+- VerticalMorale.Create
+- KeyBar.Update
+- MapMonster.CreateMarker
+- MiniMapMonster.local.DisplayPin
+- ClosetGoblinCharacterWindow.OnInitialize
+- Enemy.TalismanAlerter_Update
+- GuardLine.update
+- MiniMapMonster.RemovePin
+- Trakario.SetCarrier
+- zmm.UpdateLayout
+- Dye.Initialize
+- UiModVersionMismatchWindow.UpdateModSortButtons
+- GuardBot.SetupIconWindow
+- MapMonster.local.DisplayPin
+- Squared.RestorePosition
 - ClosetGoblinCharacterWindow.UpdateSortButtonIcon
+- Calling.ShowNotification
+- CallingSetup.OnShowCallerIconClick
+- SwiftAssist.Initialize
+- Swift Assist.SetSmartLabel
+- RoR_SoR.OnCombat
+- yAssist.SetAssist
+- Calling.Initialize
+- Enemy.TalismanAlerter_OnSettingsChanged
+- GroupSpotter.OnMouseOverStart
+- ResHelp.OnUpdate
+- TomeTracker.Journal.MapButtonHide
+- MoraleBar.Create
+- Calling.ManageNotification
+- CallingSetup.OnShowTargetIconClick
+- UiModWindow.UpdateModSortButtons
+- GroupSpotter.OnMouseOverEnd
+- GuildWardenWin.WinSetup
+- HealGridIcon.Initialize
+- SocialWindow.OnMouseOverListMember
+- TokenMachine.Initialize
+- BlackBookWindow.UpdateSortButtons
+- CCM.OnInitialize
+- Enemy.Guard_OnSettingsChanged
+- VerticalMorale.Initialize
+- TalismanMonitor.Setup
+- mmv.SetNewLayout
+- BagOMatic.init
+- CMapWindow.UpdateMailIcon
+- GetStats.OnInitialize
+- Squared.SavePosition
+- TomeTracker.Journal.Initialize
+- CallingSetup.SetAutoAssist
+- KwestorTracker.DrawQuest
+- MouseHint.OnInitialize
+- Swift Assist.local.SetTexLabel
+- ClosetGoblin.Initialize
+- MouseHint.OnUpdate
+- RoR_SoR.OnScenario
+- Moth.UpdateTarget
+- Twister.OnUpdate
+- Calling.ShowCallerIcon
+- KeyBar.OnInitialize
+- MiniMapMonster.DisplayPin
 - TomeWindow.DK_SetSortArrow
+- Swift Assist.SetTexLabel
+- BloodyMess.PlayEffect
+- TacticSetNames.UpdateColorPickerPreview
+- TomeTracker.Journal.MapButtonShow
+- TacticSetNames.UpdateSliders
+- Enemy.GuardInitialize
+- MapMonster.DisplayPinsForZone
+- RandomMountUI.OnAddCustomMount
+- RandomMountUI.OnDropSlotLButtonUp
+- Enemy._Initialize
+- Enemy.MarksInitialize
+- PP.UpdateListRow
+- RVMOD_3DPortrait.Update3DPortraitScenes
+- RoR_SoR.OnInitialize
+- Twister.OnLoad
+- yAssist.Initialize
+- ClosetGoblinZoneWindow.OnInitialize
+- GroupSpotter.Initialize
+- GuardBot.AttachIconWindow
+- Enemy.AssistUI_Target_Show
+- WSCT.OnLButtonUpColorPicker
+- yAssist.SetTexLabel
+- TurretRange.OnUpdate
+- WSCT.ColorOnInitialize
+- mms.SetNewLayout
+- Enemy.TalismanAlerterInitialize
+- GroupSpotter.InitializeSettingsWindow
 - MapMonster.DisplayPin
+- CCM.UpdateUI
+- CMapWindow.OnRvRFlagUpdated
+- NerfedButtons.Initialize
 
 
 ## Binding Resolution

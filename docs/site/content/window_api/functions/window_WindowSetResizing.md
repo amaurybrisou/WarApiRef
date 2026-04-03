@@ -89,10 +89,6 @@ Observed mutating runtime window state or presentation.
 - BuffHead: BeginResize -> WindowSetResizing(self:GetName(), true, resizeData.sizePoint, resizeData.lockAspect)
 - BuffHead: EndResize -> WindowSetResizing(self:GetName(), false, "", false)
 
-## Affects
-
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-
 ## Notes
 
 - Only one addon surfaced this symbol in the current corpus.

@@ -1203,38 +1203,35 @@ Confidence: HIGH
 
 Confidence: LOW
 
-| Position | Name | Type | Role |
-| --- | --- | --- | --- |
-| 0 | `pos` | unknown | unknown |
 ## Lua Functions Manipulating This Type
 
-- CCTV.Initialize
-- ChattyCathy.OnSlideAlpha
-- ChattyCathy.CancelOptions
-- ChattyCathy.ApplyOptions
-- MoraleCircle.ColorChanger1
-- MoraleCircle.OnSetCustomColor
-- MoraleCircle.OnSetCustomColorEmpty
-- BloodyMess.ApplyButton_OnLButtonUp
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
 - MoraleCircle.ColorChanger3
-- RoR_SoR.OnWindowOptionsSetOpacity
-- RoR_SoR.OnWindowOptionsSetScale
-- WSCT.OnSetCustomColor
-- WSCT.OnLButtonUpColorPicker
-- BloodyMess.OnInitialize
-- ChattyCathy.CC_ModelWindow
-- WSCT.ColorOnButtonUp
 - CCTV.UpdateSettings
-- ScenarioGroupWindow.OnMenuClickSetBackgroundOpacity
+- ChattyCathy.OnSlideAlpha
 - MoraleCircle.OnSetCustomColorFill
-- MoraleCircle.OnSetCustomColorFull
-- MoraleCircle.ColorChanger4
-- RoR_SoR.OnWindowOptionsSetOffset
-- XpStatus.EditOpacity
-- XpStatus.InitializeSetOpacityWindow
 - MoraleCircle.ColorChanger2
+- ScenarioGroupWindow.OnMenuClickSetBackgroundOpacity
+- MoraleCircle.OnSetCustomColorFull
+- CCTV.Initialize
+- ChattyCathy.CC_ModelWindow
+- RoR_SoR.OnWindowOptionsSetOpacity
+- XpStatus.InitializeSetOpacityWindow
+- MoraleCircle.OnSetCustomColorEmpty
+- WSCT.OnSetCustomColor
+- BloodyMess.ApplyButton_OnLButtonUp
+- MoraleCircle.OnSetCustomColor
+- RoR_SoR.OnWindowOptionsSetOffset
+- BloodyMess.OnInitialize
+- ChattyCathy.CancelOptions
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- MoraleCircle.ColorChanger1
+- RoR_SoR.OnWindowOptionsSetScale
+- ChattyCathy.ApplyOptions
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- MoraleCircle.ColorChanger4
+- WSCT.ColorOnButtonUp
+- WSCT.OnLButtonUpColorPicker
+- XpStatus.EditOpacity
 
 
 ## Binding Resolution

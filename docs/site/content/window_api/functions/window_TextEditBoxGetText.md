@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 76 addons
+- Seen in: 84 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, AdvancedPetAssist, AdvancedRenownTrainer, Amethyst, Aura, BuffHead, CastSequence |
+| Addons seen in | Ace, ActionBarHide, AdvancedPetAssist, AdvancedRenownTrainer, Amethyst, Aura, BuffHead, CMap |
 | Files seen in | APAGuiHelpers.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, Code/Core/Groups/EnemyEffectFilter.lua, Code/Core/Main.lua, Code/Core/Utils.lua, Code/Intercom/Intercom.lua, Code/UnitFrames/ClickCasting.lua |
 | Namespaces detected | TextEditBoxGetText |
 | Source kinds | lua_calls |
 | Example locations | Ace: GetText, ActionBarHide: GetText, AdvancedPetAssist: ParseRGB, AdvancedRenownTrainer: ImportNameInputOkButtonPressed, AdvancedRenownTrainer: ImportOkButtonPressed, AdvancedRenownTrainer: SavePreset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 411 |
-| Global usage count | 411 |
+| Lua usage count | 434 |
+| Global usage count | 434 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed reading from or writing to edit-box controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "DyeWindowFilterEditBox", "EnemyChooseChannelDialogTellDetailsName", "EnemyClickCastingDialogContentScrollChildActionConfig2Command" |
+| arg1 | Observed as a function or method reference. | Observed values: "AddFriendDescriptionText", "DyeWindowFilterEditBox", "EA_Window_MacroDetailsName" |
 
 ## Returns
 
@@ -90,6 +90,7 @@ Observed reading from or writing to edit-box controls.
 - Amethyst
 - Aura
 - BuffHead
+- CMap
 - CastSequence
 - Crusher
 - DAoCBuff
@@ -101,6 +102,7 @@ Observed reading from or writing to edit-box controls.
 - Effigy
 - Enemy
 - FastFriends
+- FozAuction
 - GCDsaver
 - GroupRange
 - GuildWarden
@@ -123,8 +125,10 @@ Observed reading from or writing to edit-box controls.
 - Motion
 - NaturalLog
 - NerfedButtons
+- ObjectInspector
 - Obsidian
 - PartyCast
+- PieTracker
 - Pocket Palette
 - Pure
 - Pure Careerbar
@@ -136,6 +140,7 @@ Observed reading from or writing to edit-box controls.
 - SOR
 - Sequencer
 - Shinies
+- SocialWindow 2.0
 - Squared
 - TacticSetNames
 - TargetRing
@@ -147,12 +152,15 @@ Observed reading from or writing to edit-box controls.
 - TurretRange
 - Twister
 - Vectors
+- WBStutterLess
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WoH-Reticle
 - XpStatus+G
+- bigger_MacroWindow
 - nLootLink
 - scenarioInfo
 - wbLeadHelper

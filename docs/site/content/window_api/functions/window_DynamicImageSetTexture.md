@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 97 addons
+- Seen in: 103 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Ace: Texture, AdvancedRenownTrainer: CreateAbilityWindow, Amethyst: Texture, AuctionStats: OnRButtonUpItem, AuctionStats: UpdateItemOptions, Aura: SetDynamicImageTexture |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 474 |
-| Global usage count | 474 |
+| Lua usage count | 504 |
+| Global usage count | 504 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -100,6 +100,7 @@ Observed mutating runtime image resources on existing controls.
 - BuffHead
 - CDown
 - CM_ClosetGoblin
+- CMap
 - CaVES
 - Calling
 - CastSequence
@@ -112,6 +113,7 @@ Observed mutating runtime image resources on existing controls.
 - DammazKron
 - DetauntHelper
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EZCraftX
 - EZGuard
@@ -119,6 +121,7 @@ Observed mutating runtime image resources on existing controls.
 - Emojii
 - Enemy
 - EveryBodyGuard
+- FozAuction
 - GCDTracker
 - GCDsaver
 - GetStats
@@ -158,6 +161,7 @@ Observed mutating runtime image resources on existing controls.
 - SOR
 - Sequencer
 - Shinies
+- SocialWindow 2.0
 - Squared
 - SquaredClick
 - Swift Assist
@@ -174,10 +178,12 @@ Observed mutating runtime image resources on existing controls.
 - WSCT
 - WarBoard_Menu
 - WarBoard_TaliMon
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WoH-Reticle
+- bigger_MacroWindow
 - scenarioInfo
 - talisman-monitor
 - xHUD
@@ -206,19 +212,19 @@ Observed mutating runtime image resources on existing controls.
 
 - [DynamicImageSetRotation](window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureDimensions](window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureScale](window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
 - [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
 - [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
+- [Icons.GetCareerIconIDFromCareerNamesID](../../globals/functions/global_Icons.GetCareerIconIDFromCareerNamesID.md) (HIGH 100/100) - Global Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [Texture](../../xml/element_types/element_Texture.md) (HIGH 100/100) - XML Element Type
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
-- [WindowSetGameActionData](window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

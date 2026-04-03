@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 12 addons
+- Seen in: 14 addons
 
 ## Confidence Assessment
 
@@ -32,8 +32,8 @@
 | Example locations | CleanUnitFrames: UpdateUnit, CombatTextNames: SetupText, Effigy: wstringStartsWith, Enemy: FormatNumber, HealGrid: ExtractArg, HealGrid: FindLabel |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 21 |
-| Global usage count | 21 |
+| Lua usage count | 25 |
+| Global usage count | 25 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,13 +62,13 @@ wstring.len(arg1)
 
 ## Description
 
-Observed as a global function across 12 addons.
+Observed as a global function across 14 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: GameData.Player.name, Start, entryLog |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: GameData.Player.name, Start, TargetInfo:UnitName("selffriendlytarget") |
 
 ## Returns
 
@@ -88,10 +88,12 @@ Observed as a global function across 12 addons.
 - I HATE YOU THIS MUCH
 - Kwestor
 - LibJson
+- MyReasons
 - NaturalLog
 - Queue Queuer
 - Shinies
 - WSCT
+- WarBoard_WarWhisperer
 
 ## Examples
 
@@ -101,6 +103,10 @@ Observed as a global function across 12 addons.
 - Enemy: FormatNumber -> wstring.len(number_string)
 - HealGrid: ExtractArg -> wstring.len(s)
 - HealGrid: FindLabel -> wstring.len(s)
+
+## Related APIs
+
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Used With
 

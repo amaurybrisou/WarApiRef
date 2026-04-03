@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 30 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoMark, BuddyBind, Calling, CleanUnitFrames, DammazKron, DetauntHelper, Ding, Effigy |
+| Addons seen in | AutoMark, BuddyBind, Calling, CleanUnitFrames, DammazKron, DetauntHelper, Ding, EA_OpenPartyWindow |
 | Files seen in | BuddyBind.lua, CallingList.lua, CallingNotification.lua, CleanGroupMemberUnitFrame.lua, Code/Assist/Assist.lua, Code/CombatLog/CombatLogIDS.lua, Code/GroupIcons/GroupIcon.lua, Code/Marks/MarkTemplate.lua |
 | Namespaces detected | Icons |
 | Source kinds | lua_calls |
 | Example locations | AutoMark: CreateMarker, BuddyBind: GrabName, Calling: SetListLine, Calling: ShowCallerIcon, Calling: ShowTargetIcon, CleanUnitFrames: SetCareerIcon |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 87 |
-| Global usage count | 87 |
+| Lua usage count | 89 |
+| Global usage count | 89 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ Icons.GetCareerIconIDFromCareerLine(arg1)
 
 ## Description
 
-Observed as a global function across 29 addons.
+Observed as a global function across 30 addons.
 
 ## Parameters
 
@@ -90,6 +90,7 @@ Observed as a global function across 29 addons.
 - DammazKron
 - DetauntHelper
 - Ding
+- EA_OpenPartyWindow
 - Effigy
 - Enemy
 - EveryBodyGuard
@@ -133,15 +134,11 @@ Observed as a global function across 29 addons.
 - [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureScale](../../window_api/functions/window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
 - [EA_ChatWindow.InsertText](global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
-- [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
 - [LabelGetTextDimensions](../../window_api/functions/window_LabelGetTextDimensions.md) (HIGH 100/100) - Window Function
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [EA_Window_WorldMap.ShowZone](global_EA_Window_WorldMap.ShowZone.md) (HIGH 90/100) - Global Function
 - [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
-- [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Affects
 

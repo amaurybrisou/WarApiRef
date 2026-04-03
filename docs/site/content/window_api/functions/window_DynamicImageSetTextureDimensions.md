@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 48 addons
+- Seen in: 50 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Amethyst, BBars - Mechanic Only, BuffHead, CastSequence, Crusher, DetauntHelper, DuffTimer |
+| Addons seen in | Ace, Amethyst, BBars - Mechanic Only, BuffHead, CMap, CastSequence, Crusher, DetauntHelper |
 | Files seen in | BBarsPetHP.lua, BBarsPlayerMechanic.lua, Bar.lua, Castbar.lua, Code/UnitFrames/Parts/CareerIcon.lua, Code/UnitFrames/UnitFramePart.lua, CooldownPulse.lua, DuffTimer.lua |
 | Namespaces detected | DynamicImageSetTextureDimensions |
 | Source kinds | lua_calls |
-| Example locations | Ace: TexDims, Amethyst: TexDims, BBars - Mechanic Only: MechDraw, BBars - Mechanic Only: PetHPDraw, BuffHead: SetTextureButton, CastSequence: UpdateButton |
+| Example locations | Ace: TexDims, Amethyst: TexDims, BBars - Mechanic Only: MechDraw, BBars - Mechanic Only: PetHPDraw, BuffHead: SetTextureButton, CMap: TexDims |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 166 |
-| Global usage count | 166 |
+| Lua usage count | 168 |
+| Global usage count | 168 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -89,6 +89,7 @@ Observed mutating runtime image resources on existing controls.
 - Amethyst
 - BBars - Mechanic Only
 - BuffHead
+- CMap
 - CastSequence
 - Crusher
 - DetauntHelper
@@ -126,6 +127,7 @@ Observed mutating runtime image resources on existing controls.
 - Tokens
 - WSCT
 - WarBoard_TogglerRankedLeaderboard
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse

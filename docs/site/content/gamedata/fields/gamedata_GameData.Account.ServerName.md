@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Arsenal Rank, CDown, HealGrid, SessionRPs, TacticSetNames |
-| Files seen in | ArsenalRank.lua, CDown.lua, CDownSettings.lua, HealGrid.lua, source/TacticSetNames.lua, srp.lua |
+| Addons seen in | Arsenal Rank, Asshat, CDown, GuardRange, HealGrid, MyReasons, SessionRPs, TacticSetNames |
+| Files seen in | ArsenalRank.lua, Asshat.lua, CDown.lua, CDownSettings.lua, GuardRange.lua, HealGrid.lua, MyReasons.lua, source/TacticSetNames.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | CheckSettings, FetchStats, Initialize, SettingsInitialize, ShowTab, StartTracker |
+| Example locations | CheckSettings, FetchStats, Init, Initialize, OnInitialize, SettingsInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,13 +59,16 @@
 
 ## Description
 
-GameData.GameData.Account.ServerName field accessed by 5 addons; commonly found in CheckSettings and FetchStats, Initialize, SettingsInitialize, ShowTab, StartTracker, lua_call, update contexts.
+GameData.GameData.Account.ServerName field accessed by 8 addons; commonly found in CheckSettings and FetchStats, Init, Initialize, OnInitialize, SettingsInitialize, ShowTab, StartTracker, lua_call, update contexts.
 
 ## Seen In
 
 - Arsenal Rank
+- Asshat
 - CDown
+- GuardRange
 - HealGrid
+- MyReasons
 - SessionRPs
 - TacticSetNames
 
@@ -73,7 +76,14 @@ GameData.GameData.Account.ServerName field accessed by 5 addons; commonly found 
 
 - [GameData.GetScenarioPlayers](../../globals/functions/global_GameData.GetScenarioPlayers.md) (HIGH 100/100) - Global Function
 - [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
+- [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+
+## Used With
+
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Observed in contexts: CheckSettings, FetchStats, Initialize, SettingsInitialize, ShowTab, StartTracker
+- Observed in contexts: CheckSettings, FetchStats, Init, Initialize, OnInitialize, SettingsInitialize

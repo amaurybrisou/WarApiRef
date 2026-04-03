@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 82 addons
+- Seen in: 90 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Ace: Clear, Ace: SetText, ActionBarHide: Clear, ActionBarHide: SetText, AdvancedPetAssist: ApplyHUDColorOff, AdvancedPetAssist: ApplyHUDColorOn |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 683 |
-| Global usage count | 683 |
+| Lua usage count | 722 |
+| Global usage count | 722 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -95,18 +95,21 @@ Observed reading from or writing to edit-box controls.
 - AutoBand
 - BuffHead
 - Busted
+- CMap
 - CastSequence
 - Crusher
 - DAoCBuff
 - DetauntHelper
 - DuffTimer
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
 - Enemy
 - FastFriends
 - FixGit
+- FozAuction
 - GCDsaver
 - GroupRange
 - GuildWarden
@@ -129,8 +132,10 @@ Observed reading from or writing to edit-box controls.
 - Motion
 - NaturalLog
 - NerfedButtons
+- ObjectInspector
 - Obsidian
 - PartyCast
+- PieTracker
 - Pure
 - Pure Careerbar
 - RVAPI_ColorDialog
@@ -142,6 +147,7 @@ Observed reading from or writing to edit-box controls.
 - SOR
 - Sequencer
 - Shinies
+- SocialWindow 2.0
 - Squared
 - TacticSetNames
 - TargetRing
@@ -154,12 +160,14 @@ Observed reading from or writing to edit-box controls.
 - TurretRange
 - Twister
 - Vectors
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WoH-Reticle
 - XpStatus+G
+- bigger_MacroWindow
 - nLootLink
 - scenarioInfo
 - wbLeadHelper

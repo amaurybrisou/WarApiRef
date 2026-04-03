@@ -29,8 +29,8 @@ AbilityAlert: CreateWindow("AAWindow", true)
 ## Evidence
 
 - AbilityAlert: CreateWindow("AAWindow", true)
+- AbilityNotifier: CreateWindow("AbHelpWindow", true)
 - ActionFraction: CreateWindow(windowName, true)
+- ActionPoints: CreateWindow("ActionPointsWindow", true)
 - AdvancedPetAssist: CreateWindow("APAOptions", true)
 - AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
-- AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
-- AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)

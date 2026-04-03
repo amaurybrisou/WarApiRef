@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AuctionStats, EZCraftX, HealGrid, LoyalPet |
-| Files seen in | AuctionAssist.lua, LoyalPet.lua, Source/EZCraftX.lua, UnitTooltips/HealGridUnitTooltip.lua |
+| Addons seen in | AuctionStats, EZCraft, EZCraftX, HealGrid, LoyalPet |
+| Files seen in | AuctionAssist.lua, EZCraft.lua, LoyalPet.lua, Source/EZCraftX.lua, UnitTooltips/HealGridUnitTooltip.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | CleanUp, Init, Initialize, OnInitialize, Shutdown, lua_call |
@@ -60,11 +60,12 @@
 
 ## Description
 
-SystemData.SystemData.Events.L_BUTTON_DOWN_PROCESSED field accessed by 4 addons; commonly found in CleanUp and Init, Initialize, OnInitialize, Shutdown, lua_call contexts.
+SystemData.SystemData.Events.L_BUTTON_DOWN_PROCESSED field accessed by 5 addons; commonly found in CleanUp and Init, Initialize, OnInitialize, Shutdown, lua_call contexts.
 
 ## Seen In
 
 - AuctionStats
+- EZCraft
 - EZCraftX
 - HealGrid
 - LoyalPet

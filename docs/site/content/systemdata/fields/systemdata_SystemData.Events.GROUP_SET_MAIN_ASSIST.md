@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | EA_ScenarioGroupWindow, Squared |
-| Files seen in | Source/ScenarioGroupWindow.lua, SquaredWarband.lua |
+| Addons seen in | EA_ScenarioGroupWindow, NoUselessMods-Assist, Squared |
+| Files seen in | Source/ScenarioGroupWindow.lua, SquaredWarband.lua, no-useless-mods-party.lua, no-useless-mods-warband.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | ClaimMainAssist, OnMenuClickMakeMainAssist, lua_call |
+| Example locations | ClaimMainAssist, OnMakeMainAssist, OnMenuClickMakeMainAssist, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,13 +60,14 @@
 
 ## Description
 
-SystemData.SystemData.Events.GROUP_SET_MAIN_ASSIST field accessed by 2 addons; commonly found in ClaimMainAssist and OnMenuClickMakeMainAssist, lua_call contexts.
+SystemData.SystemData.Events.GROUP_SET_MAIN_ASSIST field accessed by 3 addons; commonly found in ClaimMainAssist and OnMakeMainAssist, OnMenuClickMakeMainAssist, lua_call contexts.
 
 ## Seen In
 
 - EA_ScenarioGroupWindow
+- NoUselessMods-Assist
 - Squared
 
 ## Notes
 
-- Observed in contexts: ClaimMainAssist, OnMenuClickMakeMainAssist, lua_call
+- Observed in contexts: ClaimMainAssist, OnMakeMainAssist, OnMenuClickMakeMainAssist, lua_call

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 15 addons
+- Seen in: 16 addons
 
 ## Confidence Assessment
 
@@ -36,8 +36,8 @@
 | Example locations | Assist, AssistOnCall, Broadcast, Broadcast1, Broadcast2, BroadcastC |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 40 |
-| Global usage count | 40 |
+| Lua usage count | 41 |
+| Global usage count | 41 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.SEND_CHAT_TEXT field accessed by 15 addons; commonly found in Assist and AssistOnCall, Broadcast, Broadcast1, Broadcast2, BroadcastC, BroadcastCity1, BroadcastCity2, BroadcastCityC, BroadcastCityP, BroadcastCityW, BroadcastD1, BroadcastD2, BroadcastDC, BroadcastDP, BroadcastDW, BroadcastInfo1, BroadcastInfo2, BroadcastInfoC, BroadcastInfoP, BroadcastInfoW, BroadcastP, BroadcastW, ChatPrint, DelayStart, LeaveGuild, LogChannel, ManageChat, OnPlayerEndCast, OnTargetPlayer, PurgeList, SendChatText, SendDetails, Sendtext, SlashExec, TargetPlayer, UnLogChannel, UnitLClick, lua_call, sendChatMessage contexts.
+SystemData.SystemData.Events.SEND_CHAT_TEXT field accessed by 16 addons; commonly found in Assist and AssistOnCall, Broadcast, Broadcast1, Broadcast2, BroadcastC, BroadcastCity1, BroadcastCity2, BroadcastCityC, BroadcastCityP, BroadcastCityW, BroadcastD1, BroadcastD2, BroadcastDC, BroadcastDP, BroadcastDW, BroadcastInfo1, BroadcastInfo2, BroadcastInfoC, BroadcastInfoP, BroadcastInfoW, BroadcastP, BroadcastW, ChatPrint, DelayStart, LeaveGuild, LogChannel, ManageChat, OnPlayerEndCast, OnTargetPlayer, OnUpdate, PurgeList, SendChatText, SendDetails, Sendtext, SlashExec, TargetPlayer, UnLogChannel, UnitLClick, lua_call, sendChatMessage contexts.
 
 ## Seen In
 
@@ -72,6 +72,7 @@ SystemData.SystemData.Events.SEND_CHAT_TEXT field accessed by 15 addons; commonl
 - GuardBot
 - GuildWarden
 - I HATE YOU THIS MUCH
+- Paint the leader
 - Queue Queuer
 - SOR
 - SquaredClick
@@ -83,6 +84,7 @@ SystemData.SystemData.Events.SEND_CHAT_TEXT field accessed by 15 addons; commonl
 ## Related APIs
 
 - [BroadcastEvent](../../globals/functions/global_BroadcastEvent.md) (HIGH 93/100) - Global Function
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Notes
 

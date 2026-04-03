@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: MEDIUM
 - Confidence score: 68/100
-- Seen in: 216 addons
+- Seen in: 236 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AbilityAlert, ActionBarHide, ActionFraction, ActionPointWatch, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, ArmorGraphicToggle |
-| Files seen in | AbilityAlert.lua, ActionBarHide.lua, ActionPointWatch.lua, AdvancedPetAssist.lua, AdvancedRenownTraining.lua, AggroMeter.lua, ArmorGraphicToggle.lua, ArsenalRank.lua |
+| Addons seen in | AbilityAlert, AbilityNotifier, ActionBarHide, ActionFraction, ActionPointWatch, ActionPoints, AdvancedPetAssist, AdvancedRenownTrainer |
+| Files seen in | AAOTracker.lua, AbilityAlert.lua, AbilityNotifier.lua, ActionBarHide.lua, ActionPointWatch.lua, ActionPoints.lua, AdvancedPetAssist.lua, AdvancedRenownTraining.lua |
 | Namespaces detected | RegisterEventHandler |
 | Source kinds | lua_calls |
-| Example locations | AbilityAlert: Initialize, ActionBarHide: Initialize, ActionFraction: Initialize, ActionFraction: Start, ActionPointWatch: Initialize, AdvancedPetAssist: RegisterLoadingEnd |
+| Example locations | AbilityAlert: Initialize, AbilityNotifier: Initialize, ActionBarHide: Initialize, ActionFraction: Initialize, ActionFraction: Start, ActionPointWatch: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1060 |
-| Global usage count | 1060 |
+| Lua usage count | 1103 |
+| Global usage count | 1103 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -69,7 +69,7 @@ Observed registering global runtime handlers against shared event identifiers.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | eventId | Observed as a SystemData or runtime event identifier. | Observed values: "AuctionOnSearchResult", "EA_CareerResourceWindow", "LPET" |
-| handlerName | Observed as a Lua handler function reference. | Observed values: "AbilityAlert.CombatEvent", "ActionBarHide.Combat", "ActionBarHide.OnLoad" |
+| handlerName | Observed as a Lua handler function reference. | Observed values: "AAOTracker.BuffTracker", "AbHelp.CombatEvent", "AbHelp.CombatUpdated" |
 
 ## Returns
 
@@ -82,14 +82,17 @@ Observed registering global runtime handlers against shared event identifiers.
 ## Seen In
 
 - AbilityAlert
+- AbilityNotifier
 - ActionBarHide
 - ActionFraction
 - ActionPointWatch
+- ActionPoints
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - AggroMeter
 - ArmorGraphicToggle
 - Arsenal Rank
+- Asshat
 - Atlas
 - AuctionStats
 - Aura
@@ -101,6 +104,7 @@ Observed registering global runtime handlers against shared event identifiers.
 - BWMT
 - BagOMatic
 - BankArkel
+- BarText (Influence)
 - BlackBook
 - Bloody Mess
 - Brizio's Crappy Computer Medic
@@ -129,6 +133,8 @@ Observed registering global runtime handlers against shared event identifiers.
 - DetauntHelper
 - Ding
 - DuffTimer
+- EA_OpenPartyWindow
+- EA_ThreePartBar
 - EZGuard
 - Effigy
 - Emojii
@@ -182,19 +188,23 @@ Observed registering global runtime handlers against shared event identifiers.
 - MiracleGrowLight
 - MoraleBG
 - Motion
+- MyReasons
 - NAMBLA
 - NaturalLog
 - NerfedButtons
 - NervAlert
 - NoOverheal
+- NoUselessMods-Assist
 - Obsidian
 - OilTimer
 - PMTB
+- Paint the leader
 - PartyAd
 - PartyCast
 - PeaceOut
 - PetFixWindow
 - Phantom
+- PieTracker
 - PlanB
 - PlayEffectsOn
 - Pocket Palette
@@ -224,6 +234,7 @@ Observed registering global runtime handlers against shared event identifiers.
 - RezEmote
 - RoR_SoR
 - RoR_debolster
+- Rolodex
 - Rotation
 - RvRContribution
 - SNT_PANEL
@@ -236,6 +247,8 @@ Observed registering global runtime handlers against shared event identifiers.
 - ShowHealthPercent
 - ShowMeTheBubbles
 - SimpleCombatText
+- SimpleXY
+- SocialWindow 2.0
 - Soloq
 - SquaredClick
 - SquaredHDIndicator
@@ -248,6 +261,7 @@ Observed registering global runtime handlers against shared event identifiers.
 - TargetRing
 - Targets
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThankTheResser
 - ThankTheTank
@@ -261,6 +275,7 @@ Observed registering global runtime handlers against shared event identifiers.
 - Tome Titan
 - TomeTracker
 - TortallDPSCore
+- Tortall_DPS
 - Trakario
 - TurretRange
 - TurretScrap
@@ -270,11 +285,15 @@ Observed registering global runtime handlers against shared event identifiers.
 - VPBreakdown
 - Vectors
 - WARCommander
+- WBStutterLess
 - WSCT
+- WTes
 - WarBoard
+- WarBoard_AAOTracker
 - WarBoard_Loc
 - WarBoard_Session
 - WarBoard_TaliMon
+- WarBoard_WarWhisperer
 - War_RU
 - WhatsCooking
 - WhoHealedMe
@@ -285,6 +304,7 @@ Observed registering global runtime handlers against shared event identifiers.
 - ZonePOP
 - compass
 - followTheLeader
+- fpsbox
 - hideInf
 - nLootLink
 - ovdeadnomore
@@ -301,11 +321,11 @@ Observed registering global runtime handlers against shared event identifiers.
 ## Examples
 
 - AbilityAlert: Initialize -> RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, "AbilityAlert.CombatEvent")
+- AbilityNotifier: Initialize -> RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, "AbHelp.CombatEvent")
+- AbilityNotifier: Initialize -> RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, "AbHelp.CombatUpdated")
 - ActionBarHide: Initialize -> RegisterEventHandler(SystemData.Events.LOADING_END, "ActionBarHide.OnLoad")
 - ActionBarHide: Initialize -> RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "ActionBarHide.OnLoad")
 - ActionBarHide: Initialize -> RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, "ActionBarHide.Combat")
-- ActionFraction: Initialize -> RegisterEventHandler(SystemData.Events.LOADING_END, "ActionFractionWindow.UpdateVisibility")
-- ActionFraction: Start -> RegisterEventHandler(SystemData.Events.ENTER_WORLD, "ActionFraction.Initialize")
 
 ## Related APIs
 
@@ -359,6 +379,8 @@ Observed registering global runtime handlers against shared event identifiers.
 - [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
@@ -375,15 +397,12 @@ Observed registering global runtime handlers against shared event identifiers.
 - [SystemData.Events.BATTLEGROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.CITY_SCENARIO_BEGIN](../../systemdata/fields/systemdata_SystemData.Events.CITY_SCENARIO_BEGIN.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.CITY_SCENARIO_END](../../systemdata/fields/systemdata_SystemData.Events.CITY_SCENARIO_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.GROUP_STATUS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_STATUS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.GROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.MACROS_LOADED](../../systemdata/fields/systemdata_SystemData.Events.MACROS_LOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.MACRO_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.MACRO_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_ACTIVE_TACTICS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ACTIVE_TACTICS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_BEGIN_CAST](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_BEGIN_CAST.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CAREER_LINE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_LINE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CAREER_RANK_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_RANK_UPDATED.md) (HIGH 100/100) - SystemData Field
@@ -392,9 +411,7 @@ Observed registering global runtime handlers against shared event identifiers.
 - [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_EFFECTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_EFFECTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_EQUIPMENT_SLOT_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_HOT_BAR_ENABLED_STATE_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HOT_BAR_ENABLED_STATE_CHANGED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_STATS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_STATS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_TARGET_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_TARGET_UPDATED.md) (HIGH 100/100) - SystemData Field

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 30 addons
+- Seen in: 31 addons
 
 ## Confidence Assessment
 
@@ -37,8 +37,8 @@
 | Example locations | APPLY_TARGETINFO_FIX_DONOTTOUCH, AceAddon_OnUpdate_DONOTTOUCH, ActionBarsUpdated, ButtonsUpdated, Cleanup, Close |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 53 |
-| Global usage count | 53 |
+| Lua usage count | 54 |
+| Global usage count | 54 |
 | Local definition count | 0 |
 | Documentation references | 3 |
 | Initialization flow references | 0 |
@@ -61,7 +61,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.UPDATE_PROCESSED field accessed by 30 addons; commonly found in APPLY_TARGETINFO_FIX_DONOTTOUCH and AceAddon_OnUpdate_DONOTTOUCH, ActionBarsUpdated, ButtonsUpdated, Cleanup, Close, CloseOptionswindow, DelayStart, Disable, Enable, Hide, Initialize, MB3FlagCarrier, MB3FlagDrop, OnChat, OnCombatFlagUpdated, OnHidden, OnInitialize, OnLoadingEnd, OnRegisteredTexturedChanged, OnSearchChanged, OnShown, OnShutdown, OnSkavenStatusChange, PO_Tick, QuitSync, RefreshActionBars, RefreshSettings, RegStart, Register, RegisterEventHandlers, RetAlert_Disable, RetAlert_Enable, SET_TARGETINFO_FIX_UPDATE_FLAG_DONOTTOUCH, SettingsUpdated, SetupAction, Show, Shutdown, StartBR, StartRKOTH, Statdoll.Local.delayedUpdate, Sync, SystemData.Events.UPDATE_PROCESSED, TargetInfoFix.APPLY_TARGETINFO_FIX_DONOTTOUCH, UC, UpdateButtons, UpdateSearch, _deferred_apply, delayedUpdate, event_page, event_registration, lua_call, queueUpdate contexts.
+SystemData.SystemData.Events.UPDATE_PROCESSED field accessed by 31 addons; commonly found in APPLY_TARGETINFO_FIX_DONOTTOUCH and AceAddon_OnUpdate_DONOTTOUCH, ActionBarsUpdated, ButtonsUpdated, Cleanup, Close, CloseOptionswindow, CreateGui, DelayStart, Disable, Enable, Hide, Initialize, MB3FlagCarrier, MB3FlagDrop, OnChat, OnCombatFlagUpdated, OnHidden, OnInitialize, OnLoadingEnd, OnRegisteredTexturedChanged, OnSearchChanged, OnShown, OnShutdown, OnSkavenStatusChange, PO_Tick, QuitSync, RefreshActionBars, RefreshSettings, RegStart, Register, RegisterEventHandlers, RetAlert_Disable, RetAlert_Enable, SET_TARGETINFO_FIX_UPDATE_FLAG_DONOTTOUCH, SettingsUpdated, SetupAction, Show, Shutdown, StartBR, StartRKOTH, Statdoll.Local.delayedUpdate, Sync, SystemData.Events.UPDATE_PROCESSED, TargetInfoFix.APPLY_TARGETINFO_FIX_DONOTTOUCH, UC, UpdateButtons, UpdateSearch, _deferred_apply, delayedUpdate, event_page, event_registration, lua_call, queueUpdate contexts.
 
 ## Seen In
 
@@ -94,13 +94,12 @@ SystemData.SystemData.Events.UPDATE_PROCESSED field accessed by 30 addons; commo
 - TheSeeker
 - TortallDPSCore
 - Trakario
+- WarBoard_WarWhisperer
 - scenarioInfo
 
 ## Related APIs
 
 - [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
-- [WindowGetHandleInput](../../window_api/functions/window_WindowGetHandleInput.md) (HIGH 100/100) - Window Function
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
 - [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
@@ -111,7 +110,6 @@ SystemData.SystemData.Events.UPDATE_PROCESSED field accessed by 30 addons; commo
 ## Used With
 
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
-- [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 16 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -60,7 +60,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.PLAYER_POSITION_UPDATED field accessed by 16 addons; commonly found in Init and Initialize, InitializePlayer, OnInitialize, OnShutdown, RegisterEventHandlers, Shutdown, ShutdownPlayer, Unload, UnregisterEventHandlers, load, lua_call, unload contexts.
+SystemData.SystemData.Events.PLAYER_POSITION_UPDATED field accessed by 17 addons; commonly found in Init and Initialize, InitializePlayer, OnInitialize, OnShutdown, RegisterEventHandlers, Shutdown, ShutdownPlayer, Unload, UnregisterEventHandlers, load, lua_call, unload contexts.
 
 ## Seen In
 
@@ -75,6 +75,7 @@ SystemData.SystemData.Events.PLAYER_POSITION_UPDATED field accessed by 16 addons
 - NerfedButtons
 - RVAPI_Range
 - Rangechecker
+- SimpleXY
 - TomeTracker
 - TurretRange
 - WarBoard_Loc
@@ -83,7 +84,6 @@ SystemData.SystemData.Events.PLAYER_POSITION_UPDATED field accessed by 16 addons
 
 ## Related APIs
 
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 

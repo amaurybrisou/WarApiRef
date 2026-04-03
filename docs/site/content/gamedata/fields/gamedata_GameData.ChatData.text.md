@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Cram The Spam, Emojii, Enemy, Ges, MapPin, ResHelp, ShowMeTheBubbles, rorAutoInviter |
-| Files seen in | Code/Core/Communication.lua, CramTheSpam.lua, Emojii.lua, GesComms.lua, ResHelp.lua, rorAutoInviter.lua, showmethebubbles.lua, source/MapPin.lua |
+| Addons seen in | Cram The Spam, Emojii, Enemy, Ges, MapPin, ResHelp, ShowMeTheBubbles, TaxPayer |
+| Files seen in | Code/Core/Communication.lua, CramTheSpam.lua, Emojii.lua, GesComms.lua, ResHelp.lua, TaxPayer.lua, rorAutoInviter.lua, showmethebubbles.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | CommsReceived, OnChat, OnChatText, OnChatTextArrived, OnMessageReceived, lua_call |
+| Example locations | CommsReceived, GotRX, OnChat, OnChatText, OnChatTextArrived, OnMessageReceived |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 9 |
+| Global usage count | 9 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,7 +59,7 @@
 
 ## Description
 
-GameData.GameData.ChatData.text field accessed by 8 addons; commonly found in CommsReceived and OnChat, OnChatText, OnChatTextArrived, OnMessageReceived, lua_call, test contexts.
+GameData.GameData.ChatData.text field accessed by 10 addons; commonly found in CommsReceived and GotRX, OnChat, OnChatText, OnChatTextArrived, OnMessageReceived, getPosition, lua_call, test contexts.
 
 ## Seen In
 
@@ -70,15 +70,16 @@ GameData.GameData.ChatData.text field accessed by 8 addons; commonly found in Co
 - MapPin
 - ResHelp
 - ShowMeTheBubbles
+- TaxPayer
+- WarBoard_WarWhisperer
 - rorAutoInviter
 
 ## Related APIs
 
-- [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
 - [wstring.upper](../../globals/functions/global_wstring.upper.md) (HIGH 100/100) - Global Function
+- [PartyUtils.IsWarbandFull](../../globals/functions/global_PartyUtils.IsWarbandFull.md) (HIGH 96/100) - Global Function
 - [AlertTextWindow.AddAlert](../../globals/functions/global_AlertTextWindow.AddAlert.md) (HIGH 75/100) - Global Function
-- [PartyUtils.IsWarbandFull](../../globals/functions/global_PartyUtils.IsWarbandFull.md) (MEDIUM 45/100) - Global Function
 
 ## Notes
 
-- Observed in contexts: CommsReceived, OnChat, OnChatText, OnChatTextArrived, OnMessageReceived, lua_call
+- Observed in contexts: CommsReceived, GotRX, OnChat, OnChatText, OnChatTextArrived, OnMessageReceived

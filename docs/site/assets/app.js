@@ -458,8 +458,14 @@ const KIND_COLOR = {
   ui_element:     "#a08030",
 };
 const KIND_COLOR_DEFAULT = "#7a7060";
+const TEXT_NODE_COLOR_DARKER = "#8d6f2a";
 
-function kindColor(k) { return KIND_COLOR[k] || KIND_COLOR_DEFAULT; }
+function kindColor(k, node) {
+  if (node && (node.id === "ui:Text" || String(node.label || "") === "Text")) {
+    return TEXT_NODE_COLOR_DARKER;
+  }
+  return KIND_COLOR[k] || KIND_COLOR_DEFAULT;
+}
 
 function matchesKind(nodeType, selectedKind) {
   if (!selectedKind) return true;
@@ -557,6 +563,8 @@ function drawFallbackSvg(nodes, links) {
     });
   });
 
+  const degreeMap = buildDegreeMap(links);
+
   const edgesSvg = links.slice(0, 500).map((l) => {
     const sid = l.source?.id ?? l.source;
     const tid = l.target?.id ?? l.target;
@@ -571,9 +579,11 @@ function drawFallbackSvg(nodes, links) {
     const p = positions.get(n.id);
     if (!p) return "";
     const label = String(n.label || n.id || "").replace(/[&<>\"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+    const degree = degreeMap.get(n.id) || 0;
+    const radius = fallbackRadiusFromDegree(degree);
     return (
       `<g>` +
-      `<circle cx="${p.x}" cy="${p.y}" r="4.2" fill="${kindColor(n.type)}"></circle>` +
+      `<circle cx="${p.x}" cy="${p.y}" r="${radius}" fill="${kindColor(n.type, n)}"></circle>` +
       `<title>${label}</title>` +
       `</g>`
     );
@@ -592,6 +602,26 @@ function graphViewportHeightPx() {
     return 500;
   }
   return 700;
+}
+
+function buildDegreeMap(links) {
+  const degreeMap = new Map();
+  links.forEach((l) => {
+    const s = l.source?.id ?? l.source;
+    const t = l.target?.id ?? l.target;
+    degreeMap.set(s, (degreeMap.get(s) || 0) + 1);
+    degreeMap.set(t, (degreeMap.get(t) || 0) + 1);
+  });
+  return degreeMap;
+}
+
+function cySizeFromDegree(deg) {
+  return 18 + Math.min(deg * 2, 22);
+}
+
+function fallbackRadiusFromDegree(deg) {
+  const cySize = cySizeFromDegree(deg);
+  return Math.max(3.4, Math.min(10.0, cySize / 3.1));
 }
 
 function drawGraph(filterText, filterKind) {
@@ -624,14 +654,8 @@ function drawGraph(filterText, filterKind) {
     return;
   }
 
-  // Degree for label display.
-  const degMap = new Map();
-  visibleLinks.forEach((l) => {
-    const s = l.source?.id ?? l.source;
-    const t = l.target?.id ?? l.target;
-    degMap.set(s, (degMap.get(s) || 0) + 1);
-    degMap.set(t, (degMap.get(t) || 0) + 1);
-  });
+  // Degree drives node sizing and label prioritization.
+  const degMap = buildDegreeMap(visibleLinks);
   const topLabels = new Set(
     [...degMap.entries()].sort((a, b) => b[1] - a[1]).slice(0, 30).map(([id]) => id)
   );
@@ -640,7 +664,7 @@ function drawGraph(filterText, filterKind) {
   const cyElements = [];
   visibleNodes.forEach((n) => {
     const deg  = degMap.get(n.id) || 0;
-    const size = 18 + Math.min(deg * 2, 22);
+    const size = cySizeFromDegree(deg);
     const fullLabel = String(n.label || n.id || "");
     cyElements.push({
       group: "nodes",
@@ -653,7 +677,7 @@ function drawGraph(filterText, filterKind) {
         confidence: n.confidence,
         summary:    n.summary || "",
         path:       n.path || "",
-        color:      kindColor(n.type),
+        color:      kindColor(n.type, n),
         size,
       },
     });

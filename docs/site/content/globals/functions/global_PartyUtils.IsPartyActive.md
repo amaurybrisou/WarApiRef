@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 11 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | GuardLine, LibGuard, MapPin, PartyCast, Pure, QuickWarReport, RoR_SoR, Swift Assist |
-| Files seen in | GuardLine.lua, PartyCast.lua, QWRComms.lua, RoR_SoR.lua, Source/LibGuard.lua, Source/PureGroupPet.lua, SwiftAssist.lua, TokenMachine.lua |
+| Addons seen in | CMap, EA_OpenPartyWindow, GuardLine, LibGuard, MapPin, PartyCast, Pure, QuickWarReport |
+| Files seen in | Cmap_TidyQueueInt.lua, GuardLine.lua, PartyCast.lua, QWRComms.lua, RoR_SoR.lua, Source/LibGuard.lua, Source/PureGroupPet.lua, SwiftAssist.lua |
 | Namespaces detected | PartyUtils |
 | Source kinds | lua_calls |
-| Example locations | GuardLine: update, LibGuard: GetIdFromName, LibGuard: UpdateStateMachine, MapPin: CreateMainContextMenu, MapPin: CreateRequestContextMenu, MapPin: LButtonUp |
+| Example locations | CMap: CmapLButton, CMap: TidyQueueLButton, EA_OpenPartyWindow: OnGroupUpdated, EA_OpenPartyWindow: OnOpenPartySettingUpdated, EA_OpenPartyWindow: ToggleOpenPartyInterestFlag, EA_OpenPartyWindow: UpdateManageTabDisable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 20 |
-| Global usage count | 20 |
+| Lua usage count | 26 |
+| Global usage count | 26 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ PartyUtils.IsPartyActive()
 
 ## Description
 
-Observed as a global function across 9 addons.
+Observed as a global function across 11 addons.
 
 ## Parameters
 
@@ -82,6 +82,8 @@ Observed as a global function across 9 addons.
 
 ## Seen In
 
+- CMap
+- EA_OpenPartyWindow
 - GuardLine
 - LibGuard
 - MapPin
@@ -94,22 +96,23 @@ Observed as a global function across 9 addons.
 
 ## Examples
 
-- GuardLine: update -> PartyUtils.IsPartyActive()
-- LibGuard: GetIdFromName -> PartyUtils.IsPartyActive()
-- LibGuard: UpdateStateMachine -> PartyUtils.IsPartyActive()
-- MapPin: CreateMainContextMenu -> PartyUtils.IsPartyActive()
-- MapPin: CreateRequestContextMenu -> PartyUtils.IsPartyActive()
-- MapPin: LButtonUp -> PartyUtils.IsPartyActive()
+- CMap: CmapLButton -> PartyUtils.IsPartyActive()
+- CMap: TidyQueueLButton -> PartyUtils.IsPartyActive()
+- EA_OpenPartyWindow: OnGroupUpdated -> PartyUtils.IsPartyActive()
+- EA_OpenPartyWindow: OnOpenPartySettingUpdated -> PartyUtils.IsPartyActive()
+- EA_OpenPartyWindow: ToggleOpenPartyInterestFlag -> PartyUtils.IsPartyActive()
+- EA_OpenPartyWindow: UpdateManageTabDisable -> PartyUtils.IsPartyActive()
 
 ## Used With
 
+- [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [PartyUtils.GetWarbandLeader](global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
 
 ## Affects
 
-- [GameData.Player.Pet.name](../../gamedata/fields/gamedata_GameData.Player.Pet.name.md) (HIGH 100/100) - GameData Field
-- [GameData.Player.name](../../gamedata/fields/gamedata_GameData.Player.name.md) (HIGH 100/100) - GameData Field
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [GameData.Player.Group.Settings.isPublic](../../gamedata/fields/gamedata_GameData.Player.Group.Settings.isPublic.md) (HIGH 100/100) - GameData Field
+- [GameData.Player.isGroupLeader](../../gamedata/fields/gamedata_GameData.Player.isGroupLeader.md) (HIGH 100/100) - GameData Field
+- [GameData.Player.isOpenPartyInterested](../../gamedata/fields/gamedata_GameData.Player.isOpenPartyInterested.md) (HIGH 100/100) - GameData Field
 
 ## Notes
 

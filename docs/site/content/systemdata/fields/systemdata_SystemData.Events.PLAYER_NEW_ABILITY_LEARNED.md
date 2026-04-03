@@ -71,7 +71,6 @@ SystemData.SystemData.Events.PLAYER_NEW_ABILITY_LEARNED field accessed by 4 addo
 
 ## Related APIs
 
-- [TextEditBoxSetMaxChars](../../window_api/functions/window_TextEditBoxSetMaxChars.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 
 ## Notes

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DetauntHelper, Effigy, ZCurse_Profiler, xHUD |
-| Files seen in | CurseProfilerCompiled.lua, Source/TargetInfo.lua, States/EffigyStatePlayer.lua, xHUD.lua |
+| Addons seen in | BarText (Influence), DetauntHelper, Effigy, ZCurse_Profiler, xHUD |
+| Files seen in | BarText_Influence.lua, CurseProfilerCompiled.lua, Source/TargetInfo.lua, States/EffigyStatePlayer.lua, xHUD.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | Initialize, RegisterStateInfoForPlayer, lua_call |
+| Example locations | Initialize, OnInitialize, RegisterStateInfoForPlayer, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,15 +60,20 @@
 
 ## Description
 
-SystemData.SystemData.Events.PLAYER_AREA_CHANGED field accessed by 4 addons; commonly found in Initialize and RegisterStateInfoForPlayer, lua_call contexts.
+SystemData.SystemData.Events.PLAYER_AREA_CHANGED field accessed by 5 addons; commonly found in Initialize and OnInitialize, RegisterStateInfoForPlayer, lua_call contexts.
 
 ## Seen In
 
+- BarText (Influence)
 - DetauntHelper
 - Effigy
 - ZCurse_Profiler
 - xHUD
 
+## Related APIs
+
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
+
 ## Notes
 
-- Observed in contexts: Initialize, RegisterStateInfoForPlayer, lua_call
+- Observed in contexts: Initialize, OnInitialize, RegisterStateInfoForPlayer, lua_call

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Effigy, GuardLine, MapMonster, MapPin, RoR_SoR, Squared |
-| Files seen in | Effigy.lua, GuardLine.lua, RoR_SoR.lua, Source/MapMonster_Calibrate.lua, Squared.lua, source/MapPin.lua |
+| Addons seen in | EA_LoadingScreen, Effigy, GuardLine, MapMonster, MapPin, RoR_SoR, Squared |
+| Files seen in | Effigy.lua, GuardLine.lua, RoR_SoR.lua, Source/MapMonster_Calibrate.lua, Squared.lua, source/MapPin.lua, source/scenarioenterloadingscreen.lua, source/standardloadingscreen.lua |
 | Namespaces detected | InterfaceCore |
 | Source kinds | lua_calls |
-| Example locations | Effigy: LoadLayout, GuardLine: init, MapMonster: OnLMouseButton, MapMonster: OnMouseOverEnd, MapPin: UpdateMapCoordinates, RoR_SoR: Restack |
+| Example locations | EA_LoadingScreen: BeginScenarioEnterLoadScreen, EA_LoadingScreen: BeginStandardLoadScreen, Effigy: LoadLayout, GuardLine: init, MapMonster: OnLMouseButton, MapMonster: OnMouseOverEnd |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -66,7 +66,7 @@ InterfaceCore.GetResolutionScale()
 
 ## Description
 
-Observed as a global function across 6 addons.
+Observed as a global function across 7 addons.
 
 ## Parameters
 
@@ -83,6 +83,7 @@ Observed as a global function across 6 addons.
 
 ## Seen In
 
+- EA_LoadingScreen
 - Effigy
 - GuardLine
 - MapMonster
@@ -92,12 +93,12 @@ Observed as a global function across 6 addons.
 
 ## Examples
 
+- EA_LoadingScreen: BeginScenarioEnterLoadScreen -> InterfaceCore.GetResolutionScale()
+- EA_LoadingScreen: BeginStandardLoadScreen -> InterfaceCore.GetResolutionScale()
 - Effigy: LoadLayout -> InterfaceCore.GetResolutionScale()
 - GuardLine: init -> InterfaceCore.GetResolutionScale()
 - MapMonster: OnLMouseButton -> InterfaceCore.GetResolutionScale()
 - MapMonster: OnMouseOverEnd -> InterfaceCore.GetResolutionScale()
-- MapPin: UpdateMapCoordinates -> InterfaceCore.GetResolutionScale()
-- RoR_SoR: Restack -> InterfaceCore.GetResolutionScale()
 
 ## Related APIs
 
@@ -105,9 +106,10 @@ Observed as a global function across 6 addons.
 
 ## Used With
 
-- [SystemData.MousePosition.x](../../systemdata/fields/systemdata_SystemData.MousePosition.x.md) (HIGH 100/100) - SystemData Field
-- [SystemData.MousePosition.y](../../systemdata/fields/systemdata_SystemData.MousePosition.y.md) (HIGH 100/100) - SystemData Field
-- [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- [InterfaceCore.GetScale](global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [wstring.upper](global_wstring.upper.md) (HIGH 100/100) - Global Function
 
 ## Affects
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 31 addons
+- Seen in: 33 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, Crusher, EZCraftX, EZGuard, Effigy |
+| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, CMap, Crusher, EZCraftX, EZGuard |
 | Files seen in | AdjustTheTip.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, PartyCast.lua, TidyRollFrame.lua, libs/LibGUI.lua |
 | Namespaces detected | StatusBarSetBackgroundTint |
 | Source kinds | lua_calls |
-| Example locations | Ace: BackColor, ActionBarHide: BackColor, AdjustTheTip: AddTargetHealthToMouseOver, Amethyst: BackColor, Crusher: BackColor, EZCraftX: BackColor |
+| Example locations | Ace: BackColor, ActionBarHide: BackColor, AdjustTheTip: AddTargetHealthToMouseOver, Amethyst: BackColor, CMap: BackColor, Crusher: BackColor |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 36 |
-| Global usage count | 36 |
+| Lua usage count | 38 |
+| Global usage count | 38 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ StatusBarSetBackgroundTint(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a window function across 31 addons.
+Observed as a window function across 33 addons.
 
 ## Parameters
 
@@ -90,6 +90,7 @@ Observed as a window function across 31 addons.
 - ActionBarHide
 - AdjustTheTip
 - Amethyst
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -110,6 +111,7 @@ Observed as a window function across 31 addons.
 - TargetRing
 - TidyRoll
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -124,8 +126,8 @@ Observed as a window function across 31 addons.
 - ActionBarHide: BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
 - AdjustTheTip: AddTargetHealthToMouseOver -> StatusBarSetBackgroundTint(c_HEALTH_BAR_CONTAINER.."HealthPercentBarBar", 128, 128, 128)
 - Amethyst: BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
+- CMap: BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
 - Crusher: BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
-- EZCraftX: BackColor -> StatusBarSetBackgroundTint(self.name, red, green, blue)
 
 ## Used With
 

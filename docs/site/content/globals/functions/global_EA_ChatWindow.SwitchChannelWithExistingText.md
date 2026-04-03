@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | QuickNameActions+, Squared |
-| Files seen in | QuickNameActionsRessurected.lua, SquaredWarband.lua |
+| Addons seen in | EA_OpenPartyWindow, QuickNameActions+, SocialWindow 2.0, Squared |
+| Files seen in | QuickNameActionsRessurected.lua, SquaredWarband.lua, source/openpartywindowtabworld.lua, source/socialwindow.lua |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | lua_calls |
-| Example locations | QuickNameActions+: newEA_ChatWindowOnTomeLinkLButtonUp, Squared: OnMenuClickTellMember |
+| Example locations | EA_OpenPartyWindow: JoinPartySpecified, QuickNameActions+: newEA_ChatWindowOnTomeLinkLButtonUp, SocialWindow 2.0: SendTell, Squared: OnMenuClickTellMember |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ EA_ChatWindow.SwitchChannelWithExistingText(arg1)
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 4 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: L "/tell "..SystemData.UserInput.selectedGroupMember..L " ", linkData |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: L "/tell "..SystemData.UserInput.selectedGroupMember..L " ", linkData, text |
 
 ## Returns
 
@@ -83,16 +83,21 @@ Observed as a global function across 2 addons.
 
 ## Seen In
 
+- EA_OpenPartyWindow
 - QuickNameActions+
+- SocialWindow 2.0
 - Squared
 
 ## Examples
 
+- EA_OpenPartyWindow: JoinPartySpecified -> EA_ChatWindow.SwitchChannelWithExistingText(text)
 - QuickNameActions+: newEA_ChatWindowOnTomeLinkLButtonUp -> EA_ChatWindow.SwitchChannelWithExistingText(linkData)
+- SocialWindow 2.0: SendTell -> EA_ChatWindow.SwitchChannelWithExistingText(text)
 - Squared: OnMenuClickTellMember -> EA_ChatWindow.SwitchChannelWithExistingText(L "/tell "..SystemData.UserInput.selectedGroupMember..L " ")
 
 ## Affects
 
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.UserInput.selectedGroupMember](../../systemdata/fields/systemdata_SystemData.UserInput.selectedGroupMember.md) (HIGH 100/100) - SystemData Field
 
 ## Notes

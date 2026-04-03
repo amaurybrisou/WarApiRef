@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 14 addons
+- Seen in: 15 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | CDown: Initialize, Crusher: OnLoad, DAoCBuff: Initialize, DeepSleep: Initialize, DuffTimer: OnLoadingEnd, Effigy: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
-| Global usage count | 14 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ LayoutEditor.RegisterEditCallback(arg1)
 
 ## Description
 
-Observed as a window function across 14 addons.
+Observed as a window function across 15 addons.
 
 ## Parameters
 
@@ -97,6 +97,7 @@ Observed as a window function across 14 addons.
 - RetAlert
 - SOR
 - Vectors
+- WTes
 
 ## Examples
 

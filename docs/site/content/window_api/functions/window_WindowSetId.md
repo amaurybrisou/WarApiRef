@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 47 addons
+- Seen in: 53 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, BankArkel, Calling, Crafting Info Tooltip, Crusher, DammazKron, DuffTimer |
-| Files seen in | AdvancedRenownTraining.lua, BankArkel.lua, CallingSetup.lua, Code/ScenarioInfo/ScenarioInfo.lua, Core/Tome/DK_Tome.lua, CraftValueTip.lua, DuffTimer.lua, Gui/HealGridGuiColorSelect.lua |
+| Addons seen in | Ace, AdvancedRenownTrainer, BankArkel, CMap, Calling, Crafting Info Tooltip, Crusher, DammazKron |
+| Files seen in | AdvancedRenownTraining.lua, BankArkel.lua, CMap.lua, CallingSetup.lua, Code/ScenarioInfo/ScenarioInfo.lua, Core/Tome/DK_Tome.lua, CraftValueTip.lua, DuffTimer.lua |
 | Namespaces detected | WindowSetId |
 | Source kinds | lua_calls |
-| Example locations | Ace: SetId, AdvancedRenownTrainer: CreateAbilityWindow, BankArkel: CreatePackWin, Calling: UpdateMacros, Crafting Info Tooltip: ItemWindow, Crusher: SetId |
+| Example locations | Ace: SetId, AdvancedRenownTrainer: CreateAbilityWindow, BankArkel: CreatePackWin, CMap: PopulateFilterCell, CMap: SetId, Calling: UpdateMacros |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 81 |
-| Global usage count | 81 |
+| Lua usage count | 90 |
+| Global usage count | 90 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -87,11 +87,13 @@ Observed mutating runtime window state or presentation.
 - Ace
 - AdvancedRenownTrainer
 - BankArkel
+- CMap
 - Calling
 - Crafting Info Tooltip
 - Crusher
 - DammazKron
 - DuffTimer
+- EA_ThreePartBar
 - EZCraftX
 - EZGuard
 - Effigy
@@ -107,8 +109,10 @@ Observed mutating runtime window state or presentation.
 - MapMonster
 - MiniMapMonster
 - Miracle Grow Remix
+- MoraleSet
 - Motion
 - NerfedButtons
+- NoUselessMods-Assist
 - PartyCast
 - Pure
 - Pure Careerbar
@@ -118,12 +122,14 @@ Observed mutating runtime window state or presentation.
 - RoR_SoR
 - Sequencer
 - Shinies
+- SocialWindow 2.0
 - TacticSetNames
 - TargetRing
 - TidyChat
 - TidyQueue
 - TidyRoll
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -137,18 +143,14 @@ Observed mutating runtime window state or presentation.
 - Ace: SetId -> WindowSetId(self.name, id)
 - AdvancedRenownTrainer: CreateAbilityWindow -> WindowSetId(t.windowName, t.id)
 - BankArkel: CreatePackWin -> WindowSetId("PackIcon"..i, i)
+- CMap: PopulateFilterCell -> WindowSetId(buttonFrame, pinTypeIndex)
+- CMap: SetId -> WindowSetId(self.name, id)
 - Calling: UpdateMacros -> WindowSetId("CallingSetupMacroIconSlotC", callMacroId)
-- Calling: UpdateMacros -> WindowSetId("CallingSetupMacroIconSlotT", targetMacroId)
-- Crafting Info Tooltip: ItemWindow -> WindowSetId(windowName, itemId)
 
 ## Related APIs
 
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-
-## Used With
-
-- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
 
 ## Notes
 

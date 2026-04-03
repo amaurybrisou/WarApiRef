@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionBarHide, AdvancedPetAssist, AdvancedRenownTrainer, Amethyst, AnywhereTrainerAdditions, ArmorGraphicToggle, Arsenal Rank, AuctionStats |
+| Addons seen in | AbilityNotifier, ActionBarHide, AdvancedPetAssist, AdvancedRenownTrainer, Amethyst, AnywhereTrainerAdditions, ArmorGraphicToggle, Arsenal Rank |
 | Files seen in | Code/Core/Utils.lua, DefaultLayouts/Yak_Reso_Injector.lua, Elements/EffigyBar.lua, Elements/EffigyIndicator.lua, PhantomLib/PhantomLib.lua, Rules/EffigyRule.lua, Source/AuraAddon.lua, Source/Common.lua |
 | Namespaces detected | EA_ChatWindow |
 | Source kinds | lua_calls |
-| Example locations | ActionBarHide: OnLoad, AdvancedPetAssist: Print, AdvancedRenownTrainer: ExportToLink, Amethyst: ApplySettings, Amethyst: Initialize, AnywhereTrainerAdditions: EquipmentLButtonDown |
+| Example locations | AbilityNotifier: Echo, ActionBarHide: OnLoad, AdvancedPetAssist: Print, AdvancedRenownTrainer: ExportToLink, Amethyst: ApplySettings, Amethyst: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 474 |
-| Global usage count | 12 |
+| Lua usage count | 549 |
+| Global usage count | 13 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 12 member functions; the primary API surface for 131 addons.
+Shared function table with 13 member functions; the primary API surface for 150 addons.
 
 ## Functions
 
@@ -65,6 +65,7 @@ Shared function table with 12 member functions; the primary API surface for 131 
 - EA_ChatWindow.InsertItemLink
 - EA_ChatWindow.InsertQuestLink
 - EA_ChatWindow.InsertText
+- EA_ChatWindow.OnHyperLinkLButtonUp
 - EA_ChatWindow.OnKeyEnter
 - EA_ChatWindow.OnSettingsChanged
 - EA_ChatWindow.Print
@@ -80,6 +81,7 @@ Shared function table with 12 member functions; the primary API surface for 131 
 
 ## Seen In
 
+- AbilityNotifier
 - ActionBarHide
 - AdvancedPetAssist
 - AdvancedRenownTrainer
@@ -87,6 +89,8 @@ Shared function table with 12 member functions; the primary API surface for 131 
 - AnywhereTrainerAdditions
 - ArmorGraphicToggle
 - Arsenal Rank
+- Asshat
+- Assist
 - AuctionStats
 - Aura
 - AutoBand
@@ -94,6 +98,7 @@ Shared function table with 12 member functions; the primary API surface for 131 
 - AutoSalvage
 - BagOMatic
 - BankArkel
+- BarText (Influence)
 - BlackBook
 - Bloody Mess
 - BuffThrottle
@@ -112,6 +117,9 @@ Shared function table with 12 member functions; the primary API surface for 131 
 - DeMoNiCore
 - DetauntHelper
 - DwarfTalk
+- EA_LoadingScreen
+- EA_OpenPartyWindow
+- EZCraft
 - EZGuard
 - Effigy
 - EmoteAlert
@@ -123,6 +131,8 @@ Shared function table with 12 member functions; the primary API surface for 131 
 - Group Icons
 - GroupRange
 - GuardLine
+- GuardList
+- GuardRange
 - GuildWarden
 - HealAll
 - HealGrid
@@ -147,13 +157,17 @@ Shared function table with 12 member functions; the primary API surface for 131 
 - MiracleGrow
 - MiracleGrowLight
 - Motion
+- MyReasons
 - NPC Item Sale Price
 - NerfedButtons
 - NervAlert
 - NoOverheal
+- ObjectInspector
 - OilTimer
+- Paint the leader
 - PartyAd
 - Phantom
+- PieTracker
 - PlanB
 - Pure
 - Queue Queuer
@@ -169,6 +183,8 @@ Shared function table with 12 member functions; the primary API surface for 131 
 - SOR
 - ScenarioStats
 - Shinies
+- SimpleXY
+- SocialWindow 2.0
 - Soloq
 - Squared
 - SquaredClick
@@ -176,6 +192,7 @@ Shared function table with 12 member functions; the primary API surface for 131 
 - Swift Assist
 - Targets
 - TastyButtons
+- TaxPayer
 - ThankTheResser
 - TheSeeker
 - ThinkOutLoud
@@ -193,7 +210,10 @@ Shared function table with 12 member functions; the primary API surface for 131 
 - WARCommander
 - WARRatingBuster
 - WSCT
+- WTes
+- WarBoard_AAOTracker
 - WarBoard_TaliMon
+- WarBoard_WarWhisperer
 - WarTriage
 - War_RU
 - WhoHealedMe
@@ -214,12 +234,12 @@ Shared function table with 12 member functions; the primary API surface for 131 
 
 ## Examples
 
+- AbilityNotifier: Echo -> EA_ChatWindow.Print(StringToWString(tostring(what)))
 - ActionBarHide: OnLoad -> EA_ChatWindow.Print(L "ActionBarHide Loaded")
 - AdvancedPetAssist: Print -> EA_ChatWindow.Print(L "<icon149> "..msg)
 - AdvancedRenownTrainer: ExportToLink -> EA_ChatWindow.InsertText(hl)
 - Amethyst: ApplySettings -> EA_ChatWindow.Print(L "Amethyst: Settings applied.")
 - Amethyst: Initialize -> EA_ChatWindow.Print(L "Amethyst Initialized. Configuration via /amt")
-- AnywhereTrainerAdditions: EquipmentLButtonDown -> EA_ChatWindow.InsertItemLink(itemData)
 
 ## Notes
 

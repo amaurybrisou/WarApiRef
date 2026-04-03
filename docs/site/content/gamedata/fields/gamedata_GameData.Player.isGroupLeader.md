@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Effigy, Squared |
-| Files seen in | SquaredGroup.lua, States/EffigyStatePlayer.lua |
+| Addons seen in | EA_OpenPartyWindow, Effigy, Squared |
+| Files seen in | SquaredGroup.lua, States/EffigyStatePlayer.lua, source/openpartywindowtabmanage.lua, source/openpartywindowtabnearby.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | UpdateGroup, UpdatePlayerHP, lua_call |
+| Example locations | OnOpenPartySettingUpdated, UpdateFormWarbandButtonState, UpdateGroup, UpdatePlayerHP, UpdateSettings, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,13 +59,18 @@
 
 ## Description
 
-GameData.GameData.Player.isGroupLeader field accessed by 2 addons; commonly found in UpdateGroup and UpdatePlayerHP, lua_call contexts.
+GameData.GameData.Player.isGroupLeader field accessed by 3 addons; commonly found in OnOpenPartySettingUpdated and UpdateFormWarbandButtonState, UpdateGroup, UpdatePlayerHP, UpdateSettings, lua_call contexts.
 
 ## Seen In
 
+- EA_OpenPartyWindow
 - Effigy
 - Squared
 
+## Related APIs
+
+- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
+
 ## Notes
 
-- Observed in contexts: UpdateGroup, UpdatePlayerHP, lua_call
+- Observed in contexts: OnOpenPartySettingUpdated, UpdateFormWarbandButtonState, UpdateGroup, UpdatePlayerHP, UpdateSettings, lua_call

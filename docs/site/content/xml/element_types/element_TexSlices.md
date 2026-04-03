@@ -135,9 +135,9 @@ Observed 104 times as an unnamed child.
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
 | `id` | optional | morale-white, RightTabFrame-Rollover, Tactics-Button-Rollover, SquareButton-Rollover |
-| `b` | optional | 63, 36, 0, 50 |
-| `g` | optional | 213, 57, 85, 192 |
-| `r` | optional | 250, 95, 255, 222 |
+| `b` | optional | 63, 0, 36, 50 |
+| `g` | optional | 213, 85, 57, 192 |
+| `r` | optional | 250, 255, 95, 222 |
 | `a` | optional | 255, 1 |
 | `x` | optional | 27, 105, 0, 201 |
 | `y` | optional | 28, 44, 0, 341 |
@@ -150,9 +150,9 @@ Observed 95 times as an unnamed child.
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
 | `id` | optional | morale-white, RightTabFrame-Rollover, Tactics-Button-Depressed, SquareButton-Depressed |
-| `b` | optional | 63, 0, 36, 45 |
-| `g` | optional | 213, 85, 57, 255 |
-| `r` | optional | 250, 255, 95, 226 |
+| `b` | optional | 63, 36, 0, 45 |
+| `g` | optional | 213, 57, 85, 255 |
+| `r` | optional | 250, 95, 255, 226 |
 | `a` | optional | 255, 1 |
 | `x` | optional | 0, 120, 172, 475 |
 | `y` | optional | 56, 44, 370, 420 |

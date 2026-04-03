@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 22 addons
+- Seen in: 24 addons
 
 ## Confidence Assessment
 
@@ -32,8 +32,8 @@
 | Example locations | AnywhereTrainerAdditions: EquipmentLButtonDown, AuctionStats: AuctionHouseWindowCreateSearchItemName_LButtonDown, AuctionStats: EA_Window_Backpack_EquipmentLButtonDown_Override, AuctionStats: OnLButtonUpItem, BankWindowFix: BankEquipmentRButtonDown, CM_ClosetGoblin: HandleDrag |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 50 |
-| Global usage count | 50 |
+| Lua usage count | 53 |
+| Global usage count | 53 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ Cursor.IconOnCursor()
 
 ## Description
 
-Observed as a global function across 22 addons.
+Observed as a global function across 24 addons.
 
 ## Parameters
 
@@ -88,6 +88,7 @@ Observed as a global function across 22 addons.
 - DetauntHelper
 - Enemy
 - FixGit
+- FozAuction
 - HotbarMorale
 - KeyBar
 - NerfedButtons
@@ -100,6 +101,7 @@ Observed as a global function across 22 addons.
 - Twister
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
+- bigger_MacroWindow
 - zMailMod
 
 ## Examples
@@ -122,10 +124,12 @@ Observed as a global function across 22 addons.
 - [Cursor.Clear](global_Cursor.Clear.md) (HIGH 100/100) - Global Function
 - [Cursor.PickUp](global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
 - [EA_BackpackUtilsMediator.GetCurrentBackpackType](global_EA_BackpackUtilsMediator.GetCurrentBackpackType.md) (HIGH 100/100) - Global Function
+- [EA_BackpackUtilsMediator.GetCursorForBackpack](global_EA_BackpackUtilsMediator.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
+- [EA_BackpackUtilsMediator.GetItemsFromBackpack](global_EA_BackpackUtilsMediator.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
 - [EA_ChatWindow.InsertItemLink](global_EA_ChatWindow.InsertItemLink.md) (HIGH 100/100) - Global Function
 - [EA_Window_Macro.UpdateDetails](global_EA_Window_Macro.UpdateDetails.md) (HIGH 100/100) - Global Function
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [SystemData.TrialAlert.ALERT_AUCTION](../../systemdata/fields/systemdata_SystemData.TrialAlert.ALERT_AUCTION.md) (HIGH 100/100) - SystemData Field
+- [EA_BackpackUtilsMediator.ReleaseLockForSlot](global_EA_BackpackUtilsMediator.ReleaseLockForSlot.md) (HIGH 90/100) - Global Function
 - [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [BankWindow.GetItem](global_BankWindow.GetItem.md) (HIGH 71/100) - Global Function
 - [BankWindow.GetSlotNumberForButtonIndex](global_BankWindow.GetSlotNumberForButtonIndex.md) (HIGH 71/100) - Global Function

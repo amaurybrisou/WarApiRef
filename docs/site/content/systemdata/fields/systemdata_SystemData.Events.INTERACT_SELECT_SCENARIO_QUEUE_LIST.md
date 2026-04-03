@@ -67,7 +67,6 @@ SystemData.SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST field accessed 
 ## Related APIs
 
 - [EA_Window_ScenarioLobby.OnJoinInstanceWait](../../globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md) (HIGH 100/100) - Global Function
-- [wstring.upper](../../globals/functions/global_wstring.upper.md) (HIGH 100/100) - Global Function
 - [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Notes

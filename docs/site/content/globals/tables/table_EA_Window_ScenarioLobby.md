@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Queue Queuer, TidyQueue |
+| Addons seen in | CMap, Queue Queuer, TidyQueue |
 | Namespaces detected | EA_Window_ScenarioLobby |
 | Source kinds | lua_calls |
-| Example locations | Queue Queuer: LeaveQueues, Queue Queuer: OnCancel, Queue Queuer: OnUpdate, TidyQueue: OnUpdate |
+| Example locations | CMap: JoinAllQueues, Queue Queuer: LeaveQueues, Queue Queuer: OnCancel, Queue Queuer: OnUpdate, TidyQueue: OnUpdate |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 2 |
+| Lua usage count | 6 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -56,10 +56,12 @@
 
 ## Description
 
-Shared function table with 2 member functions; the primary API surface for 2 addons.
+Shared function table with 4 member functions; the primary API surface for 3 addons.
 
 ## Functions
 
+- EA_Window_ScenarioLobby.Initialize
+- EA_Window_ScenarioLobby.OnJoinAllQueues
 - EA_Window_ScenarioLobby.OnJoinInstanceWait
 - EA_Window_ScenarioLobby.OnLeaveActiveQueueFromLobby
 
@@ -69,11 +71,14 @@ Shared function table with 2 member functions; the primary API surface for 2 add
 
 ## Seen In
 
+- CMap
 - Queue Queuer
 - TidyQueue
 
 ## Examples
 
+- CMap: JoinAllQueues -> EA_Window_ScenarioLobby.Initialize()
+- CMap: JoinAllQueues -> EA_Window_ScenarioLobby.OnJoinAllQueues()
 - Queue Queuer: LeaveQueues -> EA_Window_ScenarioLobby.OnLeaveActiveQueueFromLobby()
 - Queue Queuer: OnCancel -> EA_Window_ScenarioLobby.OnLeaveActiveQueueFromLobby()
 - Queue Queuer: OnUpdate -> EA_Window_ScenarioLobby.OnJoinInstanceWait()

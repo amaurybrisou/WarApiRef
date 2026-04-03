@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CM_ClosetGoblin, DammazKron, Ding, KillTracker, MapMonster, TomeTracker, wbLeadHelper |
-| Files seen in | ClosetGoblin.lua, Core/DK_Core.lua, Ding.lua, Source/KillTracker.lua, Source/MapMonster_Player.lua, Source/TomeTracker.lua, wbLeadHelper.lua |
+| Addons seen in | CM_ClosetGoblin, DammazKron, Ding, EA_LoadingScreen, KillTracker, MapMonster, TomeTracker, wbLeadHelper |
+| Files seen in | ClosetGoblin.lua, Core/DK_Core.lua, Ding.lua, Source/KillTracker.lua, Source/MapMonster_Player.lua, Source/TomeTracker.lua, source/loadingscreen.lua, wbLeadHelper.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Initialize, InitializePlayer, OnInitialize, RegisterEventHandlerDK, ShutdownPlayer, UnregisterEventHandlerDK |
@@ -60,13 +60,14 @@
 
 ## Description
 
-SystemData.SystemData.Events.LOADING_BEGIN field accessed by 7 addons; commonly found in Initialize and InitializePlayer, OnInitialize, RegisterEventHandlerDK, ShutdownPlayer, UnregisterEventHandlerDK, ZoneChangeInit, ZoneChangeShutdown, lua_call contexts.
+SystemData.SystemData.Events.LOADING_BEGIN field accessed by 8 addons; commonly found in Initialize and InitializePlayer, OnInitialize, RegisterEventHandlerDK, ShutdownPlayer, UnregisterEventHandlerDK, ZoneChangeInit, ZoneChangeShutdown, lua_call contexts.
 
 ## Seen In
 
 - CM_ClosetGoblin
 - DammazKron
 - Ding
+- EA_LoadingScreen
 - KillTracker
 - MapMonster
 - TomeTracker

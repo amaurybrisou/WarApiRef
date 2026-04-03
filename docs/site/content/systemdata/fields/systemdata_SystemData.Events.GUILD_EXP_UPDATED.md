@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Effigy, XpStatus+G |
-| Files seen in | States/EffigyStateGuild.lua, source/XpStatus.lua |
+| Addons seen in | Effigy, FozAuction, XpStatus+G |
+| Files seen in | Source/auctionwindowsellcontrols.lua, States/EffigyStateGuild.lua, source/XpStatus.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | OnInitialize, RegisterStateInfoForGuild, Shutdown, lua_call |
+| Example locations | Initialize, OnInitialize, RegisterStateInfoForGuild, Shutdown, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 5 |
+| Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,11 +60,12 @@
 
 ## Description
 
-SystemData.SystemData.Events.GUILD_EXP_UPDATED field accessed by 2 addons; commonly found in OnInitialize and RegisterStateInfoForGuild, Shutdown, lua_call contexts.
+SystemData.SystemData.Events.GUILD_EXP_UPDATED field accessed by 3 addons; commonly found in Initialize and OnInitialize, RegisterStateInfoForGuild, Shutdown, lua_call contexts.
 
 ## Seen In
 
 - Effigy
+- FozAuction
 - XpStatus+G
 
 ## Related APIs
@@ -81,4 +82,4 @@ SystemData.SystemData.Events.GUILD_EXP_UPDATED field accessed by 2 addons; commo
 
 ## Notes
 
-- Observed in contexts: OnInitialize, RegisterStateInfoForGuild, Shutdown, lua_call
+- Observed in contexts: Initialize, OnInitialize, RegisterStateInfoForGuild, Shutdown, lua_call

@@ -2,20 +2,22 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 96/100
-- Seen in: 3 addons
+- Confidence score: 100/100
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 96/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches a known engine namespace, called globally with no local definition, seen in 2 to 3 addons.
+- Raw weighted score: 108
+
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
@@ -26,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DetauntHelper, EA_ScenarioGroupWindow, Trakario |
-| Files seen in | Source/Config/BarSettings.lua, Source/ScenarioGroupWindow.lua, Source/TargetInfo.lua, trakario.lua |
+| Addons seen in | DetauntHelper, EA_ScenarioGroupWindow, SocialWindow 2.0, Trakario |
+| Files seen in | Source/Config/BarSettings.lua, Source/ScenarioGroupWindow.lua, Source/TargetInfo.lua, source/socialwindow.lua, trakario.lua |
 | Namespaces detected | Icons |
 | Source kinds | lua_calls |
-| Example locations | DetauntHelper: GetCareerIconDataFromCareerID, DetauntHelper: InitUI, DetauntHelper: _GetCareerIcon, EA_ScenarioGroupWindow: UpdateSingleMemberWindow, Trakario: SetCareerIcon |
+| Example locations | DetauntHelper: GetCareerIconDataFromCareerID, DetauntHelper: InitUI, DetauntHelper: _GetCareerIcon, EA_ScenarioGroupWindow: UpdateSingleMemberWindow, SocialWindow 2.0: OnMouseOverListMember, Trakario: SetCareerIcon |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 7 |
+| Global usage count | 7 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -63,13 +65,13 @@ Icons.GetCareerIconIDFromCareerNamesID(arg1)
 
 ## Description
 
-Observed as a global function across 3 addons.
+Observed as a global function across 4 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: GameData.Player.career.id, careerId, cid |
+| arg1 | Observed as a function or method reference. | Observed values: GameData.Player.career.id, SocialWindow.MemberListTable[windowId].careerID, careerId |
 
 ## Returns
 
@@ -83,6 +85,7 @@ Observed as a global function across 3 addons.
 
 - DetauntHelper
 - EA_ScenarioGroupWindow
+- SocialWindow 2.0
 - Trakario
 
 ## Examples
@@ -91,11 +94,19 @@ Observed as a global function across 3 addons.
 - DetauntHelper: InitUI -> Icons.GetCareerIconIDFromCareerNamesID(GameData.Player.career.id)
 - DetauntHelper: _GetCareerIcon -> Icons.GetCareerIconIDFromCareerNamesID(self.pinfo.careerId)
 - EA_ScenarioGroupWindow: UpdateSingleMemberWindow -> Icons.GetCareerIconIDFromCareerNamesID(player.careerId)
+- SocialWindow 2.0: OnMouseOverListMember -> Icons.GetCareerIconIDFromCareerNamesID(SocialWindow.MemberListTable[windowId].careerID)
 - Trakario: SetCareerIcon -> Icons.GetCareerIconIDFromCareerNamesID(careerId)
+
+## Used With
+
+- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
+- [GameData.Player.career.id](../../gamedata/fields/gamedata_GameData.Player.career.id.md) (HIGH 100/100) - GameData Field
+- [GameData.Player.name](../../gamedata/fields/gamedata_GameData.Player.name.md) (HIGH 100/100) - GameData Field
 - [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

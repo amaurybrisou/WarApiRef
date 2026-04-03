@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, EA_ScenarioGroupWindow, TidyRoll, alertMod |
-| Files seen in | CustomAutoRoll.lua, Setup/LayoutControlFrame.lua, Setup/LayoutFrame.lua, Source/ScenarioGroupWindow.lua, alertMod.lua |
+| Addons seen in | BuffHead, EA_ScenarioGroupWindow, EA_UiModWindow, TidyRoll, alertMod |
+| Files seen in | CustomAutoRoll.lua, Setup/LayoutControlFrame.lua, Setup/LayoutFrame.lua, Source/ScenarioGroupWindow.lua, alertMod.lua, source/uimodwindow.lua, source/versionmismatchwindow.lua |
 | Namespaces detected | DefaultColor |
 | Source kinds | lua_calls |
-| Example locations | BuffHead: Create, BuffHead: UpdateFrameColor, EA_ScenarioGroupWindow: SetListRowTints, TidyRoll: Initialize, alertMod: SetLabels |
+| Example locations | BuffHead: Create, BuffHead: UpdateFrameColor, EA_ScenarioGroupWindow: SetListRowTints, EA_UiModWindow: InitModDetails, EA_UiModWindow: UpdateModRowByIndex, TidyRoll: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 14 |
+| Global usage count | 14 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,13 +62,13 @@ DefaultColor.SetWindowTint(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 4 addons.
+Observed as a global function across 5 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "alertModDisplayTimeRowBackgroundName", "alertModFadeInRowBackgroundName", "alertModFadeOutRowBackgroundName" |
+| arg1 | Observed as a text or wstring payload. | Observed values: "UiModVersionMismatchWindowModsListRow"..rowIndex.."Background", "alertModDisplayTimeRowBackgroundName", "alertModFadeInRowBackgroundName" |
 | arg2 | Observed as a function or method reference. | Observed values: DefaultColor.GetRowColor(1), DefaultColor.GetRowColor(2), DefaultColor.GetRowColor(row) |
 
 ## Returns
@@ -83,6 +83,7 @@ Observed as a global function across 4 addons.
 
 - BuffHead
 - EA_ScenarioGroupWindow
+- EA_UiModWindow
 - TidyRoll
 - alertMod
 
@@ -92,14 +93,16 @@ Observed as a global function across 4 addons.
 - BuffHead: UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Frame", frameColor)
 - BuffHead: UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Background", backgroundColor)
 - EA_ScenarioGroupWindow: SetListRowTints -> DefaultColor.SetWindowTint(targetRowWindow, DefaultColor.GetRowColor(row))
-- TidyRoll: Initialize -> DefaultColor.SetWindowTint(rowName.."Background", color)
-- alertMod: SetLabels -> DefaultColor.SetWindowTint("alertModHeightShiftRowBackgroundName", DefaultColor.GetRowColor(2))
+- EA_UiModWindow: InitModDetails -> DefaultColor.SetWindowTint(windowName.."ScrollChildNameBackground", DefaultColor.GetRowColor(1))
+- EA_UiModWindow: UpdateModRowByIndex -> DefaultColor.SetWindowTint("UiModVersionMismatchWindowModsListRow"..rowIndex.."Background", color)
 
 ## Used With
 
-- [ButtonSetText](../../window_api/functions/window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxAddMenuItem](../../window_api/functions/window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 - [DefaultColor.GetRowColor](global_DefaultColor.GetRowColor.md) (HIGH 96/100) - Global Function
+- [DefaultColor.SetLabelColor](global_DefaultColor.SetLabelColor.md) (HIGH 88/100) - Global Function
 
 ## Notes
 

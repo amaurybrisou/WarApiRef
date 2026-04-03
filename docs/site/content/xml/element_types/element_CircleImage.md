@@ -1042,6 +1042,8 @@ Confidence: MEDIUM
 ## Lua Functions Manipulating This Type
 
 - Enemy.EnemyEffectsIndicator:Update
+- GuardList.UpdateStateMachine
+- GuardRange.UpdateStateMachine
 - TurretRange.OnUpdate
 - TurretScrap.Initialize
 

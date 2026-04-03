@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, FixGit |
-| Files seen in | Fixes.lua, Setup/LayoutControlFrame.lua |
+| Addons seen in | BuffHead, FixGit, SocialWindow 2.0 |
+| Files seen in | Fixes.lua, Setup/LayoutControlFrame.lua, source/socialwindowbuddylist.lua |
 | Namespaces detected | WindowSetMoving |
 | Source kinds | lua_calls |
-| Example locations | BuffHead: BeginMoving, BuffHead: EndMoving, FixGit: BeginMoving, FixGit: FixLELockingIssue |
+| Example locations | BuffHead: BeginMoving, BuffHead: EndMoving, FixGit: BeginMoving, FixGit: FixLELockingIssue, SocialWindow 2.0: OnLButtonDownTab, SocialWindow 2.0: OnLButtonUpTab |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 4 |
-| Global usage count | 4 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: self:GetName() |
+| windowName | Observed as a target window name. | Observed values: PARENT_WINDOW, self:GetName() |
 | arg2 | Observed as a boolean toggle. | Observed values: false, true |
 
 ## Returns
@@ -86,6 +86,7 @@ Observed mutating runtime window state or presentation.
 
 - BuffHead
 - FixGit
+- SocialWindow 2.0
 
 ## Examples
 
@@ -93,6 +94,12 @@ Observed mutating runtime window state or presentation.
 - BuffHead: EndMoving -> WindowSetMoving(self:GetName(), false)
 - FixGit: BeginMoving -> WindowSetMoving(self:GetName(), true)
 - FixGit: FixLELockingIssue -> WindowSetMoving(self:GetName(), true)
+- SocialWindow 2.0: OnLButtonDownTab -> WindowSetMoving(PARENT_WINDOW, true)
+- SocialWindow 2.0: OnLButtonUpTab -> WindowSetMoving(PARENT_WINDOW, false)
+
+## Affects
+
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

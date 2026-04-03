@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Effigy, HealGrid, JunkDump, PartyCast, SNT_CASTBAR, Shinies, SquaredClick, xHUD |
-| Files seen in | Bars/HealGridCastBar.lua, JunkDump.lua, PartyCast.lua, Source/Shinies.lua, Source/SquaredClick.lua, States/EffigyStateCastbar.lua, snt_castbar.lua, xHUD.lua |
+| Addons seen in | Effigy, FozAuction, HealGrid, JunkDump, PartyCast, SNT_CASTBAR, Shinies, SquaredClick |
+| Files seen in | Bars/HealGridCastBar.lua, JunkDump.lua, PartyCast.lua, Source/Shinies.lua, Source/SquaredClick.lua, Source/auctionwindow.lua, States/EffigyStateCastbar.lua, snt_castbar.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Disable, Enable, Init, Initialize, OnDisable, OnEnable |
@@ -60,11 +60,12 @@
 
 ## Description
 
-SystemData.SystemData.Events.INTERACT_DONE field accessed by 8 addons; commonly found in Disable and Enable, Init, Initialize, OnDisable, OnEnable, OnShutdown, RegisterStateInfoForCastbar, StartListeners, UpdateDefaultAuctionHouseDisable, entry_point, lua_call contexts.
+SystemData.SystemData.Events.INTERACT_DONE field accessed by 9 addons; commonly found in Disable and Enable, Init, Initialize, OnDisable, OnEnable, OnShutdown, RegisterStateInfoForCastbar, StartListeners, UpdateDefaultAuctionHouseDisable, entry_point, lua_call contexts.
 
 ## Seen In
 
 - Effigy
+- FozAuction
 - HealGrid
 - JunkDump
 - PartyCast

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 31 addons
+- Seen in: 33 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, DeepSleep, EZCraftX, EZGuard, Effigy |
+| Addons seen in | Ace, ActionBarHide, Amethyst, CMap, Crusher, DeepSleep, EZCraftX, EZGuard |
 | Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Settings.lua, libs/LibGUI.lua |
 | Namespaces detected | ComboBoxGetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: Enabled, ActionBarHide: Enabled, Amethyst: Enabled, Crusher: Enabled, DeepSleep: ComboBoxChanged, EZCraftX: Enabled |
+| Example locations | Ace: Enabled, ActionBarHide: Enabled, Amethyst: Enabled, CMap: Enabled, Crusher: Enabled, DeepSleep: ComboBoxChanged |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 31 |
-| Global usage count | 31 |
+| Lua usage count | 33 |
+| Global usage count | 33 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxGetDisabledFlag(arg1)
 
 ## Description
 
-Observed as a window function across 31 addons.
+Observed as a window function across 33 addons.
 
 ## Parameters
 
@@ -86,6 +86,7 @@ Observed as a window function across 31 addons.
 - Ace
 - ActionBarHide
 - Amethyst
+- CMap
 - Crusher
 - DeepSleep
 - EZCraftX
@@ -107,6 +108,7 @@ Observed as a window function across 31 addons.
 - TargetRing
 - Tokens
 - Vectors
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -120,9 +122,9 @@ Observed as a window function across 31 addons.
 - Ace: Enabled -> ComboBoxGetDisabledFlag(self.name)
 - ActionBarHide: Enabled -> ComboBoxGetDisabledFlag(self.name)
 - Amethyst: Enabled -> ComboBoxGetDisabledFlag(self.name)
+- CMap: Enabled -> ComboBoxGetDisabledFlag(self.name)
 - Crusher: Enabled -> ComboBoxGetDisabledFlag(self.name)
 - DeepSleep: ComboBoxChanged -> ComboBoxGetDisabledFlag(box)
-- EZCraftX: Enabled -> ComboBoxGetDisabledFlag(self.name)
 
 ## Used With
 

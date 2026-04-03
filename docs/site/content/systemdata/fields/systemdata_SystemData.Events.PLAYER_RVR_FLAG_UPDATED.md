@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, Effigy, Enemy, Minmap, Pure, RoR_debolster |
-| Files seen in | Code/Core/Groups/Groups.lua, RoR_debolster.lua, Source/AuraEngine.lua, Source/PureGroup.lua, Source/PurePlayer.lua, States/EffigyStatePlayer.lua, core.lua |
+| Addons seen in | Aura, CMap, Effigy, Enemy, Minmap, Pure, RoR_debolster |
+| Files seen in | CMap.lua, Code/Core/Groups/Groups.lua, RoR_debolster.lua, Source/AuraEngine.lua, Source/PureGroup.lua, Source/PurePlayer.lua, States/EffigyStatePlayer.lua, core.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | GroupsInitialize, Initialize, JumpStartEventBasedAuras, LoadUnitFrame, RegisterStateInfoForPlayer, UnloadUnitFrame |
@@ -60,16 +60,21 @@
 
 ## Description
 
-SystemData.SystemData.Events.PLAYER_RVR_FLAG_UPDATED field accessed by 6 addons; commonly found in GroupsInitialize and Initialize, JumpStartEventBasedAuras, LoadUnitFrame, RegisterStateInfoForPlayer, UnloadUnitFrame, lua_call contexts.
+SystemData.SystemData.Events.PLAYER_RVR_FLAG_UPDATED field accessed by 7 addons; commonly found in GroupsInitialize and Initialize, JumpStartEventBasedAuras, LoadUnitFrame, RegisterStateInfoForPlayer, UnloadUnitFrame, lua_call contexts.
 
 ## Seen In
 
 - Aura
+- CMap
 - Effigy
 - Enemy
 - Minmap
 - Pure
 - RoR_debolster
+
+## Related APIs
+
+- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

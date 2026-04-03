@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 11 addons
+- Seen in: 12 addons
 
 ## Confidence Assessment
 
@@ -30,8 +30,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, ActionPointWatch, Effigy, Enemy, HealGrid, Pure, RVMOD_PlayerStatus, Squared |
-| Files seen in | ActionPointWatch.lua, Bars/HealGridActionPointBar.lua, Code/Core/Groups/Groups.lua, RVMOD_PlayerStatus.lua, Source/PureGroup.lua, Source/PurePlayer.lua, Squared.lua, SquaredGroup.lua |
+| Addons seen in | ActionFraction, ActionPointWatch, ActionPoints, Effigy, Enemy, HealGrid, Pure, RVMOD_PlayerStatus |
+| Files seen in | ActionPointWatch.lua, ActionPoints.lua, Bars/HealGridActionPointBar.lua, Code/Core/Groups/Groups.lua, RVMOD_PlayerStatus.lua, Source/PureGroup.lua, Source/PurePlayer.lua, Squared.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | DisableBars, EnableBars, GroupsInitialize, Initialize, LoadUnitFrame, OnLoad |
@@ -61,12 +61,13 @@
 
 ## Description
 
-SystemData.SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED field accessed by 11 addons; commonly found in DisableBars and EnableBars, GroupsInitialize, Initialize, LoadUnitFrame, OnLoad, OnShutdown, OnUnload, RegisterEventHandlers, RegisterSelfEvents, RegisterStateInfoForPlayer, Set_APHandler_all, Shutdown, SquaredGroup.UpdateAP, SquaredPlayer.UpdateAP, SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED, UnloadUnitFrame, UnregisterSelfEvents, event_page, event_registration, lua_call contexts.
+SystemData.SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED field accessed by 12 addons; commonly found in DisableBars and EnableBars, GroupsInitialize, Initialize, LoadUnitFrame, OnLoad, OnShutdown, OnUnload, RegisterEventHandlers, RegisterSelfEvents, RegisterStateInfoForPlayer, Set_APHandler_all, Shutdown, SquaredGroup.UpdateAP, SquaredPlayer.UpdateAP, SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED, UnloadUnitFrame, UnregisterSelfEvents, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
 - ActionFraction
 - ActionPointWatch
+- ActionPoints
 - Effigy
 - Enemy
 - HealGrid
@@ -79,31 +80,24 @@ SystemData.SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED field accessed by 
 
 ## Related APIs
 
-- [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
-- [LabelSetFont](../../window_api/functions/window_LabelSetFont.md) (HIGH 100/100) - Window Function
-- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.IsSlashCmdRegistered](../../globals/functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
 - [LibSlash.UnregisterSlashCmd](../../globals/functions/global_LibSlash.UnregisterSlashCmd.md) (HIGH 100/100) - Global Function
-- [WindowRegisterCoreEventHandler](../../window_api/functions/window_WindowRegisterCoreEventHandler.md) (HIGH 100/100) - Window Function
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
-- [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [WindowUnregisterEventHandler](../../window_api/functions/window_WindowUnregisterEventHandler.md) (HIGH 100/100) - Window Function
 - [WindowUnRegisterEventHandler](../../window_api/functions/window_WindowUnRegisterEventHandler.md) (HIGH 98/100) - Window Function
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
-- [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 - [UnregisterEventHandler](../../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Used With
 
-- [SystemData.Events.LOADING_END](systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Notes
 

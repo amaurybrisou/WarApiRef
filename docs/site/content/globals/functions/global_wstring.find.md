@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 10 addons
+- Seen in: 11 addons
 
 ## Confidence Assessment
 
@@ -32,8 +32,8 @@
 | Example locations | Cram The Spam: FuzzyFilterTest, Cram The Spam: GenericSlashCommand, DammazKron: PrintRegister, Effigy: UpdateTitle, Effigy: WStringSplitInclDelimiter, I HATE YOU THIS MUCH: ChatHandler |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 68 |
-| Global usage count | 68 |
+| Lua usage count | 74 |
+| Global usage count | 74 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ wstring.find(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a global function across 10 addons.
+Observed as a global function across 11 addons.
 
 ## Parameters
 
@@ -93,6 +93,7 @@ Observed as a global function across 10 addons.
 - TidyChat
 - TomeTracker
 - Trakario
+- WarBoard_WarWhisperer
 
 ## Examples
 
@@ -106,6 +107,7 @@ Observed as a global function across 10 addons.
 ## Used With
 
 - [wstring.lower](global_wstring.lower.md) (HIGH 100/100) - Global Function
+- [wstring.reverse](global_wstring.reverse.md) (HIGH 88/100) - Global Function
 - [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Affects

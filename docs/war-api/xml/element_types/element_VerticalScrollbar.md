@@ -228,8 +228,8 @@ Confidence: MEDIUM
 | 0 | `scrollPos` | number | scroll_position |
 ## Lua Functions Manipulating This Type
 
-- MacroIcons.OnInitialize
 - EA_Window_Macro.Initialize
+- MacroIcons.OnInitialize
 
 
 ## Binding Resolution

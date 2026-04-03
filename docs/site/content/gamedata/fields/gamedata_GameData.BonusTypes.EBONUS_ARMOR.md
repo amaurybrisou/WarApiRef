@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CaVES, Effigy |
-| Files seen in | States/EffigyStatePlayer.lua, source/CaVES.lua |
+| Addons seen in | CaVES, Effigy, FozAuction |
+| Files seen in | Source/auctionwindowsearchcontrols.lua, States/EffigyStatePlayer.lua, source/CaVES.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | UpdateArmorLabel, UpdatePlayerArmor, lua_call |
+| Example locations | SpawnStatisticMenu, UpdateArmorLabel, UpdatePlayerArmor, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,13 +59,14 @@
 
 ## Description
 
-GameData.GameData.BonusTypes.EBONUS_ARMOR field accessed by 2 addons; commonly found in UpdateArmorLabel and UpdatePlayerArmor, lua_call contexts.
+GameData.GameData.BonusTypes.EBONUS_ARMOR field accessed by 3 addons; commonly found in SpawnStatisticMenu and UpdateArmorLabel, UpdatePlayerArmor, lua_call contexts.
 
 ## Seen In
 
 - CaVES
 - Effigy
+- FozAuction
 
 ## Notes
 
-- Observed in contexts: UpdateArmorLabel, UpdatePlayerArmor, lua_call
+- Observed in contexts: SpawnStatisticMenu, UpdateArmorLabel, UpdatePlayerArmor, lua_call

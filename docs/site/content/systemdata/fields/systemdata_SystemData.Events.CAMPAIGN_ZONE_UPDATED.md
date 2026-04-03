@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 156
+- Raw weighted score: 168
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Killer, RealmStatus, RvRContribution |
-| Files seen in | KillerLifecycle.lua, RealmStatus.lua, rvr-contribution.lua |
+| Addons seen in | EA_ThreePartBar, Killer, RealmStatus, RvRContribution |
+| Files seen in | KillerLifecycle.lua, RealmStatus.lua, rvr-contribution.lua, source/ea_threepartbar.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Initialize, OnInitialize, Shutdown, lua_call |
@@ -60,10 +60,11 @@
 
 ## Description
 
-SystemData.SystemData.Events.CAMPAIGN_ZONE_UPDATED field accessed by 3 addons; commonly found in Initialize and OnInitialize, Shutdown, lua_call contexts.
+SystemData.SystemData.Events.CAMPAIGN_ZONE_UPDATED field accessed by 4 addons; commonly found in Initialize and OnInitialize, Shutdown, lua_call contexts.
 
 ## Seen In
 
+- EA_ThreePartBar
 - Killer
 - RealmStatus
 - RvRContribution

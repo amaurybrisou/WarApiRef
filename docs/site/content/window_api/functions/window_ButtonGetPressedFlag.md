@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 80 addons
+- Seen in: 89 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, Atlas, AuctionStats, Bloody Mess, BuffHead |
-| Files seen in | AdjustTheTip.lua, AuctionAssist.lua, Bloody Mess.lua, CDownSettings.lua, CallingSetup.lua, Code/Core/ConfigurationWindow.lua, Code/UnitFrames/ClickCasting.lua, Code/UnitFrames/EffectsIndicator.lua |
+| Files seen in | AAOTracker.lua, AdjustTheTip.lua, AuctionAssist.lua, Bloody Mess.lua, CDownSettings.lua, CMap.lua, CallingSetup.lua, Code/Core/ConfigurationWindow.lua |
 | Namespaces detected | ButtonGetPressedFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: GetValue, ActionBarHide: GetValue, AdjustTheTip: OnDelayedFadingEnabled, Amethyst: GetValue, Atlas: OnCheckboxLBU, AuctionStats: AutoUndercutClicked |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 348 |
-| Global usage count | 348 |
+| Lua usage count | 377 |
+| Global usage count | 377 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ButtonGetPressedFlag(arg1)
 
 ## Description
 
-Observed as a window function across 80 addons.
+Observed as a window function across 89 addons.
 
 ## Parameters
 
@@ -92,6 +92,7 @@ Observed as a window function across 80 addons.
 - Bloody Mess
 - BuffHead
 - CDown
+- CMap
 - CaVES
 - Calling
 - CastSequence
@@ -100,7 +101,9 @@ Observed as a window function across 80 addons.
 - DAoCBuff
 - DammazKron
 - DetauntHelper
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
@@ -133,16 +136,19 @@ Observed as a window function across 80 addons.
 - Obsidian
 - PartyCast
 - Phantom
+- PieTracker
 - PotionBar
 - Pure
 - Pure Careerbar
 - RealmStatus
 - ReliquaryHunter
 - Shinies
+- SocialWindow 2.0
 - Statdoll Remix
 - TalismanGenie
 - TargetRing
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyChat
 - TidyQueue
@@ -152,6 +158,9 @@ Observed as a window function across 80 addons.
 - Vectors
 - WARCommander
 - WSCT
+- WTes
+- WarBoard_AAOTracker
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -177,7 +186,6 @@ Observed as a window function across 80 addons.
 
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [EA_LabelCheckButton.Toggle](../../globals/functions/global_EA_LabelCheckButton.Toggle.md) (HIGH 100/100) - Global Function
-- [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.Hide](window_LayoutEditor.Hide.md) (HIGH 90/100) - Window Function
 - [LayoutEditor.Show](window_LayoutEditor.Show.md) (HIGH 90/100) - Window Function
 

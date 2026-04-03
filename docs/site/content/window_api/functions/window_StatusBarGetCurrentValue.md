@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 31 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Addons seen in | Ace, ActionBarHide, Amethyst, CMap, Crusher, EZCraftX, EZGuard, Effigy |
 | Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, PartyCast.lua, VerticalMorale.lua, libs/LibGUI.lua |
 | Namespaces detected | StatusBarGetCurrentValue |
 | Source kinds | lua_calls |
-| Example locations | Ace: GetValue, ActionBarHide: GetValue, Amethyst: GetValue, Crusher: GetValue, EZCraftX: GetValue, EZGuard: GetValue |
+| Example locations | Ace: GetValue, ActionBarHide: GetValue, Amethyst: GetValue, CMap: GetValue, Crusher: GetValue, EZCraftX: GetValue |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 32 |
-| Global usage count | 32 |
+| Lua usage count | 34 |
+| Global usage count | 34 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ StatusBarGetCurrentValue(arg1)
 
 ## Description
 
-Observed as a window function across 29 addons.
+Observed as a window function across 31 addons.
 
 ## Parameters
 
@@ -86,6 +86,7 @@ Observed as a window function across 29 addons.
 - Ace
 - ActionBarHide
 - Amethyst
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -105,6 +106,7 @@ Observed as a window function across 29 addons.
 - TargetRing
 - Tokens
 - VerticalMorale
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -118,13 +120,9 @@ Observed as a window function across 29 addons.
 - Ace: GetValue -> StatusBarGetCurrentValue(self.name)
 - ActionBarHide: GetValue -> StatusBarGetCurrentValue(self.name)
 - Amethyst: GetValue -> StatusBarGetCurrentValue(self.name)
+- CMap: GetValue -> StatusBarGetCurrentValue(self.name)
 - Crusher: GetValue -> StatusBarGetCurrentValue(self.name)
 - EZCraftX: GetValue -> StatusBarGetCurrentValue(self.name)
-- EZGuard: GetValue -> StatusBarGetCurrentValue(self.name)
-
-## Used With
-
-- [ButtonGetPressedFlag](window_ButtonGetPressedFlag.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

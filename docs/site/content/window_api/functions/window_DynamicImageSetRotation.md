@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 31 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Amethyst, Aura, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Addons seen in | Ace, Amethyst, Aura, CMap, Crusher, EZCraftX, EZGuard, Effigy |
 | Files seen in | KeyBar.lua, LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Source/AuraHelpers.lua, VerticalMorale.lua, libs/LibGUI.lua |
 | Namespaces detected | DynamicImageSetRotation |
 | Source kinds | lua_calls |
-| Example locations | Ace: Rotate, Amethyst: Rotate, Aura: SetDynamicImageTexture, Crusher: Rotate, EZCraftX: Rotate, EZGuard: Rotate |
+| Example locations | Ace: Rotate, Amethyst: Rotate, Aura: SetDynamicImageTexture, CMap: Rotate, Crusher: Rotate, EZCraftX: Rotate |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 40 |
-| Global usage count | 40 |
+| Lua usage count | 42 |
+| Global usage count | 42 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -87,6 +87,7 @@ Observed mutating runtime image resources on existing controls.
 - Ace
 - Amethyst
 - Aura
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -107,6 +108,7 @@ Observed mutating runtime image resources on existing controls.
 - TargetRing
 - Tokens
 - VerticalMorale
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -119,9 +121,9 @@ Observed mutating runtime image resources on existing controls.
 - Ace: Rotate -> DynamicImageSetRotation(self.name, angle)
 - Amethyst: Rotate -> DynamicImageSetRotation(self.name, angle)
 - Aura: SetDynamicImageTexture -> DynamicImageSetRotation(window, rotation)
+- CMap: Rotate -> DynamicImageSetRotation(self.name, angle)
 - Crusher: Rotate -> DynamicImageSetRotation(self.name, angle)
 - EZCraftX: Rotate -> DynamicImageSetRotation(self.name, angle)
-- EZGuard: Rotate -> DynamicImageSetRotation(self.name, angle)
 
 ## Related APIs
 

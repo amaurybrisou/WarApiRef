@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 59 addons
+- Seen in: 64 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, ActionBarHide, AdvancedRenownTrainer, Amethyst, AutoBand, BuffHead, Busted, CDown |
-| Files seen in | AdvancedRenownTraining.lua, AutoBand.lua, Busted.lua, CDownSettings.lua, ClosetGoblinCharacterWindow.lua, Code/Core/Main.lua, Code/Intercom/Intercom.lua, Code/UnitFrames/EffectsIndicator.lua |
+| Files seen in | AdvancedRenownTraining.lua, AutoBand.lua, Busted.lua, CDownSettings.lua, CMap.lua, ClosetGoblinCharacterWindow.lua, Code/Core/Main.lua, Code/Intercom/Intercom.lua |
 | Namespaces detected | ButtonSetDisabledFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: SetEnabled, ActionBarHide: SetEnabled, AdvancedRenownTrainer: AnywhereShow, AdvancedRenownTrainer: OnHidden, Amethyst: SetEnabled, AutoBand: mark_template_settings_modified |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 332 |
-| Global usage count | 332 |
+| Lua usage count | 369 |
+| Global usage count | 369 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "BustedGUINextError", "BustedGUIPrevError", "ClosetGoblinCharacterWindowContentsDeleteSet" |
+| arg1 | Observed as a function or method reference. | Observed values: "BustedGUINextError", "BustedGUIPrevError", "CMapWindowZoomSliderInButton" |
 | arg2 | Observed as a boolean toggle. | Observed values: (firstVisible==1), (onTargetChangeEnabled==false), (sequence.Count<firstVisible+#buttons-1) |
 
 ## Returns
@@ -93,20 +93,24 @@ Observed mutating button text or pressed state on existing controls.
 - Busted
 - CDown
 - CM_ClosetGoblin
+- CMap
 - CaVES
 - CastSequence
 - Crusher
 - DAoCBuff
 - DammazKron
 - DetauntHelper
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
 - Enemy
 - FastFriends
 - FixGit
+- FozAuction
 - GCDsaver
 - HealGrid
 - Hopper
@@ -134,6 +138,7 @@ Observed mutating button text or pressed state on existing controls.
 - Tokens
 - Vectors
 - WSCT
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -156,12 +161,12 @@ Observed mutating button text or pressed state on existing controls.
 ## Related APIs
 
 - [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 
 ## Used With
 
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
-- [ComboBoxSetDisabledFlag](window_ComboBoxSetDisabledFlag.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Notes

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 184 addons
+- Seen in: 211 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AbilityAlert, Ace, ActionBarHide, ActionFraction, AdjustTheTip, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter |
-| Files seen in | APAGui.lua, APAGuiHUD.lua, AbilityAlert.lua, AdjustTheTip.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, AggroMeter.lua, AuctionAssist.lua |
+| Addons seen in | AbilityAlert, AbilityNotifier, Ace, ActionBarHide, ActionFraction, ActionPoints, AdjustTheTip, AdvancedPetAssist |
+| Files seen in | AAOTWarBoard.lua, AAOTracker.lua, APAGui.lua, APAGuiHUD.lua, AbilityAlert.lua, AbilityNotifier.lua, ActionPoints.lua, AdjustTheTip.lua |
 | Namespaces detected | LabelSetText |
 | Source kinds | lua_calls |
-| Example locations | AbilityAlert: Display, Ace: Clear, Ace: SetText, ActionBarHide: Clear, ActionBarHide: SetText, ActionFraction: Initialize |
+| Example locations | AbilityAlert: Display, AbilityNotifier: Notify, Ace: Clear, Ace: SetText, ActionBarHide: Clear, ActionBarHide: SetText |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3778 |
-| Global usage count | 3778 |
+| Lua usage count | 4040 |
+| Global usage count | 4040 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -85,20 +85,24 @@ Observed updating label text or label styling on existing controls.
 ## Seen In
 
 - AbilityAlert
+- AbilityNotifier
 - Ace
 - ActionBarHide
 - ActionFraction
+- ActionPoints
 - AdjustTheTip
 - AdvancedPetAssist
 - AdvancedRenownTrainer
 - AggroMeter
 - Amethyst
+- Asshat
 - Atlas
 - AuctionStats
 - Aura
 - AutoBand
 - AutoSalvage
 - BankArkel
+- BarText (Influence)
 - BlackBook
 - BlackBox
 - Bloody Mess
@@ -108,11 +112,14 @@ Observed updating label text or label styling on existing controls.
 - Busted
 - CDown
 - CM_ClosetGoblin
+- CMap
 - CaVES
 - Calling
 - CastSequence
 - ChattyCathy
+- Cheeseboard
 - CleanUnitFrames
+- Clock
 - CombatTextNames
 - CoolDownLine
 - Countdown
@@ -127,8 +134,11 @@ Observed updating label text or label styling on existing controls.
 - DetauntHelper
 - DuffTimer
 - Dye Preview
+- EA_LoadingScreen
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
@@ -138,12 +148,15 @@ Observed updating label text or label styling on existing controls.
 - FastFriends
 - FastInteract
 - FlagCap
+- FozAuction
 - GCDTracker
 - GCDsaver
 - GetStats
 - Group Icons SG
 - GroupRange
 - GroupSpotter
+- GuardList
+- GuardRange
 - GuildWarden
 - HealGrid
 - Hopper
@@ -171,14 +184,17 @@ Observed updating label text or label styling on existing controls.
 - MoraleCircle
 - Moth
 - Motion
+- MyReasons
 - NaturalLog
 - NerfedButtons
 - NoOverheal
+- ObjectInspector
 - Obsidian
 - OverheadFonts
 - PartyCast
 - PeaceOut
 - Phantom
+- PieTracker
 - Pocket Palette
 - PotionBar
 - Pure
@@ -201,6 +217,7 @@ Observed updating label text or label styling on existing controls.
 - ResHelp
 - RoR_SoR
 - RoR_debolster
+- Rolodex
 - RvRContribution
 - RvRStats
 - RvRStatsTab
@@ -213,6 +230,8 @@ Observed updating label text or label styling on existing controls.
 - SessionRPs
 - Shinies
 - ShowHealthPercent
+- SimpleXY
+- SocialWindow 2.0
 - Soloq
 - Squared
 - SquaredClick
@@ -227,6 +246,7 @@ Observed updating label text or label styling on existing controls.
 - TargetRing
 - Targets
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThankTheTank
 - ThinkOutLoud
@@ -237,6 +257,7 @@ Observed updating label text or label styling on existing controls.
 - Tokens
 - Tome Titan
 - TomeTracker
+- Tortall_DPS
 - Trakario
 - TurretRange
 - Twister
@@ -244,10 +265,14 @@ Observed updating label text or label styling on existing controls.
 - Vectors
 - WARCommander
 - WARRatingBuster
+- WBStutterLess
 - WSCT
+- WTes
+- WarBoard_AAOTracker
 - WarBoard_Loc
 - WarBoard_Session
 - WarBoard_TDPS
+- WarBoard_WarWhisperer
 - WarTriage
 - WhatsCooking
 - WhoHealedMe
@@ -257,7 +282,9 @@ Observed updating label text or label styling on existing controls.
 - XpStatus+G
 - ZonePOP
 - alertMod
+- bigger_MacroWindow
 - emotes
+- fpsbox
 - minesweep
 - nLootLink
 - scenarioInfo
@@ -272,11 +299,11 @@ Observed updating label text or label styling on existing controls.
 ## Examples
 
 - AbilityAlert: Display -> LabelSetText("AAText", msg)
+- AbilityNotifier: Notify -> LabelSetText("AbHelpText", StringToWString(what))
 - Ace: Clear -> LabelSetText(self.name, L "")
 - Ace: SetText -> LabelSetText(self.name, towstring(text))
 - ActionBarHide: Clear -> LabelSetText(self.name, L "")
 - ActionBarHide: SetText -> LabelSetText(self.name, towstring(text))
-- ActionFraction: Initialize -> LabelSetText("ActionFractionWindowContextColorCodeCurrentAPCheckBoxLabel", LOC_TEXT.CURRENTAP_COLOR_CODING)
 
 ## Related APIs
 
@@ -292,40 +319,39 @@ Observed updating label text or label styling on existing controls.
 
 ## Used With
 
+- [ButtonSetCheckButtonFlag](window_ButtonSetCheckButtonFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
+- [DefaultColor.SetWindowTint](../../globals/functions/global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
 - [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureScale](window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
+- [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
+- [EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID](../../globals/functions/global_EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID.md) (HIGH 100/100) - Global Function
 - [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
 - [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
+- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
 - [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 100/100) - Window Function
 - [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
-- [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
-- [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetTintColor](window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
+- [wstring.gsub](../../globals/functions/global_wstring.gsub.md) (HIGH 100/100) - Global Function
+- [wstring.upper](../../globals/functions/global_wstring.upper.md) (HIGH 100/100) - Global Function
 - [EA_Window_InteractionRenownTraining.GetPointsAvailable](../../globals/functions/global_EA_Window_InteractionRenownTraining.GetPointsAvailable.md) (HIGH 98/100) - Global Function
 - [EA_Window_InteractionRenownTraining.GetPointsSpent](../../globals/functions/global_EA_Window_InteractionRenownTraining.GetPointsSpent.md) (HIGH 98/100) - Global Function
+- [DefaultColor.GetRowColor](../../globals/functions/global_DefaultColor.GetRowColor.md) (HIGH 96/100) - Global Function
 - [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
+- [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
-
-## Affects
-
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

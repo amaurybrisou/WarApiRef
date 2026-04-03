@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 43 addons
+- Seen in: 48 addons
 
 ## Confidence Assessment
 
@@ -11,7 +11,7 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 135
+- Raw weighted score: 110
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
@@ -22,21 +22,21 @@
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
-- +10 Argument pattern is consistent: Observed argument positions remain stable.
+- -15 Conflicting signatures across usages: Observed arity or argument shape conflicts across usages.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, Countdown, Crusher, DAoCBuff, Dascore, EA_UiDebugTools |
-| Files seen in | DascoreResu.lua, Fixes.lua, GuildWardenWin.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, QueueQueuer.lua |
+| Addons seen in | Ace, ActionBarHide, Amethyst, CMap, Countdown, Crusher, DAoCBuff, Dascore |
+| Files seen in | DascoreResu.lua, Fixes.lua, GuardList.lua, GuardRange.lua, GuildWardenWin.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua |
 | Namespaces detected | LabelGetText |
 | Source kinds | lua_calls |
-| Example locations | Ace: GetText, ActionBarHide: GetText, Amethyst: GetText, Countdown: displayCountdown, Crusher: GetText, DAoCBuff: FilterRowOnLButtonUp |
+| Example locations | Ace: GetText, ActionBarHide: GetText, Amethyst: GetText, CMap: GetText, Countdown: displayCountdown, Crusher: GetText |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 67 |
-| Global usage count | 67 |
+| Lua usage count | 74 |
+| Global usage count | 74 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -45,13 +45,13 @@
 | Event binding presence | no |
 | Observed in XML and Lua | no |
 | Consistent role | yes |
-| Consistent arguments | yes |
+| Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
 | Placeholder or computed name | no |
-| Conflicting signatures | no |
+| Conflicting signatures | yes |
 | Conflicting roles | no |
 | Wrapper likely | no |
 | Never outside local graph | no |
@@ -65,13 +65,13 @@ LabelGetText(arg1)
 
 ## Description
 
-Observed as a window function across 43 addons.
+Observed as a window function across 48 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_ScenarioJoinPromptBoxName", "GuildWarden.DBWindow.TextN5", "ScenarioSummaryWindowDestructionPoints" |
+| arg1 | Observed as a function or method reference. | Observed values: "EA_Window_ScenarioJoinPromptBoxName", "GuardList_Window0Label", "GuardRange_Window0Label" |
 
 ## Returns
 
@@ -86,6 +86,7 @@ Observed as a window function across 43 addons.
 - Ace
 - ActionBarHide
 - Amethyst
+- CMap
 - Countdown
 - Crusher
 - DAoCBuff
@@ -95,7 +96,10 @@ Observed as a window function across 43 addons.
 - EZGuard
 - Effigy
 - FixGit
+- FozAuction
 - GCDsaver
+- GuardList
+- GuardRange
 - GuildWarden
 - Hopper
 - InfoScroller
@@ -117,6 +121,7 @@ Observed as a window function across 43 addons.
 - ThankTheResser
 - Tokens
 - Trakario
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -132,9 +137,9 @@ Observed as a window function across 43 addons.
 - Ace: GetText -> LabelGetText(self.name)
 - ActionBarHide: GetText -> LabelGetText(self.name)
 - Amethyst: GetText -> LabelGetText(self.name)
+- CMap: GetText -> LabelGetText(self.name)
 - Countdown: displayCountdown -> LabelGetText(label)
 - Crusher: GetText -> LabelGetText(self.name)
-- DAoCBuff: FilterRowOnLButtonUp -> LabelGetText(SystemData.ActiveWindow.name.."Name")
 
 ## Related APIs
 
@@ -143,10 +148,6 @@ Observed as a window function across 43 addons.
 ## Used With
 
 - [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
-
-## Affects
-
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 21 addons
+- Seen in: 22 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Calling: ManageNotification, DammazKron: SetData, DetauntHelper: OnUpdateFontCombo, Enemy: Apply, GetStats: GetSafeTextWidth, HealGrid: Display |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 59 |
-| Global usage count | 59 |
+| Lua usage count | 61 |
+| Global usage count | 61 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ LabelGetTextDimensions(arg1)
 
 ## Description
 
-Observed as a window function across 21 addons.
+Observed as a window function across 22 addons.
 
 ## Parameters
 
@@ -93,6 +93,7 @@ Observed as a window function across 21 addons.
 - LibAddonButton
 - MapMonster
 - MapPin
+- MoraleSet
 - Moth
 - NaturalLog
 - RoR_SoR
@@ -111,8 +112,8 @@ Observed as a window function across 21 addons.
 - DammazKron: SetData -> LabelGetTextDimensions(windowName.."Name")
 - DammazKron: SetData -> LabelGetTextDimensions(windowName.."Career")
 - DammazKron: SetData -> LabelGetTextDimensions(windowName.."Level")
-- DammazKron: SetData -> LabelGetTextDimensions(windowName.."DeathblowValue")
 - DammazKron: SetData -> LabelGetTextDimensions(windowName.."DeathblowTitle")
+- DammazKron: SetData -> LabelGetTextDimensions(windowName.."DeathblowValue")
 
 ## Used With
 

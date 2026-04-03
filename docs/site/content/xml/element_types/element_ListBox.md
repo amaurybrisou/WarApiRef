@@ -113,6 +113,10 @@ ListBox is a container-style XML element for row-based UI lists. It commonly wor
 
 **OnLButtonUp** handlers call: `ButtonSetPressedFlag`, `Cursor.Clear`, `Cursor.IconOnCursor`, `ListBoxGetDataIndex`, `WindowGetId`
 
+**OnMouseOver** handlers call: `WindowSetShowing`
+
+**OnMouseOverEnd** handlers call: `WindowSetShowing`
+
 **OnRButtonUp** handlers call: `ListBoxGetDataIndex`, `WindowGetId`
 
 **OnUpdate** handlers call: `ListBoxSetVisibleRowCount`
@@ -148,9 +152,9 @@ ListBox is a container-style XML element for row-based UI lists. It commonly wor
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `rowdef` | **required** | 94% | AggroMeterGrayTemplateListboxRow, AuraSharesRow, AuraIconRow, AuraWindowRow, ... |
+| `rowdef` | **required** | 94% | AggroMeterGrayTemplateListboxRow, AuraWindowRow, AuraSharesRow, AuraIconRow, ... |
 | `rowspacing` | **required** | 94% | 0, 1, 6, 5, ... |
-| `visiblerows` | **required** | 94% | 13, 5, 4, 7, ... |
+| `visiblerows` | **required** | 94% | 13, 7, 5, 4, ... |
 | `scrollbar` | **required** | 82% | EA_ScrollBar_DefaultVerticalChain, DPSMeterVerticalScrollbar, ScenarioSummaryVertScroll, UngroupedPlayerVertScroll, ... |
 | `rowcount` | optional | 46% | 120, 150, 250, 100, ... |
 | `layer` | optional | 7% | secondary, popup |
@@ -172,8 +176,8 @@ Observed 110 times as an unnamed child.
 
 | Attribute | Required | Sample Values |
 | --- | --- | --- |
-| `table` | **required** | AggroMeter.Listdata, AuraShares.listDisplayData, AuraTexture.listIconDisplayData, AuraSettings.listDisplayData |
-| `populationfunction` | **required** | AuraShares.PopulateDisplay, AuraTexture.PopulateIconsListDisplay, AuraSettings.PopulateDisplay, BlackBookWindow.Populate |
+| `table` | **required** | AggroMeter.Listdata, AuraSettings.listDisplayData, AuraShares.listDisplayData, AuraTexture.listIconDisplayData |
+| `populationfunction` | **required** | AuraSettings.PopulateDisplay, AuraShares.PopulateDisplay, AuraTexture.PopulateIconsListDisplay, BlackBookWindow.Populate |
 ### [Size](element_Size.md)
 
 Observed 76 times as an unnamed child.
@@ -1041,6 +1045,7 @@ API functions commonly called from event handler Lua functions on this element t
 | `ButtonSetPressedFlag` | ui | 6 | OnLButtonUp |
 | `ListBoxGetDataIndex` | ui | 6 | OnLButtonUp, OnRButtonUp |
 | `ListBoxSetVisibleRowCount` | ui | 2 | OnUpdate |
+| `WindowSetShowing` | ui | 2 | OnMouseOver, OnMouseOverEnd |
 | `Cursor.Clear` | ui | 1 | OnLButtonUp |
 | `Cursor.IconOnCursor` | data | 1 | OnLButtonUp |
 ## Handler Callback Signatures
@@ -1058,11 +1063,11 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ### OnMouseOver
 
-Confidence: LOW
+Confidence: HIGH
 
 ### OnMouseOverEnd
 
-Confidence: LOW
+Confidence: HIGH
 
 ### OnRButtonUp
 
@@ -1082,21 +1087,24 @@ Confidence: MEDIUM
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
+- UiModVersionMismatchWindow.UpdateModRowByIndex
 - RealmStatus.Loading
-- mml.OnItemMouseOver
+- SocialWindowBuddyList.RefreshFilterMenu
 - ClosetGoblinCharacterWindow.UpdateHighlightOnRow
+- ClosetGoblinZoneWindow.UpdateHighlightOnRow
+- DAoCBuffSettings.CreateOptionswindow
 - DAoCBuffSettings.SetLabels
 - DAoCBuffSettings.Change_Setting
-- DAoCBuffSettings.CreateOptionswindow
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- SocialWindowTabFriends.RefreshFilterMenu
 - TTitan.UI.DisplayRow
-- ClosetGoblinZoneWindow.UpdateHighlightOnRow
+- mml.OnItemMouseOver
 
 
 ## Binding Resolution
 
 - Total handler declarations: 18
-- Resolved to Lua functions: 14 (77%)
+- Resolved to Lua functions: 18 (100%)
 
 ## Seen In
 

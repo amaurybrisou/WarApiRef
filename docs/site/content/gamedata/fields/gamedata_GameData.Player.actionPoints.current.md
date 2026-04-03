@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -28,8 +28,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionPointWatch, Aura, Effigy, Enemy, HealGrid, Pure, RVMOD_PlayerStatus, Squared |
-| Files seen in | ActionPointWatch.lua, Bars/HealGridActionPointBar.lua, Code/Core/Groups/EnemyPlayer.lua, RVMOD_PlayerStatus.lua, Source/AuraEngine.lua, Source/PureGroup.lua, Source/PurePlayer.lua, SquaredGroup.lua |
+| Addons seen in | ActionPointWatch, ActionPoints, Aura, Effigy, Enemy, HealGrid, Pure, RVMOD_PlayerStatus |
+| Files seen in | ActionPointWatch.lua, ActionPoints.lua, Bars/HealGridActionPointBar.lua, Code/Core/Groups/EnemyPlayer.lua, RVMOD_PlayerStatus.lua, Source/AuraEngine.lua, Source/PureGroup.lua, Source/PurePlayer.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | ActionPointsPercent, HandleTriggerType_ActionPoints, LoadFromCurrentPlayer, OnLoad, OnPlayerActionPointsUpdated, UpdateAP |
@@ -59,11 +59,12 @@
 
 ## Description
 
-GameData.GameData.Player.actionPoints.current field accessed by 9 addons; commonly found in ActionPointsPercent and HandleTriggerType_ActionPoints, LoadFromCurrentPlayer, OnLoad, OnPlayerActionPointsUpdated, UpdateAP, UpdateCurrentActionPoints, UpdateGroup, UpdatePlayerAP, lua_call contexts.
+GameData.GameData.Player.actionPoints.current field accessed by 10 addons; commonly found in ActionPointsPercent and HandleTriggerType_ActionPoints, LoadFromCurrentPlayer, OnLoad, OnPlayerActionPointsUpdated, UpdateAP, UpdateCurrentActionPoints, UpdateGroup, UpdatePlayerAP, lua_call contexts.
 
 ## Seen In
 
 - ActionPointWatch
+- ActionPoints
 - Aura
 - Effigy
 - Enemy

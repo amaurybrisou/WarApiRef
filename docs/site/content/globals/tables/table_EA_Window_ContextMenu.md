@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, AdjustTheTip, AggroMeter, AutoBand, BuffHead, CM_ClosetGoblin, CastSequence, Crusher |
+| Addons seen in | ActionFraction, AdjustTheTip, AggroMeter, AutoBand, BuffHead, CM_ClosetGoblin, CMap, CastSequence |
 | Files seen in | Code/CombatLog/CombatLogEpsWindow.lua, Code/CombatLog/CombatLogStatsWindow.lua, Code/CombatLog/CombatLogTargetDefenseWindow.lua, Code/Core/Main.lua, Code/Marks/Marks.lua, Code/ScenarioInfo/ScenarioInfo.lua, Manager/Advanced.lua, Manager/Manager.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
 | Example locations | ActionFraction: AutoHideOnMouseOver, ActionFraction: RightClick, ActionFraction: SetFontSelectionMenu, ActionFraction: SetPresetLocation, AdjustTheTip: ContextMenu_Finalize, AdjustTheTip: CreateContextMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 685 |
-| Global usage count | 11 |
+| Lua usage count | 750 |
+| Global usage count | 12 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 11 member functions; the primary API surface for 54 addons.
+Shared function table with 12 member functions; the primary API surface for 62 addons.
 
 ## Functions
 
@@ -67,6 +67,7 @@ Shared function table with 11 member functions; the primary API surface for 54 a
 - EA_Window_ContextMenu.AddUserDefinedMenuItem
 - EA_Window_ContextMenu.CreateContextMenu
 - EA_Window_ContextMenu.CreateDefaultContextMenu
+- EA_Window_ContextMenu.CreateOpacityOnlyContextMenu
 - EA_Window_ContextMenu.Finalize
 - EA_Window_ContextMenu.GameActionData
 - EA_Window_ContextMenu.Hide
@@ -85,16 +86,20 @@ Shared function table with 11 member functions; the primary API surface for 54 a
 - AutoBand
 - BuffHead
 - CM_ClosetGoblin
+- CMap
 - CastSequence
 - Crusher
 - Dascore
 - DuelInvite
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
+- EZCraft
 - EZCraftX
 - Effigy
 - Enemy
+- FozAuction
 - HealGrid
 - Killer
 - LibAddonButton
@@ -119,17 +124,21 @@ Shared function table with 11 member functions; the primary API surface for 54 a
 - SOR
 - Shinies
 - ShowMeTheBubbles
+- SocialWindow 2.0
 - TacticSetNames
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyChat
 - TidyQueue
+- Tortall_DPS
 - TurretRange
 - Vectors
 - WARCommander
 - WarBoard
 - WarBoard_Loc
 - WarBoard_Menu
+- WarBoard_WarWhisperer
 - XpStatus+G
 - nLootLink
 - scenarioInfo

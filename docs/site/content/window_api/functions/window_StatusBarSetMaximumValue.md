@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 37 addons
+- Seen in: 39 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, BlackBox, CleanUnitFrames, Crusher, EZCraftX |
+| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, BlackBox, CMap, CleanUnitFrames, Crusher |
 | Files seen in | AdjustTheTip.lua, BlackBox.lua, CleanGroupMemberUnitFrame.lua, CleanTargetUnitFrame.lua, FlagCap.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua |
 | Namespaces detected | StatusBarSetMaximumValue |
 | Source kinds | lua_calls |
-| Example locations | Ace: New, ActionBarHide: New, AdjustTheTip: AddTargetHealthToMouseOver, Amethyst: New, BlackBox: OnApplicationTwoButtonDialogHook, CleanUnitFrames: Create |
+| Example locations | Ace: New, ActionBarHide: New, AdjustTheTip: AddTargetHealthToMouseOver, Amethyst: New, BlackBox: OnApplicationTwoButtonDialogHook, CMap: New |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 46 |
-| Global usage count | 46 |
+| Lua usage count | 48 |
+| Global usage count | 48 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ StatusBarSetMaximumValue(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 37 addons.
+Observed as a window function across 39 addons.
 
 ## Parameters
 
@@ -89,6 +89,7 @@ Observed as a window function across 37 addons.
 - AdjustTheTip
 - Amethyst
 - BlackBox
+- CMap
 - CleanUnitFrames
 - Crusher
 - EZCraftX
@@ -114,6 +115,7 @@ Observed as a window function across 37 addons.
 - Targets
 - TidyRoll
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -129,7 +131,7 @@ Observed as a window function across 37 addons.
 - AdjustTheTip: AddTargetHealthToMouseOver -> StatusBarSetMaximumValue(c_HEALTH_BAR_CONTAINER.."HealthPercentBarBar", 100)
 - Amethyst: New -> StatusBarSetMaximumValue(w.name, 1)
 - BlackBox: OnApplicationTwoButtonDialogHook -> StatusBarSetMaximumValue("RespawnTimerWindowBar", respawnTimeLeft)
-- CleanUnitFrames: Create -> StatusBarSetMaximumValue(newUnitFrame:GetName().."StatusContainerHealthPercentBar", 100)
+- CMap: New -> StatusBarSetMaximumValue(w.name, 1)
 
 ## Related APIs
 
@@ -142,10 +144,6 @@ Observed as a window function across 37 addons.
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
-
-## Affects
-
-- [GameData.BuffTargetType.GROUP_MEMBER_START](../../gamedata/fields/gamedata_GameData.BuffTargetType.GROUP_MEMBER_START.md) (HIGH 100/100) - GameData Field
 
 ## Notes
 

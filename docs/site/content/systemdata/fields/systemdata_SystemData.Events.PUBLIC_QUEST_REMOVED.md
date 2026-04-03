@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | RoR_SoR, xHUD |
-| Files seen in | RoR_SoR.lua, xHUD.lua |
+| Addons seen in | CMap, RoR_SoR, xHUD |
+| Files seen in | CMap.lua, RoR_SoR.lua, xHUD.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Initialize, OnShutdown, RegisterSelfEvents, lua_call |
@@ -60,15 +60,17 @@
 
 ## Description
 
-SystemData.SystemData.Events.PUBLIC_QUEST_REMOVED field accessed by 2 addons; commonly found in Initialize and OnShutdown, RegisterSelfEvents, lua_call contexts.
+SystemData.SystemData.Events.PUBLIC_QUEST_REMOVED field accessed by 3 addons; commonly found in Initialize and OnShutdown, RegisterSelfEvents, lua_call contexts.
 
 ## Seen In
 
+- CMap
 - RoR_SoR
 - xHUD
 
 ## Related APIs
 
+- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 
 ## Notes

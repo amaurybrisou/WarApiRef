@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 18 addons
+- Seen in: 21 addons
 
 ## Confidence Assessment
 
@@ -36,8 +36,8 @@
 | Example locations | ChatHandler, CommunicationInitialize, Init, Init_Warden, Initialize, OnChat |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 13 |
+| Global usage count | 13 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.CHAT_TEXT_ARRIVED field accessed by 18 addons; commonly found in ChatHandler and CommunicationInitialize, Init, Init_Warden, Initialize, OnChat, OnInitialize, OnShutdown, Shutdown, initEvents, lua_call contexts.
+SystemData.SystemData.Events.CHAT_TEXT_ARRIVED field accessed by 21 addons; commonly found in ChatHandler and CommunicationInitialize, Init, Init_Warden, Initialize, OnChat, OnInitialize, OnShutdown, RegisterEvents, Shutdown, UnregisterEvents, initEvents, lua_call contexts.
 
 ## Seen In
 
@@ -74,12 +74,15 @@ SystemData.SystemData.Events.CHAT_TEXT_ARRIVED field accessed by 18 addons; comm
 - Info_Loot
 - MegaphonePlus
 - MegaphonePlusPlus
+- NoUselessMods-Assist
 - Queue Queuer
 - QuickWarReport
 - ResHelp
 - SOR
 - ShowMeTheBubbles
+- TaxPayer
 - WARCommander
+- WarBoard_WarWhisperer
 - nLootLink
 - whatsPugSc
 

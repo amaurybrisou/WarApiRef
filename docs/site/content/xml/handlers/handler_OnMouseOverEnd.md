@@ -23,13 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Atlas, BuffHead, CM_ClosetGoblin, CastSequence, CleanUnitFrames, DAoCBuff, Enemy, GroupSpotter |
+| Addons seen in | Atlas, BuffHead, CM_ClosetGoblin, CMap, CastSequence, CleanUnitFrames, DAoCBuff, EA_OpenPartyWindow |
 | Namespaces detected | OnMouseOverEnd |
 | Source kinds | bindings, xml_handlers |
-| Example locations | Atlas: .OnMouseOverEnd, BuffHead: .OnMouseOverEnd, CM_ClosetGoblin: .OnMouseOverEnd, CastSequence: .OnMouseOverEnd, CleanUnitFrames: .OnMouseOverEnd, DAoCBuff: .OnMouseOverEnd |
+| Example locations | Atlas: .OnMouseOverEnd, BuffHead: .OnMouseOverEnd, CM_ClosetGoblin: .OnMouseOverEnd, CMap: .OnMouseOverEnd, CastSequence: .OnMouseOverEnd, CleanUnitFrames: .OnMouseOverEnd |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 126 |
+| Lua usage count | 134 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 38 addons.
+XML handler event observed across 41 addons.
 
 ## Expected Lua Binding
 
@@ -70,9 +70,11 @@ function(...)
 - Atlas
 - BuffHead
 - CM_ClosetGoblin
+- CMap
 - CastSequence
 - CleanUnitFrames
 - DAoCBuff
+- EA_OpenPartyWindow
 - Enemy
 - GroupSpotter
 - HealGrid
@@ -96,6 +98,7 @@ function(...)
 - SOR
 - SessionRPs
 - Shinies
+- SocialWindow 2.0
 - Squared
 - TalismanGenie
 - TexturedButtons

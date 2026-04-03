@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 35 addons
+- Seen in: 38 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Aura, AutoBand, Busted, Crusher, EA_UiDebugTools, EZCraftX, EZGuard |
+| Addons seen in | Ace, Aura, AutoBand, Busted, CMap, Crusher, EA_UiDebugTools, EZCraftX |
 | Files seen in | AutoBand.lua, Busted.lua, Code/Core/Main.lua, Code/Intercom/Intercom.lua, LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, MassRefine.lua |
 | Namespaces detected | WindowAssignFocus |
 | Source kinds | lua_calls |
 | Example locations | Ace: Defocus, Ace: Focus, Aura: OnExportAura, Aura: OnImportAura, AutoBand: ShowCopyLink, Busted: UpdateErrorView |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 90 |
-| Global usage count | 90 |
+| Lua usage count | 108 |
+| Global usage count | 108 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ WindowAssignFocus(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 35 addons.
+Observed as a window function across 38 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "BustedGUIErrorMessage", "DebugWindowTextBox", "EnemyChooseChannelDialog" |
+| arg1 | Observed as a function or method reference. | Observed values: "BustedGUIErrorMessage", "DebugWindowTextBox", "EA_TextEntryGroupEntryBoxTextInput" |
 | arg2 | Observed as a boolean toggle. | Observed values: false, true |
 
 ## Returns
@@ -88,6 +88,7 @@ Observed as a window function across 35 addons.
 - Aura
 - AutoBand
 - Busted
+- CMap
 - Crusher
 - EA_UiDebugTools
 - EZCraftX
@@ -108,11 +109,13 @@ Observed as a window function across 35 addons.
 - Pure Careerbar
 - RealmStatus
 - Shinies
+- SocialWindow 2.0
 - Squared
 - TargetRing
 - TidyChat
 - Tokens
 - Twister
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -131,6 +134,7 @@ Observed as a window function across 35 addons.
 
 ## Related APIs
 
+- [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
 - [OnKeyEscape](../../xml/handlers/handler_OnKeyEscape.md) (HIGH 88/100) - XML Event
 - [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
 
@@ -138,6 +142,7 @@ Observed as a window function across 35 addons.
 
 - [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
+- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 
 ## Notes

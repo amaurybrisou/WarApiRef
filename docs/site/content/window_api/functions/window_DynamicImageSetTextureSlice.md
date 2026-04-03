@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 44 addons
+- Seen in: 48 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Amethyst, Aura, Crusher, EZCraftX, EZGuard, Effigy, FlagCap |
-| Files seen in | FlagCap.lua, InfoScroller.lua, LibGUI.lua, LibWBToggler.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, MGRemix.lua, MiniMapMonster.lua |
+| Addons seen in | Ace, Amethyst, Aura, CMap, Crusher, EA_LoadingScreen, EA_ThreePartBar, EZCraftX |
+| Files seen in | CMap.lua, FlagCap.lua, InfoScroller.lua, LibGUI.lua, LibWBToggler.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, MGRemix.lua |
 | Namespaces detected | DynamicImageSetTextureSlice |
 | Source kinds | lua_calls |
-| Example locations | Ace: TexSlice, Amethyst: TexSlice, Aura: SetDynamicImageTexture, Crusher: TexSlice, EZCraftX: TexSlice, EZGuard: TexSlice |
+| Example locations | Ace: TexSlice, Amethyst: TexSlice, Aura: SetDynamicImageTexture, CMap: PopulateFilterCell, CMap: TexSlice, Crusher: TexSlice |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 118 |
-| Global usage count | 118 |
+| Lua usage count | 126 |
+| Global usage count | 126 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -87,7 +87,10 @@ Observed mutating runtime image resources on existing controls.
 - Ace
 - Amethyst
 - Aura
+- CMap
 - Crusher
+- EA_LoadingScreen
+- EA_ThreePartBar
 - EZCraftX
 - EZGuard
 - Effigy
@@ -120,6 +123,7 @@ Observed mutating runtime image resources on existing controls.
 - Trakario
 - WarBoard_Menu
 - WarBoard_TogglerWARCommander
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -134,9 +138,9 @@ Observed mutating runtime image resources on existing controls.
 - Ace: TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
 - Amethyst: TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
 - Aura: SetDynamicImageTexture -> DynamicImageSetTextureSlice(window, slice)
+- CMap: PopulateFilterCell -> DynamicImageSetTextureSlice(iconFrame, filterData.slice)
+- CMap: TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
 - Crusher: TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
-- EZCraftX: TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
-- EZGuard: TexSlice -> DynamicImageSetTextureSlice(self.name, slice)
 
 ## Related APIs
 
@@ -147,6 +151,7 @@ Observed mutating runtime image resources on existing controls.
 
 - [DynamicImageSetRotation](window_DynamicImageSetRotation.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureOrientation](window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 
 ## Notes

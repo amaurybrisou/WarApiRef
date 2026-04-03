@@ -19,11 +19,11 @@
 - Evidence:
 
 - RegisterEventHandler: AbilityAlert: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, "AbilityAlert.CombatEvent")
+  - RegisterEventHandler: AbilityNotifier: RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, "AbHelp.CombatEvent")
+  - RegisterEventHandler: AbilityNotifier: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, "AbHelp.CombatUpdated")
   - RegisterEventHandler: ActionBarHide: RegisterEventHandler(SystemData.Events.LOADING_END, "ActionBarHide.OnLoad")
   - RegisterEventHandler: ActionBarHide: RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, "ActionBarHide.OnLoad")
   - RegisterEventHandler: ActionBarHide: RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, "ActionBarHide.Combat")
-  - RegisterEventHandler: ActionFraction: RegisterEventHandler(SystemData.Events.LOADING_END, "ActionFractionWindow.UpdateVisibility")
-  - RegisterEventHandler: ActionFraction: RegisterEventHandler(SystemData.Events.ENTER_WORLD, "ActionFraction.Initialize")
   - UnregisterEventHandler: Ace: UnregisterEventHandler(SystemData.Events.UPDATE_PROCESSED, "AceAddon_OnUpdate_DONOTTOUCH")
   - UnregisterEventHandler: ActionFraction: UnregisterEventHandler(SystemData.Events.ENTER_WORLD, "ActionFraction.Initialize")
 
@@ -36,11 +36,11 @@
 - Evidence:
 
 - Window creation: AbilityAlert: CreateWindow("AAWindow", true)
+  - Window creation: AbilityNotifier: CreateWindow("AbHelpWindow", true)
   - Window creation: ActionFraction: CreateWindow(windowName, true)
+  - Window creation: ActionPoints: CreateWindow("ActionPointsWindow", true)
   - Window creation: AdvancedPetAssist: CreateWindow("APAOptions", true)
   - Window creation: AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
-  - Window creation: AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
-  - Window creation: AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
   - Template instantiation: Ace: CreateWindowFromTemplate(w.name, base, w.parent)
   - Template instantiation: Ace: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)
 

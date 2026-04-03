@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Minmap, ZCurse_Profiler |
-| Files seen in | CurseProfilerCompiled.lua, core.lua |
+| Addons seen in | CMap, Minmap, ZCurse_Profiler |
+| Files seen in | CMap.lua, CurseProfilerCompiled.lua, core.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Initialize, lua_call |
@@ -60,12 +60,17 @@
 
 ## Description
 
-SystemData.SystemData.Events.TOGGLE_WORLD_MAP_WINDOW field accessed by 2 addons; commonly found in Initialize and lua_call contexts.
+SystemData.SystemData.Events.TOGGLE_WORLD_MAP_WINDOW field accessed by 3 addons; commonly found in Initialize and lua_call contexts.
 
 ## Seen In
 
+- CMap
 - Minmap
 - ZCurse_Profiler
+
+## Related APIs
+
+- [ButtonSetStayDownFlag](../../window_api/functions/window_ButtonSetStayDownFlag.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 88 addons
+- Seen in: 98 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, ActionBarHide, AdvancedPetAssist, Amethyst, BankArkel, Brizio's Crappy Computer Medic, BuffHead, Busted |
-| Files seen in | APAGui.lua, BankArkel.lua, Busted.lua, CCM.lua, CCTV.lua, CDownSettings.lua, ChattyCathy.lua, Code/Assist/Assist.lua |
+| Files seen in | AAOTracker.lua, APAGui.lua, BankArkel.lua, Busted.lua, CCM.lua, CCTV.lua, CDownSettings.lua, ChattyCathy.lua |
 | Namespaces detected | ComboBoxSetSelectedMenuItem |
 | Source kinds | lua_calls |
 | Example locations | Ace: SelectIndex, ActionBarHide: SelectIndex, AdvancedPetAssist: FillCombo, Amethyst: SelectIndex, BankArkel: PackClose, BankArkel: SetupCombos |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 530 |
-| Global usage count | 530 |
+| Lua usage count | 569 |
+| Global usage count | 569 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxSetSelectedMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 88 addons.
+Observed as a window function across 98 addons.
 
 ## Parameters
 
@@ -94,6 +94,7 @@ Observed as a window function across 88 addons.
 - Busted
 - CCTV
 - CDown
+- CMap
 - CaVES
 - CastSequence
 - ChattyCathy
@@ -107,12 +108,15 @@ Observed as a window function across 88 addons.
 - DetauntHelper
 - DuffTimer
 - Dye Preview
+- EA_OpenPartyWindow
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
 - Enemy
 - EveryBodyGuard
+- FozAuction
 - GCDsaver
 - GroupRange
 - GuildWarden
@@ -130,6 +134,7 @@ Observed as a window function across 88 addons.
 - MarkBuff
 - MegaphonePlusPlus
 - Miracle Grow Remix
+- MoraleSet
 - Motion
 - NaturalLog
 - NerfedButtons
@@ -146,10 +151,12 @@ Observed as a window function across 88 addons.
 - ScenarioStats
 - Sequencer
 - Shinies
+- SocialWindow 2.0
 - Statdoll Remix
 - TalismanGenie
 - TargetRing
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThinkOutLoud
 - TidyChat
@@ -159,7 +166,10 @@ Observed as a window function across 88 addons.
 - TurretRange
 - Vectors
 - WARCommander
+- WBStutterLess
+- WarBoard_AAOTracker
 - WarBoard_FPS
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar

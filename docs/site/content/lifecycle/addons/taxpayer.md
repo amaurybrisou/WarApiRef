@@ -17,7 +17,7 @@
 
 | Kind | Name | Resolution | Confidence | Matched |
 | --- | --- | --- | --- | --- |
-| CallFunction | TaxPayer.Initialise | ambiguous | MEDIUM | CaptainHook.Initialise, TalismanGenie.Initialise |
+| CallFunction | TaxPayer.Initialise | ambiguous | MEDIUM | CaptainHook.Initialise, ObjectInspector.Initialise, PieTracker.Initialise, TalismanGenie.Initialise, TaxPayer.Initialise, WTes.Initialise, AAOTWarBoard.Initialise, AAOTracker.Initialise |
 ## Unknown / Custom Hook Actions
 
 | Kind | Name | Resolution | Confidence | Matched |

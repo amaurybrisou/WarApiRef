@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 14 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, Atlas, BuddyBind, CaVES, Calling, HealGrid, ManualScenarioRefresh, Map |
+| Addons seen in | ActionFraction, Atlas, BuddyBind, CaVES, Calling, FozAuction, HealGrid, ManualScenarioRefresh |
 | Files seen in | BuddyBind.lua, CallingKeybinding.lua, ManualScenarioRefresh.lua, Map.lua, Map/Main.lua, MiracleGrow.lua, Modules/UI/Shinies-UI-Browse.lua, PhantomLib/PhantomLib.lua |
 | Namespaces detected | WindowUnregisterEventHandler |
 | Source kinds | lua_calls |
 | Example locations | ActionFraction: Shutdown, Atlas: Shutdown, BuddyBind: OnExitBindingMode, BuddyBind: OnRawDeviceInput, CaVES: Shutdown, Calling: OnRawDeviceInput |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 37 |
-| Global usage count | 37 |
+| Lua usage count | 44 |
+| Global usage count | 44 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ WindowUnregisterEventHandler(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 14 addons.
+Observed as a window function across 17 addons.
 
 ## Parameters
 
@@ -89,15 +89,18 @@ Observed as a window function across 14 addons.
 - BuddyBind
 - CaVES
 - Calling
+- FozAuction
 - HealGrid
 - ManualScenarioRefresh
 - Map
 - MiracleGrow
+- MoraleSet
 - Phantom
 - RVMOD_PlayerStatus
 - RVMOD_Targets
 - ResHelp
 - Shinies
+- WarBoard_WarWhisperer
 
 ## Examples
 
@@ -112,6 +115,11 @@ Observed as a window function across 14 addons.
 
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+
+## Used With
+
+- [ComboBoxExternalOpenMenu](window_ComboBoxExternalOpenMenu.md) (HIGH 100/100) - Window Function
+- [SystemData.Events.L_BUTTON_UP_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Affects
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 37 addons
+- Seen in: 40 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdjustTheTip, Amethyst, Atlas, AuctionStats, AutoMark, BuffHead, Calling, CastSequence |
-| Files seen in | AdjustTheTip.lua, Amethyst.lua, AuctionStats.lua, Button.lua, CallingTargetMarker.lua, ChattyCathy.lua, Code/Core/ObjectWindows.lua, Container.lua |
+| Addons seen in | AdjustTheTip, Amethyst, Atlas, AuctionStats, AutoMark, BuffHead, CMap, Calling |
+| Files seen in | AdjustTheTip.lua, Amethyst.lua, AuctionStats.lua, Button.lua, CMap.lua, CallingTargetMarker.lua, ChattyCathy.lua, Code/Core/ObjectWindows.lua |
 | Namespaces detected | WindowGetScreenPosition |
 | Source kinds | lua_calls |
 | Example locations | AdjustTheTip: UpdateCallback, Amethyst: SavePosition, Atlas: ShowCoordinatesOnMouseOver, AuctionStats: AddExtraWindow, AutoMark: OnUpdate, BuffHead: GetRelativeScreenPosition |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 111 |
-| Global usage count | 111 |
+| Lua usage count | 116 |
+| Global usage count | 116 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -89,6 +89,7 @@ Observed querying runtime window state or metadata.
 - AuctionStats
 - AutoMark
 - BuffHead
+- CMap
 - Calling
 - CastSequence
 - ChattyCathy
@@ -106,11 +107,13 @@ Observed querying runtime window state or metadata.
 - MiracleGrowLight
 - Obsidian
 - Pocket Palette
+- Preciousss
 - RVAPI_ColorDialog
 - ResHelp
 - RvRContribution
 - SNT_PANEL
 - Shinies
+- SimpleXY
 - TastyButtons
 - TexturedButtons
 - Tokens
@@ -139,11 +142,7 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
 - [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [SystemData.MousePosition.x](../../systemdata/fields/systemdata_SystemData.MousePosition.x.md) (HIGH 100/100) - SystemData Field
-- [SystemData.MousePosition.y](../../systemdata/fields/systemdata_SystemData.MousePosition.y.md) (HIGH 100/100) - SystemData Field
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 96/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, Squared |
-| Files seen in | Code/Core/Groups/EnemyPlayer.lua, SquaredWarband.lua |
+| Addons seen in | EA_OpenPartyWindow, Enemy, Squared |
+| Files seen in | Code/Core/Groups/EnemyPlayer.lua, SquaredWarband.lua, source/openpartywindowtabmanage.lua |
 | Namespaces detected | PartyUtils |
 | Source kinds | lua_calls |
-| Example locations | Enemy: IsMainAssist, Squared: ShowMenu |
+| Example locations | EA_OpenPartyWindow: ShowWarbandMemberMenu, Enemy: IsMainAssist, Squared: ShowMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -63,7 +63,7 @@ PartyUtils.GetWarbandMainAssist()
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 3 addons.
 
 ## Parameters
 
@@ -80,13 +80,19 @@ Observed as a global function across 2 addons.
 
 ## Seen In
 
+- EA_OpenPartyWindow
 - Enemy
 - Squared
 
 ## Examples
 
+- EA_OpenPartyWindow: ShowWarbandMemberMenu -> PartyUtils.GetWarbandMainAssist()
 - Enemy: IsMainAssist -> PartyUtils.GetWarbandMainAssist()
 - Squared: ShowMenu -> PartyUtils.GetWarbandMainAssist()
+
+## Affects
+
+- [GameData.Player.name](../../gamedata/fields/gamedata_GameData.Player.name.md) (HIGH 100/100) - GameData Field
 
 ## Notes
 

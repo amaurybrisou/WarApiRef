@@ -186,7 +186,6 @@ Observed as a window function across 89 addons.
 
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [EA_LabelCheckButton.Toggle](../../globals/functions/global_EA_LabelCheckButton.Toggle.md) (HIGH 100/100) - Global Function
-- [StatusBarGetCurrentValue](window_StatusBarGetCurrentValue.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.Hide](window_LayoutEditor.Hide.md) (HIGH 90/100) - Window Function
 - [LayoutEditor.Show](window_LayoutEditor.Show.md) (HIGH 90/100) - Window Function
 

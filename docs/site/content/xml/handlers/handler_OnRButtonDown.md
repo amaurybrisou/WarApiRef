@@ -29,7 +29,7 @@
 | Example locations | BuffHead: .OnRButtonDown, Calling: .OnRButtonDown, Enemy: .OnRButtonDown, HealGrid: .OnRButtonDown, LibAddonButton: .OnRButtonDown, MarkBuff: .OnRButtonDown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 30 |
+| Lua usage count | 33 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 13 addons.
+XML handler event observed across 14 addons.
 
 ## Expected Lua Binding
 
@@ -80,6 +80,7 @@ function(...)
 - Targets
 - TexturedButtons
 - TurretRange
+- bigger_MacroWindow
 
 ## Examples
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 73 addons
+- Seen in: 79 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Ace: Clear, ActionBarHide: Clear, AdvancedPetAssist: FillCombo, AdvancedRenownTrainer: DeletePreset, AdvancedRenownTrainer: GeneratePresetByLinkData, AdvancedRenownTrainer: SaveCurrentSpecAsPreset |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 321 |
-| Global usage count | 321 |
+| Lua usage count | 331 |
+| Global usage count | 331 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxClearMenuItems(arg1)
 
 ## Description
 
-Observed as a window function across 73 addons.
+Observed as a window function across 79 addons.
 
 ## Parameters
 
@@ -92,6 +92,7 @@ Observed as a window function across 73 addons.
 - BuffHead
 - CCTV
 - CDown
+- CMap
 - Calling
 - CastSequence
 - ChattyCathy
@@ -101,12 +102,15 @@ Observed as a window function across 73 addons.
 - DPSMeter
 - DaemonAssist
 - DetauntHelper
+- EA_OpenPartyWindow
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
 - Enemy
 - EveryBodyGuard
+- FozAuction
 - GCDsaver
 - GroupRange
 - HealGrid
@@ -135,6 +139,7 @@ Observed as a window function across 73 addons.
 - SOR
 - ScenarioStats
 - Shinies
+- SocialWindow 2.0
 - Statdoll Remix
 - TalismanGenie
 - TargetRing
@@ -146,6 +151,7 @@ Observed as a window function across 73 addons.
 - TurretRange
 - Vectors
 - WARCommander
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar
@@ -173,7 +179,6 @@ Observed as a window function across 73 addons.
 
 ## Used With
 
-- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBoxAddMenuItem](window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [LibSlash.RegisterSlashCmd](../../globals/functions/global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function

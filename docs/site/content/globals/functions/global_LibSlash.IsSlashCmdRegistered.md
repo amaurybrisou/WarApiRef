@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 27 addons
+- Seen in: 29 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AbilityAlert, ActionFraction, ActionPointWatch, AutoBand, BagOMatic, ChatAlert, DPSMeter, EZCraftX |
-| Files seen in | AbilityAlert.lua, ActionPointWatch.lua, AutoBand.lua, BagOMatic.lua, ChatAlert.lua, Core.lua, DPSMeter.lua, EffigySlashCommands.lua |
+| Addons seen in | AbilityAlert, ActionFraction, ActionPointWatch, AutoBand, BagOMatic, CMap, ChatAlert, DPSMeter |
+| Files seen in | AbilityAlert.lua, ActionPointWatch.lua, AutoBand.lua, BagOMatic.lua, CMap.lua, ChatAlert.lua, Core.lua, DPSMeter.lua |
 | Namespaces detected | LibSlash |
 | Source kinds | lua_calls |
-| Example locations | AbilityAlert: Initialize, ActionFraction: Initialize, ActionPointWatch: Initialize, AutoBand: init, BagOMatic: init, ChatAlert: Initialize |
+| Example locations | AbilityAlert: Initialize, ActionFraction: Initialize, ActionPointWatch: Initialize, AutoBand: init, BagOMatic: init, CMap: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 34 |
-| Global usage count | 34 |
+| Lua usage count | 37 |
+| Global usage count | 37 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -89,6 +89,7 @@ Observed wiring slash commands through a shared command-registration table.
 - ActionPointWatch
 - AutoBand
 - BagOMatic
+- CMap
 - ChatAlert
 - DPSMeter
 - EZCraftX
@@ -107,6 +108,7 @@ Observed wiring slash commands through a shared command-registration table.
 - Squared
 - TokenMachine
 - Tokens
+- WarBoard_WarWhisperer
 - alertMod
 - scnoload
 - wbLeadHelper
@@ -129,22 +131,23 @@ Observed wiring slash commands through a shared command-registration table.
 
 - [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.RegisterWSlashCmd](global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
 - [RegisterEventHandler](global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- [UnregisterEventHandler](global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
 
 ## Affects
 
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.BATTLEGROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.GROUP_LEAVE](../../systemdata/fields/systemdata_SystemData.Events.GROUP_LEAVE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.GROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
 

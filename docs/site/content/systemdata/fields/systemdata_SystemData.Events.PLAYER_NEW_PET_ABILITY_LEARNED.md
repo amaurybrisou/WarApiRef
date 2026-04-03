@@ -64,10 +64,6 @@ SystemData.SystemData.Events.PLAYER_NEW_PET_ABILITY_LEARNED field accessed by 1 
 
 - NerfedButtons
 
-## Related APIs
-
-- [TextEditBoxSetMaxChars](../../window_api/functions/window_TextEditBoxSetMaxChars.md) (HIGH 100/100) - Window Function
-
 ## Notes
 
 - Observed in contexts: Initialize, Shutdown, lua_call

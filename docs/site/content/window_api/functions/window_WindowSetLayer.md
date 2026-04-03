@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 52 addons
+- Seen in: 56 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, BankArkel, BetterCC, BuffHead, CastSequence, CraftingWillard |
-| Files seen in | BankArkel.lua, BetterCC.lua, Castbar.lua, Code/CombatLog/CombatLogStatsWindow.lua, Code/GroupIcons/GroupIcon.lua, Code/Marks/MarkTemplate.lua, Code/ScenarioInfo/ScenarioInfo.lua, Code/UnitFrames/EffectsIndicator.lua |
+| Addons seen in | Ace, ActionBarHide, Amethyst, Asshat, BankArkel, BetterCC, BuffHead, CMap |
+| Files seen in | Asshat.lua, BankArkel.lua, BetterCC.lua, Castbar.lua, Code/CombatLog/CombatLogStatsWindow.lua, Code/GroupIcons/GroupIcon.lua, Code/Marks/MarkTemplate.lua, Code/ScenarioInfo/ScenarioInfo.lua |
 | Namespaces detected | WindowSetLayer |
 | Source kinds | lua_calls |
-| Example locations | Ace: Layer, ActionBarHide: Layer, Amethyst: Layer, BankArkel: Init, BetterCC: UpdatePulse, BuffHead: SetLayer |
+| Example locations | Ace: Layer, ActionBarHide: Layer, Amethyst: Layer, Asshat: Init, BankArkel: Init, BetterCC: UpdatePulse |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 117 |
-| Global usage count | 117 |
+| Lua usage count | 123 |
+| Global usage count | 123 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -87,9 +87,11 @@ Observed mutating runtime window state or presentation.
 - Ace
 - ActionBarHide
 - Amethyst
+- Asshat
 - BankArkel
 - BetterCC
 - BuffHead
+- CMap
 - CastSequence
 - CraftingWillard
 - Crusher
@@ -106,6 +108,7 @@ Observed mutating runtime window state or presentation.
 - LibWBToggler
 - Map
 - Motion
+- MyReasons
 - NaturalLog
 - Obsidian
 - PartyCast
@@ -126,6 +129,7 @@ Observed mutating runtime window state or presentation.
 - TidyRoll
 - Tokens
 - Twister
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -142,23 +146,26 @@ Observed mutating runtime window state or presentation.
 - Ace: Layer -> WindowSetLayer(self.name, layer)
 - ActionBarHide: Layer -> WindowSetLayer(self.name, layer)
 - Amethyst: Layer -> WindowSetLayer(self.name, layer)
+- Asshat: Init -> WindowSetLayer(hostileWindow, 3)
+- Asshat: Init -> WindowSetLayer(friendlyWindow, 3)
 - BankArkel: Init -> WindowSetLayer("BankArkelBackpack", 4)
-- BetterCC: UpdatePulse -> WindowSetLayer(windowName, 0)
-- BetterCC: UpdatePulse -> WindowSetLayer(windowName, 4)
 
 ## Related APIs
 
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Used With
 
-- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetLayer](window_WindowGetLayer.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
+- [GameData.Account.ServerName](../../gamedata/fields/gamedata_GameData.Account.ServerName.md) (HIGH 100/100) - GameData Field
 - [SystemData.Events.INTERACT_OPEN_BANK](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_OPEN_BANK.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.LOG_OUT](../../systemdata/fields/systemdata_SystemData.Events.LOG_OUT.md) (HIGH 100/100) - SystemData Field
 
 ## Notes

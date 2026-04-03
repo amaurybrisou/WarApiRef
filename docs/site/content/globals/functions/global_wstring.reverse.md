@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 88/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | I HATE YOU THIS MUCH, Queue Queuer |
-| Files seen in | IHYTM.lua, QueueQueuer.lua |
+| Addons seen in | I HATE YOU THIS MUCH, Queue Queuer, WarBoard_WarWhisperer |
+| Files seen in | IHYTM.lua, QueueQueuer.lua, warwhisperer.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | I HATE YOU THIS MUCH: FixName, I HATE YOU THIS MUCH: SendSyncMessage, Queue Queuer: FixName |
+| Example locations | I HATE YOU THIS MUCH: FixName, I HATE YOU THIS MUCH: SendSyncMessage, Queue Queuer: FixName, WarBoard_WarWhisperer: FixName |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ wstring.reverse(arg1)
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 3 addons.
 
 ## Parameters
 
@@ -82,12 +82,19 @@ Observed as a global function across 2 addons.
 
 - I HATE YOU THIS MUCH
 - Queue Queuer
+- WarBoard_WarWhisperer
 
 ## Examples
 
 - I HATE YOU THIS MUCH: FixName -> wstring.reverse(name)
 - I HATE YOU THIS MUCH: SendSyncMessage -> wstring.reverse(msg)
 - Queue Queuer: FixName -> wstring.reverse(name)
+- WarBoard_WarWhisperer: FixName -> wstring.reverse(name)
+
+## Used With
+
+- [wstring.find](global_wstring.find.md) (HIGH 75/100) - Global Function
+- [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

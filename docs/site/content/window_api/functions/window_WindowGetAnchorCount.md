@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 11 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AnywhereTrainer, CaVES, Countdown, DammazKron, KillTracker, Pocket Palette, Shinies, Vectors |
-| Files seen in | Core.lua, Core/DK_Core.lua, Modules/Aggregator/Shinies-Aggregator-Tooltip.lua, PocketPalette.lua, Source/KillTracker.lua, Vis.lua, countdown.lua, emotesOBJECT.lua |
+| Addons seen in | AnywhereTrainer, CaVES, Countdown, DammazKron, KillTracker, Pocket Palette, Shinies, SimpleXY |
+| Files seen in | Core.lua, Core/DK_Core.lua, Modules/Aggregator/Shinies-Aggregator-Tooltip.lua, PocketPalette.lua, SimpleXY.lua, Source/KillTracker.lua, Vis.lua, WTes.lua |
 | Namespaces detected | WindowGetAnchorCount |
 | Source kinds | lua_calls |
 | Example locations | AnywhereTrainer: ReadjustWindowAnchors, CaVES: ReadjustWindowAnchors, Countdown: OnInitialize, DammazKron: AnchorHTS, KillTracker: CreateTrackerWindow, Pocket Palette: ToggleWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 15 |
+| Global usage count | 15 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "DammazKronHTS", b, name |
+| windowName | Observed as a target window name. | Observed values: "DammazKronHTS", "EA_Window_WorldMapZoneViewCoordinates", WTes.GlyphPos.TrackerWindow |
 
 ## Returns
 
@@ -90,7 +90,9 @@ Observed querying runtime window state or metadata.
 - KillTracker
 - Pocket Palette
 - Shinies
+- SimpleXY
 - Vectors
+- WTes
 - emotes
 
 ## Examples

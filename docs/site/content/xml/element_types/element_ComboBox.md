@@ -558,8 +558,8 @@ ComboBox is an interactive XML control. It commonly appears under ScrollWindow a
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnSelChanged](../handlers/handler_OnSelChanged.md) | data | APAGui.OnComboChanged, , EA_Window_OpenPartyWorld.UpdateComboBoxDisable, LPET.QuickHealthOnSelChanged, LPET.QuickModeOnSelChanged, LPET.QuickPriorityOnSelChanged, WHMGui.OnOptionsComboChanged, DK_Config.OnUpdateSoundCombo, DetauntBarSettings.OnUpdateCombo, MapPin.ComboBoxUpdate, BustedGUI.SelectAddonView, CDownSettings.GrowHorizontalChanged, CDownSettings.GrowLeftChanged, CDownSettings.GrowUpChanged, CDownSettings.TimerFontChanged, DaemonAssist.OnBindingComboChanged, DuffTimer.Options.OnSelChanged, Dye.OnSelChanged, EA_Window_OpenPartyWorld.PopulateSpecificComboBoxes, Enemy.ConfigurationWindow_OnChange, Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample, Killer.OnSettingsComboChanged, Megaphone.SaveSettings, PP.UpdateDyeList, TalismanGenie.CurioChange, TalismanGenie.EssenceChange, TalismanGenie.FragmentChange, TalismanGenie.GoldDustChange, TalismanGenie.TalismanStats, TaxPayer.UpdateSelection, Warbuilder.ComboBoxUpdate, AdvancedRenownTraining.SelectedItemChanged, AuctionWindowSearchControls.OnChangeCategory, AuctionWindowSearchControls.OnChangeMaxRank, AuctionWindowSearchControls.OnChangeMinRank, AuctionWindowSearchControls.OnCheckItemSlot, AuctionWindowSearchControls.OnCheckItemType, AuraConfig.OnActivationSoundComboChanged, AuraConfig.OnDeactivationSoundComboChanged, AuraConfig.OnTriggerTypeSelChanged, AutoBandWindowConfig.OnSelChangedComboBox, AutoBandWindowTemplate.OnSelChangedComboBox, BankArkel.PackCombo, BuffHead.Setup.AdvancedContainersItem.OnPositionChanged, BuffHead.Setup.AdvancedContainersItem.OnTargetTypeChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsBuffsChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnEffectsDebuffsChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnElementChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnGrowthHorizontalChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnGrowthVerticalChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnLayerChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnLayoutChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnMaximumThresholdChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnMinimumThresholdChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnPositionAnchorChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnPositionPlacementChanged, BuffHead.Setup.AdvancedContainersItem.Properties.OnPropertiesChanged, BuffHead.Setup.Container.OnContainerAlwaysShowAnchorChanged, BuffHead.Setup.Container.OnContainerAlwaysShowPlacementChanged, BuffHead.Setup.Container.OnContainerBuffsAnchorChanged, BuffHead.Setup.Container.OnContainerBuffsPlacementChanged, BuffHead.Setup.Container.OnContainerDebuffsAnchorChanged, BuffHead.Setup.Container.OnContainerDebuffsPlacementChanged, BuffHead.Setup.Container.OnSizeContainerTypeChanged, BuffHead.Setup.Display.OnLayerChanged, BuffHead.Setup.Display.OnSortByChanged, BuffHead.Setup.Display.OnSortDirectionChanged, BuffHead.Setup.General.OnCompressionChanged, BuffHead.Setup.Layout.Manager.OnExportLayoutChanged, BuffHead.Setup.Layout.Manager.OnLayoutsLayoutChanged, BuffHead.Setup.Layout.Properties.OnDurationFormatChanged, BuffHead.Setup.Layout.Properties.OnElementChanged, BuffHead.Setup.Layout.Properties.OnFontAlignmentChanged, BuffHead.Setup.Layout.Properties.OnIconBorderColorTypeChanged, BuffHead.Setup.Layout.Properties.OnLayerLayerChanged, BuffHead.Setup.Layout.Properties.OnPropertiesChanged, BuffHead.Setup.Layout.Properties.OnStatusBarForegroundColorTypeChanged, BuffHead.Setup.Layout.Properties.OnStatusBarOrientationChanged, BuffHead.Setup.Performance.OnEffectAnchoringChanged, BuffHead.Setup.PriorityEffects.OnAnimationChanged, BuffHead.Setup.Trackers.OnTrackerBuffChanged, BuffHead.Setup.Trackers.OnTrackerDebuffChanged, BuffHead.Setup.Trackers.OnTrackerTypeChanged, CCTV.MenuSelect, CCTV.MenuSelect2, CCTV.MenuSelect3, CCTV.MenuSelect4, CDownSettings.ABNameFontChanged, CDownSettings.CSettingChanged, CDownSettings.CountChanged, CDownSettings.LayoutChanged, CDownSettings.MaxCDChanged, CDownSettings.MinCDChanged, CDownSettings.OrderChanged, CDownSettings.RefreshChanged, CDownSettings.RowChanged, CDownSettings.SMaxCountChanged, CallingSetup.OnLanguageChanged, CallingSetup.OnPrioSelectionChanged, CallingSetup.OnPrioTypeChanged, CastSequence.Setup.OnAdvancementTypeChanged, ChattyCathy.UpdateEntrySetup, Cheeseboard.OnClassComboChanged, Cheeseboard.OnTotalComboChanged, CrusherConfig_Profiles_OnActiveProfileChanged, CrusherConfig_Profiles_OnCopyProfileChanged, DAoCBuffSettings.BufforderChanged, DAoCBuffSettings.CountChanged, DAoCBuffSettings.DivideChanged, DAoCBuffSettings.FilterSettings.ClassTableChanged, DAoCBuffSettings.FilterSettings.ConditionChanged, DAoCBuffSettings.FilterSettings.ConditionTypeChanged, DAoCBuffSettings.FilterSettings.FilterPropertyChanged, DAoCBuffSettings.FilterSettings.G1FilterChanged, DAoCBuffSettings.FilterSettings.G2ListChanged, DAoCBuffSettings.FilterSettings.G4HistoryBrowserChanged, DAoCBuffSettings.FilterSettings.G4UseandChanged, DAoCBuffSettings.FilterSettings.G5DurationChanged, DAoCBuffSettings.FilterSettings.G5FilterChanged, DAoCBuffSettings.FilterSettings.TextureChanged, DAoCBuffSettings.FilterSettings.TextureTypeChanged, DAoCBuffSettings.FilterSettings.UseandChanged, DAoCBuffSettings.FontChanged, DAoCBuffSettings.GrowHorizontalChanged, DAoCBuffSettings.GrowLeftChanged, DAoCBuffSettings.GrowUpChanged, DAoCBuffSettings.LeftListChanged, DAoCBuffSettings.ManagerModeChanged, DAoCBuffSettings.PermabuffsChanged, DAoCBuffSettings.RefreshChanged, DAoCBuffSettings.RemoveListChanged, DAoCBuffSettings.RightListChanged, DAoCBuffSettings.RowChanged, DAoCBuffSettings.StickChanged, DAoCBuffSettings.TargetChanged, DAoCBuffSettings.TypeChanged, DPSMeter.AbilityChanged, DPSMeter.ValueChanged, DeepSleep.Settings.ComboBoxChanged, DetauntBarSettings.OnDetauntReadySelChanged, DetauntBarSettings.OnDetauntSelChanged, DetauntBarSettings.OnUpdateFontColorCombo, DetauntBarSettings.OnUpdateFontCombo, EA_Window_OpenPartyLootRollOptions.OnOptionChange, EA_Window_OpenPartyManage.OnLeaderMarkSelChange, EA_Window_OpenPartyManage.OnLootModeSelChange, EA_Window_OpenPartyManage.OnLootThresholdSelChange, EA_Window_OpenPartyManage.OnMasterLooterSelChange, Enemy.AssistUI_ConfigDialog_OnNewTargetSoundIdSelChanged, Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged, Enemy.CombatLogUI_StatsWindow_OnTypeSelChanged, Enemy.GroupsUI_EffectFilterDialog_OnDurationTypeSelChanged, Enemy.IntercomUI_ChooseChannelDialog_ChannelListChanged, Enemy.UI_ConfigDialog_OnSectionSelChanged, Enemy.UnitFramesUI_ConfigDialog_OnSorting1Changed, Enemy.UnitFramesUI_ConfigDialog_OnSorting2Changed, Enemy.UnitFramesUI_ConfigDialog_OnSorting3Changed, Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged, Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged, Enemy.UnitFramesUI_UnitFramePartDialog_OnTypeSelChanged, EveryBodyGuard.Settings.ComboBoxChanged, GDes.ExtrasFeatureSelected, GDes.ExtrasPositionSelected, Ges.ColourTabIconSelected, Ges.ExtrasFeatureSelected, Ges.ExtrasIconSelected, Ges.ExtrasPositionSelected, GroupRangeSetup.Style.GroupBox.OnColorStyleChanged, GroupRangeSetup.Style.GroupBox.OnGrowthChanged, GroupRangeSetup.Style.GroupBox.OnLayerChanged, GroupRangeSetup.Style.OnStyleChanged, GroupRangeSetup.Style.Pointer.OnColorStyleChanged, GroupRangeSetup.Style.Pointer.OnLayerChanged, GroupRangeSetup.Style.PointerReverse.OnColorStyleChanged, GroupRangeSetup.Style.PointerReverse.OnLayerChanged, GroupRangeSetup.Style.SimpleText.OnColorStyleChanged, GroupRangeSetup.Style.SimpleText.OnLayerChanged, HealGridGuiTabBattlegroup.ChangeShowDebuffFlags, HealGridGuiTabBattlegroup.ChangeSkin, HealGridGuiTabBattlegroup.GridGroupingChanged, HealGridGuiTabBattlegroup.GridGrowthChanged, HealGridGuiTabBattlegroup.GridOrientationChanged, HealGridGuiTabBattlegroup.ShowActionPointsBarChanged, HealGridGuiTabBattlegroup.ShowCareerLineIconChanged, HealGridGuiTabBattlegroup.ShowHealthPointsBarChanged, HealGridGuiTabBattlegroup.ShowMoraleLevelBarChanged, HealGridGuiTabGroup.ChangeShowDebuffFlags, HealGridGuiTabGroup.ChangeSkin, HealGridGuiTabGroup.GridGroupingChanged, HealGridGuiTabGroup.GridGrowthChanged, HealGridGuiTabGroup.GridOrientationChanged, HealGridGuiTabGroup.ShowActionPointsBarChanged, HealGridGuiTabGroup.ShowCareerLineIconChanged, HealGridGuiTabGroup.ShowHealthPointsBarChanged, HealGridGuiTabGroup.ShowMoraleLevelBarChanged, HealGridGuiTabHUD.ChangeShowFriendlyTargetDebuffFlags, HealGridGuiTabHUD.ChangeShowHostileTargetDebuffFlags, HealGridGuiTabHUD.ChangeShowPlayerDebuffFlags, HealGridGuiTabHUD.ChangeSkin, HealGridGuiTabHUD.ShowActionPointsBarChanged, HealGridGuiTabHUD.ShowCareerLineIconChanged, HealGridGuiTabHUD.ShowHealthPointsBarChanged, HealGridGuiTabHUD.ShowMoraleLevelBarChanged, HealGridGuiTabHUDBuffs.ChangeFriendlyTargetBuffsFilter, HealGridGuiTabHUDBuffs.ChangeFriendlyTargetDebuffsFilter, HealGridGuiTabHUDBuffs.ChangeHostileTargetBuffsFilter, HealGridGuiTabHUDBuffs.ChangeHostileTargetDebuffsFilter, HealGridGuiTabHUDBuffs.ChangePlayerBuffsFilter, HealGridGuiTabHUDBuffs.ChangePlayerDebuffsFilter, HealGridGuiTabMouseClick.ActionChanged, HealGridGuiTabScenariogroup.ChangeShowDebuffFlags, HealGridGuiTabScenariogroup.ChangeSkin, HealGridGuiTabScenariogroup.GridGroupingChanged, HealGridGuiTabScenariogroup.GridGrowthChanged, HealGridGuiTabScenariogroup.GridOrientationChanged, HealGridGuiTabScenariogroup.ShowActionPointsBarChanged, HealGridGuiTabScenariogroup.ShowCareerLineIconChanged, HealGridGuiTabScenariogroup.ShowHealthPointsBarChanged, HealGridGuiTabScenariogroup.ShowMoraleLevelBarChanged, HopperConfig_Profiles_OnActiveProfileChanged, HopperConfig_Profiles_OnCopyProfileChanged, ItemRack.Sets.Select, ItemRack.Tactics.OnSetMenuSelectionChanged, KeysetMonsterPlay.Setup.Profile.OnDefaultProfileChanged, KeysetMonsterPlay.Setup.Profile.OnMonsterProfileChanged, LPET.AttackRangeCheckComboOnSelChanged, LPET.AutoAttackComboOnSelChanged, LPET.AutoDefendComboOnSelChanged, LPET.AutoSwitchComboOnSelChanged, LPET.BiteComboOnSelChanged, LPET.BiteHealthComboOnSelChanged, LPET.BitePriorityComboOnSelChanged, LPET.ClawSweepComboOnSelChanged, LPET.ClawSweepHealthComboOnSelChanged, LPET.ClawSweepPriorityComboOnSelChanged, LPET.ComboOnSelChanged, LPET.CoruscatingEnergyComboOnSelChanged, LPET.CoruscatingEnergyHealthComboOnSelChanged, LPET.CoruscatingEnergyPriorityComboOnSelChanged, LPET.DaemonicConsumptionComboOnSelChanged, LPET.DaemonicConsumptionHealthComboOnSelChanged, LPET.DaemonicConsumptionPriorityComboOnSelChanged, LPET.DaemonicFireComboOnSelChanged, LPET.DaemonicFireHealthComboOnSelChanged, LPET.DaemonicFirePriorityComboOnSelChanged, LPET.DeathFromAboveComboOnSelChanged, LPET.DeathFromAboveHealthComboOnSelChanged, LPET.DeathFromAbovePriorityComboOnSelChanged, LPET.DefendRangeCheckComboOnSelChanged, LPET.FangAndClawComboOnSelChanged, LPET.FangAndClawHealthComboOnSelChanged, LPET.FangAndClawPriorityComboOnSelChanged, LPET.FlameOfTzeentchComboOnSelChanged, LPET.FlameOfTzeentchHealthComboOnSelChanged, LPET.FlameOfTzeentchPriorityComboOnSelChanged, LPET.FlamesOfChangeComboOnSelChanged, LPET.FlamesOfChangeHealthComboOnSelChanged, LPET.FlamesOfChangePriorityComboOnSelChanged, LPET.FlamethrowerComboOnSelChanged, LPET.FlamethrowerHealthComboOnSelChanged, LPET.FlamethrowerPriorityComboOnSelChanged, LPET.GoopShootinComboOnSelChanged, LPET.GoopShootinHealthComboOnSelChanged, LPET.GoopShootinPriorityComboOnSelChanged, LPET.GoreComboOnSelChanged, LPET.GoreHealthComboOnSelChanged, LPET.GorePriorityComboOnSelChanged, LPET.GutRipperComboOnSelChanged, LPET.GutRipperHealthComboOnSelChanged, LPET.GutRipperPriorityComboOnSelChanged, LPET.HeadButtComboOnSelChanged, LPET.HeadButtHealthComboOnSelChanged, LPET.HeadButtPriorityComboOnSelChanged, LPET.HighExplosiveGrenadeComboOnSelChanged, LPET.HighExplosiveGrenadeHealthComboOnSelChanged, LPET.HighExplosiveGrenadePriorityComboOnSelChanged, LPET.LegTearComboOnSelChanged, LPET.LegTearHealthComboOnSelChanged, LPET.LegTearPriorityComboOnSelChanged, LPET.LionsRoarComboOnSelChanged, LPET.LionsRoarHealthComboOnSelChanged, LPET.LionsRoarPriorityComboOnSelChanged, LPET.MachineGunComboOnSelChanged, LPET.MachineGunHealthComboOnSelChanged, LPET.MachineGunPriorityComboOnSelChanged, LPET.MaulComboOnSelChanged, LPET.MaulHealthComboOnSelChanged, LPET.MaulPriorityComboOnSelChanged, LPET.PenetratingRoundComboOnSelChanged, LPET.PenetratingRoundHealthComboOnSelChanged, LPET.PenetratingRoundPriorityComboOnSelChanged, LPET.PetAttackComboOnSelChanged, LPET.PetFollowComboOnSelChanged, LPET.PoisonedSpineComboOnSelChanged, LPET.PoisonedSpineHealthComboOnSelChanged, LPET.PoisonedSpinePriorityComboOnSelChanged, LPET.ProfilesComboOnSelChanged, LPET.QuickSettingsComboOnSelChanged, LPET.SelfFollowComboOnSelChanged, LPET.ShockGrenadeComboOnSelChanged, LPET.ShockGrenadeHealthComboOnSelChanged, LPET.ShockGrenadePriorityComboOnSelChanged, LPET.ShredComboOnSelChanged, LPET.ShredHealthComboOnSelChanged, LPET.ShredPriorityComboOnSelChanged, LPET.SpineFlingComboOnSelChanged, LPET.SpineFlingHealthComboOnSelChanged, LPET.SpineFlingPriorityComboOnSelChanged, LPET.SporeCloudComboOnSelChanged, LPET.SporeCloudHealthComboOnSelChanged, LPET.SporeCloudPriorityComboOnSelChanged, LPET.SquigSquealComboOnSelChanged, LPET.SquigSquealHealthComboOnSelChanged, LPET.SquigSquealPriorityComboOnSelChanged, LPET.SteamVentComboOnSelChanged, LPET.SteamVentHealthComboOnSelChanged, LPET.SteamVentPriorityComboOnSelChanged, LPET.SwitchRangeCheckComboOnSelChanged, LPET.TerrifyingRoarComboOnSelChanged, LPET.TerrifyingRoarHealthComboOnSelChanged, LPET.TerrifyingRoarPriorityComboOnSelChanged, LPET.WarpingEnergyComboOnSelChanged, LPET.WarpingEnergyHealthComboOnSelChanged, LPET.WarpingEnergyPriorityComboOnSelChanged, LibAddonButton.Manager.Advanced.OnItemChanged, LibAddonButton.Manager.CustomItem.OnTypeChanged, MBuffSetup.SmartBuff.OnClassTypeChanged, Map.OnSelChanged, MapMonster.Editor.OnPinTypeChange, MapMonster.Editor.OnSubTypeChange, MapMonster.Editor.OnZoneNameChange, MapMonster.PinTypeEditor.OnSubTypeChange, MiracleGrow2.LayoutPlotArrChanged, MiracleGrow2.LayoutShowChanged, MoraleSet.OnSetMenuSelectionChanged, MotionConfig_Profiles_OnActiveProfileChanged, MotionConfig_Profiles_OnCopyProfileChanged, NBSBCore.OnAddonSelected, NBSBParam.OnParamChange, Obsidian.Setup.Castbar.OnElementChanged, Obsidian.Setup.Castbar.OnFillUpdatePriorityChanged, Obsidian.Setup.Castbar.OnGlobalCooldownPositionChanged, Obsidian.Setup.Castbar.OnIconPositionChanged, Obsidian.Setup.Castbar.OnNameAlignmentChanged, Obsidian.Setup.Castbar.OnTimerAlignmentChanged, Obsidian.Setup.EffectTracker.OnBarElementChanged, Obsidian.Setup.EffectTracker.OnElementChanged, Obsidian.Setup.EffectTracker.OnFillUpdatePriorityChanged, Obsidian.Setup.EffectTracker.OnNameAlignmentChanged, Obsidian.Setup.EffectTracker.OnTimerAlignmentChanged, Obsidian.Setup.EffectTracker.OnTrackerElementChanged, Obsidian.Setup.EffectTracker.OnTrackerFillColorChanged, Obsidian.Setup.EffectTracker.OnTrackerIconPositionChanged, Obsidian.Setup.EffectTracker.OnTrackerPositionChanged, PartyAdWindow.OnSelChangedPurposePreset, PartyAdWindow.OnSelChangedSelfRole, PotionBarSettings.ActivatorComboSelChanged, PotionBarSettings.BuildComboSelChanged, PotionBarSettings.ComboMethod, PotionBarSettings.InfoTextBRComboSelChanged, PotionBarSettings.InfoTextTRComboSelChanged, PotionBarSettings.QuickActionsSelChanged, PureConfig_Profiles_OnActiveProfileChanged, PureConfig_Profiles_OnCopyProfileChanged, RVMOD_Manager.OnSelChangedSortBy, RVMOD_SquaredDistances.OnComboBoxAnchorPointsChange, RVMOD_SquaredDistances.OnComboBoxFontsChange, RVMOD_SquaredDistances.OnComboBoxLayerChange, RVMOD_Targets.OnComboBoxConditionClick, RVMOD_Targets.OnComboBoxTemplateChange, RaidMeter.MenuSelect, Res.OptionsIconBackgroundSelected, Res.OptionsIconForegroundSelected, Res.OptionsIconHighlightSelected, ScenarioStats.CharacterSelectionChanged, ScenarioStats.ScenarioSelectionChanged, ShiniesBrowseUI.OnSelChanged_Criteria_ItemSlotCombo, ShiniesBrowseUI.OnSelChanged_Criteria_ItemTypeCombo, ShiniesBrowseUI.OnSelChanged_Criteria_ModifierCombo, SocialWindowTabSearch.OnFilterSelChanged, TOLSettingsUI.OnEventSelChanged, TOLSettingsUI.OnPhraseSelChanged, TOLSettingsUI.OnSkillSelChanged, TastyButtonsOptions.OnComboButtonSelectionChanged, TastyButtonsOptions.OnComboFontChanged, TastyButtonsOptions.OnComboStateChanged, TexturedButtons.Setup.Actionbar.OnBarChanged, TexturedButtons.Setup.Actionbar.OnSelectorChanged, TexturedButtons.Setup.AdvancedTextures.OnCustomChanged, TexturedButtons.Setup.AdvancedTextures.OnCustomTextureChanged, TexturedButtons.Setup.AdvancedTextures.OnCustomTextureSliceChanged, TexturedButtons.Setup.AdvancedTextures.OnPresetChanged, TexturedButtons.Setup.AdvancedTextures.OnSlotTypeChanged, TexturedButtons.Setup.Misc.OnActionButtonPickUpModifierChanged, TexturedButtons.Setup.Misc.OnCustomGlowChanged, TexturedButtons.Setup.Textures.OnCustomChanged, TexturedButtons.Setup.Textures.OnCustomTextureChanged, TexturedButtons.Setup.Textures.OnCustomTextureSliceChanged, TexturedButtons.Setup.Textures.OnPresetChanged, TexturedButtons.Setup.Tint.OnTintTypeChanged, TidyChat.Options.UpdateGroupTabs, TidyRoll.CustomAutoRoll.OnChoiceChange, TokenMachine.UpdateOption, TurretRange.Setup.Display.OnCircleModeChanged, TurretRange.Setup.Display.OnCircleTypeChanged, TurretRange.Setup.Display.OnDistanceLayoutChanged, TurretRange.Setup.Display.OnDistanceTypeChanged, TurretRange.Setup.Display.OnElementChanged, TurretRange.Setup.Display.OnGraphicTypeChanged, TwisterSet.OnSetMenuSelectionChanged, UiModWindow.OnCategoryComboSelChanged, Vectors.Settings.ComboBoxChanged, WARCommanderConfig.OnRVRAlertsChange, WARCommanderConfig.OnRVRCommandsChange, WARCommanderConfig.OnScenAlertsChange, WARCommanderConfig.OnScenCommandsChange, WCDBConfig_Filters_OnActiveFilterChanged, WCDBConfig_Profiles_OnActiveProfileChanged, WCDBConfig_Profiles_OnCopyProfileChanged, WCDPConfig_Filters_OnActiveFilterChanged, WCDPConfig_Profiles_OnActiveProfileChanged, WCDPConfig_Profiles_OnCopyProfileChanged, WSCT.ComboOnSelChanged, WSCT.EventOnSelChanged, WSCT.FrameComboOnSelChanged, WSCT.FrameOnSelChanged, WarBoard_FPSOptions.OnCmbChange, Warbuilder.ChangeSelect, Warbuilder.LinkLevel, Warbuilder.MenuSelect, ZonePOP.OnFilterSelChanged, nLootLinkGUI.onCareerSelected, nLootLinkGUI.onCategorySelected, nLootLinkGUI.onRaritySelected, nLootLinkGUI.onSlotSelected, nLootLinkGUI.onStatSelected, nLootLinkGUI.onTypeSelected, nLootLinkOptions.onRaritySelected, wbLeadHelperConfigTab.OnChanged | `index` | MEDIUM |
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | LPET.OnMouseOver, , Enemy.ConfigurationWindow_ShowTooltip, AutoBandWindowConfig.OnSettingMouseOver, DevPadWindow.OnMouseOverCode, EA_Window_OpenPartyManage.OnMouseoverLeaderMark, EA_Window_OpenPartyManage.OnMouseoverLootModeCombo, EA_Window_OpenPartyManage.OnMouseoverLootThresholdCombo, EZCraftX.OnMouseOver_Dropdown, MoraleSet.OnMouseOverSetMenu, PotionBarSettings.OnMouseoverActivator, PotionBarSettings.OnMouseoverBuild, PotionBarSettings.OnMouseoverInfoTextBR, PotionBarSettings.OnMouseoverInfoTextTR, PotionBarSettings.OnMouseoverMethod, PotionBarSettings.OnMouseoverQuickActions, TwisterSet.OnMouseover, WSCT.FrameComboOnMouseOver, WSCT.OnMouseOver, WbLeadHelperMessage.OnMouseOverSubmenuComboBox, WbLeadHelperMessage.OnMouseOverTypeComboBox, wbLeadHelperConfigTab.OnMouseOverMessageTextColorLabel | `` |  |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | MoraleSet.OnLButtonUpSetMenu, TOLSettingsUI.OnEventSelChanged, TwisterSet.OnLClick, alertMod.OnSliderChanged | `flags, x, y` | LOW |
-| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | EA_Window_OpenPartyLootRollOptions.OnRClickComboBox, MoraleSet.OnRButtonUpSetMenu, TOLSettingsUI.OnEventSelChanged, TwisterSet.OnRClick | `flags, x, y` | LOW |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | MoraleSet.OnLButtonUpSetMenu, TOLSettingsUI.OnEventSelChanged, TwisterSet.OnLClick, alertMod.OnSliderChanged | `flags, x, y` | MEDIUM |
+| [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | EA_Window_OpenPartyLootRollOptions.OnRClickComboBox, MoraleSet.OnRButtonUpSetMenu, TOLSettingsUI.OnEventSelChanged, TwisterSet.OnRClick | `flags, x, y` | MEDIUM |
 | [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | AutoBandWindowConfig.OnSettingMouseOverEnd | `` |  |
 
 ### Per-Event Lua API Calls
@@ -570,7 +570,7 @@ ComboBox is an interactive XML control. It commonly appears under ScrollWindow a
 
 **OnLButtonUp** handlers call: `ComboBoxSetSelectedMenuItem`, `WindowSetShowing`
 
-**OnRButtonUp** handlers call: `ButtonSetText`, `ButtonSetTextColor`, `ComboBoxSetSelectedMenuItem`, `WindowSetShowing`
+**OnRButtonUp** handlers call: `ButtonGetText`, `ButtonSetText`, `ButtonSetTextColor`, `ComboBoxGetSelectedMenuItem`, `ComboBoxSetDisabledFlag`, `ComboBoxSetSelectedMenuItem`, `WindowGetId`, `WindowGetParent`, `WindowSetShowing`
 
 ## Common Inherits
 
@@ -721,23 +721,22 @@ API functions commonly called from event handler Lua functions on this element t
 
 | API Function | Category | Call Count | From Events |
 | --- | --- | --- | --- |
-| `ComboBoxGetSelectedMenuItem` | ui | 237 | OnSelChanged |
-| `WindowGetParent` | ui | 230 | OnMouseOver, OnSelChanged |
-| `WindowSetShowing` | ui | 78 | OnLButtonUp, OnRButtonUp, OnSelChanged |
+| `ComboBoxGetSelectedMenuItem` | ui | 250 | OnRButtonUp, OnSelChanged |
+| `WindowGetParent` | ui | 232 | OnMouseOver, OnRButtonUp, OnSelChanged |
+| `WindowSetShowing` | ui | 74 | OnLButtonUp, OnRButtonUp, OnSelChanged |
 | `LabelSetText` | ui | 62 | OnSelChanged |
-| `ComboBoxSetSelectedMenuItem` | ui | 33 | OnLButtonUp, OnRButtonUp, OnSelChanged |
+| `ComboBoxSetSelectedMenuItem` | ui | 42 | OnLButtonUp, OnRButtonUp, OnSelChanged |
 | `TextEditBoxGetText` | ui | 22 | OnSelChanged |
 | `ButtonSetDisabledFlag` | ui | 13 | OnSelChanged |
 | `ButtonGetPressedFlag` | ui | 10 | OnSelChanged |
 | `ButtonSetPressedFlag` | ui | 9 | OnSelChanged |
-| `ButtonSetText` | ui | 9 | OnRButtonUp, OnSelChanged |
+| `WindowGetId` | ui | 9 | OnRButtonUp, OnSelChanged |
+| `ComboBoxGetSelectedText` | ui | 8 | OnMouseOver, OnSelChanged |
+| `ComboBoxSetDisabledFlag` | ui | 8 | OnRButtonUp, OnSelChanged |
 | `SliderBarGetCurrentPosition` | ui | 8 | OnSelChanged |
-| `ComboBoxGetSelectedText` | ui | 7 | OnMouseOver, OnSelChanged |
+| `ButtonSetText` | ui | 7 | OnRButtonUp, OnSelChanged |
 | `WindowSetHandleInput` | ui | 6 | OnSelChanged |
 | `DynamicImageSetTexture` | ui | 5 | OnSelChanged |
-| `WindowGetId` | ui | 5 | OnSelChanged |
-| `ButtonSetTextColor` | ui | 4 | OnRButtonUp, OnSelChanged |
-| `ComboBoxSetDisabledFlag` | ui | 4 | OnSelChanged |
 | `LabelSetTextColor` | ui | 4 | OnSelChanged |
 | `WindowAddAnchor` | ui | 4 | OnSelChanged |
 | `ComboBoxAddMenuItem` | ui | 3 | OnSelChanged |
@@ -746,11 +745,13 @@ API functions commonly called from event handler Lua functions on this element t
 | `DoesWindowExist` | ui | 3 | OnSelChanged |
 | `LabelSetFont` | ui | 3 | OnSelChanged |
 | `WindowClearAnchors` | ui | 3 | OnSelChanged |
+| `WindowRegisterEventHandler` | event | 3 | OnSelChanged |
+| `ButtonGetText` | ui | 2 | OnRButtonUp, OnSelChanged |
+| `ButtonSetTextColor` | ui | 2 | OnRButtonUp, OnSelChanged |
 | `DynamicImageSetTextureSlice` | ui | 2 | OnSelChanged |
 | `ListBoxSetDisplayOrder` | ui | 2 | OnSelChanged |
 | `TextEditBoxSetText` | ui | 2 | OnSelChanged |
 | `TextEditBoxSetTextColor` | ui | 2 | OnSelChanged |
-| `ButtonGetText` | ui | 1 | OnSelChanged |
 | `CreateWindowFromTemplate` | ui | 1 | OnSelChanged |
 | `DestroyWindow` | ui | 1 | OnSelChanged |
 | `LabelGetTextDimensions` | ui | 1 | OnSelChanged |
@@ -758,7 +759,6 @@ API functions commonly called from event handler Lua functions on this element t
 | `SystemData.ActiveWindow.name:match` | data | 1 | OnSelChanged |
 | `WindowGetDimensions` | ui | 1 | OnSelChanged |
 | `WindowGetShowing` | ui | 1 | OnSelChanged |
-| `WindowRegisterEventHandler` | event | 1 | OnSelChanged |
 | `WindowSetDimensions` | ui | 1 | OnSelChanged |
 ## Handler Callback Signatures
 
@@ -799,45 +799,46 @@ Confidence: MEDIUM
 | 0 | `index` | number | selected_index |
 ## Lua Functions Manipulating This Type
 
-- ChattyCathy.CC_ModelWindow
-- ChattyCathy.UpdateEntrySetup
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- TwisterSet.OnSetMenuSelectionChanged
-- BustedGUI.NewErrorRecorded
-- BustedGUI.Initialize
-- Enemy.UI_ConfigDialog_Open
-- Enemy.IntercomUI_IntercomJoinDialog_Open
-- ScenarioStats.CreateDropdownList
-- TwisterSet.OnRClick
-- AdvancedRenownTrainer.GeneratePresetByLinkData
-- CallingSetup.Initialize
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- TalismanGenie.EssenceCheckToggle
-- BankArkel.SetupCombos
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- GuildWardenWin.WinSetup
-- MapPin.EditMarker
-- ZonePOP.UpdateZoneList
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- MapPin.RButtonUp
-- TalismanGenie.CurioCheckToggle
-- CCTV.Initialize
-- Enemy.IntercomUI_ChooseChannelDialog_Open
-- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
-- Enemy.CombatLogUI_StatsWindow_Open
-- Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
-- DaemonAssist.PopulateBindingCombos
 - MapPin.local.EditMarker
-- TalismanGenie.GoldDustCheckToggle
+- ZonePOP.UpdateZoneList
+- DaemonAssist.PopulateBindingCombos
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - TwisterSet.Initialize
 - alertMod.SetLabels
-- Enemy.UI_ConfigDialog_OnSectionSelChanged
-- Enemy.UnitFramesUI_ConfigDialog_Import
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
 - Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
+- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- ScenarioStats.CreateDropdownList
+- TalismanGenie.GoldDustCheckToggle
 - TalismanGenie.Reset
+- TwisterSet.OnRClick
+- CallingSetup.Initialize
+- UiModWindow.UpdateCategoryComboBox
+- Enemy.UnitFramesUI_ConfigDialog_Import
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- MapPin.RButtonUp
+- MapPin.EditMarker
+- AdvancedRenownTrainer.GeneratePresetByLinkData
+- BustedGUI.Initialize
+- CCTV.Initialize
+- Enemy.IntercomUI_ChooseChannelDialog_Open
+- Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
+- Enemy.UI_ConfigDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- BankArkel.SetupCombos
+- BustedGUI.NewErrorRecorded
+- ChattyCathy.UpdateEntrySetup
+- Enemy.CombatLogUI_StatsWindow_Open
+- ChattyCathy.CC_ModelWindow
+- Enemy.IntercomUI_IntercomJoinDialog_Open
+- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- TwisterSet.OnSetMenuSelectionChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- GuildWardenWin.WinSetup
+- TalismanGenie.EssenceCheckToggle
+- TalismanGenie.CurioCheckToggle
 
 
 ## Binding Resolution

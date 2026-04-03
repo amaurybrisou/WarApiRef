@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 38 addons
+- Seen in: 42 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, AdvancedRenownTrainer, Amethyst, Crusher, DAoCBuff, DammazKron, EZCraftX |
+| Addons seen in | Ace, ActionBarHide, AdvancedRenownTrainer, Amethyst, CMap, Crusher, DAoCBuff, DammazKron |
 | Files seen in | AdvancedRenownTrainingImportExport.lua, Conf/DK_Config.lua, Gui/HealGridGuiUtility.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Settings.lua |
 | Namespaces detected | ComboBoxSetDisabledFlag |
 | Source kinds | lua_calls |
-| Example locations | Ace: SetEnabled, ActionBarHide: SetEnabled, AdvancedRenownTrainer: OnExportHidden, AdvancedRenownTrainer: OnExportShown, Amethyst: SetEnabled, Crusher: SetEnabled |
+| Example locations | Ace: SetEnabled, ActionBarHide: SetEnabled, AdvancedRenownTrainer: OnExportHidden, AdvancedRenownTrainer: OnExportShown, Amethyst: SetEnabled, CMap: SetEnabled |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 63 |
-| Global usage count | 63 |
+| Lua usage count | 74 |
+| Global usage count | 74 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,14 +65,14 @@ ComboBoxSetDisabledFlag(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 38 addons.
+Observed as a window function across 42 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: "AdvancedRenownTrainingPresetsWindowLoadComboBox", "ZonePOPWndComboBoxZoneNames", FilterWindow.."ClassTableComboBox" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: active, disable, false |
+| arg1 | Observed as a function or method reference. | Observed values: "AdvancedRenownTrainingPresetsWindowLoadComboBox", "MoraleEditorSetMenu", "ZonePOPWndComboBoxZoneNames" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: (isLeader==false)or(EA_Window_OpenPartyManage.CountWarband()<16)or(warbandActive==false), GameData.Player.isGroupLeader==false, MoraleSet.charData.linkedToTactics or MoraleSet.isDisabled |
 
 ## Returns
 
@@ -88,9 +88,11 @@ Observed as a window function across 38 addons.
 - ActionBarHide
 - AdvancedRenownTrainer
 - Amethyst
+- CMap
 - Crusher
 - DAoCBuff
 - DammazKron
+- EA_OpenPartyWindow
 - EZCraftX
 - EZGuard
 - Effigy
@@ -100,6 +102,7 @@ Observed as a window function across 38 addons.
 - InfoScroller
 - LibWBToggler
 - Map
+- MoraleSet
 - Motion
 - NaturalLog
 - PartyCast
@@ -113,6 +116,7 @@ Observed as a window function across 38 addons.
 - TidyChat
 - Tokens
 - Vectors
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -130,11 +134,7 @@ Observed as a window function across 38 addons.
 - AdvancedRenownTrainer: OnExportHidden -> ComboBoxSetDisabledFlag("AdvancedRenownTrainingPresetsWindowLoadComboBox", false)
 - AdvancedRenownTrainer: OnExportShown -> ComboBoxSetDisabledFlag("AdvancedRenownTrainingPresetsWindowLoadComboBox", true)
 - Amethyst: SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
-- Crusher: SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
-
-## Used With
-
-- [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
+- CMap: SetEnabled -> ComboBoxSetDisabledFlag(self.name, not flag)
 
 ## Notes
 

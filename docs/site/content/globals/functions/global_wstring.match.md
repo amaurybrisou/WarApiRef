@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 16 addons
+- Seen in: 17 addons
 
 ## Confidence Assessment
 
@@ -32,8 +32,8 @@
 | Example locations | AdvancedRenownTrainer: ImportOkButtonPressed, Aura: cleanWString, Aura: unpickle, CCTV: Update, CombatTextNames: TruncateAbilityName, Cram The Spam: GetCleanName |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 95 |
-| Global usage count | 95 |
+| Lua usage count | 96 |
+| Global usage count | 96 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ wstring.match(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 16 addons.
+Observed as a global function across 17 addons.
 
 ## Parameters
 
@@ -97,6 +97,7 @@ Observed as a global function across 16 addons.
 - TidyChat
 - Trakario
 - WSCT
+- WarBoard_WarWhisperer
 
 ## Examples
 
@@ -111,7 +112,6 @@ Observed as a global function across 16 addons.
 
 - [TextEditBoxGetText](../../window_api/functions/window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
-- [wstring.gsub](global_wstring.gsub.md) (HIGH 100/100) - Global Function
 
 ## Notes
 

@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoMark, BuddyBind, Calling, CleanUnitFrames, DammazKron, DetauntHelper, Ding, EA_ScenarioGroupWindow |
+| Addons seen in | AutoMark, BuddyBind, Calling, CleanUnitFrames, DammazKron, DetauntHelper, Ding, EA_OpenPartyWindow |
 | Files seen in | Code/Assist/Assist.lua, Code/CombatLog/CombatLogIDS.lua, Code/GroupIcons/GroupIcon.lua, Code/Marks/MarkTemplate.lua, Code/UnitFrames/Parts/CareerIcon.lua, Core/Tome/DK_Tome.lua, Core/ToolTip/DK_Tooltip.lua, Elements/EffigyIcons.lua |
 | Namespaces detected | Icons |
 | Source kinds | lua_calls |
 | Example locations | AutoMark: CreateMarker, BuddyBind: GrabName, Calling: SetListLine, Calling: ShowCallerIcon, Calling: ShowTargetIcon, CleanUnitFrames: SetCareerIcon |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 82 |
+| Lua usage count | 84 |
 | Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 2 member functions; the primary API surface for 31 addons.
+Shared function table with 2 member functions; the primary API surface for 33 addons.
 
 ## Functions
 
@@ -77,6 +77,7 @@ Shared function table with 2 member functions; the primary API surface for 31 ad
 - DammazKron
 - DetauntHelper
 - Ding
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - Effigy
 - Enemy
@@ -93,6 +94,7 @@ Shared function table with 2 member functions; the primary API surface for 31 ad
 - QuickNameActions+
 - ResHelp
 - SessionRPs
+- SocialWindow 2.0
 - Squared
 - Swift Assist
 - TargetInfoRing

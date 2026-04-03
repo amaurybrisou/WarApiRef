@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -30,8 +30,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, LibGroup, MegaphonePlusPlus, Squared |
-| Files seen in | Code/Core/Groups/Groups.lua, LibGroup.lua, MegaphonePlusPlus.lua, Squared.lua, SquaredWarband.lua |
+| Addons seen in | EA_OpenPartyWindow, Enemy, LibGroup, MegaphonePlusPlus, Squared |
+| Files seen in | Code/Core/Groups/Groups.lua, LibGroup.lua, MegaphonePlusPlus.lua, Squared.lua, SquaredWarband.lua, source/openpartywindowtabmanage.lua |
 | Namespaces detected | SystemData |
 | Source kinds | event_page, event_registration, lua_call |
 | Example locations | GroupsInitialize, Initialize, OnLoad, OnShutdown, OnUnload, SetMode |
@@ -61,10 +61,11 @@
 
 ## Description
 
-SystemData.SystemData.Events.BATTLEGROUP_MEMBER_UPDATED field accessed by 4 addons; commonly found in GroupsInitialize and Initialize, OnLoad, OnShutdown, OnUnload, SetMode, SquaredWarband.UpdateMember, SystemData.Events.BATTLEGROUP_MEMBER_UPDATED, event_page, event_registration, lua_call contexts.
+SystemData.SystemData.Events.BATTLEGROUP_MEMBER_UPDATED field accessed by 5 addons; commonly found in GroupsInitialize and Initialize, OnLoad, OnShutdown, OnUnload, SetMode, SquaredWarband.UpdateMember, SystemData.Events.BATTLEGROUP_MEMBER_UPDATED, event_page, event_registration, lua_call contexts.
 
 ## Seen In
 
+- EA_OpenPartyWindow
 - Enemy
 - LibGroup
 - MegaphonePlusPlus
@@ -74,6 +75,15 @@ SystemData.SystemData.Events.BATTLEGROUP_MEMBER_UPDATED field accessed by 4 addo
 
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 - [RegisterEventHandler](../../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
+- [DefaultColor.LabelSetTextColor](../../globals/functions/global_DefaultColor.LabelSetTextColor.md) (MEDIUM 55/100) - Global Function
+
+## Used With
+
+- [SystemData.Events.BATTLEGROUP_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.GROUP_SETTINGS_UPDATED](systemdata_SystemData.Events.GROUP_SETTINGS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.GROUP_UPDATED](systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.L_BUTTON_UP_PROCESSED](systemdata_SystemData.Events.L_BUTTON_UP_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_ZONE_CHANGED](systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

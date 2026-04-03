@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 28 addons
+- Seen in: 30 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, Crusher, EZCraftX, EZGuard, Effigy, GCDsaver |
+| Addons seen in | Ace, ActionBarHide, Amethyst, CMap, Crusher, EZCraftX, EZGuard, Effigy |
 | Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, libs/LibGUI.lua |
 | Namespaces detected | ButtonGetTextColor |
 | Source kinds | lua_calls |
-| Example locations | Ace: TextColor, ActionBarHide: TextColor, Amethyst: TextColor, Crusher: TextColor, EZCraftX: TextColor, EZGuard: TextColor |
+| Example locations | Ace: TextColor, ActionBarHide: TextColor, Amethyst: TextColor, CMap: TextColor, Crusher: TextColor, EZCraftX: TextColor |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 28 |
-| Global usage count | 28 |
+| Lua usage count | 30 |
+| Global usage count | 30 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ButtonGetTextColor(arg1)
 
 ## Description
 
-Observed as a window function across 28 addons.
+Observed as a window function across 30 addons.
 
 ## Parameters
 
@@ -86,6 +86,7 @@ Observed as a window function across 28 addons.
 - Ace
 - ActionBarHide
 - Amethyst
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -104,6 +105,7 @@ Observed as a window function across 28 addons.
 - Shinies
 - TargetRing
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -117,9 +119,9 @@ Observed as a window function across 28 addons.
 - Ace: TextColor -> ButtonGetTextColor(self.name)
 - ActionBarHide: TextColor -> ButtonGetTextColor(self.name)
 - Amethyst: TextColor -> ButtonGetTextColor(self.name)
+- CMap: TextColor -> ButtonGetTextColor(self.name)
 - Crusher: TextColor -> ButtonGetTextColor(self.name)
 - EZCraftX: TextColor -> ButtonGetTextColor(self.name)
-- EZGuard: TextColor -> ButtonGetTextColor(self.name)
 
 ## Used With
 

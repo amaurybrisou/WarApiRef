@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 32 addons
+- Seen in: 36 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Atlas, Crusher, DAoCBuff, EZCraftX, EZGuard, Effigy, GCDsaver |
-| Files seen in | Castbar.lua, Configuration/WCDBConfig_Actions.lua, Configuration/WCDBConfig_Morale.lua, Configuration/WCDBConfig_PetActions.lua, Display.lua, EffectTracker/EffectBar.lua, GroupIconsSG.lua, LibGUI.lua |
+| Addons seen in | Ace, Atlas, CMap, Crusher, DAoCBuff, EA_OpenPartyWindow, EZCraftX, EZGuard |
+| Files seen in | Castbar.lua, Configuration/WCDBConfig_Actions.lua, Configuration/WCDBConfig_Morale.lua, Configuration/WCDBConfig_PetActions.lua, Display.lua, EffectTracker/EffectBar.lua, GroupIconsSG.lua, GuardList.lua |
 | Namespaces detected | WindowSetFontAlpha |
 | Source kinds | lua_calls |
-| Example locations | Ace: FontAlpha, Atlas: SetMapTransparency, Crusher: FontAlpha, DAoCBuff: Create, EZCraftX: FontAlpha, EZGuard: FontAlpha |
+| Example locations | Ace: FontAlpha, Atlas: SetMapTransparency, CMap: FontAlpha, Crusher: FontAlpha, DAoCBuff: Create, EA_OpenPartyWindow: OnGroupUpdated |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 96 |
-| Global usage count | 96 |
+| Lua usage count | 107 |
+| Global usage count | 107 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "AtlasFrameTitleBar", "AtlasFrameZoneNameLabel", "NoOverheal_Window" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, 0.5, 1 |
+| windowName | Observed as a target window name. | Observed values: "AtlasFrameTitleBar", "AtlasFrameZoneNameLabel", "GuardList_Window0" |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: 0, 0.3, 0.4 |
 
 ## Returns
 
@@ -86,13 +86,16 @@ Observed mutating runtime window state or presentation.
 
 - Ace
 - Atlas
+- CMap
 - Crusher
 - DAoCBuff
+- EA_OpenPartyWindow
 - EZCraftX
 - EZGuard
 - Effigy
 - GCDsaver
 - Group Icons SG
+- GuardList
 - Hopper
 - InfoScroller
 - Kwestor
@@ -111,6 +114,7 @@ Observed mutating runtime window state or presentation.
 - Tokens
 - TurretRange
 - WSCT
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -122,9 +126,9 @@ Observed mutating runtime window state or presentation.
 - Ace: FontAlpha -> WindowSetFontAlpha(self.name, alpha)
 - Atlas: SetMapTransparency -> WindowSetFontAlpha("AtlasFrameTitleBar", alpha)
 - Atlas: SetMapTransparency -> WindowSetFontAlpha("AtlasFrameZoneNameLabel", alpha)
+- CMap: FontAlpha -> WindowSetFontAlpha(self.name, alpha)
 - Crusher: FontAlpha -> WindowSetFontAlpha(self.name, alpha)
 - DAoCBuff: Create -> WindowSetFontAlpha(windowName, 1.0)
-- EZCraftX: FontAlpha -> WindowSetFontAlpha(self.name, alpha)
 
 ## Related APIs
 

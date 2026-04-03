@@ -63,10 +63,6 @@ GameData.GameData.BuffTargetType.GROUP_MEMBER_START field accessed by 1 addons; 
 
 - CleanUnitFrames
 
-## Related APIs
-
-- [StatusBarSetMaximumValue](../../window_api/functions/window_StatusBarSetMaximumValue.md) (HIGH 100/100) - Window Function
-
 ## Notes
 
 - Observed in contexts: Create, lua_call

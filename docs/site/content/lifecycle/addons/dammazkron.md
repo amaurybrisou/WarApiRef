@@ -15,13 +15,13 @@
 
 | Kind | Name | Resolution | Confidence | Matched |
 | --- | --- | --- | --- | --- |
-| CallFunction | DammazKron.Start | ambiguous | MEDIUM | ActionFraction.Start, AuraEngine.Start, CaVES.Start, Countdown.start, DammazKron.Start, DammazKronTNFO.Start, DammazKronPLUG.Start, SetBookmarkHook.Start, DeMoNiCore.Start, Hopper.Start, ReliquaryHunter.Start, SessionRPs.Start |
-| CallFunction | SetBookmarkHook.Start | ambiguous | MEDIUM | ActionFraction.Start, AuraEngine.Start, CaVES.Start, Countdown.start, DammazKron.Start, DammazKronTNFO.Start, DammazKronPLUG.Start, SetBookmarkHook.Start, DeMoNiCore.Start, Hopper.Start, ReliquaryHunter.Start, SessionRPs.Start |
+| CallFunction | DammazKron.Start | ambiguous | MEDIUM | ActionFraction.Start, AuraEngine.Start, CaVES.Start, Countdown.start, DammazKron.Start, DammazKronPLUG.Start, DammazKronTNFO.Start, SetBookmarkHook.Start, DeMoNiCore.Start, Hopper.Start, ReliquaryHunter.Start, SessionRPs.Start |
+| CallFunction | SetBookmarkHook.Start | ambiguous | MEDIUM | ActionFraction.Start, AuraEngine.Start, CaVES.Start, Countdown.start, DammazKron.Start, DammazKronPLUG.Start, DammazKronTNFO.Start, SetBookmarkHook.Start, DeMoNiCore.Start, Hopper.Start, ReliquaryHunter.Start, SessionRPs.Start |
 ## Shutdown Actions (OnShutdown)
 
 | Kind | Name | Resolution | Confidence | Matched |
 | --- | --- | --- | --- | --- |
-| CallFunction | DammazKron.Stop | ambiguous | MEDIUM | AuraEngine.Stop, DammazKron.Stop, DammazKronTNFO.Stop, DeMoNiCore.Stop, Hopper.Stop |
+| CallFunction | DammazKron.Stop | ambiguous | MEDIUM | AuraEngine.Stop, DammazKron.Stop, DammazKronTNFO.Stop, DeMoNiCore.Stop, EA_Window_LoadingScreen.Stop, Hopper.Stop |
 ## Unknown / Custom Hook Actions
 
 | Kind | Name | Resolution | Confidence | Matched |

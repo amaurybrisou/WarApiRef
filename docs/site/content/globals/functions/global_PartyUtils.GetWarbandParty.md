@@ -1,36 +1,40 @@
 # PartyUtils.GetWarbandParty
 
 - Category: Global Function
-- Confidence level: MEDIUM
-- Confidence score: 45/100
-- Seen in: 1 addons
+- Confidence level: HIGH
+- Confidence score: 96/100
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
-- Level: MEDIUM
+- Level: HIGH
 
-- Score: 45/100
+- Score: 96/100
 
-- Rationale: Promoted as MEDIUM confidence because matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches a known engine namespace, called globally with no local definition, seen in 2 to 3 addons.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
+- +10 Argument pattern is consistent: Observed argument positions remain stable.
+- +8 Return usage is consistent: Observed as a stable query-style API.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | EZGuard |
-| Files seen in | EZGuard.lua |
+| Addons seen in | EA_OpenPartyWindow, EZGuard |
+| Files seen in | EZGuard.lua, source/openpartywindowtabmanage.lua |
 | Namespaces detected | PartyUtils |
 | Source kinds | lua_calls |
-| Example locations | EZGuard: UpdateGroup |
+| Example locations | EA_OpenPartyWindow: UpdateWarbandParty, EZGuard: UpdateGroup |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 1 |
-| Global usage count | 1 |
+| Lua usage count | 2 |
+| Global usage count | 2 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -38,9 +42,9 @@
 | Default UI presence | no |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
-| Consistent arguments | no |
-| Consistent returns | no |
+| Consistent role | yes |
+| Consistent arguments | yes |
+| Consistent returns | yes |
 | Slash command presence | no |
 | Weak usage only | no |
 | Project-specific name | no |
@@ -59,7 +63,7 @@ PartyUtils.GetWarbandParty(arg1)
 
 ## Description
 
-Observed as a global function across 1 addons.
+Observed as a global function across 2 addons.
 
 ## Parameters
 
@@ -77,13 +81,14 @@ Observed as a global function across 1 addons.
 
 ## Seen In
 
+- EA_OpenPartyWindow
 - EZGuard
 
 ## Examples
 
+- EA_OpenPartyWindow: UpdateWarbandParty -> PartyUtils.GetWarbandParty(partyIndex)
 - EZGuard: UpdateGroup -> PartyUtils.GetWarbandParty(partyIndex)
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.

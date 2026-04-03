@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, Hopper, LibGroup, LibGuard, MegaphonePlusPlus, Squared, WarTriage, WhoHealedMe |
+| Addons seen in | EA_OpenPartyWindow, Enemy, Hopper, LibGroup, LibGuard, MegaphonePlusPlus, Squared, WarTriage |
 | Files seen in | Code/Core/Groups/Groups.lua, LibGroup.lua, MegaphonePlusPlus.lua, Source/Hopper.lua, Source/LibGuard.lua, SquaredWarband.lua, WHMCore.lua, WarTriage.lua |
 | Namespaces detected | PartyUtils |
 | Source kinds | lua_calls |
-| Example locations | Enemy: _GroupsUpdate, Hopper: UpdateWarbandOpenSlots, LibGroup: GetWarbandData, LibGuard: GetIdFromName, MegaphonePlusPlus: FindLeader, Squared: UpdateGroup |
+| Example locations | EA_OpenPartyWindow: CountWarband, EA_OpenPartyWindow: UpdateWarband, Enemy: _GroupsUpdate, Hopper: UpdateWarbandOpenSlots, LibGroup: GetWarbandData, LibGuard: GetIdFromName |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 11 |
+| Global usage count | 11 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ PartyUtils.GetWarbandData()
 
 ## Description
 
-Observed as a global function across 8 addons.
+Observed as a global function across 9 addons.
 
 ## Parameters
 
@@ -82,6 +82,7 @@ Observed as a global function across 8 addons.
 
 ## Seen In
 
+- EA_OpenPartyWindow
 - Enemy
 - Hopper
 - LibGroup
@@ -93,16 +94,12 @@ Observed as a global function across 8 addons.
 
 ## Examples
 
+- EA_OpenPartyWindow: CountWarband -> PartyUtils.GetWarbandData()
+- EA_OpenPartyWindow: UpdateWarband -> PartyUtils.GetWarbandData()
 - Enemy: _GroupsUpdate -> PartyUtils.GetWarbandData()
 - Hopper: UpdateWarbandOpenSlots -> PartyUtils.GetWarbandData()
 - LibGroup: GetWarbandData -> PartyUtils.GetWarbandData()
 - LibGuard: GetIdFromName -> PartyUtils.GetWarbandData()
-- MegaphonePlusPlus: FindLeader -> PartyUtils.GetWarbandData()
-- Squared: UpdateGroup -> PartyUtils.GetWarbandData()
-
-## Used With
-
-- [PartyUtils.GetPartyData](global_PartyUtils.GetPartyData.md) (HIGH 100/100) - Global Function
 
 ## Affects
 

@@ -71,7 +71,7 @@ Observed as a global function across 2 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: CreateAuctionWindow.itemInventorySlot.slot, slotB |
+| arg1 | Observed as a function or method reference. | Observed values: CreateAuctionWindow.itemInventorySlot.slot, slotB |
 | arg2 | Observed as a function or method reference. | Observed values: CreateAuctionWindow.itemInventorySlot.backpack, backpack |
 | arg3 | Observed as a text or wstring payload. | Observed values: "AuctionHouseWindowCreateAuction", "EA_Window_BackpackIconViewSection"..bag.."Buttons" |
 

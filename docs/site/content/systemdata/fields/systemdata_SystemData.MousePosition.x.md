@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Group Icons, MapMonster, MapPin, Miracle Grow Remix, MouseHint, RVMOD_SquaredDistances, RoR_SoR |
-| Files seen in | GroupIcons.lua, RVMOD_SquaredDistances.lua, RoR_SoR.lua, Source/MapMonster_Calibrate.lua, layout.lua, mouse-hint.lua, source/MapPin.lua |
+| Addons seen in | CMap, Group Icons, MapMonster, MapPin, Miracle Grow Remix, MouseHint, RVMOD_SquaredDistances, RoR_SoR |
+| Files seen in | CMap.lua, GroupIcons.lua, RVMOD_SquaredDistances.lua, RoR_SoR.lua, SimpleXY.lua, Source/MapMonster_Calibrate.lua, layout.lua, mouse-hint.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | GetMapPos, LayoutEndDrag, LayoutStartDrag, LayoutUpdate, OnLMouseButton, OnMouseOverEnd |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 11 |
-| Global usage count | 11 |
+| Lua usage count | 14 |
+| Global usage count | 14 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,10 +59,11 @@
 
 ## Description
 
-SystemData.SystemData.MousePosition.x field accessed by 7 addons; commonly found in GetMapPos and LayoutEndDrag, LayoutStartDrag, LayoutUpdate, OnLMouseButton, OnMouseOverEnd, OnUpdate, OnWindowOptionsSetScale, SetWindowAlphaByMousePosition, UpdateMapCoordinates, lua_call contexts.
+SystemData.SystemData.MousePosition.x field accessed by 9 addons; commonly found in GetMapPos and LayoutEndDrag, LayoutStartDrag, LayoutUpdate, OnLMouseButton, OnMouseOverEnd, OnUpdate, OnWindowOptionsSetScale, SetWindowAlphaByMousePosition, UpdateCoordinates, UpdateCoordinatesMap, UpdateCoordinatesWMap, UpdateMapCoordinates, lua_call contexts.
 
 ## Seen In
 
+- CMap
 - Group Icons
 - MapMonster
 - MapPin
@@ -70,6 +71,7 @@ SystemData.SystemData.MousePosition.x field accessed by 7 addons; commonly found
 - MouseHint
 - RVMOD_SquaredDistances
 - RoR_SoR
+- SimpleXY
 
 ## Related APIs
 
@@ -79,9 +81,7 @@ SystemData.SystemData.MousePosition.x field accessed by 7 addons; commonly found
 
 ## Used With
 
-- [InterfaceCore.GetResolutionScale](../../globals/functions/global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
 - [SystemData.MousePosition.y](systemdata_SystemData.MousePosition.y.md) (HIGH 100/100) - SystemData Field
-- [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

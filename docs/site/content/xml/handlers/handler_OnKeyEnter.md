@@ -23,13 +23,13 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DuffTimer, EA_UiDebugTools, MapMonster, MapPin, Mass Refine, RandomMount, SNT_PANEL, Twister |
+| Addons seen in | DuffTimer, EA_UiDebugTools, FozAuction, MapMonster, MapPin, Mass Refine, ObjectInspector, RandomMount |
 | Namespaces detected | OnKeyEnter |
 | Source kinds | bindings, xml_handlers |
-| Example locations | DuffTimer: .OnKeyEnter, EA_UiDebugTools: .OnKeyEnter, MapMonster: .OnKeyEnter, MapPin: .OnKeyEnter, Mass Refine: .OnKeyEnter, RandomMount: .OnKeyEnter |
+| Example locations | DuffTimer: .OnKeyEnter, EA_UiDebugTools: .OnKeyEnter, FozAuction: .OnKeyEnter, MapMonster: .OnKeyEnter, MapPin: .OnKeyEnter, Mass Refine: .OnKeyEnter |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 30 |
+| Lua usage count | 35 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 11 addons.
+XML handler event observed across 14 addons.
 
 ## Expected Lua Binding
 
@@ -69,11 +69,14 @@ function(...)
 
 - DuffTimer
 - EA_UiDebugTools
+- FozAuction
 - MapMonster
 - MapPin
 - Mass Refine
+- ObjectInspector
 - RandomMount
 - SNT_PANEL
+- SocialWindow 2.0
 - Twister
 - WarBoard_FPS
 - XpStatus+G
@@ -86,7 +89,7 @@ function(...)
 - EA_UiDebugTools: .OnKeyEnter -> DevPadWindow.CreateNewFile
 - EA_UiDebugTools: .OnKeyEnter -> DevPadWindow.ConfirmRename
 - EA_UiDebugTools: .OnKeyEnter -> ObjectInspector.InspectObject
-- MapMonster: .OnKeyEnter -> MapMonster.Editor.OnPosEnterKey
+- FozAuction: .OnKeyEnter -> AuctionWindowSearchControls.OnLButtonUpSearch
 
 ## Related APIs
 

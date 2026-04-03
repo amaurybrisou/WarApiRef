@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 26 addons
+- Seen in: 28 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Crusher, DAoCBuff, EZCraftX, EZGuard, Effigy, EveryBodyGuard, GCDsaver |
+| Addons seen in | Ace, CMap, Crusher, DAoCBuff, EZCraftX, EZGuard, Effigy, EveryBodyGuard |
 | Files seen in | LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Settings.lua, Source/DAoCBuffSettings.lua, libs/LibGUI.lua |
 | Namespaces detected | WindowGetHandleInput |
 | Source kinds | lua_calls |
-| Example locations | Ace: TakesInput, Crusher: TakesInput, DAoCBuff: Disable, DAoCBuff: OpenOptionswindow, DAoCBuff: Reactivate, DAoCBuff: UC |
+| Example locations | Ace: TakesInput, CMap: TakesInput, Crusher: TakesInput, DAoCBuff: Disable, DAoCBuff: OpenOptionswindow, DAoCBuff: Reactivate |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 32 |
-| Global usage count | 32 |
+| Lua usage count | 34 |
+| Global usage count | 34 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -84,6 +84,7 @@ Observed querying runtime window state or metadata.
 ## Seen In
 
 - Ace
+- CMap
 - Crusher
 - DAoCBuff
 - EZCraftX
@@ -104,6 +105,7 @@ Observed querying runtime window state or metadata.
 - TargetRing
 - Tokens
 - Vectors
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -113,15 +115,11 @@ Observed querying runtime window state or metadata.
 ## Examples
 
 - Ace: TakesInput -> WindowGetHandleInput(self.name)
+- CMap: TakesInput -> WindowGetHandleInput(self.name)
 - Crusher: TakesInput -> WindowGetHandleInput(self.name)
 - DAoCBuff: Disable -> WindowGetHandleInput("DAoCBuff_Settings")
 - DAoCBuff: OpenOptionswindow -> WindowGetHandleInput("DAoCBuff_Settings")
 - DAoCBuff: Reactivate -> WindowGetHandleInput("DAoCBuff_Settings")
-- DAoCBuff: UC -> WindowGetHandleInput("DAoCBuff_Settings")
-
-## Affects
-
-- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 8 addons
+- Seen in: 9 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoBand, Effigy, I HATE YOU THIS MUCH, Info_DeathBlow, LibGuard, MegaphonePlus, Squared, followTheLeader |
+| Addons seen in | AutoBand, Effigy, I HATE YOU THIS MUCH, Info_DeathBlow, LibGuard, MegaphonePlus, NoUselessMods-Assist, Squared |
 | Files seen in | AutoBand.lua, Effigy.lua, IHYTM.lua, Info_DeathBlow.lua, MegaphonePlus.lua, Source/LibGuard.lua, SquaredWarband.lua, followTheLeader.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | Init, Initialize, OnInitialize, OnMenuClickLeaveGroup, OnShutdown, init |
+| Example locations | Init, Initialize, OnInitialize, OnLeaveGroup, OnMenuClickLeaveGroup, OnShutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 9 |
+| Global usage count | 9 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.GROUP_LEAVE field accessed by 8 addons; commonly found in Init and Initialize, OnInitialize, OnMenuClickLeaveGroup, OnShutdown, init, lua_call, maybe_broadcast_group_leave contexts.
+SystemData.SystemData.Events.GROUP_LEAVE field accessed by 9 addons; commonly found in Init and Initialize, OnInitialize, OnLeaveGroup, OnMenuClickLeaveGroup, OnShutdown, init, lua_call, maybe_broadcast_group_leave contexts.
 
 ## Seen In
 
@@ -70,20 +70,16 @@ SystemData.SystemData.Events.GROUP_LEAVE field accessed by 8 addons; commonly fo
 - Info_DeathBlow
 - LibGuard
 - MegaphonePlus
+- NoUselessMods-Assist
 - Squared
 - followTheLeader
 
 ## Related APIs
 
-- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.IsSlashCmdRegistered](../../globals/functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 
-## Used With
-
-- [SystemData.Events.INTERFACE_RELOADED](systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
-
 ## Notes
 
-- Observed in contexts: Init, Initialize, OnInitialize, OnMenuClickLeaveGroup, OnShutdown, init
+- Observed in contexts: Init, Initialize, OnInitialize, OnLeaveGroup, OnMenuClickLeaveGroup, OnShutdown

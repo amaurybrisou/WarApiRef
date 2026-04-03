@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 104 addons
+- Seen in: 114 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Ace: Tint, AdvancedPetAssist: UpdateFollowTargetHUD, AdvancedPetAssist: UpdateInstantOnlyHUD, AdvancedPetAssist: UpdateKitingHUD, AdvancedPetAssist: UpdatePetTargetHUD, AdvancedRenownTrainer: SelectAdvantage |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 717 |
-| Global usage count | 717 |
+| Lua usage count | 748 |
+| Global usage count | 748 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -72,8 +72,8 @@ Observed mutating runtime window state or presentation.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: "APAFollowTargetHUDFill", "APAInstantOnlyHUDFill", "APAKitingHUDFill" |
-| arg2 | Observed as a function or method reference. | Observed values: 0, 100, 12 |
-| arg3 | Observed as a numeric value. | Observed values: 0, 100, 110 |
+| arg2 | Observed as a numeric value. | Observed values: 0, 100, 12 |
+| arg3 | Observed as a numeric value. | Observed values: 0, 10, 100 |
 | arg4 | Observed as a numeric value. | Observed values: 0, 10, 100 |
 
 ## Returns
@@ -97,15 +97,19 @@ Observed mutating runtime window state or presentation.
 - CCTV
 - CDown
 - CM_ClosetGoblin
+- CMap
 - Calling
 - CastSequence
 - ChattyCathy
+- Cheeseboard
 - CleanUnitFrames
 - CraftingWillard
 - Crusher
 - DAoCBuff
 - DetauntHelper
 - DuffTimer
+- EA_LoadingScreen
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
@@ -113,6 +117,7 @@ Observed mutating runtime window state or presentation.
 - Enemy
 - EveryBodyGuard
 - FlagCap
+- FozAuction
 - GCDsaver
 - Group Icons
 - Group Icons SG
@@ -120,6 +125,8 @@ Observed mutating runtime window state or presentation.
 - GroupSpotter
 - GuardBot
 - GuardLine
+- GuardList
+- GuardRange
 - GuildWarden
 - HealGrid
 - Hopper
@@ -160,6 +167,7 @@ Observed mutating runtime window state or presentation.
 - SOR
 - Sequencer
 - Shinies
+- SocialWindow 2.0
 - Squared
 - Swinger
 - TacticSetNames
@@ -172,11 +180,13 @@ Observed mutating runtime window state or presentation.
 - TokenMachine
 - Tokens
 - TomeTracker
+- Tortall_DPS
 - TurretRange
 - Twister
 - Vectors
 - WARCommander
 - WSCT
+- WarBoard_WarWhisperer
 - WarTriage
 - WhatsCooking
 - WhoHealedMe
@@ -214,7 +224,7 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [DefaultColor.SetWindowTint](../../globals/functions/global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LabelSetTextColor](window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
@@ -222,6 +232,8 @@ Observed mutating runtime window state or presentation.
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [DefaultColor.GetRowColor](../../globals/functions/global_DefaultColor.GetRowColor.md) (HIGH 96/100) - Global Function
+- [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 

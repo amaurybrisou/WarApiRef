@@ -26,14 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, AuctionStats, BankArkel, HealAll, JunkDump, zMailMod |
+| Addons seen in | AdvancedRenownTrainer, AuctionStats, BankArkel, FozAuction, HealAll, JunkDump, zMailMod |
+| Files seen in | Source/auctionwindow.lua, Source/auctionwindowsellcontrols.lua |
 | Namespaces detected | MoneyFrame |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: Respecialize, AuctionStats: AddExtraWindow, AuctionStats: OnRButtonUpItem, AuctionStats: UpdateItemOptions, BankArkel: PackShow, HealAll: Heal |
+| Example locations | AdvancedRenownTrainer: Respecialize, AuctionStats: AddExtraWindow, AuctionStats: OnRButtonUpItem, AuctionStats: UpdateItemOptions, BankArkel: PackShow, FozAuction: Clear |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 16 |
-| Global usage count | 3 |
+| Lua usage count | 25 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -56,11 +57,12 @@
 
 ## Description
 
-Shared function table with 3 member functions; the primary API surface for 6 addons.
+Shared function table with 4 member functions; the primary API surface for 7 addons.
 
 ## Functions
 
 - MoneyFrame.ConvertBrassToCurrency
+- MoneyFrame.ConvertCurrencyToBrass
 - MoneyFrame.FormatMoney
 - MoneyFrame.FormatMoneyString
 
@@ -73,6 +75,7 @@ Shared function table with 3 member functions; the primary API surface for 6 add
 - AdvancedRenownTrainer
 - AuctionStats
 - BankArkel
+- FozAuction
 - HealAll
 - JunkDump
 - zMailMod

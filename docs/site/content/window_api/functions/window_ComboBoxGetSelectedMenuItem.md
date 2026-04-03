@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 79 addons
+- Seen in: 88 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, AdvancedRenownTrainer, Amethyst, BuffHead, CDown, CaVES, Calling |
-| Files seen in | AdvancedRenownTrainingImportExport.lua, CDownSettings.lua, CallingSetup.lua, ChattyCathy.lua, Code/Assist/Assist.lua, Code/CombatLog/CombatLogStatsWindow.lua, Code/Core/Groups/EnemyEffectFilter.lua, Code/Core/Main.lua |
+| Addons seen in | Ace, ActionBarHide, AdvancedRenownTrainer, Amethyst, BuffHead, CDown, CMap, CaVES |
+| Files seen in | AAOTracker.lua, AdvancedRenownTrainingImportExport.lua, CDownSettings.lua, CallingSetup.lua, ChattyCathy.lua, Cheeseboard.lua, Code/Assist/Assist.lua, Code/CombatLog/CombatLogStatsWindow.lua |
 | Namespaces detected | ComboBoxGetSelectedMenuItem |
 | Source kinds | lua_calls |
 | Example locations | Ace: SelectedIndex, ActionBarHide: SelectedIndex, AdvancedRenownTrainer: OnExportButtonPressed, Amethyst: SelectedIndex, BuffHead: OnAnimationChanged, BuffHead: OnCompressionChanged |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 450 |
-| Global usage count | 450 |
+| Lua usage count | 494 |
+| Global usage count | 494 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ComboBoxGetSelectedMenuItem(arg1)
 
 ## Description
 
-Observed as a window function across 79 addons.
+Observed as a window function across 88 addons.
 
 ## Parameters
 
@@ -89,10 +89,12 @@ Observed as a window function across 79 addons.
 - Amethyst
 - BuffHead
 - CDown
+- CMap
 - CaVES
 - Calling
 - CastSequence
 - ChattyCathy
+- Cheeseboard
 - Crafting Info Tooltip
 - Crusher
 - DAoCBuff
@@ -100,12 +102,14 @@ Observed as a window function across 79 addons.
 - DeepSleep
 - DetauntHelper
 - Dye Preview
+- EA_OpenPartyWindow
 - EA_UiDebugTools
 - EZCraftX
 - EZGuard
 - Effigy
 - Enemy
 - EveryBodyGuard
+- FozAuction
 - GCDsaver
 - GroupRange
 - GuildWarden
@@ -123,6 +127,7 @@ Observed as a window function across 79 addons.
 - MarkBuff
 - MegaphonePlusPlus
 - Miracle Grow Remix
+- MoraleSet
 - Motion
 - NaturalLog
 - NerfedButtons
@@ -142,6 +147,7 @@ Observed as a window function across 79 addons.
 - TalismanGenie
 - TargetRing
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThinkOutLoud
 - TidyChat
@@ -150,8 +156,11 @@ Observed as a window function across 79 addons.
 - Tokens
 - TurretRange
 - Vectors
+- WBStutterLess
 - WSCT
 - WarBoard
+- WarBoard_AAOTracker
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse

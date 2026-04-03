@@ -68,10 +68,6 @@ SystemData.SystemData.Events.PLAYER_ABILITIES_LIST_UPDATED field accessed by 3 a
 - NerfedButtons
 - ZCurse_Profiler
 
-## Related APIs
-
-- [TextEditBoxSetMaxChars](../../window_api/functions/window_TextEditBoxSetMaxChars.md) (HIGH 100/100) - Window Function
-
 ## Notes
 
 - Observed in contexts: Initialize, RegisterStateInfoForCastbar, Shutdown, lua_call

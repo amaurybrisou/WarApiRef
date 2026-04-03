@@ -84,7 +84,11 @@ ScrollWindow is a container-style XML element for scrollable UI content. It comm
 
 | Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
 |-------|----------|---------------------|-------------------|-----------------|
-| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | SocialWindow.HideSelectionBorder | `x, y, delta` | LOW |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | SocialWindow.HideSelectionBorder | `x, y, delta` | MEDIUM |
+
+### Per-Event Lua API Calls
+
+**OnMouseWheel** handlers call: `WindowSetShowing`
 
 ## Common Inherits
 
@@ -999,13 +1003,20 @@ Observed 1 times as an unnamed child.
     - [Windows](element_Windows.md) (structural, 1498×, HIGH)
       - (cycle)
 
+## Lua API Usage (from Handlers)
+
+API functions commonly called from event handler Lua functions on this element type:
+
+| API Function | Category | Call Count | From Events |
+| --- | --- | --- | --- |
+| `WindowSetShowing` | ui | 2 | OnMouseWheel |
 ## Handler Callback Signatures
 
 Expected callback argument patterns for event handlers on this element type:
 
 ### OnMouseWheel
 
-Confidence: LOW
+Confidence: MEDIUM
 
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
@@ -1014,59 +1025,65 @@ Confidence: LOW
 | 2 | `delta` | number | wheel_delta |
 ## Lua Functions Manipulating This Type
 
-- TTitan.UI.SetDataSource
-- GroupIcons.OnInitialize
-- MacroIcons.OnInitialize
-- Enemy.local._OnKeyModifierChanged
-- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
-- Enemy._OnKeyModifierChanged
-- Group Icons SG.marker:Create
-- Group Icons SG.marker:Size
-- GroupIconsSG.OnInitialize
-- DAoCBuff.ShowMessageWindow
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- TTitan.UI.DisplayRow
-- MapMonster.local.FilterButtonState
-- GroupIcons.OnUpdate
-- GroupIconsSG.OptionsCHKclick
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
-- DAoCBuffSettings.PopulateSettings
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.local._OnArchetypeChanged
-- Enemy.EnemyGroupIcon:ApplySettings
-- CDown.local.ShowTab
-- WbLeadHelperMessage.OnOk
-- wbLeadHelperConfigTab.OnReset
-- GroupIcons.HandleSlashCmd
-- wbLeadHelperConfigTab.OnLoad
-- TTitan.UI.DisplayManualEntry
-- wbLeadHelperConfigTab.Initialize
-- Statdoll.WriteLabels
-- MBuffGui.SetGroupBuffIcon
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy._OnArchetypeChanged
-- Killer.Initialize
-- wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
-- MapMonster.FilterButtonState
-- WbLeadHelperMessage.MessageDialogOpen
 - CDown.ShowTab
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
-- GroupIconsSG.SlashHandler
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
 - Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- GroupIcons.OnInitialize
+- EA_Window_Macro.HideMacroIconSelectionWindow
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- Enemy._OnArchetypeChanged
+- MapMonster.FilterButtonState
+- GroupIcons.OnUpdate
+- DAoCBuff.ShowMessageWindow
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
+- MapMonster.local.FilterButtonState
+- TTitan.UI.SetDataSource
+- EA_Window_Macro.Initialize
+- CDown.local.ShowTab
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- GroupIconsSG.SlashHandler
+- EA_Window_Macro.Shutdown
+- wbLeadHelperConfigTab.OnReset
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- GroupIconsSG.OptionsCHKclick
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- wbLeadHelperConfigTab.Initialize
+- WbLeadHelperMessage.MessageDialogOpen
+- UiModWindow.ShowModDetails
+- MBuffGui.SetGroupBuffIcon
+- EA_Window_Macro.SelectionIconLButtonDown
+- Enemy.local._OnArchetypeChanged
+- TTitan.UI.DisplayManualEntry
+- EA_Window_Macro.DetailIconLButtonDown
+- WbLeadHelperMessage.OnOk
+- Killer.Initialize
+- Group Icons SG.marker:Create
+- Enemy._OnKeyModifierChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- DAoCBuffSettings.PopulateSettings
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- TTitan.UI.DisplayRow
+- MacroIcons.OnInitialize
+- Statdoll.WriteLabels
+- Enemy.EnemyGroupIcon:ApplySettings
+- GroupIconsSG.OnInitialize
+- Group Icons SG.marker:Size
+- wbLeadHelperConfigTab.OnLoad
+- Enemy.local._OnKeyModifierChanged
+- GroupIcons.HandleSlashCmd
 
 
 ## Binding Resolution
 
 - Total handler declarations: 1
-- Resolved to Lua functions: 0 (0%)
+- Resolved to Lua functions: 1 (100%)
 
 ## Seen In
 

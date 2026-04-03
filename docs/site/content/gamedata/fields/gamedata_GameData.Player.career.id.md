@@ -63,6 +63,10 @@ GameData.GameData.Player.career.id field accessed by 1 addons; commonly found in
 
 - DetauntHelper
 
+## Related APIs
+
+- [Icons.GetCareerIconIDFromCareerNamesID](../../globals/functions/global_Icons.GetCareerIconIDFromCareerNamesID.md) (HIGH 100/100) - Global Function
+
 ## Notes
 
 - Observed in contexts: InitUI, lua_call

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 56 addons
+- Seen in: 62 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, AdvancedRenownTrainer, Amethyst, Aura, BuffHead, CDown, Crusher |
+| Addons seen in | Ace, ActionBarHide, AdvancedRenownTrainer, Amethyst, Aura, BuffHead, CDown, CMap |
 | Files seen in | AdvancedRenownTraining.lua, CDownSettings.lua, Code/Core/ConfigurationWindow.lua, Code/Core/Main.lua, Code/Intercom/Intercom.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFramePart.lua, Code/UnitFrames/UnitFrames.lua |
 | Namespaces detected | ButtonGetDisabledFlag |
 | Source kinds | lua_calls |
 | Example locations | Ace: Enabled, ActionBarHide: Enabled, AdvancedRenownTrainer: PurchaseAdvances, Amethyst: Enabled, Aura: OnIconLButtonUp, BuffHead: OnTargetChangeClearAlwaysShowLUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 168 |
-| Global usage count | 168 |
+| Lua usage count | 196 |
+| Global usage count | 196 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ ButtonGetDisabledFlag(arg1)
 
 ## Description
 
-Observed as a window function across 56 addons.
+Observed as a window function across 62 addons.
 
 ## Parameters
 
@@ -90,17 +90,21 @@ Observed as a window function across 56 addons.
 - Aura
 - BuffHead
 - CDown
+- CMap
 - Crusher
 - DAoCBuff
 - DammazKron
 - DetauntHelper
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
 - Enemy
 - EveryBodyGuard
 - FastFriends
+- FozAuction
 - GCDsaver
 - Hopper
 - InfoScroller
@@ -111,6 +115,7 @@ Observed as a window function across 56 addons.
 - Motion
 - NaturalLog
 - NerfedButtons
+- NoUselessMods-Assist
 - PartyCast
 - PotionBar
 - Pure
@@ -128,6 +133,7 @@ Observed as a window function across 56 addons.
 - TidyRoll
 - Tokens
 - Vectors
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -156,6 +162,7 @@ Observed as a window function across 56 addons.
 ## Used With
 
 - [ComboBoxGetDisabledFlag](window_ComboBoxGetDisabledFlag.md) (HIGH 100/100) - Window Function
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [WindowGetParent](window_WindowGetParent.md) (HIGH 100/100) - Window Function
 
 ## Affects

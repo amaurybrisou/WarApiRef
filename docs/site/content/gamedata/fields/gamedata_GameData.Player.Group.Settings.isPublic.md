@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,30 +11,32 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 105
+- Raw weighted score: 138
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AutoBand |
-| Files seen in | AutoBand.lua |
+| Addons seen in | AutoBand, EA_OpenPartyWindow |
+| Files seen in | AutoBand.lua, source/openpartywindowtabnearby.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | cmd_open_party_status, is_open_party, lua_call |
+| Example locations | OnOpenPartySettingUpdated, cmd_open_party_status, is_open_party, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -42,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -57,12 +59,17 @@
 
 ## Description
 
-GameData.GameData.Player.Group.Settings.isPublic field accessed by 1 addons; commonly found in cmd_open_party_status and is_open_party, lua_call contexts.
+GameData.GameData.Player.Group.Settings.isPublic field accessed by 2 addons; commonly found in OnOpenPartySettingUpdated and cmd_open_party_status, is_open_party, lua_call contexts.
 
 ## Seen In
 
 - AutoBand
+- EA_OpenPartyWindow
+
+## Related APIs
+
+- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
 
 ## Notes
 
-- Observed in contexts: cmd_open_party_status, is_open_party, lua_call
+- Observed in contexts: OnOpenPartySettingUpdated, cmd_open_party_status, is_open_party, lua_call

@@ -84,7 +84,6 @@ SystemData.SystemData.Events.PLAYER_POSITION_UPDATED field accessed by 17 addons
 
 ## Related APIs
 
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 

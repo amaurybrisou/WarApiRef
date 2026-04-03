@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 1 addons
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
@@ -11,31 +11,33 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 156
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +18 Used in event registration or dispatch: Observed in event-driven engine hooks.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +25 Referenced by generated docs or reference files: The symbol is reinforced outside a single call page.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Minmap |
-| Files seen in | core.lua |
+| Addons seen in | CMap, Minmap |
+| Files seen in | CMap.lua, core.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | ARC, lua_call |
+| Example locations | ARC, OnRallyCallLButtonUp, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -43,7 +45,7 @@
 | Default UI presence | yes |
 | Event binding presence | yes |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | no |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -58,12 +60,13 @@
 
 ## Description
 
-SystemData.SystemData.Events.RALLY_CALL_JOIN field accessed by 1 addons; commonly found in ARC and lua_call contexts.
+SystemData.SystemData.Events.RALLY_CALL_JOIN field accessed by 2 addons; commonly found in ARC and OnRallyCallLButtonUp, lua_call contexts.
 
 ## Seen In
 
+- CMap
 - Minmap
 
 ## Notes
 
-- Observed in contexts: ARC, lua_call
+- Observed in contexts: ARC, OnRallyCallLButtonUp, lua_call

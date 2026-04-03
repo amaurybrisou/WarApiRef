@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 88 addons
+- Seen in: 105 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, Atlas, Aura, BagOMatic, BankArkel, BlackBook |
-| Files seen in | AdvancedRenownTraining.lua, AggroMeter.lua, BagOMatic.lua, BankArkel.lua, BlackBookWindow.lua, CCTV.lua, CDownSettings.lua, ClosetGoblinCharacterWindow.lua |
+| Addons seen in | Ace, AdvancedRenownTrainer, AggroMeter, Assist, Atlas, Aura, BagOMatic, BankArkel |
+| Files seen in | AdvancedRenownTraining.lua, AggroMeter.lua, BagOMatic.lua, BankArkel.lua, BlackBookWindow.lua, CCTV.lua, CDownSettings.lua, CMap.lua |
 | Namespaces detected | WindowGetId |
 | Source kinds | lua_calls |
 | Example locations | Ace: GetId, AdvancedRenownTrainer: AbilityTooltip, AdvancedRenownTrainer: OnLButtonUpTab, AdvancedRenownTrainer: Select, AggroMeter: OnTabLBU, AggroMeter: PickedListMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 385 |
-| Global usage count | 385 |
+| Lua usage count | 475 |
+| Global usage count | 475 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: ButtonName, EA_Window_ContextMenu.activeWindow, ParentRow |
+| windowName | Observed as a target window name. | Observed values: "SocialWindowAddMemberWindow", ButtonName, EA_Window_ContextMenu.activeWindow |
 
 ## Returns
 
@@ -86,6 +86,7 @@ Observed querying runtime window state or metadata.
 - Ace
 - AdvancedRenownTrainer
 - AggroMeter
+- Assist
 - Atlas
 - Aura
 - BagOMatic
@@ -95,19 +96,26 @@ Observed querying runtime window state or metadata.
 - CCTV
 - CDown
 - CM_ClosetGoblin
+- CMap
 - CastSequence
+- Cheeseboard
 - Crusher
 - DAoCBuff
 - DPSMeter
 - DammazKron
 - DetauntHelper
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_ThreePartBar
+- EA_UiModWindow
+- EZCraft
 - EZCraftX
 - EZGuard
 - Effigy
 - Emojii
 - Enemy
+- FozAuction
 - GCDsaver
 - HealGrid
 - HideHiddenFrames
@@ -127,10 +135,12 @@ Observed querying runtime window state or metadata.
 - MarkBuff
 - Minmap
 - Miracle Grow Remix
+- MoraleSet
 - Motion
 - NerfedButtons
 - Obsidian
 - PartyCast
+- PieTracker
 - Pocket Palette
 - Pure
 - Pure Careerbar
@@ -142,13 +152,16 @@ Observed querying runtime window state or metadata.
 - Refer
 - ResHelp
 - RoR_SoR
+- Rolodex
 - Sequencer
 - SessionRPs
 - Shinies
+- SocialWindow 2.0
 - Statdoll
 - TacticSetNames
 - TargetRing
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyChat
 - TidyQueue
@@ -157,14 +170,18 @@ Observed querying runtime window state or metadata.
 - Tokens
 - Tome Titan
 - TomeTracker
+- Tortall_DPS
 - TurretRange
 - Vectors
+- WTes
 - WarBoard_Menu
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WoH-Reticle
 - XpStatus+G
+- bigger_MacroWindow
 - minesweep
 - nLootLink
 - nRarity
@@ -188,13 +205,20 @@ Observed querying runtime window state or metadata.
 - [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
 - [OnSlide](../../xml/handlers/handler_OnSlide.md) (HIGH 88/100) - XML Event
 - [OnTextChanged](../../xml/handlers/handler_OnTextChanged.md) (HIGH 88/100) - XML Event
+- [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
+- [IconLButtonUp](../../events/game_events/game_event_IconLButtonUp.md) (MEDIUM 43/100) - Game Event
 
 ## Used With
 
 - [EA_Window_ContextMenu.HideAll](../../globals/functions/global_EA_Window_ContextMenu.HideAll.md) (HIGH 100/100) - Global Function
+- [PartyUtils.GetWarbandMember](../../globals/functions/global_PartyUtils.GetWarbandMember.md) (HIGH 100/100) - Global Function
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetParent](window_WindowGetParent.md) (HIGH 100/100) - Window Function
+- [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
+- [PartyUtils.MoveWarbandMember](../../globals/functions/global_PartyUtils.MoveWarbandMember.md) (HIGH 88/100) - Global Function
+- [PartyUtils.SwapWarbandMembers](../../globals/functions/global_PartyUtils.SwapWarbandMembers.md) (MEDIUM 45/100) - Global Function
 
 ## Affects
 

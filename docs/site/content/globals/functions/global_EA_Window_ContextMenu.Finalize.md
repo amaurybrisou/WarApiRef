@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 51 addons
+- Seen in: 58 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | ActionFraction: RightClick, ActionFraction: SetFontSelectionMenu, ActionFraction: SetPresetLocation, AdjustTheTip: ContextMenu_Finalize, AdjustTheTip: CreateContextMenu, AdjustTheTip: SpawnAnchorContextMenu |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 143 |
-| Global usage count | 143 |
+| Lua usage count | 160 |
+| Global usage count | 160 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ EA_Window_ContextMenu.Finalize()
 
 ## Description
 
-Observed as a global function across 51 addons.
+Observed as a global function across 58 addons.
 
 ## Parameters
 
@@ -92,11 +92,14 @@ Observed as a global function across 51 addons.
 - Crusher
 - Dascore
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
+- EZCraft
 - EZCraftX
 - Effigy
 - Enemy
+- FozAuction
 - HealGrid
 - Killer
 - LibAddonButton
@@ -120,17 +123,21 @@ Observed as a global function across 51 addons.
 - SOR
 - Shinies
 - ShowMeTheBubbles
+- SocialWindow 2.0
 - TacticSetNames
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - TidyChat
 - TidyQueue
+- Tortall_DPS
 - TurretRange
 - Vectors
 - WARCommander
 - WarBoard
 - WarBoard_Loc
 - WarBoard_Menu
+- WarBoard_WarWhisperer
 - XpStatus+G
 - scenarioInfo
 
@@ -157,7 +164,8 @@ Observed as a global function across 51 addons.
 - [EA_Window_ContextMenu.CreateContextMenu](global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.Hide](global_EA_Window_ContextMenu.Hide.md) (HIGH 100/100) - Global Function
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
-- [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
 
 ## Notes
 

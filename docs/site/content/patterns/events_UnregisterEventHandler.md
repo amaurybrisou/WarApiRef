@@ -15,8 +15,8 @@ Observed removing previously registered global runtime handlers.
 - [SystemData.Events.LOADING_END](../events/game_events/game_event_SystemData.Events.LOADING_END.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.LOADING_END](../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED](../systemdata/fields/systemdata_SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.UPDATE_PROCESSED](../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.UPDATE_PROCESSED](../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.UPDATE_PROCESSED](../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [OnUpdate](../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [UnregisterEventHandler](../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
@@ -25,7 +25,7 @@ Observed removing previously registered global runtime handlers.
 ## Flow Diagram
 
 ```text
-OnShutdown -> UnregisterEventHandler
+SystemData.Events.ENTER_WORLD <-> SystemData.Events.INTERFACE_RELOADED
 ```
 
 ## Example Code

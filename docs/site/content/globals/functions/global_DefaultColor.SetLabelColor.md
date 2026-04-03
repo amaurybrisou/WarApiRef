@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 88/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, Tome Titan |
-| Files seen in | Setup/LayoutFrame.lua, TTitan_UI.lua |
+| Addons seen in | BuffHead, EA_UiModWindow, Tome Titan |
+| Files seen in | Setup/LayoutFrame.lua, TTitan_UI.lua, source/uimodwindow.lua |
 | Namespaces detected | DefaultColor |
 | Source kinds | lua_calls |
-| Example locations | BuffHead: UpdateFrameColor, Tome Titan: MouseOverRow |
+| Example locations | BuffHead: UpdateFrameColor, EA_UiModWindow: UpdateModDetailsData, EA_UiModWindow: UpdateModRowByIndex, Tome Titan: MouseOverRow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,14 +62,14 @@ DefaultColor.SetLabelColor(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 3 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: self:GetName().."Name", targetRowWindow.."Name" |
-| arg2 | Observed as a function or method reference. | Observed values: DefaultColor.MAGENTA, nameColor |
+| arg1 | Observed as a function or method reference. | Observed values: rowName.."Status", self:GetName().."Name", targetRowWindow.."Name" |
+| arg2 | Observed as a function or method reference. | Observed values: DefaultColor.MAGENTA, loadStatusData.color, nameColor |
 
 ## Returns
 
@@ -82,12 +82,19 @@ Observed as a global function across 2 addons.
 ## Seen In
 
 - BuffHead
+- EA_UiModWindow
 - Tome Titan
 
 ## Examples
 
 - BuffHead: UpdateFrameColor -> DefaultColor.SetLabelColor(self:GetName().."Name", nameColor)
+- EA_UiModWindow: UpdateModDetailsData -> DefaultColor.SetLabelColor(windowName.."ScrollChildStatusText", loadStatusData.color)
+- EA_UiModWindow: UpdateModRowByIndex -> DefaultColor.SetLabelColor(rowName.."Status", loadStatusData.color)
 - Tome Titan: MouseOverRow -> DefaultColor.SetLabelColor(targetRowWindow.."Name", DefaultColor.MAGENTA)
+
+## Used With
+
+- [DefaultColor.SetWindowTint](global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
 
 ## Affects
 

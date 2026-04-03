@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 99 addons
+- Seen in: 107 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Ace: Alpha, ActionBarHide: Alpha, AdjustTheTip: AbilityTooltipSetShowing, Amethyst: Alpha, Atlas: SetMapTransparency, Atlas: UpdateLegend |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 555 |
-| Global usage count | 555 |
+| Lua usage count | 574 |
+| Global usage count | 574 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -99,15 +99,18 @@ Observed mutating runtime window state or presentation.
 - Busted
 - CCTV
 - CDown
+- CMap
 - Calling
 - CastSequence
 - ChattyCathy
+- Cheeseboard
 - CoolDownLine
 - CraftingWillard
 - Crusher
 - DAoCBuff
 - DetauntHelper
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
 - EZCraftX
@@ -115,6 +118,7 @@ Observed mutating runtime window state or presentation.
 - Effigy
 - Enemy
 - EveryBodyGuard
+- FozAuction
 - GCDsaver
 - Group Icons
 - Group Icons SG
@@ -122,6 +126,7 @@ Observed mutating runtime window state or presentation.
 - GroupSpotter
 - GuardBot
 - GuardLine
+- GuardList
 - HealGrid
 - Hopper
 - InfoScroller
@@ -168,10 +173,13 @@ Observed mutating runtime window state or presentation.
 - Tokens
 - Tome Titan
 - TomeTracker
+- Tortall_DPS
 - TurretRange
 - Vectors
 - WARRatingBuster
 - WSCT
+- WTes
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -208,7 +216,6 @@ Observed mutating runtime window state or presentation.
 - [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureOrientation](window_DynamicImageSetTextureOrientation.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureSlice](window_DynamicImageSetTextureSlice.md) (HIGH 100/100) - Window Function
-- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetAlpha](window_WindowGetAlpha.md) (HIGH 100/100) - Window Function

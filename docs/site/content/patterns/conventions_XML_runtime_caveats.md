@@ -20,7 +20,7 @@ Implementation-validated findings show that XML input and scroll layout behavior
 
 ```text
 OnLButtonUp
-  -> handlers: ScenarioGroupWindow.LeaveGroup
+  -> handlers: AuctionWindow.Hide, EA_Window_OpenParty.ToggleFullWindow, ScenarioGroupWindow.LeaveGroup
   -> ui: Button
 ```
 

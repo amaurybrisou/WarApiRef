@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 47 addons
+- Seen in: 49 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, Amethyst, BuffHead, CCTV, CleanUnitFrames |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, Amethyst, BuffHead, CCTV, CMap |
 | Files seen in | AdjustTheTip.lua, CCTV.lua, CleanGroupMemberUnitFrame.lua, Code/Assist/Assist.lua, Code/GroupIcons/GroupIcon.lua, Code/Guard/Guard.lua, Code/Marks/MarkTemplate.lua, Code/UnitFrames/UnitFramePart.lua |
 | Namespaces detected | WindowSetHandleInput |
 | Source kinds | lua_calls |
 | Example locations | Ace: CaptureInput, Ace: IgnoreInput, Ace: MakeMovable, ActionBarHide: CaptureInput, ActionBarHide: IgnoreInput, ActionBarHide: MakeMovable |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 178 |
-| Global usage count | 178 |
+| Lua usage count | 186 |
+| Global usage count | 186 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -91,6 +91,7 @@ Observed mutating runtime window state or presentation.
 - Amethyst
 - BuffHead
 - CCTV
+- CMap
 - CleanUnitFrames
 - Crusher
 - DAoCBuff
@@ -123,6 +124,7 @@ Observed mutating runtime window state or presentation.
 - TidyRoll
 - Tokens
 - Vectors
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse

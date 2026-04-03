@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 107 addons
+- Seen in: 121 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AbilityAlert, ActionFraction, Amethyst, Atlas, AutoBand, BBars - Mechanic Only, Brizio's Crappy Computer Medic, BuffHead |
-| Files seen in | AbilityAlert.lua, AdvancedContainers.lua, Amethyst.lua, AutoBand.lua, BBarsPlayerMechanic.lua, Busted.lua, CCM.lua, CDown.lua |
+| Addons seen in | AbilityAlert, AbilityNotifier, ActionFraction, ActionPoints, Amethyst, Atlas, AutoBand, BBars - Mechanic Only |
+| Files seen in | AAOTracker.lua, AbilityAlert.lua, AbilityNotifier.lua, ActionPoints.lua, AdvancedContainers.lua, Amethyst.lua, AutoBand.lua, BBarsPlayerMechanic.lua |
 | Namespaces detected | LayoutEditor |
 | Source kinds | lua_calls |
-| Example locations | AbilityAlert: Initialize, ActionFraction: Initialize, Amethyst: Recreate, Atlas: LayoutEditorRegistrations, AutoBand: init, BBars - Mechanic Only: MechDraw |
+| Example locations | AbilityAlert: Initialize, AbilityNotifier: Initialize, ActionFraction: Initialize, ActionPoints: Initialize, Amethyst: Recreate, Atlas: LayoutEditorRegistrations |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 173 |
-| Global usage count | 173 |
+| Lua usage count | 189 |
+| Global usage count | 189 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ LayoutEditor.RegisterWindow(arg1, arg2, arg3, arg4, arg5, arg6, arg7)
 
 ## Description
 
-Observed as a window function across 107 addons.
+Observed as a window function across 121 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "AAWindow", "ActionBarLockToggler", "AtlasConfigurationFrame" |
+| arg1 | Observed as a text or wstring payload. | Observed values: "AAWindow", "AbHelpWindow", "ActionBarLockToggler" |
 | arg2 | Observed as a text or wstring payload. | Observed values: Atlas.Strings.AtlasConfigurationFrameTitle, Atlas.Strings.AtlasFrameTitle, Calling.GetLocalized("callingIconCaption") |
 | arg3 | Observed as a text or wstring payload. | Observed values: "", "Text", Atlas.Strings.AtlasConfigurationFrameDescription |
 | arg4 | Observed as a boolean toggle. | Observed values: false, true |
@@ -90,7 +90,9 @@ Observed as a window function across 107 addons.
 ## Seen In
 
 - AbilityAlert
+- AbilityNotifier
 - ActionFraction
+- ActionPoints
 - Amethyst
 - Atlas
 - AutoBand
@@ -100,10 +102,12 @@ Observed as a window function across 107 addons.
 - Busted
 - CDown
 - CM_ClosetGoblin
+- CMap
 - Calling
 - ChattyCathy
 - CleanUnitFrames
 - CleansingBuddy
+- Clock
 - Countdown
 - CraftingWillard
 - Crusher
@@ -111,6 +115,7 @@ Observed as a window function across 107 addons.
 - DammazKron
 - DetauntHelper
 - DuffTimer
+- EA_OpenPartyWindow
 - Effigy
 - Emojii
 - Enemy
@@ -122,6 +127,8 @@ Observed as a window function across 107 addons.
 - GroupRange
 - GroupSpotter
 - GuardLine
+- GuardList
+- GuardRange
 - GuildWarden
 - HealGrid
 - Hopper
@@ -137,8 +144,10 @@ Observed as a window function across 107 addons.
 - Miracle Grow Remix
 - MiracleGrow
 - MiracleGrowLight
+- MoraleSet
 - Moth
 - Motion
+- MyReasons
 - NerfedButtons
 - NoOverheal
 - Obsidian
@@ -176,6 +185,7 @@ Observed as a window function across 107 addons.
 - Tokens
 - Tome Titan
 - TomeTracker
+- Tortall_DPS
 - Trakario
 - TurretRange
 - TurretScrap
@@ -183,6 +193,9 @@ Observed as a window function across 107 addons.
 - TwisterSet
 - VPBreakdown
 - WARCommander
+- WTes
+- WarBoard_AAOTracker
+- WarBoard_WarWhisperer
 - WhatsCooking
 - WhoHealedMe
 - Wikki's Cooldown Bar
@@ -192,6 +205,7 @@ Observed as a window function across 107 addons.
 - compass
 - emotes
 - followTheLeader
+- fpsbox
 - nLootLink
 - talisman-monitor
 - yAssistHelper
@@ -200,11 +214,11 @@ Observed as a window function across 107 addons.
 ## Examples
 
 - AbilityAlert: Initialize -> LayoutEditor.RegisterWindow("AAWindow", L "Ability Alert!", L "Alerts when cooldown completed and combat events.", false, false, true, nil)
+- AbilityNotifier: Initialize -> LayoutEditor.RegisterWindow("AbHelpWindow", L "Ability Notifier", L "Reminds you to use skills.", false, false, true, nil)
 - ActionFraction: Initialize -> LayoutEditor.RegisterWindow(windowName, L "Action Fraction", L "Displays character's current Action Points", true, true, true, nil)
+- ActionPoints: Initialize -> LayoutEditor.RegisterWindow("ActionPointsWindow", L "Action Points Indicator", L "Displays your current AP.", false, false, true, nil)
 - Amethyst: Recreate -> LayoutEditor.RegisterWindow(C.name, L "Amethyst CastBar", "", true, true, true)
 - Atlas: LayoutEditorRegistrations -> LayoutEditor.RegisterWindow("AtlasFrame", Atlas.Strings.AtlasFrameTitle, Atlas.Strings.AtlasFrameDescription, false, false, true, nil)
-- Atlas: LayoutEditorRegistrations -> LayoutEditor.RegisterWindow("AtlasConfigurationFrame", Atlas.Strings.AtlasConfigurationFrameTitle, Atlas.Strings.AtlasConfigurationFrameDescription, false, false, true, nil)
-- AutoBand: init -> LayoutEditor.RegisterWindow("AutoBandMapIcon", L "AutoBand", L "AutoBand Button", false, false, true, nil)
 
 ## Related APIs
 
@@ -215,9 +229,11 @@ Observed as a window function across 107 addons.
 
 - [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureDimensions](window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [LayoutEditor.UnregisterWindow](window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
 - [LibSlash.IsSlashCmdRegistered](../../globals/functions/global_LibSlash.IsSlashCmdRegistered.md) (HIGH 100/100) - Global Function
 - [LibSlash.RegisterWSlashCmd](../../globals/functions/global_LibSlash.RegisterWSlashCmd.md) (HIGH 100/100) - Global Function
+- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
@@ -232,17 +248,11 @@ Observed as a window function across 107 addons.
 
 ## Affects
 
-- [SystemData.Events.BATTLEGROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_LEAVE](../../systemdata/fields/systemdata_SystemData.Events.GROUP_LEAVE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
 
 ## Notes

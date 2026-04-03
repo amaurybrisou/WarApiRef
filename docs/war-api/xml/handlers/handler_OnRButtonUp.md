@@ -160,8 +160,8 @@ function(...)
 
 - AggroMeter: .OnRButtonUp -> AggroMeter.OnTabRBU
 - AggroMeter: .OnRButtonUp -> AggroMeter.PickedListMenu
-- AnywhereTrainerAdditions: .OnRButtonUp -> AnywhereTrainerAdditions.OnRButtonUp
 - AnywhereTrainer: .OnRButtonUp -> AnywhereTrainer.OnRButtonUp
+- AnywhereTrainerAdditions: .OnRButtonUp -> AnywhereTrainerAdditions.OnRButtonUp
 - Atlas: .OnRButtonUp -> AtlasMap.OnMapRBU
 - AuctionStats: .OnRButtonUp -> AuctionStats.OnRButtonUpItem
 

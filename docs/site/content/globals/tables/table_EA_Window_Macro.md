@@ -27,7 +27,7 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AdvancedPetAssist, Atlas, Brizio's Crappy Computer Medic, BuddyBind, Calling, Enemy, RandomMount, Squared |
-| Files seen in | Code/Core/ConfigurationWindow.lua, Code/Core/Utils.lua, Code/ScenarioInfo/ScenarioInfo.lua, Shared/Utilities.lua |
+| Files seen in | Code/Assist/Assist.lua, Code/Core/ConfigurationWindow.lua, Code/Core/Utils.lua, Shared/Utilities.lua |
 | Namespaces detected | EA_Window_Macro |
 | Source kinds | lua_calls |
 | Example locations | AdvancedPetAssist: CreateOrUpdateMacros, Atlas: CreateMacro, Brizio's Crappy Computer Medic: SetMacro, BuddyBind: CreateMacro, Calling: CreateMacro, Enemy: ConfigurationWindow_OnMacroMouseDrag |

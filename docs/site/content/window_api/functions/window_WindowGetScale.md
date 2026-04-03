@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 67 addons
+- Seen in: 71 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Amethyst, Atlas, BetterCC, BuffHead, CDown, Calling, CastSequence |
-| Files seen in | AdvancedContainers.lua, Amethyst.lua, Bars/HealGridProgressBar.lua, BetterCC.lua, CDownFrames.lua, CallingNotification.lua, CleanCastbar.lua, CleanTargetWindow.lua |
+| Addons seen in | Ace, Amethyst, Atlas, BetterCC, BuffHead, CDown, CMap, Calling |
+| Files seen in | AdvancedContainers.lua, Amethyst.lua, Bars/HealGridProgressBar.lua, BetterCC.lua, CDownFrames.lua, CMap.lua, CallingNotification.lua, CleanCastbar.lua |
 | Namespaces detected | WindowGetScale |
 | Source kinds | lua_calls |
 | Example locations | Ace: Scale, Amethyst: SavePosition, Amethyst: Scale, Atlas: ShowCoordinatesOnMouseOver, Atlas: UpdateDirectionalButtons, Atlas: UpdateLegend |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 190 |
-| Global usage count | 190 |
+| Lua usage count | 198 |
+| Global usage count | 198 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "AtlasFrame", "CMapWindowMapDisplay", "CallWindow" |
+| windowName | Observed as a target window name. | Observed values: "AtlasFrame", "CMapWindow", "CMapWindowMapDisplay" |
 
 ## Returns
 
@@ -89,6 +89,7 @@ Observed querying runtime window state or metadata.
 - BetterCC
 - BuffHead
 - CDown
+- CMap
 - Calling
 - CastSequence
 - CleanCastbar
@@ -141,11 +142,14 @@ Observed querying runtime window state or metadata.
 - Vectors
 - VerticalTactics
 - WARCommander
+- WTes
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WindowMovers
 - WoH-Reticle
+- fpsbox
 - nLootLink
 - nRarity
 - scenarioInfo
@@ -168,11 +172,8 @@ Observed querying runtime window state or metadata.
 
 ## Used With
 
-- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [WindowGetAnchor](window_WindowGetAnchor.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowGetScreenPosition](window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
-- [WindowGetShowing](window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetAlpha](window_WindowSetAlpha.md) (HIGH 100/100) - Window Function
 - [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function

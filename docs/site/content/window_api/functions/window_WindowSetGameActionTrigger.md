@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 35 addons
+- Seen in: 37 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Amethyst, BuddyBind, CastSequence, Crusher, DetauntHelper, EZCraftX, EZGuard |
+| Addons seen in | Ace, Amethyst, BuddyBind, CMap, CastSequence, Crusher, DetauntHelper, EZCraftX |
 | Files seen in | BuddyBind.lua, Core.lua, EveryBodyGuard.lua, GroupSpotter.lua, LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Modules/HealGridMouseClick.lua |
 | Namespaces detected | WindowSetGameActionTrigger |
 | Source kinds | lua_calls |
-| Example locations | Ace: Trigger, Amethyst: Trigger, BuddyBind: init, CastSequence: SetTrigger, Crusher: Trigger, DetauntHelper: OnLButtonDown |
+| Example locations | Ace: Trigger, Amethyst: Trigger, BuddyBind: init, CMap: Trigger, CastSequence: SetTrigger, Crusher: Trigger |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 43 |
-| Global usage count | 43 |
+| Lua usage count | 45 |
+| Global usage count | 45 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -87,6 +87,7 @@ Observed mutating runtime window state or presentation.
 - Ace
 - Amethyst
 - BuddyBind
+- CMap
 - CastSequence
 - Crusher
 - DetauntHelper
@@ -113,6 +114,7 @@ Observed mutating runtime window state or presentation.
 - TargetRing
 - Tokens
 - Twister
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -125,17 +127,13 @@ Observed mutating runtime window state or presentation.
 - Ace: Trigger -> WindowSetGameActionTrigger(self.name, action)
 - Amethyst: Trigger -> WindowSetGameActionTrigger(self.name, action)
 - BuddyBind: init -> WindowSetGameActionTrigger("BuddyBindWindowExecute", GetActionIdFromName("ACTION_BAR_"..BuddyBind.Button))
+- CMap: Trigger -> WindowSetGameActionTrigger(self.name, action)
 - CastSequence: SetTrigger -> WindowSetGameActionTrigger(self:GetName().."Bar"..index, actionId)
 - Crusher: Trigger -> WindowSetGameActionTrigger(self.name, action)
-- DetauntHelper: OnLButtonDown -> WindowSetGameActionTrigger(self.m_BarName, actionId)
 
 ## Related APIs
 
 - [OnLButtonDown](../../xml/handlers/handler_OnLButtonDown.md) (HIGH 88/100) - XML Event
-
-## Used With
-
-- [WindowSetGameActionData](window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
 
 ## Affects
 

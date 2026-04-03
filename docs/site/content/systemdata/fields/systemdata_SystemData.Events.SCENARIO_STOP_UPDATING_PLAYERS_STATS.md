@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 4 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 156
+- Raw weighted score: 168
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, referenced by generated docs or reference files.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, Trakario, scenarioInfo |
-| Files seen in | Code/ScenarioInfo/ScenarioInfo.lua, scenarioInfo.lua, trakario.lua |
+| Addons seen in | Assist, Enemy, Trakario, scenarioInfo |
+| Files seen in | Code/ScenarioInfo/ScenarioInfo.lua, assist.lua, scenarioInfo.lua, trakario.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | GetDeathCountByName, ScenarioInfoUI_ScenarioInfoDialog_OnHidden, Timer, _ScenarioInfoEnabledChanged, lua_call |
+| Example locations | CheckSCPlayers, GetDeathCountByName, ScenarioInfoUI_ScenarioInfoDialog_OnHidden, Timer, _ScenarioInfoEnabledChanged, lua_call |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 5 |
-| Global usage count | 5 |
+| Lua usage count | 6 |
+| Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,10 +60,11 @@
 
 ## Description
 
-SystemData.SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS field accessed by 3 addons; commonly found in GetDeathCountByName and ScenarioInfoUI_ScenarioInfoDialog_OnHidden, Timer, _ScenarioInfoEnabledChanged, lua_call contexts.
+SystemData.SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS field accessed by 4 addons; commonly found in CheckSCPlayers and GetDeathCountByName, ScenarioInfoUI_ScenarioInfoDialog_OnHidden, Timer, _ScenarioInfoEnabledChanged, lua_call contexts.
 
 ## Seen In
 
+- Assist
 - Enemy
 - Trakario
 - scenarioInfo
@@ -71,7 +72,14 @@ SystemData.SystemData.Events.SCENARIO_STOP_UPDATING_PLAYERS_STATS field accessed
 ## Related APIs
 
 - [GameData.GetScenarioPlayers](../../globals/functions/global_GameData.GetScenarioPlayers.md) (HIGH 100/100) - Global Function
+- [BroadcastEvent](../../globals/functions/global_BroadcastEvent.md) (HIGH 93/100) - Global Function
+
+## Used With
+
+- [GameData.GetScenarioPlayers](../../globals/functions/global_GameData.GetScenarioPlayers.md) (HIGH 100/100) - Global Function
+- [SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS](systemdata_SystemData.Events.SCENARIO_START_UPDATING_PLAYERS_STATS.md) (HIGH 100/100) - SystemData Field
+- [BroadcastEvent](../../globals/functions/global_BroadcastEvent.md) (HIGH 93/100) - Global Function
 
 ## Notes
 
-- Observed in contexts: GetDeathCountByName, ScenarioInfoUI_ScenarioInfoDialog_OnHidden, Timer, _ScenarioInfoEnabledChanged, lua_call
+- Observed in contexts: CheckSCPlayers, GetDeathCountByName, ScenarioInfoUI_ScenarioInfoDialog_OnHidden, Timer, _ScenarioInfoEnabledChanged, lua_call

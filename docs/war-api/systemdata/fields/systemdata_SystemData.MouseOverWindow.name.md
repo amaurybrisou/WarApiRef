@@ -154,14 +154,14 @@ SystemData.SystemData.MouseOverWindow.name field accessed by 63 addons; commonly
 
 ## Used With
 
+- [DialogManager.MakeTextEntryDialog](../../globals/functions/global_DialogManager.MakeTextEntryDialog.md) (HIGH 100/100) - Global Function
+- [EA_ChatWindow.InsertText](../../globals/functions/global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.AddMenuDivider](../../globals/functions/global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.AddMenuItem](../../globals/functions/global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
-- [PartyUtils.GetWarbandMember](../../globals/functions/global_PartyUtils.GetWarbandMember.md) (HIGH 100/100) - Global Function
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 - [OnMouseOver](../../xml/handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
-- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
 
 ## Notes
 

@@ -18,7 +18,7 @@ Observed XML and window-scoped handlers using On* hooks to bridge engine UI even
 
 ```text
 OnLButtonUp
-  -> handlers: ScenarioGroupWindow.LeaveGroup
+  -> handlers: AuctionWindow.Hide, EA_Window_OpenParty.ToggleFullWindow, ScenarioGroupWindow.LeaveGroup
   -> ui: Button
 ```
 

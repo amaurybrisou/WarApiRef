@@ -26,14 +26,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions, EZCraftX, JunkDump, Motion, nLootLink |
+| Addons seen in | AnywhereTrainer, AnywhereTrainerAdditions, EZCraft, EZCraftX, JunkDump, Motion, nLootLink |
 | Files seen in | Source/EZCraftX.lua, Source/Motion.lua, source/AnywhereTrainer.lua, source/nLootLinkData.lua, source/nLootLinkGUI.lua |
 | Namespaces detected | CraftingSystem |
 | Source kinds | lua_calls |
-| Example locations | AnywhereTrainer: OnLeftClickCraft, AnywhereTrainerAdditions: OnLeftClickCraft, EZCraftX: item_allowed_in_slot, JunkDump: professionChecks, JunkDump: professionChecks2, Motion: determineCraftSubKey |
+| Example locations | AnywhereTrainer: OnLeftClickCraft, AnywhereTrainerAdditions: OnLeftClickCraft, EZCraft: ItemIsAllowedInSlot, EZCraftX: item_allowed_in_slot, JunkDump: professionChecks, JunkDump: professionChecks2 |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 14 |
+| Lua usage count | 15 |
 | Global usage count | 6 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 6 member functions; the primary API surface for 6 addons.
+Shared function table with 6 member functions; the primary API surface for 7 addons.
 
 ## Functions
 
@@ -76,6 +76,7 @@ Shared function table with 6 member functions; the primary API surface for 6 add
 
 - AnywhereTrainer
 - AnywhereTrainerAdditions
+- EZCraft
 - EZCraftX
 - JunkDump
 - Motion
@@ -87,8 +88,8 @@ Shared function table with 6 member functions; the primary API surface for 6 add
 - AnywhereTrainer: OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.TALISMAN)
 - AnywhereTrainerAdditions: OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.APOTHECARY)
 - AnywhereTrainerAdditions: OnLeftClickCraft -> CraftingSystem.ToggleShowing(GameData.TradeSkills.TALISMAN)
+- EZCraft: ItemIsAllowedInSlot -> CraftingSystem.GetCraftingData(itemData)
 - EZCraftX: item_allowed_in_slot -> CraftingSystem.GetCraftingData(itemData)
-- JunkDump: professionChecks -> CraftingSystem.GetCraftingData(itemData)
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 12 addons
+- Seen in: 13 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | BBars - Mechanic Only: MechDraw, BBars - Mechanic Only: PetHPDraw, CoolDownLine: OnUpdate, DammazKron: InitializeBookmark, FlagCap: OnUpdate, GetStats: OnChatLogUpdated |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 40 |
-| Global usage count | 40 |
+| Lua usage count | 43 |
+| Global usage count | 43 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -97,6 +97,7 @@ Observed mutating runtime window state or presentation.
 - RoR_SoR
 - RoR_debolster
 - Twister
+- WarBoard_WarWhisperer
 
 ## Examples
 

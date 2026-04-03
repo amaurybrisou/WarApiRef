@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 23 addons
+- Seen in: 24 addons
 
 ## Confidence Assessment
 
@@ -28,8 +28,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CastSequence, Crusher, DetauntHelper, EmoteAlert, GCDTracker, GroupRange, Hopper, MarkBuff |
-| Files seen in | Core.lua, CurseProfilerCompiled.lua, EmoteAlert.lua, Gui.lua, NerfedTalks.lua, PocketPalette.lua, RezEmote.lua, Source/Crusher.lua |
+| Addons seen in | BarText (Influence), CastSequence, Crusher, DetauntHelper, EmoteAlert, GCDTracker, GroupRange, Hopper |
+| Files seen in | BarText_Influence.lua, Core.lua, CurseProfilerCompiled.lua, EmoteAlert.lua, Gui.lua, NerfedTalks.lua, PocketPalette.lua, RezEmote.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | HandleNerfListCommand, Initialize, LibSlashHandler, ListUnknowns, Log, OnPlayerDeath |
@@ -59,10 +59,11 @@
 
 ## Description
 
-SystemData.SystemData.ChatLogFilters.SAY field accessed by 23 addons; commonly found in HandleNerfListCommand and Initialize, LibSlashHandler, ListUnknowns, Log, OnPlayerDeath, Print, Say, errorhandler, log, lua_call, print, printChat, printHelp, repeatnil, slash, truefalse contexts.
+SystemData.SystemData.ChatLogFilters.SAY field accessed by 24 addons; commonly found in HandleNerfListCommand and Initialize, LibSlashHandler, ListUnknowns, Log, OnPlayerDeath, Print, Say, errorhandler, log, lua_call, print, printChat, printHelp, repeatnil, slash, truefalse contexts.
 
 ## Seen In
 
+- BarText (Influence)
 - CastSequence
 - Crusher
 - DetauntHelper

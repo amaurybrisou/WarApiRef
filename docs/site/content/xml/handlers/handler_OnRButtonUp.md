@@ -29,7 +29,7 @@
 | Example locations | AggroMeter: .OnRButtonUp, AnywhereTrainer: .OnRButtonUp, AnywhereTrainerAdditions: .OnRButtonUp, Atlas: .OnRButtonUp, AuctionStats: .OnRButtonUp, Aura: .OnRButtonUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 218 |
+| Lua usage count | 240 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 80 addons.
+XML handler event observed across 88 addons.
 
 ## Expected Lua Binding
 
@@ -78,6 +78,7 @@ function(...)
 - BuffHead
 - Busted
 - CM_ClosetGoblin
+- CMap
 - Calling
 - CastSequence
 - CleanUnitFrames
@@ -85,10 +86,12 @@ function(...)
 - DammazKron
 - DetauntHelper
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_UiDebugTools
 - Effigy
 - Emojii
 - Enemy
+- FozAuction
 - GroupSpotter
 - HealGrid
 - JunkDump
@@ -105,10 +108,12 @@ function(...)
 - Miracle Grow Remix
 - MiracleGrowLight
 - MoraleCircle
+- MoraleSet
 - NerfedButtons
 - NoOverheal
 - Obsidian
 - PeaceOut
+- PieTracker
 - PlayEffectsOn
 - Pocket Palette
 - PotionBar
@@ -123,17 +128,20 @@ function(...)
 - SOR
 - ScenarioStats
 - Shinies
+- SocialWindow 2.0
 - Squared
 - SquaredClick
 - Statdoll
 - Statdoll Light
 - Statdoll Remix
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThankTheTank
 - ThinkOutLoud
 - TidyQueue
 - Tome Titan
+- Tortall_DPS
 - Trakario
 - TurretRange
 - Twister
@@ -180,7 +188,14 @@ function(...)
 - [WindowSetLayer](../../window_api/functions/window_WindowSetLayer.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [EA_Window_ContextMenu.CreateOpacityOnlyContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateOpacityOnlyContextMenu.md) (HIGH 80/100) - Global Function
 - [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
+- [PlayerMenuWindow.NewCustomItem](../../globals/functions/global_PlayerMenuWindow.NewCustomItem.md) (HIGH 75/100) - Global Function
+
+## Used With
+
+- [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
+- [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
 
 ## Affects
 

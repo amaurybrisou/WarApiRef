@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 24 addons
+- Seen in: 35 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, Atlas, BuddyBind, Busted, CaVES, Calling, CleanUnitFrames, EA_ScenarioGroupWindow |
-| Files seen in | BuddyBind.lua, Busted.lua, CallingKeybinding.lua, CleanTargetWindow.lua, MGRemix.lua, Map.lua, Map/Main.lua, MiracleGrow.lua |
+| Addons seen in | ActionFraction, Atlas, BuddyBind, Busted, CMap, CaVES, Calling, CleanUnitFrames |
+| Files seen in | BuddyBind.lua, Busted.lua, CMap.lua, CallingKeybinding.lua, CleanTargetWindow.lua, EZCraft.lua, MGRemix.lua, Map.lua |
 | Namespaces detected | WindowRegisterEventHandler |
 | Source kinds | lua_calls |
-| Example locations | ActionFraction: Initialize, Atlas: RegisterEventHandlers, BuddyBind: OnLButtonRawDeviceInput, Busted: Initialize, CaVES: Initialize, Calling: StartBinding |
+| Example locations | ActionFraction: Initialize, Atlas: RegisterEventHandlers, BuddyBind: OnLButtonRawDeviceInput, Busted: Initialize, CMap: Initialize, CaVES: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 80 |
-| Global usage count | 80 |
+| Lua usage count | 154 |
+| Global usage count | 154 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -73,7 +73,7 @@ Observed binding SystemData events directly to a named window.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: "AtlasFrame", "AuctionWindow", "BustedProxy" |
-| eventId | Observed as a SystemData event identifier. | Observed values: SystemData.Events.AUCTION_BID_RESULT_RECEIVED, SystemData.Events.AUCTION_INIT_RECEIVED, SystemData.Events.AUCTION_SEARCH_RESULT_RECEIVED |
+| eventId | Observed as a SystemData event identifier. | Observed values: SystemData.Events.ALLIANCE_UPDATED, SystemData.Events.ALL_MODULES_INITIALIZED, SystemData.Events.AUCTION_BID_RESULT_RECEIVED |
 | handlerName | Observed as a Lua handler reference. | Observed values: "ActionFractionWindow.OnAgroModeUpdated", "ActionFractionWindow.UpdateActionPoints", "ActionFractionWindow.UpdateBasedOnUserSettings" |
 
 ## Returns
@@ -90,26 +90,37 @@ Observed binding SystemData events directly to a named window.
 - Atlas
 - BuddyBind
 - Busted
+- CMap
 - CaVES
 - Calling
 - CleanUnitFrames
+- EA_LoadingScreen
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
+- EA_UiModWindow
+- EZCraft
 - EZCraftX
+- FozAuction
 - HealGrid
 - Map
 - Minmap
 - Miracle Grow Remix
 - MiracleGrow
+- MoraleSet
 - Moth
 - Phantom
 - RVMOD_PlayerStatus
 - RVMOD_Targets
 - ResHelp
+- Rolodex
 - SNT_CASTBAR
 - Shinies
+- SocialWindow 2.0
 - WARCommander
+- WarBoard_WarWhisperer
 - XpStatus+G
+- bigger_MacroWindow
 
 ## Examples
 
@@ -127,17 +138,9 @@ Observed binding SystemData events directly to a named window.
 
 ## Affects
 
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_POSITION_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_POSITION_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_ZONE_CHANGED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_ZONE_CHANGED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.RELOAD_INTERFACE](../../systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.UPDATE_PROCESSED](../../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

@@ -2,37 +2,41 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 90/100
-- Seen in: 1 addons
+- Confidence score: 100/100
+- Seen in: 2 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 90/100
+- Final score: 100/100
+
+- Raw weighted score: 123
 
 - Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
+- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
+- +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
 - +10 Argument pattern is consistent: Observed argument positions remain stable.
 
 ## Evidence Summary
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Squared |
-| Files seen in | SquaredGroup.lua, SquaredWarband.lua |
+| Addons seen in | NoUselessMods-Assist, Squared |
+| Files seen in | SquaredGroup.lua, SquaredWarband.lua, no-useless-mods-party.lua |
 | Namespaces detected | EA_Window_OpenParty |
 | Source kinds | lua_calls |
-| Example locations | Squared: OnMenuClickShowWarband, Squared: OnViewGroupOptions |
+| Example locations | NoUselessMods-Assist: OnFormWarparty, Squared: OnMenuClickShowWarband, Squared: OnViewGroupOptions |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -40,7 +44,7 @@
 | Default UI presence | yes |
 | Event binding presence | no |
 | Observed in XML and Lua | no |
-| Consistent role | no |
+| Consistent role | yes |
 | Consistent arguments | yes |
 | Consistent returns | no |
 | Slash command presence | no |
@@ -61,7 +65,7 @@ EA_Window_OpenParty.OpenToManageTab()
 
 ## Description
 
-Observed as a global function across 1 addons.
+Observed as a global function across 2 addons.
 
 ## Parameters
 
@@ -78,14 +82,16 @@ Observed as a global function across 1 addons.
 
 ## Seen In
 
+- NoUselessMods-Assist
 - Squared
 
 ## Examples
 
+- NoUselessMods-Assist: OnFormWarparty -> EA_Window_OpenParty.OpenToManageTab()
 - Squared: OnMenuClickShowWarband -> EA_Window_OpenParty.OpenToManageTab()
 - Squared: OnViewGroupOptions -> EA_Window_OpenParty.OpenToManageTab()
 
 ## Notes
 
-- Only one addon surfaced this symbol in the current corpus.
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

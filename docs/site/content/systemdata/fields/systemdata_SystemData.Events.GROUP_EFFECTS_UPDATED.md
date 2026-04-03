@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -30,14 +30,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | BuffHead, DAoCBuff, Enemy, EveryBodyGuard, HealGrid, MarkBuff, Phantom, Pure |
-| Files seen in | Code/Core/Groups/Groups.lua, Core.lua, EveryBodyGuard.lua, PhantomLib/PhantomLib.lua, Source/DAoCBuff.lua, Source/PureGroup.lua, SquaredHotIndicators.lua |
+| Files seen in | Code/Core/Groups/Groups.lua, Core.lua, EveryBodyGuard.lua, PhantomLib/PhantomLib.lua, Source/DAoCBuff.lua, Source/PureGroup.lua, SquaredHotIndicators.lua, WBStutterLess.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | EnforceEventStates, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, SetGroupTracking |
+| Example locations | EnforceEventStates, GroupWindowHook, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 9 |
-| Global usage count | 9 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.GROUP_EFFECTS_UPDATED field accessed by 9 addons; commonly found in EnforceEventStates and GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, SetGroupTracking, Shutdown, UnloadUnitFrame, lua_call contexts.
+SystemData.SystemData.Events.GROUP_EFFECTS_UPDATED field accessed by 10 addons; commonly found in EnforceEventStates and GroupWindowHook, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, SetGroupTracking, Shutdown, UnloadUnitFrame, lua_call contexts.
 
 ## Seen In
 
@@ -73,6 +73,7 @@ SystemData.SystemData.Events.GROUP_EFFECTS_UPDATED field accessed by 9 addons; c
 - Phantom
 - Pure
 - SquaredHotIndicators
+- WBStutterLess
 
 ## Related APIs
 
@@ -81,4 +82,4 @@ SystemData.SystemData.Events.GROUP_EFFECTS_UPDATED field accessed by 9 addons; c
 
 ## Notes
 
-- Observed in contexts: EnforceEventStates, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize, SetGroupTracking
+- Observed in contexts: EnforceEventStates, GroupWindowHook, GroupsInitialize, Initialize, LoadUnitFrame, OnInitialize

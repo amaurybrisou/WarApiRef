@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 83/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | EZCraftX, JunkDump, Motion, nLootLink |
-| Files seen in | JunkDump.lua, Source/EZCraftX.lua, Source/Motion.lua, source/nLootLinkData.lua |
+| Addons seen in | EZCraft, EZCraftX, JunkDump, Motion, nLootLink |
+| Files seen in | EZCraft.lua, JunkDump.lua, Source/EZCraftX.lua, Source/Motion.lua, source/nLootLinkData.lua |
 | Namespaces detected | CraftingSystem |
 | Source kinds | lua_calls |
-| Example locations | EZCraftX: item_allowed_in_slot, JunkDump: professionChecks, JunkDump: professionChecks2, Motion: determineCraftSubKey, nLootLink: addListData |
+| Example locations | EZCraft: ItemIsAllowedInSlot, EZCraftX: item_allowed_in_slot, JunkDump: professionChecks, JunkDump: professionChecks2, Motion: determineCraftSubKey, nLootLink: addListData |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 9 |
+| Global usage count | 9 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ CraftingSystem.GetCraftingData(arg1)
 
 ## Description
 
-Observed as a global function across 4 addons.
+Observed as a global function across 5 addons.
 
 ## Parameters
 
@@ -80,6 +80,7 @@ Observed as a global function across 4 addons.
 
 ## Seen In
 
+- EZCraft
 - EZCraftX
 - JunkDump
 - Motion
@@ -87,6 +88,7 @@ Observed as a global function across 4 addons.
 
 ## Examples
 
+- EZCraft: ItemIsAllowedInSlot -> CraftingSystem.GetCraftingData(itemData)
 - EZCraftX: item_allowed_in_slot -> CraftingSystem.GetCraftingData(itemData)
 - JunkDump: professionChecks -> CraftingSystem.GetCraftingData(itemData)
 - JunkDump: professionChecks2 -> CraftingSystem.GetCraftingData(itemData)

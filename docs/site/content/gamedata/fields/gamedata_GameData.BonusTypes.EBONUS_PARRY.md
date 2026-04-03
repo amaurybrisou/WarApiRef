@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | CaVES, Statdoll, Statdoll Light, Statdoll Remix |
-| Files seen in | Statdoll.lua, StatdollLocal.lua, source/CaVES.lua |
+| Addons seen in | CaVES, FozAuction, Statdoll, Statdoll Light, Statdoll Remix |
+| Files seen in | Source/auctionwindowsearchcontrols.lua, Statdoll.lua, StatdollLocal.lua, source/CaVES.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
-| Example locations | FormatDefenses, GetValues, SetReference, UpdateParryLabel, calcextra, getLocalStats |
+| Example locations | FormatDefenses, GetValues, SetReference, SpawnStatisticMenu, UpdateParryLabel, calcextra |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,15 +59,16 @@
 
 ## Description
 
-GameData.GameData.BonusTypes.EBONUS_PARRY field accessed by 4 addons; commonly found in FormatDefenses and GetValues, SetReference, UpdateParryLabel, calcextra, getLocalStats, lua_call contexts.
+GameData.GameData.BonusTypes.EBONUS_PARRY field accessed by 5 addons; commonly found in FormatDefenses and GetValues, SetReference, SpawnStatisticMenu, UpdateParryLabel, calcextra, getLocalStats, lua_call contexts.
 
 ## Seen In
 
 - CaVES
+- FozAuction
 - Statdoll
 - Statdoll Light
 - Statdoll Remix
 
 ## Notes
 
-- Observed in contexts: FormatDefenses, GetValues, SetReference, UpdateParryLabel, calcextra, getLocalStats
+- Observed in contexts: FormatDefenses, GetValues, SetReference, SpawnStatisticMenu, UpdateParryLabel, calcextra

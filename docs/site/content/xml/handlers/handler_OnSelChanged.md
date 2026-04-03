@@ -29,7 +29,7 @@
 | Example locations | AdvancedPetAssist: .OnSelChanged, AdvancedRenownTrainer: .OnSelChanged, BankArkel: .OnSelChanged, BuffHead: .OnSelChanged, Busted: .OnSelChanged, CCTV: .OnSelChanged |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 461 |
+| Lua usage count | 484 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 63 addons.
+XML handler event observed across 70 addons.
 
 ## Expected Lua Binding
 
@@ -77,6 +77,7 @@ function(...)
 - Calling
 - CastSequence
 - ChattyCathy
+- Cheeseboard
 - Crusher
 - DAoCBuff
 - DPSMeter
@@ -85,8 +86,11 @@ function(...)
 - DetauntHelper
 - DuffTimer
 - Dye Preview
+- EA_OpenPartyWindow
 - EA_UiDebugTools
+- EA_UiModWindow
 - Enemy
+- FozAuction
 - GroupRange
 - HealGrid
 - Hopper
@@ -100,6 +104,7 @@ function(...)
 - MarkBuff
 - MegaphonePlusPlus
 - Miracle Grow Remix
+- MoraleSet
 - Motion
 - NerfedButtons
 - Obsidian
@@ -112,8 +117,10 @@ function(...)
 - RaidMeter
 - ScenarioStats
 - Shinies
+- SocialWindow 2.0
 - TalismanGenie
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThinkOutLoud
 - TidyChat

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Map, nLootLink |
-| Files seen in | Map.lua, source/nLootLinkGUI.lua, source/nLootLinkOptions.lua |
+| Addons seen in | Map, SocialWindow 2.0, nLootLink |
+| Files seen in | Map.lua, source/nLootLinkGUI.lua, source/nLootLinkOptions.lua, source/socialwindowbuddylist.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | Map: OnMButtonUp, nLootLink: onRButtonUp |
+| Example locations | Map: OnMButtonUp, SocialWindow 2.0: OnRButtonUp, nLootLink: onRButtonUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 4 |
+| Global usage count | 4 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ EA_Window_ContextMenu.CreateDefaultContextMenu(arg1)
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 3 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: "Map", WINDOW_NAME |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: "Map", PARENT_WINDOW, WINDOW_NAME |
 
 ## Returns
 
@@ -84,11 +84,13 @@ Observed as a global function across 2 addons.
 ## Seen In
 
 - Map
+- SocialWindow 2.0
 - nLootLink
 
 ## Examples
 
 - Map: OnMButtonUp -> EA_Window_ContextMenu.CreateDefaultContextMenu("Map")
+- SocialWindow 2.0: OnRButtonUp -> EA_Window_ContextMenu.CreateDefaultContextMenu(PARENT_WINDOW)
 - nLootLink: onRButtonUp -> EA_Window_ContextMenu.CreateDefaultContextMenu(WINDOW_NAME)
 
 ## Related APIs

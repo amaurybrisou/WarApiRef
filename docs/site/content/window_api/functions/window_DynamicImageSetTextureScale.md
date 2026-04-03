@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 37 addons
+- Seen in: 39 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Amethyst, CastSequence, Crusher, DammazKron, DetauntHelper, EZCraftX, EZGuard |
-| Files seen in | CooldownPulse.lua, Core/ToolTip/DK_Tooltip.lua, Elements/EffigyBar.lua, Gui.lua, InfoScroller.lua, LibGUI.lua, LibWBToggler.lua, Libraries/LibGUI.lua |
+| Addons seen in | Ace, Amethyst, CMap, CastSequence, Crusher, DammazKron, DetauntHelper, EZCraftX |
+| Files seen in | CMap.lua, CooldownPulse.lua, Core/ToolTip/DK_Tooltip.lua, Elements/EffigyBar.lua, Gui.lua, InfoScroller.lua, LibGUI.lua, LibWBToggler.lua |
 | Namespaces detected | DynamicImageSetTextureScale |
 | Source kinds | lua_calls |
-| Example locations | Ace: TexScale, Amethyst: TexScale, CastSequence: UpdateButton, Crusher: TexScale, DammazKron: SetData, DetauntHelper: InitUI |
+| Example locations | Ace: TexScale, Amethyst: TexScale, CMap: PopulateFilterCell, CMap: TexScale, CastSequence: UpdateButton, Crusher: TexScale |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 63 |
-| Global usage count | 63 |
+| Lua usage count | 67 |
+| Global usage count | 67 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed mutating runtime image resources on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: MBuffGui.Elements.Images.SpellIcon, WICON, WindowName.."Image" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: .125, 0.5, 1 |
+| arg1 | Observed as a function or method reference. | Observed values: "warwhispererMainInnerTextCareerButtonIconBase", MBuffGui.Elements.Images.SpellIcon, WICON |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: .125, 0.5, 0.7 |
 
 ## Returns
 
@@ -86,6 +86,7 @@ Observed mutating runtime image resources on existing controls.
 
 - Ace
 - Amethyst
+- CMap
 - CastSequence
 - Crusher
 - DammazKron
@@ -115,6 +116,7 @@ Observed mutating runtime image resources on existing controls.
 - TexturedButtons
 - Tokens
 - WarBoard_Menu
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -126,13 +128,14 @@ Observed mutating runtime image resources on existing controls.
 
 - Ace: TexScale -> DynamicImageSetTextureScale(self.name, scale)
 - Amethyst: TexScale -> DynamicImageSetTextureScale(self.name, scale)
+- CMap: PopulateFilterCell -> DynamicImageSetTextureScale(iconFrame, filterData.scale)
+- CMap: TexScale -> DynamicImageSetTextureScale(self.name, scale)
 - CastSequence: UpdateButton -> DynamicImageSetTextureScale(button.WarningIcon, 1)
 - Crusher: TexScale -> DynamicImageSetTextureScale(self.name, scale)
-- DammazKron: SetData -> DynamicImageSetTextureScale(windowName.."Icon", iconScale)
-- DetauntHelper: InitUI -> DynamicImageSetTextureScale(barname.."ClassIcon", 1)
 
 ## Used With
 
+- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
 - [LabelGetTextDimensions](window_LabelGetTextDimensions.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function

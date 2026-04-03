@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 12 addons
+- Seen in: 13 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, AdvancedRenownTrainer, Aura, BankArkel, Crusher, Enemy, Miracle Grow Remix, Shinies |
+| Addons seen in | ActionFraction, AdvancedRenownTrainer, Aura, BankArkel, Crusher, Enemy, FozAuction, Miracle Grow Remix |
 | Files seen in | AdvancedRenownTraining.lua, BankArkel.lua, Code/Core/Groups/EnemyEffectFilter.lua, Code/UnitFrames/ClickCasting.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFramePart.lua, MGRemix.lua, Modules/UI/Shinies-UI-Auctions.lua |
 | Namespaces detected | DialogManager |
 | Source kinds | lua_calls |
 | Example locations | ActionFraction: SetLocationActionPointBar, AdvancedRenownTrainer: Respecialize, Aura: OnImportExportOkButton, BankArkel: ConvertDB, BankArkel: Init, Crusher: performCrush |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 25 |
-| Global usage count | 25 |
+| Lua usage count | 29 |
+| Global usage count | 29 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -60,20 +60,19 @@
 ## Signature (inferred)
 
 ```lua
-DialogManager.MakeOneButtonDialog(arg1, arg2, arg3)
+DialogManager.MakeOneButtonDialog(arg1, arg2)
 ```
 
 ## Description
 
-Observed as a global function across 12 addons.
+Observed as a global function across 13 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_NOT_ENOUGH_MONEY,{MoneyFrame.FormatMoneyString(respecCost)}), L "Did you know that you can use the mod 'Busted' to help submit more useful bug reports? You can find it on Curse.", L "In Squared 2.4+ you should no longer need to set rangefading-ability." |
+| arg1 | Observed as a function or method reference. | Observed values: GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_NOT_ENOUGH_MONEY,{MoneyFrame.FormatMoneyString(respecCost)}), GetStringFromTable("AuctionHouseStrings",StringTables.AuctionHouse.LABEL_ERROR_INSUFFICIENT_FUNDS), GetStringFromTable("AuctionHouseStrings",StringTables.AuctionHouse.LABEL_ERROR_NO_PRICE) |
 | arg2 | Observed as a text or wstring payload. | Observed values: GetPregameString(StringTables.Pregame.LABEL_CONTINUE), GetString(StringTables.Default.LABEL_OKAY), L "OK" |
-| arg3 | Observed as a runtime window or control identifier. | Observed values: BankArkel.ResetDB, nil |
 
 ## Returns
 
@@ -91,6 +90,7 @@ Observed as a global function across 12 addons.
 - BankArkel
 - Crusher
 - Enemy
+- FozAuction
 - Miracle Grow Remix
 - Shinies
 - Squared

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 4 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | LibAddonButton, MapMonster, Motion, Vectors |
-| Files seen in | Menu.lua, Settings.lua, Source/MapMonster_Pins.lua, Source/Motion.lua |
+| Addons seen in | FozAuction, LibAddonButton, MapMonster, Motion, Vectors |
+| Files seen in | Menu.lua, Settings.lua, Source/MapMonster_Pins.lua, Source/Motion.lua, Source/auctionwindowsearchcontrols.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | LibAddonButton: OnLButtonUp, MapMonster: HideFilterMenus, Motion: OnLButtonUp_ContextMenu_Item, Motion: OnLButtonUp_ContextMenu_Recipe, Vectors: OnUpdateInteractiveSelection, Vectors: ShowSelectOption |
+| Example locations | FozAuction: OnLButtonDownContextMenuItem, LibAddonButton: OnLButtonUp, MapMonster: HideFilterMenus, Motion: OnLButtonUp_ContextMenu_Item, Motion: OnLButtonUp_ContextMenu_Recipe, Vectors: OnUpdateInteractiveSelection |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 9 |
+| Global usage count | 9 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ EA_Window_ContextMenu.HideAll()
 
 ## Description
 
-Observed as a global function across 4 addons.
+Observed as a global function across 5 addons.
 
 ## Parameters
 
@@ -82,6 +82,7 @@ Observed as a global function across 4 addons.
 
 ## Seen In
 
+- FozAuction
 - LibAddonButton
 - MapMonster
 - Motion
@@ -89,12 +90,12 @@ Observed as a global function across 4 addons.
 
 ## Examples
 
+- FozAuction: OnLButtonDownContextMenuItem -> EA_Window_ContextMenu.HideAll()
 - LibAddonButton: OnLButtonUp -> EA_Window_ContextMenu.HideAll()
 - MapMonster: HideFilterMenus -> EA_Window_ContextMenu.HideAll()
 - Motion: OnLButtonUp_ContextMenu_Item -> EA_Window_ContextMenu.HideAll()
 - Motion: OnLButtonUp_ContextMenu_Recipe -> EA_Window_ContextMenu.HideAll()
 - Vectors: OnUpdateInteractiveSelection -> EA_Window_ContextMenu.HideAll()
-- Vectors: ShowSelectOption -> EA_Window_ContextMenu.HideAll()
 
 ## Related APIs
 
@@ -103,10 +104,10 @@ Observed as a global function across 4 addons.
 ## Used With
 
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
-- [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes

@@ -24,14 +24,14 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AbilityAlert, ActionBarCD, ActionBarHide, ActionFraction, ActionPointWatch, AdvancedPetAssist, Amethyst, ArmorGraphicToggle |
+| Addons seen in | AbilityAlert, AbilityNotifier, ActionBarCD, ActionBarHide, ActionFraction, ActionPointWatch, AdvancedPetAssist, Amethyst |
 | Files seen in | Configuration/Main.lua, Core/DK_Core.lua, Modules/HealGridMouseClick.lua, Source/AuraAddon.lua, Source/AutoMark.lua, Source/Core.lua, Source/Crusher.lua, Source/DAoCBuff.lua |
 | Namespaces detected | LibSlash |
 | Source kinds | lua_calls |
-| Example locations | AbilityAlert: Initialize, ActionBarCD: Initialize, ActionBarHide: OnLoad, ActionFraction: Initialize, ActionFraction: Shutdown, ActionPointWatch: Initialize |
+| Example locations | AbilityAlert: Initialize, AbilityNotifier: Initialize, ActionBarCD: Initialize, ActionBarHide: OnLoad, ActionFraction: Initialize, ActionFraction: Shutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 354 |
+| Lua usage count | 383 |
 | Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -55,7 +55,7 @@
 
 ## Description
 
-Shared function table with 5 member functions; the primary API surface for 174 addons.
+Shared function table with 5 member functions; the primary API surface for 190 addons.
 
 ## Functions
 
@@ -72,6 +72,7 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 ## Seen In
 
 - AbilityAlert
+- AbilityNotifier
 - ActionBarCD
 - ActionBarHide
 - ActionFraction
@@ -79,6 +80,8 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 - AdvancedPetAssist
 - Amethyst
 - ArmorGraphicToggle
+- Asshat
+- Assist
 - Atlas
 - AuctionStats
 - Aura
@@ -88,12 +91,14 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 - AutoMark
 - AutoSalvage
 - BagOMatic
+- BarText (Influence)
 - BlackBook
 - Brizio's Crappy Computer Medic
 - BuffHead
 - CCTV
 - CDown
 - CM_ClosetGoblin
+- CMap
 - Calling
 - CastSequence
 - ChatAlert
@@ -116,6 +121,7 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 - DuffTimer
 - DwarfTalk
 - Dye Preview
+- EA_LoadingScreen
 - EZCraftX
 - EZGuard
 - Effigy
@@ -162,9 +168,11 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 - MiracleGrow
 - MiracleGrowLight
 - Motion
+- MyReasons
 - NPC Item Sale Price
 - NaturalLog
 - NerfedButtons
+- ObjectInspector
 - Obsidian
 - OilTimer
 - PagerWentPoof
@@ -172,6 +180,7 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 - PartyCast
 - PeaceOut
 - Phantom
+- PieTracker
 - PlanB
 - Pocket Palette
 - PotionBar
@@ -200,6 +209,7 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 - SessionRPs
 - Shinies
 - SimpleCombatText
+- SimpleXY
 - Soloq
 - Squared
 - Statdoll Remix
@@ -207,6 +217,7 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 - TargetRing
 - Targets
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThankTheResser
 - TheSeeker
@@ -217,6 +228,7 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 - Tokens
 - Tome Titan
 - TomeTracker
+- Tortall_DPS
 - Tortall_SCC
 - TurretRange
 - VPBreakdown
@@ -226,8 +238,12 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 - Vertigo
 - WARCommander
 - WARRatingBuster
+- WBStutterLess
 - WSCT
+- WTes
 - WarBoard
+- WarBoard_AAOTracker
+- WarBoard_WarWhisperer
 - WarTriage
 - Wargames
 - WhoHealedMe
@@ -251,9 +267,9 @@ Shared function table with 5 member functions; the primary API surface for 174 a
 - AbilityAlert: Initialize -> LibSlash.IsSlashCmdRegistered("aa")
 - AbilityAlert: Initialize -> LibSlash.RegisterWSlashCmd("aa", function(args)AbilityAlert.SlashHandler(args)end)
 - AbilityAlert: Initialize -> LibSlash.RegisterWSlashCmd("abilityalert", function(args)AbilityAlert.SlashHandler(args)end)
+- AbilityNotifier: Initialize -> LibSlash.RegisterSlashCmd("an", slashhandler)
+- AbilityNotifier: Initialize -> LibSlash.RegisterSlashCmd("anot", slashhandler)
 - ActionBarCD: Initialize -> LibSlash.RegisterSlashCmd("abcd", function(args)ActionBarCD.SlashHandler(args)end)
-- ActionBarHide: OnLoad -> LibSlash.RegisterSlashCmd("abh", function()ActionBarHide.OptionsWindow()end)
-- ActionFraction: Initialize -> LibSlash.IsSlashCmdRegistered("af")
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | EA_UiDebugTools, QuickNameActions+ |
-| Files seen in | QuickNameActionsRessurected.lua, Source/devpad/DebugWindowCodePad.lua |
+| Addons seen in | EA_UiDebugTools, QuickNameActions+, WarBoard_WarWhisperer |
+| Files seen in | QuickNameActionsRessurected.lua, Source/devpad/DebugWindowCodePad.lua, warwhisperer.lua |
 | Namespaces detected | TextEditBoxInsertText |
 | Source kinds | lua_calls |
-| Example locations | EA_UiDebugTools: OnKeyTab, QuickNameActions+: newEA_ChatWindowOnTomeLinkLButtonUp |
+| Example locations | EA_UiDebugTools: OnKeyTab, QuickNameActions+: newEA_ChatWindowOnTomeLinkLButtonUp, WarBoard_WarWhisperer: EA_ChatWindowInsertText |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2 |
-| Global usage count | 2 |
+| Lua usage count | 3 |
+| Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,8 +71,8 @@ Observed reading from or writing to edit-box controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "EA_TextEntryGroupEntryBoxTextInput", codeWindow |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: linkData, towstring "     " |
+| arg1 | Observed as a text or wstring payload. | Observed values: "EA_TextEntryGroupEntryBoxTextInput", "warwhispererMainSendBox", codeWindow |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: linkData, text, towstring "     " |
 
 ## Returns
 
@@ -86,11 +86,13 @@ Observed reading from or writing to edit-box controls.
 
 - EA_UiDebugTools
 - QuickNameActions+
+- WarBoard_WarWhisperer
 
 ## Examples
 
 - EA_UiDebugTools: OnKeyTab -> TextEditBoxInsertText(codeWindow, towstring "     ")
 - QuickNameActions+: newEA_ChatWindowOnTomeLinkLButtonUp -> TextEditBoxInsertText("EA_TextEntryGroupEntryBoxTextInput", linkData)
+- WarBoard_WarWhisperer: EA_ChatWindowInsertText -> TextEditBoxInsertText("warwhispererMainSendBox", text)
 
 ## Notes
 

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 127 addons
+- Seen in: 142 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Ace: AddAnchor, ActionBarHide: AddAnchor, ActionFraction: ResetWindow, ActionFraction: SetLocationActionPointBar, ActionFraction: SetLocationCenterScreen, AdjustTheTip: AddTargetHealthToMouseOver |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 971 |
-| Global usage count | 971 |
+| Lua usage count | 1012 |
+| Global usage count | 1012 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -106,6 +106,7 @@ Observed positioning windows relative to other runtime UI elements.
 - BlackBook
 - BuffHead
 - CDown
+- CMap
 - CastSequence
 - ChattyCathy
 - CombatTextNames
@@ -118,7 +119,11 @@ Observed positioning windows relative to other runtime UI elements.
 - Dascore
 - DetauntHelper
 - DuffTimer
+- EA_LoadingScreen
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_ThreePartBar
+- EA_UiModWindow
 - EZCraftX
 - EZGuard
 - Effigy
@@ -129,6 +134,8 @@ Observed positioning windows relative to other runtime UI elements.
 - GroupRange
 - GroupSpotter
 - GuardBot
+- GuardList
+- GuardRange
 - HealGrid
 - Hopper
 - InfoScroller
@@ -146,6 +153,7 @@ Observed positioning windows relative to other runtime UI elements.
 - MiniMapMonster
 - Miracle Grow Remix
 - MoraleBG
+- MoraleSet
 - Moth
 - Motion
 - MouseHint
@@ -155,6 +163,7 @@ Observed positioning windows relative to other runtime UI elements.
 - OverheadFonts
 - PartyCast
 - PotionBar
+- Preciousss
 - Pure
 - Pure Careerbar
 - QuickWarReport
@@ -179,6 +188,8 @@ Observed positioning windows relative to other runtime UI elements.
 - Shinies
 - ShowHealthPercent
 - SimpleCombatText
+- SimpleXY
+- SocialWindow 2.0
 - SquaredHotIndicators
 - Statdoll Remix
 - TacticSetNames
@@ -191,6 +202,7 @@ Observed positioning windows relative to other runtime UI elements.
 - TidyRoll
 - TokenMachine
 - Tokens
+- Tortall_DPS
 - TurretRange
 - VPBreakdown
 - Vectors
@@ -200,6 +212,7 @@ Observed positioning windows relative to other runtime UI elements.
 - WSCT
 - WarBoard_Loc
 - WarBoard_Menu
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar
@@ -207,7 +220,9 @@ Observed positioning windows relative to other runtime UI elements.
 - WindowMovers
 - WoH-Reticle
 - XpStatus+G
+- bigger_MacroWindow
 - emotes
+- fpsbox
 - nLootLink
 - nRarity
 - scenarioInfo
@@ -244,7 +259,6 @@ Observed positioning windows relative to other runtime UI elements.
 - [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureDimensions](window_DynamicImageSetTextureDimensions.md) (HIGH 100/100) - Window Function
 - [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
-- [LabelSetFont](window_LabelSetFont.md) (HIGH 100/100) - Window Function
 - [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [StatusBarSetBackgroundTint](window_StatusBarSetBackgroundTint.md) (HIGH 100/100) - Window Function
@@ -259,6 +273,7 @@ Observed positioning windows relative to other runtime UI elements.
 - [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [GetIconData](../../globals/functions/global_GetIconData.md) (HIGH 83/100) - Global Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 

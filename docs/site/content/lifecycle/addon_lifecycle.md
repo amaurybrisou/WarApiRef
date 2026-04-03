@@ -14,37 +14,33 @@
 | Metric | Value |
 | --- | --- |
 | source_root | /workspace/data/raw |
-| source_directories | 397 |
+| source_directories | 396 |
 | manifest_discovered | 384 |
-| source_scanned_addons | 382 |
-| mod_semantic_addons | 382 |
-| lifecycle_catalog_addons | 382 |
-| excluded_entries | 15 |
+| source_scanned_addons | 384 |
+| mod_semantic_addons | 384 |
+| lifecycle_catalog_addons | 384 |
+| excluded_entries | 12 |
 
 ## Exclusion Reasons
 
 | Reason | Count |
 | --- | --- |
-| no_manifest | 13 |
-| no_resolved_source_files | 2 |
+| no_manifest | 12 |
 
 ## Excluded Addons
 
-AceLocale-3.0 - directory has no .mod or .toc manifest and is excluded at source discovery
-GuardPack - directory has no .mod or .toc manifest and is excluded at source discovery
-apw-1-0-0 - directory has no .mod or .toc manifest and is excluded at source discovery
-guildwindowexpanded-1-5-5 - directory has no .mod or .toc manifest and is excluded at source discovery
-harbinger.1-6-1 - directory has no .mod or .toc manifest and is excluded at source discovery
-orcanizer - directory has no .mod or .toc manifest and is excluded at source discovery
-timeinqueue-1-1-1 - directory has no .mod or .toc manifest and is excluded at source discovery
-unbearable-1-0-0 - directory has no .mod or .toc manifest and is excluded at source discovery
-warboard_crests-0-5-1 - directory has no .mod or .toc manifest and is excluded at source discovery
-warboard_toggler_pack-1-0-0 - directory has no .mod or .toc manifest and is excluded at source discovery
-yakui-1-3-6 - directory has no .mod or .toc manifest and is excluded at source discovery
-zTimeLib - directory has no .mod or .toc manifest and is excluded at source discovery
-zonepop1-3-1-3-0 - directory has no .mod or .toc manifest and is excluded at source discovery
-NoUselessMods-Assist [dir: no-useless-mods] - manifest discovered but none of the manifest-listed XML/Lua files resolved on disk
-WarBoard_WarWhisperer [dir: warwhisperer] - manifest discovered but none of the manifest-listed XML/Lua files resolved on disk
+- AceLocale-3.0 - directory has no .mod or .toc manifest and is excluded at source discovery
+- GuardPack - directory has no .mod or .toc manifest and is excluded at source discovery
+- guildwindowexpanded-1-5-5 - directory has no .mod or .toc manifest and is excluded at source discovery
+- harbinger.1-6-1 - directory has no .mod or .toc manifest and is excluded at source discovery
+- orcanizer - directory has no .mod or .toc manifest and is excluded at source discovery
+- timeinqueue-1-1-1 - directory has no .mod or .toc manifest and is excluded at source discovery
+- unbearable-1-0-0 - directory has no .mod or .toc manifest and is excluded at source discovery
+- warboard_crests-0-5-1 - directory has no .mod or .toc manifest and is excluded at source discovery
+- warboard_toggler_pack-1-0-0 - directory has no .mod or .toc manifest and is excluded at source discovery
+- yakui-1-3-6 - directory has no .mod or .toc manifest and is excluded at source discovery
+- zTimeLib - directory has no .mod or .toc manifest and is excluded at source discovery
+- zonepop1-3-1-3-0 - directory has no .mod or .toc manifest and is excluded at source discovery
 
 ## Source Addon Inventory
 
@@ -348,7 +344,6 @@ WarBoard_WarWhisperer [dir: warwhisperer] - manifest discovered but none of the 
 | alertMod | [alertMod](addons/alertmod) | included | .mod semantic lifecycle entry emitted |
 | amethyst | [Amethyst](addons/amethyst) | included | .mod semantic lifecycle entry emitted |
 | apw | apw | excluded | not present in .mod lifecycle semantic output |
-| apw-1-0-0 | apw-1-0-0 | excluded | no_manifest: directory has no .mod or .toc manifest and is excluded at source discovery |
 | assist | [Assist](addons/assist) | included | .mod semantic lifecycle entry emitted |
 | au-stats | au-stats | excluded | not present in .mod lifecycle semantic output |
 | autochannel | [AutoChannel](addons/autochannel) | included | .mod semantic lifecycle entry emitted |
@@ -391,7 +386,7 @@ WarBoard_WarWhisperer [dir: warwhisperer] - manifest discovered but none of the 
 | nLootLink | [nLootLink](addons/nlootlink) | included | .mod semantic lifecycle entry emitted |
 | nRarity | [nRarity](addons/nrarity) | included | .mod semantic lifecycle entry emitted |
 | nisp | nisp | excluded | not present in .mod lifecycle semantic output |
-| no-useless-mods | no-useless-mods | excluded | no_resolved_source_files: manifest discovered but none of the manifest-listed XML/Lua files resolved on disk |
+| no-useless-mods | no-useless-mods | excluded | not present in .mod lifecycle semantic output |
 | nooverheal | [NoOverheal](addons/nooverheal) | included | .mod semantic lifecycle entry emitted |
 | orcanizer | orcanizer | excluded | no_manifest: directory has no .mod or .toc manifest and is excluded at source discovery |
 | ovdeadnomore | [ovdeadnomore](addons/ovdeadnomore) | included | .mod semantic lifecycle entry emitted |
@@ -433,7 +428,7 @@ WarBoard_WarWhisperer [dir: warwhisperer] - manifest discovered but none of the 
 | warboard_togglerwsct | [WarBoard_TogglerWSCT](addons/warboard_togglerwsct) | included | .mod semantic lifecycle entry emitted |
 | warcommander | [WARCommander](addons/warcommander) | included | .mod semantic lifecycle entry emitted |
 | wargames | [Wargames](addons/wargames) | included | .mod semantic lifecycle entry emitted |
-| warwhisperer | warwhisperer | excluded | no_resolved_source_files: manifest discovered but none of the manifest-listed XML/Lua files resolved on disk |
+| warwhisperer | warwhisperer | excluded | not present in .mod lifecycle semantic output |
 | wbLeadHelper | [wbLeadHelper](addons/wbleadhelper) | included | .mod semantic lifecycle entry emitted |
 | whatsPugSc | [whatsPugSc](addons/whatspugsc) | included | .mod semantic lifecycle entry emitted |
 | whom | [whom](addons/whom) | included | .mod semantic lifecycle entry emitted |
@@ -649,6 +644,7 @@ WarBoard_WarWhisperer [dir: warwhisperer] - manifest discovered but none of the 
 - [NerfedButtons](addons/nerfedbuttons)
 - [NervAlert](addons/nervalert)
 - [NoOverheal](addons/nooverheal)
+- [NoUselessMods-Assist](addons/nouselessmods-assist)
 - [ObjectInspector](addons/objectinspector)
 - [Obsidian](addons/obsidian)
 - [OilTimer](addons/oiltimer)
@@ -795,6 +791,7 @@ WarBoard_WarWhisperer [dir: warwhisperer] - manifest discovered but none of the 
 - [WarBoard_TogglerWARCommander](addons/warboard_togglerwarcommander)
 - [WarBoard_TogglerWSCT](addons/warboard_togglerwsct)
 - [WarBoard_TogglerWlh](addons/warboard_togglerwlh)
+- [WarBoard_WarWhisperer](addons/warboard_warwhisperer)
 - [WarTriage](addons/wartriage)
 - [War_RU](addons/war_ru)
 - [Warbuilder](addons/warbuilder)

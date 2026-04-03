@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 86 addons
+- Seen in: 91 addons
 
 ## Confidence Assessment
 
@@ -25,14 +25,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, ActionBarHide, Amethyst, Aura, AutoMark, BBars - Mechanic Only, BankWindowFix, BuffHead |
-| Files seen in | BBars.lua, ChattyCathy.lua, CleanCastbar.lua, CleansingBuddy.lua, Code/Core/Main.lua, Code/GroupIcons/GroupIcon.lua, Code/Marks/MarkTemplate.lua, Code/Marks/Marks.lua |
+| Files seen in | AAOTracker.lua, BBars.lua, ChattyCathy.lua, CleanCastbar.lua, CleansingBuddy.lua, Code/Core/Main.lua, Code/GroupIcons/GroupIcon.lua, Code/Marks/MarkTemplate.lua |
 | Namespaces detected | DestroyWindow |
 | Source kinds | lua_calls |
 | Example locations | Ace: Destroy, ActionBarHide: Destroy, Amethyst: Destroy, Aura: DeleteWindow, AutoMark: DestroyMarker, BBars - Mechanic Only: OnShutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 202 |
-| Global usage count | 202 |
+| Lua usage count | 213 |
+| Global usage count | 213 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -87,6 +87,7 @@ Observed tearing down runtime-created windows.
 - BBars - Mechanic Only
 - BankWindowFix
 - BuffHead
+- CMap
 - CastSequence
 - ChattyCathy
 - CleanCastbar
@@ -96,6 +97,7 @@ Observed tearing down runtime-created windows.
 - Crusher
 - DAoCBuff
 - DuffTimer
+- EA_ThreePartBar
 - EZCraftX
 - EZGuard
 - Effigy
@@ -120,6 +122,7 @@ Observed tearing down runtime-created windows.
 - Motion
 - NaturalLog
 - NerfedButtons
+- NoUselessMods-Assist
 - PartyCast
 - PotionBar
 - Pure
@@ -153,6 +156,8 @@ Observed tearing down runtime-created windows.
 - Tokens
 - VerticalMorale
 - WSCT
+- WarBoard_AAOTracker
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse

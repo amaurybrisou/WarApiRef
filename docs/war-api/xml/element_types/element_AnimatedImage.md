@@ -989,24 +989,24 @@ Observed 1 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- CMapWindow.ActivateRallyCall
-- CMapWindow.UpdateScenarioQueueButton
-- TexturedButtons.Setup.Cooldown.OnHideFlashLUp
-- CoolDownLine.OnUpdate
-- MapMonster.InitializeMapPins
-- Aura.Aura:CreateRuntimeWindows
-- Emojii.Emoji
-- MapMonster.HighlightSetTint
-- GuardLine.update
-- GuardList.UpdateStateMachine
-- GuardRange.UpdateStateMachine
 - CMapWindow.DeactivateRallyCall
-- CMapWindow.OnMouseoverRallyCall
-- TidyRollOptions.Initialize
-- Enemy.AssistUI_Target_Show
-- CMapWindow.OnRallyCallLButtonUp
+- CMapWindow.UpdateScenarioQueueButton
+- MapMonster.InitializeMapPins
 - TexturedButtons.Setup.Cooldown.LoadSettings
 - TexturedButtons.Setup.Cooldown.Initialize
+- GuardRange.UpdateStateMachine
+- CMapWindow.OnRallyCallLButtonUp
+- Emojii.Emoji
+- TidyRollOptions.Initialize
+- TexturedButtons.Setup.Cooldown.OnHideFlashLUp
+- GuardLine.update
+- Enemy.AssistUI_Target_Show
+- MapMonster.HighlightSetTint
+- GuardList.UpdateStateMachine
+- CMapWindow.ActivateRallyCall
+- CoolDownLine.OnUpdate
+- Aura.Aura:CreateRuntimeWindows
+- CMapWindow.OnMouseoverRallyCall
 
 ## Seen In
 

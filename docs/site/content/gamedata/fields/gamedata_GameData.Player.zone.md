@@ -3,7 +3,7 @@
 - Category: GameData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 19 addons
+- Seen in: 20 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Killer, Map, MapMonster, MapPin, Minmap, Queue Queuer, RealmStatus, RoR_SoR |
-| Files seen in | Core.lua, CurseProfilerCompiled.lua, KillerRenown.lua, KillerUtils.lua, KillerZoneHistory.lua, Map.lua, QueueQueuer.lua, RealmStatus.lua |
+| Addons seen in | CMap, Killer, Map, MapMonster, MapPin, Minmap, Queue Queuer, RealmStatus |
+| Files seen in | CMap.lua, Core.lua, CurseProfilerCompiled.lua, KillerRenown.lua, KillerUtils.lua, KillerZoneHistory.lua, Map.lua, QueueQueuer.lua |
 | Namespaces detected | GameData |
 | Source kinds | lua_call |
 | Example locations | AllowedToShowDetailWindow, Broadcast1, Broadcast2, BroadcastA, BroadcastG, BroadcastP |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 41 |
-| Global usage count | 41 |
+| Lua usage count | 44 |
+| Global usage count | 44 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -59,10 +59,11 @@
 
 ## Description
 
-GameData.GameData.Player.zone field accessed by 19 addons; commonly found in AllowedToShowDetailWindow and Broadcast1, Broadcast2, BroadcastA, BroadcastG, BroadcastP, BroadcastW, CaptureInitialWarCrests, ChatHandler, GetActiveRvrZoneId, GetCurrentZoneHistoryEntry, GetCurrentZoneId, HandleSlashCmd, InitialEpicEntry, IsTier, LoadCurrentZoneFromHistory, OnCurrencyUpdated, OnLoadComplete, OnNameChange, OnPetUpdated, OnPlayerPositionUpdated, OnRenownUpdated, OnUpdate, QueuerCheckMessage, ResolveZoneIdFromName, ScanLore, ScanPerson, SendMessage, ShowWorldMapHooked, SlashCmd, TIMER_UPDATE, UpdateDetailLabels, UpdateGroup, UpdateMap, UpdateVP, UpsertZoneHistory, check, isInAllowedZone, lua_call, untilfunction, zonelistprint contexts.
+GameData.GameData.Player.zone field accessed by 20 addons; commonly found in AllowedToShowDetailWindow and Broadcast1, Broadcast2, BroadcastA, BroadcastG, BroadcastP, BroadcastW, CaptureInitialWarCrests, ChatHandler, GetActiveRvrZoneId, GetCurrentZoneHistoryEntry, GetCurrentZoneId, HandleSlashCmd, InitialEpicEntry, IsTier, LoadCurrentZoneFromHistory, OnAreaNameChange, OnCurrencyUpdated, OnLoadComplete, OnNameChange, OnPetUpdated, OnPlayerPositionUpdated, OnRenownUpdated, OnUpdate, QueuerCheckMessage, ResolveZoneIdFromName, ScanLore, ScanPerson, SendMessage, ShowWorldMapHooked, SlashCmd, TIMER_UPDATE, UpdateDetailLabels, UpdateGroup, UpdateMap, UpdateVP, UpsertZoneHistory, check, isInAllowedZone, lua_call, untilfunction, zonelistprint, zoomDOWN, zoomUP contexts.
 
 ## Seen In
 
+- CMap
 - Killer
 - Map
 - MapMonster
@@ -87,8 +88,6 @@ GameData.GameData.Player.zone field accessed by 19 addons; commonly found in All
 
 - [EA_Window_Backpack.GetItemsFromBackpack](../../globals/functions/global_EA_Window_Backpack.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
 - [EA_Window_ScenarioLobby.OnJoinInstanceWait](../../globals/functions/global_EA_Window_ScenarioLobby.OnJoinInstanceWait.md) (HIGH 100/100) - Global Function
-- [PartyUtils.GetWarbandLeader](../../globals/functions/global_PartyUtils.GetWarbandLeader.md) (HIGH 100/100) - Global Function
-- [wstring.upper](../../globals/functions/global_wstring.upper.md) (HIGH 100/100) - Global Function
 - [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 
 ## Notes

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 49 addons
+- Seen in: 57 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, AdjustTheTip, AggroMeter, AutoBand, BuffHead, CM_ClosetGoblin, CastSequence, Crusher |
-| Files seen in | AdjustTheTip.lua, AggroMeter.lua, AutoBand.lua, Button.lua, ClosetGoblinCharacterWindow.lua, ClosetGoblinOptionWindow.lua, ClosetGoblinZoneWindow.lua, Code/CombatLog/CombatLogEpsWindow.lua |
+| Addons seen in | ActionFraction, AdjustTheTip, AggroMeter, AutoBand, BuffHead, CM_ClosetGoblin, CMap, CastSequence |
+| Files seen in | AdjustTheTip.lua, AggroMeter.lua, AutoBand.lua, Button.lua, CMap.lua, ClosetGoblinCharacterWindow.lua, ClosetGoblinOptionWindow.lua, ClosetGoblinZoneWindow.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
 | Example locations | ActionFraction: RightClick, ActionFraction: SetFontSelectionMenu, ActionFraction: SetPresetLocation, AdjustTheTip: SpawnAnchorContextMenu, AdjustTheTip: SpawnDelayedFadingContextMenu, AggroMeter: OnTabRBU |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 139 |
-| Global usage count | 139 |
+| Lua usage count | 157 |
+| Global usage count | 157 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ EA_Window_ContextMenu.CreateContextMenu(arg1)
 
 ## Description
 
-Observed as a global function across 49 addons.
+Observed as a global function across 57 addons.
 
 ## Parameters
 
@@ -89,15 +89,19 @@ Observed as a global function across 49 addons.
 - AutoBand
 - BuffHead
 - CM_ClosetGoblin
+- CMap
 - CastSequence
 - Crusher
 - Dascore
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
+- EZCraft
 - EZCraftX
 - Effigy
 - Enemy
+- FozAuction
 - HealGrid
 - Killer
 - LibAddonButton
@@ -121,15 +125,19 @@ Observed as a global function across 49 addons.
 - SOR
 - Shinies
 - ShowMeTheBubbles
+- SocialWindow 2.0
 - TacticSetNames
 - TastyButtons
+- TaxPayer
 - TexturedButtons
+- Tortall_DPS
 - TurretRange
 - Vectors
 - WARCommander
 - WarBoard
 - WarBoard_Loc
 - WarBoard_Menu
+- WarBoard_WarWhisperer
 - XpStatus+G
 - scenarioInfo
 
@@ -157,7 +165,7 @@ Observed as a global function across 49 addons.
 - [EA_Window_ContextMenu.Hide](global_EA_Window_ContextMenu.Hide.md) (HIGH 100/100) - Global Function
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
+- [OnRButtonUp](../../xml/handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
 
 ## Affects
 

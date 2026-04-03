@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 38 addons
+- Seen in: 40 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, BlackBox, CleanUnitFrames, Crusher, EA_ScenarioGroupWindow |
+| Addons seen in | Ace, ActionBarHide, AdjustTheTip, Amethyst, BlackBox, CMap, CleanUnitFrames, Crusher |
 | Files seen in | AdjustTheTip.lua, BlackBox.lua, CleanGroupMemberUnitFrame.lua, CleanTargetUnitFrame.lua, FlagCap.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua |
 | Namespaces detected | StatusBarSetCurrentValue |
 | Source kinds | lua_calls |
-| Example locations | Ace: SetValue, ActionBarHide: SetValue, AdjustTheTip: SetMouseOverTargetHealth, Amethyst: SetValue, BlackBox: UpdateTimer, CleanUnitFrames: UpdateActionPoints |
+| Example locations | Ace: SetValue, ActionBarHide: SetValue, AdjustTheTip: SetMouseOverTargetHealth, Amethyst: SetValue, BlackBox: UpdateTimer, CMap: SetValue |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 51 |
-| Global usage count | 51 |
+| Lua usage count | 53 |
+| Global usage count | 53 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ StatusBarSetCurrentValue(arg1, arg2)
 
 ## Description
 
-Observed as a window function across 38 addons.
+Observed as a window function across 40 addons.
 
 ## Parameters
 
@@ -89,6 +89,7 @@ Observed as a window function across 38 addons.
 - AdjustTheTip
 - Amethyst
 - BlackBox
+- CMap
 - CleanUnitFrames
 - Crusher
 - EA_ScenarioGroupWindow
@@ -115,6 +116,7 @@ Observed as a window function across 38 addons.
 - Targets
 - TidyRoll
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -130,7 +132,7 @@ Observed as a window function across 38 addons.
 - AdjustTheTip: SetMouseOverTargetHealth -> StatusBarSetCurrentValue(c_HEALTH_BAR_CONTAINER.."HealthPercentBarBar", val)
 - Amethyst: SetValue -> StatusBarSetCurrentValue(self.name, value)
 - BlackBox: UpdateTimer -> StatusBarSetCurrentValue("RespawnTimerWindowBar", respawnTimeLeft)
-- CleanUnitFrames: UpdateActionPoints -> StatusBarSetCurrentValue(self:GetName().."StatusContainerAPPercentBar", newActionPoints)
+- CMap: SetValue -> StatusBarSetCurrentValue(self.name, value)
 
 ## Notes
 

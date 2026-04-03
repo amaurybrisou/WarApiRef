@@ -2,20 +2,22 @@
 
 - Category: Global Function
 - Confidence level: HIGH
-- Confidence score: 96/100
-- Seen in: 3 addons
+- Confidence score: 100/100
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
 - Level: HIGH
 
-- Score: 96/100
+- Final score: 100/100
 
-- Rationale: Promoted as HIGH confidence because matches a known engine namespace, called globally with no local definition, seen in 2 to 3 addons.
+- Raw weighted score: 108
+
+- Rationale: Promoted as HIGH confidence because seen in 4 or more addons, matches a known engine namespace, called globally with no local definition.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
 - +15 Role is consistent across addons: The same symbol serves the same kind of job across addons.
@@ -26,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, LibGroup, Squared |
-| Files seen in | Code/Core/Groups/Groups.lua, LibGroup.lua, SquaredWarband.lua |
+| Addons seen in | EA_OpenPartyWindow, Enemy, LibGroup, NoUselessMods-Assist, Squared |
+| Files seen in | Code/Core/Groups/Groups.lua, LibGroup.lua, SquaredWarband.lua, no-useless-mods-warband.lua, source/openpartywindowtabmanage.lua |
 | Namespaces detected | PartyUtils |
 | Source kinds | lua_calls |
-| Example locations | Enemy: Groups_OnBattlegroupMemberUpdated, LibGroup: OnWarbandMemberUpdated, Squared: UpdateMember |
+| Example locations | EA_OpenPartyWindow: OnLButtonUpProcessed, EA_OpenPartyWindow: OnRButtonUpPlayerRow, EA_OpenPartyWindow: SingleMemberUpdate, Enemy: Groups_OnBattlegroupMemberUpdated, LibGroup: OnWarbandMemberUpdated, NoUselessMods-Assist: GetWarbandMember |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 3 |
-| Global usage count | 3 |
+| Lua usage count | 9 |
+| Global usage count | 9 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -63,14 +65,14 @@ PartyUtils.GetWarbandMember(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 3 addons.
+Observed as a global function across 5 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: groupInWarband, groupIndex, partyIndex |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: memberIndex, slotInGroup |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: groupInWarband, groupIndex, newPartyIndex |
+| arg2 | Observed as a runtime window or control identifier. | Observed values: memberIndex, newMemberIndex, slotInGroup |
 
 ## Returns
 
@@ -82,16 +84,33 @@ Observed as a global function across 3 addons.
 
 ## Seen In
 
+- EA_OpenPartyWindow
 - Enemy
 - LibGroup
+- NoUselessMods-Assist
 - Squared
 
 ## Examples
 
+- EA_OpenPartyWindow: OnLButtonUpProcessed -> PartyUtils.GetWarbandMember(partyIndex, memberIndex)
+- EA_OpenPartyWindow: OnLButtonUpProcessed -> PartyUtils.GetWarbandMember(newPartyIndex, newMemberIndex)
+- EA_OpenPartyWindow: OnRButtonUpPlayerRow -> PartyUtils.GetWarbandMember(partyIndex, memberIndex)
+- EA_OpenPartyWindow: SingleMemberUpdate -> PartyUtils.GetWarbandMember(partyIndex, memberIndex)
 - Enemy: Groups_OnBattlegroupMemberUpdated -> PartyUtils.GetWarbandMember(groupIndex, memberIndex)
 - LibGroup: OnWarbandMemberUpdated -> PartyUtils.GetWarbandMember(groupInWarband, slotInGroup)
-- Squared: UpdateMember -> PartyUtils.GetWarbandMember(partyIndex, memberIndex)
+
+## Used With
+
+- [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
+- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
+- [PartyUtils.MoveWarbandMember](global_PartyUtils.MoveWarbandMember.md) (HIGH 88/100) - Global Function
+- [PartyUtils.SwapWarbandMembers](global_PartyUtils.SwapWarbandMembers.md) (MEDIUM 45/100) - Global Function
+
+## Affects
+
+- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
 - Canonical entry built from observed call sites, not from engine source or decompiled definitions.
+- Advanced return analysis: No strong return evidence observed

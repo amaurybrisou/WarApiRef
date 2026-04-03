@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 16 addons
+- Seen in: 18 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, BankWindowFix, CM_ClosetGoblin, Crusher, Enemy, Hopper, Lib RuString, MapMonster |
+| Addons seen in | AdvancedRenownTrainer, BankWindowFix, CM_ClosetGoblin, Crusher, EA_UiModWindow, Enemy, FozAuction, Hopper |
 | Files seen in | AdvancedRenownTraining.lua, ClosetGoblinCharacterWindow.lua, Code/CombatLog/CombatLog.lua, Code/CombatLog/CombatLogStatsWindow.lua, Code/Core/Main.lua, Code/Marks/Marks.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFrames.lua |
 | Namespaces detected | DialogManager |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: Respecialize, BankWindowFix: BagEquipmentRButtonUp, CM_ClosetGoblin: OnClickDeleteSetButton, Crusher: InitializeWindow, Crusher: OnLButtonUp, Enemy: CombatLogInitialize |
+| Example locations | AdvancedRenownTrainer: Respecialize, BankWindowFix: BagEquipmentRButtonUp, CM_ClosetGoblin: OnClickDeleteSetButton, Crusher: InitializeWindow, Crusher: OnLButtonUp, EA_UiModWindow: CreateReloadDialogAdvanced |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 55 |
-| Global usage count | 55 |
+| Lua usage count | 59 |
+| Global usage count | 59 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,16 +65,16 @@ DialogManager.MakeTwoButtonDialog(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a global function across 16 addons.
+Observed as a global function across 18 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_CONFIRMATION,{MoneyFrame.FormatMoneyString(respecCost)}), GetStringFromTable("CustomizeUiStrings",StringTables.CustomizeUi.TEXT_UI_MOD_SETTINGS_CHANGED_DIALOG), L "Answer Rally Call or Open WAR Report ?" |
-| arg2 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_YES), L "Aye", L "Hell Yeah!" |
-| arg3 | Observed as a function or method reference. | Observed values: ARC, AdvancedRenownTraining.RefundRenownPoints, ClosetGoblinCharacterWindow.OnConfirmDeleteSet |
-| arg4 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_NO), L "Nah", L "No" |
+| arg1 | Observed as a function or method reference. | Observed values: GetStringFormatFromTable("TrainingStrings",StringTables.Training.TEXT_RESPEC_CONFIRMATION,{MoneyFrame.FormatMoneyString(respecCost)}), GetStringFromTable("AuctionHouseStrings",StringTables.AuctionHouse.SEARCH_RESULTS_CANCEL_CONFIRMATION_TEXT), GetStringFromTable("CustomizeUiStrings",StringTables.CustomizeUi.TEXT_UI_MOD_SETTINGS_CHANGED_DIALOG) |
+| arg2 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_YES), GetStringFromTable("CustomizeUiStrings",StringTables.CustomizeUi.LABEL_REVERT), L "Aye" |
+| arg3 | Observed as a function or method reference. | Observed values: ARC, AdvancedRenownTraining.RefundRenownPoints, AuctionWindow.CancelPressConfirmed |
+| arg4 | Observed as a text or wstring payload. | Observed values: GetString(StringTables.Default.LABEL_CANCEL), GetString(StringTables.Default.LABEL_NO), L "Nah" |
 
 ## Returns
 
@@ -90,7 +90,9 @@ Observed as a global function across 16 addons.
 - BankWindowFix
 - CM_ClosetGoblin
 - Crusher
+- EA_UiModWindow
 - Enemy
+- FozAuction
 - Hopper
 - Lib RuString
 - MapMonster
@@ -110,7 +112,7 @@ Observed as a global function across 16 addons.
 - CM_ClosetGoblin: OnClickDeleteSetButton -> DialogManager.MakeTwoButtonDialog(cgL["confirm_delete_set"]:gsub(L "#1#",set.name), confirmYes, ClosetGoblinCharacterWindow.OnConfirmDeleteSet, confirmNo, nil)
 - Crusher: InitializeWindow -> DialogManager.MakeTwoButtonDialog(T["Are you sure?"], GetString(StringTables.Default.LABEL_YES), CrusherConfig_Profiles_OnResetProfile, GetString(StringTables.Default.LABEL_NO), nil, nil, nil, nil, nil, DialogManager.TYPE_MODAL)
 - Crusher: OnLButtonUp -> DialogManager.MakeTwoButtonDialog(T["Are you sure?"], GetString(StringTables.Default.LABEL_YES), CrusherConfig_Profiles_OnResetProfile, GetString(StringTables.Default.LABEL_NO), nil, nil, nil, nil, nil, DialogManager.TYPE_MODAL)
-- Enemy: CombatLogInitialize -> DialogManager.MakeTwoButtonDialog(L "Enemy addon\n\nCause of considerable changes in combat log statistics code it's recommended to reset combat log settings to default values. Only combat log settings will be affected.\n\nDo you want to reset it now (you will have to wait for game interface to reload)?\n\nRecommended - yes", L "Yes", Enemy.CombatLogResetSettings, L "No")
+- EA_UiModWindow: CreateReloadDialogAdvanced -> DialogManager.MakeTwoButtonDialog(GetStringFromTable("CustomizeUiStrings",StringTables.CustomizeUi.TEXT_UI_MOD_SETTINGS_CHANGED_DIALOG), GetString(StringTables.Default.LABEL_YES), UiModWindow.SaveAndReloadAdvanced, GetString(StringTables.Default.LABEL_NO), UiModWindow.CancelAdvancedDialog)
 
 ## Related APIs
 

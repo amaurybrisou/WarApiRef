@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -29,8 +29,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Minmap, TidyQueue |
-| Files seen in | TidyQueue.lua, core.lua |
+| Addons seen in | CMap, Minmap, TidyQueue |
+| Files seen in | CMap.lua, TidyQueue.lua, core.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | Initialize, OnJoinAScenario, lua_call |
@@ -60,10 +60,11 @@
 
 ## Description
 
-SystemData.SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST field accessed by 2 addons; commonly found in Initialize and OnJoinAScenario, lua_call contexts.
+SystemData.SystemData.Events.INTERACT_SHOW_SCENARIO_QUEUE_LIST field accessed by 3 addons; commonly found in Initialize and OnJoinAScenario, lua_call contexts.
 
 ## Seen In
 
+- CMap
 - Minmap
 - TidyQueue
 

@@ -89,25 +89,12 @@ Observed mutating runtime window state or presentation.
 
 ## Examples
 
-- Pure: LoadUnitFrame -> WindowSetDrawWhenInterfaceHidden(playerFrame:GetName(), Pure.Get("player-frame-showinsiege"))
+- Pure: LoadUnitFrame -> WindowSetDrawWhenInterfaceHidden(petFrame:GetName(), Pure.Get("playerpet-frame-showinsiege"))
 - Pure: LoadUnitFrame -> WindowSetDrawWhenInterfaceHidden(targetFrame:GetName(), Pure.Get("playerpettarget-frame-showinsiege"))
+- Pure: LoadUnitFrame -> WindowSetDrawWhenInterfaceHidden(playerFrame:GetName(), Pure.Get("player-frame-showinsiege"))
 - Pure: LoadUnitFrame -> WindowSetDrawWhenInterfaceHidden(hostileFrame:GetName(), Pure.Get("hostile-frame-showinsiege"))
 - Pure: LoadUnitFrame -> WindowSetDrawWhenInterfaceHidden(friendlyFrame:GetName(), Pure.Get("friendly-frame-showinsiege"))
-- Pure: LoadUnitFrame -> WindowSetDrawWhenInterfaceHidden(petFrame:GetName(), Pure.Get("playerpet-frame-showinsiege"))
 - Squared: Create -> WindowSetDrawWhenInterfaceHidden(wName, window.alwaysdraw)
-
-## Affects
-
-- [SystemData.Events.BATTLEGROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_PLAYER_ADDED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_PLAYER_ADDED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_STATUS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_STATUS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_PET_HEALTH_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_PET_HEALTH_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.SCENARIO_BEGIN](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_BEGIN.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.SCENARIO_END](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.SCENARIO_GROUP_JOIN](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_GROUP_JOIN.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.SCENARIO_GROUP_LEAVE](../../systemdata/fields/systemdata_SystemData.Events.SCENARIO_GROUP_LEAVE.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

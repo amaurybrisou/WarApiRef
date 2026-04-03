@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 6 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Enemy, LibGuard, MegaphonePlus, Pure, followTheLeader |
-| Files seen in | Code/Core/Groups/Groups.lua, MegaphonePlus.lua, Source/LibGuard.lua, Source/PureGroup.lua, Source/PureGroupPet.lua, followTheLeader.lua |
+| Addons seen in | Enemy, LibGuard, MegaphonePlus, Pure, WBStutterLess, followTheLeader |
+| Files seen in | Code/Core/Groups/Groups.lua, MegaphonePlus.lua, Source/LibGuard.lua, Source/PureGroup.lua, Source/PureGroupPet.lua, WBStutterLess.lua, followTheLeader.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
-| Example locations | GroupsInitialize, Init, Initialize, LoadUnitFrame, OnShutdown, UnloadUnitFrame |
+| Example locations | GroupWindowHook, GroupsInitialize, Init, Initialize, LoadUnitFrame, OnShutdown |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 8 |
+| Global usage count | 8 |
 | Local definition count | 0 |
 | Documentation references | 1 |
 | Initialization flow references | 0 |
@@ -60,7 +60,7 @@
 
 ## Description
 
-SystemData.SystemData.Events.GROUP_PLAYER_ADDED field accessed by 5 addons; commonly found in GroupsInitialize and Init, Initialize, LoadUnitFrame, OnShutdown, UnloadUnitFrame, lua_call contexts.
+SystemData.SystemData.Events.GROUP_PLAYER_ADDED field accessed by 6 addons; commonly found in GroupWindowHook and GroupsInitialize, Init, Initialize, LoadUnitFrame, OnShutdown, UnloadUnitFrame, lua_call contexts.
 
 ## Seen In
 
@@ -68,21 +68,13 @@ SystemData.SystemData.Events.GROUP_PLAYER_ADDED field accessed by 5 addons; comm
 - LibGuard
 - MegaphonePlus
 - Pure
+- WBStutterLess
 - followTheLeader
 
 ## Related APIs
 
-- [WindowSetDrawWhenInterfaceHidden](../../window_api/functions/window_WindowSetDrawWhenInterfaceHidden.md) (HIGH 100/100) - Window Function
 - [OnShutdown](../../xml/handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
-
-## Used With
-
-- [SystemData.Events.BATTLEGROUP_UPDATED](systemdata_SystemData.Events.BATTLEGROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_STATUS_UPDATED](systemdata_SystemData.Events.GROUP_STATUS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.GROUP_UPDATED](systemdata_SystemData.Events.GROUP_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.LOADING_END](systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_PET_HEALTH_UPDATED](systemdata_SystemData.Events.PLAYER_PET_HEALTH_UPDATED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 
-- Observed in contexts: GroupsInitialize, Init, Initialize, LoadUnitFrame, OnShutdown, UnloadUnitFrame
+- Observed in contexts: GroupWindowHook, GroupsInitialize, Init, Initialize, LoadUnitFrame, OnShutdown

@@ -13,7 +13,7 @@
 
 | Metric | Value |
 | --- | --- |
-| source_root | C:/Return of Reckoning/Interface/AddOns/WAR_API_Ref/addons |
+| source_root | /workspace/data/raw |
 | source_directories | 396 |
 | manifest_discovered | 384 |
 | source_scanned_addons | 384 |

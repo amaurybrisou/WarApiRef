@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 44 addons
+- Seen in: 46 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, ActionFraction, Amethyst, Atlas, CharacterScreenTabFix, Crusher, EZCraftX |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, Amethyst, Atlas, CMap, CharacterScreenTabFix, Crusher |
 | Files seen in | CharacterScreenTabFix.lua, Code/Core/Main.lua, Code/Guard/Guard.lua, JunkDumpOptions.lua, LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua |
 | Namespaces detected | WindowSetMovable |
 | Source kinds | lua_calls |
 | Example locations | Ace: MakeFixed, Ace: MakeMovable, ActionBarHide: MakeFixed, ActionBarHide: MakeMovable, ActionFraction: OnLock, ActionFraction: OnUnlock |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 84 |
-| Global usage count | 84 |
+| Lua usage count | 90 |
+| Global usage count | 90 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -72,7 +72,7 @@ Observed mutating runtime window state or presentation.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: "AbilitiesWindow", "ApothecaryWindow", "AtlasFrame" |
-| arg2 | Observed as a boolean toggle. | Observed values: (...), (settings.Movable==true), an |
+| arg2 | Observed as a boolean toggle. | Observed values: (...), (settings.Movable==true), WarWhisperer.Settings.moveable |
 
 ## Returns
 
@@ -89,6 +89,7 @@ Observed mutating runtime window state or presentation.
 - ActionFraction
 - Amethyst
 - Atlas
+- CMap
 - CharacterScreenTabFix
 - Crusher
 - EZCraftX
@@ -117,6 +118,7 @@ Observed mutating runtime window state or presentation.
 - TastyButtons
 - TexturedButtons
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse

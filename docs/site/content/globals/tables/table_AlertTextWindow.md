@@ -33,7 +33,7 @@
 | Example locations | Aura: Activate, Aura: Deactivate, BlackBook: CheckOdds, BlackBook: PlayerRenownUpdated, DammazKron: AlertRegister, DetauntHelper: Print |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 35 |
+| Lua usage count | 36 |
 | Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 3 member functions; the primary API surface for 21 addons.
+Shared function table with 3 member functions; the primary API surface for 22 addons.
 
 ## Functions
 
@@ -92,6 +92,7 @@ Shared function table with 3 member functions; the primary API surface for 21 ad
 - TheSeeker
 - TomeTracker
 - WSCT
+- WarBoard_AAOTracker
 
 ## Examples
 

@@ -27,13 +27,13 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | AnywhereTrainerAdditions, AuctionStats, BankWindowFix, CM_ClosetGoblin, CastSequence, Crusher, DetauntHelper, Enemy |
-| Files seen in | Code/Core/ConfigurationWindow.lua, Code/ScenarioInfo/ScenarioInfo.lua, Code/UnitFrames/ClickCasting.lua, Configuration/WCDBConfig_Filters.lua, Configuration/WCDPConfig_Filters.lua, Modules/UI/Shinies-UI-Auto.lua, Modules/UI/Shinies-UI-Browse.lua, Modules/UI/Shinies-UI-Post.lua |
+| Files seen in | Code/Assist/Assist.lua, Code/Core/ConfigurationWindow.lua, Code/UnitFrames/ClickCasting.lua, Configuration/WCDBConfig_Filters.lua, Configuration/WCDPConfig_Filters.lua, Modules/UI/Shinies-UI-Auto.lua, Modules/UI/Shinies-UI-Browse.lua, Modules/UI/Shinies-UI-Post.lua |
 | Namespaces detected | Cursor |
 | Source kinds | lua_calls |
 | Example locations | AnywhereTrainerAdditions: EquipmentLButtonDown, AuctionStats: AuctionHouseWindowCreateSearchItemName_LButtonDown, AuctionStats: EA_Window_Backpack_EquipmentLButtonDown_Override, AuctionStats: OnLButtonUpItem, BankWindowFix: BankEquipmentRButtonDown, CM_ClosetGoblin: HandleDrag |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 82 |
+| Lua usage count | 89 |
 | Global usage count | 3 |
 | Local definition count | 0 |
 | Documentation references | 0 |
@@ -57,7 +57,7 @@
 
 ## Description
 
-Shared function table with 3 member functions; the primary API surface for 22 addons.
+Shared function table with 3 member functions; the primary API surface for 24 addons.
 
 ## Functions
 
@@ -80,6 +80,7 @@ Shared function table with 3 member functions; the primary API surface for 22 ad
 - DetauntHelper
 - Enemy
 - FixGit
+- FozAuction
 - HotbarMorale
 - KeyBar
 - NerfedButtons
@@ -92,6 +93,7 @@ Shared function table with 3 member functions; the primary API surface for 22 ad
 - Twister
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
+- bigger_MacroWindow
 - zMailMod
 
 ## Examples

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 60 addons
+- Seen in: 64 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionFraction, AdjustTheTip, Amethyst, BuffHead, CleanUnitFrames, Crusher, DAoCBuff |
+| Addons seen in | Ace, ActionFraction, AdjustTheTip, Amethyst, BuffHead, CMap, CleanUnitFrames, Crusher |
 | Files seen in | AdjustTheTip.lua, AdvancedContainers.lua, Amethyst.lua, Button.lua, CleanTargetWindow.lua, Code/UnitFrames/EffectsIndicator.lua, Code/UnitFrames/UnitFrame.lua, Code/UnitFrames/UnitFramePart.lua |
 | Namespaces detected | InterfaceCore |
 | Source kinds | lua_calls |
 | Example locations | Ace: Scale, ActionFraction: ResetWindow, AdjustTheTip: UpdateCallback, Amethyst: Recreate, Amethyst: Scale, BuffHead: AnchorContainers |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 174 |
-| Global usage count | 174 |
+| Lua usage count | 183 |
+| Global usage count | 183 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -66,7 +66,7 @@ InterfaceCore.GetScale()
 
 ## Description
 
-Observed as a global function across 60 addons.
+Observed as a global function across 64 addons.
 
 ## Parameters
 
@@ -88,9 +88,11 @@ Observed as a global function across 60 addons.
 - AdjustTheTip
 - Amethyst
 - BuffHead
+- CMap
 - CleanUnitFrames
 - Crusher
 - DAoCBuff
+- EA_LoadingScreen
 - EA_UiDebugTools
 - EZCraftX
 - EZGuard
@@ -113,6 +115,7 @@ Observed as a global function across 60 addons.
 - Obsidian
 - PartyCast
 - PotionBar
+- Preciousss
 - Pure
 - Pure Careerbar
 - RO-Style Combat Text
@@ -133,6 +136,7 @@ Observed as a global function across 60 addons.
 - Tokens
 - TurretRange
 - Vectors
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -163,14 +167,15 @@ Observed as a global function across 60 addons.
 
 ## Used With
 
+- [InterfaceCore.GetResolutionScale](global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
+- [LayoutEditor.RegisterWindow](../../window_api/functions/window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [LayoutEditor.UnregisterWindow](../../window_api/functions/window_LayoutEditor.UnregisterWindow.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
-- [WindowGetScale](../../window_api/functions/window_WindowGetScale.md) (HIGH 100/100) - Window Function
 - [WindowGetScreenPosition](../../window_api/functions/window_WindowGetScreenPosition.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetScale](../../window_api/functions/window_WindowSetScale.md) (HIGH 100/100) - Window Function
-- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 - [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
 
 ## Notes

@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 50 addons
+- Seen in: 53 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, AggroMeter, Amethyst, BuddyBind, CastSequence, CleanUnitFrames, Crusher, DetauntHelper |
+| Addons seen in | Ace, AggroMeter, Amethyst, Assist, BuddyBind, CMap, CastSequence, CleanUnitFrames |
 | Files seen in | AggroMeter.lua, BuddyBind.lua, CleanGroupMemberUnitFrame.lua, Code/GroupIcons/GroupIcon.lua, Code/Guard/Guard.lua, Code/Marks/MarkTemplate.lua, Code/UnitFrames/ClickCasting.lua, Code/UnitFrames/UnitFrame.lua |
 | Namespaces detected | WindowSetGameActionData |
 | Source kinds | lua_calls |
-| Example locations | Ace: Action, AggroMeter: SelectChar, Amethyst: Action, BuddyBind: GrabName, BuddyBind: init, BuddyBind: update |
+| Example locations | Ace: Action, AggroMeter: SelectChar, Amethyst: Action, Assist: updTargets, BuddyBind: GrabName, BuddyBind: init |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 104 |
-| Global usage count | 104 |
+| Lua usage count | 109 |
+| Global usage count | 109 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,9 +71,9 @@ Observed mutating runtime window state or presentation.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "BuddyBindWindow", "BuddyBindWindowExecute", "EffigyTLMOAction" |
-| arg2 | Observed as a function or method reference. | Observed values: 0, GameData.PlayerActions.ASSIST_PLAYER, GameData.PlayerActions.COMMAND_PET |
-| arg3 | Observed as a runtime window or control identifier. | Observed values: 0, GameData.AssistType.MAIN_ASSIST, GameData.TradeSkills.CULTIVATION |
+| windowName | Observed as a target window name. | Observed values: "AssistWindow1BTN", "AssistWindow2BTN", "AssistWindow3BTN" |
+| arg2 | Observed as a function or method reference. | Observed values: 0, 4, GameData.PlayerActions.ASSIST_PLAYER |
+| arg3 | Observed as a runtime window or control identifier. | Observed values: 0, 46, 47 |
 | arg4 | Observed as a text or wstring payload. | Observed values: EffigyState:GetState(bar.state):GetTitle(), Enemy.isNil(g.guardPlayerName,L ""), GameData.Player.name |
 
 ## Returns
@@ -89,7 +89,9 @@ Observed mutating runtime window state or presentation.
 - Ace
 - AggroMeter
 - Amethyst
+- Assist
 - BuddyBind
+- CMap
 - CastSequence
 - CleanUnitFrames
 - Crusher
@@ -129,6 +131,7 @@ Observed mutating runtime window state or presentation.
 - TastyButtons
 - Tokens
 - Twister
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -142,9 +145,9 @@ Observed mutating runtime window state or presentation.
 - Ace: Action -> WindowSetGameActionData(self.name, actionType, numArg, wstringArg)
 - AggroMeter: SelectChar -> WindowSetGameActionData(tostring(WindowName), GameData.PlayerActions.SET_TARGET, 0, towstring(AggroMeter.AggroHolder[tostring(MobNumber)][tonumber(LabelNumber)].name))
 - Amethyst: Action -> WindowSetGameActionData(self.name, actionType, numArg, wstringArg)
-- BuddyBind: GrabName -> WindowSetGameActionData("BuddyBindWindow", GameData.PlayerActions.SET_TARGET, 0, towstring(BuddyBind.Name))
-- BuddyBind: GrabName -> WindowSetGameActionData("BuddyBindWindowExecute", GameData.PlayerActions.SET_TARGET, 0, towstring(BuddyBind.Name))
-- BuddyBind: init -> WindowSetGameActionData("BuddyBindWindowExecute", GameData.PlayerActions.SET_TARGET, 0, towstring(BuddyBind.Name))
+- Assist: updTargets -> WindowSetGameActionData("AssistWindow1BTN", 4, 46, L "")
+- Assist: updTargets -> WindowSetGameActionData("AssistWindow2BTN", 4, 47, L "")
+- Assist: updTargets -> WindowSetGameActionData("AssistWindow3BTN", 4, 48, L "")
 
 ## Related APIs
 
@@ -153,11 +156,7 @@ Observed mutating runtime window state or presentation.
 
 ## Used With
 
-- [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
-- [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
-- [WindowSetGameActionTrigger](window_WindowSetGameActionTrigger.md) (HIGH 100/100) - Window Function
-- [wstring.sub](../../globals/functions/global_wstring.sub.md) (HIGH 75/100) - Global Function
 
 ## Affects
 

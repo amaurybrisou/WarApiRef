@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 21 addons
+- Seen in: 22 addons
 
 ## Confidence Assessment
 
@@ -32,8 +32,8 @@
 | Example locations | AnywhereTrainerAdditions: EquipmentLButtonDown, AuctionStats: AuctionHouseWindowCreateSearchItemName_LButtonDown, AuctionStats: OnLButtonUpItem, CM_ClosetGoblin: HandleDrag, CastSequence: OnLButtonUp, Crusher: OnLButtonUp |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 46 |
-| Global usage count | 46 |
+| Lua usage count | 47 |
+| Global usage count | 47 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ Cursor.Clear()
 
 ## Description
 
-Observed as a global function across 21 addons.
+Observed as a global function across 22 addons.
 
 ## Parameters
 
@@ -87,6 +87,7 @@ Observed as a global function across 21 addons.
 - DetauntHelper
 - Enemy
 - FixGit
+- FozAuction
 - HotbarMorale
 - KeyBar
 - NerfedButtons
@@ -120,8 +121,10 @@ Observed as a global function across 21 addons.
 - [Cursor.IconOnCursor](global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
 - [Cursor.PickUp](global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
 - [EA_BackpackUtilsMediator.GetCurrentBackpackType](global_EA_BackpackUtilsMediator.GetCurrentBackpackType.md) (HIGH 100/100) - Global Function
+- [EA_BackpackUtilsMediator.GetCursorForBackpack](global_EA_BackpackUtilsMediator.GetCursorForBackpack.md) (HIGH 100/100) - Global Function
+- [EA_BackpackUtilsMediator.GetItemsFromBackpack](global_EA_BackpackUtilsMediator.GetItemsFromBackpack.md) (HIGH 100/100) - Global Function
 - [EA_ChatWindow.InsertItemLink](global_EA_ChatWindow.InsertItemLink.md) (HIGH 100/100) - Global Function
-- [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
+- [SystemData.TrialAlert.ALERT_AUCTION](../../systemdata/fields/systemdata_SystemData.TrialAlert.ALERT_AUCTION.md) (HIGH 100/100) - SystemData Field
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [DoesWindowExist](global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [BankWindow.GetItem](global_BankWindow.GetItem.md) (HIGH 71/100) - Global Function

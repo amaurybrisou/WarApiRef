@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, LibAddonButton, MarkBuff, Miracle Grow Remix, MoraleCircle, TacticSetNames |
-| Files seen in | Gui.lua, Menu.lua, MoraleCircle.lua, context.lua, source/ActionFraction.lua, source/Settings.lua |
+| Addons seen in | ActionFraction, FozAuction, LibAddonButton, MarkBuff, Miracle Grow Remix, MoraleCircle, SocialWindow 2.0, TacticSetNames |
+| Files seen in | Gui.lua, Menu.lua, MoraleCircle.lua, Source/auctionwindowsearchcontrols.lua, context.lua, source/ActionFraction.lua, source/Settings.lua, source/socialwindow.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | ActionFraction: RightClick, LibAddonButton: AddMenuItem, MarkBuff: ShowAurasMenu, Miracle Grow Remix: AddContextItem, MoraleCircle: ColorChanger1, MoraleCircle: ColorChanger2 |
+| Example locations | ActionFraction: RightClick, FozAuction: CreateAndAddSelectionMenuItem, LibAddonButton: AddMenuItem, MarkBuff: ShowAurasMenu, Miracle Grow Remix: AddContextItem, MoraleCircle: ColorChanger1 |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 12 |
-| Global usage count | 12 |
+| Lua usage count | 16 |
+| Global usage count | 16 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,14 +65,14 @@ EA_Window_ContextMenu.AddUserDefinedMenuItem(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 6 addons.
+Observed as a global function across 8 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
 | arg1 | Observed as a text or wstring payload. | Observed values: "ActionFractionWindowContextAutoHide", "ActionFractionWindowContextColorCodeCurrentAP", "MoraleSliders" |
-| arg2 | Observed as a runtime window or control identifier. | Observed values: 3, EA_Window_ContextMenu.CONTEXT_MENU_1, iMenuNum |
+| arg2 | Observed as a function or method reference. | Observed values: 3, EA_Window_ContextMenu.CONTEXT_MENU_1, EA_Window_ContextMenu.CONTEXT_MENU_2 |
 
 ## Returns
 
@@ -85,20 +85,22 @@ Observed as a global function across 6 addons.
 ## Seen In
 
 - ActionFraction
+- FozAuction
 - LibAddonButton
 - MarkBuff
 - Miracle Grow Remix
 - MoraleCircle
+- SocialWindow 2.0
 - TacticSetNames
 
 ## Examples
 
 - ActionFraction: RightClick -> EA_Window_ContextMenu.AddUserDefinedMenuItem("ActionFractionWindowContextColorCodeCurrentAP")
 - ActionFraction: RightClick -> EA_Window_ContextMenu.AddUserDefinedMenuItem("ActionFractionWindowContextAutoHide")
+- FozAuction: CreateAndAddSelectionMenuItem -> EA_Window_ContextMenu.AddUserDefinedMenuItem(windowName, EA_Window_ContextMenu.CONTEXT_MENU_2)
 - LibAddonButton: AddMenuItem -> EA_Window_ContextMenu.AddUserDefinedMenuItem(menuName, menuId)
 - MarkBuff: ShowAurasMenu -> EA_Window_ContextMenu.AddUserDefinedMenuItem(windowName, menu)
 - Miracle Grow Remix: AddContextItem -> EA_Window_ContextMenu.AddUserDefinedMenuItem(sName, iMenuNum)
-- MoraleCircle: ColorChanger1 -> EA_Window_ContextMenu.AddUserDefinedMenuItem("MoraleSliders", 3)
 
 ## Used With
 

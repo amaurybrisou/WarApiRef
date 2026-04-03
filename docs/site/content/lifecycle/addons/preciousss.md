@@ -11,7 +11,7 @@
 
 | Kind | Name | Resolution | Confidence | Matched |
 | --- | --- | --- | --- | --- |
-| CallFunction | Preciousss.Setup | ambiguous | MEDIUM | Effigy.local.Setup, Effigy.Setup, Effigy.local.Setup, Effigy.Setup, SORRealms.Setup, TastyButtonsOptions.Setup, WarBoard.Options.SetUp, TalismanMonitor.Setup |
+| CallFunction | Preciousss.Setup | ambiguous | MEDIUM | Effigy.local.Setup, Effigy.Setup, Effigy.local.Setup, Effigy.Setup, Preciousss.Setup, Rolodex.Setup, SORRealms.Setup, TastyButtonsOptions.Setup, WarBoard.Options.SetUp, TalismanMonitor.Setup |
 ## Unknown / Custom Hook Actions
 
 | Kind | Name | Resolution | Confidence | Matched |

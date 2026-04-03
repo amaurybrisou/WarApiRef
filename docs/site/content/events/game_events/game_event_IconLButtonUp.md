@@ -79,6 +79,16 @@ Observed as a runtime event ID routed through RegisterEventHandler-style APIs.
 - Enemy: AddEventHandler -> IconLButtonUp -> Enemy.IntercomUI_IntercomDialog_Open
 - Enemy: Enemy.IntercomUI_IntercomDialog_Open -> AddEventHandler(IconLButtonUp, Enemy.IntercomUI_IntercomDialog_Open)
 
+## Related APIs
+
+- [Cursor.PickUp](../../globals/functions/global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
+- [EA_Window_Macro.UpdateDetails](../../globals/functions/global_EA_Window_Macro.UpdateDetails.md) (HIGH 100/100) - Global Function
+- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
+
+## Affects
+
+- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
+
 ## Notes
 
 - Only one addon surfaced this event in the current addon-api corpus.

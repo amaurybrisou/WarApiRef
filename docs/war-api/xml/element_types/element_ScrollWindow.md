@@ -1025,59 +1025,59 @@ Confidence: MEDIUM
 | 2 | `delta` | number | wheel_delta |
 ## Lua Functions Manipulating This Type
 
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- wbLeadHelperConfigTab.Initialize
-- MapMonster.FilterButtonState
-- WbLeadHelperMessage.MessageDialogOpen
-- TTitan.UI.DisplayRow
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- CDown.ShowTab
-- Enemy._OnArchetypeChanged
+- GroupIconsSG.SlashHandler
+- Group Icons SG.marker:Size
+- wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
 - Enemy.local._OnKeyModifierChanged
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- TTitan.UI.DisplayRow
+- EA_Window_Macro.HideMacroIconSelectionWindow
+- MapMonster.local.FilterButtonState
+- WbLeadHelperMessage.MessageDialogOpen
 - MBuffGui.SetGroupBuffIcon
+- GroupIconsSG.OptionsCHKclick
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- EA_Window_Macro.Initialize
+- MacroIcons.OnInitialize
+- Group Icons SG.marker:Create
+- DAoCBuffSettings.PopulateSettings
+- Killer.Initialize
+- UiModWindow.ShowModDetails
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- GroupIcons.HandleSlashCmd
+- Enemy._OnKeyModifierChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- TTitan.UI.SetDataSource
+- EA_Window_Macro.Shutdown
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy._OnArchetypeChanged
+- EA_Window_Macro.SelectionIconLButtonDown
+- Statdoll.WriteLabels
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- GroupIconsSG.OnInitialize
+- Enemy.EnemyGroupIcon:ApplySettings
+- CDown.ShowTab
+- CDown.local.ShowTab
+- GroupIcons.OnUpdate
+- Enemy.local._OnArchetypeChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- wbLeadHelperConfigTab.OnLoad
+- MapMonster.FilterButtonState
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- wbLeadHelperConfigTab.Initialize
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- EA_Window_Macro.DetailIconLButtonDown
+- WbLeadHelperMessage.OnOk
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- TTitan.UI.DisplayManualEntry
 - GroupIcons.OnInitialize
 - wbLeadHelperConfigTab.OnReset
-- wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
-- WbLeadHelperMessage.OnOk
-- CDown.local.ShowTab
-- UiModWindow.ShowModDetails
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.local._OnArchetypeChanged
-- Killer.Initialize
-- Group Icons SG.marker:Create
-- wbLeadHelperConfigTab.OnLoad
-- GroupIconsSG.OnInitialize
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
-- TTitan.UI.SetDataSource
-- EA_Window_Macro.SelectionIconLButtonDown
-- Group Icons SG.marker:Size
-- EA_Window_Macro.HideMacroIconSelectionWindow
-- Enemy.EnemyGroupIcon:ApplySettings
-- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
 - DAoCBuff.ShowMessageWindow
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- EA_Window_Macro.DetailIconLButtonDown
-- Statdoll.WriteLabels
-- DAoCBuffSettings.PopulateSettings
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
-- GroupIcons.HandleSlashCmd
-- EA_Window_Macro.Shutdown
-- GroupIconsSG.OptionsCHKclick
-- MapMonster.local.FilterButtonState
-- EA_Window_Macro.Initialize
-- GroupIconsSG.SlashHandler
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- TTitan.UI.DisplayManualEntry
-- GroupIcons.OnUpdate
-- MacroIcons.OnInitialize
-- Enemy._OnKeyModifierChanged
 
 
 ## Binding Resolution

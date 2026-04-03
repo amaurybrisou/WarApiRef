@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 54 addons
+- Seen in: 58 addons
 
 ## Confidence Assessment
 
@@ -29,15 +29,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, Amethyst, BetterCC, BuddyBind, Calling |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, Amethyst, BetterCC, BuddyBind, CMap |
 | Files seen in | AdjustTheTip.lua, BetterCC.lua, BuddyBind.lua, CallingKeybinding.lua, CharacterScreenTabFix.lua, CleanTargetWindow.lua, Core.lua, DuffTimer.lua |
 | Namespaces detected | WindowRegisterCoreEventHandler |
 | Source kinds | lua_calls |
 | Example locations | Ace: RegisterEvent, ActionBarHide: RegisterEvent, ActionFraction: Initialize, AdjustTheTip: CreateCheckBoxMenuItem, AdjustTheTip: CreateSliderMenuItem, AdjustTheTip: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 110 |
-| Global usage count | 110 |
+| Lua usage count | 117 |
+| Global usage count | 117 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -73,7 +73,7 @@ Observed binding On* window events directly to a named window.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: "ActionFractionWindowContextAutoHide", "ActionFractionWindowContextColorCodeCurrentAP", "ApothecaryWindowTitleBarText" |
-| windowEvent | Observed as an On* window event string. | Observed values: "OnHidden", "OnInitializeCustomSettings", "OnLButtonDown" |
+| windowEvent | Observed as an On* window event string. | Observed values: "OnHidden", "OnInitializeCustomSettings", "OnKeyTab" |
 | handlerName | Observed as a Lua handler reference. | Observed values: "ActionFractionWindow.ToggleAutoHide", "ActionFractionWindow.ToggleColorCodeCurrentAP", "AdjustTheTip.OnMouseOverTargetWindowClick" |
 
 ## Returns
@@ -93,6 +93,7 @@ Observed binding On* window events directly to a named window.
 - Amethyst
 - BetterCC
 - BuddyBind
+- CMap
 - Calling
 - CharacterScreenTabFix
 - CleanUnitFrames
@@ -120,6 +121,7 @@ Observed binding On* window events directly to a named window.
 - RVMOD_PlayerStatus
 - RVMOD_Targets
 - RealmStatus
+- Rolodex
 - Shinies
 - TacticSetNames
 - TargetRing
@@ -131,10 +133,12 @@ Observed binding On* window events directly to a named window.
 - VPBreakdown
 - Vectors
 - WarBoard_Menu
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WoH-Reticle
+- bigger_MacroWindow
 - nRarity
 - scenarioInfo
 - xHUD
@@ -163,12 +167,9 @@ Observed binding On* window events directly to a named window.
 
 ## Affects
 
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

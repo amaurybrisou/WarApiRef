@@ -22,14 +22,14 @@ OnInitialize -> LibSlash.RegisterSlashCmd
 ## Example Code
 
 ```lua
-ActionBarCD: LibSlash.RegisterSlashCmd("abcd", function(args)ActionBarCD.SlashHandler(args)end)
+AbilityNotifier: LibSlash.RegisterSlashCmd("an", slashhandler)
 ```
 
 ## Evidence
 
+- AbilityNotifier: LibSlash.RegisterSlashCmd("an", slashhandler)
+- AbilityNotifier: LibSlash.RegisterSlashCmd("anot", slashhandler)
 - ActionBarCD: LibSlash.RegisterSlashCmd("abcd", function(args)ActionBarCD.SlashHandler(args)end)
 - ActionBarHide: LibSlash.RegisterSlashCmd("abh", function()ActionBarHide.OptionsWindow()end)
 - AdvancedPetAssist: LibSlash.RegisterSlashCmd("apa", function(input)APA.SlashHandler(input)end)
 - Amethyst: LibSlash.RegisterSlashCmd("amt", function(msg)Amethyst.Slash(msg)end)
-- Amethyst: LibSlash.RegisterSlashCmd("amethyst", function(msg)Amethyst.Slash(msg)end)
-- ArmorGraphicToggle: LibSlash.RegisterSlashCmd("agt", function(msg)ArmorGraphicToggle.Slash(msg)end)

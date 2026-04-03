@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 25 addons
+- Seen in: 27 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, Crusher, DuffTimer, EZCraftX, EZGuard, Effigy, GCDsaver, Hopper |
+| Addons seen in | Ace, CMap, Crusher, DuffTimer, EZCraftX, EZGuard, Effigy, GCDsaver |
 | Files seen in | DuffTimer.lua, LibGUI.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Vis.lua, libs/LibGUI.lua |
 | Namespaces detected | WindowForceProcessAnchors |
 | Source kinds | lua_calls |
-| Example locations | Ace: ProcessAnchors, Crusher: ProcessAnchors, DuffTimer: CreateBar, EZCraftX: ProcessAnchors, EZGuard: ProcessAnchors, Effigy: ProcessAnchors |
+| Example locations | Ace: ProcessAnchors, CMap: ProcessAnchors, Crusher: ProcessAnchors, DuffTimer: CreateBar, EZCraftX: ProcessAnchors, EZGuard: ProcessAnchors |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 25 |
-| Global usage count | 25 |
+| Lua usage count | 27 |
+| Global usage count | 27 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ WindowForceProcessAnchors(arg1)
 
 ## Description
 
-Observed as a window function across 25 addons.
+Observed as a window function across 27 addons.
 
 ## Parameters
 
@@ -84,6 +84,7 @@ Observed as a window function across 25 addons.
 ## Seen In
 
 - Ace
+- CMap
 - Crusher
 - DuffTimer
 - EZCraftX
@@ -103,6 +104,7 @@ Observed as a window function across 25 addons.
 - TargetRing
 - Tokens
 - Vectors
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -112,11 +114,11 @@ Observed as a window function across 25 addons.
 ## Examples
 
 - Ace: ProcessAnchors -> WindowForceProcessAnchors(self.name)
+- CMap: ProcessAnchors -> WindowForceProcessAnchors(self.name)
 - Crusher: ProcessAnchors -> WindowForceProcessAnchors(self.name)
 - DuffTimer: CreateBar -> WindowForceProcessAnchors(buff.windowName)
 - EZCraftX: ProcessAnchors -> WindowForceProcessAnchors(self.name)
 - EZGuard: ProcessAnchors -> WindowForceProcessAnchors(self.name)
-- Effigy: ProcessAnchors -> WindowForceProcessAnchors(self.name)
 
 ## Notes
 

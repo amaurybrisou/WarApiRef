@@ -18,7 +18,7 @@ XML handler names map directly to Lua functions and can be cross-checked through
 
 ```text
 OnLButtonUp
-  -> handlers: ScenarioGroupWindow.LeaveGroup
+  -> handlers: AuctionWindow.Hide, EA_Window_OpenParty.ToggleFullWindow, ScenarioGroupWindow.LeaveGroup
   -> ui: Button
 ```
 

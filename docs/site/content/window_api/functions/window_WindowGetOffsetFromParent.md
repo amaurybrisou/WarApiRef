@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 5 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | DAoCBuff, PotionBar, Statdoll Remix, TidyChat, Vectors |
-| Files seen in | Settings.lua, Source/DAoCBuffFrames.lua, StatdollWnd.lua, StatdollWndLight.lua, TidyChat.lua, source/Main.lua |
+| Addons seen in | DAoCBuff, EA_OpenPartyWindow, PotionBar, Statdoll Remix, TidyChat, Vectors, WarBoard_WarWhisperer |
+| Files seen in | Settings.lua, Source/DAoCBuffFrames.lua, StatdollWnd.lua, StatdollWndLight.lua, TidyChat.lua, source/Main.lua, source/openpartywindow.lua, warwhisperer.lua |
 | Namespaces detected | WindowGetOffsetFromParent |
 | Source kinds | lua_calls |
-| Example locations | DAoCBuff: Shutdown, PotionBar: Shutdown, Statdoll Remix: onShutdown, TidyChat: SetWindowGroup, Vectors: ShowSelectOption |
+| Example locations | DAoCBuff: Shutdown, EA_OpenPartyWindow: OnOpenPartyNotification, PotionBar: Shutdown, Statdoll Remix: onShutdown, TidyChat: SetWindowGroup, Vectors: ShowSelectOption |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 6 |
-| Global usage count | 6 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -71,7 +71,7 @@ Observed querying runtime window state or metadata.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| windowName | Observed as a target window name. | Observed values: "CursorWindow", "PotionBarFloatingActivator", StatdollWnd.window |
+| windowName | Observed as a target window name. | Observed values: "CursorWindow", "PotionBarFloatingActivator", FLY_OUT_WINDOW.."Header" |
 
 ## Returns
 
@@ -84,19 +84,21 @@ Observed querying runtime window state or metadata.
 ## Seen In
 
 - DAoCBuff
+- EA_OpenPartyWindow
 - PotionBar
 - Statdoll Remix
 - TidyChat
 - Vectors
+- WarBoard_WarWhisperer
 
 ## Examples
 
 - DAoCBuff: Shutdown -> WindowGetOffsetFromParent(self.m_windowName)
+- EA_OpenPartyWindow: OnOpenPartyNotification -> WindowGetOffsetFromParent(FLY_OUT_WINDOW.."Header")
 - PotionBar: Shutdown -> WindowGetOffsetFromParent("PotionBarFloatingActivator")
-- Statdoll Remix: onShutdown -> WindowGetOffsetFromParent(StatdollWndLight.window)
 - Statdoll Remix: onShutdown -> WindowGetOffsetFromParent(StatdollWnd.window)
+- Statdoll Remix: onShutdown -> WindowGetOffsetFromParent(StatdollWndLight.window)
 - TidyChat: SetWindowGroup -> WindowGetOffsetFromParent(wndGroupName)
-- Vectors: ShowSelectOption -> WindowGetOffsetFromParent("CursorWindow")
 
 ## Related APIs
 

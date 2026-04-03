@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 83/100
-- Seen in: 73 addons
+- Seen in: 79 addons
 
 ## Confidence Assessment
 
@@ -32,8 +32,8 @@
 | Example locations | AdvancedRenownTrainer: CreateAbilityWindow, Amethyst: ShowCastBar, Amethyst: ShowDummyCastBar, AuctionStats: UpdateItemOptions, Aura: GetTextureData, AutoMark: CreateMarker |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 229 |
-| Global usage count | 229 |
+| Lua usage count | 261 |
+| Global usage count | 261 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ GetIconData(arg1)
 
 ## Description
 
-Observed as a shared query API across 73 addons.
+Observed as a shared query API across 79 addons.
 
 ## Parameters
 
@@ -101,12 +101,14 @@ Observed as a shared query API across 73 addons.
 - DammazKron
 - DetauntHelper
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EZCraftX
 - Effigy
 - Emojii
 - Enemy
 - EveryBodyGuard
+- FozAuction
 - GCDTracker
 - GetStats
 - Group Icons
@@ -117,6 +119,7 @@ Observed as a shared query API across 73 addons.
 - MapPin
 - MarkBuff
 - MoraleCircle
+- MoraleSet
 - Moth
 - Motion
 - NAMBLA
@@ -130,6 +133,7 @@ Observed as a shared query API across 73 addons.
 - SNT_BUTTONS
 - SNT_CASTBAR
 - Shinies
+- SocialWindow 2.0
 - Squared
 - SquaredClick
 - Swift Assist
@@ -145,9 +149,11 @@ Observed as a shared query API across 73 addons.
 - Twister
 - WSCT
 - WarBoard_TaliMon
+- WarBoard_WarWhisperer
 - WhatsCooking
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
+- bigger_MacroWindow
 - talisman-monitor
 - wbLeadHelper
 - xHUD
@@ -175,16 +181,11 @@ Observed as a shared query API across 73 addons.
 - [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [DynamicImageSetTextureScale](../../window_api/functions/window_DynamicImageSetTextureScale.md) (HIGH 100/100) - Window Function
 - [EA_ChatWindow.InsertText](global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.AddMenuDivider](global_EA_Window_ContextMenu.AddMenuDivider.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.AddMenuItem](global_EA_Window_ContextMenu.AddMenuItem.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.CreateContextMenu](global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
-- [EA_Window_ContextMenu.Finalize](global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
 - [Icons.GetCareerIconIDFromCareerLine](global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
 - [InterfaceCore.GetScale](global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
 - [LabelGetTextDimensions](../../window_api/functions/window_LabelGetTextDimensions.md) (HIGH 100/100) - Window Function
 - [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [WindowSetId](../../window_api/functions/window_WindowSetId.md) (HIGH 100/100) - Window Function
+- [WindowAddAnchor](../../window_api/functions/window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [EA_Window_WorldMap.ShowZone](global_EA_Window_WorldMap.ShowZone.md) (HIGH 90/100) - Global Function
 

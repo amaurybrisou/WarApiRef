@@ -3,7 +3,7 @@
 - Category: SystemData Field
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 7 addons
+- Seen in: 8 addons
 
 ## Confidence Assessment
 
@@ -28,8 +28,8 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Aura, DammazKron, NerfedButtons, ScenarioStats, TortallDPSCore, War_RU, ZCurse_Profiler |
-| Files seen in | Core/DK_Core.lua, CurseProfilerCompiled.lua, NerfedMemory.lua, ScenarioStats.lua, Source/AuraProfile.lua, TortallDPSCore.lua, War_RU.lua |
+| Addons seen in | Aura, DammazKron, MoraleSet, NerfedButtons, ScenarioStats, TortallDPSCore, War_RU, ZCurse_Profiler |
+| Files seen in | Core/DK_Core.lua, CurseProfilerCompiled.lua, NerfedMemory.lua, ScenarioStats.lua, Source/AuraProfile.lua, Source/MoraleSet.lua, TortallDPSCore.lua, War_RU.lua |
 | Namespaces detected | SystemData |
 | Source kinds | lua_call |
 | Example locations | CheckSettingsInit, Convert03To04, GetCurProfileNum, GetCurrentCharacter, InitProfile, Initialize |
@@ -59,12 +59,13 @@
 
 ## Description
 
-SystemData.SystemData.Server.Name field accessed by 7 addons; commonly found in CheckSettingsInit and Convert03To04, GetCurProfileNum, GetCurrentCharacter, InitProfile, Initialize, InitializeLocal, LoadCharacterSettings, ParseGuild, ParsePlayer, SaveCharacterSettings, ShowWindowByName, SwitchProfile, lua_call, repeatnil contexts.
+SystemData.SystemData.Server.Name field accessed by 8 addons; commonly found in CheckSettingsInit and Convert03To04, GetCurProfileNum, GetCurrentCharacter, InitProfile, Initialize, InitializeLocal, LoadCharacterSettings, ParseGuild, ParsePlayer, SaveCharacterSettings, ShowWindowByName, SwitchProfile, lua_call, repeatnil contexts.
 
 ## Seen In
 
 - Aura
 - DammazKron
+- MoraleSet
 - NerfedButtons
 - ScenarioStats
 - TortallDPSCore

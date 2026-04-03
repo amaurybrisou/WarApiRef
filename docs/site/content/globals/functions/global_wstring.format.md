@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 42 addons
+- Seen in: 44 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, AdjustTheTip, AggroMeter, CCTV, CaVES, Calling, CastSequence, CoolDownLine |
-| Files seen in | AdjustTheTip.lua, AggroMeter.lua, Bars/HealGridCastBar.lua, CCTV.lua, CallingList.lua, Castbar.lua, Code/Core/Utils.lua, Configuration/Config.lua |
+| Addons seen in | ActionFraction, AdjustTheTip, AggroMeter, BarText (Influence), CCTV, CaVES, Calling, CastSequence |
+| Files seen in | AdjustTheTip.lua, AggroMeter.lua, BarText_Influence.lua, Bars/HealGridCastBar.lua, CCTV.lua, CallingList.lua, Castbar.lua, Clock.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | ActionFraction: Initialize, AdjustTheTip: GetAbilityCastTimeText, AdjustTheTip: UpdateInfluenceTooltip, AggroMeter: OnMouseOverStart, CCTV: Update, CCTV: UpdateSettings |
+| Example locations | ActionFraction: Initialize, AdjustTheTip: GetAbilityCastTimeText, AdjustTheTip: UpdateInfluenceTooltip, AggroMeter: OnMouseOverStart, BarText (Influence): PlayerInfluenceUpdated, CCTV: Update |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 457 |
-| Global usage count | 457 |
+| Lua usage count | 461 |
+| Global usage count | 461 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ wstring.format(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 42 addons.
+Observed as a global function across 44 addons.
 
 ## Parameters
 
@@ -84,10 +84,12 @@ Observed as a global function across 42 addons.
 - ActionFraction
 - AdjustTheTip
 - AggroMeter
+- BarText (Influence)
 - CCTV
 - CaVES
 - Calling
 - CastSequence
+- Clock
 - CoolDownLine
 - Crusher
 - DAoCBuff
@@ -140,16 +142,17 @@ Observed as a global function across 42 addons.
 
 ## Used With
 
-- [EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID](global_EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID.md) (HIGH 80/100) - Global Function
+- [EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID](global_EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID.md) (HIGH 100/100) - Global Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
+- [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
+- [wstring.gsub](global_wstring.gsub.md) (HIGH 100/100) - Global Function
 
 ## Affects
 
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T13:32:29.2200307Z",
+  "generated_at": "2026-04-05T05:49:51.080329117Z",
   "frequent_call_chains": [
     {
       "id": "call_chain:xml_event.OnInitialize_function.global.RegisterEventHandler",
@@ -3267,46 +3267,6 @@
       "weight": 26
     },
     {
-      "id": "combination:data.system.SystemData.Events.LOADING_END_data.system.SystemData.Events.RELOAD_INTERFACE",
-      "type": "common_combination",
-      "title": "SystemData.Events.LOADING_END + SystemData.Events.RELOAD_INTERFACE",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "data:system:SystemData.Events.LOADING_END",
-          "label": "SystemData.Events.LOADING_END",
-          "type": "data_structure",
-          "category": "SystemData Field",
-          "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_END.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "SystemData.SystemData.Events.LOADING_END field accessed by 106 addons; commonly found in ArmorGraphicToggle_Disable and ArmorGraphicToggle_Enable, DelayInit, DisableBars, EnableBars, Init, InitComplete, Init_Warden, Initialise, Initialize, InitializePlayer, LOADING_END, LibRange.OnLoad, LoadUnitFrame, NAMBLA_Initialize, OnInit, OnInitialize, OnLoad, OnLoadCastbar, OnLoadingEnd, OnShutdown, RegisterCoreEvents, RegisterEventHandlerDK, RegisterEventHandlers, RegisterLoadingEnd, RegisterStateInfoForCastbar, RegisterStateInfoForPlayer, RegisterStateInfoForTargets, Shutdown, ShutdownPlayer, Squared.OnLoad, SquaredRangeFading.LoadingEnd, SystemData.Events.LOADING_END, Unload, UnloadUnitFrame, UnregisterCoreEvents, UnregisterEventHandlerDK, UnregisterEventHandlers, UnregisterLoadingEnd, ZoneChangeInit, ZoneChangeShutdown, _ScenarioInfoEnabledChanged, entry_point, event_page, event_registration, init, lua_call, onInit, onInitialize contexts."
-        },
-        {
-          "id": "data:system:SystemData.Events.RELOAD_INTERFACE",
-          "label": "SystemData.Events.RELOAD_INTERFACE",
-          "type": "data_structure",
-          "category": "SystemData Field",
-          "path": "systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "SystemData.SystemData.Events.RELOAD_INTERFACE field accessed by 65 addons; commonly found in Init and Initialize, LOADING_END, LoadUnitFrame, NAMBLA_Initialize, OnClickReloadUI, OnInitialize, OnShutdown, RegisterCoreEvents, RegisterEventHandlers, SaveAndReloadAdvanced, SaveAndReloadMods, Shutdown, Squared.OnLoad, SystemData.Events.RELOAD_INTERFACE, ToggleHook, Unload, UnloadUnitFrame, UnregisterCoreEvents, entry_point, event_page, event_registration, init, lua_call, onInitialize contexts."
-        }
-      ],
-      "flow": [
-        "SystemData.Events.LOADING_END \u003c-\u003e SystemData.Events.RELOAD_INTERFACE"
-      ],
-      "evidence": [
-        "ActionBarHide: Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"ActionBarHide.OnLoad\")",
-        "ActionBarHide: Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, \"ActionBarHide.Combat\")",
-        "ActionBarHide: Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"ActionBarHide.OnLoad\")",
-        "AdvancedRenownTrainer: Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
-        "AdvancedRenownTrainer: Initialize -\u003e EA_Window_InteractionRenownTraining.GetPointsAvailable()",
-        "AdvancedRenownTrainer: Initialize -\u003e EA_Window_InteractionRenownTraining.GetPointsSpent()"
-      ],
-      "weight": 25
-    },
-    {
       "id": "combination:function.global.LibSlash.RegisterSlashCmd_function.global.RegisterEventHandler",
       "type": "common_combination",
       "title": "LibSlash.RegisterSlashCmd + RegisterEventHandler",
@@ -3343,6 +3303,46 @@
         "AbilityNotifier: Initialize -\u003e LibSlash.RegisterSlashCmd(\"anot\", slashhandler)",
         "AbilityNotifier: Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, \"AbHelp.CombatUpdated\")",
         "AbilityNotifier: Initialize -\u003e RegisterEventHandler(SystemData.Events.WORLD_OBJ_COMBAT_EVENT, \"AbHelp.CombatEvent\")"
+      ],
+      "weight": 24
+    },
+    {
+      "id": "combination:data.system.SystemData.Events.LOADING_END_data.system.SystemData.Events.RELOAD_INTERFACE",
+      "type": "common_combination",
+      "title": "SystemData.Events.LOADING_END + SystemData.Events.RELOAD_INTERFACE",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "data:system:SystemData.Events.LOADING_END",
+          "label": "SystemData.Events.LOADING_END",
+          "type": "data_structure",
+          "category": "SystemData Field",
+          "path": "systemdata/fields/systemdata_SystemData.Events.LOADING_END.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "SystemData.SystemData.Events.LOADING_END field accessed by 106 addons; commonly found in ArmorGraphicToggle_Disable and ArmorGraphicToggle_Enable, DelayInit, DisableBars, EnableBars, Init, InitComplete, Init_Warden, Initialise, Initialize, InitializePlayer, LOADING_END, LibRange.OnLoad, LoadUnitFrame, NAMBLA_Initialize, OnInit, OnInitialize, OnLoad, OnLoadCastbar, OnLoadingEnd, OnShutdown, RegisterCoreEvents, RegisterEventHandlerDK, RegisterEventHandlers, RegisterLoadingEnd, RegisterStateInfoForCastbar, RegisterStateInfoForPlayer, RegisterStateInfoForTargets, Shutdown, ShutdownPlayer, Squared.OnLoad, SquaredRangeFading.LoadingEnd, SystemData.Events.LOADING_END, Unload, UnloadUnitFrame, UnregisterCoreEvents, UnregisterEventHandlerDK, UnregisterEventHandlers, UnregisterLoadingEnd, ZoneChangeInit, ZoneChangeShutdown, _ScenarioInfoEnabledChanged, entry_point, event_page, event_registration, init, lua_call, onInit, onInitialize contexts."
+        },
+        {
+          "id": "data:system:SystemData.Events.RELOAD_INTERFACE",
+          "label": "SystemData.Events.RELOAD_INTERFACE",
+          "type": "data_structure",
+          "category": "SystemData Field",
+          "path": "systemdata/fields/systemdata_SystemData.Events.RELOAD_INTERFACE.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "SystemData.SystemData.Events.RELOAD_INTERFACE field accessed by 65 addons; commonly found in Init and Initialize, LOADING_END, LoadUnitFrame, NAMBLA_Initialize, OnClickReloadUI, OnInitialize, OnShutdown, RegisterCoreEvents, RegisterEventHandlers, SaveAndReloadAdvanced, SaveAndReloadMods, Shutdown, Squared.OnLoad, SystemData.Events.RELOAD_INTERFACE, ToggleHook, Unload, UnloadUnitFrame, UnregisterCoreEvents, entry_point, event_page, event_registration, init, lua_call, onInitialize contexts."
+        }
+      ],
+      "flow": [
+        "SystemData.Events.LOADING_END \u003c-\u003e SystemData.Events.RELOAD_INTERFACE"
+      ],
+      "evidence": [
+        "ActionBarHide: Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"ActionBarHide.OnLoad\")",
+        "ActionBarHide: Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_COMBAT_FLAG_UPDATED, \"ActionBarHide.Combat\")",
+        "ActionBarHide: Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"ActionBarHide.OnLoad\")",
+        "AdvancedRenownTrainer: Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
+        "AdvancedRenownTrainer: Initialize -\u003e EA_Window_InteractionRenownTraining.GetPointsAvailable()",
+        "AdvancedRenownTrainer: Initialize -\u003e EA_Window_InteractionRenownTraining.GetPointsSpent()"
       ],
       "weight": 24
     },

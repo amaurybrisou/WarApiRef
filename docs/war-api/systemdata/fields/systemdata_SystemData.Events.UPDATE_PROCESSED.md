@@ -100,7 +100,6 @@ SystemData.SystemData.Events.UPDATE_PROCESSED field accessed by 31 addons; commo
 ## Related APIs
 
 - [LayoutEditor.RegisterEditCallback](../../window_api/functions/window_LayoutEditor.RegisterEditCallback.md) (HIGH 100/100) - Window Function
-- [WindowRegisterEventHandler](../../window_api/functions/window_WindowRegisterEventHandler.md) (HIGH 100/100) - Window Function
 - [OnHidden](../../xml/handlers/handler_OnHidden.md) (HIGH 88/100) - XML Event
 - [OnInitialize](../../xml/handlers/handler_OnInitialize.md) (HIGH 88/100) - XML Event
 - [OnShown](../../xml/handlers/handler_OnShown.md) (HIGH 88/100) - XML Event

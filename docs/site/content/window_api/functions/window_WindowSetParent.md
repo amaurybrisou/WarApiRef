@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 53 addons
+- Seen in: 56 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, BBars - Mechanic Only, BagOMatic, BetterCC, CM_ClosetGoblin, CoolDownLine |
+| Addons seen in | Ace, ActionBarHide, Amethyst, BBars - Mechanic Only, BagOMatic, BetterCC, CM_ClosetGoblin, CMap |
 | Files seen in | BBarsPetHP.lua, BBarsPlayerMechanic.lua, BagOMatic.lua, BetterCC.lua, ClosetGoblin.lua, CoolDownLine.lua, Core.lua, Dye.lua |
 | Namespaces detected | WindowSetParent |
 | Source kinds | lua_calls |
 | Example locations | Ace: Parent, ActionBarHide: Parent, Amethyst: Parent, BBars - Mechanic Only: MechDraw, BBars - Mechanic Only: PetHPDraw, BagOMatic: init |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 89 |
-| Global usage count | 89 |
+| Lua usage count | 92 |
+| Global usage count | 92 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -91,6 +91,7 @@ Observed mutating runtime window state or presentation.
 - BagOMatic
 - BetterCC
 - CM_ClosetGoblin
+- CMap
 - CoolDownLine
 - Crusher
 - Dye Preview
@@ -128,10 +129,12 @@ Observed mutating runtime window state or presentation.
 - Tokens
 - TurretRange
 - WarBoard_Menu
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
 - WoH-Reticle
+- bigger_MacroWindow
 - nRarity
 - scenarioInfo
 - xHUD

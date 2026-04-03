@@ -34,7 +34,7 @@
 | Example locations | AdvancedPetAssist: .OnLButtonUp, AdvancedRenownTrainer: .OnLButtonUp, AggroMeter: .OnLButtonUp, AnywhereTrainer: .OnLButtonUp, Atlas: .OnLButtonUp, AuctionStats: .OnLButtonUp |
 | XML usage count | 1 |
 | XML attribute usage count | 1 |
-| Lua usage count | 1459 |
+| Lua usage count | 1653 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -58,7 +58,7 @@
 
 ## Description
 
-XML handler event commonly bound to Button elements in 148 addons.
+XML handler event commonly bound to Button elements in 165 addons.
 
 ## Expected Lua Binding
 
@@ -92,10 +92,12 @@ function(...)
 - CCTV
 - CDown
 - CM_ClosetGoblin
+- CMap
 - CaVES
 - Calling
 - CastSequence
 - ChattyCathy
+- Cheeseboard
 - CleanUnitFrames
 - Crusher
 - DAoCBuff
@@ -104,14 +106,18 @@ function(...)
 - DetauntHelper
 - DuffTimer
 - Dye Preview
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EA_UiDebugTools
+- EA_UiModWindow
+- EZCraft
 - EZCraftX
 - Effigy
 - Emojii
 - Enemy
 - FastFriends
 - FastInteract
+- FozAuction
 - GetStats
 - Group Icons SG
 - GroupRange
@@ -143,11 +149,14 @@ function(...)
 - MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
+- MoraleSet
 - Motion
 - NerfedButtons
 - NoOverheal
+- ObjectInspector
 - Obsidian
 - Phantom
+- PieTracker
 - Pocket Palette
 - PotionBar
 - Pure
@@ -167,6 +176,7 @@ function(...)
 - ReliquaryHunter
 - RoR_SoR
 - RoR_debolster
+- Rolodex
 - Rotation
 - RvRStats
 - RvRStatsTab
@@ -179,6 +189,7 @@ function(...)
 - Sequencer
 - SessionRPs
 - Shinies
+- SocialWindow 2.0
 - Soloq
 - Squared
 - SquaredClick
@@ -187,6 +198,7 @@ function(...)
 - TacticSetNames
 - TalismanGenie
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThankTheTank
 - ThinkOutLoud
@@ -196,13 +208,17 @@ function(...)
 - TokenMachine
 - Tome Titan
 - TomeTracker
+- Tortall_DPS
 - Trakario
 - TurretRange
 - Twister
 - TwisterSet
 - WARCommander
+- WBStutterLess
 - WSCT
+- WTes
 - WarBoard
+- WarBoard_AAOTracker
 - WarBoard_FPS
 - WarBoard_Loc
 - WarBoard_Session
@@ -214,6 +230,7 @@ function(...)
 - XpStatus+G
 - ZonePOP
 - alertMod
+- bigger_MacroWindow
 - emotes
 - followTheLeader
 - minesweep
@@ -232,6 +249,7 @@ function(...)
 
 ## Related APIs
 
+- [AuctionWindow.Hide](../../globals/functions/global_AuctionWindow.Hide.md) (HIGH 100/100) - Global Function
 - [Button](../element_types/element_Button.md) (HIGH 100/100) - XML Element Type
 - [ButtonSetPressedFlag](../../window_api/functions/window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ComboBox](../element_types/element_ComboBox.md) (HIGH 100/100) - XML Element Type
@@ -245,6 +263,7 @@ function(...)
 - [EA_Window_ContextMenu.CreateContextMenu](../../globals/functions/global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.Finalize](../../globals/functions/global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.HideAll](../../globals/functions/global_EA_Window_ContextMenu.HideAll.md) (HIGH 100/100) - Global Function
+- [EA_Window_OpenParty.ToggleFullWindow](../../globals/functions/global_EA_Window_OpenParty.ToggleFullWindow.md) (HIGH 100/100) - Global Function
 - [EditBox](../element_types/element_EditBox.md) (HIGH 100/100) - XML Element Type
 - [FullResizeImage](../element_types/element_FullResizeImage.md) (HIGH 100/100) - XML Element Type
 - [Label](../element_types/element_Label.md) (HIGH 100/100) - XML Element Type
@@ -273,11 +292,8 @@ function(...)
 
 ## Used With
 
-- [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
-- [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
 - [DialogManager.MakeTwoButtonDialog](../../globals/functions/global_DialogManager.MakeTwoButtonDialog.md) (HIGH 100/100) - Global Function
 - [EA_ChatWindow.Print](../../globals/functions/global_EA_ChatWindow.Print.md) (HIGH 100/100) - Global Function
-- [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [WindowGetTintColor](../../window_api/functions/window_WindowGetTintColor.md) (HIGH 100/100) - Window Function
 - [OnUpdate](handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function

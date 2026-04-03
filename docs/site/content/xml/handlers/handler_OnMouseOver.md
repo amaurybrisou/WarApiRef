@@ -29,7 +29,7 @@
 | Example locations | AdvancedRenownTrainer: .OnMouseOver, AggroMeter: .OnMouseOver, AnywhereTrainer: .OnMouseOver, Atlas: .OnMouseOver, AuctionStats: .OnMouseOver, Aura: .OnMouseOver |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 652 |
+| Lua usage count | 729 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 88 addons.
+XML handler event observed across 101 addons.
 
 ## Expected Lua Binding
 
@@ -76,25 +76,32 @@ function()
 - AutoBand
 - BagOMatic
 - BankArkel
+- BarText (Influence)
 - BlackBook
 - Brizio's Crappy Computer Medic
 - BuffHead
 - CM_ClosetGoblin
+- CMap
 - CaVES
 - Calling
 - CastSequence
+- Cheeseboard
 - CleanUnitFrames
 - Crusher
 - DAoCBuff
 - DammazKron
 - DetauntHelper
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_ThreePartBar
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZCraftX
 - Effigy
 - Emojii
 - Enemy
+- FozAuction
 - GroupSpotter
 - GuildWarden
 - HealGrid
@@ -113,11 +120,13 @@ function()
 - MiracleGrow
 - MiracleGrowLight
 - MoraleCircle
+- MoraleSet
 - Motion
 - NaturalLog
 - NerfedButtons
 - NoOverheal
 - Obsidian
+- PieTracker
 - Pocket Palette
 - PotionBar
 - Pure
@@ -134,15 +143,18 @@ function()
 - Sequencer
 - SessionRPs
 - Shinies
+- SocialWindow 2.0
 - Squared
 - TalismanGenie
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - Tome Titan
 - TomeTracker
 - TurretRange
 - TwisterSet
 - WARCommander
+- WBStutterLess
 - WSCT
 - WarBoard
 - WarBoard_Loc
@@ -150,6 +162,7 @@ function()
 - WarBoard_TaliMon
 - XpStatus+G
 - ZonePOP
+- bigger_MacroWindow
 - emotes
 - followTheLeader
 - nLootLink
@@ -190,11 +203,13 @@ function()
 - [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [EA_Window_ContextMenu.OnMouseOverDefaultMenuItem](../../globals/functions/global_EA_Window_ContextMenu.OnMouseOverDefaultMenuItem.md) (HIGH 80/100) - Global Function
+- [EA_Window_PublicQuestTracker.OnMouseOverInfluenceBar](../../globals/functions/global_EA_Window_PublicQuestTracker.OnMouseOverInfluenceBar.md) (HIGH 80/100) - Global Function
 
 ## Used With
 
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
+- [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 
 ## Affects
 

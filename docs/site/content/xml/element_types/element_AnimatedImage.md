@@ -56,7 +56,7 @@
 
 ## Description
 
-AnimatedImage is a container-style XML element. It commonly appears under Button and Window. It is typically used to organize structural children such as Anchors, AnimFrames, Size and be manipulated from Lua by functions such as Aura.Aura:CreateRuntimeWindows, CoolDownLine.OnUpdate.
+AnimatedImage is a container-style XML element. It commonly appears under Button and Window. It is typically used to organize structural children such as Anchors, AnimFrames, Size and be manipulated from Lua by functions such as Aura.Aura:CreateRuntimeWindows, CMapWindow.ActivateRallyCall.
 
 ## Common Attributes
 
@@ -989,17 +989,24 @@ Observed 1 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- TidyRollOptions.Initialize
-- MapMonster.InitializeMapPins
-- Enemy.AssistUI_Target_Show
-- CoolDownLine.OnUpdate
 - MapMonster.HighlightSetTint
+- CMapWindow.DeactivateRallyCall
+- CMapWindow.UpdateScenarioQueueButton
 - TexturedButtons.Setup.Cooldown.LoadSettings
-- TexturedButtons.Setup.Cooldown.OnHideFlashLUp
-- Emojii.Emoji
-- GuardLine.update
 - TexturedButtons.Setup.Cooldown.Initialize
+- Emojii.Emoji
+- TidyRollOptions.Initialize
+- Enemy.AssistUI_Target_Show
+- GuardLine.update
+- CMapWindow.OnMouseoverRallyCall
+- CoolDownLine.OnUpdate
+- GuardRange.UpdateStateMachine
 - Aura.Aura:CreateRuntimeWindows
+- MapMonster.InitializeMapPins
+- TexturedButtons.Setup.Cooldown.OnHideFlashLUp
+- GuardList.UpdateStateMachine
+- CMapWindow.OnRallyCallLButtonUp
+- CMapWindow.ActivateRallyCall
 
 ## Seen In
 

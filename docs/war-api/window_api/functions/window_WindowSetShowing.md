@@ -352,7 +352,6 @@ Observed mutating runtime window state or presentation.
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedText](window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
 - [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
-- [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
 - [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [EA_ChatWindow.UpdateSocialWindowButton](../../globals/functions/global_EA_ChatWindow.UpdateSocialWindowButton.md) (HIGH 100/100) - Global Function
 - [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function

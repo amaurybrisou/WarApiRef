@@ -101,7 +101,6 @@ Observed as a global function across 5 addons.
 
 ## Used With
 
-- [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
 - [WindowClearAnchors](../../window_api/functions/window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetId](../../window_api/functions/window_WindowGetId.md) (HIGH 100/100) - Window Function
 - [PartyUtils.MoveWarbandMember](global_PartyUtils.MoveWarbandMember.md) (HIGH 88/100) - Global Function

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 12 addons
+- Seen in: 13 addons
 
 ## Confidence Assessment
 
@@ -25,14 +25,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Aura, DetauntHelper, EmoteAlert, MapMonster, MegaphonePlus, MegaphonePlusPlus, Sequencer, SessionRPs |
-| Files seen in | EmoteAlert.lua, MegaphonePlus.lua, MegaphonePlusPlus.lua, Sequencer.lua, Source/Aura.lua, Source/Common.lua, Source/MapMonster.lua, Source/MapMonster_EditorWindow.lua |
+| Files seen in | AAOTracker.lua, EmoteAlert.lua, MegaphonePlus.lua, MegaphonePlusPlus.lua, Sequencer.lua, Source/Aura.lua, Source/Common.lua, Source/MapMonster.lua |
 | Namespaces detected | AlertTextWindow |
 | Source kinds | lua_calls |
 | Example locations | Aura: Activate, Aura: Deactivate, DetauntHelper: Print, EmoteAlert: showOnscreenMessage, MapMonster: ConfirmCreateSubType, MapMonster: LeftButton |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 32 |
-| Global usage count | 32 |
+| Lua usage count | 33 |
+| Global usage count | 33 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -61,13 +61,13 @@ AlertTextWindow.AddLine(arg1, arg2)
 
 ## Description
 
-Observed as a global function across 12 addons.
+Observed as a global function across 13 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: AuraConstants.AlertText[self:Get("activation-alerttexttype")].type, AuraConstants.AlertText[self:Get("deactivation-alerttexttype")].type, MapMonster.AlertTypes.ERROR |
+| arg1 | Observed as a function or method reference. | Observed values: AAOTracker.Alerts[AAOTracker.Settings.AlertChannel].id, AuraConstants.AlertText[self:Get("activation-alerttexttype")].type, AuraConstants.AlertText[self:Get("deactivation-alerttexttype")].type |
 | arg2 | Observed as a runtime window or control identifier. | Observed values: GetString(StringTables.Default.TEXT_MORALE_DROP_ERROR), GetString(StringTables.Default.TEXT_TACTIC_DROP_ERROR), L "Entry still locked" |
 
 ## Returns
@@ -92,6 +92,7 @@ Observed as a global function across 12 addons.
 - Targets
 - TomeTracker
 - WSCT
+- WarBoard_AAOTracker
 
 ## Examples
 

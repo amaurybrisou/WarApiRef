@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 75/100
-- Seen in: 29 addons
+- Seen in: 30 addons
 
 ## Confidence Assessment
 
@@ -32,8 +32,8 @@
 | Example locations | BuddyBind: GrabName, BuddyBind: update, CCTV: Initialize, CleanUnitFrames: UpdateUnit, CombatTextNames: TruncateAbilityName, DammazKron: InitializeLocal |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 141 |
-| Global usage count | 141 |
+| Lua usage count | 146 |
+| Global usage count | 146 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,7 +62,7 @@ wstring.sub(arg1, arg2, arg3)
 
 ## Description
 
-Observed as a global function across 29 addons.
+Observed as a global function across 30 addons.
 
 ## Parameters
 
@@ -110,6 +110,7 @@ Observed as a global function across 29 addons.
 - Squared
 - TomeTracker
 - WSCT
+- WarBoard_WarWhisperer
 - whatsPugSc
 
 ## Examples
@@ -130,15 +131,8 @@ Observed as a global function across 29 addons.
 - [ComboBoxAddMenuItem](../../window_api/functions/window_ComboBoxAddMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxClearMenuItems](../../window_api/functions/window_ComboBoxClearMenuItems.md) (HIGH 100/100) - Window Function
 - [ComboBoxSetSelectedMenuItem](../../window_api/functions/window_ComboBoxSetSelectedMenuItem.md) (HIGH 100/100) - Window Function
-- [DynamicImageSetTexture](../../window_api/functions/window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
-- [GameData.PlayerActions.SET_TARGET](../../gamedata/fields/gamedata_GameData.PlayerActions.SET_TARGET.md) (HIGH 100/100) - GameData Field
-- [Icons.GetCareerIconIDFromCareerLine](global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
-- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
-- [WindowSetGameActionData](../../window_api/functions/window_WindowSetGameActionData.md) (HIGH 100/100) - Window Function
-- [wstring.gsub](global_wstring.gsub.md) (HIGH 100/100) - Global Function
 - [wstring.len](global_wstring.len.md) (HIGH 100/100) - Global Function
-- [wstring.lower](global_wstring.lower.md) (HIGH 100/100) - Global Function
-- [wstring.upper](global_wstring.upper.md) (HIGH 100/100) - Global Function
+- [wstring.reverse](global_wstring.reverse.md) (HIGH 88/100) - Global Function
 - [LibSlash.RegisterSlashCmd](global_LibSlash.RegisterSlashCmd.md) (HIGH 85/100) - Global Function
 - [wstring.find](global_wstring.find.md) (HIGH 75/100) - Global Function
 

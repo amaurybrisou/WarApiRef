@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 9 addons
+- Seen in: 10 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Amethyst, EZGuard, GCDsaver, InfoScroller, LibWBToggler, PartyCast, TargetRing, WarTriage |
-| Files seen in | Amethyst.lua, PartyCast.lua, libs/LibConfig.lua |
+| Addons seen in | Amethyst, CMap, EZGuard, GCDsaver, InfoScroller, LibWBToggler, PartyCast, TargetRing |
+| Files seen in | Amethyst.lua, LibConfig.lua, PartyCast.lua, libs/LibConfig.lua |
 | Namespaces detected | WindowGetTintColor |
 | Source kinds | lua_calls |
-| Example locations | Amethyst: ApplySettings, Amethyst: CreateGUI, Amethyst: OnLButtonUp, EZGuard: Add, EZGuard: OnLButtonUp, GCDsaver: Add |
+| Example locations | Amethyst: ApplySettings, Amethyst: CreateGUI, Amethyst: OnLButtonUp, CMap: Add, CMap: OnLButtonUp, EZGuard: Add |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 37 |
-| Global usage count | 37 |
+| Lua usage count | 39 |
+| Global usage count | 39 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -84,6 +84,7 @@ Observed querying runtime window state or metadata.
 ## Seen In
 
 - Amethyst
+- CMap
 - EZGuard
 - GCDsaver
 - InfoScroller

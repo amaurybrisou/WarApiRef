@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 39 addons
+- Seen in: 44 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | ActionFraction: RightClick, ActionFraction: SetFontSelectionMenu, ActionFraction: SetPresetLocation, AggroMeter: OnTabRBU, AggroMeter: PickedListMenu, AutoBand: AutoBand_L_AddContextMenuItem |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 390 |
-| Global usage count | 390 |
+| Lua usage count | 409 |
+| Global usage count | 409 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,7 +65,7 @@ EA_Window_ContextMenu.AddMenuItem(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a global function across 39 addons.
+Observed as a global function across 44 addons.
 
 ## Parameters
 
@@ -74,7 +74,7 @@ Observed as a global function across 39 addons.
 | arg1 | Observed as a function or method reference. | Observed values: Checkbox(mode,MODE_ALL)..GetStringFromTable("UserSettingsStrings",StringTables.UserSettings.PERFORMANCE_ABILITY_EFFECTS_ALL)..L " (*)", Checkbox(mode,MODE_NONE)..GetStringFromTable("UserSettingsStrings",StringTables.UserSettings.PERFORMANCE_ABILITY_EFFECTS_NONE)..L " (0)", Checkbox(mode,MODE_PARTY)..GetStringFromTable("UserSettingsStrings",StringTables.UserSettings.PERFORMANCE_ABILITY_EFFECTS_PARTY)..L " (6)" |
 | arg2 | Observed as a function or method reference. | Observed values: AbilitiesWindow.ToggleShowing, ActionFractionWindow.OnLock, ActionFractionWindow.OnUnlock |
 | arg3 | Observed as a boolean toggle. | Observed values: (activeItem.Entry.Index==#activeMenu.Subitems), (activeItem.Entry.Index==1), (activeRowItem.Index==#textureSettings.Animation.Frames) |
-| arg4 | Observed as a boolean toggle. | Observed values: EA_Window_ContextMenu.CONTEXT_MENU_1, true |
+| arg4 | Observed as a boolean toggle. | Observed values: EA_Window_ContextMenu.CONTEXT_MENU_1, false, true |
 
 ## Returns
 
@@ -95,6 +95,7 @@ Observed as a global function across 39 addons.
 - Dascore
 - DuelInvite
 - DuffTimer
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
 - EZCraftX
 - Effigy
@@ -119,11 +120,15 @@ Observed as a global function across 39 addons.
 - SOR
 - Shinies
 - ShowMeTheBubbles
+- SocialWindow 2.0
+- TaxPayer
 - TidyChat
 - TidyQueue
+- Tortall_DPS
 - TurretRange
 - WarBoard
 - WarBoard_Loc
+- WarBoard_WarWhisperer
 - XpStatus+G
 
 ## Examples
@@ -149,7 +154,6 @@ Observed as a global function across 39 addons.
 - [EA_Window_ContextMenu.Finalize](global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.Hide](global_EA_Window_ContextMenu.Hide.md) (HIGH 100/100) - Global Function
 - [SystemData.MouseOverWindow.name](../../systemdata/fields/systemdata_SystemData.MouseOverWindow.name.md) (HIGH 100/100) - SystemData Field
-- [GetIconData](global_GetIconData.md) (HIGH 83/100) - Global Function
 
 ## Notes
 

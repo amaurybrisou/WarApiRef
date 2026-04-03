@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 32 addons
+- Seen in: 34 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, Amethyst, BuffHead, Crusher, EZCraftX, EZGuard, Effigy |
+| Addons seen in | Ace, ActionBarHide, Amethyst, BuffHead, CMap, Crusher, EZCraftX, EZGuard |
 | Files seen in | LibGUI.lua, LibGui.lua, Libraries/LibGUI.lua, Libs/LibGUI.lua, Setup/SelectColor.lua, Setup/SelectTexture.lua, libs/LibGUI.lua, source/Border.lua |
 | Namespaces detected | WindowGetLayer |
 | Source kinds | lua_calls |
-| Example locations | Ace: Layer, ActionBarHide: Layer, Amethyst: Layer, BuffHead: Show, Crusher: Layer, EZCraftX: Layer |
+| Example locations | Ace: Layer, ActionBarHide: Layer, Amethyst: Layer, BuffHead: Show, CMap: Layer, Crusher: Layer |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 34 |
-| Global usage count | 34 |
+| Lua usage count | 36 |
+| Global usage count | 36 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -87,6 +87,7 @@ Observed querying runtime window state or metadata.
 - ActionBarHide
 - Amethyst
 - BuffHead
+- CMap
 - Crusher
 - EZCraftX
 - EZGuard
@@ -107,6 +108,7 @@ Observed querying runtime window state or metadata.
 - TargetRing
 - TexturedButtons
 - Tokens
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -122,8 +124,8 @@ Observed querying runtime window state or metadata.
 - ActionBarHide: Layer -> WindowGetLayer(self.name)
 - Amethyst: Layer -> WindowGetLayer(self.name)
 - BuffHead: Show -> WindowGetLayer(window)
+- CMap: Layer -> WindowGetLayer(self.name)
 - Crusher: Layer -> WindowGetLayer(self.name)
-- EZCraftX: Layer -> WindowGetLayer(self.name)
 
 ## Used With
 

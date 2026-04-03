@@ -138,8 +138,8 @@ Observed querying runtime window state or metadata.
 - Ace: Alpha -> WindowGetAlpha(self.name)
 - ActionBarHide: Alpha -> WindowGetAlpha(self.name)
 - ActionBarHide: ChangeAlpha -> WindowGetAlpha("EA_ActionBar"..k)
-- ActionFraction: OnUpdate -> WindowGetAlpha(windowName.."LabelCurrentAP")
 - ActionFraction: OnUpdate -> WindowGetAlpha(windowName.."LabelMaximumAP")
+- ActionFraction: OnUpdate -> WindowGetAlpha(windowName.."LabelCurrentAP")
 - ActionFraction: UpdateActionFractionVisibility -> WindowGetAlpha(windowName.."LabelCurrentAP")
 
 ## Related APIs

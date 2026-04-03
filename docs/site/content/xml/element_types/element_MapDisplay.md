@@ -122,7 +122,7 @@ MapDisplay is an interactive XML control. It commonly appears under Window. It i
 |-------|----------|---------------------|-------------------|-----------------|
 | [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) | custom | Map.OnMouseOverPoint, AtlasMap.OnMouseOverPoint, CMapWindow.OnMouseOverPoint, CMapWindow.WmapOnMouseOverPoint, Minmap.OnMouseOverPoint, Tooltips.OnMouseOverMapPoint | `` |  |
 | [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Map.OnClickMap, CMapWindow.OnClickMap, CMapWindow.WmapOnClickMap, Minmap.OnClickMap | `flags, x, y` | MEDIUM |
-| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | CMapWindow.MWheel, Minmap.HandleMouseWheel | `x, y, delta` | LOW |
+| [OnMouseWheel](../handlers/handler_OnMouseWheel.md) | input | CMapWindow.MWheel, Minmap.HandleMouseWheel | `x, y, delta` | MEDIUM |
 | [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | Map.OnRClickMap, AtlasMap.OnMapRBU | `flags, x, y` | MEDIUM |
 | [OnMButtonUp](../handlers/handler_OnMButtonUp.md) | input | Map.OnMButtonUp | `flags, x, y` | MEDIUM |
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | AtlasMap.OnMouseOver, CMapWindow.WmapOver | `` |  |
@@ -131,7 +131,7 @@ MapDisplay is an interactive XML control. It commonly appears under Window. It i
 | [OnMouseLeave](../handlers/handler_OnMouseLeave.md) | custom | AtlasMap.OnMouseLeaveMapPin | `` |  |
 | [OnShown](../handlers/handler_OnShown.md) | lifecycle | WindowUtils.OnShown | `` |  |
 | [OnShutdown](../handlers/handler_OnShutdown.md) | lifecycle | Map.Shutdown | `` |  |
-| [OnUpdate](../handlers/handler_OnUpdate.md) | lifecycle | CMapWindow.UpdateCoordinatesWMap | `elapsed` | LOW |
+| [OnUpdate](../handlers/handler_OnUpdate.md) | lifecycle | CMapWindow.UpdateCoordinatesWMap | `elapsed` | MEDIUM |
 
 ### Per-Event Lua API Calls
 
@@ -142,6 +142,8 @@ MapDisplay is an interactive XML control. It commonly appears under Window. It i
 **OnShown** handlers call: `ButtonSetText`, `DoesWindowExist`, `LabelSetText`, `TextEditBoxSetText`, `WindowSetDimensions`, `WindowSetShowing`
 
 **OnShutdown** handlers call: `WindowUnregisterEventHandler`
+
+**OnUpdate** handlers call: `LabelSetText`, `WindowGetScreenPosition`
 
 ## Common Inherits
 
@@ -206,12 +208,13 @@ API functions commonly called from event handler Lua functions on this element t
 | API Function | Category | Call Count | From Events |
 | --- | --- | --- | --- |
 | `TextEditBoxSetText` | ui | 15 | OnShown |
-| `LabelSetText` | ui | 13 | OnShown |
+| `LabelSetText` | ui | 14 | OnShown, OnUpdate |
 | `ButtonSetText` | ui | 6 | OnShown |
 | `WindowSetDimensions` | ui | 3 | OnShown |
 | `DoesWindowExist` | ui | 2 | OnShown |
 | `WindowSetShowing` | ui | 2 | OnMouseOverEnd, OnShown |
 | `WindowUnregisterEventHandler` | ui | 2 | OnShutdown |
+| `WindowGetScreenPosition` | ui | 1 | OnUpdate |
 | `WindowGetShowing` | ui | 1 | OnRButtonUp |
 ## Handler Callback Signatures
 
@@ -283,41 +286,42 @@ Confidence: HIGH
 
 ### OnUpdate
 
-Confidence: LOW
+Confidence: MEDIUM
 
 | Position | Name | Type | Role |
 | --- | --- | --- | --- |
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
-- MapPin.OnUpdate
-- MapMonster_Calibrate.OnMouseOverEnd
-- Atlas.local.SetMapTransparency
-- MapMonster_Calibrate.OnLMouseButton
-- MapMonster.Calibrate_ResizeMap
-- MapMonster.Calibrate_MoveAnchor
-- MapMonster.InitializeMapPins
 - MapPin.GetMapPos
-- MapPin.UpdateGuide
-- Map.SetBorderForegroundFRI
-- MapPin.UpdateMapCoordinates
-- MapMonster.MoveMapPin
-- Atlas.local.ShowCoordinatesOnMouseOver
-- Atlas.ShowCoordinatesOnMouseOver
-- Atlas.SetMapTransparency
-- MapMonster.local.MoveMapPin
-- MapMonster.local.CreateMarker
-- Map.Initialize
+- SimpleXY.UpdateCoordinates
+- MapMonster_Calibrate.OnLMouseButton
 - MapMonster.local.Calibrate_MoveAnchor
+- Map.SetBorderForegroundFRI
+- Atlas.SetMapTransparency
+- Atlas.local.SetMapTransparency
+- Map.Initialize
+- MapMonster.Calibrate_MoveAnchor
 - MapMonster_Calibrate.GetDimensions
+- Atlas.ShowCoordinatesOnMouseOver
+- MapMonster.local.CreateMarker
+- MapMonster_Calibrate.OnMouseOverEnd
+- MapMonster.Calibrate_ResizeMap
 - MapMonster_Calibrate.WindowReport
+- Atlas.local.ShowCoordinatesOnMouseOver
+- MapMonster.InitializeMapPins
+- MapMonster.MoveMapPin
+- MapPin.UpdateMapCoordinates
+- MapPin.UpdateGuide
 - MapMonster.CreateMarker
+- MapMonster.local.MoveMapPin
+- MapPin.OnUpdate
 
 
 ## Binding Resolution
 
 - Total handler declarations: 29
-- Resolved to Lua functions: 28 (96%)
+- Resolved to Lua functions: 29 (100%)
 
 ## Seen In
 
@@ -353,9 +357,9 @@ Confidence: LOW
 - [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 88/100) - XML Event
 - [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 88/100) - XML Event
 - [OnMouseWheel](../handlers/handler_OnMouseWheel.md) (HIGH 88/100) - XML Event
+- [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) (HIGH 88/100) - XML Event
 - [OnRButtonUp](../handlers/handler_OnRButtonUp.md) (HIGH 88/100) - XML Event
 - [OnShown](../handlers/handler_OnShown.md) (HIGH 88/100) - XML Event
 - [OnShutdown](../handlers/handler_OnShutdown.md) (HIGH 88/100) - XML Event
 - [OnUpdate](../handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [OnMouseLeave](../handlers/handler_OnMouseLeave.md) (HIGH 76/100) - XML Event
-- [OnPointMouseOver](../handlers/handler_OnPointMouseOver.md) (HIGH 76/100) - XML Event

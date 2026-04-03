@@ -81,9 +81,9 @@ NormalHighlit is a XML UI element. It commonly appears under AnimatedImages and 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
 | `id` | optional | 35% | morale-white, RightTabFrame-Rollover, Tactics-Button-Rollover, SquareButton-Rollover, ... |
-| `b` | optional | 27% | 63, 36, 0, 50, ... |
-| `g` | optional | 27% | 213, 57, 85, 192, ... |
-| `r` | optional | 27% | 250, 95, 255, 222, ... |
+| `b` | optional | 27% | 63, 0, 36, 50, ... |
+| `g` | optional | 27% | 213, 85, 57, 192, ... |
+| `r` | optional | 27% | 250, 255, 95, 222, ... |
 | `a` | optional | 26% | 255, 1 |
 | `x` | optional | 22% | 27, 105, 0, 201, ... |
 | `y` | optional | 22% | 28, 44, 0, 341, ... |

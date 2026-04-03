@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 96/100
-- Seen in: 2 addons
+- Seen in: 3 addons
 
 ## Confidence Assessment
 
@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | EA_ScenarioGroupWindow, alertMod |
-| Files seen in | Source/ScenarioGroupWindow.lua, alertMod.lua |
+| Addons seen in | EA_ScenarioGroupWindow, EA_UiModWindow, alertMod |
+| Files seen in | Source/ScenarioGroupWindow.lua, alertMod.lua, source/uimodwindow.lua, source/versionmismatchwindow.lua |
 | Namespaces detected | DefaultColor |
 | Source kinds | lua_calls |
-| Example locations | EA_ScenarioGroupWindow: SetListRowTints, alertMod: SetLabels |
+| Example locations | EA_ScenarioGroupWindow: SetListRowTints, EA_UiModWindow: InitModDetails, EA_UiModWindow: UpdateModRowByIndex, alertMod: SetLabels |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 8 |
-| Global usage count | 8 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -63,7 +63,7 @@ DefaultColor.GetRowColor(arg1)
 
 ## Description
 
-Observed as a global function across 2 addons.
+Observed as a global function across 3 addons.
 
 ## Parameters
 
@@ -82,17 +82,23 @@ Observed as a global function across 2 addons.
 ## Seen In
 
 - EA_ScenarioGroupWindow
+- EA_UiModWindow
 - alertMod
 
 ## Examples
 
 - EA_ScenarioGroupWindow: SetListRowTints -> DefaultColor.GetRowColor(row)
+- EA_UiModWindow: InitModDetails -> DefaultColor.GetRowColor(1)
+- EA_UiModWindow: UpdateModRowByIndex -> DefaultColor.GetRowColor(rowIndex)
 - alertMod: SetLabels -> DefaultColor.GetRowColor(2)
 - alertMod: SetLabels -> DefaultColor.GetRowColor(1)
 
 ## Used With
 
 - [DefaultColor.SetWindowTint](global_DefaultColor.SetWindowTint.md) (HIGH 100/100) - Global Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [LabelSetTextColor](../../window_api/functions/window_LabelSetTextColor.md) (HIGH 100/100) - Window Function
+- [WindowSetTintColor](../../window_api/functions/window_WindowSetTintColor.md) (HIGH 100/100) - Window Function
 
 ## Notes
 

@@ -26,15 +26,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | BuffHead, EA_ScenarioGroupWindow, TidyRoll, Tome Titan, alertMod |
-| Files seen in | Setup/LayoutControlFrame.lua, Setup/LayoutFrame.lua, Source/ScenarioGroupWindow.lua |
+| Addons seen in | BuffHead, EA_OpenPartyWindow, EA_ScenarioGroupWindow, EA_UiModWindow, TidyRoll, Tome Titan, alertMod |
+| Files seen in | Setup/LayoutControlFrame.lua, Setup/LayoutFrame.lua, Source/ScenarioGroupWindow.lua, source/openpartywindowtablootrolloptions.lua, source/uimodwindow.lua, source/versionmismatchwindow.lua |
 | Namespaces detected | DefaultColor |
 | Source kinds | lua_calls |
-| Example locations | BuffHead: Create, BuffHead: UpdateFrameColor, EA_ScenarioGroupWindow: SetListRowTints, TidyRoll: Initialize, Tome Titan: MouseOverRow, alertMod: SetLabels |
+| Example locations | BuffHead: Create, BuffHead: UpdateFrameColor, EA_OpenPartyWindow: Initialize, EA_ScenarioGroupWindow: SetListRowTints, EA_UiModWindow: InitModDetails, EA_UiModWindow: UpdateModDetailsData |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 17 |
-| Global usage count | 3 |
+| Lua usage count | 30 |
+| Global usage count | 5 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -57,12 +57,14 @@
 
 ## Description
 
-Shared function table with 3 member functions; the primary API surface for 5 addons.
+Shared function table with 5 member functions; the primary API surface for 7 addons.
 
 ## Functions
 
 - DefaultColor.GetRowColor
+- DefaultColor.LabelSetTextColor
 - DefaultColor.SetLabelColor
+- DefaultColor.SetListRowTint
 - DefaultColor.SetWindowTint
 
 ## Observed Members
@@ -72,7 +74,9 @@ Shared function table with 3 member functions; the primary API surface for 5 add
 ## Seen In
 
 - BuffHead
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_UiModWindow
 - TidyRoll
 - Tome Titan
 - alertMod
@@ -83,8 +87,8 @@ Shared function table with 3 member functions; the primary API surface for 5 add
 - BuffHead: UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Frame", frameColor)
 - BuffHead: UpdateFrameColor -> DefaultColor.SetWindowTint(self:GetName().."Background", backgroundColor)
 - BuffHead: UpdateFrameColor -> DefaultColor.SetLabelColor(self:GetName().."Name", nameColor)
-- EA_ScenarioGroupWindow: SetListRowTints -> DefaultColor.GetRowColor(row)
-- EA_ScenarioGroupWindow: SetListRowTints -> DefaultColor.SetWindowTint(targetRowWindow, DefaultColor.GetRowColor(row))
+- EA_OpenPartyWindow: Initialize -> DefaultColor.LabelSetTextColor(PARENT_WINDOW.."RarityLabelCommon", GameDefs.ItemRarity[SystemData.ItemRarity.COMMON].color)
+- EA_OpenPartyWindow: Initialize -> DefaultColor.LabelSetTextColor(PARENT_WINDOW.."RarityLabelUncommon", GameDefs.ItemRarity[SystemData.ItemRarity.UNCOMMON].color)
 
 ## Notes
 

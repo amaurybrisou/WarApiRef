@@ -17,7 +17,7 @@ Observed XML handler events routing directly into addon Lua functions through sh
 
 ```text
 OnLButtonUp
-  -> handlers: ScenarioGroupWindow.LeaveGroup
+  -> handlers: AuctionWindow.Hide, EA_Window_OpenParty.ToggleFullWindow, ScenarioGroupWindow.LeaveGroup
   -> ui: Button
 ```
 

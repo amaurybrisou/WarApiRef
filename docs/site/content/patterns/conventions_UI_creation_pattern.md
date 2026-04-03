@@ -32,10 +32,10 @@ Window creation: AbilityAlert: CreateWindow("AAWindow", true)
 ## Evidence
 
 - Window creation: AbilityAlert: CreateWindow("AAWindow", true)
+- Window creation: AbilityNotifier: CreateWindow("AbHelpWindow", true)
 - Window creation: ActionFraction: CreateWindow(windowName, true)
+- Window creation: ActionPoints: CreateWindow("ActionPointsWindow", true)
 - Window creation: AdvancedPetAssist: CreateWindow("APAOptions", true)
 - Window creation: AdvancedRenownTrainer: CreateWindow("AdvancedRenownTrainingPresetsWindow", false)
-- Window creation: AdvancedRenownTrainer: CreateWindow(ImportWindowName, false)
-- Window creation: AdvancedRenownTrainer: CreateWindow(ImportNameInputWindowName, false)
 - Template instantiation: Ace: CreateWindowFromTemplate(w.name, base, w.parent)
 - Template instantiation: Ace: CreateWindowFromTemplate(w.name, "EA_Button_DefaultWindowClose", w.parent)

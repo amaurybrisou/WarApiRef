@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 121 addons
+- Seen in: 131 addons
 
 ## Confidence Assessment
 
@@ -35,8 +35,8 @@
 | Example locations | Ace: Resize, ActionBarHide: Resize, ActionFraction: ResetWindow, AdjustTheTip: AddTargetHealthToMouseOver, AdvancedPetAssist: ApplyPetTargetHUDLayout, AdvancedPetAssist: EnsureSmallEditBox |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 803 |
-| Global usage count | 803 |
+| Lua usage count | 847 |
+| Global usage count | 847 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -97,8 +97,10 @@ Observed mutating runtime window state or presentation.
 - Aura
 - BBars - Mechanic Only
 - BankArkel
+- BarText (Influence)
 - BuffHead
 - CDown
+- CMap
 - CaVES
 - Calling
 - CastSequence
@@ -113,7 +115,11 @@ Observed mutating runtime window state or presentation.
 - Dascore
 - DetauntHelper
 - DuffTimer
+- EA_LoadingScreen
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_ThreePartBar
+- EA_UiModWindow
 - EZGuard
 - Effigy
 - Enemy
@@ -134,6 +140,7 @@ Observed mutating runtime window state or presentation.
 - Map
 - MapMonster
 - Miracle Grow Remix
+- MoraleSet
 - Moth
 - Motion
 - NAMBLA
@@ -159,6 +166,7 @@ Observed mutating runtime window state or presentation.
 - Sequencer
 - SessionRPs
 - Shinies
+- SocialWindow 2.0
 - SquaredHotIndicators
 - Statdoll
 - Statdoll Remix
@@ -179,6 +187,7 @@ Observed mutating runtime window state or presentation.
 - WARCommander
 - WARRatingBuster
 - WSCT
+- WTes
 - WarBoard_Loc
 - WarBoard_Menu
 - WarBoard_TogglerHealGrid
@@ -191,6 +200,7 @@ Observed mutating runtime window state or presentation.
 - WarBoard_TogglerWARCommander
 - WarBoard_TogglerWSCT
 - WarBoard_TogglerWlh
+- WarBoard_WarWhisperer
 - WarTriage
 - WhoHealedMe
 - Wikki's Cooldown Bar
@@ -212,9 +222,9 @@ Observed mutating runtime window state or presentation.
 - Ace: Resize -> WindowSetDimensions(self.name, width, self.height)
 - Ace: Resize -> WindowSetDimensions(self.name, self.width, self.height)
 - Ace: Resize -> WindowSetDimensions(self.name, width, height)
-- ActionBarHide: Resize -> WindowSetDimensions(self.name, self.width, self.height)
-- ActionBarHide: Resize -> WindowSetDimensions(self.name, width, height)
+- ActionBarHide: Resize -> WindowSetDimensions(self.name, 22, height)
 - ActionBarHide: Resize -> WindowSetDimensions(self.name, width, 41)
+- ActionBarHide: Resize -> WindowSetDimensions(self.name, width, 32)
 
 ## Related APIs
 
@@ -231,12 +241,18 @@ Observed mutating runtime window state or presentation.
 ## Used With
 
 - [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
+- [EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID](../../globals/functions/global_EA_Window_PublicQuestTracker.GetLocalAreaInfluenceID.md) (HIGH 100/100) - Global Function
+- [InterfaceCore.GetScale](../../globals/functions/global_InterfaceCore.GetScale.md) (HIGH 100/100) - Global Function
+- [LabelSetText](window_LabelSetText.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowClearAnchors](window_WindowClearAnchors.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowSetScale](window_WindowSetScale.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [wstring.gsub](../../globals/functions/global_wstring.gsub.md) (HIGH 100/100) - Global Function
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
+- [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 
 ## Notes
 

@@ -80,8 +80,8 @@ ListData is a structural XML sub-element that binds list controls to Lua-backed 
 
 | Attribute | Required | Usage % | Sample Values |
 | --- | --- | --- | --- |
-| `table` | **required** | 100% | AggroMeter.Listdata, AuraShares.listDisplayData, AuraTexture.listIconDisplayData, AuraSettings.listDisplayData, ... |
-| `populationfunction` | **required** | 98% | AuraShares.PopulateDisplay, AuraTexture.PopulateIconsListDisplay, AuraSettings.PopulateDisplay, BlackBookWindow.Populate, ... |
+| `table` | **required** | 100% | AggroMeter.Listdata, AuraSettings.listDisplayData, AuraShares.listDisplayData, AuraTexture.listIconDisplayData, ... |
+| `populationfunction` | **required** | 98% | AuraSettings.PopulateDisplay, AuraShares.PopulateDisplay, AuraTexture.PopulateIconsListDisplay, BlackBookWindow.Populate, ... |
 ## Structural Sub-Elements
 
 ### [ListColumns](element_ListColumns.md)

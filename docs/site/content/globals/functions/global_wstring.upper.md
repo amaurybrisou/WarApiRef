@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 6 addons
+- Seen in: 7 addons
 
 ## Confidence Assessment
 
@@ -25,15 +25,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Effigy, HealGrid, Info_Loot, Moth, Queue Queuer, Refer |
-| Files seen in | Elements/EffigyLabel.lua, HealGridTags.lua, Info_Loot.lua, MothHelpers.lua, QueueQueuer.lua, Refer.lua |
+| Addons seen in | EA_LoadingScreen, Effigy, HealGrid, Info_Loot, Moth, Queue Queuer, Refer |
+| Files seen in | Elements/EffigyLabel.lua, HealGridTags.lua, Info_Loot.lua, MothHelpers.lua, QueueQueuer.lua, Refer.lua, source/nodataloadingscreen.lua, source/scenarioenterloadingscreen.lua |
 | Namespaces detected | wstring |
 | Source kinds | lua_calls |
-| Example locations | Effigy: Render, HealGrid: ProcessTagUpper, Info_Loot: TextArrived, Moth: CapitalizeWString, Queue Queuer: OnUpdate, Refer: FormatPlayerName |
+| Example locations | EA_LoadingScreen: BeginNoDataLoadScreen, EA_LoadingScreen: BeginScenarioEnterLoadScreen, EA_LoadingScreen: BeginStandardLoadScreen, Effigy: Render, HealGrid: ProcessTagUpper, Info_Loot: TextArrived |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 7 |
-| Global usage count | 7 |
+| Lua usage count | 10 |
+| Global usage count | 10 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -62,13 +62,13 @@ wstring.upper(arg1)
 
 ## Description
 
-Observed as a global function across 6 addons.
+Observed as a global function across 7 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: LabelGetText("EA_Window_ScenarioJoinPromptBoxName"), lootbag, str |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: LabelGetText("EA_Window_ScenarioJoinPromptBoxName"), lootbag, scenarioName |
 
 ## Returns
 
@@ -80,6 +80,7 @@ Observed as a global function across 6 addons.
 
 ## Seen In
 
+- EA_LoadingScreen
 - Effigy
 - HealGrid
 - Info_Loot
@@ -89,12 +90,12 @@ Observed as a global function across 6 addons.
 
 ## Examples
 
+- EA_LoadingScreen: BeginNoDataLoadScreen -> wstring.upper(text)
+- EA_LoadingScreen: BeginScenarioEnterLoadScreen -> wstring.upper(scenarioName)
+- EA_LoadingScreen: BeginStandardLoadScreen -> wstring.upper(zoneName)
 - Effigy: Render -> wstring.upper(text)
 - HealGrid: ProcessTagUpper -> wstring.upper(str)
 - Info_Loot: TextArrived -> wstring.upper(lootbag)
-- Moth: CapitalizeWString -> wstring.upper(wstring.sub(wstr,1,1))
-- Queue Queuer: OnUpdate -> wstring.upper(LabelGetText("EA_Window_ScenarioJoinPromptBoxName"))
-- Refer: FormatPlayerName -> wstring.upper(wstring.sub(nameLower,1,1))
 
 ## Related APIs
 
@@ -102,14 +103,13 @@ Observed as a global function across 6 addons.
 
 ## Used With
 
-- [wstring.lower](global_wstring.lower.md) (HIGH 100/100) - Global Function
-- [wstring.sub](global_wstring.sub.md) (HIGH 75/100) - Global Function
+- [InterfaceCore.GetResolutionScale](global_InterfaceCore.GetResolutionScale.md) (HIGH 100/100) - Global Function
+- [LabelSetText](../../window_api/functions/window_LabelSetText.md) (HIGH 100/100) - Window Function
+- [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 
 ## Affects
 
 - [GameData.ChatData.text](../../gamedata/fields/gamedata_GameData.ChatData.text.md) (HIGH 100/100) - GameData Field
-- [GameData.Player.zone](../../gamedata/fields/gamedata_GameData.Player.zone.md) (HIGH 100/100) - GameData Field
-- [SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST](../../systemdata/fields/systemdata_SystemData.Events.INTERACT_SELECT_SCENARIO_QUEUE_LIST.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

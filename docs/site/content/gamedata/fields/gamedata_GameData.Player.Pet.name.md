@@ -70,10 +70,6 @@ GameData.GameData.Player.Pet.name field accessed by 6 addons; commonly found in 
 - LibGuard
 - Pure
 
-## Related APIs
-
-- [PartyUtils.IsPartyActive](../../globals/functions/global_PartyUtils.IsPartyActive.md) (HIGH 100/100) - Global Function
-
 ## Notes
 
 - Observed in contexts: GetIDs, Initialize, LoadPetFromCurrentPlayer, UpdateInformation, UpdatePet, UpdatePetHealthProxy

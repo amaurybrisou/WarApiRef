@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 211 addons
+- Seen in: 236 addons
 
 ## Confidence Assessment
 
@@ -29,14 +29,14 @@
 | Evidence | Value |
 | --- | --- |
 | Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, AdvancedPetAssist, AdvancedRenownTrainer, AggroMeter, Amethyst |
-| Files seen in | APAGui.lua, APAGuiHUD.lua, ActionBarHide.lua, AdjustTheTip.lua, AdvancedPetAssist.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua, AggroMeter.lua |
+| Files seen in | AAOTracker.lua, APAGui.lua, APAGuiHUD.lua, ActionBarHide.lua, AdjustTheTip.lua, AdvancedPetAssist.lua, AdvancedRenownTraining.lua, AdvancedRenownTrainingImportExport.lua |
 | Namespaces detected | WindowSetShowing |
 | Source kinds | lua_calls |
 | Example locations | Ace: Hide, Ace: Show, ActionBarHide: Hide, ActionBarHide: OnLoad, ActionBarHide: Show, ActionFraction: Initialize |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 2955 |
-| Global usage count | 2955 |
+| Lua usage count | 3234 |
+| Global usage count | 3234 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -72,7 +72,7 @@ Observed mutating runtime window state or presentation.
 | Name | Role | Evidence |
 | --- | --- | --- |
 | windowName | Observed as a target window name. | Observed values: "AGTSettingsWindow", "APAInstantOnlyHUD", "APAKitingHUD" |
-| arg2 | Observed as a boolean toggle. | Observed values: "ST"..SNTCAST_DB.PRESET, #ResHelp.Table>0, (KEEP1_State==4) |
+| arg2 | Observed as a boolean toggle. | Observed values: "ST"..SNTCAST_DB.PRESET, #ResHelp.Table>0, (GameData.Player.rvrPermaFlagged or GameData.Player.rvrZoneFlagged)and CMapWindow.VisSettings[CFG_RVRINDI].value |
 
 ## Returns
 
@@ -102,6 +102,7 @@ Observed mutating runtime window state or presentation.
 - AutoSalvage
 - BBars - Mechanic Only
 - BankArkel
+- BarText (Influence)
 - BlackBook
 - BlackBox
 - Bloody Mess
@@ -111,11 +112,13 @@ Observed mutating runtime window state or presentation.
 - CCTV
 - CDown
 - CM_ClosetGoblin
+- CMap
 - CaVES
 - Calling
 - CastSequence
 - CharacterScreenTabFix
 - ChattyCathy
+- Cheeseboard
 - CleanCastbar
 - CleanUnitFrames
 - CombatTextNames
@@ -133,8 +136,12 @@ Observed mutating runtime window state or presentation.
 - DetauntHelper
 - DuffTimer
 - Dye Preview
+- EA_LoadingScreen
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_ThreePartBar
 - EA_UiDebugTools
+- EA_UiModWindow
 - EZGuard
 - Effigy
 - Emojii
@@ -144,6 +151,7 @@ Observed mutating runtime window state or presentation.
 - FastInteract
 - FixGit
 - FlagCap
+- FozAuction
 - GCDTracker
 - GCDsaver
 - GetStats
@@ -153,6 +161,8 @@ Observed mutating runtime window state or presentation.
 - GroupSpotter
 - GuardBot
 - GuardLine
+- GuardList
+- GuardRange
 - GuildWarden
 - Hopper
 - I HATE YOU THIS MUCH
@@ -185,6 +195,7 @@ Observed mutating runtime window state or presentation.
 - MiracleGrow
 - MiracleGrowLight
 - MoraleBG
+- MoraleSet
 - Moth
 - Motion
 - MouseHint
@@ -192,11 +203,15 @@ Observed mutating runtime window state or presentation.
 - NaturalLog
 - NerfedButtons
 - NoOverheal
+- NoUselessMods-Assist
+- ObjectInspector
 - Obsidian
 - OverheadFonts
+- Paint the leader
 - PartyCast
 - PeaceOut
 - PetFixWindow
+- PieTracker
 - Pocket Palette
 - PotionBar
 - Pure
@@ -216,6 +231,7 @@ Observed mutating runtime window state or presentation.
 - ResHelp
 - RoR_SoR
 - RoR_debolster
+- Rolodex
 - Rotation
 - RvRStats
 - RvRStatsTab
@@ -229,6 +245,8 @@ Observed mutating runtime window state or presentation.
 - SessionRPs
 - Shinies
 - SimpleCombatText
+- SimpleXY
+- SocialWindow 2.0
 - Soloq
 - Squared
 - SquaredClick
@@ -244,6 +262,7 @@ Observed mutating runtime window state or presentation.
 - TargetInfoRing
 - TargetRing
 - TastyButtons
+- TaxPayer
 - TexturedButtons
 - ThankTheTank
 - ThinkOutLoud
@@ -253,6 +272,7 @@ Observed mutating runtime window state or presentation.
 - Tokens
 - Tome Titan
 - TomeTracker
+- Tortall_DPS
 - Trakario
 - TurretRange
 - TurretScrap
@@ -264,12 +284,16 @@ Observed mutating runtime window state or presentation.
 - VerticalTactics
 - WARCommander
 - WARRatingBuster
+- WBStutterLess
 - WSCT
+- WTes
 - WarBoard
+- WarBoard_AAOTracker
 - WarBoard_Loc
 - WarBoard_Menu
 - WarBoard_TogglerRankedLeaderboard
 - WarBoard_TogglerWARCommander
+- WarBoard_WarWhisperer
 - WarTriage
 - Wargames
 - WhatsCooking
@@ -281,6 +305,7 @@ Observed mutating runtime window state or presentation.
 - ZCurse_Profiler
 - ZonePOP
 - alertMod
+- bigger_MacroWindow
 - compass
 - emotes
 - followTheLeader
@@ -318,14 +343,15 @@ Observed mutating runtime window state or presentation.
 - [OnUpdate](../../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
+- [Stop](../../events/game_events/game_event_Stop.md) (MEDIUM 43/100) - Game Event
 
 ## Used With
 
 - [ButtonSetDisabledFlag](window_ButtonSetDisabledFlag.md) (HIGH 100/100) - Window Function
+- [ButtonSetPressedFlag](window_ButtonSetPressedFlag.md) (HIGH 100/100) - Window Function
 - [ButtonSetText](window_ButtonSetText.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedText](window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
 - [Cursor.Clear](../../globals/functions/global_Cursor.Clear.md) (HIGH 100/100) - Global Function
-- [Cursor.IconOnCursor](../../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
 - [DynamicImageSetTexture](window_DynamicImageSetTexture.md) (HIGH 100/100) - Window Function
 - [EA_ChatWindow.UpdateSocialWindowButton](../../globals/functions/global_EA_ChatWindow.UpdateSocialWindowButton.md) (HIGH 100/100) - Global Function
 - [Icons.GetCareerIconIDFromCareerLine](../../globals/functions/global_Icons.GetCareerIconIDFromCareerLine.md) (HIGH 100/100) - Global Function
@@ -333,6 +359,7 @@ Observed mutating runtime window state or presentation.
 - [LayoutEditor.RegisterWindow](window_LayoutEditor.RegisterWindow.md) (HIGH 100/100) - Window Function
 - [TextEditBoxGetText](window_TextEditBoxGetText.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSelectAll](window_TextEditBoxSelectAll.md) (HIGH 100/100) - Window Function
+- [TextEditBoxSetMaxChars](window_TextEditBoxSetMaxChars.md) (HIGH 100/100) - Window Function
 - [TextEditBoxSetText](window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [WindowAddAnchor](window_WindowAddAnchor.md) (HIGH 100/100) - Window Function
 - [WindowAssignFocus](window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
@@ -362,12 +389,9 @@ Observed mutating runtime window state or presentation.
 
 ## Affects
 
-- [SystemData.Events.LOADING_END](../../systemdata/fields/systemdata_SystemData.Events.LOADING_END.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_AGRO_MODE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_AGRO_MODE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_HEALTH_FADE_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_HEALTH_FADE_UPDATED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED](../../systemdata/fields/systemdata_SystemData.Events.PLAYER_MAX_ACTION_POINTS_UPDATED.md) (HIGH 100/100) - SystemData Field
+- [SystemData.ChatLogFilters.SHOUT](../../systemdata/fields/systemdata_SystemData.ChatLogFilters.SHOUT.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.ENTER_WORLD](../../systemdata/fields/systemdata_SystemData.Events.ENTER_WORLD.md) (HIGH 100/100) - SystemData Field
+- [SystemData.Events.INTERFACE_RELOADED](../../systemdata/fields/systemdata_SystemData.Events.INTERFACE_RELOADED.md) (HIGH 100/100) - SystemData Field
 
 ## Notes
 

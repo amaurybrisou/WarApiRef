@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 29 addons
+- Seen in: 33 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AggroMeter, Aura, DammazKron, EA_ScenarioGroupWindow, Emojii, Enemy, HealGrid, HideHiddenFrames |
+| Addons seen in | AggroMeter, Aura, DammazKron, EA_OpenPartyWindow, EA_ScenarioGroupWindow, EA_UiModWindow, Emojii, Enemy |
 | Files seen in | AggroMeter.lua, Classes/Display.lua, Code/Marks/MarkTemplate.lua, Core/Tome/DK_Tome.lua, Core/ToolTip/DK_Tooltip.lua, Emojii.lua, Gui/HealGridGuiColorSelect.lua, Gui/HealGridGuiTabSpellTrack.lua |
 | Namespaces detected | WindowGetParent |
 | Source kinds | lua_calls |
 | Example locations | AggroMeter: OnMouseOverStart, AggroMeter: SelectChar, Aura: OnIconLButtonUp, DammazKron: DK_OnSelectProfil, DammazKron: DK_OnSelectProfilMini, DammazKron: DestroyWindow |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 93 |
-| Global usage count | 93 |
+| Lua usage count | 103 |
+| Global usage count | 103 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -86,7 +86,9 @@ Observed querying runtime window state or metadata.
 - AggroMeter
 - Aura
 - DammazKron
+- EA_OpenPartyWindow
 - EA_ScenarioGroupWindow
+- EA_UiModWindow
 - Emojii
 - Enemy
 - HealGrid
@@ -106,20 +108,22 @@ Observed querying runtime window state or metadata.
 - RandomMount
 - Refer
 - RoR_SoR
+- SocialWindow 2.0
 - TastyButtons
 - TokenMachine
 - TomeTracker
 - Vectors
 - WSCT
+- WTes
 - zMailMod
 
 ## Examples
 
 - AggroMeter: OnMouseOverStart -> WindowGetParent(SystemData.MouseOverWindow.name)
 - AggroMeter: SelectChar -> WindowGetParent(SystemData.MouseOverWindow.name)
+- Aura: OnIconLButtonUp -> WindowGetParent(SystemData.ActiveWindow.name)
 - Aura: OnIconLButtonUp -> WindowGetParent(WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name)))
 - Aura: OnIconLButtonUp -> WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name))
-- Aura: OnIconLButtonUp -> WindowGetParent(SystemData.ActiveWindow.name)
 - DammazKron: DK_OnSelectProfil -> WindowGetParent(SystemData.ActiveWindow.name)
 
 ## Related APIs
@@ -134,7 +138,6 @@ Observed querying runtime window state or metadata.
 ## Used With
 
 - [ButtonGetDisabledFlag](window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
-- [EA_Window_ContextMenu.HideAll](../../globals/functions/global_EA_Window_ContextMenu.HideAll.md) (HIGH 100/100) - Global Function
 - [SystemData.ActiveWindow.name](../../systemdata/fields/systemdata_SystemData.ActiveWindow.name.md) (HIGH 100/100) - SystemData Field
 - [WindowGetId](window_WindowGetId.md) (HIGH 100/100) - Window Function
 

@@ -3,7 +3,7 @@
 - Category: Global Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 11 addons
+- Seen in: 12 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | ActionFraction, AdjustTheTip, AutoBand, LibAddonButton, MapPin, MarkBuff, MoraleCircle, QuickNameActions+ |
-| Files seen in | AdjustTheTip.lua, AutoBand.lua, Gui.lua, Manager/Manager.lua, MoraleCircle.lua, QuickNameActionsRessurected.lua, RoR_SoR.lua, showmethebubbles.lua |
+| Addons seen in | ActionFraction, AdjustTheTip, AutoBand, FozAuction, LibAddonButton, MapPin, MarkBuff, MoraleCircle |
+| Files seen in | AdjustTheTip.lua, AutoBand.lua, Gui.lua, Manager/Manager.lua, MoraleCircle.lua, QuickNameActionsRessurected.lua, RoR_SoR.lua, Source/auctionwindowsearchcontrols.lua |
 | Namespaces detected | EA_Window_ContextMenu |
 | Source kinds | lua_calls |
-| Example locations | ActionFraction: RightClick, AdjustTheTip: CreateContextMenu, AutoBand: AutoBand_L_AddContextMenuCascade, LibAddonButton: CreateRemoveContextMenu, LibAddonButton: ShowOptions, MapPin: CreateMainContextMenu |
+| Example locations | ActionFraction: RightClick, AdjustTheTip: CreateContextMenu, AutoBand: AutoBand_L_AddContextMenuCascade, FozAuction: OnLButtonUpAdditonalFilters, LibAddonButton: CreateRemoveContextMenu, LibAddonButton: ShowOptions |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 34 |
-| Global usage count | 34 |
+| Lua usage count | 37 |
+| Global usage count | 37 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ EA_Window_ContextMenu.AddCascadingMenuItem(arg1, arg2, arg3, arg4)
 
 ## Description
 
-Observed as a global function across 11 addons.
+Observed as a global function across 12 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: L "<icon00075>Party (1)..", L "<icon00075>Party (2)..", L "<icon00075>Party (3).." |
+| arg1 | Observed as a function or method reference. | Observed values: GetStringFormatFromTable("AuctionHouseStrings",StringTables.AuctionHouse.CONTEXT_MENU_ADDITIONAL_FILTERS_CAREER_X,{careerSelectionName}), GetStringFormatFromTable("AuctionHouseStrings",StringTables.AuctionHouse.CONTEXT_MENU_ADDITIONAL_FILTERS_RESTRICTION_X,{restrictionSelectionName}), GetStringFormatFromTable("AuctionHouseStrings",StringTables.AuctionHouse.CONTEXT_MENU_ADDITIONAL_FILTERS_STATISTIC_X,{statisticSelectionName}) |
 | arg2 | Observed as a runtime window or control identifier. | Observed values: ActionFractionWindow.SetFontSelectionMenu, ActionFractionWindow.SetPresetLocation, AdjustTheTip.SpawnAnchorContextMenu |
 | arg3 | Observed as a boolean toggle. | Observed values: false |
 | arg4 | Observed as a numeric value. | Observed values: 1, 2, EA_Window_ContextMenu.CONTEXT_MENU_1 |
@@ -89,6 +89,7 @@ Observed as a global function across 11 addons.
 - ActionFraction
 - AdjustTheTip
 - AutoBand
+- FozAuction
 - LibAddonButton
 - MapPin
 - MarkBuff
@@ -105,7 +106,7 @@ Observed as a global function across 11 addons.
 - AdjustTheTip: CreateContextMenu -> EA_Window_ContextMenu.AddCascadingMenuItem(L "Delayed Fading", AdjustTheTip.SpawnDelayedFadingContextMenu, false)
 - AdjustTheTip: CreateContextMenu -> EA_Window_ContextMenu.AddCascadingMenuItem(L "Ability Tooltip Anchor", AdjustTheTip.SpawnAnchorContextMenu, false)
 - AutoBand: AutoBand_L_AddContextMenuCascade -> EA_Window_ContextMenu.AddCascadingMenuItem(label_w, callback, false, menuId)
-- LibAddonButton: CreateRemoveContextMenu -> EA_Window_ContextMenu.AddCascadingMenuItem(localization["Manager.Context.MoveTo"], function()ShowMoveTo(moveTo)end, false)
+- FozAuction: OnLButtonUpAdditonalFilters -> EA_Window_ContextMenu.AddCascadingMenuItem(GetStringFormatFromTable("AuctionHouseStrings",StringTables.AuctionHouse.CONTEXT_MENU_ADDITIONAL_FILTERS_STATISTIC_X,{statisticSelectionName}), SpawnStatisticMenu)
 
 ## Used With
 
@@ -114,6 +115,11 @@ Observed as a global function across 11 addons.
 - [EA_Window_ContextMenu.AddUserDefinedMenuItem](global_EA_Window_ContextMenu.AddUserDefinedMenuItem.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.CreateContextMenu](global_EA_Window_ContextMenu.CreateContextMenu.md) (HIGH 100/100) - Global Function
 - [EA_Window_ContextMenu.Finalize](global_EA_Window_ContextMenu.Finalize.md) (HIGH 100/100) - Global Function
+
+## Affects
+
+- [GameData.Auction.RESTRICTION_NONE](../../gamedata/fields/gamedata_GameData.Auction.RESTRICTION_NONE.md) (HIGH 100/100) - GameData Field
+- [GameData.BonusTypes.EBONUS_NONE](../../gamedata/fields/gamedata_GameData.BonusTypes.EBONUS_NONE.md) (HIGH 100/100) - GameData Field
 
 ## Notes
 

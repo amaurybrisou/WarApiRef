@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 45 addons
+- Seen in: 49 addons
 
 ## Confidence Assessment
 
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, Amethyst, CCTV, ChattyCathy, Crusher |
+| Addons seen in | Ace, ActionBarHide, ActionFraction, AdjustTheTip, Amethyst, CCTV, CMap, ChattyCathy |
 | Files seen in | ActionBarHide.lua, AdjustTheTip.lua, CCTV.lua, ChattyCathy.lua, Core.lua, Fader.lua, GroupIcons.lua, GuardLine.lua |
 | Namespaces detected | WindowGetAlpha |
 | Source kinds | lua_calls |
 | Example locations | Ace: Alpha, ActionBarHide: Alpha, ActionBarHide: ChangeAlpha, ActionFraction: OnUpdate, ActionFraction: UpdateActionFractionVisibility, AdjustTheTip: OnMouseOverTargetWindowClick |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 84 |
-| Global usage count | 84 |
+| Lua usage count | 91 |
+| Global usage count | 91 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -89,6 +89,7 @@ Observed querying runtime window state or metadata.
 - AdjustTheTip
 - Amethyst
 - CCTV
+- CMap
 - ChattyCathy
 - Crusher
 - DAoCBuff
@@ -120,7 +121,10 @@ Observed querying runtime window state or metadata.
 - Statdoll
 - TargetRing
 - Tokens
+- Tortall_DPS
 - Vectors
+- WTes
+- WarBoard_WarWhisperer
 - WarTriage
 - Wikki's Cooldown Bar
 - Wikki's Cooldown Pulse
@@ -134,8 +138,8 @@ Observed querying runtime window state or metadata.
 - Ace: Alpha -> WindowGetAlpha(self.name)
 - ActionBarHide: Alpha -> WindowGetAlpha(self.name)
 - ActionBarHide: ChangeAlpha -> WindowGetAlpha("EA_ActionBar"..k)
-- ActionFraction: OnUpdate -> WindowGetAlpha(windowName.."LabelMaximumAP")
 - ActionFraction: OnUpdate -> WindowGetAlpha(windowName.."LabelCurrentAP")
+- ActionFraction: OnUpdate -> WindowGetAlpha(windowName.."LabelMaximumAP")
 - ActionFraction: UpdateActionFractionVisibility -> WindowGetAlpha(windowName.."LabelCurrentAP")
 
 ## Related APIs

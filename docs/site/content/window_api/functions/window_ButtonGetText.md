@@ -3,7 +3,7 @@
 - Category: Window Function
 - Confidence level: HIGH
 - Confidence score: 100/100
-- Seen in: 3 addons
+- Seen in: 5 addons
 
 ## Confidence Assessment
 
@@ -11,13 +11,13 @@
 
 - Final score: 100/100
 
-- Raw weighted score: 123
+- Raw weighted score: 135
 
-- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, matches a known engine namespace, called globally with no local definition.
+- Rationale: Promoted as HIGH confidence because matches default ui or extracted base ui surface, seen in 4 or more addons, matches a known engine namespace.
 
 ## Evidence Signals
 
-- +18 Seen in 2 to 3 addons: Cross-addon spread is present but limited.
+- +30 Seen in 4 or more addons: Cross-addon spread is strong.
 - +35 Matches default UI or extracted base UI surface: Symbol aligns with known default-interface namespaces.
 - +20 Called globally with no local definition: No addon-local definition was observed in the generated corpus.
 - +25 Matches a known engine namespace: Namespace shape matches WAR engine APIs.
@@ -28,15 +28,15 @@
 
 | Evidence | Value |
 | --- | --- |
-| Addons seen in | AdvancedRenownTrainer, EA_UiDebugTools, TastyButtons |
-| Files seen in | AdvancedRenownTraining.lua, Source/devpad/DebugWindowCodePad.lua, TastyButtonsOptions.lua |
+| Addons seen in | AdvancedRenownTrainer, EA_UiDebugTools, MoraleSet, TastyButtons, WarBoard_WarWhisperer |
+| Files seen in | AdvancedRenownTraining.lua, Source/MoraleSet.lua, Source/devpad/DebugWindowCodePad.lua, TastyButtonsOptions.lua, warwhisperer.lua |
 | Namespaces detected | ButtonGetText |
 | Source kinds | lua_calls |
-| Example locations | AdvancedRenownTrainer: Respecialize, EA_UiDebugTools: OnFileButtonUp, EA_UiDebugTools: TestPrint, TastyButtons: ButtonDelProfile, TastyButtons: ButtonLoadProfile, TastyButtons: OnComboStateChanged |
+| Example locations | AdvancedRenownTrainer: Respecialize, EA_UiDebugTools: OnFileButtonUp, EA_UiDebugTools: TestPrint, MoraleSet: OnRButtonUpSetMenu, TastyButtons: ButtonDelProfile, TastyButtons: ButtonLoadProfile |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 13 |
-| Global usage count | 13 |
+| Lua usage count | 18 |
+| Global usage count | 18 |
 | Local definition count | 0 |
 | Documentation references | 0 |
 | Initialization flow references | 0 |
@@ -65,13 +65,13 @@ ButtonGetText(arg1)
 
 ## Description
 
-Observed as a window function across 3 addons.
+Observed as a window function across 5 addons.
 
 ## Parameters
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: (comboBoxButtonName["ComboProfile"]..ComboBoxGetSelectedMenuItem(comboBoxButtonName["ComboProfileBox"])), WindowName.."RespecializeButton", comboBoxButtonName["ComboShowing"]..ComboBoxGetSelectedMenuItem(comboBoxButtonName["ComboShowingBox"]) |
+| arg1 | Observed as a function or method reference. | Observed values: "EA_TacticsEditorSetMenuSelectedButton", (comboBoxButtonName["ComboProfile"]..ComboBoxGetSelectedMenuItem(comboBoxButtonName["ComboProfileBox"])), SystemData.ActiveWindow.name |
 
 ## Returns
 
@@ -85,16 +85,18 @@ Observed as a window function across 3 addons.
 
 - AdvancedRenownTrainer
 - EA_UiDebugTools
+- MoraleSet
 - TastyButtons
+- WarBoard_WarWhisperer
 
 ## Examples
 
 - AdvancedRenownTrainer: Respecialize -> ButtonGetText(WindowName.."RespecializeButton")
 - EA_UiDebugTools: OnFileButtonUp -> ButtonGetText(windowName)
 - EA_UiDebugTools: TestPrint -> ButtonGetText(windowName)
+- MoraleSet: OnRButtonUpSetMenu -> ButtonGetText("EA_TacticsEditorSetMenuSelectedButton")
 - TastyButtons: ButtonDelProfile -> ButtonGetText((comboBoxButtonName["ComboProfile"]..ComboBoxGetSelectedMenuItem(comboBoxButtonName["ComboProfileBox"])))
 - TastyButtons: ButtonLoadProfile -> ButtonGetText((comboBoxButtonName["ComboProfile"]..ComboBoxGetSelectedMenuItem(comboBoxButtonName["ComboProfileBox"])))
-- TastyButtons: OnComboStateChanged -> ButtonGetText(comboBoxButtonName["ComboStateAdd"]..ComboBoxGetSelectedMenuItem(windowNameTable["StateView"].."ComboStateAdd"))
 
 ## Used With
 

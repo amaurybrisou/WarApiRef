@@ -29,7 +29,7 @@
 | Example locations | AdvancedPetAssist: .OnHidden, AdvancedRenownTrainer: .OnHidden, Aura: .OnHidden, BlackBook: .OnHidden, BuffHead: .OnHidden, CCTV: .OnHidden |
 | XML usage count | 0 |
 | XML attribute usage count | 0 |
-| Lua usage count | 100 |
+| Lua usage count | 109 |
 | Global usage count | 0 |
 | Local definition count | 0 |
 | Documentation references | 1 |
@@ -53,7 +53,7 @@
 
 ## Description
 
-XML handler event observed across 35 addons.
+XML handler event observed across 39 addons.
 
 ## Expected Lua Binding
 
@@ -78,6 +78,8 @@ function()
 - CastSequence
 - Crusher
 - DPSMeter
+- EA_OpenPartyWindow
+- EA_UiModWindow
 - Enemy
 - GroupRange
 - Keyset
@@ -92,6 +94,7 @@ function()
 - SOR
 - Sequencer
 - Shinies
+- SocialWindow 2.0
 - Statdoll Remix
 - TexturedButtons
 - TidyChat
@@ -101,6 +104,7 @@ function()
 - WARCommander
 - WSCT
 - WhoHealedMe
+- bigger_MacroWindow
 - nLootLink
 
 ## Examples
@@ -120,6 +124,7 @@ function()
 - [MapDisplay](../element_types/element_MapDisplay.md) (HIGH 100/100) - XML Element Type
 - [TextEditBoxSetText](../../window_api/functions/window_TextEditBoxSetText.md) (HIGH 100/100) - Window Function
 - [Window](../element_types/element_Window.md) (HIGH 100/100) - XML Element Type
+- [WindowAssignFocus](../../window_api/functions/window_WindowAssignFocus.md) (HIGH 100/100) - Window Function
 - [WindowGetDimensions](../../window_api/functions/window_WindowGetDimensions.md) (HIGH 100/100) - Window Function
 - [WindowGetShowing](../../window_api/functions/window_WindowGetShowing.md) (HIGH 100/100) - Window Function
 - [WindowSetDimensions](../../window_api/functions/window_WindowSetDimensions.md) (HIGH 100/100) - Window Function
