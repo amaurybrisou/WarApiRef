@@ -474,13 +474,13 @@ body:not(.show-advanced) .doc-section.analysis-section {
   display: none;
 }
 
-/* Reduce navigation noise by default; reveal structural-only groups in advanced mode. */
-body:not(.show-advanced) .nav-tree .nav-structural {
+/* Hide group "Overview" links by default; they are internal navigation helpers. */
+body:not(.show-advanced) .nav-tree .nav-group-link {
   display: none;
 }
 
-/* Hide group "Overview" links by default; they are internal navigation helpers. */
-body:not(.show-advanced) .nav-tree .nav-group-link {
+/* Hide MCP/internal debug entry by default. */
+body:not(.show-advanced) #mcpPageBtn {
   display: none;
 }
 

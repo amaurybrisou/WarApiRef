@@ -827,7 +827,7 @@ if (mcpToolsBtn) {
 
 if (analysisToggle) {
   analysisToggle.addEventListener("click", () => {
-    applyAnalysisToggle(!document.body.classList.contains("show-analysis"));
+    applyAnalysisToggle(!document.body.classList.contains("show-advanced"));
   });
 }
 
