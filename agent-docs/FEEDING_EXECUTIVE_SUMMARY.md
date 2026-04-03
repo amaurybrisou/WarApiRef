@@ -118,7 +118,7 @@ The feeding mechanism has been **strengthened to serve as the definitive structu
 ### Maintainer
 ```
 1. List pending observations
-2. Review and accept (status: reviewed)
+2. Review and accept (status: accepted)
 3. Promote to seed files (status: promoted, symbol validation runs)
 4. Regenerate docs (observation content becomes part of canonical docs)
 ```

@@ -147,13 +147,13 @@ After observations are ingested into the queue, they proceed through a governed 
 
 ### 1. Review Stage: Accept or Reject
 
-Use `feeding/review_observation` to apply a verdict and optional reviewer commentary.
+Use `feeding/review` to apply a verdict and optional reviewer commentary.
 
 ```powershell
 $payload = @{
   jsonrpc = "2.0"
   id = 10
-  method = "feeding/review_observation"
+  method = "feeding/review"
   params = @{
     observation_id = "whohealedme_xml_input_and_layout"
     verdict = "accept"  # or "reject"
@@ -166,7 +166,7 @@ Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8091/mcp" -ContentType "ap
 ```
 
 **Outcome:**
-- `verdict = "accept"` → observation status changes to `reviewed` (eligible for promotion)
+- `verdict = "accept"` → observation status changes to `accepted` (eligible for promotion)
 - `verdict = "reject"` → observation status becomes `rejected` and is appended to `rejected.ndjson` durable store
 
 All review verdicts (accept/reject) include:
@@ -181,13 +181,13 @@ Rejected observations are:
 
 ### 2. Promotion Stage: Move to Seed Files
 
-Once an observation reaches `reviewed` status, promote it to target seed files using `feeding/promote_observation`.
+Once an observation reaches `accepted` status, promote it to target seed files using `feeding/promote`.
 
 ```powershell
 $payload = @{
   jsonrpc = "2.0"
   id = 11
-  method = "feeding/promote_observation"
+  method = "feeding/promote"
   params = @{
     observation_id = "whohealedme_xml_input_and_layout"
     dry_run = $true  # Preview first
@@ -252,7 +252,7 @@ Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8091/mcp" -ContentType "ap
 After promotion completes, the generated docs must be rebuilt to reflect seed file updates.
 
 **Regeneration Timing:**
-- **Immediate (recommended):** Call `feeding/regenerate_from_promoted_knowledge` immediately after successful promotion
+- **Immediate (recommended):** Call `feeding/regenerate` immediately after successful promotion
 - **Batch (alternative):** Schedule nightly regeneration of all platform docs
 - **Manual:** Run `make generate-platform` and `make generate-site` in repository root
 
@@ -268,7 +268,7 @@ After promotion completes, the generated docs must be rebuilt to reflect seed fi
 $promotePayload = @{
   jsonrpc = "2.0"
   id = 11
-  method = "feeding/promote_observation"
+  method = "feeding/promote"
   params = @{ observation_id = "whohealedme_xml_input_and_layout"; dry_run = $false }
 } | ConvertTo-Json -Depth 8
 
@@ -280,7 +280,7 @@ if ($promoteResult.result.promoted -eq $true) {
   $regenPayload = @{
     jsonrpc = "2.0"
     id = 12
-    method = "feeding/regenerate_from_promoted_knowledge"
+    method = "feeding/regenerate"
     params = @{ scope = "full"; dry_run = $false }
   } | ConvertTo-Json -Depth 8
 
@@ -372,7 +372,7 @@ Generated Docs (source of truth for MCP queries)
 ### Candidate Observations Do NOT Affect Semantics Automatically
 
 - Observations in `candidate` status are NOT visible to MCP queries
-- They do NOT contribute to docs until `reviewed` → `promoted`
+- They do NOT contribute to docs until `accepted` → `promoted`
 - They do NOT trigger regeneration on ingestion
 - Manual review step enforces governance
 
@@ -396,7 +396,7 @@ This prevents untrusted or provisional findings from polluting semantic contract
 
 ### Regeneration Failures
 
-**Scenario:** `feeding/regenerate_from_promoted_knowledge` returns errors
+**Scenario:** `feeding/regenerate` returns errors
 
 **Action:**
 1. Verify workspace root validation: check Makefile, docker-compose.yml, tools/api_doc_gen exist

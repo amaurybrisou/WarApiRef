@@ -1,6 +1,7 @@
 package server
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -438,6 +439,61 @@ func TestPromoteObservationUnresolvedSymbolsAreWarningsOnly(t *testing.T) {
 		t.Fatalf("read seed file: %v", err)
 	}
 	if !strings.Contains(string(content), "<!-- OBSERVATION:obs_unresolved_symbols") {
+		t.Fatalf("expected promoted marker in seed file")
+	}
+}
+
+func TestPromoteObservationStoreUnavailableIsWarningOnly(t *testing.T) {
+	rec := buildTestRecord("obs_store_unavailable", lifecycleStatusAccepted)
+	claims := rec.Observation["claims"].([]any)
+	firstClaim := claims[0].(map[string]any)
+	firstClaim["symbols"] = []any{"Some_Symbol_To_Validate"}
+	rec.Observation["claims"] = claims
+
+	feedRoot := setupTestFeedingRoot(t, []lifecycleRecord{rec})
+	wsRoot := wsRootFromFeeding(feedRoot)
+
+	seedRelPath := "docs/platform/seeds/xml_conventions.md"
+	seedAbsPath := filepath.Join(wsRoot, filepath.FromSlash(seedRelPath))
+	if err := os.MkdirAll(filepath.Dir(seedAbsPath), 0o755); err != nil {
+		t.Fatalf("mkdir seed: %v", err)
+	}
+	if err := os.WriteFile(seedAbsPath, []byte("# XML Conventions\n"), 0o644); err != nil {
+		t.Fatalf("write seed: %v", err)
+	}
+
+	app := newTestApp(t, feedRoot)
+	<-app.storeDone
+
+	app.storeMu.Lock()
+	app.store = nil
+	app.storeErr = errors.New("forced store failure for test")
+	app.storeMu.Unlock()
+
+	resp := app.promoteObservation(schema.PromoteObservationRequest{ObservationID: "obs_store_unavailable"})
+	if len(resp.Errors) > 0 {
+		t.Fatalf("promotion should not fail when store is unavailable, got errors: %v", resp.Errors)
+	}
+	if !resp.Promoted {
+		t.Fatalf("expected promoted=true when store is unavailable")
+	}
+
+	foundStoreUnavailable := false
+	for _, w := range resp.Warnings {
+		if w.Code == "store_unavailable" {
+			foundStoreUnavailable = true
+			break
+		}
+	}
+	if !foundStoreUnavailable {
+		t.Fatalf("expected store_unavailable warning, got: %+v", resp.Warnings)
+	}
+
+	content, err := os.ReadFile(seedAbsPath)
+	if err != nil {
+		t.Fatalf("read seed file: %v", err)
+	}
+	if !strings.Contains(string(content), "<!-- OBSERVATION:obs_store_unavailable") {
 		t.Fatalf("expected promoted marker in seed file")
 	}
 }

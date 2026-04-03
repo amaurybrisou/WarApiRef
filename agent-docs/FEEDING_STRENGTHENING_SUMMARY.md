@@ -50,7 +50,7 @@
 - Provided workflow examples with MCP calls
 
 **Policy Established:**
-- **Immediate Regeneration (Recommended):** After successful promotion, call `feeding/regenerate_from_promoted_knowledge` immediately
+- **Immediate Regeneration (Recommended):** After successful promotion, call `feeding/regenerate` immediately
 - **Batch Regeneration (Alternative):** Collect 5-10 observations, promote as batch, regenerate once
 - **Scheduled Regeneration:** Nightly or weekly via CI/automation (optional)
 
@@ -66,10 +66,10 @@
 **Workflow Example Provided:**
 ```powershell
 # Promote observation
-POST /mcp method=feeding/promote_observation params={observation_id=..., dry_run=false}
+POST /mcp method=feeding/promote params={observation_id=..., dry_run=false}
 
 # If promotion succeeds, immediately regenerate
-POST /mcp method=feeding/regenerate_from_promoted_knowledge params={scope="full", dry_run=false}
+POST /mcp method=feeding/regenerate params={scope="full", dry_run=false}
 ```
 
 ---
@@ -172,7 +172,7 @@ Time | Action | Status | Visibility | Doc Impact
 -----|--------|--------|------------|----------
 T0   | Ingest | candidate | Queue only | None
      | (Review decision pending...)
-T1   | Review | reviewed | Queue only | None
+T1   | Review | accepted | Queue only | None
      | (Promotion decision pending...)
 T2   | Promote | promoted | Seed + Queue | Pending regen
 T3   | Regenerate | (promoted) | Docs + MCP | Published
@@ -290,16 +290,16 @@ POST /mcp method=feeding/ingest_batch params={dry_run=$false, persist=$true}
 GET /mcp method=feeding/list_pending_observations params={status_filter=["candidate"]}
 
 # 2. Review observation and accept
-POST /mcp method=feeding/review_observation \
+POST /mcp method=feeding/review \
   params={observation_id="...", verdict="accept", reviewer="you@example.com"}
 
 # 3. Promote to seed file
-POST /mcp method=feeding/promote_observation \
+POST /mcp method=feeding/promote \
   params={observation_id="...", dry_run=$false}
 # ⚠️ Symbol validation runs (non-blocking warnings only)
 
 # 4. Regenerate immediately
-POST /mcp method=feeding/regenerate_from_promoted_knowledge \
+POST /mcp method=feeding/regenerate \
   params={scope="full", dry_run=$false}
 
 # Verify in generated docs
@@ -311,7 +311,7 @@ grep -r "claim statement" docs/war-api/
 ## Benefits Achieved
 
 ### 1. **Governance-Backed Feedback**
-- ✅ Observations don't affect docs until reviewed and promoted
+- ✅ Observations don't affect docs until accepted and promoted
 - ✅ Explicit gates at each stage (ingest → review → promote → regenerate)
 - ✅ Rejection history auditable in rejected.ndjson
 - ✅ Reviewer identity and notes stored with each decision

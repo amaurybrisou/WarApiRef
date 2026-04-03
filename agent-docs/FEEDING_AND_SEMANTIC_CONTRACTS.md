@@ -39,7 +39,7 @@ Acts as **structured feedback intake** for addon-discovered patterns:
 | Phase | Content | Status | Audience | Can Affect Docs? |
 |-------|---------|--------|----------|-----------------|
 | **Ingest** | Raw `.feed.json` observation + evidence narrative `.md` | `candidate` | Dev who discovered pattern | No (not yet visible) |
-| **Review** | Accept/reject verdict + reviewer notes | `reviewed` OR `rejected` | Maintainers/API experts | No (rejected is archived) |
+| **Review** | Accept/reject verdict + reviewer notes | `accepted` OR `rejected` | Maintainers/API experts | No (rejected is archived) |
 | **Promote** | Observation moved to seed file with metadata | `promoted` | Seed maintainers | Yes (feeds tool/regen) |
 | **Regenerate** | Seed content integrated into canonical docs | Final | Everyone | Yes (becomes canonical) |
 
@@ -63,7 +63,7 @@ OBSERVATION (Addon developer's claim with evidence)
     │    Impact: Zero on semantics
     │
     ├────→ Review (accept/reject decision)
-    │        ├─ Accept → Status: reviewed → Eligible for promotion
+   │        ├─ Accept → Status: accepted → Eligible for promotion
     │        └─ Reject → Status: rejected → Archived, immutable
     │
     ├────→ Promote (move to seed files)
@@ -232,7 +232,7 @@ $payload = @{
   notes = "Confirmed against current XE/Coder docs; valuable pattern for form-heavy addons"
 }
 
-# Via MCP: feeding/review_observation
+# Via MCP: feeding/review
 ```
 
 ### For Maintainers: Promoting and Integrating
@@ -250,7 +250,7 @@ $payload = @{
      observation_id = "myAddon_xml_feature_caveat"
      dry_run = $false  # After dry-run preview
    }
-   # Via MCP: feeding/promote_observation
+   # Via MCP: feeding/promote
    ```
    - Symbol validation runs (advisory warnings only)
    - Observation appended to seed file with metadata comment
@@ -262,7 +262,7 @@ $payload = @{
      scope = "full"
      dry_run = $false
    }
-   # Via MCP: feeding/regenerate_from_promoted_knowledge
+   # Via MCP: feeding/regenerate  
    ```
    - Platform docs rebuild from seeds
    - Site content regenerates from platform docs
@@ -322,7 +322,7 @@ message: "symbol 'hypothetical_future_symbol'
 ### Regeneration Process
 
 ```
-feeding/regenerate_from_promoted_knowledge scope=full
+feeding/regenerate scope=full
     ├─ [Platform Regeneration]
     │   go run ./tools/api_doc_gen generate platform ./docs/addon-api ./docs/war-api
     │   Input: Addon-level API analysis + seed files
@@ -415,7 +415,7 @@ Time | Status | Visibility | Doc Impact
 -----|--------|------------|----------
 T0   | candidate | Queue only | None
      | Reviews pending...
-T1   | reviewed (accepted) | Queue only | None
+T1   | accepted | Queue only | None
      | Awaiting promotion decision...
 T2   | promoted | Seed file | Docs updated on next regen
 T3   | (after regen) | Docs + MCP | Full visibility
@@ -514,7 +514,7 @@ Choose based on whether symbol should exist in API.
 **Question:** I ingested an observation but `search_symbols` doesn't find it.
 
 **Answer:** Correct behavior. Observations affect docs only after:
-1. Status: `reviewed` (via `review_observation` with verdict=accept)
+1. Status: `accepted` (via `review_observation` with verdict=accept)
 2. Status: `promoted` (via `promote_observation`)
 3. Docs regenerated (via `regenerate_from_promoted_knowledge`)
 
@@ -605,7 +605,7 @@ NDJSON (newline-delimited JSON):
 
 ```json
 {"ingested_at_utc":"2026-04-03T10:00:00Z","source_path":"docs/platform/feeding/xml/myPattern.feed.json","observation":{...},"lifecycle_status":"candidate"}
-{"ingested_at_utc":"2026-04-03T11:00:00Z","source_path":"docs/platform/feeding/xml/myPattern.feed.json","observation":{...},"lifecycle_status":"reviewed","review":{"verdict":"accept","reviewer":"user@example.com","notes":"Validated","reviewed_at_utc":"2026-04-03T11:15:00Z"}}
+{"ingested_at_utc":"2026-04-03T11:00:00Z","source_path":"docs/platform/feeding/xml/myPattern.feed.json","observation":{...},"lifecycle_status":"accepted","review":{"verdict":"accept","reviewer":"user@example.com","notes":"Validated","reviewed_at_utc":"2026-04-03T11:15:00Z"}}
 ```
 
 Each line is a complete observation lifecycle record.
@@ -618,7 +618,7 @@ The strengthened feeding mechanism provides **governance-backed addon discovery 
 
 **Key Points:**
 - ✅ Observations are reviewed input, not semantic sources
-- ✅ Candidates don't affect docs (immutable until reviewed+promoted)
+- ✅ Candidates don't affect docs (immutable until accepted+promoted)
 - ✅ Symbol validation is advisory (non-blocking)
 - ✅ Seed traceability enables audit trail
 - ✅ Regeneration transforms promoted observations into canonical docs

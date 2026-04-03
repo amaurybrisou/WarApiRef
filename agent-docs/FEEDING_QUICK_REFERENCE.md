@@ -233,7 +233,7 @@ Write-Host "Status: $($result.result.status)"
 ```
 
 **Verdict options:**
-- `verdict = "accept"` → Status becomes `reviewed` (eligible for promotion)
+- `verdict = "accept"` → Status becomes `accepted` (eligible for promotion)
 - `verdict = "reject"` → Status becomes `rejected` (archived, immutable)
 
 ### Step 3: Promote to Seed File
@@ -242,7 +242,7 @@ Write-Host "Status: $($result.result.status)"
 # DRY-RUN FIRST
 $payload = @{
   jsonrpc = "2.0"
-  method = "feeding/promote_observation"
+  method = "feeding/promote"
   params = @{
     observation_id = "myAddon_form_input"
     dry_run = $true  # Preview first
@@ -277,7 +277,7 @@ if ($result.result.promoted) {
 # DRY-RUN FIRST
 $payload = @{
   jsonrpc = "2.0"
-  method = "feeding/regenerate_from_promoted_knowledge"
+  method = "feeding/regenerate"
   params = @{
     scope = "full"  # or "platform" or "site"
     dry_run = $true
@@ -358,7 +358,7 @@ ls -la docs/war-api/conventions*.md
 
 **Action:**
 1. Use `feeding/list_pending_observations` to see candidates
-2. Review and promote (status→reviewed→promoted)
+2. Review and promote (status→accepted→promoted)
 3. After regeneration, observation appears in standard queries
 
 ---
@@ -376,7 +376,7 @@ $pending = Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8091/mcp" \
 # 2. Accept all (or select subset)
 $pending.result.observations | ForEach-Object {
   $payload = @{
-    method = "feeding/review_observation"
+    method = "feeding/review"
     params = @{
       observation_id = $_.observation_id
       verdict = "accept"
@@ -392,7 +392,7 @@ $pending.result.observations | ForEach-Object {
 # 3. Promote all to same seed file
 foreach ($id in @("obs1", "obs2", "obs3")) {
   $payload = @{
-    method = "feeding/promote_observation"
+    method = "feeding/promote"
     params = @{ observation_id = $id; dry_run = $false }
   } | ConvertTo-Json
   
@@ -402,7 +402,7 @@ foreach ($id in @("obs1", "obs2", "obs3")) {
 
 # 4. Regenerate ONCE (much faster than per-observation)
 $payload = @{
-  method = "feeding/regenerate_from_promoted_knowledge"
+  method = "feeding/regenerate"
   params = @{ scope = "full"; dry_run = $false }
 } | ConvertTo-Json
 

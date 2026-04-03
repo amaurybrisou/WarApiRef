@@ -47,7 +47,7 @@ Addon Finding
 [2] QUEUE: Append lifecycle record to docs/platform/feeding/review_queue/accepted.ndjson (ingested_at_utc, source_path, observation)
     ↓
 [3] REVIEW: Apply accept/reject verdict + reviewer metadata + timestamp
-    ├─ ACCEPT: Update queue status to "reviewed"
+    ├─ ACCEPT: Update queue status to "accepted"
     └─ REJECT: Also append to rejected.ndjson durable store
     ↓
 [4] PROMOTE: Build markdown fragment (with HTML comment marker), append to target seed files
@@ -70,7 +70,7 @@ Addon Finding
 **Required Fields:**
 - `schema_version`: Fixed to "feeding.observation.v1" (version check enforced in validation)
 - `entry_id`: Unique stable snake_case identifier (e.g., "whohealedme_xml_input_and_layout")
-- `status`: Enum [candidate, reviewed, promoted, rejected]
+- `status`: Enum [candidate, accepted, promoted, rejected]
 - `source`: Object with {addon, date_utc, validation (dev_observed|user_validated), context, repository, branch}
 - `target_seeds`: Non-empty array of seed file paths (e.g., ["docs/platform/seeds/xml_conventions.md"])
 - `confidence`: Object with {overall (HIGH|MEDIUM|LOW), rationale (string)}
@@ -88,8 +88,8 @@ Addon Finding
 
 | State | Transitions | Rules |
 |-------|-------------|-------|
-| `candidate` | → reviewed OR rejected | Initial state after ingestion; can't be promoted directly |
-| `reviewed` | → promoted OR rejected | Must be set via review_observation verdict = "accept" |
+| `candidate` | → accepted OR rejected | Initial state after ingestion; can't be promoted directly |
+| `accepted` | → promoted OR rejected | Must be set via review_observation verdict = "accept" |
 | `promoted` | (immutable) | Can't re-review or re-reject; promotion records are durable until superseding workflow exists |
 | `rejected` | (immutable) | Appended to durable rejected.ndjson store; can't be promoted |
 
@@ -143,7 +143,7 @@ if status == lifecycleStatusCandidate {
 
 #### 3. **list_pending_observations** (`server/observation_lifecycle.go` lines 229-276)
 - **Purpose:** Query queue with filtering
-- **Input:** StatusFilter (default: [candidate, reviewed]), TargetFilter (substring match on target_seeds), Limit
+- **Input:** StatusFilter (default: [candidate, accepted]), TargetFilter (substring match on target_seeds), Limit
 - **Output:** PendingObservations[] with {ObservationID, Status, Confidence, EvidenceCount, ClaimSummary, SourceAddon}, TotalCount
 - **Filtering:** Supports multiple status values AND target_seeds substring matching
 
@@ -163,7 +163,7 @@ if status == lifecycleStatusCandidate {
 - **Input:** ObservationID, DryRun, SeedPathOverride
 - **Output:** TargetSeeds[], SeedUpdates[] {SeedPath, Appended, Duplicate}, Errors[], Warnings[], Promoted (bool)
 - **Behavior:**
-  - Validates observation is in "reviewed" state (not candidate or rejected)
+  - Validates observation is in "accepted" state (not candidate or rejected)
   - Gets target_seeds from observation or SeedPathOverride
   - For each seed file:
     - Checks for duplicate promotion marker (prevents re-promotion)
@@ -245,7 +245,7 @@ type lifecycleRecord struct {
     IngestedAtUTC    string                 // Timestamp when observation was added to queue
     SourcePath       string                 // Path to .feed.json file
     Observation      map[string]any         // Full observation object (as above)
-    LifecycleStatus  string                 // candidate|reviewed|promoted|rejected
+    LifecycleStatus  string                 // candidate|accepted|promoted|rejected
     Review           *lifecycleReview       // (nil until reviewed) {Verdict, Reviewer, Notes, ReviewedAtUTC}
     PromotedAtUTC    string                 // (empty until promoted) Timestamp when moved to seed files
 }
@@ -396,7 +396,7 @@ func isDuplicatePromotion(seedAbsPath, entryID string) bool {
 | File-pair pattern (markdown + .feed.json) | ✅ Complete | HIGH | Separation of concerns, both human and machine readable |
 | Validation pipeline | ✅ Complete | HIGH | Schema version check, required fields, entry ID uniqueness, workspace safety |
 | Queue management (NDJSON) | ✅ Complete | HIGH | Append-only, lifecycle tracking, status immutability enforcement |
-| Status workflow (candidate → reviewed/rejected → promoted) | ✅ Complete | HIGH | State machine enforced in code, prevents re-reviews, immutable promotion |
+| Status workflow (candidate → accepted/rejected → promoted) | ✅ Complete | HIGH | State machine enforced in code, prevents re-reviews, immutable promotion |
 | MCP tool registry | ✅ Complete | HIGH | 7 tools fully implemented, all with error handling and dry-run support |
 | Dry-run support | ✅ Complete | HIGH | All tools support DryRun flag for safe preview |
 | Workspace validation | ✅ Complete | HIGH | Prevents misconfiguration, enforced before file operations |
