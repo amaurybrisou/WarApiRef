@@ -8,15 +8,13 @@ import (
 )
 
 // TestPipelineSourceFirstProducesRicherHierarchy validates the core
-// architectural requirement: the source-first pipeline produces a richer
-// element type model than the degraded docs-based fallback when real source
-// files are available.
+// architectural requirement: the source-first pipeline enriches hierarchy
+// from real source files.
 //
 // The test wires a minimal addon on disk (with a real XML file containing
-// a named Window that holds a named Button child), runs both pipeline paths,
+// a named Window that holds a named Button child), runs the source-first path,
 // and verifies that:
 //   - the source-first path discovers the parent/child relationship
-//   - the fallback path (empty SourceModel) produces no hierarchy
 func TestPipelineSourceFirstProducesRicherHierarchy(t *testing.T) {
 	// Build a minimal addon source tree on disk.
 	root := t.TempDir()
@@ -57,9 +55,6 @@ func TestPipelineSourceFirstProducesRicherHierarchy(t *testing.T) {
 	// --- Source-first path ---
 	srcResult := runPhasedPipelineFromSources(cloneTypes(baseTypes), root, SourceModel{})
 
-	// --- Degraded docs path (no real source data) ---
-	docsResult := runPhasedPipelineFromDocs(cloneTypes(baseTypes), SourceModel{})
-
 	// The source-first path must have enriched element type data:
 	// Window must appear as a parent of Button (or Button as a child of Window).
 	windowFromSources := findType(srcResult.ElementTypes, "Window")
@@ -81,48 +76,37 @@ func TestPipelineSourceFirstProducesRicherHierarchy(t *testing.T) {
 		t.Error("source-first: Button missing OnClick handler (parsed from real XML)")
 	}
 
-	// The degraded docs path has no real source data, so it should not
-	// produce any event bindings for these types.
-	windowFromDocs := findType(docsResult.ElementTypes, "Window")
-	buttonFromDocs := findType(docsResult.ElementTypes, "Button")
-
-	if windowFromDocs != nil && hasHandlerEvent(windowFromDocs, "OnInitialize") {
-		t.Error("degraded: Window unexpectedly has OnInitialize — source data leaked into fallback path")
-	}
-	if buttonFromDocs != nil && hasHandlerEvent(buttonFromDocs, "OnClick") {
-		t.Error("degraded: Button unexpectedly has OnClick — source data leaked into fallback path")
-	}
 }
 
-// TestPipelineFallbackIsExplicitlyDegraded verifies that the degraded fallback
-// path still runs to completion (returns enriched types) when given a
-// non-empty SourceModel, and that the dispatch function selects it when
-// sourceRoot is empty.
-func TestPipelineFallbackIsExplicitlyDegraded(t *testing.T) {
-	source := SourceModel{}
-	types := []ElementTypeSymbol{{Name: "Window"}, {Name: "Button"}}
-
-	// dispatch with empty sourceRoot → should call degraded path without panic
-	result := runPhasedPipeline(cloneTypes(types), source, "")
-	if len(result.ElementTypes) != 2 {
-		t.Fatalf("expected 2 element types back, got %d", len(result.ElementTypes))
-	}
+// TestPipelineDispatchRequiresSourceRoot verifies that contract-only dispatch
+// fails fast when sourceRoot is missing.
+func TestPipelineDispatchRequiresSourceRoot(t *testing.T) {
+	expectPanic(t, func() {
+		runPhasedPipeline(cloneTypes([]ElementTypeSymbol{{Name: "Window"}}), SourceModel{}, "")
+	})
 }
 
 // TestPipelineDispatchSelectsSourceFirstWhenRootProvided verifies that when a
 // valid sourceRoot is provided, the dispatch function uses the source-first
-// path (it should not produce a [DEGRADED] log or error for a valid root even
-// if the root is empty of addons — it falls back gracefully).
+// path.
 func TestPipelineDispatchSelectsSourceFirstWhenRootProvided(t *testing.T) {
-	emptyRoot := t.TempDir() // valid dir, but no addons → graceful fallback logged
+	emptyRoot := t.TempDir()
 	source := SourceModel{}
 	types := []ElementTypeSymbol{{Name: "Window"}}
 
-	// Should not panic; gracefully falls back with a warning.
-	result := runPhasedPipeline(cloneTypes(types), source, emptyRoot)
-	if len(result.ElementTypes) != 1 {
-		t.Fatalf("expected 1 element type back, got %d", len(result.ElementTypes))
-	}
+	expectPanic(t, func() {
+		runPhasedPipeline(cloneTypes(types), source, emptyRoot)
+	})
+}
+
+func expectPanic(t *testing.T, fn func()) {
+	t.Helper()
+	defer func() {
+		if r := recover(); r == nil {
+			t.Fatal("expected panic, got none")
+		}
+	}()
+	fn()
 }
 
 // TestSourceFirstPreservesNamedAndStructuralChildren verifies that the

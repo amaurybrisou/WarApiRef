@@ -130,18 +130,20 @@ func runPlatformMode(args []string) error {
 		return fmt.Errorf("resolve output root: %w", err)
 	}
 
-	var sourceRoot string
-	if sourceRootArg != "" {
-		sourceRoot, err = resolveExistingDirectory(sourceRootArg)
-		if err != nil {
-			return fmt.Errorf("resolve source root: %w", err)
-		}
+	if sourceRootArg == "" {
+		return fmt.Errorf("platform generation requires --source-root in contract-only mode")
+	}
+	sourceRoot, err := resolveExistingDirectory(sourceRootArg)
+	if err != nil {
+		return fmt.Errorf("resolve source root: %w", err)
 	}
 
-	source, err := platform.ParseAPIRef(apiRefRoot)
+	contracts, err := platform.LoadContractInputs(apiRefRoot)
 	if err != nil {
-		return err
+		return fmt.Errorf("load contract inputs: %w", err)
 	}
+	source := platform.SourceModelFromContracts(contracts)
+
 	corpus := platform.BuildWithOptions(source, platform.BuildOptions{SourceRoot: sourceRoot})
 	return platform.Generate(outputRoot, corpus)
 }

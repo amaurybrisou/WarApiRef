@@ -14,17 +14,15 @@ import (
 	"roraddons/tools/api_doc_gen/xml_structure"
 )
 
-// runPhasedPipeline is the pipeline dispatch function. It selects the
-// source-first path when a sourceRoot is available, or falls back to the
-// degraded docs-based path.
+// runPhasedPipeline is the pipeline dispatch function.
 //
-//   - When sourceRoot != "": calls [runPhasedPipelineFromSources] (primary path).
-//   - When sourceRoot == "": calls [runPhasedPipelineFromDocs] (degraded fallback).
+// Contract-only mode requires a valid sourceRoot and source-first analysis.
+// Any attempt to run without sourceRoot is a hard error.
 func runPhasedPipeline(elementTypes []ElementTypeSymbol, source SourceModel, sourceRoot string) phasedPipelineResult {
-	if sourceRoot != "" {
-		return runPhasedPipelineFromSources(elementTypes, sourceRoot, source)
+	if strings.TrimSpace(sourceRoot) == "" {
+		panic("platform pipeline requires source-root in contract-only mode")
 	}
-	return runPhasedPipelineFromDocs(elementTypes, source)
+	return runPhasedPipelineFromSources(elementTypes, sourceRoot, source)
 }
 
 // phasedPipelineResult bundles all structured outputs from the analysis
@@ -44,16 +42,16 @@ type phasedPipelineResult struct {
 // The pre-resolved bindings from the SourceModel are injected as supplementary
 // evidence, but the primary structural data always comes from source files.
 func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot string, source SourceModel) phasedPipelineResult {
+	if len(source.Bindings) > 0 || len(source.Frames) > 0 || len(source.Functions) > 0 || len(source.Events) > 0 || len(source.Handlers) > 0 {
+		panic("source-first pipeline guard: SourceModel input is not allowed in contract-only mode")
+	}
+
 	addonSources, err := source_scan.DiscoverAddonSources(sourceRoot)
 	if err != nil {
-		fmt.Fprintf(os.Stderr,
-			"warning: source-first pipeline: discover sources failed (%v); falling back to degraded docs path\n", err)
-		return runPhasedPipelineFromDocs(elementTypes, source)
+		panic(fmt.Sprintf("source-first pipeline: discover sources failed: %v", err))
 	}
 	if len(addonSources) == 0 {
-		fmt.Fprintf(os.Stderr,
-			"warning: source-first pipeline: no addon sources found in %q; falling back to degraded docs path\n", sourceRoot)
-		return runPhasedPipelineFromDocs(elementTypes, source)
+		panic(fmt.Sprintf("source-first pipeline: no addon sources found in %q", sourceRoot))
 	}
 
 	// Phase 1: parse real XML source files.
@@ -84,20 +82,6 @@ func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot s
 		}
 	}
 
-	// Supplement with pre-resolved bindings from the SourceModel as additional
-	// evidence (they do not replace source-parsed hierarchy data).
-	var preResolved []semantic_merge.PreResolvedBinding
-	for _, b := range source.Bindings {
-		preResolved = append(preResolved, semantic_merge.PreResolvedBinding{
-			Addon:       b.Addon,
-			Frame:       b.Frame,
-			Event:       b.Event,
-			XMLFunction: b.XMLFunction,
-			LuaFunction: b.LuaFunction,
-			Resolved:    b.Resolved,
-		})
-	}
-
 	// Build indexes for .mod semantic correlation from the already-collected
 	// Lua definitions and XML trees.
 	luaQualifiedNames := make([]string, 0, len(luaDefs))
@@ -124,10 +108,9 @@ func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot s
 	}
 
 	output := semantic_merge.RunPipeline(&semantic_merge.PipelineInput{
-		XMLTrees:            trees,
-		LuaFunctions:        luaDefs,
-		PreResolvedBindings: preResolved,
-		ModSemantics:        modSemantics,
+		XMLTrees:     trees,
+		LuaFunctions: luaDefs,
+		ModSemantics: modSemantics,
 	})
 	enriched := enrichElementTypesFromCatalog(elementTypes, output.Catalog)
 	enriched = enrichElementTypesFromModSemantics(enriched, output.ModSemantics, frameTypeByName)
@@ -151,33 +134,7 @@ func runPhasedPipelineFromSources(elementTypes []ElementTypeSymbol, sourceRoot s
 // is available. It must NOT be used as the primary pipeline input. Callers
 // should prefer [runPhasedPipelineFromSources].
 func runPhasedPipelineFromDocs(elementTypes []ElementTypeSymbol, source SourceModel) phasedPipelineResult {
-	fmt.Fprintln(os.Stderr,
-		"[DEGRADED] platform pipeline: running from flattened docs (no source root). "+
-			"Hierarchy will be partial; provide a source root via BuildOptions.SourceRoot for source-first analysis.")
-
-	trees := synthesizeXMLTrees(source)
-	luaDefs := synthesizeLuaDefs(source)
-
-	var preResolved []semantic_merge.PreResolvedBinding
-	for _, b := range source.Bindings {
-		preResolved = append(preResolved, semantic_merge.PreResolvedBinding{
-			Addon:       b.Addon,
-			Frame:       b.Frame,
-			Event:       b.Event,
-			XMLFunction: b.XMLFunction,
-			LuaFunction: b.LuaFunction,
-			Resolved:    b.Resolved,
-		})
-	}
-
-	output := semantic_merge.RunPipeline(&semantic_merge.PipelineInput{
-		XMLTrees:            trees,
-		LuaFunctions:        luaDefs,
-		PreResolvedBindings: preResolved,
-	})
-	return phasedPipelineResult{
-		ElementTypes: enrichElementTypesFromCatalog(elementTypes, output.Catalog),
-	}
+	panic("runPhasedPipelineFromDocs is disabled: markdown/docs semantic fallback is not allowed")
 }
 
 // synthesizeXMLTrees converts SourceModel.Frames into XMLTrees that the Phase 1

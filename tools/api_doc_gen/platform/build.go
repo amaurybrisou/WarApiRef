@@ -587,7 +587,7 @@ func BuildWithOptions(source SourceModel, opts BuildOptions) Corpus {
 	// This enriches ElementTypes with structured attribute profiles,
 	// structural child profiles, Lua API call aggregations, handler
 	// argument patterns, and .mod lifecycle facts.
-	pipelineResult := runPhasedPipeline(corpus.ElementTypes, source, opts.SourceRoot)
+	pipelineResult := runPhasedPipeline(corpus.ElementTypes, SourceModel{}, opts.SourceRoot)
 	corpus.ElementTypes = pipelineResult.ElementTypes
 	corpus.AddonLifecycleSemantics = pipelineResult.AddonLifecycleSemantics
 	corpus.FunctionLifecycleRoles = pipelineResult.FunctionLifecycleRoles
