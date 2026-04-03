@@ -121,9 +121,9 @@ Observed querying runtime window state or metadata.
 
 - AggroMeter: OnMouseOverStart -> WindowGetParent(SystemData.MouseOverWindow.name)
 - AggroMeter: SelectChar -> WindowGetParent(SystemData.MouseOverWindow.name)
-- Aura: OnIconLButtonUp -> WindowGetParent(WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name)))
 - Aura: OnIconLButtonUp -> WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name))
 - Aura: OnIconLButtonUp -> WindowGetParent(SystemData.ActiveWindow.name)
+- Aura: OnIconLButtonUp -> WindowGetParent(WindowGetParent(WindowGetParent(SystemData.ActiveWindow.name)))
 - DammazKron: DK_OnSelectProfil -> WindowGetParent(SystemData.ActiveWindow.name)
 
 ## Related APIs

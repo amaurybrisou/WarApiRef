@@ -68,7 +68,7 @@ Observed as a global function across 2 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a function or method reference. | Observed values: member.name, playerName |
+| arg1 | Observed as a runtime window or control identifier. | Observed values: member.name, playerName |
 | arg2 | Observed as a runtime window or control identifier. | Observed values: groupIndex, newPartyIndex |
 
 ## Returns

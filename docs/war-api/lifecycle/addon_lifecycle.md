@@ -29,18 +29,18 @@
 
 ## Excluded Addons
 
-AceLocale-3.0 - directory has no .mod or .toc manifest and is excluded at source discovery
-GuardPack - directory has no .mod or .toc manifest and is excluded at source discovery
-guildwindowexpanded-1-5-5 - directory has no .mod or .toc manifest and is excluded at source discovery
-harbinger.1-6-1 - directory has no .mod or .toc manifest and is excluded at source discovery
-orcanizer - directory has no .mod or .toc manifest and is excluded at source discovery
-timeinqueue-1-1-1 - directory has no .mod or .toc manifest and is excluded at source discovery
-unbearable-1-0-0 - directory has no .mod or .toc manifest and is excluded at source discovery
-warboard_crests-0-5-1 - directory has no .mod or .toc manifest and is excluded at source discovery
-warboard_toggler_pack-1-0-0 - directory has no .mod or .toc manifest and is excluded at source discovery
-yakui-1-3-6 - directory has no .mod or .toc manifest and is excluded at source discovery
-zTimeLib - directory has no .mod or .toc manifest and is excluded at source discovery
-zonepop1-3-1-3-0 - directory has no .mod or .toc manifest and is excluded at source discovery
+- AceLocale-3.0 - directory has no .mod or .toc manifest and is excluded at source discovery
+- GuardPack - directory has no .mod or .toc manifest and is excluded at source discovery
+- guildwindowexpanded-1-5-5 - directory has no .mod or .toc manifest and is excluded at source discovery
+- harbinger.1-6-1 - directory has no .mod or .toc manifest and is excluded at source discovery
+- orcanizer - directory has no .mod or .toc manifest and is excluded at source discovery
+- timeinqueue-1-1-1 - directory has no .mod or .toc manifest and is excluded at source discovery
+- unbearable-1-0-0 - directory has no .mod or .toc manifest and is excluded at source discovery
+- warboard_crests-0-5-1 - directory has no .mod or .toc manifest and is excluded at source discovery
+- warboard_toggler_pack-1-0-0 - directory has no .mod or .toc manifest and is excluded at source discovery
+- yakui-1-3-6 - directory has no .mod or .toc manifest and is excluded at source discovery
+- zTimeLib - directory has no .mod or .toc manifest and is excluded at source discovery
+- zonepop1-3-1-3-0 - directory has no .mod or .toc manifest and is excluded at source discovery
 
 ## Source Addon Inventory
 

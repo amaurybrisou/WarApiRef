@@ -138,8 +138,8 @@ Observed 19 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- BlackBox.OnApplicationTwoButtonDialogHook
 - BlackBox.UpdateTimer
+- BlackBox.OnApplicationTwoButtonDialogHook
 
 ## Seen In
 

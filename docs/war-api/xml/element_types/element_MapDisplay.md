@@ -293,28 +293,28 @@ Confidence: MEDIUM
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
-- MapMonster_Calibrate.OnMouseOverEnd
-- SimpleXY.UpdateCoordinates
-- MapMonster.MoveMapPin
-- Atlas.local.SetMapTransparency
-- MapPin.UpdateGuide
 - MapPin.OnUpdate
-- MapMonster_Calibrate.OnLMouseButton
-- MapMonster.local.Calibrate_MoveAnchor
+- MapMonster_Calibrate.GetDimensions
+- MapMonster_Calibrate.OnMouseOverEnd
+- MapPin.UpdateGuide
+- Atlas.ShowCoordinatesOnMouseOver
 - MapMonster.CreateMarker
-- MapMonster.local.MoveMapPin
-- Atlas.SetMapTransparency
-- MapMonster.local.CreateMarker
-- MapMonster_Calibrate.WindowReport
 - MapMonster.Calibrate_ResizeMap
+- MapMonster_Calibrate.OnLMouseButton
+- Atlas.local.SetMapTransparency
+- Map.Initialize
+- MapPin.GetMapPos
 - MapMonster.Calibrate_MoveAnchor
+- MapMonster_Calibrate.WindowReport
+- MapMonster.local.CreateMarker
+- MapMonster.local.MoveMapPin
+- MapMonster.MoveMapPin
+- Atlas.SetMapTransparency
 - MapPin.UpdateMapCoordinates
 - MapMonster.InitializeMapPins
+- SimpleXY.UpdateCoordinates
+- MapMonster.local.Calibrate_MoveAnchor
 - Map.SetBorderForegroundFRI
-- Map.Initialize
-- MapMonster_Calibrate.GetDimensions
-- MapPin.GetMapPos
-- Atlas.ShowCoordinatesOnMouseOver
 - Atlas.local.ShowCoordinatesOnMouseOver
 
 

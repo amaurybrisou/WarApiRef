@@ -19,7 +19,8 @@ services:
     ports:
       - "${DOCS_SITE_PORT:-8080}:80"
     volumes:
-      - ./docs/site:/usr/share/nginx/html:ro
+      - ./docs/site:/usr/share/nginx/html
+      - ./addons:/usr/share/nginx/html/addons
 
   mcp-server:
     container_name: war-api-mcp-server
