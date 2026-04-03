@@ -91,38 +91,38 @@ Observed 73 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- MoraleCircle.OnSetCustomColorEmpty
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- MoraleCircle.OnSetCustomColor
+- BuffHead.BuffHeadEffectFrame:SetLayout
 - TurretRange.ShowElement
+- WoHReticle.CreateRing
+- TurretRange.Display.SetAlpha
+- Enemy.EnemyGroupIcon:Attach
+- TurretRange.UpdateDisplay
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- MoraleCircle.ColorChanger2
+- Enemy.EnemyEffectsIndicator:Update
+- MoraleCircle.OnSetCustomColorEmpty
+- TurretRange.Display.UpdateLayout
+- TurretRange.OnUpdate
+- MoraleCircle.ColorChanger4
+- TurretRange.Setup.Display.Initialize
+- FilterSettings.DisableCondenseSettings
 - GuardLine.update
 - TurretRange.local.UpdateDisplay
-- TurretRange.Setup.Display.OnCircleModeChanged
 - TurretRange.Setup.Display.LoadSettings
-- TurretRange.UpdateDisplay
-- MoraleCircle.ColorChanger2
-- MoraleCircle.ColorChanger1
-- BuffHead.BuffHeadEffectFrame:Update
-- TurretRange.Display.UpdateLayout
-- MoraleCircle.ColorChanger4
-- WoHReticle.CreateRing
-- WoHReticle.UpdateTargets
-- TurretRange.Display.SetAlpha
-- MoraleCircle.ColorChanger3
-- TurretRange.local.ShowElement
-- FilterSettings.DisableCondenseSettings
-- TurretRange.OnUpdate
-- TurretRange.Setup.Display.Initialize
 - TurretRange.Setup.Display.OnCircleInvertLUp
-- Enemy.EnemyEffectsIndicator:Update
-- RoR_SoR.T1_UPDATE
-- BuffHead.BuffHeadEffectFrame:SetLayout
-- Enemy.UI_Icon_Switch
-- Enemy.EnemyGroupIcon:Attach
+- MoraleCircle.ColorChanger1
 - Aura.Aura:UpdateWindow
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - DAoCBuff.DAoCBuffFrame:SetBuff
+- Enemy.UI_Icon_Switch
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- RoR_SoR.T1_UPDATE
+- MoraleCircle.ColorChanger3
+- TurretRange.Setup.Display.OnCircleModeChanged
 - MoraleCircle.OnSetCustomColorFill
+- MoraleCircle.OnSetCustomColor
+- WoHReticle.UpdateTargets
+- BuffHead.BuffHeadEffectFrame:Update
+- TurretRange.local.ShowElement
 - MoraleCircle.OnSetCustomColorFull
 
 ## Seen In

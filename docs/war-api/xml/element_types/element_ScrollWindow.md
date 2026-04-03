@@ -733,29 +733,29 @@ Observed 12 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
 - Enemy.EnemyGroupIcon:ApplySettings
-- DAoCBuff.ShowMessageWindow
+- DAoCBuffSettings.PopulateSettings
 - Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
 - Enemy.local._OnArchetypeChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
 - Enemy._OnKeyModifierChanged
-- DAoCBuffSettings.PopulateSettings
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- Enemy.local._OnKeyModifierChanged
-- Enemy._OnArchetypeChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- Enemy.local._OnKeyModifierChanged
 - Killer.Initialize
+- DAoCBuff.ShowMessageWindow
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy._OnArchetypeChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
 
 ## Seen In
 

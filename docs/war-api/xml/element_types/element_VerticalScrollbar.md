@@ -183,8 +183,10 @@ Confidence: LOW
 
 ## Related APIs
 
+- [EA_ScrollBar_DefaultVerticalChain](../../globals/constants/constant_EA_ScrollBar_DefaultVerticalChain.md) (HIGH 100/100) - Constant
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [EA_ScrollBar_ChatVertical](../../globals/constants/constant_EA_ScrollBar_ChatVertical.md) (HIGH 90/100) - Constant
 - [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
 - [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 

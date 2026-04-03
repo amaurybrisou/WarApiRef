@@ -116,7 +116,7 @@ Observed XML element type instantiated by 12 addons.
 
 ## Used With
 
-- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
+- none
 
 ## Triggered By
 

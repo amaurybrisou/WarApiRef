@@ -129,6 +129,7 @@ Observed mutating button text or pressed state on existing controls.
 - [OnLButtonUp](../../xml/handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [Window](../../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
+- [CreateWindow](../../globals/functions/global_CreateWindow.md) (HIGH 75/100) - Global Function
 
 ## Triggered By
 

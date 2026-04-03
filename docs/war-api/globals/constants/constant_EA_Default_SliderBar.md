@@ -162,7 +162,7 @@ Observed engine XML template or inherited constant referenced by 14 addons.
 
 ## Related APIs
 
-- none
+- [SliderBar](../../xml/element_types/element_SliderBar.md) (HIGH 100/100) - XML Element Type
 
 ## Used With
 

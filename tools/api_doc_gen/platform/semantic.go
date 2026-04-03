@@ -530,6 +530,26 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog) (APIGraph, Relatio
 				contextIDs = append(contextIDs, handlerEntry.ID)
 			}
 		}
+		// Emit inherited_from edges: element types whose XML frames commonly
+		// declare an inherits="EA_*" (or Root) template attribute. Only edges
+		// whose target resolves to a node in the constant catalog are emitted;
+		// no heuristic guessing.
+		allInherits := symbol.InheritsBases
+		if len(allInherits) == 0 {
+			allInherits = symbol.CommonInherits
+		}
+		for _, inheritName := range graph.UniqueStrings(allInherits) {
+			if inheritName == "" {
+				continue
+			}
+			constEntry, constFound := catalog.entries[constantID(inheritName)]
+			if !constFound {
+				continue
+			}
+			evidence := fmt.Sprintf("%s inherits XML template %s", symbol.Name, inheritName)
+			addEdge(entry.ID, constEntry.ID, "inherited_from", evidence)
+			contextIDs = append(contextIDs, constEntry.ID)
+		}
 		recordCombination(contextIDs, symbol.Name+": XML element relationships")
 	}
 
@@ -885,6 +905,8 @@ func calculateEdgeConfidence(edgeType string, weight int, evidenceCount int) int
 		baseScore = 70 + (weight-1)*2
 	case "updates_ui", "bound_from_xml":
 		baseScore = 72 + (weight-1)*2
+	case "inherited_from":
+		baseScore = 82 + (weight-1)*2
 	case "commonly_used_with":
 		baseScore = 55 + (weight-1)*1
 	}
@@ -924,6 +946,8 @@ func generateEdgeRationale(edgeType, from, to string, weight int) string {
 		return fmt.Sprintf("%s updates UI element %s", from, to)
 	case "bound_from_xml":
 		return fmt.Sprintf("%s is bound from XML handler %s", from, to)
+	case "inherited_from":
+		return fmt.Sprintf("%s inherits XML template %s", from, to)
 	case "commonly_used_with":
 		return fmt.Sprintf("%s and %s are commonly used together", from, to)
 	default:
@@ -1154,6 +1178,9 @@ func buildSemanticLinks(catalog symbolCatalog, edges []GraphEdge) map[string]Sem
 			appendLink(edge.To, "related", fromEntry)
 		case "reads_data", "writes_state", "updates_ui":
 			appendLink(edge.From, "affects", toEntry)
+			appendLink(edge.To, "related", fromEntry)
+		case "inherited_from":
+			appendLink(edge.From, "related", toEntry)
 			appendLink(edge.To, "related", fromEntry)
 		}
 	}

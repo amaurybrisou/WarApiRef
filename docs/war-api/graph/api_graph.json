@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T03:16:50.193460783Z",
+  "generated_at": "2026-04-03T03:53:01.755761Z",
   "nodes": [
     {
       "id": "data:table:AlertTextWindow",
@@ -10450,6 +10450,27 @@
     },
     {
       "from": "function:global:CreateWindow",
+      "to": "function:global:EA_Window_InteractionRenownTraining.Hide",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")"
+      ],
+      "rationale": "function:global:CreateWindow and function:global:EA_Window_InteractionRenownTraining.Hide are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e CreateWindow(\"AdvancedRenownTrainingPresetsWindow\", false)",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.LOADING_END, \"AdvancedRenownTraining.OnReload\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.PLAYER_CAREER_CATEGORY_UPDATED, \"AdvancedRenownTraining.CreateDataTable\")",
+        "AdvancedRenownTrainer: AdvancedRenownTraining.Initialize -\u003e RegisterEventHandler(SystemData.Events.RELOAD_INTERFACE, \"AdvancedRenownTraining.OnReload\")"
+      ]
+    },
+    {
+      "from": "function:global:CreateWindow",
       "to": "function:global:LibSlash.RegisterSlashCmd",
       "type": "commonly_used_with",
       "confidence_score": 71,
@@ -10494,6 +10515,27 @@
         "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"EA_Window_CityCaptureJoinPromptWindow\", true)",
         "MiracleGrowLight: MiracleGrowLight.Initialize -\u003e DynamicImageSetTextureSlice(windowName..\"Plant\"..i..\"ButtonFrame\", \"IconFrame-1\")",
         "MiracleGrowLight: MiracleGrowLight.Initialize -\u003e DynamicImageSetTextureSlice(windowName..\"Plant\"..i..\"HarvestFrame\", \"IconFrame-1\")"
+      ]
+    },
+    {
+      "from": "function:global:CreateWindow",
+      "to": "function:window:ButtonSetPressedFlag",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "Enemy: Enemy.UnitFramesUI_EffectsIndicatorDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyEffectsIndicatorDialogContent\", 0)",
+        "Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyClickCastingDialogContent\", 0)",
+        "Enemy: Enemy.UnitFramesUI_UnitFramePartDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyUnitFramePartDialogContent\", 0)",
+        "Pocket Palette: PP.CreateWindow -\u003e WindowGetAnchor(PP.settings.windows[\"main\"].name, 1)"
+      ],
+      "rationale": "function:global:CreateWindow and function:window:ButtonSetPressedFlag are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "Enemy: Enemy.UnitFramesUI_EffectsIndicatorDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyEffectsIndicatorDialogContent\", 0)",
+        "Enemy: Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyClickCastingDialogContent\", 0)",
+        "Enemy: Enemy.UnitFramesUI_UnitFramePartDialog_Open -\u003e ScrollWindowSetOffset(\"EnemyUnitFramePartDialogContent\", 0)",
+        "Pocket Palette: PP.CreateWindow -\u003e WindowGetAnchor(PP.settings.windows[\"main\"].name, 1)"
       ]
     },
     {
@@ -10569,48 +10611,6 @@
         "GuardLine: GuardLine.init -\u003e InterfaceCore.GetResolutionScale()",
         "GuardLine: GuardLine.init -\u003e LayoutEditor.RegisterEditCallback(GuardLine.OnLayoutEditorFinished)",
         "TidyChat: TidyChatFrames.Initialize -\u003e WindowRegisterCoreEventHandler(c_TEXT_ENTRY_WINDOW..\"ChannelButton\", \"OnRButtonUp\", \"TidyChat.ToggleOptions\")"
-      ]
-    },
-    {
-      "from": "function:global:CreateWindow",
-      "to": "function:window:WindowSetAlpha",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(shareWindowId..\"BackgroundInner\", .9)",
-        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(windowId..\"BackgroundInner\", .9)",
-        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"DeathWindow\", true)",
-        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"EA_Window_CityCaptureJoinPromptWindow\", true)"
-      ],
-      "rationale": "function:global:CreateWindow and function:window:WindowSetAlpha are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(shareWindowId..\"BackgroundInner\", .9)",
-        "Aura: AuraTooltip.OnInitialize -\u003e WindowSetAlpha(windowId..\"BackgroundInner\", .9)",
-        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"DeathWindow\", true)",
-        "Enemy: Enemy._Initialize -\u003e WindowSetMovable(\"EA_Window_CityCaptureJoinPromptWindow\", true)"
-      ]
-    },
-    {
-      "from": "function:global:CreateWindow",
-      "to": "function:window:WindowSetShowing",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "AdvancedPetAssist: APAGui.Show -\u003e CreateWindow(\"APAOptions\", true)",
-        "AdvancedPetAssist: APAGui.Show -\u003e WindowSetShowing(\"APAOptions\", true)",
-        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
-        "DAoCBuff: DAoCBuff.ShowMessageWindow -\u003e ScrollWindowUpdateScrollRect(\"DAoCBuffMessageWindowScrollWindow\")"
-      ],
-      "rationale": "function:global:CreateWindow and function:window:WindowSetShowing are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "AdvancedPetAssist: APAGui.Show -\u003e CreateWindow(\"APAOptions\", true)",
-        "AdvancedPetAssist: APAGui.Show -\u003e WindowSetShowing(\"APAOptions\", true)",
-        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
-        "DAoCBuff: DAoCBuff.ShowMessageWindow -\u003e ScrollWindowUpdateScrollRect(\"DAoCBuffMessageWindowScrollWindow\")"
       ]
     },
     {
@@ -10715,6 +10715,31 @@
     },
     {
       "from": "function:global:CreateWindowFromTemplate",
+      "to": "function:window:LayoutEditor.RegisterWindow",
+      "type": "commonly_used_with",
+      "confidence_score": 70,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "BuffHead: BuffHead.local.RegisterLayoutEditor -\u003e LayoutEditor.RegisterWindow(layoutWindow, displayName, L \"\", false, false, true)",
+        "BuffHead: BuffHead.local.RegisterLayoutEditor -\u003e WindowGetScale(container:GetName())",
+        "BuffHead: BuffHead.local.RegisterLayoutEditor -\u003e WindowSetScale(layoutWindow, WindowGetScale(container:GetName()))",
+        "BuffHead: RegisterLayoutEditor -\u003e LayoutEditor.RegisterWindow(layoutWindow, displayName, L \"\", false, false, true)",
+        "BuffHead: RegisterLayoutEditor -\u003e WindowGetScale(container:GetName())",
+        "DAoCBuff: DAoCBuffHeadTracker:Create -\u003e LayoutEditor.RegisterWindow(windowName, towstring(windowName), L \"Alternative Buffwindow. (Head)\", false, false, true, nil)"
+      ],
+      "rationale": "function:global:CreateWindowFromTemplate and function:window:LayoutEditor.RegisterWindow are commonly used together",
+      "weight": 6,
+      "evidence": [
+        "BuffHead: BuffHead.local.RegisterLayoutEditor -\u003e LayoutEditor.RegisterWindow(layoutWindow, displayName, L \"\", false, false, true)",
+        "BuffHead: BuffHead.local.RegisterLayoutEditor -\u003e WindowGetScale(container:GetName())",
+        "BuffHead: BuffHead.local.RegisterLayoutEditor -\u003e WindowSetScale(layoutWindow, WindowGetScale(container:GetName()))",
+        "BuffHead: RegisterLayoutEditor -\u003e LayoutEditor.RegisterWindow(layoutWindow, displayName, L \"\", false, false, true)",
+        "BuffHead: RegisterLayoutEditor -\u003e WindowGetScale(container:GetName())",
+        "DAoCBuff: DAoCBuffHeadTracker:Create -\u003e LayoutEditor.RegisterWindow(windowName, towstring(windowName), L \"Alternative Buffwindow. (Head)\", false, false, true, nil)"
+      ]
+    },
+    {
+      "from": "function:global:CreateWindowFromTemplate",
       "to": "function:window:WindowAddAnchor",
       "type": "commonly_used_with",
       "confidence_score": 79,
@@ -10786,31 +10811,6 @@
         "AdvancedRenownTrainer: AdvancedRenownTrainer.local.CreateAbilityWindow -\u003e WindowSetId(t.windowName, t.id)",
         "AdvancedRenownTrainer: CreateAbilityWindow -\u003e DynamicImageSetTexture(t.windowName..\"Square\", GetIconData(t.icon), 0, 0)",
         "AdvancedRenownTrainer: CreateAbilityWindow -\u003e GetIconData(t.icon)"
-      ]
-    },
-    {
-      "from": "function:global:CreateWindowFromTemplate",
-      "to": "function:window:WindowSetShowing",
-      "type": "commonly_used_with",
-      "confidence_score": 70,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "AutoMark: AutoMark.local.CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
-        "AutoMark: AutoMark.local.CreateMarker -\u003e GetIconData(career_icon_id)",
-        "AutoMark: CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
-        "AutoMark: CreateMarker -\u003e GetIconData(career_icon_id)",
-        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
-        "Enemy: Enemy.CombatLogUI_IDS_Update -\u003e Icons.GetCareerIconIDFromCareerLine(career)"
-      ],
-      "rationale": "function:global:CreateWindowFromTemplate and function:window:WindowSetShowing are commonly used together",
-      "weight": 6,
-      "evidence": [
-        "AutoMark: AutoMark.local.CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
-        "AutoMark: AutoMark.local.CreateMarker -\u003e GetIconData(career_icon_id)",
-        "AutoMark: CreateMarker -\u003e DynamicImageSetTexture(window_name..\"_Icon\", texture_name, texture_x, texture_y)",
-        "AutoMark: CreateMarker -\u003e GetIconData(career_icon_id)",
-        "BankArkel: BankArkel.CreatePackWin -\u003e WindowSetId(\"PackIcon\"..i, i)",
-        "Enemy: Enemy.CombatLogUI_IDS_Update -\u003e Icons.GetCareerIconIDFromCareerLine(career)"
       ]
     },
     {
@@ -15673,168 +15673,99 @@
       ]
     },
     {
-      "from": "ui:Anchor",
-      "to": "ui:Anchors",
-      "type": "commonly_used_with",
-      "confidence_score": 70,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "AbsPoint: XML element relationships",
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "Window: XML element relationships"
-      ],
-      "rationale": "ui:Anchor and ui:Anchors are commonly used together",
-      "weight": 6,
-      "evidence": [
-        "AbsPoint: XML element relationships",
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "Window: XML element relationships"
-      ]
-    },
-    {
-      "from": "ui:Anchor",
-      "to": "ui:Button",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "Window: XML element relationships"
-      ],
-      "rationale": "ui:Anchor and ui:Button are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "Window: XML element relationships"
-      ]
-    },
-    {
-      "from": "ui:Anchors",
-      "to": "ui:Button",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "Window: XML element relationships"
-      ],
-      "rationale": "ui:Anchors and ui:Button are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "Anchor: XML element relationships",
-        "Anchors: XML element relationships",
-        "Button: XML element relationships",
-        "Window: XML element relationships"
-      ]
-    },
-    {
       "from": "ui:Anchors",
       "to": "ui:EventHandlers",
       "type": "commonly_used_with",
-      "confidence_score": 75,
-      "evidence_count": 6,
+      "confidence_score": 59,
+      "evidence_count": 5,
       "evidence_sources": [
-        "Button: XML element relationships",
-        "ComboBox: XML element relationships",
-        "DynamicImage: XML element relationships",
         "EditBox: XML element relationships",
-        "FullResizeImage: XML element relationships",
-        "Label: XML element relationships"
+        "ListBox: XML element relationships",
+        "MapDisplay: XML element relationships",
+        "SliderBar: XML element relationships",
+        "VerticalScrollbar: XML element relationships"
       ],
       "rationale": "ui:Anchors and ui:EventHandlers are commonly used together",
-      "weight": 11,
+      "weight": 5,
       "evidence": [
-        "Button: XML element relationships",
-        "ComboBox: XML element relationships",
-        "DynamicImage: XML element relationships",
         "EditBox: XML element relationships",
-        "FullResizeImage: XML element relationships",
-        "Label: XML element relationships"
+        "ListBox: XML element relationships",
+        "MapDisplay: XML element relationships",
+        "SliderBar: XML element relationships",
+        "VerticalScrollbar: XML element relationships"
       ]
     },
     {
       "from": "ui:Anchors",
       "to": "ui:Size",
       "type": "commonly_used_with",
-      "confidence_score": 79,
+      "confidence_score": 75,
       "evidence_count": 6,
       "evidence_sources": [
         "AbsPoint: XML element relationships",
         "AnimatedImage: XML element relationships",
         "CircleImage: XML element relationships",
-        "ComboBox: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "DynamicImage: XML element relationships"
+        "EditBox: XML element relationships",
+        "HorizontalResizeImage: XML element relationships"
       ],
       "rationale": "ui:Anchors and ui:Size are commonly used together",
-      "weight": 15,
+      "weight": 11,
       "evidence": [
         "AbsPoint: XML element relationships",
         "AnimatedImage: XML element relationships",
         "CircleImage: XML element relationships",
-        "ComboBox: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "DynamicImage: XML element relationships"
+        "EditBox: XML element relationships",
+        "HorizontalResizeImage: XML element relationships"
       ]
     },
     {
       "from": "ui:Anchors",
       "to": "ui:Windows",
       "type": "commonly_used_with",
-      "confidence_score": 74,
+      "confidence_score": 71,
       "evidence_count": 6,
       "evidence_sources": [
         "AnimatedImage: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "EditBox: XML element relationships",
         "ListBox: XML element relationships",
         "LogDisplay: XML element relationships",
-        "MapDisplay: XML element relationships"
+        "MapDisplay: XML element relationships",
+        "ScrollWindow: XML element relationships"
       ],
       "rationale": "ui:Anchors and ui:Windows are commonly used together",
-      "weight": 10,
+      "weight": 7,
       "evidence": [
         "AnimatedImage: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "EditBox: XML element relationships",
         "ListBox: XML element relationships",
         "LogDisplay: XML element relationships",
-        "MapDisplay: XML element relationships"
+        "MapDisplay: XML element relationships",
+        "ScrollWindow: XML element relationships"
       ]
     },
     {
       "from": "ui:Button",
-      "to": "ui:Disabled",
+      "to": "ui:CircleImage",
       "type": "commonly_used_with",
       "confidence_score": 59,
       "evidence_count": 5,
       "evidence_sources": [
-        "OverlayTexCoords: XML element relationships",
-        "ResizeImages: XML element relationships",
+        "Anchors: XML element relationships",
+        "Size: XML element relationships",
         "TexCoords: XML element relationships",
-        "TexSlices: XML element relationships",
-        "TextColors: XML element relationships"
+        "TexDims: XML element relationships",
+        "Windows: XML element relationships"
       ],
-      "rationale": "ui:Button and ui:Disabled are commonly used together",
+      "rationale": "ui:Button and ui:CircleImage are commonly used together",
       "weight": 5,
       "evidence": [
-        "OverlayTexCoords: XML element relationships",
-        "ResizeImages: XML element relationships",
+        "Anchors: XML element relationships",
+        "Size: XML element relationships",
         "TexCoords: XML element relationships",
-        "TexSlices: XML element relationships",
-        "TextColors: XML element relationships"
+        "TexDims: XML element relationships",
+        "Windows: XML element relationships"
       ]
     },
     {
@@ -16241,31 +16172,6 @@
       "from": "ui:EventHandlers",
       "to": "ui:Size",
       "type": "commonly_used_with",
-      "confidence_score": 73,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "ComboBox: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "EditBox: XML element relationships",
-        "FullResizeImage: XML element relationships",
-        "Label: XML element relationships",
-        "ListBox: XML element relationships"
-      ],
-      "rationale": "ui:EventHandlers and ui:Size are commonly used together",
-      "weight": 9,
-      "evidence": [
-        "ComboBox: XML element relationships",
-        "DynamicImage: XML element relationships",
-        "EditBox: XML element relationships",
-        "FullResizeImage: XML element relationships",
-        "Label: XML element relationships",
-        "ListBox: XML element relationships"
-      ]
-    },
-    {
-      "from": "ui:EventHandlers",
-      "to": "ui:Windows",
-      "type": "commonly_used_with",
       "confidence_score": 59,
       "evidence_count": 5,
       "evidence_sources": [
@@ -16275,7 +16181,7 @@
         "SliderBar: XML element relationships",
         "VerticalScrollbar: XML element relationships"
       ],
-      "rationale": "ui:EventHandlers and ui:Windows are commonly used together",
+      "rationale": "ui:EventHandlers and ui:Size are commonly used together",
       "weight": 5,
       "evidence": [
         "EditBox: XML element relationships",
@@ -16617,22 +16523,20 @@
       "from": "ui:Size",
       "to": "ui:Windows",
       "type": "commonly_used_with",
-      "confidence_score": 72,
-      "evidence_count": 6,
+      "confidence_score": 59,
+      "evidence_count": 5,
       "evidence_sources": [
         "AnimatedImage: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "EditBox: XML element relationships",
         "ListBox: XML element relationships",
         "MapDisplay: XML element relationships",
         "ScrollWindow: XML element relationships"
       ],
       "rationale": "ui:Size and ui:Windows are commonly used together",
-      "weight": 8,
+      "weight": 5,
       "evidence": [
         "AnimatedImage: XML element relationships",
         "CooldownDisplay: XML element relationships",
-        "EditBox: XML element relationships",
         "ListBox: XML element relationships",
         "MapDisplay: XML element relationships",
         "ScrollWindow: XML element relationships"
@@ -16642,20 +16546,18 @@
       "from": "ui:Sizes",
       "to": "ui:TexCoords",
       "type": "commonly_used_with",
-      "confidence_score": 59,
-      "evidence_count": 5,
+      "confidence_score": 58,
+      "evidence_count": 4,
       "evidence_sources": [
         "BottomRight: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
         "Middle: XML element relationships",
         "TopLeft: XML element relationships",
         "VerticalResizeImage: XML element relationships"
       ],
       "rationale": "ui:Sizes and ui:TexCoords are commonly used together",
-      "weight": 5,
+      "weight": 4,
       "evidence": [
         "BottomRight: XML element relationships",
-        "HorizontalResizeImage: XML element relationships",
         "Middle: XML element relationships",
         "TopLeft: XML element relationships",
         "VerticalResizeImage: XML element relationships"
@@ -21176,6 +21078,1191 @@
       "evidence": [
         "Window declares XML event OnUpdate",
         "Window declares XML handler OnUpdate"
+      ]
+    },
+    {
+      "from": "ui:AnimatedImage",
+      "to": "data:constant:EA_MoraleButtonAnimation",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "AnimatedImage inherits XML template EA_MoraleButtonAnimation"
+      ],
+      "rationale": "ui:AnimatedImage inherits XML template data:constant:EA_MoraleButtonAnimation",
+      "weight": 1,
+      "evidence": [
+        "AnimatedImage inherits XML template EA_MoraleButtonAnimation"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_BottomTab",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_BottomTab"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_BottomTab",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_BottomTab"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_Default",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_Default"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_Default",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_Default"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultBigLeftArrow",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultBigLeftArrow"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultBigLeftArrow",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultBigLeftArrow"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultBigRightArrow",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultBigRightArrow"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultBigRightArrow",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultBigRightArrow"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultCheckBox",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultCheckBox"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultCheckBox",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultCheckBox"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultDown",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultDown"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultDown",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultDown"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultIconFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultIconFrame"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultIconFrame",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultIconFrame"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultIconFrame_Large",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultIconFrame_Large"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultIconFrame_Large",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultIconFrame_Large"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultIconFrame_Small",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultIconFrame_Small"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultIconFrame_Small",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultIconFrame_Small"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultListSort",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultListSort"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultListSort",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultListSort"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultMenuButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultMenuButton"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultMenuButton",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultMenuButton"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultMinus",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultMinus"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultMinus",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultMinus"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultPlus",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultPlus"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultPlus",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultPlus"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultResizeable",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultResizeable"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultResizeable",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultResizeable"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultSmallSquare",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultSmallSquare"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultSmallSquare",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultSmallSquare"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultText",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultText"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultText",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultText"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultToggleCircle",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultToggleCircle"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultToggleCircle",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultToggleCircle"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultUp",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultUp"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultUp",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultUp"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_DefaultWindowClose",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_DefaultWindowClose"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_DefaultWindowClose",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_DefaultWindowClose"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_ListSort",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_ListSort"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_ListSort",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_ListSort"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_ResizeIconFrame_NoNormalImage",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_ResizeIconFrame_NoNormalImage"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_ResizeIconFrame_NoNormalImage",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_ResizeIconFrame_NoNormalImage"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Button_Tab",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Button_Tab"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Button_Tab",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Button_Tab"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_FilterMenuButtonTemplate",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_FilterMenuButtonTemplate"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_FilterMenuButtonTemplate",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_FilterMenuButtonTemplate"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_ScrollBar_DefaultDownArrowButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_ScrollBar_DefaultDownArrowButton"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_ScrollBar_DefaultDownArrowButton",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_ScrollBar_DefaultDownArrowButton"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_ScrollBar_DefaultUpArrowButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_ScrollBar_DefaultUpArrowButton"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_ScrollBar_DefaultUpArrowButton",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_ScrollBar_DefaultUpArrowButton"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Templates_Color_Picker_Button",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Templates_Color_Picker_Button"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Templates_Color_Picker_Button",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Templates_Color_Picker_Button"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Window_MacroDetailIconButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Window_MacroDetailIconButton"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Window_MacroDetailIconButton",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Window_MacroDetailIconButton"
+      ]
+    },
+    {
+      "from": "ui:Button",
+      "to": "data:constant:EA_Window_MacroIconButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button inherits XML template EA_Window_MacroIconButton"
+      ],
+      "rationale": "ui:Button inherits XML template data:constant:EA_Window_MacroIconButton",
+      "weight": 1,
+      "evidence": [
+        "Button inherits XML template EA_Window_MacroIconButton"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "data:constant:EA_ComboBox_DefaultResizable",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizable"
+      ],
+      "rationale": "ui:ComboBox inherits XML template data:constant:EA_ComboBox_DefaultResizable",
+      "weight": 1,
+      "evidence": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizable"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "data:constant:EA_ComboBox_DefaultResizableLarge",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableLarge"
+      ],
+      "rationale": "ui:ComboBox inherits XML template data:constant:EA_ComboBox_DefaultResizableLarge",
+      "weight": 1,
+      "evidence": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableLarge"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "data:constant:EA_ComboBox_DefaultResizableMedium",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableMedium"
+      ],
+      "rationale": "ui:ComboBox inherits XML template data:constant:EA_ComboBox_DefaultResizableMedium",
+      "weight": 1,
+      "evidence": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableMedium"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "data:constant:EA_ComboBox_DefaultResizableSmall",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableSmall"
+      ],
+      "rationale": "ui:ComboBox inherits XML template data:constant:EA_ComboBox_DefaultResizableSmall",
+      "weight": 1,
+      "evidence": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizableSmall"
+      ]
+    },
+    {
+      "from": "ui:ComboBox",
+      "to": "data:constant:EA_ComboBox_DefaultResizable_Fixed",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizable_Fixed"
+      ],
+      "rationale": "ui:ComboBox inherits XML template data:constant:EA_ComboBox_DefaultResizable_Fixed",
+      "weight": 1,
+      "evidence": [
+        "ComboBox inherits XML template EA_ComboBox_DefaultResizable_Fixed"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Default_CharacterImage",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Default_CharacterImage"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Default_CharacterImage",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Default_CharacterImage"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Default_TrainingImage",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Default_TrainingImage"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Default_TrainingImage",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Default_TrainingImage"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Image_DefaultIcon",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Image_DefaultIcon"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Image_DefaultIcon",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Image_DefaultIcon"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Image_DefaultIconFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Image_DefaultIconFrame"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Image_DefaultIconFrame",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Image_DefaultIconFrame"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_ListSortDownArrow",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_ListSortDownArrow"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_ListSortDownArrow",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_ListSortDownArrow"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_ListSortUpArrow",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_ListSortUpArrow"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_ListSortUpArrow",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_ListSortUpArrow"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Templates_BrassCoin",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Templates_BrassCoin"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Templates_BrassCoin",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Templates_BrassCoin"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Templates_GoldCoin",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Templates_GoldCoin"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Templates_GoldCoin",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Templates_GoldCoin"
+      ]
+    },
+    {
+      "from": "ui:DynamicImage",
+      "to": "data:constant:EA_Templates_SilverCoin",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "DynamicImage inherits XML template EA_Templates_SilverCoin"
+      ],
+      "rationale": "ui:DynamicImage inherits XML template data:constant:EA_Templates_SilverCoin",
+      "weight": 1,
+      "evidence": [
+        "DynamicImage inherits XML template EA_Templates_SilverCoin"
+      ]
+    },
+    {
+      "from": "ui:EditBox",
+      "to": "data:constant:EA_EditBox_DefaultFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "EditBox inherits XML template EA_EditBox_DefaultFrame"
+      ],
+      "rationale": "ui:EditBox inherits XML template data:constant:EA_EditBox_DefaultFrame",
+      "weight": 1,
+      "evidence": [
+        "EditBox inherits XML template EA_EditBox_DefaultFrame"
+      ]
+    },
+    {
+      "from": "ui:EditBox",
+      "to": "data:constant:EA_EditBox_DefaultFrame_Multiline",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "EditBox inherits XML template EA_EditBox_DefaultFrame_Multiline"
+      ],
+      "rationale": "ui:EditBox inherits XML template data:constant:EA_EditBox_DefaultFrame_Multiline",
+      "weight": 1,
+      "evidence": [
+        "EditBox inherits XML template EA_EditBox_DefaultFrame_Multiline"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_Button_ResizeIconFrameNormal",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_Button_ResizeIconFrameNormal"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_Button_ResizeIconFrameNormal",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_Button_ResizeIconFrameNormal"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_BlackTransparent",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_BlackTransparent"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_BlackTransparent",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_BlackTransparent"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_DefaultFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_DefaultFrame"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_DefaultFrame",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_DefaultFrame"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_MetalFill",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_MetalFill"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_MetalFill",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_MetalFill"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_TintableFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_TintableFrame"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_TintableFrame",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_TintableFrame"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_TintableSolidBackground",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_TintableSolidBackground"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_TintableSolidBackground",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_TintableSolidBackground"
+      ]
+    },
+    {
+      "from": "ui:FullResizeImage",
+      "to": "data:constant:EA_FullResizeImage_WhiteTransparent",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_WhiteTransparent"
+      ],
+      "rationale": "ui:FullResizeImage inherits XML template data:constant:EA_FullResizeImage_WhiteTransparent",
+      "weight": 1,
+      "evidence": [
+        "FullResizeImage inherits XML template EA_FullResizeImage_WhiteTransparent"
+      ]
+    },
+    {
+      "from": "ui:HorizontalResizeImage",
+      "to": "data:constant:EA_BrownHorizontalRule",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "HorizontalResizeImage inherits XML template EA_BrownHorizontalRule"
+      ],
+      "rationale": "ui:HorizontalResizeImage inherits XML template data:constant:EA_BrownHorizontalRule",
+      "weight": 1,
+      "evidence": [
+        "HorizontalResizeImage inherits XML template EA_BrownHorizontalRule"
+      ]
+    },
+    {
+      "from": "ui:HorizontalResizeImage",
+      "to": "data:constant:EA_HorizontalResizeImage_DefaultTopFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "HorizontalResizeImage inherits XML template EA_HorizontalResizeImage_DefaultTopFrame"
+      ],
+      "rationale": "ui:HorizontalResizeImage inherits XML template data:constant:EA_HorizontalResizeImage_DefaultTopFrame",
+      "weight": 1,
+      "evidence": [
+        "HorizontalResizeImage inherits XML template EA_HorizontalResizeImage_DefaultTopFrame"
+      ]
+    },
+    {
+      "from": "ui:HorizontalResizeImage",
+      "to": "data:constant:EA_HorizontalResizeImage_TabSeparatorMiddle",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "HorizontalResizeImage inherits XML template EA_HorizontalResizeImage_TabSeparatorMiddle"
+      ],
+      "rationale": "ui:HorizontalResizeImage inherits XML template data:constant:EA_HorizontalResizeImage_TabSeparatorMiddle",
+      "weight": 1,
+      "evidence": [
+        "HorizontalResizeImage inherits XML template EA_HorizontalResizeImage_TabSeparatorMiddle"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "data:constant:EA_Label_DefaultSubHeading",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Label inherits XML template EA_Label_DefaultSubHeading"
+      ],
+      "rationale": "ui:Label inherits XML template data:constant:EA_Label_DefaultSubHeading",
+      "weight": 1,
+      "evidence": [
+        "Label inherits XML template EA_Label_DefaultSubHeading"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "data:constant:EA_Label_DefaultText",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Label inherits XML template EA_Label_DefaultText"
+      ],
+      "rationale": "ui:Label inherits XML template data:constant:EA_Label_DefaultText",
+      "weight": 1,
+      "evidence": [
+        "Label inherits XML template EA_Label_DefaultText"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "data:constant:EA_Label_DefaultText_Small",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Label inherits XML template EA_Label_DefaultText_Small"
+      ],
+      "rationale": "ui:Label inherits XML template data:constant:EA_Label_DefaultText_Small",
+      "weight": 1,
+      "evidence": [
+        "Label inherits XML template EA_Label_DefaultText_Small"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "data:constant:EA_Settings_ItemTitle",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Label inherits XML template EA_Settings_ItemTitle"
+      ],
+      "rationale": "ui:Label inherits XML template data:constant:EA_Settings_ItemTitle",
+      "weight": 1,
+      "evidence": [
+        "Label inherits XML template EA_Settings_ItemTitle"
+      ]
+    },
+    {
+      "from": "ui:Label",
+      "to": "data:constant:EA_Settings_SectionTitle",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Label inherits XML template EA_Settings_SectionTitle"
+      ],
+      "rationale": "ui:Label inherits XML template data:constant:EA_Settings_SectionTitle",
+      "weight": 1,
+      "evidence": [
+        "Label inherits XML template EA_Settings_SectionTitle"
+      ]
+    },
+    {
+      "from": "ui:SliderBar",
+      "to": "data:constant:EA_Default_SliderBar",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "SliderBar inherits XML template EA_Default_SliderBar"
+      ],
+      "rationale": "ui:SliderBar inherits XML template data:constant:EA_Default_SliderBar",
+      "weight": 1,
+      "evidence": [
+        "SliderBar inherits XML template EA_Default_SliderBar"
+      ]
+    },
+    {
+      "from": "ui:StatusBar",
+      "to": "data:constant:EA_StatusBar_DefaultTintable",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "StatusBar inherits XML template EA_StatusBar_DefaultTintable"
+      ],
+      "rationale": "ui:StatusBar inherits XML template data:constant:EA_StatusBar_DefaultTintable",
+      "weight": 1,
+      "evidence": [
+        "StatusBar inherits XML template EA_StatusBar_DefaultTintable"
+      ]
+    },
+    {
+      "from": "ui:VerticalScrollbar",
+      "to": "data:constant:EA_ScrollBar_ChatVertical",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "VerticalScrollbar inherits XML template EA_ScrollBar_ChatVertical"
+      ],
+      "rationale": "ui:VerticalScrollbar inherits XML template data:constant:EA_ScrollBar_ChatVertical",
+      "weight": 1,
+      "evidence": [
+        "VerticalScrollbar inherits XML template EA_ScrollBar_ChatVertical"
+      ]
+    },
+    {
+      "from": "ui:VerticalScrollbar",
+      "to": "data:constant:EA_ScrollBar_DefaultVerticalChain",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "VerticalScrollbar inherits XML template EA_ScrollBar_DefaultVerticalChain"
+      ],
+      "rationale": "ui:VerticalScrollbar inherits XML template data:constant:EA_ScrollBar_DefaultVerticalChain",
+      "weight": 1,
+      "evidence": [
+        "VerticalScrollbar inherits XML template EA_ScrollBar_DefaultVerticalChain"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_LabelCheckButton",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_LabelCheckButton"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_LabelCheckButton",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_LabelCheckButton"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_TitleBar_Default",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_TitleBar_Default"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_TitleBar_Default",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_TitleBar_Default"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_CityRating",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_CityRating"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_CityRating",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_CityRating"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_ComboBoxMenuBackground",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_ComboBoxMenuBackground"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_ComboBoxMenuBackground",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_ComboBoxMenuBackground"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_Default",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_Default"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_Default",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_Default"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultBackgroundFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultBackgroundFrame"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultBackgroundFrame",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultBackgroundFrame"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultButtonBottomFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultButtonBottomFrame"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultButtonBottomFrame",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultButtonBottomFrame"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultContextMenuFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultContextMenuFrame"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultContextMenuFrame",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultContextMenuFrame"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultFrame",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultFrame"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultFrame",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultFrame"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultFrameStatusBar",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultFrameStatusBar"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultFrameStatusBar",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultFrameStatusBar"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultSeparator",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultSeparator"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultSeparator",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultSeparator"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultTooltipBackground",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultTooltipBackground"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultTooltipBackground",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultTooltipBackground"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_DefaultVerticalSeparator",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_DefaultVerticalSeparator"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_DefaultVerticalSeparator",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_DefaultVerticalSeparator"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_TabSeparatorLeftSide",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_TabSeparatorLeftSide"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_TabSeparatorLeftSide",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_TabSeparatorLeftSide"
+      ]
+    },
+    {
+      "from": "ui:Window",
+      "to": "data:constant:EA_Window_TabSeparatorRightSide",
+      "type": "inherited_from",
+      "confidence_score": 82,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window inherits XML template EA_Window_TabSeparatorRightSide"
+      ],
+      "rationale": "ui:Window inherits XML template data:constant:EA_Window_TabSeparatorRightSide",
+      "weight": 1,
+      "evidence": [
+        "Window inherits XML template EA_Window_TabSeparatorRightSide"
       ]
     },
     {

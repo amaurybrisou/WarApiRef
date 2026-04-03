@@ -1071,62 +1071,62 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- ClosetGoblinCharacterWindow.HideShowHelm
-- ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
-- BankArkel.CreatePackWin
-- ClosetGoblinCharacterWindow.OnShow
-- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
-- Enemy.ScenarioInfoInitialize
-- ClosetGoblinCharacterWindow.UpdateSetRow
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.MarksUI_MarkConfigDialog_Open
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- PotionBar.local.UpdateButton
-- Enemy.CombatLogUI_StatsWindow_Open
-- ClosetGoblinCharacterWindow.ShowCloakHeraldry
-- AggroMeter.Initialize
-- ClosetGoblinCharacterWindow.UpdateActionBarSettings
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
-- ClosetGoblinCharacterWindow.ShowShowCloakOnly
-- Enemy.IntercomUI_ChooseChannelDialog_Open
-- ClosetGoblinCharacterWindow.HotbarChangeToggled1
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
-- ClosetGoblinCharacterWindow.HotbarChangeToggled4
+- Enemy.ScenarioInfoInitialize
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- PotionBar.UpdateButton
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- ClosetGoblinCharacterWindow.UpdateActionBarSettings
 - DAoCBuff.ShowMessageWindow
-- Enemy.UI_ConfigDialog_OnSectionSelChanged
-- ClosetGoblinCharacterWindow.ShowCloak
-- ClosetGoblinCharacterWindow.HideCloakOptions
-- ClosetGoblinCharacterWindow.ShowCloakOptions
-- Enemy.IntercomUI_IntercomDialog_Open
-- PotionBarSettings.OnAboutShown
+- ClosetGoblinCharacterWindow.HotbarChangeToggled1
 - ClosetGoblinCharacterWindow.ShowShowHelm
-- ClosetGoblinCharacterWindow.ShowHelm
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- ClosetGoblinCharacterWindow.ShowCloak
 - ClosetGoblinCharacterWindow.OnInitialize
-- ClosetGoblinCharacterWindow.HotbarChangeToggled5
-- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- Killer.Initialize
-- WSCT.ColorOnInitialize
-- LibWBTogglerManager.Initialize
-- Enemy.UI_ConfigDialog_Open
-- Enemy.IntercomInitialize
 - DAoCBuffSettings.SetLabels
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- Enemy.IntercomUI_IntercomDialog_Open
+- PotionBar.local.UpdateButton
+- TidyRollOptions.Initialize
+- ClosetGoblinCharacterWindow.ShowShowCloakOnly
+- ClosetGoblinCharacterWindow.ShowCloakHeraldry
+- Enemy.UI_ConfigDialog_Open
+- AggroMeter.Initialize
+- ClosetGoblinCharacterWindow.ShowShowCloakHeraldryOnly
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- WSCT.ColorOnInitialize
+- APAGui.OnShown
+- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Killer.Initialize
+- RoR_SoR.Restack
+- ClosetGoblinCharacterWindow.OnShow
+- ClosetGoblinCharacterWindow.HotbarChangeToggled4
+- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- ClosetGoblinZoneWindow.OnInitialize
+- LibWBTogglerManager.Initialize
+- ClosetGoblinCharacterWindow.HotbarChangeToggled3
+- ClosetGoblinCharacterWindow.HideCloakOptions
+- ClosetGoblinCharacterWindow.UseItemRackToggled
+- Enemy.IntercomUI_ChooseChannelDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- ClosetGoblinCharacterWindow.UpdateSetRow
+- Enemy.IntercomInitialize
+- Enemy.MarksUI_MarkConfigDialog_Open
+- Enemy.CombatLogUI_StatsWindow_Open
+- ClosetGoblinCharacterWindow.ShowHelm
+- ClosetGoblinCharacterWindow.HideShowHelm
+- ClosetGoblinCharacterWindow.ShowShowHelmOnly
+- ClosetGoblinCharacterWindow.ShowCloakOptions
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- PotionBarSettings.OnAboutShown
+- BankArkel.CreatePackWin
+- ClosetGoblinCharacterWindow.HotbarChangeToggled5
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - AggroMeter.OnTabLBU
 - ClosetGoblinCharacterWindow.HotbarChangeToggled2
-- RoR_SoR.Restack
-- TidyRollOptions.Initialize
-- APAGui.OnShown
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- PotionBar.UpdateButton
-- ClosetGoblinZoneWindow.OnInitialize
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- ClosetGoblinCharacterWindow.ShowShowHelmOnly
-- ClosetGoblinCharacterWindow.UseItemRackToggled
-- ClosetGoblinCharacterWindow.HotbarChangeToggled3
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
 
 
 ## Binding Resolution
@@ -1184,7 +1184,19 @@ Confidence: MEDIUM
 - [Cursor.PickUp](../../globals/functions/global_Cursor.PickUp.md) (HIGH 100/100) - Global Function
 - [DialogManager.MakeOneButtonDialog](../../globals/functions/global_DialogManager.MakeOneButtonDialog.md) (HIGH 100/100) - Global Function
 - [DialogManager.MakeTwoButtonDialog](../../globals/functions/global_DialogManager.MakeTwoButtonDialog.md) (HIGH 100/100) - Global Function
+- [EA_Button_Default](../../globals/constants/constant_EA_Button_Default.md) (HIGH 100/100) - Constant
+- [EA_Button_DefaultCheckBox](../../globals/constants/constant_EA_Button_DefaultCheckBox.md) (HIGH 100/100) - Constant
+- [EA_Button_DefaultIconFrame_Large](../../globals/constants/constant_EA_Button_DefaultIconFrame_Large.md) (HIGH 100/100) - Constant
+- [EA_Button_DefaultListSort](../../globals/constants/constant_EA_Button_DefaultListSort.md) (HIGH 100/100) - Constant
+- [EA_Button_DefaultMenuButton](../../globals/constants/constant_EA_Button_DefaultMenuButton.md) (HIGH 100/100) - Constant
+- [EA_Button_DefaultResizeable](../../globals/constants/constant_EA_Button_DefaultResizeable.md) (HIGH 100/100) - Constant
+- [EA_Button_DefaultSmallSquare](../../globals/constants/constant_EA_Button_DefaultSmallSquare.md) (HIGH 100/100) - Constant
+- [EA_Button_DefaultWindowClose](../../globals/constants/constant_EA_Button_DefaultWindowClose.md) (HIGH 100/100) - Constant
+- [EA_Button_ListSort](../../globals/constants/constant_EA_Button_ListSort.md) (HIGH 100/100) - Constant
+- [EA_Button_ResizeIconFrame_NoNormalImage](../../globals/constants/constant_EA_Button_ResizeIconFrame_NoNormalImage.md) (HIGH 100/100) - Constant
+- [EA_Button_Tab](../../globals/constants/constant_EA_Button_Tab.md) (HIGH 100/100) - Constant
 - [EA_ChatWindow.InsertText](../../globals/functions/global_EA_ChatWindow.InsertText.md) (HIGH 100/100) - Global Function
+- [EA_Window_MacroDetailIconButton](../../globals/constants/constant_EA_Window_MacroDetailIconButton.md) (HIGH 100/100) - Constant
 - [GameData.Player.GetRenownRefundCost](../../globals/functions/global_GameData.Player.GetRenownRefundCost.md) (HIGH 100/100) - Global Function
 - [OverlayOffset](element_OverlayOffset.md) (HIGH 100/100) - XML Element Type
 - [OverlaySize](element_OverlaySize.md) (HIGH 100/100) - XML Element Type
@@ -1209,6 +1221,22 @@ Confidence: MEDIUM
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
 - [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
 - [DialogManager.MakeTextEntryDialog](../../globals/functions/global_DialogManager.MakeTextEntryDialog.md) (HIGH 98/100) - Global Function
+- [EA_Button_BottomTab](../../globals/constants/constant_EA_Button_BottomTab.md) (HIGH 90/100) - Constant
+- [EA_Button_DefaultBigLeftArrow](../../globals/constants/constant_EA_Button_DefaultBigLeftArrow.md) (HIGH 90/100) - Constant
+- [EA_Button_DefaultBigRightArrow](../../globals/constants/constant_EA_Button_DefaultBigRightArrow.md) (HIGH 90/100) - Constant
+- [EA_Button_DefaultDown](../../globals/constants/constant_EA_Button_DefaultDown.md) (HIGH 90/100) - Constant
+- [EA_Button_DefaultIconFrame](../../globals/constants/constant_EA_Button_DefaultIconFrame.md) (HIGH 90/100) - Constant
+- [EA_Button_DefaultIconFrame_Small](../../globals/constants/constant_EA_Button_DefaultIconFrame_Small.md) (HIGH 90/100) - Constant
+- [EA_Button_DefaultMinus](../../globals/constants/constant_EA_Button_DefaultMinus.md) (HIGH 90/100) - Constant
+- [EA_Button_DefaultPlus](../../globals/constants/constant_EA_Button_DefaultPlus.md) (HIGH 90/100) - Constant
+- [EA_Button_DefaultText](../../globals/constants/constant_EA_Button_DefaultText.md) (HIGH 90/100) - Constant
+- [EA_Button_DefaultToggleCircle](../../globals/constants/constant_EA_Button_DefaultToggleCircle.md) (HIGH 90/100) - Constant
+- [EA_Button_DefaultUp](../../globals/constants/constant_EA_Button_DefaultUp.md) (HIGH 90/100) - Constant
+- [EA_FilterMenuButtonTemplate](../../globals/constants/constant_EA_FilterMenuButtonTemplate.md) (HIGH 90/100) - Constant
+- [EA_ScrollBar_DefaultDownArrowButton](../../globals/constants/constant_EA_ScrollBar_DefaultDownArrowButton.md) (HIGH 90/100) - Constant
+- [EA_ScrollBar_DefaultUpArrowButton](../../globals/constants/constant_EA_ScrollBar_DefaultUpArrowButton.md) (HIGH 90/100) - Constant
+- [EA_Templates_Color_Picker_Button](../../globals/constants/constant_EA_Templates_Color_Picker_Button.md) (HIGH 90/100) - Constant
+- [EA_Window_MacroIconButton](../../globals/constants/constant_EA_Window_MacroIconButton.md) (HIGH 90/100) - Constant
 - [ButtonGetText](../../window_api/functions/window_ButtonGetText.md) (HIGH 80/100) - Window Function
 - [DestroyWindow](../../globals/functions/global_DestroyWindow.md) (HIGH 75/100) - Global Function
 - [Anchor](element_Anchor.md) (MEDIUM 55/100) - XML Element Type
@@ -1219,11 +1247,12 @@ Confidence: MEDIUM
 ## Used With
 
 - [ButtonGetDisabledFlag](../../window_api/functions/window_ButtonGetDisabledFlag.md) (HIGH 100/100) - Window Function
+- [CircleImage](element_CircleImage.md) (HIGH 100/100) - XML Element Type
 - [ComboBoxGetSelectedMenuItem](../../window_api/functions/window_ComboBoxGetSelectedMenuItem.md) (HIGH 100/100) - Window Function
 - [ComboBoxGetSelectedText](../../window_api/functions/window_ComboBoxGetSelectedText.md) (HIGH 100/100) - Window Function
 - [OnLButtonDown](../handlers/handler_OnLButtonDown.md) (HIGH 100/100) - XML Event
-- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [OnLButtonUp](../../events/window_events/window_event_OnLButtonUp.md) (HIGH 100/100) - Window Event
+- [OnLButtonUp](../handlers/handler_OnLButtonUp.md) (HIGH 100/100) - XML Event
 - [OnMouseDrag](../handlers/handler_OnMouseDrag.md) (HIGH 100/100) - XML Event
 - [OnMouseOver](../handlers/handler_OnMouseOver.md) (HIGH 100/100) - XML Event
 - [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) (HIGH 100/100) - XML Event
@@ -1234,9 +1263,6 @@ Confidence: MEDIUM
 - [WindowGetParent](../../window_api/functions/window_WindowGetParent.md) (HIGH 100/100) - Window Function
 - [WindowSetShowing](../../window_api/functions/window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [wstring.match](../../globals/functions/global_wstring.match.md) (HIGH 100/100) - Global Function
-- [Anchor](element_Anchor.md) (MEDIUM 55/100) - XML Element Type
-- [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
-- [Disabled](element_Disabled.md) (MEDIUM 45/100) - XML Element Type
 
 ## Triggered By
 

@@ -770,6 +770,7 @@ Observed 2 times as an unnamed child.
 
 ## Related APIs
 
+- [EA_MoraleButtonAnimation](../../globals/constants/constant_EA_MoraleButtonAnimation.md) (HIGH 100/100) - Constant
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
 - [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T03:16:50.193737465Z",
+  "generated_at": "2026-04-03T03:53:01.756023665Z",
   "frequent_call_chains": [
     {
       "id": "call_chain:xml_event.OnUpdate_function.window.WindowSetShowing",
@@ -2280,46 +2280,6 @@
       "weight": 16
     },
     {
-      "id": "combination:ui.Anchors_ui.Size",
-      "type": "common_combination",
-      "title": "Anchors + Size",
-      "description": "Observed together in the same inferred usage contexts.",
-      "participants": [
-        {
-          "id": "ui:Anchors",
-          "label": "Anchors",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Anchors.md",
-          "confidence": "MEDIUM",
-          "score": 55,
-          "summary": "Observed XML element type instantiated by 32 addons."
-        },
-        {
-          "id": "ui:Size",
-          "label": "Size",
-          "type": "ui_element",
-          "category": "XML Element Type",
-          "path": "xml/element_types/element_Size.md",
-          "confidence": "HIGH",
-          "score": 100,
-          "summary": "Observed XML element type instantiated by 33 addons."
-        }
-      ],
-      "flow": [
-        "Anchors \u003c-\u003e Size"
-      ],
-      "evidence": [
-        "AbsPoint: XML element relationships",
-        "AnimatedImage: XML element relationships",
-        "CircleImage: XML element relationships",
-        "ComboBox: XML element relationships",
-        "CooldownDisplay: XML element relationships",
-        "DynamicImage: XML element relationships"
-      ],
-      "weight": 15
-    },
-    {
       "id": "combination:function.global.CreateWindowFromTemplate_function.global.GetIconData",
       "type": "common_combination",
       "title": "CreateWindowFromTemplate + GetIconData",
@@ -2436,6 +2396,46 @@
         "AnywhereTrainerAdditions: AnywhereTrainerAdditions.EquipmentLButtonDown -\u003e EA_ChatWindow.InsertItemLink(itemData)",
         "Enemy: Enemy.ConfigurationWindow_OnMacroMouseDrag -\u003e Cursor.IconOnCursor()",
         "Enemy: Enemy.ConfigurationWindow_OnMacroMouseDrag -\u003e Cursor.PickUp(Cursor.SOURCE_MACRO, p.macroId, p.macroId, p.macroIconNum, false)"
+      ],
+      "weight": 15
+    },
+    {
+      "id": "combination:function.window.DynamicImageSetTexture_function.window.DynamicImageSetTextureDimensions",
+      "type": "common_combination",
+      "title": "DynamicImageSetTexture + DynamicImageSetTextureDimensions",
+      "description": "Observed together in the same inferred usage contexts.",
+      "participants": [
+        {
+          "id": "function:window:DynamicImageSetTexture",
+          "label": "DynamicImageSetTexture",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_DynamicImageSetTexture.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed mutating runtime image resources on existing controls."
+        },
+        {
+          "id": "function:window:DynamicImageSetTextureDimensions",
+          "label": "DynamicImageSetTextureDimensions",
+          "type": "function",
+          "category": "Window Function",
+          "path": "window_api/functions/window_DynamicImageSetTextureDimensions.md",
+          "confidence": "HIGH",
+          "score": 100,
+          "summary": "Observed mutating runtime image resources on existing controls."
+        }
+      ],
+      "flow": [
+        "DynamicImageSetTexture \u003c-\u003e DynamicImageSetTextureDimensions"
+      ],
+      "evidence": [
+        "BuffHead: BuffHead.local.SetTextureButton -\u003e DynamicImageSetTextureDimensions(textureButton..\"Texture\", dimensions.Width, dimensions.Height)",
+        "BuffHead: SetTextureButton -\u003e DynamicImageSetTextureDimensions(textureButton..\"Texture\", dimensions.Width, dimensions.Height)",
+        "Enemy: Enemy.UnitFramePart_ApplyTexture -\u003e DynamicImageSetTextureDimensions(windowName, texture.dx, texture.dy)",
+        "Enemy: Enemy.UnitFramesParts_CareerIconInitialize -\u003e Icons.GetCareerIconIDFromCareerLine(cache.career)",
+        "PartyCast: PartyCast.FetchedText -\u003e PartyUtils.GetPartyData()",
+        "PartyCast: PartyCast.FetchedText -\u003e StatusBarSetBackgroundTint(\"PartyCastWindow\"..PlayerNumber..\"TimerBar\", DefaultColor.BLACK.r, DefaultColor.BLACK.g, DefaultColor.BLACK.b)"
       ],
       "weight": 15
     }

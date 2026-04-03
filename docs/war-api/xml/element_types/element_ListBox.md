@@ -98,11 +98,11 @@ Observed XML element type instantiated by 12 addons.
 
 | Event | Category | Common Lua Bindings | Expected Callback | Args Confidence |
 |-------|----------|---------------------|-------------------|-----------------|
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Enemy.UnitFramesUI_ConfigDialog_OnClickCastingsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnUnitFramePartsListLButtonUp, Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListLButtonUp, TidyRoll.CustomAutoRoll.OnListLbuttonUp | `flags, x, y` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | Enemy.UnitFramesUI_ConfigDialog_OnClickCastingsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnUnitFramePartsListLButtonUp, Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListLButtonUp, TidyRoll.CustomAutoRoll.OnListLbuttonUp | `function(...)` | LOW |
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.KillSpamUI_KillSpamDialog_OnMouseOver | `function()` | MEDIUM |
 | [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | Enemy.KillSpamUI_KillSpamDialog_OnMouseOverEnd | `function(...)` | LOW |
 | [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | AggroMeter.PickedListMenu | `flags, x, y` | MEDIUM |
-| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | , Enemy.UnitFramesUI_ConfigDialog_OnClickCastingsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnUnitFramePartsListLButtonUp, Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListLButtonUp, TidyRoll.CustomAutoRoll.OnListLbuttonUp | `flags, x, y` | MEDIUM |
+| [OnLButtonUp](../handlers/handler_OnLButtonUp.md) | input | , Enemy.UnitFramesUI_ConfigDialog_OnClickCastingsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnEffectsIndicatorsListLButtonUp, Enemy.UnitFramesUI_ConfigDialog_OnUnitFramePartsListLButtonUp, Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListLButtonUp, TidyRoll.CustomAutoRoll.OnListLbuttonUp | `flags, x, y` | LOW |
 | [OnMouseOver](../handlers/handler_OnMouseOver.md) | input | Enemy.KillSpamUI_KillSpamDialog_OnMouseOver | `` |  |
 | [OnMouseOverEnd](../handlers/handler_OnMouseOverEnd.md) | input | Enemy.KillSpamUI_KillSpamDialog_OnMouseOverEnd | `` |  |
 | [OnRButtonUp](../handlers/handler_OnRButtonUp.md) | input | AggroMeter.PickedListMenu | `flags, x, y` | MEDIUM |
@@ -244,12 +244,12 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- DAoCBuffSettings.Change_Setting
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - ClosetGoblinCharacterWindow.UpdateHighlightOnRow
 - ClosetGoblinZoneWindow.UpdateHighlightOnRow
-- DAoCBuffSettings.CreateOptionswindow
+- DAoCBuffSettings.Change_Setting
 - DAoCBuffSettings.SetLabels
+- DAoCBuffSettings.CreateOptionswindow
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 
 
 ## Binding Resolution

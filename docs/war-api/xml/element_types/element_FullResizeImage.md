@@ -799,31 +799,31 @@ Confidence: HIGH
 
 ## Lua Functions Manipulating This Type
 
-- Enemy.CombatLogUI_IDS_Initialize
-- Killer.ShowRowTooltip
-- MoraleCircle.OnSetCustomColorFull
-- WHMCore.ApplyBackgroundFillColor
-- WHMGui.RefreshConfigurationWindow
+- WSCT.ColorOnButtonUp
 - Enemy.EnemyEffectsIndicator:BoundingBoxSetShowing
-- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
-- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
-- Killer.Initialize
+- Enemy.MarksInitialize
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - Killer.ShowPersonalStatsTooltip
+- Killer.ShowRowTooltip
+- MoraleCircle.ColorChanger2
+- MoraleCircle.OnSetCustomColorFill
+- Enemy._Initialize
+- Enemy.ScenarioInfoUI_ScenarioInfoDialog_Update
+- Enemy.CombatLogUI_IDS_Initialize
+- MoraleCircle.OnSetCustomColorFull
+- MoraleCircle.ColorChanger4
+- MoraleCircle.OnSetCustomColorEmpty
+- WHMCore.ApplyBackgroundFillColor
+- Killer.Initialize
 - Killer.ShowTopKillersTooltip
 - MoraleCircle.OnSetCustomColor
-- MoraleCircle.OnSetCustomColorFill
-- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
-- MoraleCircle.ColorChanger4
-- WSCT.OnSetCustomColor
-- MoraleCircle.ColorChanger3
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - MoraleCircle.ColorChanger1
-- MoraleCircle.ColorChanger2
-- MoraleCircle.OnSetCustomColorEmpty
 - WSCT.OnLButtonUpColorPicker
-- Enemy.MarksInitialize
-- WSCT.ColorOnButtonUp
-- Enemy._Initialize
+- Enemy.EnemyUnitFrame:BoundingBoxSetShowing
+- Enemy.EnemyUnitFramePart:BoundingBoxSetShowing
+- MoraleCircle.ColorChanger3
+- WSCT.OnSetCustomColor
+- WHMGui.RefreshConfigurationWindow
 
 
 ## Binding Resolution
@@ -867,6 +867,12 @@ Confidence: HIGH
 
 ## Related APIs
 
+- [EA_Button_ResizeIconFrameNormal](../../globals/constants/constant_EA_Button_ResizeIconFrameNormal.md) (HIGH 100/100) - Constant
+- [EA_FullResizeImage_BlackTransparent](../../globals/constants/constant_EA_FullResizeImage_BlackTransparent.md) (HIGH 100/100) - Constant
+- [EA_FullResizeImage_DefaultFrame](../../globals/constants/constant_EA_FullResizeImage_DefaultFrame.md) (HIGH 100/100) - Constant
+- [EA_FullResizeImage_MetalFill](../../globals/constants/constant_EA_FullResizeImage_MetalFill.md) (HIGH 100/100) - Constant
+- [EA_FullResizeImage_TintableSolidBackground](../../globals/constants/constant_EA_FullResizeImage_TintableSolidBackground.md) (HIGH 100/100) - Constant
+- [EA_FullResizeImage_WhiteTransparent](../../globals/constants/constant_EA_FullResizeImage_WhiteTransparent.md) (HIGH 100/100) - Constant
 - [Size](element_Size.md) (HIGH 100/100) - XML Element Type
 - [Sizes](element_Sizes.md) (HIGH 100/100) - XML Element Type
 - [TexCoords](element_TexCoords.md) (HIGH 100/100) - XML Element Type
@@ -875,6 +881,7 @@ Confidence: HIGH
 - [TintColor](element_TintColor.md) (HIGH 100/100) - XML Element Type
 - [Window](element_Window.md) (HIGH 100/100) - XML Element Type
 - [Windows](element_Windows.md) (HIGH 100/100) - XML Element Type
+- [EA_FullResizeImage_TintableFrame](../../globals/constants/constant_EA_FullResizeImage_TintableFrame.md) (HIGH 90/100) - Constant
 - [Anchors](element_Anchors.md) (MEDIUM 55/100) - XML Element Type
 - [EventHandlers](element_EventHandlers.md) (MEDIUM 55/100) - XML Element Type
 - [Color](element_Color.md) (MEDIUM 45/100) - XML Element Type
