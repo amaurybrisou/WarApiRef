@@ -55,7 +55,20 @@
               </div>
             </div>
             <div class="graph-controls">
-                <input id="graphSearch" type="search" placeholder="Filter nodes..." aria-label="Filter graph nodes">
+              <div class="graph-search-help" tabindex="0" aria-label="Graph search help" role="button">
+                <span class="graph-search-help-icon" aria-hidden="true">i</span>
+                <div class="graph-search-help-popover" role="tooltip">
+                  <strong>Graph Search</strong>
+                  <div>Matches node labels only, case-insensitive.</div>
+                  <div class="graph-search-help-examples">
+                    <div><code>window</code> finds Window, WindowGetLayer, ScrollWindow</div>
+                    <div><code>label</code> finds Label and related label-named functions</div>
+                    <div><code>oninit</code> finds OnInitialize-style event nodes</div>
+                  </div>
+                  <div>Use the type filter to narrow to Functions, Events, Tables, or XML.</div>
+                </div>
+              </div>
+              <input id="graphSearch" type="search" placeholder="Filter nodes..." aria-label="Filter graph nodes">
               <select id="graphKindFilter" aria-label="Filter by node type">
                 <option value="">All types</option>
                 <option value="function">Functions</option>

@@ -434,6 +434,77 @@ main {
 .legend-dot.xml { background: #a08030; }
 
 .graph-controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.graph-search-help {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 253, 247, 0.92);
+  color: var(--muted);
+  cursor: help;
+  flex: 0 0 auto;
+}
+.graph-search-help:focus-visible {
+  outline: 2px solid rgba(35, 90, 82, 0.35);
+  outline-offset: 2px;
+}
+.graph-search-help-icon {
+  font-size: .75rem;
+  line-height: 1;
+  font-weight: 700;
+  font-family: "IBM Plex Mono", monospace;
+}
+.graph-search-help-popover {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  width: min(300px, calc(100vw - 40px));
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(26, 23, 16, .97);
+  color: #f0ebe0;
+  border: 1px solid rgba(255, 255, 255, .10);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .28);
+  font-size: .76rem;
+  line-height: 1.35;
+  z-index: 25;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2px);
+  transition: opacity .12s ease, transform .12s ease, visibility .12s ease;
+}
+.graph-search-help:hover .graph-search-help-popover,
+.graph-search-help:focus-visible .graph-search-help-popover,
+.graph-search-help:focus-within .graph-search-help-popover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.graph-search-help-popover strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #f5efde;
+  font-size: .84rem;
+}
+.graph-search-help-examples {
+  margin: 7px 0;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+}
+.graph-search-help-examples div + div {
+  margin-top: 4px;
+}
+.graph-search-help-popover code {
+  font-size: .74rem;
+  color: #f2d9a0;
+  background: rgba(255, 255, 255, .06);
+  padding: 1px 4px;
+  border-radius: 4px;
+}
 .graph-controls input,
 .graph-controls select { flex: 1; min-width: 130px; max-width: 240px; margin: 0; padding: 6px 10px; font-size: .85rem; }
 .graph-controls button { margin: 0; padding: 6px 12px; font-size: .85rem; white-space: nowrap; }

@@ -588,6 +588,42 @@ func buildSemanticGraph(corpus Corpus, catalog symbolCatalog, input contractSema
 			addEdge(entry.ID, constEntry.ID, "inherited_from", evidence)
 			contextIDs = append(contextIDs, constEntry.ID)
 		}
+		// Emit manipulated_by edges: global functions that operate on this element type
+		for _, manipulatorName := range graph.UniqueStrings(symbol.LuaManipulators) {
+			if manipulatorName == "" {
+				continue
+			}
+			manipulatorEntry, matched := catalog.lookup(manipulatorName, "function")
+			if !matched {
+				continue
+			}
+			evidence := fmt.Sprintf("%s manipulated by %s", symbol.Name, manipulatorName)
+			addEdge(manipulatorEntry.ID, entry.ID, "manipulates", evidence)
+			contextIDs = append(contextIDs, manipulatorEntry.ID)
+		}
+		// Infer manipulated_by edges from function name patterns:
+		// Functions that start with the element type name (e.g., "WindowAddAnchor" for ui:Window)
+		// typically operate on that element type.
+		elementTypePrefix := symbol.Name
+		for catalogKey, funcEntry := range catalog.entries {
+			// Only check functions
+			if funcEntry.Type != "function" {
+				continue
+			}
+			// Check if function name starts with element type prefix
+			if !strings.HasPrefix(funcEntry.Label, elementTypePrefix) {
+				continue
+			}
+			// Avoid duplicate edges
+			duplicateKey := "manipulates|" + funcEntry.ID + "|" + entry.ID
+			if _, exists := edgeAccumulators[duplicateKey]; exists {
+				continue
+			}
+			evidence := fmt.Sprintf("Function name prefix %s* indicates operation on %s", elementTypePrefix, symbol.Name)
+			addEdge(funcEntry.ID, entry.ID, "manipulates", evidence)
+			contextIDs = append(contextIDs, funcEntry.ID)
+			_ = catalogKey // Avoid unused variable warning
+		}
 		recordCombination(contextIDs, symbol.Name+": XML element relationships")
 	}
 

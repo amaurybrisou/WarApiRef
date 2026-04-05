@@ -504,20 +504,84 @@ function normalizeGraphLinks(data) {
   if (!data) return [];
   if (Array.isArray(data.links) && data.links.length > 0) return data.links;
   if (Array.isArray(data.edges) && data.edges.length > 0) {
-    return data.edges.map((e) => ({
+    const links = data.edges.map((e) => ({
       source: e.source?.id ?? e.source ?? e.from,
       target: e.target?.id ?? e.target ?? e.to,
       type:   e.type || "related",
       weight: e.weight || 1,
     }));
+    
+    // Infer manipulates relationships: functions whose names start with UI element names
+    // indicate they operate on that element type.
+    if (Array.isArray(data.nodes)) {
+      const elementsByName = new Map();
+      const functionsByPrefix = new Map();
+      
+      // Build indexes
+      data.nodes.forEach((n) => {
+        if (n.type === "ui_element") {
+          elementsByName.set(n.label, n);
+        } else if (n.type === "function") {
+          const label = String(n.label || "");
+          // Extract prefix (e.g., "Window" from "WindowAddAnchor")
+          for (const elemName of elementsByName.keys()) {
+            if (label.startsWith(elemName)) {
+              if (!functionsByPrefix.has(elemName)) {
+                functionsByPrefix.set(elemName, []);
+              }
+              functionsByPrefix.get(elemName).push(n);
+              break;
+            }
+          }
+        }
+      });
+      
+      // Create manipulates edges for matching pairs
+      for (const [elemName, elementNode] of elementsByName) {
+        const funcs = functionsByPrefix.get(elemName);
+        if (!funcs) continue;
+        funcs.forEach((func) => {
+          const existingEdge = links.find(
+            (l) => (l.source.id ?? l.source) === func.id && (l.target.id ?? l.target) === elementNode.id
+          );
+          if (!existingEdge) {
+            links.push({
+              source: func.id,
+              target: elementNode.id,
+              type: "manipulates",
+              weight: 1,
+            });
+          }
+        });
+      }
+    }
+    
+    return links;
   }
   return [];
 }
 
 const EDGE_LINE_COLOR = {
-  commonly_used_with: "#c8a070",
-  triggers:           "#2ea87e",
-  structural_child_of:"#a08030",
+  commonly_used_with:  "#c8a070",
+  triggers:            "#2ea87e",
+  triggered_by:        "#2ea87e",
+  structural_child_of: "#a08030",
+  contains:            "#a08030",
+  manipulates:         "#c4673a",
+  calls:               "#6b83c0",
+  reads_data:          "#6b83c0",
+  writes_state:        "#c4673a",
+  updates_ui:          "#a08030",
+  bound_from_xml:      "#3b8bb5",
+  inherited_from:      "#9b87a0",
+};
+
+const RENDER_OPTIONS = {
+  edgeTypeFilter: localStorage.getItem("war-api-edge-types") || "",
+  maxNodesCap:    parseInt(localStorage.getItem("war-api-node-cap") || "300", 10),
+  maxLinksCap:    parseInt(localStorage.getItem("war-api-link-cap") || "800", 10),
+  nodeSizeMin:    parseInt(localStorage.getItem("war-api-node-size-min") || "3", 10),
+  nodeSizeMax:    parseInt(localStorage.getItem("war-api-node-size-max") || "32", 10),
 };
 
 function showGraphMessage(message) {
@@ -615,13 +679,35 @@ function buildDegreeMap(links) {
   return degreeMap;
 }
 
+function sortNodesByDegreeDesc(nodes, degreeMap) {
+  return [...nodes].sort((left, right) => {
+    const rightDegree = degreeMap.get(right.id) || 0;
+    const leftDegree = degreeMap.get(left.id) || 0;
+    if (rightDegree !== leftDegree) return rightDegree - leftDegree;
+
+    const rightLabel = String(right.label || right.id || "");
+    const leftLabel = String(left.label || left.id || "");
+    return leftLabel.localeCompare(rightLabel);
+  });
+}
+
 function cySizeFromDegree(deg) {
-  return 18 + Math.min(deg * 2, 22);
+  const baseSize = 18;
+  const maxBonus = Math.min(deg * 2, 22);
+  return baseSize + maxBonus;
 }
 
 function fallbackRadiusFromDegree(deg) {
   const cySize = cySizeFromDegree(deg);
-  return Math.max(3.4, Math.min(10.0, cySize / 3.1));
+  const minRadius = RENDER_OPTIONS.nodeSizeMin;
+  const maxRadius = RENDER_OPTIONS.nodeSizeMax;
+  return Math.max(minRadius, Math.min(maxRadius, cySize / 3.1));
+}
+
+function matchesEdgeFilter(edgeType) {
+  if (!RENDER_OPTIONS.edgeTypeFilter) return true;
+  const types = RENDER_OPTIONS.edgeTypeFilter.split(',').map(t => t.trim()).filter(t => t);
+  return types.length === 0 || types.includes(edgeType);
 }
 
 function drawGraph(filterText, filterKind) {
@@ -640,14 +726,24 @@ function drawGraph(filterText, filterKind) {
     return true;
   });
 
-  const visibleNodes = capNodesDiverse(filteredNodes, 300);
   const allLinks     = normalizeGraphLinks(graphData);
+  const filteredIds  = new Set(filteredNodes.map((n) => n.id));
+  const candidateLinks = allLinks.filter((l) => {
+    const sid = l.source?.id ?? l.source;
+    const tid = l.target?.id ?? l.target;
+    if (!filteredIds.has(sid) || !filteredIds.has(tid)) return false;
+    if (!matchesEdgeFilter(l.type)) return false;
+    return true;
+  });
+  const candidateDegreeMap = buildDegreeMap(candidateLinks);
+  const rankedNodes = sortNodesByDegreeDesc(filteredNodes, candidateDegreeMap);
+  const visibleNodes = rankedNodes.slice(0, RENDER_OPTIONS.maxNodesCap);
   const visibleIds   = new Set(visibleNodes.map((n) => n.id));
-  const visibleLinks = allLinks.filter((l) => {
+  const visibleLinks = candidateLinks.filter((l) => {
     const sid = l.source?.id ?? l.source;
     const tid = l.target?.id ?? l.target;
     return visibleIds.has(sid) && visibleIds.has(tid);
-  }).slice(0, 800);
+  }).slice(0, RENDER_OPTIONS.maxLinksCap);
 
   if (typeof cytoscape !== "function") {
     drawFallbackSvg(visibleNodes, visibleLinks);
@@ -805,11 +901,31 @@ function drawGraph(filterText, filterKind) {
     const r   = graphPanel.getBoundingClientRect();
     const pos = e.renderedPosition || { x: 0, y: 0 };
     const canvasRect = cyContainer.getBoundingClientRect();
-    let left = (canvasRect.left - r.left) + pos.x + 14;
-    const top  = (canvasRect.top  - r.top)  + pos.y - 10;
-    if (left + 284 > r.width - 10) left -= 298;
+    const mouseLeft = (canvasRect.left - r.left) + pos.x;
+    const mouseTop  = (canvasRect.top  - r.top)  + pos.y;
+    const offsetX = 8;
+    const offsetY = 6;
+    const tooltipWidth = graphTooltip.offsetWidth || 240;
+    const tooltipHeight = graphTooltip.offsetHeight || 140;
+
+    let left = mouseLeft + offsetX;
+    let top = mouseTop + offsetY;
+
+    if (left + tooltipWidth > r.width - 8) {
+      left = mouseLeft - tooltipWidth - offsetX;
+    }
+    if (left < 8) {
+      left = 8;
+    }
+    if (top + tooltipHeight > r.height - 8) {
+      top = r.height - tooltipHeight - 8;
+    }
+    if (top < 4) {
+      top = 4;
+    }
+
     graphTooltip.style.left = left + "px";
-    graphTooltip.style.top  = Math.max(4, top) + "px";
+    graphTooltip.style.top  = top + "px";
   });
 
   cyInstance.on("mouseout", "node", () => graphTooltip.classList.add("hidden"));
@@ -891,6 +1007,100 @@ graphReset.addEventListener("click", () => {
   drawGraph("", "");
 });
 
+// --- Graph Rendering Controls -----------------------------------------------
+function initGraphRenderingControls() {
+  const edgeTypePanel = document.getElementById("graphEdgeTypePanel");
+  if (!edgeTypePanel) {
+    // Create controls if they don't exist yet
+    const controlsHtml = `
+      <div id="graphEdgeTypePanel" style="padding: 4px 6px; border-top: 1px solid #ddd; font-size: 0.68em; line-height: 1.1;">
+        <div style="display: grid; grid-template-columns: minmax(0, 2.2fr) repeat(4, minmax(52px, 72px)); gap: 4px 6px; align-items: end;">
+          <label for="graphEdgeTypeInput" style="display: block; min-width: 0;">
+            <span style="display: block; margin-bottom: 1px; font-weight: 600;">Edges</span>
+            <input type="text" id="graphEdgeTypeInput" placeholder="contains,calls" 
+                   value="${RENDER_OPTIONS.edgeTypeFilter}" 
+                   style="width: 100%; min-width: 0; padding: 1px 4px; font-size: 1em; line-height: 1.1;">
+          </label>
+          <label for="graphNodeCapInput" style="display: block;">
+            <span style="display: block; margin-bottom: 1px;">Nodes</span>
+            <input type="number" id="graphNodeCapInput" min="50" max="500" step="50" value="${RENDER_OPTIONS.maxNodesCap}" style="width: 100%; padding: 1px 3px; font-size: 1em; line-height: 1.1;">
+          </label>
+          <label for="graphLinkCapInput" style="display: block;">
+            <span style="display: block; margin-bottom: 1px;">Links</span>
+            <input type="number" id="graphLinkCapInput" min="100" max="2000" step="100" value="${RENDER_OPTIONS.maxLinksCap}" style="width: 100%; padding: 1px 3px; font-size: 1em; line-height: 1.1;">
+          </label>
+          <label for="graphNodeSizeMinInput" style="display: block;">
+            <span style="display: block; margin-bottom: 1px;">Min</span>
+            <input type="number" id="graphNodeSizeMinInput" min="1" max="15" step="1" value="${RENDER_OPTIONS.nodeSizeMin}" style="width: 100%; padding: 1px 3px; font-size: 1em; line-height: 1.1;">
+          </label>
+          <label for="graphNodeSizeMaxInput" style="display: block;">
+            <span style="display: block; margin-bottom: 1px;">Max</span>
+            <input type="number" id="graphNodeSizeMaxInput" min="16" max="50" step="2" value="${RENDER_OPTIONS.nodeSizeMax}" style="width: 100%; padding: 1px 3px; font-size: 1em; line-height: 1.1;">
+          </label>
+        </div>
+      </div>`;
+    
+    const filterSection = document.querySelector("[id='graphKindFilter']")?.parentElement;
+    if (filterSection) {
+      filterSection.insertAdjacentHTML("afterend", controlsHtml);
+    }
+  }
+  
+  const edgeInput = document.getElementById("graphEdgeTypeInput");
+  const nodeCapInput = document.getElementById("graphNodeCapInput");
+  const linkCapInput = document.getElementById("graphLinkCapInput");
+  const nodeSizeMinInput = document.getElementById("graphNodeSizeMinInput");
+  const nodeSizeMaxInput = document.getElementById("graphNodeSizeMaxInput");
+  
+  if (edgeInput) {
+    edgeInput.addEventListener("input", (e) => {
+      RENDER_OPTIONS.edgeTypeFilter = e.target.value;
+      localStorage.setItem("war-api-edge-types", e.target.value);
+      if (!graphPanel.classList.contains("hidden")) drawGraph(graphSearch.value, graphKindFilter.value);
+    });
+  }
+  
+  if (nodeCapInput) {
+    nodeCapInput.addEventListener("change", (e) => {
+      const value = Math.max(50, Math.min(500, parseInt(e.target.value, 10) || RENDER_OPTIONS.maxNodesCap));
+      e.target.value = String(value);
+      RENDER_OPTIONS.maxNodesCap = value;
+      localStorage.setItem("war-api-node-cap", String(value));
+      if (!graphPanel.classList.contains("hidden")) drawGraph(graphSearch.value, graphKindFilter.value);
+    });
+  }
+  
+  if (linkCapInput) {
+    linkCapInput.addEventListener("change", (e) => {
+      const value = Math.max(100, Math.min(2000, parseInt(e.target.value, 10) || RENDER_OPTIONS.maxLinksCap));
+      e.target.value = String(value);
+      RENDER_OPTIONS.maxLinksCap = value;
+      localStorage.setItem("war-api-link-cap", String(value));
+      if (!graphPanel.classList.contains("hidden")) drawGraph(graphSearch.value, graphKindFilter.value);
+    });
+  }
+  
+  if (nodeSizeMinInput) {
+    nodeSizeMinInput.addEventListener("change", (e) => {
+      const value = Math.max(1, Math.min(15, parseInt(e.target.value, 10) || RENDER_OPTIONS.nodeSizeMin));
+      e.target.value = String(value);
+      RENDER_OPTIONS.nodeSizeMin = value;
+      localStorage.setItem("war-api-node-size-min", String(value));
+      if (!graphPanel.classList.contains("hidden")) drawGraph(graphSearch.value, graphKindFilter.value);
+    });
+  }
+  
+  if (nodeSizeMaxInput) {
+    nodeSizeMaxInput.addEventListener("change", (e) => {
+      const value = Math.max(16, Math.min(50, parseInt(e.target.value, 10) || RENDER_OPTIONS.nodeSizeMax));
+      e.target.value = String(value);
+      RENDER_OPTIONS.nodeSizeMax = value;
+      localStorage.setItem("war-api-node-size-max", String(value));
+      if (!graphPanel.classList.contains("hidden")) drawGraph(graphSearch.value, graphKindFilter.value);
+    });
+  }
+}
+
 if (mcpInitBtn) {
   mcpInitBtn.addEventListener("click", () => {
     postMcp("initialize", {
@@ -951,5 +1161,6 @@ async function handleRoute() {
 
   await Promise.all([loadSearchIndex(), loadGraph(), loadNavigation()]);
   await handleRoute();
+  initGraphRenderingControls();
 })();
 
