@@ -1,0 +1,131 @@
+{
+  "schema_version": "feeding.observation.v1",
+  "entry_id": "aura_xml_layout_anchor_and_spacing_patterns",
+  "status": "promoted",
+  "source": {
+    "addon": "Aura",
+    "repository": "Aura",
+    "date_utc": "2026-04-05",
+    "validation": "human_validated",
+    "context": "Named profile UI implementation and repeated in-game user validation while fixing layout, spacing, and text placement."
+  },
+  "target_seeds": [
+    "docs/platform/seeds/xml_conventions.md"
+  ],
+  "confidence": {
+    "overall": "MEDIUM",
+    "rationale": "Observed across multiple UI fixes in Aura and validated in game by the user, but still best treated as platform guidance rather than a hard engine contract."
+  },
+  "claims": [
+    {
+      "claim_id": "stable_parent_anchors_reduce_layout_drift",
+      "kind": "usage_pattern",
+      "confidence": "MEDIUM",
+      "symbols": [
+        "WindowAddAnchor",
+        "WindowClearAnchors",
+        "EA_Window_DefaultButtonBottomFrame"
+      ],
+      "statement": "When footer controls or edit boxes drift under sibling-based anchoring, anchoring them directly to a stable parent container is more reliable than chaining them through neighboring controls.",
+      "guidance": "If a control renders in the wrong column or outside the window, clear its anchors and re-anchor it from `$parent` or a stable container such as `$parentButtonBackground` with explicit offsets.",
+      "evidence_refs": [
+        "ev_parent_anchor_stabilization"
+      ]
+    },
+    {
+      "claim_id": "label_measurement_prevents_ui_text_collisions",
+      "kind": "usage_pattern",
+      "confidence": "MEDIUM",
+      "symbols": [
+        "LabelSetText",
+        "LabelGetTextDimensions",
+        "WindowSetDimensions"
+      ],
+      "statement": "Text-driven header or form rows are more stable when label dimensions are measured after LabelSetText and adjacent controls are positioned from the measured width.",
+      "guidance": "Use `LabelGetTextDimensions()` and then resize or re-anchor neighboring labels and edit boxes to avoid truncation, overlap, or misplaced values.",
+      "evidence_refs": [
+        "ev_dynamic_label_sizing"
+      ]
+    },
+    {
+      "claim_id": "row_template_width_controls_list_tint_span",
+      "kind": "behavior_caveat",
+      "confidence": "MEDIUM",
+      "symbols": [
+        "ListBox",
+        "EA_FullResizeImage_TintableSolidBackground"
+      ],
+      "statement": "A ListBox row highlight or tint only spans the width of the row template; widening the list box alone does not widen the tinted row background.",
+      "guidance": "If alternating row tint stops short, widen the row template window and its child label widths instead of only changing the ListBox anchors.",
+      "evidence_refs": [
+        "ev_row_template_width"
+      ]
+    },
+    {
+      "claim_id": "default_resizable_buttons_need_full_height_and_footer_space",
+      "kind": "usage_pattern",
+      "confidence": "MEDIUM",
+      "symbols": [
+        "EA_Button_DefaultResizeable",
+        "EA_Window_DefaultButtonBottomFrame"
+      ],
+      "statement": "Default resizable WAR buttons render more cleanly at their native full height and need adequate footer/container height to prevent stacked controls from overlapping.",
+      "guidance": "Prefer keeping button height around 39px and increase the containing button-background height before squeezing stacked rows closer together.",
+      "evidence_refs": [
+        "ev_footer_button_spacing"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_parent_anchor_stabilization",
+      "type": "code_change",
+      "summary": "Aura profile controls stopped drifting only after edit boxes and value labels were re-anchored directly to stable parent windows and footer containers.",
+      "file_refs": [
+        "AddOns/Aura/Source/AuraProfiles.xml",
+        "AddOns/Aura/Source/AuraProfiles.lua"
+      ]
+    },
+    {
+      "evidence_id": "ev_dynamic_label_sizing",
+      "type": "code_change",
+      "summary": "Aura used LabelGetTextDimensions with runtime WindowSetDimensions and re-anchoring to keep `Active Profile:` and `Profile Name:` rows readable during in-game validation.",
+      "file_refs": [
+        "AddOns/Aura/Source/AuraProfiles.lua"
+      ]
+    },
+    {
+      "evidence_id": "ev_row_template_width",
+      "type": "runtime_observation",
+      "summary": "The profile list row tint did not span the full width until the row template and row label widths were widened, even though the ListBox itself was already wider.",
+      "file_refs": [
+        "AddOns/Aura/Source/AuraProfiles.xml"
+      ]
+    },
+    {
+      "evidence_id": "ev_footer_button_spacing",
+      "type": "runtime_observation",
+      "summary": "Stacked footer buttons in Aura overlapped or felt cramped until the button background height was increased and full-height button sizing was preserved during in-game review.",
+      "file_refs": [
+        "AddOns/Aura/Source/AuraProfiles.xml",
+        "AddOns/Aura/Source/AuraSettings.xml"
+      ]
+    }
+  ],
+  "promotion": {
+    "notes": "Promote as XML layout guidance and caveats, not as canonical engine guarantees.",
+    "criteria": [
+      "Keep MEDIUM confidence unless corroborated by more addons or canonical platform documentation.",
+      "Treat these as practical layout patterns for WAR XML UI work."
+    ]
+  },
+  "tags": [
+    "xml",
+    "layout",
+    "anchors",
+    "labelgettextdimensions",
+    "listbox",
+    "buttons",
+    "aura"
+  ]
+}

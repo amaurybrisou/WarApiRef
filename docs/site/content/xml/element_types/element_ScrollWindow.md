@@ -1025,59 +1025,59 @@ Confidence: MEDIUM
 | 2 | `delta` | number | wheel_delta |
 ## Lua Functions Manipulating This Type
 
-- CDown.ShowTab
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
-- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
-- GroupIcons.OnInitialize
-- EA_Window_Macro.HideMacroIconSelectionWindow
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
 - Enemy._OnArchetypeChanged
-- MapMonster.FilterButtonState
+- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- EA_Window_Macro.SelectionIconLButtonDown
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- EA_Window_Macro.Initialize
+- MacroIcons.OnInitialize
+- GroupIconsSG.SlashHandler
+- DAoCBuffSettings.PopulateSettings
+- wbLeadHelperConfigTab.OnReset
+- CDown.local.ShowTab
+- CDown.ShowTab
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- MBuffGui.SetGroupBuffIcon
+- EA_Window_Macro.HideMacroIconSelectionWindow
+- WbLeadHelperMessage.OnOk
 - GroupIcons.OnUpdate
-- DAoCBuff.ShowMessageWindow
+- Enemy.local._OnArchetypeChanged
+- wbLeadHelperConfigTab.OnLoad
+- GroupIcons.HandleSlashCmd
+- Group Icons SG.marker:Size
+- Group Icons SG.marker:Create
+- UiModWindow.ShowModDetails
+- TTitan.UI.DisplayRow
+- Killer.Initialize
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
+- wbLeadHelperConfigTab.Initialize
+- MapMonster.local.FilterButtonState
+- WbLeadHelperMessage.MessageDialogOpen
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
 - wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
-- MapMonster.local.FilterButtonState
-- TTitan.UI.SetDataSource
-- EA_Window_Macro.Initialize
-- CDown.local.ShowTab
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
-- GroupIconsSG.SlashHandler
-- EA_Window_Macro.Shutdown
-- wbLeadHelperConfigTab.OnReset
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
-- GroupIconsSG.OptionsCHKclick
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- wbLeadHelperConfigTab.Initialize
-- WbLeadHelperMessage.MessageDialogOpen
-- UiModWindow.ShowModDetails
-- MBuffGui.SetGroupBuffIcon
-- EA_Window_Macro.SelectionIconLButtonDown
-- Enemy.local._OnArchetypeChanged
-- TTitan.UI.DisplayManualEntry
-- EA_Window_Macro.DetailIconLButtonDown
-- WbLeadHelperMessage.OnOk
-- Killer.Initialize
-- Group Icons SG.marker:Create
-- Enemy._OnKeyModifierChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- DAoCBuffSettings.PopulateSettings
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- TTitan.UI.DisplayRow
-- MacroIcons.OnInitialize
-- Statdoll.WriteLabels
-- Enemy.EnemyGroupIcon:ApplySettings
 - GroupIconsSG.OnInitialize
-- Group Icons SG.marker:Size
-- wbLeadHelperConfigTab.OnLoad
+- TTitan.UI.DisplayManualEntry
+- DAoCBuff.ShowMessageWindow
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- TTitan.UI.SetDataSource
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- GroupIcons.OnInitialize
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy._OnKeyModifierChanged
+- Enemy.EnemyGroupIcon:ApplySettings
+- Statdoll.WriteLabels
+- EA_Window_Macro.DetailIconLButtonDown
 - Enemy.local._OnKeyModifierChanged
-- GroupIcons.HandleSlashCmd
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- EA_Window_Macro.Shutdown
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- MapMonster.FilterButtonState
+- GroupIconsSG.OptionsCHKclick
 
 
 ## Binding Resolution

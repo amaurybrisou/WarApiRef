@@ -1041,11 +1041,11 @@ Confidence: MEDIUM
 | 2 | `y` | number | mouse_y |
 ## Lua Functions Manipulating This Type
 
-- TurretRange.OnUpdate
-- TurretScrap.Initialize
 - Enemy.EnemyEffectsIndicator:Update
 - GuardList.UpdateStateMachine
 - GuardRange.UpdateStateMachine
+- TurretRange.OnUpdate
+- TurretScrap.Initialize
 
 
 ## Binding Resolution

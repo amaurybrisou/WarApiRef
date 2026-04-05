@@ -1025,59 +1025,59 @@ Confidence: MEDIUM
 | 2 | `delta` | number | wheel_delta |
 ## Lua Functions Manipulating This Type
 
-- GroupIconsSG.SlashHandler
-- Group Icons SG.marker:Size
-- wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
-- Enemy.local._OnKeyModifierChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
-- TTitan.UI.DisplayRow
-- EA_Window_Macro.HideMacroIconSelectionWindow
-- MapMonster.local.FilterButtonState
-- WbLeadHelperMessage.MessageDialogOpen
-- MBuffGui.SetGroupBuffIcon
-- GroupIconsSG.OptionsCHKclick
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- Enemy._OnArchetypeChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- EA_Window_Macro.SelectionIconLButtonDown
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
 - EA_Window_Macro.Initialize
 - MacroIcons.OnInitialize
-- Group Icons SG.marker:Create
+- GroupIconsSG.SlashHandler
 - DAoCBuffSettings.PopulateSettings
-- Killer.Initialize
-- UiModWindow.ShowModDetails
-- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
-- GroupIcons.HandleSlashCmd
-- Enemy._OnKeyModifierChanged
-- Enemy.UnitFramesUI_UnitFramePartDialog_OnExceptMeChanged
-- TTitan.UI.SetDataSource
-- EA_Window_Macro.Shutdown
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- Enemy._OnArchetypeChanged
-- EA_Window_Macro.SelectionIconLButtonDown
-- Statdoll.WriteLabels
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
-- GroupIconsSG.OnInitialize
-- Enemy.EnemyGroupIcon:ApplySettings
-- CDown.ShowTab
+- wbLeadHelperConfigTab.OnReset
 - CDown.local.ShowTab
+- CDown.ShowTab
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- MBuffGui.SetGroupBuffIcon
+- EA_Window_Macro.HideMacroIconSelectionWindow
+- WbLeadHelperMessage.OnOk
 - GroupIcons.OnUpdate
 - Enemy.local._OnArchetypeChanged
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
 - wbLeadHelperConfigTab.OnLoad
-- MapMonster.FilterButtonState
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnIconSelChanged
+- GroupIcons.HandleSlashCmd
+- Group Icons SG.marker:Size
+- Group Icons SG.marker:Create
+- UiModWindow.ShowModDetails
+- TTitan.UI.DisplayRow
+- Killer.Initialize
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnExceptMeChanged
 - wbLeadHelperConfigTab.Initialize
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- EA_Window_Macro.DetailIconLButtonDown
-- WbLeadHelperMessage.OnOk
+- MapMonster.local.FilterButtonState
+- WbLeadHelperMessage.MessageDialogOpen
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_UpdateExample
+- wbLeadHelperConfigTab.OnLfgIconsCheckBoxUp
+- GroupIconsSG.OnInitialize
 - TTitan.UI.DisplayManualEntry
-- GroupIcons.OnInitialize
-- wbLeadHelperConfigTab.OnReset
 - DAoCBuff.ShowMessageWindow
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- TTitan.UI.SetDataSource
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnCircleIconChanged
+- GroupIcons.OnInitialize
 - Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnExceptMeChanged
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnLScaleCheckBoxChanged
+- Enemy._OnKeyModifierChanged
+- Enemy.EnemyGroupIcon:ApplySettings
+- Statdoll.WriteLabels
+- EA_Window_Macro.DetailIconLButtonDown
+- Enemy.local._OnKeyModifierChanged
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
+- EA_Window_Macro.Shutdown
+- Enemy.UnitFramesUI_EffectsIndicatorDialog_OnEffectFiltersListSelChanged
+- Enemy.UnitFramesUI_UnitFramePartDialog_UpdateExample
+- MapMonster.FilterButtonState
+- GroupIconsSG.OptionsCHKclick
 
 
 ## Binding Resolution

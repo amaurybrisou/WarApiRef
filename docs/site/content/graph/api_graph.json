@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T13:49:16.481462284Z",
+  "generated_at": "2026-04-05T08:13:33.263074996Z",
   "nodes": [
     {
       "id": "data:table:AlertTextWindow",
@@ -972,16 +972,6 @@
       "summary": "Engine-supplied XML constant or template class referenced by 5 addons."
     },
     {
-      "id": "data:table:EA_LabelCheckButton",
-      "label": "EA_LabelCheckButton",
-      "type": "data_structure",
-      "category": "Global Table",
-      "path": "globals/tables/table_EA_LabelCheckButton.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Shared function table with 1 member functions; the primary API surface for 3 addons."
-    },
-    {
       "id": "data:constant:EA_LabelCheckButton",
       "label": "EA_LabelCheckButton",
       "type": "data_structure",
@@ -990,6 +980,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Engine-supplied XML constant or template class referenced by 35 addons."
+    },
+    {
+      "id": "data:table:EA_LabelCheckButton",
+      "label": "EA_LabelCheckButton",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_EA_LabelCheckButton.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Shared function table with 1 member functions; the primary API surface for 3 addons."
     },
     {
       "id": "data:constant:EA_LabelCheckButtonSmall",
@@ -1822,16 +1822,6 @@
       "summary": "Shared function table with 1 member functions; the primary API surface for 1 addons."
     },
     {
-      "id": "data:table:EA_Window_Macro",
-      "label": "EA_Window_Macro",
-      "type": "data_structure",
-      "category": "Global Table",
-      "path": "globals/tables/table_EA_Window_Macro.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Shared function table with 2 member functions; the primary API surface for 10 addons."
-    },
-    {
       "id": "data:constant:EA_Window_Macro",
       "label": "EA_Window_Macro",
       "type": "data_structure",
@@ -1840,6 +1830,16 @@
       "confidence": "HIGH",
       "score": 90,
       "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:table:EA_Window_Macro",
+      "label": "EA_Window_Macro",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_EA_Window_Macro.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Shared function table with 2 member functions; the primary API surface for 10 addons."
     },
     {
       "id": "data:constant:EA_Window_MacroDetailIconButton",
@@ -1902,16 +1902,6 @@
       "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
     },
     {
-      "id": "data:constant:EA_Window_OpenParty",
-      "label": "EA_Window_OpenParty",
-      "type": "data_structure",
-      "category": "Constant",
-      "path": "globals/constants/constant_EA_Window_OpenParty.md",
-      "confidence": "HIGH",
-      "score": 90,
-      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
-    },
-    {
       "id": "data:table:EA_Window_OpenParty",
       "label": "EA_Window_OpenParty",
       "type": "data_structure",
@@ -1920,6 +1910,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Shared function table with 3 member functions; the primary API surface for 3 addons."
+    },
+    {
+      "id": "data:constant:EA_Window_OpenParty",
+      "label": "EA_Window_OpenParty",
+      "type": "data_structure",
+      "category": "Constant",
+      "path": "globals/constants/constant_EA_Window_OpenParty.md",
+      "confidence": "HIGH",
+      "score": 90,
+      "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
     },
     {
       "id": "data:constant:EA_Window_OpenPartyFlyOut",
@@ -19432,7 +19432,7 @@
     },
     {
       "from": "data:system:SystemData.Events.LOADING_END",
-      "to": "data:system:SystemData.Events.PLAYER_HEALTH_FADE_UPDATED",
+      "to": "data:system:SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED",
       "type": "commonly_used_with",
       "confidence_score": 72,
       "evidence_count": 6,
@@ -19444,7 +19444,32 @@
         "ActionFraction: Shutdown -\u003e WindowUnRegisterEventHandler(windowName, SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED, \"ActionFractionWindow.UpdateCurrentHitPoints\")",
         "ActionFraction: Shutdown -\u003e WindowUnRegisterEventHandler(windowName, SystemData.Events.PLAYER_HEALTH_FADE_UPDATED, \"ActionFractionWindow.UpdateBasedOnUserSettings\")"
       ],
-      "rationale": "data:system:SystemData.Events.LOADING_END and data:system:SystemData.Events.PLAYER_HEALTH_FADE_UPDATED are commonly used together",
+      "rationale": "data:system:SystemData.Events.LOADING_END and data:system:SystemData.Events.PLAYER_CUR_ACTION_POINTS_UPDATED are commonly used together",
+      "weight": 8,
+      "evidence": [
+        "ActionFraction: Shutdown -\u003e LibSlash.UnregisterSlashCmd(\"ActionFraction\")",
+        "ActionFraction: Shutdown -\u003e LibSlash.UnregisterSlashCmd(\"af\")",
+        "ActionFraction: Shutdown -\u003e UnregisterEventHandler(SystemData.Events.LOADING_END, \"ActionFractionWindow.UpdateVisibility\")",
+        "ActionFraction: Shutdown -\u003e WindowUnRegisterEventHandler(windowName, SystemData.Events.PLAYER_AGRO_MODE_UPDATED, \"ActionFractionWindow.OnAgroModeUpdated\")",
+        "ActionFraction: Shutdown -\u003e WindowUnRegisterEventHandler(windowName, SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED, \"ActionFractionWindow.UpdateCurrentHitPoints\")",
+        "ActionFraction: Shutdown -\u003e WindowUnRegisterEventHandler(windowName, SystemData.Events.PLAYER_HEALTH_FADE_UPDATED, \"ActionFractionWindow.UpdateBasedOnUserSettings\")"
+      ]
+    },
+    {
+      "from": "data:system:SystemData.Events.LOADING_END",
+      "to": "data:system:SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED",
+      "type": "commonly_used_with",
+      "confidence_score": 72,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "ActionFraction: Shutdown -\u003e LibSlash.UnregisterSlashCmd(\"ActionFraction\")",
+        "ActionFraction: Shutdown -\u003e LibSlash.UnregisterSlashCmd(\"af\")",
+        "ActionFraction: Shutdown -\u003e UnregisterEventHandler(SystemData.Events.LOADING_END, \"ActionFractionWindow.UpdateVisibility\")",
+        "ActionFraction: Shutdown -\u003e WindowUnRegisterEventHandler(windowName, SystemData.Events.PLAYER_AGRO_MODE_UPDATED, \"ActionFractionWindow.OnAgroModeUpdated\")",
+        "ActionFraction: Shutdown -\u003e WindowUnRegisterEventHandler(windowName, SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED, \"ActionFractionWindow.UpdateCurrentHitPoints\")",
+        "ActionFraction: Shutdown -\u003e WindowUnRegisterEventHandler(windowName, SystemData.Events.PLAYER_HEALTH_FADE_UPDATED, \"ActionFractionWindow.UpdateBasedOnUserSettings\")"
+      ],
+      "rationale": "data:system:SystemData.Events.LOADING_END and data:system:SystemData.Events.PLAYER_CUR_HIT_POINTS_UPDATED are commonly used together",
       "weight": 8,
       "evidence": [
         "ActionFraction: Shutdown -\u003e LibSlash.UnregisterSlashCmd(\"ActionFraction\")",
@@ -19528,31 +19553,6 @@
         "Asshat: Init -\u003e WindowSetLayer(friendlyWindow, 3)",
         "Asshat: Init -\u003e WindowSetLayer(hostileWindow, 3)",
         "BagOMatic: init -\u003e LibSlash.IsSlashCmdRegistered(\"bom\")"
-      ]
-    },
-    {
-      "from": "data:system:SystemData.Events.LOADING_END",
-      "to": "function:global:LibSlash.RegisterSlashCmd",
-      "type": "commonly_used_with",
-      "confidence_score": 72,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "Asshat: Init -\u003e WindowSetLayer(friendlyWindow, 3)",
-        "Asshat: Init -\u003e WindowSetLayer(hostileWindow, 3)",
-        "Aura: OnInitialize",
-        "BagOMatic: init -\u003e LibSlash.IsSlashCmdRegistered(\"bom\")",
-        "MyReasons: OnInitialize",
-        "RoR_SoR: OnInitialize"
-      ],
-      "rationale": "data:system:SystemData.Events.LOADING_END and function:global:LibSlash.RegisterSlashCmd are commonly used together",
-      "weight": 8,
-      "evidence": [
-        "Asshat: Init -\u003e WindowSetLayer(friendlyWindow, 3)",
-        "Asshat: Init -\u003e WindowSetLayer(hostileWindow, 3)",
-        "Aura: OnInitialize",
-        "BagOMatic: init -\u003e LibSlash.IsSlashCmdRegistered(\"bom\")",
-        "MyReasons: OnInitialize",
-        "RoR_SoR: OnInitialize"
       ]
     },
     {
@@ -23482,6 +23482,31 @@
     },
     {
       "from": "function:global:DoesWindowExist",
+      "to": "function:window:WindowGetDimensions",
+      "type": "commonly_used_with",
+      "confidence_score": 72,
+      "evidence_count": 6,
+      "evidence_sources": [
+        "AdvancedPetAssist: ApplyPetTargetHUDLayout -\u003e DoesWindowExist(\"APAPetTargetHUD\")",
+        "AdvancedPetAssist: ApplyPetTargetHUDLayout -\u003e WindowGetDimensions(\"APAPetTargetHUD\")",
+        "Careful Core Functions: WindowAddAnchor",
+        "Careful Core Functions: WindowGetDimensions",
+        "MapPin: UpdatePinCoordinates -\u003e WindowStartScaleAnimation(\"MapPinNotePin\"..WindowsNumber, 2, 2.5*Scale, MapPin.Pins.Notes[EA_Window_WorldMap.currentMap][WindowsNumber].PinScale*Scale, 0.5, true, 0.0, 0)",
+        "MapPin: UpdatePinCoordinates -\u003e WindowStartScaleAnimation(\"MapPinRequestPin\"..RequestWindowsNumber, 2, 2.5*Scale, MapPin.Pins.Request[RequestWindowsNumber].PinScale*Scale, 0.5, true, 0.0, 0)"
+      ],
+      "rationale": "function:global:DoesWindowExist and function:window:WindowGetDimensions are commonly used together",
+      "weight": 8,
+      "evidence": [
+        "AdvancedPetAssist: ApplyPetTargetHUDLayout -\u003e DoesWindowExist(\"APAPetTargetHUD\")",
+        "AdvancedPetAssist: ApplyPetTargetHUDLayout -\u003e WindowGetDimensions(\"APAPetTargetHUD\")",
+        "Careful Core Functions: WindowAddAnchor",
+        "Careful Core Functions: WindowGetDimensions",
+        "MapPin: UpdatePinCoordinates -\u003e WindowStartScaleAnimation(\"MapPinNotePin\"..WindowsNumber, 2, 2.5*Scale, MapPin.Pins.Notes[EA_Window_WorldMap.currentMap][WindowsNumber].PinScale*Scale, 0.5, true, 0.0, 0)",
+        "MapPin: UpdatePinCoordinates -\u003e WindowStartScaleAnimation(\"MapPinRequestPin\"..RequestWindowsNumber, 2, 2.5*Scale, MapPin.Pins.Request[RequestWindowsNumber].PinScale*Scale, 0.5, true, 0.0, 0)"
+      ]
+    },
+    {
+      "from": "function:global:DoesWindowExist",
       "to": "function:window:WindowSetDimensions",
       "type": "commonly_used_with",
       "confidence_score": 74,
@@ -23528,31 +23553,6 @@
         "AdvancedPetAssist: OnShown -\u003e ButtonSetText(\"APAOptionsTabsGeneral\", L \"General\")",
         "AdvancedPetAssist: Show -\u003e CreateWindow(\"APAOptions\", true)",
         "Atlas: ShowCoordinatesOnMouseOver -\u003e WindowGetScale(\"AtlasFrame\")"
-      ]
-    },
-    {
-      "from": "function:global:DoesWindowExist",
-      "to": "function:window:WindowSetTintColor",
-      "type": "commonly_used_with",
-      "confidence_score": 72,
-      "evidence_count": 6,
-      "evidence_sources": [
-        "AdvancedPetAssist: UpdateFollowTargetHUD -\u003e WindowSetTintColor(\"APAFollowTargetHUDFill\", APA.hudColorOffR, APA.hudColorOffG, APA.hudColorOffB)",
-        "AdvancedPetAssist: UpdateFollowTargetHUD -\u003e WindowSetTintColor(\"APAFollowTargetHUDFill\", APA.hudColorOnR, APA.hudColorOnG, APA.hudColorOnB)",
-        "AdvancedPetAssist: UpdateInstantOnlyHUD -\u003e WindowSetTintColor(\"APAInstantOnlyHUDFill\", 0, 200, 0)",
-        "AdvancedPetAssist: UpdateInstantOnlyHUD -\u003e WindowSetTintColor(\"APAInstantOnlyHUDFill\", 128, 128, 128)",
-        "AdvancedPetAssist: UpdateInstantOnlyHUD -\u003e WindowSetTintColor(\"APAInstantOnlyHUDFill\", 200, 100, 0)",
-        "Atlas: UpdateLegend -\u003e WindowGetScale(\"AtlasFrame\")"
-      ],
-      "rationale": "function:global:DoesWindowExist and function:window:WindowSetTintColor are commonly used together",
-      "weight": 8,
-      "evidence": [
-        "AdvancedPetAssist: UpdateFollowTargetHUD -\u003e WindowSetTintColor(\"APAFollowTargetHUDFill\", APA.hudColorOffR, APA.hudColorOffG, APA.hudColorOffB)",
-        "AdvancedPetAssist: UpdateFollowTargetHUD -\u003e WindowSetTintColor(\"APAFollowTargetHUDFill\", APA.hudColorOnR, APA.hudColorOnG, APA.hudColorOnB)",
-        "AdvancedPetAssist: UpdateInstantOnlyHUD -\u003e WindowSetTintColor(\"APAInstantOnlyHUDFill\", 0, 200, 0)",
-        "AdvancedPetAssist: UpdateInstantOnlyHUD -\u003e WindowSetTintColor(\"APAInstantOnlyHUDFill\", 128, 128, 128)",
-        "AdvancedPetAssist: UpdateInstantOnlyHUD -\u003e WindowSetTintColor(\"APAInstantOnlyHUDFill\", 200, 100, 0)",
-        "Atlas: UpdateLegend -\u003e WindowGetScale(\"AtlasFrame\")"
       ]
     },
     {
@@ -30426,7 +30426,7 @@
       "from": "ui:Anchors",
       "to": "ui:Size",
       "type": "commonly_used_with",
-      "confidence_score": 77,
+      "confidence_score": 75,
       "evidence_count": 6,
       "evidence_sources": [
         "AbsPoint: XML element relationships",
@@ -30437,7 +30437,7 @@
         "LogDisplay: XML element relationships"
       ],
       "rationale": "ui:Anchors and ui:Size are commonly used together",
-      "weight": 13,
+      "weight": 11,
       "evidence": [
         "AbsPoint: XML element relationships",
         "AnimatedImage: XML element relationships",
@@ -30451,25 +30451,23 @@
       "from": "ui:Anchors",
       "to": "ui:Windows",
       "type": "commonly_used_with",
-      "confidence_score": 71,
-      "evidence_count": 6,
+      "confidence_score": 59,
+      "evidence_count": 5,
       "evidence_sources": [
         "ActionButtonGroup: XML element relationships",
         "CooldownDisplay: XML element relationships",
         "LogDisplay: XML element relationships",
         "MapDisplay: XML element relationships",
-        "PageWindow: XML element relationships",
-        "ScrollWindow: XML element relationships"
+        "PageWindow: XML element relationships"
       ],
       "rationale": "ui:Anchors and ui:Windows are commonly used together",
-      "weight": 7,
+      "weight": 5,
       "evidence": [
         "ActionButtonGroup: XML element relationships",
         "CooldownDisplay: XML element relationships",
         "LogDisplay: XML element relationships",
         "MapDisplay: XML element relationships",
-        "PageWindow: XML element relationships",
-        "ScrollWindow: XML element relationships"
+        "PageWindow: XML element relationships"
       ]
     },
     {
@@ -30610,27 +30608,6 @@
     },
     {
       "from": "ui:Button",
-      "to": "ui:Label",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "Color: XML element relationships",
-        "Sounds: XML element relationships",
-        "Text: XML element relationships",
-        "TintColor: XML element relationships"
-      ],
-      "rationale": "ui:Button and ui:Label are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "Color: XML element relationships",
-        "Sounds: XML element relationships",
-        "Text: XML element relationships",
-        "TintColor: XML element relationships"
-      ]
-    },
-    {
-      "from": "ui:Button",
       "to": "ui:Normal",
       "type": "commonly_used_with",
       "confidence_score": 59,
@@ -30676,6 +30653,27 @@
       ]
     },
     {
+      "from": "ui:Button",
+      "to": "ui:Pressed",
+      "type": "commonly_used_with",
+      "confidence_score": 58,
+      "evidence_count": 4,
+      "evidence_sources": [
+        "OverlayTexCoords: XML element relationships",
+        "OverlayTexSlices: XML element relationships",
+        "ResizeImages: XML element relationships",
+        "TextColors: XML element relationships"
+      ],
+      "rationale": "ui:Button and ui:Pressed are commonly used together",
+      "weight": 4,
+      "evidence": [
+        "OverlayTexCoords: XML element relationships",
+        "OverlayTexSlices: XML element relationships",
+        "ResizeImages: XML element relationships",
+        "TextColors: XML element relationships"
+      ]
+    },
+    {
       "from": "ui:DynamicImage",
       "to": "ui:FullResizeImage",
       "type": "commonly_used_with",
@@ -30700,7 +30698,7 @@
       "from": "ui:EventHandlers",
       "to": "ui:Size",
       "type": "commonly_used_with",
-      "confidence_score": 71,
+      "confidence_score": 70,
       "evidence_count": 6,
       "evidence_sources": [
         "CircleImage: XML element relationships",
@@ -30708,38 +30706,17 @@
         "LogDisplay: XML element relationships",
         "MapDisplay: XML element relationships",
         "NifDisplay: XML element relationships",
-        "ScrollWindow: XML element relationships"
+        "SliderBar: XML element relationships"
       ],
       "rationale": "ui:EventHandlers and ui:Size are commonly used together",
-      "weight": 7,
+      "weight": 6,
       "evidence": [
         "CircleImage: XML element relationships",
         "ListBox: XML element relationships",
         "LogDisplay: XML element relationships",
         "MapDisplay: XML element relationships",
         "NifDisplay: XML element relationships",
-        "ScrollWindow: XML element relationships"
-      ]
-    },
-    {
-      "from": "ui:EventHandlers",
-      "to": "ui:Windows",
-      "type": "commonly_used_with",
-      "confidence_score": 58,
-      "evidence_count": 4,
-      "evidence_sources": [
-        "ActionButtonGroup: XML element relationships",
-        "LogDisplay: XML element relationships",
-        "MapDisplay: XML element relationships",
-        "ScrollWindow: XML element relationships"
-      ],
-      "rationale": "ui:EventHandlers and ui:Windows are commonly used together",
-      "weight": 4,
-      "evidence": [
-        "ActionButtonGroup: XML element relationships",
-        "LogDisplay: XML element relationships",
-        "MapDisplay: XML element relationships",
-        "ScrollWindow: XML element relationships"
+        "SliderBar: XML element relationships"
       ]
     },
     {
@@ -30880,25 +30857,21 @@
       "from": "ui:Size",
       "to": "ui:Windows",
       "type": "commonly_used_with",
-      "confidence_score": 70,
-      "evidence_count": 6,
+      "confidence_score": 58,
+      "evidence_count": 4,
       "evidence_sources": [
         "CooldownDisplay: XML element relationships",
         "LogDisplay: XML element relationships",
         "MapDisplay: XML element relationships",
-        "PageWindow: XML element relationships",
-        "ScrollWindow: XML element relationships",
-        "StatusBar: XML element relationships"
+        "PageWindow: XML element relationships"
       ],
       "rationale": "ui:Size and ui:Windows are commonly used together",
-      "weight": 6,
+      "weight": 4,
       "evidence": [
         "CooldownDisplay: XML element relationships",
         "LogDisplay: XML element relationships",
         "MapDisplay: XML element relationships",
-        "PageWindow: XML element relationships",
-        "ScrollWindow: XML element relationships",
-        "StatusBar: XML element relationships"
+        "PageWindow: XML element relationships"
       ]
     },
     {
@@ -39144,6 +39117,1761 @@
       "weight": 1,
       "evidence": [
         "Window inherits XML template EA_Window_TabSeparatorRightSide"
+      ]
+    },
+    {
+      "from": "function:global:AuctionWindow.Hide",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window manipulated by AuctionWindow.Hide"
+      ],
+      "rationale": "function:global:AuctionWindow.Hide relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Window manipulated by AuctionWindow.Hide"
+      ]
+    },
+    {
+      "from": "function:global:EA_ChatWindow.UpdateSocialWindowButton",
+      "to": "ui:Texture",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Texture manipulated by EA_ChatWindow.UpdateSocialWindowButton"
+      ],
+      "rationale": "function:global:EA_ChatWindow.UpdateSocialWindowButton relates to ui:Texture via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Texture manipulated by EA_ChatWindow.UpdateSocialWindowButton"
+      ]
+    },
+    {
+      "from": "function:global:EA_ChatWindow.UpdateSocialWindowButton",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window manipulated by EA_ChatWindow.UpdateSocialWindowButton"
+      ],
+      "rationale": "function:global:EA_ChatWindow.UpdateSocialWindowButton relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Window manipulated by EA_ChatWindow.UpdateSocialWindowButton"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_Macro.UpdateDetails",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Button manipulated by EA_Window_Macro.UpdateDetails"
+      ],
+      "rationale": "function:global:EA_Window_Macro.UpdateDetails relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Button manipulated by EA_Window_Macro.UpdateDetails"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_Macro.UpdateDetails",
+      "to": "ui:EditBox",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "EditBox manipulated by EA_Window_Macro.UpdateDetails"
+      ],
+      "rationale": "function:global:EA_Window_Macro.UpdateDetails relates to ui:EditBox via manipulates",
+      "weight": 1,
+      "evidence": [
+        "EditBox manipulated by EA_Window_Macro.UpdateDetails"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_Macro.UpdateDetails",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window manipulated by EA_Window_Macro.UpdateDetails"
+      ],
+      "rationale": "function:global:EA_Window_Macro.UpdateDetails relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Window manipulated by EA_Window_Macro.UpdateDetails"
+      ]
+    },
+    {
+      "from": "function:global:EA_Window_Macro.UpdateMacros",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Window manipulated by EA_Window_Macro.UpdateMacros"
+      ],
+      "rationale": "function:global:EA_Window_Macro.UpdateMacros relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Window manipulated by EA_Window_Macro.UpdateMacros"
+      ]
+    },
+    {
+      "from": "function:global:Icons.GetCareerIconIDFromCareerLine",
+      "to": "ui:Icon",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Icon* indicates operation on Icon"
+      ],
+      "rationale": "function:global:Icons.GetCareerIconIDFromCareerLine relates to ui:Icon via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Icon* indicates operation on Icon"
+      ]
+    },
+    {
+      "from": "function:global:Icons.GetCareerIconIDFromCareerNamesID",
+      "to": "ui:Icon",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Icon* indicates operation on Icon"
+      ],
+      "rationale": "function:global:Icons.GetCareerIconIDFromCareerNamesID relates to ui:Icon via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Icon* indicates operation on Icon"
+      ]
+    },
+    {
+      "from": "function:window:ButtonGetCheckButtonFlag",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonGetCheckButtonFlag relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonGetDisabledFlag",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonGetDisabledFlag relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonGetPressedFlag",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonGetPressedFlag relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonGetText",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonGetText relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonGetTextColor",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonGetTextColor relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonGetTextDimensions",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonGetTextDimensions relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetCheckButtonFlag",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonSetCheckButtonFlag relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetDisabledFlag",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonSetDisabledFlag relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetHighlightFlag",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonSetHighlightFlag relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetPressedFlag",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonSetPressedFlag relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetStayDownFlag",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonSetStayDownFlag relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetText",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonSetText relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetTextColor",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonSetTextColor relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetTexture",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonSetTexture relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ButtonSetTextureSlice",
+      "to": "ui:Button",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Button* indicates operation on Button"
+      ],
+      "rationale": "function:window:ButtonSetTextureSlice relates to ui:Button via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Button* indicates operation on Button"
+      ]
+    },
+    {
+      "from": "function:window:ComboBoxAddMenuItem",
+      "to": "ui:ComboBox",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ],
+      "rationale": "function:window:ComboBoxAddMenuItem relates to ui:ComboBox via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ]
+    },
+    {
+      "from": "function:window:ComboBoxClearMenuItems",
+      "to": "ui:ComboBox",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ],
+      "rationale": "function:window:ComboBoxClearMenuItems relates to ui:ComboBox via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ]
+    },
+    {
+      "from": "function:window:ComboBoxExternalOpenMenu",
+      "to": "ui:ComboBox",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ],
+      "rationale": "function:window:ComboBoxExternalOpenMenu relates to ui:ComboBox via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ]
+    },
+    {
+      "from": "function:window:ComboBoxGetDisabledFlag",
+      "to": "ui:ComboBox",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ],
+      "rationale": "function:window:ComboBoxGetDisabledFlag relates to ui:ComboBox via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ]
+    },
+    {
+      "from": "function:window:ComboBoxGetSelectedMenuItem",
+      "to": "ui:ComboBox",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ],
+      "rationale": "function:window:ComboBoxGetSelectedMenuItem relates to ui:ComboBox via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ]
+    },
+    {
+      "from": "function:window:ComboBoxGetSelectedText",
+      "to": "ui:ComboBox",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ],
+      "rationale": "function:window:ComboBoxGetSelectedText relates to ui:ComboBox via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ]
+    },
+    {
+      "from": "function:window:ComboBoxIsMenuOpen",
+      "to": "ui:ComboBox",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ],
+      "rationale": "function:window:ComboBoxIsMenuOpen relates to ui:ComboBox via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ]
+    },
+    {
+      "from": "function:window:ComboBoxSetDisabledFlag",
+      "to": "ui:ComboBox",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ],
+      "rationale": "function:window:ComboBoxSetDisabledFlag relates to ui:ComboBox via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ]
+    },
+    {
+      "from": "function:window:ComboBoxSetSelectedMenuItem",
+      "to": "ui:ComboBox",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ],
+      "rationale": "function:window:ComboBoxSetSelectedMenuItem relates to ui:ComboBox via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ComboBox* indicates operation on ComboBox"
+      ]
+    },
+    {
+      "from": "function:window:DynamicImageSetRotation",
+      "to": "ui:DynamicImage",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ],
+      "rationale": "function:window:DynamicImageSetRotation relates to ui:DynamicImage via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ]
+    },
+    {
+      "from": "function:window:DynamicImageSetTexture",
+      "to": "ui:DynamicImage",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ],
+      "rationale": "function:window:DynamicImageSetTexture relates to ui:DynamicImage via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ]
+    },
+    {
+      "from": "function:window:DynamicImageSetTextureDimensions",
+      "to": "ui:DynamicImage",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ],
+      "rationale": "function:window:DynamicImageSetTextureDimensions relates to ui:DynamicImage via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ]
+    },
+    {
+      "from": "function:window:DynamicImageSetTextureOrientation",
+      "to": "ui:DynamicImage",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ],
+      "rationale": "function:window:DynamicImageSetTextureOrientation relates to ui:DynamicImage via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ]
+    },
+    {
+      "from": "function:window:DynamicImageSetTextureScale",
+      "to": "ui:DynamicImage",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ],
+      "rationale": "function:window:DynamicImageSetTextureScale relates to ui:DynamicImage via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ]
+    },
+    {
+      "from": "function:window:DynamicImageSetTextureSlice",
+      "to": "ui:DynamicImage",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ],
+      "rationale": "function:window:DynamicImageSetTextureSlice relates to ui:DynamicImage via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix DynamicImage* indicates operation on DynamicImage"
+      ]
+    },
+    {
+      "from": "function:window:LabelGetText",
+      "to": "ui:Label",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Label* indicates operation on Label"
+      ],
+      "rationale": "function:window:LabelGetText relates to ui:Label via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Label* indicates operation on Label"
+      ]
+    },
+    {
+      "from": "function:window:LabelGetTextColor",
+      "to": "ui:Label",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Label* indicates operation on Label"
+      ],
+      "rationale": "function:window:LabelGetTextColor relates to ui:Label via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Label* indicates operation on Label"
+      ]
+    },
+    {
+      "from": "function:window:LabelGetTextDimensions",
+      "to": "ui:Label",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Label* indicates operation on Label"
+      ],
+      "rationale": "function:window:LabelGetTextDimensions relates to ui:Label via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Label* indicates operation on Label"
+      ]
+    },
+    {
+      "from": "function:window:LabelGetWordWrap",
+      "to": "ui:Label",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Label* indicates operation on Label"
+      ],
+      "rationale": "function:window:LabelGetWordWrap relates to ui:Label via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Label* indicates operation on Label"
+      ]
+    },
+    {
+      "from": "function:window:LabelSetFont",
+      "to": "ui:Label",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Label* indicates operation on Label"
+      ],
+      "rationale": "function:window:LabelSetFont relates to ui:Label via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Label* indicates operation on Label"
+      ]
+    },
+    {
+      "from": "function:window:LabelSetText",
+      "to": "ui:Label",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Label* indicates operation on Label"
+      ],
+      "rationale": "function:window:LabelSetText relates to ui:Label via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Label* indicates operation on Label"
+      ]
+    },
+    {
+      "from": "function:window:LabelSetTextAlign",
+      "to": "ui:Label",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Label* indicates operation on Label"
+      ],
+      "rationale": "function:window:LabelSetTextAlign relates to ui:Label via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Label* indicates operation on Label"
+      ]
+    },
+    {
+      "from": "function:window:LabelSetTextColor",
+      "to": "ui:Label",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Label* indicates operation on Label"
+      ],
+      "rationale": "function:window:LabelSetTextColor relates to ui:Label via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Label* indicates operation on Label"
+      ]
+    },
+    {
+      "from": "function:window:LabelSetWordWrap",
+      "to": "ui:Label",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Label* indicates operation on Label"
+      ],
+      "rationale": "function:window:LabelSetWordWrap relates to ui:Label via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Label* indicates operation on Label"
+      ]
+    },
+    {
+      "from": "function:window:ScrollWindowSetOffset",
+      "to": "ui:ScrollWindow",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ScrollWindow* indicates operation on ScrollWindow"
+      ],
+      "rationale": "function:window:ScrollWindowSetOffset relates to ui:ScrollWindow via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ScrollWindow* indicates operation on ScrollWindow"
+      ]
+    },
+    {
+      "from": "function:window:ScrollWindowUpdateScrollRect",
+      "to": "ui:ScrollWindow",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix ScrollWindow* indicates operation on ScrollWindow"
+      ],
+      "rationale": "function:window:ScrollWindowUpdateScrollRect relates to ui:ScrollWindow via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix ScrollWindow* indicates operation on ScrollWindow"
+      ]
+    },
+    {
+      "from": "function:window:StatusBarGetCurrentValue",
+      "to": "ui:StatusBar",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ],
+      "rationale": "function:window:StatusBarGetCurrentValue relates to ui:StatusBar via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ]
+    },
+    {
+      "from": "function:window:StatusBarGetMaximumValue",
+      "to": "ui:StatusBar",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ],
+      "rationale": "function:window:StatusBarGetMaximumValue relates to ui:StatusBar via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ]
+    },
+    {
+      "from": "function:window:StatusBarSetBackgroundTint",
+      "to": "ui:StatusBar",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ],
+      "rationale": "function:window:StatusBarSetBackgroundTint relates to ui:StatusBar via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ]
+    },
+    {
+      "from": "function:window:StatusBarSetCurrentValue",
+      "to": "ui:StatusBar",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ],
+      "rationale": "function:window:StatusBarSetCurrentValue relates to ui:StatusBar via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ]
+    },
+    {
+      "from": "function:window:StatusBarSetForegroundTint",
+      "to": "ui:StatusBar",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ],
+      "rationale": "function:window:StatusBarSetForegroundTint relates to ui:StatusBar via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ]
+    },
+    {
+      "from": "function:window:StatusBarSetMaximumValue",
+      "to": "ui:StatusBar",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ],
+      "rationale": "function:window:StatusBarSetMaximumValue relates to ui:StatusBar via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix StatusBar* indicates operation on StatusBar"
+      ]
+    },
+    {
+      "from": "function:window:TextEditBoxGetFont",
+      "to": "ui:Text",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Text* indicates operation on Text"
+      ],
+      "rationale": "function:window:TextEditBoxGetFont relates to ui:Text via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Text* indicates operation on Text"
+      ]
+    },
+    {
+      "from": "function:window:TextEditBoxGetHistory",
+      "to": "ui:Text",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Text* indicates operation on Text"
+      ],
+      "rationale": "function:window:TextEditBoxGetHistory relates to ui:Text via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Text* indicates operation on Text"
+      ]
+    },
+    {
+      "from": "function:window:TextEditBoxGetText",
+      "to": "ui:Text",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Text* indicates operation on Text"
+      ],
+      "rationale": "function:window:TextEditBoxGetText relates to ui:Text via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Text* indicates operation on Text"
+      ]
+    },
+    {
+      "from": "function:window:TextEditBoxInsertText",
+      "to": "ui:Text",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Text* indicates operation on Text"
+      ],
+      "rationale": "function:window:TextEditBoxInsertText relates to ui:Text via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Text* indicates operation on Text"
+      ]
+    },
+    {
+      "from": "function:window:TextEditBoxSelectAll",
+      "to": "ui:Text",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Text* indicates operation on Text"
+      ],
+      "rationale": "function:window:TextEditBoxSelectAll relates to ui:Text via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Text* indicates operation on Text"
+      ]
+    },
+    {
+      "from": "function:window:TextEditBoxSetHistory",
+      "to": "ui:Text",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Text* indicates operation on Text"
+      ],
+      "rationale": "function:window:TextEditBoxSetHistory relates to ui:Text via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Text* indicates operation on Text"
+      ]
+    },
+    {
+      "from": "function:window:TextEditBoxSetMaxChars",
+      "to": "ui:Text",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Text* indicates operation on Text"
+      ],
+      "rationale": "function:window:TextEditBoxSetMaxChars relates to ui:Text via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Text* indicates operation on Text"
+      ]
+    },
+    {
+      "from": "function:window:TextEditBoxSetText",
+      "to": "ui:Text",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Text* indicates operation on Text"
+      ],
+      "rationale": "function:window:TextEditBoxSetText relates to ui:Text via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Text* indicates operation on Text"
+      ]
+    },
+    {
+      "from": "function:window:TextEditBoxSetTextColor",
+      "to": "ui:Text",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Text* indicates operation on Text"
+      ],
+      "rationale": "function:window:TextEditBoxSetTextColor relates to ui:Text via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Text* indicates operation on Text"
+      ]
+    },
+    {
+      "from": "function:window:WindowAddAnchor",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowAddAnchor relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowAssignFocus",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowAssignFocus relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowClearAnchors",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowClearAnchors relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowForceProcessAnchors",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowForceProcessAnchors relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGameAction",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGameAction relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetAlpha",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetAlpha relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetAnchor",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetAnchor relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetAnchorCount",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetAnchorCount relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetDimensions",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetDimensions relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetFontAlpha",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetFontAlpha relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetGameActionData",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetGameActionData relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetHandleInput",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetHandleInput relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetId",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetId relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetLayer",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetLayer relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetMovable",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetMovable relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetOffsetFromParent",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetOffsetFromParent relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetParent",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetParent relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetPopable",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetPopable relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetScale",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetScale relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetScreenPosition",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetScreenPosition relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetShowing",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetShowing relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowGetTintColor",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowGetTintColor relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowRegisterCoreEventHandler",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowRegisterCoreEventHandler relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowRegisterEventHandler",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowRegisterEventHandler relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowResizeOnChildren",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowResizeOnChildren relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowRestoreDefaultSettings",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowRestoreDefaultSettings relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetAlpha",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetAlpha relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetDimensions",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetDimensions relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetDrawWhenInterfaceHidden",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetDrawWhenInterfaceHidden relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetFontAlpha",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetFontAlpha relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetGameActionData",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetGameActionData relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetGameActionTrigger",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetGameActionTrigger relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetHandleInput",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetHandleInput relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetId",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetId relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetLayer",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetLayer relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetMovable",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetMovable relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetMoving",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetMoving relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetOffsetFromParent",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetOffsetFromParent relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetParent",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetParent relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetPopable",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetPopable relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetRelativeScale",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetRelativeScale relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetResizing",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetResizing relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetScale",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetScale relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetShowing",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetShowing relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowSetTintColor",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowSetTintColor relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowStartAlphaAnimation",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowStartAlphaAnimation relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowStartPositionAnimation",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowStartPositionAnimation relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowStartScaleAnimation",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowStartScaleAnimation relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowStopAlphaAnimation",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowStopAlphaAnimation relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowUnRegisterEventHandler",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowUnRegisterEventHandler relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowUnregisterCoreEventHandler",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowUnregisterCoreEventHandler relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
+      ]
+    },
+    {
+      "from": "function:window:WindowUnregisterEventHandler",
+      "to": "ui:Window",
+      "type": "manipulates",
+      "confidence_score": 50,
+      "evidence_count": 1,
+      "evidence_sources": [
+        "Function name prefix Window* indicates operation on Window"
+      ],
+      "rationale": "function:window:WindowUnregisterEventHandler relates to ui:Window via manipulates",
+      "weight": 1,
+      "evidence": [
+        "Function name prefix Window* indicates operation on Window"
       ]
     },
     {

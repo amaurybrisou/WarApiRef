@@ -98,6 +98,58 @@ func TestPipelineDispatchSelectsSourceFirstWhenRootProvided(t *testing.T) {
 	})
 }
 
+func TestLoadXMLConventionSeedEvidence(t *testing.T) {
+	root := t.TempDir()
+	seedDir := filepath.Join(root, "docs", "platform", "seeds")
+	if err := os.MkdirAll(seedDir, 0o755); err != nil {
+		t.Fatal(err)
+	}
+
+	seed := `# XML Conventions Seed
+
+## Observed Layout Caveats
+
+- Seed layout caveat.
+
+## Observed List Binding Patterns
+
+- Seed list binding note.
+
+<!-- OBSERVATION:test_obs (promoted:2026-04-05T00:20:00Z) -->
+> Source: Aura | Confidence: MEDIUM | Promoted: 2026-04-05
+
+- Promoted layout note.
+  - Guidance: Keep anchors stable.
+`
+	if err := os.WriteFile(filepath.Join(seedDir, "xml_conventions.md"), []byte(seed), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	cwd, err := os.Getwd()
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer func() {
+		if chdirErr := os.Chdir(cwd); chdirErr != nil {
+			t.Fatalf("restore cwd: %v", chdirErr)
+		}
+	}()
+	if err := os.Chdir(root); err != nil {
+		t.Fatal(err)
+	}
+
+	runtimeEvidence, listEvidence := loadXMLConventionSeedEvidence()
+	if !strings.Contains(strings.Join(runtimeEvidence, "\n"), "Promoted layout note.") {
+		t.Fatalf("runtime evidence missing promoted observation: %v", runtimeEvidence)
+	}
+	if !strings.Contains(strings.Join(runtimeEvidence, "\n"), "Guidance: Keep anchors stable.") {
+		t.Fatalf("runtime evidence missing promoted guidance: %v", runtimeEvidence)
+	}
+	if !strings.Contains(strings.Join(listEvidence, "\n"), "Seed list binding note.") {
+		t.Fatalf("list evidence missing seed note: %v", listEvidence)
+	}
+}
+
 func expectPanic(t *testing.T, fn func()) {
 	t.Helper()
 	defer func() {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T13:49:16.481928723Z",
+  "generated_at": "2026-04-05T08:13:33.263630605Z",
   "frequent_call_chains": [
     {
       "id": "call_chain:xml_event.OnInitialize_function.global.RegisterEventHandler",

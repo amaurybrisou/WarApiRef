@@ -216,6 +216,7 @@ Observed querying runtime window state or metadata.
 - [WindowSetShowing](window_WindowSetShowing.md) (HIGH 100/100) - Window Function
 - [wstring.gsub](../../globals/functions/global_wstring.gsub.md) (HIGH 100/100) - Global Function
 - [wstring.upper](../../globals/functions/global_wstring.upper.md) (HIGH 100/100) - Global Function
+- [DoesWindowExist](../../globals/functions/global_DoesWindowExist.md) (HIGH 83/100) - Global Function
 - [CreateWindowFromTemplate](../../globals/functions/global_CreateWindowFromTemplate.md) (HIGH 75/100) - Global Function
 - [wstring.format](../../globals/functions/global_wstring.format.md) (HIGH 75/100) - Global Function
 

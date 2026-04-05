@@ -28,3 +28,15 @@
 
 - XML behavior claims must be backed by canonical docs or MCP evidence.
 - Mark inferred behavior with confidence notes.
+
+<!-- OBSERVATION:aura_xml_layout_anchor_and_spacing_patterns (promoted:2026-04-05T00:20:00Z) -->
+> Source: Aura | Confidence: MEDIUM | Promoted: 2026-04-05
+
+- `MEDIUM`: When footer controls or edit boxes drift under sibling-based anchoring, anchoring them directly to a stable parent container is more reliable than chaining them through neighboring controls.
+  - Guidance: If a control renders in the wrong column or outside the window, clear its anchors and re-anchor it from `$parent` or a stable container such as `$parentButtonBackground` with explicit offsets.
+- `MEDIUM`: Text-driven header or form rows are more stable when label dimensions are measured after LabelSetText and adjacent controls are positioned from the measured width.
+  - Guidance: Use `LabelGetTextDimensions()` and then resize or re-anchor neighboring labels and edit boxes to avoid truncation, overlap, or misplaced values.
+- `MEDIUM`: A ListBox row highlight or tint only spans the width of the row template; widening the list box alone does not widen the tinted row background.
+  - Guidance: If alternating row tint stops short, increase the row template window and its child label widths instead of only changing the ListBox anchors.
+- `MEDIUM`: Default resizable WAR buttons render more cleanly at their native full height and need adequate footer/container height to prevent stacked controls from overlapping.
+  - Guidance: Prefer keeping button height around 39px and increase the containing button-background height before squeezing stacked rows closer together.

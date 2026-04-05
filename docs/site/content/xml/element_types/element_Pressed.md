@@ -180,5 +180,6 @@ Pressed is a XML UI element. It commonly appears under OverlayTexCoords and Over
 
 ## Used With
 
+- [Button](element_Button.md) (HIGH 100/100) - XML Element Type
 - [Normal](element_Normal.md) (MEDIUM 45/100) - XML Element Type
 - [NormalHighlit](element_NormalHighlit.md) (MEDIUM 45/100) - XML Element Type

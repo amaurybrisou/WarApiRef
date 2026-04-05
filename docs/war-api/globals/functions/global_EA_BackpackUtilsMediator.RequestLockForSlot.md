@@ -69,7 +69,7 @@ Observed as a global function across 2 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: containerSlot, determinantSlot, inventorySlot |
+| arg1 | Observed as a function or method reference. | Observed values: containerSlot, determinantSlot, inventorySlot |
 | arg2 | Observed as a function or method reference. | Observed values: backpackType, containerType, determinantType |
 | arg3 | Observed as a runtime window or control identifier. | Observed values: WINDOW_NAME, windowId |
 | arg4 | Observed as a runtime window or control identifier. | Observed values: {r=0,g=255,b=0} |

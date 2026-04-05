@@ -71,7 +71,7 @@ Observed mutating button text or pressed state on existing controls.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a text or wstring payload. | Observed values: "BloodyMessOptionsEnableCheckBoxButton", "CMapWindowMapWorldMapButton", "CallingSetupCategories"..subName |
+| arg1 | Observed as a function or method reference. | Observed values: "BloodyMessOptionsEnableCheckBoxButton", "CMapWindowMapWorldMapButton", "CallingSetupCategories"..subName |
 | arg2 | Observed as a boolean toggle. | Observed values: false, flag, setit |
 
 ## Returns

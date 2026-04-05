@@ -799,46 +799,46 @@ Confidence: MEDIUM
 | 0 | `index` | number | selected_index |
 ## Lua Functions Manipulating This Type
 
-- MapPin.local.EditMarker
-- ZonePOP.UpdateZoneList
-- DaemonAssist.PopulateBindingCombos
-- Enemy.GroupsUI_EffectFilterDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
-- Enemy.UnitFramesUI_UnitFramePartDialog_Open
-- TwisterSet.Initialize
-- alertMod.SetLabels
-- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
-- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- Enemy.CombatLogUI_StatsWindow_Open
+- GuildWardenWin.WinSetup
 - ScenarioStats.CreateDropdownList
 - TalismanGenie.GoldDustCheckToggle
-- TalismanGenie.Reset
 - TwisterSet.OnRClick
-- CallingSetup.Initialize
-- UiModWindow.UpdateCategoryComboBox
-- Enemy.UnitFramesUI_ConfigDialog_Import
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
-- MapPin.RButtonUp
-- MapPin.EditMarker
 - AdvancedRenownTrainer.GeneratePresetByLinkData
-- BustedGUI.Initialize
-- CCTV.Initialize
-- Enemy.IntercomUI_ChooseChannelDialog_Open
-- Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
-- Enemy.UI_ConfigDialog_Open
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
-- BankArkel.SetupCombos
-- BustedGUI.NewErrorRecorded
 - ChattyCathy.UpdateEntrySetup
-- Enemy.CombatLogUI_StatsWindow_Open
-- ChattyCathy.CC_ModelWindow
+- Enemy.CombatLogUI_StatsWindow_OnSessionSelChanged
 - Enemy.IntercomUI_IntercomJoinDialog_Open
-- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
-- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
-- TwisterSet.OnSetMenuSelectionChanged
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
-- GuildWardenWin.WinSetup
 - TalismanGenie.EssenceCheckToggle
+- BankArkel.SetupCombos
+- Enemy.UnitFramesUI_ConfigDialog_Import
+- Enemy.UI_ConfigDialog_OnSectionSelChanged
+- Enemy.IntercomUI_ChooseChannelDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_OnActionSelChanged
+- ChattyCathy.CC_ModelWindow
+- DaemonAssist.PopulateBindingCombos
+- MapPin.RButtonUp
+- TwisterSet.OnSetMenuSelectionChanged
+- TwisterSet.Initialize
+- ZonePOP.UpdateZoneList
+- CCTV.Initialize
+- UiModWindow.UpdateCategoryComboBox
+- Enemy.UI_ConfigDialog_Open
+- Enemy.IntercomUI_IntercomJoinDialog_AddGroup
+- MapPin.local.EditMarker
 - TalismanGenie.CurioCheckToggle
+- alertMod.SetLabels
+- BustedGUI.NewErrorRecorded
+- Enemy.GroupsUI_EffectFilterDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Ok
+- Enemy.UnitFramesUI_UnitFramePartDialog_Open
+- MapPin.EditMarker
+- TalismanGenie.Reset
+- BustedGUI.Initialize
+- CallingSetup.Initialize
+- Enemy.CombatLogUI_StatsWindow_UpdateSessionsList
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_Open
+- Enemy.UnitFramesUI_UnitFrameClickCastingDialog_UpdateAbilityIcon
 
 
 ## Binding Resolution

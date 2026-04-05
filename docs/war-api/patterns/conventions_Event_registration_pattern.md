@@ -18,8 +18,8 @@ Runtime events are typically wired through RegisterEventHandler or window-scoped
 - [SystemData.Events.RELOAD_INTERFACE](../events/game_events/game_event_SystemData.Events.RELOAD_INTERFACE.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.UPDATE_PROCESSED](../events/game_events/game_event_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - Game Event
 - [SystemData.Events.UPDATE_PROCESSED](../systemdata/fields/systemdata_SystemData.Events.UPDATE_PROCESSED.md) (HIGH 100/100) - SystemData Field
-- [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
 - [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../events/game_events/game_event_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - Game Event
+- [SystemData.Events.WORLD_OBJ_COMBAT_EVENT](../systemdata/fields/systemdata_SystemData.Events.WORLD_OBJ_COMBAT_EVENT.md) (HIGH 100/100) - SystemData Field
 - [OnUpdate](../xml/handlers/handler_OnUpdate.md) (HIGH 88/100) - XML Event
 - [RegisterEventHandler](../globals/functions/global_RegisterEventHandler.md) (MEDIUM 68/100) - Global Function
 - [UnregisterEventHandler](../globals/functions/global_UnregisterEventHandler.md) (MEDIUM 68/100) - Global Function
