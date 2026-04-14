@@ -7826,94 +7826,106 @@
             "order": 2
           },
           {
+            "label": "Lua encoding caveats",
+            "type": "pattern",
+            "path": "patterns/conventions_Lua_encoding_caveats.md",
+            "order": 3
+          },
+          {
             "label": "UI creation pattern",
             "type": "pattern",
             "path": "patterns/conventions_UI_creation_pattern.md",
-            "order": 3
+            "order": 4
+          },
+          {
+            "label": "WAR API runtime facts",
+            "type": "pattern",
+            "path": "patterns/conventions_WAR_API_runtime_facts.md",
+            "order": 5
           },
           {
             "label": "XML list binding pattern",
             "type": "pattern",
             "path": "patterns/conventions_XML_list_binding_pattern.md",
-            "order": 4
+            "order": 6
           },
           {
             "label": "XML runtime caveats",
             "type": "pattern",
             "path": "patterns/conventions_XML_runtime_caveats.md",
-            "order": 5
+            "order": 7
           },
           {
             "label": "XML to Lua binding pattern",
             "type": "pattern",
             "path": "patterns/conventions_XML_to_Lua_binding_pattern.md",
-            "order": 6
+            "order": 8
           },
           {
             "label": "BroadcastEvent",
             "type": "pattern",
             "path": "patterns/events_BroadcastEvent.md",
-            "order": 7
+            "order": 9
           },
           {
             "label": "Game event fan-in",
             "type": "pattern",
             "path": "patterns/events_Game_event_fan-in.md",
-            "order": 8
+            "order": 10
           },
           {
             "label": "RegisterEventHandler",
             "type": "pattern",
             "path": "patterns/events_RegisterEventHandler.md",
-            "order": 9
+            "order": 11
           },
           {
             "label": "UnregisterEventHandler",
             "type": "pattern",
             "path": "patterns/events_UnregisterEventHandler.md",
-            "order": 10
+            "order": 12
           },
           {
             "label": "Window event hooks",
             "type": "pattern",
             "path": "patterns/events_Window_event_hooks.md",
-            "order": 11
+            "order": 13
           },
           {
             "label": "LibSlash cleanup",
             "type": "pattern",
             "path": "patterns/slash_commands_LibSlash_cleanup.md",
-            "order": 12
+            "order": 14
           },
           {
             "label": "LibSlash registration",
             "type": "pattern",
             "path": "patterns/slash_commands_LibSlash_registration.md",
-            "order": 13
+            "order": 15
           },
           {
             "label": "Runtime anchoring",
             "type": "pattern",
             "path": "patterns/window_Runtime_anchoring.md",
-            "order": 14
+            "order": 16
           },
           {
             "label": "Template instantiation",
             "type": "pattern",
             "path": "patterns/window_Template_instantiation.md",
-            "order": 15
+            "order": 17
           },
           {
             "label": "Window creation",
             "type": "pattern",
             "path": "patterns/window_Window_creation.md",
-            "order": 16
+            "order": 18
           },
           {
             "label": "XML to Lua binding",
             "type": "pattern",
             "path": "patterns/window_XML_to_Lua_binding.md",
-            "order": 17
+            "order": 19
           }
         ]
       }

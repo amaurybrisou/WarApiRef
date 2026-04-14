@@ -1087,18 +1087,18 @@ Confidence: MEDIUM
 | 0 | `elapsed` | number | time_delta |
 ## Lua Functions Manipulating This Type
 
+- ClosetGoblinCharacterWindow.UpdateHighlightOnRow
+- DAoCBuffSettings.Change_Setting
+- DAoCBuffSettings.SetLabels
+- UiModVersionMismatchWindow.UpdateModRowByIndex
 - TTitan.UI.DisplayRow
 - mml.OnItemMouseOver
-- ClosetGoblinCharacterWindow.UpdateHighlightOnRow
-- DAoCBuffSettings.SetLabels
-- DAoCBuffSettings.Change_Setting
-- UiModVersionMismatchWindow.UpdateModRowByIndex
-- RealmStatus.Loading
-- SocialWindowTabFriends.RefreshFilterMenu
 - ClosetGoblinZoneWindow.UpdateHighlightOnRow
 - DAoCBuffSettings.CreateOptionswindow
 - Enemy.UnitFramesUI_EffectsIndicatorDialog_Open
+- RealmStatus.Loading
 - SocialWindowBuddyList.RefreshFilterMenu
+- SocialWindowTabFriends.RefreshFilterMenu
 
 
 ## Binding Resolution

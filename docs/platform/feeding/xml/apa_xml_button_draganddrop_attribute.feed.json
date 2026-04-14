@@ -1,0 +1,44 @@
+{
+  "schema_version": "feeding.observation.v1",
+  "entry_id": "apa_xml_button_draganddrop_attribute",
+  "status": "candidate",
+  "source": {
+    "addon": "AdvancedPetAssist",
+    "repository": "AdvancedPetAssist",
+    "branch": "main",
+    "date_utc": "2026-04-14",
+    "validation": "user_validated",
+    "context": "APA_FTDropSlotTemplate XML Button with draganddrop=true used in cast blacklist drop slot. User successfully dropped abilities onto the button in-game."
+  },
+  "target_seeds": ["docs/platform/seeds/xml_conventions.md"],
+  "confidence": {
+    "overall": "HIGH",
+    "rationale": "draganddrop attribute on Button exercised at runtime. Drop events (OnLButtonUp) fired correctly when attribute was present. User confirmed the drag-and-drop feature works end-to-end."
+  },
+  "claims": [
+    {
+      "claim_id": "button_draganddrop_attribute_enables_drop_events",
+      "kind": "usage_pattern",
+      "confidence": "HIGH",
+      "symbols": ["draganddrop", "Button", "OnLButtonUp"],
+      "statement": "Adding draganddrop=\"true\" to an XML Button element enables it to receive drag-and-drop events. The OnLButtonUp handler fires when the player releases a dragged item or ability over the button. Without this attribute the button does not receive drop events.",
+      "guidance": "Set draganddrop=\"true\" on the Button element in XML. In the OnLButtonUp Lua handler, check Cursor.IconOnCursor() and guard on Cursor.Data.Source before reading the payload. Ensure handleinput=\"true\" or handleinput is not explicitly disabled on the button and its parent chain.",
+      "evidence_refs": ["ev_apa_draganddrop_xml"]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_apa_draganddrop_xml",
+      "type": "runtime_observation",
+      "summary": "APA_FTDropSlotTemplate Button declared with draganddrop=\"true\" received ability drops from the action bar in AdvancedPetAssist. The OnLButtonUp handler fired and the ability ID was correctly captured via Cursor.Data.ObjectId. User confirmed the drag-and-drop cast blacklist feature works.",
+      "file_refs": ["AdvancedPetAssist/APAGui.xml", "AdvancedPetAssist/APAGui.lua"]
+    }
+  ],
+  "promotion": {
+    "notes": "The draganddrop XML attribute is not documented anywhere in docs/war-api or seed files. This is the first documented fact about it.",
+    "criteria": [
+      "Validate whether non-Button element types also support draganddrop if evidence is found in other addons."
+    ]
+  },
+  "tags": ["xml", "button", "drag-drop", "ui", "advancedpetassist"]
+}

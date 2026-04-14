@@ -10,6 +10,8 @@ Implementation-validated findings show that XML input, anchoring, and scroll lay
 ## Involved APIs
 
 - [Button](../xml/element_types/element_Button.md) (HIGH 100/100) - XML Element Type
+- [Cursor](../globals/tables/table_Cursor.md) (HIGH 100/100) - Global Table
+- [Cursor.IconOnCursor](../globals/functions/global_Cursor.IconOnCursor.md) (HIGH 100/100) - Global Function
 - [Label](../xml/element_types/element_Label.md) (HIGH 100/100) - XML Element Type
 - [LabelGetText](../window_api/functions/window_LabelGetText.md) (HIGH 100/100) - Window Function
 - [LabelGetTextDimensions](../window_api/functions/window_LabelGetTextDimensions.md) (HIGH 100/100) - Window Function
@@ -21,6 +23,7 @@ Implementation-validated findings show that XML input, anchoring, and scroll lay
 - [Text](../xml/element_types/element_Text.md) (HIGH 100/100) - XML Element Type
 - [Window](../xml/element_types/element_Window.md) (HIGH 100/100) - XML Element Type
 - [OnLButtonUp](../events/window_events/window_event_OnLButtonUp.md) (MEDIUM 53/100) - Window Event
+- [Icon](../xml/element_types/element_Icon.md) (MEDIUM 45/100) - XML Element Type
 
 ## Flow Diagram
 

@@ -1,0 +1,42 @@
+{
+  "schema_version": "feeding.observation.v1",
+  "entry_id": "apa_lua_utf8_bom_parse_error",
+  "status": "candidate",
+  "source": {
+    "addon": "AdvancedPetAssist",
+    "repository": "AdvancedPetAssist",
+    "branch": "main",
+    "date_utc": "2026-04-14",
+    "validation": "user_validated",
+    "context": "APAGui.lua was re-saved using PowerShell Set-Content -Encoding UTF8 during a file-repair step. The game reported a parse error on next load. Removing the BOM fixed the error immediately."
+  },
+  "target_seeds": ["docs/platform/seeds/lua_conventions.md"],
+  "confidence": {
+    "overall": "HIGH",
+    "rationale": "BOM-caused parse error observed at runtime with exact error message. Removal of BOM fixed the error. Definitive negative test."
+  },
+  "claims": [
+    {
+      "claim_id": "utf8_bom_causes_lua_parse_error",
+      "kind": "behavior_caveat",
+      "confidence": "HIGH",
+      "symbols": [],
+      "statement": "The WAR engine Lua parser rejects .lua files that begin with a UTF-8 BOM (byte sequence 0xEF 0xBB 0xBF). The error message is: Error Reading Lua buffer <file>: [string ...]:1: '=' expected near '»'. The '»' character is the visual artefact of the BOM rendered in the error log.",
+      "guidance": "Always save Lua addon files as UTF-8 without BOM. In PowerShell 5.1, do NOT use Set-Content -Encoding UTF8 (it adds a BOM). Use [System.IO.File]::WriteAllText(path, content, [System.Text.UTF8Encoding]::new($false)) instead. To verify: read the first 3 bytes — they must NOT be 239 187 191.",
+      "evidence_refs": ["ev_apa_bom_runtime_error"]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_apa_bom_runtime_error",
+      "type": "runtime_observation",
+      "summary": "After truncating APAGui.lua with Set-Content -Encoding UTF8 in PowerShell 5.1, the game logged: Error Reading Lua buffer Interface/AddOns/AdvancedPetAssist/APAGui.lua: [string ...]:1: '=' expected near '»'. Byte inspection confirmed first 3 bytes were the UTF-8 BOM. Re-saving with [System.Text.UTF8Encoding]::new($false) resolved the error immediately.",
+      "file_refs": ["AdvancedPetAssist/APAGui.lua"]
+    }
+  ],
+  "promotion": {
+    "notes": "Promote as a Lua conventions caveat. This is an operational pitfall when editing WAR addon files on Windows using PowerShell tools and affects any addon developer.",
+    "criteria": []
+  },
+  "tags": ["lua", "encoding", "tooling", "caveat", "advancedpetassist"]
+}

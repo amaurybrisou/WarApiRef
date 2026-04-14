@@ -112,8 +112,8 @@ Observed as a window function across 22 addons.
 - DammazKron: SetData -> LabelGetTextDimensions(windowName.."Name")
 - DammazKron: SetData -> LabelGetTextDimensions(windowName.."Career")
 - DammazKron: SetData -> LabelGetTextDimensions(windowName.."Level")
-- DammazKron: SetData -> LabelGetTextDimensions(windowName.."DeathblowTitle")
 - DammazKron: SetData -> LabelGetTextDimensions(windowName.."DeathblowValue")
+- DammazKron: SetData -> LabelGetTextDimensions(windowName.."DeathblowTitle")
 
 ## Used With
 

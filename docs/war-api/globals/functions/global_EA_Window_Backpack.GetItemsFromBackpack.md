@@ -72,7 +72,7 @@ Observed as a global function across 8 addons.
 
 | Name | Role | Evidence |
 | --- | --- | --- |
-| arg1 | Observed as a runtime window or control identifier. | Observed values: EA_Window_Backpack.TYPE_CURRENCY, EA_Window_Backpack.currentMode, Read[i] |
+| arg1 | Observed as a function or method reference. | Observed values: EA_Window_Backpack.TYPE_CURRENCY, EA_Window_Backpack.currentMode, Read[i] |
 
 ## Returns
 

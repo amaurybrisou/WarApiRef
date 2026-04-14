@@ -9106,10 +9106,24 @@
               "importance": 100
             },
             {
+              "id": "pattern:conventions_Lua_encoding_caveats",
+              "label": "Lua encoding caveats",
+              "type": "pattern",
+              "path": "patterns/conventions_Lua_encoding_caveats.md",
+              "importance": 100
+            },
+            {
               "id": "pattern:conventions_UI_creation_pattern",
               "label": "UI creation pattern",
               "type": "pattern",
               "path": "patterns/conventions_UI_creation_pattern.md",
+              "importance": 100
+            },
+            {
+              "id": "pattern:conventions_WAR_API_runtime_facts",
+              "label": "WAR API runtime facts",
+              "type": "pattern",
+              "path": "patterns/conventions_WAR_API_runtime_facts.md",
               "importance": 100
             },
             {

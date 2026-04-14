@@ -1,0 +1,51 @@
+{
+  "schema_version": "feeding.observation.v1",
+  "entry_id": "apa_cursor_data_drag_drop_pattern",
+  "status": "candidate",
+  "source": {
+    "addon": "AdvancedPetAssist",
+    "repository": "AdvancedPetAssist",
+    "branch": "main",
+    "date_utc": "2026-04-14",
+    "validation": "user_validated",
+    "context": "Drag-and-drop ability slot in AdvancedPetAssist cast blacklist UI. User dragged abilities from the action bar onto the drop slot. The correct ability IDs were captured and persisted. User confirmed feature works as intended."
+  },
+  "target_seeds": ["docs/platform/seeds/war_api_facts.md"],
+  "confidence": {
+    "overall": "HIGH",
+    "rationale": "Cursor.Data.Source, Cursor.Data.ObjectId, and Cursor.SOURCE_ACTION_LIST were used and produced correct ability IDs at runtime. User-validated end-to-end."
+  },
+  "claims": [
+    {
+      "claim_id": "cursor_data_source_and_objectid_for_action_bar",
+      "kind": "usage_pattern",
+      "confidence": "HIGH",
+      "symbols": [
+        "Cursor.Data",
+        "Cursor.Data.Source",
+        "Cursor.Data.ObjectId",
+        "Cursor.SOURCE_ACTION_LIST",
+        "Cursor.Clear",
+        "Cursor.IconOnCursor"
+      ],
+      "statement": "When an ability is dragged from the action bar: Cursor.IconOnCursor() returns true; Cursor.Data.Source equals Cursor.SOURCE_ACTION_LIST; Cursor.Data.ObjectId contains the ability ID as an integer. After handling the drop, Cursor.Clear() must be called to consume the cursor item.",
+      "guidance": "Always check Cursor.IconOnCursor() first. Guard with Cursor.Data.Source == Cursor.SOURCE_ACTION_LIST before reading Cursor.Data.ObjectId. Call Cursor.Clear() after every drop handling path (success or rejection) to avoid leaving a stale cursor icon.",
+      "evidence_refs": ["ev_apa_drag_drop_runtime"]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_apa_drag_drop_runtime",
+      "type": "runtime_observation",
+      "summary": "AdvancedPetAssist cast blacklist panel: user dragged abilities from the action bar onto the drop slot. Cursor.IconOnCursor() was true, Cursor.Data.Source equalled Cursor.SOURCE_ACTION_LIST, and Cursor.Data.ObjectId held the correct ability ID. The ability was correctly added to the blacklist. User confirmed the feature works.",
+      "file_refs": ["AdvancedPetAssist/APAGui.lua"]
+    }
+  ],
+  "promotion": {
+    "notes": "Cursor.Data subfields (Source, ObjectId) and the SOURCE_ACTION_LIST constant are undocumented in the Cursor table doc. This fills the drag-drop ability identification gap.",
+    "criteria": [
+      "Corroborate Cursor.Data.Source constants for other drag sources (items, gear) in additional addons."
+    ]
+  },
+  "tags": ["lua", "cursor", "drag-drop", "ui", "advancedpetassist"]
+}

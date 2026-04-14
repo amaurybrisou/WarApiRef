@@ -40,3 +40,9 @@
   - Guidance: If alternating row tint stops short, increase the row template window and its child label widths instead of only changing the ListBox anchors.
 - `MEDIUM`: Default resizable WAR buttons render more cleanly at their native full height and need adequate footer/container height to prevent stacked controls from overlapping.
   - Guidance: Prefer keeping button height around 39px and increase the containing button-background height before squeezing stacked rows closer together.
+
+<!-- OBSERVATION:apa_xml_button_draganddrop_attribute (promoted:2026-04-14T05:15:34Z) -->
+> Source: AdvancedPetAssist | Confidence: HIGH | Promoted: 2026-04-14
+
+- `HIGH`: Adding draganddrop="true" to an XML Button element enables it to receive drag-and-drop events. The OnLButtonUp handler fires when the player releases a dragged item or ability over the button. Without this attribute the button does not receive drop events.
+  - Guidance: Set draganddrop="true" on the Button element in XML. In the OnLButtonUp Lua handler, check Cursor.IconOnCursor() and guard on Cursor.Data.Source before reading the payload. Ensure handleinput="true" or handleinput is not explicitly disabled on the button and its parent chain.

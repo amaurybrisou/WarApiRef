@@ -1133,6 +1133,8 @@ func buildEventPatterns(globalFunctions map[string]*functionAccumulator, gameEve
 func buildConventions(corpus Corpus, input contractSemanticInput) []PatternDoc {
 	patterns := []PatternDoc{}
 	seedRuntimeEvidence, seedListEvidence := loadXMLConventionSeedEvidence()
+	luaSeedEvidence := loadLuaConventionSeedEvidence()
+	warAPIFactsEvidence := loadWarAPIFactsSeedEvidence()
 
 	patterns = append(patterns, PatternDoc{
 		Name:        "Initialization pattern",
@@ -1187,6 +1189,24 @@ func buildConventions(corpus Corpus, input contractSemanticInput) []PatternDoc {
 			"AggroMeter: `ListData table=\"AggroMeter.Listdata\" populationfunction=\"\"` suggests column-only text binding works without a custom population callback.",
 		}, seedListEvidence...)),
 	})
+	if len(luaSeedEvidence) > 0 {
+		patterns = append(patterns, PatternDoc{
+			Name:        "Lua encoding caveats",
+			Category:    "conventions",
+			Confidence:  ConfidenceHigh,
+			Description: "Implementation-validated encoding and tooling findings for WAR Lua addon files.",
+			Evidence:    luaSeedEvidence,
+		})
+	}
+	if len(warAPIFactsEvidence) > 0 {
+		patterns = append(patterns, PatternDoc{
+			Name:        "WAR API runtime facts",
+			Category:    "conventions",
+			Confidence:  ConfidenceHigh,
+			Description: "Implementation-validated WAR engine API facts discovered through addon development and confirmed against the live engine.",
+			Evidence:    warAPIFactsEvidence,
+		})
+	}
 	return patterns
 }
 
@@ -1239,6 +1259,84 @@ func loadXMLConventionSeedEvidence() (runtimeEvidence []string, listEvidence []s
 	}
 
 	return uniqueNonEmptyStrings(runtimeEvidence), uniqueNonEmptyStrings(listEvidence)
+}
+
+func loadLuaConventionSeedEvidence() []string {
+	candidates := []string{
+		"docs/platform/seeds/lua_conventions.md",
+		"/workspace/docs/platform/seeds/lua_conventions.md",
+	}
+
+	var content string
+	for _, candidate := range candidates {
+		data, err := os.ReadFile(candidate)
+		if err == nil {
+			content = string(data)
+			break
+		}
+	}
+	if content == "" {
+		return nil
+	}
+
+	var evidence []string
+	inPromotedObservation := false
+	for _, rawLine := range strings.Split(content, "\n") {
+		line := strings.TrimSpace(rawLine)
+		if strings.HasPrefix(line, "## ") {
+			inPromotedObservation = false
+			continue
+		}
+		if strings.HasPrefix(line, "<!-- OBSERVATION:") {
+			inPromotedObservation = true
+			continue
+		}
+		if inPromotedObservation {
+			if e, ok := seedEvidenceLine(line); ok {
+				evidence = append(evidence, e)
+			}
+		}
+	}
+	return uniqueNonEmptyStrings(evidence)
+}
+
+func loadWarAPIFactsSeedEvidence() []string {
+	candidates := []string{
+		"docs/platform/seeds/war_api_facts.md",
+		"/workspace/docs/platform/seeds/war_api_facts.md",
+	}
+
+	var content string
+	for _, candidate := range candidates {
+		data, err := os.ReadFile(candidate)
+		if err == nil {
+			content = string(data)
+			break
+		}
+	}
+	if content == "" {
+		return nil
+	}
+
+	var evidence []string
+	inPromotedObservation := false
+	for _, rawLine := range strings.Split(content, "\n") {
+		line := strings.TrimSpace(rawLine)
+		if strings.HasPrefix(line, "## ") {
+			inPromotedObservation = false
+			continue
+		}
+		if strings.HasPrefix(line, "<!-- OBSERVATION:") {
+			inPromotedObservation = true
+			continue
+		}
+		if inPromotedObservation {
+			if e, ok := seedEvidenceLine(line); ok {
+				evidence = append(evidence, e)
+			}
+		}
+	}
+	return uniqueNonEmptyStrings(evidence)
 }
 
 func seedEvidenceLine(line string) (string, bool) {

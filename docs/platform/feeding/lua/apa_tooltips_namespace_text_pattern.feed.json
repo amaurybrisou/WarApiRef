@@ -1,0 +1,72 @@
+{
+  "schema_version": "feeding.observation.v1",
+  "entry_id": "apa_tooltips_namespace_text_pattern",
+  "status": "candidate",
+  "source": {
+    "addon": "AdvancedPetAssist",
+    "repository": "AdvancedPetAssist",
+    "branch": "main",
+    "date_utc": "2026-04-14",
+    "validation": "user_validated",
+    "context": "Drag-and-drop cast blacklist UI in AdvancedPetAssist. Hover tooltips on the drop slot and ability rows were exercised in-game. User confirmed both UI and behavior work as intended. Tooltips.AddLineToTooltip nil error was observed in a prior iteration, confirming that function does not exist."
+  },
+  "target_seeds": ["docs/platform/seeds/war_api_facts.md"],
+  "confidence": {
+    "overall": "HIGH",
+    "rationale": "CreateTextOnlyTooltip + SetTooltipText + Finalize + AnchorTooltip pattern rendered correctly in-game and is user-validated. AddLineToTooltip nil error is a hard runtime fact."
+  },
+  "claims": [
+    {
+      "claim_id": "tooltips_text_multiline_pattern",
+      "kind": "usage_pattern",
+      "confidence": "HIGH",
+      "symbols": [
+        "Tooltips.CreateTextOnlyTooltip",
+        "Tooltips.SetTooltipText",
+        "Tooltips.SetTooltipColorDef",
+        "Tooltips.Finalize",
+        "Tooltips.AnchorTooltip",
+        "Tooltips.ClearTooltip",
+        "Tooltips.COLOR_HEADING",
+        "Tooltips.ANCHOR_WINDOW_RIGHT"
+      ],
+      "statement": "The standard pattern for a multi-line text-only tooltip is: Tooltips.CreateTextOnlyTooltip(windowName, nil) then Tooltips.SetTooltipText(row, col, wstring) for each line, Tooltips.SetTooltipColorDef(1, 1, Tooltips.COLOR_HEADING) for the heading row, then Tooltips.Finalize() and Tooltips.AnchorTooltip(Tooltips.ANCHOR_WINDOW_RIGHT). The MouseOverEnd handler should call Tooltips.ClearTooltip().",
+      "guidance": "Use row=1, col=1 for the heading line with COLOR_HEADING applied. Use row=2+ for body lines. The row index is 1-based. Do NOT call Tooltips.AddLineToTooltip — that function does not exist and causes a nil-call runtime error.",
+      "evidence_refs": ["ev_apa_tooltip_runtime"]
+    },
+    {
+      "claim_id": "tooltips_addlinetooltip_does_not_exist",
+      "kind": "behavior_caveat",
+      "confidence": "HIGH",
+      "symbols": ["Tooltips.AddLineToTooltip"],
+      "statement": "Tooltips.AddLineToTooltip does not exist in the WAR engine. Calling it produces the runtime error: attempt to call field 'AddLineToTooltip' (a nil value).",
+      "guidance": "Never call Tooltips.AddLineToTooltip. To add a separator or body line, call Tooltips.SetTooltipText with the next row index instead.",
+      "evidence_refs": ["ev_apa_tooltip_runtime"]
+    },
+    {
+      "claim_id": "tooltips_createabilitytooltip_signature",
+      "kind": "signature_hint",
+      "confidence": "MEDIUM",
+      "symbols": ["Tooltips.CreateAbilityTooltip"],
+      "statement": "Tooltips.CreateAbilityTooltip(abilityData, windowName, anchor, hintWstring, nil) creates an ability tooltip anchored to a named window. The first argument is the table returned by GetAbilityData(id).",
+      "guidance": "Pass the table from GetAbilityData(id) as the first argument. Use Tooltips.ANCHOR_WINDOW_RIGHT as anchor. The fifth argument appears unused (nil). Corroborate in additional addons before treating as a hard contract.",
+      "evidence_refs": ["ev_apa_tooltip_runtime"]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_apa_tooltip_runtime",
+      "type": "runtime_observation",
+      "summary": "Tooltips.AddLineToTooltip raised a nil-call error at runtime in AdvancedPetAssist during cast blacklist panel implementation. After removing it, the CreateTextOnlyTooltip + SetTooltipText + Finalize + AnchorTooltip pattern rendered correctly in-game on hover. User confirmed the entire blacklist UI works as intended.",
+      "file_refs": ["AdvancedPetAssist/APAGui.lua"]
+    }
+  ],
+  "promotion": {
+    "notes": "Promote to war_api_facts.md. The Tooltips namespace is entirely absent from docs/war-api. These are the first documented facts about it.",
+    "criteria": [
+      "Corroborate Tooltips.CreateAbilityTooltip signature in additional addons before upgrading to HIGH.",
+      "Retain HIGH confidence for the negative AddLineToTooltip fact — runtime error is definitive."
+    ]
+  },
+  "tags": ["lua", "tooltips", "ui", "advancedpetassist"]
+}
