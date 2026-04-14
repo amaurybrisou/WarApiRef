@@ -2,6 +2,8 @@
 
 This repository now exposes a consolidated documentation pipeline with a single generator and a static site.
 
+> **Disclaimer:** This is a best-effort, community-inferred reference. All API knowledge is reverse-engineered from existing addon source code — no official documentation exists. The coverage is **incomplete** and the conclusions are **imperfect**. Contributions and corrections are welcome via the knowledge workflow below.
+
 ## Structure
 
 - `tools/api_doc_gen`: Go generator (addon, platform, site modes)
