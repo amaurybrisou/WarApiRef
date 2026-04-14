@@ -22,7 +22,4 @@ docs/addon-api/
 *.pid
 addons/*
 all_addons/*
-.debug/source-subset/Clock/Changelog-Clock-1.4.txt
-.debug/source-subset/Clock/Clock.lua
-.debug/source-subset/Clock/Clock.mod
-.debug/source-subset/Clock/Clock.xml
+.debug/source-subset/*
