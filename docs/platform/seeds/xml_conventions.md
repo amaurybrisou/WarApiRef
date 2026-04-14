@@ -46,3 +46,11 @@
 
 - `HIGH`: Adding draganddrop="true" to an XML Button element enables it to receive drag-and-drop events. The OnLButtonUp handler fires when the player releases a dragged item or ability over the button. Without this attribute the button does not receive drop events.
   - Guidance: Set draganddrop="true" on the Button element in XML. In the OnLButtonUp Lua handler, check Cursor.IconOnCursor() and guard on Cursor.Data.Source before reading the payload. Ensure handleinput="true" or handleinput is not explicitly disabled on the button and its parent chain.
+
+<!-- OBSERVATION:aura_editbox_anchor_and_footer_window_sizing (promoted:2026-04-14T11:23:23Z) -->
+> Source: Aura | Confidence: HIGH | Promoted: 2026-04-14
+
+- `HIGH`: EA_EditBox_DefaultFrame elements cannot be reliably used as relativeTo anchor references for sibling controls. Chaining a control's anchor off 'topright of EA_EditBox_DefaultFrame' resolves to wrong or negative x coordinates at runtime.
+  - Guidance: Never use an EditBox element as the relativeTo target in a sibling's Anchor element. Always anchor sibling controls directly to a known stable container ($parent, $parentButtonBackground, or the main window) with explicit absolute x offsets. The root cause is that the internal layout frame of EA_EditBox_DefaultFrame does not expose its outer bounds as a reliable anchor point.
+- `HIGH`: EA_Window_DefaultButtonBottomFrame auto-anchors to the parent window's bottom edge. Increasing its Size y (to add a row) does NOT grow the parent window — it compresses the content ListBox above it instead. The parent window Size y must be increased by the same amount as the footer height increase to preserve the ListBox area.
+  - Guidance: When adding a row to the footer ButtonBackground, increase BOTH $parentButtonBackground Size y AND the main window's Size y by the same pixel amount. Example: adding a 35px profile row requires adding 35px to the main window height. Failing to do so compresses the ListBox rather than expanding the window.

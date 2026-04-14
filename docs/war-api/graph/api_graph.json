@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-14T05:39:21.538465758Z",
+  "generated_at": "2026-04-14T12:03:06.958101616Z",
   "nodes": [
     {
       "id": "data:table:AlertTextWindow",
@@ -972,16 +972,6 @@
       "summary": "Engine-supplied XML constant or template class referenced by 5 addons."
     },
     {
-      "id": "data:table:EA_LabelCheckButton",
-      "label": "EA_LabelCheckButton",
-      "type": "data_structure",
-      "category": "Global Table",
-      "path": "globals/tables/table_EA_LabelCheckButton.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Shared function table with 1 member functions; the primary API surface for 3 addons."
-    },
-    {
       "id": "data:constant:EA_LabelCheckButton",
       "label": "EA_LabelCheckButton",
       "type": "data_structure",
@@ -990,6 +980,16 @@
       "confidence": "HIGH",
       "score": 100,
       "summary": "Engine-supplied XML constant or template class referenced by 35 addons."
+    },
+    {
+      "id": "data:table:EA_LabelCheckButton",
+      "label": "EA_LabelCheckButton",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_EA_LabelCheckButton.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Shared function table with 1 member functions; the primary API surface for 3 addons."
     },
     {
       "id": "data:constant:EA_LabelCheckButtonSmall",
@@ -1902,16 +1902,6 @@
       "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
     },
     {
-      "id": "data:table:EA_Window_OpenParty",
-      "label": "EA_Window_OpenParty",
-      "type": "data_structure",
-      "category": "Global Table",
-      "path": "globals/tables/table_EA_Window_OpenParty.md",
-      "confidence": "HIGH",
-      "score": 100,
-      "summary": "Shared function table with 3 member functions; the primary API surface for 3 addons."
-    },
-    {
       "id": "data:constant:EA_Window_OpenParty",
       "label": "EA_Window_OpenParty",
       "type": "data_structure",
@@ -1920,6 +1910,16 @@
       "confidence": "HIGH",
       "score": 90,
       "summary": "Engine-supplied XML constant or template class referenced by 1 addons."
+    },
+    {
+      "id": "data:table:EA_Window_OpenParty",
+      "label": "EA_Window_OpenParty",
+      "type": "data_structure",
+      "category": "Global Table",
+      "path": "globals/tables/table_EA_Window_OpenParty.md",
+      "confidence": "HIGH",
+      "score": 100,
+      "summary": "Shared function table with 3 member functions; the primary API surface for 3 addons."
     },
     {
       "id": "data:constant:EA_Window_OpenPartyFlyOut",

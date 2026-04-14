@@ -1,0 +1,59 @@
+{
+  "schema_version": "feeding.observation.v1",
+  "entry_id": "aura_editbox_anchor_and_footer_window_sizing",
+  "status": "candidate",
+  "source": {
+    "addon": "Aura",
+    "repository": "Aura",
+    "date_utc": "2026-04-15",
+    "validation": "user_validated",
+    "context": "Aura profile controls row added to AuraSettings.xml footer. Controls chaining anchors through an EditBox rendered off-screen. Re-anchoring all controls directly to $parentButtonBackground with explicit x offsets resolved the layout. Discovered separately that increasing ButtonBG Size y without also increasing the main window Size y compressed the ListBox instead of growing the window."
+  },
+  "target_seeds": ["docs/platform/seeds/xml_conventions.md"],
+  "confidence": {
+    "overall": "HIGH",
+    "rationale": "Directly observed at runtime by user. EditBox-as-anchor produced reproducible wrong x coordinates; plain $parent-Based anchors with explicit offsets fixed the layout immediately. The window+footer coupling was confirmed by user-side manual correction."
+  },
+  "claims": [
+    {
+      "claim_id": "editbox_frame_cannot_be_anchor_relativeto",
+      "kind": "behavior_caveat",
+      "confidence": "HIGH",
+      "symbols": ["EA_EditBox_DefaultFrame"],
+      "statement": "EA_EditBox_DefaultFrame elements cannot be reliably used as relativeTo anchor references for sibling controls. Chaining a control's anchor off 'topright of EA_EditBox_DefaultFrame' resolves to wrong or negative x coordinates at runtime.",
+      "guidance": "Never use an EditBox element as the relativeTo target in a sibling's Anchor element. Always anchor sibling controls directly to a known stable container ($parent, $parentButtonBackground, or the main window) with explicit absolute x offsets. The root cause is that the internal layout frame of EA_EditBox_DefaultFrame does not expose its outer bounds as a reliable anchor point.",
+      "evidence_refs": ["ev_editbox_anchor_offscreen"]
+    },
+    {
+      "claim_id": "footer_height_requires_main_window_y_increase",
+      "kind": "behavior_caveat",
+      "confidence": "HIGH",
+      "symbols": ["EA_Window_DefaultButtonBottomFrame"],
+      "statement": "EA_Window_DefaultButtonBottomFrame auto-anchors to the parent window's bottom edge. Increasing its Size y (to add a row) does NOT grow the parent window — it compresses the content ListBox above it instead. The parent window Size y must be increased by the same amount as the footer height increase to preserve the ListBox area.",
+      "guidance": "When adding a row to the footer ButtonBackground, increase BOTH $parentButtonBackground Size y AND the main window's Size y by the same pixel amount. Example: adding a 35px profile row requires adding 35px to the main window height. Failing to do so compresses the ListBox rather than expanding the window.",
+      "evidence_refs": ["ev_footer_window_y_coupling"]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_editbox_anchor_offscreen",
+      "type": "runtime_observation",
+      "summary": "In AuraSettings.xml, a Save button anchored 'topright' of $parentProfileNameEdit (an EA_EditBox_DefaultFrame) appeared off-screen to the left. Replacing the anchor with an explicit x offset from $parentButtonBackground topleft rendered the button in the correct column.",
+      "file_refs": ["AddOns/Aura/Source/AuraSettings.xml"]
+    },
+    {
+      "evidence_id": "ev_footer_window_y_coupling",
+      "type": "runtime_observation",
+      "summary": "Increasing $parentButtonBackground Size y from 120 to 155 without changing the main window Size y caused the aura ListBox to shrink by 35px. User manually corrected the main window Size y to 510 (+35 from the original 475) to restore the ListBox height.",
+      "file_refs": ["AddOns/Aura/Source/AuraSettings.xml"]
+    }
+  ],
+  "promotion": {
+    "notes": "Promote as XML layout caveats. Both behaviors are reliable pitfalls that affect any addon adding rows to a footer or using EditBox elements as sibling anchors.",
+    "criteria": [
+      "If corroborated in other addons, raise EditBox anchor caveat to DEFINITIVE.",
+      "Footer/window-y coupling is a direct consequence of EA_Window_DefaultButtonBottomFrame anchor semantics and can be promoted immediately."
+    ]
+  },
+  "tags": ["xml", "layout", "anchor", "editbox", "footer", "window-sizing", "aura", "caveat"]
+}

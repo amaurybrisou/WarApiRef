@@ -1,0 +1,59 @@
+{
+  "schema_version": "feeding.observation.v1",
+  "entry_id": "aura_lua_cleaninternalmembers_side_effect",
+  "status": "candidate",
+  "source": {
+    "addon": "Aura",
+    "repository": "Aura",
+    "date_utc": "2026-04-15",
+    "validation": "user_validated",
+    "context": "Aura profile Save feature caused aura overlay icons to stop displaying after saving a profile. Root cause: SaveCurrentAsProfile called CleanInternalMembers() while the engine was running. CleanInternalMembers destroys all runtime overlay windows and clears their IDs. AuraEngine.Start() was then a no-op because engineRunning was still true. Fix: copy RuntimeAuras with CopyTable and strip internal-* keys from the copy only, leaving live engine state untouched."
+  },
+  "target_seeds": ["docs/platform/seeds/lua_conventions.md"],
+  "confidence": {
+    "overall": "HIGH",
+    "rationale": "Bug reproduced in-game (icons disappeared after profile save), root cause traced through the call chain, fix confirmed working by user."
+  },
+  "claims": [
+    {
+      "claim_id": "cleaninternalmembers_must_not_run_while_engine_running",
+      "kind": "behavior_caveat",
+      "confidence": "HIGH",
+      "symbols": [],
+      "statement": "AuraAddon.CleanInternalMembers() iterates RuntimeAuras and calls Aura:CleanInternalMembers() on each, which destroys all runtime overlay windows (internal-runtimewindowid, internal-runtimetimerwindowid, internal-runtimeflashwindowid) and clears their IDs from aura.Data. If the engine is still running when this is called, the windows are gone but engineRunning remains true, so AuraEngine.Start() becomes a no-op and the windows are never rebuilt. Aura icons stop displaying.",
+      "guidance": "Never call AuraAddon.CleanInternalMembers() while the engine is running unless you immediately follow it with AuraEngine.Stop() + AuraEngine.Start() (as SwitchProfile correctly does). For snapshot/save operations that do not switch profiles, copy RuntimeAuras with AuraHelpers.CopyTable() and strip internal-* keys from the copy only — do not touch the live runtime table.",
+      "evidence_refs": ["ev_clean_destroys_windows"]
+    },
+    {
+      "claim_id": "safe_profile_snapshot_pattern",
+      "kind": "usage_pattern",
+      "confidence": "HIGH",
+      "symbols": [],
+      "statement": "To safely snapshot RuntimeAuras for persistence (without affecting the live engine), copy with AuraHelpers.CopyTable(), then iterate the copy and remove keys matching '^internal.*' from each aura's Data sub-table. Use a two-pass approach (collect keys in one table, then remove) to avoid modifying the table while iterating it.",
+      "guidance": "Pattern: `local copy = AuraHelpers.CopyTable(AuraAddon.RuntimeAuras)` then for each entry `for _, auraCopy in ipairs(copy) do -- collect internal keys, then nil them in auraCopy.Data end`. This is the correct substitute for calling CleanInternalMembers() before a CopyTable when the engine must remain running.",
+      "evidence_refs": ["ev_safe_snapshot_fix"]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_clean_destroys_windows",
+      "type": "runtime_observation",
+      "summary": "After calling SaveCurrentAsProfile (which called CleanInternalMembers), all Aura overlay icons stopped appearing. The engine was still flagged as running so Start() was skipped on settings close. Root cause confirmed by tracing CleanInternalMembers -> Aura:CleanInternalMembers -> DeleteWindow on all internal-runtimewindowid entries.",
+      "file_refs": ["AddOns/Aura/Source/AuraAddon.lua", "AddOns/Aura/Source/Aura.lua"]
+    },
+    {
+      "evidence_id": "ev_safe_snapshot_fix",
+      "type": "code_change",
+      "summary": "Replaced CleanInternalMembers() + CopyTable() with CopyTable() + two-pass internal key strip on the copy only. User confirmed aura icons continued displaying after saving a profile.",
+      "file_refs": ["AddOns/Aura/Source/AuraAddon.lua"]
+    }
+  ],
+  "promotion": {
+    "notes": "Promote as a Lua lifecycle caveat. The pattern of CleanInternalMembers being called without a matching Stop/Start is a latent bug that could affect any future profile or snapshot feature in Aura. The safe snapshot pattern is reusable.",
+    "criteria": [
+      "HIGH confidence — directly user-validated at runtime.",
+      "Promote both claims to lua_conventions.md."
+    ]
+  },
+  "tags": ["lua", "engine", "runtime-windows", "profile", "snapshot", "aura", "caveat"]
+}

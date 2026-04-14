@@ -1027,13 +1027,13 @@ Observed 3 times as an unnamed child.
 
 ## Lua Functions Manipulating This Type
 
-- PotionBarSettings.OnShown
-- mms.SetNewLayout
 - zmm.UpdateLayout
 - APAGui.UpdateFollowTargetHUD
 - APAGui.UpdateKitingHUD
 - APAGui.UpdateInstantOnlyHUD
 - APAGui.UpdatePetTargetHUD
+- PotionBarSettings.OnShown
+- mms.SetNewLayout
 
 ## Seen In
 

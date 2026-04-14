@@ -1,0 +1,86 @@
+{
+  "schema_version": "feeding.observation.v1",
+  "entry_id": "aura_lua_savedvariables_nil_guard_pattern",
+  "status": "candidate",
+  "source": {
+    "addon": "Aura",
+    "repository": "Aura",
+    "date_utc": "2026-04-15",
+    "validation": "user_validated",
+    "context": "Aura profile feature was implemented and tested live. Old SavedVariables written by a partial/broken previous implementation caused cascading nil errors at OnLoad time: RuntimeConfiguration.Auras, .Enabled, and .Debug were all nil after LoadCharacterSettings returned, and AuraShares crashed iterating data.Auras. Adding nil guards at the load boundary and at every pairs/ipairs call site resolved all errors."
+  },
+  "target_seeds": ["docs/platform/seeds/lua_conventions.md"],
+  "confidence": {
+    "overall": "HIGH",
+    "rationale": "All errors were reproduced at runtime by the user and resolved immediately by the nil guards described. Root cause (SavedVariables written by broken code persisting partial keys) is a well-known WAR addon pattern."
+  },
+  "claims": [
+    {
+      "claim_id": "savedvariables_partial_keys_after_broken_impl",
+      "kind": "behavior_caveat",
+      "confidence": "HIGH",
+      "symbols": [],
+      "statement": "WAR's SavedVariables engine persists partial or malformed config tables across sessions. If a previous version of an addon wrote an incomplete table (missing expected sub-keys), the next version receives the partial table from LoadCharacterSettings and all missing keys are nil — even though the top-level character entry exists. Nil checks on the entry itself are insufficient.",
+      "guidance": "After calling the character-profile load function (e.g. AuraProfile.LoadCharacterSettings), validate every expected sub-key and replace nil values with their defaults before using them. Guard at least: RuntimeAuras (init to {}), RuntimeSettings (copy DefaultSettings), Enabled (copy DefaultConfiguration.Enabled), Debug (copy DefaultConfiguration.Debug). This is the correct boundary — not inside the library.",
+      "evidence_refs": ["ev_nil_runtime_auras", "ev_nil_enabled_debug"]
+    },
+    {
+      "claim_id": "pairs_ipairs_always_guard_before_iterate",
+      "kind": "usage_pattern",
+      "confidence": "HIGH",
+      "symbols": [],
+      "statement": "Any Lua function that iterates a WAR addon config table with pairs() or ipairs() must guard the table for nil before the call, even if the table was initialized earlier. SavedVariables corruption or partial-load scenarios mean the table can be nil at any call site that runs before a full validation pass.",
+      "guidance": "Add an explicit `if table == nil then return end` (or equivalent early-return) before every pairs()/ipairs() call site that touches config data loaded from SavedVariables. Affected patterns in Aura: PrepareSettingsForRuntime, CleanInternalMembers (ipairs over RuntimeAuras), CreateListDisplayData (pairs over RuntimeAuras).",
+      "evidence_refs": ["ev_ipairs_preparesettings", "ev_pairs_createlistdata"]
+    },
+    {
+      "claim_id": "aurashares_auras_key_nil_guard",
+      "kind": "behavior_caveat",
+      "confidence": "HIGH",
+      "symbols": ["AuraShares"],
+      "statement": "AuraShares iterates AuraAddon.Configuration for all characters and accesses data.Auras. Not all character entries are guaranteed to have an Auras sub-table — entries written by a broken or partial implementation will have a nil Auras key. The guard must be: `if( data ~= nil and data.Auras ~= nil )` — not just `if( data ~= nil )`.",
+      "guidance": "In any AuraShares loop over the per-character config table, check both the entry and the Auras sub-table before iterating. Failure to guard data.Auras produces a `attempt to call a nil value (pairs)` crash at runtime.",
+      "evidence_refs": ["ev_aurashares_nil_auras"]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_nil_runtime_auras",
+      "type": "runtime_observation",
+      "summary": "At game load, AuraSettings.lua:114 crashed with 'pairs(nil)' because RuntimeAuras was nil. Root cause: AuraProfile.LoadCharacterSettings returned a config entry missing the Auras key (written by old broken code). Fix: after OnLoad assignment, guard `if AuraAddon.RuntimeAuras == nil then AuraAddon.RuntimeAuras = {} end`.",
+      "file_refs": ["AddOns/Aura/Source/AuraAddon.lua", "AddOns/Aura/Source/AuraSettings.lua"]
+    },
+    {
+      "evidence_id": "ev_nil_enabled_debug",
+      "type": "runtime_observation",
+      "summary": "ButtonSetPressedFlag was called with nil as second argument because RuntimeConfiguration.Enabled and .Debug were nil. Same root cause (partial SavedVariables). Fix: guard both fields falling back to DefaultConfiguration values immediately after OnLoad assignment.",
+      "file_refs": ["AddOns/Aura/Source/AuraAddon.lua"]
+    },
+    {
+      "evidence_id": "ev_ipairs_preparesettings",
+      "type": "runtime_observation",
+      "summary": "AuraAddon.lua:200 crashed with 'ipairs(nil)' in PrepareSettingsForRuntime because RuntimeAuras was nil at that call site. Fix: early-return guard at the top of PrepareSettingsForRuntime and CleanInternalMembers.",
+      "file_refs": ["AddOns/Aura/Source/AuraAddon.lua"]
+    },
+    {
+      "evidence_id": "ev_pairs_createlistdata",
+      "type": "runtime_observation",
+      "summary": "AuraSettings.lua CreateListDisplayData crashed with 'pairs(nil)'. Same pattern as PrepareSettingsForRuntime. All config-iterating functions need nil guards on RuntimeAuras.",
+      "file_refs": ["AddOns/Aura/Source/AuraSettings.lua"]
+    },
+    {
+      "evidence_id": "ev_aurashares_nil_auras",
+      "type": "runtime_observation",
+      "summary": "AuraShares.lua:135 crashed with 'pairs(nil)' because data.Auras was nil for a stale character entry. The existing check `if( data ~= nil )` was insufficient. Fix: added `and data.Auras ~= nil` to the condition.",
+      "file_refs": ["AddOns/Aura/Source/AuraShares.lua"]
+    }
+  ],
+  "promotion": {
+    "notes": "Promote as Lua conventions guidance. The SavedVariables partial-key pitfall affects any WAR addon that evolves its data schema across versions. This is a broadly applicable defensive coding pattern.",
+    "criteria": [
+      "The SavedVariables-partial-key pattern should be promoted as a general Lua caveat.",
+      "The AuraShares-specific claim can be scoped to Aura only."
+    ]
+  },
+  "tags": ["lua", "savedvariables", "nil-guard", "error-handling", "aura", "caveat", "runtime-error"]
+}
