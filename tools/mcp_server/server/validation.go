@@ -151,6 +151,12 @@ func (v *Validator) decodeAndValidate(toolName string, raw json.RawMessage) (int
 			return nil, invalidParams("promote_observation", "observation_id is required")
 		}
 		return req, nil
+	case "promote_all_accepted":
+		var req schema.PromoteAllAcceptedRequest
+		if err := json.Unmarshal(raw, &req); err != nil {
+			return nil, invalidParams("promote_all_accepted", "invalid request payload")
+		}
+		return req, nil
 	case "list_rejected_observations":
 		var req schema.ListRejectedObservationsRequest
 		if err := json.Unmarshal(raw, &req); err != nil {

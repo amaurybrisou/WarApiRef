@@ -558,6 +558,49 @@ func (a *App) listRejectedObservations(req schema.ListRejectedObservationsReques
 	return resp
 }
 
+// promoteAllAccepted promotes every observation with lifecycle_status=accepted.
+func (a *App) promoteAllAccepted(req schema.PromoteAllAcceptedRequest) schema.PromoteAllAcceptedResponse {
+	resp := schema.PromoteAllAcceptedResponse{DryRun: req.DryRun}
+
+	records, warnings, err := readQueueRecords(a.queueFilePath())
+	resp.Warnings = warnings
+	if err != nil {
+		resp.Errors = append(resp.Errors, "read queue: "+err.Error())
+		return resp
+	}
+
+	for _, rec := range records {
+		if rec.effectiveStatus() != lifecycleStatusAccepted {
+			continue
+		}
+		resp.TotalAccepted++
+		id := rec.entryID()
+		item := schema.PromoteAllAcceptedItem{ObservationID: id}
+		result := a.promoteObservation(schema.PromoteObservationRequest{
+			ObservationID: id,
+			DryRun:        req.DryRun,
+		})
+		item.SeedUpdates = result.SeedUpdates
+		item.Promoted = result.Promoted
+		if len(result.Warnings) > 0 {
+			resp.Warnings = append(resp.Warnings, result.Warnings...)
+		}
+		if len(result.Errors) > 0 {
+			item.Error = strings.Join(result.Errors, "; ")
+			resp.Errors = append(resp.Errors, id+": "+item.Error)
+			resp.SkippedCount++
+		} else if result.Promoted {
+			resp.PromotedCount++
+		} else {
+			// duplicate or dry-run
+			resp.SkippedCount++
+			item.Duplicate = true
+		}
+		resp.Results = append(resp.Results, item)
+	}
+	return resp
+}
+
 // regenerateFromPromotedKnowledge builds and optionally executes regeneration commands.
 func (a *App) regenerateFromPromotedKnowledge(req schema.RegenerateRequest) schema.RegenerateResponse {
 	scope := strings.ToLower(strings.TrimSpace(req.Scope))

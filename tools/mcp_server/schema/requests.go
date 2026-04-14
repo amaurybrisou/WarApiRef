@@ -71,6 +71,7 @@ type IngestObservationRequest struct {
 type IngestObservationBatchRequest struct {
 	DryRun          bool   `json:"dry_run,omitempty"`
 	Persist         bool   `json:"persist,omitempty"`
+	AutoAccept      bool   `json:"auto_accept,omitempty"`
 	QueueFile       string `json:"queue_file,omitempty"`
 	ContinueOnError bool   `json:"continue_on_error,omitempty"`
 	Limit           int    `json:"limit,omitempty"`
@@ -102,4 +103,8 @@ type ListRejectedObservationsRequest struct {
 type RegenerateRequest struct {
 	Scope  string `json:"scope,omitempty"` // "platform", "site", or "full" (default)
 	DryRun bool   `json:"dry_run,omitempty"`
+}
+
+type PromoteAllAcceptedRequest struct {
+	DryRun bool `json:"dry_run,omitempty"`
 }

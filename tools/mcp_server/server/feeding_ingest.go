@@ -98,6 +98,21 @@ func (a *App) ingestObservationBatch(req schema.IngestObservationBatchRequest) s
 		item.Errors = append(item.Errors, single.Errors...)
 		if item.Accepted {
 			resp.AcceptedCount++
+			// If auto_accept is set and the observation was persisted, immediately mark it accepted.
+			if req.AutoAccept && req.Persist && !req.DryRun && single.EntryID != "" {
+				reviewResp := a.reviewObservation(schema.ReviewObservationRequest{
+					ObservationID: single.EntryID,
+					Verdict:       "accept",
+					Reviewer:      "auto_accept",
+					Notes:         "auto-accepted via ingest_batch auto_accept=true",
+				})
+				if len(reviewResp.Errors) > 0 {
+					resp.Warnings = append(resp.Warnings, model.Warning{
+						Code:    "auto_accept_failed",
+						Message: "ingested but auto-accept failed for " + single.EntryID + ": " + strings.Join(reviewResp.Errors, "; "),
+					})
+				}
+			}
 		} else {
 			resp.RejectedCount++
 			if !req.ContinueOnError {

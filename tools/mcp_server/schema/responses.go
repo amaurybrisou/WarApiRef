@@ -167,3 +167,21 @@ type RegenerateResponse struct {
 	Errors   []string           `json:"errors,omitempty"`
 	Warnings []model.Warning    `json:"warnings,omitempty"`
 }
+
+type PromoteAllAcceptedItem struct {
+	ObservationID string       `json:"observation_id"`
+	Promoted      bool         `json:"promoted"`
+	Duplicate     bool         `json:"duplicate,omitempty"`
+	SeedUpdates   []SeedUpdate `json:"seed_updates,omitempty"`
+	Error         string       `json:"error,omitempty"`
+}
+
+type PromoteAllAcceptedResponse struct {
+	TotalAccepted int                      `json:"total_accepted"`
+	PromotedCount int                      `json:"promoted_count"`
+	SkippedCount  int                      `json:"skipped_count"`
+	DryRun        bool                     `json:"dry_run"`
+	Results       []PromoteAllAcceptedItem `json:"results"`
+	Warnings      []model.Warning          `json:"warnings,omitempty"`
+	Errors        []string                 `json:"errors,omitempty"`
+}

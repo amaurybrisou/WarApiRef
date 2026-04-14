@@ -52,7 +52,7 @@
     },
     {
       "name": "ingest_observation_batch",
-      "request_fields": ["dry_run", "persist", "queue_file", "continue_on_error", "limit"],
+      "request_fields": ["dry_run", "persist", "auto_accept", "queue_file", "continue_on_error", "limit"],
       "response_fields": ["total_files", "processed_files", "accepted_count", "rejected_count", "results", "warnings"]
     },
     {
@@ -69,6 +69,11 @@
       "name": "promote_observation",
       "request_fields": ["observation_id", "dry_run", "seed_path_override"],
       "response_fields": ["observation_id", "promoted", "target_seeds", "seed_updates", "dry_run", "warnings", "errors"]
+    },
+    {
+      "name": "promote_all_accepted",
+      "request_fields": ["dry_run"],
+      "response_fields": ["total_accepted", "promoted_count", "skipped_count", "dry_run", "results", "warnings", "errors"]
     },
     {
       "name": "list_rejected_observations",

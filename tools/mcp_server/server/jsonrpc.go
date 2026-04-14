@@ -35,7 +35,7 @@ type jsonRPCResponse struct {
 type App struct {
 	docsRoot    string
 	feedingRoot string
-	queueMu     sync.Mutex   // protects queue read-modify-write operations
+	queueMu     sync.Mutex // protects queue read-modify-write operations
 	store       *Store
 	storeErr    error
 	storeOnce   sync.Once
@@ -227,6 +227,12 @@ func (a *App) dispatch(method string, params json.RawMessage) (interface{}, *mod
 			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "observation_id is required"}
 		}
 		return a.promoteObservation(req), nil
+	case "feeding/promote_all_accepted":
+		var req schema.PromoteAllAcceptedRequest
+		if err := json.Unmarshal(params, &req); err != nil {
+			return nil, &model.APIError{ErrorCode: "invalid_params", ErrorMessage: "invalid feeding/promote_all_accepted payload"}
+		}
+		return a.promoteAllAccepted(req), nil
 	case "feeding/list_rejected":
 		var req schema.ListRejectedObservationsRequest
 		if err := json.Unmarshal(params, &req); err != nil {

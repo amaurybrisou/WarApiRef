@@ -15,6 +15,7 @@ var ToolNames = []string{
 	"list_pending_observations",
 	"review_observation",
 	"promote_observation",
+	"promote_all_accepted",
 	"list_rejected_observations",
 	"regenerate_from_promoted_knowledge",
 }

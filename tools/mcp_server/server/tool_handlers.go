@@ -26,6 +26,8 @@ func (a *App) HandleToolCall(name string, args json.RawMessage) (interface{}, *m
 		return a.reviewObservation(decoded.(schema.ReviewObservationRequest)), nil
 	case "promote_observation":
 		return a.promoteObservation(decoded.(schema.PromoteObservationRequest)), nil
+	case "promote_all_accepted":
+		return a.promoteAllAccepted(decoded.(schema.PromoteAllAcceptedRequest)), nil
 	case "list_rejected_observations":
 		return a.listRejectedObservations(decoded.(schema.ListRejectedObservationsRequest)), nil
 	case "regenerate_from_promoted_knowledge":
@@ -59,4 +61,3 @@ func (a *App) HandleToolCall(name string, args json.RawMessage) (interface{}, *m
 		return nil, &model.APIError{ErrorCode: "unknown_tool", ErrorMessage: "unknown tool"}
 	}
 }
-
