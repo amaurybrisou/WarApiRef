@@ -142,6 +142,7 @@ Supported tools:
 - `list_pending_observations`
 - `review_observation`
 - `promote_observation`
+- `promote_all_accepted`
 - `list_rejected_observations`
 - `regenerate_from_promoted_knowledge`
 
@@ -164,93 +165,27 @@ Machine-readable contract summary:
 
 ## Knowledge Workflow
 
-The MCP server supports a durable knowledge-loop for validated findings:
+The MCP server supports a durable knowledge-loop for validated findings.
+
+**Fast path** (writable container required on port 8092):
 
 ```
-observation → review → promote → regenerate
+.feed.json  →  ingest_batch (persist + auto_accept)  →  promote_all_accepted  →  make build + generate-platform
 ```
 
-### 1. Submit observation
-
-Use `ingest_observation` (tool) or `feeding/ingest` (method) to submit a normalized observation.
-The observation enters the queue with status `candidate`.
-
-```json
-{ "jsonrpc": "2.0", "method": "feeding/ingest", "params": { "observation": { ... } } }
-```
-
-### 2. List pending observations
-
-Use `list_pending_observations` or `feeding/list_pending` to see observations awaiting review.
-
-Supports `status_filter` (`candidate`, `accepted`), `target_filter` (seed path substring), and `limit`.
-
-### 3. Review (accept or reject)
-
-Use `review_observation` or `feeding/review` to apply a verdict.
-
-```json
-{
-  "observation_id": "my_obs_id",
-  "verdict": "accept",
-  "reviewer": "alice",
-  "notes": "validated in WhoHealedMe"
-}
-```
-
-- **accept** → status becomes `accepted`
-- **reject** → status becomes `rejected`; a durable copy is appended to `review_queue/rejected.ndjson`
-
-Rejection is not deletion. Rejected observations remain queryable via `list_rejected_observations`.
-
-### 4. Promote
-
-Use `promote_observation` or `feeding/promote` to write an accepted observation into the normalized seed files.
-
-```json
-{ "observation_id": "my_obs_id", "dry_run": true }
-```
-
-- Only `accepted` observations may be promoted. Attempting to promote a `candidate` or `rejected` observation returns a hard error.
-- `dry_run: true` — previews seed changes without writing
-- `dry_run: false` (default) — appends the observation's claims to each `target_seeds` path and marks the queue record as `promoted`
-- Duplicate detection: if the seed file already contains a promotion marker for the same `entry_id`, the update is skipped and marked `duplicate: true`
-- The observation's `target_seeds` field controls which seed files receive the promotion. Use `seed_path_override` to redirect to a different seed file.
-
-Promotion targets `docs/platform/seeds/` files. Generated docs under `docs/war-api/` are **not** the primary persistence layer.
-
-**Promoted observations are immutable.** Once an observation reaches `promoted` status, it cannot be re-reviewed (accept or reject). This prevents incoherent states where the queue says `rejected` but the seed file already contains the promoted content. A future superseding workflow will handle intentional updates.
-
-### 5. Regenerate
-
-Use `regenerate_from_promoted_knowledge` or `feeding/regenerate` to rebuild docs from updated seeds.
-
-```json
-{ "scope": "full", "dry_run": true }
-```
-
-Scopes:
-- `platform` — regenerates `docs/war-api` from `docs/addon-api`
-- `site` — regenerates `docs/site/content` from `docs/war-api`
-- `full` (default) — runs platform then site
-
-`dry_run: true` returns the commands that would be run without executing them.
-`dry_run: false` executes `go run ./tools/api_doc_gen generate ...` in the project root.
-
-### Rejected observation memory
-
-Use `list_rejected_observations` or `feeding/list_rejected` to retrieve rejected observations with their reviewer notes.
-This allows future workflows to detect that a similar claim was previously rejected before re-promoting it.
+For the full runbook, observation file template, seed routing, and troubleshooting see:
+`agent-docs/FEEDING_QUICK_REFERENCE.md`
 
 ### Feeding direct methods
 
-All lifecycle operations are also accessible as `feeding/*` JSON-RPC methods (without going through `tools/call`):
+All lifecycle operations are accessible as `feeding/*` JSON-RPC methods:
 
 - `feeding/ingest`
-- `feeding/ingest_batch`
+- `feeding/ingest_batch` — accepts `auto_accept: true` to skip manual review
 - `feeding/list_pending`
 - `feeding/review`
 - `feeding/promote`
+- `feeding/promote_all_accepted` — promotes every accepted observation in one call
 - `feeding/list_rejected`
 - `feeding/regenerate`
 
@@ -262,6 +197,9 @@ All lifecycle operations are also accessible as `feeding/*` JSON-RPC methods (wi
 | `accepted` | Reviewed and approved; eligible for promotion |
 | `rejected` | Reviewed and rejected; durable copy in `rejected.ndjson`; cannot be promoted |
 | `promoted` | Claims written into target seed files; **immutable** — cannot be re-reviewed |
+
+Seed files (promotion targets): `docs/platform/seeds/`
+Machine-readable tool contracts: `tools/mcp_server/schema/tool_contracts.json`
 
 ## Site Features
 
